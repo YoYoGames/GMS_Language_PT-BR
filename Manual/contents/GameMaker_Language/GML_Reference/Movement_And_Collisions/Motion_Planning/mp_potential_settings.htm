@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_potencial_settings</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_potential_settings" />
+  <meta name="rh-index-keywords" content="mp_potential_settings" />
+  <meta name="search-keywords" content="mp_potential_settings" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_potencial_settings</h1>
+  <p>As funções <tt>mp_potencial_</tt> fazem seu trabalho usando uma série de parâmetros que podem ser alterados usando esta função. Globalmente o método funciona da seguinte forma: primeiro tenta se mover diretamente em direção ao objetivo, olhando uma série de passos à frente que podem
+    ser definido com o parâmetro &quot;à frente&quot; (o valor padrão é 3). Reduzir este valor significa que a instância começará a mudar de direção mais tarde, pois não &quot;vê&quot; tão à frente, e aumentá-lo significa que começará a mudar de direção
+    mais cedo. Se esta verificação leva a uma colisão, então começa a olhar mais para a esquerda e para a direita da direção ideal, em linha reta. Ele faz isto em etapas de tamanho &quot;rotstep&quot; (o valor padrão é 10), e reduzindo isto dá
+    a instância terá mais possibilidades de movimentação, mas será mais lenta, pois precisa de mais poder de processamento.</p>
+  <p>O parâmetro &quot;maxrot&quot; é um pouco mais difícil de explicar! A instância tem uma direção de movimento de corrente, e maxrot (valor padrão é 30) indica o quanto é permitido variar sua direção de cada lado dessa direção de corrente em um
+    passo. Portanto, mesmo que possa se mover, por exemplo, diretamente para o objetivo, só o fará se não violar esta mudança máxima de direção. Se você fizer do maxrot um grande valor, então a instância pode mudar muito de direção em cada passo, e isto tornará mais fácil
+    para encontrar um caminho curto, mas o caminho será mais feio e menos natural. Se você fizer o valor menor, então o caminho será mais suave, mas pode levar desvios mais longos (e às vezes até falhar em encontrar o objetivo). Finalmente, quando nenhum passo pode ser dado, o comportamento
+    depende do valor do parâmetro &quot;no local&quot;. Se no local for verdadeiro (o valor padrão), então a instância girará no local pelo valor indicado com &quot;maxrot&quot; e se for falso, não se moverá de forma alguma. Definindo-o como falso
+    é útil, por exemplo, para carros, mas reduz a chance de a instância encontrar um caminho.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">mp_potencial_settings(maxrot, apodrecimento, adiante, no local)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>maxrot</td>
+        <td>O número de graus de cada lado da direção atual que a instância pode girar em uma etapa</td>
+      </tr>
+      <tr>
+        <td>passo</td>
+        <td>O número de graus de cada lado da direção atual que a instância pode verificar para uma colisão</td>
+      </tr>
+      <tr>
+        <td>adiante</td>
+        <td>O número de passos à frente que a instância pode verificar se há uma colisão. Os valores maiores são mais lentos do que os menores.</td>
+      </tr>
+      <tr>
+        <td>no local</td>
+        <td>Use isto para permitir que a instância gire no local quando não for encontrado nenhum caminho (verdadeiro) ou não (falso)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">mp_potencial_settings(45, 5, 5, 0);</p>
+  <p>O código acima irá definir as funções <tt>mp_potencial_</tt> para usar as seguintes configurações: a instância pode olhar para frente cinco passos, mudar a direção 45 graus cada passo, olhar 5 graus para cada lado da direção atual se houver um obstáculo e
+    não girar no momento em que há uma colisão.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Motion_Planning.htm">Planejamento de Movimento</a></div>
+        <div style="float:right">Próximo: <a href="mp_potential_step.htm">mp_potencial_step</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_potential_settings
+-->
+  <!-- TAGS
+mp_potential_settings
+-->
+</body>
+</html>

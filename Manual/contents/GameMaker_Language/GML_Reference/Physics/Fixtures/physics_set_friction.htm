@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_set_friction</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_set_friction" />
+  <meta name="rh-index-keywords" content="physics_set_friction" />
+  <meta name="search-keywords" content="physics_set_friction" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_set_friction</h1>
+  <p>Quando você amarra um acessório a uma instância usando <a href="physics_fixture_bind.htm"><tt>physics_fixture_bind()</tt></a> isto retorna um &quot;id&quot; para a fixação do limite. Você pode usar este id para definir o valor de fricção da fixação vinculada, <i>não</i> a fixação &quot;base&quot;, a qualquer momento usando esta função. Note que o atrito é normalmente definido para um valor entre 0 e 1, mas você pode usar qualquer valor não negativo, se necessário.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">physics_set_friction(fixture, fricção)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>fixação</td>
+        <td>a identificação da fixação do limite</td>
+      </tr>
+      <tr>
+        <td>fricção</td>
+        <td>o novo valor de fricção a aplicar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var fric = physics_get_friction(fix_id);<br> physics_set_friction(fix_id, fric + 0.1);</p>
+  <p>O código acima obtém o valor de atrito atual para as propriedades físicas vinculadas da instância e depois as define para um valor diferente.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Fixtures.htm">Instalações</a></div>
+        <div style="float:right">A seguir: <a href="physics_set_density.htm">densidade_física_set</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_set_friction
+-->
+  <!-- TAGS
+physics_set_friction
+-->
+</body>
+</html>

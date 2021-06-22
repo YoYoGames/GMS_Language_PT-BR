@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>network_set_timeout</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for network_set_timeout" />
+  <meta name="rh-index-keywords" content="network_set_timeout" />
+  <meta name="search-keywords" content="network_set_timeout" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>network_set_timeout</h1>
+  <p>Com esta função, você pode definir o tempo limite para ler e escrever dados de/para um servidor através do soquete dado. Note que o timeout não gera nenhum tipo de evento, portanto você mesmo terá que lidar com os timeouts usando alarmes (por exemplo).
+    Note que este valor afeta apenas o envio e recebimento de dados, e caso você deseje alterar o valor de timeout da conexão, então você deve estar usando a função <a href="network_set_config.htm"><tt>network_set_config()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">network_set_timeout(socket, read_timeout, write_timeout);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>soquete</td>
+        <td>A identificação do soquete a ser utilizado.</td>
+      </tr>
+      <tr>
+        <td>read_timeout</td>
+        <td>Os milissegundos em que uma transferência de um servidor terá um timeout.</td>
+      </tr>
+      <tr>
+        <td>write_timeout</td>
+        <td>Os milissegundos em que uma transferência para um servidor terá um timeout.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">network_set_timeout(sock, 3000, 3000);</p>
+  <p>O código acima definirá o tempo limite para leitura e escrita de dados através do soquete indexado na variável &quot;meia&quot; a 3 segundos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Networking.htm">Rede</a></div>
+        <div style="float:right">Próximo: <a href="network_send_broadcast.htm">network_send_broadcast</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+network_set_timeout
+-->
+  <!-- TAGS
+network_set_timeout
+-->
+</body>
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>caminho_tipo_de_série</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_set_kind" />
+  <meta name="rh-index-keywords" content="path_set_kind" />
+  <meta name="search-keywords" content="path_set_kind" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>caminho_tipo_de_série</h1>
+  <p>Esta função pode ser usada para definir o tipo de caminho que você deseja que o recurso especificado seja. Este pode ser um caminho em linha reta (definido como 0) ou um caminho alisado (definido como 1), em cujo caso a precisão do caminho também deve ser levada em conta (a precisão
+    pode ser ajustado também usando <a href="path_set_precision.htm"><tt>caminho_set_precision()</tt></a>). Esta função muda o recurso do caminho real, e assim afetará permanentemente como o caminho é usado por todas as instâncias do jogo a partir do momento em que
+    a função é usada até o final do jogo. Se isso não for o que você precisa, então você deve usar uma função como <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span> para criar uma cópia do caminho primeiro, então chame essa função
+    sobre o bem duplicado (não esqueça de ligar para <span class="inline"><a href="path_delete.htm">path_delete()</a></span> sobre o bem quando ele não for mais necessário).</p>
+  <p><img alt="Path kind example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Paths/setkind.png" /></p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">path_set_kind(index, val);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice do caminho para a mudança.</td>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>O tipo de caminho, 0 para reto ou 1 para liso.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">path_set_kind(pth_Patrol, true);</p>
+  <p>Isto definirá o caminho dado para ser um caminho &quot;suave&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Path_Manipulation.htm">Manipulação do caminho</a></div>
+        <div style="float:right">Próximo: <a href="path_set_precision.htm">caminho_set_precisão</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_set_kind
+-->
+  <!-- TAGS
+path_set_kind
+-->
+</body>
+</html>

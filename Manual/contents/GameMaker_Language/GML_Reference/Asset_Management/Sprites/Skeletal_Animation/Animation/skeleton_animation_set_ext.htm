@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>esqueleto_animação_set_ext_sext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_animation_set_ext" />
+  <meta name="rh-index-keywords" content="skeleton_animation_set_ext" />
+  <meta name="search-keywords" content="skeleton_animation_set_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>esqueleto_animação_set_ext_sext</h1>
+  <p>Quando você define um conjunto de animação para seu sprite de animação esquelética, é atribuída a ele a <i>faixa 0</i> internamente. Entretanto, você pode atribuir outros conjuntos a outras pistas (1 e acima) e desta forma, fazer com que seu duende toque duas (ou
+    mais) animações ao mesmo tempo. Note que o sprite deveria ter sido projetado em seu programa de animação com isto em mente, de modo que a animação &quot;base&quot; na faixa 0 tenha apenas keyframes <span class="notranslate">para</span> certos ossos, enquanto as faixas seguintes têm keyframes
+    para os outros. Por exemplo, se você tiver uma animação &quot;walk&quot; e seus quadros-chave <span class="notranslate">só</span> afetam as pernas do duende, você pode então ter um conjunto de animações de cabeça e de braço que você pode definir nas faixas 1 e 2 respectivamente, permitindo
+    você tenha um movimento de base e se adapte nele em tempo real enquanto o jogo está sendo jogado.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">esqueleto_animação_set_ext(animname, pista);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>animname</td>
+        <td>O nome (uma cadeia) do conjunto de animação a ser utilizado.</td>
+      </tr>
+      <tr>
+        <td>faixa</td>
+        <td>A pista para o conjunto de animação a ser utilizado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if mouse_check_button(mb_left)<br> {
+    <br> skeleton_animation_set_ext(&quot;bodyfight&quot;, 1);<br> }
+    <br> mais
+    <br> {
+    <br> skeleton_animation_set_ext(&quot;bodywalk&quot;, 1);<br> }
+  </p>
+  <p>O código acima mudará o conjunto de animação sendo usado pela faixa 1 para o conjunto &quot;bodyfight&quot; ou o conjunto &quot;bodywalk&quot; quando o botão esquerdo do mouse for pressionado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Animation.htm">Animação</a></div>
+        <div style="float:right">Próximo: <a href="skeleton_animation_get_duration.htm">esqueleto_animação_get_duração</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_animation_set_ext
+-->
+  <!-- TAGS
+skeleton_animation_set_ext
+-->
+</body>
+</html>

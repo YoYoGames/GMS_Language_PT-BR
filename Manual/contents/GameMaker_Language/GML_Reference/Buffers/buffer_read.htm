@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_read</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_read" />
+  <meta name="rh-index-keywords" content="buffer_read,buffer_u8,buffer_s8,buffer_u16,buffer_s16,buffer_u32,buffer_s32,buffer_u64,buffer_f16,buffer_f32,buffer_f64,buffer_bool,buffer_string,buffer_text" />
+  <meta name="search-keywords" content="buffer_read,buffer_u8,buffer_s8,buffer_u16,buffer_s16,buffer_u32,buffer_s32,buffer_u64,buffer_f16,buffer_f32,buffer_f64,buffer_bool,buffer_string,buffer_text" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_read</h1>
+  <p>Esta função pode ser usada para ler dados de um buffer previamente criado. O valor de retorno dependerá do tipo de dados que você estiver lendo, o que em si mesmo é definido pelas seguintes constantes:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>buffer_u8</td>
+        <td>Um número inteiro não assinado de 8 bits. Este é um valor positivo de 0 a 255.</td>
+      </tr>
+      <tr>
+        <td>buffer_s8</td>
+        <td>Um número inteiro de 8 bits assinado. Este pode ser um valor positivo ou negativo de -128 a 127 (0 é classificado como positivo).</td>
+      </tr>
+      <tr>
+        <td>buffer_u16</td>
+        <td>Um inteiro de 16 bits, não assinado. Este é um valor positivo de 0 - 65,535.</td>
+      </tr>
+      <tr>
+        <td>buffer_s16</td>
+        <td>Um número inteiro de 16 bits assinado. Este pode ser um valor positivo ou negativo de -32.768 a 32.767 (0 é classificado como positivo).</td>
+      </tr>
+      <tr>
+        <td>buffer_u32</td>
+        <td>Um número inteiro não assinado de 32 bits. Este é um valor positivo de 0 a 4.294.967.295.</td>
+      </tr>
+      <tr>
+        <td>buffer_s32</td>
+        <td>Um número inteiro de 32 bits assinado. Este pode ser um valor positivo ou negativo de -2.147.483.648 a 2.147.483.647 (0 é classificado como positivo).</td>
+      </tr>
+      <tr>
+        <td>buffer_u64</td>
+        <td>Um número inteiro não assinado de 64 bits.</td>
+      </tr>
+      <tr>
+        <td>buffer_f16</td>
+        <td>Um flutuador de 16 bits. Este pode ser um valor positivo ou negativo dentro da faixa de +/- 65504. <i>(Não suportado atualmente!)</i></td>
+      </tr>
+      <tr>
+        <td>buffer_f32</td>
+        <td>Um flutuador de 32bit. Este pode ser um valor positivo ou negativo dentro da faixa de +/-16777216.</td>
+      </tr>
+      <tr>
+        <td>buffer_f64</td>
+        <td>Um flutuador de 64 bits.</td>
+      </tr>
+      <tr>
+        <td>buffer_bool</td>
+        <td>Um valor booleano. Pode ser apenas 1 ou 0<tt>(verdadeiro</tt> ou <tt>falso</tt>)</td>
+      </tr>
+      <tr>
+        <td>cordão_tampão</td>
+        <td>Um fio de qualquer tamanho.</td>
+      </tr>
+      <tr>
+        <td>texto_tampão</td>
+        <td>Uma cadeia de qualquer tamanho, sem o caráter final de terminação nula.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Se a função for bem sucedida, ela retornará um valor do tipo dado, porém, se falhar, causará um erro de corredor.</p>
+  <p class="note"><b>NOTA</b>: O uso do tipo de dados incorretos para os dados que estão sendo lidos resultará em valores errôneos que serão devolvidos.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">buffer_read(buffer, tipo)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tampão</td>
+        <td>O índice do buffer a ser lido.</td>
+      </tr>
+      <tr>
+        <td>tipo</td>
+        <td>O tipo de dados que devem ser lidos do buffer (ver a lista de constantes acima).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real/Calça</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var cmd = buffer_read(buff, buffer_s16);</p>
+  <p>O código acima lê do buffer com o id armazenado na variável &quot;buff&quot; um valor de 16 bits assinado na variável local &quot;cmd&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Buffers.htm">Tampões</a></div>
+        <div style="float:right">Próximo: <a href="buffer_write.htm">buffer_write</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_read
+buffer_u8
+buffer_s8
+buffer_u16
+buffer_s16
+buffer_u32
+buffer_s32
+buffer_u64
+buffer_f16
+buffer_f32
+buffer_f64
+buffer_bool
+buffer_string
+buffer_text
+-->
+  <!-- TAGS
+buffer_read
+-->
+</body>
+</html>

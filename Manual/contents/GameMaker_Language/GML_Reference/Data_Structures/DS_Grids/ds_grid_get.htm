@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_grid_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_get" />
+  <meta name="rh-index-keywords" content="ds_grid_get" />
+  <meta name="search-keywords" content="ds_grid_get" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_get</h1>
+  <p>Esta função pode ser usada para obter o valor (seja um número real ou uma string) de qualquer célula dentro da grade DS dada. Se você passar coordenadas de grade inválidas para a função, então o valor retornado será <tt>indefinido</tt> e um erro será mostrado
+    na janela de saída.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">ds_grid_get(índice, x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice da grade.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A posição x da célula da qual você quer encontrar o valor.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A posição y da célula da qual você quer encontrar o valor.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real ou String</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var xx = irandom(ds_grid_width(grid) - 1);<br> var yy = irandom(ds_grid_height(grid) - 1);<br> val = ds_grid_get(grid, xx, yy)</p>
+  <p>O código acima seleciona uma célula aleatória da grade DS indexada na variável &quot;grid&quot; e armazena seu valor na variável &quot;val&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="DS_Grids.htm">Grades DS</a></div>
+        <div style="float:right">Próximo: <a href="ds_grid_get_max.htm">ds_grid_get_max</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_get
+-->
+  <!-- TAGS
+ds_grid_get
+-->
+
+</body></html>

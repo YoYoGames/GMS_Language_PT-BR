@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>A estrutura sequencial do objeto</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining The Sequence Object Struct" />
+  <meta name="rh-index-keywords" content="Sequence Object Struct" />
+  <meta name="search-keywords" content="The Sequence Object Struct,seqplay_oneshot,seqplay_loop,seqplay_pingpong,spritespeed_framespersecond,spritespeed_framespergameframe,name,loopmode,playbackSpeed,playbackSpeedType,length,volume,xorigin,yorigin,messageEventKeyframes,momentKeyframes,tracks" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>A estrutura sequencial do objeto</h1>
+  <p>Um objeto sequencial é o nome dado à estrutura recuperada do ativo sequencial como definido no navegador de ativos para seu jogo. Esta <a href="../../../../GML_Overview/Structs.htm">estrutura</a> terá as seguintes propriedades que podem ser alteradas:</p>
+  <ul class="colour">
+    <li><tt>nome</tt>: Este é o nome da seqüência como um fio e você pode obter ou definir este valor conforme necessário. Observe que as seqüências criadas usando a função <a href="../sequence_create.htm"><tt>sequence_create()</tt></a> não terá um nome e isto
+      será simplesmente um fio vazio &quot;&quot;.<tt></tt></li>
+    <li><tt>loopmode</tt>: Este é o modo de reprodução do objeto em seqüência e pode ser obtido ou definido. Ele retornará (ou pode ser definido para) as seguintes constantes:</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+        <th>Valor</th>
+      </tr>
+      <tr>
+        <td><tt>seqplay_oneshot</tt></td>
+        <td>A seqüência tocará uma vez e depois parará quando estiver terminada.</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td><tt>seqplay_loop</tt></td>
+        <td>A seqüência fará um loop, com o playhead voltando ao início quando chegar ao final da região de reprodução.</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td><tt>seqplay_pingpong</tt></td>
+        <td>A seqüência fará um loop, com o playhead invertendo a direção quando chegar ao final da região de reprodução.</td>
+        <td>2</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <ul class="colour">
+    <li><tt>playbackSpeed</tt>: Especifica a velocidade de reprodução da seqüência, que é interpretada como quadros por segundo ou quadros por quadro, dependendo do <tt>tipo de reproduçãoSpeedType</tt> (veja abaixo). Você pode obter ou definir este valor.</li>
+    <li><tt>playbackSpeedType</tt>: Isto especifica como a <tt>playbackSpeed</tt> deve ser interpretada e você pode obter ou definir este valor. Você pode usar uma das seguintes constantes para definir o valor (ou uma destas constantes será devolvida se for verificado
+      a propriedade):</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+        <th>Valor</th>
+      </tr>
+      <tr>
+        <td><tt>spritespeed_framespersecond</tt></td>
+        <td>Especifica que <tt>playbackSpeed</tt> deve ser interpretado como frames-per-second</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td><tt>spritespeed_framespergameframe</tt></td>
+        <td>Especifica que <tt>playbackSpeed</tt> deve ser interpretado como frames-per-game-frame.</td>
+        <td>1</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <ul class="colour">
+    <li><tt>comprimento</tt>: O comprimento da seqüência em quadros. Você pode obter ou definir este valor, mas note que fazer uma seqüência mais curta pode causar problemas se uma instância de seqüência referenciando esta seqüência tiver seu playhead definido para além do novo comprimento.</li>
+    <li><tt>volume</tt>: Este é um valor escalar de 0 a 1 que é usado para escalar o volume de todas as faixas de áudio na seqüência. Você pode obter ou definir este valor e ele modificará a saída de áudio global para todas as faixas - por exemplo, se você tiver uma faixa de áudio
+      com um volume de 0,8 e depois definir a propriedade de <tt>volume</tt> da seqüência para 0,5, a faixa de áudio terá um volume final de 0,4.</li>
+    <li><tt>xorigem</tt>: Esta é a origem da seqüência ao longo do eixo X. Você pode obter ou definir este valor.</li>
+    <li><tt>yorigin</tt>: Esta é a origem da seqüência ao longo do eixo Y. Você pode obter ou definir este valor.</li>
+    <li><tt>mensagemEventKeyframes</tt>: Isto permite o acesso aos <span class="notranslate">keyframes de</span> eventos de mensagens para a seqüência. Você pode obter ou definir estes eventos de mensagem, e ao obter esta propriedade é devolvido um conjunto de estruturas de <span class="notranslate">quadros-chave</span>, e para definir a propriedade você
+      deve fornecer uma série de estruturas de <span class="notranslate">quadros-chave</span>. Para mais informações, consulte a página sobre <a href="../Sequence_Events_Moments_Broadcast.htm">Eventos e Momentos Sequenciais</a>.</li>
+    <li><tt>momentKeyframes</tt>: Isto permite o acesso aos <span class="notranslate">quadros-chave de</span> eventos do momento para a seqüência. Você pode obter ou definir estes eventos de momento, e ao obter esta propriedade é devolvido um conjunto de estruturas de <span class="notranslate">quadros-chave</span>, e para definir a propriedade você deve fornecer
+      uma série de estruturas de <span class="notranslate">quadros-chave</span>. Para mais informações, consulte a página sobre <a href="../Sequence_Events_Moments_Broadcast.htm">Eventos e Momentos Sequenciais</a>.</li>
+    <li><tt>pistas</tt>: Isto permite o acesso à lista de <b>faixas de ativos</b> no nível superior da seqüência. Você pode obter ou definir esta propriedade, e ao obter esta propriedade é devolvido um conjunto de estruturas de pistas, e para definir a propriedade você deve
+      fornecer um conjunto de estruturas de esteiras. Para mais informações, por favor, consulte a seção sobre <a href="The_Track_Struct.htm"><b>Estruturas de trilhos</b></a>.</li>
+  </ul>
+  <p>Observe que se você quiser acessar as propriedades de uma seqüência que foi criada no navegador de ativos, você deve primeiro chamar a função <a href="../sequence_get.htm"><tt>sequence_get()</tt></a> no índice de ativos para recuperar a estrutura do objeto de seqüência.
+    Observe também que quaisquer mudanças feitas nesta estrutura de seqüência significarão que todas as outras instâncias deste ativo de seqüência também terão estas mudanças, e elas serão mantidas enquanto o jogo estiver em execução, mesmo se você chamar a função <span class="inline">game_restart()</span>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Sequences.htm">Sequências</a></div>
+        <div style="float:right">A seguir: <a href="The_Sequence_Instance_Struct.htm">A estrutura da instância seqüencial</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Sequence Object Struct
+seqplay_oneshot
+seqplay_loop
+seqplay_pingpong
+spritespeed_framespersecond
+spritespeed_framespergameframe
+name
+loopmode
+playbackSpeed
+playbackSpeedType
+length
+volume
+xorigin
+yorigin
+messageEvent<span class="notranslate">Keyframes</span>
+moment<span class="notranslate">Keyframes</span>
+tracks
+-->
+  <!-- TAGS
+sequence_object
+-->
+</body>
+</html>

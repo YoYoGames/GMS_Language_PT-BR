@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_stats_get_social_leaderboard</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_stats_get_social_leaderboard" />
+  <meta name="rh-index-keywords" content="xboxlive_stats_get_social_leaderboard, achievement_stat_event" />
+  <meta name="search-keywords" content="xboxlive_stats_get_social_leaderboard,achievement_stat_event" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_stats_get_social_leaderboard</h1>
+  <p>Esta função pode ser usada para recuperar um quadro de líderes sociais para uma determinada estatística. Você fornece o ID do usuário (como retornado, por exemplo, pela função <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>), o
+    stat string (como definido quando você o criou usando as funções xboxlive_stats_set_stat_*), e então você especifica um número de detalhes sobre quais informações do leaderboard você quer recuperar. Note que você só pode recuperar um quadro de líderes sociais para
+    int ou estatísticas reais, mas não para as estatísticas de string, e que se você assinalar o argumento &quot;somente favoritos_ somente&quot; como verdadeiro, então os resultados só conterão dados para aqueles amigos que são marcados pelo usuário como &quot;favoritos&quot;.</p>
+  <p class="note"><b>IMPORTANTE!</b> As estatísticas utilizadas nos quadros de liderança social <b>não</b> precisam ser registradas como &quot;Estatísticas em Destaque&quot; no XDP/Windows<span class="notranslate">Dev</span> Center...</p>
+  <p>A função gerará uma chamada de retorno que acionará um <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">Evento Assíncrono do Sistema</a>. Este evento terá o mapa DS especial <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>    que deve então ser analisado para as seguintes chaves:</p>
+  <ul class="colour">
+    <li>&quot;id&quot; - Realizará o constante <tt>evento</tt></li>
+    <li>&quot;evento<b>&quot; -</b> Segura a corda &quot; GetLeaderboardComplete<i>&quot;</i>.</li>
+    <li>&quot;userid<b>&quot; -</b> O ID do usuário associado à solicitação</li>
+    <li>&quot;erro<b>&quot; - 0</b> se bem sucedido, algum outro valor se tiver havido um erro. O seguinte é o erro mais comum retornado:
+      <ul>
+        <li>-2145844848: Má solicitação (a estatística não é um tipo de quadro de comando válido, ou seja: uma corda)</li>
+      </ul>
+    </li>
+    <li>&quot; errormessage<b>&quot; - Uma</b> cadeia com uma mensagem de erro, se houver alguma disponível</li>
+    <li>&quot;<b>display_name&quot; -</b> A identificação única para o painel de controle, conforme definido no painel do fornecedor.</li>
+    <li>&quot;numentries<b>&quot; -</b> O número de entradas no quadro de líderes que você recebeu.</li>
+  </ul>
+  <p>O restante do mapa DS também conterá os dados do quadro de líderes com o seguinte formato (onde &quot;N&quot; é a posição nos dados do quadro de líderes, de 0 a &quot;numentries&quot;):</p>
+  <ul class="colour">
+    <li>&quot;<b>PlayerN&quot; -</b> O nome do jogador, onde &quot;N&quot; é um valor inteiro correspondente à sua posição dentro da lista de entradas do quadro de líderes.</li>
+    <li>&quot;<b>PlayeridN&quot; -</b> A identificação única do usuário do jogador, &quot;N&quot;.</li>
+    <li>&quot;RankN<b>&quot; -</b> A classificação do jogador &quot;N&quot; dentro da tabela de liderança.</li>
+    <li>Pontuação &quot;N&quot;<b>-</b> A pontuação do jogador &quot;N&quot;.</li>
+  </ul>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">xboxlive_stats_get_social_leaderboard(user_id, stat, num_entries, start_rank, start_at_user, favorite_only);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>O ID do usuário para obter o quadro de líderes para</td>
+      </tr>
+      <tr>
+        <td>stat</td>
+        <td>O estatuto (como cordel) para criar o quadro de líderes globais a partir</td>
+      </tr>
+      <tr>
+        <td>num_entries</td>
+        <td>O número de entradas do quadro de líderes globais a recuperar</td>
+      </tr>
+      <tr>
+        <td>start_rank</td>
+        <td>A posição no quadro de líderes para começar (use 0 se o argumento &quot;start_at_user&quot; for definido como verdadeiro)</td>
+      </tr>
+      <tr>
+        <td>start_at_user</td>
+        <td>Definido como <tt>verdadeiro</tt> para começar no posto de identificação do usuário, <tt>falso</tt> caso contrário (definido como <tt>falso</tt> se o argumento &quot;start_rank&quot; for qualquer coisa diferente de 0)</td>
+      </tr>
+      <tr>
+        <td>favoritos_somente</td>
+        <td>Definir como <tt>verdadeiro</tt> para mostrar apenas os amigos que são marcados como &quot;favoritos&quot; ou falsos <tt>de outra forma</tt> </td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo ampliado:</h4>
+  <p>A seguir, um exemplo ampliado de como esta função pode ser utilizada. Para começar, você a chamaria em algum evento como Room <b>Start ou</b> <b>Create</b>:</p>
+  <p class="code">xboxlive_stats_get_social_leaderboard(user_id, &quot;GlobalTime&quot;, 20, 1, falso, falso);</p>
+  <p>O código acima seria chamado para obter uma lista de todas as posições de liderança global para o jogo, e geraria uma chamada de retorno de Evento Assíncrono Social, que trataríamos da seguinte forma:</p>
+  <p class="code">if (async_load[? &quot;id&quot;] == achievement_stat_event)<br> {
+    <br> if (async_load[? &quot;event&quot;] == &quot;GetLeaderboardComplete&quot;)<br> {
+    <br> global.numentries = async_load[? &quot;numentries&quot;];<br> for(var i = 0; i &lt; numentries; i++;)<br> {
+    <br> global.playername[i] = async_load[? &quot;Player&quot; + string(i)];<br> global.playerid[i] = async_load[? &quot;Playerid&quot; + string(i)];<br> global.playerrank[i] = async_load[? &quot;Rank&quot; + string(i)];<br> global.playerscore[i] = async_load[? &quot;Score&quot; + string(i]);<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>O código acima verifica o mapa DS retornado no Evento Assíncrono Social e se seu &quot;id&quot; corresponde à constante a ser verificada, então verifica se o evento foi acionado pelos dados do quadro de líderes retornados antes de fazer looping pelo mapa
+    e armazenando todos os diferentes valores em uma série de arrays globais.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Stats_And_Leaderboards.htm">Estatísticas e Quadros de Líderes</a></div>
+        <div style="float:right">Próximo: <a href="xboxlive_achievements_set_progress.htm">xboxlive_achievements_set_progress</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_stats_get_social_leaderboard
+achievement_stat_event
+-->
+  <!-- TAGS
+xboxlive_stats_get_social_leaderboard
+-->
+</body>
+</html>

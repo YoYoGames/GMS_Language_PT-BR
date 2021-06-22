@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_particles_count</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_particles_count" />
+  <meta name="rh-index-keywords" content="part_particles_count" />
+  <meta name="search-keywords" content="part_particles_count" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_particles_count</h1>
+  <p>Com esta função você pode verificar se um sistema de partículas atualmente tem alguma partícula criada na sala, e ele retornará o número delas também.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">part_particles_count(ind);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>O índice do sistema de partícula.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if (part_particles_count(Sname) == 0)<br> {
+    <br> part_system_destroy(Sname);
+    <br> instance_destroy();
+    <br> }
+  </p>
+  <p>O código acima verificará o número de partículas no sistema de partículas local indexado na variável &quot;Sname&quot; e, se não houver nenhuma, destruirá o sistema e, em seguida, a instância.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Particle_Systems.htm">Sistemas de Partículas</a></div>
+        <div style="float:right">Próximo: <a href="part_system_automatic_update.htm">part_system_automatic_update</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_particles_count
+-->
+  <!-- TAGS
+part_particles_count
+-->
+</body>
+</html>

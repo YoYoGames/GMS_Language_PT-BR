@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Funções e Variáveis de Roteiro</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page outlining the use of scripts to create functions and global variables and macros" />
+  <meta name="rh-index-keywords" content="Script Functions And Variables" />
+  <meta name="search-keywords" content="user defined functions,script functions,gmcallback_,gmcallback" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Funções e Variáveis de Roteiro</h1>
+  <p>Os ativos do Script são essencialmente uma coleção de uma ou mais funções ou variáveis definidas pelo usuário que você mesmo escreve como trechos de código no <a href="../../The_Asset_Editors/Scripts.htm">Editor de Script</a>. As funções que você define em um script podem
+    resolver expressões, retornar valores ou fazer qualquer outra coisa que a <span class="notranslate">linguagem GameMaker</span> permita, da mesma forma que as <a href="Runtime_Functions.htm">funções</a> construídas em <a href="Runtime_Functions.htm"><span class="notranslate">tempo de execução</span></a>.</p>
+  <p>As funções do script devem geralmente ser usadas se você tiver um bloco de código que você usa em mais de um lugar ou objeto, ou quando você quiser que um bloco de código seja usado através de vários objetos de forma modular. O uso de scripts para definir funções significa que
+    você pode mudar a função apenas uma vez quando necessário e a mudança será &quot;pega&quot; por cada objeto que tenha uma chamada para a função.</p>
+  <p>Os scripts também podem ser muito úteis do ponto de vista organizacional, pois permitem criar grupos de funções que pertencem a uma determinada categoria - por exemplo, você pode ter várias funções, todas relacionadas a colisões entre instâncias em seu
+    Assim, você criaria um roteiro &quot;<span class="inline">Collision_Functions</span>&quot; e guardaria todas estas funções juntas nele.</p>
+  <h2>Criação de funções</h2>
+  <p>Ao criar um roteiro com funções nele, as funções devem ser criadas utilizando os seguintes formatos:</p>
+  <p class="code"><span>função &lt;nome&gt;( &lt;parametro1&gt;, &lt;parametro2&gt;, etc... )<br>
+{</span><br>
+    <span>    &lt;estatuto1&gt;;</span><br>
+    <span>    &lt;estatuto1&gt;;</span><br>
+    <span>    ...</span><br>
+    <span>}</span></p>
+  <p>ou:</p>
+  <p class="code"><span><span>&lt;nome&gt; = </span>função( &lt;parametro1&gt;, &lt;parametro2&gt;, etc... )</span><br>
+    <span>{</span><br>
+    <span>    &lt;estatuto1&gt;;</span><br>
+    <span>    &lt;estatuto1&gt;;</span><br>
+    <span>    ...</span><br>
+    <span>}</span></p>
+  <p>Em geral, entretanto, você usaria a <em>primeira </em>forma para funções de roteiro, pois ela definirá a função como sendo especificamente uma função de roteiro, o que significa que ela terá um <a href="Variables_And_Variable_Scope.htm">escopo</a> <strong>global </strong>,
+    ser atribuído um <strong>índice de script</strong>, e não exigir o prefixo <span class="inline">global</span> para identificá-lo, já que o compilador o reconhecerá como uma função de script. Usando o segundo formulário, em vez disso, será gerado um escopo global
+   <a href="Method_Variables.htm">e</a>, como tal, <em>não </em>será reconhecida como uma função de script pela IDE e exigirá o uso do prefixo <span class="inline">global</span> ao ser referenciada em seu código.</p>
+  <p class="note"><strong>NOTA</strong>: Você pode verificar isto usando os dois formulários em um script e depois chamando a função <span class="notranslate">runtime</span> <a href="../GML_Reference/Variable_Functions/typeof.htm">typeof(</a> ) em cada um deles. Um deles será classificado como um &quot;número&quot; - uma vez que
+    retorna um ID de índice de roteiro - e o outro será classificado como um &quot;método&quot;.</p>
+  <h2>Argumentos</h2>
+  <p>Você pode definir seus próprios parâmetros/argumentos para a função, que estarão disponíveis para a função como variáveis locais e podem ser usados de qualquer maneira:</p>
+  <p class="code">function move<strong>(spd, dir</strong>)<br> {
+    <br> speed = <strong>spd</strong>;<br> direction = <strong>dir</strong>;<br> }
+  </p>
+  <p>Esta função pega dois argumentos e aplica seus valores às variáveis de <tt>velocidade e</tt> <tt>direção</tt> da instância. Agora ela pode ser chamada como qualquer função de <span class="notranslate">tempo de execução</span> e os argumentos podem ser passados para ela:</p>
+  <p class="code">var _mouse_dir = point_direction(x, y, mouse_x, mouse_y);<br>
+    <br>
+   <strong>move(4, _mouse_dir);</strong></p>
+  <p>Note que se não for dada uma argumentação a uma função, seu valor será <tt>indefinido</tt>. Você pode usar isto para definir argumentos <em>opcionais</em> e verificar se um argumento é passado ou não, verificando se ele é igual a <tt>indefinido</tt>. No entanto, o valor é indefinido,
+    você também pode definir um valor padrão para um argumento que será usado em vez de <tt>indefinido</tt> quando não for passado para dentro.</p>
+  <p>Você pode atribuir esse valor padrão a um parâmetro usando o sinal de igual<tt>(=</tt>), tornando-o uma variável opcional:</p>
+  <p class="code">função move(spd, <strong>dir = 90</strong>)<br> {
+    <br> speed = spd;<br> direction = dir;<br> }
+  </p>
+  <p>Se o argumento <tt>da represa</tt> não for passado ao chamar a função acima, então seu valor padrão será de <tt>90</tt>, movendo a instância em direção ascendente.</p>
+  <p>O valor padrão de uma variável opcional pode ser uma expressão, assim, por exemplo, você pode usar variáveis e funções de chamada enquanto define uma variável opcional. Note que tal expressão só será executada se seu argumento opcional não for fornecido.
+    na chamada de função. Veja o seguinte exemplo de uma função de registro:</p>
+  <p class="code">function log(text = &quot;Log&quot;, object = object_index, time = date_datetime_string(date_current_datetime()))<br> {
+    <br> var _string = &quot;[&quot; + string(time) + &quot;] &quot;;<br> _string += object_get_name(object) + &quot;: &quot;;<br> _string += text;<br>     <br> show_debug_message(_string);<br> }
+  </p>
+  <p>Esta função leva três argumentos, onde o primeiro argumento tem como padrão uma constante de string, o segundo argumento tem como padrão uma variável de instância (no escopo da instância de chamada) e o terceiro argumento tem como padrão uma expressão que chama uma função
+    para recuperar a data e a hora atuais. Esta função pode agora ser chamada com até três argumentos, como visto no exemplo a seguir:</p>
+  <p class="code">log();<br> // Impressões: [09-Jun-21 12:34:37] Objeto1: Log<br>
+    <br> log(&quot;Player Shot&quot;, obj_player, 10);<br> // Impressões: [10] obj_player: Player Shot</p>
+  <h2>JSDoc</h2>
+  <p>Também recomendamos que você acrescente comentários para definir as propriedades da função (veja a seção sobre <a href="../../The_Asset_Editors/Code_Editor_Properties/JSDoc_Script_Comments.htm">Comentários JSDoc</a> para mais detalhes), de forma que um simples script
+    parecer com isto:</p>
+  <p class="code">/// @function log(message);<br> /// @param {string} message The message to show<br> /// @description Show a message when the function is called.<br>
+    <br> function log(message)<br> {
+    <br> show_debug_message(mensagem);
+    <br> }
+  </p>
+  <p>Funções adicionais para o script podem ser adicionadas usando o mesmo formato como mostrado acima, uma após a outra dentro do recurso do script.</p>
+  <p><img alt="Multiple Functions In One Script" class="center" src="../../assets/Images/Scripting_Reference/GML/Overview/Multiple_Functions_Scripts.png" /></p>
+  <h2>Valor de retorno</h2>
+  <p>As funções em scripts também podem retornar um valor, assim como as funções de <span class="notranslate">tempo de execução</span>, e como tal podem ser usadas em expressões. Para isso, você usaria a função <a href="Language_Features/return.htm"><tt>retorno</tt></a> declaração:</p>
+  <p class="code">retorno &lt;expressão&gt;</p>
+  <p>Deve-se notar que o <strong><i>a execução da função termina na declaração de retorno</i></strong>O que significa que qualquer código que venha após o <strong>retorno </strong>tenha sido chamado <i>não será executado</i>. Aqui está um pequeno exemplo de função de
+    uma função chamada &quot;<span class="inline">sqr_calc</span>&quot; que calcula o quadrado do valor que lhe é passado, e caso o valor dado não seja um número real, usa o retorno para <strong>terminar</strong> a função cedo para que o real
+    cálculo nunca é executado:</p>
+  <p class="code">/// @function sqr_calc(val);<br> /// @param {real} val O valor para calcular o quadrado de<br> //// @description Calcular o quadrado do valor dado<br>
+    <br> function sqr_calc(val)<br> {
+    <br> if !is_real(val)<br> {
+    <br> return 0;<br> }
+    <br>
+    <br> return (val * val);<br> }
+  </p>
+  <p>Note que se você criar uma função de script <em>sem</em> valor de retorno, então em sua verificação de código para um, você receberá o valor <span class="inline">undefined</span> por padrão.</p>
+  <p>Para chamar uma função de script de dentro de um pedaço de código, basta usá-la da mesma forma que ao chamar qualquer função <span class="notranslate">em tempo de execução</span> - ou seja, escrever o nome da função com os valores dos parâmetros entre parênteses. Assim, o script acima seria chamado desta forma:</p>
+  <p class="code">if keyboard_check_pressed(vk_enter)<br> {
+    <br> val = scr_sqr(montante);<br> }
+  </p>
+  <p class="note"><strong>NOTA</strong>: Ao utilizar suas próprias funções a partir de scripts no editor de código, você pode pressionar<span> <img alt="F1 Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_f1.png" width="55"></span> ou clique no botão do meio do mouse <span><img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png"> </span>em
+    o nome da função para abrir o roteiro que o contém para edição direta.</p>
+  <h2>Nomes de Script vs. Nomes de Funções</h2>
+  <p>É importante entender que <i>os nomes dos</i> roteiros são <b>independentes das funções que eles contêm</b>, assim você pode nomear seus roteiros de uma forma mais &quot;senso comum&quot;, ou seja: todas as suas funções de IA poderiam ir em um roteiro &quot;<span class="inline">Enemy_AI</span>&quot;.
+    (seguindo as convenções padrão de nomes de ativos de caracteres alfanuméricos e a barra inferior &quot;_&quot; apenas). Entretanto, você ainda pode chamar scripts em seu jogo - e pode nomear scripts da mesma forma que uma função que você define neles - que
+    pode dar origem a problemas devido à forma como o <span class="notranslate">GameMaker Studio 2</span> armazena referências de ativos. Para dar um exemplo, considere este código, chamado a partir de uma instância:</p>
+  <p class="code">função indirectaCall(func, arg)<br> {
+    <br> func(arg);
+    <br> }
+    <br>
+    <br> indirectCall(myscript, arg);</p>
+  <p>O código acima está tentando chamar um script chamado &quot;myscript&quot; dentro de um método, que neste caso falhará. Isto porque a função em linha está realmente usando o <em>índice</em> para o ativo do script e <strong>não </strong>
+    chamando o roteiro - por exemplo: se o índice do roteiro resolve para &quot;4&quot;, essencialmente a função está chamando 4(arg); , <tt>o que</tt> não faz sentido. O código deve, ao invés disso, ser estruturado de uma das duas maneiras seguintes:</p>
+  <p class="code">função indirectaCall(func, arg)<br> {
+    <br> func(arg);
+    <br> }
+    <br>
+    <br> indirectCall(method(undefined, myscript), arg);<br>
+    <br> // OR<br>
+    <br> function indirectCall(func, arg)<br> {
+    <br> script_execute(func, arg);<br> }
+    <br>
+    <br> indirectCall(myscript, arg);</p>
+  <p>Isto é importante notar, especialmente quando se trabalha com projetos legados onde os scripts contêm uma única função, e a função é nomeada da mesma forma que o script. No entanto, você <em>nunca</em> deve fazer isso, e seus scripts devem ser nomeados
+    independentemente das funções que elas contêm.</p>
+  <h2>Escopo do Script</h2>
+  <p>Isto nos leva ao último e mais importante conhecimento sobre scripts e as funções que eles contêm: os scripts são analisados em nível <b>global</b> e serão <strong>compilados logo no início do</strong> jogo. Isto significa que <em>tecnicamente</em> todas as funções em um script são <a href="Method_Variables.htm">variáveis</a> do método &quot;sem limites <a href="Method_Variables.htm">&quot;, e quaisquer</a> variáveis declaradas fora de uma função no script serão consideradas <a href="Variables/Global_Variables.htm">variáveis</a> globais.
+    Por exemplo, considere este script:</p>
+  <p class="code">função Foo()<br> {
+    <br> // Fazer algo<br> }
+    <br> blah = 10;<br> function Bar()<br> {
+    <br> /// Faça algo mais<br> }
+  </p>
+  <p>No caso acima, não apenas definimos as funções <tt>Foo</tt> e <tt>Bar</tt>, mas também a variável <tt>blá</tt> e todas elas são consideradas como tendo sido criadas no âmbito <b>global</b>. As funções não precisam da palavra-chave <tt>global</tt> para serem reconhecidas, pois o compilador entende que estas funções fazem parte do roteiro, mas se você quisesse acessar blah, então precisaria fazer:</p>
+  <p class="code">val = global.blah;</p>
+  <p>Dito isto, recomendamos que você <b>sempre digite explicitamente as variáveis globais</b> ao criá-las em scripts para evitar qualquer problema posteriormente. Os scripts também são um lugar ideal para definir qualquer <strong>Macros</strong> ou <strong>Enums</strong><a href="Variables/Constants.htm">(constantes</a>),
+    como adicioná-los a um script fora de uma função também significa que eles serão criados para uso antes que o código do jogo comece a ser realmente executado. Abaixo está um exemplo de um script que está criando diferentes valores de escopo global para um jogo:</p>
+  <p class="code">//// Inicializar todos os valores e constantes do escopo global<br> global.player_score = 0;<br> global.player_hp = 100;<br> global.pause = falso;<br> global.music = verdadeiro;<br> global.sound = verdadeiro;<br>
+    <br> enumere as cores do arco-íris<br> {
+    <br> vermelho,<br> laranja,<br> amarelo,<br> verde,<br> azul,<br> índigo,<br> violeta<br> }
+    <br>
+    <br> #macro weapon_num 3<br> #macro weapon_gun 0<br> #macro weapon_bomb 1<br> #macro weapon_knife 2</p>
+  <p>Observe como todas essas constantes são configuradas fora de qualquer chamada de função, o que significa que serão inicializadas antes de tudo o resto e em um escopo <em>global </em>. Isto significa que se você quiser usar um script para rubricar variáveis em um escopo de <em>instância </em>
+    então você deve envolvê-los em uma função, por exemplo:</p>
+  <p class="code">//// @function init_enemy();<br> /// @description Initialise enemy instance vars<br>
+    <br> function init_enemy()<br> {
+    <br> hp = 100;<br> dmg = 5;<br> mana = 50;<br> }
+  </p>
+  <p>Assim, os scripts podem ser usados para gerar macros, enums e variáveis globais antes do início do jogo, para que estejam prontos para uso a qualquer momento, e também podem ser usados para criar métodos &quot;não vinculados&quot; (funções definidas pelo usuário) que podem ser usados em seu jogo
+    como as funções de <span class="notranslate">tempo de execução</span> <span class="notranslate">GML</span>.</p>
+  <p>Uma última coisa a notar sobre funções de scripts é que se você estiver desenvolvendo para <strong>Web </strong>(ou seja: visando <strong>HTML5</strong>), então há um protocolo de função adicional que você pode usar ao adicionar funções a scripts, que é
+    prefixo um nome de função com <tt>gmcallback_</tt>, por exemplo:</p>
+  <p class="code">gmcallback_create_button</p>
+  <p>Usar o nome da função acima significaria que a função <tt>gmcallback_create_button()</tt> não será ofuscada e, portanto, pode ser usada em extensões JavaScript e outras áreas de seu jogo, por exemplo, ao usar o <a href="../GML_Reference/Web_And_HTML5/Web_And_HTML5.htm"><tt>clicável_*</tt></a> funções.</p>
+  <h2>Variáveis estáticas</h2>
+  <p>As funções também podem fazer uso de variáveis estáticas, que mantêm seus valores ao longo de cada chamada de função. Favor <a href="Functions/Static_Variables.htm">ler esta página</a> para mais informações.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="GML_Overview.htm">Visão geral da<span class="notranslate">GML</span></a></div>
+        <div style="float:right">A seguir: <a href="Method_Variables.htm">Método Variáveis</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Script Functions
+User Defined Functions
+function
+gmcallback
+-->
+  <!-- TAGS
+script_functions
+-->
+</body>
+</html>

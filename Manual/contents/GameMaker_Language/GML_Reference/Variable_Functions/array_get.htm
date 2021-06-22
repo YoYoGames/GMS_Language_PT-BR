@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>array_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function array_get" />
+  <meta name="rh-index-keywords" content="array_get" />
+  <meta name="search-keywords" content="array_get" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>array_get</h1>
+  <p>Com esta função você pode recuperar o valor de um índice em uma matriz. A função exige que você forneça uma variável que contenha o array e o índice para obter o valor de dentro desse array. Observe que se o índice do array dado estiver fora dos limites
+    então o jogo vai cair com um erro. Esta função também pode ser usada para matrizes multidimensionais, desde que você especifique qual dimensão deseja obter ao fornecer o índice da matriz, seguindo este padrão:</p>
+  <p class="code">// 1D array<br> array_get(my_array, 0);<br> // 2D array<br> array_get(my_array[0], 0);<br> // 3D array<br> array_get(my_array[0][0], 0);<br> // etc...</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">array_get(variável, índice);</p>
+  
+    <table>
+      <tbody>
+        <tr>
+          <th>Argumento</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>variável</td>
+          <td>A variável que sustenta a matriz.</td>
+        </tr>
+        <tr>
+          <td>índice</td>
+          <td>O índice da matriz para obter o valor.</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Qualquer tipo de dado válido que uma matriz possa conter.</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">para (var i = 0; i &lt; 10; ++i;)<br> {
+    <br> show_debug_message(array_get(my_array, i)));<br> }
+  </p>
+  <p>O código acima dará os primeiros 10 itens do dado para o console.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Variable_Functions.htm">Funções variáveis</a></div>
+        <div style="float:right">Próximo: <a href="array_set.htm">array_set</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_get
+-->
+  <!-- TAGS
+array_get
+-->
+</body>
+</html>

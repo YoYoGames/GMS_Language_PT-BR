@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_index</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_index" />
+  <meta name="rh-index-keywords" content="sprite_index" />
+  <meta name="search-keywords" content="sprite_index" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_index</h1>
+  <p>Esta variável retorna o índice do sprite atual para a instância, ou -1 se a instância não tiver sprite associado a ela. Você pode alterá-la para dar à instância um duende diferente, dando-lhe o nome de um duende da árvore de recursos ou por
+    usando uma variável que tem um sprite indexado externamente. A mudança do duende não altera o índice do quadro atualmente visível, portanto, se você mudar o duende no quadro número 3, o novo duende será desenhado com esse quadro visível.
+    (assumindo que tenha o mesmo número de quadros).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">sprite_index;</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (número inteiro - valor do índice de recursos)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">com (obj_Check)<br> {
+    <br> if !collision_line(x, y, other.x, other.x, other.y, obj_Wall, false, true)<br> {
+    <br> sprite_index = spr_spotted;<br> }
+    <br> else
+    <br> {
+    <br> sprite_index = spr_clear;<br> }
+    <br> }
+  </p>
+  <p>O código acima passará por todas as instâncias de &quot;obj_Check&quot; verificando se há uma linha de colisão entre elas e a instância que executa o código. O sprite dessas instâncias será alterado de acordo com o valor de retorno (verdadeiro ou falso) para a
+    linha de colisão.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sprite_Instance_Variables.htm">Variáveis de Sprite Instance</a></div>
+        <div style="float:right">Próximo: <a href="sprite_width.htm">sprite_width</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_index
+-->
+  <!-- TAGS
+sprite_index
+-->
+</body>
+</html>

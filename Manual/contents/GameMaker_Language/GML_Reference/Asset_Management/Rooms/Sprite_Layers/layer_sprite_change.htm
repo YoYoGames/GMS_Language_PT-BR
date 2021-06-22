@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sprite_change</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_change" />
+  <meta name="rh-index-keywords" content="layer_sprite_change" />
+  <meta name="search-keywords" content="layer_sprite_change" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sprite_change</h1>
+  <p>Usando esta função você pode alterar o recurso sprite atribuído a um determinado elemento sprite em uma camada. Você dá o ID do elemento sprite (que você obtém quando cria um elemento sprite usando <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>    ou quando você usa a função <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>) e, em seguida, fornecer um ativo de índice sprite será alterado. Observe que se o duende tiver sub-imagens, ele também animará (isto pode ser controlado
+    usando o <a href="layer_sprite_index.htm"><tt>layer_sprite_index()</tt></a> e <a href="layer_sprite_speed.htm"><tt>layer_sprite_speed()</tt></a> funções). Observe que você pode atribuir um valor -1 como novo índice sprite e nenhum sprite será mostrado,
+    embora o elemento ainda exista e ainda possa ser alterado mais tarde.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">layer_sprite_change(sprite_element_id, sprite_index)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>sprite_element_id</td>
+        <td>O valor de identificação único do elemento sprite a mudar</td>
+      </tr>
+      <tr>
+        <td>sprite_index</td>
+        <td>O novo índice sprite a utilizar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var s = layer_sprite_get_id(layer, global.Asset_sprite);<br> se layer_sprite_get_sprite(s) != spr_Nighttime<br> {
+    <br> layer_sprite_change(s, spr_nighttime);<br> }
+  </p>
+  <p>O código acima verifica o índice sprite do elemento com o ID armazenado na variável global <tt>global.Asset_sprite</tt> e se não for &quot;spr_Nighttime&quot;, então esse sprite é atribuído ao elemento.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sprite_Layers.htm">Camadas de Sprite</a></div>
+        <div style="float:right">Próximo: <a href="layer_sprite_index.htm">layer_sprite_index</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sprite_change
+-->
+  <!-- TAGS
+layer_sprite_change
+-->
+</body>
+</html>

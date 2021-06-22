@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>física_física_grupo_de_partículas_final</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_particle_group_end" />
+  <meta name="rh-index-keywords" content="physics_particle_group_end" />
+  <meta name="search-keywords" content="physics_particle_group_end" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>física_física_grupo_de_partículas_final</h1>
+  <p>Esta função é utilizada para terminar a definição da forma de um grupo de partículas. Chamando esta função criará as partículas dentro dos parâmetros de forma determinados, e também retornará um valor de identificação que pode ser armazenado e usado em outras funções para interações
+    com o grupo de partículas.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">física_particle_group_end()</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;<br> var groupflags = phy_particle_group_flag_solid;<br> physics_particle_group_begin(flags, groupflags, mouse_x, mouse_y, 0, 0, 0, c_white, 1, 1, 2);<br> physics_particle_group_circle_circle(100);
+    <br> mLastGroup = physics_particle_group_end();</p>
+  <p>O código acima armazena as bandeiras para o tipo de partícula e as propriedades do grupo de partículas em variáveis e depois as utiliza para criar um grupo de partículas circular com um raio de 100px na posição do mouse. A identificação para o grupo que foi criado é armazenada
+    na variável &quot;mLastGroup&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Soft_Body_Particles.htm">Partículas macias do corpo</a></div>
+        <div style="float:right">A seguir: <a href="physics_particle_group_join.htm">fisica_particle_group_join</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_particle_group_end
+-->
+  <!-- TAGS
+physics_particle_group_end
+-->
+</body>
+</html>

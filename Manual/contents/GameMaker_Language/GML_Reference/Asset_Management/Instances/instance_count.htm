@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>exemplo_conta</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_count" />
+  <meta name="rh-index-keywords" content="instance_count" />
+  <meta name="search-keywords" content="instance_count" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>exemplo_conta</h1>
+  <p>Com esta variável <b>lida apenas</b> você pode obter uma contagem de todas as instâncias ativas que estão na sala. Isto incluirá a instância que executa o código, mas <i>não</i> inclui as instâncias que foram desativadas usando as funções da <a href="Deactivating_Instances/Deactivating_Instances.htm">instância desativada</a>. Note que esta variável só lhe dará o número de instâncias no <i>início</i> da etapa, portanto quaisquer alterações nas instâncias na sala feitas após o início da etapa não serão levadas em consideração.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">exemplo_conta;</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se (exemplo_conta &lt; 100)<br> {
+    <br> var dif = 100 - instance_count;<br> while (--dif &gt; 0)<br> {
+    <br> instance_create_layer(random(room_width), random(room_height), &quot;Effects&quot;, obj_Star);<br> }
+    <br> }
+  </p>
+  <p>O código acima criará múltiplas instâncias do objeto &quot;obj_Star&quot; até que a contagem total de instâncias atinja 100.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Instances.htm">Instâncias</a></div>
+        <div style="float:right">Próximo: <a href="alarm_get.htm">alarm_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_id_get
+-->
+  <!-- TAGS
+instance_id_get
+-->
+</body>
+</html>

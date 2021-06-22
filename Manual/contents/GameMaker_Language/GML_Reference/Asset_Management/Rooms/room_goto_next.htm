@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>room_goto_next</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_goto_next" />
+  <meta name="rh-index-keywords" content="room_goto_next" />
+  <meta name="search-keywords" content="room_goto_next" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>room_goto_next</h1>
+  <p>Com esta função você pode fazer seu jogo ir para o próximo, conforme listado no <a href="../../../../Settings/The_Room_Manager.htm">Gerente de Sala</a> no momento em que o jogo foi compilado. Se esta sala não existir, um erro será cometido e o jogo será
+    ser forçado a fechar. Note que a sala não mudará até o final do evento onde a função foi chamada, portanto, qualquer código após esta ter sido chamada ainda será executado se no mesmo evento. A ressalva a isto é que qualquer código que crie instâncias
+    que é chamado depois disto, <i>não</i> criará a instância e assim deve ser chamado antes do vestiário. Esta função também acionará o evento <b>Room End</b>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">room_goto_next();</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se room_exists(room_next(room))<br> {<br> room_goto_next();<br> }</p>
+  <p>O código acima verificará se há outra sala após a atual e, se houver, irá para aquela sala.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Rooms.htm">Quartos</a></div>
+        <div style="float:right">Próximo: <a href="room_goto_previous.htm">room_goto_previous</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_goto_next
+-->
+  <!-- TAGS
+room_goto_next
+-->
+</body>
+</html>

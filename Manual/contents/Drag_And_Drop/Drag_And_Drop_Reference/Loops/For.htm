@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Para</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the For action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - For" />
+  <meta name="search-keywords" content="For" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="For Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/i_Loops_For.png"> Para</h1>
+  <p>O <b>For</b> action é usado para realizar loops que só terminam quando um valor atinge a condição determinada. Você dá um valor inicial como uma variável (que pode ser marcada como uma variável local temporária - geralmente é o que você quer), então você dá
+    a condição para comparar a variável (por exemplo, se ela for inferior a um determinado valor), e finalmente a quantia para incrementar a variável a cada iteração do laço. Portanto, o fluxo geral é o seguinte:</p>
+  <ul class="colour">
+    <li>Você rubricar uma variável até um valor</li>
+    <li>Você define a condição para verificar esta variável em relação a</li>
+    <li>Você define o quanto a variável deve ser incrementada por cada iteração do laço</li>
+    <li>Você então adiciona ações no laço, e estas serão executadas para cada iteração até que a condição retorne <tt>falsa</tt> ou uma ação de quebra seja encontrada.</li>
+  </ul>
+  <p>Ao adicionar ações a serem executadas dentro do loop, estas são adicionadas tanto quanto você adicionaria uma ação a um &quot;se&quot;, ou seja: deixá-la cair para o lado da ação em vez de sob ela:</p>
+  <p><img alt="For drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/For_Drop.png">Todas as ações adicionadas ao lado serão incluídas no For e serão realizadas antes da continuação do evento ou do roteiro
+    com as ações acrescentadas abaixo. Note que você pode terminar qualquer loop prematuramente se você chamar a ação <a href="Break.htm">Break</a>, e ao usar Para loops você não tem <i>que</i> incrementar e pode fazer com que ele também diminua, desde que a condição
+    que você usa é apropriado. Por exemplo, configure a variável inicial para 10, configure a condição para verificar menos de 0 e depois configure o valor de incremento para -1 e o loop irá iterar 10 vezes, contando de 10 a 0 para trás.</p>
+  <p> </p>
+  <h4>Sintaxe de ação:</h4>
+  <p><img alt="For Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/a_Loops_For.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>Inicializar</td>
+        <td>Inicializar a variável que será usada para contar até um valor (pode ser marcada como uma variável local temporária)</td>
+      </tr>
+      <tr>
+        <td>Condição</td>
+        <td>A condição para verificar para quebrar o laço</td>
+      </tr>
+      <tr>
+        <td>Incremento</td>
+        <td>A quantidade para incrementar (ou diminuir) a variável inicial de contagem por cada iteração do laço</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p><img alt="For Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/e_Loops_For.png">O código de bloco de ação acima executa um loop <tt>para</tt> verificar e ver se um controle de jogo está conectado a algum dos 12 disponíveis
+    &quot;ranhuras&quot;. Se um "gamepad" é descoberto, uma variável global é definida para o número atual de slots e o loop é quebrado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Loop_Actions.htm">Ações de Loop</a></div>
+        <div style="float:right">A seguir: <a href="Break.htm">Intervalo</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - For
+-->
+  <!-- TAGS
+action_for
+-->
+</body>
+</html>

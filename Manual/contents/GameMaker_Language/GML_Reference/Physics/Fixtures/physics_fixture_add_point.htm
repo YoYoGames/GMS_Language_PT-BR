@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>fisica_fixture_add_point</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_add_point" />
+  <meta name="rh-index-keywords" content="physics_fixture_add_point" />
+  <meta name="search-keywords" content="physics_fixture_add_point" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>fisica_fixture_add_point</h1>
+  <p>Esta função define os pontos de um polígono que foi previamente definido para a fixação usando <a href="physics_fixture_set_polygon_shape.htm"><tt>physics_fixture_set_polygon_shape()</tt></a> ou pode ser usado para adicionar pontos a uma cadeia de bordas
+    equipamentos que utilizam a função <a href="physics_fixture_set_chain_shape.htm"><tt>physics_fixture_set_chain_shape()</tt></a>. Para uma forma poligonal, os pontos são relativos à origem da fixação, sendo a posição 0,0 do eixo x/y o centro,
+    e as coordenadas subseqüentes sendo calculadas como de costume no <span class="notranslate">GameMaker Studio 2</span> com down/right sendo +x,+y e up/left sendo -x,-y. Aqui está uma ilustração para ajudar você a visualizar este processo:</p>
+  <p><img alt="Physics polyfon points example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_add_point_image.png">Como você pode ver, qualquer polígono <b>convexo</b> simples pode ser modelado desta forma, mas
+    Os polígonos <b>côncavos</b> <i>não</i> são suportados neste momento. Finalmente, para fechar o polígono, é preciso ligar a fixação a uma instância. Você também deve observar que também deve ter pelo menos <b>três</b> pontos definidos para seu polígono antes de ligar
+    a uma instância ou você receberá um erro e que adicionar um ponto a uma fixação que não tem uma forma poligonal previamente definida também causará um erro. Observe também que o número máximo de pontos permitidos para um fixador é <b>oito</b>.</p>
+  <p>Para formas de correntes (que são simplesmente uma série de formas de bordas conectadas em série), esta função definirá um ponto como uma &quot;conexão&quot; para encadear as bordas em conjunto. Portanto, é necessário ter definido pelo menos dois pontos antes de unir a fixação à instância
+    caso contrário, você receberá um erro. Entretanto, ao contrário dos polígonos, você não está limitado a um máximo de oito pontos e pode adicionar tantos quantos você precisar para criar a cadeia e os pontos são definidos nas coordenadas reais da sala, em vez de serem relativos ao
+    instância.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">physics_fixture_add_point(fixture, xpos, ypos)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>fixação</td>
+        <td>o índice da fixação</td>
+      </tr>
+      <tr>
+        <td>xpos</td>
+        <td>a posição x do ponto<i>(em relação à origem da fixação</i> para formas de polígono)</td>
+      </tr>
+      <tr>
+        <td>ypos</td>
+        <td>a posição y do ponto<i>(em relação à origem da fixação</i> para formas de polígono)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">physics_fixture_set_polygon_shape(fix_Ship);<br> physics_fixture_add_point(fix_Ship, 0,0);<br> physics_fixture_add_point(fix_Ship, -40, 100);<br> physics_fixture_add_point(fix_Ship, 40, 100);</p>
+  <p>O código acima aplicará uma forma poligonal à fixação indexada na variável &quot;fix_Ship&quot; e depois definirá três pontos para criar uma forma triangular.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Fixtures.htm">Instalações</a></div>
+        <div style="float:right">A seguir: <a href="physics_fixture_set_density.htm">densidade_de_set_física</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_add_point
+-->
+  <!-- TAGS
+physics_fixture_add_point
+-->
+</body>
+</html>

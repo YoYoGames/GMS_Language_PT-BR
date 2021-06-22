@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Compilação</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Compiling Projects In GMS2" />
+  <meta name="rh-index-keywords" content="Compiling" />
+  <meta name="search-keywords" content="compiling" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Compilação</h1>
+  <p><a class="glossterm" data-glossterm="Compilação" href="#">Compilar</a> seu jogo pode significar uma de duas coisas: compilá-lo para testes, ou compilá-lo para criar um <em> <a class="glossterm" data-glossterm="pacote executável" href="#">pacote executável</a></em> ou
+    uma plataforma alvo específica. A compilação de seu jogo para teste pode ser feita simplesmente pressionando o botão Play <img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png"> no topo da IDE, que lançará o jogo para teste.
+    usando o alvo especificado. Você também pode executar o jogo no <strong>Debug Mode</strong> testando usando o botão Debug <img alt="Debug Icon" class="icon" src="../assets/Images/Icons/Icon_Debug.png">. Isto irá rodar o jogo, mas também abrirá o
+   <strong>Debug Window</strong>, onde você pode monitorar como seu jogo funciona e ver qualquer problema (veja a seção sobre <a href="Debugging.htm">Depuração</a> para mais informações).</p>
+  <p>Por padrão, o <span class="notranslate">GameMaker Studio 2</span> será executado e depurado usando a <a class="glossterm" data-glossterm="Máquina Virtual (VM)" href="#">Máquina Virtual (VM</a>), que é mais ou menos o mesmo que rodar no sistema operacional desktop que está sendo usado. Entretanto, <span class="notranslate">o GameMaker</span>
+    O Studio 2 é um <strong>mecanismo de plataforma cruzada</strong> e você pode testar, depurar e compilar pacotes executáveis de seus projetos em várias plataformas alvo diferentes (as plataformas exatas disponíveis dependerão dos detalhes de sua licença). Para
+    alterar a plataforma alvo atual você pode clicar em <img alt="Icon LMB" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> no botão Alvos <img alt="Target Manager Icon" class="icon" src="../assets/Images/Icons/Icon_Targets.png"> para abrir a <strong>Janela de Alvos</strong>, que se parecerá com isto (os detalhes exatos variam de acordo com seu tipo de licença):</p>
+  <p><img alt="Target List" class="center" src="../assets/Images/Introduction/QS_TargetList.png" /></p>
+  <p>Na parte superior, ao lado do botão Targets, você tem as configurações atuais que indicam a plataforma e as configurações específicas que estão sendo utilizadas, e então o resto da janela é ocupada com os detalhes e opções para todos os alvos disponíveis que
+    você pode selecionar para usar em seu lugar. Cada seção desta janela é explicada abaixo:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down" href="#">Trabalhador</a></p>
+  <div class="droptext" data-targetname="drop_down">
+    <p class="dropspot">A primeira coluna do Gerente-Alvo é dedicada ao <strong> <a class="glossterm" data-glossterm="Trabalhadores remotos" href="#">Trabalhadores remotos</a></strong> que você tem disponível. Para começar, você só terá uma única máquina &quot;Local&quot;.
+      listados aqui, que é a máquina na qual o <span class="notranslate">GameMaker Studio 2</span> está instalado, mas você também pode configurar um Operador Remoto para usar. Quando um Operador Remoto tiver sido configurado, você poderá selecioná-lo da lista aqui, e fazer com que ele construa sua
+      em vez de usar a máquina host onde o <span class="notranslate">GameMaker Studio 2</span> está instalado.</p>
+    <p class="dropspot">Para mais informações sobre como montar e usar Trabalhadores Remotos, por favor, veja a seção abaixo:</p>
+    <ul class="colour">
+      <li class="dropspot"><a href="../IDE_Tools/Remote_Workers.htm">Trabalhadores remotos</a></li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down2" href="#">Plataformas</a></p>
+  <div class="droptext" data-targetname="drop_down2">
+    <p class="dropspot">Esta seção lista todas as plataformas alvo disponíveis. O conteúdo desta lista variará dependendo da licença que você tiver, mas sempre terá pelo menos o alvo &quot;Teste&quot;. Para selecionar um alvo, basta clicar em <img alt="Icon LMB" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> sobre ele. Isto então atualizará as demais janelas de opções para mostrar diferentes detalhes dependendo da plataforma selecionada.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down3" href="#">Saída</a></p>
+  <div class="droptext" data-targetname="drop_down3">
+    <p class="dropspot">Cada plataforma alvo pode ter um ou mais formatos de saída, sendo os principais:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>VM</strong>: O alvo VM (Virtual Machine) usa um <em>runner </em>genérico para cada plataforma e depois interpreta o código para o seu jogo. Em geral, esta opção é utilizada para testes devido a seus tempos de compilação mais rápidos, mas não oferece o
+        mesmo aumento de desempenho que o uso da opção YYC (se disponível) oferece. Você pode usar isto para compilar pacotes executáveis para jogos menores ou jogos onde o desempenho nunca será um problema.</li>
+      <li class="dropspot"><strong>YYC</strong>: O YYC<span class="notranslate">(YoYo</span> Compiler) pega a saída normal do <span class="notranslate">GameMaker Studio 2</span> e a compila em código nativo para a plataforma alvo, &quot;removendo&quot; funções desnecessárias e executando uma série de outras técnicas de otimização
+        para criar um pacote executável menor e com melhor desempenho. Isto pode aumentar o desempenho de seus jogos em pelo menos duas ou três vezes, especialmente em jogos de lógica pesada, e é ideal para aqueles projetos maiores ou intensivos em CPU. Os tempos de compilação podem
+        demore mais e você deve sempre limpar o cache do compilador antes de construir qualquer pacote final completo de ativos para uma plataforma alvo. Observe que o alvo YYC pode exigir a instalação de ferramentas extras para a plataforma selecionada, caso contrário, ele não
+        trabalho - você pode encontrar mais informações sobre isso no <a href="https://help.yoyogames.com/hc/en-us/articles/227860547-GMS2-Required-SDKs">Centro de Ajuda<span class="notranslate">YoYo Games</span></a>, bem como nas páginas de <a href="../Setting_Up_And_Version_Information/Platform_Preferences.htm">Preferências</a> individuais <a href="../Setting_Up_And_Version_Information/Platform_Preferences.htm">de</a> cada <a href="../Setting_Up_And_Version_Information/Platform_Preferences.htm">alvo</a> 
+        detalhado neste manual.</li>
+      <li class="dropspot"><strong>JavaScript</strong>: O alvo JavaScript só estará disponível para alguns alvos, como o alvo HTML5, e define o jogo a ser compilado em JavaScript puro.</li>
+    </ul>
+    <p class="dropspot"> </p>
+    <ul class="dropspotlist">
+    </ul>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down4" href="#">Dispositivo</a></p>
+  <div class="droptext" data-targetname="drop_down4">
+    <p class="dropspot">Certas plataformas (como <span class="notranslate">iOS</span> ou <span class="notranslate">Android</span>) permitem associar um ou mais dispositivos ao <span class="notranslate">GameMaker Studio 2</span> para que os jogos possam compilar seletivamente para eles. Inicialmente, a lista de dispositivos estará vazia e você precisa clicar em <img alt="Icon LMB" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> no ícone Lápis <img alt="Pencil Icon" class="icon" height="18" src="../assets/Images/Icons/Icon_Pencil.png" width="18"> para abrir o <strong>Editor de Dispositivos</strong>:</p>
+    <p class="dropspot"><img alt="The Device Editor" class="center" src="../assets/Images/Introduction/QS_DeviceEditor.png">Aqui você pode adicionar novos dispositivos, bem como fazer o teste <span class="notranslate">GameMaker Studio 2</span> para uma conexão a qualquer dispositivo(s) que possa(m) estar conectado(s). O conteúdo exato
+      desta janela dependerá das especificações da plataforma (veja a seção sobre o <a href="../Setting_Up_And_Version_Information/The_Device_Manager.htm">Gerenciador de Dispositivos</a> para detalhes exatos de qualquer plataforma). Uma vez que um dispositivo tenha sido encontrado ou adicionado,
+      será então mostrado nesta janela, como nesta imagem de exemplo para o <span class="notranslate">Android</span>:</p>
+    <p class="dropspot"><img alt="Add An Android Device" class="center" src="../assets/Images/Introduction/QS_AddDevice.png">O procedimento exato e os requisitos para a criação de dispositivos e problemas de solução de problemas podem ser encontrados na seção apropriada da <a href="https://help.yoyogames.com/hc/en-us/categories/204246668-GameMaker-Studio-2">Base de Conhecimento</a> do <a href="https://help.yoyogames.com/hc/en-us/categories/204246668-GameMaker-Studio-2"><span class="notranslate">GameMaker Studio 2</span></a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down5" href="#">Config</a></p>
+  <div class="droptext" data-targetname="drop_down5">
+    <p class="dropspot">Como explicado na seção sobre <a href="../Settings/Configurations.htm">Configurações</a>, você pode armazenar certos detalhes para a compilação de seu jogo como <strong>Configs</strong>. Esta seção da janela Alvos permite que você tenha o <span class="notranslate">GameMaker Studio</span>
+      2 selecionam automaticamente uma configuração específica para uma plataforma alvo específica.</p>
+  </div>
+  <p> </p>
+  <p>Há também um número ou preferências que podem ser definidas para modificar e personalizar o fluxo de trabalho da compilação, explicado na página seguinte:</p>
+  <ul class="colour">
+    <li><a href="../Setting_Up_And_Version_Information/IDE_Preferences/General/Compiling.htm">Preferências de compilação</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <h1>Criando um pacote final executável</h1>
+  <p>A compilação de seu projeto de jogo para qualquer plataforma alvo exigirá que você tenha configurado a plataforma correta <strong> <a class="glossterm" data-glossterm="construir ferramentas" href="#">construir ferramentas</a></strong> (ver <a href="../Setting_Up_And_Version_Information/Required_SDKs.htm">aqui</a>)
+    e também preencheu as <a href="../Setting_Up_And_Version_Information/Platform_Preferences.htm">Preferências de Plataforma</a> apropriadas. Uma vez feito isso, você pode simplesmente clicar no botão Create Executable <img alt="Compile Icon" class="icon" src="../assets/Images/Icons/Icon_Compile.png"> no IDE para iniciar a compilação do compilador ou selecionar <strong>Create Executable</strong> a partir do <a href="../IDE_Navigation/Menus/The_Build_Menu.htm">Menu Build</a>. Qualquer uma das opções abrirá uma janela do explorador de arquivos onde você poderá dar o nome final que
+    que você deseja usar para seu jogo executável antes de clicar em <em>Salvar </em>para iniciar o processo de compilação e construção. Uma vez feito isso, os arquivos necessários serão gerados para que você possa distribuí-lo como desejar.</p>
+  <p class="note"><strong>IMPORTANTE!</strong> Se você tiver a <strong> licença</strong> gratuita <strong> de 30 dias de teste</strong>, então a compilação de um executável final não estará disponível, e você será obrigado a atualizar para uma das licenças pagas para compilar seu jogo para distribuição.</p>
+  <p class="note"><strong>NOTA</strong>: Antes de fazer uma construção final de seu projeto para lançamento, você deve <strong>sempre limpar o <a class="glossterm" data-glossterm="Cache" href="#">Cache</a></strong> do <strong>Compilador de Ativos</strong> (usando o ícone &quot;vassoura&quot; <img alt="Clean Cache Icon" class="icon" src="../assets/Images/Icons/Icon_Clean.png"> na parte superior da IDE). O <span class="notranslate">GameMaker Studio 2</span> armazenará muitos de seus arquivos de jogo para manter a velocidade de compilação a um mínimo.</p>
+  <p>Cada opção alvo economiza para um formato específico da plataforma, listado abaixo:</p>
+  <ul class="colour">
+    <li><strong><span class="notranslate">Windows</span> </strong>- A compilação para o sistema operacional <span class="notranslate">Windows</span> geral solicitará primeiro que você escolha entre criar um <em>instalador </em>ou um pacote <em>Zip </em>, onde o instalador será um único executável que instalará seu jogo, e o
+      O arquivo Zip será um único arquivo comprimido no formato <span class="inline">*.zip</span> com todos os seus arquivos de jogo armazenados (os arquivos precisarão ser extraídos para que o jogo seja executado). <img alt="Windows Compile Options" class="center" src="../assets/Images/Introduction/QS_Windows_Compile_Options.png" style="cursor: nwse-resize;">Se você marcar a caixa marcada como <strong>Remember Packaging Option</strong>, então <span class="notranslate">o GameMaker Studio 2</span> se lembrará da escolha para todas as compilações futuras (isto pode ser redefinido ou alterado a partir das <a href="../Setting_Up_And_Version_Information/Platform_Preferences/Windows.htm">Preferências do<span class="notranslate">Windows</span></a>).
+      Você pode saber mais no <a href="https://help.yoyogames.com/hc/en-us/sections/207157668">Centro de Ajuda</a> do <a href="https://help.yoyogames.com/hc/en-us/sections/207157668"><span class="notranslate">YoYo Games</span></a>. Observe que o alvo do <span class="notranslate">Windows</span> pode compilar executáveis de 32 bits <em>ou </em>64 bits, dependendo do que você selecionou em
+      as <a href="../Settings/Game_Options/Windows.htm">Opções Gerais de Jogo</a>. <strong>Recomendamos fortemente que todos os novos projetos usem o <span class="notranslate">tempo de execução</span></strong> x64 para criar executáveis de 64 bits, pois o <span class="notranslate">tempo de execução de</span> 32 bits será depreciado e removido.
+      no futuro.</li>
+    <li><strong><span class="notranslate">Ubuntu</span> (<span class="notranslate">Linux</span></strong> ) - Os aplicativos <span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>) podem ser compilados como arquivos <span class="inline">*.zip</span> - contendo um x64 ou um executável ARM - dependendo do dispositivo a ser visado. Você pode saber mais no <a href="http://help.yoyogames.com/hc/en-us/articles/235186168">Centro de Ajuda<span class="notranslate">YoYo Games</span></a>.</li>
+    <li><strong>HTML5 </strong>- Se você optou por construir HTML5, então um arquivo <span class="inline">index.html</span> (este é o nome padrão, mas você pode dar seu próprio nome também nas Preferências da Plataforma), juntamente com uma pasta contendo seus arquivos de jogo
+      será criado e salvo no local especificado. Para que seu jogo funcione, você precisará que ambos sejam carregados em um <a class="glossterm" data-glossterm="servidor" href="#">servidor</a>. O <span class="inline">index.html</span> também pode ser customizado
+      para mostrar seu jogo com uma cor de fundo diferente, ou em uma posição diferente, etc... mas é necessário um conhecimento de HTML para isso, e você também pode especificar seu próprio arquivo de índice personalizado ao construir o pacote (veja as <a href="../Settings/Game_Options/HTML5.htm">Opções de Jogo HTML5</a>).
+      Você pode saber mais no <a href="http://help.yoyogames.com/hc/en-us/sections/115000309008">Centro de Ajuda</a> do <a href="http://help.yoyogames.com/hc/en-us/sections/115000309008"><span class="notranslate">YoYo Games</span></a>.</li>
+    <li><strong><span class="notranslate">Android</span> </strong>- Para dispositivos <span class="notranslate">Android</span>, você pode escolher construir um arquivo <span class="inline">*.apk</span> ou um <span class="inline">*.aab</span> <span class="notranslate">(Android</span> App Bundle) da janela que é mostrada para salvar o jogo:<br>
+      <br>
+      <img alt="Andoird APK or AAB File Selector" class="center" src="../assets/Images/Introduction/QS_AndroidFileSelector.png">O tipo de arquivo que você escolher dependerá da loja que você deseja segmentar, com o arquivo <span class="inline">*.aab</span> sendo necessário para o Google Play, enquanto o arquivo <span class="inline">*.apk</span> pode ser usado em outras lojas. Você pode saber mais no <a href="http://help.yoyogames.com/hc/en-us/articles/115001368727">Centro de Ajuda</a> do <a href="http://help.yoyogames.com/hc/en-us/articles/115001368727"><span class="notranslate">YoYo Games</span></a>.</li>
+    <li><strong><span class="notranslate">iOS</span> </strong>- A compilação no <span class="notranslate">iOS</span> criará um arquivo <span class="inline">xarchive</span> que é então usado no Xtools para criar o pacote final do <span class="notranslate">iOS</span>. Note que <strong>para compilar para o <span class="notranslate">iOS</span></strong> será necessário um computador Apple Mac rodando OSX ou superior, bem como os certificados e permissões relevantes.
+      Você pode saber mais no <a href="http://help.yoyogames.com/hc/en-us/articles/115001368747">Centro de Ajuda</a> do <a href="http://help.yoyogames.com/hc/en-us/articles/115001368747"><span class="notranslate">YoYo Games</span></a>.</li>
+    <li><strong><span class="notranslate">macOS</span> </strong>- A compilação para o alvo <span class="notranslate">macOS</span> irá primeiro solicitar que você escolha entre criar um <em>DMG </em>ou um arquivo <em>Zip </em>:<br>
+      <img class="center" height="194" src="../assets/Images/Introduction/QS_macOS_Compile_Options.png" style="cursor: nesw-resize;" width="430">&quot;Package as DMG&quot; irá construir um pacote instalador .dmg que pode ser usado para instalar o jogo em
+      um computador Mac. Note que durante este processo de construção você verá o instalador aparecer no Mac, que desaparecerá assim que o processo de construção estiver completo.<br>
+      <br> &quot;Package as Zip&quot; construirá um arquivo <span class="inline">*.app</span> ou um arquivo <span class="inline">*.pkg</span>, dependendo se você deseja ou não fazer o upload posterior para a App Store Mac. Como no <span class="notranslate">iOS</span>, <strong>você precisará de um computador Apple Mac rodando OSX ou superior, assim como os certificados e permissões relevantes</strong>.
+      Você pode saber mais no <a href="http://help.yoyogames.com/hc/en-us/articles/235186128">Centro de Ajuda</a> do <a href="http://help.yoyogames.com/hc/en-us/articles/235186128"><span class="notranslate">YoYo Games</span></a>.</li>
+    <li><strong><span class="notranslate">Windows UWP</span></strong> - Para <span class="notranslate">Windows UWP</span>, o <span class="notranslate">GameMaker Studio 2</span> criará um pacote <span class="inline">*.appxbundle</span> que poderá então ser carregado na Loja <span class="notranslate">Windows</span> ou distribuído em outro lugar. Quando você clica no botão Criar Executável
+      você será solicitado a informar ao <span class="notranslate">GameMaker Studio 2</span> qual tipo de pacote você gostaria de criar (pode ser para <a class="glossterm" data-glossterm="arquiteturas" href="#">arquiteturas</a> ARM, x64 e/ou x86), e você deve escolher aqueles alvos que
+      o jogo será suportado (você deve selecionar pelo menos um, mas pode selecionar os três ou qualquer combinação): <br>
+      <br>
+      <img alt="UWP Compile Options" class="center" src="../assets/Images/Introduction/QS_UWP_Compile_Options.png">Se você marcar a caixa marcada <strong>Package For Store Upload</strong>, então o pacote final criado será um arquivo <span class="inline">*.appxupload</span>, que é o que a Microsoft especifica que deve ser usado para enviar aplicativos para sua loja, como explicado neste artigo <a href="https://docs.microsoft.com/en-us/windows/uwp/publish/upload-app-packages">aqui</a> (todas as arquiteturas escolhidas serão
+      incluído, assim como com o <span class="inline">*.appxbundle</span>). Você pode saber mais sobre a configuração e compilação para a plataforma UWP a partir do <a href="http://help.yoyogames.com/hc/en-us/sections/115000309028">Centro de Ajuda<span class="notranslate">YoYo Games</span></a>.</li>
+  </ul>
+  <p>Uma vez criado seu pacote de ativos executáveis, você pode então entregar o arquivo a outras pessoas ou colocá-lo em seu website para download, ou carregar esses arquivos para os diferentes serviços de hospedagem para distribuição individual ou mesmo para lojas online (como
+    Google Play, iTunes ou a MS Store) para distribuição geral e varejo.</p>
+  <p>Note que você é livre para distribuir os jogos que criar com o <span class="notranslate">GameMaker Studio 2</span> da maneira que quiser, inclusive vendendo-os. Naturalmente, isto pressupõe que os sprites, imagens e sons que você usou para fazê-los podem ser distribuídos ou vendidos também e que
+    você tem os direitos legais sobre todos os bens, e também assume que o jogo está de acordo com o <a href="https://www.yoyogames.com/legal/eula">EULA da<span class="notranslate">YoYo Games</span> para <span class="notranslate">GameMaker Studio 2</span></a>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Introduction_To_GameMaker_Studio_2.htm">Introdução ao <span class="notranslate">GameMaker Studio 2</span></a></div>
+        <div style="float:right">A seguir: <a href="Debugging.htm">Depuração</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Compiling
+Targets
+Compiler Targets
+VM
+Test
+YYC
+<span class="notranslate">YoYo</span> Compiler
+Cache
+Cleaning The Cache
+Device Editor
+Adding Devices
+Create Executable
+Remote Workers
+Target Manager
+-->
+  <!-- TAGS
+compiling
+compile_output
+compile_platform
+compile_device
+compile_config
+compile_remote
+-->
+
+</body></html>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_particle_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_particle_create" />
+  <meta name="rh-index-keywords" content="physics_particle_create,phy_particle_flag_water,phy_particle_flag_zombie,phy_particle_flag_wall,phy_particle_flag_spring,phy_particle_flag_elastic,phy_particle_flag_viscous,phy_particle_flag_powder,phy_particle_flag_tensile,phy_particle_flag_colourmixing,phy_particle_flag_colormixing" />
+  <meta name="search-keywords" content="physics_particle_create,phy_particle_flag_water,phy_particle_flag_zombie,phy_particle_flag_wall,phy_particle_flag_spring,phy_particle_flag_elastic,phy_particle_flag_viscous,phy_particle_flag_powder,phy_particle_flag_tensile,phy_particle_flag_colourmixing,phy_particle_flag_colormixing" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_particle_create</h1>
+  <p>Com esta função, você pode criar uma única partícula em qualquer lugar dentro de sua sala de jogos, colocando determinadas bandeiras e propriedades. As &quot;bandeiras&quot; são o valor de retorno de uma combinação das seguintes constantes:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_water</td>
+        <td>As propriedades padrão para uma partícula macia do corpo.</td>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_zombie</td>
+        <td>Uma partícula de zumbi é aquela que será destruída após um único passo com todos os outros marcados desta forma.</td>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_wall</td>
+        <td>Isto define a partícula como <i>estática</i>, essencialmente criando-a como um objeto imóvel na simulação física, pois eles permanecerão em uma posição fixa, não importa o que colida com eles. Você deve usar esta bandeira em vez de definir a densidade
+          a 0.</td>
+      </tr>
+      <tr>
+        <td>filigrana_flag_spring</td>
+        <td>As partículas de molas produzem o efeito de estarem presas umas às outras, como se fossem por uma mola. As partículas criadas com esta bandeira são &quot;conectadas&quot; em pares, sendo cada partícula conectada à que estava mais próxima uma da outra no momento da criação.
+          Uma vez emparelhadas, as partículas não mudam de &quot;parceiros&quot;, e quanto mais longe uma força externa as puxa uma da outra, maior será a potência com que colidirão quando essa força externa for removida. Note que não importa a distância em que as partículas se emparelham.
+          partículas se afastam umas das outras, a conexão entre elas não se romperá.</td>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_elastic</td>
+        <td>As partículas elásticas deformam-se e podem também saltar quando colidem com outros corpos rígidos na simulação da física.</td>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_viscous</td>
+        <td>Uma partícula viscosa é aquela que exibe &quot;aderência&quot; ou &quot;pegajosidade&quot;, como o óleo. As partículas viscosas se aglomerarão e se colarão mais.</td>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_powder</td>
+        <td>As partículas de pó produzem um efeito de dispersão, como você pode ver com areia ou pó.</td>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_tensile</td>
+        <td>As partículas de tração são usadas para produzir o efeito da tensão superficial, ou a curvatura esticada na superfície de um corpo de líquido. Elas podem ser usadas, por exemplo, para criar a tensão superficial que você veria em uma gota d'água. Uma vez que a tensão é
+          quebradas, as partículas saltam como se fossem elásticas, mas também continuam a se atrair umas às outras. Como resultado, as partículas tendem a formar aglomerados à medida que ressaltam.</td>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_colourmixing</td>
+        <td>As partículas de mistura de cores assumem parte da cor de outras partículas com as quais colidem. Observe que se apenas uma das duas partículas que colidem for uma cor-mixagem, a outra partícula retém sua cor de pré-colisão.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Estas bandeiras usam a bit-masking para criar um valor de saída final que é então verificado para definir as diferentes propriedades básicas da partícula (sendo a propriedade base sempre a da <tt>phy_particle_flag_water</tt>). Por exemplo, se você quiser simular
+    um líquido viscoso com tensão superficial, você usaria o <a href="../../../../Additional_Information/Bitwise_Operators.htm">bitwise <i>ou</i></a> &quot;|&quot; para sinalizar os bits apropriados, como mostrado no exemplo abaixo. Desta forma, você pode definir diferentes
+    propriedades (que não as propriedades globais) para cada partícula individual criada.</p>
+  <p>Além das bandeiras, você também pode definir a posição na sala para criar a partícula, a velocidade inicial horizontal e vertical, a cor inicial e alfa, assim como a <b>categoria do</b> usuário. A cor e os valores alfa só são usados quando
+    desenhando a partícula usando a função <a href="physics_particle_draw.htm"><tt>physics_particle_draw()</tt></a>mas o valor da categoria é usado em várias outras funções. Este valor é um valor inteiro arbitrário que você dá a cada partícula que
+    você quer ter propriedades similares, e pode ser usado para colocar bandeiras posteriormente para essa categoria específica, bem como uma série de outras coisas. Por exemplo, se você tiver definido uma partícula &quot;água&quot; e uma partícula &quot;óleo&quot;, você daria a todas essas
+    partículas marcadas como &quot;água&quot; a categoria de usuário 1 e todas aquelas partículas criadas como &quot;óleo&quot; a categoria de usuário 2, permitindo que mais tarde o usuário tenha como alvo uma única categoria para mudar suas bandeiras ou obter dados específicos.</p>
+  <p class="note"><b>NOTA</b>: Você pode usar qualquer valor inteiro para a categoria <b>, exceto 0</b> que é reservado pela simulação e é usado para selecionar todas as categorias em outras funções (como para desenho).</p>
+  <p>A função retorna um valor de índice (ou ID) único para a partícula que pode ser armazenado em uma variável a ser usada em outras funções que fazem referência direta à partícula.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">physics_particle_create(bandeiras, x, y, xv, yv, col, alfa, categoria)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>bandeiras</td>
+        <td>As bandeiras a serem colocadas sobre a partícula.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A posição x para criar a partícula em.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A posição y para criar a partícula em.</td>
+      </tr>
+      <tr>
+        <td>xv</td>
+        <td>A velocidade horizontal inicial.</td>
+      </tr>
+      <tr>
+        <td>yv</td>
+        <td>A velocidade vertical inicial.</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>A cor de base a ser usada para a partícula.</td>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>A base alfa a ser utilizada para a partícula.</td>
+      </tr>
+      <tr>
+        <td>categoria</td>
+        <td>A categoria definida pelo usuário à qual a partícula pertence.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;<br> var x_vel = lengthdir_x(5, image_angle);<br> var y_vel = lengthdir_y(5, image_angle);<br> var p = physics_particle_create(flags, x, y, x_vel, y_vel, y_vel,
+    c_white, 1, 1);</p>
+  <p>O código acima criará variáveis para definir o tipo de partícula e sua velocidade inicial, depois as utilizará para criar uma partícula na posição x/y das instâncias.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Soft_Body_Particles.htm">Partículas macias do corpo</a></div>
+        <div style="float:right">A seguir: <a href="physics_particle_group_begin.htm">physics_particle_group_begin</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_particle_create
+phy_particle_flag_water
+phy_particle_flag_zombie
+phy_particle_flag_wall
+phy_particle_flag_spring
+phy_particle_flag_elastic
+phy_particle_flag_viscous
+phy_particle_flag_powder
+phy_particle_flag_tensile
+phy_particle_flag_colourmixing
+-->
+  <!-- TAGS
+physics_particle_create
+-->
+</body>
+</html>

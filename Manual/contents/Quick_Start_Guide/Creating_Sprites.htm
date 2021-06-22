@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Criando Sprites</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Overview of what a sprite is and how to make one." />
+  <meta name="rh-index-keywords" content="Quick Start - Sprites" />
+  <meta name="search-keywords" content="sprites" />
+  <meta name="robots" content="NOODP" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Criando Sprites</h1>
+  <p>Agora que você <a href="What_Is_Programming_.htm">sabe o que é um programa</a>, é hora de olhar alguns dos diferentes <strong>recursos que </strong>podem ser usados no GameMaker <span class="notranslate">Studio 2 para</span> fazer seu jogo. Para começar, vamos analisar os sprites <strong>,</strong>
+    que são geralmente uma das primeiras coisas que você precisará ao fazer qualquer projeto. Como explicado na seção do <a href="../Introduction/The_Asset_Browser.htm">The Asset Browser</a>, um sprite é uma imagem que pode ser animada (embora não
+    precisa ser) e depois atraída para a tela. Em geral, um duende será associado a um objeto, mas você pode desenhar sprites por conta própria, seja a partir do código ou da <strong>camada de ativos</strong> do editor da sala (falaremos sobre isso com mais detalhes mais tarde,
+    na seção sobre <a href="Rooms.htm">quartos</a>). Você também pode criar um duende para ser usado como um <a class="glossterm" data-glossterm="jogos de azulejos" href="#">conjunto de azulejos</a>, mas exploraremos essa opção também em uma seção posterior.</p>
+  <p>Quando você cria um novo projeto a partir da <a href="../Introduction/The_Start_Page.htm">página inicial</a>, o navegador de recursos só conterá pastas vazias para os recursos que você possa precisar, então você precisa clicar com o botão direito do mouse em <img alt="Icon RMB" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> na pasta de recursos sprite e então selecionar a opção <strong>Criar</strong> (se você não tiver uma pasta de recursos sprite você pode fazer uma a partir do menu de clique com o botão direito do mouse e então criar a sprite, ou você pode simplesmente clicar com o botão direito do mouse em qualquer lugar do recurso
+    navegador e criá-lo). Isto criará um novo ativo sprite e abrirá o <a href="../The_Asset_Editors/Sprites.htm"><strong>editor sprite</strong></a> para você (se o editor sprite não abrir, simplesmente clique duas vezes em <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> sobre o novo ativo):</p>
+  <p><img alt="The Sprite Editor" class="center" src="../assets/Images/QS_Guide/QS_Sprites_SpriteEditor.png">Como você pode ver, a parte superior esquerda da janela tem um campo para o <strong>Nome </strong>do duende. Todos os sprites (e todos os outros bens) devem ter
+    um nome dado a eles para que você (e o <span class="notranslate">GameMaker Studio 2</span>) possa identificá-los facilmente, embora você deva observar que este nome é realmente apenas um <strong> <a class="glossterm" data-glossterm="variável" href="#">variável</a></strong> que possui um valor de identificação
+    que &quot;aponta&quot; para o recurso, neste caso, um duende. É melhor dar a cada duende um nome descritivo para que você possa identificar rapidamente se um determinado bem é um duende, um objeto ou outra coisa, e muitas pessoas fazem isso
+    prefixando ou sufixando o recurso com as letras &quot; <span class="inline">spr</span>&quot; - por exemplo, &quot; <span class="inline">spr_Ball</span>&quot;. Observe que os nomes dos recursos estão limitados ao uso apenas de letras, dígitos e o sublinhado
+    símbolo &quot;_&quot;, e o nome de todos os bens deve começar com uma letra e não com um número.</p>
+  <p>As outras características do editor sprite que discutiremos no final desta seção, mas primeiro precisamos explicar como desenhar um sprite. Isto é feito na seção <a href="../The_Asset_Editors/Image_Editor.htm"><strong>Editor de imagem</strong></a>. A imagem
+    editor é uma ferramenta muito poderosa para criar os gráficos em seu jogo e é aberta clicando no botão <em>Edit Image </em>.</p>
+  <p><img alt="The Image Editor" class="center" src="../assets/Images/QS_Guide/QS_Sprites_ImageEditor.png" /></p>
+  <p>Não vamos entrar em muita profundidade sobre as ferramentas disponíveis aqui - para isso temos a seção Editor de Imagem do manual - mas brevemente você tem:</p>
+  <ul class="colour">
+    <li>Na parte superior esquerda, a <strong>vista da moldura</strong> - esta mostra a(s) moldura(s) de seu duende e pode ser redimensionada usando os ícones da lupa.</li>
+    <li>No centro temos a <strong>tela de</strong> desenho - isto mostra a moldura atualmente selecionada pronta para desenho e você pode usar o botão central do mouse <img alt="MMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_MMB.png" width="21"> para dar a volta e a roda do mouse <img alt="MMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_MMB.png" width="21"> para aumentar e diminuir o zoom.</li>
+    <li>Na parte superior direita temos as <strong>escovas</strong> básicas - aqui você pode escolher a escova para desenho, e qualquer escova personalizada também será adicionada aqui.</li>
+    <li>No meio à direita temos o <strong>seletor de cores</strong> - aqui podemos escolher a cor a ser usada para o botão esquerdo e/ou direito do mouse, já que você pode desenhar na tela com um ou outro botão ao mesmo tempo.</li>
+    <li>Logo abaixo do colhedor de cores temos nossas <strong>ferramentas </strong>- estas são as diferentes ferramentas de desenho, incluindo a escova, o enchimento de inundação, o mascaramento e as ferramentas de forma. Observe que algumas das ferramentas são divididas diagonalmente e desenharão ou esboçadas ou preenchidas
+      formas, dependendo do lado da linha em que você clicar para selecioná-las.</li>
+    <li>Na parte inferior direita temos a <strong>vista das camadas</strong> - como muitas outras ferramentas de desenho lá fora, você pode criar diferentes camadas para desenhar, permitindo que você experimente com posição e cor, etc... sem ter que se preocupar em destruir
+      o que está por baixo.</li>
+  </ul>
+  <p>Desenhe algo no editor de imagem e leve algum tempo para brincar com as opções, depois quando estiver pronto feche a área de trabalho do editor de imagem (que salvará a imagem) para levá-lo de volta à área de trabalho principal com o editor sprite dentro dela. Vamos discutir
+    algumas outras características do editor sprite que são importantes de se conhecer quando se está apenas começando...</p>
+  <p>A primeira coisa que você precisa saber é como definir a <strong>origem </strong>para o duende. A origem é simplesmente o ponto que será usado para &quot;ancorar&quot; nosso duende dentro da sala e, neste caso, queremos colocá-lo no centro.</p>
+  <p>Portanto, clicamos em <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> no menu inferior para definir a origem e selecionamos &quot;centro do meio&quot;:</p>
+  <p><img alt="Example Showing The Sprite Origin" class="center" src="../assets/Images/QS_Guide/QS_Sprites_SpriteOrigin.png" /></p>
+  <p>Você verá o marcador de origem azul na imagem de pré-visualização mover-se para o centro do duende. Note que você pode colocar a origem em qualquer lugar que desejar, basta clicar em <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> no link
+    imagem de pré-visualização, e você também pode inserir manualmente a posição de origem adicionando valores nos campos x/y na parte superior.</p>
+  <p>Outra coisa importante a fazer é saber como colocar a <strong>máscara de colisão</strong> para o duende. A máscara de colisão é a área que o <span class="notranslate">GameMaker Studio 2</span> irá verificar para ver se houve uma colisão com qualquer outra instância de um objeto no jogo,
+    e, por padrão, isto é definido como retângulo (que também é o mais rápido a ser resolvido). Observe que você pode definir o modo de detecção para o <strong> <a class="glossterm" data-glossterm="caixa de delimitação" href="#">caixa de delimitação</a></strong> para ser automático
+    (o valor padrão) ou manual. Se você escolher manual você será capaz de definir os valores da caixa de delimitação esquerda, direita, superior e inferior.</p>
+  <p><img alt="Example Showing The Sprite Mask" class="center" src="../assets/Images/QS_Guide/QS_Sprites_SpriteMask.png" /></p>
+  <p>Qualquer tipo de máscara de colisão que não seja retângulo será mais lento de resolver, mas quando se faz um jogo pequeno e simples, normalmente não é um problema. Note que você também pode importar sprites feitos em outro software clicando no botão <em>Importar </em>no
+    sprite editor, e você também pode arrastar arquivos de imagem para o IDE <span class="notranslate">GameMaker Studio 2</span> para adicioná-los como sprites ao Navegador de Ativos. Você também pode arrastar sprites do Navegador de Ativos para adicioná-los diretamente às coisas, neste caso a IDE irá destacar o
+    lugares aos quais você pode adicionar o duende:</p>
+  <p><img alt="Where To Drop A Sprite On An Object" class="center" src="../assets/Images/QS_Guide/QS_DropSprite.png">Se você quiser informações mais detalhadas sobre o Editor Sprite e o Editor de Imagem, consulte as seções seguintes do manual:</p>
+  <ul class="colour">
+    <li><a href="../The_Asset_Editors/Sprites.htm">Editores: O Editor Sprite</a></li>
+    <li><a href="../The_Asset_Editors/Image_Editor.htm">Editores: O Editor de Imagem</a></li>
+  </ul>
+  <p>Você pode fechar o editor sprite agora que vamos passar a discutir os <strong> Conjuntos de Azulejos</strong>.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Content.htm">Índice</a></div>
+        <div style="float:right">A seguir: <a href="Creating_Tile_Sets.htm">Criação de Ladrilhos</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Creating Sprites
+Quick Start: Creating Sprites
+-->
+  <!-- TAGS
+qs_sprites
+-->
+
+</body></html>

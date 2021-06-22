@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_joint_wheel_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_joint_wheel_create" />
+  <meta name="rh-index-keywords" content="physics_joint_wheel_create" />
+  <meta name="search-keywords" content="physics_joint_wheel_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_joint_wheel_create</h1>
+  <p>Uma junta de roda simplesmente combina um pistão e uma junta giratória, como uma roda montada no amortecedor de choque de um carro. Você especifica o ponto de ancoragem para a junta, bem como as duas instâncias físicas habilitadas para a junta, e a primeira instância atuará como a &quot;carroceria&quot;.
+    para a junta, enquanto a segunda será a &quot;roda&quot;, e será permitido mover-se livremente ao redor do eixo da junta. Você também pode definir um vetor de eixo, que é a linha imaginária ao longo da qual a articulação atuará como uma &quot;mola&quot;, permitindo a
+    roda para saltar para cima e para baixo ao longo dela à medida que encontra obstáculos (muito parecidos com a junta do pistão). A imagem a seguir ilustra isto:</p>
+  <p><img alt="Wheel joint illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/wheel_joint_image.png">Se você optar por habilitar um motor, então a segunda instância irá girar em torno da posição da âncora, e
+    você pode ajustar o torque máximo do motor usado para atingir a velocidade do motor desejada (N/m), bem como a velocidade na qual o motor deve girar. Como a junta de roda também tem um eixo ao longo do qual ela pode se mover, você pode ajustar a freqüência de oscilação (em Hz) como
+    bem como a relação de amortecimento para a junta - talvez seja necessário jogar com estes valores para afiná-los e é recomendável que você comece com valores menores e aumente-os até obter o efeito que você deseja.</p>
+  <p>Como em todas as juntas, se você definir o valor &quot;col&quot; como verdadeiro, então <tt>as</tt> duas instâncias podem interagir e colidir uma com a outra, mas somente se <i>elas</i> tiverem eventos de colisão, porém, se for definido como falso, <tt>elas</tt> não irão colidir
+    não importa o que aconteça.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">physics_joint_wheel_create(inst1, inst2, anchor_x, anchor_y, axis_x, axis_y, enableMotor, max_motor_torque, motor_speed, freq_hz, damping_ratio, col)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>inst1</td>
+        <td>A primeira instância para se conectar com a junta</td>
+      </tr>
+      <tr>
+        <td>inst2</td>
+        <td>A segunda instância para se conectar com a junta</td>
+      </tr>
+      <tr>
+        <td>anchor_x</td>
+        <td>A coordenada x onde a articulação está ancorada, dentro do mundo do jogo</td>
+      </tr>
+      <tr>
+        <td>âncora_y</td>
+        <td>A coordenada y onde a articulação está ancorada, dentro do mundo do jogo</td>
+      </tr>
+      <tr>
+        <td>eixo_x</td>
+        <td>O componente x do vetor do eixo da roda</td>
+      </tr>
+      <tr>
+        <td>eixo_y</td>
+        <td>O componente y do vetor do eixo da roda</td>
+      </tr>
+      <tr>
+        <td>enableMotor</td>
+        <td>Se o motor deve estar ativo (verdadeiro) ou não (falso)</td>
+      </tr>
+      <tr>
+        <td>max_motor_torque</td>
+        <td>Define o torque máximo do motor utilizado para atingir a velocidade desejada do motor (em Newtons por metro)</td>
+      </tr>
+      <tr>
+        <td>velocidade_do_motor</td>
+        <td>Esta é a velocidade na qual o motor deve girar</td>
+      </tr>
+      <tr>
+        <td>freq_hz</td>
+        <td>Esta é a freqüência de oscilação para a junta, em hertz</td>
+      </tr>
+      <tr>
+        <td>damping_ratio</td>
+        <td>Esta relação de amortecimento para a junta</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Se as duas instâncias podem colidir (verdadeiras) ou não (falsas)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Inteiro (índice da junta)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var mainFixture = physics_fixture_create();<br> physics_fixture_set_box_shape(mainFixture, 128, 32);<br> var wheelFixture = physics_fixture_create();<br> physics_fixture_set_circle_shape(wheelFixture, 32);<br> var o_id = instance_create_layer(x+25,
+    y + 100, &quot;Instâncias&quot;, obj_Wheel);<br> physics_fixture_bind(mainFixture, id);<br> physics_fixture_bind(wheelFixture, o_id);<br> physics_joint_wheel_create(id, o_id, o_id.x, o_id.y, 0, 1, true, 10, 1, 15, 6, false);<br> physics_fixture_delete(mainFixture);
+    <br> physics_fixture_delete(wheelFixture);
+  </p>
+  <p>O código acima cria e define dois novos dispositivos. Estes são então vinculados à instância de chamada e a uma nova instância que é criada antes de ter uma junta de roda aplicada para conectá-los, após o que os dispositivos são apagados da memória.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Joints.htm">Juntas</a></div>
+        <div style="float:right">A seguir: <a href="physics_joint_weld_create.htm">physics_joint_weld_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_wheel_create
+-->
+  <!-- TAGS
+physics_joint_wheel_create
+-->
+</body>
+</html>

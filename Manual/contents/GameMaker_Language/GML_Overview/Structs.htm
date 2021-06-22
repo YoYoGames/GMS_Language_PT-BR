@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Estruturas e Construtores</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page outlining the use of Structs" />
+  <meta name="rh-index-keywords" content="Structs" />
+  <meta name="search-keywords" content="structs,new,delete,struct" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Estruturas e Construtores</h1>
+  <p>Uma <strong>estrutura </strong>é - para dizer de forma simples - uma variável que contém um conjunto de outras variáveis. As variáveis que uma estrutura contém podem ser de qualquer <a href="Data_Types.htm">tipo de dado</a> mencionado anteriormente e estas variáveis podem ser lidas de
+    e escritos após a declaração de estrutura inicial, e você também pode adicionar mais variáveis a uma estrutura depois que ela foi declarada. As variáveis utilizadas em uma estrutura devem seguir esquemas convencionais de nomenclatura, ou seja: elas não podem começar com um número e devem
+    ser composto somente de caracteres alfanuméricos e o caractere &quot;_&quot;, e também observar que o conteúdo de uma estrutura é <em>independente da instância ou função que a criou, e como</em> tal você pode - se desejar - usar caracteres embutidos
+    nomes de variáveis tais como <tt>image_index</tt> ou <tt>x</tt> e <tt>y</tt>.</p>
+  <p>Após a criação inicial, as estruturas não têm nenhuma sobrecarga de processamento enquanto elas existirem <i>,</i> embora ocupem espaço na memória. A sintaxe da estrutura é a seguinte:</p>
+  <p class="code"><i>&lt;variável&gt; =</i><br> {
+   <br>
+       <i> &lt;variável&gt; : &lt;valor&gt;</i> <i>,</i><br>
+       <i> &lt;variável&gt; : &lt;valor&gt;</i> <i>,</i><br> <i></i> etc...
+    <br> };
+  </p>
+  <p>Portanto, um exemplo disso na prática seria:</p>
+  <p class="code">mystruct =<br> {
+    <br> a : 20,<br> b : &quot;Hello World&quot;<br> };
+  </p>
+  <p>O código acima cria uma estrutura de escopo de instância na variável <tt>mystruct</tt> e a preenche com alguns valores (estruturas podem ser criadas em escopos local, instância e global, como qualquer outra variável - veja a seção sobre <a href="Variables_And_Variable_Scope.htm">Variáveis e Escopo de Variável</a> para mais informações). Note que você não precisa preencher o conteúdo de uma estrutura quando ela é criada inicialmente e você pode criar uma estrutura vazia simplesmente fazendo isso:</p>
+  <p class="code">mystruct = {};</p>
+  <p>Esta estrutura pode então ser acrescentada em um ponto posterior do código do jogo. Aqui está um exemplo de uma estrutura com várias variáveis e tipos de dados:</p>
+  <p class="code">var _xx = 100;<br> mystruct =<br> {
+    <br> a : 10,<br> b : &quot;Hello World&quot;,<br> c : int64(5),<br> d : _xx + 50,<br> e : function(a, b)<br> {
+    <br> return a + b;<br> },
+    <br> f : [ 10, 20, 30, 40, 50 ],<br> g : image_index<br> };
+  </p>
+  <p>Você notará no código acima que você também pode definir métodos e usar funções de tempo de execução em estruturas e também pode usar variáveis locais e de instância dentro da declaração estrutural.</p>
+  <p>Por exemplo, você notará no exemplo acima que a variável estrutural &quot;g&quot; está sendo definida para <span class="inline">image_index</span>, que é uma variável de instância. Você pode pensar que precisaria usar a palavra-chave <span class="inline">other</span> neste caso para obter a variável de instância, mas isto não é necessário. Essencialmente, quando você define uma estrutura<strong>, todas as variáveis membros no lado esquerdo dos dois pontos &quot;:&quot; são as <em>variáveis</em></strong> estruturais, e os valores e variáveis no lado direito usam o escopo do que quer que esteja definindo a estrutura (neste caso, uma instância).</p>
+  <p>Vejamos um exemplo simples para ilustrar isto. Digamos que você quer definir uma estrutura com as variáveis &quot;x&quot; e &quot;y&quot; e quer defini-las para o &quot;x&quot; e &quot;y&quot; da instância que define a estrutura. Na prática
+    o código ficaria assim:</p>
+  <p class="code">mystruct =<br> {
+    <br> x : x,<br> y : y<br> };
+  </p>
+  <p>No código acima, as variáveis estruturais dos membros <tt>x</tt> e <tt>y</tt> estão sendo definidas para os valores mantidos na instância variáveis <tt>x</tt> e <tt>y</tt>, uma vez que o lado direito dos dois pontos &quot;:&quot; se refere à instância que está definindo
+    a estrutura. Vale notar que isto significa que você <em>não pode</em> utilizar variáveis estruturais de membros para definir variáveis subseqüentes dentro da declaração estrutural. Por exemplo, o seguinte lhe daria um erro:</p>
+  <p class="code">mystruct =<br> {
+    <br> a : 10,<br> b : 10,<br> c : a + b<br> }
+  </p>
+  <p>O erro ocorre porque as variáveis <tt>a</tt> e <tt>b</tt> estão de fato sendo avaliadas no âmbito do que quer que esteja definindo a estrutura (elas estão no lado direito dos dois pontos &quot;:&quot;), e não são as <em>que</em> estão sendo definidas dentro
+    a própria estrutura.<strong></strong></p>
+  <h3 style="padding-left: 20px"><em><strong style="margin-left: 0px">IMPORTANTE!</strong></em>  Você <strong>não pode </strong>usar nenhum <em><strong>global </strong></em>variáveis de escopo como nomes de membros estruturantes, por exemplo: <span class="inline">game_id</span> ou <span class="inline">fps</span>.
+    Você pode encontrar uma lista completa destas variáveis globais na página seguinte:</h3>
+  <ul class="colour">
+    <li><a href="Struct_Forbidden_Variables.htm">Estruturas Variáveis Proibidas</a></li>
+  </ul>
+  <p>Uma vez definida uma estrutura, você pode acessar os dados dentro dela usando a notação &quot;ponto&quot;, assim:</p>
+  <p class="code">mystruct =<br> {
+    <br> a : 20,<br> b : &quot;Hello World&quot;<br> }
+    <br>
+    <br> mystring = mystruct.b + string(mystruct.a);</p>
+  <p>Você também pode realizar operações sobre as variáveis dentro de uma estrutura ou usá-las em funções, assim como faria com qualquer outra variável. Por exemplo:</p>
+  <p class="code">mystruct.a += 1;<br> mystruct.b = mystruct.a + 20;<br> mydir = point_direction(mouse_x, mouse_y, mystruct.xx, mystruct.yy);</p>
+  <p>Finalmente, as estruturas podem ter outras estruturas aninhadas dentro delas, como esta:</p>
+  <p class="code">mystruct =<br> {
+    <br> a :<br> {<br> aa : &quot;Este é um exemplo&quot;<br> },
+    <br> b :<br> {<br> bb : &quot;E outro&quot;<br> },
+    <br> };
+  </p>
+  <p>Para acessar tais estruturas aninhadas, você ainda usaria a notação de ponto, desta forma:</p>
+  <p class="code">var _str = mystuct.a.aa + &quot; &quot; + mystruct.b.bb;<br> show_debug_message(_str);
+  </p>
+  <p>Outra maneira de acessar dados em uma estrutura é usando o <a href="Language_Features/with.htm"><span class="inline">with()</span></a> função. Assim, por exemplo, você poderia fazer isto:</p>
+  <p class="code">com(mystruct)<br> {
+    <br> a += outros.x;<br> }
+  </p>
+  <p>Usando <span class="inline">with()</span> muda o escopo do código para a estrutura dada, onde você pode manipular as variáveis dos membros no escopo da estrutura. Note que no exemplo também utilizamos a <a href="Instance_Keywords.htm">palavra-chave<span class="inline">other</span> </a>.
+    Isto funciona exatamente como em uma instância ao usar <span class="inline">with()</span> e referenciará a instância (ou estrutura) que está realmente rodando o bloco de código.</p>
+  <p>Quando uma estrutura não é mais necessária, ela pode ser removida da memória usando o <a href="Language_Features/delete.htm"><tt>excluir</tt></a> operador, que sinaliza a estrutura como podendo ser coletado o lixo. Isto não é estritamente necessário, pois o <a class="glossterm" data-glossterm="catador de lixo" href="#">lixeiro</a> pode fazer isto automaticamente se a estrutura não estiver mais referenciada em seu código, mas é uma boa prática fazê-lo e nós o recomendamos (por exemplo, chamar a <tt>eliminação</tt> no <a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">evento</a> de <a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">limpeza</a> de uma instância para dizer explicitamente ao lixeiro que uma estrutura de escopo de instância deve ser eliminada). Aqui está um exemplo:</p>
+  <p class="code">// Criar evento<br> mystruct =<br> {
+    <br> pos_x : x,<br> pos_y : y,<br> contagem : 1000<br> };
+    <br>
+    <br> /// Evento de limpeza<br> apagar mystruct;</p>
+  <h2>Funções do Construtor</h2>
+  <p>Você também pode usar <a href="Script_Functions.htm">funções</a> ou <a href="Method_Variables.htm">métodos de</a> <a href="Script_Functions.htm">script</a> para criar funções que podem ser usadas para gerar novas estruturas, o que requer o uso da palavra-chave <tt>do construtor</tt> para a função
+    e o <a href="Language_Features/new.htm"><tt>novo</tt></a> ao criar uma estrutura a partir de tal função. Veja a seguinte função:</p>
+  <p class="code">função Vector2(_x, _y) <strong>construtor</strong><br> {
+    <br> x = _x;<br> y = _y;<br>
+    <br> static Add = function(_vec2)<br> {
+    <br> x += _vec2.x;<br> y += _vec2.y;<br> }
+    <br> }
+  </p>
+  <p>Ou, usando o método de sintaxe variável:</p>
+  <p class="code">Vector2 = construtor de função(_x, _y)<br> {
+    <br> x = _x;<br> y = _y;<br>
+    <br> static Add = function(_vec2)<br> {
+    <br> x += _vec2.x;<br> y += _vec2.y;<br> }
+    <br> }
+  </p>
+  <p>Aqui estamos criando uma função chamada <tt>Vetor2</tt> e dizendo ao <span class="notranslate">GameMaker Studio 2</span> que esta é uma função utilizada para criar estruturas, acrescentando a palavra-chave <tt>construtor</tt> após sua definição. Você pode então chamar esta função construtora como
+    isto:</p>
+  <p class="code">v2 = novo Vector2(10, 10);</p>
+  <p>A variável <tt>v2</tt> conterá agora uma estrutura com as variáveis <tt>x</tt> e <tt>y</tt> e a <a href="Method_Variables.htm">variável do método</a> <a href="Functions/Static_Variables.htm">estático</a> <tt>Add</tt>.</p>
+  <p>Você também pode fazer uso de argumentos opcionais em suas funções de construtor:</p>
+  <p class="code">função Vector2<strong>(_x = 0, _y = 0</strong>) construtor<br> {
+    <br> x = _x;<br> y = _y;<br> }
+  </p>
+  <p>Este construtor usará agora <tt>0</tt> para os argumentos <tt>_x</tt> e <tt>_y</tt> se eles não forem especificados quando a função for chamada. Isto significa que você pode criar uma nova estrutura <tt>Vector2</tt> sem ter que especificar nenhum argumento:</p>
+  <p class="code">vazio_vetor = novo Vetor2();</p>
+  <h2>Herança</h2>
+  <p>As funções criadas desta forma também suportarão <b>herança</b> única, ou seja: você pode criar uma função construtora que herda dados de outra função construtora.</p>
+  <p class="note"><strong>NOTA</strong>: Ao trabalhar com herança, não se pode usar variáveis de método para definir a função do construtor, apenas funções de roteiro.</p>
+  <p>Por exemplo, criamos a função construtora <tt>Vector2</tt> acima, para que possamos usá-la como &quot;pai&quot; para outra função construtora, que chamaremos Vector3:</p>
+  <p class="code">função <strong>Vector3(_x, _y, _z) </strong><strong>:</strong><strong> Vector2(_x, _y) </strong>construtor<br> {
+    <br> z = _z;<br>
+    <br> static Add = function( _vec3 )<br> {
+    <br> x += _vec3.x;<br> y += _vec3.y;<br> z += _vec3.z;<br> }
+    <br> }
+  </p>
+  <p>Como você pode ver, ao definir a função usamos um cólon &quot;<span class="inline">:</span>&quot; para separar o novo construtor da construtora mãe a ser herdada. O construtor infantil<tt>(Vector3</tt>) passa o <tt>_x</tt> e
+   <tt>_y</tt> arguments into the parent<tt>(Vector2</tt>) constructor, que são usados para executar o construtor dos pais primeiro, depois do qual o construtor da criança é executado. Desta forma, o construtor da criança obtém as variáveis do pai (x e y) e também pode definir suas próprias (z).</p>
+  <p>Você também pode passar valores constantes para a construtora pais, de modo que uma certa construtora infantil sempre forneça os mesmos valores para sua construtora pais:</p>
+  <p class="code">função Item(dano) construtor<br> {
+    <br> my_damage = dano;<br> }
+    <br>
+    <br> função BasicSword() : Item(10) construtor<br> {}
+    <br>
+    <br> var _basic_sword = new BasicSword();<br> show_debug_message(_basic_sword.my_damage); // Imprime 10</p>
+  <p>Isto significa que o dano de uma espada básica será sempre <tt>10</tt>, uma vez que ela passa esse valor para seu construtor-mãe independentemente de quais sejam seus próprios argumentos.</p>
+  <p>Observe que atribuir um valor padrão a um argumento em uma construtora de crianças sobreporá o valor padrão dos pais para esse argumento. Veja o seguinte exemplo:</p>
+  <p class="code">função Pai(valor = 10) construtor<br> {
+    <br> show_debug_message(valor);<br> }
+    <br>
+    <br> função Criança(valor = 20) : Pai(valor) construtor<br> {
+    <br> show_debug_message(valor);<br> }
+    <br>
+    <br> var _child = criança nova();</p>
+  <p>Ambos os construtores irão imprimir <tt>20</tt> para o registro de saída, pois esse foi o valor padrão para o argumento definido pelo construtor infantil, e o mesmo valor foi passado para o construtor pai.</p>
+  <p>Para obter mais detalhes sobre os operadores <tt>novos</tt> e <tt>de exclusão</tt>, consulte as páginas seguintes:</p>
+  <ul class="colour">
+    <li><a href="Language_Features/new.htm"><tt>novo</tt></a></li>
+    <li><tt><a href="Language_Features/delete.htm"><tt>excluir</tt></a>
+      </tt>
+    </li>
+  </ul>
+  <h2>Saída de cordas</h2>
+  <p>Uma última coisa a mencionar sobre as estruturas é que você pode mudar o que sai deles para o console para depuração. Por padrão, chamando a função <a href="../GML_Reference/Debugging/show_debug_overlay.htm"><span class="inline">show_debug_message()</span></a> em
+    uma estrutura produzirá o conteúdo da estrutura (como mostrado acima). Entretanto, é possível personalizar esta mensagem adicionando um método especificamente nomeado à estrutura chamada <span class="inline">toString</span>:</p>
+  <p class="code">mystruct =<br> {
+    <br> a : 20,<br> b : &quot;Hello World&quot;,<br>
+    <br> toString : function()<br> {<br> return &quot;This stuct says &quot; + b + &quot;, &quot; + string(a) + &quot; times!&quot;;<br> } <br> }
+    <br> show_debug_message(mystruct);
+  </p>
+  <p>Agora quando a função <span class="inline">show_debug_message()</span> for chamada, o método <span class="inline">toString</span> será usado para gerar a saída e - com o exemplo acima - você terá:</p>
+  <p class="code">Esta estrutura diz Olá Mundo, 20 vezes!</p>
+  <p>Note que você também pode chamar o <a href="../GML_Reference/Strings/Strings.htm"><span class="inline">string()</span></a> de uma referência estrutural e usar isso para exibir o conteúdo - ou o método <span class="inline">toString</span> - para o
+    ou salvá-lo em um arquivo, ou o que quer que seja, por exemplo, uma tela</p>
+  <p class="code">var _str = string(mystruct);<br> draw_text(32, 32, _str);</p>
+  <p>Finalmente, há uma série de funções de <span class="notranslate">tempo de execução</span> que você pode usar nas estruturas para obter as variáveis que elas contêm, bem como algumas outras coisas. Você pode encontrá-las na seção seguinte:</p>
+  <ul class="colour">
+    <li><a href="../GML_Reference/Variable_Functions/Variable_Functions.htm">Funções variáveis</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="GML_Overview.htm">Visão geral da<span class="notranslate">GML</span></a></div>
+        <div style="float:right">A seguir: <a href="Language_Features.htm">Características lingüísticas</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Structs
+struct
+constructor
+-->
+  <!-- TAGS
+structs
+-->
+
+</body></html>

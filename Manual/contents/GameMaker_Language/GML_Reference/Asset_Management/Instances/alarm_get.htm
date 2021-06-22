@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>alarm_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function alarm_get" />
+  <meta name="rh-index-keywords" content="alarm_get" />
+  <meta name="search-keywords" content="alarm_get" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>alarm_get</h1>
+  <p>Esta função pode ser usada para obter o valor atual do alarme dado. Você fornece o número do alarme de 0 a 11 e esta função retornará o valor que o alarme está atualmente ligado. Este é um método alternativo para obter o valor <a href="Instance_Variables/alarm.htm">da matriz de alarme</a> 
+    diretamente.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">alarm_get(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice de alarme a obter, de 0 a 11.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (inteiro)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">para (var i = 0; i &lt; 12; i++)<br> {
+    <br> if alarm_get(i) &gt; 0 alarm_set(i, -1);<br> }
+  </p>
+  <p>O código acima verifica todos os alarmes na instância de chamada e, se forem maiores que 0, os coloca em -1, impedindo-os de continuar a contagem regressiva.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Instances.htm">Instâncias</a></div>
+        <div style="float:right">Próximo: <a href="alarm_set.htm">alarme_set</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+alarm_get
+-->
+  <!-- TAGS
+alarm_get
+-->
+</body>
+</html>

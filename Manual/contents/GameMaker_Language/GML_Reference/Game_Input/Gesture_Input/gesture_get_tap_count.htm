@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gesto_get_tap_count</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gesture_get_tap_count" />
+  <meta name="rh-index-keywords" content="gesture_get_tap_count" />
+  <meta name="search-keywords" content="gesture_get_tap_count" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gesto_get_tap_count</h1>
+  <p>Esta função é usada para verificar se a contagem de torneira está ativada ou desativada. A função retornará <tt>verdadeiro</tt> se estiver ativada, e <tt>falso</tt> caso contrário e você pode ativar ou desativar a contagem de torneira usando a função <a href="gesture_tap_count.htm"><tt>gesto_tap_count()</tt></a>.
+    Quando ativado, cada evento de tap terá uma entrada adicional de mapa DS &quot;tapcount&quot; que terá registrado o número de taps, e quando ativado significa que todos os eventos de tap serão acionados, ou seja: dois taps acionarão ambos os
+    e o evento de torneira dupla, com a contagem de torneira simples sendo 1 e a contagem de torneira dupla sendo 2. O valor da contagem de tap será zerado para 0 após o tempo ajustado para uma detecção de tap duplo (veja a função <a href="gesture_get_double_tap_time.htm"><tt>gesture_double_tap_time()</tt></a>).
+    Se a contagem da torneira estiver desativada, então a torneira inicial não será registrada até que o tempo de dupla torneira tenha passado e nenhuma segunda torneira tenha sido detectada. Note que isto é <b>habilitado</b> por padrão.</p>
+  <p> </p>
+  <h4><b>Sintaxe:</b></h4>
+  <p class="code">gesture_get_tap_count();</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Bool</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se !gesture_get_tap_count()<br> {
+    <br> getsure_tap_count(true);
+    <br> }
+  </p>
+  <p>O código acima verifica se a contagem de torneira está ativada e se não está, então está ligada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Gesture_Input.htm">Entrada por gestos</a></div>
+        <div style="float:right">Próximo: <a href="gesture_get_pinch_distance.htm">gesture_get_pinch_distance</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gesture_get_tap_count
+-->
+  <!-- TAGS
+gesture_get_tap_count
+-->
+
+</body></html>

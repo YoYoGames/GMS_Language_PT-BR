@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>persistente</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the variable persistent" />
+  <meta name="rh-index-keywords" content="persistent" />
+  <meta name="search-keywords" content="persistent" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>persistente</h1>
+  <p>Esta variável pode ser lida para descobrir se a instância é marcada como <tt>persistente</tt> ou não, ou pode ser usada para definir persistência como <tt>verdadeira</tt> (persistente) ou <tt>falsa</tt> (não persistente) para a instância. Uma instância persistente é aquela que irá
+    ser &quot;transportado&quot; de sala em sala, o que significa (por exemplo) que ele só tem que ser criado uma vez no início do jogo e estará presente em todas as outras salas. Deve-se tomar cuidado com persistência, pois é fácil perder a noção de persistente
+    instâncias que podem levar a problemas mais tarde no desenvolvimento do jogo.</p>
+  <p>Quando você cria uma instância com persistência habilitada em uma sala, esta variável será definida como <tt>verdadeira</tt> e lhe será atribuída uma camada ou uma profundidade (dependendo da função que você usou para criar a instância do objeto). Quando a sala é trocada,
+    e se a seguinte sala <i>não</i> tiver uma camada com o mesmo nome ou profundidade que a designada, então uma nova camada será criada para a instância que está persistindo nas salas. Se você der uma camada nomeada quando a instância foi criada,
+    então a nova camada também será nomeada da mesma forma que a camada original, enquanto se você atribuir uma profundidade à instância, então a nova camada será nomeada &quot; _layer_XXX<tt>&quot;,</tt> onde &quot;XXX&quot; é um valor hexadecimal usado para dar à camada um valor único
+    nome. Estas camadas serão removidas da sala no Room End. Outra coisa a se notar sobre camadas e instâncias persistentes é que se você tiver atribuído à instância uma camada nomeada na criação, e há outra camada nas seguintes salas com o
+    mesmo nome, então a instância persistente será atribuída à camada com o mesmo nome, <i>independentemente da profundidade da camada</i>. Finalmente, se uma instância persistente se mover para uma sala com uma camada na mesma profundidade em que a instância foi criada, ela
+   <i>não</i> será atribuído a esta camada, mas em vez disso será criada uma nova camada com a mesma profundidade (seguindo a convenção de nomenclatura explicada anteriormente).</p>
+  <p>Um objeto persistente ainda terá seus eventos <b>Início do jogo</b>, <b>Fim do jogo</b>, <b>Início da sala</b> e <b>Fim da sala</b> acionados, porém se você reiniciar o jogo (com, por exemplo, a função <tt>game_restart()</tt> ) todos os objetos persistentes
+    ser removido e só existir quando criado novamente pelo jogo. Observe também que se você desativar um objeto persistente, ele não passará mais de uma sala para outra, a menos que seja reativado antes que o evento Room End seja acionado.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">persistente;</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se !persistente<br> {
+    <br> persistente = verdadeiro;<br> }
+  </p>
+  <p>O código acima verificará a instância para ver se a persistência é sinalizada como <tt>falsa</tt> e se a instância NÃO é persistente, a bandeira de persistência é colocada como <tt>verdadeira</tt>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Instance_Variables.htm">Variáveis de instância</a></div>
+        <div style="float:right">Próximo: <a href="depth.htm">profundidade</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+persistent
+-->
+  <!-- TAGS
+persistent
+-->
+</body>
+</html>

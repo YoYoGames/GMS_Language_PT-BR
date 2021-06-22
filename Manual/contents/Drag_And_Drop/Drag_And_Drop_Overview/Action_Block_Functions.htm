@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Funções do Action Block Script</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Article explaining how to make action block script functions" />
+  <meta name="rh-index-keywords" content="DnD™ Overview - Action Block Script Functions" />
+  <meta name="search-keywords" content="DnD,Code DnD,DnD Scripts,Drag and Drop Scripts" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Funções do Action Block Script</h1>
+  <p>Um dos ativos mais importantes do <a href="../../Introduction/The_Asset_Browser.htm">Navegador de Ativos</a> é o ativo <a href="../../The_Asset_Editors/Scripts.htm">Script</a>. Os Scripts são ativos especiais na medida em que são essencialmente &quot;containers&quot;.
+    para funções definidas pelo usuário e não são chamados por ele mesmo diretamente em seus jogos. Todos os scripts são <strong>globais</strong> no escopo e serão executados automaticamente pelo <span class="notranslate">GameMaker</span> quando seu jogo começar, de modo que você pode usá-los para definir
+    variáveis e funções que você deseja utilizar durante todo o seu jogo.</p>
+  <p>Cada script <span class="notranslate">DnD™</span>pode ter uma ou mais funções definidas pelo usuário, e estas funções são criadas usando a ação <a href="../Drag_And_Drop_Reference/Common/Declare_A_New_Function.htm">Declarar uma nova função</a>:</p>
+  <p><img alt="Declare A New Function Syntax" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Common_Declare_Function.png">As funções que você definir aqui serão globais no escopo e agirão como qualquer outra função integrada <span class="notranslate">DnD™</span>
+    ação, ou seja: eles podem tomar valores diferentes - ou nenhum - chamados<span class="glossextra">argumentos</span> (ou parâmetros), e então executar uma tarefa, devolver um valor ou não devolver nada
+    conforme necessário. Você então chamaria a função em seus jogos usando a ação de <a href="../Drag_And_Drop_Reference/Common/Function_Call.htm">Chamada de Função</a> <img alt="Function Call Icon" class="icon" height="24" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Execute_Function.png" width="24">, que se parece com isto:</p>
+  <p><img alt="Function Call Syntax" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Common_Execute_Function.png">Para criar um script <span class="notranslate">DnD™</span>, basta usar o botão direito do mouse <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> em qualquer lugar do Navegador de Ativos e selecionar <strong>Criar </strong>então <strong>Script</strong>. Isto criará um novo script <span class="notranslate">DnD™</span>e abrirá a janela do editor:</p>
+  <p><img alt="D&amp;D Script editor" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Scripts.png">Você pode nomear o script clicando com o botão direito do mouse <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> sobre ele no Navegador de Ativos e selecionando <strong>Renomear </strong>(ou usando um duplo clique lento à esquerda <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21">), mas note que o script
+    O nome deve estar de acordo com as regras gerais para bens, portanto, devem começar com uma letra e conter apenas letras, números ou o símbolo &quot;_&quot; abaixo da barra. Seu script também será pré-povoado com uma ação <strong>Declare A New Function</strong>,
+    pronto para você preenchê-lo, e você pode adicionar mais declarações de funções conforme necessário (um único script pode conter várias funções, o que é útil para agrupar funções com uso similar ou conectado em conjunto).</p>
+  <p>Como mencionado acima, você pode passar uma série de argumentos para uma função, e ela os utilizará para realizar a tarefa para a qual você a escreveu. Para entender isto melhor, tome - por exemplo - qualquer uma das ações embutidas e pense em como ela funciona... você
+    colocá-lo em um evento e fornecer uma série de valores e isso fará com que sua instância faça algo. As funções definidas pelo usuário são exatamente as mesmas, sendo que a única diferença é que <em>você </em>as escreve.</p>
+  <p>Ao definir uma nova função, você dá a ela um nome e também define o nome de quaisquer argumentos que ela tome, se ela tomar algum (as funções não podem tomar argumentos ou argumentos múltiplos, dependendo do que você precisar). Se você der nomes de argumentos, então estes serão
+    utilizadas nas ações que a função chama como <strong>variáveis locais </strong>contendo os valores de entrada da função.</p>
+  <p>Também é uma boa prática acrescentar em um comentário para a ação que explique o que ela faz, seguindo as <a href="../../The_Asset_Editors/Code_Editor_Properties/JSDoc_Script_Comments.htm">regras do documento do JS</a>. Por exemplo, considere esta função <span class="inline">set_vec()</span>:</p>
+  <p><img alt="D&amp;D Function Example With Comments" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_FunctionExample.png">Para chamar o script acima você simplesmente usaria a ação <strong>Call Function</strong>,
+    assim:</p>
+  <p><img alt="Call A Function From A Script" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Declare_Function_2.png">Você não só pode passar argumentos para uma função, mas também pode pedir a uma função que devolva um valor
+    também (usando a ação <a href="../Drag_And_Drop_Reference/Common/Return.htm">Return</a> <img alt="Return Action Icon" class="icon" height="24" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Return.png" width="24"> ), então você
+    pode usá-los para (por exemplo) construir métodos de cálculo ou devolver uma identificação de instância após uma complexa detecção de colisão ou qualquer número de coisas. Observe, entretanto, que o uso do retorno <strong>termina a função</strong> e, portanto, nenhuma ação colocada após
+    foi usado será executado, e isto significa que uma certa quantidade de pensamento tem que ir para a forma como suas funções são estruturadas.</p>
+  <p>Abaixo está uma função <span class="notranslate">Arrastar e Soltar</span> que retorna um valor:</p>
+  <p><img alt="D&amp;D Script Return Example" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Script_Example_Return.png" /></p>
+  <p>A função acima simplesmente verifica todas as instâncias em uma sala para ver qual é seu <span class="inline">object_index</span> e se uma delas for o objeto do jogador, a função retornará <span class="inline">true</span> (terminando a chamada de função) ou
+    <span class="inline">false</span> . Você chamaria esta função desta forma:</p>
+  <p><img alt="Call D&amp;D Script With Return Value" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Script_Call_Return.png">Portanto, chamamos a função e fazemos com que ela crie uma variável temporária (local) para armazenar o retorno
+    (que neste caso é <span class="inline">true</span> ou <span class="inline">false</span>), e então esta variável é verificada e uma ação é tomada.</p>
+  <p>Ao criar funções para seus scripts <span class="notranslate">DnD™</span>você pode usar todas as mesmas ações que usaria ao adicionar ações em um evento de objeto, e pode até mesmo chamar funções de dentro das funções, e desta forma criar mais código de ação &quot;modular&quot;. Construindo
+    scripts com funções desta forma podem economizar muito tempo criando as mesmas seqüências de ação e também podem ajudar a tornar suas seqüências de ação mais fáceis de ler e mais fáceis de depurar.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../../Content.htm">Índice</a></div>
+        <div style="float:right">A seguir: <a href="Changing_DnD_To_Code.htm">Mudando <span class="notranslate">DnD™</span></a>para código</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Drag And Drop</span> Scripts
+<span class="notranslate">DnD</span> Scripts
+-->
+  <!-- TAGS
+drag_and_drop_scripts
+-->
+
+</body></html>

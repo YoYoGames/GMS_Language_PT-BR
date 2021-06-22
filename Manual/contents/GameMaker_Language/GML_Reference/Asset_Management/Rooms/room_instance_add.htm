@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>room_instance_add</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_instance_add" />
+  <meta name="rh-index-keywords" content="room_instance_add" />
+  <meta name="search-keywords" content="room_instance_add" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>room_instance_add</h1>
+  <p>Com esta função você pode adicionar uma instância em qualquer sala que não seja a atual e em qualquer posição dentro daquela sala. A função retorna o exclusivo <a href="../Instances/Instance_Variables/id.htm"><tt>id</tt></a> da instância que pode então
+    ser usado em outras chamadas de função para definir propriedades etc... dessa instância, mas <strong>somente depois que o jogo tiver entrado na sala especificada</strong>. Se você deseja criar uma instância na sala atual, você deve estar usando a função <a href="../Instances/instance_create_layer.htm"><tt>instance_create_layer()</tt></a>. Nota
+    que chamar esta função em uma sala de ativos criada no Navegador de Ativos <strong>adicionará permanentemente a instância à sala</strong>, e mesmo chamando <span class="inline">game_restart()</span> não retornará a sala ao seu estado original
+    (somente terminando o jogo e abrindo-o novamente começará com a sala em seu estado original novamente).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">room_instance_add(index, x, y, obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice da sala para adicionar uma instância de objeto.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A posição x da nova instância.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A posição y da nova instância.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>O objetivo de acrescentar uma instância de.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Identificação da instância</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">global.rm = room_add();<br> room_assign(rm_Base, global.rm);<br> room_instance_add(global.rm, 100, 100, obj_Player);</p>
+  <p>O código acima adicionará uma nova sala ao jogo e então copiará o conteúdo da sala indexada como &quot;rm_Base&quot; para dentro dela. Ele então adicionará uma instância do objeto &quot;obj_player&quot; na posição 100.100 desta nova sala.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Rooms.htm">Quartos</a></div>
+        <div style="float:right">A seguir: <a href="room_instance_clear.htm">room_instance_clear</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_instance_add
+-->
+  <!-- TAGS
+room_instance_add
+-->
+</body>
+</html>

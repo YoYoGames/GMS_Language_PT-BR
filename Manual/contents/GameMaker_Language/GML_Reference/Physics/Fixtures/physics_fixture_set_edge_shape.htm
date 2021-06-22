@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>forma_de_série_física</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_set_edge_shape" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_edge_shape" />
+  <meta name="search-keywords" content="physics_fixture_set_edge_shape" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>forma_de_série_física</h1>
+  <p>Esta função define uma forma de fixação &quot;borda&quot;. Uma forma de borda é simplesmente uma linha que irá gerar uma colisão quando outras fixações sobre ela, e pode ser muito útil para gerar (por exemplo) terreno, ou para criar bordas ao redor de uma sala.
+    A posição da borda é definida utilizando espaço <i>local</i>, ou seja: a posição x/y da instância é considerada (0,0), portanto, isto deve ser levado em consideração ao criá-las (no exemplo de código abaixo, a instância teria sido colocada em
+    (0,0) na sala para evitar complicações).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">physics_fixture_set_edge_shape(fixture, local_x1, local_y1, local_x2, local_y2)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>fixação</td>
+        <td>o índice da fixação</td>
+      </tr>
+      <tr>
+        <td>local_x1</td>
+        <td>posição inicial x posição para a borda</td>
+      </tr>
+      <tr>
+        <td>local_y1</td>
+        <td>posição inicial para a borda</td>
+      </tr>
+      <tr>
+        <td>local_x2</td>
+        <td>posição final x posição para a borda</td>
+      </tr>
+      <tr>
+        <td>local_y2</td>
+        <td>posição final y para a borda</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var xx = 0;<br> var y1 = room_height - 100;<br> var y2 = room_height - 50 - irandom(100);<br> for (var i = 0; i &lt; 10; i++;)<br> {
+    <br> var fix = physics_fixture_create();<br> physics_fixture_set_edge_shape(fix, xx, y1, xx + 50, y2);<br> physics_fixture_bind(fix, id);<br> physics_fixture_delete(fix);
+    <br> xx += 50;<br> y1 = y2;<br> y2 = room_height - 50 - irandom(100);<br> }
+  </p>
+  <p>O código acima criará uma linha de &quot;bordas&quot; com uma variedade de alturas ao longo do comprimento da sala.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Fixtures.htm">Instalações</a></div>
+        <div style="float:right">A seguir: <a href="physics_fixture_set_chain_shape.htm">forma_da_cade_física</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_edge_shape
+-->
+  <!-- TAGS
+physics_fixture_set_edge_shape
+-->
+</body>
+</html>

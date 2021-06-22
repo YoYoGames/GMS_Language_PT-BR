@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_create" />
+  <meta name="rh-index-keywords" content="mp_grid_create" />
+  <meta name="search-keywords" content="mp_grid_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_create</h1>
+  <p>Com esta função você pode criar uma mp_grid para as funções de planejamento de movimento. Ela retorna um índice que deve ser armazenado em uma variável para uso em todas as outras chamadas de funções de grade MP. As coordenadas x e y indicam a posição do canto superior esquerdo
+    da grade, hcells e vcells indicam o número de células horizontais e verticais a serem criadas dentro da grade, e a largura e altura das células indicam o tamanho das células em pixels. Você pode criar e manter múltiplas estruturas de grade na
+    mesmo momento se você precisar delas para coisas diferentes, mas esteja ciente de que cada grade exigirá memória, e quanto mais células elas tiverem, mais memória elas precisarão. Observe também que as funções MP são bastante pesadas em termos de processador, portanto, quanto mais frequentemente
+    você os chama e quanto maior a resolução da célula, maior é a probabilidade de ter uma queda no desempenho.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">mp_grid_create(esquerda, topo, hcells, vcells, cellwidth, cellheight):</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>esquerda</td>
+        <td>Início x coordenada da rede mp_grid na sala</td>
+      </tr>
+      <tr>
+        <td>topo</td>
+        <td>Início e coordenada da rede mp_grid na sala</td>
+      </tr>
+      <tr>
+        <td>hcells</td>
+        <td>Número de células horizontais que a rede mp_grid conterá</td>
+      </tr>
+      <tr>
+        <td>vcells</td>
+        <td>Número de células verticais que a rede mp_grid conterá</td>
+      </tr>
+      <tr>
+        <td>largura do velório</td>
+        <td>A largura (em pixels) de cada célula individual da rede mp_grid</td>
+      </tr>
+      <tr>
+        <td>altura de cela</td>
+        <td>A altura (em pixels) de cada célula individual da rede mp_grid</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">global.grid = mp_grid_create(0, 0, room_width / 32, room_height /32, 32, 32);</p>
+  <p>O código acima cria uma variável global &quot;grid&quot;, depois gera uma mp_grid e atribui seu índice (id) a essa variável para uso em todas as outras chamadas de função mp_grid. A grade cobre a sala, com uma resolução de célula de 32x32 pixels. Isto significa
+    que, por exemplo, em uma sala que é 640x480, a grade conteria 300 células: 20 células horizontais (640 / 32) multiplicadas por 15 células verticais (480 /32) dá 300 células</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Motion_Planning.htm">Planejamento de Movimento</a></div>
+        <div style="float:right">Próximo: <a href="mp_grid_destroy.htm">mp_grid_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_create
+-->
+  <!-- TAGS
+mp_grid_create
+-->
+</body>
+</html>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>superfície_criar_texto</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_create_ext" />
+  <meta name="rh-index-keywords" content="surface_create_ext" />
+  <meta name="search-keywords" content="surface_create_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>superfície_criar_texto</h1>
+  <p>Esta função permite anexar uma superfície a um elemento de tela que já existe em sua página web, o que significa que você pode efetivamente dividir porções de seu jogo a serem desenhadas em vários lugares diferentes dentro da página. Para isso, você <i>deve</i> ter definido corretamente o elemento de tela dentro da página <tt>*.html</tt> de seu jogo usando os tamanhos e nomes corretos que correspondem às superfícies que você deseja criar. Assim, você teria sua tela &quot;principal&quot;, e então sua superfície secundária
+    elementos de tela, que serão designados usando esta função para as superfícies corretas. A imagem seguinte é um exemplo de como uma página com três elementos de lona seria criada:</p>
+  <p><img alt="Multi canvas layour example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/surface_ext_1.png">O layout da página pode ser complicado, especialmente se você desejar que todos os elementos se alinhem corretamente, mas uma vez
+    a difícil tarefa de criar o layout foi concluída, você pode então adicionar este arquivo <tt>html</tt> como o arquivo de página padrão do jogo usando a <a href="../../../../Settings/Game_Options/HTML5.htm">guia HTML5</a> das <a href="../../../../Settings/Game_Options.htm">Opções do Jogo</a>.
+    A próxima coisa que você deve fazer é configurar sua sala e vistas, pois cada superfície precisará estar associada a uma vista específica para &quot;capturar&quot; as imagens do jogo (veja a variável de vista <a href="../../Cameras_And_Display/Cameras_And_Viewports/view_surface_id.htm"><tt>view_surface_id[0...7]</tt></a>).
+    A imagem abaixo mostra como a sala de jogos para o exemplo da tela acima seria exposta:</p>
+  <p><img alt="Multi canvas layour example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/surface_ext_2.png">Finalmente, você usaria esta função para criar as superfícies, sendo o nome o mesmo
+    usado para os elementos de lona e o tamanho correspondente ao tamanho daquela mesma lona. A função retornará o índice da superfície que deverá ser armazenada em uma variável para futuras chamadas de função. Quando a superfície é criada pela primeira vez, ela pode conter
+    &quot;ruído&quot;, pois basicamente é apenas uma área de memória que é posta de lado para o propósito (e que a memória ainda pode conter informações), então você pode querer limpar a superfície antes de usar com uma função como <a href="../Colour_And_Alpha/draw_clear_alpha.htm"><tt>draw_clear_alpha()</tt></a>.</p>
+  <p class="note"><b>NOTA</b>: Esta função só está disponível para uso com o módulo HTML5.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">surface_create_ext(nome, w, h);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>nome</td>
+        <td>O nome do elemento de lona para ligar a superfície.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>A largura da superfície a ser criada.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>A altura da superfície a ser criada.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">s1 = surface_create_ext(&quot;surface1&quot;, 192, 550);<br> s2 = surface_create_ext(&quot;surface2&quot;, 608, 186);<br> view_surface_id[1] = s1;<br> view_surface_id[2] = s2;</p>
+  <p>O código acima cria duas superfícies de tamanhos diferentes, atribuindo cada uma a um elemento de tela diferente, e então essas superfícies são atribuídas a duas vistas para que a parte correta da sala seja capturada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Surfaces.htm">Superfícies</a></div>
+        <div style="float:right">Próximo: <a href="surface_resize.htm">tamanho_da_superfície</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_create_ext
+-->
+  <!-- TAGS
+surface_create_ext
+-->
+</body>
+</html>

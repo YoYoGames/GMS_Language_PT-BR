@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>matrix_multiply</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for matrix_multiply" />
+  <meta name="rh-index-keywords" content="matrix_multiply" />
+  <meta name="search-keywords" content="matrix_multiply" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>matrix_multiply</h1>
+  <p>Com esta função, é possível multiplicar duas matrizes juntas para criar uma nova matriz de transformação. A função retornará o novo índice de matriz que deverá ser armazenado em uma variável para uso futuro.</p>
+  <p class="note"><b>NOTA</b>: Você não pode usar uma constante de matriz como argumento com esta função, então se você deseja multiplicar a matriz de visualização (por exemplo) com uma matriz personalizada que você construiu, você deve primeiro chamar <span style="font-size:1px;"><a href="matrix_get.htm"><tt style="font-size: 14px">matrix_get()</tt></a></span>    e atribuir os valores da matriz de visão a uma variável da matriz, depois multiplicá-la por sua matriz personalizada, e então definir a matriz escolhida (visão, projeção ou mundo).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">matrix_multiply(matrix1, matrix2);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>matriz1</td>
+        <td>O primeiro índice matricial a ser utilizado.</td>
+      </tr>
+      <tr>
+        <td>matriz2</td>
+        <td>O segundo índice matricial a ser utilizado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Índice de Matriz (Matriz 4x4)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var v_matrix = matrix_get(matrix_view);<br> var new_matrix = matrix_multiply(v_matrix, my_matrix);<br> matrix_set(matrix_view, new_matrix);</p>
+  <p>O código acima obterá a matriz de visão atual, depois a multiplicará com uma matriz personalizada e depois usará o índice de matriz resultante para definir a matriz de visão novamente.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Matrix_Functions.htm">Funções da Matriz</a></div>
+        <div style="float:right">Próximo: <a href="matrix_build_identity.htm">matrix_build_identity</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+matrix_multiply
+-->
+  <!-- TAGS
+matrix_multiply
+-->
+
+</body></html>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>camera_create_view</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for camera_create_view" />
+  <meta name="rh-index-keywords" content="camera_create_view" />
+  <meta name="search-keywords" content="camera_create_view" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>camera_create_view</h1>
+  <p>Esta função criará uma nova câmera e então definirá sua visão para a sala, antes de retornar o valor de identificação único para identificar a câmera em futuras chamadas de função. A câmera será criada usando os valores que você definir nesta função para posição, tamanho
+    e outros detalhes que se correlacionam com os valores que você estabelece no Room Editor (ver <a href="../../../../The_Asset_Editors/Rooms.htm">aqui</a>). Note que esta função pode assumir um <i>número variável de argumentos</i> com apenas a posição x/y e largura/altura
+    argumentos sendo obrigatórios. Quaisquer argumentos não fornecidos utilizarão seus argumentos padrão.</p>
+  <p>Note que as câmeras são como todos os recursos dinâmicos e ocuparão a memória quando criadas. Isto significa que você precisa tomar cuidado para não criar câmeras desnecessariamente e destruir aquelas que você não precisa chamando a função <a href="camera_destroy.htm"><tt>camera_destroy()</tt></a>.
+    Isto também significa que as câmeras persistirão de sala para sala se atribuídas a uma variável <tt>global</tt> (elas persistirão quando atribuídas a uma instância ou a variáveis locais também, mas você não pode acessá-las depois de mudar de sala, daí o vazamento de memória), portanto
+    que você pode - por exemplo - criar uma nova câmera, atribuí-la a uma variável global e, no início de cada sala, usar as funções <tt>camera_set_*</tt> para definir as propriedades antes de atribuí-la a uma porta de visualização.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">camera_create_view(room_x, room_y, width, height, [angle, object, x_speed, y_speed, x_border, y_border])</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>room_x</td>
+        <td>A posição x (dentro da sala) do lado esquerdo da área que a vista da câmera captura.</td>
+      </tr>
+      <tr>
+        <td>quarto_y</td>
+        <td>A posição y (dentro da sala) do topo da área que a vista da câmera captura.</td>
+      </tr>
+      <tr>
+        <td>largura</td>
+        <td>A largura da área que a vista capta.</td>
+      </tr>
+      <tr>
+        <td>altura</td>
+        <td>A altura da área que a vista capta.</td>
+      </tr>
+      <tr>
+        <td>ângulo</td>
+        <td>O ângulo a ser definido para a visão da câmera (de 0° - 360°, o padrão é 0).</td>
+      </tr>
+      <tr>
+        <td>objeto</td>
+        <td>O ID do objeto (ou ID da instância) para a visualização da câmera a seguir (o padrão é -1, sem objeto).</td>
+      </tr>
+      <tr>
+        <td>x_velocidade</td>
+        <td>A velocidade horizontal máxima em que a vista pode se mover (definida como -1 para &quot;instantâneo&quot; seguinte, o padrão é -1).</td>
+      </tr>
+      <tr>
+        <td>y_speed</td>
+        <td>A velocidade vertical máxima em que a vista pode se mover (definida como -1 para &quot;instantâneo&quot; seguinte, o padrão é -1).</td>
+      </tr>
+      <tr>
+        <td>x_fronteira</td>
+        <td>O espaço horizontal mínimo entre a borda da área de visão e a instância a ser seguida (antes que a visão comece a se mover e se for definida para seguir uma instância, o padrão é 0).</td>
+      </tr>
+      <tr>
+        <td>y_fronteira</td>
+        <td>O espaço vertical mínimo entre a borda da área de visão e a instância a ser seguida (antes que a visão comece a se mover e se for definida para seguir uma instância, o padrão é 0).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (valor único de identificação da câmera)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">camera_destroy(view_camera[0]);<br> view_camera[0] = camera_create_view(0, 0, 640, 480, 0, obj_Player, 5, 5, -1, -1, -1);</p>
+  <p>O código acima remove a câmera atual designada para viewport[0] e então cria uma nova câmera, define suas propriedades de visualização e então a atribui para viewport[0].</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Cameras_And_View_Ports.htm">Câmeras e Ver Portos</a></div>
+        <div style="float:right">Próximo: <a href="camera_destroy.htm">camera_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_create_view
+-->
+  <!-- TAGS
+camera_create_view
+-->
+</body>
+</html>

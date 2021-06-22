@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_sprite_part</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_sprite_part" />
+  <meta name="rh-index-keywords" content="draw_sprite_part" />
+  <meta name="search-keywords" content="draw_sprite_part" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_sprite_part</h1>
+  <p>Com esta função, você pode desenhar parte de qualquer duende em uma determinada posição dentro da sala. Como com <a href="draw_sprite.htm"><tt>draw_sprite()</tt></a> você pode especificar um duende e uma subimagem para desenho, então você deve dar as <i>coordenadas relativas</i> dentro do duende da área para selecionar para desenho. Isto significa que uma posição esquerda de 0 e uma posição superior de 0 seria o canto superior esquerdo do duende e todas as outras coordenadas devem ser obtidas a partir dessa posição. A imagem abaixo mostra um exemplo
+    de como isto funciona:</p>
+  <p><img alt="draw_sprite_part example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/spr_part.png">Você deve observar que se a página de textura permite o corte automático, então esta função pode não funcionar como esperado,
+    uma vez que o espaço extra &quot;vazio&quot; ao redor do duende terá sido removido para criar a página de textura. Para resolver este problema, será necessário definir as configurações da página de textura (no <a href="../../../../Settings/Texture_Groups.htm">Editor do Grupo de Textura</a>)
+    para desativar a opção <b>Corte Automático</b>.</p>
+  <p class="note"><b>NOTA</b>: Ao desenhar com esta função, o <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">desvio</a> sprite <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">x</a> e <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">y</a> são ignorados e a parte sprite será desenhada com o canto superior esquerdo na posição x / y especificada na sala.</p>
+  <p class="note"><b>NOTA</b>: Esta função é útil apenas para sprites <b>bitmap</b> e não funcionará com sprites SWF ou JSON (Espinha).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">draw_sprite_part(sprite, subimg, left, top, width, height, x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>O índice do duende a desenhar.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td>O subimg (frame) do duende a desenhar (image_index ou -1 correlacionado com o frame atual da animação no objeto).</td>
+      </tr>
+      <tr>
+        <td>esquerda</td>
+        <td>A posição x no duende do canto superior esquerdo da área a desenhar.</td>
+      </tr>
+      <tr>
+        <td>topo</td>
+        <td>A posição y no fustão do canto superior esquerdo da área a desenhar.</td>
+      </tr>
+      <tr>
+        <td>largura</td>
+        <td>A largura da área a ser desenhada.</td>
+      </tr>
+      <tr>
+        <td>altura</td>
+        <td>A altura da área a desenhar.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A coordenada x de onde desenhar o duende.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A coordenada y de onde desenhar o duende.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">draw_sprite_part(sprite_index, image_index, 4, 0, sprite_width-16, sprite_height-16, x, y );</p>
+  <p>Isso irá extrair as instâncias atribuídas ao sprite (sprite_index) e seu quadro atual de animação (image_index), no entanto, ele irá raspar uma margem de 4px da largura em ambos os lados, e uma margem de 8 pixels da altura da parte inferior do original 24x24
+    duende de píxeis.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sprites_And_Tiles.htm">Sprites e Azulejos</a></div>
+        <div style="float:right">Próximo: <a href="draw_sprite_part_ext.htm">draw_sprite_part_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite_part
+-->
+  <!-- TAGS
+draw_sprite_part
+-->
+</body>
+</html>

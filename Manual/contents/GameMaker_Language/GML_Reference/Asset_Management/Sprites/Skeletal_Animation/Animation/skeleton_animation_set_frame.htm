@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>esqueleto_estrutura_de_animação</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_animation_set_frame" />
+  <meta name="rh-index-keywords" content="skeleton_animation_set_frame" />
+  <meta name="search-keywords" content="skeleton_animation_set_frame" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>esqueleto_estrutura_de_animação</h1>
+  <p>Esta função definirá a animação atribuída à pista dada ao frame que você fornecer. O índice de quadros deve ser um valor real entre 0 e o número de quadros para a animação (que você pode obter usando a função <a href="skeleton_animation_get_frames.htm"><tt>esqueleto_animação_get_frames</tt></a>).
+    Se você fornecer um valor fora desta faixa, a animação será laçada para fazer a diferença, por exemplo, se a animação tiver 5 quadros e você definir o quadro como 8, o quadro real mostrado será 3.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">esqueleto_estrutura_de_animação_set(pista, índice);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>faixa</td>
+        <td>A trilha de animação para definir o quadro de.</td>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O novo índice para o quadro de animação.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se global.pause<br> {
+    <br> skeleton_animation_set_frame(0, -image_speed);<br> }
+  </p>
+  <p>O código acima definirá o índice de quadros para a animação na faixa 0 para a velocidade negativa da imagem quando a variável global &quot;pausa&quot; for verdadeira (essencialmente pausando a animação).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Animation.htm">Animação</a></div>
+        <div style="float:right">A seguir: <a href="../Skins/skeleton_skin_get.htm">esqueleto_esqueleto_esqueleto</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_animation_set_frame
+-->
+  <!-- TAGS
+skeleton_animation_set_frame
+-->
+</body>
+</html>

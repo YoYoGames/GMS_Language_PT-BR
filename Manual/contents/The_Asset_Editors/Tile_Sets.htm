@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Conjuntos de azulejos</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the tile set editor works" />
+  <meta name="rh-index-keywords" content="Tile Set Editor" />
+  <meta name="search-keywords" content="tiles,tile sets,tile set editor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>O Editor do Conjunto de Ladrilhos</h1>
+  <p><img alt="Tile Set Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Tilesets.png">Um <strong>conjunto de azulejos</strong> é um recurso gráfico para desenhar níveis e outros componentes estáticos de seu jogo. Um conjunto de azulejos é composto de uma única imagem
+    que é então dividida em diferentes &quot;células&quot; (azulejos), e cada azulejo pode então ser colocado no editor da sala para criar uma imagem completa. Abaixo você pode ver dois exemplos de sprites que podem ser usados como conjuntos de azulejos:</p>
+  <p><img alt="Tile Set Example" class="center" src="../assets/Images/Asset_Editors/Editor_Tilesets_Example.png" style="margin-top: -10px; margin-bottom: -20px;" /></p>
+  <p style="text-align:center;padding-top:0.5em;padding-right:1em;padding-bottom:1.5em;padding-left:1em"><span style="font-size:14px;font-style:italic">Imagens de <a href="http://www.lostgarden.com/2006/07/more-free-game-graphics.html">Lost Garden</a></span></p>
+  <p>Estas são as formas mais comuns de criar conjuntos de azulejos - todos encravados juntos ou com pequenos espaços separando-os, e o <span class="notranslate">GameMaker Studio 2</span> pode lidar com ambos os tipos. Essencialmente todos os conjuntos de azulejos devem ser compostos de imagens que cabem dentro de
+    uma grade claramente definida, sendo que cada célula da grade tem <em>exatamente o mesmo tamanho</em> (note que enquanto as imagens mostradas acima são todas compostas de azulejos quadrados, um conjunto de azulejos também pode ser feito de azulejos retangulares).</p>
+  <p>Ao criar seus conjuntos de azulejos, tenha em mente que <strong>a célula superior esquerda da grade deve estar <em>sempre </em></strong> vazia, pois este é o azulejo que o <span class="notranslate">GameMaker Studio 2</span> usará para azulejos &quot;vazios&quot; em uma sala e para apagar azulejos existentes (e até
+    se você tiver pixels nessa parte da imagem, eles serão ignorados).</p>
+  <p>Quando você criar um recurso de conjunto de azulejos pela primeira vez, a janela do Editor de Conjunto de Azulejos será aberta com as seguintes opções:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Nome</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Aqui você pode dar um nome ao seu conjunto de azulejos. Os nomes só podem ser alfanuméricos e só podem usar o símbolo abaixo da barra &quot;_&quot;, e não podem começar com um número.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Sprite</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Aqui você pode selecionar o bem patrimonial do <a href="../Quick_Start_Guide/Creating_Sprites.htm">sprite</a> a partir do qual criar nosso conjunto de azulejos. Clicando no botão principal abrirá o Asset Explorer onde você pode escolher o duende que deseja usar para o conjunto de azulejos:<br></p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/Asset_Editors/Editor_Tilesets_AssetExplorer.png" src="../assets/Images/Asset_Editors/Editor_Tilesets_AssetExplorer.png" class="center" alt="The Asset Explorer Window">Você também pode clicar no botão <strong>New Sprite</strong> <img data-cke-saved-src="../assets/Images/Icons/Icon_NewSprite.png" src="../assets/Images/Icons/Icon_NewSprite.png" width="24" height="24" alt="New Sprite Icon" class="icon"> para criar um novo recurso sprite (que abrirá o <a href="Sprites.htm">Editor Sprite</a> para o novo recurso dentro do espaço de trabalho para edição), ou você pode editar o sprite atualmente selecionado usando o botão <strong>Edit Sprite</strong> <img data-cke-saved-src="../assets/Images/Icons/Icon_EditSprite.png" src="../assets/Images/Icons/Icon_EditSprite.png" class="icon" alt="Edit Sprite Icon">, ou mesmo escolher editar a própria imagem sprite no <a href="Image_Editor.htm">Editor de Imagem</a> pressionando o botão <img data-cke-saved-src="../assets/Images/Icons/Icon_EditImage.png" src="../assets/Images/Icons/Icon_EditImage.png" alt="Edit Image Icon" class="icon">.</p>
+    <p class="dropspot">Por padrão quando você abre um conjunto de azulejos, a janela <strong>Propriedades do Conjunto de Azulejos</strong> também será mostrada (veja abaixo), mas se você fechá-lo, então você pode clicar no botão aqui para reabri-lo novamente.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Imóveis</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot"><strong></strong>A janela <strong>Propriedades do conjunto de telhas</strong> é para designar o tamanho da telha base (o padrão é 16px quadrado), a quantidade de desvio e a separação entre as telhas (estas duas últimas opções são para uso com sprites como o mostrado
+      na imagem de exemplo mais acima nesta página, onde há lacunas entre as partes individuais das telhas). Você também pode definir os valores da <strong>Borda de Saída</strong> para a imagem do conjunto de azulejos, que controla como a imagem será armazenada no disco e
+      adicionar pixels extras ao redor de cada ladrilho, conforme necessário.</p>
+    <p class="dropspot">Devido à forma como as telhas são renderizadas, elas precisam ser preparadas de antemão com uma borda ao redor de cada uma para &quot;manchar&quot; as bordas. A imagem mostrada abaixo ilustra como as telhas são geralmente mapeadas pelos drivers gráficos do dispositivo, com a linha vermelha ao redor
+      a telha mostrando para onde as coordenadas U,V são mapeadas (As letras &quot;U&quot; e &quot;V&quot; são usadas para descrever a malha de textura 2D porque &quot;X&quot;, &quot;Y&quot; e &quot;Z&quot; já são usadas para descrever espaço e objeto espacial
+      coordenadas):
+    </p>
+    <p class="dropspot"><img alt="Single Tile" class="center" src="../assets/Images/Asset_Editors/Editor_Tilesets_Single.png" style="margin-top: -20px; margin-bottom: -10px;">Como você pode ver, ele escolhe o centro do <a class="glossterm" data-glossterm="texel" href="#">texel</a> para
+      cartografar diretamente ao desenhar a imagem na sala. Agora em uma escala de 1:1, tudo isto está bem e bom, mas o que acontecerá quando dimensionarmos este azulejo para baixo? A questão com a escala para baixo é que quando você diminui a imagem, os UVs também diminuem e tentam
+      para caber em um espaço mais comprimido, mas isso obviamente não pode acontecer, então o driver gráfico escolhe quais textels desenhar com base nos centros de pixel disponíveis.</p>
+    <p class="dropspot">Portanto, se estamos &quot;apenas&quot; nos movendo para um novo pixel de tela, então, porque os drivers gráficos usam o centro do pixel para decidir com o que desenhar, ele escolherá um texel ao redor do azulejo, não um texel no próprio azulejo.</p>
+    <p class="dropspot"><img alt="Texel Tile" class="center" src="../assets/Images/Asset_Editors/Editor_Tilesets_Texel.png" style="margin-top: -20px; margin-bottom: -20px;" /></p>
+    <p class="dropspot">Mostrado acima é um azulejo sendo desenhado em 6 pixels de tela, e isso mostra que quando você se sobrepõe um pouco no próximo pixel de tela, o driver gráfico tem que fazer uma escolha entre deixar cair esse texel, ou tentar preenchê-lo com o que ele pensa
+      é um texel válido. Digamos apenas que neste caso ele decide desenhar o texel sobreposto no pixel da tela, e, como agora ele está claramente fora de nosso azulejo, ele recebe este pixel do próximo azulejo, ou dos pequenos pedaços de espaço que você
+      fornecidas ao redor das telhas, o que significa que quando encolhe, você terá rachaduras entre as telhas &quot;falhas&quot; na forma como elas são desenhadas e é aqui que surge muita confusão... Cada driver gráfico e dispositivo realmente faz isso em seu próprio
+      de maneira, o que significa que os resultados podem ser imprevisíveis e parecer terríveis... mas se você for cuidadoso e planejar com antecedência, você pode trabalhar em torno disso.</p>
+    <p class="dropspot">Com jogos de alta qualidade se você desenhar a partir de uma única textura (não em uma página de textura ou atlas de textura), você tem a opção de usar um modo de textura chamado <strong>grampo </strong>e o que isso faz é repetir a última linha de textos infinitamente fora para a
+      distância, permitindo uma escala sem problemas, pois obriga o hardware a obter a última fila de pixels, não importa o que aconteça. Isto é o que as configurações de <strong>saída de fronteira </strong>aqui fazem por você:</p>
+    <p class="dropspot"><img alt="Smear Tile" class="center" src="../assets/Images/Asset_Editors/Editor_Tilesets_Smear.png" style="margin-top: -10px;margin-bottom: 1px">Exibido acima é um duende de azulejos &quot;fixo&quot; e você pode ver que agora tem uma seção repetida ao redor
+      Cada ladrilho significa que quando o hardware for ultrapassado, ele sempre escolherá o último texel do ladrilho em vez de um dos espaços ou do ladrilho depois disso. Portanto, ao criar um conjunto de azulejos, tenha em mente que se você for ampliar a visão do jogo
+      dentro ou fora, ou que vão fazer com que as telhas sejam escalonadas, você pode precisar ter uma largura ou altura de borda de saída maior que o valor padrão de 2.</p>
+    <p class="dropspot">A seguir, você pode escolher o <strong>grupo de textura</strong> ao qual você deseja que o recurso de azulejos pertença. Basicamente, um grupo de textura (previamente definido no <a href="../Settings/Texture_Groups.htm">Gerente do Grupo de Textura</a>) é algo a que você
+      pode se configurar para que todos os recursos de imagem que você precisa para salas ou níveis específicos de seu jogo possam ser armazenados juntos. Assim, por exemplo, você pode ter todas as suas imagens de nível 1 em um grupo de textura, todas as suas imagens de nível 2 em outro etc... e <span class="notranslate">GameMaker</span>
+      O Studio 2 tentará colocar todos aqueles ativos agrupados na mesma <a class="glossterm" data-glossterm="página de textura" href="#">página de textura</a> para reduzir a troca de página de textura enquanto seu jogo estiver rodando na plataforma alvo escolhida.</p>
+    <div class="dropspotnote"><strong>NOTA</strong>: Isto pode não ser sempre necessário e o aumento de desempenho deste método dependerá se o dispositivo alvo está vinculado à CPU ou à GPU.</div>
+    <p class="dropspot">A opção final nas propriedades do conjunto de azulejos é <strong>Desabilitar a Exportação de Sprite Fonte</strong>. Isto é verificado por padrão, e o que ele faz é sinalizar o ativo sprite de origem a ser omitido quando a página de textura de seu projeto estiver sendo gerada. Isto
+      funciona sob o pressuposto de que um duende usado como um conjunto de azulejos não será usado para mais nada, e por isso só precisa ser exportado uma vez. No entanto, se você estiver usando o recurso básico de duende para qualquer outra coisa que não sejam telhas, então você gostaria de
+      desmarque isto para que o duende base <em>e o </em>conjunto de azulejos sejam ambos adicionados na página de textura em compilação.</p>
+    <p class="dropspot"><strong></strong></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Editores</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Cada um dos botões na seção <strong>Editores </strong>abrirá um editor diferente para uma funcionalidade específica do conjunto de azulejos. Você pode criar <em>escovas de </em>conjunto de azulejos com base em vários azulejos juntos, <em>azulejos animados</em>, usando azulejos diferentes
+      como molduras individuais, e você também pode criar <em>azulejos automotivos</em> que &quot;se unirão&quot; com base nos azulejos que os cercam. Cada um desses editores é explicado em detalhes nas seções ligadas no final desta página.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Caixa de ferramentas de pré-visualização</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">Estas são as ferramentas que você pode usar para pré-visualizar o sprite selecionado para o conjunto de azulejos. Estes botões controlam o nível atual de zoom de visualização e você pode usá-los para aumentar ou diminuir o zoom e clicar no botão <img alt="Zoom Reset Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_ZoomReset.png" src="../assets/Images/Icons/Icon_ZoomReset.png"> irá redefinir a visualização para 1:1 com o sprite do conjunto de azulejos sendo editado. Você também pode clicar no botão <strong>Window Fit</strong> <img data-cke-saved-src="../assets/Images/Icons/Icon_CanvasFit.png" src="../assets/Images/Icons/Icon_CanvasFit.png" alt="Canvas Fit Icon" class="icon"> para fazer com que todo o conjunto de azulejos caiba dentro da janela de pré-visualização atual (isto fará com que o zoom in/out seja o apropriado para fazê-lo caber). Note que você também pode aumentar e diminuir o zoom
+      usando o <img data-cke-saved-src="../assets/Images/Icons/Icon_Ctrl.png" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" height="20" alt="Control Icon" class="icon"> / <img data-cke-saved-src="../assets/Images/Icons/Icon_Cmd.png" src="../assets/Images/Icons/Icon_Cmd.png" width="55" height="20" alt="CMD Icon" class="icon"> e a Roda do Rato <img data-cke-saved-src="../assets/Images/Icons/Icon_MMB.png" src="../assets/Images/Icons/Icon_MMB.png" class="icon" alt="MMB Icon">, e pressionando <img data-cke-saved-src="../assets/Images/Icons/Icon_Ctrl.png" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" height="20" alt="Control Icon" class="icon"> / <img data-cke-saved-src="../assets/Images/Icons/Icon_Cmd.png" src="../assets/Images/Icons/Icon_Cmd.png" width="55" height="20" alt="CMD Icon" class="icon"> + <img data-cke-saved-src="../assets/Images/Icons/Icon_Enter.png" src="../assets/Images/Icons/Icon_Enter.png" width="55" height="20" alt="Enter Icon" class="icon"> a tela será 1:1 com o conjunto de azulejos sprite.<br></p>
+    <p class="dropspot">Outra característica é que você pode ligar ou desligar a visualização em grade, clicando no botão <img data-cke-saved-src="../assets/Images/Icons/Icon_CanvasGrid.png" src="../assets/Images/Icons/Icon_CanvasGrid.png" class="icon" alt="Grid Icon">, assim como
+      definir a cor da grade a ser utilizada (clicando no botão <img data-cke-saved-src="../assets/Images/Icons/Icon_CanvasOptions.png" src="../assets/Images/Icons/Icon_CanvasOptions.png" alt="Preview Options Button" class="icon"> ). Quando a grelha
+      está ativo, mostrará um contorno colorido para cada uma das telhas da grade, respeitando as configurações de separação, etc...</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Pré-visualização</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">Esta seção é a janela de pré-visualização do conjunto de azulejos. Para navegar pela pré-visualização, você pode usar os mesmos controles básicos dos Espaços de Trabalho gerais, ou seja: Use o botão do meio do mouse <img alt="MMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_MMB.png" src="../assets/Images/Icons/Icon_MMB.png"> e arraste para girar a pré-visualização (ou, alternativamente, use a combinação <img alt="Space Icon" class="icon" height="20" data-cke-saved-src="../assets/Images/Icons/Icon_Space.png" src="../assets/Images/Icons/Icon_Space.png" width="55"> + <img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png"> ), e você pode rolar horizontalmente com a roda do mouse <img alt="MMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_MMB.png" src="../assets/Images/Icons/Icon_MMB.png"> ou aumentar e diminuir o zoom usando a tecla <img alt="Control Icon" class="icon" height="20" data-cke-saved-src="../assets/Images/Icons/Icon_Ctrl.png" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" data-cke-saved-src="../assets/Images/Icons/Icon_Cmd.png" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> e a roda do mouse <img alt="MMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_MMB.png" src="../assets/Images/Icons/Icon_MMB.png">. Você também pode usar os diferentes botões da <strong>Caixa de ferramentas de visualização prévia</strong> para mudar o zoom e ativar/desativar a sobreposição de células da grade.</p>
+  </div>
+  <p> </p>
+  <p>Como mencionado na seção sobre <strong>Editores</strong> acima, há outras ferramentas disponíveis para editar conjuntos de azulejos e gerar <em>pincéis </em> especiais (combinações de azulejos que podem ser pintados em uma sala), azulejos <em>animados </em>e azulejos <em>automotivos</em> 
+    (que são azulejos especiais que se conectarão automaticamente quando colocados em uma sala). Cada um desses editores é explicado em profundidade a partir das páginas seguintes:</p>
+  <ul class="colour">
+    <li><a href="Tile_Set_Editors/Brush_Builder.htm">O construtor da escova</a></li>
+    <li><a href="Tile_Set_Editors/Animated_Tiles.htm">Ladrilhos Animados</a></li>
+    <li><a href="Tile_Set_Editors/Auto_Tiles.htm">Azulejos automotivos</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="The_Asset_Editors.htm">Os Editores de Ativos</a></div>
+        <div style="float:right">A seguir: <a href="Timelines.htm">Linha do tempo</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Tile Set Editor
+Tiles
+Tile Sets
+-->
+  <!-- TAGS
+tile_set_editor
+-->
+
+</body></html>

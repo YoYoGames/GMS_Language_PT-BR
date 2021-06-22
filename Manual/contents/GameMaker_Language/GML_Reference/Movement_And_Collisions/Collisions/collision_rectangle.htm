@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>colisão_rectângulo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion collision_rectangle" />
+  <meta name="rh-index-keywords" content="collision_rectangle" />
+  <meta name="search-keywords" content="collision_rectangle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>colisão_rectângulo</h1>
+  <p><span class="inline">Collision_rectangle</span> usa os primeiros quatro argumentos (x1,y1,x2,y2) para definir uma área dentro da sala atual e depois verifica se <b>algum</b> objeto que é definido pelo argumento &quot;obj&quot; está em colisão com aquele
+    área. Esta colisão pode ser verificada como precisa ou não, e você também pode optar por verificar, por exemplo, a execução do próprio código ou não. Considere esta imagem:</p>
+  <p><img alt="Collision rectangle example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/collision_rectangle_illustration.png">Aqui, a instância no meio está usando um retângulo de colisão para verificar
+    para objetos de bola. Agora, os azuis <i>não</i> têm uma caixa de delimitação precisa e, como você pode ver, mesmo que o duende não esteja realmente tocando o retângulo, a colisão ainda acontecerá (mesmo que você defina a opção precisa na função como verdadeira).
+    como a caixa de delimitação daquele duende sobreposto ao retângulo de colisão. Por outro lado, as bolas verdes só serão consideradas em colisão se o duende real sobrelaçar o retângulo. Lembre-se, para que colisões precisas sejam consideradas <i>tanto</i> o duende objeto quanto a função de colisão devem ter a marcação precisa como em cima. Deve-se observar também que o valor de retorno da função pode ser o id de <i>qualquer uma</i> das instâncias consideradas como em colisão.</p>
+  <p>Note que ao invés de um índice de objetos você pode fornecer uma instância <a href="../../Asset_Management/Instances/Instance_Variables/id.htm"><tt>id</tt></a> para verificar uma instância específica, ou as <a href="../../../GML_Overview/Instance_Keywords.htm">palavras-chave da instância</a> <span class="inline">all</span>, ou <span class="inline">other</span> (dependendo do evento e do escopo do código atual).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">collision_rectangle(x1, y1, x2, y2, obj, prec, notme);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>A coordenada x do lado esquerdo do retângulo a ser verificado.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>A coordenada y do lado superior do retângulo a verificar.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>A coordenada x do lado direito do retângulo a ser verificado.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>A coordenada y do lado inferior do retângulo a verificar.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>O objeto a ser verificado, por exemplo, colisões.</td>
+      </tr>
+      <tr>
+        <td>prec</td>
+        <td>Se a verificação é baseada em colisões precisas<tt>(verdadeiro</tt>, que é mais lento) ou em sua caixa de delimitação em geral<tt>(falso</tt>, mais rápido).</td>
+      </tr>
+      <tr>
+        <td>notme</td>
+        <td>Se a instância de chamada, se relevante, deve ser excluída<tt>(verdadeira</tt>) ou não<tt>(falsa</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Identificação da instância ou de ninguém</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var inst;<br> inst = collision_rectangle(50, 50, 200, 100, obj_Ball, false, true);<br> if inst != noone<br> {
+    <br> com (inst) instance_destroy();<br> }
+  </p>
+  <p>Este código curto usa colision_rectangle check an area in the room from 50x, 50y (top left of the rectangle) to 200x, 200y (bottom right of the rectangle) for an instance of an object called &quot;obj_ball&quot;. Ele armazena o valor de retorno em um
+    que é então verificada para ver se esse valor é um id de instância, ou a palavra-chave <a href="../../../GML_Overview/Instance_Keywords.htm"><b>noone</b></a>. Se <i>não</i> for <b>ninguém</b>, então usa a identificação da instância armazenada para destruir o objeto.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Collisions.htm">Colisões</a></div>
+        <div style="float:right">Próximo: <a href="collision_rectangle_list.htm">collision_rectangle_list</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+collision_rectangle
+-->
+  <!-- TAGS
+collision_rectangle
+-->
+</body>
+</html>

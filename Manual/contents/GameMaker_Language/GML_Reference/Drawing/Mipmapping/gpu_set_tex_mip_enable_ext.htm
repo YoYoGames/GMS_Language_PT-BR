@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_tex_mip_enable_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_tex_mip_enable_ext" />
+  <meta name="rh-index-keywords" content="gpu_set_tex_mip_enable_ext,mip_off,mip_on,mip_markedonly" />
+  <meta name="search-keywords" content="gpu_set_tex_mip_enable_ext,mip_off,mip_on,mip_markedonly" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_tex_mip_enable_ext</h1>
+  <p>Com esta função você pode definir se o mipmapping está desligado, ligado para tudo ou ligado somente para grupos de textura selecionados no <a href="../../../../Settings/Texture_Groups.htm">Gerente de Grupo de Textura</a> em um amostrador de <span class="notranslate">shader</span>. Você
+    fornecer o valor do índice para o amostrador de <span class="notranslate">sombreamento</span> (como retornado pela função <a href="../../Asset_Management/Shaders/shader_get_sampler_index.htm"><tt><span class="notranslate">shader_get_sampler_index</span>()</tt></a>e, em seguida, uma das constantes listadas abaixo.</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>mip_off</td>
+        <td>O Mipmapping está desativado.</td>
+      </tr>
+      <tr>
+        <td>mip_on</td>
+        <td>O Mipmapping para todas as texturas está habilitado.</td>
+      </tr>
+      <tr>
+        <td>mip_markedonly</td>
+        <td>O Mipmapping está habilitado para texturas que o tenham habilitado nas opções do Grupo de Textura (default).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">gpu_set_tex_mip_enable_ext(sampler_index, setting);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice_de_amostragem</td>
+        <td>O índice do amostrador de <span class="notranslate">sombreamento</span> para obter</td>
+      </tr>
+      <tr>
+        <td>cenário</td>
+        <td>A configuração do mipmap (uma constante, padrão: <tt>mip_markedonly</tt>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p><span> </span></p>
+  <h4>Exemplo:</h4>
+  <p class="code">var _sampleIndex = <span class="notranslate">shader_get_sampler_index</span>(shd_Glass, &quot;s_Background&quot;);<br> var _spriteTex = sprite_get_texture(sprite_index, 0);<br> shader_set <span class="notranslate">(shd_Glass</span>);
+    <br> if gpu_get_tex_mip_enable_ext(_sampleIndex) != mip_on<br> {
+    <br> gpu_set_tex_mip_enable_ext(_sampleIndex, mip_on);<br> }
+    <br> text_set_set_stage(_sampleIndex , _spriteTex);<br> <span class="notranslate">shader_reset</span>();
+  </p>
+  <p>O código acima permite o mipmapping para o amostrador de textura de <span class="notranslate">sombreamento</span> dado, caso ainda não tenha sido habilitado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Mipmapping.htm">Mipmapping</a></div>
+        <div style="float:right">Próximo: <a href="gpu_get_tex_mip_filter.htm">gpu_get_tex_mip_filter</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_tex_mip_enable_ext
+mip_off
+mip_on
+mip_markedonly
+-->
+  <!-- TAGS
+gpu_set_tex_mip_enable_ext
+-->
+</body>
+</html>

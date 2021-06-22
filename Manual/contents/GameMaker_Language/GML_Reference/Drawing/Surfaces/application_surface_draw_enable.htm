@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>application_surface_draw_enable</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for application_surface_draw_enable" />
+  <meta name="rh-index-keywords" content="application_surface_draw_enable" />
+  <meta name="search-keywords" content="application_surface_draw_enable" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>application_surface_draw_enable</h1>
+  <p>Você pode usar esta função para ativar ou desativar o desenho automático da superfície da aplicação. Por padrão isto está habilitado, mas em muitos casos você vai querer assumir quando e como a superfície é desenhada (ao usar <span class="notranslate">shaders</span>, por exemplo), em que caso
+    você usaria esta função para defini-la como falsa, para que você mesmo a possa desenhar quando e como você precisar. É importante notar que quando você desliga o desenho automático e desenha a superfície da aplicação você mesmo, que você pode ver certos problemas
+    com o componente alfa dos sprites e a própria superfície. Isto porque o <span class="notranslate">GameMaker Studio 2</span> desenhará a superfície de aplicação <i>sem mistura alfa</i> quando o desenho automático estiver ligado. Se você desligar o desenho automático, então você precisa
+    para lidar com isso você mesmo, usando o seguinte código (por exemplo):</p>
+  <p class="code">gpu_set_blendenable(false);<br> draw_surface_ext(application_surface, 0, 0, 1, 1, 1, 0, c_white, 1);<br> gpu_set_blendenable(true);
+  </p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">application_surface_draw_enable(flag);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>bandeira</td>
+        <td>A bandeira será ou <tt>verdadeira</tt> (ativada, o valor padrão) ou <tt>falsa</tt> (desativada).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">application_surface_draw_enable(false);</p>
+  <p>O código acima irá desligar o desenho automático da superfície da aplicação.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Surfaces.htm">Superfícies</a></div>
+        <div style="float:right">Próximo: <a href="surface_exists.htm">superfície_existe</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+application_surface_draw_enable
+-->
+  <!-- TAGS
+application_surface_draw_enable
+-->
+</body>
+</html>

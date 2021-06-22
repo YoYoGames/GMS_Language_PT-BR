@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_criate_buffer_sound</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_create_buffer_sound" />
+  <meta name="rh-index-keywords" content="audio_create_buffer_sound" />
+  <meta name="search-keywords" content="audio_create_buffer_sound,audio_mono,audio_stereo,audio_3D" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_criate_buffer_sound</h1>
+  <p>Com esta função você pode criar um novo som a partir do conteúdo de um buffer. O buffer terá sido criado anteriormente (veja as <a href="../../../Buffers/Buffers.htm">funções de buffer</a> para detalhes sobre como fazer isso), e teve dados adicionados ou
+    carregado nele. Em seguida, você o passa para esta função com o formato de dados (apenas <tt>buffer_u8</tt> ou <tt>buffer_s16</tt> são suportados atualmente), a taxa de amostragem (que pode estar entre 1000hz e 48000hz), e uma compensação no buffer para obter os dados
+    de. Você também precisa fornecer o número de amostras no tampão e os canais que o som requer. Estes canais são definidos por uma das seguintes constantes:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td><span class="inline">audio_mono</span></td>
+        <td>Áudio mono (canal único).</td>
+      </tr>
+      <tr>
+        <td><span class="inline">audio_stereo</span></td>
+        <td>Áudio estéreo (canal duplo).</td>
+      </tr>
+      <tr>
+        <td><span class="inline">audio_3D</span></td>
+        <td>áudio 3D (5.1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Observe que depois de ter criado um som, você deve liberar o índice do ponteiro associado a ele quando ele não for mais necessário usando a função <a href="audio_free_buffer_sound.htm"><tt>audio_free_buffer_sound()</tt></a>. Se você não fizer isso e
+    então reatribuir a variável ou mudar de sala, etc... a identificação sonora será perdida e você terá um vazamento de memória. Observe também que você não pode apagar o buffer se algum som tiver sido criado a partir dele e o som não tiver sido liberado primeiro. Portanto, você
+    libere primeiro o som (ou sons), <i>depois</i> apague o buffer. Também vale a pena notar que adicionar qualquer coisa ao buffer, ou mudar o tamanho do buffer, depois de ter tido um som criado a partir dele, dará resultados inesperados e não é recomendado
+    - Uma vez que você tenha começado a criar sons a partir de qualquer tampão, não deve manipulá-los de outra forma depois.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">audio_create_buffer_sound(bufferId, bufferFormat, bufferRate, bufferOffset, bufferLength, bufferChannels);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>bufferId</td>
+        <td>A identificação do buffer a ser utilizado.</td>
+      </tr>
+      <tr>
+        <td>bufferFormat</td>
+        <td>O formato dos dados no buffer<tt>(buffer_u8</tt> ou <tt>buffer_s16</tt>).</td>
+      </tr>
+      <tr>
+        <td>bufferRate</td>
+        <td>A taxa de amostragem dos dados no buffer.</td>
+      </tr>
+      <tr>
+        <td>bufferOffset</td>
+        <td>A compensação para o buffer para ler os dados da amostra (em bytes).</td>
+      </tr>
+      <tr>
+        <td>comprimento do buffer</td>
+        <td>O comprimento do buffer (o número de bytes de dados de áudio, excluindo o cabeçalho).</td>
+      </tr>
+      <tr>
+        <td>Canais-tampãoCanais de segurança</td>
+        <td>Os canais a serem utilizados a partir de uma das constantes listadas abaixo.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Inteiro (Sound ID)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var rate = 44100;<br> var hertz = irandom_range(220, 880);<br> var samples = 44100;<br> var bufferId = buffer_create(rate, buffer_fast, 1);<br> var buffer_seek(bufferId, buffer_seek_start, 0);<br> var num_to_write = rate / hertz;<br> var length
+    = buffer_get_size(bufferId) ;<br> var val_to_write = 1;<br> for (var i = 0; i &lt; (samples / num_to_write) + 1; i++;) <br> {
+    <br> for (var j = 0; j &lt; num_to_write; j++;)<br> {
+    <br> buffer_write(bufferId, buffer_u8, val_to_write * 255);<br> }
+    <br> val_to_write = (1 - val_to_write);<br> }
+    <br> soundId = audio_create_buffer_sound(bufferId, buffer_u8, rate, 0, length, audio_stereo);</p>
+  <p>O acima exposto cria um buffer e, em seguida, processa-o com dados. Estes dados são então usados para criar um novo som, que é armazenado na variável &quot;soundId&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Audio.htm">Buffers de áudio</a></div>
+        <div style="float:right">Próximo: <a href="audio_free_buffer_sound.htm">audio_free_buffer_sound</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_create_buffer_sound
+audio_mono
+audio_stereo
+audio_3D
+-->
+  <!-- TAGS
+audio_create_buffer_sound
+-->
+</body>
+</html>

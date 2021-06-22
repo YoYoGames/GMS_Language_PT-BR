@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_queue_copy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_queue_copy" />
+  <meta name="rh-index-keywords" content="ds_queue_copy" />
+  <meta name="search-keywords" content="ds_queue_copy" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_queue_copy</h1>
+  <p>Esta função pode ser usada para copiar o conteúdo de uma fila para outra. Note que isto <i>NÃO</i> remove o conteúdo da fila original, nem destrói a fila original. Ao usar esta função, a fila para a qual está sendo copiado deve ter
+    foi previamente criada e se continha algum item antes da cópia, então estes serão limpos primeiro (significando que esta informação será perdida).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">ds_queue_copy(id, fonte);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>A identificação da NOVO fila.</td>
+      </tr>
+      <tr>
+        <td>fonte</td>
+        <td>A fila ORIGINAL para copiar para a identificação.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">com (instance_create_layer(x, y, &quot;Enemies&quot;, obj_Enemy))<br> {
+    <br> queue = ds_queue_create();<br> ds_queue_copy(queue, other.queue);<br> }
+  </p>
+  <p>A função acima cria uma nova instância e, nessa instância, cria uma nova fila de DS e copia o conteúdo da fila na instância que executa o bloco de código, para a fila da instância recém-criada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="DS_Queues.htm">Filas de DS</a></div>
+        <div style="float:right">Próximo: <a href="ds_queue_read.htm">ds_queue_read</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_queue_copy
+-->
+  <!-- TAGS
+ds_queue_copy
+-->
+
+</body></html>

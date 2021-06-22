@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_sprite_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_sprite_ext" />
+  <meta name="rh-index-keywords" content="draw_sprite_ext" />
+  <meta name="search-keywords" content="draw_sprite_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_sprite_ext</h1>
+  <p>Esta função desenhará o duende dado como na função <a href="draw_sprite.htm"><tt>draw_sprite()</tt></a> mas com opções adicionais para mudar a escala, mistura, rotação e alfa do duende a ser desenhado. A mudança destes valores <i>não</i> altera o recurso de forma alguma (apenas como ele é desenhado), e você pode usar qualquer uma das <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm">variáveis sprite</a> disponíveis em vez de valores diretos para todos os
+    argumentos na função. A imagem abaixo ilustra como valores diferentes afetam o desenho do duende:</p>
+  <p><img alt="sraw_sprite_ext examples" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/spr_ext.png" /></p>
+  <p class="note"><b>NOTA</b>: A mistura de cores só é recomendada para o alvo HTML5 quando a WebGL está habilitada, embora você ainda possa definir a cor da mistura se ela não estiver habilitada e ela irá misturar o sprite como normal. Entretanto, toda mistura desta forma cria uma duplicata
+    sprite, que é então armazenado no cache e utilizado quando necessário. Isto está longe de ser ideal e se você usar mudanças múltiplas de cor, isso irá diminuir o desempenho de seus jogos a menos que você ative o WebGL. se você não quiser usar o WebGL, então você pode definir
+    o tamanho do cache da fonte para tentar limitá-lo, caso seja necessário, utilizando a função <span style="font-size:1px;"><a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_set_cache_size_ext.htm"><tt style="font-size: 14px">sprite_set_cache_size_size()</tt></a></span>.</p>
+  <p class="note"><b>NOTA</b>: Esta função pode não funcionar como esperado ao usar sprites de animação de esqueleto, e você pode descobrir que a função apenas desenha o primeiro frame da pose padrão. Você deve usar as funções <tt>draw_skeleton_*</tt> em seu lugar.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">draw_sprite_ext( sprite, subimg, x, y, xscale, yscale, podridão, cor, alfa );</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>O índice do duende a desenhar.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td>O subimg (frame) do duende a desenhar (image_index ou -1 correlacionado com o frame atual da animação no objeto).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A coordenada x de onde desenhar o duende.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A coordenada y de onde desenhar o duende.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>A escalada horizontal do duende, como um multiplicador: 1 = escalada normal, 0,5 é metade, etc...</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>A escalada vertical do duende como um multiplicador: 1 = escalada normal, 0,5 é metade, etc...</td>
+      </tr>
+      <tr>
+        <td>podridão</td>
+        <td>A rotação do duende. 0=direita para cima, 90=rotated 90 graus no sentido anti-horário, etc...</td>
+      </tr>
+      <tr>
+        <td>cor</td>
+        <td>A cor com a qual se deve misturar o duende. <tt>c_white</tt> é para exibi-lo normalmente.</td>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>O alfa do duende (de 0 a 1 onde 0 é transparente e 1 opaco).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);</p>
+  <p>Isto atrairá as instâncias atribuídas ao sprite com todos os seus valores padrão (essencialmente o mesmo que usar <tt>o draw_self</tt>).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sprites_And_Tiles.htm">Sprites e Azulejos</a></div>
+        <div style="float:right">A seguir: <a href="draw_sprite_general.htm">draw_sprite_general</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite_ext
+-->
+  <!-- TAGS
+draw_sprite_ext
+-->
+</body>
+</html>

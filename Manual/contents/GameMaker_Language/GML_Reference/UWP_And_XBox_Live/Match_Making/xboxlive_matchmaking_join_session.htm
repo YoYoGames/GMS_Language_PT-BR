@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_matchmaking_join_session</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_matchmaking_join_session" />
+  <meta name="rh-index-keywords" content="xboxlive_matchmaking_join_session,MATCHMAKING_SESSION" />
+  <meta name="search-keywords" content="xboxlive_matchmaking_join_session,MATCHMAKING_SESSION" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_matchmaking_join_session</h1>
+  <p>Esta função permite que você participe de uma sessão específica através de uma alavanca de sessão. Isto é semelhante a um convite para uma sessão, mas é útil quando você tem seu próprio servidor realizando o matchmaking em vez de confiar no xbox live matchmaking.</p>
+  <p>A função exige que você forneça o ID do usuário - que você pode recuperar para um determinado bloco de jogo, chamando o <a href="../Users_And_Accounts/xboxlive_user_for_pad.htm"><tt>xboxlive_user_for_pad()</tt></a> função - assim como o Dispositivo Seguro
+    Modelo de associação, que você deveria ter criado previamente no painel de controle do XDP.</p>
+  <p>Para a sessão, você precisará primeiro ter recuperado o &quot;id de correlação&quot; da sessão à qual você deseja participar. Quando a sessão original for criada, o evento social assíncrono será &quot;<tt>session_created&quot; e</tt> ele
+    incluir uma entrada &quot;<b>correlationid</b>&quot; no mapa retornado (ver <a href="xboxlive_matchmaking_create.htm"><tt>xboxlive_matchmaking_create()</tt></a>). Você precisará ter esta identificação passada de volta para o servidor para que ela seja então passada quando
+    recebendo um pedido de matchmaking. Uma vez que o jogo de junção tenha recebido o &quot;ID de correlação&quot; de volta do servidor, eles podem então chamar esta função passando o ID de correlação como o argumento de tratamento da sessão.</p>
+  <p>A função retornará -1 se houver um erro (caso em que deve haver uma saída de console detalhando o problema), ou um valor de ID de solicitação de outra forma. O valor do ID de Solicitação pode então ser usado para identificar o <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">Evento Assíncrono Social</a> correto para esta função. Este evento será acionado quando a sessão tiver sido criada e conterá um Mapa DS na variável <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> com o seguinte
+    pares chave/valor:</p>
+  <ul class="colour">
+    <li>&quot;requestid&quot;<b>-</b> contém a identificação do pedido conforme retornado pela função de chamada</li>
+    <li>&quot;<b>status&quot; -</b> contém a seqüência &quot;session_player_joined&quot; para informá-lo sobre que tipo de evento foi acionado.</li>
+    <li>&quot;<b>sessionid&quot; -</b> contém o ID da sessão, ou -1 em caso de falha.</li>
+    <li>&quot;<b>sessionOwner&lt; index&gt; &quot;<i>-</i></b> contém o ID do host da sessão se uma sessão tiver sido encontrada (&lt; index&gt; é um valor<i>de 0</i> a &quot;num_resultados&quot; - 1)</li>
+    <li>&quot; id&quot; - contém a constante SESSÃO_DE_CONTECIMENTO</li>
+    <li>&quot; erro<b>&quot; -</b> será 0 se tudo estiver bem, ou -1 se algo falhar</li>
+  </ul>
+  <p>Quando um novo jogador entra na sessão, o mapa DS terá estes pares chave/valor:</p>
+  <ul class="colour">
+    <li>&quot; id&quot; - contém a constante SESSÃO_DE_CONTECIMENTO</li>
+    <li>&quot;<b>sessionid&quot; -</b> contém o ID da sessão</li>
+    <li>&quot;<b>status&quot; -</b> contém a seqüência &quot;session_player_joined&quot;.</li>
+    <li>&quot;requestid&quot;<b>-</b> O valor de identificação que foi devolvido pela função que criou o pedido</li>
+  </ul>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">xboxlive_matchmaking_join_session(user_id, session_handle, sdatemplate);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>O ponteiro de identificação do usuário a ser usado</td>
+      </tr>
+      <tr>
+        <td>session_handle</td>
+        <td>O &quot;ID de correlação&quot; a ser usado para a identificação da sessão (ver descrição, acima)</td>
+      </tr>
+      <tr>
+        <td>sdatemplate</td>
+        <td>O nome do modelo de associação de dispositivo seguro a ser usado</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Solicitar ID (número inteiro)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">Request_ID = xboxlive_matchmaking_join_session(global.UserID, global.SessionID, &quot;PeerServerTraffic&quot;);</p>
+  <p>O acima mencionado enviará uma solicitação para participar da sessão multiplayer em questão, armazenando o valor de identificação da solicitação em uma variável para que possa ser verificada no evento assíncrono.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Match_Making.htm">Fósforos</a></div>
+        <div style="float:right">Próximo: <a href="xboxlive_matchmaking_session_leave.htm">xboxlive_matchmaking_session_leave</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_matchmaking_join_session
+MATCHMAKING_SESSION
+-->
+  <!-- TAGS
+xboxlive_matchmaking_join_session
+-->
+</body>
+</html>

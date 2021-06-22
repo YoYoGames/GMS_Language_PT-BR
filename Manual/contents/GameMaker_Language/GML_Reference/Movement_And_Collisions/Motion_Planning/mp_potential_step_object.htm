@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_potencial_objecto_de_passo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_potential_step_object" />
+  <meta name="rh-index-keywords" content="mp_potential_step_object" />
+  <meta name="search-keywords" content="mp_potential_step_object" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_potencial_objecto_de_passo</h1>
+  <p>Esta função permite à instância dar um passo em direção a uma determinada posição definida por xgoal/ygoal, sempre tentando evitar obstáculos. Quando a instância se deparar com uma instância do objeto especificado pelo argumento &quot;obj&quot;, ela mudará
+    a direção do movimento para tentar evitar essa instância e se movimentar em torno dela. Esta abordagem não é garantia de funcionar, mas, na maioria dos casos fáceis, ela moverá efetivamente a instância em direção ao objetivo. A função retorna se o objetivo foi alcançado ou não.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">mp_potencial_objeto_de_passo(xgoal, ygoal, stepize, obj)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>xgoal</td>
+        <td>A posição alvo x.</td>
+      </tr>
+      <tr>
+        <td>ygoal</td>
+        <td>A posição y alvo.</td>
+      </tr>
+      <tr>
+        <td>stepsize</td>
+        <td>A velocidade que a instância se move em pixels por passo.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>O objetivo que é bloquear o caminho da instância que está executando a função. Pode ser um índice de objeto, um id de instância ou a palavra-chave especial<b>, tudo isso</b>.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if instance_exists(obj_Enemy)<br> {
+    <br> var inst;<br> inst = instance_nearest(x, y, obj_Enemy);<br> mp_potential_step_object(inst.x, inst.y, 5, obj_Wall);<br> }
+  </p>
+  <p>O código acima verifica primeiro se há alguma instância de &quot;obj_Enemy&quot; na sala. Se houver, então encontra o mais próximo e armazena sua identificação em uma variável. Esta variável é então usada para dizer <tt>mp_potential_step_object</tt> para mover
+    a instância com o código em direção à posição x/y do objeto que foi encontrado a uma velocidade de 5 pixels por passo, evitando apenas instâncias do objeto &quot;obj_Wall&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Motion_Planning.htm">Planejamento de Movimento</a></div>
+        <div style="float:right">A seguir: <a href="mp_potential_path.htm">mp_potencial_path</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_potential_step_object
+-->
+  <!-- TAGS
+mp_potential_step_object
+-->
+</body>
+</html>

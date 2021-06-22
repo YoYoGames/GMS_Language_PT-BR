@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_sprite_general</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_sprite_general" />
+  <meta name="rh-index-keywords" content="draw_sprite_general" />
+  <meta name="search-keywords" content="draw_sprite_general" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_sprite_general</h1>
+  <p>Esta função combina a função <a href="draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a> com a função <a href="draw_sprite_part.htm"><tt>draw_sprite_part()</tt></a>de modo que cada canto do
+    A parte final do duende pode ser misturada com uma cor individual.</p>
+  <p class="note"><b>NOTA</b>: A mistura de cores só é recomendada para o alvo HTML5 quando a WebGL está habilitada, embora você ainda possa definir a cor da mistura se ela não estiver habilitada e ela irá misturar o sprite como normal. Entretanto, toda mistura desta forma cria uma duplicata
+    sprite, que é então armazenado no cache e utilizado quando necessário. Isto está longe de ser ideal e se você usar mudanças múltiplas de cor, isso irá diminuir o desempenho de seus jogos a menos que você ative o WebGL. se você não quiser usar o WebGL, então você pode definir
+    o tamanho do cache da fonte para tentar limitá-lo, caso seja necessário, utilizando a função <span style="font-size:1px;"><a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_set_cache_size_ext.htm"><tt style="font-size: 14px">sprite_set_cache_size_size()</tt></a></span>.</p>
+  <p class="note"><b>NOTA</b>: Esta função pode não funcionar como esperado ao usar sprites de animação de esqueleto, e você pode descobrir que a função apenas desenha o primeiro frame da pose padrão. Você deve usar as funções <tt>draw_skeleton_*</tt> em seu lugar.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">draw_sprite_general(sprite, subimg, left, top, width, height, x, y, xscale, yscale, yscale, rot, c1, c2, c3, c4, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>O índice do duende a desenhar.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td>O subimg (frame) do duende a desenhar (image_index ou -1 correlacionado com o frame atual da animação no objeto).</td>
+      </tr>
+      <tr>
+        <td>esquerda</td>
+        <td>A posição x no duende do canto superior esquerdo da área a desenhar.</td>
+      </tr>
+      <tr>
+        <td>topo</td>
+        <td>A posição y no fustão do canto superior esquerdo da área a desenhar.</td>
+      </tr>
+      <tr>
+        <td>largura</td>
+        <td>A largura da área a ser desenhada.</td>
+      </tr>
+      <tr>
+        <td>altura</td>
+        <td>A altura da área a desenhar.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A coordenada x de onde desenhar o duende.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A coordenada y de onde desenhar o duende.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>A escalada horizontal do duende, como um multiplicador: 1 = escalada normal, 0,5 é metade, etc...</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>A escalada vertical do duende, como um multiplicador: 1 = escalada normal, 0,5 é metade etc...</td>
+      </tr>
+      <tr>
+        <td>podridão</td>
+        <td>A rotação do duende. 0=normal, 90=voltada 90 graus no sentido anti-horário, etc.</td>
+      </tr>
+      <tr>
+        <td>c1</td>
+        <td>A cor com a qual se mistura a área superior esquerda do duende.</td>
+      </tr>
+      <tr>
+        <td>c2</td>
+        <td>A cor com a qual se mistura a área superior direita do duende.</td>
+      </tr>
+      <tr>
+        <td>c3</td>
+        <td>A cor com a qual se mistura a área inferior direita do duende.</td>
+      </tr>
+      <tr>
+        <td>c4</td>
+        <td>A cor com a qual se mistura a área inferior esquerda do duende.</td>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>O alfa do duende (de 0 a 1 onde 0 é transparente e 1 opaco).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">draw_sprite_general(sprite_index, image_index, 8, 8, sprite_width-16, sprite_height-16, x, y, 2, 0,5, 180, c_white, c_white, c_black, c_black, 1);</p>
+  <p>Isto atrairá as instâncias atribuídas ao duende (sprite_index) e seu quadro atual de animação (image_index), porém raspará uma margem de 8px em todos os quatro lados do duende. Ele será esticado para dobrar sua largura habitual, mas metade de sua altura habitual.
+    Será opaco, e de cabeça para baixo. A área superior do duende será branca e, portanto, normal, mas a área inferior será preta, o que significa que o duende passará de normal para uma silhueta para baixo em um gradiente suave.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sprites_And_Tiles.htm">Sprites e Azulejos</a></div>
+        <div style="float:right">Próximo: <a href="draw_sprite_part.htm">draw_sprite_part</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite_general
+-->
+  <!-- TAGS
+draw_sprite_general
+-->
+</body>
+</html>

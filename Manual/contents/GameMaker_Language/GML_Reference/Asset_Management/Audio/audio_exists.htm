@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_existe</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_exists" />
+  <meta name="rh-index-keywords" content="audio_exists" />
+  <meta name="search-keywords" content="audio_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_existe</h1>
+  <p>Esta função retorna se um som existe<tt>(verdadeiro</tt>) ou não<tt>(falso</tt>). Note que se o índice que você procura não foi rubricado anteriormente, esta função causará um erro, pois está procurando por índices de ativos inexistentes. O
+    som a ser verificado pode ser uma única instância de um som (o índice de sons individuais que estão sendo reproduzidos pode ser armazenado em uma variável ao usar o <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a> ou <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a> funções)
+    ou um bem sólido.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">audio_exists(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice do som para verificar a existência de.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se o audio_existe(global.Music)<br> {
+    <br> audio_play_sound(global.Music, 0, true);<br> }
+  </p>
+  <p>O código acima verifica se existe um som. Se existir, ele é ajustado para tocar em loop.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Audio.htm">Áudio</a></div>
+        <div style="float:right">Próximo: <a href="audio_get_name.htm">audio_get_name</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_exists
+-->
+  <!-- TAGS
+audio_exists
+-->
+</body>
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_tilemap</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_tilemap" />
+  <meta name="rh-index-keywords" content="draw_tilemap" />
+  <meta name="search-keywords" content="draw_tilemap" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_tilemap</h1>
+  <p>Esta função pode ser usada para desenhar um determinado mapa de azulejos em qualquer parte da sala. Você dá o ID do elemento do mapa de azulejos (que você obtém quando cria um elemento do mapa de azulejos usando <a href="../../Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a>    ou quando você usa a função <a href="../../Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>), depois dar a posição x/y para desenho (na sala). Note que isto simplesmente desenhará o mapa de azulejos em
+    o ponto especificado, usando a profundidade da camada da instância que está chamando a função. Ele <i>não</i> move o mapa de azulejos - nem o altera de forma alguma - e importa se o mapa de azulejos está sinalizado como visível ou não.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">draw_tilemap(tilemap_element_id, x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tilemap_element_id</td>
+        <td>O valor de identificação único do elemento do mapa de azulejos para obter a posição da célula y de</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A posição x dentro da sala para desenhar em</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A posição y dentro da sala para desenhar em</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Tiles_Effects&quot;);<br> var map_id = layer_tilemap_get_id(lay_id);<br> draw_tilemap(map_id, mouse_x, mouse_y);</p>
+  <p>O código acima obtém o ID da camada e depois o usa para obter um ID específico do mapa de azulejos que, por sua vez, é usado para desenhar o mapa de azulejos na posição do mouse.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sprites_And_Tiles.htm">Sprites e Azulejos</a></div>
+        <div style="float:right">Próximo: <a href="draw_self.htm">draw_self</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_tilemap
+-->
+  <!-- TAGS
+draw_tilemap
+-->
+</body>
+</html>

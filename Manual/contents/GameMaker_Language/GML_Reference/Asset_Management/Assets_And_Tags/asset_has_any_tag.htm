@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ativo_ tem_qualquer_e_etiqueta</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function asset_has_any_tag" />
+  <meta name="rh-index-keywords" content="asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence,asset_has_any_tag" />
+  <meta name="search-keywords" content="asset_object,asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence,asset_has_any_tag" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ativos_etags_de_benefícios</h1>
+  <p>Com esta função você pode verificar se uma ou mais cadeias de tags são atribuídas a qualquer ativo a partir do navegador de ativos. Você fornece o nome do ativo (como uma string) ou seu índice de ativos, assim como uma única tag string ou uma matriz onde cada item
+    é uma única cadeia de etiquetas. Se você fornecer um valor de índice de ativos, então você precisará fornecer o argumento do tipo de ativo opcional (uma constante), pois ativos de tipos diferentes podem ter o mesmo índice, mesmo que não possam ter o mesmo nome. Os ativos disponíveis
+    Os tipos de ativos estão listados na tabela abaixo:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>asset_object</td>
+        <td>O nome dado refere-se a um <a href="../../../../The_Asset_Editors/Objects.htm">objeto</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_sprite</td>
+        <td>O nome dado refere-se a um <a href="../../../../The_Asset_Editors/Sprites.htm">duende</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_sound</td>
+        <td>O nome dado refere-se a um <a href="../../../../The_Asset_Editors/Sounds.htm">som</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_room</td>
+        <td>O nome dado refere-se a uma <a href="../../../../The_Asset_Editors/Rooms.htm">sala</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_tiles</td>
+        <td>O nome dado refere-se a um <a href="../../../../The_Asset_Editors/Tile_Sets.htm">conjunto de azulejos</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_path</td>
+        <td>O nome dado refere-se a um <a href="../../../../The_Asset_Editors/Paths.htm">caminho</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_script</td>
+        <td>O nome dado refere-se a um <a href="../../../../The_Asset_Editors/Scripts.htm">roteiro</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_font</td>
+        <td>O nome dado refere-se a uma <a href="../../../../The_Asset_Editors/Fonts.htm">fonte</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_timeline</td>
+        <td>O nome dado refere-se a uma <a href="../../../../The_Asset_Editors/Timelines.htm">linha de tempo</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_shader</td>
+        <td>O nome dado refere-se a um <a href="../../../../The_Asset_Editors/Shaders.htm"><span class="notranslate">shader</span></a>.</td>
+      </tr>
+      <tr>
+        <td>asset_animationcurve</td>
+        <td>O nome dado refere-se a uma <a href="../../../../The_Asset_Editors/Animation_Curves.htm">Curva de Animação</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_sequence</td>
+        <td>O nome dado refere-se a uma <a href="../../../../The_Asset_Editors/Sequences.htm">sequência</a>.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Se a função for bem sucedida e uma ou mais das etiquetas estiver presente para o bem, então ela retornará <tt>verdadeira</tt>, caso contrário, retornará <tt>falsa</tt>. Se você precisar verificar uma correspondência exata com qualquer tag ou conjunto de tags, então use a função
+    <a href="asset_has_tags.htm"><tt>asset_has_tags()</tt></a>.</p>
+  <p> </p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">asset_has_any_tag(name_or_index, tags, [asset_type]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>nome_ou_index</td>
+        <td>O nome do bem (uma cadeia) ou seu valor de índice (um número inteiro).</td>
+      </tr>
+      <tr>
+        <td>etiquetas</td>
+        <td>Uma única cadeia de tags de ativos ou uma matriz com várias tags de ativos.</td>
+      </tr>
+      <tr>
+        <td>[asset_type]</td>
+        <td>OPCIONAL! O tipo de bem a ser verificado pelas etiquetas, usado somente quando se fornece um índice para o primeiro argumento.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var _a = array_create(3);<br> _a[0] = &quot;chefe&quot;;<br> _a[1] = &quot;chefe_principal&quot;;<br> _a[2] = &quot;chefe_final&quot;;<br> if asset_has_any_tag(object_index, _a, asset_object)<br> {
+    <br> instance_create_layer(0, 0, &quot;Overlay&quot;, obj_Boss_Text);<br> }
+  </p>
+  <p>O código acima criará um conjunto de tags e então verificará se alguma delas é aplicada ao objeto em questão, e se são, criará uma instância de outro objeto.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Assets_And_Tags.htm">Ativos e Etiquetas</a></div>
+        <div style="float:right">Próxima: <a href="asset_clear_tags.htm">marcas_de_activo</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+asset_has_tags
+asset_object
+asset_sprite
+asset_sound
+asset_room
+asset_tiles
+asset_path
+asset_script
+asset_font
+asset_timeline
+asset_<span class="notranslate">shader</span>
+asset_animationcurve
+asset_sequence
+-->
+  <!-- TAGS
+asset_has_tags
+-->
+</body>
+</html>

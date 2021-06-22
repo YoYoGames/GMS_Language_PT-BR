@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tipo_parte</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_type_shape" />
+  <meta name="rh-index-keywords" content="part_type_shape,pt_shape_pixel,pt_shape_disk,pt_shape_square,pt_shape_line,pt_shape_star,pt_shape_circle,pt_shape_ring,pt_shape_sphere,pt_shape_flare,pt_shape_spark,pt_shape_explosion,pt_shape_cloud,pt_shape_smoke,pt_shape_snow" />
+  <meta name="search-keywords" content="part_type_shape,pt_shape_pixel,pt_shape_disk,pt_shape_square,pt_shape_line,pt_shape_star,pt_shape_circle,pt_shape_ring,pt_shape_sphere,pt_shape_flare,pt_shape_spark,pt_shape_explosion,pt_shape_cloud,pt_shape_smoke,pt_shape_snow" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tipo_parte</h1>
+  <p>Com esta função você pode definir a forma do duende a ser usado para o tipo de partícula, sendo aceitáveis as seguintes constantes:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>pt_shape_pixel</td>
+        <td>Um pixel de 1x1 pixel. (Esta é a configuração padrão).</td>
+      </tr>
+      <tr>
+        <td>pt_shape_disk</td>
+        <td>Um círculo preenchido.</td>
+      </tr>
+      <tr>
+        <td>pt_shape_square</td>
+        <td>Um quadrado cheio.</td>
+      </tr>
+      <tr>
+        <td>pt_shape_line</td>
+        <td>Uma linha horizontal de 8px de largura.</td>
+      </tr>
+      <tr>
+        <td>pt_shape_star</td>
+        <td>Uma estrela cheia de cinco pontos.</td>
+      </tr>
+      <tr>
+        <td>pt_shape_circle</td>
+        <td>Um círculo de 3px delineado.</td>
+      </tr>
+      <tr>
+        <td>pt_shape_ring</td>
+        <td>Um círculo com um brilho interior (parece uma bolha).</td>
+      </tr>
+      <tr>
+        <td>pt_shape_sphere</td>
+        <td>Um círculo com um "brilho para fora" sólido no meio, brilhando para fora.</td>
+      </tr>
+      <tr>
+        <td>pt_shape_flare</td>
+        <td>Um ponto de brilho intenso (parece uma estrela de verdade na noite).</td>
+      </tr>
+      <tr>
+        <td>pt_shape_spark</td>
+        <td>Um "efeito de faísca" como uma estrela com múltiplos pontos se desvanecendo.</td>
+      </tr>
+      <tr>
+        <td>pt_shape_explosion</td>
+        <td>Uma "nuvem quadrada de fumaça" requer múltiplas cores para assemelhar-se a uma explosão.</td>
+      </tr>
+      <tr>
+        <td>pt_shape_cloud</td>
+        <td>Uma nuvem fina, requer escalada e múltiplas partículas para se assemelhar a uma nuvem.</td>
+      </tr>
+      <tr>
+        <td>pt_shape_smoke</td>
+        <td>Uma versão suave do efeito de explosão. Use múltiplos para criar uma nuvem de fumaça.</td>
+      </tr>
+      <tr>
+        <td>pt_shape_snow</td>
+        <td>Uma forma genérica de floco de neve.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><img alt="Particle Shapes" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Particle_Sprites.png" /></p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">part_type_shape(ind, shape);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>O índice do tipo de partícula a definir.</td>
+      </tr>
+      <tr>
+        <td>forma</td>
+        <td>A forma a escolher.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">global.p1 = part_type_create();<br> part_type_shape(global.p1, pt_shape_square);<br> part_type_size(global.p1, 1, 3, 0, 0, 0);<br> part_type_scale(global.p1, 1, 1);<br> part_type_colour1(global.p1, c_white);<br> part_type_alpha2(global.p1, 1, 0);<br> part_type_speed(global.p1, 2, 4, 0, 0, 0);<br> part_type_direction(global.p1, 0, 180, 0, 0, 0);<br> part_type_gravity(global.p1, 0.20, 270);<br> part_type_orientation(global.p1, 0, 0, 0, 0, 0, 1);<br> part_type_blend(global.p1, 1);<br> part_type_life(global.p1,
+    15, 60);</p>
+  <p>O código acima define o tipo de partícula indexada na variável global &quot;p1&quot; para a forma de um quadrado, depois define várias outras propriedades de partícula.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Particle_Types.htm">Tipos de Partículas</a></div>
+        <div style="float:right">Próximo: <a href="part_type_sprite.htm">part_type_sprite</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_type_shape
+pt_shape_pixel
+pt_shape_disk
+pt_shape_square
+pt_shape_line
+pt_shape_star
+pt_shape_circle
+pt_shape_ring
+pt_shape_sphere
+pt_shape_flare
+pt_shape_spark
+pt_shape_explosion
+pt_shape_cloud
+pt_shape_smoke
+pt_shape_snow
+-->
+  <!-- TAGS
+part_type_shape
+-->
+</body>
+</html>

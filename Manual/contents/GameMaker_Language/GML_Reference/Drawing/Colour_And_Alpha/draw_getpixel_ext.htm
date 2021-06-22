@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_getpixel_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section the function draw_getpixel_ext" />
+  <meta name="rh-index-keywords" content="draw_getpixel_ext" />
+  <meta name="search-keywords" content="draw_getpixel_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_getpixel_ext</h1>
+  <p>Com esta função você pode obter o valor total <b>abgr 32bit</b> de qualquer pixel que esteja sendo atraído para o alvo de renderização atual. Isto significa que os resultados dependerão do evento em que a função for chamada, e também da superfície do alvo ser
+    usado.</p>
+  <p class="note"><b>OBSERVAÇÃO</b>: Esta função causará um grande impacto no desempenho e, portanto, só deve ser usada quando absolutamente necessário.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">draw_getpixel_ext(x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A coordenada x do pixel a verificar</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A coordenada y do pixel a verificar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">col = draw_getpixel_ext(mouse_x, mouse_y);<br> alfa = (col &gt;&gt; 24) &amp; 255;<br> azul = (col &gt;&gt; 16) &amp; 255;<br> verde = (col &gt;&gt; 8) &amp; 255;<br> vermelho = col &amp; 255;</p>
+  <p>O código acima obterá o valor da cor de 32 bits na posição do mouse e depois o dividirá em seus valores componentes, armazenando-os em variáveis.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Colour_And_Alpha.htm">Cor e Alfa</a></div>
+        <div style="float:right">Próximo: <a href="draw_get_colour.htm">draw_get_colour</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_getpixel_ext
+-->
+  <!-- TAGS
+draw_getpixel_ext
+-->
+</body>
+</html>

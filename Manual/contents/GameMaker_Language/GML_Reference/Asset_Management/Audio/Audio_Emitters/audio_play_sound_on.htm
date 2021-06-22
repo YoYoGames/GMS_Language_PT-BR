@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_play_sound_on</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_play_sound_on" />
+  <meta name="rh-index-keywords" content="audio_play_sound_on" />
+  <meta name="search-keywords" content="audio_play_sound_on" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_play_sound_on</h1>
+  <p>Com esta função você pode tocar qualquer recurso sonoro através de um emissor, com qualquer mudança no ganho do emissor, posição, tom ou velocidade afetando a forma como o usuário ouve o som final sendo tocado. Você fornece o índice do emissor a ser utilizado, o índice do som
+    do som a ser tocado e depois especificar se o som deve ou não ser laçoado. Finalmente, pode-se atribuir uma prioridade, que é então usada para determinar como os sons são tratados quando o número de sons tocados está acima do limite estabelecido pela função 
+    <a href="../audio_channel_num.htm"><tt>audio_channel_num()</tt></a>. Sons de prioridade mais baixa serão interrompidos em favor de sons de prioridade mais alta, e o valor da prioridade pode ser qualquer número real (o valor real é arbitrário, e pode ser de 0 a 1 ou 0 a 100, pois o <span class="notranslate">GameMaker Studio 2</span> 
+      dar-lhes a mesma prioridade). Observe que, quando se trata de prioridade, quanto <i>maior</i> o número, <i>maior</i> será a prioridade, de tal forma que um som com prioridade 100 será favorecido em relação a um som com
+      prioridade 1.</p>
+  <p>Esta função também retornará um número de índice único para o som que está sendo tocado, que pode então ser armazenado em uma variável para que você possa pausá-lo ou pará-lo com as funções apropriadas. Isto significa que se você tiver múltiplas instâncias do mesmo
+    som tocado a qualquer momento, você pode direcionar apenas uma instância desse som para lidar com o uso das funções de áudio.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">audio_play_sound_on(emissor, som, loop, prioridade);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>emissora</td>
+        <td>O índice do emissor a ser utilizado.</td>
+      </tr>
+      <tr>
+        <td>som</td>
+        <td>O índice do som a ser utilizado.</td>
+      </tr>
+      <tr>
+        <td>loop</td>
+        <td>Marque o som como looping ou não.</td>
+      </tr>
+      <tr>
+        <td>prioridade</td>
+        <td>Defina a prioridade do canal para o som.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Índice</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if global.SFX<br> {
+    <br> audio_play_sound_on(s_emit, snd_Explode, false, 1);<br> }
+  </p>
+  <p>O código acima verifica a variável global &quot;SFX&quot; e se ela retornar verdadeiro então <tt>o</tt> som indexado na variável &quot;snd_Explode&quot; será reproduzido através do emissor indexado na variável &quot;s_emit&quot;.
+    com uma prioridade baixa e sem looping.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Audio_Emitters.htm">Emissores de áudio</a></div>
+        <div style="float:right">A seguir: <a href="audio_emitter_get_gain.htm">audio_emitter_get_gain</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_play_sound_on
+-->
+  <!-- TAGS
+audio_play_sound_on
+-->
+</body>
+</html>

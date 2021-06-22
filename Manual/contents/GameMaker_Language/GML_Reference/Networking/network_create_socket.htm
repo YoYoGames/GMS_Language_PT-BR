@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>network_create_socket</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for network_create_socket" />
+  <meta name="rh-index-keywords" content="network_create_socket,network_socket_tcp,network_socket_udp,network_socket_ws,network_socket_bluetooth" />
+  <meta name="search-keywords" content="network_create_socket,network_socket_tcp,network_socket_udp,network_socket_ws,network_socket_bluetooth" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>network_create_socket</h1>
+  <p>Esta função é utilizada para criar um novo soquete de cliente para que seu jogo se comunique através da rede. Você deve definir o tipo de socket (veja a lista de constantes abaixo) e a função retornará uma <i>identificação</i> única para esse socket, que deve ser usada
+    em todas as outras funções exige esse soquete, ou um valor inferior a 0 se a conexão falhar.</p>
+  <p class="note"><b>NOTA</b>: Você pode usar o IP &quot;127.0.0.1&quot; para conectar de volta ao mesmo dispositivo que está rodando o jogo.</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>network_socket_tcp</td>
+        <td>Criar um soquete usando TCP.</td>
+      </tr>
+      <tr>
+        <td>rede_socket_udp</td>
+        <td>Criar um soquete utilizando o UDP.</td>
+      </tr>
+      <tr>
+        <td>network_socket_ws</td>
+        <td>Criar um soquete web<i>(somente</i> para projetos rodando em HTML5), usando TCP.</td>
+      </tr>
+      <tr>
+        <td>rede_socket_bluetooth</td>
+        <td>Criar um soquete bluetooth<i>(atualmente indisponível!</i>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">network_create_socket(tipo);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tipo</td>
+        <td>O tipo de conexão de soquete a ser criado (ver as constantes listadas abaixo).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if os_browser == browser_not_a_browser<br> {
+    <br> cliente = network_create_socket(network_socket_tcp);<br> network_connect( cliente, &quot;192.134.0.1&quot;, 6510 );<br> }
+    <br> mais
+    <br> {
+    <br> cliente = network_create_socket(network_socket_ws);<br> network_connect( cliente, &quot;192.134.0.1&quot;, 6520 );<br> }
+  </p>
+  <p>O código acima verificará se o jogo está rodando em um navegador ou não e criará um novo TCP ou socket Web antes de tentar se conectar através dele ao endereço IP dado na porta dada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Networking.htm">Rede</a></div>
+        <div style="float:right">Próximo: <a href="network_create_socket_ext.htm">network_create_socket_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+network_create_socket
+network_socket_tcp
+network_socket_udp
+network_socket_ws
+network_socket_bluetooth
+-->
+  <!-- TAGS
+network_create_socket
+-->
+</body>
+</html>

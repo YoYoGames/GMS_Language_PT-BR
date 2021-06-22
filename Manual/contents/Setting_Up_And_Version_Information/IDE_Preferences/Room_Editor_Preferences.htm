@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Preferências do editor da sala</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="The Room Editor Preferences" />
+  <meta name="rh-index-keywords" content="Prefs - Rooms" />
+  <meta name="search-keywords" content="Room Prefs,Room Editor Preferences" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Preferências do editor da sala</h1>
+  <p><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_Prefs.png" /></p>
+  <p>As <strong>Preferências do Editor de Sala</strong> são usadas para definir como o <a href="../../The_Asset_Editors/Rooms.htm">Editor de Sala</a> irá se parecer e se comportar. As configurações gerais são as seguintes:</p>
+  <ul class="colour">
+    <li>A<strong>distância inicial da corrente desvanece-se (px)</strong>: Define a distância a partir da janela principal para que o elo da corrente se desvaneça. O valor padrão é 10px.</li>
+    <li>A<strong>distância de parada da corrente desvanece-se (px)</strong>: Define a distância da janela principal para o elo da corrente até o fim do desbotamento. O valor padrão é 100px.</li>
+    <li><strong>Cadeia Alfa Mínima</strong>: Define o valor alfa final após o ponto de queda para o ponto de queda da cadeia alfa. O valor padrão é 0,3.</li>
+    <li><strong>Espaçamento de profundidade da camada padrão</strong>: Quando você cria várias camadas no editor da sala, é automaticamente atribuída uma profundidade com base em sua posição dentro da lista de camadas. Esta profundidade é incrementada pela quantidade dada aqui. O padrão
+      valor é 100, portanto cada camada será camada anterior + 100 de profundidade.</li>
+    <li><strong>Largura padrão da sala</strong>: Define a largura inicial que será selecionada como padrão para uma nova sala. O padrão é 1024px.</li>
+    <li><strong>Altura padrão da sala</strong>: Define a altura inicial que será selecionada como padrão para uma nova sala. O padrão é 768px.</li>
+    <li><strong>Adicionar camadas de sala padrão</strong>: Quando você criar qualquer novo recurso de sala, o <span class="notranslate">GameMaker Studio 2</span> irá gerar um par de camadas &quot;base&quot; para você - uma camada de fundo e uma camada de instância. Você pode desativar esse comportamento aqui para que
+      As novas salas não terão camadas pré-fabricadas. Isto é feito por padrão.</li>
+    <li><strong>Vista da sala de exposição</strong>: Se você tiver vistas ativas dentro de uma sala, isto é mostrado por um esboço onde os limites da vista estariam dentro da sala, e a visibilidade desta área pode ser alternada usando o botão dedicado no próprio editor.
+      Entretanto, você pode optar por ter os limites de visualização invisíveis ao abrir uma sala, desmarcando esta opção (o botão ainda pode ser usado para mostrá-los novamente). O valor padrão está ativado, tornando os limites de visualização visíveis quando você abre uma sala.</li>
+    <li><strong>Opções gerais de cores</strong>: Estas estão relacionadas às diferentes cores que são usadas em toda a interface do editor da sala, e se você clicar duas vezes em qualquer uma das amostras, você pode editar a cor para aquela configuração.</li>
+    <li><strong>Ajuste do volume mestre</strong>: O ajuste do volume mestre para reprodução prévia no Editor de Sala, um valor entre 0 e 1. O padrão é 1.</li>
+  </ul>
+  <p>Outras opções estão disponíveis para edição a partir das sub-categorias listadas abaixo:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Confirmar Diálogos</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p><img class="center" height="623" src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_Confirm_Prefs.png" width="860" /></p>
+    <p class="dropspot"><strong></strong>As preferências do <strong>Confirm Dialogs </strong>são usadas para alterar as mensagens que são mostradas no editor da sala quando você executa certas ações. As mensagens que você pode alterar são:</p>
+    <ul class="dropspotlist">
+      <li><strong>Resposta automática à atualização das profundidades das camadas</strong>: quando você muda as profundidades das camadas, uma mensagem é mostrada para avisá-lo de que ao fazer isso, você também atualizará automaticamente todas as outras profundidades das camadas. Com esta opção, você pode optar por ter a mensagem
+        mostrar, faça com que ele atualize as camadas como se você tivesse clicado &quot;Ok&quot;, ou não atualize nada como se você tivesse clicado &quot;Não&quot;.</li>
+      <li><strong>Resposta automática ao aviso de bloqueio por camadas</strong>: Se você tentar apagar uma camada na sala e ela por acaso estiver bloqueada, será exibida uma mensagem por padrão. No entanto, se você definir esta opção como &quot;Ok&quot;, não será mostrada a mensagem e
+        apenas não deixar apagar a camada.</li>
+      <li><strong>Resposta automática ao aviso de item bloqueado</strong>: <strong> </strong>Se você tentar excluir um item que esteja bloqueado, será exibida uma mensagem por padrão. No entanto, ao definir esta opção para &quot;Ok&quot;, não será mostrada a mensagem e
+        apenas não deixar apagar o item.</li>
+      <li><strong>Resposta automática ao aviso de bloqueio da camada do proprietário do item</strong>: Se você tentar excluir um item em uma camada e a camada estiver bloqueada (mesmo que o item não esteja), então lhe será mostrada uma mensagem por padrão para informá-lo de que não pode
+        ser feito. No entanto, ao definir esta opção para &quot;Ok&quot;, a mensagem não será mostrada e simplesmente não será permitido apagar o item.</li>
+      <li><strong>Criar nova camada de ativos ao arrastar seqüências/prites para camadas inadequadas</strong>: Se você tentar adicionar um sprite (ou uma seqüência) a uma camada que não seja uma camada de ativos, então lhe será mostrada uma mensagem por padrão para informá-lo de que ela não pode
+        ser feito e perguntar se você deseja criar uma nova camada de ativo para o item sendo arrastado. Entretanto, a configuração desta opção para &quot;Ok&quot; não mostrará a mensagem e criará automaticamente uma nova camada para sprites (e seqüências).</li>
+      <li><strong>Resposta automática à exclusão de itens da sala mãe</strong>: Aqui você pode escolher o que acontece quando você apaga um item que faz parte de um quarto dos pais (e assim presente em todos os quartos de crianças). O padrão é mostrar-lhe uma mensagem de aviso e permitir que você
+        decidir o que fazer, mas você pode defini-lo como &quot;Apagar tudo&quot; para suprimir a mensagem e prosseguir com o item apagar do quarto dos pais e de todos os seus filhos, ou você pode selecionar &quot;Manter tudo&quot; para suprimir a mensagem abortar a exclusão.</li>
+      <li><strong>Resposta automática à exclusão da camada da sala mãe</strong>: Aqui você pode escolher o que acontece quando você elimina uma camada que faz parte de um quarto dos pais (e assim presente em todos os quartos das crianças). O padrão é mostrar-lhe uma mensagem de aviso e permitir que você
+        decidir o que fazer, mas você pode definir &quot;Apagar tudo&quot; para suprimir a mensagem e ir em frente com a camada apagar do quarto dos pais e de todos os seus filhos, ou você pode selecionar &quot;Manter tudo&quot; para suprimir a mensagem abortar a exclusão.</li>
+      <li><strong>Resposta automática a erro de arraste de ativo inválido</strong>: Se você tentar adicionar um ativo a uma camada que não é designada como sendo para esse tipo de ativo (como adicionar um caminho a uma camada de instância), então lhe será mostrada uma mensagem por padrão para
+        informar que isso não pode ser feito. No entanto, a configuração desta opção para &quot;Ok&quot; não mostrará a mensagem e simplesmente não permitirá que você acrescente o ativo. Note que esta opção não se aplica a instâncias, sprites ou seqüências.</li>
+      <li><strong>Criar nova camada de instância ao arrastar objetos em camadas inadequadas</strong>: Se você tentar adicionar uma instância de objeto a uma camada que não seja uma camada de instância, então lhe será mostrada uma mensagem por padrão para informá-lo de que ela não pode ser
+        feito e perguntar se você deseja criar uma nova camada de instância para o item que está sendo arrastado. No entanto, definir esta opção para &quot;Ok&quot; não mostrará a mensagem e criará automaticamente uma nova camada para a instância.</li>
+      <li><strong>Resposta automática ao erro de arrasto de seleção de camada inválida</strong>: Aqui você pode escolher o que acontece quando você arrasta um recurso para o editor da sala quando você selecionou várias camadas no editor de camadas (ou não selecionou nenhuma camada
+        em absoluto). O padrão é mostrar uma mensagem de aviso, mas você pode definir esta opção como &quot;OK&quot; para suprimir a mensagem e continuar, sem adicionar nenhum recurso.</li>
+      <li><strong>Resposta automática a erro de arraste de camada bloqueada ou invisível</strong>: Aqui você pode escolher o que acontece quando você arrasta um recurso para uma camada que foi bloqueada ou que está marcada como invisível. O padrão é mostrar uma mensagem de aviso, mas você
+        pode definir esta opção para &quot;OK&quot; para suprimir a mensagem e continuar, sem acrescentar nenhum recurso.</li>
+    </ul>
+    <p> </p>
+    <p><strong></strong></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Configurações da grade</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p>
+      <img data-cke-saved-src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_Grid_Prefs.png" src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_Grid_Prefs.png" class="center" alt="Room Editor Grid Settings Preferences" /></p>
+    <p class="dropspot">O
+      As preferências de <strong>Grid Settings</strong> são usadas para mudar a forma como a sobreposição da grade funciona, com as seguintes opções disponíveis:</p>
+    <ul class="colour">
+      <li>
+       <strong>Espaçamento horizontal da grade (px)</strong>: Isto irá definir o espaço horizontal para as células da grade da sala em pixels. O valor padrão é 32px.</li>
+      <li>
+       <strong>Espaçamento vertical da grade (px)</strong>: Isto irá definir o espaço vertical para as células da grade da sala em pixels. O valor padrão é 32px.</li>
+      <li>
+       <strong>Grade de exibição</strong>: Esta opção irá ligar ou desligar a grade da sala quando você abrir uma sala pela primeira vez. Ela está ligada por padrão, mas mesmo que esteja desligada, você pode ativá-la novamente usando o botão apropriado no próprio editor da sala.</li>
+      <li>
+       <strong>Pronto para a rede</strong>: Com esta opção, você pode definir se uma sala terá ativos snap to the room grid por padrão ou não, quando uma sala é aberta inicialmente. Ela está ligada por padrão, mas mesmo que esteja desligada, você pode habilitá-la novamente usando
+        o botão apropriado no próprio editor da sala.</li>
+      <li>
+       <strong>Cor da linha de grade</strong>: Esta opção permite definir a cor (incluindo o componente alfa) das linhas de grade da sala. O valor padrão é (
+       <a data-glossterm="ARGB" class="glossterm" href="#">ARGB</a>) #30FFFFFF.</li>
+    </ul>
+    <p>
+      <br /><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Guias inteligentes</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p>
+      <img data-cke-saved-src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_SmartGuides_Prefs.png" src="../../assets/Images/Setup_And_Version/Preferences/Room_Editor_SmartGuides_Prefs.png" class="center" alt="Room Editor Smart Guides Preferences" /></p>
+    <p class="dropspot">Esta seção detalha o
+     <strong>Preferências de Guias Inteligentes</strong> para o Editor da Sala. As opções disponíveis são:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot">
+       <strong>Habilitar guias inteligentes</strong>: Isto é usado para ativar/desativar o uso de guias inteligentes no Editor de Sala. O padrão é ativado.
+       <br><br></li>
+      <li class="dropspot">
+       <strong>Habilitar as Réguas</strong>: Esta opção ativará/desativará as réguas laterais no Editor de Sala. O padrão está habilitado.
+       <br><br></li>
+      <li class="dropspot">
+       <strong>Réguas de corte para bordas</strong>: Quando ativada, esta opção irá encaixar guias arrastadas para o editor da sala a partir das réguas para qualquer ativo colocado na sala. A opção padrão está ativada.
+       <br><br></li>
+      <li class="dropspot">
+       <strong>Distância instantânea</strong>: Esta configuração diz ao Editor de Sala a que distância um guia tem que estar de um bem antes de &quot;estalar&quot; para o lado do bem. O valor padrão é 6px.
+       <br><br></li>
+    </ul>
+    <p class="dropspot">
+      <br /><br /></p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../IDE_Preferences.htm">Preferências IDE</a></div>
+        <div style="float:right">A seguir: <a href="Spline_Editor.htm">Preferências do Editor Spline</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Preferences - Room Editor
+-->
+  <!-- TAGS
+prefs_room_editor
+-->
+
+</body></html>

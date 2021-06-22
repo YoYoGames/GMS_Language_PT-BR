@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_objeto_de_caminho_linear</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_linear_path_object" />
+  <meta name="rh-index-keywords" content="mp_linear_path_object" />
+  <meta name="search-keywords" content="mp_linear_path_object" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_objeto_de_caminho_linear</h1>
+  <p>Esta função calcula um caminho linear da posição da instância atual até o ponto especificado pelos valores &quot;xgoal&quot; e &quot;ygoal&quot;. Ela utiliza o tamanho do passo indicado, o mesmo que na função <a href="mp_linear_step.htm"><tt>mp_linear_step()</tt></a>.
+    O caminho indicado já deve existir e será sobrescrito pelo novo caminho e a função retornará se um caminho completo for encontrado (verdadeiro) ou não (falso). Um caminho completo só é encontrado se não houve colisão com o objeto ou instância especificada e
+    se o caminho falso for devolvido, ainda é gerado um caminho, mas este só chegará até a posição onde o caminho foi bloqueado.</p>
+  <p class="note"><b>NOTA</b>: Esta função não move a instância. Ela estabelece apenas um caminho, e você deve usar as funções de <a href="../../Asset_Management/Paths/Paths.htm">Caminho</a> para se movimentar.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">mp_linear_path_object(path, xgoal, ygoal, stepsize, obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>caminho</td>
+        <td>O índice do caminho a ser utilizado</td>
+      </tr>
+      <tr>
+        <td>xgoal</td>
+        <td>A posição alvo x.</td>
+      </tr>
+      <tr>
+        <td>ygoal</td>
+        <td>A posição y alvo.</td>
+      </tr>
+      <tr>
+        <td>stepsize</td>
+        <td>A velocidade que a instância se move em pixels por passo.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>O objetivo que é bloquear o caminho. Pode ser um índice de objetos, um id de instância ou a palavra-chave especial<b>, tudo</b></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if mp_linear_path_object(path, mouse_x, mouse_y, 4, obj_Wall)<br> {<br> path_start(path, 4, 0, 0);<br> }</p>
+  <p>O código acima verifica uma colisão com &quot;obj_Wall&quot; ao longo do caminho entre o objeto que executa o código e a posição x/y do mouse. Se não houver colisão e o caminho completo for gerado, então ele iniciará o objeto ao longo do
+    caminho gerado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Motion_Planning.htm">Planejamento de Movimento</a></div>
+        <div style="float:right">Próximo: <a href="mp_potential_settings.htm">mp_potencial_settings</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_linear_path_object
+-->
+  <!-- TAGS
+mp_linear_path_object
+-->
+</body>
+</html>

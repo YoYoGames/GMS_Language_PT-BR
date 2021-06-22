@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>física_particle_group_begin</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_particle_group_begin" />
+  <meta name="rh-index-keywords" content="physics_particle_group_begin,phy_particle_group_flag_solid,phy_particle_group_flag_rigid" />
+  <meta name="search-keywords" content="physics_particle_group_begin,phy_particle_group_flag_solid,phy_particle_group_flag_rigid" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>física_particle_group_begin</h1>
+  <p>Com esta função você pode criar um grupo de partículas em uma sala. Um grupo de partículas é aquele em que as partículas necessárias para criar uma forma específica são criadas de uma só vez como um grupo, permitindo-lhe criar corpos moles simulados com várias propriedades
+    colocadas pelas bandeiras utilizadas. As &quot;bandeiras&quot; são o valor de retorno de uma combinação das <b>constantes</b> das partículas <b>(ver a</b> função <a href="physics_particle_create.htm"><tt>physics_particle_create()</tt></a> para detalhes destes), enquanto as &quot;groupFlags
+    são uma combinação das seguintes <b>constantes de grupo</b> (ou 0 para nenhuma bandeira):</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>phy_particle_group_flag_solid</td>
+        <td>Um grupo de partículas sólidas impede que outros dispositivos se alojam dentro dele. Se algo penetrar nele, o grupo de partículas sólidas empurra o dispositivo ofensivo de volta para sua superfície, fazendo com que um grupo de partículas sólidas possua um
+          força repulsiva.</td>
+      </tr>
+      <tr>
+        <td>phy_particle_group_flag_rigid</td>
+        <td>Os grupos rígidos de partículas são aqueles cuja forma não muda, mesmo quando colidem com outros dispositivos.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Estas bandeiras de grupo utilizam a bit-masking para criar um valor de saída final que é então verificado para definir as diferentes propriedades básicas do grupo, além daquelas definidas pelas bandeiras de partículas. Você pode usar nenhuma, uma ou ambas estas constantes usando o <a href="../../../../Additional_Information/Bitwise_Operators.htm">bitwise <i>ou</i></a> &quot;|&quot; para mascarar os bits apropriados (como mostrado no exemplo abaixo).</p>
+  <p>Além das bandeiras, você também pode definir a posição na sala para criar o grupo de partículas (a posição dada será o centro de massa do grupo acabado), a velocidade horizontal e vertical inicial, bem como a velocidade angular do grupo de partículas (a posição dada será o centro de massa do grupo acabado), a velocidade horizontal e vertical inicial, bem como a velocidade angular do grupo de partículas (a posição dada será o centro de massa do grupo acabado).
+    grupo, permitindo a criação de grupos móveis e rotativos.</p>
+  <p>Você também pode definir a cor inicial e alfa de todas as partículas do grupo, com os valores sendo usados ao desenhar as partículas usando a função <a href="physics_particle_draw.htm"><tt>physics_particle_draw()</tt></a>. Depois disso, você estabelece o coeso
+    força das partículas do grupo, que é outra forma de dizer o quanto elas se &quot;colam&quot; umas às outras. A força pode ser um valor entre 0 e 1, onde 0 não é coesão, e 1 é coesão máxima.</p>
+  <p>Finalmente, você tem que dar a categoria para seu grupo de partículas. Este valor é um valor inteiro arbitrário que você dá a cada grupo de partículas que você deseja que tenha propriedades similares, e pode ser usado para definir bandeiras mais tarde também para aquela categoria específica.
+    como uma série de outras coisas.</p>
+  <p class="note"><b>NOTA</b>: Você pode usar qualquer valor inteiro para a categoria <b>, exceto 0</b> que é reservado pela simulação e é usado para selecionar todas as categorias em outras funções (como para desenho).</p>
+  <p>É importante notar que chamar esta função <i>não</i> cria o grupo na sala de física. Esta função simplesmente inicia o processo e define as propriedades da partícula base para o grupo. Para criar de fato o grupo de partículas é necessário dar
+    é um <i>formulário</i> (veja o exemplo abaixo) e depois chamar a função <a href="physics_particle_group_end.htm"><tt>física_particle_group_end()</tt></a>e, em seguida, será criado.</p>
+  <p class="note"><b>OBSERVAÇÃO</b>: As bandeiras do tipo partícula que você colocar também influenciarão a coesão do grupo de partículas, de modo que se você sinalizar as partículas como sendo do tipo água (por exemplo), quando o grupo colide com outro dispositivo, ele se separará,
+    enquanto que se você sinalizar a partícula como um tipo de mola, então ela manterá sua coesão em caso de colisão.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">physics_particle_group_begin(bandeiras, groupflags, x, y, ang, xv, yv, ang_velocity, col, alpha, strength, category)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>bandeiras</td>
+        <td>As bandeiras a serem colocadas sobre a partícula.</td>
+      </tr>
+      <tr>
+        <td>groupflags</td>
+        <td>As bandeiras do grupo a serem colocadas sobre a partícula (ver <b>descrição</b> abaixo).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A posição x para criar o grupo de partículas em.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A posição y para criar o grupo de partículas em.</td>
+      </tr>
+      <tr>
+        <td>ang</td>
+        <td>O ângulo (em graus) para girar o grupo para criar.</td>
+      </tr>
+      <tr>
+        <td>xv</td>
+        <td>A velocidade horizontal inicial.</td>
+      </tr>
+      <tr>
+        <td>yv</td>
+        <td>A velocidade vertical inicial.</td>
+      </tr>
+      <tr>
+        <td>ang_velocidade</td>
+        <td>A velocidade angular inicial.</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>A cor base a ser utilizada para o grupo de partículas.</td>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>O alfa base a ser utilizado para o grupo de partículas.</td>
+      </tr>
+      <tr>
+        <td>força</td>
+        <td>Estabelecer a força de coesão entre as partículas do grupo.</td>
+      </tr>
+      <tr>
+        <td>categoria</td>
+        <td>A categoria definida pelo usuário à qual o grupo pertence.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;<br> var groupflags = phy_particle_group_flag_solid | phy_particle_group_flag_rigid;<br> physics_particle_group_begin(flags, groupflags, mouse_x, mouse_y,
+    0, 0, 0, 0, 0, c_white, 1, 1, 2);<br> physics_particle_group_circle(100);
+    <br> mLastGroup = physics_particle_group_end();</p>
+  <p>O código acima armazena as bandeiras para o tipo de partícula e as propriedades do grupo de partículas em variáveis e depois as utiliza para criar um grupo de partículas circular com um raio de 100px na posição do mouse.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Soft_Body_Particles.htm">Partículas macias do corpo</a></div>
+        <div style="float:right">A seguir: <a href="physics_particle_group_circle.htm">círculo_físico_de_partículas_grupo</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_particle_group_begin
+phy_particle_group_flag_solid
+phy_particle_group_flag_rigid
+-->
+  <!-- TAGS
+physics_particle_group_begin
+-->
+</body>
+</html>

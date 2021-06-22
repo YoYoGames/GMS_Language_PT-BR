@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>interruptor</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the switch function" />
+  <meta name="rh-index-keywords" content="switch,case" />
+  <meta name="search-keywords" content="switch,default" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>interruptor</h1>
+  <p>Em várias situações, você quer deixar que suas instâncias completem ações diferentes, dependendo de um valor particular. Você pode fazer isso usando uma série de <a href="If_Else_and_Conditional_Operators.htm"><tt>se/outro</tt></a> declarações, mas
+    quando as escolhas possíveis ficam acima de duas ou três, geralmente é mais fácil usar a declaração de <tt>interruptor</tt>. Uma declaração de <tt>troca</tt> tem a seguinte forma:</p>
+  <p class="code">interruptor (&lt;expressão&gt;)<br> {
+    <br> case &lt;constant1&gt;: &lt;statement1&gt;; ... ; break;<br> case &lt;constant2&gt;: &lt;statement2&gt;; ... ; break;<br>...
+    <br> default: &lt;declaração&gt;;<br> }
+  </p>
+  <p>Isto funciona da seguinte forma:</p>
+  <ul class="colour">
+    <li>Primeiro a <a class="glossterm" data-glossterm="expressão" href="#">expressão</a> é executada.</li>
+    <li>Em seguida, é comparado com os resultados das diferentes <a href="../Variables/Constants.htm">constantes</a> após cada uma das<span class="glossextra">declarações</span> do <span class="inline">case</span>.
+      Quando dizemos &quot;constante&quot;, o que queremos dizer é que o valor no caso não pode ser uma expressão variável e deve ser um valor fixo de qualquer tipo de dado, <a href="../Data_Types.htm">como &quot;</a>luta&quot; ou 3 ou a palavra-chave <span class="inline"><a href="../Instance_Keywords.htm">noone</a></span>. </li>
+    <li>A execução continua após a primeira declaração <span class="inline">case</span> com o valor correto, <i>até que uma declaração de <a href="break.htm">pausa</a></i> seja encontrada.</li>
+    <li>Se nenhuma declaração de caso tiver o valor correto, então a declaração <span class="inline">default</span> será executada (não é necessário ter uma declaração <span class="inline">default</span>, e se nenhuma for fornecida, então nenhuma ação será tomada).</li>
+  </ul>
+  <p>Um exemplo simples de utilização de uma declaração de interruptor seria algo parecido com isto:</p>
+  <p class="code">switch (global.state)<br> {<br> caso &quot;alerta&quot;:<br> if (instance_exists(obj_Player))<br> {<br> if (point_distance(x, y, obj_Player.x, obj_Player.y) &lt; 100)<br> {<br> 
+    global.state = &quot;chase&quot;;<br> } <br> } <br> break;<br> case &quot;chase&quot;:<br> var _lost = false;<br> if (instance_exists(obj_Player))<br> {<br> move_towards_point(obj_Player.x,
+    obj_Player.y, 2);<br> if (point_distance(x, y, obj_Player.x, obj_Player.y) &gt; 100)<br> {<br> _lost = true;<br> } <br> } <br> else _lost = true;<br> if (_lost)<br> {<br> speed = 0;<br> global.state = &quot;alert&quot;;<br> } <br> break;<br> }</p>
+  <p>Aqui temos uma variável global que contém um valor de string que é usado para definir o comportamento (estado) da instância. Neste exemplo, a instância simplesmente alterna entre dois estados, mas é extremamente fácil expandi-la para incluir mais estados, acrescentando
+    mais <span class="inline">case</span> declarações para cadeias de estados adicionais, como &quot;lutar&quot; ou &quot;morrer&quot;, etc...</p>
+  <p>Note-se que podem ser usadas múltiplas declarações de <tt>caso</tt> para executar a mesma declaração, já que a <tt>pausa</tt> nem sempre é necessária para cada um <span class="inline">case</span>. Se não houver uma declaração <span class="inline">break</span> para um
+    particular <span class="inline">case</span>, a execução simplesmente continua com o código para o próximo caso, por exemplo:</p>
+  <p class="code">switch (teclado_chave)<br> {
+    <br> case vk_left:<br> case ord(&quot;A&quot;):<br> x -= 4;<br> break;
+    <br> caso vk_direita:<br> caso ord(&quot;D&quot;):<br> x += 4;<br> pausa;
+    <br> caso vk_up:<br> caso ord(&quot;W&quot;):<br> y -= 4;<br> pausa;
+    <br> caso vk_down:<br> caso ord(&quot;S&quot;):<br> y += 4;<br> pausa;
+    <br> }
+  </p>
+  <p>O código acima usa o <tt>switch</tt> para verificar um evento de teclado e depois compara isso com cada um dos <span class="inline">case</span> listados. Se ele atender a algum dos valores requeridos, então o código correspondente é executado. Observe como no código que usamos
+    a maneira como essa <tt>chave</tt> pode verificar várias <span class="inline">cases</span> e continuar se não for encontrada <span class="inline">break</span> para permitir que várias chaves sejam usadas para obter o mesmo resultado. Note que cada <span class="inline">case</span> pode ter seu próprio código, e assim você pode configurar uma espécie de sistema de &quot;herança&quot; onde mais de um <span class="inline">case</span> e seu código será executado consecutivamente com o próximo até que uma pausa seja alcançada, dependendo do valor
+    da expressão inicial <span class="inline">switch</span>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Language_Features.htm">Características lingüísticas</a></div>
+        <div style="float:right">Próximo: <a href="break.htm">intervalo</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+switch
+-->
+  <!-- TAGS
+switch
+-->
+
+</body></html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>jogo_save</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function game_save" />
+  <meta name="rh-index-keywords" content="game_save" />
+  <meta name="search-keywords" content="game_save" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>jogo_save</h1>
+  <p>Esta é uma função herdada que pode ser usada para salvar o estado atual do jogo, e não é mais recomendada para uso. Use as <a href="../File_Handling/File_Handling.htm">funções de Arquivo</a> para criar um sistema de salvamento personalizado onde você só salva
+    e carregar dados específicos do jogo.</p>
+  <p>Esta função salvará o estado do jogo como ele é, porém não economizará nenhum recurso dinâmico sendo usado naquele momento, tais como estruturas de dados, superfícies, recursos adicionados em tempo de execução <span class="notranslate">,</span> etc. Se tal arquivo de salvamento for carregado, qualquer atualização do jogo que tenha sido
+    feito após o salvamento não será visível, pois restaurará a versão do jogo que foi usada para criar o salvamento.</p>
+  <p>Note que salvar arquivos criados usando esta função pode não ser suportado por atualizações <a class="glossterm" data-glossterm="Tempo de execução" href="#"><span class="notranslate">Tempo de execução</span></a> por isso substituir esta função por um novo sistema de economia é essencial para garantir a compatibilidade com as versões
+    futuras atualizações do <span class="notranslate">GameMaker</span> e, pelas razões listadas acima, atualizações feitas em seu próprio jogo.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">game_save(filename);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>nome do arquivo</td>
+        <td>O nome do arquivo para o qual salvar o jogo.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se keyboard_check_pressed(ord(&quot;S&quot;))<br> {
+    <br> global.Saved = true;<br> game_save(&quot;Save.dat&quot;);
+    <br> }
+  </p>
+  <p>O código acima definirá uma variável global como <tt>verdadeira</tt> e então salvará o jogo no arquivo &quot;Save.dat&quot; quando a tecla &quot;S&quot; for pressionada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="General_Game_Control.htm">Controle geral do jogo</a></div>
+        <div style="float:right">Próximo: <a href="game_save_buffer.htm">game_save_buffer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+game_save
+-->
+  <!-- TAGS
+game_save
+-->
+
+</body></html>

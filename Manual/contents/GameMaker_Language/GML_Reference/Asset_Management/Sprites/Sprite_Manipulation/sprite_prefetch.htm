@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_prefetch</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_prefetch" />
+  <meta name="rh-index-keywords" content="sprite_prefetch" />
+  <meta name="search-keywords" content="sprite_prefetch" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_prefetch</h1>
+  <p>Esta função pode ser usada para pré-fetar (colocar na memória de textura) uma página de textura com o duende dado. Você fornece o índice sprite conforme definido quando você criou o recurso sprite, e a página de textura em que ele está será carregada na memória. Note que o
+    retornará <tt>-1</tt> se o prefetch não for suportado para o recurso escolhido ou se a plataforma alvo for HTML5, ou retornará <tt>0</tt> se tudo tiver funcionado corretamente.</p>
+  <p class="note"><b>OBSERVAÇÃO</b>: Há um golpe de desempenho quando a textura é carregada na memória de textura na maioria dos dispositivos, por isso é recomendável que você ligue para <span style="font-size:1px;"><tt style="font-size: 14px">sprite_prefetch</tt></span> em
+    qualquer gráfico necessário no início de um nível para evitar qualquer barraca.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">sprite_prefetch(ind)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>O índice sprite a ser buscado</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Int (-1 ou 0)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">sprite_prefetch(spr_Player_Aura);</p>
+  <p>O código acima irá colocar o duende referenciado na memória de textura pronta para uso.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sprite_Manipulation.htm">Manipulação de Sprite</a></div>
+        <div style="float:right">Próximo: <a href="sprite_prefetch_multi.htm">sprite_prefetch_multi</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_prefetch
+-->
+  <!-- TAGS
+sprite_prefetch
+-->
+</body>
+</html>

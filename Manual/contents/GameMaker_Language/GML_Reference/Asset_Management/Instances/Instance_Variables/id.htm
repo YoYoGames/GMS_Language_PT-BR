@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>id</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the variable id" />
+  <meta name="rh-index-keywords" content="id" />
+  <meta name="search-keywords" content="id" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>id</h1>
+  <p>Esta variável <b>somente leitura</b> contém o número de identificação único para a instância. Cada instância criada - seja através de código ou adicionando-os a uma sala no Room Editor - recebe um número que é usado internamente para identificar esta instância
+    e a variável <span class="inline">id</span> é o que você pode usar para referenciá-la. O <span class="inline">id</span> também é retornado (e pode ser armazenado em uma variável) quando uma instância é criada usando <tt><a href="../instance_create_layer.htm">instance_create_layer()</a></tt> ou
+    <span class="inline"><a href="../instance_create_depth.htm">instance_create_depth()</a></span> , bem como outras funções de instância.</p>
+  <p class="note"><b>NOTA</b>: O valor desta variável <i>não</i> é o mesmo que o identificador que a instância é dada no editor da sala e também é diferente do <span style="font-size:1px;"><a href="../instance_id.htm" style="font-size: 14px"><tt style="font-size: 14px">exemplo_id</tt></a></span> matriz
+    que contém todas as identificações de todas as instâncias atualmente ativas.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">id;</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (número inteiro - valor de identificação da instância)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">for(var i = 0; i &lt; instance_count; i++;)<br> {
+    <br> if instance_id[i] != id<br> {
+    <br> instance_id[i].scr += 5;<br> }
+    <br> }
+  </p>
+  <p>O código acima adiciona 5 à variável &quot;scr&quot; para cada instância ativa na sala, exceto a que está executando o código. Isto é feito através de looping em TODAS as instâncias ativas (usando a array &quot;instance_id&quot; para retornar cada instância ativa
+    ID) e comparando-os com a variável &quot;id&quot; embutida, que é o ID da instância original que executa o código.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Instance_Variables.htm">Variáveis de instância</a></div>
+        <div style="float:right">A seguir: <a href="visible.htm">visível</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+id
+-->
+  <!-- TAGS
+id
+-->
+</body>
+</html>

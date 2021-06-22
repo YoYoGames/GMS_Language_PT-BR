@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_queue_enqueue</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_queue_enqueue" />
+  <meta name="rh-index-keywords" content="ds_queue_enqueue" />
+  <meta name="search-keywords" content="ds_queue_enqueue" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_queue_enqueue</h1>
+  <p>Esta função adicionará um valor (real ou string) à cauda da <span class="misspell-word">fila DS</span>. A função pode levar mais 14 argumentos opcionais (fazendo um total de 15 adições possíveis), permitindo que você adicione múltiplos valores
+    consecutivamente à cauda da fila em uma única chamada.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">ds_queue_enqueue(id, val [, val2, ... val15]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>A identificação da fila a ser acrescentada.</td>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>O valor a agregar à fila.</td>
+      </tr>
+      <tr>
+        <td>[val2, ... val15]</td>
+        <td>Valores opcionais a serem adicionados à fila.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">move_queue = ds_queue_queue_create();<br> ds_queue_enqueue(move_queue, x + 200);<br> ds_queue_enqueue(move_queue, y);<br> ds_queue_enqueue(move_queue, x + 200); <br> ds_queue_enqueue(move_queue, y + 200);<br> ds_queue_enqueue(move_queue, x);<br> ds_queue_enqueue(move_queue, x); ds_queue_enqueue(move_queue, x + 200),
+    y + 200);<br> ds_queue_enqueue(move_queue, x);<br> ds_queue_enqueue(move_queue, y);</p>
+  <p>O código acima cria uma nova fila de DS e armazena seu índice na variável &quot;move_queue&quot;. Ele então empurra uma série de valores para a fila para uso futuro.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="DS_Queues.htm">Filas de DS</a></div>
+        <div style="float:right">Próximo: <a href="ds_queue_head.htm">ds_queue_head</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_queue_enqueue
+-->
+  <!-- TAGS
+ds_queue_enqueue
+-->
+
+</body></html>

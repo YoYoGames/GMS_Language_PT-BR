@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>image_index</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the variable image_index" />
+  <meta name="rh-index-keywords" content="image_index" />
+  <meta name="search-keywords" content="image_index" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>image_index</h1>
+  <p>Um duende é composto de uma ou mais <i>subimagens</i> que podem fazer o duende parecer animado enquanto ele muda de uma para outra, ou podem ser alternados em código para dar diferentes &quot;estados&quot;, como um botão tem nas janelas.
+    Se o sprite for animado, então você pode obter o quadro atual da animação verificando a variável <tt>image_index</tt>, ou se você quiser mudar o estado de um sprite estático, você pode selecionar uma nova subimagem definindo esta variável para a desejada
+    subimagem do duende. Favor observar que para que as mudanças nesta variável sejam visíveis, a instância <i>não</i> deve ter <i>nenhum</i> evento de sorteio (e, portanto, o <span class="notranslate">GameMaker Studio 2</span> irá desenhar o duende por padrão) ou ser desenhada usando uma das funções de desenho como
+    <a href="../../../Drawing/Sprites_And_Tiles/draw_self.htm"><tt>draw_self()</tt></a> ou <a href="../../../Drawing/Sprites_And_Tiles/draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a> (fornecendo a imagem_index no argumento apropriado).</p>
+  <p>Observe que a definição desta variável diretamente em um quadro <em>não</em> acionará nenhuma mensagem de difusão que possa estar presente nesse quadro.</p>
+  <p>Observe também que, ao usar os sprites de animação esquelética, você ainda pode obter e definir os valores do <tt>índice da imagem</tt> - veja a função <a href="../Skeletal_Animation/Animation/skeleton_animation_get_duration.htm"><tt>esqueleto_animação_get_duração()</tt></a> para
+    exemplos de como fazer isso.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">image_index;</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (valor de ponto flutuante de precisão único)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if (image_speed &gt; 0)<br> {
+    <br> if (image_index &gt;= image_number - 1) instance_destroy();<br> }
+  </p>
+  <p>O código acima verifica se o sprite está animando, e se está então verifica se a imagem_index atual está no último frame e nesse caso destrói a instância.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sprite_Instance_Variables.htm">Variáveis de Sprite Instance</a></div>
+        <div style="float:right">Próximo: <a href="image_number.htm">image_number</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+image_index
+-->
+  <!-- TAGS
+image_index
+-->
+</body>
+</html>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tampão_peek</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_peek" />
+  <meta name="rh-index-keywords" content="buffer_peek,buffer_u8,buffer_s8,buffer_u16,buffer_s16,buffer_u32,buffer_s32,buffer_u64,buffer_f16,buffer_f32,buffer_f64,buffer_bool,buffer_string,buffer_text" />
+  <meta name="search-keywords" content="buffer_peek" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tampão_peek</h1>
+  <p>Com o <a href="buffer_read.htm"><tt>buffer_read()</tt></a> você pode ler os dados do buffer dado na posição &quot;procurar&quot; atual, com cada pedaço de dado sendo lido avançando esta posição pelos bytes lidos ou escritos.
+    Entretanto, pode ser necessário que você leia um determinado dado sem querer alterar a posição atual de busca, e é quando você usaria esta função. Você simplesmente fornece a função com um buffer id, e então uma posição offset (de
+    o buffer start) dentro desse buffer para ler, assim como o tipo de dados que você está querendo ler.</p>
+  <p class="note"><b>NOTA</b>: O uso do tipo de dados incorretos para os dados que estão sendo lidos resultará em valores errôneos!</p>
+  <p>Se a função tiver sucesso, então um valor (Real, string, int, etc...) será retornado dependendo do tipo de dado, enquanto uma falha retornará simplesmente 0.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">buffer_peek(buffer, offset, tipo);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tampão</td>
+        <td>O índice do buffer a ser utilizado.</td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td>A posição de offset (em bytes) dentro do buffer para ler os dados fornecidos.</td>
+      </tr>
+      <tr>
+        <td>tipo</td>
+        <td>O tipo de dados que devem ser lidos do buffer (ver a lista de constantes <a href="buffer_read.htm">aqui</a>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real/Calça ou 0 se falhar.</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var vermelho = buffer_peek(buff, 1, buffer_u8);<br> var verde = buffer_peek(buff, 2, buffer_u8);<br> var azul = buffer_peek(buff, 3, buffer_u8);<br> image_blend = make_colour_rgb(vermelho, verde, azul);</p>
+  <p>O código acima obterá três valores de três posições diferentes dentro do buffer indexado na variável &quot;buff&quot; e então usará esses valores para definir a mistura da imagem da instância.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Buffers.htm">Tampões</a></div>
+        <div style="float:right">Próximo: <a href="buffer_poke.htm">buffer_poke</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_peek
+-->
+  <!-- TAGS
+buffer_peek
+-->
+</body>
+</html>

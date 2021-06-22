@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>profundidade</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the variable depth" />
+  <meta name="rh-index-keywords" content="depth" />
+  <meta name="search-keywords" content="depth" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>profundidade</h1>
+  <p>Quando você cria um objeto você pode atribuir-lhe uma <i>profundidade</i> inicial que define como as instâncias desse objeto serão desenhadas na sala quando o jogo estiver sendo jogado e essa variável pode ser usada para obter e alterar esse valor de profundidade enquanto o
+    o jogo está em andamento. Você normalmente não precisaria usar esta variável, uma vez que você deve definir instâncias a serem adicionadas a <a href="layer.htm">camadas</a> discretas, que por sua vez são definidas para uma profundidade específica, mas pode ser que você queira mudar a profundidade
+    de uma instância utilizando este valor, em cujo caso será criada uma &quot;camada temporária&quot; especificamente para a instância na profundidade determinada. Note que quando nenhuma instância estiver na mesma profundidade, esta camada temporária será removida da memória.
+    (ao contrário das camadas regulares, que permanecerão mesmo que não tenham nada sobre elas).</p>
+  <p class="note"><b>IMPORTANTE!</b> Quando você modifica a variável <tt>de profundidade</tt> e o <span class="notranslate">GameMaker Studio 2</span> gerencia as camadas, as camadas incorporadas <span style="font-size:1px;"><a href="layer.htm"><tt style="font-size: 14px">camada</tt></a></span> variável retornará -1 e não
+    o ID da camada, uma vez que as camadas gerenciadas não podem ser manipuladas através de código.</p>
+  <p>No <span class="notranslate">GameMaker Studio 2</span>, quanto menor o valor de profundidade de uma instância, mais &quot;perto da câmera&quot; essa instância será desenhada, enquanto um valor de profundidade mais alto significa que a instância será desenhada &quot;mais longe da câmera&quot;, ou seja
+    -1000 é desenhada em cima de -100, que é desenhada em cima de 0, que é desenhada em cima de 100, que é desenhada em cima de 1000.</p>
+  <p><img alt="Depth sorting example image" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Instances/depth_image.png">Note que instâncias de um objeto que têm a <b>mesma</b> profundidade podem ser desenhadas <b>acima <i>ou</i></b> abaixo uma da outra, mesmo quando parecem ser colocadas uma em cima da outra no editor da sala. Se você quiser garantir que algo seja desenhado por cima ou por baixo de tudo o resto, você deve sempre definir explicitamente a profundidade (ou camada). Observe também que há um mínimo de
+    (-16000) e valor máximo (+16000) de profundidade fora do qual as instâncias não serão extraídas, embora elas ainda existam e processem eventos.</p>
+  <p class="note"><b>NOTA: </b>Você <b>não pode</b> definir a profundidade de uma instância em seu evento de sorteio (todos os outros eventos estão bem).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">profundidade;</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (valor de ponto flutuante de precisão único)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se y != yprevious<br> {
+    <br> profundidade = -y;<br> }
+  </p>
+  <p>O código acima verificará se a posição y mudou e se a profundidade também será ajustada para corresponder a ele.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Instance_Variables.htm">Variáveis de instância</a></div>
+        <div style="float:right">Próximo: <a href="layer.htm">camada</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+depth
+-->
+  <!-- TAGS
+depth
+-->
+</body>
+</html>

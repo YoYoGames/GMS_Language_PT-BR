@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_play_sound_at</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_play_sound_at" />
+  <meta name="rh-index-keywords" content="audio_play_sound_at" />
+  <meta name="search-keywords" content="audio_play_sound_at" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_play_sound_at</h1>
+  <p>Com esta função você pode reproduzir qualquer recurso sonoro em uma determinada posição dentro do espaço de áudio. Você fornece o índice de som e então atribui a ele uma posição dentro do espaço 3D. A posição padrão do ouvinte é (0, 0, 0), então isto significa que se o ouvinte
+    não foi movido e você quer que o som venha da esquerda (por exemplo), você deve definir a posição x para um valor negativo (para mais informações sobre como definir a posição do ouvinte, veja <a href="Audio_Listeners/audio_listener_position.htm"><tt>audio_listener_position()</tt></a>).</p>
+  <p>Você também pode definir uma distância de queda (0 fará o som silencioso, o padrão é 100) o que fará o som desvanecer à medida que se afasta da posição do ouvinte. A forma como o som é ouvido dependerá da referência da queda (que é a distância
+    sob o qual o volume para a fonte normalmente cairia pela metade) e o fator roll off (que afeta apenas o som além da distância de referência de falloff). O fator padrão é normalmente 1, e o efeito dos diferentes valores de falloff dependerá
+    sobre o modelo escolhido (para um guia completo dos diferentes modelos de falloff e como esses valores são utilizados, consulte a função <a href="audio_falloff_set_model.htm"><tt>audio_falloff_set_model()</tt></a>).</p>
+  <p>Os dois últimos argumentos são para definir se o som deve ou não ser laço e, finalmente, para atribuir uma prioridade ao som. Esta prioridade é então usada para determinar como os sons são tratados quando o número de sons tocados está acima do limite estabelecido pela função
+    <a href="audio_channel_num.htm"><tt>audio_channel_num()</tt></a>. Sons de prioridade mais baixa serão interrompidos em favor de sons de prioridade mais alta, e o valor da prioridade pode ser qualquer número real (o valor real é arbitrário, e pode ser de 0 a 1 ou 0
+    a 100, uma vez que o <span class="notranslate">GameMaker Studio 2</span> irá priorizá-los da mesma forma). Observe que, quando se trata de prioridade, quanto <i>maior</i> o número, <i>maior</i> será a prioridade, de modo que um som com prioridade 100 será favorecido em relação a um som com prioridade 1.</p>
+  <p>Esta função retornará um número de índice único para o som que está sendo tocado, que pode então ser armazenado em uma variável para que você possa pausá-lo ou pará-lo com as funções apropriadas. Isto significa que se você tiver várias instâncias do mesmo som
+    tocando a qualquer momento, você pode direcionar apenas uma instância desse som para lidar com o uso das funções de áudio.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">audio_play_sound_at(index, x, y, z, falloff_ref, falloff_max, falloff_factor, loop, priority);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice do som a tocar.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A posição x.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A posição y.</td>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td>A posição z.</td>
+      </tr>
+      <tr>
+        <td>falloff_ref</td>
+        <td>A referência de falloff em relação ao ouvinte (grampo).</td>
+      </tr>
+      <tr>
+        <td>falloff_max</td>
+        <td>A distância máxima de falloff em relação ao ouvinte.</td>
+      </tr>
+      <tr>
+        <td>falloff_factor</td>
+        <td>O fator falloff (default 1).</td>
+      </tr>
+      <tr>
+        <td>loop</td>
+        <td>Marque o som como looping ou não.</td>
+      </tr>
+      <tr>
+        <td>prioridade</td>
+        <td>Defina a prioridade do canal para o som.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Índice (identificação sonora)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if global.SFX<br> {
+    <br> audio_play_sound_at(snd_Waterfall, x, y, 0, 100, 300, 1, true, 1);<br> }
+  </p>
+  <p>O código acima verifica a variável global &quot;SFX&quot; e se ela retornar verdadeiro então <tt>o</tt> som indexado na variável &quot;snd_Waterfall&quot; será laçado em sua posição de sala, com uma referência de queda de 100, uma distância de queda de 300,
+    um fator de falha de 1 e uma baixa prioridade.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Audio.htm">Áudio</a></div>
+        <div style="float:right">Próximo: <a href="audio_pause_sound.htm">audio_pause_sound</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_play_sound_at
+-->
+  <!-- TAGS
+audio_play_sound_at
+-->
+</body>
+</html>

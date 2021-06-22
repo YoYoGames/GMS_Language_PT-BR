@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Opções do Menu do Botão Direito do Rato</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Article explaining the right mouse button menu options
+" />
+  <meta name="rh-index-keywords" content="DnD™ Overview - Right Mouse Button Menu Options" />
+  <meta name="search-keywords" content="DnD,Code DnD,DnD RMB Menu,DnD to GML,DnD Comments,comments" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Opções do Menu do Botão Direito do Rato</h1>
+  <p>Ao trabalhar em seu código <span class="notranslate">DnD™</span>, você pode clicar com o botão direito do mouse <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> na ação, no espaço de trabalho ou no texto da lista restrita à esquerda
+    para abrir o menu do botão direito do mouse:</p>
+  <p><img alt="DnD™ RMB Menu" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_RMB_Menu.png">Este menu tem as seguintes opções:</p>
+  <ul class="colour">
+    <li><strong>Cortar </strong>/ <strong>Copiar </strong>/ <strong>Colar</strong>: Isto lhe permitirá cortar, copiar ou colar qualquer ação que seja selecionada no espaço de trabalho. Note que você pode usar <img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55"> + <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> fora das ações e arrastar, ou usar <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> em ações individuais,
+      para selecionar mais de um e aplicar o comando a todos eles.</li>
+    <li><strong>Comentar </strong>/ <strong>Remover Comentário</strong>: Esta opção lhe permite adicionar e remover comentários de seus blocos de código <span class="notranslate">DnD™</span>. Quando você selecionar Comentar, o editor de texto será aberto à direita do bloco <span class="notranslate">DnD™</span>selecionado, e lá você poderá
+      adicione qualquer texto necessário, seja um lembrete para mudar algo, ou um comentário útil para um tutorial, ou mesmo instruções para seus colegas de equipe:<br>
+      <img alt="DnD™ Comments" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Add_Comment.gif">Uma vez adicionado o comentário, você pode clicar nele e arrastá-lo para posicioná-lo verticalmente e horizontalmente - embora
+      somente à direita do nó pai - e colapsando o nó <span class="notranslate">DnD™</span>também colapsará o comentário e mostrará um resumo de seu conteúdo (caso em que não poderá ser reposicionado). Se o comentário não for mais necessário, então você pode ou apagar todos os
+      o texto no comentário, ou use a opção <strong>Remover Comentário </strong>do menu. Note que quando você copia um nó, o comentário será copiado junto com ele, e se você converter o nó de <span class="notranslate">DnD™</span>para <span class="notranslate">GML</span>, então o comentário será preservado.
+      e adicionado ao <span class="notranslate">GML</span> que é criado, como ilustrado na imagem abaixo: <br>
+      <img alt="DnD™ Comments In GML" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Comments_In_GML.png"> Como mencionado acima, um comentário só pode ser aplicado a um único nó, mas você pode expandi-lo para cobrir vários
+      nós, simplesmente adicionando intervalos de linha para estendê-lo - embora isso possa exigir que você reposicione o comentário para evitar sobreposições com nós subseqüentes:<br>
+      <img alt="DnD™ Comment Over Multiple Nodes" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Comments_Extended.png">Uma vez adicionado um comentário, você pode selecionar a opção &quot;Comentário<strong>&quot;</strong>.
+      novamente a partir do menu RMB ou você pode clicar duas vezes <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> sobre ele para habilitar a edição.</li>
+    <li><strong>Desativar </strong>/ <strong>Habilitar</strong>: Estes comandos podem ser utilizados para desativar ou ativar a ação (ou ações) selecionada. Quando uma ação é desativada, ela ainda é visível no espaço de trabalho, mas não será executada quando você compilar o jogo. Neste
+      maneira de adicionar/remover ações para testes e depuração. A imagem abaixo mostra algum código <span class="notranslate">DnD™</span>com ações desabilitadas:<br>
+      <img alt="DnD™ Disable Actions" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Disable_Actions.png">Você pode ver que as ações &quot;If Score&quot; e &quot;Go To Next Room&quot; foram desabilitadas -
+      foram acinzentados, visualmente - e por isso serão pulados quando o jogo for testado ou compilado.</li>
+    <li><strong>Troca de ponto de parada</strong>: Este comando ativará ou desativará um ponto de parada para a ação selecionada. Um ponto de parada é simplesmente um ponto no código <span class="notranslate">DnD™</span>onde o <a href="../../IDE_Tools/The_Debugger.htm">depurador</a> deve parar quando o jogo
+      está sendo executado no modo Debug. Uma ação com um ponto de parada atribuído a ela será destacada, como mostrado na imagem abaixo (a ação &quot;Se Saúde&quot; foi definida como um ponto de parada):<br>
+      <img alt="DnD™ Breakpoint" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_ToggleBreakpoint.png"></li>
+    <li><strong>Apagar todos os pontos de parada</strong>: Com este comando, você pode remover todos os pontos de parada do código <span class="notranslate">DnD™</span>.</li>
+    <li><strong>Colapsar tudo</strong> / <strong>Expandir tudo</strong>: <span class="notranslate">DnD™</span>as ações podem ser colapsadas ou expandidas, onde uma ação colapsada simplesmente mostrará o nome da ação mas não qualquer um dos valores internos, maximizando assim o espaço disponível
+      para o espaço de trabalho. Por exemplo:<br>
+      <img alt="DnD™ Collapsed Actions" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_CollapseActions.png">Como você pode ver, as ações ocupam muito menos espaço, e você ainda pode ver o que elas fazem a partir do curto
+      descrição dada à direita. Você pode selecionar a opção &quot;Expandir tudo&quot; para desfazer isto para cada nó no espaço de trabalho.</li>
+    <li><strong>Redefinir o layout</strong>: Isto irá redefinir o espaço de trabalho <span class="notranslate">DnD™</span>, ajustando o nível de zoom para 100%, focando na ação atualmente selecionada, e expandindo qualquer (e todas) as ações colapsadas também.</li>
+    <li><strong>Pré-visualização ao vivo</strong>: Ao selecionar esta opção, você ativará ou desativará a janela de visualização de código <span class="notranslate">DnD™</span>para <span class="notranslate">GML</span><span class="notranslate">(GameMaker Language</span>). Isto é explicado com mais detalhes na página <a href="Changing_DnD_To_Code.htm">Mudando <span class="notranslate">DnD™</span></a> para Código.</li>
+    <li><strong>Converter para <span class="notranslate">GML</span></strong>: Isto irá converter todas as suas ações no evento atual para código <span class="notranslate">GML</span><span class="notranslate">(GameMaker Language</span>). Tenha muito cuidado com isto, pois <em>você não pode converter <span class="notranslate">o GML</span> de volta para as ações <span class="notranslate">DnD™</span></em> das quais ele foi criado. Você pode converter
+      o evento de volta para um evento <span class="notranslate">DnD™</span>de código, mas qualquer código será simplesmente envolto em uma ação de <a href="../Drag_And_Drop_Reference/Common/Execute_Code.htm">Código de Execução</a>. Isto é explicado com mais detalhes na página <a href="Changing_DnD_To_Code.htm">Mudando <span class="notranslate">DnD™</span></a> para Código.</li>
+    <li><strong>Janela</strong>: Esta seção abre o seguinte sub-menu:<br>
+      <img alt="DnD™ Window Options" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_WindowOptions.png">Os itens de menu disponíveis aqui são:
+      <ul>
+        <li><strong>Ir para Objeto</strong>: Isto vai direcionar o espaço de trabalho para o objeto que está chamando o evento</li>
+        <li><strong>Evento Aberto Herdado</strong>: Esta opção só está disponível se o objeto sendo editado for filho de um objeto pai, e abrirá o evento sendo editado do objeto pai e abrirá o espaço de trabalho para ele.</li>
+        <li><strong>Painel Único </strong>/ <strong>2 Colunas</strong> / <strong>3 Colunas</strong>: Estas opções podem ser usadas para dividir o espaço de trabalho atual em 1, 2 ou 3 &quot;painéis&quot; diferentes. Cada painel é um espaço de trabalho separado que pode ter scripts
+          ou eventos arrastados sobre eles para que você possa editar e comparar 2 ou mais blocos de código <span class="notranslate">DnD™</span>de cada vez. A imagem abaixo mostra dois scripts em uma janela mostrados em seu próprio painel de espaço de trabalho:<br>
+          <img alt="DnD™ Split Workspace Panes" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_SplitPaneWindow.png"></li>
+      </ul>
+    </li>
+  </ul>
+  <p>As duas opções a seguir só estão disponíveis quando o menu RMB é aberto em um nó <span class="notranslate">DnD™:</span></p>
+  <ul class="colour">
+    <li><strong>Pan</strong>: Ao selecionar esta opção em qualquer nó, a área de trabalho irá girar para tocar aquele nó até o centro.</li>
+    <li><strong>Mostrar Ajuda</strong>... : Selecionando isto abrirá o Manual em um novo espaço de trabalho na página relevante para o nó que foi selecionado. Você também pode obter os mesmos resultados usando <img alt="Icon F1" class="icon" height="20" src="../../assets/Images/Icons/Icon_f1.png" width="55"> no nó.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../../Content.htm">Índice</a></div>
+        <div style="float:right">A seguir: <a href="Constructing_Action_Block_Code.htm">Construindo o Código de Bloco de Ação</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Drag And Drop</span> RMB Options
+<span class="notranslate">DnD</span> RMB Options
+<span class="notranslate">DnD</span> Comments
+<span class="notranslate">DnD</span> to <span class="notranslate">GML</span>
+-->
+  <!-- TAGS
+drag_and_drop_rmb
+-->
+</body>
+</html>

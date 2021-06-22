@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sequence_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_create" />
+  <meta name="rh-index-keywords" content="layer_sequence_create" />
+  <meta name="search-keywords" content="layer_sequence_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sequence_create</h1>
+  <p>Com esta função, você pode criar uma instância de um ativo em seqüência na camada dada. Você fornece o ID da camada que pode ser uma seqüência do nome da camada - como definido no editor da sala - ou o ID exclusivo da camada - como retornado pela função <a href="../General_Layer_Functions/layer_get_id.htm"><tt>layer_get_id()</tt></a>,
+    assim como a posição X e Y na sala para criar a seqüência e, finalmente, a identificação da seqüência a ser criada. O ID da seqüência é o nome constante que você definiu no Navegador de Ativos para a seqüência. A função retornará o ID exclusivo
+    do elemento sequência, que pode então ser usado em todas as funções de camadas adicionais para seqüências, ou pode ser usado para recuperar a estrutura da instância da seqüência usando a função <a href="layer_sequence_get_sequence.htm"><tt>layer_sequence_get_instance()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">layer_sequence_create(layer_id, x, y, sequence_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>O valor de identificação único da camada de instância a ser alvo</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A posição x na sala para criar a seqüência em</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A posição y na sala para criar a seqüência em</td>
+      </tr>
+      <tr>
+        <td>sequence_id</td>
+        <td>A identificação da seqüência a criar, conforme definido no Navegador de Ativos</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Inteiro (ID do elemento)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var _s = layer_sequence_create(&quot;Background&quot;, 0, 0, seq_AnimatedBackground);<br> layer_sequence_pause(_s);
+  </p>
+  <p>O código acima cria uma nova seqüência na camada &quot;Background&quot; e depois a faz uma pausa.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sequence_Layers.htm">Sequência de camadas</a></div>
+        <div style="float:right">Próximo: <a href="layer_sequence_destroy.htm">layer_destroy_sequence_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_create
+-->
+  <!-- TAGS
+layer_sequence_create
+-->
+</body>
+</html>

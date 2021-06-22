@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ladrilhos Animados</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the tile set editor animated tiles works" />
+  <meta name="rh-index-keywords" content="Tile Sets - Animated Tiles" />
+  <meta name="search-keywords" content="animated tiles,tile animation" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Ladrilhos Animados</h1>
+  <p>Os azulejos são geralmente considerados células estáticas dentro da sala de jogos, porém com o <span class="notranslate">GameMaker Studio 2</span> é possível animá-los, da mesma forma que se anima um duende. Por que não usar apenas sprites, você pergunta? Bem, os sprites têm uma certa sobrecarga de processamento devido
+    a eles estarem associados a uma caixa de delimitação e à forma em que são renderizados, mas as telhas têm uma carga de processamento muito menor e, portanto, são mais rápidas de renderizar. No entanto, isto tem um preço, na medida em que com animações de conjuntos de azulejos você está limitado a
+    criando animações que devem ser uma potência de dois comprimentos - ou seja: de 2, 4, 8, 16, etc... quadros - e obviamente devem ser criadas dentro da grade de azulejos, <em>e </em>todas elas devem animar na mesma velocidade (na base de um conjunto por telha). Entretanto, mesmo
+    Com estas limitações, os azulejos animados são uma característica poderosa que pode ser usada para acrescentar vida e cor a ambientes e fundos estáticos.</p>
+  <p>Para criar uma animação de azulejos você deve primeiro ter um conjunto de azulejos que tenha os azulejos necessários dentro de uma imagem sprite (mas não como quadros sprite, então um único grande quadro sprite com todas as imagens de animação dentro dele), e então no <a href="../Tile_Sets.htm">Editor de Conjunto de Azulejos</a> você clica no botão <strong>Animação de Azulejos</strong> para trazer à tona o Editor de Animação:</p>
+  <p><img alt="Tile Animation Window" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_Animations.png">A imagem de exemplo acima é uma imagem única com todos os quadros de animação contidos nela, mas deve ser notado que a imagem poderia
+    também contém outras peças que não sejam de animação, já que você pode usar um único conjunto de peças maciças e depois &quot;escolher a cereja&quot; as partes da animação a partir das quais você deseja criar a animação. Por exemplo, você poderia ter um grande conjunto de azulejos de paisagem com árvores,
+    terra e água, e dentro do conjunto de azulejos têm vários azulejos a serem animados para fazer a ondulação da água.</p>
+  <p>Para criar uma animação de azulejos você primeiro tem que adicionar uma animação à biblioteca de animação clicando no botão <strong>Add Animation </strong> <img alt="Add Animation Icon" class="icon" src="../../assets/Images/Icons/Icon_AddArgument.png">, que irá
+    adicionar uma tira de animação vazia à biblioteca e solicitar que você selecione um número de quadros a serem usados:</p>
+  <p><img alt="Add Animation" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_AnimationAdd.png">Você será então apresentado com uma visão de cada frame de animação vazio, com o frame inicial destacado para você:</p>
+  <p><img alt="An Empty Animation" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_EmptyAnim.png">Se você então voltar para a imagem do conjunto de azulejos à esquerda do editor, você pode clicar <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> em qualquer azulejo para adicioná-lo à animação e o quadro avançará para o próximo. Clicando em <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> em azulejos sucessivos, você preencherá o quadro
+    animação, que você pode então visualizar clicando no botão &quot;play&quot; ao lado dos quadros:</p>
+  <p><img alt="Add Animation Frames" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_AddFrames.gif">Uma vez que você tenha feito isso, sua animação se tornará parte da biblioteca de animação e quando você entrar no <a href="../Rooms.htm">Editor da Sala</a> você poderá selecioná-la e colocá-la dentro da sala. Note que se você selecionar qualquer um dos azulejos de uma animação para colocar em uma sala, esse azulejo irá animar a partir do azulejo selecionado, para que você possa &quot;dessincronizar&quot; uma animação, colocando separadamente
+    dentro da sala e todos eles irão animar. A única ressalva é que a velocidade de animação será sempre a mesma, já que é definida para todo o conjunto de azulejos e não para animações individuais dentro da biblioteca.</p>
+  <p>Algumas coisas a serem observadas sobre os azulejos que estão sendo usados em animações:</p>
+  <ul class="colour">
+    <li>Se a telha tiver sua própria animação especificada (portanto, há uma animação onde ela é definida como a primeira telha), então ela usará essa animação.</li>
+    <li>Se o azulejo não tem sua própria animação, mas é usado apenas em uma outra animação, então ele usará essa animação começando na primeira posição em que o azulejo está presente na animação.</li>
+    <li>Se o azulejo não tiver sua própria animação e for usado em várias outras animações, então ele não irá animar em absoluto. Você precisará especificar explicitamente uma animação com ela como o primeiro azulejo.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Tile_Sets.htm">Conjuntos de azulejos</a></div>
+        <div style="float:right">A seguir: <a href="Auto_Tiles.htm">Pisos para automóveis</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Animated Tiles
+-->
+  <!-- TAGS
+tile_set_editor_animated_tiles
+-->
+</body>
+</html>

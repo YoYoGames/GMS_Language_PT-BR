@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>dados_esqueleto_dados_de_squadra</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_slot_data" />
+  <meta name="rh-index-keywords" content="skeleton_slot_data" />
+  <meta name="search-keywords" content="skeleton_slot_data" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>dados_esqueleto_dados_de_squadra</h1>
+  <p>Com esta função você pode preencher uma <a href="../../../../Data_Structures/DS_Lists/DS_Lists.htm">lista DS</a> (pré-criada) com dados para cada um dos slots de anexo disponíveis que uma animação contém. Estes dados são retornados no fórum de um <a href="../../../../Data_Structures/DS_Maps/DS_Maps.htm">mapa DS</a> que contém os seguintes pares chave/valor:</p>
+  <ul class="colour">
+    <li><b>&quot;nome&quot;:</b> O nome do espaço.</li>
+    <li><b>&quot;osso&quot;:</b> O nome do "osso".</li>
+    <li><b>&quot;anexo&quot;:</b> O nome do anexo se for usado ou &quot;(nenhum)&quot; se não houver um atribuído.</li>
+  </ul>
+  <p>Os valores para cada chave serão cordas e podem então ser usados nas outras funções de fixação do esqueleto para estes tipos de duende. Observe que o mapa DS criado <i>não</i> é destruído, portanto você precisará percorrer a lista DS e destruir cada um dos
+    os próprios mapas criados.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">skeleton_slot_data(sprite, lista);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>O índice sprite da animação do esqueleto da coluna vertebral para obter os dados.</td>
+      </tr>
+      <tr>
+        <td>lista</td>
+        <td>A identificação da lista DS a ser preenchida com os mapas DS.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var list = ds_list_create();<br> var open = true;<br> slot_name = &quot;&quot;;<br> skeleton_slot_data(sprite_index, list);<br> for (var i = 0; i &lt; ds_list_size(list); i++;) <br> {
+    <br> var map = list[| i];<br> se aberto<br> {
+    <br> if map[? &quot;attachment&quot;] == &quot;(none)&quot;<br> {
+    <br> open = false;<br> slot_name = map[? &quot;nome&quot;];<br> }
+    <br> }
+    <br> ds_map_destroy(mapa);
+    <br> }
+    <br> ds_list_destroy(list);
+  </p>
+  <p>O código acima cria uma lista DS e depois a preenche com os dados do slot para o exemplo sprite. Estes dados são então analisados para extrair os mapas individuais de DS com os dados do slot. Isto é então verificado para ver se há um slot vazio, e se sim, a variável
+    O &quot;slot_name&quot; é atribuído ao nome do slot vazio antes que o mapa DS seja destruído. Finalmente, destruímos a lista DS, pois ela não é mais necessária.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Slots.htm">Slots</a></div>
+        <div style="float:right">Próxima: <a href="skeleton_slot_data_instance.htm">esqueleto_dados_de_instância_esqueleto</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_slot_data
+-->
+  <!-- TAGS
+skeleton_slot_data
+-->
+</body>
+</html>

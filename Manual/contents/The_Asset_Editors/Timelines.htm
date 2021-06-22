@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Linhas do tempo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the timeline editor works" />
+  <meta name="rh-index-keywords" content="Timeline Editor" />
+  <meta name="search-keywords" content="timelines,timeline,timeline editor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>O Editor da Linha do Tempo</h1>
+  <p><img alt="The Timeline Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Timelines.png">Na maioria dos jogos você vai querer que certas coisas aconteçam em momentos precisos no tempo. Agora, você pode tentar conseguir isso usando os eventos de alarme, mas
+    Quando as coisas se complicarem demais, isto não funcionará mais, especialmente porque você está limitado a apenas doze alarmes. É por isso que temos o ativo da linha do tempo. Em uma linha do tempo, você especifica quais ações devem acontecer em determinados momentos em
+    tempo de jogo, e você pode usar todas as ações que também estão disponíveis para um objeto em seus diferentes eventos ou códigos para definir isto. Uma vez criada uma linha de tempo, você pode então atribuí-la a um objeto, e a instância desse objeto executará então o
+    ações nos momentos indicados, quando colocadas ou criadas dentro de uma sala.</p>
+  <p>Por exemplo, suponha que você queira fazer um guarda e que esse guarda deve mover 20 passos para a esquerda, depois 10 para cima, depois 20 para a direita, depois 10 para baixo e depois finalmente parar. Para conseguir isso, você pode fazer uma linha do tempo onde você começa com a configuração
+    uma moção para a esquerda. Você então criaria o momento 20 (um &quot;momento&quot; é apenas outra forma de dizer &quot;passo de jogo&quot; ou &quot;moldura de jogo&quot;) e colocaria um movimento para cima, depois no momento 30 um movimento para a direita, no momento 50 um movimento para baixo
+    e, finalmente, no momento 60, você pararia a moção. Uma vez feito isso, você pode atribuir esta linha de tempo ao objeto de guarda e a instância de guarda fará exatamente o que você planejou quando colocado em uma sala. Você poderia até mesmo colocar um alarme na linha de tempo, de modo que
+    que se repete após um certo período de tempo e desta forma sua guarda pode patrulhar uma área. Você também pode usar uma linha de tempo para controlar seu jogo mais globalmente, por exemplo, criando um objeto controlador invisível, depois uma linha de tempo que, com certeza
+    momentos cria inimigos e, em seguida, atribuí-lo ao objeto controlador e colocar uma instância na sala. Esta é uma maneira fácil de obter momentos cronometrados dos inimigos em um jogo de shoorter espacial ou algo parecido.</p>
+  <p>Para criar uma linha do tempo, clique com o botão direito do mouse <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> no <a href="../Introduction/The_Asset_Browser.htm">Navegador de Ativos</a> e selecione &quot;Criar Linha do Tempo&quot;. Isto abrirá a janela ilustrada
+    no topo desta página com as seguintes seções:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Nome</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Aqui você dá um <strong>nome</strong> ao seu recurso da linha do tempo. Este deve conter apenas caracteres alfanuméricos ou a barra inferior &quot;_&quot; e não pode começar com um número, pois será usado para referenciar sua linha do tempo através do código. Este nome irá
+      ser também a identificação única da linha do tempo que pode ser usada em <span class="notranslate">DnD™</span>ações ou funções de código para identificar a linha do tempo.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Momento</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Você pode definir aqui o valor do <strong>momento </strong>. O valor do momento é calculado como o número de etapas do jogo após o início da linha do tempo. Portanto, se você tiver uma linha de tempo com momentos nas posições 0 e 60, então o momento 0 será acionado quando a linha de tempo
+      é <em>iniciado </em>e o momento 60 acontecerá 60 passos <em>depois</em>. Se a velocidade de seu quarto estiver definida para 60 também, então o momento 60 acontecerá um segundo após o início da linha do tempo. Você pode fazer um duplo clique <img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png"> sobre o valor do momento ou pode usar o menu <img alt="RMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_RMB.png" src="../assets/Images/Icons/Icon_RMB.png"> com o botão direito e selecionar
+      &quot;
+     <em>mudar</em>&quot; (veja a seção no menu de botões abaixo) para mudá-lo. Para adicionar um novo momento, basta clicar no botão <strong>Adicionar </strong>, na parte inferior do editor. Adicionar novos momentos abrirá o <a href="Scripts.htm">editor de código</a> (ou editor de ação) onde você pode adicionar as funções ou <span class="notranslate">DnD™</span>que você deseja chamar naquele momento.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Nome do Momento</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Para ajudá-lo a entender o que sua linha do tempo está fazendo, é permitido que você dê um nome aos momentos para identificá-los. Isto é simplesmente um fio e não será usado no código do jogo ou em qualquer outro lugar, pois é puramente para organizar e entender o que
+      sua linha do tempo faz. Para adicionar um nome/descrição ao seu momento, você precisa usar o formato <span class="inline">/// @description</span> na primeira linha do bloco de código, por exemplo:<br>
+    </p>
+    <p class="code">//// @descrição Olá Mundo</p>
+    <p class="dropspot">O que se pareceria com isto:</p>
+    <p class="dropspot">
+      <img src="../assets/Images/Asset_Editors/Editor_Timelines_Name.png" class="center" alt="Timeline Editor Name/Description" />
+    </p>
+  </div>
+  <p> </p>
+  <p>O editor da linha do tempo permite que você use <img alt="Space Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Space.png" width="55"> + <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> selecione
+    todos os momentos entre o primeiro clique <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> e o segundo clique <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21">, ou você pode usar <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> para clicar em momentos únicos para selecioná-los independentemente. Os momentos da linha do tempo podem ser editados usando o botão direito do mouse <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> menu em um dos elementos selecionados:</p>
+  <p><img alt="Timeline RMB Menu" class="center" src="../assets/Images/Asset_Editors/Editor_Timelines_RMBMenu.png" /></p>
+  <ul class="colour">
+    <li><strong>Acrescente</strong>: Esta opção lhe permite adicionar um novo momento à linha do tempo. Ele será adicionado diretamente após o último momento, portanto, se o último momento em sua linha de tempo for 120, o próximo a ser adicionado será 121. Você pode mudar a posição do momento
+      clicando duas vezes em <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> sobre o valor do momento no editor ou clicando com o botão direito do mouse em <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> e escolhendo &quot;<em>Change</em>&quot;.</li>
+    <li><strong>Editar</strong>: Isto abre o momento atual da linha do tempo para edição.</li>
+    <li><strong>Momento de mudança</strong>: Alterar o valor para o momento selecionado da linha do tempo. Isto é o mesmo que clicar duas vezes lentamente <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> sobre o valor da linha do tempo
+      na janela do editor.</li>
+    <li><strong>Mudança Descrição</strong>: Alterar o nome descritivo para o momento selecionado da linha do tempo. Isto é o mesmo que clicar duas vezes lentamente em <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> no
+      descrição da linha do tempo na janela do editor.</li>
+    <li><strong>Duplicar</strong>: Isto duplicará todos os momentos selecionados da linha do tempo e os adicionará consecutivamente ao final da linha do tempo atual.</li>
+    <li><strong>Fundir</strong>: Se você selecionar dois ou mais momentos de uma linha do tempo, você pode optar por fundi-los. Isto criará um único momento da linha do tempo na posição do primeiro momento selecionado com todos os códigos e ações em conjunto ao mesmo tempo.</li>
+    <li><strong>Remover</strong>: Isto removerá o momento (ou momentos) selecionado da linha do tempo.</li>
+    <li><strong>Cortar </strong>/ <strong>Copiar </strong>/ <strong>Colar</strong>: Estas opções permitem cortar, copiar ou colar um ou mais momentos da linha do tempo. Você pode usar os atalhos de teclado padrão também aqui: <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">X</span>&quot;, <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">C</span>&quot;, e <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">V</span>&quot;.</li>
+    <li><strong>Selecione Tudo</strong>: Com esta opção, você pode selecionar todos os momentos em uma linha do tempo. Os momentos selecionados podem então ser removidos, fundidos, duplicados, cortados ou copiados.</li>
+    <li><strong>Converter em <span class="notranslate">Drag and Drop</span></strong>/ Code: Os momentos da linha do tempo serão criados usando o método escolhido quando você criou o projeto, seja usando código ou usando ações de <span class="notranslate">Arrastar e Soltar e Drop™</span>. Com esta opção você pode converter de um para o outro, independentemente
+      do tipo de projeto.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="The_Asset_Editors.htm">Os Editores de Ativos</a></div>
+        <div style="float:right">A seguir: <a href="Image_Editor.htm">Editor de imagem</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Timeline Editor
+Timeline Editor
+-->
+  <!-- TAGS
+timeline_editor
+-->
+</body>
+</html>

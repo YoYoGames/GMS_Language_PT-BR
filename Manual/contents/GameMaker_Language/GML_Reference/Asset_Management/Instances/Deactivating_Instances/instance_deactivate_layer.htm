@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>instance_deactivate_layer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_deactivate_layer" />
+  <meta name="rh-index-keywords" content="instance_deactivate_layer" />
+  <meta name="search-keywords" content="instance_deactivate_layer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>instance_deactivate_layer</h1>
+  <p>Com esta função você pode desativar todas as instâncias atribuídas a uma camada específica. Você precisa fornecer o <b>ID da camada</b>, que pode ser o nome da camada como escrito no editor de código (como uma string) ou o valor real do ID da camada como retornado.
+    pela <a href="../../Rooms/General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a>e observe que você só pode desativar camadas de <i>instância</i> com esta função. Note que se você desativou uma camada que tem instâncias de objetos
+    marcado como <b>Persistente</b>, então você precisará reativar a camada novamente com a função <a href="instance_activate_layer.htm"><tt>instance_activate_layer()</tt></a> antes do vestiário, caso contrário, qualquer instância persistente na camada
+   <i>não</i> serão transportados e serão descartados. Observe também que a desativação não é instantânea, e uma instância que tenha sido desativada desta forma não será considerada inativa até o final do evento em que a função foi chamada.</p>
+  <p class="note"><b>NOTA</b>: Se você desativar uma instância no início da sala (ou seja: do código de criação da sala, ou de uma instância criar evento de uma instância dentro da sala) todas as instâncias que são colocadas dentro da sala do editor da sala <b>ainda executarão seu evento de criação</b> antes de serem desativadas.</p>
+  <p class="note"><b></b><b>AVISO</b>: A desativação de instâncias que têm a física habilitada <b>NÃO</b> irá impedir que seus dispositivos interajam dentro da simulação física. Para isso, você deve definir seus <span style="font-size:1px;"><a href="../../../Physics/Physics_Variables/phy_active.htm"><tt style="font-size: 14px">phy_active</tt></a></span> variável
+    para <tt>verdadeiro</tt> ou <tt>falso</tt> à medida que você ativa/desativa as instâncias.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">instance_deactivate_layer(obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>camada</td>
+        <td>A cadeia de identificação da camada (ou valor) a ser usada</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">instance_deactivate_layer(&quot;Enemy Layer&quot;);<br> var _vx = camera_get_view_x(view_camera[0]);<br> var _vy = camera_get_view_y(view_camera[0]); <br> var _vw = camera_get_view_width(view_camera[0]);<br> var _vh = camera_get_view_height(view_camera[0]);<br> instance_activate_region(_vx - 64, _vy - 64, _vw + 128, _vh + 128, false);</p>
+  <p>O código acima desativa todas as instâncias atribuídas à camada &quot;Enemy_Layer&quot; e depois ativa uma região dentro da sala.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Deactivating_Instances.htm">Desativação de Instâncias</a></div>
+        <div style="float:right">A seguir: <a href="instance_activate_all.htm">instance_activate_all</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_deactivate_layer
+-->
+  <!-- TAGS
+instance_deactivate_layer
+-->
+</body>
+</html>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_add</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_add" />
+  <meta name="rh-index-keywords" content="sprite_add" />
+  <meta name="search-keywords" content="sprite_add" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_add</h1>
+  <p>Com esta função você pode adicionar uma imagem como um sprite, carregando-a de uma fonte externa onde o arquivo de imagem a ser carregado deve estar <b>sempre</b> no formato <tt>*.png</tt>, <tt>*.gif</tt>, <tt>*.jpg/jpeg</tt> ou <tt>*.json</tt><tt>(</tt> arquivos<tt>*json</tt> são usados para carregar <a href="../Skeletal_Animation/Skeletal_Animation.htm">sprites de animação de esqueleto</a> feitos com Lombada). A função retorna o novo índice sprite que deve então ser usado em todos os outros códigos que se relacionam com o sprite. Se
+    você usa esta função com HTML5 ou está obtendo uma imagem de uma URL, esta função também irá gerar um evento assíncrono de <b>imagem carregada</b>. Veja <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Image_Loaded.htm">esta página</a> para
+    mais informações.</p>
+  <p>Todas as imagens que devem ser transformadas em sprites animados - exceto <tt>*.gif</tt> (veja abaixo) - devem ter um formato &quot;strip&quot; (veja a imagem abaixo) e serão divididas no número de subimagens especificadas seguindo a regra sprite <b>width = largura de strip / sub images</b>.</p>
+  <p><img alt="Example Sprite Strip" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/spr_strip.png" /></p>
+  <p>Como você pode ver na imagem acima, o duende foi colocado sobre um fundo roxo escuro, e isto pode ser removido colocando o argumento &quot;removeback&quot; em realidade. Isto funciona verificando o píxel <i>inferior esquerdo</i> do duende para
+    a cor ali e depois a usa como a cor a ser removida. Por exemplo, na imagem acima, se tivéssemos a cor do pixel inferior esquerdo como verde, todas as partes verdes do duende teriam sido removidas e o resto do fundo roxo teria sido ignorado.</p>
+  <p>Se você escolher a opção &quot;removeback&quot;, você também pode querer que o GameMaker <span class="notranslate">Studio 2 suavize</span> as bordas do duende definindo o argumento &quot;suave&quot; como verdadeiro. Tudo o que isso faz é criar uma borda semi-transparente ao redor das bordas do
+    o duende depois de ter tido seu fundo removido.</p>
+  <p>Finalmente, você também pode especificar a <i>origem</i> x e y para o duende. Este é o ponto onde o duende é &quot;fixo&quot; na instância que o utiliza, e é sempre calculado em relação ao canto superior esquerdo 0,0 de uma subimagem do duende. Portanto, o que significa que o duende é "fixo" na instância que o utiliza,
+    por exemplo, um duende de 32 x 32 pixels com estes valores definidos para (16,16) terá sua origem no centro.</p>
+  <p>Se você estiver adicionando uma imagem em formato <tt>*.gif</tt>, então você só precisa especificar o nome do arquivo e o número da imagem (que deve ser 1 para o primeiro quadro) e pode deixar todos os outros argumentos como 0, observando que <b>somente a primeira imagem do GIF será carregada</b>.
+    Para <tt>*.json</tt> sprites, o número da imagem deve ser 1, e as configurações &quot;removeback&quot; e &quot;smooth&quot; serão ignoradas.</p>
+  <p>Por padrão, todos os novos sprites têm suas caixas delimitadoras calculadas automaticamente (a caixa delimitadora exata dependerá do tamanho e da transparência do sprite), no entanto, você pode querer personalizar isso, caso em que você também deve usar a função
+    <a href="sprite_collision_mask.htm"><tt>sprite_collision_mask()</tt></a>.</p>
+  <p>Deve-se observar que a memória utilizada ao adicionar um duende desta forma será maior do que se espera. Isto porque o <span class="notranslate">GameMaker Studio 2</span> irá armazenar o duende como uma página de textura <i>e</i> também será armazenado na memória GPU, portanto, a memória total
+    será maior do que o esperado para um arquivo de imagem do mesmo duende.</p>
+  <p class="note"><b>NOTA</b>: Quando você carrega um duende no <span class="notranslate">GameMaker Studio 2</span>, você deve se lembrar de removê-lo novamente (com <a href="sprite_delete.htm"><tt>sprite_delete()</tt></a>) quando não for mais necessário, caso contrário há o risco de um vazamento de memória que irá diminuir e
+    acabam por quebrar seu jogo.</p>
+  <p class="note"><b>NOTA</b>: Em <b><span class="notranslate">iOS</span></b>Se você estiver carregando um arquivo incluído a partir de uma pasta, ou seja: com um caminho algo como &quot;<span style="font-size:1px;"><tt>Antecedentes/fundos1.png</tt></span>&quot;, você NÃO precisa incluir a pasta como parte do
+    e simplesmente fornecer o nome do arquivo é suficiente. Em todas as outras plataformas você deve fornecer a(s) pasta(s) como parte do caminho para o arquivo.</p>
+  <p class="note"><b>NOTA</b>: Em <b>HTML5</b>, se você estiver carregando um sprite a partir de um servidor seguro, você pode precisar definir o tipo de origem cruzada e usar um caminho relativo ao invés de um caminho absoluto. Veja <span style="font-size:1px;"><a href="../../../Asynchronous_Functions/HTTP/http_set_request_crossorigin.htm"><tt style="font-size: 14px">http_set_request_crossorigin()</tt></a></span> para
+    mais detalhes.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">sprite_add(fname, imgnumb, removeback, smooth, xorig, yorig);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td>O nome (um caminho de arquivo de cadeia) do arquivo a ser adicionado.</td>
+      </tr>
+      <tr>
+        <td>imgnum</td>
+        <td>Use para indicar o número de sub-imagens (1 para uma única imagem ou para um <tt>*.gif</tt>).</td>
+      </tr>
+      <tr>
+        <td>remover</td>
+        <td>Indica se todos os pixels com a cor de fundo (píxel inferior esquerdo) devem ser transparentes.</td>
+      </tr>
+      <tr>
+        <td>smooth</td>
+        <td>Indica se as bordas devem ser suavizadas se forem transparentes.</td>
+      </tr>
+      <tr>
+        <td>xorig</td>
+        <td>Indicar a posição x da origem no duende.</td>
+      </tr>
+      <tr>
+        <td>yorig</td>
+        <td>Indicar a posição y da origem no duende.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (valor de identificação sprite)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">spr = sprite_add(&quot;player_5.png&quot;, 16, true, true, 0, 0);</p>
+  <p>O código acima carrega um duende para o jogo e armazena seu índice na variável &quot;spr&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sprite_Manipulation.htm">Manipulação de Sprite</a></div>
+        <div style="float:right">Próximo: <a href="sprite_replace.htm">sprite_replace</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_add
+-->
+  <!-- TAGS
+sprite_add
+-->
+</body>
+</html>

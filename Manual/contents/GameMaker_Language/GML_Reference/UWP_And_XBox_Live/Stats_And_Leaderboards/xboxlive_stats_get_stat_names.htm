@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_stats_get_stat_names</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_stats_get_stat_names" />
+  <meta name="rh-index-keywords" content="xboxlive_stats_get_stat_names" />
+  <meta name="search-keywords" content="xboxlive_stats_get_stat_names" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_stats_get_stat_names</h1>
+  <p>Esta função pode ser usada para recuperar todas as estatísticas definidas do gerente de estatísticas para um determinado usuário. O usuário fornece o ID do usuário conforme retornado pela (por exemplo) função <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>,
+    e a função retornará um conjunto de cordas contendo as estatísticas para o usuário. Se ocorrer um erro ou se o usuário não tiver estatísticas, a matriz ainda será devolvida, mas terá uma contagem de elementos de 0.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">xboxlive_stats_get_stat_names(user_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>O ponteiro de identificação do usuário para obter os nomes estatutários de</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Array</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var _stat_str = xboxlive_stats_get_stat_names(user_id);<br> for (var i = 0; i &lt; array_length(_stat_str); ++i;) <br> {
+    <br> xboxlive_stats_delete_stat(user_id, _stat_str[i]);<br> }
+  </p>
+  <p>O código acima recupera todas as estatísticas definidas para o ponteiro de identificação do usuário armazenado na variável dada e, em seguida, percorre a matriz e apaga o stat especificado do gerente do stat.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Stats_And_Leaderboards.htm">Estatísticas e Quadros de Líderes</a></div>
+        <div style="float:right">Próximo: <a href="xboxlive_stats_get_stat.htm">xboxlive_stats_get_stat</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_stats_get_stat_names
+-->
+  <!-- TAGS
+xboxlive_stats_get_stat_names
+-->
+</body>
+</html>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_get_fog</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_get_fog" />
+  <meta name="rh-index-keywords" content="gpu_get_fog" />
+  <meta name="search-keywords" content="gpu_get_fog" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_get_fog</h1>
+  <p>Esta função pode ser usada para recuperar os ajustes de nevoeiro. A função retorna uma matriz de 4 elementos 1D com as seguintes informações:</p>
+  <ul class="colour">
+    <li>[0] = alternância ativada (um booleano, <tt>verdadeiro</tt> ou <tt>falso</tt>), padrão <tt>falso</tt></li>
+    <li>[1] = cor (real), padrão <tt>c_preto</tt></li>
+    <li>[2] = distância inicial (real), padrão 0</li>
+    <li>[3] = distância final (real), padrão 1</li>
+  </ul>
+  <p>Note que você pode mudar esses valores e passar o conjunto completo para o <a href="gpu_set_fog.htm"><tt>gpu_set_fog()</tt></a> funcionam como um único argumento.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">gpu_get_fog();</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">4 elementos 1D Array (veja acima os elementos do array)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var fog_a = gpu_get_fog();<br> fog_a[1] = c_red;<br> gpu_set_fog(fog_a);
+  </p>
+  <p>O código acima obtém as configurações atuais de nevoeiro e então define o elemento de cor da matriz para <tt>c_red</tt> antes de definir o nevoeiro novamente usando a matriz alterada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="GPU_Control.htm">Controle de GPU</a></div>
+        <div style="float:right">Próximo: <a href="gpu_get_cullmode.htm">gpu_get_cullmode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_get_fog
+-->
+  <!-- TAGS
+gpu_get_fog
+-->
+</body>
+</html>

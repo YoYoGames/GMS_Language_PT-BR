@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_base64_decode</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_base64_decode" />
+  <meta name="rh-index-keywords" content="buffer_base64_decode" />
+  <meta name="search-keywords" content="buffer_base64_decode" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_base64_decode</h1>
+  <p>Com esta função você pode decodificar uma cadeia codificada base64 (criada usando o <a href="buffer_base64_encode.htm"><tt>buffer_base64_encode()</tt></a> função) em um buffer. Esta função criará o buffer (como um buffer &quot;crescer&quot; alinhado por 1 byte).
+    e retornará o índice único para o buffer que deve ser usado em todas as outras chamadas de função.</p>
+  <p class="note"><b>NOTA</b>: É importante que você remova da memória qualquer recurso criado dinamicamente como este quando não precisar mais deles para evitar vazamentos de memória, então quando terminar com o buffer que você criou, você deve liberá-lo novamente
+    usando <span style="font-size:1px;"><a href="buffer_delete.htm"><tt style="font-size: 14px">buffer_delete()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">buffer_base64_decode(string);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>corda</td>
+        <td>O fio codificado base64 para decodificar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">ini_open(&quot;Save.ini&quot;);<br> buff = buffer_base64_decode(ini_read_string(&quot;Save&quot;, &quot;Slot1&quot;, &quot;&quot;));<br> ini_close();
+  </p>
+  <p>O código acima abrirá um arquivo ini e então lerá uma seqüência dele para a função de decodificação. Esta função retornará um índice de buffer, que é armazenado na variável &quot;buff&quot;, contendo os dados previamente codificados e salvos. O arquivo ini
+    é então fechado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Buffers.htm">Tampões</a></div>
+        <div style="float:right">Próximo: <a href="buffer_base64_decode_ext.htm">buffer_base64_decode_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_base64_decode
+-->
+  <!-- TAGS
+buffer_base64_decode
+-->
+</body>
+</html>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Sprites e Ladrilhos</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the Sprites And Tiles functions and variables" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Sprites And Tiles" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Sprites e Ladrilhos</h1>
+  <p>Mesmo que você possa criar fundos no editor da sala e atribuir sprites às instâncias, muitas vezes isto não é suficientemente flexível para o jogo que você está fazendo. Por exemplo, se você tem uma instância que tem que desenhar um menu, você pode querer exibir vários
+    botões sprites de cada vez, ou se você tiver um jogo com fundos de paralaxe rolantes, você precisará ser capaz de configurá-los através de código em uma instância controladora de algum tipo. Nestas situações, você deve estar usando as seguintes funções que podem
+    desenhe o duende e os recursos de fundo em qualquer lugar da sala com algumas das funções que também permitem manipular a forma, tamanho, cor e alfa do duende para obter efeitos especiais.</p>
+  <p>Você pode atribuir um duende a uma instância e, por padrão, o <span class="notranslate">GameMaker Studio 2</span> o desenhará com as propriedades dadas pelas diversas <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm">variáveis do duende</a>,
+    No entanto, se você acrescentar algo ao evento do sorteio, você está &quot;assumindo o controle&quot; e deve dizer ao GameMaker <span class="notranslate">Studio 2 exatamente</span> o que deve desenhar. Isto significa que se você tiver que usar as seguintes funções para definir exatamente o que é a instância
+    para desenhar e onde está na sala para desenhá-la:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_self.htm">draw_self</a></li>
+    <li><a href="draw_sprite.htm">draw_sprite</a></li>
+    <li><a href="draw_sprite_ext.htm">draw_sprite_ext</a></li>
+    <li><a href="draw_sprite_general.htm">draw_sprite_general</a></li>
+    <li><a href="draw_sprite_part.htm">draw_sprite_part</a></li>
+    <li><a href="draw_sprite_part_ext.htm">draw_sprite_part_ext</a></li>
+    <li><a href="draw_sprite_stretched.htm">draw_sprite_stretched</a></li>
+    <li><a href="draw_sprite_stretched_ext.htm">draw_sprite_stretched_ext</a></li>
+    <li><a href="draw_sprite_pos.htm">draw_sprite_pos</a></li>
+    <li><a href="draw_sprite_tiled.htm">draw_sprite_tiled</a></li>
+    <li><a href="draw_sprite_tiled_ext.htm">draw_sprite_tiled_ext</a></li>
+  </ul>
+  <p> </p>
+  <p>Se você estiver usando sprites no formato SWF, então também há opções adicionais para controlar o anti-aliasing usado no desenho (veja <a href="../../../../Settings/Texture_Information/Non-Bitmap_Sprites.htm">Importar Sprites Não-Bitmap</a> para
+    mais informações sobre estes tipos de sprites). Note que estas funções funcionam em nível <i>global</i> e definirão o AA em todos os sprites vetoriais SWF desenhados depois de terem sido chamados.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_enable_swf_aa.htm">draw_enable_swf_aaa</a></li>
+    <li><a href="draw_set_swf_aa_level.htm">nível_de_sorteio_swf_aa</a></li>
+    <li><a href="draw_get_swf_aa_level.htm">nível_get_swf_aa_de_sorteio</a></li>
+  </ul>
+  <p> </p>
+  <p>Além das funções listadas acima, há também duas funções especiais projetadas para uso com animações esqueléticas (ver <a href="../../../../Settings/Texture_Information/Non-Bitmap_Sprites.htm">Importar Sprites Não-Bitmap</a> para
+    mais informações sobre estes tipos de sprites, e a seção <a href="../../Asset_Management/Sprites/Skeletal_Animation/Skeletal_Animation.htm">Animações Esqueletais</a> para funções específicas relacionadas a estes tipos de sprites):</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton.htm">draw_skeleton</a></li>
+    <li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton_instance.htm">draw_skeleton_instance</a></li>
+    <li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton_collision.htm">draw_skeleton_collision</a></li>
+    <li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton_time.htm">tempo_esqueleto_de_sorteio</a></li>
+  </ul>
+  <p> </p>
+  <p>Os ladrilhos são desenhados automaticamente com base nos dados que contêm, no conjunto de ladrilhos utilizados e nas propriedades do mapa de ladrilhos. Entretanto, <i>é possível</i> desenhar azulejos individuais ou mapas de azulejos usando as seguintes funções:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_tile.htm">draw_tile</a></li>
+    <li><a href="draw_tilemap.htm">draw_tilemap</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Drawing.htm">Desenho</a></div>
+        <div style="float:right">A seguir: <a href="../Text/Text.htm">Texto</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sprites And Tiles
+-->
+  <!-- TAGS
+sprite_tile_functions
+-->
+</body>
+</html>

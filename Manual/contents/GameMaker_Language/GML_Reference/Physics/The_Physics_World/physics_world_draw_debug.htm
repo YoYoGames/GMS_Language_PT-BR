@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_world_draw_debug</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_world_draw_debug" />
+  <meta name="rh-index-keywords" content="physics_world_draw_debug,phy_debug_render_aabb,phy_debug_render_collision_pairs,phy_debug_render_coms,phy_debug_render_core_shapes,phy_debug_render_joints,phy_debug_render_obb,phy_debug_render_shapes" />
+  <meta name="search-keywords" content="physics_world_draw_debug,phy_debug_render_aabb,phy_debug_render_collision_pairs,phy_debug_render_coms,phy_debug_render_core_shapes,phy_debug_render_joints,phy_debug_render_obb,phy_debug_render_shapes" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_world_draw_debug</h1>
+  <p>Esta função irá desenhar uma representação do sistema do mundo físico da sala para ajudar na depuração quando você estiver tendo problemas para que a cena física funcione corretamente. Às vezes o problema pode estar na parte de renderização do seu jogo, por exemplo
+    um duende pode ser desenhado na posição ou rotação errada, dando a aparência de física incorreta, ou pode ser que seus cálculos não estejam corretos. De qualquer forma, esta função o ajudará a encontrar e resolver o problema, desenhando o que está acontecendo.
+    em seu sistema de física. Para isso, você precisa dizer qual parte do sistema deve desenhar, e isto é feito passando um valor criado a partir dos bits armazenados em várias constantes de &quot;bandeira&quot;:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>phy_debug_render_aabb</td>
+        <td>Isto mostra a caixa de delimitação absoluta de cada fixação em relação ao eixo da sala</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_collision_pairs</td>
+        <td>Isto mostrará qualquer equipamento que esteja atualmente em colisão</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_coms</td>
+        <td>Isto marca o centro de massa de cada luminária na sala</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_core_shapes</td>
+        <td>Mostra as formas básicas que compõem as luminárias na sala</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_joints</td>
+        <td>Isto desenhará cada uma das juntas de todas as luminárias da sala</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_obb</td>
+        <td>Isto mostra a caixa de delimitação relativa para as luminárias na sala</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_shapes</td>
+        <td>Isto mostra as formas reais que compõem as luminárias dentro da sala</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Assim, para desenhar quaisquer duas dessas opções, precisaríamos fazer um <a href="../../../../Additional_Information/Bitwise_Operators.htm">pouco &quot;ou&quot; (no GameMaker</a> <span class="notranslate">Studio 2 isto é</span> representado por | ) sobre as duas e armazenar o resultado
+    variável para a função a ser utilizada. Aqui está um exemplo de como você definiria uma variável para usar com a função que atrairá apenas os centros de massa e as juntas de todos os dispositivos em uma sala:</p>
+  <p class="code">bandeira = phy_debug_render_coms | phy_debug_render_shapes;</p>
+  <p>O que lhe daria algo parecido com isto:</p>
+  <p><img alt="Physics debug draw example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_draw_debug_image.png">Como você pode ver com o código acima, apenas as formas e centros de massa são desenhados na tela
+    (assim como as cores que representam seus estados - para maiores informações, consulte on-line a documentação da Caixa 2D). Da mesma forma, você pode exibir mais, ou mesmo todas as constantes que deseja depurar... Apenas &quot;ou&quot; todas elas juntas!
+    Uma outra coisa deve ser observada - esta função deve ser chamada <i>apenas</i> no caso de um sorteio de uma instância que tenha uma profundidade inferior àquelas que você deseja depurar ou então você não será capaz de ver as informações de depuração.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">physics_world_draw_debug(bandeira)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>bandeira</td>
+        <td>O valor da bandeira para mostrar diferentes características de depuração</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">flag = phy_debug_render_aabb | phy_debug_render_collision_pairs | phy_debug_render_obb;<br> physics_world_draw_debug(flag);
+  </p>
+  <p>O código acima desenhará todas as caixas de delimitação absoluta, as caixas de delimitação relativa, bem como os dispositivos em colisão dentro do sistema físico atual.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="The_Physics_World.htm">O Mundo da Física</a></div>
+        <div style="float:right">Próximo: <a href="physics_draw_debug.htm">physics_draw_debug</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_world_draw_debug
+phy_debug_render_aabb
+phy_debug_render_collision_pairs
+phy_debug_render_coms
+phy_debug_render_core_shapes
+phy_debug_render_joints
+phy_debug_render_obb
+phy_debug_render_shapes
+-->
+  <!-- TAGS
+physics_world_draw_debug
+-->
+</body>
+</html>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>dados_de_agrupamento_de_particula_física</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_particle_group_get_data" />
+  <meta name="rh-index-keywords" content="physics_particle_group_get_data,phy_particle_data_flag_typeflags,phy_particle_data_flag_position,phy_particle_data_flag_velocity,phy_particle_data_flag_colour,phy_particle_data_flag_category,phy_particle_data_flag_color" />
+  <meta name="search-keywords" content="physics_particle_group_get_data,phy_particle_data_flag_typeflags,phy_particle_data_flag_position,phy_particle_data_flag_velocity,phy_particle_data_flag_colour,phy_particle_data_flag_category,phy_particle_data_flag_color" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>dados_de_agrupamento_de_particula_física</h1>
+  <p>Esta função retorna várias informações sobre um grupo de partículas na simulação física usando as bandeiras verificadas. O índice do grupo (sua identificação) é o que foi retornado pela função <a href="physics_particle_group_end.htm"><tt>physics_particle_group_end()</tt></a>,
+    e o buffer utilizado deve ter sido criado anteriormente usando a função <a href="../../Buffers/buffer_create.htm"><tt>buffer_create()</tt></a>. Deve ser do tipo &quot;crescer&quot;, com o tamanho aproximado do retorno esperado.
+    dados. As bandeiras em si são definidas usando as constantes dadas abaixo, e você usaria o <a href="../../../../Additional_Information/Bitwise_Operators.htm">bitwise <i>ou</i></a> &quot;|&quot; para criar um único valor de bandeira para obter as informações desejadas.</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+        <th>Tipo de dados</th>
+      </tr>
+      <tr>
+        <td>bandeiras tipo phy_particle_data_flag</td>
+        <td>O valor das bandeiras para a partícula.</td>
+        <td>buffer_u32</td>
+      </tr>
+      <tr>
+        <td>phy_particle_data_flag_position</td>
+        <td>A posição x e y da partícula.</td>
+        <td>2 x buffer_f32</td>
+      </tr>
+      <tr>
+        <td>phy_particle_data_flag_velocity</td>
+        <td>A velocidade horizontal e vertical.</td>
+        <td>2 x buffer_f32</td>
+      </tr>
+      <tr>
+        <td>phy_particle_data_flag_colour</td>
+        <td>A cor e o valor alfa (hexadecimal).</td>
+        <td>buffer_f32</td>
+      </tr>
+      <tr>
+        <td>phy_particle_data_category</td>
+        <td>A categoria de partícula (como definida quando você criou o grupo ao qual pertence).</td>
+        <td>buffer_u32</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">physics_particle_group_get_data(group, buffer, flags)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>grupo</td>
+        <td>O índice do grupo de partículas (ID) do grupo de partículas para obter os dados.</td>
+      </tr>
+      <tr>
+        <td>tampão</td>
+        <td>O buffer (anteriormente criado) a ser usado para armazenar os dados.</td>
+      </tr>
+      <tr>
+        <td>bandeiras</td>
+        <td>As bandeiras a serem usadas para extrair dados sobre tipos específicos de partículas.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Dados tampão</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var count = physics_particle_group_count(gp);<br> var flags = phy_particle_data_flag_position | phy_particle_data_flag_colour;<br> if (contagem &gt; 0)<br> {
+    <br> var buffer = buffer_create(count * 12, buffer_grow, 4);<br> physics_particle_group_get_data(gp, buffer, flags);<br> for (var n = 0; n &lt; count; n++;)<br> {
+    <br> var xx = buffer_read(buffer, buffer_f32);<br> var yy = buffer_read(buffer, buffer_f32);<br> var argb = buffer_read(buffer, buffer_u32);<br> var alfa = (argb &gt;&gt; 24) &amp; 255;<br> draw_sprite_ext(sprBlob,
+    0, xx, yy, 1, 1, 0, c_green, alpha);<br> }
+    <br> buffer_delete(tampão);
+    <br> }
+  </p>
+  <p>O código acima obtém a posição e a velocidade de cada partícula do grupo indexada pela variável &quot;gp&quot;, armazena os dados buffer em uma série de variáveis, e depois usa isso para desenhar um sprite na posição de cada partícula do grupo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Soft_Body_Particles.htm">Partículas macias do corpo</a></div>
+        <div style="float:right">A seguir: <a href="physics_particle_create.htm">physics_particle_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_particle_group_get_data
+phy_particle_data_flag_typeflags
+phy_particle_data_flag_position
+phy_particle_data_flag_velocity
+phy_particle_data_flag_colour
+phy_particle_data_flag_category
+-->
+  <!-- TAGS
+physics_particle_group_get_data
+-->
+</body>
+</html>

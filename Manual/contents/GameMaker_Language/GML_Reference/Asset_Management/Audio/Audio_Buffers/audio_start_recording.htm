@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_start_recording</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_start_recording" />
+  <meta name="rh-index-keywords" content="audio_start_recording" />
+  <meta name="search-keywords" content="audio_start_recording" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_start_recording</h1>
+  <p>Esta função começará a gravar áudio a partir da fonte indexada do gravador. Você pode obter o número de fontes do gravador usando a função <a href="audio_get_recorder_count.htm"><tt>audio_get_recorder_count()</tt></a>e quando você começar a gravar o
+    O áudio será armazenado em um buffer temporário e começará a disparar um <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Recording.htm">Evento Assíncrono de Gravação de Áudio</a>. Este evento é acionado a cada passo que a gravação
+    ocorre e irá criar o <a href="../../../Data_Structures/DS_Maps/DS_Maps.htm">mapa</a> especial <a href="../../../Data_Structures/DS_Maps/DS_Maps.htm">DS</a> na variável <a href="../../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> com o seguinte
+    pares chave/valor:</p>
+  <ul class="colour">
+    <li>&quot;<strong>buffer_id&quot; -</strong> a identificação do buffer temporário que você pode usar para recuperar os dados de áudio</li>
+    <li>&quot;<strong>channel_index&quot; -</strong> o índice do canal de gravação (como retornado pela função) de onde vieram estes dados</li>
+    <li>&quot;data_len<strong>&quot; -</strong> o comprimento dos dados (em bytes) que você recebeu</li>
+  </ul>
+  <p>Observe que após o evento assíncrono ter sido acionado, o áudio no buffer temporário será apagado, portanto você deverá copiar seus dados em um buffer personalizado que você tenha criado anteriormente.</p>
+  <p class="note"><b>NOTA: </b>A maioria das plataformas <b>, exceto HTML5</b>, suporta a gravação de áudio de alguma forma, mas isso não significa que todos os dispositivos o permitam, mesmo que a plataforma o permita, então você deve sempre verificar se o <span style="font-size:1px;"><a href="audio_get_recorder_count.htm"><tt style="font-size: 14px">audio_get_recorder_count()</tt></a></span>    retorna um valor maior que 0 para verificar se os dispositivos de gravação estão disponíveis antes de utilizar o restante das funções de gravação.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">audio_start_recording(recorder_index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>recorder_index</td>
+        <td>O índice da fonte do registrador a ser utilizado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (Buffer ID)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">audio_record = audio_start_recording(0);</p>
+  <p>O código acima começa a gravar a partir da fonte do gravador 0, armazenando o índice de canal da gravação na variável &quot;audio_record&quot; para uso no <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Recording.htm">evento</a> assíncrono <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Recording.htm">de</a> gravação de áudio.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Audio.htm">Buffers de áudio</a></div>
+        <div style="float:right">A seguir: <a href="audio_stop_recording.htm">Audio_stop_recording</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_start_recording
+-->
+  <!-- TAGS
+audio_start_recording
+-->
+</body>
+</html>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>network_connect_raw</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for network_connect_raw" />
+  <meta name="rh-index-keywords" content="network_connect_raw" />
+  <meta name="search-keywords" content="network_connect_raw" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>network_connect_raw</h1>
+  <p>Com esta função, você pode enviar um pedido para se conectar a um servidor. A função leva a <i>identificação do soquete</i> para se conectar (veja <a href="network_create_socket.htm"><tt>network_create_socket()</tt></a>) e exige que você forneça o endereço IP para se conectar
+    para (um fio), bem como a porta de passagem, e se a conexão falhar, um valor inferior a 0 será devolvido. A diferença entre esta função e <a href="network_connect.htm"><tt>network_connect()</tt></a> é que esta função
+    pode se conectar a qualquer servidor e não faz nada com os dados brutos, o que significa que você mesmo tem que implementar os protocolos no final do servidor. Note que por padrão a função é síncrona, o que significa que seu jogo pode parecer &quot;pendurado&quot; como o
+    a conexão é feita. Você pode definir um valor de timeout para conexão, ou alternativamente fazer a criação assíncrona, usando a função <a href="network_set_config.htm"><tt>network_set_config()</tt></a>ou, alternativamente, usar a função <a href="network_connect_raw_async.htm"><span class="inline">network_connect_async_raw()</span></a>    ao invés disso.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">network_connect_raw(socket, url, porta);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>soquete</td>
+        <td>A identificação do soquete a ser utilizado.</td>
+      </tr>
+      <tr>
+        <td>url</td>
+        <td>A URL ou IP a que se conectar (uma cadeia).</td>
+      </tr>
+      <tr>
+        <td>porto</td>
+        <td>A porta a ser conectada.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">cliente = network_create_socket(network_socket_tcp);<br> network_connect_raw(client, &quot;www.macsweeneygames.com&quot;, 6510);</p>
+  <p>O código acima criará um novo soquete TCP e então tentará criar uma conexão &quot;bruta&quot; através dele para a URL dada na porta 6510.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Networking.htm">Rede</a></div>
+        <div style="float:right">Próximo: <a href="network_connect_raw_async.htm">network_connect_async_raw</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+network_connect_raw
+-->
+  <!-- TAGS
+network_connect_raw
+-->
+
+</body></html>

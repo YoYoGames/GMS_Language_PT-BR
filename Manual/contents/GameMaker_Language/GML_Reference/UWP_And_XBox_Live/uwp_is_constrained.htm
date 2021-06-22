@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>uwp_is_constrained</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for uwp_is_constrained" />
+  <meta name="rh-index-keywords" content="uwp_is_constrained" />
+  <meta name="search-keywords" content="uwp_is_constrained" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>uwp_is_constrained</h1>
+  <p>Esta função retornará <tt>verdadeiro</tt> se o jogo estiver rodando em um modo de restrição de recursos ou <tt>falso</tt> se estiver rodando normalmente. O modo com restrição de recursos pode ser ativado quando o jogo não tem foco e, neste modo, o jogo reduziu
+    Recursos da GPU. A resposta a isto normalmente deveria ser pausar o jogo (já que o usuário não tem mais controle). Além disso, desativar qualquer efeito particularmente tributário pode ser uma boa idéia se a desaceleração for observada neste modo. Note que, ao contrário da <a href="uwp_is_suspending.htm"><tt>uwp_is_suspending()</tt></a>    esta função voltará a <tt>ser verdadeira</tt> continuamente enquanto o jogo estiver em modo restrito (e não apenas uma vez quando isso acontecer pela primeira vez).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">uwp_is_constrained();</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se xboxliveis_constrained()<br> {
+    <br> if !instance_exists(obj_PauseMenu)<br> {
+    <br> instance_create(0,0,obj_PauseMenu);
+    <br> }
+    <br> }
+  </p>
+  <p>O código acima verifica se o aplicativo está restrito e se ele cria uma instância de um objeto (usado para pausar o jogo).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="UWP_And_XBox_Live.htm">UWP e XBox Live</a></div>
+        <div style="float:right">Próximo: <a href="uwp_was_terminated.htm">uwp_was_terminated</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+uwp_is_constrained
+-->
+  <!-- TAGS
+uwp_is_constrained
+-->
+</body>
+</html>

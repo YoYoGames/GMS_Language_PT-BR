@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>dispositivo_mouse_check_button_press</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for device_mouse_check_button_pressed" />
+  <meta name="rh-index-keywords" content="device_mouse_check_button_pressed" />
+  <meta name="search-keywords" content="device_mouse_check_button_pressed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>dispositivo_mouse_check_button_press</h1>
+  <p>Esta função retorna <tt>verdadeiro</tt> ou <tt>falso</tt>, dependendo se o dispositivo que você especificar foi &quot;tocado&quot; (clicado) ou não. O argumento do dispositivo se refere ao número de toque, que pode ser de 0 a n e o número máximo de
+    Os toques que podem ser detectados dependerão muito do dispositivo a ser utilizado e do sistema operacional (a maioria dos dispositivos suportará pelo menos 4 toques simultâneos). Esta função só é acionada <em>uma vez </em>pela ação de pressão real, e as constantes
+    listados <a href="../Mouse_Input/Mouse_Input.htm">nesta página</a> podem ser usados para verificar os botões do mouse. Note que <tt>mb_right</tt> só será detectado se um toque duplo for detectado e mantido na segunda torneira (este comportamento pode ser desativado
+    usando a função <span class="inline"><a href="device_mouse_dbclick_enable.htm">device_mouse_dbclick_enable()</a></span>).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">device_mouse_check_button_pressed(device, button);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>dispositivo</td>
+        <td>O dispositivo (de 0 a <i>n</i>) que está sendo verificado.</td>
+      </tr>
+      <tr>
+        <td>botão</td>
+        <td>O botão do dispositivo que está sendo verificado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se device_mouse_check_button_pressed(0, mb_left)<br> {
+    <br> press=true;<br> }
+  </p>
+  <p>O código acima verifica se o dispositivo foi pressionado e define uma variável como verdadeira, caso tenha sido.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Device_Input.htm">Entrada do dispositivo</a></div>
+        <div style="float:right">Próximo: <a href="device_mouse_check_button_released.htm">device_mouse_check_button_released</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+device_mouse_check_button_pressed
+-->
+  <!-- TAGS
+device_mouse_check_button_pressed
+-->
+</body>
+</html>

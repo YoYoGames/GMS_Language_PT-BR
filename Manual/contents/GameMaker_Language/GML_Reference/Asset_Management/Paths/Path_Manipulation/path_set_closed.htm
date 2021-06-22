@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>caminho_de_série_fechada</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_set_closed" />
+  <meta name="rh-index-keywords" content="path_set_closed" />
+  <meta name="search-keywords" content="path_set_closed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>caminho_de_série_fechada</h1>
+  <p>Esta função pode ser usada para marcar um determinado caminho como aberto (falso) ou fechado (verdadeiro). Um caminho fechado tem seu ponto inicial conectado a seu ponto final, formando um loop, e um caminho aberto tem um início e fim definitivo, não conectado. <strong>Esta função muda o ativo do caminho real</strong>,
+    Se isto não for o que você precisa, então você deve usar uma função como <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span> para criar uma cópia do caminho primeiro, então chame esta função sobre o bem duplicado (não esqueça de chamar <span class="inline"><a href="path_delete.htm">path_delete()</a></span> sobre o bem quando não for mais necessário).</p>
+  <p> </p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">path_set_closed(índice, fechado);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice do caminho para a mudança.</td>
+      </tr>
+      <tr>
+        <td>fechado</td>
+        <td>Se o caminho está fechado (verdadeiro) ou não (falso).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">path_set_closed(pth_Patrol, true);</p>
+  <p>Isto definirá o caminho dado como sendo um caminho fechado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Path_Manipulation.htm">Manipulação do caminho</a></div>
+        <div style="float:right">Próximo: <a href="path_set_kind.htm">caminho_set_kind</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_set_closed
+-->
+  <!-- TAGS
+path_set_closed
+-->
+</body>
+</html>

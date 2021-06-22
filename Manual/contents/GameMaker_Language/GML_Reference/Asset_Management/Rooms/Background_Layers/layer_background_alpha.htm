@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>fundo_da_camada_alfa</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_alpha" />
+  <meta name="rh-index-keywords" content="layer_background_alpha" />
+  <meta name="search-keywords" content="layer_background_alpha" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>fundo_da_camada_alfa</h1>
+  <p>Esta função controla o alfa (transparência) do duende de fundo. Você dá a identificação do elemento de fundo (que você obtém quando cria um elemento de fundo usando <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a> ou quando
+    você usa a função <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>), e então definir o valor alfa a ser usado. Alfa pode ser entre 0 (totalmente transparente) e 1 (totalmente opaco) com o valor alfa padrão para o fundo
+    elemento sendo 1. Note que se a camada à qual o elemento de fundo foi atribuído não for visível - ou o próprio elemento tiver sido tornado invisível - você não verá nenhuma diferença com esta função até que a camada ou elemento tenha sido tornado visível
+    novamente.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">layer_background_alpha(background_element_id, alfa);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>background_element_id</td>
+        <td>O valor de identificação único do elemento de fundo a ser mudado</td>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>O alfa para o sprite de fundo, de 0 a 1 (padrão é 1)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Background_sky&quot;);<br> var back_id = layer_background_get_id(lay_id);<br> layer_background_alpha(back_id, random(1));</p>
+  <p>O código acima obtém o valor de identificação do fundo atribuído à camada &quot;Background_sky&quot; e então define seu alfa para um valor aleatório entre 0 e 1.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Background_Layers.htm">Camadas de fundo</a></div>
+        <div style="float:right">Próximo: <a href="layer_background_index.htm">layer_background_index</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_background_alpha
+-->
+  <!-- TAGS
+layer_background_alpha
+-->
+</body>
+</html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_map_find_first</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_map_find_first" />
+  <meta name="rh-index-keywords" content="ds_map_find_first" />
+  <meta name="search-keywords" content="ds_map_find_first" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_map_find_first</h1>
+  <p>Esta função retorna a primeira chave armazenada no mapa DS. <b>Esta não é a primeira chave na ordem em que você as adicionou!</b> Os mapas DS não são armazenados de forma linear, para isso use a <a href="../DS_Lists/DS_Lists.htm">lista DS</a>, então tudo o que isso faz é encontrar a
+    primeira chave como armazenada pelo computador. Isto pode ser útil se você tiver que iterar através do mapa DS procurando por algo, mas deve ser evitado se possível, pois pode ser lento.</p>
+  <p>Note que esta função retornará <tt>indefinida</tt> se o mapa DS dado estiver vazio.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">ds_map_find_first(id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>A identificação do mapa a ser utilizado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real, de corda ou indefinido</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var size = ds_map_size(inventory) ;<br> var key = ds_map_find_first(inventory);<br> for (var i = 0; i &lt; size; i++;)<br> {
+    <br> if key != &quot;ouro&quot;<br> {
+    <br> key = ds_map_find_next(inventário, chave);<br> }
+    <br> ou break;<br> }
+  </p>
+  <p>O código acima cria algumas variáveis temporárias e depois obtém o tamanho do mapa DS e encontra a primeira chave como armazenada pelo computador no mapa. Ele então usa um laço <tt>para</tt> iterar através do mapa DS procurando o valor da chave &quot;ouro&quot;. Se
+    encontra-o, ele rompe o laço.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="DS_Maps.htm">DS Maps</a></div>
+        <div style="float:right">Próximo: <a href="ds_map_find_last.htm">ds_map_find_last</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_map_find_first
+-->
+  <!-- TAGS
+ds_map_find_first
+-->
+</body>
+</html>

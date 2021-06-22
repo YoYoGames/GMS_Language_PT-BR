@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_map_values_to_array</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_map_values_to_array" />
+  <meta name="rh-index-keywords" content="ds_map_values_to_array" />
+  <meta name="search-keywords" content="ds_map_values_to_array" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_map_values_to_array</h1>
+  <p>Com esta função você pode recuperar todos os valores que um mapa DS contém para cada chave no mapa. Você fornece o DS map ID para obter as chaves de (como retornado por <a href="ds_map_create.htm"><span class="inline">ds_map_create()</span></a>) e o
+    retornará um <a href="../../../GML_Overview/Arrays.htm">array</a> onde cada entrada no array é um valor do mapa DS (por exemplo, se o mapa tiver 10 chaves, então um array de 10 entradas será retornado com cada entrada correspondente
+    a um valor para uma chave). A função tem um segundo argumento opcional onde você pode fornecer um array que você criou, caso em que os dados do valor da chave do mapa serão anexados a qualquer dado existente no array. Note que a função modificará
+    a matriz fornecida diretamente, mas também retornará uma referência a ela (ou uma referência a uma nova matriz se nenhuma for fornecida).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code"><span class="misspell-word">ds_map_values_to_array</span>(id, [array])</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>A identificação do mapa a ser utilizado.</td>
+      </tr>
+      <tr>
+        <td>[matriz]</td>
+        <td>OPCIONAL! A matriz para anexar os valores do mapa DS.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Array</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var _values = <span class="misspell-word">ds_map_values_to_array(lvl_score);<br>
+var _total = 0;<br>
+for (var i = 0; i &lt; array_lengh(valores); ++i;)<br>
+    {<br>
+    _total += _valores[i];<br>
+    }<br>
+draw_text(32, 32, &quot;pontuação total para todos os níveis = &quot; + string(_total&quot;));</span></p>
+  <p>O acima recupera todos os valores de um mapa DS para cada chave no mapa e os armazena em uma variável local como uma matriz. Em seguida, ele percorre a matriz e adiciona cada um dos valores a uma variável local que é então usada para exibir o total de todos os valores de uma variável local.
+    os valores.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="DS_Maps.htm">DS Maps</a></div>
+        <div style="float:right">Próximo: <a href="ds_map_set.htm">ds_map_set</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_map_values_to_array
+-->
+  <!-- TAGS
+ds_map_values_to_array
+-->
+</body>
+</html>

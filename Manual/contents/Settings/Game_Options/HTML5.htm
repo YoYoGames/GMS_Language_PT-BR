@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>HTML5</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that details the HTML5 Game Options" />
+  <meta name="rh-index-keywords" content="Game Options - HTML5" />
+  <meta name="search-keywords" content="HTML5 Game Options" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Opções de jogo HTML5</h1>
+  <p>Esta seção descreve as diferentes opções disponíveis para você que controlam como seus projetos de jogo HTML5 serão compilados. As diferentes seções são:</p>
+  <p> </p>
+  <h2>Geral</h2>
+  <p><img alt="HTML5 General Options" class="center" src="../../assets/Images/Settings/HTML5_General_Options.png">Nesta seção você tem campos para preencher as seguintes informações sobre seu jogo:</p>
+  <ul class="colour">
+    <li><strong>Título do navegador</strong>: Aqui você pode dar texto a ser usado para a barra de título da guia de seu jogo no navegador.</li>
+    <li><strong>Versão</strong>: O número da versão para o seu projeto.</li>
+    <li><strong>Nome da pasta</strong>: O nome da pasta onde seus arquivos de jogo HTML5 serão armazenados (o padrão é &quot;<span class="inline">html5game</span>&quot;).</li>
+    <li><strong>Nome de saída</strong>: Este é o nome do arquivo HTML de saída e pode ser alterado para algo diferente do padrão &quot;<span class="inline">index.html</span>&quot;.</li>
+  </ul>
+  <p> </p>
+  <p>Abaixo dos campos de informações do jogo, você também tem as seguintes opções:</p>
+  <ul class="colour">
+    <li><strong>Depuração de saída para o Console</strong>: Isto enviará toda a saída de debug para o console JS de seu navegador. Isto está desligado por padrão.</li>
+    <li><strong>Cursor de exibição</strong>: Isto irá desativar o cursor do mouse quando estiver sobre a tela do jogo. Isto está ligado por padrão.</li>
+    <li><strong>Exibir Alerta &quot;Rodando fora do servidor&quot;: Se você</strong> estiver testando um jogo localmente (ou seja: clicando no arquivo de índice de seu computador em vez de um servidor - não recomendado), então você normalmente recebe um aviso informando que as coisas
+      não funcionará como você pode esperar devido à segurança do navegador para arquivos locais. Você pode suprimir este aviso, desmarcando esta opção. Por padrão, ele está ativado.</li>
+  </ul>
+  <p>Abaixo das configurações gerais, você tem as opções <strong>Avançadas </strong>, que são</p>
+  <ul class="colour">
+    <li><strong>Incluído arquivo como index.html</strong>: Isto é para adicionar um arquivo &quot;index.html&quot; personalizado para usar em vez do arquivo pré-definido que o GameMaker <span class="notranslate">Studio 2 gera</span> por padrão. Isto pode ser muito útil se você tiver um projeto de website implementado
+      ou queira incluir certas características em todas as suas construções HTML5. O arquivo a ser utilizado deve ser incluído como um <a href="../Included_Files.htm">Arquivo Incluído</a> no projeto do jogo.</li>
+    <li><strong>Extensão da barra de carregamento</strong>: Isto mudará a barra de carregamento padrão para uma que foi adicionada ao seu projeto <span class="notranslate">GameMaker Studio 2</span> como uma <a href="../../The_Asset_Editors/Extensions.htm">Extensão</a>.</li>
+    <li><strong>Pré-gaste a saída .js</strong>: Aqui você pode pré-gastar a saída <span class="inline">*.js</span> com qualquer JavaScript extra necessário para seu jogo. Por exemplo, um aplicativo da Chrome Store pode exigir que você adicione <span class="inline">window.localStorage = undefined;</span> à saída JS, para o qual você usaria esta opção.</li>
+  </ul>
+  <p> </p>
+  <h2>Analíticos</h2>
+  <p><img alt="HTML5 Analytics Options" class="center" src="../../assets/Images/Settings/HTML5_Analytics_Options.png">Esta seção permite que você adicione análises ao seu jogo, permitindo que você use certos produtos de terceiros para rastrear seu jogo e seu
+    vendas ou peças de teatro. Você pode especificar se deve usar <a href="https://www.flurry.com/">Flurry Analytics</a> ou <a href="https://marketingplatform.google.com/about/analytics/">Google Analytics</a> para rastrear seu jogo. Devido à natureza destas funções,
+    você só pode ter um ativo de cada vez, e uma vez que você tenha sinalizado a opção <strong>Enable Flurry Analytics</strong> ou <strong>Enable Google Analytics</strong>, você também deve adicionar a identificação única que lhe foi atribuída na área apropriada.</p>
+  <p>Para informações sobre as funções que você pode usar para enviar dados analíticos, por favor, veja <a href="../../GameMaker_Language/GML_Reference/Web_And_HTML5/Web_And_HTML5.htm">aqui</a>.</p>
+  <p> </p>
+  <h2>Gráficos</h2>
+  <p><img alt="HTML5 Graphics Options" class="center" src="../../assets/Images/Settings/HTML5_Graphics_Options.png">Aqui você pode alterar os seguintes detalhes relacionados a como seu jogo será exibido (note que nem todos os navegadores exibirão seu jogo
+    da mesma forma, portanto, teste estas opções no maior número possível de navegadores para ter certeza de que elas tenham o efeito desejado):</p>
+  <ul class="colour">
+    <li><strong>Permitir a comutação para tela cheia</strong>: Ao verificar isso, o usuário poderá alternar o jogo do modo janela para o modo tela cheia usando <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" style="cursor: nwse-resize;" width="55"> + &quot;<span class="inline">F</span>&quot; no Mac e <span class="inline">F10</span> no Windows. Isto é
+      por padrão.</li>
+    <li><strong>Interpolar as cores entre os pixels</strong>: Ativa a <a class="glossterm" data-glossterm="interpolação linear" href="Ubuntu.htm#">interpolação linear</a>, que basicamente &quot;suaviza&quot; os pixels. Para gráficos de pixel nítidos, deve ser
+      mas se você tiver misturas alfa agradáveis e gráficos alisados é melhor deixá-lo ligado. Isto está ligado por padrão.</li>
+    <li><strong>Centralizar o jogo no navegador</strong>: Ao verificar isto, a tela do jogo será automaticamente centralizada dentro do navegador que executa o jogo. Isto está desativado por padrão.</li>
+    <li><strong>Uso de Partículas Construídas em Partículas</strong>: Esta opção exportará os sprites necessários para o sistema de partículas embutidas junto com seu jogo. Estes sprites são armazenados em páginas de textura individual, o que significa que não são o método mais eficiente
+      de gerar partículas para esta plataforma, portanto é recomendado que (a menos que utilize WebGL) você desmarque esta opção e use seus próprios sprites de partículas que serão armazenados nas páginas principais de textura, todos juntos para seu jogo. Isto é feito por
+      padrão.</li>
+    <li><strong>Uso de Fonte Construída</strong>: Esta opção exportará o <span class="notranslate">GameMaker Studio 2</span> construído em fonte junto com o resto dos arquivos do jogo. Isto aumentará ligeiramente o tamanho das páginas de textura e exigirá uma pequena quantidade extra de memória e armazenamento,
+      Portanto, se seu jogo não utiliza a fonte Arial, esta deve ser desativada. Está ligado por padrão.</li>
+    <li><strong>WebGL</strong>: Escolha entre desligar o suporte WebGL, torná-lo opcional (auto-detecção) ou torná-lo um requisito para seu jogo. Deve-se notar que para testar o desempenho em todas as circunstâncias, você deve ter isso como desativado, então
+      Normalmente, a autodetecção para publicação. Torná-lo um requisito pode reduzir consideravelmente a compatibilidade que seu jogo tem com diferentes tipos de navegador. Isto é definido para autodetecção por padrão.</li>
+    <li><strong>Escala</strong>: Seu jogo pode ser configurado para escalar a tela de sorteio automaticamente para <strong>manter a relação de aspecto </strong>dentro do navegador, ou você pode selecionar para que seja executado em <strong>escala completa</strong>. A opção de escala completa irá
+      não a tela cheia do jogo no navegador, mas sim esticar o que é desenhado para caber no tamanho da tela, conforme definido pela primeira sala do jogo. Isto é definido para manter a relação de aspecto por padrão.</li>
+  </ul>
+  <p>Finalmente, há a opção de definir o tamanho da <a class="glossterm" data-glossterm="página de textura" href="macOS.htm#">página de textura</a>. O tamanho padrão (e o mais compatível) é 2048x2048, mas você pode escolher entre 256x256 até 8192x8192. Lá
+    é também um botão marcado <strong><strong>Pré-visualização </strong></strong>que gerará as páginas de textura para esta plataforma e depois abrirá uma janela para que você possa ver como elas são. Isto pode ser muito útil se você desejar ver como são as páginas de textura
+    estruturada e para evitar ter páginas de textura maiores (ou menores) do que o necessário. Para maiores informações sobre páginas de textura, por favor, veja <a href="../Texture_Information/Texture_Pages.htm">aqui</a>.</p>
+  <p class="note"><strong>NOTA</strong>: Esteja ciente de que quanto maior o tamanho da página de textura, menos compatível seu jogo será com diferentes navegadores e dispositivos.</p>
+  <p> </p>
+  <h2>Imagens</h2>
+  <p><img alt="HTML5 Images Options" class="center" src="../../assets/Images/Settings/HTML5_Images_Options.png">Esta seção é onde você pode definir o <strong>Favicon</strong> e a <strong>tela Splash</strong>. O ícone deve ser escrito como um
+    <span class="inline">*.ico</span> e podem ser 16x16, 32x32, 48x48, ou 64x64 pixels de tamanho, e 8-bit, 24-bit, ou 32-bit de profundidade de cor. A tela de respingo deve ser do tamanho da tela que vai segurar seu jogo e irá sobrepor-se a qualquer
+    barras de carregamento se você marcar a opção Use Splash Screen (ou seja: você pode ter uma barra de carregamento, OU uma tela de respingo, mas não ambas). Imagens menores ou maiores são permitidas, mas serão escalonadas para caber. A tela de respingo deve ser uma imagem <span class="inline">*.png</span>.</p>
+  <p>Vale notar que o <span class="notranslate">GameMaker Studio 2</span> possui uma ferramenta <a href="../../IDE_Tools/Project_Image_Generator.htm">Gerador de Imagens de Projeto</a> que pode ser usada para criar automaticamente todas as imagens necessárias para todas as diferentes plataformas alvo de seu jogo
+    está sendo compilado para. Se você usar esta ferramenta, você deve revisar as imagens criadas para garantir que elas sejam o que você precisa.</p>
+  <p> </p>
+  <h2>Social</h2>
+  <p><img alt="HTML5 Social Options" class="center" src="../../assets/Images/Settings/HTML5_Social_Options.png">A aba social é utilizada para configurar a comunicação no <strong>Facebook </strong>em seu jogo. Se você precisar das funções do Facebook, você precisa de
+    para clicar na caixa de seleção &quot;Use Facebook&quot; e depois fornecer o <strong>ID do aplicativo</strong> do Facebook <strong>e o</strong> <strong>Nome de exibição do aplicativo</strong> do Facebook. Observe que todas as funcionalidades do Facebook são acessadas através de uma extensão, e quando você marcar a caixa <strong>Usar Facebook</strong> pela primeira vez, você será solicitado a baixar e instalar a extensão do Facebook a partir do <a href="../../Introduction/The_Marketplace.htm"><span class="notranslate">Mercado</span></a> (talvez seja necessário fazer o login em sua <a href="https://help.yoyogames.com/hc/en-us/articles/216757288-Creating-a-YoYo-Account">conta<span class="notranslate">YoYo</span></a> antes que ela possa ser baixada).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Game_Options.htm">Opções de jogo</a></div>
+        <div style="float:right">A seguir: <a href="Android.htm"><span class="notranslate">Android</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+HTML5 Game Options
+-->
+  <!-- TAGS
+html5_options
+-->
+
+</body></html>

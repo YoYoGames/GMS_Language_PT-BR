@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_shader</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_shader" />
+  <meta name="rh-index-keywords" content="layer_shader" />
+  <meta name="search-keywords" content="layer_shader" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_shader</h1>
+  <p>Com esta função você pode atribuir um recurso de <span class="notranslate">sombreamento</span> a qualquer camada e a camada será então renderizada usando esse <span class="notranslate">sombreador</span>. Você fornece ou o valor de identificação único da camada ou o nome da camada (como uma string - isto terá um impacto no desempenho).
+    junto com a identificação do <span class="notranslate">sombreador</span> a ser usado. O <span class="notranslate">shader</span> deve ter sido criado anteriormente no Asset Browser e o índice do <span class="notranslate">shader</span> (o nome do recurso <span class="notranslate">shader</span> ) é então passado para esta função. Se a camada atribuída tiver instâncias adicionadas a ela, então
+    o <span class="notranslate">shader</span> será aplicado a <i>todos os</i> eventos de sorteio que a instância utilizar - por exemplo, se a instância tiver um evento Draw GUI Begin, então o <span class="notranslate">shader</span> será aplicado automaticamente a ele. O <span class="notranslate">sombreador</span> também afetará quaisquer outros elementos gráficos desenhados
+    sobre essa camada, como bens de duende ou mapas de azulejos.</p>
+  <p>Observe que a função <i>não</i> se destina a ser chamada em nenhum evento de sorteio ou evento de etapa, mas apenas no início da sala no <b>Código de Criação de Sala</b> ou no <b>Criar Evento </b>/ <b>Evento de Início de Sala</b> de uma instância.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">layer_shader(layer_id, <span class="notranslate">shader</span>)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>O valor de identificação único da camada a ser alvo (ou o nome da camada como uma corda)</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">shader</span></td>
+        <td>O índice de <span class="notranslate">sombreamento</span> a ser atribuído à camada</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Instâncias&quot;);<br> layer_shader(lay_id<span class="notranslate">, shd_Sepia</span>);</p>
+  <p>O código acima atribuirá o recurso <span class="notranslate">sombreador</span> &quot;shd_Sepia&quot; à camada dada para todos os desenhos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="General_Layer_Functions.htm">Funções gerais da camada</a></div>
+        <div style="float:right">Próximo: <a href="layer_get_script_begin.htm">layer_get_script_begin</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_<span class="notranslate">shader</span>
+-->
+  <!-- TAGS
+layer_<span class="notranslate">shader</span>
+-->
+</body>
+</html>

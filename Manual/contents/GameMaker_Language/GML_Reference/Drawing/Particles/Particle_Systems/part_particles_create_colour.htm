@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_particles_create_colour</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_particles_create_colour" />
+  <meta name="rh-index-keywords" content="part_particles_create_colour,part_particles_create_color" />
+  <meta name="search-keywords" content="part_particles_create_colour,part_particles_create_color" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_particles_create</h1>
+  <p>Esta função é ideal para aqueles efeitos que não requerem nenhuma das funcionalidades oferecidas pelos <a href="../Particle_Emitters/Particle_Emitters.htm">emissores de partículas</a> (por exemplo, para criar fumaça de um míssil, ou um simples efeito de explosão) como
+    permite a criação rápida e fácil de partículas em qualquer posição na sala de jogos. Você também pode colorir as partículas &quot;on the fly&quot; como são criadas com esta função, e esta cor irá sobrepor-se à cor predefinida da partícula,
+    mas não mistura esta cor ao longo da vida útil das partículas. Note que você deve ter criado previamente o sistema de partículas e o tipo de partícula para que esta função possa ser utilizada.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">part_particles_create_colour(ind, x, y, parttype, colour, number);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>O índice do sistema de partícula.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A coordenada x de onde criar as partículas.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A coordenada y de onde criar as partículas.</td>
+      </tr>
+      <tr>
+        <td>tipo de peça</td>
+        <td>O índice (tipo) das partículas a serem criadas.</td>
+      </tr>
+      <tr>
+        <td>cor</td>
+        <td>A mistura de cores para as partículas.</td>
+      </tr>
+      <tr>
+        <td>número</td>
+        <td>O número de partículas a criar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se (velocidade &gt; 1)<br> {
+    <br> var _c = choose(c_aqua, c_lime, c_fuschia, c_orange);<br> part_particles_create_colour(sname, x, y, p_Smoke, _c, 1);<br> }
+  </p>
+  <p>O código acima irá gerar uma única partícula a cada passo que a instância com o código tenha uma velocidade maior que uma. Estas partículas serão de uma cor aleatória.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Particle_Systems.htm">Sistemas de Partículas</a></div>
+        <div style="float:right">Próximo: <a href="part_system_exists.htm">part_system_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_particles_create_colour
+part_particles_create_color
+-->
+  <!-- TAGS
+part_particles_create_colour
+-->
+</body>
+</html>

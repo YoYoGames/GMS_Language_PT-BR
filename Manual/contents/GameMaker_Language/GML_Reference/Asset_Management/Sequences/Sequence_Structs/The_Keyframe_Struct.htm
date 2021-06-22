@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>A estrutura do Keyframe</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining The Keyframe Struct" />
+  <meta name="rh-index-keywords" content="Sequence Keyframe Struct" />
+  <meta name="search-keywords" content="The Keyframe Struct,frame,length,stretch,channels" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>A estrutura do <span class="notranslate">Keyframe</span> </h1>
+  <p>Cada trilha (conforme definido na página que cobre as <a href="The_Track_Struct.htm">estruturas das trilhas</a>) terá uma ou mais <a href="../../../../GML_Overview/Structs.htm">estruturas de</a> <span class="notranslate">quadros-chave</span> atribuídas a ela (que você pode obter no <tt><span class="notranslate">quadros-chave</span></tt> propriedade
+    da estrutura da pista), e cada uma delas terá as seguintes propriedades:</p>
+  <ul class="colour">
+    <li><tt>moldura</tt>: A posição (em quadros) ao longo da linha do tempo para o <span class="notranslate">quadro-chave</span>. O valor padrão é 0.<tt></tt></li>
+    <li><tt>comprimento</tt>: O comprimento do <span class="notranslate">quadro-chave</span>. O valor padrão é 1, e quando definido para valores maiores, então a propriedade da pista a que o <span class="notranslate">quadro-chave</span> se refere será mantida no valor inicial durante a duração do comprimento dado. Note que a propriedade de <tt>trecho</tt> 
+      anulará isto, se for definido como <tt>verdadeiro</tt>.</li>
+    <li><tt>esticar</tt>: Se esta propriedade for definida como <tt>verdadeira</tt>, então o <span class="notranslate">chaveiro</span> se estende para o próximo <span class="notranslate">chaveiro</span> da pista ou para o final da pista, se for o último chaveiro <span class="notranslate">.</span> Você pode obter ou definir este valor, e
+      o valor padrão é <tt>falso</tt>.</li>
+    <li><tt>canais</tt>: Esta propriedade permite o acesso à lista de <a href="The_Keyframe_Data_Struct.htm">estruturas de dados</a> do <a href="The_Keyframe_Data_Struct.htm"><span class="notranslate">quadro-chave</span></a> para os canais da pista. Ao obter esta propriedade, uma <a href="../../../../GML_Overview/Arrays.htm">matriz</a> de
+      A estrutura de dados <span class="notranslate">do quadro-chave</span> é retornada e, ao definir esta propriedade, deve ser especificada uma série de estruturas de dados do <span class="notranslate">quadro-chave</span>.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Sequences.htm">Sequências</a></div>
+        <div style="float:right">A seguir: <a href="The_Keyframe_Data_Struct.htm">A estrutura de dados <span class="notranslate">do Keyframe</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+The <span class="notranslate">Keyframe</span> Struct
+-->
+  <!-- TAGS
+sequence_<span class="notranslate">keyframe</span>
+-->
+
+</body></html>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>A estrutura de dados do Keyframe</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining The Keyframe Data Struct" />
+  <meta name="rh-index-keywords" content="Sequence Keyframe Data Struct" />
+  <meta name="search-keywords" content="The Keyframe Data Struct,seqaudiokey_loop,seqaudiokey_oneshot,channel,spriteIndex,soundIndex,playbackMode,curve,value,colour,sequence,objectIndex,events,event" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>A estrutura de dados <span class="notranslate">do Keyframe</span> </h1>
+  <p>Quando você define uma <a href="The_Keyframe_Struct.htm">estrutura de<span class="notranslate">quadro-chave</span></a> para uma pista, você também precisa definir os dados que serão associados a ela. Isto é composto de <i>canais</i> diferentes, e a cada canal pode ser dado um
+    tipo de dados, dependendo do tipo de pista para a qual você está definindo os dados <span class="notranslate">do quadro-chave</span>. Estas propriedades são:</p>
+  <ul class="colour">
+    <li><tt>canal</tt>: Este é o canal ao qual os dados do <span class="notranslate">quadro-chave</span> devem ser aplicados. É um valor inteiro positivo começando em 0, e vale a pena notar que ao criar faixas de parâmetros para os quadros-chave de &quot;posição&quot; ou &quot;escala&quot;,
+      então você precisa usar valores de canal muito específicos. Estes são: canal 0 é a posição X ou a escala X, canal 1 é a posição Y ou a escala Y.</li>
+    <li><tt>spriteIndex</tt>: O índice do bem sprite a ser utilizado para a pista. Este bem só está disponível para pistas do tipo <tt>seqtracktype_graphic</tt> e você pode obtê-lo ou configurá-lo.</li>
+    <li><tt>somIndex</tt>: O índice do ativo de áudio a ser utilizado para a faixa. Esta propriedade está disponível apenas para faixas do tipo <tt>seqtracktype_audio</tt> e você pode obtê-lo ou configurá-lo.</li>
+    <li><tt>playbackMode</tt>: O modo de reprodução para o som. Esta propriedade está disponível apenas para faixas do tipo <tt>seqtracktype_audio</tt> e você pode obtê-lo ou configurá-lo. A propriedade deve ser uma das seguintes constantes:</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+        <th>Valor</th>
+      </tr>
+      <tr>
+        <td>seqaudiokey_loop</td>
+        <td>O som será emitido em loop quando tocado.</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>seqaudiokey_oneshot</td>
+        <td>O som só tocará uma vez e depois parará.</td>
+        <td>1</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <ul class="colour">
+    <li><tt>curva</tt>: Esta propriedade requer uma estrutura de curva de animação (veja <a href="../../Animation_Curves/animcurve_channel_new.htm">aqui</a> para mais informações) e só está disponível para pistas do tipo <tt>seqtracktype_real</tt>. Se não houver estrutura de curva
+      é usado, então o valor para este imóvel será -1.</li>
+    <li><tt>valor</tt>: Esta propriedade é simplesmente um valor que está associado ao canal de dados do <span class="notranslate">quadro-chave</span>, e só está disponível para pistas do tipo <tt>seqtracktype_real</tt> quando não há estrutura de <tt>curva</tt> 
+      é fornecido.<tt></tt></li>
+    <li><tt>cor</tt>: Esta propriedade retorna (ou requer, se for definida) uma <a href="../../../../GML_Overview/Arrays.htm">matriz</a> para o valor da cor do <span class="notranslate">quadro-chave</span> com o formato [A, R, G, B]. Isto só está disponível para faixas do tipo <tt>seqtracktype_colour</tt>.
+      Note que os valores para cada componente devem ser expressos entre 0 e 1, onde 0 corresponde ao valor HEX #00 e 1 corresponde ao valor HEX #FF (0 - 255 como mostrado no seletor de cores para faixas de cores no Editor de Seqüências).</li>
+    <li><tt>seqüência</tt>: Esta propriedade retornará (ou requer, se for definida) uma <a href="The_Sequence_Object_Struct.htm">estrutura de objetos de seqüência</a> e só está disponível para pistas do tipo <tt>seqtracktype_sequence</tt>.</li>
+    <li><tt>objetoIndex</tt>: Esta propriedade retornará (ou requer, se for definida) um índice de objetos e só está disponível para pistas do tipo <tt>seqtracktype_instance</tt>.</li>
+    <li><tt>eventos</tt>: Esta propriedade permite o acesso aos <b>eventos</b> e <b>mensagens transmitidas</b> associadas à estrutura de dados <span class="notranslate">do quadro-chave</span>. Você pode obter ou definir esta propriedade, e ao obtê-la uma
+      é devolvido um conjunto de cordas, e ao defini-lo deve ser especificado um conjunto de cordas. Para mais informações sobre eventos, consulte a seção <a href="../Sequence_Events_Moments_Broadcast.htm">Eventos e Momentos Sequenciais</a>. Este
+      só está disponível para pistas do tipo <tt>seqtracktype_message</tt>.</li>
+    <li><tt>evento</tt>: Esta propriedade retornará (ou pode ser definida para) o <a href="../../../Variable_Functions/method.htm">método</a> associado com a estrutura de dados <span class="notranslate">do quadro-chave</span>. Se nenhum método tiver sido especificado ou se você desejar remover
+      Esta propriedade só está disponível para pistas do tipo <tt>seqtracktype_moment</tt>.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Sequences.htm">Sequências</a></div>
+        <div style="float:right">A seguir: <a href="The_Sequence_Object_Struct.htm">A estrutura sequencial do objeto</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+The <span class="notranslate">Keyframe</span> Data Struct
+-->
+  <!-- TAGS
+sequence_<span class="notranslate">keyframe</span>_data
+-->
+
+</body></html>

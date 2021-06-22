@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tamanho_tampão</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_resize" />
+  <meta name="rh-index-keywords" content="buffer_resize" />
+  <meta name="search-keywords" content="buffer_resize" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tamanho_tampão</h1>
+  <p>Com esta função você pode redimensionar um determinado buffer para ser o tamanho (em bytes) que você especificar.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">buffer_resize(buffer, newsize);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tampão</td>
+        <td>O índice do buffer para alterar o tamanho do.</td>
+      </tr>
+      <tr>
+        <td>newsize</td>
+        <td>O novo tamanho do buffer (em bytes).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if (buffer_get_size(buff) &lt; 16384)<br> {
+    <br> buffer_resize(buff, 16384);<br> }
+  </p>
+  <p>O código acima verificará o tamanho do buffer indexado na variável &quot;buff&quot; e se for menor que o valor dado, o buffer é redimensionado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Buffers.htm">Tampões</a></div>
+        <div style="float:right">A seguir: <a href="buffer_sizeof.htm">tamanho_tampão_de_tampão</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_resize
+-->
+  <!-- TAGS
+buffer_resize
+-->
+</body>
+</html>

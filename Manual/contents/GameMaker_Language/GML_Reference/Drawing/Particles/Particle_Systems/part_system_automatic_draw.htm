@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_system_automatic_draw</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_system_automatic_draw" />
+  <meta name="rh-index-keywords" content="part_system_automatic_draw" />
+  <meta name="search-keywords" content="part_system_automatic_draw" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_system_automatic_draw</h1>
+  <p>Esta função pode ser usada para desligar o desenho de um sistema de partículas para que quaisquer atualizações feitas no sistema (automáticas ou não) não sejam vistas. Esta é uma opção puramente visual e quando definida como <tt>falsa</tt>, não será possível ver o
+    partículas como não são desenhadas, mas ainda existem e estão mudando de posição, cor, etc... como normalmente fariam. Quando o desenho automático está desativado, você pode encomendar <i>explicitamente</i> o <span class="notranslate">GameMaker Studio 2</span> para desenhar o estado atual da partícula
+    sistema usando a função <a href="part_system_drawit.htm"><tt>part_system_drawit()</tt></a>e se esta função for definida novamente como <tt>verdadeira</tt>, você pode ligar novamente o desenho automático.</p>
+  <p>Uma coisa a ser observada é que se você estiver usando os efeitos simples criados pelas funções <a href="../effect_create_above.htm"><tt>effect_create_above()</tt></a> ou <a href="../effect_create_below.htm"><tt>effect_create_below()</tt></a> então você pode usar
+    os valores 0 (para efeitos abaixo) ou 1 (para efeitos acima) como o índice do sistema de partículas e assim alternar o desenho automático para estes também (isto também funcionará para alternar o desenho para os efeitos de partículas <span class="notranslate">DnD™</span>).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">part_system_automatic_draw(ind, automático);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>O índice do sistema de partículas a mudar.</td>
+      </tr>
+      <tr>
+        <td>automático</td>
+        <td>Se o desenho automático está ligado (verdadeiro) ou não (falso).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">part_system_automatic_draw(global.Sname, false);</p>
+  <p>O código acima desativa o desenho automático para o sistema de partículas indexado na variável global &quot;Sname&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Particle_Systems.htm">Sistemas de Partículas</a></div>
+        <div style="float:right">Próximo: <a href="part_system_update.htm">part_system_update</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_system_automatic_draw
+-->
+  <!-- TAGS
+part_system_automatic_draw
+-->
+</body>
+</html>

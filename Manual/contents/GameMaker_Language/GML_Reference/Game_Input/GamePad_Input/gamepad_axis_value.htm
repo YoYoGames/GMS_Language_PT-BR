@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_axis_value</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_axis_value" />
+  <meta name="rh-index-keywords" content="gamepad_axis_value" />
+  <meta name="search-keywords" content="gamepad_axis_value" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_axis_value</h1>
+  <p>Você pode usar esta função para obter o valor dos diferentes eixos a partir de um determinado slot gamepad. Você fornece o índice do slot do controle de jogo para verificar, junto com uma constante de índice de eixo (como listado <a href="Gamepad_Input.htm">aqui</a>), ou um valor inteiro entre
+   <tt>0</tt> e <tt><a href="gamepad_axis_count.htm">gamepad_axis_count()</a></tt><tt>-1</tt>. O valor retornado estará entre <tt>-1</tt> e <tt>1</tt> para cada um dos eixos horizontais e verticais disponíveis.</p>
+  <p>Note que o valor retornado é normalizado para levar em consideração o valor definido para a zona morta do eixo (usando a função <span class="inline"><a href="gamepad_set_axis_deadzone.htm">gamepad_set_axis_deadzone()</a></span>), e assim será sempre
+    Por exemplo, se a zona morta for definida como 0,2, o empurrão do bastão para a direita só começará a retornar um valor de 0 - 1 quando o valor do eixo <em>bruto</em> for superior a 0,2 - assim, por exemplo, quando o valor bruto for 0,2, o
+    O valor de retorno será 0, quando o valor bruto estiver em 0,5, o valor de retorno será 0,375, ou se o valor bruto for 0,9, então o valor de retorno será 0,875.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">gamepad_axis_value(device, axisIndex);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>dispositivo</td>
+        <td>Qual dispositivo de controle de jogo &quot;slot&quot; a ser verificado.</td>
+      </tr>
+      <tr>
+        <td>axisIndex</td>
+        <td>O índice de eixos a verificar (ver a <a href="Gamepad_Input.htm">lista constante</a>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var haxis = gamepad_axis_value(0, gp_axislh);<br> var vaxis = gamepad_axis_value(0, gp_axislv);<br> direção = point_direction(0, 0, haxis, vaxis);<br> velocidade = point_distance(0 ,0, haxis, vaxis) * 5;</p>
+  <p>O código acima define a velocidade e a direção da instância com base nos valores retornados do controlador analógico esquerdo do controle de jogo conectado ao dispositivo &quot;slot&quot; 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Gamepad_Input.htm">Entrada Gamepad</a></div>
+        <div style="float:right">Próximo: <a href="gamepad_button_check.htm"> gamepad_button_check </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_axis_value
+-->
+  <!-- TAGS
+gamepad_axis_value
+-->
+</body>
+</html>

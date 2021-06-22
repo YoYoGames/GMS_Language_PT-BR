@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>fisica_particle_draw</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_particle_draw" />
+  <meta name="rh-index-keywords" content="physics_particle_draw" />
+  <meta name="search-keywords" content="physics_particle_draw" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>fisica_particle_draw</h1>
+  <p>Esta função desenhará um duende na posição de todas as partículas que compartilham o mesmo valor de categoria definido pelo usuário, e que têm bandeiras que coincidem com as definidas para a máscara. O valor da máscara é definido da mesma forma que o usuário definiria o
+    bandeiras ao criar a partícula (ver a função <a href="physics_particle_create.htm"><tt>physics_particle_create()</tt></a> por exemplo), ou seja: usando o <a href="../../../../Additional_Information/Bitwise_Operators.htm">bitwise <i>ou</i></a> &quot;|&quot; para mascarar os bits apropriados para cada bandeira.</p>
+  <p class="note"><b>NOTA</b>: Esta função desenhará <b>todas as</b> partículas na simulação física com bandeiras que coincidam com as da máscara, sejam elas partículas individuais ou grupos, se a categoria do usuário for a mesma.</p>
+  <p>A partícula desenhada usará a cor e os valores alfa definidos quando você a criou, e girará com o momento angular da partícula. Entretanto, se você desejar escalar o duende ou alterar qualquer outra de suas propriedades desenhadas, você deve usar a função
+    <a href="physics_particle_draw_ext.htm"><tt>physics_particle_draw_ext()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">physics_particle_draw(typemask, category, sprite, subimg)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>typemask</td>
+        <td>A máscara para comparar as bandeiras de partículas com.</td>
+      </tr>
+      <tr>
+        <td>categoria</td>
+        <td>A categoria definida pelo usuário para desenhar (use 0 para desenhar todas as categorias).</td>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>O duende a ser utilizado para cada partícula.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td>A <tt>imagem_index</tt> do duende a desenhar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;<br> physics_particle_draw(flags, 2, sprBlob, 0);</p>
+  <p>O código acima desenhará um duende para todas as partículas da categoria &quot;2&quot; definida pelo usuário que tenham as mesmas bandeiras que a máscara dada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Soft_Body_Particles.htm">Partículas macias do corpo</a></div>
+        <div style="float:right">A seguir: <a href="physics_particle_draw_ext.htm">physics_particle_draw_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_particle_draw
+-->
+  <!-- TAGS
+physics_particle_draw
+-->
+</body>
+</html>

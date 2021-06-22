@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>url_open_full</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for url_open_full" />
+  <meta name="rh-index-keywords" content="url_open_full" />
+  <meta name="search-keywords" content="url_open_full" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>url_open_full</h1>
+  <p>Isto abrirá a URL especificada no navegador do dispositivo alvo escolhido, ou, se você estiver usando o módulo HTML5, no navegador atualmente aberto. O parâmetro &quot;alvo&quot; que você especifica é o mesmo que o &quot;nome&quot; padrão do JavaScript
+    quando você usa o método <tt>open(</tt> ) (esteja ciente de que tudo menos &quot; _self<strong>&quot; pode</strong> resultar no bloqueio do navegador, ou perguntar ao usuário se ele deseja permitir isso) e as &quot;opções&quot; são as mesmas que o JavaScript &quot;specs&quot;.
+    para controlar quais propriedades a nova janela/tabela deve exibir (nem todos os navegadores podem suportar todas as características).</p>
+  <p>Os alvos válidos são:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Meta</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>em branco</td>
+        <td>Abre o documento vinculado em uma nova janela ou aba (isto não funcionará se os pop-ups estiverem sendo bloqueados pelo usuário, caso em que você pode usar o <a href="Web_And_HTML5.htm"><tt>clicável_*</tt></a> funções em seu lugar).</td>
+      </tr>
+      <tr>
+        <td>_self</td>
+        <td>Abre o documento vinculado no mesmo quadro em que foi clicado (este é o padrão).</td>
+      </tr>
+      <tr>
+        <td>pai</td>
+        <td>Abre o documento vinculado no quadro superior.</td>
+      </tr>
+      <tr>
+        <td>_topo</td>
+        <td>Abre o documento vinculado no corpo completo da janela.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>As opções válidas são:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Parâmetros</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td><b>height=[px]'</b>'.</td>
+        <td>A altura da janela, com o valor mínimo sendo 100.</td>
+      </tr>
+      <tr>
+        <td><b>width=[px]'</b>'.</td>
+        <td>A largura da janela, com o valor mínimo sendo 100.</td>
+      </tr>
+      <tr>
+        <td><b>esquerda=[px]''</b>.</td>
+        <td>A posição esquerda da janela.</td>
+      </tr>
+      <tr>
+        <td><b>top=[px]'</b>'.</td>
+        <td>A posição superior da janela (apenas IE).</td>
+      </tr>
+      <tr>
+        <td><b>localização=[booleano</b>]''.</td>
+        <td>Se deve ou não exibir o campo de endereço (o padrão é 1).</td>
+      </tr>
+      <tr>
+        <td><b>menubar=[boolean</b>]''.</td>
+        <td>Se a barra de menu deve ou não ser exibida (o padrão é 1).</td>
+      </tr>
+      <tr>
+        <td><b>redimensionável=[booleano</b>]''.</td>
+        <td>Se a janela é redimensionável ou não (o padrão é 1).</td>
+      </tr>
+      <tr>
+        <td><b>scrollbars=[boolean</b>]''.</td>
+        <td>Se deve ou não exibir barras de rolagem (o padrão é 1).</td>
+      </tr>
+      <tr>
+        <td><b>status=[boolean</b>]''.</td>
+        <td>Adicionar ou não uma barra de status (o padrão é 1).</td>
+      </tr>
+      <tr>
+        <td><b>titlebar=[boolean</b>]''.</td>
+        <td>Se a barra de título deve ou não ser exibida. Isto é ignorado a menos que a aplicação de chamada seja uma aplicação HTML ou uma caixa de diálogo confiável (o padrão é 1);</td>
+      </tr>
+      <tr>
+        <td><b>barra de ferramentas=[booleano</b>]''.</td>
+        <td>Se a barra de ferramentas do navegador deve ou não ser exibida (o padrão é sim).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">url_open_full(url, alvo, opções);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>url</td>
+        <td>O URL (endereço do site) para o qual o link deve ser criado.</td>
+      </tr>
+      <tr>
+        <td>alvo</td>
+        <td>Esta é a área de destino para abrir a URL em (ver descrição).</td>
+      </tr>
+      <tr>
+        <td>opções</td>
+        <td>Opções padrão de navegador (ver descrição).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">url_open_full(&quot;http://yoyogames.com&quot;, &quot;_blank&quot;, &quot;resizable=0, height=200, scrollbars=0&quot;);</p>
+  <p>Isto abriria a página inicial do <span class="notranslate">YoYo Games</span> em uma nova janela que não pode ser redimensionada, tem uma altura de 200 pixels e não tem barras de rolagem.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Web_And_HTML5.htm">Web e HTML5</a></div>
+        <div style="float:right">Próximo: <a href="url_get_domain.htm">url_get_domain</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+url_open_full
+-->
+  <!-- TAGS
+url_open_full
+-->
+</body>
+</html>

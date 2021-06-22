@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_background_get_sprite</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_get_sprite" />
+  <meta name="rh-index-keywords" content="layer_background_get_sprite" />
+  <meta name="search-keywords" content="layer_background_get_sprite" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_background_get_sprite</h1>
+  <p>Esta função pode ser usada para obter o valor atual do índice sprite do elemento de fundo. Você dá o ID do elemento de fundo (que você obtém quando cria um elemento de fundo usando <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a>    ou quando você usa a função <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>), e a função retornará um valor real que representa o índice sprite que está sendo mostrado. Se o elemento não tem sprite atribuído, a função
+    retornará -1.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">layer_background_get_sprite(background_element_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>background_element_id</td>
+        <td>O valor único de identificação do elemento de fundo para obter as informações de</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Índice Sprite (Real) ou -1</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Background_sky&quot;);<br> var back_id = layer_background_get_id(lay_id);<br> if layer_background_get_sprite(back_id) != spr_Clouds<br> {
+    <br> layer_background_sprite(back_id, spr_Clouds);<br> }
+  </p>
+  <p>O código acima obterá a identificação da camada chamada &quot;Background_sky&quot; e depois a utilizará para obter a identificação do elemento de fundo nessa camada. Este ID é então usado para verificar o duende atribuído ao elemento, definindo-o para o duende &quot;spr_Clouds&quot;.
+    se ainda não o for.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Background_Layers.htm">Camadas de fundo</a></div>
+        <div style="float:right">Próximo: <a href="layer_background_get_htiled.htm">fundo_camada_get_htiled</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_background_get_sprite
+-->
+  <!-- TAGS
+layer_background_get_sprite
+-->
+</body>
+</html>

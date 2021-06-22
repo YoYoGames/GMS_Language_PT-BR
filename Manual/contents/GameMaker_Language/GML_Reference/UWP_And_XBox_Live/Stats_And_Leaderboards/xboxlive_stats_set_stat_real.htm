@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_stats_set_stat_real</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_stats_set_stat_real" />
+  <meta name="rh-index-keywords" content="xboxlive_stats_set_stat_real" />
+  <meta name="search-keywords" content="xboxlive_stats_set_stat_real" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_stats_set_stat_real</h1>
+  <p>Esta função pode ser usada para definir o valor de uma estatística para o ID do usuário dado. O usuário fornece o ID de usuário conforme retornado pela (por exemplo) função <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>então a cadeia estatutária
+    para definir<b>(se a cadeia de estatutos ainda não existir, então um novo estatuto será criado e definido para o valor dado</b>) e um valor (um real) para definir o estatuto. Note que o nome do stat deve ser apenas alfanumérico, sem símbolos ou espaços.</p>
+  <p>Ao definir o valor stat, qualquer valor anterior será substituído, portanto cabe a você determinar se o valor stat deve ser atualizado ou não (ou seja, verificar se a pontuação mais alta é realmente a mais alta), comparando com o valor stat atual com
+    o novo antes de defini-lo.</p>
+  <p>A função retornará -1 se houver um erro ou a identificação do usuário for inválida, ou qualquer outro valor se a função foi chamada com sucesso.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">xboxlive_stats_set_stat_real(user_id, stat, value);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>O ponteiro de identificação do usuário para definir a estatística para</td>
+      </tr>
+      <tr>
+        <td>stat</td>
+        <td>A estatística a definir (um fio)</td>
+      </tr>
+      <tr>
+        <td>valor</td>
+        <td>O valor para definir o estatuto para (um real)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if (game_over == verdadeiro)<br> {
+    <br> if (xboxlive_stats_get_stat(p_user_id, &quot;PercentDone&quot;) &lt; 100)<br> {
+    <br> var _val = (global.LevelsFinished / global.LevelsTotal) * 100;<br> xboxlive_stats_set_stat_real(p_user_id, &quot;PercentDone&quot;, _val);<br> }
+    <br> }
+  </p>
+  <p>O código acima verifica uma variável e se for verdade <tt>,</tt> então verificará o valor da estatística &quot;PercentDone&quot;. Se este valor for inferior a 100, um valor é então gerado e o stat é definido para este valor.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Stats_And_Leaderboards.htm">Estatísticas e Quadros de Líderes</a></div>
+        <div style="float:right">Próximo: <a href="xboxlive_stats_set_stat_int.htm">xboxlive_stats_set_stat_int</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_stats_set_stat_real
+-->
+  <!-- TAGS
+xboxlive_stats_set_stat_real
+-->
+</body>
+</html>

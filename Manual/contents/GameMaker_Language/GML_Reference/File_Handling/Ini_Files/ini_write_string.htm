@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ini_write_string</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ini_write_string" />
+  <meta name="rh-index-keywords" content="ini_write_string" />
+  <meta name="search-keywords" content="ini_write_string" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ini_write_string</h1>
+  <p>Você pode usar esta função para escrever uma string (texto) em um arquivo de dados ini. Os arquivos Ini são divididos em <b>seções</b> e, em seguida, cada seção é dividida em pares de <b>chaves</b> - <b>valores</b>. Assim, um arquivo ini típico se pareceria com algo assim:</p>
+  <p><img alt="Ini file contents example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Files/IniExample.png">Vale notar que o uso de aspas e caracteres de escape quando se escrevem cordas ini podem causar problemas quando mais tarde
+    lendo de volta os dados, pois eles podem ser truncados prematuramente. Por exemplo, escrever isto será um problema:</p>
+  <p class="code">ini_write_string(&quot;test2&quot;, &quot;seção&quot;, &quot;olá Fritz&quot;);</p>
+  <p> </p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">ini_write_string(seção, chave, valor);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>seção</td>
+        <td>A seção do .ini para escrever.</td>
+      </tr>
+      <tr>
+        <td>chave</td>
+        <td>A chave dentro da seção relevante do .ini para escrever.</td>
+      </tr>
+      <tr>
+        <td>valor</td>
+        <td>O fio para escrever para o destino relevante.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">ini_open(&quot;savedata.ini&quot;);<br> ini_write_string(&quot;Save&quot;, &quot;Player&quot;, global.Name);<br> ini_close();
+  </p>
+  <p>O código acima abre um arquivo ini para leitura e escrita, depois escreve a string armazenada na variável global &quot;Name&quot; na seção &quot;Save&quot; com a chave &quot;Player&quot; antes de fechar o arquivo novamente.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Ini_Files.htm">Arquivos de Inicia</a></div>
+        <div style="float:right">Próximo: <a href="ini_read_real.htm">ini_read_real</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ini_write_string
+-->
+  <!-- TAGS
+ini_write_string
+-->
+</body>
+</html>

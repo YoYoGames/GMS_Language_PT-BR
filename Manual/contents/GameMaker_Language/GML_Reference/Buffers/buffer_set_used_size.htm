@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tamanho_utilizado_do_soltampão</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Reference page for buffer_set_used_size" />
+  <meta name="rh-index-keywords" content="buffer_set_used_size" />
+  <meta name="search-keywords" content="buffer_set_used_size" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tamanho_utilizado_do_soltampão</h1>
+  <p>Esta função é principalmente para uso dentro de extensões, e permite definir o tamanho &quot;usado&quot; do buffer dado, que é o número de bytes que foram escritos a ele.</p>
+  <p>Quando você escreve dados em um buffer de uma extensão, o <span class="notranslate">GameMaker</span> não sabe quanto do buffer foi preenchido pelo código da extensão e não é capaz de ler esses dados. Esta função pode ser chamada pela extensão para dizer ao mecanismo quantos bytes de dados
+    foi escrito no buffer, para que o motor possa ler esses dados.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">buffer_set_use_size(buffer, tamanho);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tampão</td>
+        <td>O índice do buffer a ser utilizado.</td>
+      </tr>
+      <tr>
+        <td>tamanho</td>
+        <td>O número de bytes a definir como o tamanho &quot;usado&quot;.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">buffer_write(_bufferAddress, buffer_u8, 1);<br> buffer_write(_bufferAddress, buffer_u8, 2);<br> buffer_write(_bufferAddress, buffer_u16, 400);<br>
+    <br> buffer_set_used_size(_bufferAddress, 4);</p>
+  <p>As funções acima seriam chamadas em uma extensão para escrever alguns dados em um buffer <span class="notranslate">GameMaker</span> (através de seu endereço de memória), e então definir o número de bytes que lhe foram escritos para que o motor possa ler esses dados.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Buffers.htm">Tampões</a></div>
+        <div style="float:right">Próximo: <a href="buffer_exists.htm">buffer_existe</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_set_used_size
+-->
+  <!-- TAGS
+buffer_set_used_size
+-->
+</body>
+</html>

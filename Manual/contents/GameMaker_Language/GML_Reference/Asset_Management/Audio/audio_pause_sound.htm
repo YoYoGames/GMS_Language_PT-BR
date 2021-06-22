@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_pause_sound</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_pause_sound" />
+  <meta name="rh-index-keywords" content="audio_pause_sound" />
+  <meta name="search-keywords" content="audio_pause_sound" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_pause_sound</h1>
+  <p>Com esta função você pode fazer uma pausa em qualquer som que esteja tocando no momento. O som pode ser uma única instância de um som (o índice para sons individuais que estão sendo tocados pode ser armazenado em uma variável quando se usa o <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a> ou 
+    <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a> funções) ou um bem sonoro, em cujo caso <i>todas as</i> instâncias do som dado serão pausadas.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">audio_pause_sound(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice do som a pausar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se keyboard_check_pressed(ord(&quot;P&quot;))<br> {
+    <br> global.Pause = !global.Pause;<br> if global.Pause<br> {
+    <br> audio_pause_sound(snd_Waterfall);
+    <br> }
+    <br> else
+    <br> {
+    <br> audio_resume_sound(snd_Waterfall);
+    <br> }
+    <br> }
+  </p>
+  <p>O código acima verifica se a tecla &quot;P&quot; está pressionada e se detecta uma, define a variável global &quot;Pause&quot; como verdadeira ou falsa e <tt>, em seguida,</tt> ou pausa o som indexado na variável &quot;snd_Waterfall&quot;.
+    ou retoma o som a partir de seu estado de pausa.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Audio.htm">Áudio</a></div>
+        <div style="float:right">Próximo: <a href="audio_pause_all.htm">audio_pause_all</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_pause_sound
+-->
+  <!-- TAGS
+audio_pause_sound
+-->
+</body>
+</html>

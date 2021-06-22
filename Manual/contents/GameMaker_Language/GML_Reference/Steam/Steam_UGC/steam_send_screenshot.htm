@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_send_screenshot</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_send_screenshot" />
+  <meta name="rh-index-keywords" content="steam_send_screenshot" />
+  <meta name="search-keywords" content="steam_send_screenshot" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam_send_screenshot</span></h1>
+  <p>Com esta função você pode carregar uma captura de tela para a página de perfil da Comunidade <span class="notranslate">Steam</span> do usuário atualmente logado. O nome do arquivo que você fornece é o nome do arquivo local que foi criado quando você tirou a captura de tela usando as funções do <span class="notranslate">GameMaker Studio 2</span>. <a href="../../Cameras_And_Display/screen_save.htm"><tt>screen_save()</tt></a> ou <a href="../../Cameras_And_Display/screen_save_part.htm"><tt>screen_save_part()</tt></a>. A largura e a altura definem o tamanho da imagem, e a função
+    devolver um valor de 0 se falhar por qualquer razão e um valor maior que 0 se for bem sucedido.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code"><span class="notranslate">steam_send_screenshot</span>(filename, width, height);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>nome do arquivo</td>
+        <td>O nome do arquivo de imagem a ser carregado (uma cadeia).</td>
+      </tr>
+      <tr>
+        <td>largura</td>
+        <td>A largura da imagem (um número inteiro).</td>
+      </tr>
+      <tr>
+        <td>altura</td>
+        <td>A altura da imagem (um número inteiro).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se <span class="notranslate">o vapor for solicitado</span>()<br> {
+    <br> var file = &quot;Catch_The_Haggis_&quot; + string(global.scrn_num) + &quot;.png&quot;);<br> screen_save(file)
+    <br> <span class="notranslate">steam_send_screenshot</span>(file, window_get_width(), window_get_height());<br> global.scrn_num += 1;<br> }
+  </p>
+  <p>O código acima pesquisará o <span class="notranslate">Steam</span> API para um pedido de captura de tela e, se tiver sido, será gerado um nome único para o arquivo de imagem, uma captura de tela será tirada e o arquivo será enviado para a página da Comunidade <span class="notranslate">Steam</span> para o usuário.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Steam_UGC.htm">UGC</a></div>
+        <div style="float:right">Próximo: <a href="steam_ugc_create_item.htm"><span class="notranslate">steam_ugc_create_item</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_send_screenshot
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_send_screenshot
+-->
+</body>
+</html>

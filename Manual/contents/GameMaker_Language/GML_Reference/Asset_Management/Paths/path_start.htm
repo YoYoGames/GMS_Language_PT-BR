@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>path_start</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_start" />
+  <meta name="rh-index-keywords" content="path_start,path_action_stop,path_action_restart,path_action_continue,path_action_reverse" />
+  <meta name="search-keywords" content="path_start,path_action_stop,path_action_restart,path_action_continue,path_action_reverse" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>path_start</h1>
+  <p>Um caminho é criado a partir de uma série de pontos definidores que são ligados entre si e depois utilizados para planejar os movimentos de uma instância. Eles podem ser criados com código, <i>ou</i> no Editor de Caminhos e são atribuídos a uma instância
+    para usar no jogo. Você então usaria esta função para dizer a sua instância qual caminho seguir, que velocidade seguir o caminho (medido em pixels por passo), como se comportar quando chegar ao final do caminho, e se seguir o caminho <i>absoluto</i> ou <i>relativo</i> 
+    posição. Esta última parte significa que ou começa e segue o caminho exatamente como você projetou e o colocou no <a href="../../../../The_Asset_Editors/Paths.htm">Path Editor</a> (absoluto), ou começa e segue o caminho a partir da posição
+    em que a instância foi criada (relativa).</p>
+  <p><img alt="Relative or Absolute path examples" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Paths/path_relative_image.png">Como você pode ver na imagem acima, as duas instâncias estão seguindo o mesmo caminho iniciado com <tt>path_start()</tt>,
+    mas uma das instâncias está seguindo o caminho absoluto enquanto a outra está seguindo o caminho relativo. Deve-se observar que quando a instância relativa é definida como falsa (absoluta), a instância &quot;pulará&quot; para o início do caminho, não importando em que lugar
+    a sala onde é colocado.</p>
+  <p>As constantes usadas para definir o comportamento da instância quando ela chega ao final do caminho são as seguintes:<br>
+  </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>path_action_stop</td>
+        <td>Terminar o caminho</td>
+      </tr>
+      <tr>
+        <td>path_action_restart</td>
+        <td>Continuar o caminho desde o início, pulando novamente para a posição inicial se o caminho não estiver fechado</td>
+      </tr>
+      <tr>
+        <td>path_action_continue</td>
+        <td>Continuar a partir da posição atual</td>
+      </tr>
+      <tr>
+        <td>path_action_reverse</td>
+        <td>Retroceder ao longo do caminho novamente (conseguido invertendo a velocidade do movimento do caminho)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">path_start(caminho, velocidade, ação final, absoluto);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>caminho</td>
+        <td>O índice do caminho para começar.</td>
+      </tr>
+      <tr>
+        <td>velocidade</td>
+        <td>A velocidade da qual se deve seguir o caminho em pixels por passo, significando negativo retroceder.</td>
+      </tr>
+      <tr>
+        <td>endação</td>
+        <td>O que fazer quando o final do caminho é alcançado (ver as constantes listadas abaixo).</td>
+      </tr>
+      <tr>
+        <td>absoluto</td>
+        <td>Se a instância de chamada deve seguir o caminho absoluto como está no editor (verdadeiro) ou um caminho relativo para sua posição atual (falso).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">path_start(path, 4, path_action_reverse, 0);</p>
+  <p>Isto fará com que a instância de chamada siga o caminho indexado na variável &quot;caminho&quot; a uma velocidade de 4 pixels por passo. Ela seguirá o caminho em relação a sua própria posição, e quando chegar ao final, inverterá a direção e voltará a
+    como veio.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Paths.htm">Caminhos</a></div>
+        <div style="float:right">Próximo: <a href="path_end.htm">path_end</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_start
+path_action_stop
+path_action_restart
+path_action_continue
+path_action_reverse
+-->
+  <!-- TAGS
+path_start
+-->
+</body>
+</html>

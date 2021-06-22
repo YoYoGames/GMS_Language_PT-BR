@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>superfície_superfície_de_tampão</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_set_surface" />
+  <meta name="rh-index-keywords" content="buffer_set_surface,buffer_surface_copy (Deprecated)" />
+  <meta name="search-keywords" content="buffer_set_surface,buffer_surface_copy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>superfície_superfície_de_tampão</h1>
+  <p>Com esta função você pode escrever as informações de um buffer para uma determinada superfície. Tanto o buffer que está sendo lido quanto a superfície que está sendo escrita devem ter sido criados anteriormente, e você pode fornecer uma compensação no buffer para iniciar a leitura a partir dele.
+    Note que a leitura sempre começará no início do buffer mais o valor do offset e <em>não</em> na posição atual de busca mais o valor do offset.</p>
+  <p class="note"><strong>NOTA</strong>: Esta função foi alterada a partir da atualização do <span class="notranslate">GameMaker Studio</span> 2.3.1. As versões anteriores utilizavam a constante <span class="inline">buffer_surface_copy</span>, que agora está obsoleta.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">buffer_set_surface(buffer, superfície, offset);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tampão</td>
+        <td>O índice do buffer a ser utilizado.</td>
+      </tr>
+      <tr>
+        <td>superfície</td>
+        <td>O índice da superfície a ser utilizada.</td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td>O valor da compensação de dados.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">buffer_set_surface(buff, surface_surface_de_aplicação, 0);</p>
+  <p>O código acima copiará todos os dados armazenados no buffer indexado na variável &quot;buff&quot; para a superfície da aplicação, sem compensação.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Buffers.htm">Tampões</a></div>
+        <div style="float:right">Próximo: <a href="buffer_resize.htm">tamanho_tampão</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_set_surface
+buffer_surface_copy
+-->
+  <!-- TAGS
+buffer_set_surface
+-->
+</body>
+</html>

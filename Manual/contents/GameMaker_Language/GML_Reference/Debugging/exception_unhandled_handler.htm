@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>exception_unhandled_handler</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for exception_unhandled_handler" />
+  <meta name="rh-index-keywords" content="exception_unhandled_handler" />
+  <meta name="search-keywords" content="exception_unhandled_handler" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>exception_unhandled_handler</h1>
+  <p>Esta função de <span class="notranslate">tempo de execução</span> pode ser usada para &quot;assumir&quot; a mensagem de <span class="notranslate">erro</span> padrão do GameMaker <span class="notranslate">Studio 2</span> quando ocorre uma <span class="notranslate">exceção de</span> tempo de execução. Você fornece um método ou função que é chamado quando a exceção ocorre, e seu primeiro argumento será uma estrutura
+    contendo informações sobre a exceção. Esta estrutura tem o seguinte formato:</p>
+  <p class="code">{<br> mensagem : &quot;&quot;, // uma string que é uma mensagem curta para esta exceção<br> longMessage : &quot;&quot;, // uma string que é uma mensagem mais longa para esta exceção<br> script : &quot;&quot;, // uma string
+    que descreve onde a exceção veio da linha<br>: 0, // um real que é o número da linha onde a exceção veio de<br> stacktrace : [ &quot;&quot;, &quot;&quot; ], // um conjunto de cordas que é a estrutura da pilha a exceção
+    foi gerado<br> }
+  </p>
+  <p>Você também pode fornecer <span class="inline">undefined</span> como o argumento, que removerá o manipulador de exceções personalizado (se definido) e retornará à mensagem de erro padrão do <span class="notranslate">GameMaker Studio 2</span>.</p>
+  <p>Esta função retornará o método do manipulador de exceções previamente definido, no entanto, se nunca foi alterado ou se foi reiniciado anteriormente usando <span class="inline">undefined</span>, então ele simplesmente retornará <span class="inline">undefined</span>.</p>
+  <p>Passar um método para esta função significa que nenhuma mensagem de erro será mostrada ao usuário, e você mesmo terá permissão para lidar com a exceção. Entretanto, você não pode usar isto para &quot;quebrar&quot; a exceção para continuar seu jogo, pois o jogo
+    ainda fechará depois que o manipulador de exceções for chamado.</p>
+  <p>Observe que o contexto para executar o método <i>não</i> está em um evento e, portanto, é altamente improvável que qualquer coisa possa ser apresentada neste momento na tela. Em geral, a coisa mais segura que poderia ser feita neste momento é salvar um arquivo com o
+    informações de contexto de exceção para que possam ser - por exemplo - analisadas e processadas na próxima rodada do jogo e depois tratadas.</p>
+  <p>Observe que se você usar a declaração de <tt>retorno</tt> no método fornecido, então o valor dado será convertido para um inteiro e usado como o código de saída do corredor.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">exception_unhandled_handler(user_handler);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>user_handler</td>
+        <td>O método (função definida pelo usuário) a ser usado como o manipulador de exceções, ou <span class="inline">undefined</span> para redefini-lo como padrão.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Método (ou indefinido)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">exception_unhandled_handler(function(ex))<br> {
+    <br> show_debug_message( &quot;<br> &quot;);<br> show_debug_message( &quot;Unhandled exception &quot; + string(ex) );<br> show_debug_message( &quot;--------------------------------------------------------------&quot;); -------------------------------------------------------------- se file_exists(&quot;crash.txt&quot;) file_delete(&quot;crash.txt&quot;);<br> var _f = file_text_open_write(&quot;crash.txt&quot;);<br> file_text_write_string(_f, string(ex));<br> file_text_close(_f);
+    <br> return 0;<br> }
+    <br> )
+  </p>
+  <p>O código acima criará um método de tratamento de exceções e o utilizará para salvar um arquivo com os dados das exceções.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Debugging.htm">Depuração</a></div>
+        <div style="float:right">Próximo: <a href="get_integer.htm">get_integer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+exception_unhandled_handler
+-->
+  <!-- TAGS
+exception_unhandled_handler
+-->
+</body>
+</html>

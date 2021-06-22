@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_get_depth</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_get_depth" />
+  <meta name="rh-index-keywords" content="layer_get_depth" />
+  <meta name="search-keywords" content="layer_get_depth" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_get_depth</h1>
+  <p>Você pode usar esta função para obter o valor de <i>profundidade</i> associado a uma determinada camada. Você fornece a identificação da camada (que você obtém quando cria a camada usando <a href="layer_create.htm"><tt>layer_create()</tt></a>) ou o nome da camada (como um fio - este
+    terá um impacto no desempenho) e a função retornará essa profundidade de camadas como um número real. Note que a profundidade é definida como sendo maior quanto mais longe da câmera e menor quanto mais perto da câmera, portanto, se você tiver
+    três camadas com profundidades -100, 0, 100, as camadas serão desenhadas na ordem 100, 0, -100, de modo que a camada &quot;superior&quot; (ou seja, a mais próxima à vista da câmera e assim desenhada sobre tudo o resto) será a camada com a profundidade -100.</p>
+  <p>A imagem a seguir mostra um esquema de como funciona a profundidade para camadas:</p>
+  <p><img alt="Layer depth example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Rooms/Layer_Depths.png">Note que se você fornecer um valor de identificação de camada inválido, você receberá um erro.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">layer_get_depth(layer_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>O valor de identificação único da camada para obter a profundidade de (ou o nome da camada como uma corda)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if layer_get_depth(global.temp_layer) != -100<br> {
+    <br> layer_destroy(global.temp_layer);
+    <br> global.temp_layer = layer_create(-100);<br> }
+  </p>
+  <p>O código acima verifica a profundidade de um ID de camada armazenado em uma variável global e se não for -100, destrói a camada e a recria na profundidade de -100.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="General_Layer_Functions.htm">Funções gerais da camada</a></div>
+        <div style="float:right">Próximo: <a href="layer_get_id_at_depth.htm">layer_get_id_id_at_depth</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_get_depth
+-->
+  <!-- TAGS
+layer_get_depth
+-->
+</body>
+</html>

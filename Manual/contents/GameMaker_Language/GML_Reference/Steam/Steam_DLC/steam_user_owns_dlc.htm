@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_user_owns_dlc</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_user_owns_dlc" />
+  <meta name="rh-index-keywords" content="steam_user_owns_dlc" />
+  <meta name="search-keywords" content="steam_user_owns_dlc" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam_user_owns_dlc</span></h1>
+  <p>Se seu jogo tem DLC criado para ele, você pode usar esta função para verificar e ver se o usuário o comprou antes de acessar qualquer arquivo associado a ele. A função retorna <tt>verdadeiro</tt> se o jogador possuir o conteúdo, e <tt>falso</tt> se o
+    não, mas note que mesmo que o usuário seja proprietário do DLC, ele pode não tê-lo instalado, então você deve usar a função adicional de <a href="steam_user_installed_dlc.htm"><tt><span class="notranslate">steam_user_installed_dlc</span>()</tt></a> para verificar se ele está instalado como
+    bem antes de utilizá-lo. Observe que as identificações <span class="notranslate">a vapor</span> podem ser em grande número e, portanto, você pode precisar lançar seu valor de identificação como um <a href="../../Variable_Functions/int64.htm"><tt>int64()</tt></a> antes de fornecê-lo para a função.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code"><span class="notranslate">steam_user_owns_dlc</span>(dlc_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>dlc_id</td>
+        <td>O identificador único para o DLC a ser verificado (um número inteiro int64).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">global.Level_Max = 100;<br> if <span class="notranslate">steam_user_owns_dlc</span>(10354)<br> {
+    <br> if <span class="notranslate">steam_user_installed_dlc</span>(10354)<br> {
+    <br> global.Level_max = 200;<br> }
+    <br> }
+  </p>
+  <p>O código acima verificará se o usuário comprou, e instalou, o DLC com o id 10354, e se assim for, definirá uma variável global para um valor diferente.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Steam_DLC.htm">DLC</a></div>
+        <div style="float:right">Próximo: <a href="steam_user_installed_dlc.htm"><span class="notranslate">steam_user_installed_dlc</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_user_owns_dlc
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_user_owns_dlc
+-->
+</body>
+</html>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_save_async</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_save_async" />
+  <meta name="rh-index-keywords" content="buffer_save_async" />
+  <meta name="search-keywords" content="buffer_save_async" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_save_async</h1>
+  <p>Com esta função, você pode salvar parte do conteúdo de um buffer em um arquivo, pronto para ser lido de volta à memória usando o <a href="buffer_load.htm"><tt>buffer_load()</tt></a> (ou qualquer uma das outras funções de amortecedores de carga). O &quot;offset
+    define a posição inicial dentro do buffer para salvar (em bytes), e o &quot;tamanho&quot; é o tamanho da área do buffer a ser salva a partir desse offset (também em bytes). Esta função funciona de forma assíncrona, e assim o jogo continuará funcionando
+    enquanto estiver sendo salvo, e todos os arquivos salvos usando esta função serão colocados em uma pasta &quot;padrão&quot;. Esta pasta <i>não</i> precisa ser incluída no nome do arquivo, pois ele é adicionado automaticamente pelo <span class="notranslate">GameMaker</span>. Por exemplo, o caminho do nome do arquivo &quot; Data\Player_Save<tt>.sav&quot;</tt>.
+    seria na verdade salvo em &quot;<tt>default\Data\Player_Save.sav&quot;.</tt> Entretanto, se você então carregar o arquivo usando a função <a href="buffer_load_async.htm"><tt>buffer_load_async()</tt></a>você não precisa fornecer o &quot;padrão&quot;.
+    parte do caminho (mas qualquer outra função de arquivo o exigirá, exceto nos consoles Xbox One, PS4 e <span class="notranslate">Nintendo</span> <span class="notranslate">Switch</span>).</p>
+  <p class="note"><b>NOTA</b>: Em HTML5 &quot;default/&quot; não é adicionado automaticamente e você pode ter que responder por isso em seu código.</p>
+  <p>A função retornará um valor de ID exclusivo e acionará um <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Save_Load.htm">Evento Assíncrono de Salvamento/Carga</a> onde você pode usar o ID retornado para verificar o valor de ID de <tt>carga_assíncrona</tt>,
+    como mostrado no exemplo ampliado abaixo. O <a href="../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> no evento terá os dois pares chave/valor a seguir:</p>
+  <ul>
+    <li><b>&quot;id&quot;: a identificação da </b>função async como retornada pela função save.</li>
+    <li><b>&quot;status&quot;: </b>retornará verdadeiro se <tt>os</tt> dados foram salvos/carregados corretamente, e falso <tt>caso contrário</tt>.</li>
+  </ul>
+  <p>Note que você pode salvar múltiplos buffers em um chamando esta função várias vezes entre chamadas para <a href="buffer_async_group_begin.htm"><tt>buffer_async_group_begin()</tt></a> e <a href="buffer_async_group_end.htm"><tt>buffer_async_group_end()</tt></a>    (veja essas funções para maiores informações sobre isso).</p>
+  <p class="note"><b>NOTA</b>: Em HTML5 os resultados retornados são salvos como cordas codificadas base64 quando salvos em um arquivo.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">buffer_save_async(buffer, nome do arquivo, offset, tamanho);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tampão</td>
+        <td>O índice do buffer a ser salvo.</td>
+      </tr>
+      <tr>
+        <td>nome do arquivo</td>
+        <td>O nome do arquivo a ser salvo como.</td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td>A compensação dentro do buffer para economizar de (em bytes).</td>
+      </tr>
+      <tr>
+        <td>tamanho</td>
+        <td>O tamanho da área de amortecimento a ser economizada (em bytes).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo ampliado:</h4>
+  <p>A função <tt>buffer_save_async(</tt> ) pode ser chamada a partir de qualquer evento, e como é assíncrona, a ligação de retorno pode ser quase instantânea ou pode levar vários segundos. Chamar a função é simples e pareceria algo parecido com isto:</p>
+  <p class="code">saveid = buffer_save_async(buff, &quot;Player_Save.sav&quot;, 0, 16384);</p>
+  <p>O código acima salva o conteúdo do buffer &quot; buff&quot;<i>para</i> o arquivo salvo dado, armazenando o ID da chamada de função na variável &quot; saveid&quot;. Quando o salvamento estiver completo, o evento assíncrono de salvamento/carga será acionado
+    e você pode analisar o mapa <tt>async_load</tt> para a identificação correta da função, desta forma:</p>
+  <p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == saveid<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;) == falso<br> {
+    <br> show_debug_message(&quot;Salvar falhou!&quot;);<br> }
+    <br> }
+  </p>
+  <p>O código acima verificará primeiro a identificação do mapa DS que foi criado, depois verificará o status da chamada de retorno, postando uma mensagem de depuração se tiver havido algum problema.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Buffers.htm">Tampões</a></div>
+        <div style="float:right">Próximo: <a href="buffer_load.htm">buffer_load</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_save_async
+-->
+  <!-- TAGS
+buffer_save_async
+-->
+</body>
+</html>

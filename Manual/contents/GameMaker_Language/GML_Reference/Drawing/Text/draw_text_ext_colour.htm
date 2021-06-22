@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_text_ext_colour</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_text_ext_colour" />
+  <meta name="rh-index-keywords" content="draw_text_ext_colour,draw_text_ext_color" />
+  <meta name="search-keywords" content="draw_text_ext_colour,draw_text_ext_color" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_text_ext_colour</h1>
+  <p>Esta função é uma combinação da base <a href="draw_text.htm"><tt>draw_text</tt><tt>()</tt><tt></tt></a> função com o <a href="draw_text_ext.htm"><tt>texto_desenho_texto</tt><tt>()</tt><tt></tt></a> e <a href="draw_text_colour.htm"><tt>draw_text_colour</tt><tt>()</tt><tt></tt></a>    permitindo definir cores gradientes para o texto, assim como o espaçamento entre linhas e a largura máxima por linha, tudo junto.</p>
+  <p class="note"><b>NOTA: </b>A mistura gradual não está disponível para o alvo HTML5 a menos que a WebGL esteja habilitada, embora você ainda possa definir as cores da mistura e ela irá misturar a fonte com a primeira cor dada. No entanto, toda mistura desta forma cria uma duplicata
+    A fonte que é então armazenada no cache e usada quando necessário, que está longe de ser a ideal e se você usar mudanças múltiplas de cor irá diminuir o desempenho de seus jogos. Você pode definir o tamanho do cache da fonte para tentar limitá-lo, caso seja necessário.
+    usando a função <a href="../../Asset_Management/Fonts/font_set_cache_size.htm"><tt style="font-size: 14px">font_set_cache_size()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">draw_text_ext_colour(x, y, string, sep, w, c1, c2, c3, c4, alfa);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A coordenada x do fio desenhado.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A coordenada y da corda desenhada.</td>
+      </tr>
+      <tr>
+        <td>corda</td>
+        <td>O fio para desenhar.</td>
+      </tr>
+      <tr>
+        <td>sep</td>
+        <td>A distância em pixels entre linhas de texto.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>A largura máxima em pixels do fio antes de uma quebra de linha.</td>
+      </tr>
+      <tr>
+        <td>c1</td>
+        <td>A cor para a parte superior esquerda do texto desenhado.</td>
+      </tr>
+      <tr>
+        <td>c2</td>
+        <td>A cor para a parte superior direita do texto desenhado.</td>
+      </tr>
+      <tr>
+        <td>c3</td>
+        <td>A cor para a parte inferior direita do texto desenhado.</td>
+      </tr>
+      <tr>
+        <td>c4</td>
+        <td>A cor para a parte inferior esquerda do texto desenhado.</td>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>O alfa para o texto.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">draw_text_ext_colour(200, 200, keyboard_string, 5, 300, c_blue, c_blue, c_navy, c_navy, 1);</p>
+  <p>O código acima desenhará qualquer texto que o usuário digitar no teclado, dividindo-o em novas linhas toda vez que o comprimento da linha exceder 300 pixels. o código também manterá uma separação de 5 pixels entre linhas caso isso ocorra.
+    Cada linha do texto será colorida usando um gradiente azul, com azul claro na parte superior e azul escuro na parte inferior.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Text.htm">Texto</a></div>
+        <div style="float:right">A seguir: <a href="draw_text_ext_transformed.htm">draw_text_ext_transformed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_text_ext_colour
+draw_text_ext_color
+-->
+  <!-- TAGS
+draw_text_ext_colour
+-->
+</body>
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_stats_setup</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_stats_setup" />
+  <meta name="rh-index-keywords" content="xboxlive_stats_setup" />
+  <meta name="search-keywords" content="xboxlive_stats_setup" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_stats_setup</h1>
+  <p>Esta função precisa ser chamada antes que você possa usar qualquer uma das outras funções estatísticas do Xbox Live, e simplesmente inicializa as bibliotecas necessárias no sistema. O argumento &quot;user_id&quot; é a identificação bruta do usuário como retornada pela função <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>,
+    enquanto o &quot;service_config&quot; e o &quot;title_id&quot; são a identificação única para seu jogo no Xbox Live Dev Center.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">xboxlive_stats_setup(user_id, service_config_id, title_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>O ponteiro de identificação do usuário a ser verificado.</td>
+      </tr>
+      <tr>
+        <td>service_config_id</td>
+        <td>Esta é a seqüência config_id para o jogo.</td>
+      </tr>
+      <tr>
+        <td>title_id</td>
+        <td>A identificação única para o seu jogo no Xbox Dev Center.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var user = xboxlive_get_user(0); xboxlive_stats_setup(user, &quot;4d61a1aa-61ac-4541-badd-31f91244fea6&quot;, $1244FEA6);</p>
+  <p>O código acima inicializa o sistema de estatísticas para o ID do usuário dado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Stats_And_Leaderboards.htm">Estatísticas e Quadros de Líderes</a></div>
+        <div style="float:right">Próximo: <a href="xboxlive_stats_add_user.htm">xboxlive_stats_add_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_stats_setup
+-->
+  <!-- TAGS
+xboxlive_stats_setup
+-->
+</body>
+</html>

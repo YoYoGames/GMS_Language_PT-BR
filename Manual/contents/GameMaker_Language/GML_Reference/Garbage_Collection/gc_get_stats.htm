@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gc_get_stats</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gc_get_stats" />
+  <meta name="rh-index-keywords" content="gc_get_stats" />
+  <meta name="search-keywords" content="gc_get_stats" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gc_get_stats</h1>
+  <p>Com esta função você pode recuperar informações sobre o estado atual do coletor de lixo. A função retornará uma <a href="../../GML_Overview/Structs.htm">estrutura</a> que terá as seguintes variáveis de membros (observe que &quot;objetos&quot; são
+    aqui se refere a qualquer coisa que possa ser coletada de lixo e <i>não</i> instâncias de objetos gerais, como definido no Navegador de Ativos):</p>
+  <ul class="colour">
+    <li><tt>objects_touched</tt> - este é o número de objetos ativos que o coletor de lixo encontrou no quadro anterior. Isto varia de acordo com a geração que foi coletada.</li>
+    <li><tt>objects_collected</tt> - o número de objetos que o coletor de lixo determinado não estava ativo no quadro anterior, e que, portanto, poderia ser apagado.</li>
+    <li><tt>traversal_time</tt> - este é o tempo em microssegundos (no fio principal) que o coletor de lixo levou para descobrir quais objetos estavam ativos.</li>
+    <li><tt>tempo de coleta</tt> - este é o tempo em microssegundos (em um fio separado) que o coletor de lixo levou para limpar os objetos considerados inativos.</li>
+    <li><tt>gc_frame</tt> - este é um contador que é incrementado cada vez que ocorre uma passagem de coleta de lixo. Se a coleta de lixo for desativada, isto não aumentará.</li>
+    <li><tt>generation_collected</tt> - este é o índice da geração que foi coletada por último. 0 é a geração mais jovem e 3 é atualmente a mais velha.</li>
+    <li><tt>num_gerações</tt> - este é o número total de gerações de coleta de lixo.</li>
+    <li><tt>num_objects_in_generation</tt> - esta é uma matriz (de tamanho <tt>num_gerações</tt>) contendo o número de objetos em cada geração.</li>
+  </ul>
+  <p class="note"><b>NOTA</b>: Na plataforma alvo HTML5 a coleta de lixo é feita pelo mecanismo JavaScript e, portanto, as variáveis membros na estrutura acima retornarão todas 0 se esta função for usada naquela plataforma.</p>
+  <p>Ao utilizar esta função, observe que as informações mostradas para os objetos <em>só são atualizadas quando o processamento de uma geração completa é concluído</em>, o que pode levar vários quadros, dependendo da definição do tempo de quadro (veja <a href="gc_target_frame_time.htm">aqui</a> para mais informações sobre o tempo de quadro).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">gc_get_stats();</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Estrutura</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if (global.debug == true)<br> {
+    <br> var _s = gc_get_stats();<br> var _t = _s.traversal_time;<br> var _c = _s.collection_time;<br> show_debug_message(&quot;Traversal time = &quot; + string(_t))<br> show_debug_message(&quot;Collection time = &quot; + string(_c))<br> }
+  </p>
+  <p>O código acima verifica uma variável global e, se for <tt>verdade</tt>, obtém informações do coletor de garabges e as envia para o console como mensagens de depuração.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Garbage_Collection.htm">Coleta de Lixo</a></div>
+        <div style="float:right">Próximo: <a href="gc_enable.htm">gc_enable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gc_get_stats
+-->
+  <!-- TAGS
+gc_get_stats
+-->
+</body>
+</html>

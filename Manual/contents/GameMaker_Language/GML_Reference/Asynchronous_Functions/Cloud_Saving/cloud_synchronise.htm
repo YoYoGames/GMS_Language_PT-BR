@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Sincronizar_nuvem</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for cloud_synchronise" />
+  <meta name="rh-index-keywords" content="cloud_synchronise" />
+  <meta name="search-keywords" content="cloud_synchronise" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Sincronizar_nuvem</h1>
+  <p>Esta função seria normalmente chamada no início de um novo jogo e é usada para recuperar o status atual do serviço de nuvem no início do jogo. A função retorna um valor <b>de id</b> único que seria então usado no <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Cloud.htm">evento da nuvem assíncrona</a> para recuperar as informações relevantes do mapa DS que é criado.</p>
+  <p>Esta função enviará os dados para a nuvem, que então acionará o evento assíncrono apropriado. Neste evento, você pode verificar o retorno <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> Mapa DS
+    para os seguintes valores:</p>
+  <ul class="colour">
+    <li><b>&quot;status&quot;: </b>Isto contém o código de status, onde um valor negativo denota um erro, cuja descrição estará contida no &quot;errorString&quot;. Um valor de 0 (ou um valor positivo) indica um sucesso (veja abaixo os valores exatos),
+      e o &quot;resultadoString&quot; conterá os dados retornados ou uma mensagem de sucesso.</li>
+    <li><b>&quot;id&quot;: </b>O id que foi retornado da função chamada. Se você disparar uma série de pedidos <tt>cloud_</tt>, então você precisa saber qual deles você está recebendo a resposta, e assim você usaria este valor para comparar com o valor que você
+      armazenado quando você originalmente enviou o pedido para encontrar o correto.</li>
+    <li><b>&quot;descrição&quot;: </b>A descrição do último arquivo carregado.</li>
+    <li><b>&quot;resultString&quot;: </b>Isto contém um fio que é a bolha de dados retornada da nuvem.</li>
+    <li><b>&quot;errorString&quot;: retorna um </b>Error String para qualquer erro.</li>
+  </ul>
+  <p>O significado exato da entrada do mapa de &quot;status&quot; retornado é explicado na tabela a seguir:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Status Valor</th>
+        <th>errorString / resultString</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>-1</td>
+        <td>errorString = &quot;Not logged in to &lt;SERVICE&gt;&quot; (Não logado em &lt;SERVICE&gt;&quot;)</td>
+        <td>Você não conseguiu acessar o serviço em nuvem em questão</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>resultadoString = dados recuperados</td>
+        <td>Novos dados do jogo baixados da nuvem (seguindo uma chamada de cloud_synchronise)</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>resultString = &quot;AlreadySynchronized&quot; (já sincronizado)</td>
+        <td>Nenhum dado novo desde a última vez que você chamou cloud_synchronise</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>resultadoString = &quot;ConflictDeferral&quot;</td>
+        <td>Foi encontrado um conflito, mas o jogador optou por ignorá-lo</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>resultString = &quot;GameUploadSuccess</td>
+        <td>dados de <a href="cloud_string_save.htm"><tt>cloud_string_save()</tt></a> ou <a href="cloud_file_save.htm"><tt>cloud_file_save()</tt></a> foi carregado com sucesso para a nuvem</td>
+      </tr>
+      <tr>
+        <td>-n</td>
+        <td>errorString = Descrição do erro</td>
+        <td>Qualquer outro número negativo significa uma falha de sincronização</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">cloud_synchronise();</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo ampliado:</h4>
+  <p>Esta função seria chamada em um evento como o <strong>Game Start Event</strong> ou em um objeto que é colocado na primeira sala de seu jogo, com a idéia de que você verifique o blob de dados atual do servidor da nuvem para ver se ele está
+    data ou não.</p>
+  <p class="code">cloud_check = cloud_synchronise();</p>
+  <p>Você então gostaria de verificar o <tt>Mapa DS</tt> retornado no <b>evento da nuvem</b> assíncrona para obter o status e a string retornada, se houver, com algo como o seguinte código:</p>
+  <p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == cloud_check<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;) &lt; 0<br> {
+    <br> show_message_async(&quot;Cloud Services not available. Please check connectivity.&quot;);<br> }
+    <br> else
+    <br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;) == 0<br> {
+    <br> var file = file_text_open_write(&quot;Save.txt&quot;);<br> file_text_write_string(file, ds_map_find_value(async_load, &quot;resultString&quot;));<br> file_text_close(file);
+    <br> }
+    <br> }
+    <br> }
+  </p>
+  <p>O código acima verifica se a chamada de função assíncrona correta está sendo revisada e, em seguida, continua para obter o status do mapa DS da nuvem retornada. se o status for um número negativo, algo deu errado e o usuário é informado, caso contrário
+    o código continuará e recuperará os dados sincronizados e os escreverá em um arquivo de texto para uso posterior.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Cloud_Saving.htm">Economia de nuvens</a></div>
+        <div style="float:right">Próximo: <a href="cloud_string_save.htm">cloud_string_save</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+cloud_synchronise
+-->
+  <!-- TAGS
+cloud_synchronise
+-->
+</body>
+</html>

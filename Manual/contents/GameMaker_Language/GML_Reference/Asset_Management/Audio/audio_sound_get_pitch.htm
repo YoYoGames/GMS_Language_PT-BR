@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_sound_get_pitch</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_sound_get_pitch" />
+  <meta name="rh-index-keywords" content="audio_sound_get_pitch" />
+  <meta name="search-keywords" content="audio_sound_get_pitch" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_sound_get_pitch</h1>
+  <p>Esta função pode ser usada para obter o tom de um determinado som. O som pode ser referenciado a partir de um índice para um som individual que está sendo tocado e que foi armazenado em uma variável ao usar o <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a> ou
+    <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a> ou um ativo real do Navegador de Ativos.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">audio_sound_get_pitch(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice do som para obter o tom de voz.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if audio_sound_get_pitch(snd_Explode) != 1<br> {
+    <br> audio_sound_pitch(snd_Explode, 1);<br> }
+  </p>
+  <p>O código acima mudará o tom do áudio reproduzido do som indexado como &quot;snd_Explode&quot;, se seu tom não for igual a 1.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Audio.htm">Áudio</a></div>
+        <div style="float:right">Próximo: <a href="audio_sound_is_playable.htm">áudio_som_é_poca_de_audio</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_sound_get_pitch
+-->
+  <!-- TAGS
+audio_sound_get_pitch
+-->
+</body>
+</html>

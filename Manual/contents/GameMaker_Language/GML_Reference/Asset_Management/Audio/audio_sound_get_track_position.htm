@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_sound_get_track_position</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_sound_get_track_position" />
+  <meta name="rh-index-keywords" content="audio_sound_get_track_position" />
+  <meta name="search-keywords" content="audio_sound_get_track_position" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_sound_get_track_position</h1>
+  <p>Esta função obterá a posição (em segundos) dentro do arquivo de som para que o som seja reproduzido. O som só pode ser uma única instância de um som (o índice para sons individuais que estão sendo reproduzidos pode ser armazenado em uma variável quando se utiliza o <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a> ou  <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a> funções).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">audio_sound_get_track_position(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice do som para obter a posição de jogo de.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if audio_sound_get_track_position(global.Music) != 0<br> {
+    <br> audio_sound_set_set_track_position(global.Music, 0);<br> }
+  </p>
+  <p>O código acima verifica uma pista para obter sua posição inicial e, se não for 0 segundos, o ajuste é de 0 segundos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Audio.htm">Áudio</a></div>
+        <div style="float:right">Próximo: <a href="audio_sound_set_listener_mask.htm">audio_sound_set_listener_mask</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_sound_get_track_position
+-->
+  <!-- TAGS
+audio_sound_get_track_position
+-->
+</body>
+</html>

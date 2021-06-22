@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>bolsa_de_vapor_conquista_add_requerida_e_etiqueta</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_ugc_query_add_required_tag" />
+  <meta name="rh-index-keywords" content="steam_ugc_query_add_required_tag" />
+  <meta name="search-keywords" content="steam_ugc_query_add_required_tag" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">bolsa_de_vapor_conquista_add_requerida_e_etiqueta</span></h1>
+  <p>Esta função pode ser usada para filtrar ainda mais qualquer consulta UGC, especificamente para pesquisar somente aqueles itens UGC com a etiqueta dada. O controle da consulta é o valor retornado quando você criou a consulta (usando, por exemplo, <a href="steam_ugc_create_query_user.htm"><tt><span class="notranslate">steam_ugc_create_query_user</span>()</tt></a>)
+    e o segundo argumento é um fio que você quer usar como etiqueta a ser incluída. A função retornará <tt>verdadeiro</tt> se o filtro de consulta tiver sido configurado corretamente, ou <tt>falso</tt> de outra forma.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code"><span class="notranslate">steam_ugc_query_add_required_tag</span>(ugc_query_handle , tag_name);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>ugc_query_handle</td>
+        <td>O cabo de consulta a ser usado.</td>
+      </tr>
+      <tr>
+        <td>tag_name</td>
+        <td>O nome da etiqueta a incluir (um fio).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var query_handle = <span class="notranslate">steam_ugc_create_query_all</span>(ugc_query_RankedByTrend, ugc_match_Items, 1);<br> <span class="notranslate">steam_ugc_query_add_required_tag</span>(query_handle, &quot;RPG&quot;);<br> <span class="notranslate">steam_ugc_query_set_return_long_description</span>(query_handle, true);<br> <span class="notranslate">steam_ugc_query_set_allow_cached_response</span>(query_handle, true),
+    verdadeiro);<br> query_ID = <span class="notranslate">steam_ugc_send_query</span>(query_handle);</p>
+  <p>O código acima cria um pedido de consulta e armazena seu tratamento em uma variável local para uso futuro nas demais funções que definem melhor o pedido de consulta antes de enviar a consulta.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Steam_UGC.htm">UGC</a></div>
+        <div style="float:right">Próxima: <a href="steam_ugc_query_add_excluded_tag.htm"><span class="notranslate">etiqueta_de_energia_a_vapor_add_excluída</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_ugc_query_add_required_tag
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_ugc_query_add_required_tag
+-->
+</body>
+</html>

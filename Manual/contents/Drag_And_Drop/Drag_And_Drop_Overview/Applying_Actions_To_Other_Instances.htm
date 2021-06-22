@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Aplicação de ações em outras instâncias</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Article explaining how to apply actions to other instances" />
+  <meta name="rh-index-keywords" content="DnD™ Overview - Applying Actions To Other Instances" />
+  <meta name="search-keywords" content="DnD,Code DnD,Apply DnD" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Aplicação de ações em outras instâncias</h1>
+  <p>A maioria das ações nas bibliotecas <span class="notranslate">DnD™</span>tem a opção de aplicar a ação de diferentes maneiras. Isto se chama definir o <strong>escopo da ação</strong> e pode ser uma de várias coisas:</p>
+  <p><img alt="DnD™ Applies To" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Applies_To.png">Essencialmente o que você está dizendo ao <span class="notranslate">GameMaker Studio 2</span> é qual instância deve executar a ação. O escopo padrão da ação
+    é <span class="inline">self</span>, o que significa que uma vez criado o objeto como uma instância na sala, essa instância executará o código de ação. Entretanto, isto nem sempre é o que você quer, e você pode querer que algumas ações afetem outras, ou até
+    todos, instâncias na sala. É aqui que entra a mudança do escopo da ação.</p>
+  <p>Os diferentes escopos de execução das ações estão listados abaixo, mas deve-se observar que mudar o escopo de uma ação desta forma somente aplicará o novo escopo a essa ação <em>e não às ações subseqüentes na cadeia</em>. Se você quiser aplicar
+    uma mudança de escopo de ação para múltiplas ações encadeadas, então use primeiro a opção <a href="../Drag_And_Drop_Reference/Common/Apply_To...htm">Aplicar à</a>... ação.</p>
+  <p> </p>
+  <p><img alt="Self Icon" class="icon" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_Self.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Auto</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Este é o escopo padrão para uma ação e simplesmente declara que a ação deve ser chamada apenas pela instância que está executando o código.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Other Icon" class="icon" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_Other.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Outros</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">O escopo <span class="inline">other</span> tem duas funções principais, e o valor que ele retorna dependerá de onde e como você o utiliza. No <strong>evento de colisão</strong>, <span class="inline">other</span> retornará o valor único de identificação da instância
+      (um valor único que é usado para distinguir instâncias individuais de cada objeto), de modo que você pode, por exemplo, criar uma instância &quot;bala&quot; e ter um evento de colisão com uma instância &quot;jogador&quot; e, nesse caso, usar o escopo <span class="inline">other</span> para remover pontos de golpe do objeto &quot;jogador&quot; e depois retornar ao escopo <span class="inline">self</span> para destruir a instância &quot;bala&quot;.</p>
+    <p class="dropspot">Fora do evento de colisão, a configuração <span class="inline">other</span> se comportará como se estivesse configurada para <span class="inline">noone</span>, a menos que esteja sendo chamada de dentro de um bloco de ações delimitado. O que isto significa é que se você mudar o
+      escopo de um grupo de ações para um objeto específico, então enquanto essas ações estão sendo chamadas, o escopo <span class="inline">other</span> devolverá a identificação da instância que inicialmente chamou o grupo de ação. Por exemplo, você poderia executar
+      um <a href="../Drag_And_Drop_Reference/Common/Apply_To...htm">Aplicar a.</a>.. ação e depois no próximo bloco de código definir o escopo para <span class="inline">other</span> para executar uma ação sobre a instância executando todo o bloco de eventos, e não o
+      exemplo que está sendo aplicado aos blocos de código. A imagem abaixo dá um exemplo:</p>
+    <p class="dropspot"><img alt="DnD™ Scope" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Scope_Other.png">Na imagem, estamos verificando se o mouse pressiona na instância, e se for detectado, mudamos de escopo usando a ação <strong>Aplicar a.</strong>.. Os próximos dois blocos de ação estão agora sendo chamados da instância &quot;obj_Player&quot; (se houver mais de um, então ele será executado para todos eles) e assim o objeto mudará seu sprite e então criará um objeto na outra posição,
+      ou seja: a posição do objeto que está executando o evento e detectou a pressão do mouse.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="All Icon" class="icon" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_All.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Todos</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Quando você amplia uma ação para todos, você está dizendo ao <span class="notranslate">GameMaker Studio 2</span> para executar esse bloco para <strong>cada instância ativa dentro da sala atual</strong>. Por exemplo, criar uma ação de <a href="../Drag_And_Drop_Reference/Instance/Destroy_Object_Instance.htm">Destruir Instância de Objetos</a> 
+      e definir seu escopo para <span class="inline">all</span> fará desaparecer cada instância da sala, não importa de que objeto tenham sido criados.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Object Icon" class="icon" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_Object.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Objeto</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Uma ação também pode ser dada a um <strong>objeto</strong> por seu escopo. O que isto significa é que todas as instâncias do objeto em questão executarão essa ação ao mesmo tempo em que ela é chamada. Portanto, se você tiver 100 instâncias inimigas na sala, por exemplo, e
+      você quer defini-los todos para apontar para um ponto específico. Você chamaria o Set <a href="../Drag_And_Drop_Reference/Movement/Set_Point_Direction.htm">Point Direction e</a> definiria o escopo de ação para o objeto &quot;obj_Enemy&quot; e quando este
+      é chamado, todas as instâncias desse objeto mudarão de direção.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Expressão</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">O campo de entrada Expressão é para que você insira a identificação de uma instância específica na qual você deseja que a ação trabalhe. Pode ser o valor de identificação único atribuído a uma instância pelo Editor de Sala ou pode ser a identificação de uma instância que você tenha armazenado
+      em uma variável (onde a variável seria o valor de entrada) ou pode até mesmo ser uma expressão usando código, como mostrado na imagem abaixo:</p>
+    <p class="dropspot"><img alt="DnD™ Target" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Scope_Target.png">Neste caso, uma instância chama o <a href="../Drag_And_Drop_Reference/Instance/Set_Sprite.htm">Set Sprite</a> de
+      a instância criada pelo código dado para a Expressão. Note que, neste caso, a instância sendo criada executará primeiro seu Evento de Criação antes que a ação seja aplicada a ela.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../../Content.htm">Índice</a></div>
+        <div style="float:right">A seguir: <a href="Action_Block_Functions.htm">Roteiros de blocos de ação</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Drag And Drop</span> Applying Actions
+-->
+  <!-- TAGS
+drag_and_drop_applying
+-->
+</body>
+</html>

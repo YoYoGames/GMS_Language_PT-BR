@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_free_play_queue</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_free_play_queue" />
+  <meta name="rh-index-keywords" content="audio_free_play_queue" />
+  <meta name="search-keywords" content="audio_free_play_queue" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_free_play_queue</h1>
+  <p>Esta função é utilizada para liberar a memória associada com a fila de áudio em questão. O índice da fila é o valor retornado quando você criou a fila usando a função <a href="audio_create_play_queue.htm"><tt>audio_create_play_queue()</tt></a>e
+    esta função deve ser chamada quando a fila não for mais necessária para evitar vazamentos de memória. A liberação da fila interromperá qualquer som que estiver tocando, e não será possível apagar o buffer do qual um som está sendo transmitido até a fila que lhe é atribuída.
+    foi liberado. Esta função desencadeará um <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Playback.htm">Evento Assíncrono de Reprodução de Áudio</a>, e neste evento um <a href="../../../Data_Structures/DS_Maps/DS_Maps.htm">mapa DS</a> especial
+    ser criado na variável <a href="../../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> com os seguintes pares de chaves/valores:</p>
+  <ul class="colour">
+    <li>&quot; queue_id&quot;<strong>-</strong> a fila que terminou de jogar dados</li>
+    <li>&quot;<strong>buffer_id&quot; -</strong> o buffer que não está mais sendo jogado a partir</li>
+    <li>&quot;queue_shutdown<strong>&quot; -</strong> isto é ajustado para 0 durante a reprodução normal e 1 quando o evento é recebido porque você liberou a fila com esta função. Quando isto é ajustado para 1, você não quer enfileirar mais nenhum dado.</li>
+  </ul>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">audio_free_play_queue(queueIndex);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>queueIndex</td>
+        <td>O índice da fila para liberar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var q_id = async_load[? &quot;queue_id_id&quot;];<br> if (q_id == audio_queue)<br> {<br> audio_free_play_queue(audio_queue);<br> buffer_delete(audio_buffer);<br> }</p>
+  <p>O código acima iria no evento assíncrono de <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Playback.htm">reprodução de áudio</a> e verifica se o áudio que acabou de ser reproduzido é da &quot;audio_queue&quot;.
+    e se é ele libera a fila e o buffer associado a ele.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Audio.htm">Buffers de áudio</a></div>
+        <div style="float:right">Próximo: <a href="audio_queue_sound.htm">audio_queue_sound</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_free_play_queue
+-->
+  <!-- TAGS
+audio_free_play_queue
+-->
+</body>
+</html>

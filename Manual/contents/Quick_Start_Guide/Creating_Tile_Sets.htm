@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Criação de conjuntos de azulejos</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Overview of what a tile set is and how to make one." />
+  <meta name="rh-index-keywords" content="Quick Start - Tile Sets" />
+  <meta name="search-keywords" content="tiles,tilesets,tileset,tile set,tile sets" />
+  <meta name="robots" content="NOODP" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Criação de conjuntos de azulejos</h1>
+  <p>Os<strong>conjuntos de azulejos</strong> são criados a partir de sprites, mas também são classificados como um tipo de ativo separado, uma vez que a maneira como o <span class="notranslate">GameMaker Studio 2</span> os manipula é um pouco diferente tanto para sprites quanto para objetos. Portanto, um conjunto de azulejos é uma coleção de azulejos criados
+    juntos em um sprite, e uma telha é simplesmente um recurso gráfico que é adicionado a uma sala <span class="notranslate">GameMaker Studio 2</span> como parte de um <strong> <a class="glossterm" data-glossterm="mapa de azulejos" href="#">mapa de azulejos</a></strong>. Estes mapas de azulejos são então atraídos para o
+    com muito pouco processamento de CPU/GPU, tornando-os ideais para projetar qualquer item estático em níveis.</p>
+  <p>Para tornar o processamento de telhas tão rápido, elas têm certas restrições, sendo que a mais básica é que elas <strong>só</strong> podem <strong>ser retangulares ou quadradas</strong> (se você quiser outra coisa que não seja isto, então você precisará criar um duende normal
+    e usar a <em>camada de ativos</em> no editor da sala, mas discutiremos isso na última seção sobre <a href="Rooms.htm">salas)</a>. Outras restrições incluem o fato de que elas só podem ser giradas em 90°, ou espelhadas ou invertidas, e elas podem
+    ser animado somente com quadros que numerem uma <strong>potência de 2</strong> (ou seja: 2, 4, 8, 16, etc...).</p>
+  <p>Vamos dar uma olhada em um exemplo simples de um conjunto de azulejos - alguns azulejos de parede quadrada para um jogo de cima para baixo:</p>
+  <p><img alt="Example Tile Set Sprite" class="center" src="../assets/Images/QS_Guide/QS_ExampleTileset.png" /></p>
+  <p>Para começar, precisamos transformá-lo em um conjunto de azulejos <strong>sprite</strong>, o que seria feito no <a href="../The_Asset_Editors/Sprites.htm">Sprite Editor/Image</a><a href="../The_Asset_Editors/Image_Editor.htm">Editor</a> (ou uma imagem externa
+    editor e depois importado como um duende). O duende final deve ser algo parecido com isto:</p>
+  <p><img alt="Tile Set Sprite" class="center" src="../assets/Images/QS_Guide/QS_Tileset_Sprite.png"> <strong>Note que o primeiro ladrilho está em branco nessa imagem</strong>. A forma como o mapa de azulejos da sala é armazenado no <span class="notranslate">GameMaker Studio 2</span> significa
+    que o primeiro azulejo terá sempre que estar sempre em branco, pois é essencialmente o azulejo &quot;apagar&quot; ou o azulejo &quot;espaço vazio&quot; (este azulejo &quot;em branco&quot; terá um valor índice de 0 - os azulejos são indexados com um valor que
+    começa em 0 e conta da esquerda para a direita, de cima para baixo). Assim, ao criar seus conjuntos de azulejos, o canto superior esquerdo terá sempre que estar vazio desta forma. Observe também que enquanto a imagem acima mostra um conjunto completo de azulejos com 47 azulejos, você pode
+    não precisa de tantos, pois você pode girar e inverter os azulejos ao colocá-los mais tarde no editor da sala.</p>
+  <p>Com o sprite criado, podemos ir em frente e definir o conjunto de azulejos em si, o que significa que primeiro você tem que criar um novo recurso de conjunto de azulejos, clicando com o botão direito do mouse em <img alt="Icon RMB" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> o recurso Conjunto de Azulejos
+    pasta e selecionando <em>Criar</em>. Isto abrirá o <a href="../The_Asset_Editors/Tile_Sets.htm">Editor de Conjunto de Ladrilhos</a> onde você poderá então adicionar o sprite e definir suas propriedades:</p>
+  <p><img alt="Tile set Editor" class="center" src="../assets/Images/QS_Guide/QS_Tileset_Editor.png" /></p>
+  <p>Ajustamos o tamanho do conjunto de azulejos para 64px, e deixamos o resto das opções em seus valores padrão, já que não temos necessidade de offsets ou algo parecido (os valores de offset são úteis para qualquer conjunto de azulejos que tenha espaços ao redor de cada um dos
+    azulejos). Você vai querer nomear o conjunto de azulejos usando um prefixo apropriado como &quot; <span class="inline">ts_</span>&quot; para que você possa facilmente identificá-lo mais tarde, e note que as mesmas restrições se aplicam aos sprites, ou seja: o nome não pode começar
+    com um número, e só pode usar o símbolo &quot;_&quot; e os caracteres alfanuméricos.</p>
+  <p>Agora você pode fechar o editor do conjunto de azulejos, pois pode usar o conjunto de azulejos &quot;como está&quot; para criar camadas de mapas de azulejos no editor da sala, porém, se quiser saber mais sobre as funções avançadas do editor do conjunto de azulejos, veja a seguinte seção de
+    o manual:</p>
+  <ul class="colour">
+    <li><a href="../The_Asset_Editors/Tile_Sets.htm">Editores: O editor do conjunto de azulejos</a></li>
+  </ul>
+  <p>Agora para passar a falar em adicionar <strong>efeitos sonoros</strong> ao seu projeto...</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Content.htm">Índice</a></div>
+        <div style="float:right">A seguir: <a href="Creating_Sound_Effects.htm">Criando Efeitos Sonoros</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Creating Tilesets
+Quick Start: Creating Tilesets
+-->
+  <!-- TAGS
+qs_tilesets
+-->
+
+</body></html>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>font_add_sprite</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function font_add_sprite" />
+  <meta name="rh-index-keywords" content="font_add_sprite" />
+  <meta name="search-keywords" content="font_add_sprite" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>font_add_sprite</h1>
+  <p>Com esta função, você pode usar uma &quot;faixa sprite&quot; para criar um novo recurso de fonte, onde cada subimagem seria um símbolo ou letra individual. O índice é o número do mapa UTF8 para o primeiro caractere a ser usado e as faixas a serem usadas são as mesmas que
+    você faria por uma fonte normal, começando com &quot;!&quot;, mas lembre-se que você só deve incluir o que você precisa e que você deve estar usando o <a href="../../Strings/ord.htm"><tt>ord()</tt></a> função para obter o valor UTF8 correto para o início
+    carta. A fonte sprite criada terá então as subimagens definidas para um glifo individual da fonte, onde o &quot;primeiro&quot; glifo terá a imagem_index de 0. Você pode definir &quot;espaço&quot; como sendo qualquer caractere que você queira, por exemplo
+    uma única linha do tamanho que você deseja que o espaço seja, e todos os espaços no texto serão renderizados nessa largura (mas a imagem escolhida <i>nunca</i> será renderizada), ou se você não fornecer um duende para o espaço, então a largura do personagem mais largo
+    na fonte sprite será usado em seu lugar.</p>
+  <p>Você também pode definir o espaçamento para que a fonte seja proporcional<tt>(verdadeira</tt>) ou não<tt>(falsa</tt>), onde uma fonte proporcional é espaçada com base na largura real das letras (assim, a letra &quot;i&quot; ocupa menos espaço do que a letra &quot;w&quot;,
+    por exemplo), enquanto uma fonte não proporcional será espaçada com base na largura da subimagem, como uma fonte monoespaçada. Finalmente, você pode definir o espaço a ser deixado entre cada letra ao escrever, e este pode ser qualquer valor inteiro, sendo que 0 não é espaço (a letra "w", por exemplo).
+    letras &quot;tocarão&quot; se forem proporcionais). A função retorna um valor de <i>índice</i> que deve ser armazenado em uma variável, pois isso será necessário em todos os outros códigos que se referem a essa fonte, ou retornará -1 se a função falhar para qualquer
+    razão.</p>
+  <p>Vale notar também que não pode haver <i>espaços</i> no mapa de caracteres, de modo que se você, por exemplo, usar '.' e '0' mas não '/', você precisa incluir '/' de qualquer forma ou deixar uma subimagem em branco entre o
+    dois caracteres usados.</p>
+  <p>O próprio sprite pode ser um ativo sprite do Navegador de Ativos ou carregado de um arquivo usando primeiro <tt>o sprite_add</tt> para obter o índice do sprite carregado (que depois é usado na função). É importante observar que para o alinhamento da fonte
+    funções (como <a href="../../Drawing/Text/draw_set_halign.htm"><tt>draw_set_halign()</tt></a>) para funcionar como esperado ao usar uma fonte sprite, o duende deve ter sua origem definida para o <i>canto superior esquerdo</i>. Se você usar outros valores, então você terá
+    precisam levar em consideração a compensação de origem ao desenhar o texto usando a fonte.</p>
+  <p class="note"><b>NOTA: </b>Quando você carrega uma fonte no <span class="notranslate">GameMaker Studio 2</span> você deve se lembrar de removê-la novamente (com <span style="font-size:1px;"><a href="font_delete.htm"><tt style="font-size: 14px">font_delete()</tt></a></span>) quando não é mais necessário, caso contrário
+    é o risco de um vazamento de memória que irá diminuir a velocidade e, eventualmente, quebrar seu jogo.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">font_add_sprite(spr, first, prop, sep);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>spr</td>
+        <td>O duende para adicionar uma fonte baseada em.</td>
+      </tr>
+      <tr>
+        <td>primeiro</td>
+        <td>O índice do primeiro personagem disponível.</td>
+      </tr>
+      <tr>
+        <td>adereço</td>
+        <td>Definir como fonte proporcional ou não.</td>
+      </tr>
+      <tr>
+        <td>sep</td>
+        <td>O espaço a ser deixado entre cada carta.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">global.Font = font_add_sprite(spr_HUD_Font, ord(&quot;!&quot;), true, 2);</p>
+  <p>O código acima criará um novo ativo de fonte a partir de um ativo sprite e armazenará o índice da nova fonte na variável &quot;global.Font&quot; para uso posterior.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Fonts.htm">Fontes</a></div>
+        <div style="float:right">Próximo: <a href="font_add_sprite_ext.htm">font_add_sprite_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_add_sprite
+-->
+  <!-- TAGS
+font_add_sprite
+-->
+</body>
+</html>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>font_add_enable_aaa</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function font_add_enable_aa" />
+  <meta name="rh-index-keywords" content="font_add_enable_aa" />
+  <meta name="search-keywords" content="font_add_enable_aa" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>font_add_enable_aaa</h1>
+  <p>Esta função pode ser usada para ativar ou desativar o anti-aliasing (AA) para fontes adicionadas usando <a href="font_add.htm"><tt>font_add()</tt></a>. Esta função precisa ser chamada <i>antes de</i> adicionar qualquer fonte e configuração
+    A sua conversão em <tt>verdadeiro</tt> permitirá o AA, e a sua conversão em <tt>falso</tt> o desativará. Por padrão o AA está habilitado. Note que isto não terá efeito sobre as fontes que foram adicionadas antes da função
+    foi chamada, e a função só precisa ser chamada uma vez quando a fonte é adicionada, e não a cada desenho/passo que a fonte está sendo usada.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">font_add_enable_aaa(enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>habilitar</td>
+        <td>Quer para ativar<tt>(verdadeiro</tt>) ou desativar<tt>(falso</tt>) AA para fontes adicionadas.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if !font_addd_get_enable_aaa()<br> {
+    <br> font_add_enable_aaa(true);
+    <br> }
+  </p>
+  <p>O código acima verifica o status do anti-aliasing para fontes adicionadas e se ele não estiver ativado, então nós o habilitamos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Fonts.htm">Fontes</a></div>
+        <div style="float:right">A seguir: <a href="font_add_get_enable_aa.htm">font_addd_get_enable_aaa</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_add_enable_aa
+-->
+  <!-- TAGS
+font_add_enable_aa
+-->
+</body>
+</html>

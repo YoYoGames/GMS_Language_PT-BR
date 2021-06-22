@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Cordas</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for string functions" />
+  <meta name="rh-index-keywords" content="\r,\b,\f,\t,\v,\\,\a,\u,\x,\,\r,\b,\f,\t,\v,\\,\a,\u,\x,\" />
+  <meta name="search-keywords" content="Strings,\n,\r,\b,\f,\t,\v,\\,\a,\u,\x,\,string literal,@" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Cordas</h1>
+  <p>Em algum momento, ao fazer seu jogo, você precisará usar texto. O texto nos jogos é tratado usando as funções de <b>string</b> (uma string é apenas outra forma de dizer uma linha de texto) e o <span class="notranslate">GameMaker Studio 2</span> tem um conjunto completo de funções que
+    permitem manipular as cordas de muitas maneiras, incluindo a inserção de uma corda em outra, a cópia das cordas e a capacidade de analisar as cordas para os dígitos ou as letras que elas contêm. Em geral, uma corda <i>só</i> pode ser criada
+    adicionando texto entre aspas duplas &quot; &quot; e <em>cadeias de caracteres de aspas</em> simples <em>não são aceitas, nem</em> você <em>pode</em> dividir a cadeia de caracteres em várias linhas e esperar que o GameMaker <span class="notranslate">Studio 2</span> a <span class="notranslate">renderize</span> como se as quebras de linha fossem linhas novas (a menos que uma
+    O identificador <strong>literal</strong> <span class="inline">@</span> é usado, como explicado abaixo).</p>
+  <p>Vale ressaltar que existem certas convenções que podem ser utilizadas na criação de cordas, a maioria preocupada com o uso de <i>caracteres de escape</i>. Estes são caracteres que são precedidos por um símbolo &quot;<span class="inline">\</span>&quot;. Portanto, para
+    exemplo, se você quisesse colocar aspas dentro de uma cadeia, você teria algo assim:</p>
+  <p class="code">str = &quot;Olá Mundo&quot;;</p>
+  <p>O<span class="notranslate">GameMaker Studio 2</span> também possui suporte completo a caracteres Unicode de quatro bytes de largura, permitindo que você decodifique e codifique caracteres Unicode nos limites superiores do padrão (incluindo - mas não limitado a - emoji). Para lidar com caracteres Unicode, você
+    pode usar o &quot;<span class="inline">\</span>&quot; para preceder qualquer Unicode literal - dígitos de hexadecimais precedem um &quot;<span class="inline">u</span>&quot;, por exemplo &quot;<span class="inline"><tt>\u00e2</tt></span>&quot; para &quot;á&quot;- onde
+    os dígitos são o número do caractere Unicode. Ao trabalhar com Unicode desta forma, você precisa estar ciente do fato de que o <span class="notranslate">GameMaker Studio 2</span> interpretará <i>todos os</i> dígitos seguindo o &quot;<span class="inline">u</span>&quot;, portanto
+    se você quisesse escrever &quot;áa&quot;, por exemplo, você deveria usar:</p>
+  <p class="code">&quot;u00e2a&quot;</p>
+  <p>ou</p>
+  <p class="code">&quot;\u00e2\u61&quot;</p>
+  <p>ou</p>
+  <p class="code">&quot;\u00e2&quot; + &quot;a&quot;</p>
+  <p>como só usar &quot; \u00e2a<tt>&quot;</tt> na verdade resultaria no personagem Unicode &quot; ส&quot; (tornando-se<tt>essencialmente</tt>&quot;\u00e2a&quot;).<i></i></p>
+  <p>O<span class="notranslate">GameMaker Studio 2</span> também pode lidar com qualquer literal hexadecimal - normalmente escrito como dígitos de hexadecimais seguindo &quot;<span class="inline">0x</span>&quot;, por exemplo &quot;<span class="inline">0xff</span>&quot;, onde os dígitos são o número de
+    o caráter a ser utilizado. No <span class="notranslate">GameMaker Studio 2</span> estes são escritos usando &quot; \x&quot;<tt> e</tt> depois o valor hexadecimal. Estes e outros caracteres de escape pré-definidos estão listados na tabela abaixo:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>\n</td>
+        <td>Newline</td>
+      </tr>
+      <tr>
+        <td>\r</td>
+        <td>Retorno do transporte</td>
+      </tr>
+      <tr>
+        <td>\b</td>
+        <td>Backspace (0x08)</td>
+      </tr>
+      <tr>
+        <td>\f</td>
+        <td>Alimentação de formulário (0x0c)</td>
+      </tr>
+      <tr>
+        <td>\t</td>
+        <td>Aba Horizontal (0x09)</td>
+      </tr>
+      <tr>
+        <td>\v</td>
+        <td>Aba vertical (0x0b)</td>
+      </tr>
+      <tr>
+        <td>\\</td>
+        <td>Contrabarra em si (0x5c)</td>
+      </tr>
+      <tr>
+        <td>\a</td>
+        <td>Alerta (0x07)</td>
+      </tr>
+      <tr>
+        <td>\u[Hex Digits]</td>
+        <td>Inserir caractere Unicode</td>
+      </tr>
+      <tr>
+        <td>\x [Hex Digits]</td>
+        <td>Inserir caráter literal hexadecimal</td>
+      </tr>
+      <tr>
+        <td>\Dígitos Octal</td>
+        <td>Inserir octal Unicode caractere</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p class="note"><b>NOTA</b>: As cordas suportam alimentação de formulário, aba vertical, etc... mas isto não significa que <b>a renderização</b> sim, e ao desenhar as cordas estes caracteres podem ser ignorados.</p>
+  <p>Você também pode criar <i>literalmente uma cadeia de caracteres</i> precedendo a cadeia inteira com o caracter <span class="inline">@</span>:</p>
+  <p class="code">var test = @&quot;<br> Quebras de linha<br> em várias linhas<br> 
+    <br> &quot;;
+  </p>
+  <p>O código acima renderizará a cadeia sobre várias linhas como se houvesse um caractere de fuga de linha incluído. Uma string literal literal é similar à versão anterior do <span class="notranslate">GameMaker</span>, mas eles também usam aspas duplas ou simples e devem ser
+    prefixadas por um símbolo <span class="inline">@</span>, elas podem ser quebradas em várias linhas do arquivo de código e NÃO suportam caracteres fugidos, ou seja, <span class="inline">@&quot;Hello\World&quot;</span> <em>não</em> tentará fugir do símbolo W
+    no Mundo e será armazenado literalmente. Observe, porém, que ao usar literalmente uma corda como esta, você precisará quebrar a corda se desejar incluir aspas como parte da corda, ou seja, se você quiser incluir aspas como parte da corda:</p>
+  <p class="code">var test = @&quot;Olá &quot; + &quot;\&quot;&quot; + @&quot;Mundo&quot; + &quot;\&quot;&quot;</p>
+  <p>Outra coisa a ser observada é que o caractere Unicode 9647 (▯) é usado para substituir quaisquer glifos que você possa ter em sua fonte designada ao renderizá-la no evento do sorteio. Portanto, se sua fonte não tiver, por exemplo, o símbolo °, então escreva
+    90° produzirá de fato 90▯.</p>
+  <p>A seguinte lista de funções é toda para lidar com cordas:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="ansi_char.htm">ansi_char</a></li>
+    <li><a href="chr.htm">chr</a></li>
+    <li><a href="ord.htm">ord</a></li>
+    <li><a href="real.htm">real</a></li>
+    <li><a href="string.htm">corda</a></li>
+    <li><a href="string_byte_at.htm">string_byte_at</a></li>
+    <li><a href="string_byte_length.htm">string_byte_length</a></li>
+    <li><a href="string_set_byte_at.htm">string_set_byte_at</a></li>
+    <li><a href="string_char_at.htm">string_char_at</a></li>
+    <li><a href="string_ord_at.htm">string_ord_at</a></li>
+    <li><a href="string_copy.htm">string_copy</a></li>
+    <li><a href="string_count.htm">string_count</a></li>
+    <li><a href="string_delete.htm">string_delete</a></li>
+    <li><a href="string_digits.htm">dígitos_de_filtro</a></li>
+    <li><a href="string_format.htm">string_format</a></li>
+    <li><a href="string_insert.htm">string_insert</a></li>
+    <li><a href="string_length.htm">comprimento_de_filtro</a></li>
+    <li><a href="string_letters.htm">cartas_de_filtro</a></li>
+    <li><a href="string_lettersdigits.htm">string_lettersdigits</a></li>
+    <li><a href="string_lower.htm">string_lower</a></li>
+    <li><a href="string_pos.htm">string_pos</a></li>
+    <li><a href="string_pos_ext.htm">string_pos_ext</a></li>
+    <li><a href="string_last_pos.htm">string_last_pos</a></li>
+    <li><a href="string_last_pos_ext.htm">string_last_pos_ext_ext</a></li>
+    <li><a href="string_repeat.htm">string_repeat</a></li>
+    <li><a href="string_replace.htm">string_replace</a></li>
+    <li><a href="string_replace_all.htm">string_replace_all</a></li>
+    <li><a href="string_upper.htm">string_upper</a></li>
+    <li><a href="string_height.htm">altura_de_filtro</a></li>
+    <li><a href="string_height_ext.htm">Altura_de_filtro</a></li>
+    <li><a href="string_width.htm">largura_de_filtro</a></li>
+    <li><a href="string_width_ext.htm">largura_de_filtro_extra</a></li>
+    <li><a href="string_hash_to_newline.htm">string_hash_to_newline</a></li>
+    <li><a href="../Variable_Functions/is_string.htm">is_string</a></li>
+  </ul>
+  <p> </p>
+  <p>Além daquelas funções que se relacionam especificamente com as cordas, o <b><span class="notranslate">Windows</span></b> alvo também permite que você use a área de transferência para obter e definir informações de texto:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="clipboard_has_text.htm">clipboard_has_text</a></li>
+    <li><a href="clipboard_get_text.htm">clipboard_get_text</a></li>
+    <li><a href="clipboard_set_text.htm">clipboard_set_text</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../GML_Reference.htm">Referência<span class="notranslate">GML</span></a></div>
+        <div style="float:right">A seguir: <a href="../Maths_And_Numbers/Maths_And_Numbers.htm">Matemática e Números</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Strings
+\n
+\r
+\b
+\f
+\t
+\v
+\\
+\a
+\u
+\x
+\
+-->
+  <!-- TAGS
+string_functions
+-->
+
+</body></html>

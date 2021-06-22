@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Método Variáveis</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page outlining the use of Method Variables" />
+  <meta name="rh-index-keywords" content="Method Variables" />
+  <meta name="search-keywords" content="Method Variables,methods,method" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Método Variáveis</h1>
+  <p>Uma variável de método é essencialmente uma variável que teve uma função atribuída a ela, &quot;ligando&quot; a função a uma instância e permitindo que você use a variável para se referir à função - da mesma forma que você usa um <a href="Runtime_Functions.htm">nome de<span class="notranslate">função</span></a> de tempo de execução <a href="Runtime_Functions.htm">para</a> se referir a uma <span class="notranslate">função</span> GML incorporada. A variável usada pode ser <em>local</em>, de <em>instância</em> ou <em>global</em> no escopo (veja <a href="Variables_And_Variable_Scope.htm">aqui</a> para mais informações sobre o escopo da variável).</p>
+  <p>A sintaxe para criar uma variável de método é a seguinte:</p>
+  <p class="code">&lt;nome variável&gt; = função(&lt;parametro1&gt;, &lt;parametro2&gt;, etc... )<br> {
+    <br> &lt;statement1&gt;;<br> &lt;statement1&gt;;<br>...<br> }
+  </p>
+  <p>ou</p>
+  <p class="code">função &lt;nome variável&gt;(&lt;parametro1&gt;, &lt;parametro2&gt;, etc... )<br> {
+    <br> &lt;statement1&gt;;<br> &lt;statement1&gt;;<br>...<br> }
+  </p>
+  <p>Em geral, porém, você usaria o <em>primeiro </em>formulário para métodos, e o segundo formulário para definir <a href="Script_Functions.htm">funções de script</a>, já que o segundo formulário também atribuirá um índice de script ao nome da função, enquanto o primeiro
+    A forma será um método &quot;verdadeiro&quot; (e requer o uso do prefixo global <a href="Variables/Global_Variables.htm">se</a> usado para definir uma função de script).</p>
+  <p class="note"><strong>NOTA</strong>: Você pode verificar isto usando os dois formulários no projeto e depois chamando a função <span class="notranslate">runtime</span> <a href="../GML_Reference/Variable_Functions/typeof.htm">tipoof()</a> em cada um deles. Um deles será classificado como um &quot;número&quot; - uma vez que
+    retorna um ID de índice de roteiro - e o outro será classificado como um &quot;método&quot;.</p>
+  <p>Portanto, tenha em mente que - em geral - estaremos sempre nos referindo a funções que <em>não </em>foram definidas com um índice de roteiro quando estamos falando de métodos e variáveis de métodos. </p>
+  <p>Abaixo você pode ver três exemplos simples de criação de uma variável de método usando diferentes escopos:</p>
+  <p class="code">// Local<br> var _debug = function(message)<br> {
+    <br> show_debug_message(mensagem);<br> }
+    <br>
+    <br> // Instância<br> do_maths = function(val1, val2, val3)<br> {
+    <br> retorno (val1 * val2) - val3;<br> }
+    <br>
+    <br> // Global<br> global.pd = function(_x1, _y1, _x2, _y2);<br> {
+    <br> ponto de retorno_distância(_x1, _y1, _x2, _y2);<br> }
+  </p>
+  <p>Observe que no código acima, os vários parâmetros que são dados como inputs para a função são todos nomeados e esses nomes são o que deve ser usado dentro da função para se referir aos diferentes inputs. Observe também que você pode usar a declaração <span class="inline"><a href="Language_Features/return.htm">return</a></span> para retornar um valor de uma função para uso em outro lugar em seu código, e que uma função <em>sem</em> valor de retorno definido, retornará <span class="inline">undefined</span>.por padrão.</p>
+  <p class="note"><strong>NOTA</strong>: Enquanto a variável estiver no escopo escolhido, a função real estará vinculada ao escopo em que foi inicialmente definida. Por exemplo, <a href="Script_Functions.htm">as funções de script</a> são todas de escopo global e &quot;não vinculadas&quot;.
+    (ou seja: não estão associadas a nenhuma instância), mas se você tiver uma função de script que cria outra função como uma variável de método dentro dela e então chamar esta função de script a partir de uma instância, a função usada dentro do script <strong>será vinculada à variável de instância como um método</strong>.
+    Em geral, isto não é algo que você nunca precisa pensar, mas para operações mais complexas com variáveis de método, vale a pena levar em consideração. Isto também se aplica quando se utiliza outras construções como <a href="Language_Features/with.htm"><span class="inline">with</span></a>    - quando você cria uma variável de método dentro de um com, a função estará vinculada à instância que está atualmente em escopo.</p>
+  <p>Uma vez criada, a variável do método pode ser usada exatamente como uma função de <span class="notranslate">tempo de execução</span> ou uma função de script, por exemplo:</p>
+  <p class="code">create_vec = function(_x1, _y1, _x2, _y2);<br> {
+    <br> var _array;<br> _array[0] = point_distance(_x1, _y1, _x2, _y2);<br> _array[1] = point_direction(_x1, _y1, _x2, _y2);<br> return _array;<br> }
+    <br>
+    <br> vec = create_vec(x, y, mouse_x, mouse_y);</p>
+  <p>As variáveis criadas dentro de uma função seguirão as mesmas regras do normal e serão escopadas de acordo com a palavra-chave utilizada ou com o escopo da chamada de função. No exemplo acima, usamos <span class="inline">var</span> para que a variável array esteja no
+    escopo <em>local </em>da função. Se não usássemos a palavra-chave, então a variável teria sido criada sobre o escopo da instância que chamou a função.</p>
+  <p>Os métodos, assim como as funções de script, também podem aceitar argumentos opcionais que têm valores padrão para quando não são passados:</p>
+  <p class="code">create_attachment = function(_attachment, <strong>_x = x</strong>, <strong>_y = y</strong>)<br> {
+    <br> retorno instance_create_layer(_x, _y, layer, _attachment);<br> }
+  </p>
+  <p>A função acima leva três argumentos, sendo que os dois últimos são opcionais. Se eles não forem passados quando a função for chamada, então eles usarão as coordenadas x e y da instância por padrão.</p>
+  <p>Note que se um argumento não for passado, e não tiver um valor padrão, então ele será igual a <tt>indefinido</tt>.</p>
+  <p>Os métodos também podem fazer uso de variáveis estáticas, que mantêm seus valores ao longo de cada chamada de função. Favor <a href="Functions/Static_Variables.htm">ler esta página</a> para mais informações.</p>
+  <p>A seguir listamos algumas funções de ajuda associadas às variáveis do método:</p>
+  <ul class="colour">
+    <li><a href="../GML_Reference/Variable_Functions/is_method.htm">is_method</a></li>
+    <li><a href="../GML_Reference/Variable_Functions/method.htm">método</a></li>
+    <li><a href="../GML_Reference/Variable_Functions/method_get_self.htm">método_get_self</a></li>
+    <li><a href="../GML_Reference/Variable_Functions/method_get_index.htm">método_get_index</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="GML_Overview.htm">Visão geral da<span class="notranslate">GML</span></a></div>
+        <div style="float:right">A seguir: <a href="Structs.htm">Structs</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Script Functions
+User Defined Functions
+-->
+  <!-- TAGS
+method_variables
+-->
+</body>
+</html>

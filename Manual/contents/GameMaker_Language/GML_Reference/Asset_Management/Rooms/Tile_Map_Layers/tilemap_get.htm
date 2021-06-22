@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tilemap_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function tilemap_get" />
+  <meta name="rh-index-keywords" content="tilemap_get" />
+  <meta name="search-keywords" content="tilemap_get" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tilemap_get</h1>
+  <p>Usando esta função você pode recuperar os dados do azulejo a partir de uma célula do elemento do mapa de azulejos. Você dá o ID do elemento do mapa de azulejo (que você obtém quando cria um elemento do mapa de azulejo usando <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a> ou
+    quando você usa a função <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>), bem como a posição das <i>células</i> x e y e a função devolverá os dados do azulejo &quot;blob&quot;. Estes dados são essencialmente uma pequena máscara que contém
+    o índice de azulejos, as booleanas de flip/rotate/mirror e quaisquer dados de máscara que tenham sido aplicados (ver <a href="tilemap_set_mask.htm"><tt>tilemap_set_mask()</tt></a> para detalhes), e o valor dos dados resultantes pode então ser usado nas funções <span class="inline">tile_*</span> 
+    para mudar as propriedades de uma telha. Note que estamos usando posições x/y de célula com base no tamanho da grade do mapa de azulejos e <i>não</i> como uma posição na sala, portanto &quot;cell_x&quot; é um valor de 0 a <a href="tilemap_get_width.htm">largura do</a> mapa de azulejos,
+    e &quot;cell_y&quot; é um valor de 0 até a <a href="tilemap_get_height.htm">altura do</a> mapa de azulejos. Se você precisar obter os dados para um azulejo em uma posição específica da sala, então você precisa usar a função <a href="tilemap_get_at_pixel.htm"><tt>tilemap_get_at_pixel()</tt></a>.</p>
+  <p class="note"><b>IMPORTANTE!</b> Se as telhas no mapa de azulejos tiverem sido inalteradas (ou seja: não estão giradas ou viradas, etc...), então o valor de retorno dos dados do conjunto de azulejos será exatamente igual ao índice do azulejo no conjunto de azulejos. Assim, você pode criar &quot;colisão
+    mapas&quot; de telhas usando uma telha no índice 1 do conjunto de telhas - por exemplo - então use esta função para verificar 1 ou 0 (uma telha vazia) para calcular as colisões.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">tilemap_get(tilemap_element_id, cell_x, cell_y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tilemap_element_id</td>
+        <td>O valor de identificação único do elemento do mapa de azulejos para obter os dados de</td>
+      </tr>
+      <tr>
+        <td>x_cell</td>
+        <td>A célula ao longo do eixo x para obter os dados do azulejo</td>
+      </tr>
+      <tr>
+        <td>y_cell</td>
+        <td>A célula ao longo do eixo y para obter os dados do azulejo</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (-1 se houver um erro)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Tiles_sky&quot;);<br> var map_id = layer_tilemap_get_id(lay_id);<br> var data = tilemap_get(map_id, 0, 0);<br> data = tile_set_flip(data, true);<br> tilemap_set(map_id, data, 0, 0);</p>
+  <p>O código acima obtém a identificação para o mapa de azulejos na camada &quot;Tiles_Sky&quot; e depois a usa para obter os dados do azulejo na célula (0, 0). Estes dados do azulejo são então virados antes de serem usados para definir o azulejo no mapa de azulejos novamente.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Tile_Map_Layers.htm">Camadas do mapa de azulejos</a></div>
+        <div style="float:right">Próximo: <a href="tilemap_get_at_pixel.htm">tilemap_get_at_pixel</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+tilemap_get
+-->
+  <!-- TAGS
+tilemap_get
+-->
+</body>
+</html>

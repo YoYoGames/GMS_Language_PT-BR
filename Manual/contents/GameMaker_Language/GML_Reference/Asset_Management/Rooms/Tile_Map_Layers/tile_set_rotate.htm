@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>set_set_rotate</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function tile_set_rotate" />
+  <meta name="rh-index-keywords" content="tile_set_rotate" />
+  <meta name="search-keywords" content="tile_set_rotate" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>set_set_rotate</h1>
+  <p>Esta função pode ser usada para definir um determinado conjunto de dados da telha para girar a telha 90 graus ou não. Você dá os dados do azulejo, que podem ser recuperados usando a função <a href="tilemap_get.htm"><tt>tilemap_get()</tt></a>e depois definir o argumento da rotação
+    ou <tt>verdadeiro</tt>, se você quiser que o azulejo seja girado, ou <tt>falso</tt>, se você quiser que o azulejo esteja em seu estado padrão, não rotacionado. A função retornará um conjunto modificado de dados do azulejo que pode então ser aplicado usando a função <a href="tilemap_set.htm"><tt>tilemap_set()</tt></a>    função.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code"><span class="inline"></span>tile_set_rotate(tiledata, rotate)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tiledata</td>
+        <td>os dados da telha a definir</td>
+      </tr>
+      <tr>
+        <td>girar</td>
+        <td>Ajustar para <tt>verdadeiro</tt> para girar e <tt>falso</tt> para deixá-lo como está</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Tiles_sky&quot;);<br> var map_id = layer_tilemap_get_id(lay_id);<br> var mx = tilemap_get_cell_x_at_pixel(map_id, mouse_x, mouse_y);<br> var my = tilemap_get_cell_y_at_pixel(map_id, mouse_x, mouse_y);<br> var data
+    = tilemap_get(map_id, mx, my);<br> var bool = !tile_get_rotate(data);<br> data = tile_set_rotate(data, bool);<br> tilemap_set(map_id, data, mx, my);</p>
+  <p>O código acima obtém o ID do mapa de azulejos da camada dada e depois obtém a posição das células x e y para o azulejo sob o mouse. Esta posição é então usada para obter os dados do azulejo que são girados e depois usados para definir o azulejo novamente.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Tile_Map_Layers.htm">Camadas do mapa de azulejos</a></div>
+        <div style="float:right">Próximo: <a href="layer_tilemap_get_id.htm">layer_tilemap_get_id</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+tile_set_rotate
+-->
+  <!-- TAGS
+tile_set_rotate
+-->
+</body>
+</html>

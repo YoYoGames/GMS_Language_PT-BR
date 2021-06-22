@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_grid_height</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_height" />
+  <meta name="rh-index-keywords" content="ds_grid_height" />
+  <meta name="search-keywords" content="ds_grid_height" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_height</h1>
+  <p>Esta função devolverá a altura da grade dada. Este valor é o número de células que a grade tem ao longo do eixo y e é sempre um número inteiro, como mostra a imagem abaixo:</p>
+  <p><img alt="DS grid height" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Data_Structures/ds_grid_height.png" /></p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">ds_grid_height(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>Este índice da grade para encontrar a altura de.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">para (var i = 0; i &lt; ds_grid_width(grid); ++i;) <br> {
+    <br> para (var j = 0; j &lt; ds_grid_height(grid); ++j;) <br> {
+    <br> if (ds_grid_get(grid, i, j) == 1)<br> {
+    <br> instance_create_Layer(i * 32, j * 32, &quot;Walls&quot;, obj_Wall);<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>O código acima passará através da grade DS indexada na variável &quot;grid&quot; e se o valor encontrado em qualquer célula específica for igual a 1, criará então uma instância de &quot;obj_Wall&quot; na posição apropriada dentro da sala.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="DS_Grids.htm">Grades DS</a></div>
+        <div style="float:right">Próximo: <a href="ds_grid_resize.htm">ds_grid_resize</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_height
+-->
+  <!-- TAGS
+ds_grid_height
+-->
+
+</body></html>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ref_ref_create fraco</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for weak_ref_create" />
+  <meta name="rh-index-keywords" content="weak_ref_create" />
+  <meta name="search-keywords" content="weak_ref_create,weak references" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Ref_ref_create fraco</h1>
+  <p>Com esta função você pode criar uma <a class="glossterm" data-glossterm="referência fraca" href="#">fraca referência</a> a uma estrutura que pode então ser usada para verificar se a estrutura ainda está &quot;viva&quot; (referenciada) ou não no jogo. Você fornece a
+    referência à estrutura que você deseja rastrear, e a função retornará outra estrutura que é uma referência fraca a essa estrutura. Note que você pode verificar se uma referência é &quot;forte&quot; ou &quot;fraca&quot;, usando a função <span class="inline"><a href="../Variable_Functions/instanceof.htm">instanceof()</a></span>,
+    como uma referência forte retornará ou &quot;<span class="inline">struct</span>&quot; ou o nome da função do construtor que criou a estrutura, ou &quot;<span class="inline">weakref</span>&quot; se for uma referência fraca. Observe também que
+    a fraca estrutura de referência terá uma variável &quot;<span class="inline">ref</span>&quot; que poderá ser acessada para obter a referência da string à estrutura em questão, a menos que tenha sido recolhida, caso em que retornará <span class="inline">undefined</span>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">weak_ref_create(struct_to_track);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>structure_to_track</td>
+        <td>A estrutura para a qual você quer criar uma referência fraca</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Estrutura</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">inventory_ref = weak_ref_create(inventário);</p>
+  <p>O código acima cria uma referência fraca a uma estrutura e a armazena em uma variável de instância para uso posterior.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Garbage_Collection.htm">Coleta de Lixo</a></div>
+        <div style="float:right">A seguir: <a href="weak_ref_alive.htm">fraco_ref_alive</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+weak_ref_create
+-->
+  <!-- TAGS
+weak_ref_create
+-->
+
+</body></html>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>parte_da_cópia_de_superfície</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_copy_part" />
+  <meta name="rh-index-keywords" content="surface_copy_part" />
+  <meta name="search-keywords" content="surface_copy_part" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>parte_da_cópia_de_superfície</h1>
+  <p>Esta função simplesmente tira a imagem de uma superfície e a copia para outra na posição local especificada dentro daquela superfície (onde a posição (0,0) é o canto superior esquerdo da superfície de destino). Você pode especificar uma posição local x e y
+    para copiar, assim como a largura e a altura da seção. Observe que estas são coordenadas baseadas no <i>tamanho da superfície</i> e não na posição em que a superfície está sendo desenhada na sala. Se a superfície de destino já tiver informações
+    isto será sobrescrito pela cópia, e a função <i>não</i> altera de forma alguma a superfície da fonte.</p>
+  <p class="note"><b></b><b>NOTA</b>: Quando se trabalha com superfícies há a possibilidade de que elas possam deixar de existir a qualquer momento devido a serem armazenadas na memória de textura. Você deve <b>SEMPRE</b> verificar se uma superfície existe usando <span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">superfície_existe()</tt></a></span>    antes de referenciá-los diretamente.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">surface_copy_part(destino, x, y, fonte, xs, ys, ws, hs);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>destino</td>
+        <td>A identificação da superfície para copiar a outra superfície para.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A posição x para copiar para.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A posição y para copiar para.</td>
+      </tr>
+      <tr>
+        <td>fonte</td>
+        <td>A identificação da superfície a ser copiada.</td>
+      </tr>
+      <tr>
+        <td>xs</td>
+        <td>A posição x na superfície da fonte de onde copiar.</td>
+      </tr>
+      <tr>
+        <td>ys</td>
+        <td>A posição y na superfície da fonte de onde copiar.</td>
+      </tr>
+      <tr>
+        <td>ws</td>
+        <td>A largura da área na superfície da fonte de onde copiar.</td>
+      </tr>
+      <tr>
+        <td>hs</td>
+        <td>A altura da área na superfície da fonte de onde copiar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se view_current == 0<br> {
+    <br> surface_copy_part(surf, 0, 0, temp_surf, 0, 0, view_xview[1] - mouse_x, view_yview[1] - mouse_y);<br> }
+    <br> mais
+    <br> {
+    <br> draw_surface(surf, 0, 0);<br> }
+  </p>
+  <p>O código acima verificará a vista atual sendo desenhada e se é vista[0] copia a superfície indexada na variável &quot;temp_surf&quot; para a superfície indexada na variável &quot;surf&quot;. A área copiada corresponde a um retângulo formado
+    pela posição relativa do mouse dentro da superfície como seria desenhado em vista[1]. Se a vista atual for outra coisa que não seja vista[0] a superfície &quot;surf&quot; é desenhada para a tela.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Surfaces.htm">Superfícies</a></div>
+        <div style="float:right">A seguir: <a href="surface_depth_disable.htm">superfície_de_profundidade_disponível</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_copy_part
+-->
+  <!-- TAGS
+surface_copy_part
+-->
+</body>
+</html>

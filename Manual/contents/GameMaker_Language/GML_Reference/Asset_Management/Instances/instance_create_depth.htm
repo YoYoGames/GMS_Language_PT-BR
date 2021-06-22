@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>instance_create_depth</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_create_depth" />
+  <meta name="rh-index-keywords" content="instance_create_depth" />
+  <meta name="search-keywords" content="instance_create_depth" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>instance_create_depth</h1>
+  <p>Com esta função você pode criar uma nova instância do objeto especificado em qualquer ponto dentro da sala e na profundidade especificada. A profundidade pode ser qualquer valor, onde quanto menor a profundidade, mais &quot;perto&quot; da câmera as coisas serão desenhadas e
+    quanto maior a profundidade, mais longe, então uma instância em profundidade -200 será arrastada sobre uma instância em profundidade +300 (por exemplo).</p>
+  <p>Note que esta função realmente criará uma camada na sala, já que todas as instâncias <i>devem</i> estar em uma camada na sala, mas como esta é uma camada <i>administrada</i> (ou seja: não uma que você criou através do código ou na sala, mas uma que
+   <span class="notranslate">GameMaker Studio 2</span> foi criado automaticamente) você não pode acessá-lo, e o <a href="Instance_Variables/layer.htm"><tt>camada</tt></a> a variável de instância retornará -1.</p>
+  <p class="note"><b>IMPORTANTE!</b> Há uma profundidade mínima e máxima de camada de -16000 a 16000. Qualquer coisa colocada em uma profundidade fora dessa faixa <b>não será desenhada</b>, embora todos os eventos ainda funcionem normalmente.</p>
+  <p>Esta função retorna o <a href="Instance_Variables/id.htm"><tt>id</tt></a> da nova instância, que pode então ser armazenada em uma variável ou usada para acessar essa instância. Note que esta função também chamará o <a href="../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">Create Event</a> da instância sendo criada <i>antes de</i> continuar com o código ou ações para o evento que chamou a função.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">instance_create_depth(x, y, depth, obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A posição x o objeto será criada em</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A posição y do objeto será criada em</td>
+      </tr>
+      <tr>
+        <td>profundidade</td>
+        <td>A profundidade para atribuir a instância criada a</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>O índice de objetos do objeto para criar uma instância de</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (valor de identificação da instância)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var inst = instance_create_depth(x, y, -10000, obj_Bullet);<br> com (inst)<br> {
+    <br> speed = other.shoot_speed;<br> direction = other.image_angle;<br> }
+  </p>
+  <p>O código acima cria uma nova instância do objeto &quot;obj_Bullet&quot; e armazena a identificação da instância em uma variável. Esta variável é então usada para atribuir <tt>velocidade</tt> e <tt>direção</tt> à nova instância.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Instances.htm">Instâncias</a></div>
+        <div style="float:right">Próximo: <a href="instance_destroy.htm">instance_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_create_depth
+-->
+  <!-- TAGS
+instance_create_depth
+-->
+</body>
+</html>

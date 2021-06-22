@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ref_ref_uma_alive_baixa</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for weak_ref_any_alive" />
+  <meta name="rh-index-keywords" content="weak_ref_any_alive" />
+  <meta name="search-keywords" content="weak_ref_any_alive" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Ref_ref_create fraco</h1>
+  <p>Com esta função você pode verificar a <a class="glossterm" data-glossterm="referência fraca" href="#">fraca referência</a> a várias estruturas para ver se elas ainda estão &quot;vivas&quot; ou não. Você fornece uma série de referências fracas para verificar (cada uma delas é fraca).
+    referência deveria ter sido criada usando a função <a href="weak_ref_create.htm"><span class="inline">weak_ref_create()</span></a>), e a função retornará <span class="inline">true</span> se <em><strong>qualquer </strong></em>das estruturas ainda são
+    ser referenciado em algum lugar ou <span class="inline">false</span> se não forem e tiverem sido coletados. Note que se você fornecer um array onde qualquer um dos valores não seja uma referência fraca, a função retornará <span class="inline">undefined</span>.</p>
+  <p>Note que a função também leva dois argumentos opcionais, onde o primeiro permite fornecer um índice inicial na matriz para verificar, bem como um argumento para definir o número de posições (comprimento) a partir desse índice para verificar. Somente os índices da matriz
+    dentro desses parâmetros serão verificados.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">weak_ref_any_alive(weak_ref, [índice], [comprimento]));</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>Ref_fraqueza</td>
+        <td>A fraca referência à estrutura que você deseja verificar.</td>
+      </tr>
+      <tr>
+        <td>[índice]</td>
+        <td>OPCIONAL! O índice na matriz para começar a verificar a partir de</td>
+      </tr>
+      <tr>
+        <td>[comprimento]</td>
+        <td>OPCIONAL! O número de posições do índice dado para verificar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano (ou indefinido)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if weak_ref_any_alive(inventory_ref_array)<br> {<br> instance_destroy(obj_Inventory_Control);<br> }</p>
+  <p>O código acima verifica uma série de referências fracas e, se alguma ainda estiver viva, uma instância é destruída.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Garbage_Collection.htm">Coleta de Lixo</a></div>
+        <div style="float:right">Próximo: <a href="gc_collect.htm">gc_collect</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+weak_ref_any_alive
+-->
+  <!-- TAGS
+weak_ref_any_alive
+-->
+
+</body></html>

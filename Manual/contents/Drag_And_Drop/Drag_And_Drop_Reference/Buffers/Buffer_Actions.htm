@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ações tampão</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section detailing all the Buffer actions" />
+  <meta name="rh-index-keywords" content="DnD™ Overview - Buffer Actions Library" />
+  <meta name="search-keywords" content="Buffer Actions" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Biblioteca de Ação de Buffers</h1>
+  <p><img alt="Buffers Action Library" class="center" height="149" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/Lib_Buffers.png" width="241" /></p>
+  <p>Um <b>buffer</b> é uma região da memória física usada para armazenar dados temporariamente enquanto está sendo movida de um lugar para outro ou manipulada de alguma forma, por exemplo, você pode usar um buffer para armazenar dados do estado do jogo. O <span class="notranslate">GameMaker Studio 2</span> tem uma série de
+    ações relacionadas com a criação, modificação e carregamento/salvamento de amortecedores, mas antes de utilizá-los, observe os seguintes pontos:</p>
+  <ul class="colour">
+    <li>Quando um buffer é criado, ele é automaticamente limpo e preenchido a 0.</li>
+    <li>O argumento do &quot;tamanho&quot; das funções do buffer sempre se refere ao tamanho em bytes <i>do</i> buffer.</li>
+    <li><span class="notranslate">DnD™</span>os amortecedores estão sempre <i>1 byte alinhados</i>. O &quot;alinhamento&quot; refere-se a como os dados são armazenados dentro de um buffer e é usado quando se utilizam as <a href="../../../GameMaker_Language/GML_Reference/Buffers/Buffers.htm"><span class="notranslate">funções de</span></a> buffer GML <a href="../../../GameMaker_Language/GML_Reference/Buffers/Buffers.htm">, mas</a>
+      para o <span class="notranslate">Drag And Drop</span>, não é relevante.</li>
+    <li>Os dados em buffer são lidos e escritos de forma <i>seqüencial</i> (ou seja: você chama a ação <a href="Write_Buffer.htm">Write Buffer</a> três vezes, então ele escreverá os primeiros dados, seguirá em frente, à direita os segundos dados, seguirá em frente e então escreverá
+      os últimos dados), com algo chamado de valor &quot;procurar&quot; para dizer onde no buffer ocorrerá a próxima leitura/escrita.</li>
+    <li>Todos os dados são escritos no buffer e retornados do buffer como uma <b>string</b>, então se você tiver armazenado algum número real, você terá que usar uma das <a href="../Data_Types/Data_Type_Actions.htm">ações do tipo de dados</a> para convertê-lo da string
+      para o valor.</li>
+  </ul>
+  <p>A memória utilizada para criar buffers é a memória do sistema, portanto, mesmo quando o jogo não tem foco, qualquer dado armazenado em um buffer deve ser seguro, entretanto, se o aplicativo for fechado ou reiniciado, ele será perdido. Também vale a pena notar que os buffers podem
+    também ser salvos como arquivos e depois carregados de volta ao jogo usando as <a href="../Files/File_Actions.htm">ações do arquivo</a>.</p>
+  <p>A página seguinte explica com mais detalhes como funcionam os buffers dentro do contexto do <span class="notranslate">GameMaker Studio 2</span> e contém um par de exemplos de código <span class="notranslate">GML</span>:</p>
+  <ul class="colour">
+    <li><a href="../../../Additional_Information/Guide_To_Using_Buffers.htm">Usando amortecedores</a></li>
+  </ul>
+  <p>A biblioteca <b>Buffer</b> tem as seguintes ações:</p>
+  <p> </p>
+  <table class="dnd" style="text-align: left;margin-left:">
+    <tbody>
+      <tr style="height: 1px;">
+        <td class="icons" style="margin-left: 16px;"><img alt="Create Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Create_Buffer.png" /></td>
+        <td class="dnd" style=""><a href="Create_Buffer.htm">Criar Tampão</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Copy Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Copy_Buffer.png" /></td>
+        <td class="dnd" style=""><a href="Copy_Buffer.htm">Buffer de cópia</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Delete Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Delete_Buffer.png" /></td>
+        <td class="dnd" style=""><a href="Delete_Buffer.htm">Eliminar tampão</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Read Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Read_Buffer.png" /></td>
+        <td class="dnd" style=""><a href="Read_Buffer.htm">Leia Buffer</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Write Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Write_Buffer.png" /></td>
+        <td class="dnd" style=""><a href="Write_Buffer.htm">Buffer de escrita</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Seek Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Seek_Buffer.png" /></td>
+        <td class="dnd" style=""><a href="Seek_Buffer.htm">Procure um tampão</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Get Buffer Size Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Get_Buffer_Size.png" /></td>
+        <td class="dnd" style=""><a href="Get_Buffer_Size.htm">Obter tamanho tampão</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Get Buffer Position Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Get_Buffer_Position.png" /></td>
+        <td class="dnd" style=""><a href="Get_Buffer_Position.htm">Obter posição tampão</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="If Buffer Exists Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_If_Buffer_Exists.png" /></td>
+        <td class="dnd" style=""><a href="If_Buffer_Exists.htm">Se o tampão existir</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="If End Of Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_If_End_Of_Buffer.png" /></td>
+        <td class="dnd" style=""><a href="If_End_Of_Buffer.htm">Se o fim do tampão</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../DnD_Reference.htm">Índice</a></div>
+        <div style="float:right">A seguir: <a href="../Files/File_Actions.htm">Ações de Arquivo</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Drag And Drop</span> Buffer Actions
+Buffer Actions
+-->
+  <!-- TAGS
+dnd_buffers
+-->
+</body>
+</html>

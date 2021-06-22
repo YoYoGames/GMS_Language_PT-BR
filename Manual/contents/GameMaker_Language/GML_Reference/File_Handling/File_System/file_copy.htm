@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>file_copy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for file_copy" />
+  <meta name="rh-index-keywords" content="file_copy" />
+  <meta name="search-keywords" content="file_copy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>file_copy</h1>
+  <p>Esta função irá copiar o arquivo especificado, dando-lhe o novo nome que você escolher. Se você estiver copiando um arquivo em <i><span class="notranslate">Android</span></i> de dentro de sua área de <b>Arquivos Incluídos</b> (que estará dentro de seu APK) ele copiará primeiro para a memória, portanto, esteja ciente de que
+    que a cópia de arquivos muito grandes do APK pode fazer com que os dispositivos fiquem sem memória. No alvo HTML5, usamos o HTML5 <b>Local Storage API</b> para salvar o lado do cliente, e as funções não suportam operações de arquivos binários, portanto, suponha que você esteja
+    cópia de um arquivo de texto.</p>
+  <p class="note"><b>ADVERTÊNCIA!</b> Esta função pode não funcionar como você espera devido ao <span class="notranslate">GameMaker Studio 2</span> ser lixado! Consulte a seção sobre <a href="../../../../Additional_Information/The_File_System.htm">Limites do Sistema de Arquivos</a> para maiores informações.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">file_copy(fname, newname);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td>O nome do arquivo a ser copiado.</td>
+      </tr>
+      <tr>
+        <td>novo nome</td>
+        <td>O nome do novo, copiado, arquivo.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se file_exists(&quot;level1.txt&quot;)<br> {
+    <br> file_copy(&quot;level1.txt&quot;, &quot;level2.txt&quot;);<br> }
+  </p>
+  <p>Isto verificaria a existência de um arquivo e, se ele existe, é copiado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="File_System.htm">Sistema de arquivo</a></div>
+        <div style="float:right">Próximo: <a href="file_find_first.htm">file_find_first</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+file_copy
+-->
+  <!-- TAGS
+file_copy
+-->
+</body>
+</html>

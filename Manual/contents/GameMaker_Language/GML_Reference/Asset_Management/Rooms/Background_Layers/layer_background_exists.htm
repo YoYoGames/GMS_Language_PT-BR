@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_background_existe</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_exists" />
+  <meta name="rh-index-keywords" content="layer_background_exists" />
+  <meta name="search-keywords" content="layer_background_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_background_existe</h1>
+  <p>Você pode usar esta função para verificar e ver se existe um elemento de fundo em qualquer camada. Você fornece a identificação da camada (que você obtém quando cria a camada usando <a href="../General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a>) ou
+    o nome da camada (como um fio - isso terá um impacto no desempenho) e o ID do elemento de fundo (que você obtém quando cria um elemento de fundo usando <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a> ou quando você usa
+    a função <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>) e a função retornará ou <tt>verdadeira</tt> se o elemento existir, ou <tt>falsa</tt> se não existir.</p>
+  <p class="note"><b>NOTA</b>: Esta função funciona dentro do escopo da sala alvo atual - por padrão a sala na qual a função é chamada - que pode ser definida usando a função <span style="font-size:1px;"><a href="../General_Layer_Functions/layer_set_target_room.htm"><tt style="font-size: 14px">layer_set_target_room()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">layer_background_exists(layer_id, background_element_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>O valor de identificação único da camada a ser alvo (ou o nome da camada como uma corda)</td>
+      </tr>
+      <tr>
+        <td>background_element_id</td>
+        <td>O valor único de identificação do elemento de fundo a ser verificado</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Background_trees&quot;);<br> if layer_background_exists(lay_id, global.TreesBackground)<br> {
+    <br> layer_background_destroy(lay_id, global.TreesBackground);<br> }
+  </p>
+  <p>O código acima verifica a camada &quot;Background_trees&quot; para ver se o elemento de fundo dado existe e se ele existe, então ele é destruído (mas não a camada).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Background_Layers.htm">Camadas de fundo</a></div>
+        <div style="float:right">A seguir: <a href="layer_background_create.htm">layer_background_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_background_exists
+-->
+  <!-- TAGS
+layer_background_exists
+-->
+</body>
+</html>

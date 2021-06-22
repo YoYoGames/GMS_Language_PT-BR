@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_map_read</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_map_read" />
+  <meta name="rh-index-keywords" content="ds_map_read" />
+  <meta name="search-keywords" content="ds_map_read" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_map_read</h1>
+  <p>Esta função terá um fio que foi previamente criado pela função <a href="ds_map_write.htm"><tt>ds_map_write()</tt></a> e depois leia-o em um <span class="misspell-word">mapa DS </span> previamente criado. Se o mapa que a corda
+    está sendo lido contém qualquer par chave/valor, estes serão limpos primeiro antes que o mapa salvo seja reconstruído. Observe que se a estrutura de dados foi criada com versões anteriores do <span class="notranslate">GameMaker Studio 2</span>, você deve adicionar o argumento opcional
+    &quot;legado&quot;, definindo-o como verdadeiro, já que <tt>o</tt> formato das cordas mudou com esta versão.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">ds_map_read(id, str [, legacy]));</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>A identificação da estrutura de dados para a leitura da cadeia</td>
+      </tr>
+      <tr>
+        <td>str</td>
+        <td>O fio a ser lido</td>
+      </tr>
+      <tr>
+        <td>legado<i>(opcional</i>)</td>
+        <td>Pode ser <tt>verdadeiro</tt> ou <tt>falso</tt> ou omitido completamente.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">inventário = ds_map_create();<br> ini_open(&quot;map.ini&quot;);
+    <br> var t_string = ini_read_string(&quot;Saved&quot;, &quot;0&quot;, &quot;&quot;);<br> if (t_string != &quot;&quot;)<br> {
+    <br> ds_map_read(inventário, t_string);<br> }
+    <br> ini_close();
+  </p>
+  <p>O código acima cria um novo mapa DS e armazena seu índice de identificação na variável &quot;inventário&quot;. Em seguida, ele abre um arquivo ini e lê uma string desse arquivo na variável temporária &quot;t_string&quot;. Finalmente, ele verifica se a variável
+    A string é válida (não o valor padrão do ini &quot;&quot;) e se for, então lê a string no mapa DS recém-criado antes de fechar o ini novamente.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="DS_Maps.htm">DS Maps</a></div>
+        <div style="float:right">Próximo: <a href="ds_map_write.htm">ds_map_write</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_map_read
+-->
+  <!-- TAGS
+ds_map_read
+-->
+
+</body></html>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>display_set_sleep_margin</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for display_set_sleep_margin" />
+  <meta name="rh-index-keywords" content="display_set_sleep_margin" />
+  <meta name="search-keywords" content="display_set_sleep_margin" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>display_set_sleep_margin</h1>
+  <p>Esta função pode ser usada para definir o valor da margem de sono usada para o tempo de renderização de seu jogo, e requer um valor de milissegundos. Os valores padrão são os seguintes:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Plataforma</th>
+        <th>Milissegundos</th>
+      </tr>
+      <tr>
+        <td><span class="notranslate">Windows</span></td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">macOS</span></td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">Ubuntu</span></td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>HTML5</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">Android</span></td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">iOS</span></td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">Windows UWP</span></td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>Xbox</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>PS4</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">Nintendo</span> <span class="notranslate">Troca</span></td>
+        <td>10</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Note que mesmo que o método de tempo seja definido para usar o tempo vsync, a margem de sono terá algum efeito sobre a renderização do jogo e, portanto, você deve tomar cuidado ao definir este valor. Para maiores informações sobre o tempo de exibição, por favor veja <a href="display_set_timing_method.htm"><tt>display_set_timing_method()</tt></a>.</p>
+  <p class="note"><strong>NOTA</strong>: Além da Margem de Sono, você pode controlar ainda mais seu desempenho e consumo de energia no <span class="notranslate">Windows</span>, ajustando a <a href="../OS_And_Compiler/scheduler_resolution_set.htm">resolução do agendador de fios em</a> tempo de execução <span class="notranslate">.</span></p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">display_set_sleep_margin(milisegundos);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>milissegundos</td>
+        <td>O número de milissegundos para a margem de sono</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se display_get_timing_method() != tm_sleep<br> {
+    <br> display_set_set_timing_method(tm_sleep);
+    <br> if display_get_sleep_margin() != 20<br> {
+    <br> display_set_sleep_sleep_margin(20);
+    <br> }
+    <br> }
+  </p>
+  <p>O código acima verificará o método de tempo e, se não estiver ajustado para tm_sleep <tt>,</tt> será ajustado para isso e a margem de sono será ajustada para 20.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear"><a href="Cameras_And_Display.htm">Câmeras e Display</a>
+        <div style="float:left">Voltar: </div>
+        <div style="float:right">Próximo: <a href="screen_save.htm">screen_save</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+display_set_sleep_margin
+-->
+  <!-- TAGS
+display_set_sleep_margin
+-->
+</body>
+</html>

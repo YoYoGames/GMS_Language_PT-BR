@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_background_destroy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_destroy" />
+  <meta name="rh-index-keywords" content="layer_background_destroy" />
+  <meta name="search-keywords" content="layer_background_destroy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_background_destroy</h1>
+  <p>Esta função destruirá o elemento de fundo dado. Você fornece a identificação do fundo (que você obtém quando cria o fundo usando <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a> ou quando você usa a identificação por camadas ao longo
+    com <a href="layer_background_get_id.htm"><tt>layer_get_background_id()</tt></a>) e isto irá removê-lo. Note que isto <i>não</i> remove a camada, apenas o fundo da mesma, e se o fundo for um fundo que foi adicionado na sala
+    editor, então na próxima vez que você sair da sala e depois voltar, o fundo será recriado novamente. Entretanto, se a sala for persistente, o fundo será removido, a menos que a persistência da sala seja desligada novamente.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">layer_background_destroy(background_element_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>background_element_id</td>
+        <td>O valor único de identificação do fundo a ser destruído</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Background_trees&quot;);<br> var bck_id = layer_background_get_id(&quot;Forrest&quot;);<br> se layer_background_exists(lay_id, bck_id)<br> {
+    <br> layer_background_destroy(bck_id);
+    <br> }
+  </p>
+  <p>O código acima verifica a camada &quot;Background_trees&quot; para ver se o elemento de fundo dado existe e se ele existe, então ele é destruído (mas não a camada).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Background_Layers.htm">Camadas de fundo</a></div>
+        <div style="float:right">Próximo: <a href="layer_background_visible.htm">fundo_camada_visível</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_background_destroy
+-->
+  <!-- TAGS
+layer_background_destroy
+-->
+</body>
+</html>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>fundo_de_camada_esticar</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_stretch" />
+  <meta name="rh-index-keywords" content="layer_background_stretch" />
+  <meta name="search-keywords" content="layer_background_stretch" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>fundo_de_camada_esticar</h1>
+  <p>Usando esta função, você pode alternar um elemento de fundo sprite para esticar para caber na sala ou permanecer em 1:1 com a resolução. Você fornece o ID do elemento de fundo (que você obtém quando cria um elemento de fundo usando <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a>    ou quando você usa a função <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>), e depois colocar o argumento de esticar para <tt>verdadeiro</tt> ou <tt>falso</tt>. Quando definido como <tt>verdadeiro</tt>, o elemento sprite será esticado para caber
+    a sala (escalonada para cima ou para baixo dependendo do tamanho do duende e da sala), e quando configurado para <tt>falso</tt>, o elemento duende será exibido com sua resolução nativa.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">layer_background_stretch(background_element_id, stretch)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>background_element_id</td>
+        <td>O valor de identificação único do elemento de fundo a ser mudado</td>
+      </tr>
+      <tr>
+        <td>trecho</td>
+        <td>A alavanca de estiramento, que pode ser <tt>verdadeira</tt> ou <tt>falsa</tt></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if mouse_check_button_pressed(mb_left)<br> {
+    <br> var back = layer_background_get_id(layer);<br> if layer_background_get_stretch(back)<br> {
+    <br> layer_background_stretch(back, false);<br> }
+    <br> else
+    <br> {
+    <br> layer_background_stretch(back, true);<br> }
+    <br> }
+  </p>
+  <p>O código acima verifica se o botão do mouse está pressionado e, se for detectado, alternará o estiramento do elemento de fundo sprite atribuído à camada em que a instância está rodando o código.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Background_Layers.htm">Camadas de fundo</a></div>
+        <div style="float:right">Próximo: <a href="layer_background_blend.htm">layer_background_blend</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_background_stretch
+-->
+  <!-- TAGS
+layer_background_stretch
+-->
+</body>
+</html>

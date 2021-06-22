@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>variable_instance_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function variable_instance_get" />
+  <meta name="rh-index-keywords" content="variable_instance_get" />
+  <meta name="search-keywords" content="variable_instance_get" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>variable_instance_get</h1>
+  <p>Com esta função você pode obter o valor de uma determinada variável nomeada. Você fornece o valor único de identificação da instância (que pode ser encontrado nas <a href="../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm">propriedades da instância</a> na sala
+    editor, ou é retornado quando você chama a função <a href="../Asset_Management/Instances/instance_create_layer.htm"><tt>instance_create_layer()</tt></a>) assim como o nome da variável para obter o valor de <i>uma string</i> (ver exemplo de código
+    abaixo). A função retornará o valor mantido pela variável, ou <span class="inline">undefined</span> se a variável não existir.</p>
+  <p class="note"><b>IMPORTANTE!</b> Se a variável que você está recebendo não existir, então a função retornará a palavra-chave <tt>indefinida</tt> e você poderá receber erros que impedirão o funcionamento do jogo, portanto, em caso de dúvida, use a função <a href="variable_instance_exists.htm"><tt>variável_instância_existe</tt></a>    primeiro.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">variable_instance_get(instance_id, nome);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>exemplo_id</td>
+        <td>O valor de identificação único da instância a ser usada</td>
+      </tr>
+      <tr>
+        <td>nome</td>
+        <td>O nome da variável a ser obtida (como um fio)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Valor (qualquer tipo de dado) ou <tt>indefinido</tt> (se a variável nomeada não existir)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se variável_instance_existir(id, &quot;shields&quot;)<br> {
+    <br> var ss = variable_instance_get(id, &quot;shields&quot;);<br> }
+    <br> mais
+    <br> }
+    <br> var ss = -1;<br> }
+  </p>
+  <p>O código acima verificará se uma variável existe e se ela existe, então o valor que possui é recuperado e armazenado em uma variável local. Se não existir, a variável local é definida como -1.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Variable_Functions.htm">Funções variáveis</a></div>
+        <div style="float:right">Próximo: <a href="variable_instance_set.htm">variable_instance_set</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+variable_instance_get
+-->
+  <!-- TAGS
+variable_instance_get
+-->
+</body>
+</html>

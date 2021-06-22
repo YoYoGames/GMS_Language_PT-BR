@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>path_assign</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_assign" />
+  <meta name="rh-index-keywords" content="path_assign" />
+  <meta name="search-keywords" content="path_assign" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>path_assign</h1>
+  <p>Com esta função você pode copiar os dados do caminho de um caminho para outro. O caminho <i>a</i> ser copiado será apagado primeiro (caso tenha algum ponto de caminho) e será <strong>completamente sobregravado</strong> pelo caminho sendo
+    copiado de. Nenhum dos caminhos é eliminado no processo e o resultado são dois caminhos, com dois índices diferentes, mas exatamente a mesma forma e pontos. Em geral, você gostaria de usar esta função em um caminho criado usando <span class="inline"><a href="path_add.htm">path_add()</a></span>,
+    uma vez que se você usá-lo em um ativo do caminho, <strong>ele afetará permanentemente o caminho para todas as instâncias do jogo</strong> desde o momento em que a função é usada até o final do jogo.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">path_assign(índice, caminho);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice do caminho a ser sobregravado.</td>
+      </tr>
+      <tr>
+        <td>caminho</td>
+        <td>O índice do caminho que irá sobrescrever o 'índice'.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">mypath = path_add();<br> path_assign(mypath, choose(path_1, path_2, path_3));</p>
+  <p>O código acima criará um novo caminho vazio indexado na variável &quot;mypath&quot; e então copiará sobre os dados do caminho a partir de um dos três recursos de caminho disponíveis.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Path_Manipulation.htm">Manipulação do caminho</a></div>
+        <div style="float:right">Próximo: <a href="path_delete.htm">path_delete</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_assign
+-->
+  <!-- TAGS
+path_assign
+-->
+</body>
+</html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_hspeed</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_hspeed" />
+  <meta name="rh-index-keywords" content="layer_hspeed" />
+  <meta name="search-keywords" content="layer_hspeed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_hspeed</h1>
+  <p>Você pode usar esta função para definir a velocidade horizontal (em pixels por frame de jogo) da camada dentro da sala atualmente escopada. Você fornece a identificação da camada (que você obtém quando cria a camada usando <a href="layer_create.htm"><tt>layer_create()</tt></a>)
+    ou o nome da camada (como um fio - isso terá um impacto no desempenho) e o valor da velocidade a ser definida, onde um valor positivo é para a direita e um valor negativo para a esquerda.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">layer_hspeed(layer_id, hspd)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>O valor de identificação único da camada para definir a velocidade horizontal de</td>
+      </tr>
+      <tr>
+        <td>hspd</td>
+        <td>A velocidade horizontal (em pixels por frame de jogo) a ser definida</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Sprites&quot;);<br> if layer_get_hspeed(lay_id) != 0 || layer_get_vspeed(lay_id) != 0<br> {
+    <br> layer_hspeed(lay_id, 0);<br> layer_vspeed(lay_id, 0);<br> }
+  </p>
+  <p>O código acima verifica as velocidades horizontal e vertical da camada dada e, se ambas não estiverem ambas ajustadas a 0, então é ajustado para 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="General_Layer_Functions.htm">Funções gerais da camada</a></div>
+        <div style="float:right">Próximo: <a href="layer_vspeed.htm">layer_vspeed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_hspeed
+-->
+  <!-- TAGS
+layer_hspeed
+-->
+</body>
+</html>

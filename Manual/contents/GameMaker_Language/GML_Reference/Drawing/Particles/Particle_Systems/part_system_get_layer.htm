@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_system_get_layer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_system_get_layer" />
+  <meta name="rh-index-keywords" content="part_system_get_layer" />
+  <meta name="search-keywords" content="part_system_get_layer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_system_get_layer</h1>
+  <p>Esta função pode ser usada para recuperar o valor de identificação da camada única para o sistema de partículas em questão. Você fornece o valor de identificação do sistema de partícula (como retornado pela função <a href="part_system_create_layer.htm"><tt>part_system_create_layer()</tt></a>) e o
+    retornará o valor de identificação da camada.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">part_system_get_layer(ind);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>O valor de identificação do sistema de partículas para obter a identificação da camada de</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (valor único de ID da camada ou 0 se a camada for administrada internamente)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if (part_system_get_layer(global.p_sys) != &quot;effects_layer&quot;)<br> {
+    <br> part_system_layer(global.p_sys, &quot;effects_layer&quot;;<br> }
+  </p>
+  <p>O código acima verificará um sistema de partículas para ver em que camada está e, se não estiver na camada dada, será alterado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Particle_Systems.htm">Sistemas de Partículas</a></div>
+        <div style="float:right">Próximo: <a href="part_system_layer.htm">part_system_layer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_system_get_layer
+-->
+  <!-- TAGS
+part_system_get_layer
+-->
+</body>
+</html>

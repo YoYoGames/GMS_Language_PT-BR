@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>jogo_load_buffer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function game_load_buffer" />
+  <meta name="rh-index-keywords" content="game_load_buffer" />
+  <meta name="search-keywords" content="game_load_buffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>jogo_load_buffer</h1>
+  <p>Com esta função você pode carregar um estado de jogo que já tenha sido salvo anteriormente. O jogo é carregado a partir de um buffer &quot;crescer&quot; criado anteriormente (ver Buffers) <a href="../Buffers/Buffers.htm">e o</a> buffer deve ter tido um estado de jogo salvo nele
+    usando <a href="game_save_buffer.htm"><tt>jogo_save_buffer()</tt></a> função.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">jogo_load_buffer_buffer(buffer);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tampão</td>
+        <td>A identificação do buffer de onde carregar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se keyboard_check_pressed(ord(&quot;L&quot;))<br> {
+    <br> if global.Checkpoint game_load_buffer(save_buff)(save_buff);<br> }
+  </p>
+  <p>O código acima carregará um estado de jogo previamente salvo do buffer indexado na variável &quot;save_buff&quot;, somente se a variável global for verdadeira, quando <tt>o</tt> jogador pressiona a tecla &quot;L&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="General_Game_Control.htm">Controle geral do jogo</a></div>
+        <div style="float:right">Próximo: <a href="game_save.htm">game_save</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+game_load_buffer
+-->
+  <!-- TAGS
+game_load_buffer
+-->
+</body>
+</html>

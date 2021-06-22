@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tilemap_set</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function tilemap_set" />
+  <meta name="rh-index-keywords" content="tilemap_set" />
+  <meta name="search-keywords" content="tilemap_set" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tilemap_set</h1>
+  <p>Esta função pode ser usada para definir qualquer célula (quadrado de grade) dentro do elemento do mapa de azulejos na camada para um novo azulejo. Você dá o ID do elemento do mapa de azulejo (que você obtém quando cria um elemento do mapa de azulejo usando <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a>    ou quando você usa a função <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>), e depois os dados dos azulejos a serem definidos, bem como a posição dentro do mapa de azulejos. Você pode recuperar os dados do azulejo usando a função <a href="tilemap_get.htm"><tt>tilemap_get()</tt></a>    e depois usar as funções <tt>tile_</tt> para mudá-lo antes de configurar a célula usando esta função. A função retornará <tt>verdadeiro</tt> se o azulejo foi definido com sucesso e <tt>falso</tt> se houve um problema e não foi definido.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">tilemap_set(tilemap_element_id, tiledata, xcell, ycell)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tilemap_element_id</td>
+        <td>O valor de identificação único do elemento do mapa de azulejos a ser mudado</td>
+      </tr>
+      <tr>
+        <td>tiledata</td>
+        <td>Os dados do azulejo a ser definido</td>
+      </tr>
+      <tr>
+        <td>xcell</td>
+        <td>A posição da célula (grade) a definir ao longo do eixo x</td>
+      </tr>
+      <tr>
+        <td>ycell</td>
+        <td>A posição da célula (grade) a definir ao longo do eixo y</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Tiles_sky&quot;);<br> var map_id = layer_tilemap_get_id(lay_id);<br> var data = tilemap_get(map_id, 0, 0);<br> data = tile_set_flip(data, true);<br> tilemap_set(map_id, data, 0, 0);</p>
+  <p>O código acima obtém a identificação para o mapa de azulejos na camada &quot;Tiles_Sky&quot; e depois a usa para obter os dados do azulejo na célula (0, 0). Estes dados do azulejo são então virados antes de serem usados para definir o azulejo no mapa de azulejos novamente.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Tile_Map_Layers.htm">Camadas do mapa de azulejos</a></div>
+        <div style="float:right">A seguir: <a href="tilemap_set_at_pixel.htm">tilemap_set_at_pixel</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+tilemap_set
+-->
+  <!-- TAGS
+tilemap_set
+-->
+</body>
+</html>

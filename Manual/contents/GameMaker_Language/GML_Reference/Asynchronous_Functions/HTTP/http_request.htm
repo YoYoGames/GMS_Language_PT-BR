@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>http_request</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for http_request" />
+  <meta name="rh-index-keywords" content="http_request" />
+  <meta name="search-keywords" content="http_request" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>http_request</h1>
+  <p>Com esta função, você pode criar uma solicitação de cabeçalho HTTP para definir os parâmetros operacionais de uma transação HTTP, que pode ser usada para muitas coisas como (por exemplo) autenticação via cabeçalhos HTTP se você usar APIs RESTful. A função requer
+    o endereço IP completo do servidor a ser solicitado, bem como o tipo de solicitação a ser feita (como uma string, veja a nota abaixo): &quot;GET&quot;, &quot;HEAD&quot;, &quot;POST&quot;, &quot;PUT&quot;, &quot;DELETE&quot;, &quot;TRACE&quot;, &quot;OPTIONS&quot;,
+    ou &quot;CONNECT&quot;. Você também precisará fornecer um <tt><a href="../../Data_Structures/DS_Maps/DS_Maps.htm">Mapa DS</a></tt> de pares chave/valor (como cordas, onde a chave é o campo do cabeçalho e o valor são os dados necessários para o cabeçalho), e
+    o argumento final é uma cadeia de dados opcional que você pode adicionar ao pedido, e se não for necessário, então pode ser 0 ou uma cadeia vazia &quot;&quot;. Note que você também pode enviar um buffer (veja a seção sobre <a href="../../Buffers/Buffers.htm">Buffers</a> para mais detalhes), neste caso o último argumento seria a &quot;manipulação&quot; do buffer a ser enviado.</p>
+  <p class="note"><b>NOTA</b>: os cabeçalhos HTTP normalmente seguem o formato &quot;chave:valor&quot;, mas como o GMS cria estes pares para você a partir do ds_map, não há necessidade de incluir os dois pontos &quot;:&quot; em sua chave de mapa ou cadeias de valores.</p>
+  <p class="note"><b>NOTA</b>: Ao usar um buffer para o argumento do corpo, se a posição de busca do buffer estiver no início (0), então nenhum corpo é enviado e o buffer é preenchido com a resposta da chamada http, mas se a posição de busca do buffer for diferente de zero, então o buffer
+    O conteúdo das cordas é enviado como o corpo.</p>
+  <p class="note"><b>NOTA</b>: Você deve estar ciente de que, devido à proteção XSS nos navegadores, as solicitações e tentativas de carregamento de recursos através de domínios são bloqueadas e podem parecer retornar resultados em branco. Consulte a parte sobre <a href="HTTP.htm">Questões de Domínios Cruzados</a> para maiores detalhes.</p>
+  <p>Este evento irá gerar uma &quot;chamada de retorno&quot; que é captada por qualquer <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/HTTP.htm">evento</a> HTTP <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/HTTP.htm">,</a> caso em que irá gerar um Mapa DS ( <tt>mais</tt> comumente conhecido como &quot;dicionário&quot;)
+    que é exclusivo para este evento e que é armazenado na variável especial <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><b>async_load</b></a>. Este mapa DS tem as duas chaves a seguir relacionadas à função de solicitação:</p>
+  <ul class="colour">
+    <li><b>id: </b>O ID que foi devolvido do comando. Se você disparar uma série de solicitações <tt>http_</tt> então você precisa saber a qual você está recebendo a resposta, e assim você usaria este valor para comparar com o valor que você armazenou quando você originalmente
+      enviou o pedido para encontrar a pessoa certa.</li>
+    <li><b>response_headers:</b> Se este tiver um valor maior ou igual a 0, ele contém um mapa DS que contém os cabeçalhos HTTP retornados com a resposta à solicitação HTTP.</li>
+  </ul>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">http_request(url, método, cabeçalho_mapa, corpo);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>url</td>
+        <td>O endereço web do servidor do qual você deseja obter informações</td>
+      </tr>
+      <tr>
+        <td>método</td>
+        <td>O método de solicitação (normalmente &quot;POST&quot; ou &quot;GET&quot;, mas todos os métodos são suportados)</td>
+      </tr>
+      <tr>
+        <td>header_map</td>
+        <td>Um ds_map com os campos de cabeçalho necessários</td>
+      </tr>
+      <tr>
+        <td>corpo</td>
+        <td>Os dados a serem transmitidos seguindo os cabeçalhos (pode ser um cabo buffer binário)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var map = ds_map_create();<br> ds_map_add(map, &quot;Host&quot;, &quot;225.0.0.0.97:3000&quot;);<br> ds_map_add(map, &quot;Connection&quot;, &quot;keep-alive&quot;);<br> ds_map_add(map, &quot;Content-Length&quot;, &quot;169&quot;);<br> ds_map_add(map, &quot;Content-Length&quot;, &quot;169&quot;),
+    &quot;Cache-Control&quot;, &quot;max-age=0&quot;);<br> ds_map_add(map, &quot;Authorization&quot;, &quot;básico eW95b19hZG1pbjpjNG5lZmllbGQ=&quot;);<br> ds_map_add(map, &quot;Accept&quot;, &quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0,8&quot;);<br> ds_map_add(map, &quot;User-Agent&quot;, &quot;Mozilla/5.0 (Windows NT 6.3; WOW64<span class="notranslate">)</span> AppleWebKit/537.36 (KHTML, como Gecko) Chrome/31.0.1650.57 Safari/537.36&quot;);<br> ds_map_add(map, &quot;Content-Type&quot;, &quot;application/x-www-form-urlencoded&quot;);<br> ds_map_add(map, &quot;Accept-Encoding&quot;, &quot;gzip,deflate,sdch&quot;);<br> ds_map_add(map, &quot;Accept-Language&quot;, &quot;en-GB,en-US;q=0.8,en;q=0.6&quot;);<br> ds_map_add(map, &quot;Cookie&quot;, &quot;request_method=GET; _InAppPurchases_session=69bb6ef6eec2b&quot;);<br> var data=&quot;utf8=%E2%9C%93&amp;authenticity_token=kPmS14DcYcuKgMFZUsN3XFfj3mhs%3D&amp;product%5Bname%5D=CatchTheHaggis&amp;product%5Bproduct_id%5D=http_test&amp;commit=Create+Product&quot;;<br> request = http_request(&quot;http:225.0.0.97:3000/products&quot;,
+    &quot;POST&quot;, mapa, dados);</p>
+  <p>O código acima cria um mapa DS com os cabeçalhos HTTP relevantes para a função e, em seguida, cria uma cadeia de dados para uso, pois esta é uma solicitação POST. Finalmente a função é chamada, com seu valor de ID sendo armazenado na variável &quot;request&quot; (solicitação) para
+    verificação no evento assíncrono HTTP.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="HTTP.htm">HTTP</a></div>
+        <div style="float:right">Próximo: <a href="http_get.htm">http_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+http_request
+-->
+  <!-- TAGS
+http_request
+-->
+</body>
+</html>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_grid_multiply_grid_region</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_multiply_grid_region" />
+  <meta name="rh-index-keywords" content="ds_grid_multiply_grid_region" />
+  <meta name="search-keywords" content="ds_grid_multiply_grid_region" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_multiply_grid_region</h1>
+  <p>Com esta função é possível definir uma área dentro de uma determinada grade DS, depois pegar esses valores e multiplicá-los com aqueles encontrados em uma região separada da mesma grade DS, ou de outra (que tenha sido criada anteriormente). A região original irá
+    permanecem inalterados, enquanto a região com a qual foram multiplicados irá agora armazenar os novos valores para cada célula.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">ds_grid_multiply_grid_region(index, source, x1, y1, x2, y2, xpos, ypos);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice da grade de destino.</td>
+      </tr>
+      <tr>
+        <td>fonte</td>
+        <td>O índice da grade de fontes.</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>A posição esquerda da região de células para copiar a partir da grade de origem.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>A posição superior da região de células para copiar a partir da grade de origem.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>A posição correta da região de células para copiar a partir da grade de origem.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>A posição inferior da região de células a serem copiadas da grade de origem.</td>
+      </tr>
+      <tr>
+        <td>xpos</td>
+        <td>A posição x na grade de destino para multiplicar a região de origem com.</td>
+      </tr>
+      <tr>
+        <td>ypos</td>
+        <td>A posição y na grade de destino para multiplicar a região de origem com.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">ds_grid_multiply_grid_region(mygrid, mygrid, 0, 0, 0, 5, 5, 0, 0, 0)</p>
+  <p>Isto levaria a região de células de (0,0) a (5,5) da grade DS &quot;mygrid&quot; e as multiplicaria pelas células da posição (0,0) da mesma grade DS.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="DS_Grids.htm">Grades DS</a></div>
+        <div style="float:right">Próximo: <a href="ds_grid_value_exists.htm">ds_grid_value_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_multiply_grid_region
+-->
+  <!-- TAGS
+ds_grid_multiply_grid_region
+-->
+
+</body></html>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>linha_de_colisão</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion collision_line" />
+  <meta name="rh-index-keywords" content="collision_line" />
+  <meta name="search-keywords" content="collision_line" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>linha_de_colisão</h1>
+  <p><span class="inline">Collision_line</span> verifica ao longo de uma linha do ponto x1,y1 ao ponto x2,y2 para uma colisão com <b>qualquer</b> instância do objeto especificado pelo argumento &quot;obj&quot;. esta verificação pode ser precisa ou não, mas para
+    para que as colisões sejam habilitadas, o objeto ou instância que você está verificando também <i>deve</i> ter as colisões precisas habilitadas para seus duendes. Caso contrário, a verificação padrão é baseada em caixas delimitadoras. A imagem a seguir ilustra como isto funciona:</p>
+  <p><img alt="Collision line example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/collision_line_illustration.png">Lembre-se, para que colisões precisas sejam consideradas <i>tanto</i> o objeto sprite
+    e a função de colisão deve ter uma marcação precisa como em. Também deve ser observado que o valor de retorno da função pode ser o id de <i>qualquer uma</i> das instâncias consideradas em colisão ao longo da linha, portanto, se três instâncias se sobrepuserem a
+    linha definida, qualquer uma de suas identificações poderia ser o valor de retorno da função.</p>
+  <p>Note que ao invés de um índice de objetos você pode fornecer uma instância <a href="../../Asset_Management/Instances/Instance_Variables/id.htm"><tt>id</tt></a> para verificar uma instância específica, ou as <a href="../../../GML_Overview/Instance_Keywords.htm">palavras-chave da instância</a> <span class="inline">all</span>, ou <span class="inline">other</span> (dependendo do evento e do escopo do código atual).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">collision_line(x1, y1, x2, y2, obj, prec, notme);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>A coordenada x do início da linha.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>A coordenada y do início da linha.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>A coordenada x do final da linha.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>A coordenada y do final da linha.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>O objeto a ser verificado, por exemplo, colisões.</td>
+      </tr>
+      <tr>
+        <td>prec</td>
+        <td>Se a verificação é baseada em colisões precisas<tt>(verdadeiro</tt>, que é mais lento) ou em sua caixa de delimitação em geral<tt>(falso</tt>, mais rápido).</td>
+      </tr>
+      <tr>
+        <td>notme</td>
+        <td>Se a instância de chamada, se relevante, deve ser excluída<tt>(verdadeira</tt>) ou não<tt>(falsa</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Identificação da instância ou de ninguém</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">com (obj_Enemy)<br> {
+    <br> if collision_line(100, 400, 100, 600, id, false, false) instance_destroy();<br> }
+  </p>
+  <p>Este código faz com que todas as instâncias de &quot;obj_Enemy&quot; verifiquem numa linha de 100x, 400y a 100x, 600y para uma colisão com eles mesmos, e se houver uma, então elas são destruídas.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Collisions.htm">Colisões</a></div>
+        <div style="float:right">Próximo: <a href="collision_line_list.htm">collision_line_list</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+collision_line
+-->
+  <!-- TAGS
+collision_line
+-->
+</body>
+</html>

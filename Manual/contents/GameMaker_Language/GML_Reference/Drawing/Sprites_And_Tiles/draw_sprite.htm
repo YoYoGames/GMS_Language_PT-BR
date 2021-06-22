@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_sprite</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_sprite" />
+  <meta name="rh-index-keywords" content="draw_sprite" />
+  <meta name="search-keywords" content="draw_sprite" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_sprite</h1>
+  <p>Esta função desenha o duende dado e a subimagem em uma posição dentro da sala de jogo. Para o sprite você pode usar a variável de instância <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_index.htm"><tt>sprite_index</tt></a> para
+    obter o sprite atual que é atribuído à instância que executa o código, ou você pode usar qualquer outro ativo sprite. O mesmo vale para a subimagem, pois esta também pode ser definida para a variável da instância <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/image_index.htm"><tt>image_index</tt></a>    que definirá a subimagem para aquela selecionada para a instância atual sprite (note que você pode desenhar um sprite diferente e ainda usar o valor da subimagem para a instância atual), ou você pode usar qualquer outro valor para isso para desenhar uma subimagem específica
+    do duende escolhido. Se o valor for maior que o número de subimagens, então o <span class="notranslate">GameMaker Studio 2</span> fará um loop automático do número para selecionar a imagem correspondente (por exemplo, se o sprite a ser desenhado tiver 5 subimagens numeradas de 0 a
+    4 e definimos o valor do índice como 7, então a função irá desenhar a subimagem 3, numerada como 0). Finalmente, a posição x e y é a posição dentro da sala em que o duende será sorteado, e está centrada no <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">offset</a> sprite <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">x</a> e no <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">offset y</a>.</p>
+  <p class="note"><b>NOTA</b>: Esta função pode não funcionar como esperado ao usar sprites de animação de esqueleto, e você pode descobrir que a função apenas desenha o primeiro frame da pose padrão. Você deve usar as funções <tt>draw_skeleton_*</tt> em seu lugar.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">draw_sprite(sprite, subimg, x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>O índice do duende a desenhar.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td>A subimagem (frame) do duende a desenhar (image_index ou -1 correlacionado com o frame atual da animação no objeto).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A coordenada x de onde desenhar o duende.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A coordenada y de onde desenhar o duende.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">draw_sprite(sprite_index, image_index, x, y);<br> draw_sprite(spr_Halo, 0, x, y-32);</p>
+  <p>Isto atrairá as instâncias designadas sprite (sprite_index) com a subimagem atual na posição x e y da instância dentro da sala. Em seguida, desenhará o primeiro quadro do sprite indexado por &quot;spr_Halo&quot; na mesma posição x e y
+    mas 32 pixels "acima".</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sprites_And_Tiles.htm">Sprites e Azulejos</a></div>
+        <div style="float:right">Próximo: <a href="draw_sprite_ext.htm">draw_sprite_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite
+-->
+  <!-- TAGS
+draw_sprite
+-->
+</body>
+</html>

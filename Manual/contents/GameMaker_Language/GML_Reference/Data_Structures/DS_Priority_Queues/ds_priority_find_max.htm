@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_priority_find_max</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_priority_find_max" />
+  <meta name="rh-index-keywords" content="ds_priority_find_max" />
+  <meta name="search-keywords" content="ds_priority_find_max" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_priority_find_max</h1>
+  <p>Com esta função você pode encontrar o valor armazenado na fila de prioridade mais alta, e se mais de um valor tiver a mesma prioridade então qualquer um deles poderia ser devolvido em qualquer ordem. Entretanto, ao contrário de <a href="ds_priority_delete_max.htm"><tt>ds_priority_delete_delete_max()</tt></a>,
+    esta função não removerá o valor da fila.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">ds_priority_find_max(id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>A identificação da fila prioritária a ser usada.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real ou String</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se ai_move<br> {
+    <br> script_execute(ds_priority_find_max(ai_priority));
+    <br> }
+  </p>
+  <p>O código acima verifica uma variável de instância e se ela retornar <tt>verdadeiro</tt>, executará uma função de script indexada na fila de prioridade com o valor de prioridade mais alto.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="DS_Priority_Queues.htm">Filas de espera prioritárias DS</a></div>
+        <div style="float:right">Próximo: <a href="ds_priority_find_min.htm">ds_priority_find_min</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_priority_find_max
+-->
+  <!-- TAGS
+ds_priority_find_max
+-->
+
+</body></html>

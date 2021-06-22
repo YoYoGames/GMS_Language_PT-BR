@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>json_parse</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for json_parse" />
+  <meta name="rh-index-keywords" content="json_parse" />
+  <meta name="search-keywords" content="json_parse" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>json_parse</h1>
+  <p>Esta função pode ser usada para analisar uma cadeia JSON (previamente criada usando <a href="json_stringify.htm">json_stringify</a> ou de qualquer fonte válida), e convertê-la em uma coleção de arrays ou estruturas, onde uma matriz é o equivalente a um
+    A matriz JSON e uma estrutura é o equivalente de um objeto JSON. Você fornece a string para analisar, e a função retornará a matriz ou estrutura de nível superior que pode então ser verificada em seu código. Se você não tiver certeza do conteúdo do JSON, você pode
+    usar as diferentes <a href="../../Variable_Functions/Variable_Functions.htm">Funções Variáveis</a> (como <a href="../../Variable_Functions/typeof.htm"><span class="inline">typeof()</span></a> ou <a href="../../Variable_Functions/variable_struct_get_names.htm"><span class="inline">variable_struct_get_names()</span></a>)
+    para verificar o conteúdo devolvido. Note que ao tentar analisar um valor inválido (ou seja: não uma string), será lançado um erro de exceção.</p>
+  <p>Se a cadeia JSON fornecida incluir &quot;indefinido&quot; como valor para qualquer propriedade, ela será convertida para pointer_null <tt>ao</tt> ser analisada.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code"><code>json_parse</code>(json)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>json</td>
+        <td>O JSON a analisar (um fio)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Estruturas e matrizes aninhadas</p>
+  <p> </p>
+  <h4>Exemplo ampliado:</h4>
+  <p>Neste exemplo, analisaremos a seguinte seqüência JSON que manteremos na variável &quot;json&quot;:</p>
+  <p class="code">json = &quot;myObj]&quot;: &quot;maçãs&quot;:10, &quot;laranjas&quot;:12, &quot;batatas&quot;:100000, &quot;abacates&quot;:0, &quot;myArray&quot;:[0, 1, 2, 2, 4, 0, 1, 5, 1]}&quot;</p>
+  <p>Esta corda seria parsed algo assim:</p>
+  <p class="code">data = json_parse(json);<br> if variable_struct_exists(data, &quot;myObj&quot;)<br> {
+    <br> if is_struct(data.myObj)<br> {<br> var _names = variable_struct_get_names(data.myObj);<br> var _str = &quot;&quot;;<br> for (var i = 0; i &lt; array_length(_names); i++;) <br> {<br> _str = _nomes[i] + &quot;:
+    &quot; + string(variable_struct_get(data.myObj, _names[i]));<br> show_debug_message(_str);<br> } <br> } <br> if variable_struct_exists(data, &quot;myArray&quot;)<br> {<br> if is_array(data.myArray)<br> {<br> show_debug_message(data.myArray);<br> } <br> } <br> }
+  </p>
+  <p>O código acima analisará a seqüência JSON dada, gerando a seguinte saída do console:</p>
+  <p class="code">laranjas: 12<br> batatas: 100000<br> abacates: 0<br> maçãs: 10<br> [ 0,1,2,2,2,4,0,0,1,5,1 ]</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Encoding_And_Hashing.htm">Codificação de arquivos</a></div>
+        <div style="float:right">Próximo: <a href="base64_encode.htm">base64_encode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+json_parse
+-->
+  <!-- TAGS
+json_parse
+-->
+</body>
+</html>

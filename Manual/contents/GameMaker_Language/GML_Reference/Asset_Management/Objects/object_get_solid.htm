@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>objeto_get_solid</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function object_get_solid" />
+  <meta name="rh-index-keywords" content="object_get_solid" />
+  <meta name="search-keywords" content="object_get_solid" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>objeto_get_solid</h1>
+  <p>Esta função lhe dirá se o objeto que você está verificando foi sinalizado como &quot;sólido&quot; ou não. Um objeto sólido gera um evento de colisão especial ao utilizar o sistema de colisão tradicional (ou seja: o mundo da física está desligado). Por favor, note que
+    que esta não é uma função de instância! Portanto, você pode ter um objeto sólido e uma instância normal do mesmo objeto e vice-versa. Você pode definir uma bandeira sólida de instâncias individuais usando a <a href="../Instances/Instance_Variables/solid.htm"><tt>sólido</tt></a> exemplo
+    variável.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">object_get_solid(obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>O índice do objeto a ser verificado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if (!solid) &amp;&amp; (object_get_solid(object_index))<br> {<br> solid = true;<br> }</p>
+  <p>O código acima verificará a instância em execução para ver se ela é sólida ou não, assim como verificará o índice de objetos da instância para ver se ela está marcada como sólida ou não. Se a instância ainda <i>não</i> é sólida, o índice de objetos é sinalizado como sólido, ele
+    vai se tornar &quot;sólido&quot; para o caso.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Objects.htm">Objetos</a></div>
+        <div style="float:right">Próximo: <a href="object_get_sprite.htm">object_get_sprite</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+object_get_solid
+-->
+  <!-- TAGS
+object_get_solid
+-->
+</body>
+</html>

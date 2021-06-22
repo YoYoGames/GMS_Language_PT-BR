@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_set_rich_presence</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_set_rich_presence" />
+  <meta name="rh-index-keywords" content="xboxlive_set_rich_presence" />
+  <meta name="search-keywords" content="xboxlive_set_rich_presence" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_set_rich_presence</h1>
+  <p>Esta função irá definir a rica cadeia de presença para o usuário em questão. Uma cadeia de presença rica mostra a atividade dentro do jogo de um usuário após o nome do jogo que o usuário está jogando, separado por um hífen. Esta cadeia de caracteres é exibida sob o nome de um jogador.
+    Gamertag na lista &quot;Friends &amp; Clubs&quot;, bem como no perfil do usuário do Xbox Live do jogador.</p>
+  <p>Ao usar esta função, você precisa fornecer o ponteiro de identificação do usuário para o usuário, e então você pode marcar o usuário como ativo no jogo ou não (usando <tt>verdadeiro/falso</tt>). Se definido como <tt>falso</tt>, então a cadeia de presença rica será
+    anexado com &quot;/afk&quot; ou algo apropriado. O próximo argumento é o rico ID de cadeia de presença para mostrar, e então finalmente você pode (opcionalmente) fornecer uma cadeia de <tt>serviços_config_id</tt>. Note que este é um argumento opcional, pois se você
+    chamaram <a href="../Stats_And_Leaderboards/xboxlive_stats_setup.htm"><tt>xboxlive_stats_setup()</tt></a> você não precisa passar o <tt>service_config_id</tt> aqui.</p>
+  <p>Para mais informações sobre a presença rica e como configurar as cordas a serem usadas no centro parceiro, consulte a seguinte documentação da Microsoft:</p>
+  <ul>
+    <li><a href="https://docs.microsoft.com/en-us/gaming/xbox-live/features/social/rich-presence/" target="_blank">Visão geral das cordas de presença</a></li>
+  </ul>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">xboxlive_set_rich_presence(user_id, is_user_active, rich_presence_string, [service_config_id])</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>O ponteiro de identificação do usuário a ser verificado.</td>
+      </tr>
+      <tr>
+        <td>is_user_active</td>
+        <td>Marcar o usuário como ativo ou não.</td>
+      </tr>
+      <tr>
+        <td>rich_presence_string</td>
+        <td>O rico ID de cadeia de presença a usar (como definido no Centro de Parceiros - máximo 50 caracteres)</td>
+      </tr>
+      <tr>
+        <td>service_config_id</td>
+        <td>[OPCIONAL] Esta é a string config_id para o jogo.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var pad_uid = xboxlive_user_for_pad(0);<br> xboxlive_set_rich_presence(pad_uid, true, &quot;Playing_Challenge&quot;);</p>
+  <p>O código acima obtém o ponteiro de identificação do usuário para o usuário atribuído ao slot do gamepad [0], e então define a cadeia de presença rica para esse usuário.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Users_And_Accounts.htm">Usuários e Contas</a></div>
+        <div style="float:right">Próximo: <a href="xboxlive_gamedisplayname_for_user.htm">xboxlive_gamedisplayname_for_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_set_rich_presence
+-->
+  <!-- TAGS
+xboxlive_set_rich_presence
+-->
+</body>
+</html>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>object_set_persistent</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function object_set_persistent" />
+  <meta name="rh-index-keywords" content="object_set_persistent" />
+  <meta name="search-keywords" content="object_set_persistent" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>object_set_persistent</h1>
+  <p>Com esta função você pode definir a persistência de um objeto específico. Um objeto persistente é &quot;transportado&quot; de sala para sala e mantém suas propriedades o tempo todo (para mais informações sobre persistência, consulte a seção sobre o <a href="../../../../The_Asset_Editors/Objects.htm">Editor de</a> Objetos <a href="../../../../The_Asset_Editors/Objects.htm">)</a>.
+    Definir a persistência do objeto significa que todas as instâncias deste objeto que são criadas <i>após a persistência ter sido alterada</i> serão criadas persistentes, enquanto as instâncias que já estão na sala podem não ser afetadas.</p>
+  <p>Quando você cria uma instância com persistência habilitada em uma sala, lhe será atribuída uma camada ou uma profundidade (dependendo de qual função você usou para criar a instância do objeto). Quando a sala é trocada, e se a seguinte sala <i>não</i> tiver
+    uma camada com o mesmo nome ou profundidade que a designada, então uma nova camada será criada para a instância que persiste nas salas. Se você deu uma camada nomeada quando a instância foi criada, então a nova camada também será nomeada com o mesmo
+    como camada original, enquanto que se você atribuir uma profundidade à instância, então a nova camada será denominada &quot; _layer_XXX<tt>&quot;,</tt> onde &quot;XXX&quot; é um valor hexadecimal usado para dar à camada um nome único. Estas camadas serão removidas da sala
+    no Room End. Outra coisa a se notar sobre as camadas e instâncias persistentes é que se você tiver atribuído à instância uma camada nomeada na criação, e houver outra camada nas seguintes salas com o mesmo nome, então a instância persistente será
+    atribuído à camada com o mesmo nome, <i>independentemente da profundidade da camada</i>. Finalmente, se uma instância persistente se move para uma sala com uma camada na mesma profundidade em que a instância foi criada, ela <i>não</i> será atribuída a esta camada, mas
+    ao invés disso, uma nova camada será criada na mesma profundidade (seguindo a convenção de nomenclatura explicada anteriormente).</p>
+  <p>Por favor, note que esta não é uma função de instância! Você pode definir a bandeira persistente de instâncias individuais usando a <a href="../Instances/Instance_Variables/persistent.htm"><tt>persistente</tt></a> e, portanto, todas as dez instâncias foram marcadas como persistentes.
+    mesmo que o objeto em questão tenha a bandeira definida como falsa no IDE, e mesmo que você mude a bandeira persistente do objeto para verdadeiro usando esta função, todas as instâncias que atualmente na sala permanecerão como estavam, e apenas instâncias criadas
+    depois de chamar a função, começará com a bandeira persistente como verdadeira.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">object_set_persistent(index, pers);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice do objeto a ser modificado.</td>
+      </tr>
+      <tr>
+        <td>pers</td>
+        <td>Se o objeto deve ser assinalado como persistente<tt>(verdadeiro</tt>) ou não<tt>(falso</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if (room == rm_final)<br> {<br> object_set_persistent(obj_Player, false);<br> } <br> instance_create_layer(32, 32, &quot;Instances&quot;, obj_Player);</p>
+  <p>O código acima verifica em que sala a instância está atualmente e se está na &quot;rm_final&quot; especificada, então define a persistência do objeto &quot;obj_Player&quot; como falsa e então cria a instância.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Objects.htm">Objetos</a></div>
+        <div style="float:right">Próximo: <a href="object_set_solid.htm">object_set_solid</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+object_set_persistent
+-->
+  <!-- TAGS
+object_set_persistent
+-->
+</body>
+</html>

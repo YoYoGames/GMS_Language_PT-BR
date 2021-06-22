@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>matrix_build_lookat</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for matrix_build_lookat" />
+  <meta name="rh-index-keywords" content="matrix_build_lookat" />
+  <meta name="search-keywords" content="matrix_build_lookat" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>matrix_build_lookat</h1>
+  <p>Esta função constrói uma matriz &quot;look-at&quot; (vista) com base nos parâmetros especificados abaixo. Como esta função modifica a matriz de visão e não a matriz de projeção, deve-se primeiro inicializar a matriz de projeção usando a outra matriz
+    função <a href="matrix_build_projection_perspective.htm"><tt>matrix_build_projection_perspective()</tt></a>A câmera de visão é utilizada para mover a câmera dentro da projeção.</p>
+  <p>Para definir a visão, é necessário definir primeiro a posição <i>de onde</i> você olha, que é indicada pelos parâmetros (xfrom, yfrom, zfrom). Em seguida, você deve especificar a direção <i>que</i> você olha e isto é feito dando um segundo ponto para olhar em
+    com os argumentos (xto, yto, zto). Finalmente, você ainda pode girar a câmera ao redor da linha do ponto de vista para o ponto de vista, e para especificar isto, devemos dar um vetor &quot;para cima&quot; - a direção que está para cima na câmera. Isto é
+    dados pelos três últimos argumentos (xup, yup, zup).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">matrix_build_lookat(xfrom, yfrom, zfrom, xto, yto, zto, xup, yup, yup, zup);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>xfrom</td>
+        <td>A coordenada x da posição de onde se deve olhar.</td>
+      </tr>
+      <tr>
+        <td>yfrom</td>
+        <td>A coordenada y da posição de onde se deve olhar.</td>
+      </tr>
+      <tr>
+        <td>zfrom</td>
+        <td>A coordenada z da posição de onde se deve olhar.</td>
+      </tr>
+      <tr>
+        <td>xto</td>
+        <td>A coordenada x da posição a ser observada.</td>
+      </tr>
+      <tr>
+        <td>yto</td>
+        <td>A coordenada y da posição a ser observada.</td>
+      </tr>
+      <tr>
+        <td>zto</td>
+        <td>A coordenada z da posição a ser observada.</td>
+      </tr>
+      <tr>
+        <td>xup</td>
+        <td>A coordenada x do vetor &quot;para cima&quot;.</td>
+      </tr>
+      <tr>
+        <td>yup</td>
+        <td>A coordenada y do vetor &quot;para cima&quot;.</td>
+      </tr>
+      <tr>
+        <td>zup</td>
+        <td>A coordenada z do vetor &quot;para cima&quot;.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Índice matricial</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">viewmat = matrix_build_lookat(640, 240, -10, 640, 240, 0, 0, 1, 0);<br> projmat = matrix_build_projection_ortho(640, 480, 1.0, 32000.0);<br> camera_set_view_mat(view_camera[0], viewmat);<br> camera_set_proj_mat(view_camera[0], projmat);</p>
+  <p>O código acima cria uma nova matriz de visualização e matriz ortográfica, armazena suas identificações em variáveis locais e depois as utiliza para definir as matrizes de visualização e projeção para a câmera designada para a porta de visualização[0].</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Matrix_Functions.htm">Funções da Matriz</a></div>
+        <div style="float:right">Próximo: <a href="matrix_build_projection_ortho.htm">matrix_build_projection_ortho</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+matrix_build_lookat
+-->
+  <!-- TAGS
+matrix_build_lookat
+-->
+
+</body></html>

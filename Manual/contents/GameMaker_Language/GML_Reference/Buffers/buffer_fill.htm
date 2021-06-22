@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_fill</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_fill" />
+  <meta name="rh-index-keywords" content="buffer_fill,buffer_u8,buffer_s8,buffer_u16,buffer_s16,buffer_u32,buffer_s32,buffer_u64,buffer_f16,buffer_f32,buffer_f64,buffer_bool,buffer_string,buffer_text" />
+  <meta name="search-keywords" content="buffer_fill" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_fill</h1>
+  <p>Esta função pode ser usada para preencher um buffer previamente criado com um determinado tipo e valor de dados. Os dados com os quais você preenche o buffer devem estar de acordo com o argumento &quot;tipo&quot; desta função, o que significa que você não pode tentar preencher com um
+    e usar o tipo inteiro de 16 bits não assinado, por exemplo. As constantes do tipo são as mesmas que as utilizadas pelo <a href="buffer_read.htm"><tt>buffer_read()</tt></a> e <a href="buffer_write.htm"><tt>buffer_write()</tt></a> funções. O &quot;tamanho&quot;.
+    é o tamanho do buffer (em bytes) que você deseja preencher, enquanto o offset é o valor do offset (também em bytes) desde o início do buffer até o início do preenchimento.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">buffer_fill(buffer, offset, tipo, valor, tamanho);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tampão</td>
+        <td>O índice do buffer a ser preenchido.</td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td>O valor da compensação de dados (em bytes).</td>
+      </tr>
+      <tr>
+        <td>tipo</td>
+        <td>O tipo de dados que devem ser escritos no buffer (ver a lista de constantes <a href="buffer_write.htm">aqui</a>).</td>
+      </tr>
+      <tr>
+        <td>valor</td>
+        <td>Os dados a serem escritos.</td>
+      </tr>
+      <tr>
+        <td>tamanho</td>
+        <td>O tamanho do buffer (em bytes) que você deseja preencher.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">map_buffer = buffer_create(16384, buffer_fixed, 0);<br> buffer_fill(map_buffer, 0, buffer_u16, 0, 16384);</p>
+  <p>O código acima encontra o início do buffer com o id armazenado na variável &quot;buff&quot; eles escrevem uma série de valores inteiros assinados de 16 bits para ele.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Buffers.htm">Tampões</a></div>
+        <div style="float:right">Próximo: <a href="buffer_seek.htm">buffer_seek</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_fill
+-->
+  <!-- TAGS
+buffer_fill
+-->
+</body>
+</html>

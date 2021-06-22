@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_load_ext_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_load_ext" />
+  <meta name="rh-index-keywords" content="buffer_load_ext" />
+  <meta name="search-keywords" content="buffer_load_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_load_ext_ext</h1>
+  <p>Esta função irá carregar os dados do buffer que foram salvos anteriormente usando o <a href="buffer_save.htm"><tt>buffer_save()</tt></a> funções em um buffer já criado. Você dá a identificação do buffer previamente criado para carregar, depois o buffer salvo
+    arquivo de buffer para carregar, e finalmente o offset desde o início do buffer (em bytes) para o qual você deseja carregar os dados.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">buffer_load_ext(buffer, nome do arquivo, offset);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tampão</td>
+        <td>O índice do buffer para o qual carregar.</td>
+      </tr>
+      <tr>
+        <td>nome do arquivo</td>
+        <td>O nome do arquivo a ser carregado.</td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td>A compensação dentro do buffer para carregar a (em bytes).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var pos = buffer_seek(player_buffer, buffer_seek_end, 0);<br> buffer_load(player_buffer, &quot;Data_Save.sav&quot;, pos);</p>
+  <p>O código acima obterá primeiro a posição do final do buffer indexado na variável &quot;player_buffer&quot; e depois carregará os dados do dado para aquela posição (note que este exemplo só funcionará com &quot;grow&quot; ou &quot;wrap&quot;.
+    tipos de buffer).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Buffers.htm">Tampões</a></div>
+        <div style="float:right">Próximo: <a href="buffer_load_async.htm">buffer_load_async</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_load_ext
+-->
+  <!-- TAGS
+buffer_load_ext
+-->
+</body>
+</html>

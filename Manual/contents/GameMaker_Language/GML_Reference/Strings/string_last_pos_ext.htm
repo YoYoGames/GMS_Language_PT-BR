@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>string_last_pos_ext_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for string_last_pos_ext" />
+  <meta name="rh-index-keywords" content="string_last_pos_ext" />
+  <meta name="search-keywords" content="string_last_pos_ext" />
+</head>
+
+<body>
+<!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>string_last_pos_ext_ext</h1>
+  <p>Esta função retornará a posição de caracteres de uma instância de uma sub-cordilheira dentro de uma corda, pesquisando para trás através da corda a partir da posição dada como posição inicial. A função retornará 0 se a cadeia de caracteres de busca não for encontrada, ou
+    a posição do primeiro caractere da cadeia de busca, se for. Tenha em mente que para as cadeias de suporte herdadas são indexadas a partir de 1, portanto 1 é a primeira posição na cadeia, não 0 como você pode esperar.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">string_last_pos_ext(substr, str, start_pos);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>substr</td>
+        <td>O substrato a ser procurado no cordão.</td>
+      </tr>
+      <tr>
+        <td>str</td>
+        <td>O fio.</td>
+      </tr>
+      <tr>
+        <td>start_pos</td>
+        <td>A posição de partida para a busca.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Inteiro</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if (string_last_pos_ext(&quot;,&quot;, texto, 20) != 0)<br> {
+    <br> string_insert(nome, texto, string_last_pos_ext(&quot;,&quot;, texto, 20));<br> }
+  </p>
+  <p>O código acima procura uma vírgula na variável &quot;texto&quot; antes do 20º caracter, e se encontrar uma, insere o &quot;nome&quot; do substrato nessa posição.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Strings.htm">Cordas</a></div>
+        <div style="float:right">Próximo: <a href="string_repeat.htm">string_repeat</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+string_last_pos_ext
+-->
+  <!-- TAGS
+string_last_pos_ext
+-->
+
+</body></html>

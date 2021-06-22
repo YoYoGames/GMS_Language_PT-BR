@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_flush_multi</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_flush_multi" />
+  <meta name="rh-index-keywords" content="sprite_flush_multi" />
+  <meta name="search-keywords" content="sprite_flush_multi" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_flush_multi</h1>
+  <p>Com esta função você pode remover da memória de textura qualquer número de páginas de textura para os sprites dados. Você fornece os índices sprite como uma matriz e as páginas de textura a que eles são designados serão removidas da memória de textura. Observe que se um dos
+    as páginas de textura são usadas em outro lugar na sala (por outro sprite ou um fundo, etc...) você pode ter um pequeno acerto de desempenho, pois a página é imediatamente recarregada de volta à memória, portanto, deve-se ter cuidado ao usar esta função.
+    Note que a função retornará <tt>-1</tt> se não houver suporte para os recursos escolhidos, ou retornará <tt>0</tt> se todos funcionarem corretamente.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">sprite_flush_multi(array);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>matriz</td>
+        <td>Array com os índices de sprite para nivelar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Int (-1 ou 0)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">spr_a[0] = spr_Player_Aura1;<br> spr_a[1] = spr_Player_Aura2;<br> spr_a[2] = spr_Player_Aura3;<br> spr_a[3] = spr_Player_Aura4;<br> sprite_flush_multi(spr_a);
+  </p>
+  <p>O código acima cria uma matriz onde cada elemento contém um índice sprite. Esta matriz é então usada para limpar essas texturas sprite da memória.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sprite_Manipulation.htm">Manipulação de Sprite</a></div>
+        <div style="float:right">Próximo: <a href="sprite_prefetch.htm">sprite_prefetch</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_flush_multi
+-->
+  <!-- TAGS
+sprite_flush_multi
+-->
+</body>
+</html>

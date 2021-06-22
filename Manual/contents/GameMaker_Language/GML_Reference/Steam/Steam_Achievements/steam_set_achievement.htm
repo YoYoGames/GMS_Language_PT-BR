@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title> vapor_set_achievement</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_set_achievement" />
+  <meta name="rh-index-keywords" content="steam_set_achievement" />
+  <meta name="search-keywords" content="steam_set_achievement" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">vapor_set_achievement</span></h1>
+  <p>Com esta função você pode dizer ao <span class="notranslate">Steam</span> API para premiar (&quot;set&quot;) uma conquista para o jogador. Estas conquistas deveriam ter sido definidas na página de contas do painel de controle <span class="notranslate">Steamworks</span>para seu jogo e a seqüência que é passada para a função
+    deve corresponder ao utilizado como o <b>nome API</b> no painel de controle. O <span class="notranslate">Steam</span> Game Overlay exibirá um painel de notificação ao usuário informando sobre a realização que recebeu, a menos que a realização já tenha sido concedida, em
+    caso em que nada vai acontecer.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code"><span class="notranslate">steam_set_achievement</span>(ach_name);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>ach_name</td>
+        <td>O nome da realização a ser estabelecida (string).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se hp &lt;= 0<br> {
+    <br> global.Death += 1;<br> if global.Deaths == 10<br> {
+    <br> if !<span class="notranslate">vapor_get_achievement</span>(&quot;ach_Player_Dies_Ten_Times&quot;) vapor_set_achievement(&quot;ach_Player_Dies_Ten_Times&quot;);<br> }
+    <br> }
+  </p>
+  <p>O código acima recompensará o jogador uma conquista se a variável global &quot;Mortes&quot; for igual a 10 e se a conquista ainda não tiver sido concedida.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Steam_Achievements.htm">Conquistas e estatísticas</a></div>
+        <div style="float:right">Próximo: <a href="steam_get_achievement.htm"><span class="notranslate">steam_get_achievement</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_set_achievement
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_set_achievement
+-->
+</body>
+</html>

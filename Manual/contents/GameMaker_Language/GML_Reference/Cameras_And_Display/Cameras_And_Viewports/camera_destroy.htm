@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>camera_destroy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for camera_destroy" />
+  <meta name="rh-index-keywords" content="camera_destroy" />
+  <meta name="search-keywords" content="camera_destroy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>camera_destroy</h1>
+  <p>Com esta função, você pode destruir qualquer câmera. Ao chamar a função você fornece o valor único de identificação da câmera, que você obtém das funções <tt>camera_create_*</tt> ou do <a href="view_camera.htm"><tt>view_camera</tt></a> se estiver usando o
+    Editor da sala para configurar o porto de vista e a vista. Você <i>nunca</i> deve destruir uma câmera que está atualmente atribuída a uma vista visível, a menos que você esteja atribuindo uma nova câmera a essa vista no mesmo passo, e você deve <i>sempre</i> destruir qualquer câmera
+    que você criou através de código quando não é mais necessário para evitar vazamentos de memória, e você também pode destruir as câmeras padrão se tiver alguma atribuída no Editor de Sala, mas você deve atribuir uma nova câmera para a porta de visualização (ou desabilitar
+    isto) caso contrário, você obterá resultados estranhos.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">camera_destroy(camera_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>camera_id</td>
+        <td>O valor único de identificação da câmera retornou quando você criou a câmera.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (valor único de identificação da câmera)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">camera_destroy(view_camera[0]);<br> view_camera[0] = camera_create_view(0, 0, 640, 480, 0, obj_Player, 5, 5, -1, -1, -1);</p>
+  <p>O código acima destrói a câmera atualmente designada para visualizar a porta [0] e então cria uma nova câmera e atribui sua identificação a essa porta.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Cameras_And_View_Ports.htm">Câmeras e Ver Portos</a></div>
+        <div style="float:right">A seguir: <a href="camera_apply.htm">camera_apply</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_destroy
+-->
+  <!-- TAGS
+camera_destroy
+-->
+</body>
+</html>

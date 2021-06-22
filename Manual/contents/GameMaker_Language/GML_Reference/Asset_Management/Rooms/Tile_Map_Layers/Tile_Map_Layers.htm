@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Camadas do mapa de azulejos</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Tile Map Layers" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Tile Map Layers" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Camadas do mapa de azulejos</h1>
+  <p>O <span class="notranslate">GameMaker Studio 2</span> <a href="../../../../../The_Asset_Editors/Rooms.htm">Room Editor</a> permite que você adicione azulejos em qualquer sala usando <i>camadas</i>. Como o nome indica, uma camada de mapa de azulejos é simplesmente uma coleção de conjuntos de azulejos que são todos
+    considerado como estando na mesma profundidade dentro da sala, e empilhando camadas você pode fazer com que algumas coisas se sobreponham a outras ou se subtraiam a outras. Você também pode controlar certos aspectos das camadas a partir do código, adicionando ou removendo coisas, ou alterando certas propriedades do
+    camada ou o que ela contém em tempo de execução. Observe que no editor da sala você está limitado a um mapa de azulejos por camada (o <a href="../../../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm"><i>Camada de azulejos</i></a>), mas quando se trabalha com eles em
+    código, você pode ter vários mapas de azulejos atribuídos a uma única camada, com cada mapa tendo sua própria identificação e propriedades únicas, portanto:</p>
+  <ul class="colour">
+    <li>O <i>conjunto de azulejos</i> é o recurso que você utiliza para criar camadas de azulejos e mapas de azulejos</li>
+    <li>A <i>camada de azulejos</i> é o que você cria no Editor de Sala para adicionar conjuntos de azulejos a</li>
+    <li>O <i>mapa de azulejos</i> é o que você chama de coleção de azulejos que são adicionados a uma camada, seja no editor da sala ou através de código, como um único elemento sobre essa camada</li>
+  </ul>
+  <p>Abaixo está uma lista de todas as funções que podem ser usadas para a edição de <b>camadas de mapas de azulejos</b>:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="layer_tilemap_get_id.htm">layer_tilemap_get_id</a></li>
+    <li><a href="layer_tilemap_exists.htm">layer_tilemap_existe</a></li>
+    <li><a href="layer_tilemap_create.htm">layer_tilemap_create</a></li>
+    <li><a href="layer_tilemap_destroy.htm">layer_tilemap_destroy</a></li>
+    <li><a href="tilemap_tileset.htm">tilemap_tileset</a></li>
+    <li><a href="tilemap_clear.htm">tilemap_clear</a></li>
+    <li><a href="tilemap_x.htm">tilemap_x</a></li>
+    <li><a href="tilemap_y.htm">mapa do azulejo_y</a></li>
+    <li><a href="tilemap_set.htm">tilemap_set</a></li>
+    <li><a href="tilemap_set_at_pixel.htm">mapa_do_cartão_de_fixos_na_pixel</a></li>
+    <li><a href="tilemap_set_mask.htm">mapa_modelo_do_cartão</a></li>
+    <li><a href="tilemap_set_global_mask.htm">mapa_modelo_modelo_global</a></li>
+    <li><a href="tilemap_set_width.htm">tilemap_set_width</a></li>
+    <li><a href="tilemap_set_height.htm">mapa_móvel_altura_do_set</a></li>
+    <li><a href="tilemap_get_mask.htm">mapa_get_mask do azulejo</a></li>
+    <li><a href="tilemap_get_global_mask.htm">tilemap_get_global_mask</a></li>
+    <li><a href="tilemap_get_tileset.htm">tilemap_get_tileset</a></li>
+    <li><a href="tilemap_get_frame.htm">tilemap_get_frame</a></li>
+    <li><a href="tilemap_get_tile_width.htm">mapa_get_móvel_largura_do_móvel</a></li>
+    <li><a href="tilemap_get_tile_height.htm">mapa de azulejos_get_tile_height</a></li>
+    <li><a href="tilemap_get_width.htm">tilemap_get_width</a></li>
+    <li><a href="tilemap_get_height.htm">tilemap_get_height</a></li>
+    <li><a href="tilemap_get_x.htm">tilemap_get_x</a></li>
+    <li><a href="tilemap_get_y.htm">tilemap_get_y</a></li>
+    <li><a href="tilemap_get.htm">tilemap_get</a></li>
+    <li><a href="tilemap_get_at_pixel.htm">tilemap_get_at_pixel</a></li>
+    <li><a href="tilemap_get_cell_x_at_pixel.htm">tilemap_get_cell_x_at_pixel</a></li>
+    <li><a href="tilemap_get_cell_y_at_pixel.htm">tilemap_get_cell_y_at_pixel</a></li>
+    <li><a href="../../../Drawing/Sprites_And_Tiles/draw_tilemap.htm">draw_tilemap</a></li>
+  </ul>
+  <p> </p>
+  <p>Além das funções listadas acima para definir mapas de azulejos, você também tem uma série de funções que podem ser usadas para manipular os dados de azulejos individuais. Uma &quot;bolha&quot; de dados de azulejos é composta do índice de azulejos mais alguns bits extras para mostrar se
+    a telha foi girada, virada ou espelhada. Você também tem a possibilidade de adicionar sua própria bit-máscara aos dados do ladrilho, embora isto seja apenas para usuários avançados, pois você estará mascarando os bits que estão reservados para o índice de ladrilho - essencialmente
+    existem 19 bits reservados para seus índices de azulejos, mas se você usar apenas 8 deles, então você tem onze bits restantes que podem ser usados para criar uma máscara personalizada. Esta máscara pode então ser usada e verificada em código para criar colisões personalizadas de azulejos ou o que quer que seja.
+    Entretanto, você normalmente não precisaria criar seus próprios blobs de dados de azulejos, e em vez disso usaria a função <a href="tilemap_get.htm"><tt>tilemap_get()</tt></a> para obter os dados do azulejo, então você os manipularia usando as funções abaixo, e então
+    você o ajustaria novamente usando <a href="tilemap_set.htm"><tt>tilemap_set()</tt></a>.</p>
+  <p>Abaixo está uma lista de todas as funções que podem ser usadas para a edição de <b>azulejos</b> individuais:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="tile_get_empty.htm">tile_get_empty</a></li>
+    <li><a href="tile_get_index.htm">tile_get_index</a></li>
+    <li><a href="tile_get_flip.htm">tile_get_flip</a></li>
+    <li><a href="tile_get_mirror.htm">tile_get_mirror</a></li>
+    <li><a href="tile_get_rotate.htm">tile_get_rotate</a></li>
+    <li><a href="tile_set_empty.htm">tile_set_empty</a></li>
+    <li><a href="tile_set_index.htm">tile_set_index</a></li>
+    <li><a href="tile_set_flip.htm">tile_set_flip</a></li>
+    <li><a href="tile_set_mirror.htm">espelho_de_série</a></li>
+    <li><a href="tile_set_rotate.htm">set_set_rotate</a></li>
+    <li><a href="../../../Drawing/Sprites_And_Tiles/draw_tile.htm">draw_tile</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Rooms.htm">Quartos</a></div>
+        <div style="float:right">A seguir: <a href="../Background_Layers/Background_Layers.htm">Camadas de fundo</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Tile Map Layers
+-->
+  <!-- TAGS
+tilemap_layer_functions
+-->
+</body>
+</html>

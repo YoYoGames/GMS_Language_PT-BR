@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_list_copy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_list_copy" />
+  <meta name="rh-index-keywords" content="ds_list_copy" />
+  <meta name="search-keywords" content="ds_list_copy" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_list_copy</h1>
+  <p>Com esta função você pode copiar o conteúdo de uma lista para outra. Ambas as listas devem ter sido criadas anteriormente e se <i>a</i> lista que está sendo copiada já tiver informações dentro dela, esta lista será limpa primeiro. O resultado final são duas listas independentes
+    listas que contêm as mesmas informações.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">ds_list_copy( id, fonte );</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>A identificação da lista sendo copiada <i>para</i>.</td>
+      </tr>
+      <tr>
+        <td>fonte</td>
+        <td>A identificação <i>da</i> lista a ser copiada.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if !ds_list_empty(main_list)<br> {
+    <br> old_list = ds_list_create();<br> ds_list_copy(old_list, main_list);<br> ds_list_clear(main_list);
+    <br> }
+  </p>
+  <p>O código acima verificará uma lista DS para ver se ela está vazia. Se não estiver vazia, é copiada para outra lista DS (que foi criada anteriormente) e então a lista original é limpa.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="DS_Lists.htm">Listas DS</a></div>
+        <div style="float:right">Próximo: <a href="ds_list_read.htm">ds_list_read</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_list_copy
+-->
+  <!-- TAGS
+ds_list_copy
+-->
+
+</body></html>

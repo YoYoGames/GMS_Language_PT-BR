@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_get_file_error</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_get_file_error" />
+  <meta name="rh-index-keywords" content="xboxlive_get_file_error,xboxlive_fileerror_outoflocalstorage,xboxlive_fileerror_quotaexceeded,xboxlive_fileerror_noerror" />
+  <meta name="search-keywords" content="xboxlive_get_file_error,xboxlive_fileerror_outoflocalstorage,xboxlive_fileerror_quotaexceeded,xboxlive_fileerror_noerror" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_get_savedata_user</h1>
+  <p>Esta função retornará uma constante (mostrada abaixo) para ajudar a depurar por que uma função de arquivo falhou para que você possa tomar a ação apropriada em seu código de jogo. Quando uma das funções de arquivo falha, você pode chamar a função para descobrir exatamente qual foi o erro
+    foi.</p>
+  <p class="note"><b>NOTA</b>: Ao utilizar as funções assíncronas de <a href="../../Buffers/buffer_save_async.htm">salvar/carregar</a>, o <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>    O mapa terá uma chave extra, &quot;erro<b>&quot;</b>, que também conterá uma das constantes (mostradas abaixo).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">xboxlive_get_file_error();</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Constante</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>xboxlive_fileerror_outoflocalstorage</td>
+        <td>Se isto ocorrer ao mesmo tempo em que se economiza, isto significa que todo o espaço de jogo disponível foi utilizado, e o usuário declinou a oferta (apresentada pelo sistema operacional) de liberação de espaço. O jogo deve confirmar com o usuário que ele pretende continuar jogando
+          sem economizar. Se eles ainda quiserem poder salvar, o jogo deve tentar novamente a operação de salvar.</td>
+      </tr>
+      <tr>
+        <td>xboxlive_fileerror_quotaexcedido</td>
+        <td>Se isto ocorrer, o jogo deve notificar o usuário de que ele não pode salvar mais dados até que ele liberte algum espaço, e então apresentá-lo com uma maneira de fazer isto.</td>
+      </tr>
+      <tr>
+        <td>xboxlive_fileerror_noerror</td>
+        <td>A função de salvar ou carregar o arquivo foi realizada sem problemas.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">buffer_save(buff, &quot;SaveGame.bin&quot;);<br> if (xboxlive_get_file_error() != xboxlive_file_error_noerror)<br> {
+    <br> show_debug_message(&quot;Salvar falhou. Código de erro = &quot; + string(xboxlive_get_file_error()));<br> }
+  </p>
+  <p>O código acima verifica se houve um erro ao salvar e, em caso afirmativo, o código de erro é impresso para o console.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Saving_Data.htm">Salvando dados</a></div>
+        <div style="float:right">Próximo: <a href="xboxlive_set_savedata_user.htm">xboxlive_set_set_savedata_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_get_savedata_user
+xboxlive_fileerror_outoflocalstorage
+xboxlive_fileerror_quotaexceeded
+xboxlive_fileerror_noerror
+-->
+  <!-- TAGS
+xboxlive_get_savedata_user
+-->
+</body>
+</html>

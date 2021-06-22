@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>move_random</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function move_random" />
+  <meta name="rh-index-keywords" content="move_random" />
+  <meta name="search-keywords" content="move_random" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>move_random</h1>
+  <p>Com esta função você pode definir a instância para uma posição em qualquer lugar da sala, mas alinhada a uma grade &quot;invisível&quot;. Assim, um valor de 32 para o hsnap e vsnap colocará a instância em uma posição aleatória que está alinhada a uma grade de 32x32 quadrados.
+    você pode definir estes valores para 1 para obter uma posição em qualquer parte da sala.</p>
+  <p class="note"><b>OBSERVAÇÃO</b>: Esta função se encaixará nas mesmas posições toda vez que o jogo for executado novamente devido ao fato de que <span class="notranslate">o GameMaker Studio 2</span> gera a mesma semente inicial aleatória toda vez para fazer do código de depuração uma tarefa muito mais fácil. Para evitar este comportamento
+    uso <span style="font-size:1px;"><a href="../../Maths_And_Numbers/Number_Functions/randomise.htm"><tt style="font-size: 14px">aleatoriedade()</tt></a></span> no início de seu jogo. Isto só é verdade ao testar e depurar o jogo, como o jogo final.
+    pacote executável não mostrará este comportamento e será aleatório a cada peça.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">move_random(hsnap, vsnap);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>hsnap</td>
+        <td>O snapping horizontal (o tamanho em pixels entre 'células').</td>
+      </tr>
+      <tr>
+        <td>vsnap</td>
+        <td>O snapping vertical (o tamanho em pixels entre 'células').</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if keyboard_check(vk_space)<br> {<br> move_random(1,1);<br> }</p>
+  <p>Isto moverá a instância para uma posição aleatória em qualquer lugar da sala quando a tecla de espaço for pressionada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Movement.htm">Movimento</a></div>
+        <div style="float:right">Próximo: <a href="move_snap.htm">move_snap</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+move_random
+-->
+  <!-- TAGS
+move_random
+-->
+</body>
+</html>

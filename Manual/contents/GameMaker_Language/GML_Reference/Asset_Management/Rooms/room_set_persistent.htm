@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>room_set_persistent</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_set_persistent" />
+  <meta name="rh-index-keywords" content="room_set_persistent" />
+  <meta name="search-keywords" content="room_set_persistent" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>room_set_persistent</h1>
+  <p>Com esta função, você pode mudar (ou definir) a persistência de qualquer espaço em seu jogo <i>, exceto o atual</i>. Uma sala com persistência assinalada como <tt>verdadeira</tt> manterá o estado de todas as instâncias dentro daquela sala se o jogador sair e
+    então retorna, enquanto que se a persistência for assinalada como <tt>falsa</tt>, será sempre reiniciada para o estado inicial. Você deve observar que uma sala persistente usa consideravelmente mais memória do que uma sala normal e não é recomendado ter demasiada
+    deles em seu jogo.</p>
+  <p class="note"><b>NOTA</b>: Esta função <b>NÃO</b> funcionará para desativar a persistência se a sala já tiver sido visitada! Uma vez visitado, um quarto persistente é mantido na memória e para desligar a persistência você deve ir a esse quarto e definir o <span style="font-size:1px;"><a href="room_persistent.htm"><tt style="font-size: 14px">room_persistent</tt></a></span>    variável para <tt>falso</tt> e depois sair da sala novamente.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">room_set_persistent(index, val);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice da sala para definir a persistência de.</td>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>Se a sala deve ser persistente<tt>(verdadeira</tt>) ou não<tt>(falsa</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">global.myroom = room_add();<br> room_set_width(global.myroom, 640);<br> room_set_height(global.myroom, 480);<br> room_set_persistent(global.myroom, true);</p>
+  <p>Isto criará uma nova sala e armazenará seu índice na variável &quot;global.myroom&quot;. Em seguida, fixará sua largura para 640 pixels, sua altura para 480 pixels, sua legenda para "Game Room" e sua persistência para "true".</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Rooms.htm">Quartos</a></div>
+        <div style="float:right">A seguir: <a href="room_set_view_enabled.htm">room_set_view_enabled</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_set_persistent
+-->
+  <!-- TAGS
+room_set_persistent
+-->
+</body>
+</html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_sound_length</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_sound_length" />
+  <meta name="rh-index-keywords" content="audio_sound_length" />
+  <meta name="search-keywords" content="audio_sound_length" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_sound_length</h1>
+  <p>Esta função devolverá em segundos a duração do som dado. O som pode ser uma referência a partir do índice de um som individual que está sendo reproduzido e que foi armazenado em uma variável ao usar o <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a> ou 
+    <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a> ou um ativo real do Navegador de Ativos.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">audio_sound_length(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice do som a ser verificado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var len;<br> len = audio_sound_length(snd_Beam);<br> audio_play_sound(snd_Beam, 1, false);<br> alarm[0] = room_sound_length(snd_Beam, 1, false); alarm[0] = room_speed * len;</p>
+  <p>O código acima obtém a duração (em segundos) do som indexado na variável &quot;snd_Beam&quot;, depois toca o som e dispara um alarme quando o som tiver terminado de tocar, usando a duração do som para calcular o tempo necessário para
+    o alarme.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Audio.htm">Áudio</a></div>
+        <div style="float:right">Próximo: <a href="audio_sound_pitch.htm">áudio_sound_pitch</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_sound_length
+-->
+  <!-- TAGS
+audio_sound_length
+-->
+</body>
+</html>

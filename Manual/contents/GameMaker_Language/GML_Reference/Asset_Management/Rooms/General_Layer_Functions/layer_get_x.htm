@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_get_x</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_get_x" />
+  <meta name="rh-index-keywords" content="layer_get_x" />
+  <meta name="search-keywords" content="layer_get_x" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_get_x</h1>
+  <p>Você pode usar esta função para recuperar a posição x da camada dentro da sala atualmente escopada. Você fornece a identificação da camada (que você obtém quando cria a camada usando <a href="layer_create.htm"><tt>layer_create()</tt></a>) ou o nome da camada (como
+    uma cadeia - isto terá um impacto no desempenho) e a função retorna um número real para a posição x da camada, relativo à posição (0,0) da sala. O valor padrão é 0.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">layer_get_x(layer_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>O valor de identificação único da camada para obter a posição x de</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Sprites&quot;);<br> if layer_get_x(lay_id) != 0 || layer_get_y(lay_id) != 0<br> {
+    <br> layer_x(lay_id, 0);<br> layer_y(lay_id, 0);<br> }
+  </p>
+  <p>O código acima verifica a posição da camada dada e se não estiver definido para (0, 0), então está definido para essa posição.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="General_Layer_Functions.htm">Funções gerais da camada</a></div>
+        <div style="float:right">Próximo: <a href="layer_get_y.htm">layer_get_y</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_get_x
+-->
+  <!-- TAGS
+layer_get_x
+-->
+</body>
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>base64_código_de_tampão</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_base64_encode" />
+  <meta name="rh-index-keywords" content="buffer_base64_encode" />
+  <meta name="search-keywords" content="buffer_base64_encode" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>base64_código_de_tampão</h1>
+  <p>Esta função converterá os dados do buffer dado em um formato base64 codificado em cadeia. Este é um esquema de codificação comumente usado para qualquer mídia que precise ser armazenada ou transferida pela Internet como texto, e renderiza o
+    produzem ilegível para o olho humano. Para usar isto, é necessário especificar um buffer já criado, o valor de offset (que é o ponto dentro do buffer no qual se deseja iniciar a codificação), bem como o tamanho, em bytes, da memória buffer a ser codificada.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">buffer_base64_encode(buffer, offset, tamanho);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tampão</td>
+        <td>O índice do buffer a ser utilizado.</td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td>O valor da compensação de dados.</td>
+      </tr>
+      <tr>
+        <td>tamanho</td>
+        <td>O tamanho do amortecedor.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Cordão</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var b_str = buffer_base64_encode(buff, 0, buffer_get_size(buff))</p>
+  <p>O código acima criará a codificação dos dados completos armazenados no buffer indexado pela variável &quot;buff&quot;, e armazenará a string retornada na variável local &quot;b_str&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Buffers.htm">Tampões</a></div>
+        <div style="float:right">Próximo: <a href="buffer_base64_decode.htm">buffer_base64_decode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_base64_encode
+-->
+  <!-- TAGS
+buffer_base64_encode
+-->
+</body>
+</html>

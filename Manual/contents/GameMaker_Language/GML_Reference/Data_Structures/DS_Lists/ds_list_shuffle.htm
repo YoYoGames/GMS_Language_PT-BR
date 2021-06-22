@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_list_shuffle</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_list_shuffle" />
+  <meta name="rh-index-keywords" content="ds_list_shuffle" />
+  <meta name="search-keywords" content="ds_list_shuffle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_list_shuffle</h1>
+  <p>Com esta função você pode embaralhar uma lista, que reordenará todos os valores dos componentes em posições aleatórias daqueles em que eles foram originalmente adicionados à lista.</p>
+  <p class="note"><b>NOTA</b>: Esta função embaralhará os itens da lista para as mesmas posições toda vez que o jogo for executado novamente devido ao fato de que o <span class="notranslate">GameMaker Studio 2</span> gera a mesma semente inicial aleatória toda vez para tornar o código de depuração uma tarefa muito mais fácil. Para evitar que
+    este comportamento usa <span style="font-size:1px;"><a href="../../Maths_And_Numbers/Number_Functions/randomise.htm"><tt style="font-size: 14px">aleatoriedade()</tt></a></span> no início de seu jogo. Isto só é verdade quando se testa e depura o jogo,
+    pois o pacote executável final não mostrará este comportamento e será aleatório a cada peça.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">ds_list_shuffle(id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>O id da lista para embaralhar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se reiniciar<br> {
+    <br> ds_list_shuffle(card_list);
+    <br> }
+  </p>
+  <p>O código acima embaralhará a lista indexada na variável &quot;card_list&quot; se a variável &quot;restart&quot; estiver marcada como verdadeira.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="DS_Lists.htm">Listas DS</a></div>
+        <div style="float:right">Próximo: <a href="ds_list_sort.htm">ds_list_sort</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_list_shuffle
+-->
+  <!-- TAGS
+ds_list_shuffle
+-->
+</body>
+</html>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>A estrutura da via</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining The Track Struct" />
+  <meta name="rh-index-keywords" content="Sequence Track Struct" />
+  <meta name="search-keywords" content="The Track Struct,seqtracktype_graphic,seqtracktype_audio,seqtracktype_instance,seqtracktype_sequence,seqtracktype_clipmask,seqtracktype_clipmask_mask,seqtracktype_clipmask_subject,seqtracktype_group,seqtracktype_colour,seqtracktype_real,seqtracktype_message,seqtracktype_moment,seqtracktype_bool,seqtracktype_string,seqtracktype_spriteframes,seqtracktype_empty,type,name,tracks,visible,keyframes" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>A estrutura da via</h1>
+  <p>A estrutura de trilhos pode ser usada tanto para<span class="glossextra">trilhos</span><a class="glossterm" data-glossterm="pista de ativos" href="#">patrimoniais de</a>nível superior <i></i>ou para<a class="glossterm" data-glossterm="faixas de parâmetros" href="#">trilhos de parâmetros</a> sub-faixa <i></i>,
+    e o comportamento da pista é definido por duas coisas, seu <b>nome</b> e seu tipo <b>.</b> <a href="../../../../GML_Overview/Structs.htm">As estruturas</a> da via são criadas utilizando a função <a href="../sequence_track_new.htm"><tt>sequence_track_new()</tt></a>    e podem ser recuperados dos ativos de seqüência usando a propriedade <tt>ActiveTracks</tt> da <a href="The_Sequence_Instance_Struct.htm">estrutura de instância de seqüência</a> ou a propriedade <tt>tracks</tt> da <a href="The_Sequence_Object_Struct.htm">estrutura de objeto de seqüência</a>.</p>
+  <p>As propriedades disponíveis para a estrutura da via são:</p>
+  <ul class="colour">
+    <li><tt>tipo</tt>: As seguintes constantes podem ser todas usadas para definir o tipo de faixa que está sendo criada na seqüência (estas constantes também são usadas na geração de <span class="notranslate">quadros-chave</span> e dados de <span class="notranslate">quadros-chave</span>, explicados nas seções abaixo):</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+        <th>Valor</th>
+      </tr>
+      <tr>
+        <td>seqtracktype_graphic</td>
+        <td>Esta é uma faixa de ativos gráficos (sprite).</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_audio</td>
+        <td>Esta é uma faixa de ativos de áudio.</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_instance</td>
+        <td>Este é um exemplo de patrimônio.</td>
+        <td>14</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_sequence</td>
+        <td>Este é um caminho de ativos em seqüência.</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_clipmask</td>
+        <td>Esta é uma trilha de ativos de grupo de máscara de clipes.</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_clipmask_mask</td>
+        <td>Este é um trilho de recurso de máscara de clip sprite usado para gerar a máscara de clip.</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_clipmask_subject</td>
+        <td>Este é um trilho de recursos de sprite com máscara que está sendo mascarado.</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_group</td>
+        <td>Esta pasta de pasta de grupo é um recurso.</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_colour</td>
+        <td>Esta é uma faixa de parâmetros de dados de cor.</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_real</td>
+        <td>Esta é uma faixa de parâmetros de valor numérico real.</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_message</td>
+        <td>Esta é uma faixa de transmissão de mensagens.</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_moment</td>
+        <td>Esta é uma pista de eventos/momentos.</td>
+        <td>16</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_bool</td>
+        <td>Não utilizado atualmente.</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_string</td>
+        <td>Não utilizado atualmente.</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_spriteframes</td>
+        <td>Não utilizado atualmente.</td>
+        <td>13</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_empty</td>
+        <td>Não utilizado atualmente.</td>
+        <td>12</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <ul class="colour">
+    <li><tt>nome</tt>: Ao criar uma faixa de parâmetros, o nome que você dá aqui pode ser qualquer string que você precisar para identificar a faixa, entretanto, para faixas de parâmetros, você precisa especificar strings específicas para dizer ao <span class="notranslate">GameMaker Studio 2</span> que tipo de faixa de parâmetros
+      que você está criando (estas cadeias de caracteres só se aplicam aos tipos de faixa de parâmetros <tt>seqtracktype_real</tt> e <tt>seqtracktype_colour</tt> ):
+      <ul class="colour">
+        <li>&quot;<strong>posição&quot; -</strong> quando colocado em uma pista do tipo seqtracktype_real <tt>isto</tt> indica que o conteúdo desta pista deve ser usado como dados posicionais.</li>
+        <li>&quot;escala<strong>&quot; -</strong> quando colocado em uma trilha do tipo seqtracktype_real <tt>isto</tt> indica que o conteúdo desta trilha deve ser usado como dados de escala.</li>
+        <li>&quot;<strong>rotação&quot; -</strong> quando ajustado em uma pista do tipo seqtracktype_real <tt>isto</tt> indica que o conteúdo desta pista deve ser usado como dados de rotação.</li>
+        <li>&quot;blend_multiply<strong>&quot;</strong>- quando ajustado em uma faixa do tipo seqtracktype_colour <tt>isto</tt> indica que o conteúdo desta faixa deve ser usado como dados de multiplicação de cores. Os dados do <span class="notranslate">quadro-chave</span> para tal trilha devem
+          ser um conjunto de quatro valores com o formato [A, R, G, B]. Observe que os valores para cada componente são expressos entre 0 e 1, onde 0 corresponde ao valor HEX #00 e 1 corresponde ao valor HEX #FF (0 - 255 como mostrado na cor
+          para trilhas de mistura de imagens no Editor de Seqüências).</li>
+        <li>&quot;image_speed<strong>&quot; -</strong> quando colocado em uma pista do tipo seqtracktype_real, <tt>isto</tt> indica que o conteúdo desta pista deve ser usado como o valor da velocidade da imagem.</li>
+        <li>&quot;image_index<strong>&quot;</strong>- quando colocado em uma pista do tipo seqtracktype_real, <tt>isto</tt> indica que o conteúdo desta pista deve ser usado como o valor do índice de imagem.</li>
+        <li>&quot;image_angle<strong>&quot; -</strong> quando colocado em uma pista do tipo seqtracktype_real, <tt>isto</tt> indica que o conteúdo desta pista deve ser usado como o valor do ângulo da imagem.</li>
+        <li>&quot;image_blend<strong>&quot; -</strong> quando colocado em uma faixa do tipo seqtracktype_colour <tt>isto</tt> indica que o conteúdo desta faixa deve ser usado como o valor da mistura de imagens. Os dados do <span class="notranslate">quadro-chave</span> para tal faixa devem ser um
+          matriz de quatro valores com o formato [A, R, G, B]. Note que os valores para cada componente são expressos entre 0 e 1, onde 0 corresponde ao valor HEX #00 e 1 corresponde ao valor HEX #FF (0 - 255 como mostrado no colhedor de cores
+          para pistas de multiplicação de cores no Editor de Seqüências).</li>
+      </ul>
+    </li>
+    <li><tt>pistas</tt>: Esta propriedade permite o acesso à lista de faixas que são crianças desta faixa. Ao obter esta propriedade é devolvido um <a href="../../../../GML_Overview/Arrays.htm">conjunto</a> de estruturas de trilhos, e ao definir esta propriedade
+      uma série de estruturas de trilhos deve ser especificada.</li>
+    <li><tt>visível</tt>: Isto indica se este rastro é visível (o valor é <tt>verdadeiro</tt>) ou não (o valor é <tt>falso</tt>). Você pode obter ou definir este valor e se uma faixa não visível, então nenhuma de suas faixas infantis será desenhada também.</li>
+    <li><tt><span class="notranslate">quadros-chave</span></tt>: Esta propriedade permite o acesso à lista de <a href="The_Keyframe_Struct.htm">estruturas</a> do <a href="The_Keyframe_Struct.htm"><span class="notranslate">quadro-chave</span></a> para a pista. Ao obter esta propriedade é devolvido um conjunto de estruturas de estrutura de <span class="notranslate">teclado</span>, e ao definir esta propriedade um conjunto de estruturas <span class="notranslate">de teclado</span>
+      estruturas devem ser especificadas.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Sequences.htm">Sequências</a></div>
+        <div style="float:right">A seguir: <a href="The_Keyframe_Struct.htm">A estrutura do <span class="notranslate">Keyframe</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Track Struct
+seqtracktype_graphic
+seqtracktype_audio
+seqtracktype_instance
+seqtracktype_sequence
+seqtracktype_clipmask
+seqtracktype_clipmask_mask
+seqtracktype_clipmask_subject
+seqtracktype_group
+seqtracktype_colour
+seqtracktype_real
+seqtracktype_message
+seqtracktype_moment
+seqtracktype_bool
+seqtracktype_string
+seqtracktype_spriteframes
+seqtracktype_empty
+type
+name
+tracks
+visible
+<span class="notranslate">keyframes</span>
+-->
+  <!-- TAGS
+sequence_track
+-->
+
+</body></html>

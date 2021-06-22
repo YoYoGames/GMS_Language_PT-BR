@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Eventos Sequenciais, Momentos e Mensagens de Radiodifusão</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Sequence Events, Moments and Broadcast Messages" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Sequence Events,Sequence Momements,Sequence Messages,broadcast messages,event_create,event_destroy,event_clean_up,event_step,event_step_begin,event_step_end,event_async_system,event_broadcast_message" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Eventos, Momentos e Mensagens de Radiodifusão</h1>
+  <p>Além de todas as propriedades listadas <a href="Sequences.htm">aqui</a> para uma estruturação de seqüência, você também tem a possibilidade de adicionar propriedades especiais de &quot;ação&quot; a uma seqüência. Há três tipos diferentes de
+    estas propriedades de &quot;ação&quot; que podem ser adicionadas a um objeto de seqüência - Eventos. <b>Momentos</b> e <b>mensagens de radiodifusão</b> - e cada um deles é explicado em mais detalhes
+    nas seções abaixo.</p>
+  <p> </p>
+  <h2>Eventos Sequenciais</h2>
+  <p>Os objetos seqüenciais podem ter <b>eventos</b> adicionados a eles, e estes eventos são análogos aos eventos utilizados pelos bens objeto. Os eventos atribuídos a um objeto de seqüência ocorrerão em uma ordem específica, seja uma vez em uma ordem definida
+    momento no ciclo de vida da seqüência, ou cada quadro que a seqüência está em execução. Nesta seção, discutimos como estes eventos são tratados usando código, mas eles também podem ser adicionados usando o <a href="../../../../The_Asset_Editors/Sequences.htm">Editor de Seqüências</a>.
+    Note que a ordem dos eventos listados aqui não é influenciada pela direção do <a class="glossterm" data-glossterm="playhead" href="#">playhead</a>, e mesmo que a seqüência esteja tocando ao contrário, os eventos continuarão a ser executados na ordem dada
+    abaixo.</p>
+  <p>Os eventos disponíveis são:<b></b></p>
+  <ul class="colour">
+    <li><b>Criar</b>: isto é acionado quando uma instância de seqüência é criada em uma camada.</li>
+    <li><b>Destruir</b>: isto é acionado quando uma instância em seqüência em uma camada é destruída.</li>
+    <li><b>Limpeza</b>: isto é acionado quando uma instância de seqüência é coletada de lixo.</li>
+    <li><b>Etapa</b>: acionada um pouco antes do evento da etapa habitual do objeto. <b>Importante!</b> Se a seqüência for interrompida, este evento não será acionado até o próximo passo após a seqüência começar a tocar novamente.</li>
+    <li><b>Passo Inicial</b>: acionado pouco antes do evento de início do passo do objeto. <b>Importante!</b> Se a seqüência for pausada, este evento não será acionado até o próximo passo após a seqüência começar a tocar novamente.</li>
+    <li><b>Etapa final</b>: acionado imediatamente antes do evento de fim de etapa do objeto. <b>Importante!</b> Se a seqüência for interrompida, este evento não será acionado até o próximo passo após a seqüência começar a tocar novamente.</li>
+    <li><b>Sistema Async</b>: acionou o mesmo que qualquer objeto <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">Sistema Assíncrono</a> Manipuladores de <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">eventos</a>. <em><b>Importante!</b> Se a seqüência for pausada, este evento não será acionado.</em></li>
+    <li><b>Mensagem de radiodifusão</b>: acionada durante a atualização da seqüência como um <span class="notranslate">quadro-chave de</span> mensagem de radiodifusão é encontrado.</li>
+  </ul>
+  <p>Todos os eventos precisam estar associados a funções definidas em um script, portanto, para configurar um evento, uma <a href="../../../GML_Overview/Method_Variables.htm">variável de método</a> deve ser atribuída a um imóvel com o correto
+    nome que indica a seqüência que evento deve chamar a função. A sintaxe para isto é a seguinte:<br>
+  </p>
+  <p class="code">&lt;Sequência_estrutura&gt;.&lt;propriedade_do_evento&gt; = método(&lt;estrutura_de_sequência&gt;, &lt;nome_da_função&gt;);</p>
+  <p>As propriedades de estruturação da seqüência para os diferentes eventos são as seguintes:<tt></tt></p>
+  <ul class="colour">
+    <li><tt>event_create</tt><tt></tt></li>
+    <li><tt>event_destroy</tt><tt></tt></li>
+    <li><tt>event_clean_up</tt><tt></tt></li>
+    <li><tt>evento_step</tt><tt></tt></li>
+    <li><tt>event_step_begin</tt><tt></tt></li>
+    <li><tt>event_step_end_end</tt></li>
+    <li><tt>event_async_system</tt><tt></tt></li>
+    <li><tt>event_broadcast_message</tt></li>
+  </ul>
+  <p>Para dar um exemplo de uso, digamos que queremos que a seqüência inverta a direção quando for detectado um clique esquerdo do botão do mouse. Primeiro precisaríamos criar um script com a função que queremos chamar, algo como isto:</p>
+  <p class="code">//// @function seq_reverse();<br>
+    <br> function seq_reverse()<br> {
+    <br> if mouse_check_button_pressed(mb_left)<br> {
+    <br> if self.headDirection == seqdir_right<br> {
+    <br> self.headDirection = seqdir_left;<br> }
+    <br> else self.headDirection = seqdir_right;<br> }
+    <br> }
+  </p>
+  <p>Nesta função, tudo o que estamos fazendo é ouvir um clique do mouse e depois inverter a direção de reprodução da seqüência à qual o método foi vinculado. Você notará que atualmente você não é capaz de passar nenhum parâmetro para as funções
+    que estão ligadas a essas propriedades, e em todos os casos o <a href="../../../GML_Overview/Instance_Keywords.htm"><tt>self</tt></a> dentro do escopo da função é atribuída para ser a instância de seqüência.</p>
+  <p class="note"><b>OBSERVAÇÃO</b>: Vale notar que no roteiro acima o auto identificador pode ser omitido e só é usado para mostrar explicitamente o escopo da variável do método que está sendo usado para este exemplo.</p>
+  <p>Para atribuir isto a uma seqüência, você faria algo assim:</p>
+  <p class="code">var _seq = sequence_get(Sequence1);<br> _seq.event_step = method(_seq, seq_reverse);</p>
+  <p>Atribuímos agora um evento de etapa ao <i>objeto</i> sequencial com uma função para detectar quando um mouse é pressionado e então mudar a direção da cabeça de jogo da <i>instância</i> sequencial depois de ter
+    foi criado em uma sala.</p>
+  <p> </p>
+  <h2><label for="2">Momentos</label></h2>
+  <p>Um <b>momento de</b> seqüência é uma ação de código única que é disparada em um ou mais quadros especificados à medida que a seqüência é executada. Estes momentos de código são - como nos eventos (explicados acima) - simplesmente <a href="../../../GML_Overview/Method_Variables.htm">variáveis de método</a> pré-definidas que
+    são acionados no quadro dado. Por exemplo, digamos que você queira uma seqüência para criar uma instância &quot;bala&quot; em um frame específico da animação - primeiro você precisaria criar a função que deve ser usada para esta ação, algo como isto:</p>
+  <p class="code">//// @function seq_shoot();<br>
+    <br> seq_shoot = function()<br> {
+    <br> instance_create_layer(sequence.xorigin, sequence.yorigin, &quot;Instances&quot;, obj_Bullet);<br> }
+  </p>
+  <p>Você então adicionaria isto a uma moldura no <tt>momento em que</tt> a estrutura da seqüência é propriedade <tt>daKeyframes</tt>. Esta é essencialmente uma faixa &quot;especial&quot; que só é usada para este fim e, portanto, só pode levar <span class="notranslate">dados de</span> quadros-chave <span class="notranslate">que</span> 
+    está associado a ações momentâneas que você deseja que a seqüência tenha. Esta faixa é criada da mesma forma que você criaria qualquer outra faixa, criando estruturas de <span class="notranslate">quadros-chave</span> e preenchendo-as com dados de <span class="notranslate">quadros-chave</span>, onde o canal 0 é o único canal
+    que você pode usar e o tipo de pista é <tt>seqtracktype_moment</tt>. Abaixo está um exemplo de como isto seria criado, usando a função que definimos acima para disparar sobre os momentos dados (quadros):</p>
+  <p class="code">var _seq = sequence_get(my_Seq);<br> var _k = array_create(3);<br> _k[0] = sequence_keyframe_new(seqtracktype_moment);<br> _k[0].frame = 60;<br> _k[1] = sequence_keyframe_new(seqtracktype_moment);<br> _k[1].frame = 120;<br> _k[2] = sequence_keyframe_new(seqtracktype_moment);<br> _k[2].frame = 180;<br> var _d = array_create(1);<br> _d[0] = sequence_keyframedata_new(seqtracktype_moment);<br> _d[0].channel = 0;<br> _d[0].event = method(_d[0], seq_shoot);<br> _k[0].channels = _d;<br> _k[1].channels = _d;<br> _k[2].channels
+    = _d;<br> _seq.momentKeyframes = _k;</p>
+  <p>O código acima simplesmente definirá os quadros 60, 120 e 180 da faixa do &quot;momento&quot; para chamar o método de seq_shoot. Você notará que atualmente você não é capaz de passar nenhum parâmetro para as funções que são usadas para cada
+    momento, e em todos os casos a <tt>auto-variável</tt> dentro do escopo da função é atribuída para ser a instância da seqüência (você geralmente não precisa usar a auto-variável <tt>, mas</tt> sob alguma
+    casos em que pode ser útil).</p>
+  <p> </p>
+  <h2><label for="3">Mensagens de radiodifusão</label></h2>
+  <p>Seqüências podem ser feitas para gerar <b>mensagens de transmissão</b>, cujas simples cordas são adicionadas a quadros específicos ao longo da linha de tempo da animação, e quando esse ponto da linha de tempo é atingido, então a cadeia será transmitida para todos
+    instâncias de objeto que o escutam. Você pode adicionar estas mensagens na IDE usando o <a href="../../../../The_Asset_Editors/Sequences.htm">editor Sequence</a>, mas elas também podem ser criadas e editadas usando código.</p>
+  <p>Para criar uma mensagem de transmissão em uma seqüência usando <span class="notranslate">GML</span>, é necessário adicioná-las a um quadro na <tt>mensagemEventKeyframes</tt> propriedade da estrutura da seqüência. Esta é essencialmente uma faixa &quot;especial&quot; que só é usada
+    para este fim e, portanto, só pode levar os dados <span class="notranslate">do quadro-chave</span> que estão associados às mensagens transmitidas que você deseja que a seqüência tenha. Esta faixa é criada da mesma forma que você criaria qualquer outra faixa, criando estruturas de <span class="notranslate">keyframe</span> e
+    preenchendo-os com dados do <span class="notranslate">keyframe</span>, onde o canal 0 é o único canal que você pode usar e o tipo de pista é <tt>seqtracktype_message</tt>. Abaixo está um exemplo de como isto seria criado:</p>
+  <p class="code">var _seq = sequence_get(my_Seq);<br> var _k = array_create(2);<br> _k[0] = sequence_keyframe_new(seqtracktype_message);<br> _k[0].frame = 60;<br> _k[1] = sequence_keyframe_new(seqtracktype_message);<br> _k[1].frame = 120;<br> var _m1 = array_create(2);<br> _m1[0] = &quot;Olá&quot;;<br> _m1[1] = &quot;Mundo&quot;;<br> var _m2 = array_create(1); <br> _m2[0] = &quot;This is a Broadcast Message&quot;;<br> var _d1 = array_create(1);<br> _d1[0] = sequence_keyframedata_new<span class="notranslate">(</span>seqtracktype_message);<br> _d1[0].channel = 0;<br> _d1[0].events = _m1;<br> var _d2 = array_create(1);<br> _d2[0] = sequence_keyframedata_new(seqtracktype_message);<br> _d2[0].channel = 0;<br> _d2[0].events = _m2;<br> _k[0].channels = _d1;<br> _k[1].channels = _d2;<br> _seq.messageEventKeyframes = _k;</p>
+  <p>Você notará que o texto da mensagem é passado para o canal de dados do quadro-chave como uma matriz. Isto porque você pode transmitir várias mensagens no mesmo quadro, e ter diferentes instâncias de objetos escutando-as e reagindo de forma diferente, dependendo de
+    a mensagem que eles estão realmente esperando.</p>
+  <p>Uma vez que uma mensagem transmitida tenha sido emitida pela seqüência, você pode analisá-la usando o evento <i>Outra</i> &gt; <i>Mensagem transmitida</i> em instâncias de objeto, que é explicado em detalhes <a href="../../../../The_Asset_Editors/Sequence_Properties/Broadcast_Messages.htm">aqui</a>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sequences.htm">Sequências</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sequence Events
+Sequence Moments
+Sequence Broadcast Messages
+broadcast Messages
+event_create
+event_destroy
+event_clean_up
+event_step
+event_step_begin
+event_step_end
+event_async_system
+event_broadcast_message
+-->
+  <!-- TAGS
+sequence_events_moments_broadcasts
+-->
+
+</body></html>

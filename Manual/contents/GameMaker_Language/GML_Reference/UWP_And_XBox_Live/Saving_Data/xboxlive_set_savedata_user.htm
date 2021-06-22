@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_set_set_savedata_user</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_set_savedata_user" />
+  <meta name="rh-index-keywords" content="xboxlive_set_savedata_user" />
+  <meta name="search-keywords" content="xboxlive_set_savedata_user" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_set_set_savedata_user</h1>
+  <p>Esta função especifica que as futuras operações de arquivo que operam na área de salvar jogo (ou seja, todos os arquivos escritos, e lidos de arquivos que não estão na área do pacote) serão associados ao ponteiro de identificação do usuário especificado. Isto pode ser chamado com a mesma freqüência
+    conforme necessário para redirecionar os dados para o usuário apropriado, ou você pode usar o <tt>pointer_null</tt> constante para salvar para a área de armazenamento genérico da máquina.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">xboxlive_set_set_savedata_user(user_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>O ID do usuário (um ponteiro) a ser definido para salvar, ou <tt>ponteiro_nulo</tt></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if (xboxlive_get_savedata_user() != user_id[0])<br> {
+    <br> xboxlive_set_set_savedata_user(user_id[0]);
+    <br> }
+  </p>
+  <p>O código acima verifica se um usuário está atualmente designado como alvo a ser salvo, e se não estiver, então ele é designado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Saving_Data.htm">Salvando dados</a></div>
+        <div style="float:right">Próximo: <a href="xboxlive_get_savedata_user.htm">xboxlive_get_savedata_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_set_savedata_user
+-->
+  <!-- TAGS
+xboxlive_set_savedata_user
+-->
+</body>
+</html>

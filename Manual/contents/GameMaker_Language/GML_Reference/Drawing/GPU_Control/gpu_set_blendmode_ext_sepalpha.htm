@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_blendmode_ext_sepalpha</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_blendmode_ext_sepalpha" />
+  <meta name="rh-index-keywords" content="gpu_set_blendmode_ext_sepalpha,bm_zero,bm_one,bm_src_colour,bm_inv_src_colour,bm_src_alpha,bm_inv_src_alpha,bm_dest_alpha,bm_inv_dest_alpha,bm_dest_colour,bm_inv_dest_colour,bm_src_alpha_sat,bm_src_color,bm_inv_src_color,bm_dest_color,bm_inv_dest_colour" />
+  <meta name="search-keywords" content="gpu_set_blendmode_ext_sepalpha,bm_zero,bm_one,bm_src_colour,bm_inv_src_colour,bm_src_alpha,bm_inv_src_alpha,bm_dest_alpha,bm_inv_dest_alpha,bm_dest_colour,bm_inv_dest_colour,bm_src_alpha_sat,bm_src_color,bm_inv_src_color,bm_dest_color,bm_inv_dest_colour" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_blendmode_ext_sepalpha</h1>
+  <p>Quando o <span class="notranslate">GameMaker Studio 2</span> vai desenhar um pixel, há uma cor de origem (a cor do pixel que vamos desenhar) e uma cor de destino (a cor que já está no pixel para o qual estamos desenhando), portanto, ao determinar a nova cor de
+    o pixel, as cores de origem e destino são calculados de acordo com o modo de mistura escolhido. Cada componente das cores é armazenado como um valor de ponto flutuante entre 0 e 1, e a nova cor é calculada multiplicando cada componente do
+    cor de origem por algum fator e multiplicando cada componente da cor de destino por algum outro fator e depois adicionando os resultados juntos, componente por componente.</p>
+  <p>Esta função permite definir os diferentes componentes que devem ser considerados em conjunto para criar um modo de mistura personalizado, selecionando diferentes partes de diferentes fatores de modo de mistura para os componentes RGB e o componente Alfa. Portanto, o &quot;src&quot; é um modo de mistura personalizado.
+    e &quot;dest&quot; usarão os 3 primeiros valores do modo de mistura (RGB) e os argumentos &quot;alphasrc&quot; e &quot;alphadest&quot; tomarão a última parte do fator do modo de mistura. Por exemplo, se você tiver a fonte RGB como <tt>bm_zero</tt>,
+    então (0, 0, 0) será utilizado. Se você então definir a fonte Alfa como bm_one então (1) será usado, dando um modo de mistura final de (0, 0, 0, 1).</p>
+  <p>O gráfico seguinte mostra os valores RGBA para cada modo de mistura, onde (Rs, Gs, Bs, As) são considerados os valores de origem e (Rd, Gd, Bd, Ad) são os valores de destino. As onze constantes que estão disponíveis para uso podem ser fonte ou destino
+    (ou ambos), quando usado nesta função.</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Fator de mistura (Vermelho, Verde, Azul, Alfa)</th>
+      </tr>
+      <tr>
+        <td>bm_zero</td>
+        <td>(0, 0, 0, 0)</td>
+      </tr>
+      <tr>
+        <td>bm_one</td>
+        <td>(1, 1, 1, 1)</td>
+      </tr>
+      <tr>
+        <td>bm_src_colour</td>
+        <td>(Rs, Gs, Bs, As)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_src_colour</td>
+        <td>(1-Rs, 1-Gs, 1-Bs, 1-As)</td>
+      </tr>
+      <tr>
+        <td>bm_src_alpha</td>
+        <td>(As, As, As, As, As)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_src_alpha</td>
+        <td>(1-As, 1-As, 1-As, 1-As, 1-As)</td>
+      </tr>
+      <tr>
+        <td>bm_dest_alpha</td>
+        <td>(Anúncio, Anúncio, Anúncio, Anúncio)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_dest_alpha</td>
+        <td>(1-Ad, 1-Ad, 1-Ad, 1-Ad, 1-Ad)</td>
+      </tr>
+      <tr>
+        <td>bm_dest_colour</td>
+        <td>(Rd, Gd, Bd, Ad)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_dest_color</td>
+        <td>(1-Rd, 1-Gd, 1-Bd, 1-Ad)</td>
+      </tr>
+      <tr>
+        <td>bm_src_alpha_sat</td>
+        <td>(f, f, f, 1) onde f = min(As, 1-Ad)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><b>IMPORTANTE!</b> HTML5 sem WebGL habilitado <b>não</b> será capaz de exibir os seguintes modos de uso corretamente:</p>
+  <ul class="colour" style="padding-left: 120px">
+    <li><tt>bm_src_colour</tt></li>
+    <li><tt>bm_inv_src_colour</tt></li>
+    <li><tt>bm_dest_colour</tt></li>
+    <li><tt>bm_inv_dest_color</tt></li>
+    <li><tt>bm_src_alpha_sat</tt></li>
+  </ul>
+  <p> </p>
+  <p>Observe que você pode fornecer quatro argumentos individuais para esta função ou pode fornecer uma série de argumentos (como retornado pela função <a href="gpu_get_blendmode_ext_sepalpha.htm"><tt>gpu_get_blendmode_ext_sepalpha()</tt></a> por exemplo).
+    Se fornecer uma matriz, ela deve ter os quatro elementos a seguir:</p>
+  <ul class="colour">
+    <li>[0] = Modo de mistura da fonte menos o componente alfa (o padrão é <tt>bm_src_alpha</tt> (As, As, As))</li>
+    <li>[1] = Modo de mistura de destino menos o componente alfa (o padrão é <tt>bm_inv_src_alpha</tt> (1-As, 1-As, 1-As))</li>
+    <li>[2] = Componente alfa da fonte (o padrão é <tt>bm_src_alpha</tt> (As))</li>
+    <li>[3] = componente alfa de destino (o padrão é <tt>bm_inv_src_alpha</tt> (1-As))</li>
+  </ul>
+  <p>Para ajudá-lo a obter o máximo dos modos de mistura e para ajudar a entender como eles funcionam e como afetam a imagem final que está sendo desenhada para a tela, recomendamos que você leia o seguinte guia:</p>
+  <ul class="colour">
+    <li><a href="../../../../Additional_Information/Guide_To_Using_Blendmodes.htm">Guia para a utilização de emendas</a></li>
+  </ul>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">gpu_set_blendmode(src, dest, alphasrc, alphadest);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>src</td>
+        <td>Fator do modo de mistura da fonte para RGB (ver constantes acima).</td>
+      </tr>
+      <tr>
+        <td>dest</td>
+        <td>Fator de modo de mistura de destino para RGB(ver constantes acima)</td>
+      </tr>
+      <tr>
+        <td>alphasrc</td>
+        <td>Fator de modo de mistura da fonte Alfa (ver constantes acima).</td>
+      </tr>
+      <tr>
+        <td>alphadest</td>
+        <td>Fator de modo de mistura de destino Alfa (ver constantes acima)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var bm = gpu_get_blendmode_ext_sepalpha();<br> bm[0] = bm_src_alpha;<br> bm[1] = bm_inv_src_alpha;<br> gpu_set_blendmode_ext_sepalpha(bm);
+  </p>
+  <p>O código acima cria uma matriz local e obtém o modo de mistura estendida atual com valores alfa separados. Esta matriz é então manipulada e retornada para definir o modo de mistura.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="GPU_Control.htm">Controle de GPU</a></div>
+        <div style="float:right">A seguir: <a href="gpu_set_colourwriteenable.htm">gpu_set_colorwriteenable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_blendmode_ext_sepalpha
+bm_zero
+bm_one
+bm_src_colour
+bm_inv_src_colour
+bm_src_alpha
+bm_inv_src_alpha
+bm_dest_alpha
+bm_inv_dest_alpha
+bm_dest_colour
+bm_inv_dest_colour
+bm_src_alpha_sat
+-->
+  <!-- TAGS
+gpu_set_blendmode_ext_sepalpha
+-->
+</body>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>position_meeting</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion position_meeting" />
+  <meta name="rh-index-keywords" content="position_meeting" />
+  <meta name="search-keywords" content="position_meeting" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>position_meeting</h1>
+  <p>Com esta função você pode verificar uma posição para uma colisão com outra instância ou todas as instâncias de um objeto. Quando você usa esta função você está verificando um único ponto na sala para uma instância ou um objeto. Esta verificação será feita em relação ao limite
+    caixa da instância ou contra a máscara da instância, se essa instância tiver colisões precisas verificadas. Se você precisar obter a instância única <a href="../../Asset_Management/Instances/Instance_Variables/id.htm"><b>id</b></a> se o objeto sendo
+    colidiu com você deve usar <a href="../../Asset_Management/Instances/instance_position.htm"><tt>instance_position()</tt></a>. Esta função também aceita as <a href="../../../GML_Overview/Instance_Keywords.htm">palavras-chave</a> especiais <b>todas</b> e
+   <b>outros</b>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">position_meeting(x, y, obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A posição x a ser verificada.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A posição y a ser verificada.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>O objeto (ou identificação de instância, ou as palavras-chave &quot;todos&quot; ou &quot;outros&quot;) para verificar uma colisão com.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if mouse_check_button(mb_left)<br> {
+    <br> if !position_meeting(mouse_x, mouse_y, all) instance_create_layer(mouse_x, mouse_y, &quot;Walls&quot;, obj_Wall);<br> }
+  </p>
+  <p>O código acima verifica o botão esquerdo do mouse, e se for pressionado, verifica a posição x/y do mouse para uma colisão com qualquer instância. Se não houver nenhuma, então é criada uma instância de &quot;obj_Wall&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Collisions.htm">Colisões</a></div>
+        <div style="float:right">Próximo: <a href="position_change.htm">mudança_de_posição</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+position_meeting
+-->
+  <!-- TAGS
+position_meeting
+-->
+</body>
+</html>

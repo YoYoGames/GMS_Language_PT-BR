@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tempo_esqueleto_de_sorteio</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function draw_skeleton_time" />
+  <meta name="rh-index-keywords" content="draw_skeleton_time" />
+  <meta name="search-keywords" content="draw_skeleton_time" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tempo_esqueleto_de_sorteio</h1>
+  <p>Esta função desenhará a animação dada usando a pele dada em um momento específico da animação. O valor do tempo deve estar entre 0 (o início) e a duração final da animação, que você pode encontrar usando a função <a href="../Animation/skeleton_animation_get_duration.htm"><tt>esqueleto_animação_get_duração()</tt></a>.
+    Você <i>pode</i> definir o valor do tempo para valores superiores à duração total da animação e a animação voltará ao início, mas corre o risco de perder a precisão do ponto flutuante como o tempo acumulado
+    fica maior.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">draw_skeleton_time(sprite, animname, skinname, time, x, y, xscale, yscale, yscale, rotineiramente, colorido)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>O índice do duende a desenhar.</td>
+      </tr>
+      <tr>
+        <td>animname</td>
+        <td>O nome da animação para obter o quadro de (um fio).</td>
+      </tr>
+      <tr>
+        <td>skinname</td>
+        <td>O nome da pele a ser usada para desenho (um cordel).</td>
+      </tr>
+      <tr>
+        <td>tempo</td>
+        <td>O intervalo de tempo para desenhar a animação em (de 0 até a duração final, em segundos).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A coordenada x de onde desenhar o duende.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A coordenada y de onde desenhar o duende.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>A escalada horizontal do duende, como um multiplicador: 1 = escalada normal, 0,5 é metade, etc...</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>A escalada vertical do duende, como um multiplicador: 1 = escalada normal, 0,5 é metade, etc...</td>
+      </tr>
+      <tr>
+        <td>podridão</td>
+        <td>A rotação do duende. 0=normal, 90=voltada 90 graus no sentido anti-horário, etc.</td>
+      </tr>
+      <tr>
+        <td>cor</td>
+        <td>A cor com a qual se deve misturar o duende.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var time += delta_time / 1000000;<br> var d = skeleton_animation_get_duration(&quot;walk&quot;);<br> if time &gt; d time -= d;<br> draw_skeleton_time(sprite_index, &quot;walk&quot;, &quot;skin1&quot;, time, x, y, image_xscale, image_yscale, image_angle,
+    c_white);</p>
+  <p>O código acima desenhará o duende de animação esquelético dado usando o tempo delta para definir o frame que está sendo desenhado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Drawing_And_Miscellaneous.htm">Desenho e Diversos</a></div>
+        <div style="float:right">Próximo: <a href="../Animation/skeleton_animation_get.htm">esqueleto_animação_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_skeleton_time
+-->
+  <!-- TAGS
+draw_skeleton_time
+-->
+</body>
+</html>

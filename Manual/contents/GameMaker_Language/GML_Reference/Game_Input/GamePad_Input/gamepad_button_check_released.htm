@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_button_check_released</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_button_check_released" />
+  <meta name="rh-index-keywords" content="gamepad_button_check_released" />
+  <meta name="search-keywords" content="gamepad_button_check_released" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_button_check_released</h1>
+  <p>Esta função retornará <tt>verdadeiro</tt> ou <tt>falso</tt>, dependendo se o botão gamepad dado for detectado como tendo sido liberado ou não. Note que esta função só acionará <i>uma vez</i> para o botão no momento em que ele tiver sido liberado.
+    Para que ela acione novamente o botão deve primeiro ser pressionado e depois liberado uma vez mais. Se você estiver verificando um botão analógico, então a verificação levará em consideração a <a href="gamepad_set_button_threshold.htm">configuração do limiar</a> e somente
+    retornar <span class="inline">true</span> quando o valor de entrada bruta for inferior ao limite determinado (você pode obter este valor bruto usando a função <span class="inline"><a href="gamepad_button_value.htm">gamepad_button_value()</a></span>).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">gamepad_button_check_released(dispositivo, botão);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>dispositivo</td>
+        <td>Qual dispositivo de controle de jogo &quot;slot&quot; a ser verificado.</td>
+      </tr>
+      <tr>
+        <td>botão</td>
+        <td>Qual botão do gamepad é <a href="Gamepad_Input.htm">constante</a> a ser verificado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se gamepad_button_check_released(0, gp_select)<br> {
+    <br> audio_play_sound(snd_Button, 0, false);<br> global.Pause = !global.Pause;<br> }
+  </p>
+  <p>O código acima detectará se o botão &quot;select&quot; do controle de jogo conectado ao dispositivo &quot;slot&quot; 0 foi pressionado ou não e alternará a variável global &quot;Pause&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Gamepad_Input.htm">Entrada Gamepad</a></div>
+        <div style="float:right">Próximo: <a href="gamepad_button_count.htm">gamepad_button_count</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_button_check_released
+-->
+  <!-- TAGS
+gamepad_button_check_released
+-->
+</body>
+</html>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>caminho_mudança_ponto</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_change_point" />
+  <meta name="rh-index-keywords" content="path_change_point" />
+  <meta name="search-keywords" content="path_change_point" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>caminho_mudança_ponto</h1>
+  <p>Com esta função você pode mudar a posição e/ou o fator de velocidade de qualquer ponto previamente definido para um caminho (o caminho pode ter sido criado no editor de caminhos ou através de código usando <a href="path_add.htm"><tt>caminho_add()</tt></a>). Se usado em um
+    do Navegador de Ativos, observe que <strong>a função mudará o ativo real</strong>, e assim afetará permanentemente como o caminho é usado por todas as instâncias no jogo desde o momento em que a função é usada até o final do jogo. Se
+    isto não é o que você precisa, então você deve usar uma função como <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span> para criar uma cópia do caminho primeiro, depois chamar esta função sobre o bem duplicado (não se esqueça de
+    ligue para <span class="inline"><a href="path_delete.htm">path_delete()</a></span> sobre o bem quando ele não for mais necessário).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">path_change_point(index, n, x, y, speed);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice do caminho a ser percorrido para mudar um ponto de.</td>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td>O ponto definidor para mudar os atributos de.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A nova coordenada x (relativa ao caminho) do ponto.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A nova coordenada y (relativa ao caminho) do ponto.</td>
+      </tr>
+      <tr>
+        <td>velocidade</td>
+        <td>O novo fator de velocidade do ponto.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">para (var i = 0; i &lt; path_get_number(path0); ++i;) <br> {
+    <br> var px = path_get_point_x(pth_Patrol, i) + 64 - aleatório(128);<br> var py = path_get_point_y(pth_Patrol, i) + 64 - aleatório(128);<br> path_change_point(pth_Patrol, i, px, py, 100);<br> }
+  </p>
+  <p>O código acima percorre todos os pontos do caminho indexados como &quot;path0&quot; e reposiciona todos os pontos para uma posição aleatória dentro de uma área de 128x128 pixels.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Path_Manipulation.htm">Manipulação do caminho</a></div>
+        <div style="float:right">Próximo: <a href="path_insert_point.htm">caminho_ponto_inserto</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_change_point
+-->
+  <!-- TAGS
+path_change_point
+-->
+</body>
+</html>

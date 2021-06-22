@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_system_drawit</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_system_drawit" />
+  <meta name="rh-index-keywords" content="part_system_drawit" />
+  <meta name="search-keywords" content="part_system_drawit" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_system_update</h1>
+  <p>Com esta função você pode forçar um sistema de partículas a desenhar todas as partículas atuais na tela. Se <a href="part_system_automatic_draw.htm"><tt>part_system_automatic_draw()</tt></a> é desligada, então esta função mostrará as partículas quando
+    usado no evento de sorteio de uma instância, ou pode ser usado quando o alvo de sorteio é fixado em uma superfície (usando <a href="../../Surfaces/surface_set_target.htm"><tt>surface_set_target()</tt></a>) para atrair as partículas do sistema para aquela superfície.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">part_system_drawit(ind);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>O índice do sistema de partículas para extrair as partículas de.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se a superfície_existe(surf)<br> {
+    <br> surface_set_target(surf);
+    <br> part_system_drawit(global.psys);
+    <br> surface_reset_target();
+    <br> }
+  </p>
+  <p>O código acima verifica se a superfície indexada na variável &quot;surf&quot; existe e, se existir, define o objetivo do desenho para a superfície, desenha o sistema de partículas com o ID armazenado na variável global e, em seguida, redefine o desenho
+    alvo para que todo desenho normal apareça na tela mais uma vez.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Particle_Systems.htm">Sistemas de Partículas</a></div>
+        <div style="float:right">Próximo: <a href="part_system_draw_order.htm">part_system_draw_order</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_system_drawit
+-->
+  <!-- TAGS
+part_system_drawit
+-->
+</body>
+</html>

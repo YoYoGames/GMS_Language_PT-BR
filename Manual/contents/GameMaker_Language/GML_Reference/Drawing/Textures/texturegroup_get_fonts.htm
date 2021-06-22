@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>grupo de textura_get_fonts</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ​texturegroup_get_fonts" />
+  <meta name="rh-index-keywords" content="texturegroup_get_fonts" />
+  <meta name="search-keywords" content="texturegroup_get_fonts" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>grupo de textura_get_fonts</h1>
+  <p>Com esta função, você pode recuperar o índice de fontes de cada uma das fontes atribuídas às páginas de textura dentro de um determinado grupo de textura. Você fornece a cadeia de identificação do grupo de texturas (conforme definido no Editor de grupo de texturas) e a função retornará uma matriz 1D
+    onde cada entrada contém o índice de fontes para um recurso de fontes. Se a função falhar - ou seja: um grupo inválido é dado, ou o grupo não tem textura atribuída a ele - então a matriz estará vazia (0 comprimento).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">textgroup_get_fonts(tex_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tex</td>
+        <td>O nome do grupo de textura a verificar (um fio)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">1D array</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var _tex_array = textgroup_get_fonts( &quot;MainMenu&quot;);<br> for (var i = 0; i &lt; array_length(_tex_array); ++i;) <br> {
+    <br> show_debug_message(&quot;Font &quot; + string(i) + &quot; Index:&quot; + string(tex_array[i]));<br> }
+  </p>
+  <p>O código acima recuperará os índices de fontes para o grupo de textura &quot;MainMenu&quot;, depois exibirá essas IDs na janela de saída do console.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Textures.htm">Texturas</a></div>
+        <div style="float:right">A seguir: <a href="texturegroup_get_tilesets.htm">grupos de texturas_get_tilesets</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+texturegroup_get_fonts
+-->
+  <!-- TAGS
+texturegroup_get_fonts
+-->
+</body>
+</html>

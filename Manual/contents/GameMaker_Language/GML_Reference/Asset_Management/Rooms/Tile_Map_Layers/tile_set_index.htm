@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tile_set_index</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function tile_set_index" />
+  <meta name="rh-index-keywords" content="tile_set_index" />
+  <meta name="search-keywords" content="tile_set_index" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tile_set_index</h1>
+  <p>Esta função pode ser usada para definir o índice de azulejos (a posição do azulejo dentro da imagem do conjunto de azulejos) para um conjunto de dados de azulejos. Você dá os dados do azulejo, que podem ser recuperados usando a função <a href="tilemap_get.htm"><tt>tilemap_get()</tt></a>e
+    então o valor inteiro que representa a posição do azulejo (seu índice) dentro do conjunto de azulejos. A função retornará um conjunto modificado de dados do azulejo que pode então ser aplicado usando o <a href="tilemap_set.htm"><tt>tilemap_set()</tt></a> função.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">tile_set_index(tiledata, index)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tiledata</td>
+        <td>os dados da telha a definir</td>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O valor inteiro do índice do conjunto de azulejos a serem usados</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (tileata)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Tiles_sky&quot;);<br> var map_id = layer_tilemap_get_id(lay_id);<br> var mx = tilemap_get_cell_x_at_pixel(map_id, mouse_x, mouse_y);<br> var my = tilemap_get_cell_y_at_pixel(map_id, mouse_x, mouse_y);<br> var data
+    = tilemap_get(map_id, mx, my);<br> var ind = tile_get_index(data);<br> data = tile_set_index(data, irandom(23));<br> tilemap_set(map_id, data, mx, my);</p>
+  <p>O código acima obtém o ID do mapa de azulejos da camada dada e depois usa-o para obter os dados do azulejo para a célula sob a posição do mouse. Estes dados são então usados para definir o índice de azulejos para um número aleatório.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Tile_Map_Layers.htm">Camadas do mapa de azulejos</a></div>
+        <div style="float:right">Próximo: <a href="tile_set_flip.htm">tile_set_flip</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+tile_set_index
+-->
+  <!-- TAGS
+tile_set_index
+-->
+</body>
+</html>

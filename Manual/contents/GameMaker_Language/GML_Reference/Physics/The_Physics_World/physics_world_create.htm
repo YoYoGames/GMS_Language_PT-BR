@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_world_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference pagefor physics_world_create" />
+  <meta name="rh-index-keywords" content="physics_world_create" />
+  <meta name="search-keywords" content="physics_world_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_world_create</h1>
+  <p>Mesmo que você tenha definido a física para seus objetos, sem um mundo para colocá-los dentro deles, o sistema de colisão tradicional do <span class="notranslate">GameMaker Studio 2</span> será o padrão, então você precisa desta função para criar o sistema de física para a sala especificada
+    em um evento objeto, ou o próprio código de criação da sala (também pode ser definido sem o uso de código no editor da sala). Esta função associará um &quot;mundo&quot; físico com a sala e todas as instâncias criadas na sala se comportarão usando
+    a física que foi definida para eles e para o próprio mundo.</p>
+  <p><img alt="Physics world illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_world_create_image.png">Você notará que temos um argumento que define uma relação entre tamanho de pixel e metros.
+    Isto porque as funções físicas funcionam usando medidas do mundo real e, portanto, devemos traduzir coordenadas e tamanhos de pixels para estas medidas do mundo real usando uma &quot;escala de pixel a metro&quot;. Você vai querer ajustar o ajuste da escala de pixels até que o tamanho médio dos pixels dos objetos que você está usando se traduza aproximadamente em objetos físicos simulados de um tamanho apropriado, e acima você pode ver que nós o fixamos em 32 pixels sendo o equivalente a 1 metro. Deve-se notar que
+    que o sistema físico funcionará com proporções maiores e menores, mas que o melhor desempenho é quando as medidas do mundo real de seus objetos não forem inferiores a 0,1 metros e não superiores a 50 metros.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">physics_world_create(pixeltometrescale);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>escala de pixelometria</td>
+        <td>define a proporção de pixels na tela para metros no mundo real. Uma proporção de 32:1 será especificada como 1/32 (ou 0,03125).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">physics_world_create(1/32);</p>
+  <p>O código acima criará um mundo físico na sala atual com uma relação de escala de 32 pixels sendo o equivalente a 1 metro.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="The_Physics_World.htm">O Mundo da Física</a></div>
+        <div style="float:right">A seguir: <a href="physics_world_gravity.htm">gravidade_mundo_física</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_world_create
+-->
+  <!-- TAGS
+physics_world_create
+-->
+</body>
+</html>

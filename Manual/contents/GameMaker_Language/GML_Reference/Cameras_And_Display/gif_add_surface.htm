@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gif_add_surface</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for gif_add_surface" />
+  <meta name="rh-index-keywords" content="gif_add_surface" />
+  <meta name="search-keywords" content="gif_add_surface" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gif_add_surface</h1>
+  <p>Com esta função você pode salvar um quadro em um arquivo GIF a partir de uma superfície. Você fornece o ID do arquivo GIF (como retornado pela função <a href="gif_open.htm"><tt>gif_open()</tt></a>) e uma identificação de superfície (conforme retornado pela função <a href="../Drawing/Surfaces/surface_create.htm"><tt>surface_create()</tt></a>),
+    bem como um tempo de atraso entre os quadros. O tempo de atraso é calculado em 1/100 de segundo, mas observe que uma vez criado o GIF, se você o utilizar para fins promocionais, por exemplo, diferentes navegadores podem interpretar o atraso do frame ligeiramente
+    diferente - veja <a href="https://www.deviantart.com/humpy77/journal/Frame-Delay-Times-for-Animated-GIFs-214150546" target="_blank">aqui</a> para mais detalhes. Você pode (opcionalmente) fornecer valores de desvio X e Y para a superfície que está sendo usada para adicionar a
+    o GIF, caso em que a peça atraída para o GIF começará a partir da posição offset e não da posição default (0,0), permitindo-lhe selecionar apenas uma seção da superfície a ser adicionada. Você também pode fornecer um valor de quantização, que é um número inteiro entre 0,0
+    e 3, onde 0 é quantização total e 3 é quantização zero (valores mais baixos terão uma degradação subsequente na qualidade, mas criarão um GIF menor). Note que não há muita diferença entre a qualidade padrão de 2, e a mais alta de 3,
+    e o uso do 3 irá retardar significativamente a criação do GIF, portanto, deve-se ter cuidado ao usar o valor máximo.</p>
+  <p>Observe que não há limites embutidos no número de quadros ou no tamanho desses quadros em seu GIF, mas se você usar muita memória, a função falhará e retornará -1, caso contrário, retornará 0.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">gif_add_surface(gif_index, surface, delay_time, [xoffset], [yoffset]));</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>gif_index</td>
+        <td>A identificação do gif para adicionar os dados de superfície a</td>
+      </tr>
+      <tr>
+        <td>superfície</td>
+        <td>A identificação da superfície a ser usada como moldura adicionada</td>
+      </tr>
+      <tr>
+        <td>tempo_de_atraso</td>
+        <td>O tempo de atraso para o quadro (em 100 décimos de segundo)</td>
+      </tr>
+      <tr>
+        <td>[xoffset]</td>
+        <td><b>[Opcional</b>] O deslocamento ao longo do eixo X da superfície para adicionar a partir</td>
+      </tr>
+      <tr>
+        <td>[yoffset]</td>
+        <td><b>[Opcional</b>] O deslocamento ao longo do eixo Y da superfície para adicionar a partir</td>
+      </tr>
+      <tr>
+        <td>[quantização]</td>
+        <td><b>[Opcional</b>] A quantidade de quantização de 0 a 3 (0 qualidade mais baixa, 3 qualidade mais alta, padrão é 2)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Inteiro</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se save_gif == verdadeiro<br> {
+    <br> if count === 0<br> {
+    <br> gif_image = gif_open(room_width, room_height);<br> }
+    <br> ou se contar &lt; 30<br> {
+    <br> gif_add_surface(gif_image, application_surface, 6/100);<br> }
+    <br> mais
+    <br> {
+    <br> gif_save(gif_image, &quot;GameCapture.gif&quot;);<br> count = 0;<br> save_gif = false;<br> }
+    <br> contar+++;
+    <br> }
+  </p>
+  <p>O código acima criará um arquivo de imagem GIF com 30 quadros tirados da superfície da aplicação e depois o salvará.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear"><a href="Cameras_And_Display.htm">Câmeras e Display</a>
+        <div style="float:left">Voltar: </div>
+        <div style="float:right">Próximo: <a href="gif_save.htm">gif_save</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gif_add_surface
+-->
+  <!-- TAGS
+gif_add_surface
+-->
+</body>
+</html>

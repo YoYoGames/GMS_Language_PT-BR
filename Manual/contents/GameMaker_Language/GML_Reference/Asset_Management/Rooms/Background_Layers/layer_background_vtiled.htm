@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>fundo_camada_vtiled</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_vtiled" />
+  <meta name="rh-index-keywords" content="layer_background_vtiled" />
+  <meta name="search-keywords" content="layer_background_vtiled" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>fundo_camada_vtiled</h1>
+  <p>Usando esta função, você pode mudar se o elemento de fundo dado em uma camada deve ou não ser ladrilhado verticalmente. Você dá a identificação do elemento de fundo (que você obtém quando cria um elemento de fundo usando <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a>    ou quando você usa a função <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>), e depois definir o valor do azulejo. Se definido como <tt>verdadeiro</tt>, então o elemento será exibido em mosaico verticalmente na sala, e quando definido como <tt>falso</tt>,
+    o elemento não será azulejado. Esta função é apenas para projetos 2D, e não funcionará corretamente quando uma projeção de câmera 3D for usada.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">layer_background_vtiled(background_element_id, tiled);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>background_element_id</td>
+        <td>O valor de identificação único do elemento de fundo a ser mudado</td>
+      </tr>
+      <tr>
+        <td>visível</td>
+        <td>A chave vertical de azulejos, que pode ser <tt>verdadeira</tt> ou <tt>falsa</tt></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var back = layer_background_get_id(layer);<br> if !layer_background_get_htiled(back) || !layer_background_get_vtiled(back)<br> {
+    <br> layer_background_htiled(back, true);<br> layer_background_vtiled(back, true);<br> }
+  </p>
+  <p>O código acima verificará o elemento de fundo atribuído à camada em que a instância que está executando o código está e, se não estiver ladrilhada em nenhuma das direções, ela o colocará em azulejo vertical e horizontalmente.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Background_Layers.htm">Camadas de fundo</a></div>
+        <div style="float:right">Próximo: <a href="layer_background_stretch.htm">fundo_de_camada_esticar</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_background_vtiled
+-->
+  <!-- TAGS
+layer_background_vtiled
+-->
+</body>
+</html>

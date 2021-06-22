@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>cronograma_nome_get_name</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function timeline_get_name" />
+  <meta name="rh-index-keywords" content="timeline_get_name" />
+  <meta name="search-keywords" content="timeline_get_name" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>cronograma_nome_get_name</h1>
+  <p>Esta função pode ser usada para obter o nome de uma linha de tempo como um fio. se a linha de tempo tiver sido criada dinamicamente usando o <a href="timeline_add.htm"><tt>linha do tempo_add()</tt></a> função, o nome devolvido terá o
+    formato &quot;__newtimelineN&quot; onde &quot; N&quot; é o<i>número</i> da linha do tempo (a partir de 0). Observe que isto é <i>apenas</i> uma linha de tempo e não pode ser usado para fazer referência direta à linha de tempo - para
+    que você precisaria do <i>índice da linha do tempo</i>. Você pode, entretanto, usar esta string para obter o <i>índice da linha do tempo</i> usando a string retornada junto com a função <a href="../Assets_And_Tags/asset_get_index.htm"><tt>asset_get_index()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">timeline_get_name(ind);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>O índice da linha do tempo para verificar o nome de.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Cordão</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var _str = timeline_get_name(timeline_index);<br> show_debug_message(&quot;Current timeline = &quot; + _str);</p>
+  <p>O código acima recebe o nome da linha do tempo atualmente atribuída e o envia para o console.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Timelines.htm">Cronogramas</a></div>
+        <div style="float:right">Próximo: <a href="timeline_add.htm">linha do tempo_add</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+timeline_get_name
+-->
+  <!-- TAGS
+timeline_get_name
+-->
+</body>
+</html>

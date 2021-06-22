@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Novo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section detailing the New action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - New" />
+  <meta name="search-keywords" content="New" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="New Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_New.png" width="32"> Novo</h1>
+  <p>Esta ação é utilizada <strong>apenas em<em> </em></strong>quando se cria estruturas usando uma função que foi marcada como uma função de <strong>construtor</strong> (ver <a href="Declare_A_New_Function.htm">Declarar uma nova função</a> para mais informações). Isto
+    A ação toma o método de função para uma função previamente definida, bem como uma série de argumentos, que você pode expandir para adicionar mais, se necessário, usando o ícone <img alt="Expand Arguments Icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png">, à esquerda. Estes argumentos devem corresponder aos inputs exigidos pela função, e serão usados para povoar a estrutura que está sendo criada. A estrutura será devolvida à variável alvo, que pode ser sinalizada como uma variável local temporária
+    variável ou não.<strong></strong></p>
+  <p> </p>
+  <h4>Sintaxe de ação:</h4>
+  <p><img alt="New Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_New.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>Roteiro</td>
+        <td>O nome do script ou função definida pelo usuário a ser chamada.</td>
+      </tr>
+      <tr>
+        <td>Argumento0 ... Argumento3</td>
+        <td>Os diferentes argumentos (valores) que devem ser passados ao roteiro ou função (argumentos não utilizados podem ser deixados em branco)</td>
+      </tr>
+      <tr>
+        <td>Meta</td>
+        <td>O nome da variável que deve ser alvo de qualquer valor retornado (pode ser deixado em branco)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Exemplo ampliado:</h4>
+  <p><img alt="New Exmaple 1" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_3.png">O código de bloco de ação acima provavelmente iria no <b>Create Event</b> of an instance, e declara
+    uma nova função construtora <tt>init_char_struct</tt> com quatro argumentos: <tt>_str1</tt>, <tt>_str2</tt>, <tt>_val1</tt> e <tt>_val2</tt>. Estes argumentos são então utilizados para preencher as variáveis dadas dentro da estrutura que a função está criando.
+    Você então chamaria a função usando a <a href="New.htm">Nova</a> ação em qualquer evento subseqüente, como este:</p>
+  <p><img alt="New Exmaple 2" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_4.png">A função é chamada e retornará uma nova estrutura para a matriz &quot;char&quot;, e a estrutura
+    serão preenchidos com as variáveis &quot;name&quot;, &quot;location&quot;, &quot;hp&quot; e &quot;mana&quot;, definidas com os valores usados para os argumentos correspondentes na função.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Common_Actions_Library.htm">Ações Comuns</a></div>
+        <div style="float:right">A seguir: <a href="Function_Call.htm">Função Chamada</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Execute Script
+-->
+  <!-- TAGS
+action_execute_script
+-->
+</body>
+</html>

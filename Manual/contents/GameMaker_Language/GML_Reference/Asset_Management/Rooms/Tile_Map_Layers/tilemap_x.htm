@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tilemap_x</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function tilemap_x" />
+  <meta name="rh-index-keywords" content="tilemap_x" />
+  <meta name="search-keywords" content="tilemap_x" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tilemap_x</h1>
+  <p>Esta função controla a posição ao longo do eixo x da sala do elemento do mapa de bens azulejos na camada. Você dá o ID do elemento do mapa de azulejos (que você obtém quando cria um elemento do mapa de azulejos usando <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a>    ou quando você usa a função <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>), e então definir o valor x a ser usado (com base nas coordenadas da sala).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">tilemap_x(tilemap_element_id, x);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tilemap_element_id</td>
+        <td>O valor de identificação único do elemento do mapa de azulejos a ser mudado</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A posição x para o mapa de azulejos</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Asset_sky&quot;);<br> var map_id = layer_tilemap_get_id(lay_id);<br> tilemap_x(map_id, irandom(room_width));</p>
+  <p>O código acima obtém o valor de identificação do ativo do mapa de azulejos atribuído à camada &quot;Asset_sky&quot; e então define sua posição x para um valor aleatório entre 0 e a largura da sala.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Tile_Map_Layers.htm">Camadas do mapa de azulejos</a></div>
+        <div style="float:right">Próximo: <a href="tilemap_y.htm">tilemap_y</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+tilemap_x
+-->
+  <!-- TAGS
+tilemap_x
+-->
+</body>
+</html>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>object_get_visible</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function object_get_visible" />
+  <meta name="rh-index-keywords" content="object_get_visible" />
+  <meta name="search-keywords" content="object_get_visible" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>object_get_visible</h1>
+  <p>Esta função lhe dirá se o objeto que você está verificando foi marcado como &quot;visível&quot; (realiza seu evento de sorteio) ou não (não realiza seu evento de sorteio). Note que esta não é uma função de instância! Portanto, você pode ter um objeto visível
+    e uma instância invisível do mesmo objeto e vice-versa. Você pode definir uma visibilidade de instâncias individuais usando o <a href="../Instances/Instance_Variables/visible.htm"><tt>visível</tt></a> variável de instância.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">object_get_visible(obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>O índice do objeto a ser verificado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if (!visible) &amp;&amp; (object_get_visible(object_index))<br> {<br> visible = true;<br> }</p>
+  <p>O código acima verificará a instância em execução para ver se ela está visível ou não, bem como o índice de objetos da instância para ver se ela está sinalizada como visível ou não. Se a instância ainda <i>não</i> estiver visível, o índice de objetos é sinalizado como em,
+    ele se tornará &quot;visível&quot; para o caso em questão.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Objects.htm">Objetos</a></div>
+        <div style="float:right">Próximo: <a href="object_get_physics.htm">object_get_physics</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+object_get_visible
+-->
+  <!-- TAGS
+object_get_visible
+-->
+</body>
+</html>

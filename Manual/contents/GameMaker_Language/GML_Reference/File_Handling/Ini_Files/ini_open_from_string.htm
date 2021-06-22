@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ini_open_from_string</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ini_open_from_string" />
+  <meta name="rh-index-keywords" content="ini_open_from_string" />
+  <meta name="search-keywords" content="ini_open_from_string" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ini_open_from_string</h1>
+  <p>Esta função criará um arquivo ini a partir de um fio e o abrirá para leitura/escrita. A string deve ser formatada corretamente como um arquivo ini (ou seja: com seções, chaves de quebra de linha e valores), caso contrário, o arquivo ini não será criado corretamente. Nota
+    que este arquivo ini é temporário e será removido da memória no momento em que for fechado, perdendo qualquer informação que tenha sido armazenada nele, entretanto o <a href="ini_close.htm"><tt>ini_close()</tt></a> retorna uma seqüência do arquivo ini completo que
+    pode então ser salvo em um servidor ou em um disco.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">ini_open_from_string(string);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>corda</td>
+        <td>O fio contendo todas as informações do ini.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">ini_open_from_string(str)<br> global.sound = ini_read_string(&quot;Options&quot;, &quot;Sound&quot;, true);<br> ini_close();
+  </p>
+  <p>O código acima estabelece um ini temporário para segurar a informação da string &quot;str&quot;, depois lê a partir do ini antes de fechá-lo novamente.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Ini_Files.htm">Arquivos de Inicia</a></div>
+        <div style="float:right">Próximo: <a href="ini_open.htm">ini_open</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ini_open_from_string
+-->
+  <!-- TAGS
+ini_open_from_string
+-->
+</body>
+</html>

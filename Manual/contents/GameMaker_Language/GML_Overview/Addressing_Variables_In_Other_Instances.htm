@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Abordagem de variáveis em outras instâncias</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining hoe to address variables in other instances" />
+  <meta name="rh-index-keywords" content="Addressing Variables In Other Instances" />
+  <meta name="search-keywords" content="" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Abordagem de variáveis em outras instâncias</h1>
+  <p>Nas seções dedicadas às <a href="Variables_And_Variable_Scope.htm">variáveis</a> você descobriu como criar e usar variáveis dentro de uma única instância, ou em um escopo global, mas o que acontece se você quiser que uma instância acesse uma variável em outra,
+    exemplo diferente? Há muitos casos em que você pode querer fazer isso, por exemplo, em uma colisão com um objeto bala, você pode querer descobrir quanto dano a bala faz ao acessar uma variável na bala, ou você pode querer parar o movimento
+    de todas as bolas em um quebra-cabeça, ou você pode querer mover o personagem principal para uma determinada posição, ou qualquer outra situação que você normalmente encontra em qualquer jogo. Felizmente, a <span class="notranslate">linguagem GameMaker</span> vem equipada com mecanismos para alcançar
+    isto.</p>
+  <p>Um dos métodos mais comuns para acessar ou alterar uma variável em outra instância é usar seu nome de objeto como um identificador e depois usar um ponto &quot;<span class="inline">.</span>&quot; para dizer ao GameMaker <span class="notranslate">Studio 2 que a</span> variável usada depois
+    deve ser atribuído ou alterado nesse objeto. A sintaxe para isto é:</p>
+  <p class="code">&lt;object_id&gt;.&lt; variável&gt;<em>= &lt;valor&gt;;</em></p>
+  <p>Na prática, seria assim:</p>
+  <p class="code">obj_ball.speed = 0;</p>
+  <p>Com o código acima, você está definindo a velocidade de uma instância de &quot;obj_ball<tt>&quot;.</tt> Entretanto, se você tiver mais de uma instância do objeto dado na sala, <em>então ela se aplicará a TODOS eles igualmente</em> - a menos que você esteja usando <b>HTML5</b>,
+    Nesse caso, ele afetará apenas <em>um</em>, mas você não tem como saber qual afetará - portanto, se você precisar acessar todas as instâncias de um objeto, você deve estar usando <a href="Language_Features/with.htm"><tt>com()</tt></a>como é o caso de
+    100% compatível com plataformas cruzadas. Em geral, este formato só deve ser usado quando você tiver uma única instância do objeto na sala, ou (como você verá na próxima parte) quando você tiver uma <i> <b>identificação de</b></i> instância específica.</p>
+  <p>Você também pode acessar uma única instância de um objeto quando há múltiplas instâncias dentro da sala usando o <b>nome da instância</b> única para dizer ao <span class="notranslate">GameMaker Studio 2</span> exatamente qual instância desejamos tratar. A <b>constante do nome da instância</b> é a
+    identificação única constante que é dada a cada instância adicionada a uma sala em seu jogo. Você pode encontrar esta constante clicando duas vezes em uma instância no <a href="../../The_Asset_Editors/Rooms.htm">editor da sala</a>:</p>
+  <p><img alt="The instance constant in the room editor" class="center" src="../../assets/Images/Scripting_Reference/GML/Overview/Instance_Constant.png">Note que este nome pode ser editado e receber um nome mais descritivo - embora o nome <em>deva</em> ser
+    exclusivo para todo o jogo - e pode ser usado como o lado esquerdo do ponto:</p>
+  <p class="code">inst_4DB70D2.speed = 0;</p>
+  <p>De longe o método mais comum e prático, entretanto, é usar uma <i>variável</i> à esquerda do ponto, desde que a variável em questão<i> tenha armazenado uma <b>identificação de instância</b></i> válida. Os exemplos a seguir ilustram isto.</p>
+  <p class="code">// Exemplo 1<br> var _inst = instance_position(mouse_x, mouse_y, all);<br> se instance_exists(_inst)<br> {
+    <br> _inst.speed = 0;<br> }
+    <br>
+    <br> // Exemplo 2<br> var _inst = instance_create_layer(mouse_x, mouse_y, &quot;Inimies&quot;, obj_E_Parent);<br> _inst.direction = point_direction(_inst.x, _inst.y, x, y);<br> _inst.target = id;</p>
+  <p>No código acima para o Exemplo 1, há um <a href="../GML_Reference/Asset_Management/Instances/instance_exists.htm"><tt>instance_exists()</tt></a> chamada no bloco de código. Isto porque, utilizando o método de ponto para acessar ou alterar outras instâncias
+    valor dará um erro e travará o jogo se a instância não existir, e há a possibilidade de que este seja o caso neste exemplo. Entretanto, não precisamos da verificação nos Exemplos 2 e 3 porque sabemos que a instância está lá
+    uma vez que no Exemplo 2 o criamos, e no Exemplo 3, é a outra instância em um evento de colisão. Entretanto, se houver <i>qualquer</i> possibilidade de que a instância possa ser destruída, desativada ou de outra forma removida da sala enquanto se utiliza este método,
+    você deve <i>sempre</i> verificar com antecedência usando a função <tt>instance_exists()</tt> ou a função <a href="../GML_Reference/Asset_Management/Instances/instance_number.htm"><tt>instance_number()</tt></a> função.</p>
+  <p>Note que você não pode usar a <a href="Instance_Keywords.htm">palavra-chave</a> especial &quot;tudo&quot; com este método para direcionar todas as instâncias (por exemplo: <span class="inline">all.val = 10</span> daria um erro), mas você pode usar <i>as</i> palavras-chave
+    &quot;outros<tt>&quot; e</tt>&quot;self&quot; sem problemas. Por exemplo, utilizar <tt>o outro</tt> em um <a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">evento de colisão</a>:</p>
+  <p class="code">// Exemplo 3 other.hp -= 10;<br> if other.hp &lt;= 0<br> {
+    <br> other.sprite_index = spr_E_Dead;<br> }
+  </p>
+  <p>Também é importante notar que você não pode usar nenhuma função por si só como o lado esquerdo de uma tarefa. Por exemplo, o seguinte código lhe daria um erro:</p>
+  <p class="code">instance_nearest(x, y, obj).speed = 0;</p>
+  <p>O valor de retorno para a expressão nesse exemplo de código é um número inteiro (o valor de identificação único para a instância mais próxima) e, portanto, deve ser incluído entre parênteses <span class="inline">()</span> para ser usado dessa forma e endereçar corretamente a instância
+    necessário. O código acima seria escrito corretamente como:</p>
+  <p class="code">(instance_nearest(x, y, obj)).speed = 0;<br>
+    <br> //or
+    <br>
+    <br> var inst = instance_nearest(x, y, obj);<br> inst.speed = 0;</p>
+  <p>Todas estas são formas perfeitamente válidas de ler, mudar e definir variáveis em outras instâncias, e funcionam porque o ponto é realmente um <i>operador</i>. Ele toma um valor como <a class="glossterm" data-glossterm="operando" href="#">operando</a> da esquerda e uma variável como operando da direita, e retorna o endereço desta variável em particular no objeto ou instância indicada. Todos os nomes de objetos, constantes, IDs etc... simplesmente representam valores e estes podem ser tratados como qualquer outro valor.</p>
+  <p>A outra maneira de referenciar variáveis em outra instância é usar a função <span class="notranslate">GameMaker Language</span> <span class="inline">with()</span>, que é discutida em detalhes <a href="Language_Features/with.htm">aqui</a>:</p>
+  <p class="code">// Isto afetará todas as instâncias do objeto &quot;obj_Enemy&quot;<br> com (obj_Enemy)<br> {<br> target = other.parent;<br> } <br>
+    <br> // Isso afetará uma instância do objeto &quot;obj_Enemy&quot;<br> var _enemy = instance_nearest(x, y, obj_Enemy);<br> se instance_exists(_enemy)<br> {<br> com (_enemy)<br> {<br> target_x = mouse_x;<br> target.y = mouse_y;<br> } <br> }</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="GML_Overview.htm">Visão geral da<span class="notranslate">GML</span></a></div>
+        <div style="float:right">A seguir: <a href="Evaluation_Order.htm">Ordem de avaliação</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+variables - addressing
+addressing variables
+-->
+  <!-- TAGS
+addressing_variables
+-->
+
+</body></html>

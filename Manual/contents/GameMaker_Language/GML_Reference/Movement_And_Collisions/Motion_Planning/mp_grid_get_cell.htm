@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_get_cell</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_get_cell" />
+  <meta name="rh-index-keywords" content="mp_grid_get_cell" />
+  <meta name="search-keywords" content="mp_grid_get_cell" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_get_cell</h1>
+  <p>Com esta função você pode verificar qualquer célula da mp_grid para ver se ela foi marcada como ocupada ou não, dando o índice da mp_grid (previamente criada) e as coordenadas x e y da célula para verificar. Se foi ou não ocupada ou a posição
+    sendo verificado está fora dos limites das grades então a função retornará -1 caso contrário retornará 0.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">mp_grid_get_cell(id, x , y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Índice da rede mp_ que deve ser usada</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>A coordenada x da grade a ser verificada.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>A coordenada y da grade a ser verificada.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if mp_grid_get_cell(grid, mouse_x div 16, mouse_y div 16) == -1<br> {
+    <br> image_blend = c_red;<br> }
+    <br> mais
+    <br> {
+    <br> image_blend = c_lime;<br> }
+  </p>
+  <p>O código acima verificará a célula mp_grid que corresponde à posição do mouse e, se estiver ocupada, define a variável <tt>image_blend</tt> para vermelho, e se não estiver ocupada, define para verde.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Motion_Planning.htm">Planejamento de Movimento</a></div>
+        <div style="float:right">Próximo: <a href="mp_grid_clear_all.htm">mp_grid_clear_all</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_get_cell
+-->
+  <!-- TAGS
+mp_grid_get_cell
+-->
+</body>
+</html>

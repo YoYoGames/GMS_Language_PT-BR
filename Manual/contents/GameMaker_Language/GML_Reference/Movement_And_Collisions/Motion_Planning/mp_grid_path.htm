@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_path</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_path" />
+  <meta name="rh-index-keywords" content="mp_grid_path" />
+  <meta name="search-keywords" content="mp_grid_path" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_path</h1>
+  <p>Com esta função você pode criar um caminho que irá navegar de um ponto de partida a um ponto de chegada usando uma <tt>mp_grid</tt> que você definiu previamente, evitando quaisquer obstáculos que já tenham sido adicionados à grade. Os argumentos xstart e ystart
+    indicam o início do caminho em coordenadas de sala, enquanto xgoal, ygoal argumentos indicam o destino. Você também pode selecionar apenas movimento horizontal/vertical, ou permitir movimentos diagonais completos, especificando verdadeiro no argumento de permissão.
+    A função retorna ou verdadeiro (conseguiu encontrar um caminho) ou falso (falhou), assim como definir o caminho escolhido. Na imagem a seguir, você pode ver como tudo isso funciona em conjunto:</p>
+  <p><img alt="MP Grid path example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/mp_grid_path_image.png">Como você pode ver, os objetos &quot;tubos&quot; foram adicionados à grade, o que significa que qualquer
+    O caminho criado tem que contorná-los. Há dois caminhos criados na imagem, um (verde) foi feito com diagonais permitidas e o outro (vermelho) sem diagonais. A diferença entre os dois é bastante óbvia, com o caminho verde parecendo muito mais &quot;elegante&quot;.
+    e direto, mas tudo depende do uso que você vai dar a eles, a qual você prefere. Note que o caminho é independente da instância atual - é um caminho através da grade, não um caminho para uma instância específica, mesmo que uma instância específica
+    pode ter a variável que armazena o índice do caminho. Você também pode precisar depurar esses caminhos para ver como eles são feitos e interagir dentro do ambiente do jogo, caso em que você deve estar usando o <tt><a href="../../Drawing/Basic_Forms/draw_path.htm">draw_path()</a></tt> função.</p>
+  <p class="note"><b>OBSERVAÇÃO</b>: O caminho deve ter sido previamente criado (ou em código com <span style="font-size:1px;"><a href="../../Asset_Management/Paths/Path_Manipulation/path_add.htm"><tt style="font-size: 14px">caminho_add()</tt></a></span> ou como um recurso)
+    e será substituída pelo caminho gerado por esta função.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">mp_grid_path(id, path, xstart, ystart, xgoal, ygoal, allowdiag);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Índice da rede mp_ que deve ser usada</td>
+      </tr>
+      <tr>
+        <td>caminho</td>
+        <td>índice do caminho que deve ser utilizado pela função</td>
+      </tr>
+      <tr>
+        <td>x início</td>
+        <td>Início x coordenada do novo caminho</td>
+      </tr>
+      <tr>
+        <td>y começar</td>
+        <td>Início e coordenada do novo caminho</td>
+      </tr>
+      <tr>
+        <td>xgoal</td>
+        <td>Acabamento x coordenada do novo caminho</td>
+      </tr>
+      <tr>
+        <td>ygoal</td>
+        <td>Acabamento e coordenação do novo caminho</td>
+      </tr>
+      <tr>
+        <td>allowdiag</td>
+        <td>Indica se são permitidos movimentos diagonais em vez de apenas horizontais ou verticais</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">global.grid = mp_grid_create(0, 0, room_width div 32, room_height div 32, 32, 32);<br> mp_grid_add_instances(global.grid, obj_wall, false);<br> com (obj_Enemy)<br> {
+    <br> path = path_add();<br> if mp_grid_path(global.grid, path, x, y, obj_Player.x, obj_Player.y, 1)<br> {
+    <br> path_start(path, 0, 3, 0);<br> }
+    <br> }
+  </p>
+  <p>O código acima cria uma variável global &quot;global.grid&quot;, depois gera uma mp_grid e atribui seu índice (id) a essa variável para uso em todas as outras chamadas de função mp_grid. Ele então adiciona todas as instâncias de &quot;obj_Wall&quot; na grade antes de
+    obtendo todas as instâncias de &quot;obj_Enemy&quot; para criar um caminho e depois usar mp_grid_path <tt>para</tt> calcular uma rota de sua posição até a posição de &quot;obj_Player&quot;. Se existe um caminho, então o objeto começa ele mesmo ao longo do caminho.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Motion_Planning.htm">Planejamento de Movimento</a></div>
+        <div style="float:right">Próximo: <a href="mp_grid_add_cell.htm">mp_grid_add_cell</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_path
+-->
+  <!-- TAGS
+mp_grid_path
+-->
+</body>
+</html>

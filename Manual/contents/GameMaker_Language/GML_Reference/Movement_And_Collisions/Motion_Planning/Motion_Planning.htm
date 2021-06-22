@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Planejamento de movimento</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for Motion Planning functions and variables" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Motion Planning,mp,mp funtions" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Planejamento de movimento</h1>
+  <p>Em muitos jogos você quer que os adversários, NPC's, inimigos, etc... interajam com o jogador e mostrem certa inteligência ao se moverem, ou seja: você quer que eles evitem obstáculos, planejem rotas e geralmente não tropecem em tudo no seu caminho! Para ajudar em
+    este <span class="notranslate">GameMaker Studio 2</span> tem uma série de funções que tratam de planejamento de movimento. Note que embora estas sejam projetadas para coisas como inimigos de jogos, elas podem ser usadas para todos os tipos de coisas como criar uma maneira suave
+    para introduzir texto, ou para criar transições, etc... Entretanto, o que quer que você escolha usar da lista abaixo em seu jogo, deve ser notado que em muitas situações um único conjunto de funções não lhe dará uma solução perfeita e que você terá que
+    &quot;misture e combine&quot; as funções, usando uma ou outra, dependendo da situação dentro de seu jogo.</p>
+  <p>O planejamento de movimento no <span class="notranslate">GameMaker Studio 2</span> é tratado pelas funções <b>mp_</b>, as quais estão divididas nos três grupos seguintes:</p>
+  <p> </p>
+  <h2><label for="one">Funções lineares</label></h2>
+  <p>Este tipo de função tenta calcular um caminho livre de colisões para a instância. Uma vez calculado este caminho, você pode atribuí-lo à instância para avançar em direção ao objetivo. O cálculo da trajetória levará algum tempo, mas depois disso a execução
+    do caminho será rápido. É claro que isto só é válido se a situação não tiver mudado nesse meio tempo. Por exemplo, se os obstáculos mudarem, você possivelmente precisará recalcular o caminho. Repare novamente que estas funções podem falhar e que nenhum caminho pode
+    ser encontrado, por exemplo.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="mp_linear_step.htm">mp_linear_step</a></li>
+    <li><a href="mp_linear_step_object.htm">mp_linear_objeto_de_passo</a></li>
+    <li><a href="mp_linear_path.htm">mp_linear_path</a></li>
+    <li><a href="mp_linear_path_object.htm">mp_objeto_de_caminho_linear</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="three">Funções Potenciais</label></h2>
+  <p> </p>
+  <p>Estas são as funções básicas de prevenção e boas para a IA simples. Elas funcionam fazendo com que uma instância dê um passo em direção a uma determinada posição de objetivo enquanto tenta ir direto se possível, mas tomando uma direção diferente se necessário. Estas funções devem
+    ser usado no <b>Evento de Etapa</b> de uma instância.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="mp_potential_settings.htm">mp_potencial_settings</a></li>
+    <li><a href="mp_potential_step.htm">mp_potencial_step</a></li>
+    <li><a href="mp_potential_step_object.htm">mp_potencial_objecto_de_passo</a></li>
+    <li><a href="mp_potential_path.htm">mp_potencial_caminho</a></li>
+    <li><a href="mp_potential_path_object.htm">mp_potencial_objeto_do_caminho</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="two">Funções da grade</label></h2>
+  <p> </p>
+  <p>O tipo final de função utiliza um mecanismo muito mais complexo baseado em uma abordagem baseada em grade (às vezes chamado de algoritmo A*). Ela terá muito mais sucesso em encontrar caminhos (embora ainda possa falhar) e encontrará os caminhos mais curtos possíveis
+    mas requer mais trabalho de seu lado para configurá-lo.</p>
+  <p>A idéia global é a seguinte - Antes de tudo, criamos uma grade que cobre a sala (ou a parte relevante da mesma). Você pode escolher usar uma grade fina, que será mais lenta, ou uma grade grosseira, mas ambas devem ser baseadas na resolução da sala
+    para que a localização do caminho seja a mais precisa possível. Por exemplo, se você tiver uma sala com 400x200 pixels, você pode ter uma resolução de grade de 40, ou 20, ou 10... tudo depende de quão preciso o caminho precisa ser e de quanto processamento você quer
+   <span class="notranslate">GameMaker</span> a fazer para gerá-lo.</p>
+  <p>Em seguida, para todos os objetos relevantes que queremos evitar, precisamos determinar as células de grade que elas se sobrepõem (com base em suas caixas de delimitação ou em seus duendes precisos) e marcar essas células como sendo proibidas. Assim, uma célula será marcada como sendo totalmente proibida,
+    mesmo que um obstáculo seja apenas parcialmente sobreposto.</p>
+  <p>Finalmente, especificamos uma posição inicial e uma posição de objetivo, ambas <i>devem</i> estar em células livres, e a função então calcula o caminho mais curto possível entre estas duas posições. O caminho será percorrido entre os centros de todas as células livres, portanto
+    se as células forem suficientemente grandes para que a instância colocada em seu centro fique completamente dentro dela, isso será um sucesso. Este caminho é então atribuído à instância a seguir usando o <a href="../../Asset_Management/Paths/Paths.htm"><tt>caminho_*</tt></a> funções.
+    Você deve perceber como é importante o tamanho da célula para isto, pois as células devem ser suficientemente grandes para que o objeto em movimento colocado com sua origem no centro de uma célula fique <i>completamente</i> dentro da célula. (Tenha cuidado com a posição da origem
+    do objeto. Perceba também que você pode mudar o caminho se a origem do objeto não estiver em seu centro). Por outro lado, quanto menores forem as células, mais caminhos possíveis existirão. Se você fizer células muito grandes, as aberturas entre os obstáculos podem se fechar
+    porque todas as células se cruzam com um obstáculo.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="mp_grid_create.htm">mp_grid_create</a></li>
+    <li><a href="mp_grid_destroy.htm">mp_grid_destroy</a></li>
+    <li><a href="mp_grid_path.htm">mp_grid_path</a></li>
+    <li><a href="mp_grid_add_cell.htm">mp_grid_add_cell</a></li>
+    <li><a href="mp_grid_add_instances.htm">mp_grid_add_instances</a></li>
+    <li><a href="mp_grid_add_rectangle.htm">mp_grid_add_rectangle</a></li>
+    <li><a href="mp_grid_get_cell.htm">mp_grid_get_cell</a></li>
+    <li><a href="mp_grid_clear_all.htm">mp_grid_clear_all</a></li>
+    <li><a href="mp_grid_clear_cell.htm">mp_grid_clear_cell</a></li>
+    <li><a href="mp_grid_clear_rectangle.htm">mp_grid_clear_clear_rectangle</a></li>
+    <li><a href="mp_grid_to_ds_grid.htm">mp_grid_to_ds_grid</a></li>
+    <li><a href="mp_grid_draw.htm">mp_grid_draw</a></li>
+  </ul>
+  <p> </p>
+  <p>A abordagem baseada em grade é muito poderosa (e é usada em muitos jogos profissionais), mas exige que você faça uma reflexão cuidadosa, pois é preciso determinar qual área e tamanho de célula são bons o suficiente para resolver o jogo. Além disso, você deve determinar quais objetos
+    deve ser evitada e se a verificação precisa é importante. Todos estes parâmetros influenciam fortemente a eficiência da abordagem. Você também deve decidir se é realmente necessário, pois talvez seja uma das funções menos dispendiosas do <span class="inline">mp_*</span>.
+    pode fazer o trabalho da mesma forma.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Movement_And_Collisions.htm">Movimento e colisões</a></div>
+        <div style="float:right">A seguir: <a href="../Collisions/Collisions.htm">Colisões</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Motion Planning
+MP Functions
+Motion Planning Functions
+-->
+  <!-- TAGS
+mp_functions
+-->
+</body>
+</html>

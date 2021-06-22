@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_create_from_vertex_buffer_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_create_from_vertex_buffer_ext" />
+  <meta name="rh-index-keywords" content="buffer_create_from_vertex_buffer_ext" />
+  <meta name="search-keywords" content="buffer_create_from_vertex_buffer_ext,buffer_fixed,buffer_grow,buffer_wrap,buffer_fast,buffer_vbuffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_create_from_vertex_buffer_ext</h1>
+  <p>Você usa esta função para alocar uma parte da memória como um buffer em seu jogo preenchido com os dados de um <a href="../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">buffer de vértice</a> previamente criado. A função retorna uma <i>identificação</i> única <i>de buffer</i> que deve ser armazenada em uma variável e usada para todas as chamadas adicionais de função para o buffer. A função leva o id para que o buffer de vértices seja usado (como retornado pela função <a href="../Drawing/Primitives/vertex_create_buffer.htm"><tt>vértice_criate_buffer()</tt></a>,
+    por exemplo) com as seguintes constantes sendo usadas para definir o tipo de tampão:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>buffer_fixed</td>
+        <td>Um buffer de tamanho fixo.</td>
+      </tr>
+      <tr>
+        <td>buffer_grow</td>
+        <td>Um buffer que irá &quot;crescer&quot; dinamicamente à medida que os dados são adicionados</td>
+      </tr>
+      <tr>
+        <td>tampão_enrolador</td>
+        <td>Um buffer onde os dados serão &quot;embrulhados&quot;. Quando os dados a serem adicionados atingirem o limite do tamanho do buffer, a sobregravação será colocada de volta no início do buffer, e a escrita continuará a partir desse ponto.</td>
+      </tr>
+      <tr>
+        <td>tampão_rápido</td>
+        <td>Tampão especial &quot;despojado&quot; que é extremamente rápido de ler/escrever. Só pode ser usado com <a href="buffer_write.htm">tipos de dados</a> <tt>buffer_u8</tt>, e <i>deve</i> estar alinhado a 1 byte.</td>
+      </tr>
+      <tr>
+        <td>buffer_vbuffer</td>
+        <td>Este tipo de tampão deve ser usado somente como um tampão de vértice.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Além do tipo de amortecedor, você também terá que definir o <i>alinhamento de bytes</i> para o amortecedor. Este valor variará dependendo dos dados que você deseja armazenar no buffer, e na maioria dos casos um valor de 1 é perfeitamente bom. Entretanto, esteja ciente de que
+    para algumas operações é <i>essencial</i> um alinhamento específico, e um alinhamento incorreto pode causar erros (para mais detalhes sobre alinhamento, ver <a href="../../../Additional_Information/Guide_To_Using_Buffers.htm">Buffer Alignment</a>). O seguinte
+    é um guia geral para mostrar quais valores são mais apropriados para cada tipo de dado (quando em dúvida, use um alinhamento de 1):</p>
+  <ul class="colour">
+    <li>As cordas devem ser alinhadas a 1 byte.</li>
+    <li>Inteiros de 8 bits assinados ou não podem ser alinhados a qualquer valor, mas note que para um buffer rápido (veja <a href="buffer_write.htm"><tt>buffer_write()</tt></a>) <i>deve</i> ser alinhado a 1.</li>
+    <li>Inteiros de 16 bits assinados ou não assinados devem ser alinhados a 2 bytes.</li>
+    <li>Os inteiros de 32 bits assinados ou não devem ser alinhados a 4 bytes</li>
+    <li>Flutuadores de até 16bits devem ser alinhados a 2 bytes. <i>(Não suportado atualmente!)</i></li>
+    <li>Flutuadores de até 32bits devem ser alinhados a 4 bytes.</li>
+    <li>Flutuadores de até 64bits devem ser alinhados a 8 bytes.</li>
+  </ul>
+  <p class="note"><b>NOTA</b>: Os buffers de vértices estão alinhados em 1 byte, mas você pode criar o buffer com qualquer alinhamento dependendo de como você quer tratar os dados, pois os dados de vértices são simplesmente uma cópia da memória bruta para o buffer.</p>
+  <p>Os dois últimos argumentos são usados para especificar a gama de dados de vértices que você deseja copiar para o buffer recém-criado. O vértice inicial pode estar em qualquer lugar entre 0 e o número de vértices -1, e então você dá o número de vértices a partir desse ponto
+    para copiar. Você pode usar a função <tt><a href="../Drawing/Primitives/vertex_get_number.htm">vértice_get_number()</a></tt> no buffer de vértices para obter o número total de vértices armazenados.</p>
+  <p class="note"><b>NOTA</b>: É importante que você remova da memória qualquer recurso criado dinamicamente como este quando não precisar mais deles para evitar vazamentos de memória, então quando terminar com o buffer que você criou, você deve liberá-lo novamente
+    usando <span style="font-size:1px;"><a href="buffer_delete.htm"><tt style="font-size: 14px">buffer_delete()</tt></a></span>. Observe também que o buffer de vértices usado para criar o novo buffer também não é removido da memória e você deve usar a função
+    <span style="font-size:1px;"><a href="../Drawing/Primitives/vertex_delete_buffer.htm"><tt style="font-size: 14px">vértice_delete_buffer()</tt></a></span> quando não for mais necessário.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">buffer_create_from_vertex_buffer_ext(vertex_buffer, type, alignment, start_vertex, num_vertices)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>vértice_buffer</td>
+        <td>O índice tampão de vértice a ser utilizado.</td>
+      </tr>
+      <tr>
+        <td>tipo</td>
+        <td>O tipo de buffer a criar (veja a lista constante abaixo).</td>
+      </tr>
+      <tr>
+        <td>alinhamento</td>
+        <td>O alinhamento de bytes para o buffer</td>
+      </tr>
+      <tr>
+        <td>start_vertex</td>
+        <td>O vértice inicial.</td>
+      </tr>
+      <tr>
+        <td>num_vertices</td>
+        <td>O número total de vértices a copiar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Int (ID do buffer Vertex)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var v_num = vtex_get_number(model_buffer); player_buffer = buffer_create_from_vertex_buffer(model_buffer, buffer_grow, 1, 0, v_num - 1);</p>
+  <p>O código acima aloca a memória a um buffer e depois copia os dados de todos os vértices do buffer de vértices dado, retornando o índice do novo buffer que é armazenado na variável &quot;player_buffer&quot;, para uso futuro.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Buffers.htm">Tampões</a></div>
+        <div style="float:right">Próximo: <a href="buffer_delete.htm">buffer_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_create_from_vertex_buffer_ext
+buffer_fixed
+buffer_grow
+buffer_wrap
+buffer_fast
+buffer_vbuffer
+-->
+  <!-- TAGS
+buffer_create_from_vertex_buffer_ext
+-->
+
+</body></html>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_replace</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_replace" />
+  <meta name="rh-index-keywords" content="sprite_replace" />
+  <meta name="search-keywords" content="sprite_replace" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_replace</h1>
+  <p>Esta função funciona quase exatamente da mesma maneira que <a href="sprite_add.htm"><tt>sprite_add()</tt></a>Só que, em vez de devolver o índice do duende que você está importando, ele sobrescreve um índice de duende criado anteriormente. Ao usar o
+    esta função você deve usar um índice sprite que foi criado e armazenado em uma variável usando outras funções como <a href="sprite_add.htm"><tt>sprite_add()</tt></a> ou  <a href="sprite_create_from_surface.htm"><tt>sprite_create_from_surface()</tt></a>,
+    ou mesmo <a href="sprite_duplicate.htm"><tt>sprite_duplicate()</tt></a>em vez de um bem de um duende de árvore de recursos. Você <i>pode</i> substituir um duende dos recursos do jogo usando esta função, mas fazer isso significa que
+    você perderá o ID de referência para o duende que você está substituindo, independentemente de chamar o <tt>game_restart()</tt> ou não, e por isso não é recomendado. Independentemente do duende ser substituído, esta função <b>criará uma nova página de textura para o duende</b> e
+    portanto, deve-se ter cuidado ao utilizá-lo, pois pode afetar negativamente o desempenho ao aumentar o número de trocas de textura necessárias para a renderização.</p>
+  <p>O arquivo de imagem a ser carregado deve estar <b>sempre</b> no formato <tt>*.png</tt> e todas as imagens a serem transformadas em sprites animados devem ter um formato &quot;strip&quot; (veja a imagem abaixo).
+    Elas serão divididas no número de sub-imagens especificadas seguindo a regra <b>largura do sprite = largura da tira / sub imagens</b>.</p>
+  <p><img alt="Example Sprite Strip" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/spr_strip.png" /></p>
+  <p>Como você pode ver na imagem acima, o duende foi colocado sobre um fundo roxo escuro, e isto pode ser removido colocando o argumento &quot;removeback&quot; em realidade. Isto funciona verificando o píxel <i>inferior esquerdo</i> 
+    do duende para a cor ali e depois a utiliza como cor a ser removida. Por exemplo, na imagem acima, se tivéssemos a cor do píxel inferior esquerdo como verde, todas as partes verdes do duende teriam sido removidas e o restante do píxel roxo
+    histórico ignorado.</p>
+  <p>Se você escolher a opção &quot;removeback&quot;, você também pode querer que o GameMaker <span class="notranslate">Studio 2 suavize</span> as bordas do duende definindo o argumento &quot;suave&quot; como verdadeiro. Tudo o que isso faz é criar
+    uma borda semi-transparente ao redor das bordas do duende depois de ter tido seu fundo removido.</p>
+  <p>Finalmente, você também pode especificar a <i>origem</i> x e y para o duende. Este é o ponto onde o duende é &quot;fixo&quot; na instância que o utiliza, e é sempre calculado em relação ao canto superior esquerdo 0,0
+    de uma subimagem sprite. Assim, por exemplo, um duende de 32 x 32 pixels com estes valores definidos para (16,16) terá sua origem no centro.</p>
+  <p>Por padrão, todos os novos sprites têm suas caixas de delimitação calculadas automaticamente (a caixa exata dependerá do tamanho e da transparência do sprite), entretanto você pode querer personalizar isso, nesse caso você também deve usar a função     <a href="sprite_collision_mask.htm"><tt>sprite_collision_mask()</tt></a>.</p>
+  <p class="note"><b>NOTA</b>: Dependendo da plataforma de destino escolhida, você está limitado quanto ao local de onde pode salvar e carregar arquivos. Consulte <a href="../../../../../Additional_Information/The_File_System.htm">Manuseio de arquivos</a> para mais informações.</p>
+  <p class="note"><b>NOTA</b>: Você deve estar ciente de que se você estiver usando esta função em seu jogo HTML5 para carregar recursos de um servidor externo, então, devido à proteção XSS em navegadores, tentativas de carregar recursos de vários domínios podem ser bloqueadas e podem
+    parecem retornar resultados em branco.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">sprite_replace(ind, fname, imgnumb, removeback, smooth, xorig, yorig);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>O índice do duende a ser substituído permanentemente.</td>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td>O nome do arquivo da imagem para fazer o novo duende.</td>
+      </tr>
+      <tr>
+        <td>imgnumb</td>
+        <td>O número de armações que o duende será cortado na horizontal. 1 = uma única imagem / <tt>*.gif.</tt></td>
+      </tr>
+      <tr>
+        <td>remover</td>
+        <td>Indica se todos os pixels com a cor de fundo (píxel inferior esquerdo) devem ser transparentes.</td>
+      </tr>
+      <tr>
+        <td>smooth</td>
+        <td>Indica se é necessário suavizar as bordas.</td>
+      </tr>
+      <tr>
+        <td>xorig</td>
+        <td>A coordenada x da origem, relativa ao canto superior esquerdo do duende.</td>
+      </tr>
+      <tr>
+        <td>yorig</td>
+        <td>A coordenada y da origem, relativa ao canto superior esquerdo do duende.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">sprite_replace(spr_banner, &quot;gravemaker.png&quot;, 1, falso, falso, 0, 0);</p>
+  <p>O código acima substituirá o ativo de imagem indexado em &quot;spr_banner&quot; por outro carregado a partir de uma fonte externa.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sprite_Manipulation.htm">Manipulação de Sprite</a></div>
+        <div style="float:right">Próximo: <a href="sprite_duplicate.htm">sprite_duplicate</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_replace
+-->
+  <!-- TAGS
+sprite_replace
+-->
+</body>
+</html>

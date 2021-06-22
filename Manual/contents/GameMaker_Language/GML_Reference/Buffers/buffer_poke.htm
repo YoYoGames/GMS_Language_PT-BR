@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ponto_de_tampão</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_poke" />
+  <meta name="rh-index-keywords" content="buffer_poke,buffer_u8,buffer_s8,buffer_u16,buffer_s16,buffer_u32,buffer_s32,buffer_u64,buffer_f16,buffer_f32,buffer_f64,buffer_bool,buffer_string,buffer_text" />
+  <meta name="search-keywords" content="buffer_poke" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ponto_de_tampão</h1>
+  <p>Com o <a href="buffer_write.htm"><tt>buffer_write()</tt></a> você pode escrever dados para o buffer dado na posição &quot;procurar&quot; atual, com cada pedaço de dado avançando esta posição pelos bytes sendo escritos ou lidos. No entanto, ele
+    pode ser necessário que você altere um determinado dado sem querer alterar a posição atual de busca, e é quando você usaria esta função. Você simplesmente fornece a função com um índice de buffer, e então a posição de offset a partir do
+    buffer start (em bytes) dentro desse buffer para escrever, assim como o tipo de dados e o valor a ser escrito.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">buffer_poke(buffer, offset, tipo, valor);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tampão</td>
+        <td>O índice do buffer a ser utilizado.</td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td>A posição de compensação (em bytes) dentro do buffer para escrever os dados fornecidos.</td>
+      </tr>
+      <tr>
+        <td>tipo</td>
+        <td>O tipo de dados que devem ser escritos no buffer (ver a lista de constantes <a href="buffer_write.htm">aqui</a>).</td>
+      </tr>
+      <tr>
+        <td>valor</td>
+        <td>Os dados a serem acrescentados ao buffer, de acordo com o tipo especificado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">buffer_poke(buff, 3, buffer_u8, color_get_blue(image_blend));</p>
+  <p>O código acima adicionará o valor do componente azul da cor utilizada para a mistura da imagem no buffer indexado na variável &quot;buff&quot;, na terceira posição no buffer e como um valor de 8bit não assinado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Buffers.htm">Tampões</a></div>
+        <div style="float:right">Próximo: <a href="buffer_save.htm">buffer_save</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_poke
+-->
+  <!-- TAGS
+buffer_poke
+-->
+</body>
+</html>

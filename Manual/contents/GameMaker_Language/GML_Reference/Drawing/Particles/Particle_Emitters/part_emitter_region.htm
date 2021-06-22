@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_emitter_region</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_emitter_region" />
+  <meta name="rh-index-keywords" content="part_emitter_region,ps_shape_rectangle,ps_shape_ellipse,ps_shape_diamond,ps_shape_line,ps_distr_linear,ps_distr_gaussian,ps_distr_invgaussian" />
+  <meta name="search-keywords" content="part_emitter_region,ps_shape_rectangle,ps_shape_ellipse,ps_shape_diamond,ps_shape_line,ps_distr_linear,ps_distr_gaussian,ps_distr_invgaussian" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_emitter_region</h1>
+  <p>Esta função é usada para definir sua posição de um emissor de partículas dentro da sala atual. Você especifica a caixa de delimitação da área dentro da função e então usa qualquer uma de uma série de constantes para definir a forma final do emissor dentro desta delimitação
+    caixa, bem como a distribuição das partículas dentro da forma. As constantes disponíveis para as formas de distribuição estão listadas abaixo:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>ps_shape_rectangle</td>
+        <td>Uma forma retangular que preenche a área em questão.</td>
+      </tr>
+      <tr>
+        <td>ps_shape_ellipse</td>
+        <td>Uma elipse, com a largura e a altura definidas pela área.</td>
+      </tr>
+      <tr>
+        <td>ps_shape_diamond</td>
+        <td>Uma forma de diamante com os pontos na metade da largura e na metade da altura.</td>
+      </tr>
+      <tr>
+        <td>ps_shape_line</td>
+        <td>Uma única linha, onde o ponto inicial é a esquerda e o superior e o ponto final é a direita e o inferior.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p><img alt="Emitter Shapes" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Emitter_Shapes.png">Além das formas de distribuição, você também pode definir a curva de distribuição para as partículas que devem ser
+    emitidos. As constantes disponíveis para as curvas de distribuição estão listadas abaixo:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>ps_distr_linear</td>
+        <td>Uma distribuição linear onde todas as partículas têm uma chance igual de aparecer em qualquer lugar da área.</td>
+      </tr>
+      <tr>
+        <td>ps_distr_gaussian</td>
+        <td>Uma distribuição gaussiana onde mais partículas são geradas no centro do que nas bordas.</td>
+      </tr>
+      <tr>
+        <td>ps_distr_invgaussian</td>
+        <td>Uma distribuição gaussiana inversa onde são geradas mais partículas nas bordas do que no centro.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p><img alt="Emitter Distribution" class="center" height="321" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Emitter_Distribution.png" width="848" /></p>
+  <p class="note"><b>NOTA</b>: Se você precisar que o emissor se mova com uma instância, você terá que usar esta função no evento da etapa e atualizar a posição do emissor dessa forma. Também vale a pena notar que para emissões pontuais onde não é necessário criar partículas
+    sobre uma área ou com uma distribuição específica, muitas vezes é mais fácil de usar <span style="font-size:1px;"><a href="../Particle_Systems/part_particles_create.htm"><tt style="font-size: 14px">part_particles_create()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">part_emitter_region(ps, ind, xmin, xmax, ymin, ymax, forma, distribuição);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>ps</td>
+        <td>O sistema de partículas em que está o emissor.</td>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>O índice do emissor a ser definido.</td>
+      </tr>
+      <tr>
+        <td>xmin</td>
+        <td>A coordenada x do lado esquerdo da região.</td>
+      </tr>
+      <tr>
+        <td>xmax</td>
+        <td>A coordenada x do lado direito.</td>
+      </tr>
+      <tr>
+        <td>ymin</td>
+        <td>A coordenada y da parte superior da região.</td>
+      </tr>
+      <tr>
+        <td>ymax</td>
+        <td>A coordenada y do fundo da região.</td>
+      </tr>
+      <tr>
+        <td>forma</td>
+        <td>A forma da região.</td>
+      </tr>
+      <tr>
+        <td>distribuição</td>
+        <td>O estilo de distribuição das partículas.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">part_emitter_region(global.Sname , emit_1, x - 50, x + 50, y - 50, y + 50, ps_shape_ellipse, ps_distr_linear);</p>
+  <p>O código acima definirá um emissor para uma forma elíptica de 100px de altura e 100px de largura em torno da posição atual (x,y) da instância que executa o código.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Particle_Emitters.htm">Emissores de Partículas</a></div>
+        <div style="float:right">Próximo: <a href="part_emitter_burst.htm">part_emitter_burst</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_emitter_region
+ps_shape_rectangle
+ps_shape_ellipse
+ps_shape_diamond
+ps_shape_line
+ps_distr_linear
+ps_distr_gaussian
+ps_distr_invgaussian
+-->
+  <!-- TAGS
+part_emitter_region
+-->
+</body>
+</html>

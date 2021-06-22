@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tipo de</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function typeof" />
+  <meta name="rh-index-keywords" content="typeof" />
+  <meta name="search-keywords" content="typeof" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tipo de</h1>
+  <p>Esta função retorna o tipo de dados de qualquer variável como uma string. Os possíveis valores de retorno estão listados na tabela abaixo:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Cordão</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>número</td>
+        <td>A variável contém um número real (ponto flutuante) - isso pode incluir <tt>NaN</tt> e <tt>infinito</tt></td>
+      </tr>
+      <tr>
+        <td>corda</td>
+        <td>A variável contém um fio</td>
+      </tr>
+      <tr>
+        <td>matriz</td>
+        <td>A variável faz referência a uma matriz</td>
+      </tr>
+      <tr>
+        <td>bool</td>
+        <td>A variável contém um booleano<tt>(verdadeiro</tt> / <tt>falso</tt>)</td>
+      </tr>
+      <tr>
+        <td>int32</td>
+        <td>A variável contém um número inteiro de 32 bits</td>
+      </tr>
+      <tr>
+        <td>int64</td>
+        <td>A variável contém um inteiro de 64 bits</td>
+      </tr>
+      <tr>
+        <td>ptr</td>
+        <td>A variável contém um ponteiro</td>
+      </tr>
+      <tr>
+        <td>indefinido</td>
+        <td>A variável é indefinida</td>
+      </tr>
+      <tr>
+        <td>nulo</td>
+        <td>A variável tem um valor nulo (isto não deve ser visto normalmente)</td>
+      </tr>
+      <tr>
+        <td>vec3</td>
+        <td>A variável possui um vetor de 3 valores</td>
+      </tr>
+      <tr>
+        <td>vec4</td>
+        <td>A variável possui um vetor de 4 valores</td>
+      </tr>
+      <tr>
+        <td>método</td>
+        <td>A variável contém uma referência de função</td>
+      </tr>
+      <tr>
+        <td>estrutura</td>
+        <td>A variável contém uma referência estrutural</td>
+      </tr>
+      <tr>
+        <td>desconhecido</td>
+        <td>O valor é desconhecido. Isto <i>nunca</i> deve ser visto e significa que algo deu errado no nível mais básico, como uma sobregravação de memória.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Favor observar que há casos em que esta função pode não retornar o valor correto para um <strong>método</strong>. Considere as duas definições de função a seguir:</p>
+  <p class="code">a = função()<br> {<br> // algo<br> } <br>
+    <br> função b()<br> {<br> // Algo<br> }</p>
+  <p>Tecnicamente, estes dois métodos são considerados métodos, pois ligam uma função a uma variável de escopo de instância, no entanto, ligar para <span class="inline">typeof()</span> na função <span class="inline">b</span> retornará &quot;número&quot; e não &quot; <em>método </em>&quot;,
+    enquanto que chamá-lo em <span class="inline">a</span> retornará &quot;método&quot;. Isto se deve ao fato de que a métodos criados como o de <span class="inline">b</span> são atribuídos índices de script (que são valores inteiros), já que este é o
+    forma que o compilador reconhece as funções do script, mesmo que a função não tenha sido definida em um script.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">tipo de(variável);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>variável</td>
+        <td>A variável para obter o tipo de dados.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Corda (ver tabela acima)</p>
+  <p> </p>
+  <h4><b>Exemplo:</b></h4>
+  <p class="code">var _str = typeof(global.ExtensionInput);<br> show_debug_message(&quot; <strong>global.ExtensionInput é um &quot; + _str)</strong>;</p>
+  <p>O código acima obtém o tipo de dados mantido pela variável global dada e retorna a string para uma variável local que é então usada para emitir uma mensagem para o console.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Variable_Functions.htm">Funções variáveis</a></div>
+        <div style="float:right">Próximo: <a href="bool.htm">bool</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+typeof
+-->
+  <!-- TAGS
+typeof
+-->
+</body>
+</html>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_instance_get_instance</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_instance_get_instance" />
+  <meta name="rh-index-keywords" content="layer_instance_get_instance" />
+  <meta name="search-keywords" content="layer_instance_get_instance" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_instance_get_instance</h1>
+  <p>Esta função pode ser usada para obter a identificação única da instância do elemento da instância em questão. Você dá o ID do <i>elemento</i> de instância (veja o exemplo de código abaixo para saber como obtê-lo), e a função retornará um valor real que representa o valor único
+   <a href="../../Instances/Instance_Variables/id.htm">exemplo de id</a> para o elemento. Se o elemento não for uma instância, a função retornará -1.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">layer_instance_get_instance(element_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>element_id</td>
+        <td>O valor único de identificação do elemento de instância para obter a identificação de</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (valor de identificação único para um exemplo)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">elementos = layer_get_all_elements(&quot;Instâncias&quot;);<br> for (var i = 0; i &lt; array_length(elements); i++)<br> {
+    <br> if (layer_get_element_type(elements[i]) == layerelementtype_instance)<br> {
+    <br> var layerelement = elements[i];<br> var inst = layer_instance_get_instance(layerelement);<br> inst.x = inst.x + 10;<br> }
+    <br> }
+  </p>
+  <p>O código acima verificará todos os elementos de instância em uma camada, depois obterá seu valor de identificação único e o utilizará para movê-los 10px para a direita.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="General_Layer_Functions.htm">Funções gerais da camada</a></div>
+        <div style="float:right">Próximo: <a href="layer_destroy_instances.htm">substâncias_de_destruição_de_camadas</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_instance_get_instance
+-->
+  <!-- TAGS
+layer_instance_get_instance
+-->
+</body>
+</html>

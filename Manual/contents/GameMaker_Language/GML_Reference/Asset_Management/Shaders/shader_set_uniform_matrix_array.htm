@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>shader_set_uniform_matrix_array</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function shader_set_uniform_matrix_array" />
+  <meta name="rh-index-keywords" content="shader_set_uniform_matrix_array" />
+  <meta name="search-keywords" content="shader_set_uniform_matrix_array" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">shader_set_uniform_matrix_array</span></h1>
+  <p>Com esta função, você pode definir uma constante de <span class="notranslate">sombreamento</span> para manter uma matriz de valores. Você deve ter obtido previamente o &quot;cabo&quot; da constante usando a função <a href="shader_get_uniform.htm"><tt><span class="notranslate">shader_get_uniform</span>()</tt></a>,
+    e você terá que ter previamente rubricado a matriz como uma matriz de valores de ponto flutuante, onde cada grupo sucessivo de 16 flutuadores é uma matriz 4x4.</p>
+  <p class="note"><b>NOTA</b>: Todos os uniformes devem ser ajustados <b>após</b> a chamada da função <span style="font-size:1px;"><a href="shader_set.htm"><tt style="font-size: 14px"><span class="notranslate">shader_set</span>()</tt></a></span>e antes de chamar 
+    <span style="font-size:1px;"><a href="shader_reset.htm"><tt style="font-size: 14px"><span class="notranslate">shader_reset</span>()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code"><span class="notranslate">shader_set_uniform_matrix_array</span>(handle, array);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>alça</td>
+        <td>O cabo da constante de <span class="notranslate">sombreamento</span> a ser ajustado.</td>
+      </tr>
+      <tr>
+        <td>matriz</td>
+        <td>Um conjunto previamente rubricado de valores de ponto flutuante.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code"><span class="notranslate">shader_set</span><span class="notranslate">(shader_glass</span>);<br> <span class="notranslate">shader_params</span>= <span class="notranslate">shader_get_uniform</span><span class="notranslate">(shader_tint</span>, &quot;cMatrixArray&quot;);<br> shader_set_uniform_matrix_array(shader_params<span class="notranslate">,</span> matrix_array);<br> draw_self();
+    <br> <span class="notranslate">shader_reset</span>();
+  </p>
+  <p>O código acima obterá o cabo da constante de <span class="notranslate">sombreamento</span> &quot;cMatrixArray&quot; e então definirá essa constante para a matriz dada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Shaders.htm"><span class="notranslate">Shaders</span></a></div>
+        <div style="float:right">Próximo: <a href="shader_reset.htm"><span class="notranslate">shader_reset</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">shader</span>_set_uniform_matrix_array
+-->
+  <!-- TAGS
+<span class="notranslate">shader</span>_set_uniform_matrix_array
+-->
+</body>
+</html>

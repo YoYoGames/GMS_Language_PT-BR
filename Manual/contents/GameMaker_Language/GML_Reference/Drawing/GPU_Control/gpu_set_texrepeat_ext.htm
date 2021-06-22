@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_texrepeat_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_texrepeat_ext" />
+  <meta name="rh-index-keywords" content="gpu_set_texrepeat_ext" />
+  <meta name="search-keywords" content="gpu_set_texrepeat_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_texrepeat_ext</h1>
+  <p>Esta função pode ser usada para definir se um único &quot;slot&quot; de amostragem repete a textura dada quando se usa <a href="../../Asset_Management/Shaders/Shaders.htm"><span class="notranslate">Shaders</span></a> no <span class="notranslate">GameMaker Studio 2</span>. A sua <tt>realização</tt> repetirá o
+    textura se as coordenadas uv estiverem fora com o intervalo 0-1, enquanto um ajuste de <tt>falso</tt> significará que não haverá repetição. O caso de uso provável para estas funções é para repetir uma textura em 3D, mas para que ela funcione e não puxar imagens do resto.
+    da página de textura, o duende usado precisará ser marcado como estando em uma &quot;Página de Textura Separada&quot; no Editor Sprite.</p>
+  <p class="note"><b>OBSERVAÇÃO: </b>Esta configuração será sobrevalorizada pelo valor definido ao chamar a função <span style="font-size:1px;"><a href="gpu_set_texrepeat.htm"><tt style="font-size: 14px">gpu_set_texrepeat()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">gpu_set_texrepeat_ext(sampler_id, enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>sampler_id</td>
+        <td>A identificação do amostrador a partir do <span class="notranslate">shader</span>.</td>
+      </tr>
+      <tr>
+        <td>habilitar</td>
+        <td>Ativar ou desativar a filtragem da textura<tt>(verdadeiro</tt> / <tt>falso</tt>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var s_tex = <span class="notranslate">shader_get_sampler_index</span><span class="notranslate">(shader_glass</span>, &quot;s_NoiseSampler&quot;);<br> if gpu_get_texfilter_ext(s_tex)<br> {
+    <br> gpu_set_texfilter_ext(s_tex, false);<br> }
+    <br> mais
+    <br> {
+    <br> gpu_set_texfilter_ext(s_tex, true);<br> }
+  </p>
+  <p>O código acima verifica se a filtragem de textura está ligada ou desligada para uma identificação específica do amostrador (armazenada em uma variável local) e a troca de acordo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="GPU_Control.htm">Controle de GPU</a></div>
+        <div style="float:right">Próximo: <a href="gpu_push_state.htm">gpu_push_state</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_texrepeat_ext
+-->
+  <!-- TAGS
+gpu_set_texrepeat_ext
+-->
+</body>
+</html>

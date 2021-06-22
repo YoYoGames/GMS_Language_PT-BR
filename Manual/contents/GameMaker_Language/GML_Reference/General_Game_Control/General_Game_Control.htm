@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Controle geral do jogo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for General Game Control functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="General Game Control,Game Functions" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Controle geral do jogo</h1>
+  <p>Essas funções e variáveis estão todas relacionadas à funcionalidade específica do jogo, como carregamento/reserva ou reinício, etc...</p>
+  <p>As seguintes variáveis de <a href="../../GML_Overview/Variables/Global_Variables.htm">escopo global</a> <strong>integradas</strong> são úteis para depurar seu jogo - elas podem ser usadas como saída para um arquivo de log no caso de problemas, por exemplo - como
+    bem como para mostrar ao usuário o ID de construção atual, etc..:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="game_id.htm">jogo_id</a></li>
+    <li><a href="game_save_id.htm">game_save_id</a></li>
+    <li><a href="game_display_name.htm">game_display_name</a></li>
+    <li><a href="game_project_name.htm">nome_do_projeto_do_jogo</a></li>
+  </ul>
+  <p> </p>
+  <p>As seguintes funções são utilizadas para o controle geral do jogo:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="game_end.htm">fim_de_jogo</a></li>
+    <li><a href="game_restart.htm">jogo_restart</a></li>
+    <li><a href="game_load.htm">jogo_load</a></li>
+    <li><a href="game_load_buffer.htm">jogo_load_buffer</a></li>
+    <li><a href="game_save.htm">jogo_save</a></li>
+    <li><a href="game_save_buffer.htm">jogo_save_buffer</a></li>
+    <li><a href="game_get_speed.htm">game_get_speed</a></li>
+    <li><a href="game_set_speed.htm">game_set_speed_speed</a></li>
+  </ul>
+  <p> </p>
+  <p>Para ajudá-lo a criar e manter a pontuação máxima para seus jogos, o <span class="notranslate">GameMaker Studio 2</span> cria uma <a href="../../GML_Overview/Arrays.htm">matriz</a> global de pontuação máxima de 10 lugares que você pode acessar, adicionar e alterar para criar sua própria pontuação máxima personalizada.
+    listas sem muito alarido. Esta funcionalidade é local para o jogo e funciona em todas as plataformas, de modo que você pode facilmente armazenar e manter uma tabela básica de pontuação alta usando estas funções junto com as <a href="../File_Handling/File_Handling.htm">Funções de Manuseio de Arquivos</a>.</p>
+  <p>Existem as seguintes funções que lidam com a lista interna de pontuação alta.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="highscore_add.htm">highscore_add</a></li>
+    <li><a href="highscore_name.htm">highscore_name</a></li>
+    <li><a href="highscore_value.htm">highscore_value</a></li>
+    <li><a href="highscore_clear.htm">highscore_clear</a></li>
+  </ul>
+  <p> </p>
+  <p>O<span class="notranslate">GameMaker Studio 2</span> também inclui uma função para desenhar as notas altas na tela como uma lista, porém é muito básico e é recomendado que você use isso para depuração mais do que qualquer outra coisa, pois fazer sua própria tabela de pontuação alta é
+    fácil e lhe dará muito mais controle sobre como ela é exibida:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../Drawing/Text/draw_highscore.htm">draw_highscore</a></li>
+  </ul>
+  <p> </p>
+  <p>Finalmente, temos uma função que lhe permite atribuir um sprite ao cursor do mouse:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="cursor_sprite.htm">cursor_sprite</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../GML_Reference.htm">Referência<span class="notranslate">GML</span></a></div>
+        <div style="float:right">A seguir: <a href="../Movement_And_Collisions/Movement_And_Collisions.htm">Movimento e colisões</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+General Game Control
+Game Control Functions
+Game Functions
+-->
+  <!-- TAGS
+game_functions
+-->
+</body>
+</html>

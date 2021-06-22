@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>image_blend</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the variable image_blend" />
+  <meta name="rh-index-keywords" content="image_blend" />
+  <meta name="search-keywords" content="image_blend" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>image_blend</h1>
+  <p>Esta variável controla o &quot;tinting&quot; da instância sprite e o valor padrão é -1 (mas também pode ser c_white). Qualquer outro valor (incluindo constantes de cor internas como <tt>c_red</tt>, ou <tt>c_aqua</tt>) misturará o valor especificado
+    cor com o duende original. Favor observar que para que as mudanças nesta variável sejam visíveis, a instância <i>não</i> deve ter <i>nenhum</i> evento de sorteio (e, portanto, o <span class="notranslate">GameMaker Studio 2</span> irá desenhar o duende por padrão) ou ser desenhada usando um dos desenhos ampliados
+    funções como <a href="../../../Drawing/Sprites_And_Tiles/draw_self.htm"><tt>draw_self()</tt></a> ou <a href="../../../Drawing/Sprites_And_Tiles/draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a>.</p>
+  <p><img alt="image_blend Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/blend_image.png" /></p>
+  <p>Observe que você deve tentar limitar a mistura na plataforma HTML5 (a menos que use WebGL), pois cada sprite misturado tem que ser colocado em cache separadamente e, portanto, ter muitos sprites misturados pode afetar negativamente o desempenho (você também pode definir o tamanho do cache usando
+    a função <a href="../Sprite_Manipulation/sprite_set_cache_size.htm"><tt>sprite_set_cache_size_size()</tt></a>).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">image_blend;</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (valor de ponto flutuante de precisão único)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">image_blend = make_colour_hsv(255, 255, random(255));</p>
+  <p>O código acima definirá a mistura_de_imagem do duende definido para a instância a uma cor aleatória.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sprite_Instance_Variables.htm">Variáveis de Sprite Instance</a></div>
+        <div style="float:right">Próximo: <a href="image_index.htm">image_index</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+image_blend
+-->
+  <!-- TAGS
+image_blend
+-->
+</body>
+</html>

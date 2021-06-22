@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_grid_value_disk_y</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_value_disk_y" />
+  <meta name="rh-index-keywords" content="ds_grid_value_disk_y" />
+  <meta name="search-keywords" content="ds_grid_value_disk_y" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_value_disk_y</h1>
+  <p>Com esta função, você pode obter a coordenada y (dentro da região em forma de disco da grade) do valor que está sendo procurado. Você dá o índice da grade DS (como retornado por <a href="ds_grid_create.htm"><tt>ds_grid_create()</tt></a>) junto com as posições x/y
+    para a célula central do disco. Em seguida, você dá o raio (como um valor inteiro) ao redor da célula central para pesquisar, antes de fornecer o valor a ser pesquisado. Se o valor a ser pesquisado não existir, então a função retornará -1.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">ds_grid_value_disk_y(index, xm, ym, r, val);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice da grade.</td>
+      </tr>
+      <tr>
+        <td>xm</td>
+        <td>A posição x do disco na grade.</td>
+      </tr>
+      <tr>
+        <td>ym</td>
+        <td>A posição y do disco na grade.</td>
+      </tr>
+      <tr>
+        <td>r</td>
+        <td>O raio do disco na grade.</td>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>O valor a encontrar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if ds_grid_value_disk_exists(grid, 5, 5, 5, val)<br> {
+    <br> xpos = ds_grid_value_disk_x(grid, 5, 5, 5, val);<br> ypos = ds_grid_value_disk_y(grid, 5, 5, 5, val);<br> }
+  </p>
+  <p>O código acima verifica uma grade DS para um valor específico dentro de uma região de disco. se for encontrado, ele então armazena a posição x e y do valor em duas variáveis para uso posterior.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="DS_Grids.htm">Grades DS</a></div>
+        <div style="float:right">Próximo: <a href="ds_grid_copy.htm">ds_grid_copy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_value_disk_y
+-->
+  <!-- TAGS
+ds_grid_value_disk_y
+-->
+
+</body></html>

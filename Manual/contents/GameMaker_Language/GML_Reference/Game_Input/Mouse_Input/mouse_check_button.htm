@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mouse_check_button</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for mouse_check_button" />
+  <meta name="rh-index-keywords" content="mouse_check_button" />
+  <meta name="search-keywords" content="mouse_check_button" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mouse_check_button</h1>
+  <p>Esta função retornará <tt>verdadeiro</tt> se o botão do mouse que está sendo verificado for mantido pressionado ou <tt>falso</tt> se não o for. Você fornece o botão do mouse para verificar a partir de uma das seguintes constantes:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>mb_esquerda</td>
+        <td>O botão esquerdo do mouse</td>
+      </tr>
+      <tr>
+        <td>mb_middle</td>
+        <td>O botão central do mouse (isto pode não ser válido para todas as plataformas alvo)</td>
+      </tr>
+      <tr>
+        <td>mb_right</td>
+        <td>O botão direito do mouse</td>
+      </tr>
+      <tr>
+        <td>mb_side1*</td>
+        <td>Botão do lado do mouse 1</td>
+      </tr>
+      <tr>
+        <td>mb_side2*</td>
+        <td>Botão do lado do mouse 2</td>
+      </tr>
+      <tr>
+        <td>mb_any</td>
+        <td>Qualquer um dos botões do mouse</td>
+      </tr>
+      <tr>
+        <td>mb_none</td>
+        <td>Sem botão do mouse</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><br> * <strong>NOTA</strong>: Os botões <strong>mb_side1</strong> e <strong>mb_side2 </strong>estão disponíveis apenas no <span class="notranslate">Windows</span>, <span class="notranslate">macOS</span>, <span class="notranslate">Ubuntu</span> e HTML5.</p>
+  <h4>Sintaxe:</h4>
+  <p class="code">mouse_check_button(numb);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>dormente</td>
+        <td>Qual a constante do botão do mouse a verificar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if mouse_check_button(mb_left)<br> {
+    <br> instance_create_layer(mouse_x, mouse_y, &quot;Effects&quot;, obj_Star);<br> }
+  </p>
+  <p>O código acima verificará o botão esquerdo do mouse e cada passo que ele for mantido para baixo criará uma instância do objeto indexado em &quot;obj_Star&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Mouse_Input.htm">Entrada do mouse</a></div>
+        <div style="float:right">Próximo: <a href="mouse_check_button_pressed.htm">botão_de_marque_do_mouse_pressionado</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+mouse_check_button
+-->
+  <!-- TAGS
+mouse_check_button
+-->
+</body>
+</html>

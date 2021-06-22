@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_user_is_active</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_user_is_active" />
+  <meta name="rh-index-keywords" content="xboxlive_user_is_active" />
+  <meta name="search-keywords" content="xboxlive_user_is_active" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_user_is_active</h1>
+  <p>Com esta função você pode verificar se o ID de usuário dado está na lista de usuários que usam atualmente o console, e a função retornará <tt>verdadeiro</tt> se eles forem, ou <tt>falso</tt> de outra forma. Você pode obter um ponteiro de identificação do usuário com a função <tt><a href="xboxlive_get_user.htm">xboxlive_get_user()</a></tt>.</p>
+  <p> </p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">xboxlive_user_is_active(user_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>O ponteiro de identificação do usuário a ser verificado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">global.PlayerNum = 0;<br> global.Player_ID = array_create();<br> for(var i = 0; i &lt; xboxlive_get_user_count(); ++i;) <br> {
+    <br> var _uid = xboxlive_get_user(i);<br> se xboxlive_user_is_active(_uid)<br> {
+    <br> global.Player_ID[global.PlayerNum++] = _uid;<br> }
+    <br> }
+  </p>
+  <p>O código acima percorre as contas de usuário e depois verifica se alguma delas está ativa. Se estiverem, sua identificação de usuário é adicionada a uma matriz global.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Users_And_Accounts.htm">Usuários e Contas</a></div>
+        <div style="float:right">Próximo: <a href="xboxlive_user_is_remote.htm">xboxlive_user_is_remote</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_user_is_active
+-->
+  <!-- TAGS
+xboxlive_user_is_active
+-->
+</body>
+</html>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>exemplo_lugar</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_place" />
+  <meta name="rh-index-keywords" content="instance_place" />
+  <meta name="search-keywords" content="instance_place" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>exemplo_lugar</h1>
+  <p>Com esta função você pode verificar uma posição para uma colisão com outra instância ou todas as instâncias de um objeto usando a máscara de colisão da instância que executa o código para a verificação. Quando você usa esta função, está efetivamente pedindo ao <span class="notranslate">GameMaker Studio 2</span> para mover a instância para a nova posição, verificar se há uma colisão, voltar atrás e dizer-lhe se uma colisão foi encontrada ou não. Isto funcionará para colisões precisas, mas somente se tanto a instância quanto o objeto que está sendo verificado tiverem máscaras de colisão precisas.
+    Esta função devolverá a instância única <a href="Instance_Variables/id.htm"><tt>id</tt></a> do objeto a ser colidido, mas se isso não for necessário é um pouco mais rápido para usar o
+    função <a href="../../Movement_And_Collisions/Collisions/place_meeting.htm"><tt>place_meeting()</tt></a>. Esta função também aceita as palavras-chave especiais <span class="inline"><b>all</b></span> e <span class="inline"><b>other</b></span> e
+    devolver a <a href="../../../GML_Overview/Instance_Keywords.htm">palavra-chave</a> <span class="inline"><b>noone</b></span> se não ocorrer nenhuma colisão, ou o valor único de identificação da instância encontrada caso ocorra uma colisão.</p>
+  <p>Note que as coordenadas x/y dadas serão arredondadas para o inteiro mais próximo antes da verificação ser realizada, então se isso <i>não</i> for o que você precisa (ou se você estiver usando um produto <span class="notranslate">GameMaker</span> antigo), você deve <tt>pavimentar</tt> as coordenadas no
+    verificar:</p>
+  <p class="code">instance_place_list(floor(x), floor(y), obj_Enemy, list, true).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">instance_place(x, y, obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A posição x para verificar as instâncias.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A posição y para verificar as instâncias.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>O objeto a ser verificado em casos de.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (ou um valor de identificação de instância ou a palavra-chave <tt>noone</tt>)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var _inst = instance_place(x, y, obj_Enemy);<br> if _inst != noone<br> {
+    <br> hp -= _inst.dmg;<br> instance_destroy(_inst);
+    <br> }
+  </p>
+  <p>O código acima verificará uma colisão com instâncias de &quot;obj_Enemy&quot; e se houver uma, reduzirá a variável &quot;hp&quot; pela quantidade armazenada na variável &quot;dmg&quot; da instância de colisão e então destruirá a colisão
+    instância.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Instances.htm">Instâncias</a></div>
+        <div style="float:right">Próximo: <a href="instance_place_list.htm">exemplo_lista_local</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_place
+-->
+  <!-- TAGS
+instance_place
+-->
+</body>
+</html>

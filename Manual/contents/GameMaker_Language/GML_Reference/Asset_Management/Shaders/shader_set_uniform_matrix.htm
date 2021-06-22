@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>shader_set_uniform_matrix</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function shader_set_uniform_matrix" />
+  <meta name="rh-index-keywords" content="shader_set_uniform_matrix" />
+  <meta name="search-keywords" content="shader_set_uniform_matrix" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">shader_set_uniform_matrix</span></h1>
+  <p>Com esta função você pode definir o valor (ou valores) de uma constante de <span class="notranslate">sombreamento</span> para a matriz de transformação de corrente (como definido usando as <a href="../../Maths_And_Numbers/Matrix_Functions/Matrix_Functions.htm">Funções de Matriz</a>). Você deve ter obtido anteriormente
+    o &quot;cabo&quot; da constante usando a função <a href="shader_get_uniform.htm"><tt><span class="notranslate">shader_get_uniform</span>()</tt></a>.</p>
+  <p class="note"><b></b><b>OBSERVAÇÃO</b>: Todos os uniformes devem ser ajustados <b>após</b> a chamada da função <span style="font-size:1px;"><a href="shader_set.htm"><tt style="font-size: 14px"><span class="notranslate">shader_set</span>()</tt></a></span>e antes de chamar <span style="font-size:1px;"><a href="shader_reset.htm"><tt style="font-size: 14px"><span class="notranslate">shader_reset</span>()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code"><span class="notranslate">shader_set_uniform_matrix</span>(handle);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>alça</td>
+        <td>O cabo da constante de <span class="notranslate">sombreamento</span> a ser ajustado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code"><span class="notranslate">shader_set</span><span class="notranslate">(shader_Glass</span>);<br> <span class="notranslate">shader_matrix</span>= <span class="notranslate">shader_get_uniform</span><span class="notranslate">(shader_glass</span>, &quot;u_vMatrix&quot;);<br> shader_set_uniform_matrix(shader_matrix<span class="notranslate">)</span>;
+    <br> draw_self();
+    <br> <span class="notranslate">shader_reset</span>();
+  </p>
+  <p>O código acima obterá o comando da constante de <span class="notranslate">sombreamento</span> &quot;u_vMatrix&quot; e então definirá essa constante para a matriz de transformação de corrente.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Shaders.htm"><span class="notranslate">Shaders</span></a></div>
+        <div style="float:right">Próximo: <a href="shader_set_uniform_matrix_array.htm"><span class="notranslate">shader_set_uniform_matrix_array</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">shader</span>_set_uniform_matrix
+-->
+  <!-- TAGS
+<span class="notranslate">shader</span>_set_uniform_matrix
+-->
+</body>
+</html>

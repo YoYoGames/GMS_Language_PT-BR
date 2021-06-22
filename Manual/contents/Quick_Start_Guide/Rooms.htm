@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Quartos</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Overview of the room editor." />
+  <meta name="rh-index-keywords" content="Quick Start - Rooms" />
+  <meta name="search-keywords" content="rooms,room editor,room" />
+  <meta name="robots" content="NOODP" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Quartos</h1>
+  <p>Todos os jogos que você faz no <span class="notranslate">GameMaker Studio 2</span> precisam de pelo menos uma sala para funcionar (mas podem ter muitos, muitos mais) , e uma sala é apenas um espaço onde você coloca instâncias dos objetos que compõem seu jogo, assim como azulejos e quaisquer outros recursos gráficos.
+    Quando você criar uma sala pela primeira vez no <a href="../Introduction/The_Asset_Browser.htm">Navegador de Ativos</a>, você será presenteado com um novo <a href="../The_Asset_Editors/Rooms.htm"><strong>Editor de sala</strong></a> espaço de trabalho com o qual editar suas propriedades,
+    algo como isto:</p>
+  <p><img alt="The Room Editor" class="center" src="../assets/Images/QS_Guide/QS_RoomEditor.png" /></p>
+  <p>Por padrão, as ferramentas da sala serão colocadas à esquerda, com três seções principais:</p>
+  <ul class="colour">
+    <li><strong>Editor de camadas</strong>: Tudo em uma sala é colocado em <em>camadas</em>, e há diferentes tipos de camadas que você pode escolher (mais sobre isso mais adiante). As camadas são ordenadas por <em>profundidade </em>e esta profundidade é o que define a ordem em que
+      o conteúdo da camada será apresentado na tela quando o jogo correr. A ordem de profundidade é da mais alta para a mais baixa, de modo que quanto mais baixa a profundidade, mais perto da &quot;câmera&quot; e quanto mais alta a profundidade, mais longe. Por exemplo, uma camada com uma
+      Uma camada com uma profundidade de -300 renderá sobre uma camada com uma profundidade de -100, e uma camada com uma profundidade de 1000 renderá sob tudo com uma profundidade inferior a esta. Note que, por padrão, o <span class="notranslate">GameMaker Studio 2</span> irá ordenar as profundidades de camada para você de acordo com a posição
+      no Layer Editor, e você pode arrastar as camadas usando o mouse para reordená-las e o <span class="notranslate">GameMaker Studio 2</span> reordenará as profundidades para combinar.</li>
+    <li><strong>Propriedades de camadas</strong>: Cada camada que você acrescenta à sala terá suas próprias propriedades, e essas propriedades mudarão dependendo do tipo de camada. Esta janela permite mudar essas propriedades e editar como a camada será
+     <a class="glossterm" data-glossterm="traduzido em" href="#">prestados</a>.</li>
+    <li><strong>Propriedades do quarto</strong>: As salas também têm uma série de propriedades, e estas podem ser definidas aqui. Coisas como o tamanho da sala, as portas de visualização da câmera que estão ativas e algumas outras coisas podem ser configuradas aqui.</li>
+  </ul>
+  <p>Mencionamos que existem diferentes tipos de camadas, então vamos rever o que elas são e como podem ser usadas na construção de seus jogos:</p>
+  <table class="icons">
+    <tbody>
+      <tr>
+        <td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Background.png" /></td>
+        <td class="icons"><strong>Camada de fundo</strong></td>
+        <td class="text">A camada de fundo é uma camada que pode ser preenchida com uma <em>única </em>cor ou uma <em>única </em>imagem. Ela pode ser movida e posicionada dentro da sala, e você pode ter várias camadas de fundo. Geralmente isto é usado, como o nome sugere,
+          para gerar um fundo constante para todas as outras camadas da sala. Por padrão, uma nova sala sempre conterá uma camada de fundo, mas você pode removê-la se não precisar dela.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Instances.png" /></td>
+        <td class="icons"><strong>Camada de instância</strong></td>
+        <td class="text">A camada de instância é onde você coloca todas as instâncias dos objetos que você precisa para o jogo. Para adicionar uma instância a uma camada, basta clicar em <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> sobre o objeto no
+          navegador de recursos e depois arrastá-lo para o espaço de trabalho do editor da sala. Quando você soltar o botão do mouse, uma instância desse objeto terá sido adicionada à sala. Por padrão, uma nova sala sempre conterá uma camada de instância, mas você pode removê-la
+          se você não precisar dele.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Tilemap.png" /></td>
+        <td class="icons"><strong>Camada do mapa de azulejos</strong></td>
+        <td class="text"><span>Depois de ter criado um <a class="glossterm" data-glossterm="jogos de azulejos" href="#">conjunto de azulejos</a>, você precisa adicionar os azulejos à sua sala, o que é feito através da criação de uma camada de <a class="glossterm" data-glossterm="mapa de azulejos" href="#">mapa de azulejos</a>. Uma camada de mapa de azulejos é uma camada que permite adicionar azulejos de qualquer um dos bens do conjunto de azulejos que você criou e será configurada automaticamente para usar uma grade do tamanho das células do conjunto de azulejos. Você só pode adicionar um único azulejo a cada célula da grade, portanto, se você precisar de vários azulejos para ocupar o mesmo espaço, então você deve estar usando várias camadas do mapa de azulejos.</span></td>
+      </tr>
+      <tr>
+        <td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Path.png" /></td>
+        <td class="icons"><strong>Camada do caminho</strong></td>
+        <td class="text"><span>A camada do caminho é a única que não é realmente renderizada quando você executa seu jogo. Esta camada é mais uma camada de &quot;conveniência&quot; para ajudá-lo a criar ou editar <strong>os ativos do </strong>Path <strong>, </strong>uma vez que permite adicionar ou editar caminhos dentro do espaço real da sala.</span></td>
+      </tr>
+      <tr>
+        <td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Asset.png" /></td>
+        <td class="icons"><strong>Camada de ativos</strong></td>
+        <td class="text">Às vezes você quer um bom efeito gráfico, mas não quer a sobrecarga de usar uma instância ou não precisa que ela faça nada além de desenhar-se a si mesma. Você poderia usar um mapa de azulejos, mas dado que os mapas de azulejos são restritos ao uso de uma grade e apenas
+          uma única imagem por célula de grade, elas podem ser um pouco restritivas. Isto é quando você usaria a camada de ativos. A camada de ativos simplesmente pega um recurso sprite e o desenha usando os parâmetros que você define quando você o adiciona à sala. Sprites e
+          seqüências podem ser adicionadas a esta camada da mesma forma que as instâncias de objetos são adicionadas à camada de instância, ou seja: você clica em <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> no sprite no navegador do ativo e então
+          arrastá-lo para o espaço de trabalho do editor da sala.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <!--</div>-->
+  </p>
+  <p>Não entraremos em muito mais detalhes sobre o editor da sala aqui (para isso temos esta <a href="../The_Asset_Editors/Rooms.htm">seção do</a> manual), mas explicaremos brevemente como adicionar instâncias a uma camada de instância, pois você precisará
+    saiba que para a próxima seção do Guia de Início Rápido.</p>
+  <p>Para adicionar uma instância ao editor da sala, você deve primeiro selecionar uma camada de instância do editor de camada à esquerda (ou criar uma se não existir nenhuma). Você pode então ir até o Navegador de Ativos e simplesmente clicar em <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> e arrastar um objeto que você deseja de lá e soltá-lo na sala na posição desejada, o que adicionará uma única instância desse objeto ao seu jogo:</p>
+  <p><img alt="Adding Instances To A room Animation" class="center" src="../assets/Images/QS_Guide/QS_AddingInstances.gif" /></p>
+  <p>Se você quiser colocar várias instâncias na sala, então você pode selecionar um objeto da árvore de recursos e então pressionar e segurar <img alt="ALT Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Alt.png" width="55"> para visualizar o recurso,
+    e se você clicar adicionalmente no botão esquerdo do mouse <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> você pode então &quot;pintar&quot; para a camada do quarto.</p>
+  <p><img alt="Painting Instances In A Room Animation" class="center" src="../assets/Images/QS_Guide/QS_PaintingInstances.gif" /></p>
+  <p>Observe que os ativos recebem uma posição quando são adicionados ao editor da sala com base em suas posições dos eixos X e Y em relação à <strong>origem da</strong> sala. A origem da sala é a posição (0, 0), que no <span class="notranslate">GameMaker Studio 2</span> é o canto superior arrendado,
+    e para a direita é +X e para baixo é +Y, por exemplo:</p>
+  <p><img alt="Room Editor Axis Alignment" class="center" src="../assets/Images/QS_Guide/QS_RoomEditorAxis.png">No exemplo acima a instância é colocada no meio da sala na posição (X:512, Y:384). Também é possível ir para fora da
+    Os limites da sala e têm posições que são maiores que o comprimento do eixo da sala, ou mesmo menores que a origem da sala - neste caso, as coordenadas X/Y serão valores negativos.</p>
+  <p>Para obter informações mais detalhadas sobre o Room Editor, você pode ver a seguinte seção do manual:</p>
+  <ul class="colour">
+    <li><a href="../The_Asset_Editors/Rooms.htm">Editores: O editor da sala</a></li>
+  </ul>
+  <p>Isso o envolve para o editor de salas neste Guia de Início Rápido, e agora você deve saber o suficiente para começar a criar sprites e objetos e projetar salas para eles. As próximas seções deste guia cobrirão parte da programação
+    fundamentos para ajudá-lo em seu caminho, começando por realmente <strong>Desenhar </strong>as coisas para a tela.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Content.htm">Índice</a></div>
+        <div style="float:right">A seguir: <a href="Drawing.htm">Desenho</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Rooms
+Quick Start: Rooms
+-->
+  <!-- TAGS
+qs_rooms
+-->
+
+</body></html>

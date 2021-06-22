@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Vidas de instâncias de sorteio</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Draw Instance Lives action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Draw Instance Lives" />
+  <meta name="search-keywords" content="Draw Instance Lives" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Draw Instance Lives Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/i_Drawing_Draw_Instance_Lives.png"> Vidas de instâncias de sorteio</h1>
+  <p>Esta ação atrairá um duende para representar cada uma das vidas que a instância tem atualmente. O número a ser sorteado é retirado do valor atual das <tt>vidas da</tt> instância local, que é uma variável especial que é criada automaticamente dentro de
+    a instância se você usar qualquer uma das ações que o exijam. Você dá o duende para desenhar para as vidas e a ordem de empilhamento, que pode ser tanto a <b>linha</b> (horizontalmente, da esquerda para a direita), ou a <b>coluna</b> (verticalmente, de cima para baixo), assim como a posição.
+    A posição pode ser uma posição absoluta dentro da sala, ou uma relativa à posição da instância fazendo o desenho, e o espaçamento entre as imagens será baseado na largura ou altura do duende. Note que isto simplesmente desenha uma imagem estática
+    - a imagem inicial única (quadro 0) do duende dado - e quaisquer outros quadros serão ignorados, assim como qualquer transformação que tenha sido adicionada à instância através da alteração das variáveis da instância (como <tt>image_xscale</tt> ou <tt>image_blend</tt>).
+    O texto da legenda será desenhado antes do valor de vida e, se for texto, deverá ser embalado com &quot;&quot;, e ambos serão formatados usando a fonte de desenho atual, cor e alinhamento.</p>
+  <p><b></b></p>
+  <p class="note"><b>NOTA</b>: Esta ação é apenas para uso nos vários <a href="../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">eventos de sorteio</a>, e não desenhará nada se for usada em outro lugar.</p>
+  <p> </p>
+  <p> </p>
+  <h4>Sintaxe de ação:</h4>
+  <p><img alt="Draw Instance Lives" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/a_Drawing_Draw_Instance_Lives.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>Legenda</td>
+        <td>O fio a sacar junto com o valor da pontuação (anterior e pode ser deixado em branco)</td>
+      </tr>
+      <tr>
+        <td>Ordem de empilhamento</td>
+        <td>A ordem de entrada (Linha ou Coluna)</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A posição x para tirar a vida em</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A posição y para atrair as vidas em</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p><img alt="Draw Instance Lives Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/e_Drawing_Draw_Instance_Lives.png">O código do bloco de ação acima desenha sprites relativos à instância para representar
+    o valor de <tt>vida</tt> atual.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Drawing_Actions.htm">Ações de desenho</a></div>
+        <div style="float:right">A seguir: <a href="Set_Draw_Colour.htm">Set Draw Colour</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Draw Instance Lives
+-->
+  <!-- TAGS
+action_draw_instance_lives
+-->
+</body>
+</html>

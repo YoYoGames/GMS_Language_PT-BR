@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_get_nineslice</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet Matharoo" />
+  <meta name="topic-comment" content="Page explaining the function sprite_get_nineslice" />
+  <meta name="rh-index-keywords" content="sprite_get_nineslice" />
+  <meta name="search-keywords" content="sprite_get_nineslice" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_get_nineslice</h1>
+  <p>Esta função retorna a <a href="../../../../GML_Overview/Structs.htm" title="Structs">estrutura de</a> nove fatias para um duende, contendo todas as suas propriedades de nove fatias conforme definido no <a href="../../../../../The_Asset_Editors/Sprites.htm" title="The Sprite Editor">Editor Sprite</a> ou usando <a href="../Sprite_Manipulation/sprite_set_nineslice.htm" title="sprite_set_ninceslice">sprite_set_nineslice()</a>. O conteúdo desta estrutura está detalhado <a href="../Nine_Slice_Struct.htm" title="The Nine Slice Struct">nesta página</a>.</p>
+  <p>Se o duende fornecido não tiver uma estrutura de Nove Fatias atribuída a ele, uma nova estrutura com propriedades padrão de Nove Fatias será criada para o duende e devolvida.</p>
+  <p> <strong>A </strong>alteração de quaisquer valores nesta estrutura modificará as propriedades de nove fatias do duende original, afetando quaisquer futuras chamadas de sorteio feitas com aquele duende.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">sprite_get_nineslice(ind);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>O índice do duende do qual a estrutura das Nove Fatias será recuperada</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Estrutura (ou -1 se o duende não existir)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var _box_nineslice = <strong>sprite_get_nineslice</strong>(spr_box_nineslice_0);<br>
+    <br> _box_nineslice.enabled = true;<br> _box_nineslice.left = 10;<br> _box_nineslice.right = 10;<br> _box_nineslice.top = 10;<br> _box_nineslice.bottom = 10;</p>
+  <p>O código acima recupera a estrutura de nove fatias de um duende, permite o corte de nove fatias para ele e define os offsets da guia.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Sprite_Manipulation/Sprite_Manipulation.htm">Manipulação de Sprite</a></div>
+        <div style="float:right">Próximo: <a href="sprite_get_tpe.htm">sprite_get_tpe</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_get_nineslice
+-->
+  <!-- TAGS
+sprite_get_nineslice
+-->
+</body>
+</html>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>texture_is_ready</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ​texture_is_ready" />
+  <meta name="rh-index-keywords" content="texture_is_ready" />
+  <meta name="search-keywords" content="texture_is_ready" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>texture_is_ready</h1>
+  <p>Esta função pode ser usada para verificar se uma página de textura específica foi desempacotada e está pronta para uso, ou se um grupo de páginas de textura foi desempacotado e está pronto para uso. Você fornece o <b>ID da página de textura</b> única (como retornado pelas funções do <tt>grupo de textura_*</tt> ) ou a cadeia de ID do grupo de textura (como definido no Editor do Grupo de Textura), e a função retornará <tt>verdadeira</tt> se elas tiverem sido desempacotadas, ou <tt>falsa</tt> de outra forma.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">texture_is_ready(tex_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tex_id</td>
+        <td>O ID da página de textura (um número inteiro) <i>ou</i> um ID do grupo de textura (um fio)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var _tex_array = textgroup_get_textures( &quot;MainMenu&quot;);<br> for (var i = 0; i &lt; array_length(_tex_array); ++i;) <br> {
+    <br> if !text_is_ready(_tex_array[i])<br> {
+    <br> text_prefetch(_tex_array[i]));
+    <br> }
+    <br> }
+  </p>
+  <p>O código acima recuperará os IDs de página de textura para o grupo de textura &quot;MainMenu&quot;, então verifique se eles estão desempacotados, e se eles não estão pré-fetados na VRAM.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Textures.htm">Texturas</a></div>
+        <div style="float:right">Próxima: <a href="texturegroup_get_textures.htm">texturas de grupo_get_textures</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+texture_is_ready
+-->
+  <!-- TAGS
+texture_is_ready
+-->
+</body>
+</html>

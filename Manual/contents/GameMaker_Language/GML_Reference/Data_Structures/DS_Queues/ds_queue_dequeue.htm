@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_queue_dequeue</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_queue_dequeue" />
+  <meta name="rh-index-keywords" content="ds_queue_dequeue" />
+  <meta name="search-keywords" content="ds_queue_dequeue" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_queue_dequeue</h1>
+  <p>Esta função irá <i>desmarcar</i> o valor da cabeça da <span class="misspell-word">fila DS</span>, retirando-a da fila e retornando o valor a ser armazenado em uma variável. Se a fila estiver vazia, a função retornará a constante
+   <tt>indefinido</tt>, caso contrário, ele retornará o valor real ou de cordel contido na fila.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">ds_queue_dequeue_dequeue(id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>A identificação da fila de espera a partir da fila de espera.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Valor do tipo de dados armazenados na fila ou indefinidos</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if !ds_queue_empty(move_queue)<br> {
+    <br> var xx = ds_queue_dequeue(move_queue);<br> var yy = ds_queue_dequeue(move_queue);<br> move_towards_point(xx, yy, 4);<br> }
+  </p>
+  <p>O código acima verifica a fila DS indexada na variável &quot;move_queue&quot; para ver se ela está vazia, e se não estiver, ela então retira os dois valores da cabeça da fila e os usa para definir uma direção para o movimento.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="DS_Queues.htm">Filas de DS</a></div>
+        <div style="float:right">Próximo: <a href="ds_queue_enqueue.htm">ds_queue_enqueue</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_queue_dequeue
+-->
+  <!-- TAGS
+ds_queue_dequeue
+-->
+
+</body></html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>teclado_check_pressed</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for keyboard_check_pressed" />
+  <meta name="rh-index-keywords" content="keyboard_check_pressed" />
+  <meta name="search-keywords" content="keyboard_check_pressed" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>teclado_check_pressed</h1>
+  <p>Com esta função você pode verificar se uma tecla foi pressionada ou não. Ao contrário da função <a href="keyboard_check.htm"><tt>teclado_check()</tt></a> esta função só funcionará uma vez para cada vez que a tecla for pressionada, de modo que ela possa ser acionada novamente,
+    a chave deve ser primeiramente liberada e depois pressionada novamente. A função terá um valor de código de chave como retornado pela função <a href="../../Strings/ord.htm"><tt>ord()</tt></a> (somente letras <i>maiúsculas</i> de A-Z ou números de 0-9), ou qualquer um dos
+    constantes <tt>vk_*</tt> listadas na página principal de <a href="Keyboard_Input.htm">Entrada do Teclado</a>.</p>
+  <p> </p>
+  <h4><b>Sintaxe:</b></h4>
+  <p class="code">keyboard_check_pressed(key);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>chave</td>
+        <td>A chave para verificar o estado de pressão.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4><b>Devoluções:</b></h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4><b>Exemplo:</b></h4>
+  <p class="code">if keyboard_check_pressed(vk_anykey)<br> {
+    <br> room_goto_next();
+    <br> }
+  </p>
+  <p>O código acima avançará para a próxima sala se o jogador pressionar qualquer uma das teclas do teclado (funcionando como um prompt &quot;Pressione qualquer tecla para continuar&quot;).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Keyboard_Input.htm">Entrada de Teclado</a></div>
+        <div style="float:right">Próximo: <a href="keyboard_check_released.htm">keyboard_check_released</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+keyboard_check_pressed
+-->
+  <!-- TAGS
+keyboard_check_pressed
+-->
+
+</body></html>

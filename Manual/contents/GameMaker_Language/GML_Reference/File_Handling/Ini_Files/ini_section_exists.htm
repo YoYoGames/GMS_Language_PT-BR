@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ini_section_existe</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ini_section_exists" />
+  <meta name="rh-index-keywords" content="ini_section_exists" />
+  <meta name="search-keywords" content="ini_section_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ini_section_existe</h1>
+  <p>Esta função verifica se existe uma seção no ini atualmente aberto e retornará <tt>verdadeiro</tt> se existir ou <tt>falso</tt> de outra forma. Esta não é uma verificação necessária para evitar erros, pois, quando uma seção não existe, a leitura de uma seção não existente
+    apenas retornará um valor padrão, porém pode ser útil ver se um arquivo ini salvou dados específicos.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">ini_section_exists(section);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>seção</td>
+        <td>A seção no arquivo .ini aberto para verificar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">ini_open(&quot;savedata.ini&quot;);<br> if !ini_section_exists(&quot;save1&quot;)<br> {
+    <br> global.savegame = &quot;1&quot;;<br> }
+    <br> ini_close();
+  </p>
+  <p>Isto definirá a variável global.savegame para &quot;1&quot; se &quot;save1&quot; NÃO for encontrado. Com um loop para loop, isto poderia ser usado como uma forma básica de calcular quantos jogos salvos existem para um jogo (ou seja: criando um sistema para múltiplos salvamentos simultâneos
+    jogos por um jogo).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Ini_Files.htm">Arquivos de Inicia</a></div>
+        <div style="float:right">Próximo: <a href="ini_key_delete.htm">ini_key_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ini_section_exists
+-->
+  <!-- TAGS
+ini_section_exists
+-->
+</body>
+</html>

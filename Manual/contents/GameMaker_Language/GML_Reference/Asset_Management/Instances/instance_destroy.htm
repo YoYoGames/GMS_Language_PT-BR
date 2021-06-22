@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>exemplo_destroy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_destroy" />
+  <meta name="rh-index-keywords" content="instance_destroy" />
+  <meta name="search-keywords" content="instance_destroy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>exemplo_destroy</h1>
+  <p>Você chama esta função sempre que desejar &quot;destruir&quot; uma instância, normalmente desencadeando um <a href="../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">Evento</a> de Destruição <a href="../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">e também</a> um <a href="../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">Evento</a> de Limpeza.
+    Isto irá removê-lo da sala até que a sala seja reiniciada (a menos que a sala seja persistente). Chamar a função sem argumentos simplesmente destruirá a instância que está atualmente em escopo e executando o código, mas você pode fornecer um
+    argumento &quot;id&quot; e direcione uma instância específica usando o valor da instância <span class="inline"><a href="Instance_Variables/id.htm">id</a></span>, ou você pode direcionar todas as instâncias de um determinado objeto usando um <a href="../Objects/object_index.htm"><tt>object_index</tt></a>.
+    Por exemplo:</p>
+  <p class="code">instance_destroy(other); // destruir a &quot;outra&quot; instância em um Evento de Colisão<br> instance_destroy(obj_Bullet); // destruir TODAS as instâncias do objeto &quot;obj_Bullet&quot;.</p>
+  <p>A segunda bandeira <i>opcional</i> permite &quot;desligar&quot; o Evento Destroy, por exemplo, sendo destruído. Por padrão o Evento Destroy será <i>sempre</i> realizado, mas se você definir esta bandeira como <tt>falsa</tt>, então você pode fazer o
+    se destruir e pular a realização desse evento.</p>
+  <p class="note"><b>IMPORTANTE!</b> Isto irá pular o Evento Destroy, mas o evento Clean Up ainda será chamado.</p>
+  <p>Vale notar que quando se destrói uma instância, seu evento de destruição é chamado <i>imediatamente</i> após o código ou ação que chama a função de destruição. Além disso, embora o evento de destruição seja realizado, a instância <i>não é imediatamente removida do jogo</i>,
+    e continuará a executar o código contido no evento atual. Somente quando o evento atual terminar, ele será removido do jogo.</p>
+  <p>Portanto, se você tem, por exemplo, este código:</p>
+  <p class="code">f hp &lt;= 0 instance_destroy();<br> pontuação += 10;</p>
+  <p>A variável &quot;score&quot; será incrementada mesmo <i>que a <tt>função</tt></i> instance_destroy tenha sido chamada, e a instância será finalmente removida de seu jogo no final do evento. Tenha cuidado com isso, como se você tivesse (por exemplo)
+    criou um recurso dinâmico por exemplo, como uma estrutura de dados, e depois destruiu esse recurso no evento de destruição, se houver alguma referência a ele após a função ou ação de destruição ter sido realizada, então você terá um &quot;desconhecido
+    erro &quot;recurso&quot;, pois o evento de destruição o removeu do jogo.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">instance_destroy([id, execute_flag_event_flag]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>O ID da instância ou índice_objeto a destruir (opcional, o padrão é a instância de chamada)</td>
+      </tr>
+      <tr>
+        <td>execute_flag_event_flag</td>
+        <td>Definir como <tt>verdadeiro</tt> ou <tt>falso</tt> para realizar ou não o evento de destruição (opcional, o padrão é <tt>verdadeiro</tt>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if bbox_right &lt; 0 || bbox_left &gt; room_width ||| bbox_bottom &lt; 0 || bbox_top &gt; room_height<br> {
+    <br> instance_destroy(id, false);<br> }
+  </p>
+  <p>O código acima destruirá a instância executando o código sem chamar o Evento Destrutivo se a instância estiver fora dos limites da sala.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Instances.htm">Instâncias</a></div>
+        <div style="float:right">Próximo: <a href="instance_exists.htm">instance_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_destroy
+-->
+  <!-- TAGS
+instance_destroy
+-->
+</body>
+</html>

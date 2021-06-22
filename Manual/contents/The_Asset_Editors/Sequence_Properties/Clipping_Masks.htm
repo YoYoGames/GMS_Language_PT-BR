@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Máscaras de grampear</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how to use clipping masks in the track editor" />
+  <meta name="rh-index-keywords" content="Sequences - Clipping Masks" />
+  <meta name="search-keywords" content="masks,clip masks,clipping,clipping masks" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Máscaras de grampear</h1>
+  <p>Como mencionado na página <a href="The_Track_Panel.htm">Painel de pistas</a>, há uma ação para criar o que é chamado de <strong>grupo de máscara de recorte </strong>no editor de pistas. Isto é acessado clicando no botão <img alt="Clip Mask Icon" src="../../assets/Images/Icons/Icon_AddClipMask.png"> na parte inferior do Painel de Trilha:</p>
+  <p><img alt="Clip Mask Button in the Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Panel_ClipMask_Button.png">Clicando aqui será criado um grupo de máscara de recorte que é composto de dois subconjuntos de ativos que podem ser usados como
+    o <strong>sujeito </strong>ou a <strong>máscara </strong>do grupo. Basicamente o sujeito é o bem que vai ser mascarado, e a máscara é o bem que vai fazer o mascaramento:</p>
+  <p><img alt="Basic Clipping Mask" class="center" src="../../assets/Images/Asset_Editors/Track_Clipping_Mask.png">A idéia por trás do uso de uma máscara de recorte é que você adicione um duende de assunto, e depois um duende de máscara, e o duende de máscara &quot;esconde&quot;.
+    (máscara) o sujeito. Você pode então usar a animação de duende de máscara, ou mover ou escalar o duende de máscara para mudar a visibilidade do assunto (ou partes do assunto). Cada grupo (máscara e sujeito) pode conter múltiplos recursos, e cada um dos recursos pode
+    têm múltiplas faixas de parâmetros.</p>
+  <p>Para adicionar um assunto e máscara, simplesmente arraste o sprite, objeto ou seqüência do Navegador de Ativos sobre a pasta na qual você deseja adicioná-lo:</p>
+  <p><img alt="Add A Clipping Mask" src="../../assets/Images/Asset_Editors/Track_Add_Clipping_Mask.gif" /></p>
+  <p>A máscara <em>alfa </em>sprite será usada para &quot;esconder&quot; qualquer assunto que esteja debaixo dela, onde um valor de 100% alfa (opaco) irá mascarar completamente e um valor de 0% alfa (transparente) irá mostrá-lo. Por exemplo, temos este duende para mascarar:</p>
+  <p><img alt="Clipping Mask Example Sprite" class="center" src="../../assets/Images/Asset_Editors/Clipping_Mask_Sprite.png">Podemos então aplicar isto como uma máscara de recorte aos ícones para criar um efeito &quot;cooldown&quot;, como este:</p>
+  <p><img alt="Animated Clipping Mask Example" class="center" src="../../assets/Images/Asset_Editors/Clipping_Mask_Example.gif">No exemplo acima &quot;<span class="inline">Sprite_2</span>&quot; é simplesmente um bem estático que é o ícone de base,
+    e depois criamos um grupo de máscaras de recorte com uma versão em escala de cinza do duende, assim como uma máscara (usando o exemplo do duende mostrado acima). Quando combinado e a seqüência é reproduzida, o grupo de máscara de clipping revela o duende de base
+    por baixo, criando nosso efeito de resfriamento.</p>
+  <p>Observe que os grupos de máscara de recorte podem ser tratados como um único item na lista de faixas e <span class="notranslate">folha de drogados</span>, e você pode adicionar faixas de parâmetros de rotação e posição ao grupo <em>como um todo</em>. Você também pode aplicar grupos de máscaras de recorte a pastas de ativos de grupo
+    ou mesmo para <em>outros</em> grupos de máscaras de recorte, tornando-os uma ferramenta muito poderosa.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Sequences.htm">Sequências</a></div>
+        <div style="float:right">A seguir: <a href="Using_The_Dope_Sheet.htm">Usando a <span class="notranslate">Folha de Drogas</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Clipping Masks
+Clipping
+Masks
+Clip Masks
+-->
+  <!-- TAGS
+track_panel_clip_mask
+-->
+</body>
+</html>

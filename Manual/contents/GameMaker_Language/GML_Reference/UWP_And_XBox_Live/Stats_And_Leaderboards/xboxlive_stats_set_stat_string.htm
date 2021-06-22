@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_stats_set_stat_string</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_stats_set_stat_string" />
+  <meta name="rh-index-keywords" content="xboxlive_stats_set_stat_string" />
+  <meta name="search-keywords" content="xboxlive_stats_set_stat_string" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_stats_set_stat_string</h1>
+  <p>Esta função pode ser usada para definir uma estatística para uma string para o ID do usuário dado. O usuário fornece o ID de usuário conforme retornado pela (por exemplo) função <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>então a cadeia estatutária
+    para definir<b>(se a cadeia de caracteres caracteres não existir ainda, será criada uma nova letra e definida para o valor dado</b>) e, em seguida, a cadeia para definir a letra. Note que o nome do stat deve ser alfanumérico apenas, sem símbolos ou espaços, mas a cadeia de caracteres
+    valor que você está definindo pode ter espaços e caracteres especiais.</p>
+  <p>Ao definir a cadeia de caracteres de estatística, qualquer cadeia anterior será anulada, portanto cabe a você determinar se a cadeia de caracteres de estatística deve ser atualizada ou não, comparando-a com a cadeia de caracteres de estatística atual com a nova antes de defini-la.</p>
+  <p>A função retornará -1 se houver um erro ou a identificação do usuário for inválida, ou qualquer outro valor se a função foi chamada com sucesso.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">xboxlive_stats_set_stat_string(user_id, stat, value);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>O ponteiro de identificação do usuário para definir a estatística para</td>
+      </tr>
+      <tr>
+        <td>stat</td>
+        <td>A estatística a definir (um fio)</td>
+      </tr>
+      <tr>
+        <td>valor</td>
+        <td>O valor para definir a estatística (um fio)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">xboxlive_stats_set_stat_string(p_user_id, &quot;LevelName&quot;, global.LevelName);</p>
+  <p>O código acima define a estatística &quot;LevelName&quot; para a string armazenada na variável global em questão. </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Stats_And_Leaderboards.htm">Estatísticas e Quadros de Líderes</a></div>
+        <div style="float:right">Próximo: <a href="xboxlive_stats_delete_stat.htm">xboxlive_stats_delete_delete_stat</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_stats_set_stat_string
+-->
+  <!-- TAGS
+xboxlive_stats_set_stat_string
+-->
+</body>
+</html>

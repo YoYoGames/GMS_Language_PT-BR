@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_tex_mip_bias_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_tex_mip_bias_ext" />
+  <meta name="rh-index-keywords" content="gpu_set_tex_mip_bias_ext" />
+  <meta name="search-keywords" content="gpu_set_tex_mip_bias_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_tex_mip_bias_ext</h1>
+  <p>Com esta função você pode definir o valor de polarização do mipmap para um determinado amostrador de <span class="notranslate">sombreador</span>. Você fornece o valor do índice para o amostrador de <span class="notranslate">shader</span> (como retornado pela função <a href="../../Asset_Management/Shaders/shader_get_sampler_index.htm"><tt><span class="notranslate">shader_get_sampler_index</span>()</tt></a>,
+    e então o valor do viés, onde 0 é para nenhum viés, 1 é igual ao primeiro mipmap, 2 é igual ao segundo mipmap etc... Isso controla a taxa na qual o mapa mip é trocado e geralmente fará com que as texturas <span class="notranslate">mais sombreadas</span> fiquem mais embaçadas quanto maior o valor e a
+    maior a &quot;distância&quot; sendo vista. Note que esta função também pode assumir valores negativos, em cujo caso as texturas de <span class="notranslate">sombreamento</span> serão mais nítidas em uma distância maior quanto menor o valor.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">gpu_set_tex_mip_bias_ext(sampler_index, bias);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice_de_amostragem</td>
+        <td>O índice do amostrador de <span class="notranslate">sombreamento</span> para obter</td>
+      </tr>
+      <tr>
+        <td>viés</td>
+        <td>O valor de viés do mipmap a usar (padrão: 0)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var _sampleIndex = <span class="notranslate">shader_get_sampler_index</span>(shd_Glass, &quot;s_Background&quot;);<br> var _spriteTex = sprite_get_texture(sprite_index, 0);<br> shader_set <span class="notranslate">(shd_Glass</span>);
+    <br> if gpu_get_tex_mip_mip_bias_ext(_sampleIndex) != 0<br> {
+    <br> gpu_set_tex_mip_mip_bias_ext(_sampleIndex, 0);<br> }
+    <br> text_set_set_stage(_sampleIndex , _spriteTex);<br> <span class="notranslate">shader_reset</span>();
+  </p>
+  <p>O código acima define o viés do filtro mip como 0 para o amostrador de textura de <span class="notranslate">sombreamento</span> dado, caso ainda não tenha sido definido como 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Mipmapping.htm">Mipmapping</a></div>
+        <div style="float:right">Próximo: <a href="gpu_set_tex_min_mip.htm">gpu_set_tex_min_mip</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_tex_mip_bias_ext
+-->
+  <!-- TAGS
+gpu_set_tex_mip_bias_ext
+-->
+</body>
+</html>

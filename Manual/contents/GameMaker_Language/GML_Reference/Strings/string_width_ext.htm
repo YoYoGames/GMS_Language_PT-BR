@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>largura_de_filtro_extra</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for string_width_ext" />
+  <meta name="rh-index-keywords" content="string_width_ext" />
+  <meta name="search-keywords" content="string_width_ext" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>largura_de_filtro_extra</h1>
+  <p>Esta função retornará a largura máxima (em pixels) da cadeia de entrada, levando em conta a separação de linha e a largura de quebra de linha (que é definida como o número de pixels que a cadeia pode ocupar antes de uma quebra de linha ser inserida). Ela é muito
+    útil para calcular distâncias entre elementos de texto com base na largura máxima de um fio que é dividido em várias linhas, pois seria desenhado com <a href="../Drawing/Text/draw_text_ext.htm"><tt>draw_text_ext()</tt></a> usando o atualmente definido
+    fonte. A separação e a largura podem ser definidas como -1 para obter o espaçamento padrão.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">string_width_ext(string, sep, w);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>corda</td>
+        <td>O fio para medir a largura de.</td>
+      </tr>
+      <tr>
+        <td>sep</td>
+        <td>A distância em pixels entre linhas de texto como se a corda estivesse sendo desenhada.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>A largura máxima (em pixels) da corda antes de uma quebra de linha, como se a corda fosse trazida desenhada.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var ww = string_width_ext(str_Story_Text[1], -1, 100);<br> draw_text_ext(32, 32, str_Story_Text[1], -1, 100);<br> draw_text_ext(32 + ww, 32, str_Story_Text[2], -1, 100);</p>
+  <p>O código acima obterá a largura da corda dada, levando em conta a separação de linha e a largura da quebra de linha, e então desenhará duas linhas de texto, usando a largura total da corda retornada como um separador.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Strings.htm">Cordas</a></div>
+        <div style="float:right">Próximo: <a href="string_hash_to_newline.htm">string_hash_to_newline</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+string_width_ext
+-->
+  <!-- TAGS
+string_width_ext
+-->
+
+</body></html>

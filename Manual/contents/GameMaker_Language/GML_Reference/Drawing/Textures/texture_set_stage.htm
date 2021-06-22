@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>textura_set_set_stage</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ​texture_set_stage" />
+  <meta name="rh-index-keywords" content="texture_set_stage" />
+  <meta name="search-keywords" content="texture_set_stage" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>textura_set_set_stage</h1>
+  <p>Esta função irá definir uma textura a ser utilizada para o &quot;slot&quot; do estágio dado. O número de &quot;slots&quot; de estágio disponíveis dependerá da plataforma para a qual você está compilando, com um máximo de 8 disponíveis para Windows, <span class="notranslate">Mac e</span> Linux, mas <span class="notranslate">com</span> um
+    É importante notar também que o primeiro estágio &quot;slot&quot; é sempre usado automaticamente <span class="notranslate">pelo</span> GameMaker <span class="notranslate">Studio 2</span>.</p>
+  <p class="note"><b>NOTA</b>: Esta função não fará nada fora do contexto de um <span class="notranslate">sombreador</span> em funcionamento! Ver <a href="../../Asset_Management/Shaders/Shaders.htm"><span class="notranslate">Shaders</span> </a>para mais informações.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">text_set_set_stage(stage, tex);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>estágio</td>
+        <td>A textura &quot;ranhura&quot; a ser utilizada.</td>
+      </tr>
+      <tr>
+        <td>tex</td>
+        <td>A textura a ser utilizada.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">glassshader_bgsampler = <span class="notranslate">shader_get_sampler_index</span>(GlassShader, &quot;s_BackgroundSampler&quot;)<br> spr = sprite_get_texture(sprite_index, 0);<br> shader_set <span class="notranslate">(GlassShader</span>);
+    <br> text_set_set_stage(glassshader_bgsampler, spr);<br> <span class="notranslate">shader_reset</span>();
+  </p>
+  <p>O código acima obterá o <i>cabo</i> para o amostrador dentro do <span class="notranslate">sombreador</span> indexado como &quot;GlassShader&quot;<span class="notranslate">e</span> então definirá esse sombreador <span class="notranslate">constante</span> para a textura do duende dado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Textures.htm">Texturas</a></div>
+        <div style="float:right">A seguir: <a href="texture_global_scale.htm">textura_escala_global</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+texture_set_stage
+-->
+  <!-- TAGS
+texture_set_stage
+-->
+</body>
+</html>

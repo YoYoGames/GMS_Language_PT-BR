@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>file_text_eoln</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for file_text_eoln" />
+  <meta name="rh-index-keywords" content="file_text_eoln" />
+  <meta name="search-keywords" content="file_text_eoln" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>file_text_eoln</h1>
+  <p>Com esta função, você pode obter o <span class="notranslate">GameMaker Studio 2</span> para verificar o arquivo atualmente aberto para ver se a linha que está sendo lida terminou. A função retorna <tt>verdadeiro</tt> se o final da linha tiver sido alcançado e <tt>falso</tt> caso contrário.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">file_text_eoln(fileid);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>fileid</td>
+        <td>A identificação do arquivo a ser verificado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var file = file_text_open_read(working_directory + &quot;Game_Data.txt&quot;);<br> var num = 0; while (!file_text_eoln(file))<br> {
+    <br> score_array[num] = file_text_read_real(file);<br> num++;
+    <br> }
+    <br> file_text_close(file);
+  </p>
+  <p>O código acima abre um arquivo para leitura e depois lê os valores de uma única linha em uma matriz.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Text_Files.htm">Arquivos de texto</a></div>
+        <div style="float:right">Próximo: <a href="file_text_eof.htm">file_text_eof</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+file_text_eoln
+-->
+  <!-- TAGS
+file_text_eoln
+-->
+</body>
+</html>

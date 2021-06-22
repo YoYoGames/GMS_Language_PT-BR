@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_stats_remove_user</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_stats_remove_user" />
+  <meta name="rh-index-keywords" content="xboxlive_stats_remove_user, achievement_stat_event" />
+  <meta name="search-keywords" content="xboxlive_stats_remove_user,achievement_stat_event" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_stats_remove_user</h1>
+  <p>Esta função pode ser usada para remover (não registrar) um determinado usuário do gerente de estatísticas, realizando uma descarga dos dados estatísticos para o servidor ao vivo. De acordo com a documentação da XBox, o jogo não tem que remover o usuário do gerenciador de estatísticas,
+    uma vez que o sistema operacional XBox irá periodicamente lavar as estatísticas de qualquer maneira. Você fornece o ID do usuário conforme retornado por (por exemplo) a função <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>e a função retornará -1
+    se houver um erro ou se a identificação do usuário for inválida, ou qualquer outro valor se a função foi chamada com sucesso.</p>
+  <p class="note"><b>NOTA</b>: A remoção do usuário pode retornar um erro se as estatísticas que foram definidas sobre o usuário forem inválidas (tais como os nomes estatísticos contendo caracteres numéricos não alfanuméricos).</p>
+  <p>A função gerará uma chamada de retorno que acionará um <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">Evento Assíncrono do Sistema</a>. Este evento terá o mapa DS especial <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>    que deve então ser analisado para as seguintes chaves:</p>
+  <ul class="colour">
+    <li>&quot;id&quot; - Realizará o constante <tt>evento</tt></li>
+    <li>&quot;Eventname<b>&quot; -</b> Segura a corda &quot;LocalUserRemoved<i>&quot;</i></li>
+    <li>&quot;userid<b>&quot; -</b> O ID do usuário associado à solicitação</li>
+    <li>&quot;erro<b>&quot; - 0</b> se bem sucedido, algum outro valor se tiver havido um erro</li>
+    <li>&quot; errormessage<b>&quot; - Uma</b> cadeia com uma mensagem de erro, se houver alguma disponível</li>
+  </ul>
+  <p>Observe que, se você quiser lavar os dados de estatísticas para o servidor ao vivo a qualquer momento sem remover o usuário, você pode usar a função <a href="xboxlive_stats_flush_user.htm"><tt>xboxlive_stats_flush_user()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">xboxlive_stats_remove_user(user_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>O ID do usuário (um ponteiro) para remover</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">for(var i = 0; i &lt; xboxlive_get_user_count(); ++i;) <br> {
+    <br> user_id[i] = xboxlive_get_user(i);<br> xboxlive_stats_remove_user(user_id[i]);
+    <br> }
+  </p>
+  <p>O loop de código acima através dos IDs de conta de usuário armazenados e remover (cancelar o registro) cada usuário do gerenciador de estatísticas.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Stats_And_Leaderboards.htm">Estatísticas e Quadros de Líderes</a></div>
+        <div style="float:right">Próximo: <a href="xboxlive_stats_flush_user.htm">xboxlive_stats_flush_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_stats_remove_user
+achievement_stat_event
+-->
+  <!-- TAGS
+xboxlive_stats_remove_user
+-->
+</body>
+</html>

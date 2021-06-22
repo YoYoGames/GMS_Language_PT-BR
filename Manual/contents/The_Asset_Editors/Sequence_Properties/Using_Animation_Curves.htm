@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Usando curvas de animação</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how to use animation curves with sequences
+" />
+  <meta name="rh-index-keywords" content="Sequences - Animation Curves" />
+  <meta name="search-keywords" content="curves,animation curves" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Usando curvas de animação</h1>
+  <p>Uma característica importante do <a href="Using_The_Dope_Sheet.htm"><span class="notranslate">folha de drogadição</span></a> é a capacidade de atribuir <a href="../Animation_Curves.htm">Curvas de Animação</a> a faixas de parâmetros dentro da seqüência para criar <strong>curvas de parâmetros</strong> em seu lugar
+    dos <span class="notranslate">quadros-chave de</span> parâmetros. Há dois tipos de curvas que podem ser usadas para os quadros de parâmetros:</p>
+  <ul class="colour">
+    <li><strong>Curvas Incorporadas</strong>: Estas são curvas que estão embutidas na seqüência e são exclusivas da faixa de parâmetros em que são utilizadas.</li>
+    <li><strong>Curvas Compartilhadas</strong>: Estas são curvas que são criadas independentemente da seqüência usando o <a href="../Animation_Curves.htm">Editor de Curvas de Animação</a>.</li>
+  </ul>
+  <p>Começaremos explicando como usar um ativo Curva de Animação, que é simplesmente um caso de criação de uma nova curva, estabelecendo os canais no Editor de Curvas de Animação, e depois arrastando o ativo da curva para a <span class="notranslate">folha de papel para</span> aplicá-lo a um parâmetro
+    pista:</p>
+  <p><br />
+    <img alt="Add Animation Curve Asset To The Dope Sheet" class="center" src="../../assets/Images/Asset_Editors/Dope_Sheet_AddAnimCurve.gif" /></p>
+  <p>Você também pode usar o botão direito do mouse <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> opção do menu <strong>Assign Shared Curve (Importar)</strong><strong> </strong>para adicionar um recurso de curva de animação
+    para a faixa de parâmetros selecionada. Isto abrirá o Asset Explorer onde você poderá selecionar a curva desejada dentre as apresentadas a você:</p>
+  <p><img class="center" src="../../assets/Images/Asset_Editors/Dope_Sheet_Shared_Curve.gif">É importante notar que o ativo da curva de animação <strong>deve ter o número correto de canais para a pista em que está sendo aplicado</strong>, pois cada
+    tipo de faixa de parâmetros exigirá um número diferente de canais na curva de animação. Qualquer curva de animação que não tenha canais suficientes será mostrada com um indicador <img class="icon_small" src="../../assets/Images/Icons/Invalid_Triangle_Yellow.png"> no navegador de ativos.</p>
+  <p>Abaixo está uma lista das diferentes faixas de parâmetros e os canais que serão necessários em cada ativo da curva (canais devem ser adicionados na ordem dada para cada tipo de parâmetro):</p>
+  <ul class="colour">
+    <li><strong>Posição</strong>: 2 canais, X e Y.</li>
+    <li><strong>Rotação</strong>: 1 canal.</li>
+    <li><strong>Multiplicação de cores</strong>: 4 canais, Alfa, Vermelho, Verde e Azul, e a faixa <em>deve</em> estar entre 0 e 255.</li>
+    <li><strong>Índice de imagens</strong>: 1 canal.</li>
+    <li><strong>Velocidade de imagem</strong>: 1 canal.</li>
+    <li><strong>Origem</strong>: 2 canais, X e Y.</li>
+    <li><strong>Escala</strong>: 2 canais, escala X e escala Y, e note que o valor é um multiplicador, então o valor base é 1 (sem escala) e maior que um fará a imagem maior, e menos de 1 fará a imagem menor. Os valores negativos serão invertidos ou
+      espelhar a imagem, bem como aplicar a escala.</li>
+    <li><strong>Passo</strong>: 1 canal, que <em>deve</em> ser um mínimo de 0, onde 1 é o passo padrão do som.</li>
+    <li><strong>Volume</strong>: 1 canal, que <em>deve </em>ser um mínimo de 0 e um máximo de 1.</li>
+  </ul>
+  <p>Se você importar uma curva de animação que não tenha canais suficientes para a faixa de parâmetros, você será solicitado a escolher se algum canal em falta deve ser adicionado à curva de animação:</p>
+  <p><img class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Invalid_Curve.png" /></p>
+  <p>As curvas compartilhadas também podem ser invalidadas se qualquer canal necessário for excluído em um editor de curvas de animação externo. Nesse caso, a curva compartilhada aparecerá como inválida na <span class="notranslate">folha de dope</span>, e você pode clicar em &quot;Adicionar canal(s)&quot; para criar qualquer
+    canais em falta que tornarão a curva novamente válida:</p>
+  <p><img class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Invalid_Curve_Error.png" /></p>
+  <p>Por padrão, a curva de animação será aplicada ao longo de todo o comprimento da chave do ativo a que está anexada, no entanto, como nos <span class="notranslate">quadros-chave</span>, você pode clicar em <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> em uma curva e arrastá-la para reposicioná-la na linha de tempo, e você também pode segurar a chave <img alt="Alt Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Alt.png" width="55"> e arrastá-la para redimensionar o comprimento da curva
+    (isto também se aplica às <strong>curvas embutidas</strong>):</p>
+  <p><img alt="Resize and reposition anim curves" class="center" src="../../assets/Images/Asset_Editors/Dope_Sheet_ResizeCurve.gif">A outra maneira de adicionar uma curva de parâmetros a uma pista é incorporá-la. Isto pode ser feito clicando com o botão direito do mouse
+    <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> na faixa de parâmetros e selecionando &quot;<em>Convert to Curve&quot;, ou</em> clicando no botão Toggle Curve <strong>Mode</strong> <img src="../../assets/Images/Icons/Icon_Seq_ToggleCurves.png">, que mostrará a faixa como uma curva de animação na <span class="notranslate">área</span> completa da folha de papelão <span class="notranslate">, e</span> você poderá então clicar no <strong>botão</strong> Convert To <strong>Curve</strong>:</p>
+  <p><img alt="Convert keyframes to a curve" class="center" src="../../assets/Images/Asset_Editors/Dope_Sheet_ConvertToCurve.gif">Uma vez convertida a faixa de parâmetros do <span class="notranslate">quadro-chave</span> para uma curva, ela pode ser editada dentro da <span class="notranslate">folha de papel</span>, exatamente da mesma maneira
+    que você pode editar <a href="../Animation_Curves.htm">ativos de curva de animação</a>, isso inclui adicionar ou remover pontos, mudar sua posição, mudar o tipo de curva (linear, lisa ou bezier), aplicar predefinições e renomear canais e as cores
+    associados a eles.</p>
+  <p class="note"><strong>IMPORTANTE</strong>: Você também pode editar os ativos da curva de animação que foram aplicados às faixas de parâmetros dessa forma, porém quaisquer alterações que você fizer <strong>serão aplicadas a todas as faixas que utilizam a curva de animação</strong>, já que você está editando
+    o ativo da curva e não uma única cópia do mesmo. Para editar um ativo de curva de animação que tenha sido aplicado a uma faixa <strong>somente</strong> naquela faixa, é necessário primeiro usar o menu direito do mouse <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> na faixa de parâmetros e selecionar <b>Embed Curve</b>. Isto duplicará o ativo da curva de animação e o incorporará na pista do pararmetro como uma curva independente somente para aquela pista. Por outro lado, você pode converter uma curva de animação embutida
+    em um recurso de Curva de Animação usando o botão direito do mouse <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> opção de menu <strong>Exportar para Curva Compartilhada</strong>. Isto converterá o ativo incorporado
+    em um novo ativo que pode então ser editado como normal, bem como aplicado a outras faixas de parâmetros, se necessário.</p>
+  <p><img alt="The dope sheet curve editor" class="center" src="../../assets/Images/Asset_Editors/Dope_Sheet_EmbeddedCurves.png" /></p>
+  <p>A imagem acima mostra como fica o editor de curvas de animação incorporado, e é muito semelhante ao <a href="../Animation_Curves.htm">editor de curvas de</a> animação. Expanda cada seção abaixo para obter mais informações sobre as diferentes seções.</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Nome da Curva</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Este será o nome do ativo da curva de animação externa ou o nome da faixa de parâmetros para uma curva embutida.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Biblioteca de curvas</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">O botão <img class="icon" height="20" src="../../assets/Images/Icons/Animation_Curve_Library_Button.png" style="cursor: nwse-resize;" width="13"> abre o <strong><span data-keyref="Animation_Curve_Presets_Library">Biblioteca de Curvas de Animação</span></strong> janela,
+      que permite mudar o Tipo de Curva da curva embutida ou compartilhada, e aplicar uma predefinição ao canal selecionado.</p>
+    <p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Library.png">Veja a seção sobre <a href="../Animation_Curve_Properties/Animation_Curve_Library.htm" title="Animation Curve Library">Curvas de Animação</a> na <a href="../Animation_Curve_Properties/Animation_Curve_Library.htm" title="Animation Curve Library">Biblioteca de</a> 
+      informações sobre Tipos de Curvas e Predefinições. Note que ao abrir a janela através do botão <img class="icon" height="20" src="../../assets/Images/Icons/Animation_Curve_Library_Button.png" style="cursor: nwse-resize;" width="13">, o modo de aplicação <strong>&quot;Overwrite</strong> &quot; será selecionado por padrão.</p>
+    <ul class="dropspotlist"><br />
+    </ul>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Lista de canais</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">A lista de canais é onde você pode editar os diferentes canais que compõem sua curva de parâmetros. Cada canal deve ter um nome único (usando <span data-keyref="Asset name restriction">somente caracteres alfanuméricos e o símbolo &quot;_&quot; sublinhado)</span>,
+      e você também pode definir a cor para o canal clicando duas vezes em <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> na amostra de cores à esquerda, que abrirá o seletor de cores para que você possa escolher uma nova cor.
+      Para renomear o canal, você pode fazer um duplo clique lento <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> e renomear, e você também pode usar o botão direito do mouse <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> para abrir um menu onde você pode escolher renomear, mudar a cor ou copiar o canal. Os canais podem ser expandidos clicando na seta ao lado do nome para mostrar cada um dos pontos da curva do canal, e estes pontos podem ser editados manualmente, clicando
+      o valor atual e digitando o novo valor. Você também pode alternar a visibilidade do canal na <span class="notranslate">folha de drogadição</span> clicando no ícone &quot;olho&quot; <img alt="Eye Icon" class="icon" src="../../assets/Images/Icons/Icon_ToggleVisibility.png">.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Controle de Conversão</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Aqui <span class="notranslate">os quadros-chave</span> podem ser convertidos em curvas de parâmetros (como explicado mais adiante nesta página), mas também há um botão para converter curvas de parâmetros em <span class="notranslate">quadros-chave</span>. No entanto, você deve estar ciente de que ao fazer isso, há algumas advertências. <span class="notranslate">Quadros-chave</span>
+      não pode ser &quot;entre&quot; quadros, e assim alguns valores de curva terão que ser arredondados para o quadro mais próximo, o que, por sua vez, mudará a maneira como o parâmetro pista se comporta. Além disso, se a curva de parâmetros utilizar interpolação catmull-rom ou bezier, <strong>isto será perdido </strong>e
+      a interpolação entre os <span class="notranslate">quadros-chave</span> será definida para interpolação linear.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Menu Curva</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">Este menu contém opções disponíveis em outros lugares no editor, mas todas em um só lugar. As opções são:</p>
+    <ul class="dropspotlist">
+      <li><strong>Faixa definida</strong>: Ajuste a faixa vertical da curva de parâmetros (ver <em>Faixa de Canal</em>, abaixo).</li>
+      <li><strong>Converter em Curva</strong>: Converter a faixa de parâmetros selecionada usando <span class="notranslate">quadros-chave</span> em uma curva de parâmetros.</li>
+      <li><strong>Curva Embedar</strong>: Incorporar o ativo da curva compartilhada que está sendo usado pela pista de parâmetros na pista.</li>
+      <li><strong>Curva Compartilhada Atribuída (Importação)</strong>: Atribuir um ativo da Curva de Animação para ser usado como uma curva compartilhada para a faixa de parâmetros.</li>
+      <li><strong>Converta para chaves</strong>: Converter a faixa de parâmetros selecionados usando curvas de parâmetros em <span class="notranslate">quadros-chave</span>.</li>
+      <li><strong>Exportar para Curva Compartilhada</strong>: Converter a curva embutida em um ativo de curva compartilhada.</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Faixa de canais</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">O botão Channel Range é usado para definir o alcance vertical visual para o Editor de Canais. Por padrão, isto será definido de -1 a 1, mas clicando neste botão abrirá a seguinte janela:</p>
+    <p><img alt="Animation Curve Editor Channel Range" class="center" height="136" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Range.png" width="198" /></p>
+    <p class="dropspot">A alteração destes valores mudará a forma como os dados são representados na seção Editor de Canal, permitindo que você tenha valores mais altos/mais baixos ao longo da curva do canal do que apenas -1 a 1. Note que isto é puramente visual e não prende os valores para
+      o canal.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Editor de canais</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot">O Editor de Canal mostra uma representação visual dos diferentes canais utilizados na curva de parâmetros. Por padrão, todos os canais serão mostrados aqui, mas você só pode editar o canal atualmente selecionado da Lista de Canais, que será destacado
+      no editor. Você pode mudar a posição de qualquer um dos pontos ao longo da curva do canal clicando em <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> sobre eles e arrastando-os dentro do editor, mas note que
+      o primeiro e o último ponto só podem ser alterados ao longo do eixo vertical e seu valor horizontal será sempre 0 e 1, respectivamente.</p>
+    <div class="droptext" data-targetname="drop-down7">
+      <p class="dropspot">Você pode adicionar pontos diretamente à curva do canal movendo o mouse próximo à linha do canal principal e clicando em <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> quando o cursor mudar para o &quot; Add<strong>Point</strong>&quot;.
+        e você pode então editar estes pontos clicando em <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> e arrastando ou alterando seus valores nas opções expandidas de canais na Lista de Canais:</p>
+      <p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Dope_Sheet_Channel_Editor.gif" /></p>
+    </div>
+    <p class="dropspot">Você pode editar vários pontos ao mesmo tempo clicando em <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> e arrastando dentro do editor para selecionar todos os pontos que deseja editar ou usando <img alt="CTRL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> para adicionar pontos à seleção individualmente. Soltando o botão do mouse e depois clicando novamente em qualquer um dos pontos da seleção e arrastando, todos eles serão movidos juntos:</p>
+    <p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Dope_Sheet_Channel_Editor_Move.gif">Você pode <img class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> clicar com o botão direito do mouse em qualquer lugar no Editor de Canal para abrir a janela da <a href="../Animation_Curve_Properties/Animation_Curve_Library.htm">Biblioteca de Curvas de Animação</a> (somente quando o Tipo de Curva selecionado for <strong>Bezier</strong>). A aplicação de uma predefinição desta forma afetará todo o canal. Para modificar apenas uma parte do canal, você pode <img class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> clicar com o botão direito do mouse em uma linha individual para aplicar uma predefinição, ou selecionar várias linhas clicando <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> e arrastando, depois <img class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> clicar com o botão direito do mouse na seleção para aplicar uma predefinição às linhas selecionadas.</p>
+    <p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Dope_Sheet_Channel_Editor_Library.gif">Note que ao abrir a janela da <strong>Biblioteca de Curvas de Animação</strong> através do Editor de Canal, o Modo de Aplicação <strong>&quot;Entre&quot;</strong> será selecionado por padrão.</p>
+  </div>
+  <p> </p>
+  <p>Uma vez terminada a edição das curvas de parâmetros, você pode voltar à visualização regular da <span class="notranslate">folha de drogados</span> das diferentes faixas clicando no botão <strong>Toggle Curve Mode</strong> <img class="icon" src="../../assets/Images/Icons/Icon_Seq_ToggleCurves.png">.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Sequences.htm">Sequências</a></div>
+        <div style="float:right">A seguir: <a href="Broadcast_Messages.htm">Mensagens de radiodifusão</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Room Editor
+Rooms
+Layers
+Layer Properties
+-->
+  <!-- TAGS
+room_editor
+-->
+</body>
+</html>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>fisica_fixture_set_awake</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_set_awake" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_awake" />
+  <meta name="search-keywords" content="physics_fixture_set_awake" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>fisica_fixture_set_awake</h1>
+  <p>Quando você inicia uma sala com física, ou liga as instalações às instâncias, as instalações são sempre consideradas como &quot;acordadas&quot;... ou seja, elas estão processando eventos e interagindo com as instâncias ao redor. Entretanto, isso às vezes pode levar a
+    a problemas, especialmente se você tiver uma série de casos com luminárias que estão lado a lado quando uma sala começa (pense em uma torre feita de várias instâncias com luminárias) como se elas estivessem &quot;acordadas&quot;, elas se moverão e possivelmente mudarão de posição
+    devido ao súbito início da gravidade e às colisões que os afetam. Nestes casos, você pode usar esta função para marcar a fixação como &quot;adormecida&quot;, caso em que ela não estará processando nada quando for criada pela primeira vez na sala.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">physics_fixture_set_awake(fixture, state)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>fixação</td>
+        <td>o índice da fixação</td>
+      </tr>
+      <tr>
+        <td>bandeira</td>
+        <td>se uma fixação está acordada<tt>(verdadeira</tt>) ou não<tt>(falsa</tt>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">physics_fixture_set_awake(fix_Cloud, true);</p>
+  <p>O código acima sinaliza a fixação como estando &quot;acordada&quot; quando ligada a uma instância.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Fixtures.htm">Instalações</a></div>
+        <div style="float:right">A seguir: <a href="physics_get_friction.htm">physics_get_friction</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_awake
+-->
+  <!-- TAGS
+physics_fixture_set_awake
+-->
+</body>
+</html>

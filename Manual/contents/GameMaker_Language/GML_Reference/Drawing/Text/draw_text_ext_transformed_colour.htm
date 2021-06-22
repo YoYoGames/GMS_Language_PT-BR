@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_text_ext_transformed_colour</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_text_ext_transformed_colour" />
+  <meta name="rh-index-keywords" content="draw_text_ext_transformed_colour,draw_text_ext_transformed_color" />
+  <meta name="search-keywords" content="draw_text_ext_transformed_colour,draw_text_ext_transformed_color" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_text_ext_transformed_colour</h1>
+  <p>Esta função é uma combinação da base <a href="draw_text.htm"><tt>draw_text</tt><tt>()</tt><tt></tt></a> função com o <a href="draw_text_ext.htm"><tt>texto_desenho_texto</tt><tt>()</tt><tt></tt></a>, <a href="draw_text_transformed.htm"><tt>draw_text_transformed</tt><tt>()</tt><tt></tt></a>    e <a href="draw_text_colour.htm"><tt>draw_text_colour</tt><tt>()</tt><tt></tt></a> funções. Como tal, esta é a mais geral de todas as funções para desenhar texto e dá uma grande flexibilidade ao desenhar. Note que a &quot;largura
+    é baseado em uma escala de 1, portanto, se a escala for diferente, este valor deve ser alterado proporcionalmente. Por exemplo, se a largura de base para uma quebra de linha for 300 e você definir a escala para 2, então o texto aparecerá errado, ultrapassando o valor dado
+    largura. Em vez disso, você deveria ter ajustado a largura para 150 para compensar a escalada.</p>
+  <p class="note"><b>NOTA</b>: A mistura gradual não está disponível para o alvo HTML5 a menos que a WebGL esteja habilitada, embora você ainda possa definir as cores da mistura e ela irá misturar a fonte com a primeira cor dada. No entanto, toda mistura desta forma cria uma duplicata
+    A fonte que é então armazenada no cache e usada quando necessário, que está longe de ser a ideal e se você usar mudanças múltiplas de cor irá diminuir o desempenho de seus jogos. Você pode definir o tamanho do cache da fonte para tentar limitá-lo, caso seja necessário.
+    usando a função <a href="../../Asset_Management/Fonts/font_set_cache_size.htm"><tt style="font-size: 14px">font_set_cache_size()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">draw_text_ext_transformed_colour(x, y, string, sep, w, xscale, yscale, angle, c1, c2, c3, c4, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A coordenada x do fio desenhado.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A coordenada y da corda desenhada.</td>
+      </tr>
+      <tr>
+        <td>corda</td>
+        <td>O fio para desenhar.</td>
+      </tr>
+      <tr>
+        <td>sep</td>
+        <td>A distância em pixels entre linhas de texto.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>A largura máxima em pixels do fio antes de uma quebra de linha.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>A escala horizontal.</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>A escala vertical.</td>
+      </tr>
+      <tr>
+        <td>ângulo</td>
+        <td>O ângulo do texto.</td>
+      </tr>
+      <tr>
+        <td>c1</td>
+        <td>A cor para a parte superior esquerda do texto desenhado.</td>
+      </tr>
+      <tr>
+        <td>c2</td>
+        <td>A cor para a parte superior direita do texto desenhado.</td>
+      </tr>
+      <tr>
+        <td>c3</td>
+        <td>A cor para a parte inferior direita do texto desenhado.</td>
+      </tr>
+      <tr>
+        <td>c4</td>
+        <td>A cor para a parte inferior esquerda do texto desenhado.</td>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>O alfa para o texto.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">draw_set_halign(fa_center);<br> draw_set_valign(fa_middle);
+    <br> draw_text_ext_transformed_colour(200, 200, &quot;Meu nome é&quot; + global.name +&quot;, 20, 200, 0,5, 0,5, 0,5, 180, c_blue, c_blue, c_navy, c_navy, 1);</p>
+  <p>Isto desenhará o texto dado com um gradiente azul a azul escuro para baixo, na posição (200.200) na sala, girado para estar de cabeça para baixo e na metade do tamanho normal do ponto da fonte. Haverá 20 pixels entre cada linha, caso haja mais de
+    uma linha desenhada e cada linha terá uma largura máxima de 200 pixels.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Text.htm">Texto</a></div>
+        <div style="float:right">Próximo: <a href="draw_highscore.htm">draw_highscore</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_text_ext_transformed_colour
+draw_text_ext_transformed_color
+-->
+  <!-- TAGS
+draw_text_ext_transformed_colour
+-->
+</body>
+</html>

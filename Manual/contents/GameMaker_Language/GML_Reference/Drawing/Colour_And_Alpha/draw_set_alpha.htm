@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_set_alpha</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section the function draw_set_alpha" />
+  <meta name="rh-index-keywords" content="draw_set_alpha" />
+  <meta name="search-keywords" content="draw_set_alpha" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_set_alpha</h1>
+  <p>Com esta função você pode definir o alfa do sorteio da base para o jogo. Este valor pode ser definido de 0 a 1, sendo 0 totalmente transparente e 1 totalmente opaco (o valor padrão), e afetará todos os outros sorteios, incluindo fundos, sprites, fontes,
+    primitivos e 3D.</p>
+  <p>Observe que se você estiver desenhando algum dos ativos e fornecendo um argumento alfa como parte da função (por exemplo, ao usar <a href="../Sprites_And_Tiles/draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a>), então o valor alfa estabelecido aqui será
+    overridden, portanto desenhar um duende usando <tt>draw_sprite_ext(</tt> ) com um argumento alfa de 1 irá desenhar o duende totalmente opaco independentemente do conjunto alfa com <tt>draw_set_alpha()</tt> (isto funcionará da mesma forma quando se usa <a href="../Sprites_And_Tiles/draw_self.htm"><tt>draw_self()</tt></a>    e a definição do <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/image_alpha.htm"><tt>image_alpha</tt></a> da instância). Observe também que quando uma instância é um desenho <i>padrão</i> (ou seja: tem um duende mas não tem Evento de Sorteio), então o
+    a variável <tt>image_alpha</tt> será fixada ao conjunto alfa com <tt>draw_set_alpha()</tt>, de modo que uma <tt>image_alpha</tt> de 1 e uma alfa de 0,5 desenharão o duende em alfa 0,5, enquanto uma <tt>image_alpha</tt> de 0,25 e uma alfa de desenho
+    de 0,5 vai desenhar o duende em 0,25 alfa.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">draw_set_alpha(alfa);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>O alfa a definir (entre 0 e 1)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">draw_set_alpha(0.5);<br> draw_set_colour(c_black);
+    <br> draw_text(x+5, y+5, &quot;LEVEL 1&quot;);<br> draw_set_alpha(1);
+    <br> draw_set_colour(c_white);
+    <br> draw_text(x, y, &quot;NÍVEL 1&quot;); draw_text(x, y, &quot;NÍVEL 1&quot;);</p>
+  <p>O código acima desenhará algum texto na posição especificada com um efeito de sombra criado pelo desenho alfa e cor modificados.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Colour_And_Alpha.htm">Cor e Alfa</a></div>
+        <div style="float:right">Próximo: <a href="draw_set_colour.htm">draw_set_colour</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_set_alpha
+-->
+  <!-- TAGS
+draw_set_alpha
+-->
+</body>
+</html>

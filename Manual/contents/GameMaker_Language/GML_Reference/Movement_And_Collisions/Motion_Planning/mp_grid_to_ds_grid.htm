@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_to_ds_grid</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_to_ds_grid" />
+  <meta name="rh-index-keywords" content="mp_grid_to_ds_grid" />
+  <meta name="search-keywords" content="mp_grid_to_ds_grid" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_to_ds_grid</h1>
+  <p>Com esta função você pode copiar a grade MP dada em uma <a href="../../Data_Structures/DS_Grids/DS_Grids.htm">grade DS</a>. A grade DS deve ter o mesmo tamanho que a grade MP, embora não precise ser (os dados serão perdidos se forem menores, e
+    se for maior, todas as células extras da grade serão 0). As células da grade DS conterão o valor -1 se a célula da grade MP estiver marcada como ocupada, ou será 0 se não estiver.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">mp_grid_to_ds_grid(fonte, destino);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>fonte</td>
+        <td>Índice da rede mp_ que deve ser usada</td>
+      </tr>
+      <tr>
+        <td>destino</td>
+        <td>Índice da ds_grid que deve ser usada para copiar os dados da grade para.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">motion_grid = ds_grid_create(room_width / 32, room_height / 32);<br> mp_grid_to_ds_grid(mp_grid, motion_grid);</p>
+  <p>O código acima criará uma nova grade DS e então copiará os dados da grade MP contidos na variável &quot;mp_grid&quot; para a nova grade DS.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Motion_Planning.htm">Planejamento de Movimento</a></div>
+        <div style="float:right">Próximo: <a href="mp_grid_draw.htm">mp_grid_draw</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_to_ds_grid
+-->
+  <!-- TAGS
+mp_grid_to_ds_grid
+-->
+</body>
+</html>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Declare uma nova função</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section detailing Declare A New Function" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Declare A New Function" />
+  <meta name="search-keywords" content="Declare A New Function" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>
+    <img alt="Declare A New Function Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_Declare_Function.png"> Declare uma nova função</h1>
+  <p>Esta ação pode ser usada para criar uma nova função definida pelo usuário, que pode então ser chamada a qualquer momento mais tarde em seu código. Uma função definida pelo usuário é aquela que você define para fazer uma tarefa que não é coberta pelas ações disponíveis <span class="notranslate">DnD™</span>ou funções GML <span class="notranslate">runner</span>,
+    e podem ser globais, por exemplo ou locais (veja <a href="../../../GameMaker_Language/GML_Overview/Variables_And_Variable_Scope.htm">aqui</a> para mais informações sobre o escopo) e também podem ser usados como <b>construtores</b> para criar <a href="../../../GameMaker_Language/GML_Overview/Structs.htm">estruturas</a>.
+    Para saber mais sobre o uso desta ação para criar funções globais, consulte a seção sobre <a href="../../Drag_And_Drop_Overview/Action_Block_Functions.htm">Criação de funções de ação</a>. Você também pode sinalizar a função como sendo <b>estática</b>,
+    o que significa que só será definido uma vez na primeira vez que for utilizado.</p>
+  <p>Para utilizar esta ação, você pode adicioná-la a um evento de instância e depois dar a função que você deseja declarar um nome. Em seguida, você fornece os nomes dos argumentos necessários para cada um dos parâmetros que a função tomará. Se a função for usada como um construtor
+    (ou seja: vai estar criando uma estrutura), então você precisa verificar a <strong>bandeira </strong>do Construtor e depois chamar a função que você precisa para usar a Nova Ação. Se a função só vai ser usada localmente na mesma
+    e em nenhum outro lugar, então você também pode selecionar a bandeira <strong>Temp </strong>. Uma vez definido o nome e os parâmetros, você pode adicionar as ações que deseja que a função seja executada quando ela for chamada em seu código, deixando-as ao lado de
+    a ação, como mostrado na imagem abaixo:</p>
+  <p><img alt="Declare A New Function drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/drop_declare_function.png">Você pode ver exemplos de uso tanto como uma função regular quanto como uma função de construtor
+    abaixo.</p>
+  <p> </p>
+  <h4>Sintaxe de ação:</h4>
+  <p><img alt="Declare A New Function Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_Declare_Function.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>Função</td>
+        <td>O nome da nova função.</td>
+      </tr>
+      <tr>
+        <td>Argumento0 ... ArgumentoX</td>
+        <td>Os diferentes nomes dos argumentos para cada um dos parâmetros que devem ser passados para a função.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Exemplo ampliado 1:</h4>
+  <p><img alt="Declare A New Function Example 1" class="center" height="491" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_1.png" width="492">O código de bloco de ação acima iria no <b>Create Event</b> of an instance, e declara uma nova função <tt>set_vec</tt> com três argumentos: <tt>_x</tt>, <tt>_y</tt> e <tt>spd</tt>. Estes argumentos são então utilizados nas ações que a função chamará para definir a direção e a velocidade da instância,
+    quando a função é chamada. Você chamaria a função usando a ação de <a href="Function_Call.htm">Chamada de Função</a> em qualquer evento subseqüente, como este:</p>
+  <p><img alt="Declare A New Function Exmaple 2" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_2.png">A função é chamada e define a direção da instância para apontar para o
+    posição do mouse X/Y, e define a velocidade da instância para 5.</p>
+  <p> </p>
+  <h4>Exemplo ampliado 2:</h4>
+  <p><img alt="Declare A New Function Exmaple 3" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_3.png">O código de bloco de ação acima provavelmente iria no <b>evento Create Event</b> of
+    uma instância, e declara uma nova função construtora <tt>init_char_struct</tt> com quatro argumentos: <tt>_str1</tt>, <tt>_str2</tt>, <tt>_val1</tt> e <tt>_val2</tt>. Estes argumentos são então utilizados para povoar as variáveis dadas dentro da estrutura
+    que a função está criando. Você então chamaria a função usando a <a href="New.htm">Nova</a> ação em qualquer evento subseqüente, como este:</p>
+  <p><img alt="Declare A New Function Exmaple 4" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_4.png">A função é chamada e retornará uma nova estrutura para a matriz &quot;char&quot;,
+    e a estrutura será preenchida com as variáveis &quot;name&quot;, &quot;location&quot;, &quot;hp&quot; e &quot;mana&quot;, definidas com os valores usados para os argumentos correspondentes na função.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Common_Actions_Library.htm">Ações Comuns</a></div>
+        <div style="float:right">A seguir: <a href="Assign_Variable.htm">Atribuir variável</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Declare A New Function
+-->
+  <!-- TAGS
+action_declare_function
+-->
+</body>
+</html>

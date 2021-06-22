@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>superfície_get_target_ext_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_get_target_ext" />
+  <meta name="rh-index-keywords" content="surface_get_target_ext" />
+  <meta name="search-keywords" content="surface_get_target_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>superfície_get_target_ext_ext</h1>
+  <p>Esta função recuperará o ID de superfície atribuído a um dos 4 alvos de renderização disponíveis para as superfícies. Você fornece o índice do alvo de renderização para verificar, e a função retornará -1 se nenhuma superfície for atribuída, ou um valor inteiro &gt;= 0, representando
+    a identificação da superfície atribuída (como retornada pela função <a href="surface_create.htm"><tt>surface_create()</tt></a>).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">surface_get_target_ext(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice de metas de renderização a serem verificadas (de 0 a 3).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Inteiro (-1 para nenhum alvo de superfície, ou um valor de identificação de superfície)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if surface_get_target_ext(0) == -1<br> {
+    <br> surface_set_target_ext(0, global.Surf);<br> }
+  </p>
+  <p>O código acima vai primeiro verificar e ver se o <span class="notranslate">shader</span> renderiza o alvo 0 foi definido para uma superfície e, se não, então é atribuído um.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Surfaces.htm">Superfícies</a></div>
+        <div style="float:right">Próximo: <a href="surface_reset_target.htm">alvo_de_reset_superfície</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_get_target_ext
+-->
+  <!-- TAGS
+surface_get_target_ext
+-->
+</body>
+</html>

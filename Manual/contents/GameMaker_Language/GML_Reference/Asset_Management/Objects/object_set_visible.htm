@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>object_set_visible</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function object_set_visible" />
+  <meta name="rh-index-keywords" content="object_set_visible" />
+  <meta name="search-keywords" content="object_set_visible" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>object_set_visible</h1>
+  <p>Com esta função você pode marcar um objeto específico como visível ou não (para mais informações sobre a bandeira &quot;visível&quot; veja a seção sobre o <a href="../../../../The_Asset_Editors/Objects.htm">Editor de</a> Objetos <a href="../../../../The_Asset_Editors/Objects.htm">)</a>. Isto significa que todas as instâncias
+    deste objeto que é criado <i>depois que o visível foi mudado</i> será criado com este novo estado, enquanto as instâncias que já estão na sala podem não ser afetadas.</p>
+  <p>Por favor, note que esta não é uma função de instância! Você pode definir a bandeira visível de instâncias individuais usando a <a href="../Instances/Instance_Variables/visible.htm"><tt>visível</tt></a> variável e, portanto, têm dez instâncias todas marcadas como visíveis, mesmo
+    embora o objeto em questão tenha a bandeira definida como falsa no IDE, e mesmo que você mude a bandeira visível do objeto para verdadeira usando esta função, todas as instâncias que atualmente na sala permanecerão como estavam, e apenas instâncias criadas depois
+    chamando a função começará com a bandeira visível como verdadeira.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">object_set_visible( índice, vis );</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice do objeto a ser modificado.</td>
+      </tr>
+      <tr>
+        <td>vis</td>
+        <td>A nova visibilidade do objeto (verdadeiro=visível, falso=invisível).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if !object_get_visible(obj_Block)<br> {<br> object_set_visible(obj_Block, true);<br> }</p>
+  <p>O código acima verifica a bandeira visível do objeto &quot;obj_Block&quot; e, se for falso, é alterado para ser sinalizado como verdadeiro.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Objects.htm">Objetos</a></div>
+        <div style="float:right">Próximo: <a href="object_index.htm">object_index</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+object_set_visible
+-->
+  <!-- TAGS
+object_set_visible
+-->
+</body>
+</html>

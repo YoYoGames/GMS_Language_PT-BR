@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>script_execute</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function script_execute" />
+  <meta name="rh-index-keywords" content="script_execute" />
+  <meta name="search-keywords" content="script_execute" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>script_execute</h1>
+  <p>Esta função foi originalmente projetada para chamar <i>recursos de</i> script de forma dinâmica, mas com a introdução de funções definidas pelo usuário ela pode agora ser usada de duas maneiras:</p>
+  <ul class="colour">
+    <li>A primeira maneira é apoiar scripts <b>legados</b>, onde cada script era uma única função e o título do script era também o nome da função. Usado desta forma, funcionará como antes e executará um script criado pelo usuário e passará
+      os argumentos apresentados. Note que, neste caso, não se trata realmente de chamar o <i>roteiro</i>, mas sim, a <i>função do roteiro</i> com o mesmo nome dentro do roteiro. <span style="text-align: justify;"></span></li>
+    <li><span style="text-align: justify;">A segunda maneira é chamar uma função a partir de um recurso de script que contém múltiplas funções ou definições de variáveis. Neste caso, você forneceria o nome da função e os argumentos que ela requer, em vez do nome do script ativo. Note que isto só funcionará para <a href="../../../GML_Overview/Script_Functions.htm">funções de script</a> e não para <a href="../../../GML_Overview/Method_Variables.htm">métodos</a>, pois somente funções de script têm um ID de script atribuído a elas.</span></li>
+  </ul>
+  <p><span style="text-align: justify;"></span>Embora esta função tenha sido projetada principalmente para apoio ao legado, ela não é depreciada, pois ainda tem seu lugar em situações de chamadas em rede e procedimentos remotos. Vale ressaltar também que esta função
+    é lento, e usá-lo muito pode afetar negativamente o desempenho.</p>
+  <p class="note"><b>NOTA</b>: Esta função não pode ser usada com funções embutidas.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">script_execute(scr, arg0, arg1, arg2..., etc...);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>scr</td>
+        <td>O nome da função/escrito que você deseja chamar</td>
+      </tr>
+      <tr>
+        <td>arg0, arg1, arg2..., etc....</td>
+        <td>Os diferentes argumentos que você quer passar para a função/escrito</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Dependerá do valor de retorno do roteiro/função a ser chamado</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">script_execute(choose(move_up, move_down, move_left, move_right), irandom(5));</p>
+  <p>O código do exemplo acima usará <tt>script_execute</tt> para escolher uma das quatro funções definidas pelo usuário (neste caso, relacionadas ao movimento) e passar um inteiro aleatório para ele como primeiro argumento.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Scripts.htm">Roteiros</a></div>
+        <div style="float:right">Próximo: <a href="script_execute_ext.htm">script_execute_ext</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+script_execute
+-->
+  <!-- TAGS
+script_execute
+-->
+</body>
+</html>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Sequências</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the sequences editor works" />
+  <meta name="rh-index-keywords" content="Sequences Editor" />
+  <meta name="search-keywords" content="sequences,dope sheet,sequences editor,parameter tracks,asset tracks,playhead" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>O Editor de Seqüências</h1>
+  <p><img alt="The Sequence Editor" src="../assets/Images/Asset_Editors/Editor_Sequences.png" /></p>
+  <p>Uma <strong>seqüência </strong>é essencialmente uma coleção de ativos que realizam uma animação dinâmica ao longo do tempo. Eles podem conter sprites, instâncias, sons e outras coisas, e cada um deles pode ser configurado para mover ou mudar de cor, ou iniciar/pararar a animação.
+    ao longo do tempo dentro da própria seqüência. Os ativos adicionados são atribuídos a <strong>faixas </strong>específicas dentro da seqüência e estas faixas podem então ter diferentes atributos aplicados a elas - chamados <strong><span class="notranslate">quadros-chave</span></strong> - o que pode ser estático
+    ou mudar com o tempo. Toda a edição de uma seqüência ocorre no <strong>Editor de Seqüências</strong> que é essencialmente composto de três áreas:</p>
+  <ul class="colour">
+    <li>a <strong>Tela </strong>- onde você coloca os bens que compõem a seqüência</li>
+    <li>o <strong>Painel de Trilhas </strong>- onde você adiciona/remova <strong>trilhas de ativos</strong> e <strong>trilhas de parâmetros</strong> à sua seqüência</li>
+    <li>o <strong><span class="notranslate">Folha de Droga</span></strong> - onde você adiciona/remove/edita o <strong><span class="notranslate">quadros-chave</span></strong> das pistas e controlar como elas se comportam ao longo do tempo.</li>
+  </ul>
+  <p>Observe também que você pode ter sequências dentro de sequências para criar animações e efeitos complexos, e as sequências também podem ser acessadas e alteradas através de código para lhe dar o maior controle possível sobre como elas serão exibidas e usadas em seu jogo.
+    Para mais informações sobre o aspecto codificado das seqüências, consulte a seção sobre as <a href="../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequences.htm">Funções de Seqüências</a>.</p>
+  <p>Antes de continuarmos a explicar os detalhes do editor, vamos tirar um momento para explicar como uma seqüência é criada, bem como algumas palavras-chave que são usadas nas descrições, para que você tenha uma compreensão mais completa de como o Editor de Seqüências
+    trabalha. O fluxo de trabalho geral para criar uma seqüência é o seguinte:</p>
+  <ul class="colour">
+    <li>Primeiro você criaria sua seqüência a partir do <a href="../Introduction/The_Asset_Browser.htm">Navegador de Ativos,</a> que a abrirá o Editor de Seqüências.</li>
+    <li>A seguir você arrastaria um bem (duende, objeto, som ou seqüência) para a tela do editor.</li>
+    <li>Isto criará uma <a class="glossterm" data-glossterm="pista de ativos" href="#">trilha de ativos</a> no <strong>Painel de Trilhas</strong>, e adicionará uma <a class="glossterm" data-glossterm="chave do ativo" href="#">chave de ativos</a> ao <a class="glossterm" data-glossterm="Folha de Droga" href="#"><span class="notranslate">Folha de Droga</span></a>. A faixa do ativo é simplesmente o nome da faixa que contém o ativo, enquanto a chave do ativo é uma barra que é desenhada para simbolizar o número de quadros sobre os quais o ativo será animado na seqüência.</li>
+    <li>Neste ponto, você normalmente quer posicionar o ativo na tela em sua posição inicial para o início da seqüência, e adicionar em qualquer transformação inicial, como escala ou rotação.</li>
+    <li>Quando você estiver satisfeito com as configurações iniciais, você vai querer gravar as <strong>teclas de parâmetros</strong> (ou <a class="glossterm" data-glossterm="keyframe" href="#"><span class="notranslate">keyframe</span></a><span class="glossextra">s</span>) - que é simplesmente o nome dado a
+      os valores de escala, rotação e posição que uma chave específica do ativo tem em qualquer ponto da linha de tempo da <span class="notranslate">folha de dote</span>.</li>
+    <li>Em seguida, você mudaria a posição do playhead <a class="glossterm" data-glossterm="playhead" href="#">(</a> a posição atual do playhead na <span class="notranslate">linha de tempo da folha de</span> dope) e, em seguida, mover ou mudar a transformação do ativo e gravar outra chave de parâmetro.</li>
+    <li>Todas as chaves de parâmetros são armazenadas em <a class="glossterm" data-glossterm="faixas de parâmetros" href="#">faixas de parâmetros</a> adicionais, que são um subconjunto de faixas sob a faixa principal de ativos no Painel de Faixas, e você pode editar os dados das chaves de parâmetros para
+      cada parâmetro no editor de pistas.</li>
+    <li>Agora você repetiria o processo acima pela duração da seqüência, movendo, girando e escalonando o ativo conforme necessário, e depois adicionando mais ativos à medida que você precisar deles.</li>
+  </ul>
+  <p>Abaixo você pode encontrar uma visão geral de cada uma das características do editor de seqüência, e na parte inferior desta página há links para páginas que explicam com mais profundidade as três principais características mencionadas acima:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Réguas / Guias</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">As réguas ao longo da borda da tela mostram a posição das coisas que são colocadas dentro dela, e são marcadas a partir de (0, 0) que é o centro da tela e a origem padrão para a seqüência. Você pode clicar e arrastar sobre as réguas para puxar
+      uma <strong>guia </strong>horizontal ou vertical na seqüência, e esta guia pode então ser usada para posicionar com precisão os diferentes ativos que estão sendo usados, pois mover um ativo perto de um o &quot;estalará&quot; para a guia. Ao posicionar
+      ativos dentro da seqüência, <strong>guias inteligentes</strong> também serão mostrados temporariamente indicando a distância entre ativos, assim como a distância do limite da seqüência ou do ponto central.</p>
+    <p class="dropspot"><img alt="Guides and Smart Guides in the Sequences Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_Guides.png">Note que o limite da seqüência e as linhas de marcação do ponto central para a seqüência também são considerados
+      guia e se comportará da mesma forma que os guias adicionados pelos governantes, com a exceção de que eles não podem ser editados.</p>
+    <p class="dropspot">A distância que os bens &quot;estalam&quot; para guiar, assim como outras propriedades, pode ser definida nas <a href="../Setting_Up_And_Version_Information/IDE_Preferences/Sequences_Preferences.htm">Preferências de</a> Seqüências.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Vista de lona</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">A vista em tela é onde você pode ver uma prévia da tela de seqüência, e é onde você pode editar e posicionar os diferentes ativos que compõem sua seqüência. Você pode adicionar um ativo à seqüência simplesmente arrastando-o do navegador do ativo e então
+      deixando-a cair na tela, e isto criará uma nova pista no Painel de Pista, e também adicionará uma chave de ativos para o ativo na posição atual de playhead da linha do tempo. Os seguintes ativos podem ser jogados na tela desta forma:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot">Sprites</li>
+      <li class="dropspot">Objetos</li>
+      <li class="dropspot">Sons</li>
+      <li class="dropspot">Sequências</li>
+    </ul>
+    <p class="dropspot">Cada ativo adicionado à tela pode ser manipulado de várias maneiras - rotacionado, transformado ou traduzido - com base em como você interage com ele, pois cada ativo terá uma <strong>caixa de delimitação</strong> e <strong>transformará</strong> o <strong> <a class="glossterm" data-glossterm="gizmos" href="#">gizmos</a></strong>, assim como <strong>os controles da caixa de delimitação</strong>. Tudo isso é explicado com mais detalhes na página sobre a <a href="Sequence_Properties/The_Sequence_Canvas.htm">Tela do Editor de Seqüências</a>.</p>
+    <p class="note"><strong>OBSERVAÇÃO</strong>: Os ativos sonoros quando adicionados a uma seqüência são essencialmente <strong>emissores de </strong>som que reproduzem apenas o recurso sonoro dado.</p>
+    <p class="dropspot">Para navegar pela tela, você pode usar os mesmos controles básicos dos Espaços de Trabalho em geral, ou seja: Use o botão do meio do mouse <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> e arraste para girar a tela (ou, alternativamente
+      use a combinação <img alt="Space Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Space.png" width="55"> + <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> ), e você pode rolar horizontalmente com o
+      roda do mouse <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> ou aumentar e diminuir o zoom usando a tecla <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> e a roda do mouse <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png">. Você também pode cortar, copiar e colar ativos usando as combinações de teclas <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">X</span>&quot;, <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">C</span>&quot; e <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">V</span>&quot;.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Controles do<span class="notranslate">quadro-chave</span> </a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Os botões de controle do <span class="notranslate">quadro de chaves</span> são uma das maneiras que você pode adicionar, remover ou editar chaves específicas na <span class="notranslate">folha de drogados</span>. Os botões são os seguintes:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><img alt="Split Keys Icon" src="../assets/Images/Icons/Icon_Seq_Split.png"> - Este é o botão &quot;Split selected keys&quot; (Dividir chaves selecionadas). Quando você tiver selecionado uma ou mais chaves de parâmetros na <span class="notranslate">folha de dope</span>, você pode então clicar neste botão e elas irão
+        ser dividido em duas chaves separadas na posição de cabeça de jogo da linha do tempo (note que as chaves devem ter sido esticadas para ocupar primeiro vários quadros):<br>
+        <img alt="Split Asset and Parameter Keys" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_Split.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+      <li class="dropspot"><img alt="Delete Keys Icon" src="../assets/Images/Icons/Icon_Seq_Delete.png"> - Este é o botão &quot;Delete selected keys&quot; (Apagar chaves selecionadas). Quando você tiver selecionado uma ou mais chaves de parâmetros na <span class="notranslate">folha de dope</span>, você pode então clicar neste botão e elas irão
+        ser apagado:<br>
+        <img alt="Delete Parameter Keys" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_Delete.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+      <li class="dropspot"><img alt="Add Keys Icon" src="../assets/Images/Icons/Icon_Seq_Add.png"> - Este é o botão &quot;Recordar uma nova chave&quot;. Quando você tiver selecionado uma chave de ativo na <span class="notranslate">folha de papel</span> e pressionar este botão, novas chaves de parâmetros serão adicionadas ao ativo
+        faixa como faixa de parâmetros, e as teclas de parâmetros serão adicionadas como pontos na linha de tempo da <span class="notranslate">folha de papel</span> na posição de cabeça de jogo:<br>
+        <img alt="Add Parameter Keys At Playhead Position" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_Record.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+      <li class="dropspot"><img alt="Record Keys Icon" src="../assets/Images/Icons/Icon_Seq_Record.png"> - Este é o botão &quot;Automatically Record Changes&quot;. Quando isto for ativado, quaisquer mudanças feitas no ativo dentro da tela serão automaticamente registradas e
+        as faixas de parâmetros apropriados e as teclas de parâmetros adicionadas na posição de cabeça de brincadeira na <span class="notranslate">folha de papelão</span>. Por exemplo, se você mover o playhead do quadro 0 para o quadro 10 e depois na tela mover o ativo 100 pixels para a direita, uma faixa de parâmetros
+        será adicionado para a posição, e as teclas de parâmetros serão adicionadas no quadro 0 (a posição inicial) e no quadro 10 (a posição do playhead) e quando você pressiona &quot;Play&quot; na seqüência, o ativo se moverá 100px para a direita sobre dez quadros.<br>
+        <img alt="Automatically Record Parameter Keys" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_Auto.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+    </ul>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Eventos Sequenciais</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">De forma semelhante aos objetos regulares, as seqüências podem ter eventos que podem executar algum código atribuído a eles. O código é atribuído sob a forma de uma <a href="../GameMaker_Language/GML_Overview/Script_Functions.htm">função de script</a> que não pode levar
+      argumentos e será chamada quando o evento for acionado.</p>
+    <p class="dropspot">Os eventos são adicionados clicando no botão <strong>Adicionar Evento</strong> <img alt="Add Event Icon" src="../assets/Images/Icons/Icon_AddEvent.png"> que abrirá a seguinte janela:</p>
+    <p class="dropspot"><img alt="Sequence Editor Add Event Window" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_Events.png" /></p>
+    <p class="dropspot">Os eventos listados aqui são os seguintes:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Criar </strong>- Este evento acontece quando uma instância da seqüência é criada pela primeira vez, e é a primeira coisa que acontece dentro de uma seqüência colocada na sala através do editor da sala quando uma sala é inserida.</li>
+      <li class="dropspot"><strong>Destroy </strong>- Este evento é executado quando uma instância da seqüência é destruída, e será executado antes do evento Clean Up (ver abaixo).</li>
+      <li class="dropspot"><strong>Clean Up</strong> - Este evento será chamado após qualquer evento que remova uma instância da seqüência da sala. Portanto, ele será acionado se a seqüência for destruída, se a sala terminar, ou se o jogo terminar, e for projetado para executar
+        qualquer tarefa que você precise executar uma vez quando a instância da seqüência é retirada do jogo por qualquer motivo. Se você destruiu a instância de seqüência usando, por exemplo, layer_sequence_destroy(), então este evento será chamado após o Destroy
+        Evento (ver acima).</li>
+      <li class="dropspot"><strong>Etapa Inicial</strong> / <strong>Etapa </strong>/ <strong>Etapa Final</strong> - O Evento da Etapa é um evento que é verificado a cada etapa (moldura) do jogo enquanto a instância da seqüência existe, e é dividido em três partes: início, etapa e
+        fim. Para a maioria das coisas, o evento da etapa padrão será bom de usar, mas às vezes você quer um pouco mais de controle sobre o que o código funciona e em que momento, para que você tenha acesso aos eventos da etapa inicial e final, e estes eventos serão sempre
+        acionadas na mesma ordem a cada passo (moldura) do jogo. <strong>Importante!</strong> Se a seqüência for pausada, estes eventos <em>não </em>serão acionados, e quando o jogo for retomado, eles serão acionados no <em>próximo frame após a seqüência começar a jogar novamente</em>.
+        Observe também que a ordem dos eventos não é influenciada pela direção da cabeça do jogo, e mesmo que a seqüência esteja jogando para trás, os eventos ainda serão executados como Começo, Passo e Fim.</li>
+      <li class="dropspot"><strong>Evento Async</strong>: Este é o equivalente do objeto <a href="Object_Properties/Async_Events.htm">Asynchronous System Event</a>. <strong>Importante!</strong> Se a seqüência for pausada, este evento <em>não </em>será acionado.</li>
+    </ul>
+    <p class="dropspot">A cada evento pode ser atribuída uma única função que será chamada quando o evento for acionado. Você pode atribuir a função usando a caixa de entrada para o evento, e clicando no botão de seta abrirá o editor de scripts para a função a ser editada.
+      Você também pode clicar no botão Criar Novo na parte inferior para criar um novo recurso de script com funções &quot;boilerplate&quot; já definidas e prontas para serem preenchidas. Note que você pode mudar os nomes das funções para qualquer coisa que você precisar e não
+      têm que usar os nomes predefinidos, e você também pode remover qualquer definição de função que não seja necessária. É importante notar que as funções usadas para eventos em seqüência não podem aceitar nenhum argumento.</p>
+    <p class="dropspot">Os eventos sequenciais também podem ser adicionados e editados usando código. Para mais informações, por favor, veja <a href="../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Events_Moments_Broadcast.htm">aqui</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Painel de Pista</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot">O <strong>Painel de Pista</strong> é onde cada um dos ativos em sua seqüência é listado como uma pista, com cada pista tendo sub-pistas para quaisquer parâmetros que estejam sendo alterados para o ativo. Você pode clicar em <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> e arrastar em qualquer faixa do ativo para mudar sua posição acima ou abaixo das outras faixas (qualquer faixa de parâmetro atribuído irá se mover junto com ela), e você pode usar <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> para selecionar várias faixas.</p>
+    <p class="dropspot">Você pode criar uma faixa arrastando um ativo do Navegador de Ativos (seja um duende, um objeto, um som ou uma seqüência) para a tela de seqüência, ou você pode clicar no ícone <img alt="Add Track Icon" class="icon" src="../assets/Images/Icons/Icon_AddAsset.png"> na parte inferior para adicionar uma nova faixa e selecionar o ativo a ser usado na janela do Asset Explorer que se abre. A nova faixa será criada e o ativo será adicionado na posição atual de playhead dentro da linha de tempo da <span class="notranslate">folha de dope</span>:</p>
+    <p class="dropspot"><img alt="Add A New Asset Track" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_AddTrack.gif">O editor de pistas tem muitas outras características que são discutidas em todos os detalhes na página seguinte:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="Sequence_Properties/The_Track_Panel.htm">O Painel de Pista</a></li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Caixa de ferramentas em lona</a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">A caixa de ferramentas do Sequence Editor contém as diferentes opções de visualização e configuração para a seqüência que está sendo editada.</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Toggle Canvas Grid</strong> <img alt="Toggle Canvas Grid Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasGrid.png">: Isto irá ligar/desligar a grade do Editor de Seqüências de Telas. Esta é uma grade que o <span class="notranslate">GameMaker Studio 2</span> desenha sobre a
+        para dividi-la em seções, e por padrão está definido em 32x32px no tamanho. Entretanto, se você clicar no ícone do Menu Grid <img alt="Icon Grid Menu" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasOptions.png" width="10">, você
+        abrirá as opções da grade:<br>
+        <img alt="Sequence Editor Grid Options" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_GridControls.png">Estas opções permitem definir a cor e alfa da grade, assim como os valores das células da grade ao longo do X e
+        Eixo Y. Você também tem a opção de ativar ou desativar o snapping da grade aqui (desativado por padrão). Você pode usar os atalhos de teclado &quot;G&quot; e <img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> + &quot;G&quot; para alternar a visibilidade da grade e o snapping da grade, respectivamente.</li>
+      <li class="dropspot"><strong>Controles de zoom de lona</strong> <img alt="Canvas Zoom Controls Icons" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasZoom.png" width="120">: Estes botões controlam o nível atual de zoom de lona. Você pode aumentar ou diminuir o zoom e
+        clicando no botão <img alt="Zoom Reset Icon" class="icon" src="../assets/Images/Icons/Icon_ZoomReset.png">, a tela será reinicializada para ser 1:1 com a seqüência sendo editada. Você também pode clicar no botão Window Fit <img alt="Canvas Fit Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasFit.png"> para fazer com que toda a seqüência da tela caiba dentro do espaço de trabalho atual do editor (isto fará o zoom in/out conforme apropriado para fazê-la caber). Observe que você também pode aumentar e diminuir o zoom usando o botão
+        <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> e a Roda do Rato <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png">, e pressionando <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="Enter Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Enter.png" width="55">, a tela será 1:1 com o display.</li>
+      <li class="dropspot"><strong>Toggle Gizmos</strong> <img alt="Toggle Gizmos Icon" class="icon" src="../assets/Images/Icons/Icon_ToggleGizmos.png">: Clicando neste botão, os diferentes <a class="glossterm" data-glossterm="gizmos" href="#">gizmos</a> visíveis na tela serão ativados ou desativados. Quando ativado, você verá todos os gizmos associados aos diferentes ativos e à própria tela, e quando desativado, estes não serão mostrados, dando uma visão mais clara de como a seqüência parece. Note que isto é habilitado por
+        padrão, e há um menu disponível no botão de opções <img alt="Icon Grid Menu" class="icon" height="24" data-cke-saved-src="../assets/Images/Icons/Icon_CanvasOptions.png" src="../assets/Images/Icons/Icon_CanvasOptions.png" width="10"> onde você pode filtrar o que é visível sem ter que desativar todos os diferentes widgets juntos. Uma lista completa destas opções de filtragem e uma explicação do que elas fazem podem ser encontradas <a href="Sequence_Properties/The_Sequence_Canvas.htm">aqui</a>.</li>
+      <li class="dropspot">Toggle<strong>Transform Gizmo Mode</strong> <img alt="Transform Gizmo Icon" class="icon" src="../assets/Images/Icons/Icon_TransformWidget.png">: Cada bem adicionado a uma seqüência tem uma transform gizmo em sua origem:<br>
+        <img alt="The transform widget for an asset" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_TransformWidget.gif">Esta gizmo pode controlar como o bem é escalado ou girado, assim como controlar sua posição e a posição
+        da origem do bem, porém mostra apenas uma dessas opções de cada vez. Clicando neste botão, você poderá alternar entre os diferentes tipos de widget ou clicar no menu de opções <img alt="Icon Grid Menu" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasOptions.png" width="10"> para selecionar diretamente o tipo de ação de controle que você deseja que o transform gizmo execute.</li>
+      <li class="dropspot"><strong>Toggle Canvas Frame</strong> <img alt="Toggle Canvas Frame Icon" class="icon" src="../assets/Images/Icons/Icon_ToggleCanvas.png">: Este botão pode ser usado para ligar ou desligar a moldura da tela (está ligada por padrão). A moldura de lona é
+        simplesmente um guia que é usado para julgar onde os elementos são colocados em seqüência de tela e quaisquer elementos fora da moldura não serão apresentados. Este botão também tem o seguinte menu de opções <img alt="Icon Grid Menu" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasOptions.png" width="10">:<br>
+        <img alt="Sequence Editor Canvas Options" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_CanvasControls.png">Aqui você pode definir a comutação da moldura da tela, assim como o tamanho da tela. Você também tem a possibilidade de ajustar
+        uma <strong>imagem de referência</strong>, que é uma imagem que você seleciona de seu computador (não é importada para o projeto) para ser usada como referência de fundo para a seqüência. Esta imagem só é visível no próprio Editor de Seqüências e
+        não será apresentada quando a seqüência for utilizada em um projeto. Se você adicionar uma imagem de referência, você também pode definir a opacidade em que é desenhada e compensar sua posição dentro da moldura da tela.</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">Ferramentas de Sequência</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot">Esta barra tem os vários controles de reprodução de seqüência:</p>
+    <p class="dropspot"><img alt="Sequence Editor Playback Controls" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_PlaybackControls.png" /></p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Velocidade de reprodução</strong>: esta é a velocidade de reprodução da seqüência em quadros (passos) por segundo.</li>
+      <li class="dropspot"><strong>Posição de cabeça de jogo</strong>: esta é a posição atual de cabeça de jogo, e pode ser mostrada no tempo (h:m:s) ou em quadros (f).</li>
+      <li class="dropspot"><strong>Opções de exibição de tempo</strong>: aqui você pode definir se deseja exibir os tempos de seqüência em horas, minutos e segundos (h:m:s) ou quadros (f).</li>
+      <li class="dropspot"><strong>Mensagem de radiodifusão</strong>: Clicando aqui, você pode adicionar uma <strong>mensagem de transmissão</strong> na posição atual de playhead (isto é explicado com mais detalhes <a href="Sequence_Properties/Broadcast_Messages.htm">aqui</a>).</li>
+      <li class="dropspot"><strong>Adicionar momento</strong>: Clicando aqui você pode adicionar um <strong>momento</strong> de seqüência na posição atual de playhead (isto é explicado com mais detalhes abaixo).</li>
+      <li class="dropspot"><strong>Editor de Curvas Abertas</strong>: Este botão alterna a faixa atualmente selecionada entre a <strong>visualização da curva</strong> e a <strong>visualização</strong> do <strong><span class="notranslate">quadro de teclas</span></strong>. Esta opção só é realmente aplicável às faixas de <em>parâmetros</em> e quando ativada
+        você terá então outras opções disponíveis, dependendo se a faixa de parâmetros utiliza <span class="notranslate">quadros-chave</span> ou uma <a href="Animation_Curves.htm">curva de animação</a>. Para mais informações, consulte a seção sobre o <a href="Sequence_Properties/Using_Animation_Curves.htm">Uso de Curvas de Animação</a>.</li>
+      <li class="dropspot"><strong>Controles de reprodução</strong>: com estes botões você pode iniciar e parar a visualização da seqüência, assim como mover a cabeça de reprodução para o início ou para o final. Há também um botão para definir se a seqüência deve ou não fazer loop, e se a seqüência
+        deve &quot;ping-pong&quot; ou repetir ao fazer looping. Note que esta configuração afetará <em>a</em> forma como a seqüência é jogada quando o projeto é compilado e executado.</li>
+      <li class="dropspot"><strong>Comprimento da seqüência</strong>: mostra o comprimento total possível da seqüência em quadros (f) ou no tempo (m:h:s). Observe que a seqüência pode não correr a este comprimento se você tiver definido a região do clipe para ser menor.</li>
+    </ul>
+    <p class="dropspot">Como mencionado acima, você pode adicionar <strong>momentos</strong> a uma seqüência. Um <strong>momento de </strong>seqüência é uma posição na linha do tempo onde a seqüência pode chamar uma <strong>função</strong>. Esta é uma <a href="../GameMaker_Language/GML_Overview/Script_Functions.htm">função com scripts</a> que
+      não deve ter parâmetros e quando o momento (quadro) na linha do tempo for atingido, esta função será chamada. Para definir um momento, basta mover o playhead para a posição desejada e então clicar no botão <strong>Adicionar momento</strong>, e no botão
+      diálogo que lhe abre dá o nome da função a ser chamada.</p>
+    <p class="dropspot"><img alt="Add A Moment To The Sequence" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_AddMoment.gif">Ao adicionar uma função de momento, você pode clicar no botão <img alt="Go To Function Icon" class="icon" src="../assets/Images/Icons/Icon_GoTo_Function.png"> para ir ao script com a função especificada, ou você pode clicar no botão <img alt="New Moment Function Icon" class="icon" src="../assets/Images/Icons/Icon_NewMomentFunction.png"> para criar um novo recurso de script com uma função vazia
+      pronto para edição. Você também pode remover o momento e a função chamada que ele contém, clicando no botão <img alt="Remove Moment Icon" class="icon" src="../assets/Images/Icons/Icon_RemoveMoment.png">.</p>
+    <p class="dropspot">Os momentos de seqüência também podem ser adicionados e editados usando código. Para mais informações, por favor, veja <a href="../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Events_Moments_Broadcast.htm">aqui</a>.</p>
+    <ul class="dropspotlist">
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">Folha de endoscopia</a></p>
+  <div class="droptext" data-targetname="drop-down9">
+    <p class="dropspot">O <strong><span class="notranslate">Folha de Droga</span></strong> é onde todas as <a class="glossterm" data-glossterm="chave do ativo" href="#">chaves de ativos</a> e<span class="glossextra">de</span> <a class="glossterm" data-glossterm="chave de parâmetro" href="#">parâmetros</a>para cada pista
+      são mostrados. Você pode clicar em <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> e arrastar as chaves para a esquerda ou para a direita para posicioná-las dentro da linha de tempo da <span class="notranslate">folha de papel</span> ão, e também pode clicar em <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> na borda direita de uma chave de ativo para alterar seu comprimento. Note que para sprites e objetos, definir o comprimento para ser mais longo do que a animação fará com que a animação
+      para passar por cima dos quadros extras. A <span class="notranslate">folha de papelão</span> também tem controles para definir o início e o fim da região do clipe para a seqüência, e você pode clicar em <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> em qualquer lugar para definir a cabeça de jogo para essa posição. Para mais informações sobre como usar a <span class="notranslate">folha de drogadição</span>, consulte a página seguinte:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="Sequence_Properties/Using_The_Dope_Sheet.htm">Usando a <span class="notranslate">folha de papelão</span></a></li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">Mudança de orientação</a></p>
+  <div class="droptext" data-targetname="drop-down10">
+    <p class="dropspot">O botão de orientação de mudança <img data-cke-saved-src="../assets/Images/Icons/Icon_ChangeOrientation.png" src="../assets/Images/Icons/Icon_ChangeOrientation.png" class="icon" alt="Change Orientation Icon"> pode ser usado para mudar a forma como a Sequência
+      O editor exibe as diferentes seções. Por padrão, você terá a Vista Cnavas na parte superior e o Editor de Pistas e a Folha de Dopes na parte inferior, mas isto pode ser alterado clicando no botão para percorrer os diferentes layouts, ou clicando no
+      Botão Opções <img alt="Icon Grid Menu" class="icon" height="24" data-cke-saved-src="../assets/Images/Icons/Icon_CanvasOptions.png" src="../assets/Images/Icons/Icon_CanvasOptions.png" width="10"> para abrir um menu e selecionar o layout que você
+      quer. Os seguintes layouts estão disponíveis:</p>
+    <table class="icons" style="margin-left: 32auto">
+      <tbody>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../assets/Images/Icons/Icon_Seq_SplitWindow.png" src="../assets/Images/Icons/Icon_Seq_SplitWindow.png" alt="Split Window Sequence Editor Button" /></td>
+          <td class="icons"><strong>Janela Dividida</strong></td>
+          <td class="text">
+            <p>Com esta opção, o Sequence Editor será dividido em duas janelas separadas, onde a janela principal da IDE mostrará a visualização da tela na área de trabalho completa e a nova janela mostrará a <span class="notranslate">Dope Sheet</span> e o Track Editor. Clicando novamente no botão, será
+              mudar o layout novamente e remover a janela extra.<br></p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../assets/Images/Icons/Icon_Seq_Top.png" src="../assets/Images/Icons/Icon_Seq_Top.png" alt="Snap Top Sequence Editor Button" /></td>
+          <td class="icons"><b>Topo do Snap</b></td>
+          <td class="text">
+            <p>Esta opção encaixa o Track Editor e o Dopesheet na parte superior da IDE.<br></p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../assets/Images/Icons/Icon_Seq_Right.png" src="../assets/Images/Icons/Icon_Seq_Right.png" alt="Snap Right Sequence Editor Button" /></td>
+          <td class="icons"><strong>Estalar à direita</strong></td>
+          <td class="text">
+            <p>Esta opção encaixa o Track Editor e o Dopesheet à direita da IDE.<br></p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../assets/Images/Icons/Icon_Seq_Bottom.png" src="../assets/Images/Icons/Icon_Seq_Bottom.png" alt="Snap Bottom Sequence Editor Button" /></td>
+          <td class="icons"><strong>Fundo do Snap</strong></td>
+          <td class="text">
+            <p>Esta opção encaixa o Track Editor e o Dopesheet na parte inferior da IDE (esta é a visão padrão.<br></p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../assets/Images/Icons/Icon_Seq_Left.png" src="../assets/Images/Icons/Icon_Seq_Left.png" alt="Snap Left Sequence Editor Button" /></td>
+          <td class="icons"><strong>Esquerda</strong></td>
+          <td class="text">
+            <p>Esta opção encaixa o Track Editor e o Dopesheet à esquerda da IDE.<br></p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot">Você também pode redefinir o layout do Sequence Editor a qualquer momento, clicando na opção Reset <img data-cke-saved-src="../assets/Images/Icons/Icon_Seq_Reset.png" src="../assets/Images/Icons/Icon_Seq_Reset.png" class="icon" alt="Reset Editor Layout Button">. Isto restaurará o editor ao seu estado padrão e reabrirá qualquer seção que tenha sido fechada.</p>
+  </div>
+  <p> </p>
+  <p>Devido à complexidade inicial do editor de seqüências, demos apenas uma breve visão geral das características disponíveis aqui, mas temos páginas adicionais listadas abaixo que aprofundam suas características e como elas podem ser usadas:</p>
+  <ul class="colour">
+    <li><a href="Sequence_Properties/The_Sequence_Canvas.htm">A Tela Seqüencial</a></li>
+    <li><a href="Sequence_Properties/The_Track_Panel.htm">O Painel de Pista</a></li>
+    <li><a href="Sequence_Properties/Clipping_Masks.htm">Máscaras de grampear</a></li>
+    <li><a href="Sequence_Properties/Using_The_Dope_Sheet.htm">Usando a <span class="notranslate">folha de papelão</span></a></li>
+    <li><a href="Sequence_Properties/Using_Animation_Curves.htm">Usando curvas de animação</a></li>
+    <li><a href="Sequence_Properties/Broadcast_Messages.htm">Mensagens de radiodifusão</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="The_Asset_Editors.htm">Os Editores de Ativos</a></div>
+        <div style="float:right">A seguir: <a href="Shaders.htm"><span class="notranslate">Shaders</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Sequences Editor
+Sequences
+Sequence Canvas
+Track Panel
+<span class="notranslate">Dope Sheet</span>
+-->
+  <!-- TAGS
+sequences_editor
+-->
+
+</body></html>

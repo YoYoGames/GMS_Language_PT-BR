@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Grupos de Textura</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains how to use Texture Groups
+" />
+  <meta name="rh-index-keywords" content="Texture Groups" />
+  <meta name="search-keywords" content="texture groups,texture pages,textures" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Grupos de Textura</h1>
+  <p><img alt="Texture Group Editor" class="center" src="../assets/Images/Settings/Texture_Groups.png">O <strong>Gerente do Grupo de Textura</strong> está disponível no <a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">menu Ferramentas</a> no IDE. Aqui
+    você pode <em>adicionar</em>, <em>apagar </em>e <em>renomear </em><strong>Grupos de Textura</strong>. O <span class="notranslate">GameMaker Studio 2</span> permite que você atribua cada um dos recursos gráficos (sprites, tilesets e fontes) a diferentes grupos de textura para tentar otimizar o número
+    de troca de textura que o hardware faz em qualquer momento de seu jogo. Para que isso funcione, você precisa definir os grupos de textura necessários a partir desta janela, e então passar por cada um dos tipos de ativos apropriados e selecionar o grupo que você deseja
+    pertencem a partir do menu suspenso. Alternativamente, você pode adicionar ativos a um grupo de textura através do botão direito do mouse <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> menu no <a href="../Introduction/The_Asset_Browser.htm">Navegador de Ativos</a>.
+    Você pode selecionar um ou mais ativos (ou uma pasta inteira do grupo de ativos) e então usar o menu RMB para adicionar os ativos a qualquer grupo, como mostrado abaixo para tilesets:</p>
+  <p><img alt="Asset Browser RMB Menu For Tilesets" class="center" src="../assets/Images/Settings/QS_RMBMenu_Tilesets.png">é importante perceber que um único grupo de textura pode ter várias páginas de textura, e elas <strong>não </strong>são equivalentes.
+    Se seu jogo tem muitos gráficos exclusivos para cada nível, então você pode definir um único <em>grupo de </em>textura para cada um dos níveis, mas os gráficos requerem duas ou mais <em>páginas de </em>textura por grupo.</p>
+  <p>Por padrão todas as imagens em seu jogo serão adicionadas ao grupo de textura &quot;Default&quot;, que sempre existe. Entretanto, você pode clicar no botão <strong>Adicionar novo</strong> para criar um novo grupo de textura, e se você selecionar o nome do grupo, você pode
+    mudar algo apropriado. Para começar com o grupo mostrará &quot;este<em>grupo está vazio&quot; para</em> cada seção do grupo (Sprites, tilesets e fontes), e então você precisará passar por seus recursos gráficos e adicioná-los. Você pode adicionar
+    um recurso usando o botão <strong>Adicionar Recurso</strong> na parte inferior, ou selecionando o grupo de textura do editor de recursos para a imagem, conjunto de azulejos, ou fonte. Grupos de texturas diferentes do &quot;Padrão&quot; também podem ser excluídos em qualquer
+    tempo, que moverá seu conteúdo para o grupo &quot;Padrão&quot; (note que se você apagar um grupo por engano você pode usar <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">Z</span>&quot; para desfazer a ação).</p>
+  <p>Uma vez definidos os grupos de textura - e atribuídos ativos gráficos a eles - você os verá listados à esquerda da janela principal do editor Texture Group, e clicando em qualquer um dos sprites desta lista os mostrará na janela de visualização de imagem em
+    o direito. Isto é particularmente útil quando se trabalha em grandes projetos e é preciso poder ver quais imagens foram atribuídas a qual grupo. Observe que se as imagens atribuídas ao grupo têm múltiplas subimagens (ou seja: são animadas), então
+   <em>apenas a primeira subimagem é mostrada na janela de visualização</em>. Você também pode clicar com o botão direito do mouse <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> em um recurso para abrir um pequeno menu dando-lhe a opção
+    para movê-lo para outro grupo de textura ou abrir o editor para esse ativo.</p>
+  <p>Vale notar que mesmo que os recursos sejam mostrados na lista como sendo separados, todos os sprites, tilesets e fontes serão adicionados à mesma página de textura (ou páginas), e não receberão uma página individual para cada tipo de recurso. A única exceção a isto
+    A regra é quando um ativo sprite foi sinalizado como sendo para uma &quot;<strong>Página de Textura</strong> Separada<strong>&quot;,</strong> neste caso será dada sua própria página de textura individual (veja a seção sobre &quot;Configurações de Textura&quot; no Editor Sprite para <a href="../The_Asset_Editors/Sprites.htm">mais detalhes)</a>.</p>
+  <p>Para mais informações sobre as páginas de textura e como são geradas, consulte a página seguinte:</p>
+  <ul class="colour">
+    <li><a href="Texture_Information/Texture_Pages.htm">Páginas de Textura</a></li>
+  </ul>
+  <p>As <strong>configurações de grupo</strong> no Editor do Grupo de Textura são usadas para determinar exatamente como as páginas de textura para um determinado grupo devem ser criadas, com as seguintes opções disponíveis:</p>
+  <ul class="colour">
+    <li><strong>Permitir a escala</strong> - Desmarcar isto forçará o <span class="notranslate">GameMaker Studio 2</span> a não escalar o grupo de textura em nenhuma circunstância. Isto pode ser útil, especialmente quando se trata de aplicações universais, pois permite colocar recursos específicos como
+      fontes em um grupo próprio para serem usadas quando o aplicativo é executado em um dispositivo específico. Por exemplo, as fontes podem ficar ótimas em um display de retina, mas quando são reduzidas para desenhar em um display normal, elas podem parecer terríveis para que você possa atribuí-las a um
+      grupo especial não escalonável - se estiver desenvolvendo para o iPhone, você pode desejar que isto seja verificado, pois os aplicativos foram rejeitados devido ao fato de as imagens estarem embaçadas por uma escala de textura. Isto é sinalizado como por padrão <em>. </em></li>
+    <li><strong>Automatically Crop</strong> - Quando você adiciona imagens no <span class="notranslate">GameMaker Studio 2</span>, se elas tiverem algum &quot;espaço&quot; ao redor delas (ou seja, 100% de transparência) isto é automaticamente cortado quando é adicionado na página de textura e &quot;Automatically
+      Crop&quot; é sinalizado. Entretanto, se, por exemplo, você estiver usando a imagem como uma textura não repetitiva para os primitivos ou algo semelhante, isto significa que as coordenadas UV para o mapeamento da textura não serão corretamente representadas. Nesses casos
+      você pode desmarcar esta opção e o sprite será adicionado à página de textura &quot;como está&quot;, mantendo quaisquer transparências que ela possa ter ao redor das bordas. Isto é sinalizado como por padrão <em>. </em></li>
+    <li><strong>Gerar Mipmaps</strong> - Marcar esta opção (está desligada por padrão) dirá ao <span class="notranslate">GameMaker Studio 2</span> que a página de textura original deve ser escalada e filtrada em múltiplas resoluções dentro do arquivo de textura. Isto normalmente está <em>desativado</em>,
+      mas se você estiver usando câmeras para aumentar ou diminuir o zoom em grandes áreas da sala de jogos, ou se você estiver trabalhando com um jogo 3D, então você pode querer ativar isso e então usar as <a href="../GameMaker_Language/GML_Reference/Drawing/Mipmapping/Mipmapping.htm">funções de Mipmapping</a> para
+      ajustar a forma como o jogo lida com os diferentes níveis do mipmap. Ao marcar esta caixa de seleção, o valor &quot;Border Size&quot; será definido para 8 (se foi definido para menos de 8 originalmente). Isto porque, ao usar mipmaps, você precisa de bordas maiores entre
+      imagens nas páginas de textura, caso contrário, elas começam a sangrar juntas em níveis mais altos de mip. O valor padrão de 8 permitirá que a imagem seja reduzida a cerca de um oitavo de seu tamanho original antes que as sub-imagens comecem a sangrar juntas, mas você pode
+      altere isso para qualquer valor que seja necessário para atender às suas necessidades. Note que se você estiver usando a opção &quot;Separate<strong>Texture Page&quot;</strong> para sprites, então você não precisa passar por cada textura aqui e sinalizá-la para gerar mipmaps,
+      mas ao invés disso, você pode ir para as <a href="Game_Options.htm">Opções Gerais de Jogo</a> e sinalizar a opção &quot;Gerar<strong>mipmaps para páginas de textura separadas&quot;</strong>.</li>
+    <li><strong>Tamanho da borda</strong> - O tamanho da borda mudará a quantidade de sobreposição (ou &quot;duplicação de pixels&quot;) ao redor das bordas de todos os ativos nas páginas geradas para o grupo de textura, de modo que quando as imagens forem escalonadas, não haja lacunas (ou costuras)
+      visível entre eles. O padrão é de 2 pixels, mas em casos extremos em que você está ampliando muito a vista para dentro ou para fora, então você pode precisar aumentar este valor. Observe que o <a href="../The_Asset_Editors/Tile_Sets.htm">editor do Tile Set Editor</a> tem
+      uma opção para definir a borda de saída das telhas (e também fornece uma explicação do porquê disto ser necessário), e isto é separado da definição da borda aqui - basicamente, as telhas são geradas com uma borda de saída para cada telha em uma textura temporária,
+      e isto é então adicionado à página de textura com a borda dada aqui ao redor da borda externa. Observe também que a habilitação do Mipmaps ajustará automaticamente o tamanho padrão da borda da página de textura para 8, para ajudar a evitar &quot;sangramento&quot; entre
+      texturas em níveis mais altos de mip, mas isto pode ser alterado.</li>
+    <li><strong>Grupo de Textura dos Pais</strong> - Aqui você pode escolher qualquer um dos grupos existentes para ser o grupo &quot;pai&quot; para o grupo atualmente selecionado. Os grupos &quot;filhos&quot; herdarão quaisquer mudanças feitas no grupo de textura dos pais e são principalmente
+      para gestão de recursos quando se trabalha com jogos entre plataformas. Um grupo de textura com um pai ainda é um grupo de textura por direito próprio e gerará páginas de textura iguais a qualquer outro grupo, mas atribuindo-lhes um pai permite que você exclua
+      grandes pedaços para diferentes plataformas. Por exemplo, você pode adicionar uma carga inteira de sprites de jogadores <span class="notranslate">Android</span> a um grupo &quot;player&quot;, e <span class="notranslate">sprites inimigos</span> Android a um grupo &quot;inimigo&quot;, e depois fazer com que ambos usem um grupo &quot;andróide&quot; pai.
+      Se você então excluir o grupo de pais &quot;andróide&quot; do Windows ou <span class="notranslate">outra</span> plataforma construída, os grupos de crianças também serão excluídos.</li>
+  </ul>
+  <p>Além dessas configurações, você também pode optar por exportar (ou não) qualquer grupo de textura para qualquer plataforma, simplesmente marcando ou desmarcando as caixas apropriadas na seção <strong>Use Group On</strong>... da janela. Observe, porém, que
+    o grupo de textura <span class="inline">&lt;Default&gt;</span> é <em>sempre exportado para cada plataforma</em>, e você não pode checar/desmarcar nenhuma delas (somente grupos de textura personalizados permitem isso).</p>
+  <p>Os Grupos de Textura também estão vinculados às <a href="Configurations.htm">configurações</a>. O que isto significa é que você pode definir grupos de textura para cada configuração individual de seu jogo e, em seguida, definir o recurso sprite, conjunto de azulejos ou fonte
+    tarefas para estes diferentes grupos e será &quot;lembrado&quot; quando você mudar para uma configuração diferente. O mesmo acontecerá com qualquer opção de exportação que você tenha escolhido na janela Grupo de Textura, para que você possa definir os grupos de textura
+    para exportar para plataformas específicas numa base per-configuração.</p>
+  <p>Um uso para isto é, por exemplo, que você poderia fazer uma configuração de iPad e para isto criar páginas de textura 2048x2048px (configurando isto através das <a href="Game_Options.htm">Opções de Jogo</a>). Você então atribuiria todos os recursos gráficos ao apropriado
+    grupo de textura, e quando terminado, você então mudaria para uma configuração diferente (para HTML5, por exemplo) e a partir da janela Grupo de Textura, criaria novos grupos de textura que são 512x512px, atribuindo os ativos a estes novos grupos. Há também
+    um botão na parte inferior da página que permite copiar configurações de grupos de textura de uma configuração para outra.</p>
+  <p>Finalmente, os grupos de textura são relevantes apenas para imagens <a class="glossterm" data-glossterm="bitmap" href="#">bitmap</a>, e os sprites não-bitmap não serão atribuídos a grupos de textura. Alguns deles já terão sua própria página de textura única (esqueleto
+    de animação) enquanto outros simplesmente não requerem texturas, pois são compostos por vetores <a class="glossterm" data-glossterm="vetor" href="#">.</a>Para mais informações, consulte a seção seguinte:</p>
+  <ul class="colour">
+    <li><a href="Texture_Information/Non-Bitmap_Sprites.htm">Sprites não-Bitmap</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Game_Settings.htm">Configurações do jogo</a></div>
+        <div style="float:right">A seguir: <a href="Game_Options.htm">Opções de jogo</a> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Texture Groups
+Texture Group Manager
+-->
+  <!-- TAGS
+texture_groups
+-->
+
+</body></html>

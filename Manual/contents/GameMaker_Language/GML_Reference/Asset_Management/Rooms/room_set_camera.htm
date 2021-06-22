@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>room_set_camera</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_set_camera" />
+  <meta name="rh-index-keywords" content="room_set_camera" />
+  <meta name="search-keywords" content="room_set_camera" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>room_set_camera</h1>
+  <p>Com esta função você pode atribuir uma câmera a um viewport específico em uma sala que não seja a atual. Você fornece o índice da sala, o índice de visão (de 0 a 7) e depois o índice da câmera a ser usada.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">room_set_camera(rm, vind, camera);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>rm</td>
+        <td>O índice da sala para definir a visão da câmera de</td>
+      </tr>
+      <tr>
+        <td>vind</td>
+        <td>O índice da porta de visualização para atribuir a câmera a</td>
+      </tr>
+      <tr>
+        <td>câmera</td>
+        <td>O índice da câmera a atribuir</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">global.myroom = room_add();<br> room_set_camera(global.myroom, 0, global.MainCam);</p>
+  <p>O código acima atribui uma câmera em uma sala recém-criada para visualizar a porta [0].</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Rooms.htm">Quartos</a></div>
+        <div style="float:right">A seguir: <a href="room_get_camera.htm">room_get_camera</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_set_camera
+-->
+  <!-- TAGS
+room_set_camera
+-->
+</body>
+</html>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Configurações</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains how to use Configurations" />
+  <meta name="rh-index-keywords" content="Configurations" />
+  <meta name="search-keywords" content="configs,configurations,config editor,configuratuon editor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Configurações</h1>
+  <p>Devido às exigências do desenvolvimento de plataformas cruzadas e à necessidade de que um produto esteja disponível e personalizado para diferentes clientes ou dispositivos ou plataformas, o <span class="notranslate">GameMaker Studio 2</span> inclui <strong>configurações</strong> para tornar as coisas mais simples. Usando isto
+    é possível alternar rapidamente entre diferentes telas splash, ícones e arquivos incluídos e testar ou exportar apenas aqueles que são relevantes para a plataforma ou cliente alvo a qualquer momento, tudo a partir do mesmo código base.</p>
+  <p>Para poder lidar com as diferentes demandas dos clientes e plataformas você pode usar o <strong>Editor de Configuração</strong> que é acessível a partir do menu <strong>Extras </strong>no <a href="../Introduction/The_Asset_Browser.htm">Navegador de Ativos</a>:</p>
+  <p><img alt="Open The Configuration Editor" class="center" src="../assets/Images/Settings/Configs_Open_Editor.png">Todos os jogos feitos no <span class="notranslate">GameMaker Studio 2</span> começam com uma configuração &quot;padrão&quot;, que é listada no editor quando você abre pela primeira vez
+    isso:</p>
+  <p><img alt="The Configuration Editor" class="center" src="../assets/Images/Settings/Configs.png">Para configurar suas configurações, recomenda-se que você primeiro prepare esta configuração &quot;padrão&quot;, incorporando todos os ativos configuráveis para
+    o projeto nele envolvido. Para fazer isso, basta passar pela seguinte lista de opções e ajustá-las ao que é exigido por padrão:</p>
+  <ul class="colour">
+    <li><a href="../The_Asset_Editors/Extensions.htm">Opções de extensão</a>: Configurar os vários campos &quot;Copiar para...&quot; para as plataformas necessárias para a configuração. Qualquer arquivo &quot;Proxy&quot; criado aqui terá sua plataforma &quot;Target&quot;.
+      ligado à configuração também.</li>
+    <li><a href="../The_Asset_Editors/Sprites.htm">Editor Sprite</a>: Defina o grupo de textura ao qual você quer que os sprites sejam adicionados.</li>
+    <li><a href="../The_Asset_Editors/Tile_Sets.htm">Editor de Ladrilhos</a>: Defina o grupo de textura ao qual você deseja que os tilesets sejam adicionados.</li>
+    <li><a href="../The_Asset_Editors/Fonts.htm">Editor de fontes</a>: Defina o grupo de textura ao qual você quer que as fontes sejam adicionadas.</li>
+    <li><a href="Texture_Groups.htm">Gerente do Grupo de Textura</a>: Aqui você pode definir qualquer uma das propriedades em uma base por configuração, incluindo o grupo pai ao qual pertence um grupo de textura.</li>
+    <li><a href="Audio_Groups.htm">Gerente do Grupo de Áudio</a>: Os sons que são designados para os diferentes grupos de áudio são confiúveis aqui.</li>
+    <li><a href="Included_Files.htm">Arquivos incluídos</a>: Defina o campo &quot;Copiar para...&quot; para as plataformas necessárias para a configuração.</li>
+  </ul>
+  <p>Depois de configurar a configuração padrão, você pode então adicionar uma nova configuração ao Editor de Configuração, clicando com o botão direito do mouse em <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> na pasta de configurações
+    e selecionando <strong>Adicionar Config</strong>, ou clicando no botão &quot;<em>Criar&quot;</em> na parte inferior da janela. A nova configuração será mostrada como uma &quot;criança&quot; da configuração padrão - todas as configurações definidas pelo usuário são crianças.
+    do padrão - e você pode dar-lhe um nome apropriado.</p>
+  <p>Para editar a configuração, você deve clicar duas vezes <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> sobre ela ou usar o botão direito do mouse <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> opção do menu &quot;Set<em>Config&quot;,</em> que selecionará a configuração no editor e, uma vez que isso tenha sido feito, você pode ir em frente e personalizá-la. Isto é feito simplesmente percorrendo as opções listadas acima e mudando
+    para os ajustes desejados para a configuração recém-criada. O <span class="notranslate">GameMaker Studio 2</span> armazenará estes valores automaticamente para a configuração, e você pode mudar entre as configurações a qualquer momento simplesmente usando a opção do menu RMB <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> ou clicando duas vezes em <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21">.</p>
+  <p>Outras configurações podem ser adicionadas como filhos da configuração padrão, ou filhos das configurações definidas pelo usuário que você criou, dependendo de qual configuração foi destacada no editor quando você a criou. Em
+    a imagem de exemplo abaixo, você pode ver que temos três configurações personalizadas definidas, duas das quais são filhos da configuração padrão, e outra que é filha de uma configuração definida pelo usuário:</p>
+  <p><img alt="Child Configurations In The Configuration Editor" class="center" src="../assets/Images/Settings/Configs_Children.png">Vale notar que você pode usar qualquer configuração com qualquer plataforma de destino ao compilar ou testar seu
+    projetos. Isto é feito selecionando a configuração necessária dentro da seção <strong>Config</strong> do <strong>Gerente de destino</strong>:</p>
+  <p><img alt="Configurations In The Target Manager" class="center" src="../assets/Images/Settings/Configs_TargetManager.png">Você também pode abrir o Editor de Configuração em qualquer tme do Gerenciador de destino clicando no botão de menu no canto superior direito (como
+    destacado na imagem acima).</p>
+  <p>Uma vez definida uma configuração a ser utilizada desta forma, a configuração escolhida será utilizada sempre que você compilar para um alvo, seja para testes ou para criar um pacote final de ativos. Para mais informações sobre a Janela de Alvos, consulte a seção
+    na <a href="../Introduction/Compiling.htm">Compilação</a>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Game_Settings.htm">Configurações do jogo</a></div>
+        <div style="float:right">A seguir: <a href="Command_Line_Parameters.htm">Parâmetros de Linha de Comando</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Conifgurations
+Configs
+Config Editor
+Configuration Editor
+-->
+  <!-- TAGS
+config_editor
+-->
+</body>
+</html>

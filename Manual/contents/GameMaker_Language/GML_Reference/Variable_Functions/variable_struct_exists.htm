@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>variável_estruto_existe</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function variable_struct_exists" />
+  <meta name="rh-index-keywords" content="variable_struct_exists" />
+  <meta name="search-keywords" content="variable_struct_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>variável_estruto_existe</h1>
+  <p>Com esta função você pode verificar se existe ou não uma variável dentro da estrutura dada. Você fornece a referência estrutural a ser usada, bem como o nome da variável a ser verificada <i>como uma string</i> (veja o código de exemplo abaixo). A função
+    retornará <tt>verdadeiro</tt> se existir uma variável com o nome dado para a estrutura e <tt>falso</tt> caso contrário.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">variable_struct_exists(structure, name);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>estrutura</td>
+        <td>A referência estrutural a ser verificada</td>
+      </tr>
+      <tr>
+        <td>nome</td>
+        <td>O nome da variável estrutural a ser verificada (como uma string)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if !variable_struct_exists(mystruct, &quot;shields&quot;))<br> {
+    <br> mystruct.shields = 0;<br> }
+  </p>
+  <p>O código acima verificará se a variável chamada &quot;shields&quot; existe na estrutura dada e se não existe, então ela é criada e rubricada a 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Variable_Functions.htm">Funções variáveis</a></div>
+        <div style="float:right">Próximo: <a href="variable_struct_get.htm">variable_struct_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+variable_struct_exists
+-->
+  <!-- TAGS
+variable_struct_exists
+-->
+</body>
+</html>

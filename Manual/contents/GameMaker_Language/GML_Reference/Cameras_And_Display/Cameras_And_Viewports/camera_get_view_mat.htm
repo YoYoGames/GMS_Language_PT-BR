@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>camera_get_view_mat</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for camera_get_view_mat" />
+  <meta name="rh-index-keywords" content="camera_get_view_mat" />
+  <meta name="search-keywords" content="camera_get_view_mat" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>camera_get_view_mat</h1>
+  <p>Esta função pode ser usada para recuperar a matriz de visualização. A função retorna o valor de identificação da matriz que pode ser usado em outras <a href="../../Maths_And_Numbers/Matrix_Functions/Matrix_Functions.htm">funções da matriz</a> ou para definir a matriz de visão de
+    outra câmera (usando <a href="camera_set_view_mat.htm"><tt>camera_set_view_mat()</tt></a>). Note que esta função é geralmente para uso com câmeras criadas usando <a href="camera_create.htm"><tt>camera_create()</tt></a>mas também pode ser utilizado
+    sobre aqueles criados no editor da sala (ou com <a href="camera_create_view.htm"><tt>camera_create_view()</tt></a>) - neste caso, a matriz devolvida só será válida após a utilização da câmera dada em uma porta de visualização pela primeira vez.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">camera_get_view_mat(camera_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>camera_id</td>
+        <td>O valor único de identificação da câmera retornou quando você criou a câmera</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Matriz de identificação (real)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">mat = camera_get_view_mat(camera_view[0]);</p>
+  <p>O código acima obtém a matriz de visualização para a câmera designada para visualizar a porta[0].</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Cameras_And_View_Ports.htm">Câmeras e Ver Portos</a></div>
+        <div style="float:right">Próximo: <a href="camera_get_proj_mat.htm">camera_get_proj_mat</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_get_view_mat
+-->
+  <!-- TAGS
+camera_get_view_mat
+-->
+</body>
+</html>

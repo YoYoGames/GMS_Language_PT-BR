@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>esqueleto_mix_animação</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_animation_mix" />
+  <meta name="rh-index-keywords" content="skeleton_animation_mix" />
+  <meta name="search-keywords" content="skeleton_animation_mix" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>esqueleto_mix_animação</h1>
+  <p>Você pode trocar facilmente os conjuntos de animação usando o <a href="skeleton_animation_set.htm"><tt>esqueleto_set_animação()</tt></a> mas isso pode causar um salto ou gagueira, já que uma animação é trocada por outra. Para evitar isso, você pode definir o valor da mistura
+    entre dois conjuntos de animação e o duende irá interpolar entre eles. normalmente você gostaria de fazer isso no Evento Criar da instância com a animação esquelética, pois ela só precisa de um conjunto uma vez, e o <span class="notranslate">GameMaker Studio 2</span> irá interpolar tudo mais
+    mudanças no sprite usando os conjuntos de animação nesse caso. Note que o valor de duração é de 0 a 1, onde um valor de 0,5 teria uma interpolação &quot;metade e metade&quot; de um conjunto para o outro.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">skeleton_animation_mix(animfrom, animto, duração);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>animfrom</td>
+        <td>O nome (uma cadeia) do primeiro conjunto de animação de onde se interpolar.</td>
+      </tr>
+      <tr>
+        <td>animto</td>
+        <td>O nome (uma cadeia) do segundo conjunto de animação para interpolar.</td>
+      </tr>
+      <tr>
+        <td>duração</td>
+        <td>A duração da interpolação (de 0 a 1)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">skeleton_animation_set(&quot;walk&quot;);<br> skeleton_animation_mix(&quot;walk&quot;, &quot;jump&quot;, 0.2);<br> skeleton_animation_mix(&quot;jump&quot;, &quot;walk&quot;, 0.4);</p>
+  <p>O código acima iria no Create Event de uma instância com um duende de animação esquelético e define a duração da mistura de animação para interpolar entre os dois conjuntos de animações &quot;andar&quot; e &quot;pular&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Animation.htm">Animação</a></div>
+        <div style="float:right">A seguir: <a href="skeleton_animation_list.htm">lista_esqueleto_animação_esqueleto</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_animation_mix
+-->
+  <!-- TAGS
+skeleton_animation_mix
+-->
+</body>
+</html>

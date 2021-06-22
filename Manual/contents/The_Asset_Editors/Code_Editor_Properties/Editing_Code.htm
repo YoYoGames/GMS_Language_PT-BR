@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Código de edição</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how to use the code editor windows
+" />
+  <meta name="rh-index-keywords" content="Code Editor - Editing" />
+  <meta name="search-keywords" content="edit code,code editor,autocomplete" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Código de edição</h1>
+  <p>Quando você começa a usar o editor de scripts, é simplesmente um caso de digitação do código que você quer ter para o ativo do script ou para o evento, seguindo a <span class="notranslate">sintaxe</span> correta do GML <a class="glossterm" data-glossterm="sintaxe" href="#">.</a> Enquanto você faz isso,
+    você receberá ajuda da janela do <strong>auto-completar</strong>:</p>
+  <p><img alt="Script Editor Code Complete" class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_CodeComplete.png">Esta janela aparecerá enquanto você estiver escrevendo seu código (normalmente após uma pequena pausa, mas isto pode ser definido nas <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Text_Editor_Preferences.htm">Preferências</a>)
+    e lhe dar uma seleção de respostas &quot;melhor adaptação&quot; em ordem alfabética.</p>
+  <p>Ao usar o editor de código você pode clicar em <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> e arrastar o mouse para selecionar uma linha de código ou manter pressionado <img alt="Alt Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Alt.png" width="55">, depois clicar em <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> e arrastar para selecionar colunas de código. Qualquer coisa selecionada desta maneira pode então ser <em>copiada</em>, <em>cortada </em>e <em>colada </em>usando
+    os atalhos de teclado padrão de <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot; <span class="inline">C</span>&quot;, <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">X</span>&quot; e <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">V</span>&quot;.</p>
+  <p>Vale a pena notar que você pode <strong>comentar </strong>seu código de várias maneiras. Comentar seu código é muito importante para manter a produtividade, pois mantém as coisas claras e separa as seções do código de tal forma que é óbvio o que cada
+    parte faz e porque está lá. Também significa que se você estiver trabalhando em equipe, poderá deixar notas para os outros membros e que eles saberão exatamente o que você fez ou para que serve uma seção específica do código. Mesmo se você for um desenvolvedor solo,
+    deixar comentários em seu código é importante, especialmente se você tiver que deixar o projeto e voltar a ele em uma data posterior.</p>
+  <p>Comentar seu código é simples, pois você só precisa usar &quot;<span class="inline">//</span>&quot; antes de qualquer linha de texto ou você pode comentar parágrafos inteiros usando &quot;<span class="inline">/* text here */</span>&quot;. Há até dois teclados
+    atalhos para comentar e descomentar linhas de código selecionadas: <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">K</span>&quot; para comentar, e <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55"> + &quot;<span class="inline">K</span>&quot; para des-comentar. A seguinte imagem ilustra o código escrito usando estes dois métodos
+    assim como alguns comentários do <strong>JS Doc</strong> (explicados com mais detalhes):</p>
+  <p><img alt="Script Editor Comments" class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_Comments.png">Os scripts também podem ter certos comentários em estilo JSDoc adicionados para definir as propriedades das funções que eles contêm, de modo que quando você usa
+    as funções em seu código aparecem em auto-completar juntamente com seus argumentos e outros detalhes. Você pode saber mais sobre isto na seção <a href="JSDoc_Script_Comments.htm">JSDoc Script Comments</a> para mais informações.</p>
+  <p>Por padrão, todos os códigos escritos terão ícones de <strong>código dobráveis</strong> ao lado de cada conjunto de chaves correspondentes <span class="inline">{}</span>. Estes assumem a forma de um pouco mais de <span class="inline">+</span> ou menos de <span class="inline">-</span> ícones, e clicando neles, o código será &quot;dobrado&quot; dentro das chaves correspondentes, de modo a ocupar menos espaço visual.</p>
+  <p>Você também pode definir manualmente regiões dobráveis de código usando as tags especiais <span class="inline">#region</span> para marcar uma seção de código. Como isto funciona é que você adiciona uma tag <span class="inline">#region</span> (junto com qualquer texto de comentário) ao topo do
+    uma seção de código e então adicionar uma tag <span class="inline">#endregion</span> correspondente no final da seção e então você pode &quot;dobrar&quot; o código, ou seja: escondê-lo para que você possa cortar o número de linhas de código visíveis no editor
+    a qualquer momento:</p>
+  <p><img alt="Script Editor Code Regions" class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_CodeRegion.gif">O código atual parece algo parecido com isto:</p>
+  <p class="code">#Esta é uma região exemplo<br>
+    <br> width = sprite_get_width(sprite);<br> height = sprite_get_height(sprite);<br> xoff = sprite_get_xoffset(sprite);<br> yoff = sprite_get_yoffset(sprite);<br>
+    <br> #endregion Comentário adicional aqui se necessário</p>
+  <p>Como você deve ter notado, partes do texto do roteiro são coloridas. O editor do roteiro &quot;conhece&quot; objetos existentes, variáveis e funções incorporadas, etc... e os códigos de cores correspondentes. Os códigos de cores ajudam muito a evitar erros
+    como você pode ver imediatamente se você escreveu mal algum nome ou usou uma palavra-chave como variável, ou tem um erro de sintaxe. Entretanto, se você não gostar do código de cores, nas <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Text_Editor_Preferences.htm">Preferências</a> você pode ligá-lo e desligá-lo (você também pode usar <span class="inline">F10</span> para ligá-lo ou desligá-lo no editor), bem como personalizar as cores que são usadas.</p>
+  <p>Você também pode clicar com o botão direito em <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> em qualquer lugar do editor para abrir o menu a seguir:</p>
+  <p><img alt="Script Editor Menu" class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_RMB_Menu.png">Além das funções regulares que você esperaria cortar, copiar e colar linhas de código, você também tem a opção de comentar ou descomentar
+    qualquer texto selecionado, adicionar ou remover travessões, assim como dividir a janela de código em 1, 2 ou 3 painéis separados (note que as opções relacionadas a <span class="inline">#regions</span> não estarão disponíveis se você não tiver definido nenhum no código que está sendo editado).</p>
+  <p>A última opção para dividir em painéis dividirá a janela real em diferentes partes onde você pode então arrastar um roteiro ou evento e fazer com que ele seja exibido junto com os outros para comparação e edição.</p>
+  <p><img alt="Script Editor Panes" class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_Panes.png">Isto é excepcionalmente útil para comparar dois scripts ou para visualizar scripts conectados ao mesmo tempo, sem precisar de outra janela
+    ou ter que alternar constantemente entre as abas.</p>
+  <p>As outras opções neste menu são alternar um ponto de parada para uso com o <a href="../../IDE_Tools/The_Debugger.htm">Debugger</a>, e converter o código <span class="notranslate">GML</span> em <span class="notranslate">DnD™</span>ou vice-versa. Observe que se converter o código para <span class="notranslate">DnD™</span>, então ele <em>não </em>criará
+    ações individuais para cada linha de código, mas use uma única ação de código para manter tudo o que estava anteriormente no evento ou roteiro.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Scripts.htm">O Editor Roteiro</a></div>
+        <div style="float:right">A seguir: <a href="JSDoc_Script_Comments.htm">Comentários JSDoc</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Editing Code
+Code Editor
+Autocomplete
+Split Panes
+Regions
+#region
+#endregion
+-->
+  <!-- TAGS
+code_editor
+-->
+
+</body></html>

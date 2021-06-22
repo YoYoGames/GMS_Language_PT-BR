@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_flush</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_flush" />
+  <meta name="rh-index-keywords" content="sprite_flush" />
+  <meta name="search-keywords" content="sprite_flush" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_flush</h1>
+  <p>Com esta função, você pode remover a página de textura dada para o duende dado da memória de textura. Você fornece o índice sprite (como definido ao criar o recurso sprite) e a página de textura para a qual ele é designado será removida da memória de textura.
+    Note que se a página de textura for usada em outro lugar na sala (por outro sprite ou fundo, etc...) você poderá obter um pequeno acerto de desempenho quando a página for imediatamente recarregada, portanto, deve-se tomar cuidado ao usar esta função. Note que a função
+    retornará <tt>-1</tt> se o fluxo não for suportado para o recurso escolhido, ou retornará <tt>0</tt> se todos funcionarem corretamente.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">sprite_flush(ind)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>O índice (nome do recurso) do ativo sprite a ser enxaguado</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Int (-1 ou 0)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">sprite_flush(spr_Player_Aura);</p>
+  <p>O código acima descarrega o duende &quot;spr_Player_Aura&quot; da memória.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sprite_Manipulation.htm">Manipulação de Sprite</a></div>
+        <div style="float:right">Próximo: <a href="sprite_flush_multi.htm">sprite_flush_multi</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_flush
+-->
+  <!-- TAGS
+sprite_flush
+-->
+</body>
+</html>

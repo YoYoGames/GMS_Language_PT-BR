@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>posição_de_som_som_som_de_audio</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_sound_set_track_position" />
+  <meta name="rh-index-keywords" content="audio_sound_set_track_position" />
+  <meta name="search-keywords" content="audio_sound_set_track_position" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>posição_de_som_som_som_de_audio</h1>
+  <p>Esta função definirá a posição (em segundos) dentro do arquivo de som para que o som seja reproduzido. O som pode ser uma única instância de um som (o índice para sons individuais que estão sendo reproduzidos pode ser armazenado em uma variável ao usar o 
+    <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a> ou <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a> funções) ou um ativo sólido. Se for uma identificação sonora única que você usa, então a posição mudará imediatamente
+      ao novo tempo dado, e se for um ativo do Navegador de Ativos, então todas as novas jogadas do som dado começarão no novo tempo. A função irá ignorar qualquer valor dado que seja maior do que a duração do som dado para o &quot;índice&quot;.
+      do valor.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">audio_sound_set_track_position(index, time);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice do som a mudar.</td>
+      </tr>
+      <tr>
+        <td>tempo</td>
+        <td>O tempo (em segundos) para definir o ponto de partida.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var snd = audio_play_sound(snd_MainTrack, 0, false);<br> audio_sound_set_track_position(snd, 32);</p>
+  <p>O código acima toca um som e depois usa o valor de identificação retornado para definir a posição inicial para o som para 32 segundos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Audio.htm">Áudio</a></div>
+        <div style="float:right">Próximo: <a href="audio_sound_get_track_position.htm">audio_sound_get_track_position</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_sound_set_track_position
+-->
+  <!-- TAGS
+audio_sound_set_track_position
+-->
+</body>
+</html>

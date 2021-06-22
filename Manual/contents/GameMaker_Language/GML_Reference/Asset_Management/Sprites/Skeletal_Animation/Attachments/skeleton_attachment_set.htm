@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>conjunto_esqueleto_de_encaixe</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_attachment_set" />
+  <meta name="rh-index-keywords" content="skeleton_attachment_set" />
+  <meta name="search-keywords" content="skeleton_attachment_set" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>conjunto_esqueleto_de_encaixe</h1>
+  <p>Um duende de animação esquelético pode ter outras imagens adicionadas como anexos, sendo essas imagens adicionadas a um slot nomeado (o nome é dado quando você cria o slot de anexo em seu programa de animação) e elas serão desenhadas juntamente com a animação de
+    o duende atual. Com esta função você pode definir um anexo para um determinado slot, onde você é obrigado a dar os nomes (como cordas) do slot e do anexo. Estes nomes são definidos pelo programa de animação utilizado, ou (no caso do anexo)
+    quando você chama <a href="skeleton_attachment_create.htm"><tt>esqueleto_criar_aplicação()</tt></a>.</p>
+  <p>Observe que você também pode passar um <tt>sprite_index</tt> como anexo, e que o sprite será usado, ou você pode usar -1 para remover o anexo do slot. Quando você passa um índice sprite como argumento, ele irá criar
+    um slot de anexo usando o nome do duende como string para nomear o slot (assim, usando <tt>spr_sword</tt>, por exemplo, criará um slot de anexo &quot;spr_sword&quot;), e o slot usará o primeiro índice de imagem (0) do
+    sprite, assim como sua origem x e y offset, com uma escala de (1,1) e uma rotação de 0.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">esqueleto_set_de_fixação(ranhura, acessório);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>ranhura</td>
+        <td>O nome da ranhura (um fio) para obter a fixação de.</td>
+      </tr>
+      <tr>
+        <td>anexo</td>
+        <td>O nome (como um fio ou um sprite_index) da imagem anexada.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Cordão</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if skeleton_attachment_get(&quot;slot_leftHand&quot;) == &quot;&quot;<br> {
+    <br> skeleton_attachment_set(&quot;slot_leftHand&quot;, choose(&quot;sword&quot;, &quot;spear&quot;, &quot;knife&quot;));<br> }
+  </p>
+  <p>O código acima verificaria o nome do anexo atualmente atribuído para o slot chamado &quot;slot_leftHand&quot; e se uma cadeia vazia for devolvida, um novo sprite é anexado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Attachments.htm">Anexos:</a></div>
+        <div style="float:right">A seguir: <a href="skeleton_attachment_create.htm">esqueleto_criar_criar</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_attachment_set
+-->
+  <!-- TAGS
+skeleton_attachment_set
+-->
+</body>
+</html>

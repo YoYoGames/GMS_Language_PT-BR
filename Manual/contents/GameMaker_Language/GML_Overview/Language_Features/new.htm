@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>novo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the new function" />
+  <meta name="rh-index-keywords" content="new" />
+  <meta name="search-keywords" content="new" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>novo</h1>
+  <p>O <tt>novo</tt> operador pode ser usado para criar uma estrutura com uma função que é chamada com os argumentos dados. A função pode então preencher a estrutura com variáveis a partir dos argumentos - assim como o evento de criação de uma instância irá definir a estrutura inicial.
+    variáveis para a instância - e então o <tt>novo</tt> operador devolverá a estrutura. Antes de utilizar este operador é importante notar que a função dada <i>deve ser sinalizada como uma função <tt>construtora</tt></i>, caso contrário o <tt>novo</tt> operador não criará a estrutura (o exemplo de código abaixo mostra isto, e para maiores informações, por favor veja a página sobre <a href="../Structs.htm">Estruturas</a>).</p>
+  <p class="note"><strong>NOTA</strong>: Você pode verificar uma estrutura para descobrir qual função foi usada para criá-la usando a função de <span class="notranslate">tempo de execução</span> <a href="../../GML_Reference/Variable_Functions/instanceof.htm"><tt>instância de()</tt></a>.</p>
+  <p>Este operador tem a seguinte sintaxe:</p>
+  <p class="code"><span>&lt;variável&gt; = novo &lt;função&gt; </span>(&lt;argumento&gt;, &lt;argumento&gt;, ...);</p>
+  <p>Quando você utiliza o novo operador junto com uma função, ele retornará uma referência estrutural que é armazenada na variável dada, permitindo que você acesse a estrutura e quaisquer variáveis que foram criadas dentro dela pela função.</p>
+  <p>O exemplo a seguir mostra uma função que foi definida para ser usada como construtor:</p>
+  <p class="code">função init_struct(_a, _b, _c) construtor<br> {
+    <br> a = _a;<br> b = _b;<br> c = _c;<br> }
+  </p>
+  <p>Esta função pode então ser usada junto com o <tt>novo</tt> operador para criar uma estrutura e preenchê-la com as variáveis definidas para os valores dos argumentos usados na função, como esta:</p>
+  <p class="code">mystruct = novo init_struct(10, 100, &quot;Olá Mundo&quot;);</p>
+  <p>É importante notar que a chamada de novas funções que <em>não</em> tenham sido marcadas como construtor causará uma <a href="../../../Additional_Information/Errors/Runner_Errors.htm">exceção de<span class="notranslate">tempo de execução</span></a>.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Language_Features.htm">Características lingüísticas</a></div>
+        <div style="float:right">Próximo: <a href="delete.htm">apagar</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+new
+-->
+  <!-- TAGS
+new
+-->
+
+</body></html>

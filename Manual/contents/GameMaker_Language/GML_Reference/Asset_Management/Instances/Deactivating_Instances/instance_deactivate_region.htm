@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>instance_deactivate_region</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_deactivate_region" />
+  <meta name="rh-index-keywords" content="instance_deactivate_region" />
+  <meta name="search-keywords" content="instance_deactivate_region" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>instance_deactivate_region</h1>
+  <p>Com esta função você pode definir uma região dentro da sala para desativar instâncias que tenham sido ativadas anteriormente. Esta região pode ser sinalizada como &quot;dentro&quot; ou &quot;fora&quot;, como demonstrado na imagem a seguir:</p>
+  <p><img alt="Instance deactivate region example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Instances/instance_deactivate_region.png">Você pode ver na imagem acima que a instância &quot;maçã&quot; é sempre
+    inativo porque, mesmo que o duende em si não se sobreponha à região, a caixa delimitadora sim. Portanto, as instâncias são consideradas dentro da região especificada quando sua <i>caixa delimitadora</i> se sobrepõe a ela, e o estado da máscara de colisão
+    (preciso ou não) <b>não</b> é levado em consideração. Note que a desativação não é instantânea, e uma instância que tenha sido desativada desta forma não será considerada inativa até o final do evento em que a função foi
+    chamado.</p>
+  <p class="note"><b>NOTA</b>: Se você desativar uma instância no início da sala (ou seja: do código de criação da sala, ou de uma instância criar evento de uma instância dentro da sala) todas as instâncias que são colocadas dentro da sala do editor da sala <b>ainda executarão seu evento de criação</b> antes de serem desativadas.</p>
+  <p class="note"><b>AVISO</b>: A desativação de instâncias que têm a física habilitada <b>NÃO</b> irá impedir que seus dispositivos interajam dentro da simulação física. Para isso, você deve definir seus <a href="../../../Physics/Physics_Variables/phy_active.htm"><tt><span style="font-size:14px;">phy_active</span></tt></a> variável
+    para <tt>verdadeiro</tt> ou <tt>falso</tt> à medida que você ativa/desativa as instâncias.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">instance_deactivate_region(left, top, width, height, inside, notme);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>esquerda</td>
+        <td>A coordenada x da esquerda da região retangular a ser desativada.</td>
+      </tr>
+      <tr>
+        <td>topo</td>
+        <td>A coordenada y da parte superior da região retangular para desativar.</td>
+      </tr>
+      <tr>
+        <td>largura</td>
+        <td>A largura da região a ser desativada.</td>
+      </tr>
+      <tr>
+        <td>altura</td>
+        <td>A altura da região para desativar.</td>
+      </tr>
+      <tr>
+        <td>dentro</td>
+        <td>Seja para desativar instâncias no interior da região (verdadeiro) ou no exterior (falso).</td>
+      </tr>
+      <tr>
+        <td>notme</td>
+        <td>Se excluir a instância de chamada da desativação (verdadeira) ou não (falsa).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">instance_activate_all();<br> var _vx = camera_get_view_x(view_camera[0]);<br> var _vy = camera_get_view_y(view_camera[0]);<br> var _vw = camera_get_view_width(view_camera[0]);<br> var _vh = camera_get_view_height(view_camera[0]);<br> instance_deactivate_region(_vx
+    - 64, _vy - 64, _vw + 128, _vh + 128, falso, falso);</p>
+  <p>O código acima ativa todas as instâncias e depois desativa uma região dentro da sala.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Deactivating_Instances.htm">Desativação de Instâncias</a></div>
+        <div style="float:right">A seguir: <a href="instance_deactivate_layer.htm">instance_deactivate_layer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_deactivate_region
+-->
+  <!-- TAGS
+instance_deactivate_region
+-->
+</body>
+</html>

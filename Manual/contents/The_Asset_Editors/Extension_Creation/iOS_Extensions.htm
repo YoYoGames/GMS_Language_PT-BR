@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Extensões iOS</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how iOS extensions work" />
+  <meta name="rh-index-keywords" content="Extensions - Creating iOS / tvOS Extensions" />
+  <meta name="search-keywords" content="iOS Extensions,iOS, tvOS Extensions, tvOS" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Extensões<span class="notranslate">iOS</span> / <span class="notranslate">tvOS</span> </h1>
+  <p>Para criar uma extensão para <span class="notranslate">iOS</span> ou <span class="notranslate">tvOS</span> você tem que fazer isso em duas partes. A primeira parte seria adicionar a própria extensão, junto com os arquivos necessários, etc... e a segunda é criar as funções e macros/constantes que a extensão requer.
+    As funções e constantes são adicionadas usando arquivos <strong>placeholder </strong>para agrupá-las, assim você adicionaria um placeholder e então definiria as funções e macros como explicado na seção aqui <a href="Creating_An_Extension.htm">.</a>
+    Para adicionar o resto dos arquivos, embora seja necessário primeiro marcar o <em><span class="notranslate">iOS</span> </em>e/ou o <em><span class="notranslate">tvOS</span> </em>na seção <strong>Características Adicionais</strong> do editor para abrir a janela de <strong>Propriedades de Extensão</strong> relevante (a caixa de seleção
+    A imagem abaixo mostra a janela de propriedades <span class="notranslate">iOS</span>, mas a janela <span class="notranslate">tvOS</span> é exatamente a mesma):</p>
+  <p class="dropspot"><img alt="iOS Editor" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions_iOS.png" /></p>
+  <p>Aqui você dá os seguintes detalhes:</p>
+  <ul class="colour">
+    <li class="dropspot"><strong>Bandeiras Linker / Bandeiras do Compilador</strong>: Algumas estruturas e SDKs de terceiros requerem a adição de bandeiras adicionais de linker e de compilador para funcionar, que podem ser especificadas aqui (veja a documentação que acompanha o SDK ou a estrutura em
+      pergunta para detalhes).</li>
+    <li class="dropspot"><strong>Nome da classe</strong>: Sua extensão pode ter múltiplas classes, com cada classe tendo suas próprias funções e constantes, portanto você deve dar-lhe um nome que reflita seu propósito</li>
+    <li class="dropspot"><strong>Nome da classe do delegado:</strong> O nome de sua classe de delegado de aplicativo personalizado. Esta configuração permite que a extensão substitua/extenda a funcionalidade principal do aplicativo. Para usar este recurso, você precisa fazer o seguinte:
+      <ol>
+        <li>Garantir que os arquivos fonte dos delegados tenham o mesmo nome que a classe do delegado (por exemplo, <span class="inline">@interface MyCustomAppDelegate</span> deve ser definido em &quot; <span class="inline">MyCustomAppDelegate.h</span>&quot;)</li>
+        <li>Adicione a variável de ambiente <span class="inline">${YYExtAppDelegateIncludes}</span> no topo do arquivo de cabeçalho do delegado de seu aplicativo. Isto será substituído em tempo de compilação com os arquivos de inclusão relevantes para a classe do delegado pai.</li>
+        <li>Use a variável de ambiente <span class="inline">${YYExtAppDelegateBaseClass}</span> como a classe base para seu delegado de aplicativo personalizado. Isto será substituído em tempo de compilação com a classe correta do delegado base.<br>
+          <br> Para garantir que sua extensão funcione com quaisquer outras extensões que usam delegados de aplicativos personalizados, você deve chamar qualquer método de classe base de métodos sobrepostos em sua classe filha. Antes de chamar o método de superclasse, você precisa ter certeza de que ele
+          é implementada na hierarquia de classes para evitar erros, por exemplo, para</li>
+      </ol>
+     <p class="code">- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions<br> {
+        <br> // Verifique se alguma superclasse implementa este método e chame-o<br> if([[[self superclass] instancesRespondToSelector:@selector(application:willFinishLaunchingWithOptions:)])<br> return [super application:application willFinishLaunchingWithOptions:launchOptions];<br> else<br> return TRUE;<br> }
+     </p>
+    </li>
+    <li class="dropspot"><strong>Estruturas do sistema</strong>: Aqui você pode adicionar em qualquer<span class="glossextra">estrutura de</span> sistema <span class="notranslate">iOS</span> à sua extensão. Estas são adicionadas clicando no botão <img alt="Add Argument Icon" class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png" width="18"> que adicionará uma estrutura de espaço reservado, que você poderá editar clicando lentamente em <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">. Você pode saber mais sobre as estruturas de sistema disponíveis <a href="https://developer.apple.com/documentation/">aqui</a>. Para remover uma estrutura de sistema, basta selecioná-la e depois clicar no botão <img alt="Remove Argument Icon" class="icon" src="../../assets/Images/Icons/Icon_RemoveArgument.png">.</li>
+    <li class="dropspot"><strong>Injetar no Info.plist</strong>: Aqui você pode adicionar qualquer código para ser injetado no arquivo <span class="inline">info.plist</span>.</li>
+    <li class="dropspot"><strong>Estruturas e Pacotes de Terceiros</strong>: Esta seção é para a adição de pacotes de terceiros e SDK. Como nos trabalhos de estrutura do sistema, você clica no botão <img alt="Add Argument Icon" class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png" width="18"> para adicioná-los e depois clica lentamente em <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> para editá-los, e selecioná-los e depois clicar em <img alt="Remove Argument Icon" class="icon" src="../../assets/Images/Icons/Icon_RemoveArgument.png"> irá removê-los (veja a documentação que veio com seu SDK escolhido para obter informações sobre o nome da estrutura). Se o pacote framework/SDK estiver em seu Mac de desenvolvimento, então você precisa adicionar o caminho em &quot; Enter <em>framework path on Mac</em>&quot;.
+      e clique no botão <img alt="Add Argument Icon" class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png" width="18">, ou se o SDK ou código fonte estiver em seu PC, use o botão <em>Add Source</em>.</li>
+    <li class="dropspot"><strong><span class="notranslate">CocoaPods</span></strong>: Aqui você pode dar o nome de qualquer <span class="notranslate">CocoaPods</span> que a extensão vai usar em vez de (ou também) quaisquer SDKs e estruturas que foram adicionados. Note que existe uma opção de jogo <a href="../../Settings/Game_Options/iOS.htm">para <span class="notranslate">iOS</span></a> e <a href="../../Settings/Game_Options/tvOS.htm">para <span class="notranslate">tvOS</span></a> para adicionar um Podfile ao <span class="notranslate">GameMaker Studio2</span>que é necessário se você estiver adicionando <span class="notranslate">CocoaPods</span> nesta seção.</li>
+    <li class="dropspot"><strong>Dependências dos<span class="notranslate">CocoaPods</span></strong>: Esta seção é onde você pode listar as diferentes dependências exigidas pelos <span class="notranslate">CocoaPods</span> adicionadas na seção anterior. Note que existe uma opção de jogo <a href="../../Settings/Game_Options/iOS.htm">para <span class="notranslate">iOS</span></a> e <a href="../../Settings/Game_Options/tvOS.htm">para <span class="notranslate">tvOS</span></a> para adicionar um Podfile.lock ao <span class="notranslate">GameMaker Studio2</span>que é necessário se você estiver adicionando Dependências de CocoaPods nesta seção.</li>
+  </ul>
+  <p>Se sua extensão teve alguma Estrutura de Sistema ou Estrutura de Terceiros adicionada, estas serão agora listadas na janela <strong>Propriedades da Extensão </strong>, com cada uma delas tendo uma caixa de seleção ao lado. Se você marcar a caixa de seleção, você estará habilitando uma
+    que é útil caso você precise &quot;sobrepor&quot; qualquer símbolo da biblioteca incluída com seu próprio valor, mas deve ser notado que ao fazer isso, a vinculação será mais lenta.</p>
+  <p>Para mais informações sobre a criação de extensões <span class="notranslate">iOS</span> e <span class="notranslate">tvOS</span>, consulte a <a href="https://help.yoyogames.com/hc/en-us/articles/360012504971-iOS-and-Android-Creating-A-Simple-Extension">Base de Conhecimento<span class="notranslate">YoYo Games</span></a>, e para informações sobre o uso de <span class="notranslate">CocoaPods</span>
+    em extensões, consulte o seguinte guia:</p>
+  <ul class="colour">
+    <li><a href="https://help.yoyogames.com/hc/en-us/articles/360008958858"><span class="notranslate">iOS</span> e <span class="notranslate">tvOS</span>: usando cápsulas de cacau</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Extensions.htm">O Editor de Extensão</a></div>
+        <div style="float:right">A seguir: <a href="Creating_An_Extension.htm">Criando uma extensão</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">iOS</span> Extensions
+<span class="notranslate">tvOS</span> Extensions
+-->
+  <!-- TAGS
+extensions_ios
+-->
+
+</body></html>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>array_copy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function array_copy" />
+  <meta name="rh-index-keywords" content="array_copy" />
+  <meta name="search-keywords" content="array_copy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>array_copy</h1>
+  <p>Com esta função você pode copiar toda ou parte de um array para outro array em qualquer posição. Você precisa fornecer tanto a matriz de origem quanto a de destino (ambas precisam ter sido criadas anteriormente), bem como uma posição dentro da matriz de origem para copiar
+    de e uma posição dentro da matriz de destino para copiar para. Finalmente, é preciso especificar o comprimento da matriz (ou o comprimento da peça que se deseja copiar). Se os dados sendo copiados excederem o comprimento da matriz de destino, a matriz irá
+    ser estendido para aceitar os dados.</p>
+  <p>Esta função também pode ser usada para matrizes multidimensionais, desde que você especifique qual dimensão deseja copiar ao fornecer o índice da matriz, seguindo este padrão:</p>
+  <p class="code">// Cópia da primeira dimensão de um array<br> // para a segunda dimensão de um array<br> array_copy(item_array, 0, inventory_array[0], 0, len);<br>
+    <br> // Cópia da terceira dimensão de um array<br> // para a primeira dimensão de um array<br> array_copy(item_array[0][0], 0, inventory_array, 0, len);<br>
+    <br> // etc...</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">array_copy(dest, dest_index, src, src_index, length);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>dest</td>
+        <td>A identificação da matriz para a qual copiar.</td>
+      </tr>
+      <tr>
+        <td>dest_index</td>
+        <td>O índice dentro da matriz para o qual copiar.</td>
+      </tr>
+      <tr>
+        <td>src</td>
+        <td>A identificação da matriz de onde copiar.</td>
+      </tr>
+      <tr>
+        <td>src_index</td>
+        <td>O índice com a matriz de onde começar a copiar.</td>
+      </tr>
+      <tr>
+        <td>comprimento</td>
+        <td>O comprimento (número de índices de matriz) a ser copiado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if !array_equals(inventory_array, item_array)<br> {
+    <br> var len = array_length(inventory_array);<br> array_copy(item_array, 0, inventory_array, 0, len);<br> }
+  </p>
+  <p>O código acima verificará duas arrays para ver se elas possuem valores equivalentes, e se elas não possuem, então o código copiará todo o conteúdo da array &quot;inventory_array&quot; para a array &quot;item_array&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Variable_Functions.htm">Funções variáveis</a></div>
+        <div style="float:right">Próximo: <a href="array_equals.htm">array_equals</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_copy
+-->
+  <!-- TAGS
+array_copy
+-->
+</body>
+</html>

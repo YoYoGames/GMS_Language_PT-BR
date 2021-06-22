@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>virtual_key_show</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for virtual_key_show" />
+  <meta name="rh-index-keywords" content="virtual_key_show" />
+  <meta name="search-keywords" content="virtual_key_show" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>virtual_key_show</h1>
+  <p>Uma vez criada sua chave virtual para seus dispositivos, você pode precisar depurar e testar se ela está corretamente posicionada e funcionando corretamente. Para isso você chamaria esta função, usando o índice da chave virtual que você deseja ver (anteriormente
+    criado e armazenado usando <a href="virtual_key_add.htm"><tt>virtual_key_add()</tt></a>) que desenhará um retângulo colorido para representar a chave na tela. Uma vez que você esteja satisfeito com as coisas, é recomendável que você crie e coloque seu próprio gráfico
+    em sua área.</p>
+  <p class="note"><b>NOTA:</b> O retângulo sendo desenhado será afetado pelas opções de mistura, cor e alfa definidas pelas <a href="../../Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">funções de desenho</a> correspondentes.</p>
+  <p> </p>
+  <h4>Sintaxe</h4>
+  <p class="code">virtual_key_show(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice da chave virtual a mostrar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if global.Debug<br> {
+    <br> virtual_key_show(global.left);
+    <br> }
+    <br> mais
+    <br> {
+    <br> virtual_key_hide(global.left);
+    <br> }
+  </p>
+  <p>O código acima verifica a variável global &quot;global.Debug&quot; e, se for verdadeiro, então a chave virtual indexada na variável &quot;global.Left&quot; será desenhada na tela, e se for falsa, então a chave será escondida.</p>
+  <p><b></b></p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Virtual_Keys_And_Keyboards.htm">Chaves e Teclados Virtuais</a></div>
+        <div style="float:right">Próximo: <a href="virtual_key_hide.htm">virtual_key_hide</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+virtual_key_show
+-->
+  <!-- TAGS
+virtual_key_show
+-->
+
+</body></html>

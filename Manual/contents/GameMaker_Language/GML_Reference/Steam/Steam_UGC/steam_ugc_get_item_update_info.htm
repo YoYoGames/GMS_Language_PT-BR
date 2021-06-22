@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_ugc_get_item_update_info</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_ugc_get_item_update_info" />
+  <meta name="rh-index-keywords" content="steam_ugc_get_item_update_info" />
+  <meta name="search-keywords" content="steam_ugc_get_item_update_info" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam_ugc_get_item_update_info</span></h1>
+  <p>Esta função pode ser usada para recuperar informações sobre o estado atual do download para a ID do arquivo em questão. Você dá o ID do item e fornece o índice para um <a href="../../Data_Structures/DS_Maps/DS_Maps.htm">mapa DS</a> vazio que será então preenchido
+    com os seguintes pares de chaves/valores, se o item existir:</p>
+  <ul class="colour">
+    <li>&quot;needs_update<b>&quot; -</b> Retornará verdadeiro ou <tt>falso</tt>, <tt>dependendo</tt> se o item precisa ou não de uma atualização.</li>
+    <li>&quot;is_downloading<b>&quot; -</b> Retornará verdadeiro ou <tt>falso</tt>, <tt>dependendo</tt> se o item está ou não sendo baixado no momento.</li>
+    <li>&quot; bytes_downloaded<b>&quot; -</b> O número de bytes que foram baixados.</li>
+    <li>&quot; bytes_total<b>&quot; -</b> O tamanho total (número de bytes) necessário para o item em disco.</li>
+  </ul>
+  <p>Se o item existir, então a função retornará <tt>verdadeiro</tt> e povoará o mapa, caso contrário, retornará <tt>falso</tt> e o mapa permanecerá vazio.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code"><span class="notranslate">steam_ugc_get_item_update_info</span>(published_file_id, info_map);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>published_file_id</td>
+        <td>O ID do arquivo único para a UGC a ser verificado.</td>
+      </tr>
+      <tr>
+        <td>info_map</td>
+        <td>Um índice do mapa DS (anteriormente criado).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var info_map = ds_map_create();<br> var info = <span class="notranslate">steam_ugc_get_item_update_info</span>(global.fileID, info_map);<br> if info<br> {
+    <br> draw_text(32, 15, &quot;needs_update: &quot; + string(info_map[? &quot;needs_update&quot;]));<br> draw_text(32, 30, &quot;is_downloading: &quot; + string(info_map[? &quot;is_downloading&quot;]));<br> draw_text(32, 45, &quot;bytes_downloaded:
+    &quot;+ string(info_map[? &quot;bytes_downloaded&quot;]));<br> draw_text(32, 60, &quot;bytes_total: &quot; + string(info_map[? &quot;bytes_total&quot;]));<br> }
+  </p>
+  <p>O código acima irá consultar o status de download do item indexado na variável global &quot;fileID&quot;, usando um DS Map para <tt>armazenar</tt> as informações.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Steam_UGC.htm">UGC</a></div>
+        <div style="float:right">Próximo: <a href="steam_ugc_request_item_details.htm"><span class="notranslate">steam_ugc_request_item_detail</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_ugc_get_item_update_info
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_ugc_get_item_update_info
+-->
+</body>
+</html>

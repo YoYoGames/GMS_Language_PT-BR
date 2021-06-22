@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>script_execute_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function script_execute_ext" />
+  <meta name="rh-index-keywords" content="script_execute_ext" />
+  <meta name="search-keywords" content="script_execute_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>script_execute_ext</h1>
+  <p>Esta função funciona de forma semelhante à função <a href="script_execute.htm">script_execute()</a> somente você pode fornecer uma <a href="../../../GML_Overview/Arrays.htm">matriz</a> que contém os argumentos necessários para a função/script que está sendo chamada. Você
+    pode também fornecer dois argumentos opcionais à função para especificar um offset na matriz para obter os argumentos, assim como o número de argumentos a serem usados na matriz (este deve ser um máximo de comprimento da matriz - offset). </p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">script_execute(scr, array_args, [offset], [num_args]));</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>scr</td>
+        <td>O nome da função/escrito que você deseja chamar</td>
+      </tr>
+      <tr>
+        <td>array_args</td>
+        <td>A matriz que contém os argumentos para a função/escrito</td>
+      </tr>
+      <tr>
+        <td>[offset]</td>
+        <td><em>OPCIONAL!</em> A compensação para a matriz de argumentos</td>
+      </tr>
+      <tr>
+        <td>[num_args]</td>
+        <td><em>OPCIONAL!</em> O número de argumentos para (a partir da compensação)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Dependerá do valor de retorno da função/script a ser chamado</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">script_execute_ext(move_inst, move_array, floor(random(4)), 1);</p>
+  <p>O código do exemplo acima usará <tt>script_execute_ext</tt> para chamar a função dada, fornecendo um conjunto de quatro argumentos, mas usando apenas um deles ao acaso.</p>
+  <p class="note"><b>NOTA</b>: Esta função não pode ser usada com funções embutidas.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Scripts.htm">Roteiros</a></div>
+        <div style="float:right">Próximo: <a href="script_exists.htm">script_existe</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+script_execute_ext
+-->
+  <!-- TAGS
+script_execute_ext
+-->
+</body>
+</html>

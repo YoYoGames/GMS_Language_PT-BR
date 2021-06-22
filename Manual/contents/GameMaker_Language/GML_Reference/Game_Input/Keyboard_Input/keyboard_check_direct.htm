@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>teclado_check_direct</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for keyboard_check_direct" />
+  <meta name="rh-index-keywords" content="keyboard_check_direct" />
+  <meta name="search-keywords" content="keyboard_check_direct" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>teclado_check_direct</h1>
+  <p>Esta função retornará <tt>verdadeiro</tt> se a chave com o código de chave particular for pressionada, ou <tt>falso</tt> se não for, verificando diretamente o hardware. Ela permite mais algumas verificações, em particular, você pode usar os códigos de chave <b>vk_lshift</b>, <b>vk_lcontrol</b>,
+   <b>vk_lalt</b>, <b>vk_rshift</b>, <b>vk_rcontrol</b> e <b>vk_ralt</b> para verificar se a tecla de deslocamento à esquerda ou à direita, controle ou alt está pressionada. A função terá um valor de código de chave como retornado pela função <a href="../../Strings/ord.htm"><tt>ord()</tt></a>    (somente letras <i>maiúsculas</i> de A-Z ou números de 0-9), ou qualquer uma das constantes <tt>vk_*</tt> listadas na página principal de <a href="Keyboard_Input.htm">Entrada do Teclado</a>.</p>
+  <p class="note"><b>NOTA: </b>Esta função está disponível apenas para o alvo padrão do <span class="notranslate">Windows</span> e o resultado é independente de qual aplicação tem foco.</p>
+  <p> </p>
+  <h4><b>Sintaxe:</b></h4>
+  <p class="code">teclado_check_direct(key);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>chave</td>
+        <td>A chave para verificar o estado de down.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4><b>Devoluções:</b></h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4><b>Exemplo:</b></h4>
+  <p class="code">if keyboard_check_direct(vk_ralt) || keyboard_check_direct(vk_lalt)<br> {
+    <br> crouch = true;<br> }
+  </p>
+  <p>O código acima verificará se as teclas alt esquerda ou direita foram pressionadas, e se elas têm a variável &quot;agachar&quot; para verdadeira.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Keyboard_Input.htm">Entrada de Teclado</a></div>
+        <div style="float:right">Próximo: <a href="keyboard_clear.htm">keyboard_clear</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+keyboard_check_direct
+-->
+  <!-- TAGS
+keyboard_check_direct
+-->
+
+</body></html>

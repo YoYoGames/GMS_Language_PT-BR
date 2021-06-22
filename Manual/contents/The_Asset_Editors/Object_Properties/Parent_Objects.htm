@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Objetos dos pais</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing object parenting" />
+  <meta name="rh-index-keywords" content="Objects - Parents" />
+  <meta name="search-keywords" content="parent,child,inheritance,object parenting" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Objetos dos pais</h1>
+  <p>Ao trabalhar com objetos na IDE <span class="notranslate">GameMaker Studio 2</span>, você pode configurar hierarquias <strong>Pai/filha </strong>. Isto é feito clicando no botão &quot;Pai&quot; no editor de objetos e depois escolhendo outro objeto do Navegador de Ativos
+    ser o &quot;pai&quot; do que está sendo editado:</p>
+  <p><img alt="Adding A Parent" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Parent.png">Então, todo objeto em seu projeto de jogo pode ter um objeto pai, mas o que isso significa? Bem, quando um objeto tem um pai designado, ele pode
+    compartilhar código, ações e eventos com aquele pai. Este compartilhamento é chamado de &quot;herança&quot; e um objeto que tem um pai é chamado de objeto &quot;filho&quot;. Não só uma criança pode compartilhar código com seu pai, mas você pode fazer verificações e executar código
+    nos objetos dos pais e incluirá automaticamente os objetos da criança também, o que economiza muito tempo e energia.</p>
+  <p>Se isso parece complicado, então outra maneira de olhar para um objeto pai é como uma forma de &quot;agrupar&quot; objetos sob o mesmo guarda-chuva e fazê-los compartilhar certas coisas sem perder sua própria identidade única. Talvez isso ainda não
+    clarifique demais as coisas, então vamos dar alguns exemplos...</p>
+  <p>Digamos que você tenha um objeto &quot;jogador&quot; e quatro objetos &quot;inimigos&quot; diferentes. Agora, você quer que o jogador morra se ele tocar em algum desses quatro objetos e isso normalmente implicaria quatro diferentes eventos de colisão com quatro conjuntos diferentes de
+    ações ou código, um para cada um dos objetos inimigos. MAS se fizermos um objeto pai para todos os inimigos, então poderemos criar um evento de colisão apenas com o objeto pai e isso desencadeará não importa qual dos quatro &quot;filhos&quot; inimigos
+    objetos tocam o jogador. Coisas úteis! No próprio objeto <span class="notranslate">GameMaker Studio 2</span> você veria algo parecido com isto:</p>
+  <p><img alt="Parenting For Collisions" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_ParentCollision.png">À esquerda temos quatro eventos de colisão separados e à direita temos um único evento de colisão, já que criamos um
+    objeto &quot;pai&quot; e atribuiu a ele todos os objetos inimigos. Note que um objeto "pai" não tem que ter nenhum evento ou código nele.</p>
+  <p>Outro exemplo de paternidade seria se você tivesse um jogo em que quisesse criar 10 objetos de aparência diferente e que todos eles se comportassem da mesma maneira. Para isso, você criaria um objeto pai e nele teria todas as suas ações ou código de comportamento
+    nos eventos necessários, e então você criaria seus dez objetos sem ações ou código, mas com sprites diferentes, e lhes atribuía seu objeto pai. Agora, quando você coloca estas instâncias em uma sala, todas elas se comportarão da mesma maneira, mas parecerão diferentes,
+    já que eles &quot;herdarão&quot; os eventos dos pais.</p>
+  <p>Finalmente, você pode usar a parentalidade para &quot;misturar e combinar&quot; eventos e comportamentos. Vamos ilustrar isto com um último exemplo... Digamos que você quer dois monstros: um que se move para cima e para baixo, enquanto outro que se move para a esquerda e para a direita, mas você também quer o
+    dois deles para ter a mesma saúde, atirar no jogador e machucá-lo se colidir com eles. Neste caso você pode ver que quase todos os eventos devem ter as mesmas ações, exceto um ou dois que governam o movimento. Assim, novamente, podemos fazer
+    um objeto o pai do outro, mas neste caso também definimos certos eventos para o objeto criança. Estes eventos &quot;substituem&quot; os eventos dos pais, o que significa que sempre que um evento para o objeto criança contém ações, estas são executadas
+    em vez das ações contidas no caso do pai. Se você também quiser executar o evento pai, você pode chamar o chamado evento &quot;herdado&quot; usando a função <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Objects/Object_Events/event_inherited.htm"><span class="inline">event_inherited()</span></a>,
+    ou a ação <span class="notranslate">DnD™</span> <a href="../../Drag_And_Drop/Drag_And_Drop_Reference/Instance/Call_Parent_Event.htm">Call Parent Event</a>.</p>
+  <p><img alt="Inheriting Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_InheritEvents.png">À esquerda acima está o objeto pai com 5 eventos, e à direita você pode ver o objeto &quot;criança&quot;. O objeto "criança".
+    também tem 5 eventos, mas dois deles anulam os eventos herdados da matriz (os eventos <strong>Step </strong>e <strong>Draw </strong>) e os outros três são cinzentos, pois são os eventos herdados da matriz. Eventos herdados
+    também terá o ícone &quot;parent override&quot; ao lado deles no Editor de Eventos:</p>
+  <p><img alt="Parent Override" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_ParentOverride.png">Ao clicar em <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> sobre um evento que foi herdado,
+    ele abrirá o editor de código para mostrar o código pai herdado, mas você não será capaz de editar este código, pois só poderá editá-lo no próprio objeto pai. Você pode clicar com o botão direito do mouse <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> em qualquer um dos eventos pai para abrir o seguinte menu de opções:</p>
+  <p><img alt="Parent Event RMB Menu" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_Parent_Menu.png">Aqui você pode escolher dois <strong>Abrir </strong>o evento pai para inspecionar o código, ou você pode optar por <strong>Herdar </strong>o
+    evento ou <strong>Anular </strong>o evento. Se você escolher <strong>Herdar </strong>, então o editor de código abrirá com a função <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Objects/Object_Events/event_inherited.htm"><span class="inline">event_inherited()</span></a> já
+    adicionado a ela (ou a ação <a href="../../Drag_And_Drop/Drag_And_Drop_Reference/Instance/Call_Parent_Event.htm">Call Parent Event</a> se utilizando <span class="notranslate">DnD™</span>). Qualquer outro código que você colocar neste evento será agora executado, assim como o código que o objeto pai
+    tem. Se você optar por <strong>Anular o </strong>evento, então a janela de código também será aberta, só que agora a função <span class="inline">event_inherited()</span> não será chamada, então qualquer coisa que você adicionar aqui será executada em <em>vez do </em>código
+    no objeto pai.</p>
+  <p class="note"><strong>NOTA</strong>: A partir do editor de código você pode navegar rapidamente para o objeto pai clicando com o botão direito do mouse <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> e selecionando <strong>Ir para Objeto</strong> no menu pop-up, ou (se o evento tiver sido substituído) você pode selecionar <strong>Abrir Evento Herdado</strong> para ir diretamente para um editor de código com o código do evento pai nele.</p>
+  <p>Sempre que você visar um objeto pai em código, o código também se aplicará aos &quot;filhos&quot; do objeto pai. Isto acontece quando, em uma ação, você indica que a ação deve ser aplicada a instâncias de um determinado objeto, e em código
+    acontece quando você usa o <a href="../../GameMaker_Language/GML_Overview/Language_Features/with.htm"><span class="inline">with()</span></a> declaração. Funcionará assim também quando você chama funções de código, como <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Instances/instance_position.htm"><span class="inline">instance_position()</span></a>,
+    <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Instances/instance_number.htm"><span class="inline">instance_number()</span></a>etc.... onde - se você fornecer um objeto dos pais - todas as instâncias dos pais <em>e </em>filhos
+    serão incluídos nos cheques. Finalmente, a parentalidade funciona quando você se refere a variáveis em outros objetos também, como no exemplo de monstro acima, se eu ajustar a velocidade 1 para 10, então a velocidade 2 também irá para dez, pois é um objeto infantil do inimigo.
+    1.</p>
+  <p>É geralmente considerado uma boa prática, na maioria dos casos, criar um objeto base pai e ter esse objeto base contendo todo o comportamento padrão, mas nunca usar uma instância dele no jogo. Em vez disso, use todos os objetos menores e use somente o objeto pai em
+    situações como as que descrevi acima, para colisões, para o referenciamento de variáveis, etc... Você também deve perceber que os pais também podem ter pais! Obviamente você não pode criar um ciclo de &quot;pai 1 é filho de pai 2 é filho de pai
+    1&quot; mas você pode criar o que é chamado de &quot;hierarquia de objetos&quot; onde &quot; pai3 é filho de<em>pai2 </em>é filho de <em>pai1&quot; </em>. Isto é extremamente útil para manter seu jogo estruturado e você é fortemente aconselhado
+    para aprender a usar este mecanismo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Objects.htm">O Editor de Objetos</a></div>
+        <div style="float:right">A seguir: <a href="Physics_Objects.htm">Objetos Físicos</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Parent Objects
+Child Objects
+parent
+child
+inheritance
+-->
+  <!-- TAGS
+parent_objects
+-->
+</body>
+</html>

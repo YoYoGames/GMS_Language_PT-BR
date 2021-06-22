@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_create_from_surface</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_create_from_surface" />
+  <meta name="rh-index-keywords" content="sprite_create_from_surface" />
+  <meta name="search-keywords" content="sprite_create_from_surface" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_create_from_surface</h1>
+  <p>Com esta função você pode criar um sprite a partir de uma superfície previamente inicializada (o valor do índice de superfície é retornado quando você cria a superfície usando <a href="../../../Drawing/Surfaces/surface_create.htm"><tt>surface_create()</tt></a>). O x e
+    y as coordenadas que você então introduzir na função devem ser relativas à posição (0,0) da <i>superfície</i> (o canto superior esquerdo) e não à janela do jogo (nem à vista se você tiver uma ativa). Os argumentos de largura e altura estão em pixels e
+    definir a largura e a altura da parte da superfície a ser utilizada.</p>
+  <p>A definição do argumento &quot;remover&quot; como verdadeiro removerá uma cor do duende, verificando o <i>píxel</i> inferior <i>esquerdo do</i> duende para a cor lá e, em seguida, usando-a como a cor a ser removida.</p>
+  <p>Se você escolher a opção &quot;removeback&quot;, você também pode querer que o GameMaker <span class="notranslate">Studio 2 suavize</span> as bordas do duende definindo o argumento &quot;suave&quot; como verdadeiro. Tudo o que isso faz é criar uma borda semi-transparente ao redor das bordas do
+    o duende depois de ter tido seu fundo removido.</p>
+  <p>Finalmente, você também pode especificar a <i>origem</i> x e y para o duende. Este é o ponto onde o duende é &quot;fixo&quot; na instância que o utiliza, e é sempre calculado em relação ao canto superior esquerdo 0,0 de uma subimagem do duende. Portanto, o que significa que o duende é "fixo" na instância que o utiliza,
+    por exemplo, um duende de 32 x 32 pixels com estes valores definidos para (16,16) terá sua origem no centro.</p>
+  <p>Por padrão, todos os novos sprites têm suas caixas de delimitação calculadas automaticamente (a caixa exata dependerá do tamanho e da transparência do sprite), entretanto você pode desejar personalizar isso, caso em que você também deve usar a função <a href="sprite_collision_mask.htm"><tt>sprite_collision_mask()</tt></a>.</p>
+  <p class="note"><b>NOTA:</b> Quando você cria um duende no <span class="notranslate">GameMaker Studio 2</span> com este método, você deve se lembrar de removê-lo novamente (com <a href="sprite_delete.htm"><tt>sprite_delete()</tt></a>) quando não for mais necessário, caso contrário há o risco de um vazamento de memória que
+    retardar e, eventualmente, acabar com seu jogo.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">sprite_create_from_surface(index, x, y, w, h, removeback, smooth, xorig, yorig);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice da superfície a ser criada a partir.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A posição x para copiar de.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A posição y para copiar de.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>A largura da área a ser copiada (a partir da posição x).</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>A altura da área a ser copiada (a partir da posição y).</td>
+      </tr>
+      <tr>
+        <td>remover</td>
+        <td>Indica se todos os pixels com a cor de fundo (píxel inferior esquerdo) devem ser transparentes.</td>
+      </tr>
+      <tr>
+        <td>smooth</td>
+        <td>Indica se é necessário suavizar as bordas.</td>
+      </tr>
+      <tr>
+        <td>xorig</td>
+        <td>Indica a posição x da origem no duende.</td>
+      </tr>
+      <tr>
+        <td>yorig</td>
+        <td>Indica a posição y da origem no duende.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções</h4>
+  <p class="code">Real (valor único de identificação sprite)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var surf;<br> surf = surface_create(32, 32);<br> surface_set_target(surf);
+    <br> draw_clear_alpha(c_black, 0);<br> draw_sprite(spr_Body, 0, 0, 0, 0);<br> draw_sprite(spr_Clothes, 0, 0, 0, 0);<br> draw_sprite(spr_Hair, 0, 0, 0, 0);<br> spr_custom = sprite_create_from_surface(surf, 0, 0, 32, 32, true, true, 16, 16);<br> surface_reset_target();
+    <br> surface_free(surf);
+  </p>
+  <p>O código acima cria uma superfície e armazena seu índice na variável local &quot;surf&quot;. Em seguida, visa aquela superfície, limpa-a e desenha vários sprites uns em cima dos outros. Finalmente, cria um novo duende a partir da imagem composta desenhada no
+    e atribui seu índice ao &quot;spr_Custom&quot; antes de liberar a memória utilizada pela superfície.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sprite_Manipulation.htm">Manipulação de Sprite</a></div>
+        <div style="float:right">Próximo: <a href="sprite_add_from_surface.htm">sprite_add_from_surface</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_create_from_surface
+-->
+  <!-- TAGS
+sprite_create_from_surface
+-->
+</body>
+</html>

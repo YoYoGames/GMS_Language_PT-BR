@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>get_integer_async</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for get_integer_async" />
+  <meta name="rh-index-keywords" content="get_integer_async" />
+  <meta name="search-keywords" content="get_integer_async" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>get_integer_async</h1>
+  <p>Esta função abre uma janela e exibe uma mensagem assim como um espaço para o usuário inserir um valor (que conterá o valor padrão fornecido para começar). Esta é uma função assíncrona, e como tal o <span class="notranslate">GameMaker Studio 2</span> <i>não</i> bloqueia
+    o dispositivo em que está sendo executado enquanto espera por uma resposta, mas continua a executar eventos como de costume. Uma vez que o usuário tenha digitado sua seqüência e pressionado o botão &quot;Ok&quot;, um <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm"><b>Diálogo</b></a>    evento é acionado que, <i>somente</i> durante a duração desse evento, terá um mapa DS armazenado na variável <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>.</p>
+  <p>Este mapa conterá as três teclas, &quot; id&quot;,<tt>&quot;</tt> status&quot; e &quot;<tt>value&quot;</tt>. id&quot; é o<tt>valor</tt> que foi retornado<tt>pela</tt> função quando chamada, o &quot;status&quot; será verdadeiro para o botão &quot;Ok&quot; sendo pressionado, ou <tt>falso</tt> se a mensagem foi cancelada (onde aplicável, pois nem <tt>todas as</tt> plataformas alvo permitem que as mensagens sejam canceladas). Finalmente, o &quot;valor<tt>&quot;</tt> retornará o número inteiro que o usuário inseriu.
+    como uma cadeia (uma cadeia vazia &quot;&quot; será devolvida se nenhuma entrada for dada).</p>
+  <p class="note"><strong><em>NOTA:</em></strong><em> Esta função é <span data-keyref="Dialog for debug only"> <strong>apenas</strong> para <strong>depuração e teste</strong></span>e não deve ser usada em jogos lançados. Para isso, você deve criar uma interface de usuário personalizada para receber informações dos jogadores, para que você tenha controle total sobre a aparência e o comportamento dos diálogos.</em></p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">get_integer_async(string, default);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>Cordão</td>
+        <td>A mensagem a ser mostrada no diálogo.</td>
+      </tr>
+      <tr>
+        <td>padrão</td>
+        <td>O valor padrão.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo ampliado:</h4>
+  <p>O <b>evento de pressão do mouse esquerdo</b> (por exemplo) do objeto que está mostrando a mensagem teria o seguinte código:</p>
+  <p class="code">msg = get_integer_async(&quot;Quantos anos você tem?&quot;, 0);</p>
+  <p>O acima mostrará uma mensagem solicitando que o usuário insira uma string e pressione &quot;Ok&quot;. A identificação da função é armazenada na variável &quot;msg&quot; e será usada no evento de Diálogos Assíncronos, como mostrado abaixo:</p>
+  <p class="code">var i_d = ds_map_find_value(async_load, &quot;id&quot;);<br> if i_d == msg<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;)<br> {
+    <br> global.Age = ds_map_find_value(async_load, &quot;value&quot;);<br> }
+    <br> }
+  </p>
+  <p>O código acima verifica a<tt>chave</tt>&quot; id&quot; do Mapa DS retornado <tt>em relação</tt> ao valor armazenado na variável &quot;msg&quot;. Se forem os mesmos, verifica se &quot;Ok&quot; foi pressionado (em vez de a janela ser
+    fechado/cancelado) e se retornar <tt>verdadeiro</tt>, então define uma variável global a partir do inteiro retornado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Dialog.htm">Diálogo</a></div>
+        <div style="float:right">Próximo: <a href="show_message_async.htm">show_message_async</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+get_integer_async
+-->
+  <!-- TAGS
+get_integer_async
+-->
+</body>
+</html>

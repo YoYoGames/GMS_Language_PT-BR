@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Roteiros</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the script editor works" />
+  <meta name="rh-index-keywords" content="Script Editor" />
+  <meta name="search-keywords" content="scripts" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>O Editor Roteiro</h1>
+  <p><img alt="The Script Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts.png">Esta seção trata do <strong>editor de roteiro</strong> (também chamado <strong>editor de texto</strong>), que é onde você digita todo o código que
+    seu jogo exigirá correr. Este editor é usado para criar recursos de script personalizados, bem como para codificar <a href="Object_Properties/Object_Events.htm">eventos de objetos</a>, para adicionar <a href="Room_Properties/Room_Properties.htm">código de criação de sala</a>,
+    e para muitas outras coisas, e como tal, esta seção simplesmente detalha como funciona o editor de scripts, e <em>não</em> como criar ativos de scripts nem como usar <span class="notranslate">Drag e Drop™</span>para fazer scripts. Para isso, consulte as seguintes seções: </p>
+  <ul class="colour">
+    <li><a href="../GameMaker_Language/GML_Overview/Script_Functions.htm">Roteiros<span class="notranslate">GML</span> </a></li>
+    <li><a href="../Drag_And_Drop/Drag_And_Drop_Overview/Action_Block_Functions.htm"><span class="notranslate">DnD™</span>Roteiros</a></li>
+  </ul>
+  <p>O editor de scripts é onde você escreve seu código de <span class="notranslate">linguagem GameMaker</span>, que é a linguagem de programação integrada que o <span class="notranslate">GameMaker Studio 2</span> usa (veja a seção <a href="../GameMaker_Language/GameMaker_Language_Index.htm">Referência<span class="notranslate">GML</span></a> para mais detalhes).
+    Quando você se familiarizar mais com o <span class="notranslate">GameMaker Studio 2</span> e quiser utilizá-lo ao máximo, é aconselhável começar a aprender a usar esta linguagem, pois ela expande muito suas possibilidades ao criar jogos.</p>
+  <p>Um recurso de script pode ser nomeado clicando com o botão direito do mouse em <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> no <a href="../Introduction/The_Asset_Browser.htm">Navegador de Recursos</a> e selecionando <em>Renomear</em>,
+    mas observe que o nome do script deve estar de acordo com as regras de script para funções, de modo que elas só possam ser alfanuméricas, devem começar com uma letra, e o único símbolo que elas podem conter é o símbolo &quot;_&quot; abaixo da barra. O editor de roteiros em outros lugares
+    não pode ser renomeado e terá um nome específico para o que está sendo editado, como um evento objeto, por exemplo.</p>
+  <p>Quando você abrir a janela do editor de roteiros, ela terá as seguintes opções e layout:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Roteiro / Aba de eventos</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">O editor de scripts abre em uma janela com abas no topo para permitir que você tenha vários scripts ou eventos em uma janela (embora este comportamento possa ser alterado das <a href="../Setting_Up_And_Version_Information/IDE_Preferences/Text_Editor_Preferences.htm">Preferências</a> para dar uma nova janela para cada script ou evento). Você pode clicar em <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> em uma aba e depois arrastá-la para alterar a ordem da aba, ou - se preferir - você pode puxar
+      A janela atual e colocá-la no espaço de trabalho para criar uma nova janela para aquele script (ou adicioná-la a uma janela diferente), e você também pode maximizar o editor do script para criar um novo espaço de trabalho também. Se você arrastar uma aba de script para fora da janela atual e colocá-la na
+      Janela <a class="glossterm" data-glossterm="IDE" href="#">IDE</a>, então uma nova IDE será gerada para conter este recurso de script, e pode ser usada como você faria na janela principal.</p>
+    <p class="dropspot">Observe que se você estiver editando código de um <strong>evento de objeto </strong>no editor de roteiros e tiver maximizado o editor de roteiros ou tê-lo em uma janela separada ou espaço de trabalho, então o menu do editor <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> terá algumas opções extras:</p>
+    <p class="dropspot"><img alt="Script Editor RMB Object Menu" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_RMB_Object_Menu.png" /></p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Restaurar para o espaço de trabalho</strong>: Isto tirará o editor de roteiros de um estado maximizado/espaço de trabalho e o colocará novamente no objeto no espaço de trabalho.</li>
+      <li class="dropspot"><strong>Ir para Objeto</strong>: Isto o levará para o espaço de trabalho em que o objeto com o código está e se concentrará no objeto.</li>
+      <li class="dropspot"><strong>Adicionar /Open Event</strong>: Isto permite adicionar um novo evento ao objeto ao qual o script atual pertence e abrirá uma nova aba de código no Editor de Script para o evento adicionado. Se o evento selecionado já tiver código no mesmo, então isto irá
+        ser aberto em uma nova aba.</li>
+    </ul>
+    <p class="dropspot">Para obter informações sobre o restante das opções do menu <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21">, veja a seção sobre <strong>Edição</strong>, abaixo.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Caleira</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">A <strong>Gutter </strong>é usada para mostrar os números de linha de seu código e também para transmitir algumas informações específicas sobre o estado do código. Mais importante ainda, se você fizer um <a class="glossterm" data-glossterm="erro datilográfico" href="#">erro de digitação</a> ou construir o código incorretamente, então a <a class="glossterm" data-glossterm="IDE" href="#">IDE</a> <span class="notranslate">GameMaker Studio 2</span> informará o problema assinalando a linha do código com um ponto de exclamação vermelho <img alt="Code Error Icon" height="17" src="../assets/Images/Icons/Icon_CodeError.png" width="18"> mostrando um erro de <a class="glossterm" data-glossterm="sintaxe" href="#">sintaxe</a>. Você pode então passar o mouse sobre o símbolo para obter uma breve descrição de qual é o problema:</p>
+    <p class="dropspot"><img alt="Script Editor Syntax Error" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_Errors.png">Você pode encontrar mais informações sobre erros de sintaxe (e erros gerais ao testar ou compilar seu código) na seção seguinte:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="../Additional_Information/Error_Reporting.htm">Relatório de erros</a></li>
+    </ul>
+    <p class="dropspot">A sarjeta também marcará qualquer linha do roteiro que tenha tido um <strong>ponto de parada </strong>adicionado. Um ponto de parada é simplesmente um lugar no roteiro onde você quer que o <a href="../IDE_Tools/The_Debugger.htm">depurador</a> pause a execução de seu
+      jogo quando é alcançado. Você pode alternar um ponto de quebra a partir de qualquer linha de qualquer script ou evento de objeto pressionando &quot;<span class="inline">f9</span>&quot; ou usando o menu <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> com o botão direito do mouse. Quando você adicionar um ponto de parada, ele aparecerá assim na sarjeta:</p>
+    <p class="dropspot"><img alt="Script Editor Breakpoint Marker" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_Breakpoint.png">Finalmente, a sarjeta também mostrará quaisquer itens marcados em livros. Para marcar uma linha de código basta segurar <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> + <span class="inline">Number</span> (de 0 a 9), e isto permitirá que você pule de volta para esta linha de código de qualquer lugar na IDE simplesmente usando <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <span class="inline">Number</span> (de 0 a 9). Para excluir o bookmark, basta executar a mesma ação que você usou para adicioná-lo
+      na linha de código novamente. Quando um marcador de página tiver sido adicionado, ele aparecerá assim:</p>
+    <p class="dropspot"><img alt="Script Editor Bookmark Marker" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_Bookmark.png" /></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Busca / Substituir</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Enquanto trabalha no editor de roteiros, você pode pressionar <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">F</span>&quot; para abrir a caixa de Busca ou <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">H</span>&quot; para abrir a caixa de Busca e Substituição:</p>
+    <p class="dropspot"><img alt="Script Editor Search Box" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_Search.png">Aqui você pode realizar uma busca <em>local </em>pela palavra-chave que você digitar e, uma vez digitado seu termo de busca, você pode então usar
+      as setas na parte superior direita da janela de busca para saltar de um termo encontrado para o próximo no script. Você pode mudar a forma como a operação de busca é realizada, alternando os seguintes botões:</p>
+    <table class="icons" style="margin-left: 32auto">
+      <tbody>
+        <tr>
+          <td class="icons"><img alt="Exact Word Icon" src="../assets/Images/Icons/Icon_ExactWord.png" style="margin-left: 24px;" /></td>
+          <td class="text">Ao alternar isto, a função de busca somente destacará aquelas cordas que correspondem a toda a cadeia de entrada. Por exemplo, com ela fora de uma busca por &quot;<em>aleatório</em>&quot; aparecerão todas as palavras que contenham esta cadeia de caracteres - como <span class="inline">irandom()</span>,
+            ou <span class="inline">randomise()</span> - enquanto que alternar com ele mostraria apenas a função <span class="inline">random()</span>.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Case Sensitive Icon" src="../assets/Images/Icons/Icon_CaseSensitive.png" style="margin-left: 24px" /></td>
+          <td class="text">Quando esta opção é alternada, você está dizendo ao <span class="notranslate">GameMaker Studio 2</span> para verificar não apenas o conteúdo da cadeia de busca, mas também o caso. Por exemplo, se você tiver um sprite chamado &quot;<span class="inline">spr_Dog</span>&quot; e fizer uma busca por
+            &quot; cão&quot; com esta alternância, então <em>a</em> corda de duende será destacada, porém se a alternância estiver ligada então não será mais, já que &quot; cão&quot; não é mais considerado o mesmo que &quot; cão&quot;.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot">Se você abriu a janela de busca usando <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">F</span>&quot;, então a funcionalidade de substituição não será visível, então você precisa clicar no botão Substituir <img alt="Replace Toggle Icon" class="icon" src="../assets/Images/Icons/Icon_ReplaceToggle.png"> para abrir
+      isso. Uma vez aberto, você pode então digitar uma string que será usada para substituir qualquer string de busca, usando os seguintes botões para realizar a ação:</p>
+    <table class="icons" style="margin-left: 32auto">
+      <tbody>
+        <tr>
+          <td class="icons"><img alt="Replace Next Icon" src="../assets/Images/Icons/Icon_ReplaceNext.png" style="margin-left: 24px" /></td>
+          <td class="text">Clicando aqui, a próxima cadeia de busca encontrada no roteiro será substituída pela cadeia de substituição dada. Observe que o termo &quot;próximo&quot; é considerado o próximo após a posição atual do cursor, e você pode pular para diferentes usando a seta
+            botões na parte superior direita da janela de busca.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Replace All Icon" src="../assets/Images/Icons/Icon_ReplaceAll.png" style="margin-left: 24px" /></td>
+          <td class="text">Clicando aqui substituirá <em>todos os </em>exemplos da cadeia de busca dentro do script usando a cadeia de substituição dada.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot">Observe que se você quiser fazer uma busca <em>global </em>(ou seja: procurar o projeto inteiro em vez do script ou evento atual), então você pode pressionar <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> + &quot;F&quot;.</p>
+    <p class="dropspot"> </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Editor Principal do Código</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">O editor de código principal é onde você escreverá todo o seu código para criar o recurso de script ou preencher um evento de objeto. A edição real de seu código é abordada na seção de <strong>Edição</strong> mais abaixo nesta página.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Informações</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">A barra de informações na parte inferior da IDE mostra o número da linha atual e a posição ao longo da linha. É também onde você pode ver o código helper, que é uma linha de texto que mostra a função que você está atualmente editando ao longo
+      com os argumentos que ela requer. Ao preencher a função no editor, os argumentos destacarão qual deles você está editando atualmente.</p>
+    <p class="dropspot">Note que qualquer argumento opcional em suas funções de script será mostrado com <tt>[]</tt> colchetes ao redor deles. Se você tiver usado os <a href="Code_Editor_Properties/JSDoc_Script_Comments.htm">Comentários do Script JSDoc</a> dentro de um recurso de script, então o
+      As informações que você forneceu também serão mostradas aqui.</p>
+  </div>
+  <p> </p>
+  <p>Você pode obter mais informações sobre o uso do roteiro e dos editores de código nas páginas seguintes:</p>
+  <ul class="colour">
+    <li><a href="Code_Editor_Properties/Editing_Code.htm">Código de edição</a></li>
+    <li><a href="Code_Editor_Properties/JSDoc_Script_Comments.htm">Comentários JSDoc</a></li>
+    <li><a href="Code_Editor_Properties/Code_Snippets.htm">Código Snippets</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="The_Asset_Editors.htm">Os Editores de Ativos</a></div>
+        <div style="float:right">A seguir: <a href="Sequences.htm">Sequências</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Script Editor
+-->
+  <!-- TAGS
+script_editor
+-->
+
+</body></html>

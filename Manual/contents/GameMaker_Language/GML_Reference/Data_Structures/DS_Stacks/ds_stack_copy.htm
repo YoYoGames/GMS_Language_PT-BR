@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_stack_copy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_stack_copy" />
+  <meta name="rh-index-keywords" content="ds_stack_copy" />
+  <meta name="search-keywords" content="ds_stack_copy" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_stack_copy</h1>
+  <p>Esta função pode ser usada para copiar o conteúdo de uma pilha para outra. Note que isto <i>NÃO</i> remove o conteúdo da pilha original, nem destrói a pilha original. Ao usar esta função, a pilha que está sendo copiada deve ter
+    foi previamente criada e se continha algum item antes da cópia, então estes serão limpos primeiro (significando que esta informação será perdida).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">ds_stack_copy(id, fonte);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>A identificação do NOVO stack.</td>
+      </tr>
+      <tr>
+        <td>fonte</td>
+        <td>A pilha ORIGINAL para copiar para a identificação.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">com (instance_create_layer(x, y, &quot;Enemies&quot;, obj_Enemy))<br> {
+    <br> stack = ds_stack_create();<br> ds_stack_copy(stack, other.stack);<br> }
+  </p>
+  <p>A função acima cria uma nova instância e, nessa instância, cria uma nova pilha de DS e copia o conteúdo da pilha na instância que executa o bloco de código, para a nova pilha de instância criada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="ds_stack_create.htm">ds_stack_create</a></div>
+        <div style="float:right">Próximo: <a href="ds_stack_top.htm">ds_stack_top</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_stack_copy
+-->
+  <!-- TAGS
+ds_stack_copy
+-->
+
+</body></html>

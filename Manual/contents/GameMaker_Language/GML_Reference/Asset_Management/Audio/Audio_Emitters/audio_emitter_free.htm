@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_emitter_free</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_emitter_free" />
+  <meta name="rh-index-keywords" content="audio_emitter_free" />
+  <meta name="search-keywords" content="audio_emitter_free" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_emitter_free</h1>
+  <p>Com esta função você pode remover da memória o emissor em questão. Isto deve ser feito sempre que o emissor não for mais utilizado na sala ou no jogo, ou seja: no <a href="../../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">Evento de Destruição</a> de
+    a instância ou no <a href="../../../../../The_Asset_Editors/Object_Properties/Other_Events.htm">Evento Room End</a>, caso contrário você pode acabar com um vazamento de memória que irá desacelerar e, eventualmente, quebrar seu jogo.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">audio_emitter_free(emissora);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>emissora</td>
+        <td>O índice do emissor a liberar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se vive = 0<br> {
+    <br> audio_emitter_free(s_emit);
+    <br> room_goto(rm_Menu);
+    <br> }
+  </p>
+  <p>O código acima verifica o valor da variável global &quot;vidas&quot; e se ela retornar 0, destruirá o emissor indexado na variável &quot;s_emit&quot; e então irá para a sala indexada na variável &quot;rm_Menu&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Audio_Emitters.htm">Emissores de áudio</a></div>
+        <div style="float:right">Próximo: <a href="audio_play_sound_on.htm">audio_play_sound_on</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_emitter_free
+-->
+  <!-- TAGS
+audio_emitter_free
+-->
+</body>
+</html>

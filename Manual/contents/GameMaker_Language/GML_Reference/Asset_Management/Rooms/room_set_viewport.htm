@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>room_set_viewport</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_set_viewport" />
+  <meta name="rh-index-keywords" content="room_set_viewport" />
+  <meta name="search-keywords" content="room_set_viewport" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>room_set_viewport</h1>
+  <p>Com esta função você pode definir as propriedades da porta de visualização para qualquer sala do seu jogo, <i>exceto a atual</i>. Você fornece o índice da sala para definir a porta de visualização, o índice da porta de visualização (de 0 a 7) e então se a porta de visualização deve ser visível em
+    o início da sala ou não (definido como <tt>verdadeiro</tt> para tornar o porto visível, e <tt>falso</tt> de outra forma). Depois disso, define-se a coordenada x e y (correspondente à posição superior esquerda da porta de visualização) e depois a largura e altura em pixels.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">room_set_viewport(rm, vind, vis, xport, yport, wport, hport);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>rm</td>
+        <td>O índice da sala a definir</td>
+      </tr>
+      <tr>
+        <td>vind</td>
+        <td>O índice do porto de visão a definir</td>
+      </tr>
+      <tr>
+        <td>vis</td>
+        <td>A visibilidade do porto de visão<tt>(verdadeiro</tt> é visível, <tt>falso é invisível</tt>)</td>
+      </tr>
+      <tr>
+        <td>xportar</td>
+        <td>A posição x para o porto de vista na sala</td>
+      </tr>
+      <tr>
+        <td>yport</td>
+        <td>A posição y da vista do porto na sala</td>
+      </tr>
+      <tr>
+        <td>wport</td>
+        <td>A largura (em pixels) da porta de visualização</td>
+      </tr>
+      <tr>
+        <td>hport</td>
+        <td>A altura (em pixels) da porta de visualização</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">global.myroom = room_add();<br> room_set_width(global.myroom, 640);<br> room_set_height(global.myroom, 480);<br> room_set_viewport(global.myroom, 0, true, 0, 0, 640, 480);</p>
+  <p>Isto irá definir as propriedades da porta de visualização [0] na sala indexada na variável &quot;global.myroom&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Rooms.htm">Quartos</a></div>
+        <div style="float:right">Próximo: <a href="room_get_viewport.htm">room_get_viewport</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_set_viewport
+-->
+  <!-- TAGS
+room_set_viewport
+-->
+</body>
+</html>

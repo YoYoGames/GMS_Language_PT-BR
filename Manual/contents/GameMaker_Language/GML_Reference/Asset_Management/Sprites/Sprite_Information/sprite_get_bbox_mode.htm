@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_get_bbox_mode</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_get_bbox_mode" />
+  <meta name="rh-index-keywords" content="sprite_get_bbox_mode,bboxmode_automatic,bboxmode_fullimage,bboxmode_manual" />
+  <meta name="search-keywords" content="sprite_get_bbox_mode,bboxmode_automatic,bboxmode_fullimage,bboxmode_manual" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_get_bbox_mode</h1>
+  <p>Esta função retornará o &quot;modo&quot; atual para os cálculos da caixa delimitadora. Você fornece o índice do sprite para verificar, e a função retornará uma das constantes mostradas abaixo.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">sprite_get_bbox_mode(ind);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>O índice do sprite a ser verificado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções</h4>
+  <p class="code">Constante</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td><tt>bboxmode_automático</tt></td>
+        <td>Automático - A caixa de delimitação será calculada automaticamente, com base no ajuste de tolerância para o duende</td>
+      </tr>
+      <tr>
+        <td><tt>bboxmode_fullimage</tt></td>
+        <td>Full Image - A caixa de delimitação será ajustada para usar toda a largura e altura do duende, independentemente da tolerância e dos pixels &quot;vazios&quot;.</td>
+      </tr>
+      <tr>
+        <td><tt>bboxmode_manual</tt></td>
+        <td>Manual - A caixa de delimitação foi definida manualmente para valores definidos pelo usuário (ou no editor sprite, ou usando a função <a href="../Sprite_Manipulation/sprite_set_bbox.htm"><tt>sprite_set_bbox()</tt></a>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if sprite_get_bbox_mode(sprite_index) != 0<br> {
+    <br> sprite_set_bbox_mode(sprite_index, bboxmode_automatic);<br> }
+  </p>
+  <p>O acima verifica o modo bbox para o sprite atual e se não for <tt>automático,</tt> então ele é ajustado para esse valor.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sprite_Information.htm">Informações Sprite</a></div>
+        <div style="float:right">Próximo: <a href="sprite_get_nineslice.htm">sprite_get_nineslice</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_get_bbox_mode
+bboxmode_manual
+bboxmode_fullimage
+bboxmode_automatic
+-->
+  <!-- TAGS
+sprite_get_bbox_mode
+-->
+</body>
+</html>

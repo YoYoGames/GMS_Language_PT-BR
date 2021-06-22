@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_apply_torque</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_apply_torque" />
+  <meta name="rh-index-keywords" content="physics_apply_torque" />
+  <meta name="search-keywords" content="physics_apply_torque" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_apply_torque</h1>
+  <p>Quando falamos de torque, geralmente estamos falando da tendência de uma força ou impulso para girar uma instância sobre seu centro de massa, mas no <span class="notranslate">GameMaker Studio 2</span> você também pode aplicar torque independentemente a uma instância, fazendo com que ela gire
+    em uma determinada direção. Quanto torque você aplica para obter a rotação desejada, tudo depende do tamanho e da densidade da fixação que você atribui à sua instância, pois ambas as propriedades vão no sentido de definir sua massa, o que define sua inércia, o que afeta
+    torque! A regra geral é que se uma instância tem muita inércia, será necessário muito torque para que ela comece a girar. Deve-se notar também que outros fatores como gravidade e colisões também podem afetar o torque de uma instância.
+    Aqui está uma imagem para ajudar a explicar:</p>
+  <p><img alt="Appply physics torque illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_apply_torque_image.png">Como você pode ver, a quantidade de torque que você precisa para girar o objeto depende do
+    massa subjacente e inércia que ela dá. Tudo isso é calculado para você pelo <span class="notranslate">GameMaker Studio 2</span> com base no tamanho e densidade da fixação que é atribuída à instância quando ela é criada. Observe também que para rotação no sentido anti-horário, o
+    valor deve ser negativo.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">physics_apply_torque(torque)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>torque</td>
+        <td>O torque (em Newton metros) a ser aplicado</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if keyboard_check(vk_left)<br> {<br> physics_apply_torque(-100);<br> }</p>
+  <p>O código acima girará a instância no sentido anti-horário (para a esquerda) com um torque de 100Nm quando a tecla de seta para a esquerda for pressionada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Forces.htm">Forças</a></div>
+        <div style="float:right">A seguir: física_aplicar_impulso_angular</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_apply_torque
+-->
+  <!-- TAGS
+physics_apply_torque
+-->
+</body>
+</html>

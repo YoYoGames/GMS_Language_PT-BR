@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_fog</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_fog" />
+  <meta name="rh-index-keywords" content="gpu_set_fog" />
+  <meta name="search-keywords" content="gpu_set_fog" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_fog</h1>
+  <p>Esta função pode ser usada para ativar ou desativar o desenho com neblina. O nevoeiro pode ser usado em jogos 3D para fazer com que as instâncias à distância pareçam embaçadas ou mesmo desaparecer, o que ajuda a criar atmosfera, além de mascarar o fato de que você não está desenhando instâncias
+    que estão muito longe. Você define se está habilitado<tt>(verdadeiro</tt>) ou desabilitado<tt>(falso</tt>), a cor que o nevoeiro deve usar para misturar, bem como as distâncias de início e fim de tração. Observe que o início da névoa indica o raio relativo ao
+    A câmera de visão onde começa o nevoeiro, e a extremidade do nevoeiro indica em que raio (também relativo) as instâncias serão completamente invisíveis.</p>
+  <p>A função pode aceitar quatro argumentos individuais (dados acima) ou uma matriz com a seguinte estrutura (o código de exemplo abaixo mostra este método):</p>
+  <ul class="colour">
+    <li>[0] = alternância ativada (um booleano, <tt>verdadeiro</tt> ou <tt>falso</tt>), padrão <tt>falso</tt></li>
+    <li>[1] = cor (real), padrão <tt>c_preto</tt></li>
+    <li>[2] = distância inicial (real), padrão 0</li>
+    <li>[3] = distância final (real), padrão 1</li>
+  </ul>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">gpu_set_fog(habilitação, cor, início, fim);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>habilitar</td>
+        <td>Ativar ou desativar a névoa</td>
+      </tr>
+      <tr>
+        <td>cor</td>
+        <td>A cor do nevoeiro</td>
+      </tr>
+      <tr>
+        <td>início</td>
+        <td>A distância para começar a aplicar névoa de</td>
+      </tr>
+      <tr>
+        <td>fim</td>
+        <td>A distância para acabar com a neblina</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var fog_a = gpu_get_fog();<br> fog_a[1] = c_red;<br> gpu_set_fog(fog_a);
+  </p>
+  <p>O código acima obtém as configurações atuais de nevoeiro e então define o elemento de cor da matriz para <tt>c_red</tt> antes de definir o nevoeiro novamente usando a matriz alterada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="GPU_Control.htm">Controle de GPU</a></div>
+        <div style="float:right">Próximo: <a href="gpu_set_cullmode.htm">gpu_set_cullmode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_fog
+-->
+  <!-- TAGS
+gpu_set_fog
+-->
+</body>
+</html>

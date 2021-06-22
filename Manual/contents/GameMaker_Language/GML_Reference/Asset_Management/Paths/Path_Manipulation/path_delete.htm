@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>path_delete</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_delete" />
+  <meta name="rh-index-keywords" content="path_delete" />
+  <meta name="search-keywords" content="path_delete" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>path_delete</h1>
+  <p>Você pode usar este código para remover um caminho da memória. Se este caminho tiver sido criado dinamicamente usando <a href="path_add.htm"><tt>path_add()</tt></a>a variável que contém o índice do caminho não será mais válida para acessar o caminho, pois não mais
+    existe, e se o caminho foi criado usando o <a href="../../../../../The_Asset_Editors/Paths.htm">Path Editor</a>, esse caminho não pode mais ser acessado em <i>todo o jogo</i>, pois você o está apagando permanentemente.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">path_delete(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice do caminho a ser excluído.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p> </p>
+  <p class="code">var t_path = path_add();<br> if mp_grid_path(grid, t_path, x, y, obj_Player.x, obj_Player.y, 1)<br> {
+    <br> path_assign(mypath, t_path);<br> }
+    <br> path_delete(t_path);
+  </p>
+  <p>O código acima irá criar um caminho e armazenar seu índice em uma variável local. Este caminho é então usado para armazenar um <a href="../../../Movement_And_Collisions/Motion_Planning/mp_grid_path.htm"><tt>mp_grid_path()</tt></a> caminho gerado que, se for bem sucedido
+    ao encontrar seu caminho até o alvo, é então atribuído ao caminho indexado em &quot;mypath&quot;. Finalmente, o &quot;t_caminho&quot; é excluído.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Path_Manipulation.htm">Manipulação do caminho</a></div>
+        <div style="float:right">Próximo: <a href="path_duplicate.htm">Path_duplicate</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_delete
+-->
+  <!-- TAGS
+path_delete
+-->
+</body>
+</html>

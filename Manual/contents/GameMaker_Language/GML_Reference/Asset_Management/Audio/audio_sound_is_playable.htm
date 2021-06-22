@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_sound_is_playable</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_sound_is_playable" />
+  <meta name="rh-index-keywords" content="audio_sound_is_playable" />
+  <meta name="search-keywords" content="audio_sound_is_playable" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_sound_is_playable</h1>
+  <p>Esta função pode ser usada para verificar se o índice de som dado pode ser reproduzido atualmente. Isto é necessário devido às diferentes formas de reprodução de som streamed e unstreamed na plataforma de destino <b>HTML5</b>, e será
+    retornar <tt>verdadeiro</tt> se o som puder ser tocado e <tt>falso</tt> se não puder. Note que em todas as outras plataformas além do HTML5, a função sempre retornará verdadeiro.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">audio_sound_is_playable(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice do som a ser verificado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if audio_sound_get_pitch(snd_Explode) != 1<br> {
+    <br> audio_sound_pitch(snd_Explode, 1);<br> }
+  </p>
+  <p>O código acima mudará o tom do áudio reproduzido do som indexado como &quot;snd_Explode&quot;, se seu tom não for igual a 1.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Audio.htm">Áudio</a></div>
+        <div style="float:right">Próximo: <a href="audio_falloff_set_model.htm">audio_falloff_set_model</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_sound_is_playable
+-->
+  <!-- TAGS
+audio_sound_is_playable
+-->
+</body>
+</html>

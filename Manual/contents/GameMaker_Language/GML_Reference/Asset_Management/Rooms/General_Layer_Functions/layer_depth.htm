@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_depth</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_depth" />
+  <meta name="rh-index-keywords" content="layer_depth" />
+  <meta name="search-keywords" content="layer_depth" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_depth</h1>
+  <p>Esta função pode ser usada para alterar a <b>profundidade</b> da camada dada, alterando a ordem na qual seu conteúdo será apresentado à tela. Você fornece a identificação da camada (que você obtém quando cria a camada usando <a href="layer_create.htm"><tt>layer_create()</tt></a>)
+    ou o nome da camada (como um fio - isto terá um impacto no desempenho) e então dar a nova profundidade para defini-la (uma forma de valor inteiro -16000 a 16000). A profundidade da camada é definida como sendo maior quando &quot;mais longe&quot; da câmera e menor
+    quando &quot;mais próximo&quot; da câmera, então se você tiver três camadas com profundidades -100, 0, 100, as camadas desenharão na ordem 100, 0, -100, de modo que a camada &quot;superior&quot; (ou seja, a mais próxima da visão da câmera e assim desenhada sobre tudo o resto)
+    ser a camada com a profundidade de -100.</p>
+  <p>A imagem a seguir mostra um esquema de como funciona a profundidade para camadas:</p>
+  <p><img alt="Layer depth example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Rooms/Layer_Depths.png">Note que você pode verificar a profundidade de uma camada a qualquer momento usando a função <a href="layer_get_depth.htm"><tt>layer_get_depth()</tt></a>.
+    Observe também que as profundidades mínima e máxima das camadas são de -16000 a 16000, e qualquer coisa fora dessas profundidades <b>não será apresentada</b>. Se você precisar de uma profundidade fora dessa faixa, então você precisará usar a função <a href="layer_force_draw_depth.htm"><tt>layer_force_draw_depth()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">layer_depth(layer_id, profundidade)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>O valor de identificação único da camada para definir a profundidade de (ou o nome da camada como uma corda)</td>
+      </tr>
+      <tr>
+        <td>profundidade</td>
+        <td>A nova profundidade para a camada</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if layer_get_depth(layer) != -100<br> {
+    <br> layer_depth(layer, -100);<br> }
+  </p>
+  <p>O código acima obtém a profundidade da camada em que a instância que executa o código está, e se não estiver -100 então a profundidade é ajustada para -100.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="General_Layer_Functions.htm">Funções gerais da camada</a></div>
+        <div style="float:right">A seguir: <a href="layer_force_draw_depth.htm">layer_force_draw_depth</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_depth
+-->
+  <!-- TAGS
+layer_depth
+-->
+</body>
+</html>

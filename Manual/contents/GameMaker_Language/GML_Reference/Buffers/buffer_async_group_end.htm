@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_async_group_end</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_async_group_end" />
+  <meta name="rh-index-keywords" content="buffer_async_group_end" />
+  <meta name="search-keywords" content="buffer_async_group_end" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_async_group_end</h1>
+  <p>Esta função termina a definição de um grupo tampão de segurança. Você deve ter chamado previamente a função <a href="buffer_async_group_begin.htm"><tt>buffer_async_group_begin()</tt></a> para iniciar o grupo, depois chamar a função <a href="buffer_save_async.htm"><tt>buffer_save_async()</tt></a>    para cada arquivo que você deseja salvar. Finalmente, você chama esta função, que iniciará a gravação dos arquivos. A função retornará um valor de identificação único para a gravação, que pode então ser usado no <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Save_Load.htm">evento Assíncrono Salvar/Carregar</a> para analisar os resultados do mapa DS <a href="../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">buffer_async_group_end();</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo ampliado:</h4>
+  <p>A função <tt>buffer_async_group_end()</tt> pode ser chamada a partir de qualquer evento, e como é assíncrona, a chamada de retorno pode ser quase instantânea ou pode levar vários segundos. Chamar a função é simples e pareceria algo assim:</p>
+  <p class="code">buffer_async_group_begin(&quot;SaveGame&quot;);<br> save1 = buffer_save_async(buff1, &quot;Player_Save1.sav&quot;, 0, 16384);<br> save2 = buffer_save_async(buff2, &quot;Player_Save2.sav&quot;, 0, 16384);<br> save3 = buffer_save_async(buff3, &quot;Player_Save3.sav&quot;,
+    0, 16384);<br> save4 = buffer_save_async(buff4, &quot;Player_Save4.sav&quot;, 0, 16384);<br> save_id = buffer_async_group_end();</p>
+  <p>O código acima inicia um grupo tampão e depois o define para salvar 4 arquivos de forma assíncrona. A definição do grupo é então terminada (momento em que a gravação começará), armazenando o ID da chamada de função na variável &quot; save_id<i>&quot;</i>. Quando a função salvar
+    estiver completo, o evento assíncrono de Salvar/Carregar será acionado e você poderá analisar o mapa de <tt>assimetria de carga</tt> para a identificação correta da função, desta forma:</p>
+  <p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == saveid<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;) == falso<br> {
+    <br> show_debug_message(&quot;Salvar falhou!&quot;);<br> }
+    <br> }
+  </p>
+  <p>O código acima verificará primeiro a identificação do mapa DS que foi criado, depois verificará o status da chamada de retorno, postando uma mensagem de depuração se tiver havido algum problema.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Buffers.htm">Tampões</a></div>
+        <div style="float:right">Próximo: <a href="buffer_copy.htm">buffer_copy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_async_group_end
+-->
+  <!-- TAGS
+buffer_async_group_end
+-->
+</body>
+</html>

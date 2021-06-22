@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_add_cell</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_add_cell" />
+  <meta name="rh-index-keywords" content="mp_grid_add_cell" />
+  <meta name="search-keywords" content="mp_grid_add_cell" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_add_cell</h1>
+  <p>Com esta função podemos marcar células individuais dentro da grade MP como sendo &quot;proibidas&quot;, o que significa que as funções de localização do caminho nunca as cruzarão. Agora, normalmente se trabalha em coordenadas x/y <i>da sala</i>, e não em coordenadas de <i>células</i> da grade MP. Portanto, vamos considerar a seguinte imagem que mostra como os dois podem se correlacionar:</p>
+  <p><img alt="Add cell example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/mp_grid_add_cell_image.png">Como você pode ver, a mp_grid é numerada como uma série de células (começando em 0,0 na parte superior esquerda
+    ), e quando você coloca esta grade sobre a sala há uma correlação direta entre as coordenadas da sala (que também começam em 0,0 no canto superior esquerdo) e as células dentro da grade. Na imagem, você pode ver que uma instância na posição 260.130
+    cai sobre a célula de grade 8,4. Você pode calcular matematicamente a célula exata na qual uma posição cai facilmente, dividindo o número pela resolução da grade e depois arredondando para baixo <i>ou</i>, se estiver usando a energia de 2 resoluções da grade (como 8,
+    16, 32 etc...) você pode usar os <a href="../../../../Additional_Information/Bitwise_Operators.htm">operadores bitwise</a>. Deve-se observar que a operação bitwise é mais rápida e o exemplo abaixo mostra os dois métodos.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">mp_grid_add_cell(id, h, v);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Índice da rede mp_ que deve ser usada</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Posição horizontal da célula na grade</td>
+      </tr>
+      <tr>
+        <td>v</td>
+        <td>Posição vertical da célula na grade</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">com (obj_Wall)<br> {
+    <br> mp_grid_add_cell(grid, floor(x / 32), floor(y / 32));<br> }
+    <br> com (obj_Door)<br> {
+    <br> mp_grid_add_cell(grid, x&gt;&gt;5, y&gt;&gt;5);<br> }
+  </p>
+  <p>O código acima fará com que toda &quot;obj_Wall&quot; e toda obj_Door adicionem suas posições de célula equivalentes na mp_grid indexada na variável &quot;grid&quot;. Na primeira parte do exemplo, isto é feito tomando as coordenadas x/y do objeto
+    e dividindo-as pela resolução da grade (usando <tt>o piso</tt> para manter os valores como inteiros), e na segunda parte (já que a resolução da grade é uma potência de 2) é feita através da mudança das coordenadas x,y de 5 lugares para a direita.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Motion_Planning.htm">Planejamento de Movimento</a></div>
+        <div style="float:right">Próximo: <a href="mp_grid_add_instances.htm">mp_grid_add_instances</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_add_cell
+-->
+  <!-- TAGS
+mp_grid_add_cell
+-->
+</body>
+</html>

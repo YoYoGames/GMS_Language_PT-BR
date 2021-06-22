@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>surface_reset_target</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_reset_target" />
+  <meta name="rh-index-keywords" content="surface_reset_target" />
+  <meta name="search-keywords" content="surface_reset_target" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>surface_reset_target</h1>
+  <p>Com esta função, você repõe todos os desenhos adicionais da superfície do alvo de volta para a tela. Observe que para começar a desenhar para uma superfície, você deve ter chamado primeiro a função <a href="surface_set_target.htm"><tt>surface_set_target()</tt></a> e
+    então este após ter terminado, <i>para cada alvo de superfície que você definiu</i> ou então nada será desenhado na tela, pois todos os outros desenhos (mesmo em outros casos) serão feitos na superfície. Você também deve perceber que nada
+    será visto se a própria superfície não for desenhada na tela no evento de sorteio de uma instância.</p>
+  <p class="note"><b>NOTA</b>: Se você não definiu previamente uma meta de renderização com a função <span style="font-size:1px;"><a href="surface_set_target.htm"><tt style="font-size: 14px">surface_set_target()</tt></a></span>usando esta função, silenciosamente (ou seja: sem
+    qualquer mensagem de erro) terminar toda a execução de código adicional para o evento.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">surface_reset_target();</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se view_current = 0<br> {
+    <br> surface_set_target(surf);
+    <br> com (obj_Effect)<br> {
+    <br> draw_self();
+    <br> }
+    <br> surface_reset_target();
+    <br> }
+    <br> mais
+    <br> {
+    <br> draw_surface(surf, 0, 0);<br> }
+  </p>
+  <p>O código acima verificará para ver qual vista está sendo desenhada atualmente, e se é vista[0] ele define o alvo de sorteio para uma superfície e desenha todas as instâncias do objeto &quot;obj_Effect&quot; antes de redefinir o alvo de sorteio novamente. Se a vista não for visualizada[0].
+    a superfície é atraída para a tela.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Surfaces.htm">Superfícies</a></div>
+        <div style="float:right">A seguir: <a href="surface_copy.htm">cópia_da_superfície</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_reset_target
+-->
+  <!-- TAGS
+surface_reset_target
+-->
+</body>
+</html>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>conjunto_de_instância_variável</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function variable_instance_set" />
+  <meta name="rh-index-keywords" content="variable_instance_set" />
+  <meta name="search-keywords" content="variable_instance_set" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>conjunto_de_instância_variável</h1>
+  <p>Com esta função você pode definir o valor de uma determinada variável em uma instância. Você fornece o valor único de identificação da instância (que pode ser encontrado nas <a href="../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm">propriedades da instância</a> no
+    editor da sala, ou é retornado quando você chama a função <a href="../Asset_Management/Instances/instance_create_layer.htm"><tt>instance_create_layer()</tt></a>), bem como o nome da variável para definir o valor de <i>uma string</i> (ver exemplo
+    código abaixo), e finalmente o valor a ser definido (pode ser qualquer <a href="../../GML_Overview/Data_Types.htm">tipo de dado</a> válido). Se a variável não existir já na instância, ela será criada e, em seguida, será atribuído o valor.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">variable_instance_set(instance_id, name, val);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>exemplo_id</td>
+        <td>O valor de identificação único da instância a ser usada</td>
+      </tr>
+      <tr>
+        <td>nome</td>
+        <td>O nome da variável a ser definida (como uma string)</td>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>O valor para definir a variável para</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se !variable_instance_exists(id, &quot;shields&quot;)<br> {
+    <br> variable_instance_set(id, &quot;shields&quot;, 0);<br> }
+  </p>
+  <p>O código acima verificará se existe uma variável de instância na instância de chamada e se ela não existe, então ela é criada e definida como 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Variable_Functions.htm">Funções variáveis</a></div>
+        <div style="float:right">A seguir: <a href="variable_global_exists.htm">variable_global_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+variable_instance_set
+-->
+  <!-- TAGS
+variable_instance_set
+-->
+</body>
+</html>

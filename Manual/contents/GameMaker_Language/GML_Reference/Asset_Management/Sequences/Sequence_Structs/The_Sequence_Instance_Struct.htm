@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>A estrutura da instância seqüencial</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining The Sequence Instance Struct" />
+  <meta name="rh-index-keywords" content="Sequence Instance Struct" />
+  <meta name="search-keywords" content="The Sequence Instance Struct,seqdir_right,seqdir_left,sequence,headPosition,headDirection,speedScale,paused,finished,elementID,activeTracks,matrix,posx,posy,scalex,scaley,xorigin,yorigin,width,height,imageindex,imagespeed,colourMultiply,gain,pitch,track,parent" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>A estrutura da instância seqüencial</h1>
+  <p>Uma seqüência, quando colocada em uma sala, é colocada como um <strong>elemento</strong> sobre a camada, e este elemento contém uma <strong>instância de seqüência</strong>. Esta instância de seqüência terá as seguintes propriedades em sua <a href="../../../../GML_Overview/Structs.htm">estrutura</a>:</p>
+  <ul class="colour">
+    <li><tt>seqüência</tt>: Esta é a identificação da estrutura do <b>objeto</b> da seqüência a partir da qual a instância da seqüência foi criada (ver mais detalhes) <a href="The_Sequence_Object_Struct.htm">.</a>Você pode obter ou definir esta estrutura, e assim mudar a base
+      seqüência que a instância está referenciando.</li>
+    <li><tt>headPosition</tt>: Esta é a posição atual do <a class="glossterm" data-glossterm="playhead" href="#">cabeçote</a> (em quadros) para a instância da seqüência. Você pode obter ou definir este valor, mas note que defini-lo para um valor maior ou menor que
+      a região de reprodução atualmente definida terá efeitos diferentes, dependendo do tipo de conjunto de reprodução para a seqüência. Ver <a href="../../Rooms/Sequence_Layers/layer_sequence_headpos.htm"><tt>layer_sequence_headpos()</tt></a> para mais informações.</li>
+    <li><tt>headDirection</tt>: Esta é a direção de reprodução atual para a instância da seqüência. Você pode obter ou definir este valor usando as seguintes constantes (Note que você pode usar as funções de camada <a href="../../Rooms/Sequence_Layers/layer_sequence_get_headdir.htm"><tt>layer_sequence_get_headdir()</tt></a> e
+      <a href="../../Rooms/Sequence_Layers/layer_sequence_headdir.htm"><tt>layer_sequence_headdir()</tt></a> para obter ou definir este valor sem ter que acessar diretamente a estrutura):</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+        <th>Valor</th>
+      </tr>
+      <tr>
+        <td>seqdir_right</td>
+        <td>A seqüência jogará quadros em uma ordem incremental da esquerda para a direita</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>seqdir_left</td>
+        <td>A seqüência jogará quadros em ordem decrescente da direita para a esquerda</td>
+        <td>-1</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <ul class="colour">
+    <li><tt>escala de velocidade</tt>: Esta propriedade pode ser usada para obter ou definir a escala de velocidade de reprodução. A escala de velocidade é um <i>multiplicador</i>, onde 1 é a velocidade de reprodução padrão e valores inferiores a 1 irão retardar a reprodução e valores superiores a 1 irão acelerar
+      para cima, por exemplo: um valor de 0,5 seria metade da velocidade de reprodução, enquanto um valor de 2 seria o dobro da velocidade de reprodução. Note que você pode usar as funções de camada <a href="../../Rooms/Sequence_Layers/layer_sequence_get_speedscale.htm"><tt>layer_sequence_get_speed scale()</tt></a> e
+      <a href="../../Rooms/Sequence_Layers/layer_sequence_speedscale.htm"><tt>camada_sequência_escala_de_velocidade()</tt></a> para obter ou definir este valor sem ter que acessar diretamente a estrutura.</li>
+    <li><tt>pausou</tt>: Você pode verificar esta propriedade para ver se uma seqüência foi pausada ou não, e será <tt>verdadeira</tt> se foi, ou <tt>falsa</tt> de outra forma. Esta é uma propriedade <b>somente de leitura</b>, mas você pode usar a função de camada <a href="../../Rooms/Sequence_Layers/layer_sequence_pause.htm"><tt>layer_sequence_pause()</tt></a> para
+      pausar a reprodução, e <a href="../../Rooms/Sequence_Layers/layer_sequence_play.htm"><tt>layer_sequence_play()</tt></a> para retomá-la novamente, se necessário. Você também pode verificar esta propriedade usando a função de camada <a href="../../Rooms/Sequence_Layers/layer_sequence_is_paused.htm"><tt>layer_sequence_is_paused()</tt></a> um pouco
+      do que verificar diretamente a propriedade na estrutura.</li>
+    <li><tt>terminado</tt>: Você pode verificar esta propriedade para ver se uma seqüência terminou de tocar ou não, retornando <tt>verdadeiro</tt> se terminou de tocar, e <tt>falso</tt> se não for assim. Esta é uma propriedade <b>somente de leitura</b>, e só retornará <tt>verdadeiro</tt> para faixas que não estejam configuradas para loop ou ping-pong. Você também pode verificar esta propriedade usando a função de camada <a href="../../Rooms/Sequence_Layers/layer_sequence_is_finished.htm"><tt>layer_sequence_is_finished()</tt></a> em vez de verificar a propriedade
+      na estrutura diretamente.</li>
+    <li><tt>elementID</tt>: Esta propriedade possui a identificação do <i>elemento de</i> seqüência. Este iD é um valor de identificação simples que está associado a uma camada no editor da sala, e pode então ser usado com as <a href="../../Rooms/General_Layer_Functions/General_Layer_Functions.htm">funções de camada</a> apropriadas para
+      encontrar a camada à qual a seqüência foi atribuída ou alterar certas propriedades da seqüência sem ter que lidar com a estrutura.</li>
+    <li><tt>ActiveTracks</tt>: Esta propriedade conterá um conjunto de estruturas de &quot;avaliação&quot; contendo informações sobre o estado atual de cada <b>trilha de</b> ativos <b>na</b> seqüência (gráficos, seqüência, áudio, etc...). Estas são apenas as pistas de nível superior,
+      e a matriz devolvida é <b>somente de leitura</b>. Para o conteúdo da estrutura de trilha do ativo retornado em cada entrada da matriz, por favor, veja a seção abaixo.</li>
+  </ul>
+  <p>A lista a seguir contém as propriedades que podem estar disponíveis para você ao acessar uma estrutura de trilhas (conforme retornado pela propriedade <tt>ActiveTracks</tt> da estrutura da seqüência pai, explicada acima). Cada estrutura de trilha de ativos pode ter alguma ou toda
+    as seguintes propriedades, dependendo do tipo de ativo que a pista está referenciando (note que você pode obter ou definir todas essas propriedades, exceto onde especificado como somente leitura), e todos os valores retornados são os da <i>posição atual de playhead</i>:</p>
+  <ul class="colour">
+    <li><tt>matriz</tt>: Esta é a matriz de transformação utilizada para desenhar a pista (sprite, instância e seqüência de pistas).</li>
+    <li><tt>posx:</tt> A posição do ativo na seqüência ao longo do eixo X para a pista na posição atual de playhead (todos os ativos).</li>
+    <li><tt>posy</tt>: A posição do ativo na seqüência ao longo do eixo Y para a pista na posição atual de playhead (todos os ativos).</li>
+    <li><tt>scalex</tt>: A escala do ativo na seqüência ao longo do eixo X para a pista na posição atual de playhead (sprite, instância e seqüência de pistas).</li>
+    <li><tt>escala</tt>: A escala do ativo na seqüência ao longo do eixo Y para a pista na posição atual de playhead (sprite, instância e seqüência de pistas).</li>
+    <li><tt>xorigem</tt>: A origem X do bem para a pista (todos os bens).</li>
+    <li><tt>yorigin</tt>: A origem Y do bem para a pista (todos os bens).</li>
+    <li><tt>largura</tt>: A largura (em pixels) do bem para a pista (sprite, exemplo e seqüência de pistas).</li>
+    <li><tt>altura</tt>: A altura (em pixels) do bem para a pista (sprite, exemplo e seqüência de pistas).</li>
+    <li><tt>imageindex</tt>: O índice de imagem do ativo na pista na seqüência na posição atual de playhead (sprite e pistas de instância).</li>
+    <li><tt>velocidade da imagem</tt>: A velocidade da imagem para o ativo na pista na seqüência na posição atual de playhead (sprite e pistas de instância).</li>
+    <li><tt>colorMultiply</tt>: O valor da multiplicação de cores para o ativo na pista na seqüência na posição atual de playhead (sprite, instância e seqüência de pistas). Este valor será uma <a href="../../../../GML_Overview/Arrays.htm">matriz</a> de
+      quatro valores <a class="glossterm" data-glossterm="ARGB" href="#">ARGB</a> com o formato [A, R, G, B]. Observe que os valores para cada componente são expressos entre 0 e 1, onde 0 corresponde ao valor HEX #00 e 1 corresponde ao HEX
+      valor #FF (0 - 255 como mostrado no seletor de cores para faixas de multiplicação de cores no Editor de Seqüências).</li>
+    <li><tt>ganho</tt>: O ganho (volume) da faixa na posição atual de playhead (faixas de áudio).</li>
+    <li><tt>passo</tt>: O tom da faixa na posição atual de playhead (faixas de áudio).</li>
+    <li><tt>pista</tt>: A estrutura de dados da pista em que esta pista se baseia (todos os ativos, um valor <b>somente de leitura</b> ).</li>
+    <li><tt>pai</tt>: O ID da instância de seqüência pai para a pista (todos os ativos, um valor <b>somente de leitura</b> ).</li>
+    <li><tt>ActiveTracks</tt>: Este é um conjunto de estruturas de avaliação para cada trilha de parâmetro que a trilha do ativo contém (todos os ativos, um valor <b>somente de leitura</b> ). O conteúdo de cada estrutura na matriz está listado na seção <a href="The_Track_Struct.htm">Estrutura da trilha</a> de parâmetros.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Sequences.htm">Sequências</a></div>
+        <div style="float:right">A seguir: <a href="The_Track_Struct.htm">A estrutura da via</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Sequence Instance Struct
+seqdir_right
+seqdir_left
+sequence
+headPosition
+headDirection
+speedScale
+paused
+finished
+elementID
+activeTracks
+matrix
+posx
+posy
+scalex
+scaley
+xorigin
+yorigin
+width
+height
+imageindex
+imagespeed
+colourMultiply
+gain
+pitch
+track
+parent
+-->
+  <!-- TAGS
+sequence_instance
+-->
+
+</body></html>

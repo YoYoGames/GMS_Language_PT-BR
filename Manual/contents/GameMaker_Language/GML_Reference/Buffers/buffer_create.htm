@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_create" />
+  <meta name="rh-index-keywords" content="buffer_create,buffer_fixed,buffer_grow,buffer_wrap,buffer_fast,buffer_vbuffer" />
+  <meta name="search-keywords" content="buffer_create,buffer_fixed,buffer_grow,buffer_wrap,buffer_fast,buffer_vbuffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_create</h1>
+  <p>Você usa esta função para alocar uma parte da memória como um buffer em seu jogo, com a função retornando a <i>identificação</i> única <i>do buffer</i> que deve ser armazenada em uma variável e usada para todas as outras chamadas de função para o buffer. O buffer pode então ser
+    usado para armazenar diferentes tipos de dados (especificado quando você escreve no buffer usando o <a href="buffer_write.htm"><tt>buffer_write()</tt></a> com as seguintes constantes sendo usadas para definir o tipo de buffer:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>buffer_fixed</td>
+        <td>Um buffer de tamanho fixo.</td>
+      </tr>
+      <tr>
+        <td>buffer_grow</td>
+        <td>Um buffer que irá &quot;crescer&quot; dinamicamente à medida que os dados são adicionados</td>
+      </tr>
+      <tr>
+        <td>tampão_enrolador</td>
+        <td>Um buffer onde os dados serão &quot;embrulhados&quot;. Quando os dados a serem adicionados atingirem o limite do tamanho do buffer, a sobregravação será colocada de volta no início do buffer, e a escrita continuará a partir desse ponto.</td>
+      </tr>
+      <tr>
+        <td>tampão_rápido</td>
+        <td>Tampão especial &quot;despojado&quot; que é extremamente rápido de ler/escrever. Só pode ser usado com <a href="buffer_read.htm">tipos de dados</a> <tt>buffer_u8</tt>, e <i>deve</i> estar alinhado a 1 byte.</td>
+      </tr>
+      <tr>
+        <td>buffer_vbuffer</td>
+        <td>Este tipo de tampão deve ser usado somente como um tampão de vértice.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Além do tipo de amortecedor, você também terá que definir o <i>alinhamento de bytes</i> para o amortecedor. Este valor variará dependendo dos dados que você deseja armazenar no buffer, e na maioria dos casos um valor de 1 é perfeitamente bom. Entretanto, esteja ciente de que
+    para algumas operações é <i>essencial</i> um alinhamento específico, e um alinhamento incorreto pode causar erros (para mais detalhes sobre alinhamento, ver <a href="../../../Additional_Information/Guide_To_Using_Buffers.htm">Buffers</a>). O seguinte é um geral
+    guia para mostrar quais valores são mais apropriados para cada tipo de dado (quando em dúvida, use um alinhamento de 1):</p>
+  <ul class="colour">
+    <li>As cordas devem ser alinhadas a 1 byte.</li>
+    <li>Inteiros de 8 bits assinados ou não podem ser alinhados a qualquer valor, mas note que para um buffer rápido (veja <a href="buffer_write.htm"><tt>buffer_write()</tt></a>) <i>deve</i> ser alinhado a 1.</li>
+    <li>Inteiros de 16 bits assinados ou não assinados devem ser alinhados a 2 bytes.</li>
+    <li>Os inteiros de 32 bits assinados ou não devem ser alinhados a 4 bytes</li>
+    <li>Flutuadores de até 16bits devem ser alinhados a 2 bytes. <i>(Não suportado atualmente!)</i></li>
+    <li>Flutuadores de até 32bits devem ser alinhados a 4 bytes.</li>
+    <li>Flutuadores de até 64bits devem ser alinhados a 8 bytes.</li>
+  </ul>
+  <p class="note"><b>NOTA</b>: O alinhamento dos bytes pode ser muito importante, pois a escolha errada pode afetar negativamente o desempenho.</p>
+  <p class="note"><b>NOTA</b>: É importante que você remova da memória qualquer recurso criado dinamicamente como este quando não precisar mais deles para evitar vazamentos de memória, então quando terminar com o buffer que você criou, você deve liberá-lo novamente
+    usando <span style="font-size:1px;"><a href="buffer_delete.htm"><tt style="font-size: 14px">buffer_delete()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">buffer_create(tamanho, tipo, alinhamento)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tamanho</td>
+        <td>O tamanho (em bytes) do buffer.</td>
+      </tr>
+      <tr>
+        <td>tipo</td>
+        <td>O tipo de buffer a criar (ver a lista de constantes acima).</td>
+      </tr>
+      <tr>
+        <td>alinhamento</td>
+        <td>O alinhamento de bytes para o buffer</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Int (ID do buffer Vertex)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">player_buffer = buffer_create(16384, buffer_fixed, 2);</p>
+  <p>O código acima aloca 16384 bytes de memória a um buffer e retorna o índice desse buffer, que é armazenado na variável &quot;player_buffer&quot;, para uso futuro. O buffer é alinhado a um limite de dois bytes.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Buffers.htm">Tampões</a></div>
+        <div style="float:right">Próximo: <a href="buffer_create_from_vertex_buffer.htm">buffer_create_from_vertex_buffer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_create
+buffer_fixed
+buffer_grow
+buffer_wrap
+buffer_fast
+buffer_vbuffer
+-->
+  <!-- TAGS
+buffer_create
+-->
+</body>
+</html>

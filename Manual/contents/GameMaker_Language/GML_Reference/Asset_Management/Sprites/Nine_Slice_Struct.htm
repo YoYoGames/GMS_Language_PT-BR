@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Estrutura de nove fatias</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet Matharoo" />
+  <meta name="topic-comment" content="Page explaining the contents of a Nine Slice struct" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Nine Slice,9slice,9-slice,9 slice" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>As Nove Estruturas em Fatias</h1>
+  <p>Uma <a href="../../../GML_Overview/Structs.htm">estrutura de</a> nove fatias pode ser criada usando <a href="Sprite_Manipulation/sprite_nineslice_create.htm" title="sprite_nineslice_create"><span class="inline">sprite_nineslice_create()</span></a>ou recuperado
+    de um duende usando <a href="Sprite_Information/sprite_get_nineslice.htm" title="sprite_get_nineslice"><span class="inline">sprite_get_nineslice()</span></a>. Esta estrutura conterá propriedades que podem ser alteradas e aplicadas a um duende usando
+    <a href="Sprite_Manipulation/sprite_set_nineslice.htm" title="sprite_set_nineslice"><span class="inline">sprite_set_nineslice()</span></a>.</p>
+  <p>Se recuperada de um duende, <strong>a </strong>mudança de valores nesta estrutura afetará o duende original.</p>
+  <p>As seguintes propriedades estarão disponíveis nesta estrutura:</p>
+  <ul class="colour">
+    <li><strong>habilitado</strong>: Este <a class="glossterm" data-glossterm="booleano" href="#">booleano</a> será <strong>verdadeiro </strong>se <span data-keyref="Nine Slicing">Nove fatias</span> estiverem ativadas para o duende, e <strong>falso </strong>se estiver
+      inválido. Você pode modificar isto para habilitar ou desabilitar <span data-keyref="Nine Slicing">Nove fatias</span> para o duende.</li>
+    <li><strong>esquerda</strong>: Este é o desvio para a guia esquerda no eixo x, em relação à borda esquerda do duende.</li>
+    <li><strong>certo</strong>: Este é o desvio para a guia direita no eixo x, em relação à borda direita do duende.</li>
+    <li><strong>topo</strong>: Este é o desvio para a guia superior no eixo y, em relação à borda superior do duende.</li>
+    <li><strong>inferior</strong>: Este é o desvio para a guia inferior no eixo y, em relação à borda inferior do duende.</li>
+    <li><strong>modo azulejo</strong>: Isto retorna uma <a href="../../../GML_Overview/Arrays.htm">matriz</a> contendo os <strong>Modos de Ladrilho</strong> para a borda e as fatias centrais.</li>
+  </ul>
+  <p>O <strong>Modo Tile de</strong> cada fatia pode ser lido ou modificado usando estas constantes como índice de array:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td><tt>nineslice_esquerda</tt></td>
+        <td>A fatia da borda esquerda</td>
+      </tr>
+      <tr>
+        <td><tt>nineslice_top</tt></td>
+        <td>A fatia superior da borda</td>
+      </tr>
+      <tr>
+        <td><tt>nineslice_right</tt></td>
+        <td>A fatia da borda direita</td>
+      </tr>
+      <tr>
+        <td><tt>nineslice_bottom</tt></td>
+        <td>A fatia inferior da borda</td>
+      </tr>
+      <tr>
+        <td><tt>nineslice_centre</tt></td>
+        <td>A fatia central</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>O <strong>Modo Tile</strong> para uma fatia será (ou pode ser definido para) uma das seguintes constantes:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td><tt>nineslice_stretch</tt></td>
+        <td>A fatia será esticada</td>
+      </tr>
+      <tr>
+        <td><tt>nineslice_repeat</tt></td>
+        <td>A fatia será repetida</td>
+      </tr>
+      <tr>
+        <td><tt>nineslice_mirror</tt></td>
+        <td>A fatia será repetida por espelhamento</td>
+      </tr>
+      <tr>
+        <td><tt>nineslice_blank</tt></td>
+        <td>A fatia não será esticada ou repetida, resultando em uma área em branco após a fatia</td>
+      </tr>
+      <tr>
+        <td><tt>nineslice_hide</tt></td>
+        <td>A fatia não aparecerá de forma alguma</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Como <strong>o modo azulejo </strong>é uma matriz, você precisa usar a sintaxe da matriz para mudar o modo azulejo de uma fatia. O exemplo de código abaixo define o Modo Tilemode da fatia superior como <strong>Repeat</strong>:</p>
+  <h4>Exemplo:</h4>
+  <p class="code"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Calibri,sans-serif"><span style="font-family:Consolas">var _nineslice = sprite_get_nineslice(spr_box);<br>
+<br>
+_nineslice.tilemode<strong>[nineslice_top</strong>] = <strong>nineslice_repeat</strong>;</span></span>
+    </span>
+    </span>
+  </p>
+  <p>Veja <a href="../../../../The_Asset_Editors/Sprite_Properties/Nine_Slices.htm" title="Nine Slice">esta página</a> para mais informações sobre a técnica das Nove Fatias.</p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Asset_Management.htm">Gestão de ativos</a></div>
+        <div style="float:right">A seguir: <a href="../Tilsets/Tile_Sets.htm">Conjuntos de azulejos</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sprites
+-->
+  <!-- TAGS
+sprite_functions
+-->
+
+</body></html>

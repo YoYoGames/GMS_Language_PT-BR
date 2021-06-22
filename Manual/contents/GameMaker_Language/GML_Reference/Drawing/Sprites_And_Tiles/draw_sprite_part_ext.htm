@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_sprite_part_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_sprite_part_ext" />
+  <meta name="rh-index-keywords" content="draw_sprite_part_ext" />
+  <meta name="search-keywords" content="draw_sprite_part_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_sprite_part_ext</h1>
+  <p>Esta função atrairá uma parte do duende escolhido na posição dada, seguindo as mesmas regras de acordo com <a href="draw_sprite_part.htm"><tt>draw_sprite_part()</tt></a>só agora você pode escalar a peça, misturar uma cor com ela, ou mudar seu alfa quando
+    desenhando-o para a tela (o mesmo que quando se desenha um duende com <a href="draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a>). Você deve observar que se a página de textura permite o corte automático, então esta função pode não funcionar como esperado, uma vez que
+    o espaço extra &quot;vazio&quot; ao redor do duende terá sido removido para criar a página de textura. Para resolver este problema, será necessário definir as configurações da página de textura (no <a href="../../../../Settings/Texture_Groups.htm">Editor do Grupo de Textura</a>)
+    para desativar o <b>cultivo automático</b>.</p>
+  <p class="note"><b>NOTA: </b>Ao desenhar com esta função, o <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">desvio</a> sprite <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">x</a> e <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">y</a> são ignorados e a parte sprite será desenhada com o canto superior esquerdo na posição x / y especificada na sala.</p>
+  <p class="note"><b>NOTA</b>: Esta função é útil apenas para sprites <b>bitmap</b> e não funcionará com sprites SWF ou JSON (Espinha).</p>
+  <p class="note"><b>NOTA</b>: A mistura de cores só é recomendada para o alvo HTML5 quando a WebGL está habilitada, embora você ainda possa definir a cor da mistura se ela não estiver habilitada e ela irá misturar o sprite como normal. Entretanto, toda mistura desta forma cria uma duplicata
+    sprite, que é então armazenado no cache e utilizado quando necessário. Isto está longe de ser ideal e se você usar mudanças múltiplas de cor, isso irá diminuir o desempenho de seus jogos a menos que você ative o WebGL. se você não quiser usar o WebGL, então você pode definir
+    o tamanho do cache da fonte para tentar limitá-lo, caso seja necessário, utilizando a função <a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_set_cache_size_ext.htm"><tt>sprite_set_cache_size()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">draw_sprite_part_ext(sprite, subimg, left, top, width, height, x, y, xscale, yscale, color, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>O índice do duende a desenhar.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td>O subimg (frame) do duende a desenhar (image_index ou -1 correlacionado com o frame atual da animação no objeto).</td>
+      </tr>
+      <tr>
+        <td>esquerda</td>
+        <td>A posição x no duende do canto superior esquerdo da área a desenhar.</td>
+      </tr>
+      <tr>
+        <td>topo</td>
+        <td>A posição y no fustão do canto superior esquerdo da área a desenhar.</td>
+      </tr>
+      <tr>
+        <td>largura</td>
+        <td>A largura da área a ser desenhada.</td>
+      </tr>
+      <tr>
+        <td>altura</td>
+        <td>A altura da área a desenhar.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A coordenada x de onde desenhar o duende.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A coordenada y de onde desenhar o duende.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>A escalada horizontal do duende, como um multiplicador: 1 = escalada normal, 0,5 é metade, etc...</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>A escalada vertical do duende, como um multiplicador: 1 = escalada normal, 0,5 é metade etc...</td>
+      </tr>
+      <tr>
+        <td>cor</td>
+        <td>A cor com a qual se deve misturar o duende. c_white é para exibi-lo normalmente.</td>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>O alfa do duende (de 0 a 1 onde 0 é transparente e 1 opaco).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">draw_sprite_part_ext(sprite_index, image_index, 8, 8, sprite_width-16, sprite_height-16, x, y, 2, 0,5, c_black, 1);</p>
+  <p>Isto atrairá as instâncias atribuídas ao duende (sprite_index) e seu quadro atual de animação (image_index), porém raspará uma margem de 8px em todos os quatro lados do duende. Será então esticada para dobrar sua largura habitual, mas metade de sua largura habitual.
+    altura, e embora o alfa ainda seja 1, ele será misturado com preto (transformando-o em uma silhueta).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sprites_And_Tiles.htm">Sprites e Azulejos</a></div>
+        <div style="float:right">A seguir: <a href="draw_sprite_stretched.htm">draw_sprite_streteched</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite_part_ext
+-->
+  <!-- TAGS
+draw_sprite_part_ext
+-->
+</body>
+</html>

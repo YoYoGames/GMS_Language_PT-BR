@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>esqueleto_criar_aplicação</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_attachment_create" />
+  <meta name="rh-index-keywords" content="skeleton_attachment_create" />
+  <meta name="search-keywords" content="skeleton_attachment_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>esqueleto_criar_aplicação</h1>
+  <p>Quando você cria um duende de animação esquelética, você pode atribuir <i>ranhuras de fixação</i> e <i>anexos</i> para ir nelas. Estas são simplesmente imagens que estão separadas da animação, mas quando anexadas
+    se moverá junto com o osso ao qual estão presos. Normalmente você atribuiria estes anexos em seu programa de animação (Coluna vertebral), mas com esta função você pode criar o seu próprio em tempo de execução usando um ativo sprite de seu jogo. a função requer
+    que você dê um nome ao anexo (como uma corda) e depois defina o sprite_index e image_index a usar, assim como a origem x e y (que pode ser diferente daquela definida pelo sprite nas propriedades do sprite), e você também pode definir qualquer transformação
+    que você deseja que seja aplicado à imagem quando anexado. Se o anexo foi criado com sucesso, a função retornará <tt>1</tt> e se não foi (você forneceu um índice sprite inválido, ou o sprite de base não é uma espinha dorsal
+    sprite) então ele retornará <tt>-1</tt>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">esqueleto_criar_criar(nome, duende, ind, xorigem, yorigin, escala x, escala y, podridão);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>nome</td>
+        <td>O nome (como um fio) do anexo a ser criado.</td>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>O sprite_index para obter a imagem de anexo.</td>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>A imagem_index para obter a imagem de anexo.</td>
+      </tr>
+      <tr>
+        <td>xorigem</td>
+        <td>A origem x para a imagem que está sendo utilizada.</td>
+      </tr>
+      <tr>
+        <td>yorigin</td>
+        <td>A origem y para a imagem que está sendo utilizada.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>A escala horizontal da imagem, como um multiplicador: 1 = escala normal, 0,5 é metade, etc...</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>A escala vertical da imagem, como um multiplicador: 1 = escala normal, 0,5 é metade, etc...</td>
+      </tr>
+      <tr>
+        <td>podridão</td>
+        <td>A rotação da imagem. 0=normal, 90=voltada 90 graus no sentido anti-horário, etc.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">1 se bem-sucedido, -1 se não</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">skeleton_attachment_create(&quot;espada&quot;, spr_Weapons, 0, 0, 80, 1, 1, 90);<br> skeleton_attachment_create(&quot;faca&quot;, spr_Weapons, 1, 0, 45, 1, 1, 1, 90);<br> skeleton_attachment_create(&quot;crossbow&quot;, spr_Weapons, 0, 10, 30, 1, 1, 1,
+    0);<br> skeleton_attachment_set(&quot;slot_leftHand&quot;, choose(&quot;sword&quot;, &quot;knife&quot;, &quot;crossbow&quot;)));</p>
+  <p>O código acima verificaria o nome do anexo atualmente atribuído para o slot chamado &quot;slot_leftHand&quot; e se uma cadeia vazia for devolvida, um novo sprite é anexado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Attachments.htm">Anexos:</a></div>
+        <div style="float:right">A seguir: <a href="skeleton_attachment_create_colour.htm">esqueleto_criar_cores</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_attachment_create
+-->
+  <!-- TAGS
+skeleton_attachment_create
+-->
+</body>
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>vapor_inicializado</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_initialised" />
+  <meta name="rh-index-keywords" content="steam_initialised" />
+  <meta name="search-keywords" content="steam_initialised" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">vapor_inicializado</span></h1>
+  <p>Ao utilizar o <span class="notranslate">Steam</span> API, esta função pode ser chamada para verificar se o <span class="notranslate">Steam</span> API do cliente foi inicializado corretamente antes de qualquer outra chamada para funções específicas do <span class="notranslate">Steam</span> em seu jogo.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code"><span class="notranslate">vapor_inicializado</span>();</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">global.<span class="notranslate">steam_api</span>= falso;<br> if <span class="notranslate">steam_initialised</span>()<br> {
+    <br> if <span class="notranslate">steam_stats_ready</span>() &amp;&amp; steam_is_overlay_enabled()<br> {
+    <br> global.<span class="notranslate">steam_api</span>= true;<br> }
+    <br> }
+  </p>
+  <p>O código acima definirá uma variável global como <tt>verdadeira</tt> se a API do cliente <span class="notranslate">Steam</span> for inicializada corretamente, juntamente com as estatísticas e a funcionalidade de sobreposição do <span class="notranslate">Steam</span>, ou definirá a variável como <tt>falsa</tt> de outra forma.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Steam_API.htm">General <span class="notranslate">Steam</span></a>API</div>
+        <div style="float:right">Próximo: <a href="steam_stats_ready.htm"><span class="notranslate">steam_stats_ready</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_initialised
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_initialised
+-->
+</body>
+</html>

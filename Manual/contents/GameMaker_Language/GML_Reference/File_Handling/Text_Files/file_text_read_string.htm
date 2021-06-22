@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>file_text_read_string</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for file_text_read_string" />
+  <meta name="rh-index-keywords" content="file_text_read_string" />
+  <meta name="search-keywords" content="file_text_read_string" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>file_text_read_string</h1>
+  <p>Com esta função você pode ler uma string de um arquivo de texto e a função retorna esse valor para ser usado ou armazenado em uma variável.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">file_text_read_string(fileid);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>fileid</td>
+        <td>A identificação do arquivo a ser lido.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Cordão</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var file = file_text_open_read(working_directory + &quot;hiscore.txt&quot;);<br> for (var i = 0; i &lt; 10; ++i;)<br> {
+    <br> scr[i] = file_text_read_real(file);<br> file_text_readln(file);
+    <br> scr_name[i] = file_text_read_string(file);<br> file_text_readln(file);
+    <br> }
+    <br> file_text_close(file);
+  </p>
+  <p>O código acima abre um arquivo para leitura e depois percorre as linhas da leitura do arquivo alternadamente um valor numérico real e uma cadeia em duas matrizes diferentes para uso futuro. O arquivo é então fechado quando o loop tiver terminado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Text_Files.htm">Arquivos de texto</a></div>
+        <div style="float:right">Próximo: <a href="file_text_readln.htm">file_text_readln</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+file_text_read_string
+-->
+  <!-- TAGS
+file_text_read_string
+-->
+</body>
+</html>

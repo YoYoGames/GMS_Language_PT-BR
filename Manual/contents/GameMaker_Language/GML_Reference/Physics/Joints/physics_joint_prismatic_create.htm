@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_joint_prismatic_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_joint_prismatic_create" />
+  <meta name="rh-index-keywords" content="physics_joint_prismatic_create" />
+  <meta name="search-keywords" content="physics_joint_prismatic_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_joint_prismatic_create</h1>
+  <p>Como uma junta revoluta, a junta prismática tem apenas um grau de liberdade, mas com esta junta é direcional em relação a um eixo em vez de rotacional e realmente impede qualquer forma de rotação. Aqui está uma imagem para ajudá-lo a visualizar como isto funciona:</p>
+  <p><img alt="Prismatic joint anchor points illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/prismatic_joint_image_1.png">Temos duas instâncias unidas no ponto de ancoragem, com um eixo de movimento
+    definido a partir do vetor as duas coordenadas w_eixo x/y em relação às (0,0) coordenadas do mundo físico (assim um componente x de 0 e um componente y de 1 (0,1) faria da junta uma junta prismática vertical). Esta junta <i>só</i> pode então se mover
+    em relação a este eixo, como uma mola ou um pistão. Se você definir o limite trans inferior ou superior, você está basicamente limitando a quantidade de movimento ao longo deste eixo, onde a posição 0 é o ponto exato que você definiu com w_anchor x/y, portanto um
+    valor iria para a &quot;esquerda&quot; daquele ponto ao longo do eixo e um valor positivo para a &quot;direita&quot; como mostrado no diagrama seguinte (perceba que &quot;esquerda&quot; e &quot;direita&quot; são termos relativos!):</p>
+  <p><img alt="Prismatic joint limits illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/prismatic_joint_image_2.png">Você também pode definir a junta como tendo ou não um motor. Isto significa que, quando não influenciada
+    por uma colisão a junta se moverá em uma direção ao longo do eixo. esta direção é definida pela velocidade do motor, com um número positivo sendo em direção às coordenadas do eixo (&quot;direita&quot;) e um número negativo sendo em direção ao ponto de ancoragem (&quot;esquerda&quot;).
+    O argumento &quot;max_motor_force&quot; é para limitar a velocidade do movimento de modo que não se obtenha um motor em perpétua aceleração e para limitar a influência que uma colisão pode ter sobre o movimento. Desta forma, você pode usar um motor conjunto
+    para simular o atrito da junta, ajustando a velocidade da junta a zero e a força máxima a algum valor pequeno, mas significativo. O motor tentará evitar que a junta se mova, mas cederá a uma carga significativa.</p>
+  <p>Como em todas as juntas, se você definir o valor &quot;col&quot; como verdadeiro, então <tt>as</tt> duas instâncias podem interagir e colidir uma com a outra, mas somente se <i>elas</i> tiverem eventos de colisão, porém, se for definido como falso, <tt>elas</tt> não irão colidir
+    não importa o que aconteça.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">physics_joint_prismatic_create(inst1, inst2, w_anchor_x, w_anchor_y, w_axis_x, w_axis_x, lower_trans_limit, upper_trans_limit, limit, max_motor_force, motor_speed, motor, col)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>inst1</td>
+        <td>A primeira instância para se conectar com a junta</td>
+      </tr>
+      <tr>
+        <td>inst2</td>
+        <td>A segunda instância para se conectar com a junta</td>
+      </tr>
+      <tr>
+        <td>w_anchor_x</td>
+        <td>A coordenada x onde a articulação está ancorada, dentro do mundo do jogo</td>
+      </tr>
+      <tr>
+        <td>w_anchor_y</td>
+        <td>A coordenada y onde a articulação está ancorada, dentro do mundo do jogo</td>
+      </tr>
+      <tr>
+        <td>w_axis_x</td>
+        <td>O componente x do vetor do eixo</td>
+      </tr>
+      <tr>
+        <td>w_axis_y</td>
+        <td>O componente y do vetor do eixo</td>
+      </tr>
+      <tr>
+        <td>limite_baixo_de_trans</td>
+        <td>O limite inferior permitido para o movimento articular</td>
+      </tr>
+      <tr>
+        <td>limite_superior_de_trans</td>
+        <td>O limite inferior permitido para o movimento articular</td>
+      </tr>
+      <tr>
+        <td>limite</td>
+        <td>Se limitar o movimento da articulação (verdadeiro) ou não (falso)</td>
+      </tr>
+      <tr>
+        <td>max_motor_force</td>
+        <td>Define a velocidade máxima de movimento para o motor</td>
+      </tr>
+      <tr>
+        <td>velocidade_do_motor</td>
+        <td>Esta é a velocidade na qual o motor deve se mover</td>
+      </tr>
+      <tr>
+        <td>motor</td>
+        <td>Se o motor deve estar ativo (verdadeiro) ou não (falso)</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Se as duas instâncias podem colidir (verdadeiras) ou não (falsas)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Inteiro (índice da junta)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var mainFixture, o_id;<br> mainFixture = physics_fixture_create();<br> physics_fixture_set_circle_shape(mainFixture, sprite_get_width(sprite_index) / 2);<br> o_id = instance_create_layer(x+25, y, &quot;Instances&quot;, obj_Piston);<br> physics_fixture_bind(mainFixture_bind(mainFixture),
+    id);<br> physics_fixture_bind(mainFixture, o_id);<br> physics_joint_prismatic_create(id, o_id, x, y, 0, 10, 0, 0, 0, 0, 5, 0, 1, 1);<br> physics_fixture_delete(mainFixture);
+  </p>
+  <p>O código acima cria e define uma nova fixação e depois cria uma instância de &quot;obj_Piston&quot;, ligando a fixação criada aos dois novos objetos. Eles são então unidos por uma junta prismática com a posição da âncora nas mesmas coordenadas x/y
+    da primeira instância e um eixo formado pelo vetor da posição x/y e o eixo x/y (neste caso 0,10, que é &quot;para baixo&quot;). Não há limites para a quantidade de movimento ao longo deste eixo, mas adicionamos um motor com velocidade 0
+    e uma força máxima de 5 para simular o atrito articular.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Joints.htm">Juntas</a></div>
+        <div style="float:right">A seguir: <a href="physics_joint_pulley_create.htm">physics_joint_pulley_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_prismatic_create
+-->
+  <!-- TAGS
+physics_joint_prismatic_create
+-->
+</body>
+</html>

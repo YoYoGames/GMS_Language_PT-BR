@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Criando um ativo no mercado</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining how to make a Marketplace package" />
+  <meta name="rh-index-keywords" content="Marketplace - Creating An Asset" />
+  <meta name="search-keywords" content="Marketplace,upload,package" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Criando um ativo <span class="notranslate">no mercado</span> </h1>
+  <p>Ao selecionar a opção <strong>Criar Pacote</strong> no <a href="../../IDE_Navigation/Menus/The_Marketplace_Menu.htm">Menu<span class="notranslate">do</span></a> IDE <a href="../../IDE_Navigation/Menus/The_Marketplace_Menu.htm"><span class="notranslate">Marketplace</span></a> você será levado para o seguinte espaço de trabalho:<img alt="Marketplace Create Package" class="center" src="../../assets/Images/Introduction/Tools_Marketplace_CreatePackage.png"> <span style="display: none;"> </span> <span class="droptext" data-targetname="drop_down4"> <span class="dropspot">Aqui</span></span> você deve primeiro selecionar a Editora
+    identidade que você deseja publicar o pacote de bens como (que você deveria ter criado a partir de seu <a href="Creating_A_Publisher_Account.htm">Painel da Editora</a>), então dê um <strong>Nome de Exibição</strong> e um <a class="glossterm" data-glossterm="Número da versão" href="#">Número de Versão</a>. Um ID de pacote será então criado para você com base no nome de exibição e na conta do editor utilizada, mas você pode editar isto para ser algo mais se desejar, desde que mantenha o formato de URL inversa. Em seguida, você precisará escolher
+    o tipo de pacote de bens a fazer:</p>
+  <ul class="colour">
+    <li class="dropspot"><strong>Ativo</strong>: Esta é uma coleção de ativos (sprites, scripts, objetos, etc...) que você deseja vender no <span class="notranslate">Mercado</span></li>
+    <li class="dropspot"><strong>Demonstração</strong>: Esta é uma demonstração para demonstrar algum conceito ou idéia de jogo</li>
+    <li class="dropspot"><strong>Tutorial</strong>: O recurso que está sendo carregado é um tutorial, projetado para ser executado a partir da IDE <span class="notranslate">GameMaker Studio 2</span> (veja <a href="Creating_A_Tutorial.htm">esta página</a> para mais detalhes)</li>
+  </ul>
+  <p>Uma vez feito isso, você pode escolher quais ativos do projeto você deseja adicionar ao Pacote de Ativos usando a seção à direita. Você pode adicionar todos os seus bens, ou apenas alguns deles, bem como remover qualquer um que você tenha adicionado por engano.
+    Presume-se que você tenha criado o ativo a ser carregado anteriormente no <span class="notranslate">GameMaker Studio 2</span> e que o projeto atual contenha tudo o que você precisa para carregar.</p>
+  <p class="note"><strong>LEMBRE-SE!</strong> Para poder criar ou utilizar pacotes de ativos, você deve ter criado previamente um certificado de perfil de usuário. Você pode fazer isto a partir das Preferências <span class="notranslate">do Mercado</span>, que são explicadas <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Marketplace_Preferences.htm">aqui</a>.</p>
+  <p>Quando você estiver satisfeito com a seleção de ativos e quiser carregar seu pacote no <span class="notranslate">Marketplace</span>, basta clicar no botão <em>Ok</em> na parte inferior, e o pacote de ativos será criado e carregado para o <span class="notranslate">Marketplace</span>. Quando o upload estiver completo,
+    um novo espaço de trabalho será aberto com uma visão do navegador da página de recursos para que você possa editar. Para mais informações sobre como configurá-lo, consulte a página seguinte:</p>
+  <ul class="colour">
+    <li><a href="Listing_An_Asset.htm">Listagem de um ativo</a></li>
+  </ul>
+  <p>Se você precisar atualizar um ativo do <span class="notranslate">Marketplace</span>, faça mais ou menos o mesmo que fez quando criou o pacote original, somente agora você precisa especificar o pacote a ser atualizado a partir de uma lista suspensa de pacotes disponíveis:</p>
+  <p><img alt="Update Asset List Of Assets" class="center" src="../../assets/Images/Introduction/Tools_Marketplace_UpdateAsset.png">Ao atualizar, você não poderá alterar o ID do pacote, e deve estar ciente de que o <a class="glossterm" data-glossterm="Número da versão" href="#">Número da Versão</a> mostrado será o número da versão <em>atual </em>e você <strong>deve incrementá-lo conforme apropriado</strong>, caso contrário a atualização falhará (já que você não pode ter dois pacotes de ativos com o mesmo número de versão). Lá
+    é também um campo onde você pode adicionar algum texto para o registro de mudanças do ativo, e este será carregado junto com o ativo e exibido na página <span class="notranslate">do Marketplace</span>. </p>
+  <p class="note"><strong>IMPORTANTE!</strong> Ativos feitos com <span class="notranslate">GameMaker Studio</span> versão 2.3+ só estarão disponíveis para aqueles usuários que estiverem usando a versão 2.3 e superior. Se você estiver atualizando um ativo de uma versão anterior, esse ativo ainda estará disponível para os usuários
+    que não atualizaram e irão coexistir com a versão atualizada 2.3+.</p>
+  <p> </p>
+  <h2>Carregando embora a página da Web</h2>
+  <p>Você pode fazer o upload de ativos através da página real <span class="notranslate">do Marketplace</span> em vez da IDE, algo que pode ser necessário se o upload através da IDE falhou por qualquer razão. Para começar, você criaria o pacote e tentaria fazer o upload através
+    a IDE como mostrado acima, e se ela falhou, então vá para a <a href="../The_Output_Window.htm">Janela de Saída</a> e verifique o log para uma linha que mostra onde o pacote que você está criando foi salvo antes de tentar o upload. Por exemplo:</p>
+  <p>Em <strong><span class="notranslate">Windows</span></strong>:</p>
+  <p class="code">Arquivo do pacote criado:<br> C:\Users\WINDOWSUSERNAME\AppData\Roaming\GameMakerStudio2\GMS2USERNAME\Marketplace\Packages\com.publishername.assetname.yymp
+  </p>
+  <p>Em <strong><span class="notranslate">macOS</span></strong>:</p>
+  <p class="code">Arquivo do pacote criado:<br> /Users/MACUSERNAME/.config/GameMakerStudio2/GMS2USERNAME/Marketplace/Packages/com.publishername.assetname.yymp
+  </p>
+  <p>Você precisa navegar até esse local de arquivo e copiar o arquivo <span class="inline">*.YYMP</span> para um local seguro, pois este será o arquivo que você estará carregando para o <span class="notranslate">Marketplace</span>.</p>
+  <p>Neste ponto você precisa abrir o <span class="notranslate">Marketplace</span> em seu navegador e navegar até a listagem de ativos para o ativo e depois ir para a seção <strong>Versões</strong>, e então clicar no botão <strong>Upload Version</strong>, como mostrado na imagem
+    abaixo:</p>
+  <p><img alt="Upload A New Asset Version" class="center" src="../../assets/Images/Introduction/MP_CreateVersion.png">Isto o levará para a página de upload da nova versão, onde você pode adicionar informações sobre a versão que está sendo carregada, se necessário
+    e também fornecer o arquivo clicando no botão <strong>Choose FIle</strong> e selecionando o arquivo <span class="inline">*.YYMP</span> previamente criado:</p>
+  <p><img alt="New Version Marketplace Upload Window" class="center" src="../../assets/Images/Introduction/MP_NewVersion.png">A adição do arquivo fará o upload das versões e mostrará uma barra de &quot;progresso&quot;, e quando o upload estiver terminado e estiver satisfeito com
+    os detalhes, você pode então clicar no botão <strong>Salvar</strong> para salvar o ativo na listagem. Observe que o bem estará na fase de <strong>Processamento</strong> por alguns minutos antes de poder ser publicado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../The_Marketplace.htm">O <span class="notranslate">Mercado</span></a></div>
+        <div style="float:right">A seguir: <a href="Creating_A_Tutorial.htm">Criando um Tutorial de <span class="notranslate">Mercado</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Marketplace</span> - Creating An Asset Package
+<span class="notranslate">Marketplace</span> - Updating An Asset
+Updating <span class="notranslate">Marketplace</span>
+Creating <span class="notranslate">Marketplace</span> Assets
+-->
+  <!-- TAGS
+marketplace_create
+-->
+
+</body></html>

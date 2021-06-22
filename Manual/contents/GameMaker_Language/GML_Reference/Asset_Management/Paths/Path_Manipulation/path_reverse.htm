@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>path_reverse</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_reverse" />
+  <meta name="rh-index-keywords" content="path_reverse" />
+  <meta name="search-keywords" content="path_reverse" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>path_reverse</h1>
+  <p>Com esta função é possível inverter a ordem na qual os pontos individuais do caminho são numerados, assim, por exemplo, se o caminho tiver 5 pontos, o ponto 0 se tornaria o ponto 4, o ponto 1 seria o ponto 3 e o ponto 2 não seria alterado. A posição real de
+    os pontos permanecem os mesmos, apenas a ordem em que são processados é alterada. <strong>Esta função muda o ativo do caminho real</strong>, e assim afetará permanentemente como o caminho é usado por todas as instâncias no jogo, a partir do momento em que o
+    é utilizada até o final do jogo. Se isto não for o que você precisa, então você deve usar uma função como <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span> para criar uma cópia do caminho primeiro, então chame esta função
+    sobre o bem duplicado (não esqueça de ligar para <span class="inline"><a href="path_delete.htm">path_delete()</a></span> sobre o bem quando ele não for mais necessário).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">path_reverse(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice do caminho para a mudança.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">path_reverse(pth_AI);</p>
+  <p>Isto inverteria a ordem na qual todos os pontos do caminho dado são processados.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Path_Manipulation.htm">Manipulação do caminho</a></div>
+        <div style="float:right">Próximo: <a href="path_rotate.htm">caminho_rota</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_rotate
+-->
+  <!-- TAGS
+path_rotate
+-->
+</body>
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>vertex_create_buffer_from_buffer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_create_buffer_from_buffer" />
+  <meta name="rh-index-keywords" content="vertex_create_buffer_from_buffer" />
+  <meta name="search-keywords" content="vertex_create_buffer_from_buffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>vertex_create_buffer_from_buffer</h1>
+  <p>Como com a função <a href="vertex_create_buffer.htm"><tt>vértice_criate_buffer()</tt></a>Esta função criará um novo buffer de vértices, só que agora os dados de vértices que armazena são copiados do buffer regular que é especificado como a fonte. O buffer
+    criado é um buffer especial de <i>crescimento</i> que é pré-formatado com o formato de vértice para construir primitivos para uso com (por exemplo) <span class="notranslate">shaders</span>. Esta função requer que você forneça o ponteiro para um buffer regular previamente criado, e um vértice
+    formato que deve ser aplicado aos dados copiados.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">vertex_create_buffer_from_buffer(buffer, formato);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tampão</td>
+        <td>O buffer para criar o buffer de vértices.</td>
+      </tr>
+      <tr>
+        <td>formato</td>
+        <td>O formato primitivo do vértice a ser utilizado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Apontador</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">vertex_format_begin();<br> vertex_format_add_position_3d();
+    <br> vertex_format_add_colour();
+    <br> vertex_format_add_textcoord();
+    <br> var my_format = vtex_format_end();<br> v_buff = vtex_create_buffer_from_buffer(global.modelBuff, myFormat);</p>
+  <p>O código acima criará um novo formato de vértice e então criará um novo buffer de vértice a partir de um buffer regular criado anteriormente, aplicando a ele o formato de vértice personalizado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Primitives_And_Vertex_Formats.htm">Primitivos e formatos de vértices</a></div>
+        <div style="float:right">A seguir: <a href="vertex_create_buffer_from_buffer_ext.htm">vertex_create_buffer_from_buffer_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+vertex_create_buffer_from_buffer
+-->
+  <!-- TAGS
+vertex_create_buffer_from_buffer
+-->
+
+</body></html>

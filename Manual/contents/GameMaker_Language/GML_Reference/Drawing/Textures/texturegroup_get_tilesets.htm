@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>grupos de texturas_get_tilesets</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ​texturegroup_get_tilesets" />
+  <meta name="rh-index-keywords" content="texturegroup_get_tilesets" />
+  <meta name="search-keywords" content="texturegroup_get_tilesets" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>grupos de texturas_get_tilesets</h1>
+  <p>Com esta função você pode recuperar o índice de cada um dos tileset atribuídos às páginas de textura dentro de um determinado grupo de textura. Você fornece a cadeia de identificação do grupo de textura (como definido no Editor de Grupo de Textura) e a função retornará um 1D
+    onde cada entrada contém o índice de tileset para um recurso de tileset. Se a função falhar - ou seja: um grupo inválido é dado, ou o grupo não tem textura atribuída a ele - então a matriz estará vazia (0 comprimento).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">texturegroup_get_tilesets(tex_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tex</td>
+        <td>O nome do grupo de textura a verificar (um fio)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">1D array</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var _tex_array = texturegroup_get_tilesets( &quot;MainMenu&quot;);<br> for (var i = 0; i &lt; array_length(_tex_array); ++i;) <br> {
+    <br> show_debug_message(&quot;Tileset &quot; + string(i) + &quot; Index:&quot; + string(tex_array[i]));<br> }
+  </p>
+  <p>O código acima recuperará os índices do tileset para o grupo de textura &quot;MainMenu&quot;, depois exibirá esses IDs na janela de saída do console.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Textures.htm">Texturas</a></div>
+        <div style="float:right">Próximo: <a href="texture_get_width.htm">textura_get_width</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+texturegroup_get_tilesets
+-->
+  <!-- TAGS
+texturegroup_get_tilesets
+-->
+</body>
+</html>

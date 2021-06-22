@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_get_info</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page explaining the function sprite_get_info" />
+  <meta name="rh-index-keywords" content="sprite_get_info" />
+  <meta name="search-keywords" content="sprite_get_info" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_get_info</h1>
+  <p>Esta função é usada para recuperar informações para o duende em questão. Você fornece um índice sprite (que pode ser um ativo adicionado através do <a href="../../../../../Introduction/The_Asset_Browser.htm">Navegador de Ativos</a> ou um sprite <a href="../Sprite_Manipulation/sprite_add.htm">adicionado</a> em <span class="notranslate">tempo de execução</span>) e a função retorna uma <a href="../../../../GML_Overview/Structs.htm">estrutura</a> com as seguintes variáveis:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th style="">Nome da variável</th>
+        <th>Tipo de dados</th>
+        <th style="">Descrição</th>
+      </tr>
+      <tr>
+        <td style=""><strong>largura</strong></td>
+        <td>real</td>
+        <td style="">A largura do duende (em pixels)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>altura</strong></td>
+        <td>real</td>
+        <td style="">A altura do duende (em pixels)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>xoffset</strong></td>
+        <td>real</td>
+        <td style="">Offset/origem em X do duende (em pixels)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>yoffset</strong></td>
+        <td>real</td>
+        <td style="">Offset em Y/origem do duende (em pixels)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>transparente</strong></td>
+        <td>booleano</td>
+        <td style=""><tt>verdadeiro</tt> se o duende for marcado como transparente, caso contrário <tt>falso</tt><br>
+         <span>(Isto só pode ser especificado através de <tt><a href="../Sprite_Manipulation/sprite_add.htm">sprite_add()</a></tt> ou funções similares, e será <tt>falso</tt></span>para sprites criados na IDE)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>smooth</strong></td>
+        <td>booleano</td>
+        <td style=""><tt>verdadeiro</tt> se o duende for marcado como liso, caso contrário <tt>falso</tt><br>
+          <span><span>(Isto só pode ser especificado através de <tt><a href="../Sprite_Manipulation/sprite_add.htm">sprite_add()</a></tt> ou funções similares, e será <tt>falso</tt> para sprites criados na IDE)</span><span></span></span>
+        </td>
+      </tr>
+      <tr>
+        <td style=""><strong>tipo</strong></td>
+        <td>real</td>
+        <td style="">O tipo de duende:<br>
+         <tt>0</tt> - Bitmap (Sprites regulares)<br>
+         <tt>1</tt> - SWF<br>
+         <tt>2</tt> - Coluna vertebral</td>
+      </tr>
+      <tr>
+        <td style=""><strong>bbox_left</strong></td>
+        <td>real</td>
+        <td style="">Posição da borda esquerda da caixa delimitadora (em pixels)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>bbox_top</strong></td>
+        <td>real</td>
+        <td style="">Posição da borda superior da caixa delimitadora (em pixels)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>bbox_right</strong></td>
+        <td>real</td>
+        <td style="">Posição da borda direita da caixa delimitadora (em pixels)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>bbox_bottom</strong></td>
+        <td>real</td>
+        <td style="">Posição da borda inferior da caixa delimitadora (em pixels)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>nome</strong></td>
+        <td>corda</td>
+        <td style="">O nome do duende</td>
+      </tr>
+      <tr>
+        <td style=""><strong>num_subimages</strong></td>
+        <td>real</td>
+        <td style="">O número de sub-imagens (ou quadros) no duende</td>
+      </tr>
+      <tr>
+        <td style=""><strong>use_mask</strong></td>
+        <td>booleano</td>
+        <td style=""><tt>verdadeiro</tt> se este duende usa uma máscara de colisão, caso contrário <tt>falso</tt></td>
+      </tr>
+      <tr>
+        <td style=""><strong>num_masks</strong></td>
+        <td>real</td>
+        <td style="">O número de máscaras neste duende (será maior que 1 se o duende usar máscaras por estrutura)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>nineslice</strong><strong></strong></td>
+        <td>estrutura</td>
+        <td style="">A <a href="../Nine_Slice_Struct.htm">estrutura de Nove fatias</a> para este duende, ou <tt>indefinida</tt> se não tiver nove dados de fatias</td>
+      </tr>
+      <tr>
+        <td style=""><strong>mensagens</strong></td>
+        <td>matriz</td>
+        <td style="">Conjunto de mensagens de difusão para este duende, onde cada mensagem de difusão é uma estrutura contendo informações sobre a mensagem (mais informações em &quot;Dados Gerais do duende&quot;)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>frame_info</strong></td>
+        <td>matriz</td>
+        <td style="">Conjunto de quadros para este duende, onde cada quadro é uma estrutura contendo informações sobre seu tempo (mais informações em &quot;Dados gerais do duende&quot;)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><strong>Esta variável adicional está disponível apenas para sprites Bitmap (regulares):</strong></p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Nome da variável</th>
+        <th style="">Tipo de dados</th>
+        <th style="">Descrição</th>
+      </tr>
+      <tr>
+        <td><strong>quadros</strong></td>
+        <td style="">matriz</td>
+        <td style="">Conjunto de quadros para este duende, onde cada quadro é uma estrutura contendo informações sobre sua textura (mais informações em &quot;Bitmap Sprite Data&quot;)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><strong>Estas variáveis adicionais estão disponíveis apenas para sprites de coluna:</strong></p>
+  <table>
+    <tbody>
+      <tr>
+        <th style="">Nome da variável</th>
+        <th>Tipo de dados</th>
+        <th style="">Descrição</th>
+      </tr>
+      <tr>
+        <td style=""><strong>num_atlas</strong></td>
+        <td>real</td>
+        <td style="">O número de texturas de atlas utilizadas</td>
+      </tr>
+      <tr>
+        <td style=""><strong>atlas_textura</strong></td>
+        <td>matriz</td>
+        <td style="">Matriz de identificações de textura utilizada para o atlas</td>
+      </tr>
+      <tr>
+        <td style=""><strong>pré-multiplicado</strong></td>
+        <td>booleano</td>
+        <td style=""><tt>verdadeiro</tt> se este duende for marcado como pré-multiplicado, caso contrário <tt>falso</tt></td>
+      </tr>
+      <tr>
+        <td style=""><strong>nomes_de_animação</strong></td>
+        <td>matriz</td>
+        <td style="">Array contendo os nomes de cada animação neste sprite</td>
+      </tr>
+      <tr>
+        <td style=""><strong>skin_names</strong></td>
+        <td>matriz</td>
+        <td style="">Array contendo os nomes de cada pele deste duende</td>
+      </tr>
+      <tr>
+        <td style=""><strong>ossos</strong></td>
+        <td>matriz</td>
+        <td style="">Matriz contendo estruturas para cada osso deste duende (mais informações em &quot;Dados de duende da coluna vertebral&quot;)</td>
+      </tr>
+      <tr>
+        <td style=""><strong>vagas</strong></td>
+        <td>matriz</td>
+        <td style="">Matriz contendo estruturas para cada fenda neste duende (mais informações em &quot;Dados do duende da coluna vertebral&quot;)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>A função retornará <tt>indefinida</tt> se o duende em questão não existir. Observe também que as informações retornadas nesta estrutura devem ser consideradas <strong>apenas de leitura</strong>, pois a modificação de qualquer uma destas variáveis não afetará o duende.</p>
+  <p>As seções abaixo contêm informações sobre as matrizes e estruturas incluídas na estrutura retornada com base no tipo sprite:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Dados gerais do Sprite</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p>Esta seção contém informações sobre as variáveis incluídas na estrutura para todos os tipos de sprites.</p>
+    <p>A variável <tt>mensagens</tt> é uma matriz que contém informações sobre as mensagens transmitidas que existem no sprite dado. Cada mensagem difundida nesta matriz é uma estrutura que contém as seguintes variáveis:</p>
+    <table>
+      <tbody>
+        <tr>
+          <th style="">Nome da variável</th>
+          <th>Tipo de dados</th>
+          <th style="">Descrição</th>
+        </tr>
+        <tr>
+          <td style=""><strong>quadro</strong></td>
+          <td>real</td>
+          <td style="">O momento da transmissão desta mensagem desde o início da animação (em frames)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>mensagem</strong></td>
+          <td>corda</td>
+          <td style="">A cadeia de mensagens transmitidas</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+    <p>A variável <tt>frame_info</tt> é uma matriz que contém informações sobre os horários das frames do duende. Cada frame desta matriz é uma estrutura que contém as seguintes variáveis:</p>
+    <table>
+      <tbody>
+        <tr>
+          <th style="">Nome da variável</th>
+          <th>Tipo de dados</th>
+          <th style="">Descrição</th>
+        </tr>
+        <tr>
+          <td style=""><strong>quadro</strong></td>
+          <td>real</td>
+          <td style="">O tempo para o início deste quadro (em quadros)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>image_index</strong></td>
+          <td>real</td>
+          <td style="">O índice de imagem deste quadro</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Dados Sprite Bitmap</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p>Esta seção contém informações sobre variáveis incluídas na estrutura para sprites Bitmap (sprites que não são sprites tipo Spine ou SWF).</p>
+    <p>A variável <tt>frames</tt> é uma matriz que contém informações sobre as texturas dos frames do duende. Cada frame desta matriz é uma estrutura que contém as seguintes variáveis:</p>
+    <table>
+      <tbody>
+        <tr>
+          <th style="">Nome da variável</th>
+          <th>Tipo de dados</th>
+          <th style="">Descrição</th>
+        </tr>
+        <tr>
+          <td style=""><strong>x</strong></td>
+          <td>real</td>
+          <td style="">A posição X deste quadro em sua página de textura (em pixels)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>y</strong></td>
+          <td>real</td>
+          <td style="">A posição em Y deste quadro em sua página de textura (em pixels)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>w</strong></td>
+          <td>real</td>
+          <td style="">A largura lógica da moldura (em pixels) utilizada internamente</td>
+        </tr>
+        <tr>
+          <td style=""><strong>h</strong></td>
+          <td>real</td>
+          <td style="">A altura lógica do quadro (em pixels) utilizado internamente</td>
+        </tr>
+        <tr>
+          <td style=""><strong>textura</strong></td>
+          <td>real</td>
+          <td style="">A identificação da página de textura para este quadro</td>
+        </tr>
+        <tr>
+          <td style=""><strong>largura_ original</strong></td>
+          <td>real</td>
+          <td style="">A largura original da moldura (em pixels)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>altura_ original</strong></td>
+          <td>real</td>
+          <td style="">A altura original da moldura (em pixels)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>largura_da_culturas</strong></td>
+          <td>real</td>
+          <td style="">A largura real da moldura na página de textura após o corte e a escala (uma vez que o GMS2 corta automaticamente o espaço vazio em torno de uma imagem e também o reduz se não couber)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>altura_da_culturas</strong></td>
+          <td>real</td>
+          <td style="">A altura real da moldura na página de textura após o corte e a escamação</td>
+        </tr>
+        <tr>
+          <td style=""><strong>x_offset</strong></td>
+          <td>real</td>
+          <td style="">O deslocamento X da margem esquerda da imagem original para a margem esquerda da seção recortada</td>
+        </tr>
+        <tr>
+          <td style=""><strong>y_offset</strong></td>
+          <td>real</td>
+          <td style="">O desvio em Y da borda superior da imagem original para a borda superior da seção recortada</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Dados do duende da coluna vertebral</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p>Esta seção contém informações sobre as variáveis incluídas na estrutura para Sprites de Coluna.</p>
+    <p>A variável <tt>ossos</tt> é um conjunto que contém informações sobre todos os ossos do duende da Coluna vertebral em questão. Cada osso desta matriz é uma estrutura que contém as seguintes variáveis:</p>
+    <table>
+      <tbody>
+        <tr>
+          <th style="">Nome da variável</th>
+          <th>Tipo de dados</th>
+          <th style="">Descrição</th>
+        </tr>
+        <tr>
+          <td style=""><strong>pai</strong></td>
+          <td>corda</td>
+          <td style="">O nome do osso pai, ou <tt>indefinido</tt> se este osso não tiver um osso pai</td>
+        </tr>
+        <tr>
+          <td style=""><strong>nome</strong></td>
+          <td>corda</td>
+          <td style="">O nome deste osso</td>
+        </tr>
+        <tr>
+          <td style=""><strong>índice</strong></td>
+          <td>real</td>
+          <td style="">O índice deste osso</td>
+        </tr>
+        <tr>
+          <td style=""><strong>comprimento</strong></td>
+          <td>real</td>
+          <td style="">O comprimento deste osso</td>
+        </tr>
+        <tr>
+          <td style=""><strong>x</strong></td>
+          <td>real</td>
+          <td style="">A posição X deste osso</td>
+        </tr>
+        <tr>
+          <td style=""><strong>y</strong></td>
+          <td>real</td>
+          <td style="">A posição em Y deste osso</td>
+        </tr>
+        <tr>
+          <td style=""><strong>rotação</strong></td>
+          <td>real</td>
+          <td style="">A rotação deste osso</td>
+        </tr>
+        <tr>
+          <td style=""><strong>escala_x</strong></td>
+          <td>real</td>
+          <td style="">(Interno à coluna vertebral) Valor da escala em X</td>
+        </tr>
+        <tr>
+          <td style=""><strong>escala_y</strong></td>
+          <td>real</td>
+          <td style="">(Interno à coluna vertebral) Valor da escala em Y</td>
+        </tr>
+        <tr>
+          <td style=""><strong>shear_x</strong></td>
+          <td>real</td>
+          <td style="">(Interno à coluna vertebral) Valor de cisalhamento em X</td>
+        </tr>
+        <tr>
+          <td style=""><strong>shear_y</strong></td>
+          <td>real</td>
+          <td style="">(Interno à coluna vertebral) Valor de cisalhamento em Y</td>
+        </tr>
+        <tr>
+          <td style=""><strong>transform_mode</strong></td>
+          <td>real</td>
+          <td style="">(Interno à coluna vertebral) O modo de transformação</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note"> <strong>NOTA</strong>: Favor consultar a <a href="http://en.esotericsoftware.com/spine-documentation" title="Spine Documentation">documentação da Coluna vertebral</a> para maiores informações sobre as variáveis internas da coluna vertebral.</p>
+    <p>A variável <tt>slots</tt> é uma matriz que contém informações sobre todos os slots no sprite da Coluna vertebral dado. Cada slot nesta matriz é uma estrutura que contém as seguintes variáveis:</p>
+    <table>
+      <tbody>
+        <tr>
+          <th style="">Nome da variável</th>
+          <th>Tipo de dados</th>
+          <th style="">Descrição</th>
+        </tr>
+        <tr>
+          <td style=""><strong>nome</strong></td>
+          <td>corda</td>
+          <td style="">O nome do espaço</td>
+        </tr>
+        <tr>
+          <td style=""><strong>índice</strong></td>
+          <td>real</td>
+          <td style="">O índice do slot</td>
+        </tr>
+        <tr>
+          <td style=""><strong>osso</strong></td>
+          <td>corda</td>
+          <td style="">O nome do osso do slot, ou &quot;( <tt>nenhum)&quot; se</tt> não houver osso para este slot</td>
+        </tr>
+        <tr>
+          <td style=""><strong>anexo</strong></td>
+          <td>corda</td>
+          <td style="">Nome do anexo</td>
+        </tr>
+        <tr>
+          <td style=""><strong>vermelho</strong></td>
+          <td>real</td>
+          <td style="">Componente vermelho da cor do slot (0-1)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>verde</strong></td>
+          <td>real</td>
+          <td style="">Componente verde da cor da ranhura (0-1)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>azul</strong></td>
+          <td>real</td>
+          <td style="">Componente azul da cor do slot (0-1)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>alfa</strong></td>
+          <td>real</td>
+          <td style="">Componente alfa da cor do slot (0-1)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>blendMode</strong></td>
+          <td>real</td>
+          <td style="">(Interno à coluna vertebral) Modo de mistura para o slot</td>
+        </tr>
+        <tr>
+          <td style=""><strong>vermelho_escuro*</strong></td>
+          <td>real</td>
+          <td style="">Componente vermelho da cor escura do slot (0-1)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>verde_escuro*</strong></td>
+          <td>real</td>
+          <td style="">Componente verde do slot de cor escura (0-1)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>azul_escuro*</strong></td>
+          <td>real</td>
+          <td style="">Componente azul da ranhura de cor escura (0-1)</td>
+        </tr>
+        <tr>
+          <td style=""><strong>alfa_escuro*</strong></td>
+          <td>corda</td>
+          <td style="">Componente alfa da cor escura do slot (0-1)</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">* <strong>NOTA</strong>: As variáveis de cor escura só estão disponíveis se o slot tiver o <a href="http://en.esotericsoftware.com/spine-slots#Tint-black" title="Tint Black">Tint Black</a> habilitado.</p>
+    <p> </p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">sprite_get_info(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice do sprite para o qual obter as informações.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções</h4>
+  <p class="code">Estruturas (ou indefinidas)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var _info = sprite_get_info(sprite_index);<br>
+    <br> if (_info != undefined &amp;&amp; _info.type == 0)<br> {
+    <br> var _messages = _info.messages;<br> var _messageCount = array_length(_messages);<br>     <br> for (var i = 0; i &lt; _messageCount; i ++)<br> {<br> var _message = _messages[i];<br> show_debug_message(&quot;Mensagem
+    em frame &quot; + string(_message.frame) + &quot;: &quot; + _message.message);<br> } <br> }
+  </p>
+  <p>O código acima obtém a estrutura de informação para o duende da instância, e então verifica se ele não está indefinido <tt>e</tt> se seu tipo é 0 (o que significa que é um duende de bitmap). Nesse caso, ele recebe a matriz de mensagens de transmissão para esse sprite e
+    então executa um loop para imprimir cada mensagem transmitida (junto com seu frame) para o log de saída.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sprite_Information.htm">Informações Sprite</a></div>
+        <div style="float:right">Próximo: <a href="../Sprite_Manipulation/sprite_exists.htm">sprite_existe</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_get_info
+-->
+  <!-- TAGS
+sprite_get_info
+-->
+</body>
+</html>

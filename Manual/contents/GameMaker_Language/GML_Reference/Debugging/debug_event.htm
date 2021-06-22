@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>debug_event</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for debug_event" />
+  <meta name="rh-index-keywords" content="debug_event" />
+  <meta name="search-keywords" content="debug_event" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>debug_event</h1>
+  <p>Esta função gera um evento de depuração personalizado que será mostrado na visualização gráfica do depurador quando um jogo estiver sendo executado no <a href="../../../Introduction/Debugging.htm">modo de depuração</a>. Se você precisar que as mensagens sejam exibidas quando <i>não</i> estiver em modo de depuração
+    modo, então você deve estar usando <a href="show_debug_message.htm"><tt>show_debug_message()</tt></a>. Vale ressaltar que a função também levará duas cordas reservadas para ajudar a realizar a depuração utilizando aplicações externas como <span class="notranslate">Visual Studio</span>. Estas
+    são:</p>
+  <ul class="colour">
+    <li>&quot;<tt>OutputDebugOn&quot; -</tt> Isto permite uma chamada para o OutputDebugString <tt>para a</tt> <b><span class="notranslate">Windows</span></b> alvo, o que significa que toda a saída de depuração - tudo que você vê na janela de saída - pode ser visualizada pelo <span class="notranslate">Visual Studio</span> ou por aplicativos de terceiros.</li>
+    <li>&quot;BreakOnError<tt>&quot; -</tt> Esta opção é apenas para Windows YYC <b><span class="notranslate">buildds</span></b>, e significa que os projetos não <i>exibirão</i> a tela habitual de erro de código se o tempo de execução <span class="notranslate">detectar</span> um erro, mas, em vez disso, apenas continuar e travar. Isto permite que você
+      para ver o stacktrace dentro do <span class="notranslate">Visual Studio</span> se debugando.</li>
+  </ul>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">debug_event(string)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>corda</td>
+        <td>A cadeia de eventos de depuração personalizada a ser usada.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4><b>Exemplo:</b></h4>
+  <p class="code">se !surface_exists(global.EffectsSurface)<br> {
+    <br> debug_event(&quot;Recreating Effects Surface&quot;);<br> global.EffectsSurface = surface_create(room_width, room_height);<br> }</p>
+  <p>O código acima verifica se uma superfície existe e se não existe, um evento de depuração é acionado na visualização gráfica do depurador (o jogo deve ter sido executado no Modo de Depuração para que isso seja visível) e a superfície é recriada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Debugging.htm">Depuração</a></div>
+        <div style="float:right">Próximo: <a href="debug_get_callstack.htm">debug_get_callstack</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+debug_event
+-->
+  <!-- TAGS
+debug_event
+-->
+</body>
+</html>

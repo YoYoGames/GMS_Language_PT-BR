@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>object_set_solid</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function object_set_solid" />
+  <meta name="rh-index-keywords" content="object_set_solid" />
+  <meta name="search-keywords" content="object_set_solid" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>object_set_solid</h1>
+  <p>Com esta função você pode marcar um objeto específico como sendo sólido ou não (para mais informações sobre a bandeira &quot;sólido&quot; veja a seção sobre o <a href="../../../../The_Asset_Editors/Objects.htm">Editor de</a> Objetos <a href="../../../../The_Asset_Editors/Objects.htm">)</a>. Isto significa que todas as instâncias
+    deste objeto que é criado <i>após a mudança de sólido</i> será criado com este novo estado, enquanto as instâncias que já se encontram na sala podem não ser afetadas.</p>
+  <p>Por favor, note que esta não é uma função de instância! Você pode definir a bandeira sólida de instâncias individuais usando a <tt><a href="../Instances/Instance_Variables/solid.htm">sólido</a></tt> e, portanto, todas as dez instâncias foram marcadas como sólidas, mesmo
+    o objeto em questão tem a bandeira definida como falsa no IDE, e mesmo que você mude a bandeira sólida do objeto para verdadeiro usando esta função, todas as instâncias que atualmente estão na sala permanecerão como estavam, e somente instâncias criadas após a chamada
+    a função começará com a bandeira sólida como verdadeira.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">object_set_solid( índice, sólido );</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice do objeto a ser modificado.</td>
+      </tr>
+      <tr>
+        <td>sólido</td>
+        <td>A nova solidez do objeto (verdadeiro=sólido, falso=não sólido).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if !object_get_solid(obj_Block)<br> {<br> object_set_solid(obj_Block, true);<br> }</p>
+  <p>O código acima verifica a bandeira sólida do objeto &quot;obj_Block&quot; e, se for falso, é alterado para ser sinalizado como verdadeiro.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Objects.htm">Objetos</a></div>
+        <div style="float:right">Próximo: <a href="object_set_sprite.htm">object_set_sprite</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+object_set_solid
+-->
+  <!-- TAGS
+object_set_solid
+-->
+</body>
+</html>

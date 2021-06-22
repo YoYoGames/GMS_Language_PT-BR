@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_get_colourwriteenable</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_get_colourwriteenable" />
+  <meta name="rh-index-keywords" content="gpu_get_colorwriteenable,gpu_get_colourwriteenable" />
+  <meta name="search-keywords" content="gpu_get_colorwriteenable,gpu_get_colourwriteenable" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_get_colourwriteenable</h1>
+  <p>Esta função pode ser usada para recuperar os valores atuais de gravação a cores. A função retorna uma matriz de 4 elementos 1D com os seguintes elementos que serão <tt>verdadeiros</tt> (habilitados) ou <tt>falsos</tt> (desabilitados). Por padrão, todas as cores
+    A redação está posta em <tt>prática</tt>:</p>
+  <ul class="colour">
+    <li>[0] = Canal vermelho habilitado/desabilitado</li>
+    <li>[1] = Canal verde habilitado/desabilitado</li>
+    <li>[2] = Canal azul habilitado/desabilitado</li>
+    <li>[3] = Canal Alfa habilitado/desabilitado</li>
+  </ul>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">gpu_get_colorwriteenable();</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">4 elementos 1D array (Veja acima para detalhes)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var cw = gpu_get_colorwriteenable();<br> cw[3] = falso;<br> gpu_set_colorwriteenable(cw);
+  </p>
+  <p>O código acima obtém os valores atuais de escrita por cor e então define o componente alfa como <tt>falso</tt>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="GPU_Control.htm">Controle de GPU</a></div>
+        <div style="float:right">Próximo: <a href="gpu_get_alphatestenable.htm">gpu_get_alphatestenable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_get_colourwriteenable
+gpu_get_colorwriteenable
+-->
+  <!-- TAGS
+gpu_get_colorwriteenable
+-->
+</body>
+</html>

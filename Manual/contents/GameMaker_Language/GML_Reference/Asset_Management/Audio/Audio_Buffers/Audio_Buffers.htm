@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Buffers de áudio</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Audio Buffers" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Audio Buffers" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Buffers de áudio</h1>
+  <p>Você pode usar <b>buffers de áudio</b> para carregar, salvar e manipular arquivos de áudio dentro de seus jogos. Estes buffers são criados de antemão utilizando as <a href="../../../Buffers/Buffers.htm">funções de buffer</a> apropriadas e então você pode utilizar as seguintes funções
+    para criar um som a ser usado em seu projeto:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="audio_create_buffer_sound.htm">audio_criate_buffer_sound</a></li>
+    <li><a href="audio_free_buffer_sound.htm">audio_free_buffer_sound</a></li>
+  </ul>
+  <p> </p>
+  <p>Note que uma vez criado um som de um buffer de áudio, você <i>não</i> está criando um novo som na memória, mas sim apontando para a posição dentro do buffer onde o som é armazenado. Você não deve alterar este buffer depois de um som ter sido
+    associado a ele, caso contrário você obterá resultados inesperados, e não poderá apagar o buffer enquanto um som estiver associado a ele. Em vez disso, libere o som (ou sons) primeiro e, em seguida, apague o buffer. Uma vez que você tenha criado seu novo recurso de áudio a partir de
+    um buffer, você pode usar seu valor de índice em qualquer uma das funções de áudio regulares para tocá-lo, alterar seu ganho ou tom, pausá-lo, etc... Note que o buffer usado para carregar o áudio <b>só pode suportar sons PCM</b>, portanto formatos como OGG não
+    ser apoiado.</p>
+  <p>Uma outra característica do áudio em buffer é que você pode usar um buffer para criar uma fila de áudio que pode então ser transmitida para o dispositivo que executa seu projeto. Uma fila de áudio leva um buffer regular que você já preencheu anteriormente com dados de áudio, e permite
+    você para &quot;apontar&quot; para partes dele e dizer ao GameMaker <span class="notranslate">Studio 2: Studio</span> para transmitir o áudio em uma determinada ordem a partir daquele buffer. As funções disponíveis para as filas de áudio são:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="audio_create_play_queue.htm">audio_create_play_queue</a></li>
+    <li><a href="audio_free_play_queue.htm">audio_free_play_queue</a></li>
+    <li><a href="audio_queue_sound.htm">audio_queue_sound</a></li>
+  </ul>
+  <p> </p>
+  <p>Uma vez criada uma fila, você pode então usar o índice de fila retornado, assim como usaria o índice de som para qualquer som normal para tocá-lo, pausá-lo, reiniciá-lo ou mudar o seu ganho e tom. A única coisa que você não pode fazer é obter o comprimento da faixa
+    ou definir a posição da faixa, mas, além disso, uma fila de áudio pode ser usada como qualquer outro som. Você também deve observar que algumas das funções da fila de áudio também acionarão um <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Playback.htm">Evento Assíncrono de Reprodução de Áudio</a>.</p>
+  <p>Os buffers de áudio também lhe permitirão gravar som de qualquer uma das fontes disponíveis (como microfones ou o sistema operacional), que podem então ser enfileirados e transmitidos usando as funções acima (por exemplo). A gravação de áudio desencadeará um <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Recording.htm">Evento Assíncrono de Gravação de Áudio</a> que conterá informações específicas sobre o que está sendo gravado.<br>
+    <br> Para a gravação de áudio, as seguintes funções estão disponíveis:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="audio_start_recording.htm">audio_start_recording</a></li>
+    <li><a href="audio_stop_recording.htm">audio_stop_recording</a></li>
+    <li><a href="audio_get_recorder_count.htm">audio_get_recorder_count</a></li>
+    <li><a href="audio_get_recorder_info.htm">audio_get_recorder_info</a></li>
+  </ul>
+  <p> </p>
+  <p class="note"><b>NOTA: </b>A maioria das plataformas <b>, exceto HTML5</b>, suporta a gravação de áudio de alguma forma, mas isso não significa que todos os dispositivos o permitam, mesmo que a plataforma o permita, então você deve sempre verificar se o <span style="font-size:1px;"><a href="audio_get_recorder_count.htm"><tt style="font-size: 14px">audio_get_recorder_count()</tt></a></span>    retorna um valor maior que 0 para verificar se os dispositivos de gravação estão disponíveis antes de utilizar o restante das funções de gravação.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Audio.htm">Áudio</a></div>
+        <div style="float:right">A seguir: <a href="../Audio_Synchronisation/Audio_Synchronisation.htm">Sincronização de áudio</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Audio Buffers
+-->
+  <!-- TAGS
+audio_buffer_functions
+-->
+</body>
+</html>

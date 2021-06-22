@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>instance_furthest</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_furthest" />
+  <meta name="rh-index-keywords" content="instance_furthest" />
+  <meta name="search-keywords" content="instance_furthest" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>instance_furthest</h1>
+  <p>Esta função verificará todas as instâncias do objeto dado para ver qual está mais distante do ponto x/y dado. Todas as verificações serão da posição x/y dada até a <i>origem</i> (a posição x/y) das instâncias do objeto especificado. Se nenhuma instância
+    do objeto existente, a função retornará a palavra-chave <a href="../../../GML_Overview/Instance_Keywords.htm">noone</a>, mas se houver instâncias, então retornará a <a href="Instance_Variables/id.htm"><tt>id</tt></a> da instância encontrada.
+    Observe que se a instância executando o código tiver o mesmo índice de objetos que o objeto a ser verificado, então ele será incluído na verificação (isto inclui a verificação dos objetos dos pais se a instância chamadora for também um filho dos pais).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">instance_furthest(x, y, obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A posição x para checar por instâncias longe de.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A posição y para checar por instâncias longe de.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>O objeto a ser verificado em casos de.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (ou um valor de identificação de instância ou a palavra-chave <tt>noone</tt>)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var inst;<br> inst = instance_furthest(x, y, object_index);<br> if inst != id<br> {
+    <br> draw_line(x, y, inst.x, inst.y);<br> }
+  </p>
+  <p>O código acima encontrará a instância mais distante que compartilha o mesmo índice de objetos que a instância que executa o código e armazena o id em uma variável. Esta variável é então verificada para ver se é a mesma que o id da instância chamadora e, se for
+    não, uma linha é traçada entre as duas instâncias.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Instances.htm">Instâncias</a></div>
+        <div style="float:right">Próximo: <a href="instance_nearest.htm">instance_nearest</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_furthest
+-->
+  <!-- TAGS
+instance_furthest
+-->
+</body>
+</html>

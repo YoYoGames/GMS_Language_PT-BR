@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sprite_angle</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_angle" />
+  <meta name="rh-index-keywords" content="layer_sprite_angle" />
+  <meta name="search-keywords" content="layer_sprite_angle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sprite_angle</h1>
+  <p>Usando esta função você pode mudar o ângulo para o elemento sprite dado em uma camada. Você dá o ID do elemento sprite (que você obtém quando cria um elemento sprite usando <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a> ou quando você
+    usar a função <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>), e então definir o valor do ângulo, de 0 a 359 no sentido anti-horário, onde 0 é para a direita, 90 é para cima, 180 é para a esquerda e 270 é para baixo. Se você definir
+    um valor superior a 360 este valor será looped para colocá-lo dentro da faixa 0 - 359.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">layer_sprite_angle(sprite_element_id, angle_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>sprite_element_id</td>
+        <td>O valor de identificação único do elemento sprite a mudar</td>
+      </tr>
+      <tr>
+        <td>ângulo</td>
+        <td>O ângulo do duende (padrão é 0)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var asset_sprite = layer_sprite_get_id(layer, &quot;gfc_Trees&quot;);<br> if layer_sprite_get_angle(asset_sprite) != 0<br> {
+    <br> layer_sprite_angle(asset_sprite, 0);<br> }
+  </p>
+  <p>O código acima verificará o elemento sprite atribuído à camada em que a instância que executa o código está e, se seu ângulo não for 0, ele o fixará em 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sprite_Layers.htm">Camadas de Sprite</a></div>
+        <div style="float:right">Próximo: <a href="layer_sprite_blend.htm">layer_sprite_blend</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sprite_angle
+-->
+  <!-- TAGS
+layer_sprite_angle
+-->
+</body>
+</html>

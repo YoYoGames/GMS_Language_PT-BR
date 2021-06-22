@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Arquivos de iniciativas</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the Ini File functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Ini Files" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Arquivos de iniciativas</h1>
+  <p>Os arquivos INI são arquivos pequenos, leves e compatíveis com a maioria das plataformas. São ideais para armazenar <i>pequenas</i> partes de informação, como preferências de interface, altas pontuações locais, dados de nível, etc... e como tal são
+    uma maneira excelente e fácil para você começar a salvar informações de seus jogos. Entretanto, vale notar que eles têm um limite de dados que podem armazenar, que é um máximo de 64KB, portanto, se você estiver salvando coisas como Estruturas de Dados, você pode desejar
+    para ver algumas das outras funções de arquivo como <a href="../Text_Files/Text_Files.htm">Arquivos de Texto</a>.</p>
+  <p class="note"><b>IMPORTANTE!</b> Todos os projetos do <span class="notranslate">GameMaker Studio 2</span> têm um arquivo chamado &quot;<span style="font-size:1px;"><tt style="font-size: 14px">opções.ini</tt></span>&quot;, então você <b>não pode nomear</b> 
+    qualquer arquivo com esse nome (você terá uma falha no uid quando tentar compilar seu projeto de jogo).</p>
+  <p>Observe que para jogos com localizações é muito importante que as letras acentuadas possam ser lidas a partir de arquivos externos. Isto significa que você deve criar <i>primeiro</i> o arquivo ini no formato <b>UTF8</b> e
+    depois adicioná-lo ao <span class="notranslate">GameMaker Studio 2</span> como um arquivo incluído para que seja exportado durante a execução do jogo e utilizado no lugar do arquivo ini padrão no formato ANSI que é criado pelas funções ini quando nenhuma foi previamente
+    fornecido. Desta forma, você pode ler e escrever corretamente com todos os sotaques e cartas não romanas mantidas.</p>
+  <p>As seguintes funções existem para os arquivos ini:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="ini_open.htm">ini_open</a></li>
+    <li><a href="ini_close.htm">ini_close</a></li>
+    <li><a href="ini_write_real.htm">ini_write_real</a></li>
+    <li><a href="ini_write_string.htm">ini_write_string</a></li>
+    <li><a href="ini_read_real.htm">ini_read_real</a></li>
+    <li><a href="ini_read_string.htm">ini_read_string</a></li>
+    <li><a href="ini_key_exists.htm">ini_key_existe</a></li>
+    <li><a href="ini_section_exists.htm">ini_section_existe</a></li>
+    <li><a href="ini_key_delete.htm">ini_key_delete</a></li>
+    <li><a href="ini_section_delete.htm">ini_section_delete</a></li>
+    <li><a href="ini_open_from_string.htm">ini_open_from_string</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../File_Handling.htm">Manuseio de arquivos</a></div>
+        <div style="float:right">A seguir: <a href="../Text_Files/Text_Files.htm">Arquivos de texto</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Ini Files
+-->
+  <!-- TAGS
+ini_file_functions
+-->
+</body>
+</html>

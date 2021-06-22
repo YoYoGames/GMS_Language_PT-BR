@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_skeleton</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function draw_skeleton" />
+  <meta name="rh-index-keywords" content="draw_skeleton" />
+  <meta name="search-keywords" content="draw_skeleton" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_skeleton</h1>
+  <p>Esta função é <i>apenas</i> para uso com sprites que foram criados usando um programa de animação esquelética como Spine. Enquanto você pode desenhar estes sprites usando as funções normais de desenho (como <a href="../../../../Drawing/Sprites_And_Tiles/draw_self.htm"><tt>draw_self()</tt></a>),
+    há momentos em que você pode querer desenhar uma única moldura ou mostrar uma mudança na textura da pele sem realmente mudar as propriedades do duende. Nestes casos, você pode desenhar o duende com esta função, onde você dá o índice do duende e depois o nome
+    da animação para obter o quadro de (um fio, como definido dentro do programa usado para fazer o duende). Em seguida você dá o nome da pele a ser usada (novamente, como definido quando o duende foi feito), e um valor de frame. O valor da moldura é para dizer ao <span class="notranslate">GameMaker Studio</span>
+    2 que parte da animação mostrar e qual o valor entre 0 e o <a href="../../Sprite_Instance_Variables/image_number.htm"><tt>image_number</tt></a>. O resto dos argumentos são os mesmos usados para o desenho normal de duendes e mudarão
+    a escala, ângulo, cor da mistura e alfa do quadro de animação final que está sendo desenhado.<b></b></p>
+  <p class="note"><b>ADVERTÊNCIA!</b> Devido à forma como as animações esqueléticas são interpoladas entre vários quadros &quot;chave&quot;, há uma sobrecarga adicional associada a esta chamada e, portanto, é recomendável que você evite desenhar sprites com base no esqueleto usando
+    este método, a menos que seja absolutamente necessário.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">draw_skeleton(sprite, animname, skinname, frame, x, y, xscale, yscale, podridão, cor, alfa);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>O índice do duende a desenhar.</td>
+      </tr>
+      <tr>
+        <td>animname</td>
+        <td>O nome da animação para obter o quadro de (um fio).</td>
+      </tr>
+      <tr>
+        <td>skinname</td>
+        <td>O nome da pele a ser usada (um fio).</td>
+      </tr>
+      <tr>
+        <td>quadro</td>
+        <td>O quadro de animação a desenhar (de 0 a image_number - 1).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A coordenada x de onde desenhar o duende.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A coordenada y de onde desenhar o duende.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>A escalada horizontal do duende, como um multiplicador: 1 = escalada normal, 0,5 é metade, etc...</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>A escalada vertical do duende, como um multiplicador: 1 = escalada normal, 0,5 é metade, etc...</td>
+      </tr>
+      <tr>
+        <td>podridão</td>
+        <td>A rotação do duende. 0=normal, 90=voltada 90 graus no sentido anti-horário, etc.</td>
+      </tr>
+      <tr>
+        <td>cor</td>
+        <td>A cor com a qual se deve misturar o duende.</td>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>O alfa do duende (de 0 a 1 onde 0 é transparente e 1 opaco).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p> </p>
+  <p class="code">draw_skeleton(spr_Jump, &quot;jump&quot;, &quot;skin1&quot;, 0, x, y, image_xscale, image_yscale, image_angle, c_white, 0,5);</p>
+  <p>O código acima desenhará o primeiro quadro do duende de animação esquelético dado, usando o conjunto de animação &quot;salto&quot;, a pele definida como &quot;skin1&quot; e na mesma escala e posição que as propriedades da instância definem, mas com um alfa
+    de 0,5.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Drawing_And_Miscellaneous.htm">Desenho e Diversos</a></div>
+        <div style="float:right">Próximo: <a href="draw_skeleton_instance.htm">draw_skeleton_instance</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_skeleton
+-->
+  <!-- TAGS
+draw_skeleton
+-->
+</body>
+</html>

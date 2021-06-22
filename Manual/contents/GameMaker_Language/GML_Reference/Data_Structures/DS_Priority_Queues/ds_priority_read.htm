@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_priority_read</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_priority_read" />
+  <meta name="rh-index-keywords" content="ds_priority_read" />
+  <meta name="search-keywords" content="ds_priority_read" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_priority_read</h1>
+  <p>Com esta função você pode recriar uma prioridade DS salva (uma que tenha sido escrita anteriormente como uma string usando <a href="ds_priority_write.htm"><tt>ds_priority_write()</tt></a>). É preciso primeiro criar uma nova prioridade DS para ler a seqüência, e se
+    a prioridade DS já existe e tem informações armazenadas nela, então isto será liberado antes da leitura. Esta função é de vital importância ao criar mecanismos de salvamento/carga para seu jogo. Observe que se a estrutura de dados foi criada com
+    versões de <i><span class="notranslate">GameMaker</span></i> você deve adicionar o argumento opcional &quot;legado&quot;, definindo-o como verdadeiro, já que <tt>o</tt> formato das cordas foi alterado com esta versão.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">ds_priority_read(id, str [, legacy]));</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>A identificação da estrutura de dados a ser escrita.</td>
+      </tr>
+      <tr>
+        <td>str</td>
+        <td>O fio para escrever de.</td>
+      </tr>
+      <tr>
+        <td>legado<i>(opcional</i>)</td>
+        <td>Pode ser <tt>verdadeiro</tt> ou <tt>falso</tt> ou omitido completamente.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">p_queue = ds_priority_create();<br> ini_open(&quot;save.ini&quot;);
+    <br> var str = ini_read_string(&quot;P_queues&quot;, &quot;0&quot;, &quot;&quot;);<br> if (str != &quot;&quot;)<br> {
+    <br> ds_priority_read(p_queue, str);<br> }
+    <br> ini_close();
+  </p>
+  <p>O código acima cria uma fila de prioridade e armazena o índice na variável &quot;p_queue&quot;. Em seguida, abre um arquivo <tt>ini</tt> e lê uma string a partir dele, verificando se a string não é retornada como vazia primeiro. Esta cadeia de caracteres é então
+    ler na prioridade DS recém-criada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="DS_Priority_Queues.htm">Filas de espera prioritárias DS</a></div>
+        <div style="float:right">Próximo: <a href="ds_priority_write.htm">ds_priority_write</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_priority_read
+-->
+  <!-- TAGS
+ds_priority_read
+-->
+
+</body></html>

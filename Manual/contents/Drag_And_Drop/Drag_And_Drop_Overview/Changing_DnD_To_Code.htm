@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Mudando DnD™ para código</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Article explaining how to change DnD™ to GML code" />
+  <meta name="rh-index-keywords" content="DnD™ Overview - Changing DnD™ To Code" />
+  <meta name="search-keywords" content="DnD,Code DnD,Change DnD to code" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Mudando <span class="notranslate">DnD™</span>para código</h1>
+  <p>Outra característica de <span class="notranslate">DnD™</span>é que você pode convertê-lo em código <span class="notranslate">GML</span><span class="notranslate">(GameMaker Language</span>), e desta forma ver o que exatamente está acontecendo nos bastidores quando você usa ações. Antes de realmente mudar as ações para <span class="notranslate">GML</span>, no entanto, você pode primeiro <strong>visualizá-las </strong>
+    usando o botão direito do mouse <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> opção de menu <strong>Live Preview</strong>:</p>
+  <p><img alt="Live Preview" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Preview_RMBMenu.png">O que abrirá uma nova janela:</p>
+  <p><img alt="DnD Live Preview Window" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Preview.png">Conforme você adiciona, altera ou remove ações <span class="notranslate">DnD™</span>, o <span class="notranslate">GML</span> Live Preview será atualizado para mostrar o código real que é
+    sendo criados &quot;por trás dos bastidores&quot;. O código na visualização ao vivo não pode ser editado diretamente, mas você pode selecionar seções e copiá-las para colar em scripts <span class="notranslate">GML</span> ou Ações de Código (por exemplo).</p>
+  <p>Se você decidir que quer converter o <span class="notranslate">DnD™</span>em código após ver a visualização, então isso pode ser feito novamente clicando no botão direito do mouse <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> em
+    qualquer espaço de trabalho para eventos com ações e selecionando <strong>Converter para <span class="notranslate">GML</span></strong>.</p>
+  <p><img alt="Convert to GML" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Code_RMBMenu.png">A primeira vez que você fizer isso, receberá uma mensagem de aviso dizendo que esta é uma conversão de uma só maneira, já que você pode
+    converter ações em código, mas não se pode convertê-las novamente em ações <em>individuais </em>mais tarde. Clicando em &quot;ok&quot; aqui, você fará a conversão para você.</p>
+  <p><img alt="DnD™ as code" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Code.png">O código resultante usará <span class="inline">{}</span> para delimitar as ações individuais, e você pode ver claramente quais ações
+    relacionar com quais funções ou declarações variáveis dentro do código. Se o <span class="notranslate">DnD™</span>for mais complexo, então o código também será, mas as mesmas regras gerais se aplicam e o código será estruturas sequencialmente exatamente as mesmas que você escreveu o <span class="notranslate">DnD™</span>. Nota
+    que às vezes o código terá variáveis <strong>locais </strong>(temporárias) extras adicionadas para armazenar certos valores que serão utilizados, por exemplo, isto:</p>
+  <p><img alt="DnD™ If Instance Exists" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_InstanceExists.png" /></p>
+  <p>Tornar-se-á este código:</p>
+  <p><img alt="DnD™ Converted Instance Exists" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Code_InstanceExists.png" /></p>
+  <p>Aqui o código primeiro cria uma variável local (temporária) e a define para <span class="inline">false</span>, depois verifica se a instância existe e define a variável local para o retorno da chamada de função. A variável local é então verificada
+    para ver se é <span class="inline">true</span> ou <span class="inline">false</span> e se é <span class="inline">true</span>, o resto do código é executado.</p>
+  <p>Ao aprender a programar usando <span class="notranslate">Drag and Drop</span>, esta pode ser uma ferramenta importante para passar a usar <span class="notranslate">GML</span> em uma etapa posterior, mas não é de forma alguma obrigatória e você ainda pode fazer grandes jogos usando <span class="notranslate">DnD™!</span>Também vale a pena notar que enquanto a conversão
+    é uma maneira, após converter ações em código, você pode voltar a usar <span class="notranslate">DnD™</span>novamente, usando o menu <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> no editor de código e
+    selecionando &quot;<strong>Converter para <span class="notranslate">DnD™&quot;</span></strong>. Isto colocará o código criado anteriormente dentro de uma ação <a href="../Drag_And_Drop_Reference/Common/Execute_Code.htm">Execute Code</a> e você poderá então continuar a usar <span class="notranslate">DnD™</span>como antes:</p>
+  <p><img alt="DnD™ Execute Code" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_ExecuteCode.png" /></p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../../Content.htm">Índice</a></div>
+        <div style="float:right">A seguir: <a href="Right_Mouse_Button_Menu_Options.htm">Opções do Menu do Botão Direito do Rato</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Drag And Drop</span> Change To <span class="notranslate">GML</span>
+<span class="notranslate">DnD</span> to <span class="notranslate">GML</span>
+-->
+  <!-- TAGS
+drag_and_drop_change
+-->
+</body>
+</html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_joint_enable_motor</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_joint_enable_motor" />
+  <meta name="rh-index-keywords" content="physics_joint_enable_motor" />
+  <meta name="search-keywords" content="physics_joint_enable_motor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_joint_enable_motor</h1>
+  <p>Quando você tem uma junta com um motor<a href="physics_joint_prismatic_create.htm">(prismático</a> ou <a href="physics_joint_revolute_create.htm">revoluto</a>), você pode querer ser capaz de ligar ou desligar o motor dependendo das variáveis e condições
+    dentro do jogo. Para isso, você precisa ter armazenado previamente o índice da junta em uma variável e então você pode ligar ou desligar o motor usando esta função e ajustando o argumento &quot;motor&quot; para verdadeiro ou <tt>falso</tt>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">physics_joint_enable_motor(junta, motor)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>conjunto</td>
+        <td>A junta na qual você deseja ativar ou desativar o motor</td>
+      </tr>
+      <tr>
+        <td>motor</td>
+        <td>Se você deseja ligar (verdadeiro) ou desligar (falso) o motor</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var t_fix = physics_fixture_create();<br> physics_fixture_set_circle_shape(t_fix, sprite_get_width(sprite_index) / 2);<br> var o_id=instance_create_layer(x+300, y, &quot;Instances&quot;, obj_Door);<br> physics_fixture_bind(t_fix, id);<br> physics_fixture_bind(t_fix, id); physics_fixture_bind(t_fix,
+    o_id);<br> perma_joint = physics_joint_revolute_create(id, o_id, x+25, y, -90, 90, 1, 10, 2, 0, 0, 0);<br> physics_joint_enable(perma_joint, 1);<br> physics_fixture_delete(t_fix);
+  </p>
+  <p>O código acima cria e define uma nova fixação e depois cria uma instância de &quot;obj_Door&quot;, ligando a fixação criada às duas instâncias. Elas são então unidas por uma junta giratória sem motor e os ângulos limitados a +/- 90 graus
+    swing, e armazenamos o índice conjunto na variável &quot;perma_joint&quot;. Depois ligamos o motor usando esta variável, antes de finalmente apagar a fixação da memória, pois ela não é mais necessária.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Joints.htm">Juntas</a></div>
+        <div style="float:right">A seguir: <a href="physics_joint_get_value.htm">physics_joint_get_value</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_enable_motor
+-->
+  <!-- TAGS
+physics_joint_enable_motor
+-->
+</body>
+</html>

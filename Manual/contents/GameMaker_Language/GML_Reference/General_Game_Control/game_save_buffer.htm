@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>jogo_save_buffer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function game_save_buffer" />
+  <meta name="rh-index-keywords" content="game_save_buffer" />
+  <meta name="search-keywords" content="game_save_buffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>jogo_save_buffer</h1>
+  <p>Esta é uma variante do <tt><a href="game_save.htm">game_save()</a></tt> Por isso, leia primeiro <a href="game_save.htm">sua página</a>, pois ela contém informações importantes relacionadas ao seu uso e também a esta função.</p>
+  <p>Com esta função você pode salvar o estado atual do jogo para um buffer &quot;grow&quot; previamente criado (ver Buffers) <a href="../Buffers/Buffers.htm">que</a> pode então ser carregado novamente a qualquer momento usando <a href="game_load_buffer.htm"><tt>jogo_load_buffer()</tt></a>    função. Esta função é projetada para uso em uma única sala de cada vez (ou seja: não é aconselhável fazer um buffer salvo em uma sala, depois tentar carregar o buffer de outra) e deve ser usada idealmente apenas para pontos de controle ou reinícios de nível.</p>
+  <p class="note"><b>NOTA</b>: Esta função é <i>muito</i> limitada e foi projetada para que o iniciante tenha um sistema de ponto de verificação funcionando rapidamente, mas os usuários mais avançados podem preferir codificar seu próprio sistema usando as funções de <a href="../File_Handling/File_Handling.htm">Arquivo</a>,
+    devido ao fato de que o jogo <i>não</i> irá salvar nenhum dos recursos dinâmicos como estruturas de dados, superfícies, sprites adicionados, etc.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">game_save_buffer(buffer);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tampão</td>
+        <td>A identificação do buffer a ser guardado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se keyboard_check_pressed(ord(&quot;S&quot;))<br> {
+    <br> global.Checkpoint = verdadeiro;<br> game_save_buffer(save_buff);
+    <br> }
+  </p>
+  <p>O código acima definirá uma variável global como <tt>verdadeira</tt> e então salvará o estado atual do jogo para o buffer indexado na variável &quot;save_buff&quot; quando a tecla &quot;S&quot; for pressionada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="General_Game_Control.htm">Controle geral do jogo</a></div>
+        <div style="float:right">Próximo: <a href="game_get_speed.htm">game_get_speed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+game_save_buffer
+-->
+  <!-- TAGS
+game_save_buffer
+-->
+</body>
+</html>

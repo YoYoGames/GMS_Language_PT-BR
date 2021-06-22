@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_agegroup_for_user</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_agegroup_for_user" />
+  <meta name="rh-index-keywords" content="xboxlive_agegroup_for_user,xboxlive_agegroup_unknown,xboxlive_agegroup_child,xboxlive_agegroup_teen,xboxlive_agegroup_adult" />
+  <meta name="search-keywords" content="xboxlive_agegroup_for_user,xboxlive_agegroup_unknown,xboxlive_agegroup_child,xboxlive_agegroup_teen,xboxlive_agegroup_adult" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_agegroup_for_user</h1>
+  <p>Esta função retornará uma das quatro constantes (mostradas abaixo) para indicar a faixa etária atribuída ao ponteiro de identificação do usuário especificado.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">xboxlive_agegroup_for_user(user_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>O ID do usuário (um ponteiro) para verificar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Constante</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>xboxlive_agegroup_unknown</td>
+        <td>A faixa etária para o usuário é desconhecida</td>
+      </tr>
+      <tr>
+        <td>xboxlive_agegroup_child</td>
+        <td>A faixa etária do usuário está entre 8 e 12 anos (inclusive)</td>
+      </tr>
+      <tr>
+        <td>xboxlive_agegroup_teen</td>
+        <td>A faixa etária do usuário está entre 13 e 17 anos (inclusive, e entre 13 e 19 anos na Coréia do Sul)</td>
+      </tr>
+      <tr>
+        <td>xboxlive_agegroup_adult</td>
+        <td>A faixa etária do usuário é de 18 anos ou mais (ou 20 e mais na Coréia do Sul</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var _age = xboxlive_agegroup_for_user(xboxlive_get_activating_user());<br> if _age != xboxlive_agegroup_adult<br> {
+    <br> global.ContentControl = true;<br> }
+    <br> else global.ContentControl = falso;</p>
+  <p>O código acima verifica a faixa etária do usuário ativador e define uma variável global como <tt>verdadeira</tt> ou <tt>falsa</tt>, dependendo da constante retornada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Users_And_Accounts.htm">Usuários e Contas</a></div>
+        <div style="float:right">Próximo: <a href="xboxlive_gamerscore_for_user.htm">xboxlive_gamerscore_for_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_agegroup_for_user
+xboxlive_agegroup_unknown
+xboxlive_agegroup_child
+xboxlive_agegroup_teen
+xboxlive_agegroup_adult
+-->
+  <!-- TAGS
+xboxlive_agegroup_for_user
+-->
+</body>
+</html>

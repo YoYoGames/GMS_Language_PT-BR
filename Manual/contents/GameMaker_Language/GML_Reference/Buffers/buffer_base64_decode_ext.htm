@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_base64_decode_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_base64_decode_ext" />
+  <meta name="rh-index-keywords" content="buffer_base64_decode_ext" />
+  <meta name="search-keywords" content="buffer_base64_decode_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_base64_decode_ext</h1>
+  <p>Com esta função você pode decodificar uma cadeia codificada base64 (criada usando o <a href="buffer_base64_encode.htm"><tt>buffer_base64_encode()</tt></a> função) em um buffer. Ao contrário da função <a href="buffer_base64_decode.htm"><tt>buffer_base64_decode()</tt></a>,
+    isto <i>não</i> criará um buffer para você, mas sim você já deveria ter criado o buffer (veja <a href="buffer_create.htm"><tt>buffer_create()</tt></a>), cuja identificação você usaria então com esta função. O &quot;offset&quot; é o
+    posição dentro do buffer para decodificar a seqüência dada (em bytes).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">buffer_base64_decode_ext(buffer, string, offset);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>tampão</td>
+        <td>O índice do buffer para decodificar a corda.</td>
+      </tr>
+      <tr>
+        <td>corda</td>
+        <td>O fio codificado base64 para decodificar.</td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td>O valor da compensação de dados.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">buff = buffer_create(16384, buffer_grow, 2);<br> ini_open(&quot;Save.ini&quot;);
+    <br> var str = ini_read_string(&quot;Save&quot;, &quot;Slot1&quot;, &quot;&quot;);<br> buffer_base64_decode_ext(buff, str, 0);<br> ini_close();
+  </p>
+  <p>O código acima criará um buffer e armazenará a identificação única para ele na variável &quot;buff&quot;, depois abrirá um arquivo ini e lerá uma string a partir dele na variável local &quot;str&quot;. Esta string é então decodificada no buffer recém-criado, antes de
+    fechando novamente o arquivo ini.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Buffers.htm">Tampões</a></div>
+        <div style="float:right">Próximo: <a href="buffer_set_used_size.htm">tamanho_utilizado_de_tampão</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_base64_decode_ext
+-->
+  <!-- TAGS
+buffer_base64_decode_ext
+-->
+</body>
+</html>

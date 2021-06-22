@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Trabalho em rede</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the Networking  functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Networking" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Trabalho em rede</h1>
+  <p>As funções de rede do <span class="notranslate">GameMaker Studio 2</span> são baseadas em <i>soquetes</i>, que é um padrão da indústria em todas as plataformas. Com os soquetes, você tem a capacidade de criar tanto clientes quanto servidores usando <span class="notranslate">GML</span> simples, o que permite criar até mesmo um único
+    jogo de jogador usando o modelo cliente/servidor (algo que permitirá que o multiplayer seja adicionado facilmente mais tarde).</p>
+  <p>Basicamente, um soquete é um objeto que pode enviar, receber, conectar e escutar as <i>portas</i> da rede. Estas funções tratam apenas de conexões TCP/IP, que é no que a Internet se baseia (IPv4, para ser mais preciso). Em essência, isto permite que você
+    conectar um soquete usando um endereço IP (digamos 192.168.1.10) a outro soquete em outro endereço IP (digamos 192.168.1.11). Uma vez conectados, estes dois soquetes podem enviar dados para frente e para trás usando as funções <tt>network_send_*</tt> (como <a href="network_send_packet.htm"><tt>network_send_packet()</tt></a>)
+    e o evento assíncrono dedicado que é acionado por eles. Este evento assíncrono gerará um <a href="../Data_Structures/DS_Maps/DS_Maps.htm">mapa DS</a> contendo os dados recebidos, bem como outros detalhes, e você pode encontrar os detalhes completos
+    na seção sobre o <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Networking.htm">Evento Network Async</a>.</p>
+  <p>Em vez de programas que precisam ler e lidar com cada bit de tráfego de rede que entra em uma máquina, os endereços IP também lidam com portas, que são numeradas de 0 a 65535. Isto permite que cada programa obtenha apenas os pacotes de dados que lhe interessam.
+    em, e não tudo o que foi enviado por cada programa. Isto também economiza tempo considerável da CPU, pois reduz seriamente o processamento de dados, de modo que com o <span class="notranslate">GameMaker Studio 2</span> você também pode "ouvir" as portas. Assim, um servidor criará um socket, e então
+    amarrá-lo a um porto específico para ser ouvido. Será então notificado das conexões, desconexões e transferências de dados daquele soquete.</p>
+  <p>Os próprios &quot;pacotes&quot; de dados são formados por dados binários retirados de um buffer. Este buffer pode ser criado e manipulado usando as <a href="../Buffers/Buffers.htm">funções</a> do <span class="notranslate">GameMaker Studio 2</span> <a href="../Buffers/Buffers.htm">Buffer</a>.</p>
+  <p>Vale notar que se você estiver criando um projeto para o alvo HTML5, então você não poderá usar o servidor para criar funções devido às restrições do navegador e terá que escrever seu próprio servidor para esta plataforma usando algo como <strong>Electron </strong>ou
+   <strong>NodeJS</strong>. Observe também que se seu jogo é plataforma cruzada e você antecipa a conexão a uma instância HTML5 do jogo a partir de um servidor rodando em um dispositivo móvel ou desktop, então seu servidor só pode se comunicar com a instância HTML5
+    usando o protocolo Web Socket (isto é feito usando a constante <tt>network_socket_ws</tt> - veja <a href="network_create_server.htm"><tt>network_create_server()</tt></a> para mais informações). Isto significa que seu servidor pode ter que criar dois soquetes
+    em diferentes portas, uma para conectar a alvos não HTML5<span class="notranslate">(Android</span>, <span class="notranslate">Windows</span>, etc...) e outra para conectar ao alvo HTML5.</p>
+  <p>As seguintes funções existem para que você possa utilizar em rede:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="network_create_server.htm">network_create_server</a></li>
+    <li><a href="network_create_server_raw.htm">rede_criar_servidor_servidor_desenhar</a></li>
+    <li><a href="network_create_socket.htm">network_create_socket</a></li>
+    <li><a href="network_create_socket_ext.htm">network_create_socket_ext</a></li>
+    <li><a href="network_connect.htm">network_connect</a></li>
+    <li><a href="network_connect_async.htm">network_connect_async</a></li>
+    <li><a href="network_connect_raw.htm">network_connect_raw</a></li>
+    <li><a href="network_connect_raw_async.htm">network_connect_async_raw</a></li>
+    <li><a href="network_resolve.htm">network_resolve</a></li>
+    <li><a href="network_set_config.htm">network_set_config</a></li>
+    <li><a href="network_set_timeout.htm">network_set_timeout</a></li>
+    <li><a href="network_send_broadcast.htm">network_send_broadcast</a></li>
+    <li><a href="network_send_packet.htm">network_send_packet</a></li>
+    <li><a href="network_send_raw.htm">network_send_raw</a></li>
+    <li><a href="network_send_udp.htm">network_send_udp</a></li>
+    <li><a href="network_send_udp_raw.htm">network_send_udp_raw</a></li>
+    <li><a href="network_destroy.htm">network_destroy</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../GML_Reference.htm">Referência<span class="notranslate">GML</span></a></div>
+        <div style="float:right">A seguir: <a href="../Web_And_HTML5/Web_And_HTML5.htm">Web</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Networking
+-->
+  <!-- TAGS
+networking_functions
+-->
+</body>
+</html>

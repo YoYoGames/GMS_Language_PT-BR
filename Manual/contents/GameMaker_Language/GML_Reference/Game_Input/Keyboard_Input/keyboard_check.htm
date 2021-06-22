@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>teclado_check</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for keyboard_check" />
+  <meta name="rh-index-keywords" content="keyboard_check" />
+  <meta name="search-keywords" content="keyboard_check" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>teclado_check</h1>
+  <p>Com esta função, você pode verificar se uma chave está ou não pressionada. Ao contrário da função <a href="keyboard_check_pressed.htm"><tt>teclado_check_pressed()</tt></a> ou <a href="keyboard_check_released.htm"><tt>keyboard_check_released()</tt></a> funções que
+    são acionados apenas uma vez quando a tecla é pressionada ou liberada, esta função é acionada a cada passo em que a tecla é mantida pressionada. A função terá um valor de código de chave como retornado pela função <a href="../../Strings/ord.htm"><tt>ord()</tt></a>    (somente letras <i>maiúsculas</i> de A-Z ou números de 0-9), ou qualquer uma das constantes <tt>vk_*</tt> listadas na página principal de <a href="Keyboard_Input.htm">Entrada do Teclado</a>.</p>
+  <p> </p>
+  <h4><b>Sintaxe:</b></h4>
+  <p class="code">keyboard_check(key);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>chave</td>
+        <td>A chave para verificar o estado de down.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4><b>Devoluções:</b></h4>
+  <p class="code"><b></b>Booleano</p>
+  <p> </p>
+  <h4><b><b>Exemplo:</b></b>
+  </h4>
+  <p class="code">if keyboard_check(vk_left)<br> {
+    <br> x -= 5;<br> }
+  </p>
+  <p>O código acima verificará se a tecla de seta está sendo pressionada e moverá a instância 5 pixels deixados a cada passo que ela retorna verdadeiro.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Keyboard_Input.htm">Entrada de Teclado</a></div>
+        <div style="float:right">Próximo: <a href="keyboard_check_pressed.htm">teclado_check_pressed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+keyboard_check
+-->
+  <!-- TAGS
+keyboard_check
+-->
+
+</body></html>

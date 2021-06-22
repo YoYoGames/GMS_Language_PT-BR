@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mouse_check_button_released</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for mouse_check_button_released" />
+  <meta name="rh-index-keywords" content="mouse_check_button_released" />
+  <meta name="search-keywords" content="mouse_check_button_released" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mouse_check_button_released</h1>
+  <p>Esta função retornará <tt>verdadeiro</tt> se o botão do mouse que está sendo verificado tiver sido liberado ou <tt>falso</tt> se não tiver sido. Esta função só será acionada <i>uma vez</i> para qualquer botão do mouse quando ele for liberado e para acionar novamente o botão
+    precisará ter sido pressionada e liberada novamente. Você fornece o botão do mouse para verificar a partir de uma das seguintes constantes:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>mb_esquerda</td>
+        <td>O botão esquerdo do mouse</td>
+      </tr>
+      <tr>
+        <td>mb_middle</td>
+        <td>O botão central do mouse (isto pode não ser válido para todas as plataformas alvo)</td>
+      </tr>
+      <tr>
+        <td>mb_right</td>
+        <td>O botão direito do mouse</td>
+      </tr>
+      <tr>
+        <td>mb_side1*</td>
+        <td>Botão do lado do mouse 1</td>
+      </tr>
+      <tr>
+        <td>mb_side2*</td>
+        <td>Botão do lado do mouse 2</td>
+      </tr>
+      <tr>
+        <td>mb_any</td>
+        <td>Qualquer um dos botões do mouse</td>
+      </tr>
+      <tr>
+        <td>mb_none</td>
+        <td>Sem botão do mouse</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><br> *
+   <strong>NOTA</strong>: Os botões <strong>mb_side1</strong> e <strong>mb_side2 </strong>estão disponíveis apenas no <span class="notranslate">Windows</span>, <span class="notranslate">macOS</span>, <span class="notranslate">Ubuntu</span> e HTML5.</p>
+  <h4>Sintaxe:</h4>
+  <p class="code">mouse_check_button_released(numb);</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>dormente</td>
+        <td>Qual a constante do botão do mouse a verificar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if mouse_check_button_released(mb_right)<br> {
+    <br> speed = point_distance(x, y, mouse_x, mouse_y) / 10;<br> }
+  </p>
+  <p>O código acima verificará se o botão direito do mouse foi liberado e se ele tem a velocidade da instância para um décimo da distância entre a posição x/y atual e a posição x/y do mouse.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Mouse_Input.htm">Entrada do mouse</a></div>
+        <div style="float:right">Próximo: <a href="mouse_clear.htm">mouse_clear</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+mouse_check_button_released
+-->
+  <!-- TAGS
+mouse_check_button_released
+-->
+</body>
+</html>

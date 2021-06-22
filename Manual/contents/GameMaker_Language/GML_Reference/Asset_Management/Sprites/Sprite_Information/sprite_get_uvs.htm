@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_get_uvs</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_get_uvs" />
+  <meta name="rh-index-keywords" content="sprite_get_uvs" />
+  <meta name="search-keywords" content="sprite_get_uvs" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_get_uvs</h1>
+  <p>Esta função retorna uma <a href="../../../../GML_Overview/Arrays.htm">matriz</a> com as coordenadas UV e outros dados para a textura da subimagem sprite na página de textura. A função retorna um array com os 8 elementos a seguir:</p>
+  <ul class="colour">
+    <li>[0] = esquerda</li>
+    <li>[1] = topo</li>
+    <li>[2] = direito</li>
+    <li>[3] = fundo</li>
+    <li>[4] = quantidade de pixels que o compilador de bens aparou do lado esquerdo dos sprites</li>
+    <li>[5] = quantidade de pixels que o compilador de bens aparou do lado superior dos sprites</li>
+    <li>[6] = porcentagem normalizada de dados de pixels da largura original dos sprites que foi salva na página de textura</li>
+    <li>[7] = porcentagem normalizada de dados de pixels da altura original dos sprites que foi salva na página de textura</li>
+  </ul>
+  <p>Esta matriz pode então ser usada em outras funções de desenho, particularmente quando se trabalha em 3D ou usando as funções <a href="../../../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">primitivas 2D</a>, bem como quando se trabalha com o <a href="../../Shaders/Shaders.htm"><span class="notranslate">Shader</span></a> funções.</p>
+  <p class="note"><b>NOTA</b>: Esta função <b>não</b> funcionará com sprites vetoriais ou sprites de animação de esqueleto.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">sprite_get_uvs(sprite, subimagem);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>O índice do duende a ser utilizado.</td>
+      </tr>
+      <tr>
+        <td>subimagem</td>
+        <td>A subimagem do duende a ser usada.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções</h4>
+  <p class="code">Array (1D, 8 elementos)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var tex = sprite_get_uvs(sprite, 0);<br> tex_left = tex[0];<br> tex_top = tex[1];<br> tex_right = tex[2];<br> tex_bottom = tex[3];</p>
+  <p>O código acima armazenará as coordenadas UV para o duende dado em uma matriz local e então atribuirá os valores às variáveis de instância.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sprite_Information.htm">Informações Sprite</a></div>
+        <div style="float:right">Próximo: <a href="sprite_get_info.htm">sprite_get_info</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_get_uvs
+-->
+  <!-- TAGS
+sprite_get_uvs
+-->
+</body>
+</html>

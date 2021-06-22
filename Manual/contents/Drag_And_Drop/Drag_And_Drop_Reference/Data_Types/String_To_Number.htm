@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>String To Number</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the String To Number action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - String To Number" />
+  <meta name="search-keywords" content="String To Number" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="String To Number Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/i_Types_String_To_Number.png"> String To Number</h1>
+  <p>Esta ação pode converter um fio em um número. Você fornece a string a ser mudada e depois dá uma variável de destino para retornar o número real (esta variável pode ser marcada como uma variável local temporária). Observe que se a cadeia de caracteres tiver algum caractere
+    exceto números e um ponto decimal, ela <i>não</i> será convertida, embora se a cadeia <i>começar</i> com um número, estes serão convertidos e o resto da cadeia será excluído. É importante notar que ao passar os decimais para este
+    ação, o fio retornado será arredondado para apenas <i>duas</i> casas decimais. Abaixo está uma tabela de valores de entrada e o que você esperaria que fosse retornado</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Cordão</th>
+        <th>Valor retornado</th>
+      </tr>
+      <tr>
+        <td>&quot;123&quot;</td>
+        <td>123</td>
+      </tr>
+      <tr>
+        <td>&quot;123 Olá Mundo&quot;</td>
+        <td>123</td>
+      </tr>
+      <tr>
+        <td>&quot;Olá Mundo&quot;</td>
+        <td>0 (por padrão, se a cadeia não puder ser convertida, 0 será devolvido)</td>
+      </tr>
+      <tr>
+        <td>&quot;Olá Mundo 123&quot;</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>&quot;123.45678&quot;</td>
+        <td>123.46</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Sintaxe de ação:</h4>
+  <p><img alt="String To Number Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/a_Types_String_To_Number.png" /></p>
+  <h4>Argumentos:</h4>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>Valor</td>
+        <td>O fio para converter</td>
+      </tr>
+      <tr>
+        <td>Meta</td>
+        <td>A variável alvo para manter o valor retornado</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p><img alt="String To Number Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/e_Types_String_To_Number.png">O código de bloco de ação acima inicia uma variável global e depois carrega um arquivo com
+    um buffer salvo nele. Duas cordas são lidas do buffer e armazenadas em uma variável local temporária antes que uma delas seja convertida em um número real e armazenada em outra variável local temporária. Estas são então atribuídas a variáveis globais, e
+    o buffer é eliminado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Data_Type_Actions.htm">Tipo de dados Ações</a></div>
+        <div style="float:right">A seguir: <a href="Number_To_String.htm">Número para String</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - String To Number
+-->
+  <!-- TAGS
+action_string_to_number
+-->
+</body>
+</html>

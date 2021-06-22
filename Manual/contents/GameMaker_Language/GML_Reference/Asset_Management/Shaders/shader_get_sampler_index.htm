@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>shader_get_sampler_index</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function shader_get_sampler_index" />
+  <meta name="rh-index-keywords" content="shader_get_sampler_index" />
+  <meta name="search-keywords" content="shader_get_sampler_index" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">shader_get_sampler_index</span></h1>
+  <p>Como você não pode alterar o valor de um amostrador de <span class="notranslate">sombreador</span> dentro do próprio <span class="notranslate">sombreador</span>, você tem que defini-lo antes de chamar o <span class="notranslate">sombreador</span> usando uma das funções do <strong>conjunto uniforme</strong> disponível. Entretanto, para poder fazer <i>isso</i>, você
+    deve primeiro chamar esta função para obter o &quot;cabo&quot; do amostrador de sombreamento que você vai querer definir.</p>
+  <p class="note"><b>NOTA</b>: Embora um <span class="notranslate">shader</span> seja composto de dois programas discretos (vértice e fragmento) esta função não diferenciará entre os dois e devolverá o cabo da amostra do <span class="notranslate">shader</span> de qualquer um deles.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code"><span class="notranslate">shader_get_sampler_index</span><span class="notranslate">(shader</span>, uniforme);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td><span class="notranslate">shader</span></td>
+        <td>O índice do <span class="notranslate">sombreador</span> a ser usado.</td>
+      </tr>
+      <tr>
+        <td>uniforme</td>
+        <td>O amostrador de <span class="notranslate">sombreador</span> para obter o cabo de (um cordel).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">glassshader_bgsampler = <span class="notranslate">shader_get_sampler_index</span>(GlassShader, &quot;s_BackgroundSampler&quot;)<br> spr = sprite_get_texture(sprite_index, 0);<br> shader_set <span class="notranslate">(GlassShader</span>);
+    <br> text_set_set_stage(glassshader_bgsampler, spr);<br> <span class="notranslate">shader_reset</span>();
+  </p>
+  <p>O código acima obterá o <i>cabo</i> para o amostrador dentro do <span class="notranslate">sombreador</span> indexado como &quot;GlassShader&quot;<span class="notranslate">e</span> então definirá esse sombreador <span class="notranslate">constante</span> para a textura do duende dado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Shaders.htm"><span class="notranslate">Shaders</span></a></div>
+        <div style="float:right">Próximo: <a href="shader_set.htm"><span class="notranslate">shader_set</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">shader</span>_get_sampler_index
+-->
+  <!-- TAGS
+<span class="notranslate">shader</span>_get_sampler_index
+-->
+</body>
+</html>

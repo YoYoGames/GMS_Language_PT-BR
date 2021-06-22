@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Variáveis estáticas</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page outlining the use of Static Variables" />
+  <meta name="rh-index-keywords" content="Static Variables" />
+  <meta name="search-keywords" content="Static Variables,static" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Variáveis estáticas</h1>
+  <p>Uma característica interessante das <a href="../Script_Functions.htm">funções do roteiro</a> e das <a href="../Method_Variables.htm">variáveis do método</a> é que elas podem ter <strong>variáveis estáticas</strong>. Uma variável estática é aquela que é definida na primeira vez
+    que a função é chamada e que manterá seu valor a partir de então. Para criar uma variável estática você precisa defini-la usando a palavra-chave <span class="inline">static</span>, como mostrado neste exemplo simples:</p>
+  <p class="code">contador = função()<br> {
+    <br> static num = 0;<br> return num++;<br> }
+  </p>
+  <p>No exemplo acima, a variável <span class="inline">num</span> é uma variável estática, e assim será definida como <tt>0</tt> na primeira vez que a função for chamada, mas toda vez que a função for chamada depois disso, a inicialização da variável será
+    ignoradas. Então, se você chamar esta função assim:</p>
+  <p class="code">para (var i = 0; i &lt; 10; ++i;)<br> {
+    <br> show_debug_message(counter());<br> }
+  </p>
+  <p>A saída será:</p>
+  <p class="code">0<br> 1
+    <br> 2
+    <br> 3
+    <br> 4
+    <br> 5
+    <br> 6
+    <br> 7
+    <br> 8
+    <br> 9
+  </p>
+  <p>Se você não usasse a palavra-chave <span class="inline">static</span> aqui, então a saída seria simplesmente 0 <tt>para</tt> cada iteração do loop, já que a variável <span class="inline">num</span> será definida como 0 toda vez
+    a função é chamada antes de ser devolvida. Note que uma variável estática só pode ser alterada dentro da função original, e retorná-la simplesmente lhe dará uma cópia de seu valor - essencialmente a variável estática compartilhada só pode ser alterada pelo
+    função que a contém.</p>
+  <p>Uma variável estática é sempre inicializada no topo da função, portanto, não importa onde você defina uma variável estática na função, ela estará sempre disponível para ser lida e alterada em toda a função (mesmo se for usada antes de ser definida).
+    Veja o exemplo a seguir:</p>
+  <p class="code">função add_health()<br> {
+    <br> my_health+++;<br> show_debug_message(my_health);<br> static my_health = 1;<br> }
+  </p>
+  <p>Aqui a variável estática &quot; my_health&quot;<tt>está</tt> sendo alterada e impressa para a saída do compilador antes de <em>ser</em> inicializada. Embora isso pareça errado, é perfeitamente correto porque as variáveis estáticas são inicializadas <em>antes de </em>qualquer
+    O código de função é executado. Note que se houver múltiplas variáveis estáticas em uma função, a ordem na qual elas foram definidas será mantida quando forem inicializadas no topo.</p>
+  <p>Você também pode usar a palavra-chave <span class="inline">static</span> dentro de uma função para criar uma <strong>função estática</strong>, o que - como com as variáveis - significa simplesmente que a função só será definida uma vez, que é a primeira vez que a função
+    é chamado, por exemplo:</p>
+  <p class="code">função(_x, _y) construtor Vector2<br> {
+    <br> x = _x;<br> y = _y;<br>
+    <br> static Add = function( _other )<br> {<br> x += _other.x;<br> y += _other.y;<br> } <br> }
+  </p>
+  <p>No exemplo acima, a função do construtor <tt><span class="inline">Vector2</span></tt> pode ser usada para criar uma estrutura, e a estrutura terá algumas variáveis, uma das quais é a variável do método <tt><span class="inline">Add</span></tt>. Desde
+    esta variável foi definida como estática, a função que ela contém só será inicializada <em>quando </em>a função <span class="inline">Vector2</span> for chamada pela primeira vez, e todas as outras estruturas criadas com este construtor farão referência
+    a função <span class="inline">Add</span> que foi criada inicialmente, em vez de criar uma nova função para cada estrutura (para mais informações sobre estruturas e a palavra-chave <span class="inline">constructor</span>, veja <a href="../Structs.htm">aqui</a>).</p>
+  <p>Ao utilizar herança com construtores, quaisquer variáveis estáticas no construtor infantil só serão inicializadas uma vez que o construtor pai tenha sido executado, de modo que as variáveis estáticas do construtor infantil não substituam a estática do pai
+    variáveis. Veja o exemplo a seguir:</p>
+  <p class="code">função Pai() construtor<br> {
+    <br> show_debug_message(valor);<br> valor estático = 10;<br> }
+    <br>
+    <br> função Criança() : Pai() construtor<br> {
+    <br> show_debug_message(valor);<br> valor estático = 20;<br> }
+    <br>
+    <br> var _child = nova criança();</p>
+  <p>Chamar a <tt>criança()</tt> construtor imprime isto no log de saída:</p>
+  <p class="code">10<br> 20
+  </p>
+  <p>O primeiro valor é da construtora mãe, e o segundo é da construtora criança. Isto mostra que o <tt>valor</tt> da variável estática da criança não <tt>foi</tt> inicializado até que a construtora mãe tenha terminado, e que em cada construtora
+    a variável estática foi inicializada antes da chamada <tt>show_debug_message()</tt>.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../GML_Overview.htm">Visão geral da<span class="notranslate">GML</span></a></div>
+        <div style="float:right">A seguir: <a href="../Structs.htm">Structs</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Static Variables
+static
+-->
+  <!-- TAGS
+static
+-->
+</body>
+</html>

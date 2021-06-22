@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>conjunto_esqueleto_animação_esqueleto</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_animation_set" />
+  <meta name="rh-index-keywords" content="skeleton_animation_set" />
+  <meta name="search-keywords" content="skeleton_animation_set" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>conjunto_esqueleto_animação_esqueleto</h1>
+  <p>Uma vez que você tenha atribuído um duende de animação esquelético a sua instância, você pode então definir qual <i>conjunto de animação</i> ele deve usar a qualquer momento com esta função. Quando você criou seu sprite (in Spine), você terá definido várias animações
+    conjuntos para diferentes estados e nomeou cada um deles apropriadamente. Esses nomes são o que você usará para dizer ao <span class="notranslate">GameMaker Studio 2</span> qual conjunto de animação deve ser usado a qualquer momento em seu jogo. Por exemplo, se seu sprite é para um jogo de plataforma, então você pode ter
+    um conjunto de &quot;salto&quot;, um conjunto de &quot;corrida&quot; e um conjunto de &quot;ociosidade&quot; todos contidos dentro de um duende e você pode alternar entre eles em seu jogo usando esta função.</p>
+  <p>Note que a definição de uma nova animação desta forma irá reinicializar o <a href="../../Sprite_Instance_Variables/image_index.htm"><tt>image_index</tt></a> a 0, iniciando o novo conjunto de animação desde o início de seu ciclo de animação. Se este <i>não</i> for o
+    comportamento desejado, então você pode definir um valor &quot;mix&quot; usando <a href="skeleton_animation_mix.htm"><tt>skeleton_animation_mix()</tt></a> e quando você definir uma nova animação, ela será facilmente interpolada com o conjunto anterior. Você também deve fazer
+    com certeza terá um <span class="notranslate">quadro-chave</span> no início de cada animação para evitar que os dados sejam retidos de animações anteriores, a menos que você planeje usar trilhas de animação separadas.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">skeleton_animation_set(animname);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>animname</td>
+        <td>O nome (uma cadeia) do conjunto de animação a ser utilizado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if keyboard_check_pressed(vk_space)<br> {
+    <br> if skeleton_animation_get() != &quot;pular&quot;<br> {
+    <br> skeleton_animation_set(&quot;salto&quot;);
+    <br> }
+    <br> }
+  </p>
+  <p>O código acima mudará o conjunto de animação sendo usado para o conjunto de &quot;salto&quot; quando a tecla de espaço for pressionada, mas somente se o conjunto atual sendo usado ainda não estiver &quot;pulando&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Animation.htm">Animação</a></div>
+        <div style="float:right">Próximo: <a href="skeleton_animation_get_ext.htm">esqueleto_animação_get_ext_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_animation_set
+-->
+  <!-- TAGS
+skeleton_animation_set
+-->
+</body>
+</html>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>física_joint_weld_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_joint_weld_create" />
+  <meta name="rh-index-keywords" content="physics_joint_weld_create" />
+  <meta name="search-keywords" content="physics_joint_weld_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>física_joint_weld_create</h1>
+  <p>A junta de solda é projetada para fixar dois dispositivos juntos em uma união forte, porém flexível. A junta de solda permitirá a flexão entre as duas fixações unidas, mas sem o estiramento associado, por exemplo, a uma junta distante, e sempre
+    tentar &quot;mola&quot; de volta ao ângulo de referência quando colocado sob qualquer tensão ou carga. Você define o ponto na sala onde a junta deve ser criada, assim como o ângulo que você deseja que a junta tente manter em todo momento, como mostrado em
+    a imagem abaixo:</p>
+  <p><img alt="Weld joint illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/weld_joint_image.png">Como você pode ver, os pontos de ancoragem são especificados como coordenadas da sala, portanto é preciso ter cuidado ao definir
+    especialmente se as instâncias estão sendo criadas ao mesmo tempo que as juntas, em vez de serem colocadas na sala através do editor da sala. Você também deve perceber que as articulações são criadas independentemente do tamanho do duende das instâncias.
+    ou as luminárias que eles anexaram. Portanto, se você criar uma junta de solda em outro lugar que não seja a origem da instância, ela ainda é válida e restringirá as duas instâncias em relação à posição em que foi criada.</p>
+  <p>Como a junta de solda é flexível e se dobra e flexiona quando sob qualquer tensão, você pode definir a freqüência de oscilação (em Hz), bem como a relação de amortecimento para que a junta obtenha efeitos diferentes - você pode precisar brincar com esses valores para afiná-los
+    e é recomendável que você comece com valores menores e os incremente até obter o efeito que deseja.</p>
+  <p>Se você definir o valor &quot;col&quot; como verdadeiro, então <tt>as</tt> duas instâncias podem interagir e colidir uma com a outra, mas somente se tiverem eventos de colisão, no entanto, se for definido como falso, <tt>elas</tt> não irão colidir, não importa o que aconteça.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">physics_joint_weld_create(inst1, inst2, anchor_x, anchor_y, ref_angle, freq_hz, damping_ratio, col)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>inst1</td>
+        <td>A primeira instância para se conectar com a junta</td>
+      </tr>
+      <tr>
+        <td>inst2</td>
+        <td>A segunda instância para se conectar com a junta</td>
+      </tr>
+      <tr>
+        <td>anchor_x</td>
+        <td>A coordenada x para a articulação, dentro do mundo do jogo</td>
+      </tr>
+      <tr>
+        <td>âncora_y</td>
+        <td>A coordenada y para a articulação, dentro do mundo do jogo</td>
+      </tr>
+      <tr>
+        <td>ref_angle</td>
+        <td>O ângulo de articulação para manter</td>
+      </tr>
+      <tr>
+        <td>freq_hz</td>
+        <td>Esta é a freqüência de oscilação para a junta, em hertz</td>
+      </tr>
+      <tr>
+        <td>damping_ratio</td>
+        <td>Esta relação de amortecimento para a junta</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Se as duas instâncias podem colidir (verdadeiras) ou não (falsas)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Inteiro (índice da junta)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var i, fix, o_id, p_id;<br> p_id = noone;<br> o_id = noone;<br> fix = physics_fixture_create();<br> physics_fixture_set_box_shape(fix, 64, 32);<br> for (i = 0; i &lt; 5; i++;)<br> {
+    <br> o_id = instance_create_layer(x + (128 * i), y, &quot;Instances&quot;, obj_BridgePart);<br> physics_fixture_bind(fix, o_id);<br> if i &gt; 0 &amp;&amp; i &lt; 4<br> {
+    <br> physics_joint_weld_create(p_id, o_id, x + (128 * i) - 64, y, 0, 10, 12, true);<br> }
+    <br> p_id = o_id;<br> }
+    <br> physics-fixture_delete(fix);
+  </p>
+  <p>O código acima criará uma fixação, depois usará um laço para criar uma série de instâncias, ligando a fixação a cada nova instância e, em seguida, unindo todas elas usando uma junta de solda. Finalmente, a fixação é apagada da memória.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Joints.htm">Juntas</a></div>
+        <div style="float:right">A seguir: <a href="physics_joint_friction_create.htm">física_fricção_junta_criar</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_weld_create
+-->
+  <!-- TAGS
+physics_joint_weld_create
+-->
+</body>
+</html>

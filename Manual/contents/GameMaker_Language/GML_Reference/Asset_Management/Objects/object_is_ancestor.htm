@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>object_is_ancestor</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function object_is_ancestor" />
+  <meta name="rh-index-keywords" content="object_is_ancestor" />
+  <meta name="search-keywords" content="object_is_ancestor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>object_is_ancestor</h1>
+  <p>Esta função pode ser usada para verificar um objeto e ver se ele é um ancestral ou não de outro objeto. Portanto, ambos os argumentos precisam ser índices de objetos e <i>não</i> a identificação da instância, e o primeiro é sempre o objeto que você
+    querem descobrir se é um filho do segundo argumento, que é sempre o objeto que quer verificar como o antepassado (pai).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">object_is_ancestor(obj, par);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>O objeto que está sendo verificado como a criança.</td>
+      </tr>
+      <tr>
+        <td>par</td>
+        <td>O objeto que está sendo verificado como o antepassado (pai).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if object_is_ancestor(object_index, obj_Enemy)<br> {
+    <br> instance_destroy();
+    <br> }
+  </p>
+  <p>O código acima verifica se a instância que executa o código é uma criança do objeto &quot;obj_Enemy&quot; e, se for o caso, é destruída.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Objects.htm">Objetos</a></div>
+        <div style="float:right">Próximo: <a href="object_set_mask.htm">object_set_mask</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+object_is_ancestor
+-->
+  <!-- TAGS
+object_is_ancestor
+-->
+</body>
+</html>

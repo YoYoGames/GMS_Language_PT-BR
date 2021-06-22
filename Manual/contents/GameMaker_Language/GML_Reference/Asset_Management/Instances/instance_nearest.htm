@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>exemplo_nearest</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_nearest" />
+  <meta name="rh-index-keywords" content="instance_nearest" />
+  <meta name="search-keywords" content="instance_nearest" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>exemplo_nearest</h1>
+  <p>Esta função verificará todas as instâncias do objeto dado para ver qual está mais próximo do ponto x/y dado. Todas as verificações serão da posição x/y dada até a <i>origem</i> (a posição x/y) das instâncias do objeto especificado. Se nenhuma instância
+    do objeto existente, a função retornará a palavra-chave <a href="../../../GML_Overview/Instance_Keywords.htm"><span class="inline">noone</span></a>mas, se houver casos, devolverá o <a href="Instance_Variables/id.htm"><tt>id</tt></a>    da instância encontrada. Observe que se a instância executando o código tiver o mesmo índice de objetos que o objeto que está sendo verificado, então ele será incluído na verificação (isto inclui a verificação dos objetos dos pais se a instância que está chamando também for uma criança
+    do pai).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">instance_nearest(x, y, obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A posição x para verificar de.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A posição y a verificar de.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>O objeto a ser verificado em casos de.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (ou um valor de identificação de instância ou a palavra-chave <tt>noone</tt>)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var inst, xx;<br> xx = x;<br> x -= 10000;<br> inst = instance_nearest(xx, y, object_index);<br> if inst != id<br> {
+    <br> draw_line(x, y, inst.x, inst.y);<br> }
+    <br> x += 10000;</p>
+  <p>O código acima move a instância atual 10000 pixels e depois verifica sua posição anterior para encontrar a instância mais próxima do mesmo tipo de objeto. Se essa instância for ela mesma, nada mais fará do que voltar à sua posição original, mas se a
+    instância encontrada seja diferente, ela traçará uma linha entre as duas.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Instances.htm">Instâncias</a></div>
+        <div style="float:right">Próximo: <a href="instance_number.htm">número_da_classe</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_nearest
+-->
+  <!-- TAGS
+instance_nearest
+-->
+</body>
+</html>

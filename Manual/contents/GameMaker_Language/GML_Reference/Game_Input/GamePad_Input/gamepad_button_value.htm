@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_button_value</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_button_value" />
+  <meta name="rh-index-keywords" content="gamepad_button_value" />
+  <meta name="search-keywords" content="gamepad_button_value" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_button_value</h1>
+  <p>Com esta função você pode obter o valor atual de um botão analógico, de 0 a 1, onde 0 é sem pressão e 1 é pressão total. Você fornece o índice de ranhura do gamepad para verificar, juntamente com uma constante de botão (como listado <a href="Gamepad_Input.htm">aqui</a>),
+    ou um valor inteiro entre 0 e <a href="gamepad_button_count.htm"><tt>gamepad_button_count()</tt></a> -1.</p>
+  <p>Note que isto retornará o valor <em>bruto</em> para o botão, e <em>não</em> leva em conta a configuração para o limiar (veja <a href="gamepad_set_button_threshold.htm">aqui</a> para mais informações sobre limiares).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">gamepad_button_value(dispositivo, botão);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>dispositivo</td>
+        <td>Qual dispositivo de controle de jogo &quot;slot&quot; a ser verificado.</td>
+      </tr>
+      <tr>
+        <td>botão</td>
+        <td>Qual botão do gamepad é <a href="Gamepad_Input.htm">constante</a> a ser verificado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">speed = gamepad_button_value(0, gp_shoulderrb) * 4;</p>
+  <p>O código acima usa o valor do gatilho analógico do controle de jogo conectado ao dispositivo &quot;slot&quot; 0 para definir a velocidade da instância.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Gamepad_Input.htm">Entrada Gamepad</a></div>
+        <div style="float:right">Próximo: <a href="gamepad_hat_count.htm">gamepad_hat_count</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_button_value
+-->
+  <!-- TAGS
+gamepad_button_value
+-->
+</body>
+</html>

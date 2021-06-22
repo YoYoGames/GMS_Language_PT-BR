@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>lista_esqueleto_animação_esqueleto</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_animation_list" />
+  <meta name="rh-index-keywords" content="skeleton_animation_list" />
+  <meta name="search-keywords" content="skeleton_animation_list" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>lista_esqueleto_animação_esqueleto</h1>
+  <p>Com esta função você pode preencher uma <a href="../../../../Data_Structures/DS_Lists/DS_Lists.htm">lista DS</a> (pré-criada) com todos os nomes das animações incluídas como parte do esqueleto de animação sprite. Os nomes serão cordas e podem então
+    ser usado nas outras funções de animação para estes tipos de duende.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">skeleton_animation_list(sprite, list);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>O índice sprite da animação do esqueleto da coluna vertebral para obter a lista.</td>
+      </tr>
+      <tr>
+        <td>lista</td>
+        <td>A identificação da lista DS a ser preenchida com os nomes da animação.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var list = ds_list_create();<br> skeleton_animation_list(sprite_index, list);<br> for (var i = 1; i &lt; ds_list_size(list); i++;) <br> {
+    <br> skeleton_animation_mix(list[| 0], list[| i], 0.5);<br> }
+    <br> ds_list_destroy(list);
+  </p>
+  <p>O código acima cria uma lista DS de todos os nomes de animação para o duende que está sendo usado pela instância. Em seguida, ele passa por eles e define o valor da mistura para todos eles com a primeira animação para 0,5.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Animation.htm">Animação</a></div>
+        <div style="float:right">A seguir: <a href="skeleton_animation_clear.htm">skeleton_animation_clear</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_animation_list
+-->
+  <!-- TAGS
+skeleton_animation_list
+-->
+</body>
+</html>

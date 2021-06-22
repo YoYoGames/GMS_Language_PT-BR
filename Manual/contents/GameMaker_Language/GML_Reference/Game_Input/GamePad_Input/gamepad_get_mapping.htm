@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_get_mapping</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_get_mapping" />
+  <meta name="rh-index-keywords" content="gamepad_get_mapping" />
+  <meta name="search-keywords" content="gamepad_get_mapping" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_get_mapping</h1>
+  <p>Esta função pode ser usada para recuperar a cadeia de mapeamento para o gamepad. Esta cadeia de caracteres será uma ou outra:</p>
+  <ul class="colour">
+    <li>A linha atual do mapa para o gamepad, por exemplo:
+     <p class="code">&quot;050000005e040000fd020000ffff3f00,Xbox Wireless Controller,a:b0,b:b1,start:b4,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b6,lefthoulder:b9,lefttick:b7,lefttrigger:a4,leftx:a0,lefty:a1,righthoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,x:b2,y:b3,platform:android&quot;.</p>
+    </li>
+    <li>Uma cadeia com &quot;sem mapeamento&quot; se não houver um conjunto de mapeamento (isto não é o <i>mesmo</i> que quando não há mapeamento disponível)</li>
+    <li>Uma cadeia com &quot;índice de dispositivo fora de alcance&quot; se o índice do slot não for um índice de gamepad válido</li>
+    <li>Uma cadeia vazia &quot;&quot; se não houver um mapeamento disponível para o gamepad conectado</li>
+  </ul>
+  <p>Para mais informações sobre a formatação da seqüência de mapas devolvidos, consulte a função <a href="gamepad_test_mapping.htm"><tt>gamepad_test_mapping()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">gamepad_get_mapping(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>De qual &quot;ranhura&quot; do índice gamepad para obter o mapeamento.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Cordão</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var _gpMap = gamepad_get_mapping(global.PadIndex);<br> show_debug_message(&quot;Gamepad Mapping = &quot; + _gpMap);</p>
+  <p>O código acima obtém a cadeia de caracteres do mapa para o slot gamepad dado e, em seguida, o envia para o console para a depuração.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Gamepad_Input.htm">Entrada Gamepad</a></div>
+        <div style="float:right">Próximo: <a href="gamepad_test_mapping.htm">gamepad_test_mapping</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_get_mapping
+-->
+  <!-- TAGS
+gamepad_get_mapping
+-->
+
+</body></html>

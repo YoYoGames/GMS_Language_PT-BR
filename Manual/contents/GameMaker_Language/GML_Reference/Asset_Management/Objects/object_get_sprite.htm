@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>object_get_sprite</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function object_get_sprite" />
+  <meta name="rh-index-keywords" content="object_get_sprite" />
+  <meta name="search-keywords" content="object_get_sprite" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>object_get_sprite</h1>
+  <p>Esta função lhe dirá se o objeto que você está verificando tem um duende ou não, e se tiver, então ele retornará o índice desse duende, ou -1 se não tiver. Note que esta não é uma função de instância! Você pode ter um objeto que não tenha
+    sprite enquanto uma instância desse mesmo objeto pode ter um e vice-versa, ou podem até mesmo ter diferentes sprites. Você pode definir uma instância individual de duende usando o <a href="../Sprites/Sprite_Instance_Variables/sprite_index.htm"><tt>sprite_index</tt></a>    variável de instância.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">object_get_sprite(obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>O índice do objeto a ser verificado</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (ID do ativo sprite)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var _spr = object_get_sprite(object_index);<br> if (sprite_index != _spr)<br> {<br> sprite_index = _spr;<br> }</p>
+  <p>O exemplo acima verificará o <span class="inline">sprite_index</span> da instância contra o duende do <span class="inline">object_index</span> da instância. Se eles não forem os mesmos, então atribuirá o mesmo duende que o do
+    índice de objetos para a instância.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Objects.htm">Objetos</a></div>
+        <div style="float:right">Próximo: <a href="object_get_visible.htm">object_get_visible</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+object_get_sprite
+-->
+  <!-- TAGS
+object_get_sprite
+-->
+</body>
+</html>

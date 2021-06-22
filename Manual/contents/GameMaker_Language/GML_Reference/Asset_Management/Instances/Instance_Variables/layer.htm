@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>camada</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the variable layer" />
+  <meta name="rh-index-keywords" content="layer" />
+  <meta name="search-keywords" content="layer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>camada</h1>
+  <p>Esta <b>variável incorporada</b> é criada para cada instância em uma sala e contém o valor de identificação da camada à qual a instância está atribuída. Este valor pode então ser usado em outras funções como <a href="../../Rooms/General_Layer_Functions/layer_get_depth.htm"><tt>layer_get_depth()</tt></a> ou
+    pode ser alterado para mover a instância para outra camada, mas note que se a camada que está sendo atribuída não existir na sala atual, então você receberá um erro que forçará seu jogo a fechar. Ao atribuir uma camada, você deve fornecer a única
+   <b>ID da camada</b> conforme retornado pela função <a href="../../Rooms/General_Layer_Functions/layer_get_id.htm"><tt>layer_get_id()</tt></a> (quando se usam camadas de sala nomeadas), ou como retornado pela função <a href="../../Rooms/General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a> (quando
+    você cria suas próprias camadas em tempo de execução).</p>
+  <p class="note"><b>IMPORTANTE!</b> se você criou a instância usando o <span style="font-size:1px;"><a href="../instance_create_depth.htm"><tt style="font-size: 14px">instance_create_depth()</tt></a></span> ou ter alterado manualmente a função <span style="font-size:1px;"><a href="depth.htm"><tt style="font-size: 14px">profundidade</tt></a></span>    a camada atribuída à instância se torna uma camada &quot;gerenciada&quot;, que é aquela que o GameMaker <span class="notranslate">Studio 2 controla</span> e gerencia automaticamente. Nesses casos, a variável de <tt>camada</tt> retornará -1.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">camada;</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (número inteiro - valor do índice de recursos)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">layer = layer_create(-1000);</p>
+  <p>O código acima criará uma nova camada com uma profundidade de -1000 e então definirá a variável da <tt>camada de</tt> instância para o ID da camada retornada, movendo a instância da camada em que se encontra atualmente para a nova camada que está sendo criada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Instance_Variables.htm">Variáveis de instância</a></div>
+        <div style="float:right">Próximo: <a href="alarm.htm">alarme</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer
+-->
+  <!-- TAGS
+layer
+-->
+</body>
+</html>

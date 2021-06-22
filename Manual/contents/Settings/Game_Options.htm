@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Opções de jogo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains how to setup the different Game options" />
+  <meta name="rh-index-keywords" content="Game Options" />
+  <meta name="search-keywords" content="Game Options,Options" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Opções de jogo</h1>
+  <p>As Opções de Jogo são divididas em duas seções, Opções Principais e as Configurações da Plataforma. As opções principais começam com as Opções <strong>Gerais</strong>, que é onde você pode definir certas coisas que irão afetar o jogo independentemente da plataforma que
+    está sendo projetado para funcionar.</p>
+  <p><img alt="General Game Options" class="center" src="../assets/Images/Settings/Game_Options/General_Options.png">A janela tem as seguintes seções:</p>
+  <ul class="colour">
+    <li><strong>Use <span class="notranslate">DnD™</span></strong> como Script Type padrão: Quando esta opção for selecionada, todos os novos scripts e eventos de objetos serão abertos usando o editor <span class="notranslate">DnD™</span>em vez do editor de código.</li>
+    <li><strong>Quadros de jogo por segundo</strong>: Este valor estabelece o limite do número de quadros por segundo que o <span class="notranslate">GameMaker Studio 2</span> deve tentar manter seus jogos durante a execução. Este valor representa o número de vezes que o loop do jogo será executado em
+      um segundo (um único loop de jogo é considerado um único &quot;frame&quot;) e é definido para um valor padrão de 60, embora 30 também seja freqüentemente utilizado. Há muitos argumentos sobre qual a velocidade da sala é o ideal, mas a resposta real depende de que tipo
+      de jogo que você está fazendo, o tamanho da sala, o número de instâncias e a intensidade do código. Por exemplo, se você tiver uma sala grande e uma velocidade de sala de 30, o jogo pode parecer &quot;agitado&quot; quanto maior for a área que você estiver olhando,
+      é mais fácil para o olho perceber a baixa velocidade da sala, mas se o jogo for intenso, então ajustar a velocidade da sala para 120 pode fazer com que o jogo &quot;atrase&quot; à medida que o fps cai devido à quantidade de processamento sendo feita. Portanto, tome cuidado com este valor
+      e tente sempre ajustá-lo ao que seu jogo precisa.</li>
+    <li><strong>Cor padrão do desenho</strong>: A cor padrão para o texto do desenho ou fóruns (e outras coisas) quando nenhuma cor tiver sido definida usando código.</li>
+    <li><strong>Cor padrão do desenho Fora da região da sala</strong>: A cor padrão que será usada para limpar o fundo de qualquer área fora da sala de jogos.</li>
+    <li><strong>Gerar imagens do projeto</strong>: Clicando aqui, será aberta a ferramenta Gerador de Imagens do Projeto.</li>
+    <li><strong>Data de início do projeto</strong>: A data em que o projeto foi iniciado.</li>
+    <li><strong>Tempo de uso do projeto</strong>: O tempo decorrido desde que você iniciou o projeto.</li>
+    <li><strong>GUIA DO PROJETO</strong>: Este é o identificador único que é criado para cada projeto dentro do <span class="notranslate">GameMaker Studio 2</span>. Se você desejar mudar isso, clique no botão Criar novo GUID para gerar um novo GUID.</li>
+    <li><strong>Gerar mipmaps para páginas de textura separadas</strong>: Esta opção fará com que o <span class="notranslate">GameMaker Studio 2</span> crie mipmaps para aqueles sprites que tenham marcado a opção Página de Textura Separada nas configurações de Textura do Editor Sprite. Habilitando o mipmapping
+      significa que a página de textura original do duende deve ser escalonada e filtrada em múltiplas resoluções dentro do arquivo de textura. Isto é normalmente desligado, mas se você estiver usando vistas para aumentar ou diminuir o zoom em grandes áreas da sala de jogos, ou se estiver trabalhando
+      com um jogo 3D, então você pode querer habilitar isto e depois usar as funções de Mipmapping para ajustar a forma como o jogo lida com os diferentes níveis de mipmap. Observe que se você não estiver sinalizando sprites como utilizando páginas de textura individual, você ainda pode habilitar
+      mipmapping em uma base de grupo por textura do Gerente do Grupo de Textura. Esta opção está desligada por padrão.</li>
+    <li><strong><span class="notranslate">Steam</span></strong> ID: Se você está criando um jogo que deve ser distribuído através do <span class="notranslate">Steam</span>, então você precisa fornecer o <span class="notranslate">Steam</span> App ID aqui. Certifique-se de ter adicionado o caminho para o <span class="notranslate">Steamworks</span>SDK nas Preferências de Plataforma ao usar esta opção,
+      e garantir que você tenha tudo configurado corretamente no painel de controle da <span class="notranslate">Steamworks</span>.</li>
+    <li><strong>Habilitar o controle da fonte</strong>: Se você deseja que o projeto esteja sob SCM (Source Control Management), então você precisa verificar isto. Ele está desligado por padrão (veja aqui para mais informações sobre controle de fonte).</li>
+    <li><strong>Autor</strong>: O nome do autor do jogo (ou editora ou estúdio).</li>
+    <li><strong>Projeto Última Alteração</strong>: Esta seção simplesmente mostra o carimbo de data/hora pela última vez que o projeto foi alterado (isto não é editável).</li>
+    <li><strong>Aceitar a licença da coluna vertebral</strong>: Aqui você pode marcar a caixa para ser mostrada a Licença de <span class="notranslate">Tempo de Espera</span> e aceitá-la. Isto permitirá que você utilize os sprites de espinha em seu jogo (esta licença também será mostrada na primeira vez que você tentar adicionar um sprite de espinha.
+      ao seu projeto e ainda não verificou a licença aqui antes).</li>
+  </ul>
+  <p>O <a href="../Introduction/The_Asset_Browser.htm">Navegador de Ativos</a> também terá outras opções de jogo disponíveis para você, dependendo das plataformas alvo que estão disponíveis para a <a href="../Setting_Up_And_Version_Information/GMS2_Version_Information.htm">licença</a> que você possui e nem todas elas podem estar disponíveis ou visíveis.</p>
+  <p>Existem as seguintes opções de jogos específicos de plataforma:</p>
+  <ul class="colour">
+    <li><a href="Game_Options/Windows.htm"><span class="notranslate">Windows</span></a></li>
+    <li><a href="Game_Options/macOS.htm"><span class="notranslate">macOS</span></a></li>
+    <li><a href="Game_Options/Ubuntu.htm"><span class="notranslate">Ubuntu</span></a></li>
+    <li><a href="Game_Options/Windows_UWP.htm"><span class="notranslate">Windows UWP</span></a></li>
+    <li><a href="Game_Options/HTML5.htm">HTML5</a></li>
+    <li><a href="Game_Options/Android.htm"><span class="notranslate">Android</span></a></li>
+    <li><a href="Game_Options/iOS.htm"><span class="notranslate">iOS</span></a></li>
+    <li><a href="Game_Options/tvOS.htm"><span class="notranslate">tvOS</span></a></li>
+  </ul>
+  <p class="note"><strong>NOTA</strong>: As várias <strong>opções de jogos de console</strong> não estão listadas aqui devido às várias restrições legais mantidas pelas diferentes empresas. Se você tem uma Licença de Console, então você pode obter estas informações no <a href="https://help.yoyogames.com/hc/en-us/categories/202590248-Console-Support">Helpdesk<span class="notranslate">YoYo Games</span></a>,
+    mas você deve primeiro contatar <span class="notranslate">a YoYo Games</span> com seu e-mail de identificação do console e solicitar permissão para visualizar as diferentes seções.</p>
+  <p>Algumas licenças do <span class="notranslate">GameMaker Studio 2</span> também podem mostrar opções de jogos para o <strong><span class="notranslate">Fogo da Amazônia</span></strong> alvo. Estas são opções herdadas, pois as licenças mais recentes suportam a plataforma Fire diretamente usando o <strong><span class="notranslate">Android</span></strong> opções de jogo. Se sua licença ainda
+    mostra <span class="notranslate">Amazon Fire</span> então você pode encontrar informações sobre as opções na página seguinte:</p>
+  <ul class="colour">
+    <li><a href="Game_Options/Amazon_Fire.htm"><span class="notranslate">Fogo da Amazônia</span> (Legado)</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Game_Settings.htm">Configurações do jogo</a></div>
+        <div style="float:right">A seguir: <a href="Configurations.htm">Configurações</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Game Settings
+-->
+  <!-- TAGS
+game_settings
+-->
+</body>
+</html>

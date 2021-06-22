@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>dados_do_evento</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for event_data" />
+  <meta name="rh-index-keywords" content="event_data" />
+  <meta name="search-keywords" content="event_data" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>dados_do_evento</h1>
+  <p>Esta variável é <b>global</b> no escopo e é usada para manter um <a href="../../Data_Structures/DS_Maps/DS_Maps.htm">Mapa DS</a> quando usada nos <a href="../../../../The_Asset_Editors/Object_Properties/Gesture_Events.htm">Eventos de Gesture</a>, e -1 em
+    todas as outras vezes. O conteúdo real do mapa DS dependerá do tipo de evento gesto que o desencadeou, portanto, consulte as seções individuais para esses eventos.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">event_data;</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (valor inteiro)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">isFlick = event_data[?&quot;isflick&quot;];<br> if (isFlick)<br> {
+    <br> flickVelX = event_data[?&quot;diffX&quot;];<br> flickVelY = event_data[?&quot;diffY&quot;];<br> }
+    <br> else
+    <br> {
+    <br> flickVelX = 0;<br> flickVelY = 0;<br> }
+  </p>
+  <p>O código acima é retirado do evento <b>Drag End</b> e verifica se o ventilador é um evento &quot;flick&quot;, e se é ele que extrai os dados necessários do <tt>mapa DS de</tt> dados do evento e o usa para definir algumas variáveis. Se for um &quot;flick
+    não for detectado, então as mesmas variáveis são definidas como 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Gesture_Input.htm">Entrada por gestos</a></div>
+        <div style="float:right">A seguir: <a href="gesture_get_drag_time.htm">gesture_get_drag_time</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+event_data
+-->
+  <!-- TAGS
+event_data
+-->
+</body>
+</html>

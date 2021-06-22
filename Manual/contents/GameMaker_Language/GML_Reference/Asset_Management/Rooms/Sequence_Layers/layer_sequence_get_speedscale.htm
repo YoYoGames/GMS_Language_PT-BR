@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>escala_de_série_de_série_de_camadas</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_get_speedscale" />
+  <meta name="rh-index-keywords" content="layer_sequence_get_speedscale" />
+  <meta name="search-keywords" content="layer_sequence_get_speedscale" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>escala_de_série_de_série_de_camadas</h1>
+  <p>Com esta função você fornece a identificação do elemento de seqüência - como retornado por <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a> ou por uma das <a href="../General_Layer_Functions/General_Layer_Functions.htm">funções dos elementos de camada</a> - e retornará a escala de velocidade de reprodução atual. Este é o valor <i>multiplicador</i> usado para desacelerar ou acelerar a velocidade de reprodução. Um valor de 1 é o valor padrão, e valores inferiores a 1 significam que a reprodução é desacelerada e valores maiores
+    do que 1 significa que a reprodução é acelerada.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">layer_sequence_get_speed scale(sequence_element_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>sequence_element_id</td>
+        <td>O valor de identificação único do elemento de seqüência para o alvo</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if layer_sequence_get_speed scale(title_sequence) != 1<br> {
+    <br> layer_sequence_speed scale(title_sequence, 1);<br> }
+  </p>
+  <p>O código acima verifica a escala de velocidade atual da cabeça de jogo do elemento de seqüência ID armazenado na variável &quot;title_sequence&quot;, e se não estiver definido para 1, está definido para este valor.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sequence_Layers.htm">Sequência de camadas</a></div>
+        <div style="float:right">Próximo: <a href="layer_sequence_get_length.htm">layer_sequence_get_length</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_get_speedscale
+-->
+  <!-- TAGS
+layer_sequence_get_speedscale
+-->
+</body>
+</html>

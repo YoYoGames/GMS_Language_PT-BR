@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>camada_existe</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_exists" />
+  <meta name="rh-index-keywords" content="layer_exists" />
+  <meta name="search-keywords" content="layer_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>camada_existe</h1>
+  <p>Esta função pode ser usada para verificar se a <b>camada</b> em questão existe. Você fornece a identificação da camada (que você obtém quando cria a camada usando <a href="layer_create.htm"><tt>layer_create()</tt></a>) ou o nome da camada (como um fio - isto terá um desempenho
+    impacto) e a função devolverá um valor <i>booleano</i> de <tt>verdadeiro</tt> se existir ou <tt>falso</tt> se não existir.</p>
+  <p class="note"><b>NOTA</b>: Esta função funciona dentro do escopo da sala alvo atual - por padrão a sala na qual a função é chamada - que pode ser definida usando a função <a href="layer_set_target_room.htm"><tt>layer_set_target_room()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">layer_exists(layer_name)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>nome_da_camada</td>
+        <td>O nome da camada (um fio ou valor de identificação)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se !layer_exists(global.tileLayer)<br> {
+    <br> global.tileLayer = layer_create(1000);<br> }
+  </p>
+  <p>O código acima verificará se a camada armazenada na variável global realmente existe, e se não existe, então ela é criada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="General_Layer_Functions.htm">Funções gerais da camada</a></div>
+        <div style="float:right">Próximo: <a href="layer_get_id.htm">layer_get_id</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_exists
+-->
+  <!-- TAGS
+layer_exists
+-->
+</body>
+</html>

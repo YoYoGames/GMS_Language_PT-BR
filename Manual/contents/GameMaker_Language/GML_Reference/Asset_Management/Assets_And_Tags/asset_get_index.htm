@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>asset_get_index</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function asset_get_index" />
+  <meta name="rh-index-keywords" content="asset_get_index" />
+  <meta name="search-keywords" content="asset_get_index" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>asset_get_index</h1>
+  <p>Você pode usar esta função para obter o índice de identificação único para um bem do jogo a partir de seu nome. Se o bem não for encontrado, a função retornará um valor de -1, caso contrário, retornará o id de índice único para o bem que está sendo verificado. Este id pode então
+    ser usado em outras funções como qualquer outro valor de índice, como o <a href="../Sprites/Sprite_Instance_Variables/sprite_index.htm"><tt>sprite_index</tt></a> ou o <a href="../Paths/Path_Variables/path_index.htm"><tt>path_index</tt></a>,
+    por exemplo. Observe que embora esta função possa ser usada para referenciar ativos a partir de cordas (veja exemplo abaixo) você deve sempre certificar-se de que o ativo existe antes de usá-lo, caso contrário você poderá receber erros que irão travar seu jogo.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">asset_get_index(nome);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>nome</td>
+        <td>O nome do ativo do jogo para obter o índice de (uma corda).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Índice de ativos (Inteiro)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var obj = asset_get_index(&quot;obj_Enemy_&quot; + string(global.Level));<br> se obj &gt; -1<br> {
+    <br> instance_create_layer(random(room_width), random(room_height), obj, &quot;Enemy_Layer&quot;);<br> }
+  </p>
+  <p>O código acima obterá um índice de objeto a partir de uma string, e se esse índice existir, criará uma instância do objeto no jogo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Assets_And_Tags.htm">Ativos e Etiquetas</a></div>
+        <div style="float:right">Próximo: <a href="asset_get_type.htm">asset_get_type</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+asset_get_index
+-->
+  <!-- TAGS
+asset_get_index
+-->
+</body>
+</html>

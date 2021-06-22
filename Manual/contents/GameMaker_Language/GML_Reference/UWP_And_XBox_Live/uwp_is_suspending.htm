@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>uwp_is_suspending</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for uwp_is_suspending" />
+  <meta name="rh-index-keywords" content="uwp_is_suspending" />
+  <meta name="search-keywords" content="uwp_is_suspending" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>uwp_is_suspending</h1>
+  <p>Esta função voltará a <tt>ser verdadeira</tt> para um único quadro (e <tt>falsa</tt> de outra forma) de maneira semelhante a <a href="../OS_And_Compiler/os_is_paused.htm"><tt>os_is_paused()</tt></a>. O jogo então tem um segundo para salvar o estado de jogo antes dele...
+    é potencialmente encerrado pelo sistema. Uma vez que o jogo tenha terminado de salvar dados, ele deve chamar <a href="uwp_suspend.htm"><tt>uwp_suspend()</tt></a> para suspender limpos. O jogo provavelmente também deveria entrar em um estado de pausa para que, se for retomado pelo
+    (se não tiver sido totalmente terminado), o jogador não é jogado diretamente de volta em uma situação de jogo.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">uwp_is_suspending();</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se uwp_is_suspending()<br> {
+    <br> scr_Save_Game_Data();
+    <br> uwp_suspend();
+    <br> }
+  </p>
+  <p>O código acima verifica se o aplicativo está entrando em suspensão e se é ele que chama um script para salvar os dados do jogo antes de suspendê-lo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="UWP_And_XBox_Live.htm">UWP e XBox Live</a></div>
+        <div style="float:right">Próximo: <a href="uwp_is_constrained.htm">uwp_is_constrained</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+uwp_is_suspending
+-->
+  <!-- TAGS
+uwp_is_suspending
+-->
+</body>
+</html>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_load</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_load" />
+  <meta name="rh-index-keywords" content="buffer_load" />
+  <meta name="search-keywords" content="buffer_load" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_load</h1>
+  <p>Esta função é usada para carregar um buffer que foi salvo anteriormente usando o <a href="buffer_save.htm"><tt>buffer_save()</tt></a> funções, bem como quaisquer <a href="../../../Settings/Included_Files.htm" title="Included Files">arquivos</a> ou arquivos <a href="../../../Settings/Included_Files.htm" title="Included Files">incluídos</a> 
+    carregado externamente. Ele retornará um novo ID de buffer que é criado pela função de &quot;crescer&quot; buffer (ver aqui) com um alinhamento de <a href="buffer_create.htm">bytes</a> de 1. Este ID deve ser armazenado em uma variável e usado em todas as outras
+    funções chamadas para este buffer. Se a carga falhar por qualquer motivo, a função retornará -1 e uma mensagem será exibida na janela de saída do compilador dizendo que a carga falhou.</p>
+  <p>Note que em HTML5 qualquer buffer carregado do armazenamento local será decodificado usando a base64 (uma vez que eles são salvos como cordas base64), porém usando esta função em Arquivos Incluídos ou quaisquer arquivos externos não usarão a decodificação da base64, o que deve ser bom
+    para a maioria dos casos.</p>
+  <p class="note"><b>NOTA</b>: É importante que você remova da memória qualquer recurso criado dinamicamente como este quando não precisar mais deles para evitar vazamentos de memória, então quando terminar com o buffer que você criou, você deve liberá-lo novamente
+    usando <a href="buffer_delete.htm"><tt>buffer_delete()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">buffer_load(filename);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>nome do arquivo</td>
+        <td>O nome do arquivo a ser carregado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">player_buffer = buffer_load(&quot;Player_Save.sav&quot;);</p>
+  <p>O código acima irá carregar um buffer previamente gravado na memória, criando um novo buffer. O índice deste novo buffer é armazenado na variável &quot;player_buffer&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Buffers.htm">Tampões</a></div>
+        <div style="float:right">A seguir: <a href="buffer_load_ext.htm"><span>buffer_load_ext_ext</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_load
+-->
+  <!-- TAGS
+buffer_load
+-->
+</body>
+</html>

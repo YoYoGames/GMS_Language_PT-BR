@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>array_length_2d</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function array_length_2d" />
+  <meta name="rh-index-keywords" content="array_length_2d (Deprecated)" />
+  <meta name="search-keywords" content="array_length_2d" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>array_length_2d<em>(Deprecated</em>)</h1>
+  <h3><b>ADVERTÊNCIA!</b> Esta função é depreciada, pois as matrizes não são mais limitadas a apenas 1 ou 2 dimensões, e como tal, esta função é fornecida apenas para apoio a projetos legados. Todos os novos projetos devem usar a forma atual de criar e acessar projetos multi-dimensionais
+    arrays (veja <a href="../../GML_Overview/Arrays.htm">aqui</a> para mais informações).</h3>
+  <p>Com esta função você pode obter o comprimento (número de entradas) de uma segunda dimensão de uma matriz. Você fornece o número de entradas para a primeira dimensão e a função retornará o número de entradas da segunda dimensão que a matriz tem (para encontrar
+    o comprimento da primeira dimensão utilizar a função <a href="array_height_2d.htm"><tt>array_height_2D()</tt></a>). A função retornará 0 se a variável dada não for um array ou 1 se a variável for um array 1D (já que ainda há 1 linha).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">array_length_2d(array_index, n);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>array_index</td>
+        <td>O índice da matriz a ser verificada.</td>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td>A entrada da matriz para obter o comprimento de.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">para (var i = 0; i &lt; altura_da_matriz_2d(a); ++i;) <br> {
+    <br> for (var j = 0; j &lt; array_length_2d(a, i); ++j;) <br> {
+    <br> a[i, j] = -1;<br> }
+    <br> }
+  </p>
+  <p>O código acima passará por uma matriz 2D e definirá cada entrada como -1.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Variable_Functions.htm">Funções variáveis</a></div>
+        <div style="float:right">Próximo: <a href="array_height_2d.htm">array_height_2d</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_length_2d (deprecated)
+-->
+  <!-- TAGS
+array_length_2d
+-->
+</body>
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_remove_mapping</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_remove_mapping" />
+  <meta name="rh-index-keywords" content="gamepad_remove_mapping" />
+  <meta name="search-keywords" content="gamepad_remove_mapping" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_remove_mapping</h1>
+  <p>Esta função pode ser usada para remover o mapeamento do dispositivo atual do índice de slots do gamepad dado. Uma vez chamado, o índice de slot precisará ser refazido usando a função <a href="gamepad_test_mapping.htm"><tt>gamepad_test_mapping()</tt></a> função, se você quiser
+    ser capaz de usar as constantes do gamepad para detectar a entrada corretamente (a entrada direta pode sempre ser recuperada usando o <tt><a href="gamepad_axis_count.htm">eixo do gamepad/button/hat_count</a><a href="gamepad_hat_count.htm">()</a></tt> e
+   <tt><a href="gamepad_axis_value.htm">gamepad_axis/button/hat_value</a><a href="gamepad_hat_value.htm">()</a></tt> funciona em conjunto).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">gamepad_remove_mapping(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>De qual &quot;ranhura&quot; do índice gamepad para remover o mapeamento.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se remap == verdadeiro<br> {
+    <br> gamepad_remove_mapping(global.PadIndex);
+    <br> }
+  </p>
+  <p>O código acima removerá o mapeamento do slot de índice gamepad dado, com base no valor de uma variável.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Gamepad_Input.htm">Entrada Gamepad</a></div>
+        <div style="float:right">A seguir: <a href="gamepad_is_supported.htm">gamepad_is_supported</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_remove_mapping
+-->
+  <!-- TAGS
+gamepad_remove_mapping
+-->
+
+</body></html>

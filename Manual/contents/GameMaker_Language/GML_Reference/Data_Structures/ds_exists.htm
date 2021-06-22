@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_existe</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_exists" />
+  <meta name="rh-index-keywords" content="ds_exists,ds_type_priority,ds_type_queue,ds_type_grid,ds_type_stack,ds_type_list,ds_type_map" />
+  <meta name="search-keywords" content="ds_exists,ds_type_priority,ds_type_queue,ds_type_grid,ds_type_stack,ds_type_list,ds_type_map" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_existe</h1>
+  <p>Com esta função você pode verificar se existe uma estrutura de dados do tipo em questão. Você fornece o valor &quot;índice&quot; (como mantido em uma variável) e o &quot;tipo&quot; de DS, que pode ser qualquer uma das constantes listadas abaixo, e a função retornará
+   <tt>verdadeiro</tt> se a estrutura de dados existir e <tt>falso</tt> caso contrário.</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>ds_type_map</td>
+        <td>Uma estrutura de dados <a href="DS_Maps/DS_Maps.htm">cartográficos</a> </td>
+      </tr>
+      <tr>
+        <td>ds_type_list</td>
+        <td>Uma estrutura de dados da <a href="DS_Lists/DS_Lists.htm">lista</a> </td>
+      </tr>
+      <tr>
+        <td>ds_type_stack</td>
+        <td>Uma estrutura de dados <a href="DS_Stacks/DS_Stacks.htm">em pilha</a> </td>
+      </tr>
+      <tr>
+        <td>ds_type_grid</td>
+        <td>Uma estrutura de dados <a href="DS_Grids/DS_Grids.htm">em grade</a> </td>
+      </tr>
+      <tr>
+        <td>ds_type_queue</td>
+        <td>Uma estrutura de dados <a href="DS_Queues/DS_Queues.htm">em fila</a> </td>
+      </tr>
+      <tr>
+        <td>ds_type_priority</td>
+        <td>Uma estrutura de dados <a href="DS_Priority_Queues/DS_Priority_Queues.htm">prioritária</a> </td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">ds_exists(ind, tipo);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>O índice variável para verificar a estrutura de dados</td>
+      </tr>
+      <tr>
+        <td>tipo</td>
+        <td>O tipo de estrutura de dados a serem verificados (ver a lista de constantes abaixo)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if !ds_exists(ai_grid, ds_type_grid)<br> {
+    <br> ai_grid = ds_grid_create(room_width / 32, room_height / 32);<br> }
+  </p>
+  <p>O código acima verifica a variável (previamente rubricada) &quot;ai_grid&quot; para ver se ela indexa uma estrutura de dados do tipo DS grid, e se não indexa, então cria uma e armazena seu índice na variável.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Data_Structures.htm">Estruturas de dados</a></div>
+        <div style="float:right">Próximo: <a href="ds_set_precision.htm">ds_set_precision</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_exists
+ds_type_map
+ds_type_list
+ds_type_stack
+ds_type_grid
+ds_type_queue
+ds_type_priority
+-->
+  <!-- TAGS
+ds_exists
+-->
+</body>
+</html>

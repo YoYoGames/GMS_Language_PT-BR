@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>velocidade_escrita_por_camada</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_speed" />
+  <meta name="rh-index-keywords" content="layer_sprite_speed" />
+  <meta name="search-keywords" content="layer_sprite_speed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>velocidade_escrita_por_camada</h1>
+  <p>Esta função pode ser usada para definir a velocidade de uma imagem animada que tenha sido atribuída a um elemento sprite. Você dá o ID do elemento sprite (que você obtém quando cria um elemento sprite usando <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>    ou quando você usa a função <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>), e então definir a velocidade da animação. Se a IDE definiu a velocidade de animação para o duende costumava ser calculada como Frames Por Frame de Jogo, então a velocidade
+    O valor dado é um <i>multiplicador</i>, sendo 1 o valor padrão, e definindo-o como 0,5 será metade da velocidade da animação, enquanto que definindo-o como 1,5 será o dobro. Entretanto, se a IDE tiver definido a velocidade de animação para o sprite usado para ser calculado como
+    Frames Por Segundo, então o valor da velocidade dada é um valor literal de frames por segundo, então definindo este valor como 5, por exemplo, ajustará a animação para loop 5 frames a cada segundo que o jogo for executado. Se o sprite utilizado não tiver sub-imagens, esta função irá
+    não têm nenhum efeito.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">layer_sprite_speed(sprite_element_id, speed);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>sprite_element_id</td>
+        <td>O valor de identificação único do elemento sprite a mudar</td>
+      </tr>
+      <tr>
+        <td>velocidade</td>
+        <td>O multiplicador de velocidade/valor a ser usado para o elemento</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Assets_water&quot;);<br> var spr_id = layer_sprite_get_id(lay_id, &quot;gfc_water&quot;);<br> layer_sprite_speed(spr_id, 0.5);</p>
+  <p>O código acima obterá a identificação da camada chamada &quot;Assets_water&quot; e depois a utilizará para obter a identificação do elemento sprite dado nessa camada. Este ID é então usado para mudar a velocidade da imagem do elemento.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sprite_Layers.htm">Camadas de Sprite</a></div>
+        <div style="float:right">Próximo: <a href="layer_sprite_xscale.htm">camada_escreva_xscale</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sprite_speed
+-->
+  <!-- TAGS
+layer_sprite_speed
+-->
+</body>
+</html>

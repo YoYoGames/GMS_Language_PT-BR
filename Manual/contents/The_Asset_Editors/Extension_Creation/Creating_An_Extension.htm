@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Criando uma extensão</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how to create a generic extension" />
+  <meta name="rh-index-keywords" content="Extensions - Creating An Extension" />
+  <meta name="search-keywords" content="creating extensions" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Criando uma extensão</h1>
+  <p>Para criar uma extensão você precisa primeiro clicar com o botão direito do mouse em <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> no Navegador de Ativos e selecionar <strong>Criar Extensão</strong>. Isso abrirá a janela principal de propriedades da extensão:</p>
+  <p><img alt="Extension Properties" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions.png">Isto agora está pronto para você adicionar os arquivos e funções necessárias, e você também pode dar um nome à extensão aqui (seguindo a convenção habitual
+    de apenas letras/números e nenhum símbolo especial, exceto a barra inferior &quot;_&quot;). Você também pode definir o número da versão para a extensão, caso deseje.</p>
+  <p>Para adicionar um arquivo à nova extensão, você precisa clicar no ícone do menu <img alt="Estension Options Icon" class="icon" src="../../assets/Images/Icons/Icon_ExtensionMenu.png"> e selecionar um arquivo de espaço reservado ou o arquivo real que é necessário para
+    a plataforma alvo:</p>
+  <p class="dropspot"><img alt="Add Files To An Extension" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions_Files.png" /></p>
+  <p>Um espaço &quot;genérico&quot; é um arquivo que pode ser de qualquer tipo, exceto aqueles requeridos pelas plataformas específicas (portanto não há arquivos <span class="inline">DLL</span> ou <span class="inline">SO </span>, por exemplo), e não será usado exceto como &quot;linker&quot;.
+    para conectar um conjunto de funções ou constantes com a extensão dada (geralmente é apenas para uso com extensões <span class="notranslate">iOS</span> e <span class="notranslate">Android</span>, o que é explicado nas seções abaixo para esses alvos). Você também pode adicionar &quot; GML&quot;<span class="notranslate">e</span>&quot;JS&quot;.
+    para um uso mais específico.</p>
+  <p>Normalmente você não precisará usar placeholders a menos que construa para iOS <span class="notranslate">e</span> <span class="notranslate">Android, então</span> você escolheria a opção Adicionar <em>Arquivos</em> para adicionar qualquer um dos seguintes arquivos, dependendo da plataforma alvo para a qual eles são destinados:</p>
+  <ul class="colour">
+    <li class="dropspot"><span class="inline">.gml</span>: Este é um arquivo feito somente com a <span class="notranslate">linguagem GameMaker</span> e é compatível com todas as plataformas.</li>
+    <li class="dropspot"><span class="inline">.js</span>: Este é um formato de extensão JavaScript e só é compatível com os módulos de destino JS (HTML5).</li>
+    <li class="dropspot"><span class="inline">.dll</span>: Este é um formato de extensão de biblioteca com link dinâmico e só é compatível com os alvos <span class="notranslate">Windows</span>, UWP e Xbox One (cada alvo precisará de um arquivo <span class="inline">*.dll</span> diferente compatível com suas especificações).</li>
+    <li class="dropspot"><span class="inline">.dylib</span>: Este é o equivalente Mac de uma DLL e só é compatível com o alvo Mac (não <span class="notranslate">iOS</span>).</li>
+    <li class="dropspot"><span class="inline">.so</span>: Este é o equivalente <span class="notranslate">Linux</span> de uma DLL e só é compatível com o alvo <span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>).</li>
+    <li class="dropspot"><span class="inline">.prx</span>: Este é um formato de arquivo para adicionar funcionalidade ao alvo PS4 (cada alvo precisará de um arquivo diferente <span class="inline">*.prx</span> compatível com suas especificações).</li>
+  </ul>
+  <p>Você notará que não há nenhum tipo de arquivo para <strong><span class="notranslate">Android</span> </strong>nem <strong><span class="notranslate">iOS</span></strong>O que se deve ao fato de sua configuração ser ligeiramente diferente. Mais abaixo você pode encontrar explicações sobre como montá-los, mas primeiro vamos olhar para criar
+    uma extensão <span class="notranslate">GML</span> geral para qualquer uma das plataformas alvo, uma vez que o processo é o mesmo para todas elas.</p>
+  <p>Para começar, você precisa criar o arquivo que vai ser utilizado. Para uma extensão <span class="notranslate">GML</span>, este seria um arquivo de texto (salvo com a extensão <span class="inline">.gml</span> ) e seria formatado algo como isto:</p>
+  <p class="code">#define c_alice_blue<br> return make_color_rgb(240.248.255);<br>
+    <br>
+    <br> #define instance_create_colour<br> var i = instance_create_layer(argument0, argument1, argument2);<br> with (i)<br> {<br> image_blend = argument3;<br> } <br> retornar i;</p>
+  <p>Como você pode ver, começamos cada seção com uma chamada <span class="inline">#define</span>, que no exemplo acima é usada para definir duas funções. Você não precisa fornecer campos de argumento para as funções, pois isso será adicionado mais tarde, basta usar
+    definir então o nome da função e ir em frente e adicionar o <span class="notranslate">GML</span> para combinar. Se você estivesse escrevendo uma extensão DLL ou JS, então o processo seria semelhante, mas no idioma correto para o formato do arquivo de extensão.</p>
+  <p>Uma vez feito isso, você precisa adicionar o arquivo à extensão (explicado acima) que irá encadear uma nova janela para as Propriedades das Extensões para as Propriedades do Arquivo:</p>
+  <p class="dropspot"><img alt="File Property Window" class="center" height="553" src="../../assets/Images/Asset_Editors/Editor_Extensions_FileProperties.png" width="1050" /></p>
+  <p>Aqui você selecionaria a plataforma alvo para a extensão (para GM você selecionaria todas elas), assim como renomearia o arquivo de extensão e definiria alguns outros detalhes, que cobriremos dentro de momentos. O Editor deve ser automaticamente preenchido com o arquivo de
+    funções incluídas em nosso arquivo <span class="notranslate">GML</span>, mas se não for, então você pode adicioná-las clicando no botão de menu de funções <img alt="Estension Options Icon" class="icon" src="../../assets/Images/Icons/Icon_ExtensionMenu.png"> e selecionar o que você deseja:</p>
+  <p class="dropspot"><img alt="Add functions/Constants To An Extension" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions_AddFunctions.png" /></p>
+  <p>Selecionando <em>Adicionar Função</em>, você poderá então adicionar uma função à extensão que poderá então ser chamada no <span class="notranslate">GameMaker Studio 2</span> como você faria com qualquer uma das funções embutidas. <span>Uma vez que a função tenha sido adicionada, a seguinte janela se abrirá para você definir as propriedades da função (ou você pode clicar duas vezes sobre a função para abri-la):</span></p>
+  <p class="dropspot"><img alt="Function Editor" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions_FunctionEditor.png" /></p>
+  <p>Na imagem acima, povoamos o editor de funções com os detalhes da função <span class="inline">instance_create_colour()</span> que definimos em nosso script de extensão <span class="notranslate">GML</span> (o editor de funções não é apenas para definir funções GML
+    e será o mesmo para qualquer outro tipo de extensão). Você pode ver que demos à função um nome, que é o que você chamaria ao utilizar a função em seu projeto, e este nome não tem que corresponder ao utilizado na extensão - você pode
+    defina-o para o que você quiser e depois use a opção <em>Nome Externo</em> para vinculá-lo ao nome real definido na extensão. Abaixo você tem uma seção para definir o texto de <em>Ajuda </em>, que é o texto que será usado no código completo
+    e o texto de ajuda na parte inferior do editor de código.</p>
+  <p>Em seguida você pode definir o <em>Tipo de Retorno</em>, que pode ser um <strong>duplo </strong>(valor de <a class="glossterm" data-glossterm="ponto flutuante" href="#">ponto flutuante</a> do número real) ou uma cadeia - se não houver nada retornado pela função externa
+    então isso não importa - e sob isso você define os argumentos que a função terá.</p>
+  <p>Os argumentos podem ser <strong>duplas </strong>ou <strong>cordas</strong>, e você pode adicioná-los clicando no botão adicionar <img alt="Add Argument Icon" class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png" width="18"> e
+    removê-los clicando no botão de remoção <img alt="Remove Argument Icon" class="icon" src="../../assets/Images/Icons/Icon_RemoveArgument.png">. Se sua função pode aceitar argumentos variáveis, você também deve verificar a caixa de seleção <em>Argumentos de Comprimento Variável</em> na parte inferior.</p>
+  <p class="note"><strong>NOTA</strong>: Se você estiver criando um arquivo do <span class="notranslate">Windows</span> <span class="inline">dll </span>e ele tiver mais de quatro argumentos, <strong>todos os argumentos devem ser do mesmo tipo</strong>.</p>
+  <p>Uma vez feito tudo isso, a função está pronta para ser usada em um projeto e aparecerá em auto-completada e com código de cores também. As funções definidas também podem ser definidas como <strong>Funções Init</strong> ou <strong>Funções Finais</strong>, ou seja
+    que serão chamados automaticamente quando o jogo começar (Init) e quando o jogo terminar (Final).</p>
+  <p class="note"><strong>IMPORTANTE!</strong> Todas as plataformas suportam a chamada de função Init, <strong>mas nem todas as plataformas realizarão a chamada de função Final</strong>. Isto porque certas plataformas simplesmente fecharão o aplicativo sem dar qualquer aviso ou tempo para
+    esta função a ser chamada. As plataformas que são afetadas por isto são: <strong><span class="notranslate">iOS</span></strong>, <strong><span class="notranslate">Android</span></strong> <strong>HTML5</strong>, <strong>PlayStation </strong>e <strong>XboxOne</strong>.</p>
+  <p>A outra opção que você tem é criar uma <strong>Macro</strong>. Uma macro pode ser um valor <a class="glossterm" data-glossterm="constante" href="#">constante</a> ou um snippet de código único (para mais informações sobre macros, veja aqui). Por exemplo, nós
+    poderia remover a função definida de nosso exemplo de extensão <span class="notranslate">GML</span> acima para a cor c_alice_blue e torná-la uma macro em seu lugar. Para fazer uma macro, basta clicar no botão Macros na janela Propriedades da Extensão:</p>
+  <p class="dropspot"><img alt="Macro Editor" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions_MacroEditor.png" /></p>
+  <p>O editor aqui é praticamente auto-explicativo - você dá o nome da macro/constante e o valor, ou uma pequena linha de código. Note que se a macro for uma linha de código, <strong>ela será avaliada toda vez que a macro for chamada</strong>.</p>
+  <p>Ao trabalhar com múltiplas plataformas alvo, vale a pena notar que você pode criar uma única extensão com apenas um conjunto de funções/macros que funcionará em <em>todas as </em>plataformas. Isto é conseguido adicionando apenas uma das bibliotecas de links ao seu
+    como uma extensão e colocando o(s) outro(s) na lista de <strong>Arquivos de Proxy</strong> da janela <strong>Propriedades da Extensão</strong>. Por exemplo, digamos que você tenha uma extensão do <span class="notranslate">Windows</span> com o <span class="inline"> <strong>dll </strong></span>&quot;&quot;.
+    <span class="inline">Haggis.dll</span> &quot;. Você simplesmente replicaria este <span class="inline"> <strong>dll</strong></span> como um Mac <span class="inline"> <strong>DyLib</strong></span>, nomeando-o &quot; <span class="inline"> <strong>libHaggis.dylib</strong></span>&quot;.
+    e certificando-se de que os nomes das funções internas correspondem aos do <span class="notranslate">Windows</span> original <span class="inline"> <strong>dll</strong></span>. Este <strong> <span class="inline">DyLib</span> </strong>seria então adicionado aos Arquivos de Proxy e definido para exportar
+    quando o jogo for executado no alvo Mac, e o <span class="notranslate">GameMaker Studio 2</span> o utilizará automaticamente quando as funções de extensão forem chamadas.</p>
+  <p>Para adicionar um arquivo proxy, basta clicar no botão <img alt="Add Argument Icon" class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png" width="18"> na janela Propriedades da extensão e navegar até o local do arquivo.
+    Uma vez adicionado, você pode precisar mudar o alvo da extensão para o módulo apropriado, e quando você executar o jogo, ele será incluído como um proxy para aquela plataforma. Você também pode remover os arquivos proxy clicando no botão <img alt="Remove Argument Icon" class="icon" src="../../assets/Images/Icons/Icon_RemoveArgument.png">, que removerá o último da lista, cada um pressionado.</p>
+  <p>Uma vez que você tenha adicionado seus arquivos proxy, eles serão armazenados nos arquivos de projeto de seu jogo, na pasta Extensões (você pode encontrá-los facilmente clicando com o botão direito do mouse em <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> no
+    e selecionando <em>Abrir no Explorer</em>), portanto, se você precisar editá-los, você deve editar os arquivos copiados que estão empacotados com o jogo e não os originais, pois o <span class="notranslate">GameMaker Studio 2</span> estará usando os do projeto para compilação.</p>
+  <p>É muito importante que seus arquivos proxy sigam as convenções de nomes listadas abaixo, pois o <span class="notranslate">GameMaker Studio 2</span> analisará esses nomes e atribuirá o módulo alvo para o arquivo de acordo com sua extensão e nome e ligará automaticamente os arquivos para
+    você. Se você não seguir estas convenções, seu jogo pode não funcionar em <span class="notranslate">tempo de execução</span>, já que o <span class="notranslate">GameMaker Studio 2</span> não será capaz de descobrir qual arquivo usar ou não carregará o arquivo corretamente.</p>
+  <p>As convenções de nomenclatura para cada plataforma alvo são dadas abaixo:</p>
+  <p class="dropspot">  </p>
+  <table>
+    <tbody>
+      <tr>
+        <th style="">Plataforma</th>
+        <th style="">Nomes</th>
+      </tr>
+      <tr>
+        <td style=""><span class="notranslate">Windows</span> 32bit <span class="notranslate">Tempo de execução</span></td>
+        <td style=""><span class="inline">&lt;<em>Name</em>&gt;.dll, lib&lt;<em>Name</em>&gt;.dll</span></td>
+      </tr>
+      <tr>
+        <td style=""><span class="notranslate">Windows</span> 64bit <span class="notranslate">Tempo de execução</span></td>
+        <td style=""><span class="inline">&lt;N<em>ame</em>&gt;_x64.dll, lib&lt;<em>Name</em>&gt;_x64.dll</span></td>
+      </tr>
+      <tr>
+        <td style=""><span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>)</td>
+        <td style=""><span class="inline">&lt;<em>Name</em>&gt;.so, lib&lt;<em>Name</em>&gt;.so, &lt;<em>Name</em>&gt;_linux.so, lib&lt;<em>Name</em>&gt;_linux.so</span></td>
+      </tr>
+      <tr>
+        <td style=""><span class="notranslate">macOS</span></td>
+        <td style=""><span class="inline">&lt;<em>Name</em>&gt;.dylib, lib&lt;Name&gt;.dylib</span></td>
+      </tr>
+      <tr>
+        <td style="">HTML5</td>
+        <td style=""><span class="inline">&lt;<em>Name</em>&gt;.js</span></td>
+      </tr>
+      <tr>
+        <td style="">PS4</td>
+        <td style=""><span class="inline">&lt;<em>Name</em>&gt;.prx, lib&lt; <em>Name</em>&gt;.prx, &lt; <em>Name</em>&gt;_ps4.prx, lib&lt; <em>Name</em>&gt;_ps4.prx</span></td>
+      </tr>
+      <tr>
+        <td style=""><span class="notranslate">XBox One</span></td>
+        <td style=""><span class="inline">&lt;<em>Name</em>&gt;_xboxone.dll</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="dropspot"> </p>
+  <p>Usando as convenções acima, você trocaria a parte <span class="inline">&lt;<em>Name</em>&gt;</span> pelo nome do arquivo base para o qual você está adicionando os arquivos proxy.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Extensions.htm">O Editor de Extensão</a></div>
+        <div style="float:right">A seguir: <a href="Android_Extensions.htm">Extensões do<span class="notranslate">Android</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Creating Extensions
+-->
+  <!-- TAGS
+extensions_create
+-->
+
+</body></html>

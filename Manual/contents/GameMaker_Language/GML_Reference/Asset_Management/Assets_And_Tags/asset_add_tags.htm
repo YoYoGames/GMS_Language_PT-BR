@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>asset_add_tags</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function asset_add_tags" />
+  <meta name="rh-index-keywords" content="asset_add_tags,asset_object,asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence" />
+  <meta name="search-keywords" content="asset_add_tags,asset_object,asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>asset_add_tags</h1>
+  <p>Com esta função você pode adicionar uma ou mais cadeias de tags a qualquer ativo a partir do navegador de ativos. Você fornece ou o nome do ativo (como uma string) ou seu índice de ativos, assim como uma única tag string ou uma matriz onde cada item é uma única tag string.
+    Se você fornecer um valor de índice de ativos, então você precisará fornecer o argumento do tipo de ativo opcional (uma constante), pois ativos de tipos diferentes podem ter o mesmo índice, mesmo que não possam ter o mesmo nome. Os tipos de ativos disponíveis são listados
+    na tabela abaixo:</p>
+  <p> </p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>asset_object</td>
+        <td>O nome dado refere-se a um <a href="../../../../The_Asset_Editors/Objects.htm">objeto</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_sprite</td>
+        <td>O nome dado refere-se a um <a href="../../../../The_Asset_Editors/Sprites.htm">duende</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_sound</td>
+        <td>O nome dado refere-se a um <a href="../../../../The_Asset_Editors/Sounds.htm">som</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_room</td>
+        <td>O nome dado refere-se a uma <a href="../../../../The_Asset_Editors/Rooms.htm">sala</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_tiles</td>
+        <td>O nome dado refere-se a um <a href="../../../../The_Asset_Editors/Tile_Sets.htm">conjunto de azulejos</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_path</td>
+        <td>O nome dado refere-se a um <a href="../../../../The_Asset_Editors/Paths.htm">caminho</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_script</td>
+        <td>O nome dado refere-se a um <a href="../../../../The_Asset_Editors/Scripts.htm">roteiro</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_font</td>
+        <td>O nome dado refere-se a uma <a href="../../../../The_Asset_Editors/Fonts.htm">fonte</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_timeline</td>
+        <td>O nome dado refere-se a uma <a href="../../../../The_Asset_Editors/Timelines.htm">linha de tempo</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_shader</td>
+        <td>O nome dado refere-se a um <a href="../../../../The_Asset_Editors/Shaders.htm"><span class="notranslate">shader</span></a>.</td>
+      </tr>
+      <tr>
+        <td>asset_animationcurve</td>
+        <td>O nome dado refere-se a uma <a href="../../../../The_Asset_Editors/Animation_Curves.htm">Curva de Animação</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_sequence</td>
+        <td>O nome dado refere-se a uma <a href="../../../../The_Asset_Editors/Sequences.htm">sequência</a>.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Se a função conseguir adicionar a(s) etiqueta(s), ela retornará <tt>verdadeira</tt> (s), caso contrário, retornará <tt>falsa(s)</tt>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">asset_add_tags(nome_ou_index, tags, [tipo_de_activo]));</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>nome_ou_index</td>
+        <td>O nome do bem (uma cadeia) ou seu valor de índice (um número inteiro).</td>
+      </tr>
+      <tr>
+        <td>etiquetas</td>
+        <td>Uma única cadeia de tags de ativos ou uma matriz com várias tags de ativos.</td>
+      </tr>
+      <tr>
+        <td>[asset_type]</td>
+        <td>OPCIONAL! O tipo de bem a ser colocado nas etiquetas, usado somente quando se fornece um índice para o primeiro argumento.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var _a = array_create(3);<br> _a[0] = &quot;enemy&quot;;<br> _a[1] = &quot;all_levels&quot;;<br> _a[2] = &quot;boss&quot;;<br> asset_add_tags(obj_Enemy_Boss_Parent, _a, asset_object);</p>
+  <p>O código acima criará um conjunto de tags e depois as adicionará ao objeto em questão.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Assets_And_Tags.htm">Ativos e Etiquetas</a></div>
+        <div style="float:right">Próximo: <a href="asset_remove_tags.htm">asset_remove_tags</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+asset_add_tags
+asset_object
+asset_sprite
+asset_sound
+asset_room
+asset_tiles
+asset_path
+asset_script
+asset_font
+asset_timeline
+asset_<span class="notranslate">shader</span>
+asset_animationcurve
+asset_sequence
+-->
+  <!-- TAGS
+asset_add_tags
+-->
+</body>
+</html>

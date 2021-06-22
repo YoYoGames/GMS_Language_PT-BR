@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_create_play_queue</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_create_play_queue" />
+  <meta name="rh-index-keywords" content="audio_create_play_queue,audio_mono,audio_stereo,audio_3D" />
+  <meta name="search-keywords" content="audio_create_play_queue,audio_mono,audio_stereo,audio_3D" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_create_play_queue</h1>
+  <p>Esta função prepara uma fila de segurança para o áudio. Você passa o formato de dados (apenas <tt>buffer_u8</tt> ou <tt>buffer_s16</tt> são suportados atualmente), a taxa de amostragem (que pode estar entre 1000hz e 48000hz), e os canais que o áudio requer de
+    uma das constantes listadas abaixo:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td><span class="inline">audio_mono</span></td>
+        <td>Áudio mono (canal único).</td>
+      </tr>
+      <tr>
+        <td><span class="inline">audio_stereo</span></td>
+        <td>Áudio estéreo (canal duplo).</td>
+      </tr>
+      <tr>
+        <td><span class="inline">audio_3D</span></td>
+        <td>Áudio 3D (5.1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> Note que você deve liberar quaisquer filas de áudio criadas com esta função quando não for mais necessário para evitar vazamentos de memória usando a função <a href="audio_free_play_queue.htm"><tt>audio_free_play_queue()</tt></a>.</p>
+  <p>Esta função desencadeará um <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Playback.htm">Evento Assíncrono de Reprodução de Áudio</a> quando a fila chegar ao fim e, neste evento, um <a href="../../../Data_Structures/DS_Maps/DS_Maps.htm">mapa DS</a> especial
+    ser criado na variável <a href="../../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> com os seguintes pares de chaves/valores:</p>
+  <ul class="colour">
+    <li>&quot; queue_id&quot;<strong>-</strong> a fila que terminou de jogar dados</li>
+    <li>&quot;<strong>buffer_id&quot; -</strong> o buffer que não está mais sendo jogado a partir</li>
+    <li>&quot;queue_shutdown<strong>&quot; -</strong> isto é ajustado para 0 durante a reprodução normal e 1 quando o evento é recebido porque <a href="audio_free_play_queue.htm"><tt>audio_free_play_queue()</tt></a> foi chamado. Quando isto é ajustado para 1, você não
+      não quer enfileirar mais nenhum dado.</li>
+  </ul>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">audio_create_play_queue(queueFormat, queueRate, queueCheueChannels);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>queueFormat</td>
+        <td>O formato dos dados buffer a usar<tt>(buffer_u8</tt> ou <tt>buffer_s16</tt>).</td>
+      </tr>
+      <tr>
+        <td>fila</td>
+        <td>A taxa de amostragem dos dados na fila tampão.</td>
+      </tr>
+      <tr>
+        <td>canais de fila</td>
+        <td>Os canais a serem utilizados a partir de uma das constantes listadas abaixo.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (Buffer ID)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">audio_queue = audio_create_play_queue(buffer_s16, 11052, audio_mono);</p>
+  <p>O código acima cria uma nova fila de áudio e atribui sua identificação a uma variável para referência futura.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Audio.htm">Buffers de áudio</a></div>
+        <div style="float:right">Próximo: <a href="audio_free_play_queue.htm">audio_free_play_queue</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_create_play_queue
+audio_mono
+audio_stereo
+audio_3D
+-->
+  <!-- TAGS
+audio_create_play_queue
+-->
+</body>
+</html>

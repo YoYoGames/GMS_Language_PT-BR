@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_priority_write</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_priority_write" />
+  <meta name="rh-index-keywords" content="ds_priority_write" />
+  <meta name="search-keywords" content="ds_priority_write" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_priority_write</h1>
+  <p>Esta função retorna uma string que pode então ser armazenada ou transferida para outra estrutura de dados usando o <a href="ds_priority_read.htm"><tt>ds_priority_read()</tt></a> função.</p>
+  <p class="note"><b>NOTA</b>: O fio retornado não é um fio legível por humanos, mas sim uma lixeira do conteúdo da estrutura de dados</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">ds_priority_write(id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>A identificação da estrutura de dados a ser verificada.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Cordão</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var str;<br> ini_open(&quot;save.ini&quot;);
+    <br> str =ds_priority_write(p_queue);<br> ini_write_string(&quot;P_Queues&quot;, &quot;0&quot;, str);<br> ds_priority_clear(p_queue);
+    <br> ini_close();
+  </p>
+  <p>O código acima abre um arquivo ini e então escreve uma string contendo as informações armazenadas na fila de prioridade DS indexada na variável &quot;p_queue&quot;. A fila de prioridade é então limpa e o arquivo ini é fechado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="DS_Priority_Queues.htm">Filas de espera prioritárias DS</a></div>
+        <div style="float:right">Próximo: <a href="ds_priority_create.htm">ds_priority_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_priority_write
+-->
+  <!-- TAGS
+ds_priority_write
+-->
+
+</body></html>

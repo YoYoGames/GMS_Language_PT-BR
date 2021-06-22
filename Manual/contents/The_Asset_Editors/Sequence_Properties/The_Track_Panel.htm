@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>O Painel de Pista</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the sequence canvas" />
+  <meta name="rh-index-keywords" content="Sequences - The Track Panel" />
+  <meta name="search-keywords" content="tracks,track panel,track editor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>O Painel de Pista</h1>
+  <p><img alt="The Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Panel.png">O que suas seqüências fazem são regidas pelos ativos e parâmetros que foram adicionados ao <strong>Painel de Pista</strong>. Você pode adicionar uma faixa ao
+    editor por qualquer um dos dois:</p>
+  <ul class="colour">
+    <li>arrastando um bem para a seqüência <a href="The_Sequence_Canvas.htm">Tela</a></li>
+    <li>arrastando um bem para o próprio Painel de Pista</li>
+    <li>clicando no botão &quot;Add Asset&quot; (Adicionar Ativo) <img alt="Add Track Icon" class="icon" src="../../assets/Images/Icons/Icon_AddAsset.png"> na parte inferior do Painel de Pista.</li>
+  </ul>
+  <p>Este último método abrirá o Asset Explorer para você, onde você poderá escolher o bem a ser adicionado.</p>
+  <p>Independentemente do método escolhido, será feita uma nova <a class="glossterm" data-glossterm="pista de ativos" href="#">trilha</a> para o ativo. Esta pista é a pista principal para o ativo na seqüência e terá uma pista <a class="glossterm" data-glossterm="chave do ativo" href="#">chave</a> correspondente para o ativo na <span class="notranslate">Folha de Dados</span> na posição de <a class="glossterm" data-glossterm="playhead" href="#">cabeça de jogo</a>:</p>
+  <p><img alt="Add An Asset To The Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Add_Asset.gif">Note que a cor da chave de ativos na <span class="notranslate">folha de Dope Sheet</span> pode ser definida a partir do Painel de Controle clicando na barra colorida na
+    fim. Isto abrirá o <strong>Colour Picker</strong> onde você pode escolher qual cor usar para as faixas chave na <span class="notranslate">Folha de Drogas</span>.</p>
+  <p>Cada ativo no editor de pistas também pode ter um conjunto de <a class="glossterm" data-glossterm="faixas de parâmetros" href="#">pistas de parâmetros</a> adicionado a ele. Estas pistas são o que controla as várias propriedades (parâmetros) diferentes que podem ser modificadas
+    para a pista ao longo do tempo. Os diferentes parâmetros disponíveis são abordados em profundidade na seção &quot;Adicionando<strong>Faixas de Parâmetros&quot;</strong> mais abaixo nesta página, mas para lhe dar uma idéia do que está disponível aqui é uma breve lista:</p>
+  <ul class="colour">
+    <li><strong>Todos os bens</strong>: <em>Posição </em>e <em>Rotação</em>.</li>
+    <li><strong>Sons</strong>: <em>Breu </em>e <em>Volume</em>.</li>
+    <li><strong>Seqüências</strong>: <em>Origem </em>e <em>Escala</em>.</li>
+    <li><strong>Sprites e Objetos</strong>: <em>Origem</em>, <em>Escala</em>, <em>Índice de Imagem</em>, <em>Velocidade da Imagem</em> e <em>Multiplicação de Cores</em>.</li>
+  </ul>
+  <p>Para adicionar uma faixa de parâmetros no editor, você pode habilitar &quot;<strong>Automatically Record Changes&quot;</strong> <img alt="Record Changes Icon" src="../../assets/Images/Icons/Icon_Seq_Record.png"> no Painel de Faixas, que então adicionará as teclas de parâmetros
+    para qualquer mudança que você fizer em um bem na Tela na posição atual de cabeça de jogo, como mostrado aqui:</p>
+  <p><img alt="Adding A Parameter Key To An Asset In The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Add_Keys.gif">Alternativamente, você pode clicar no botão &quot;Add<strong>Parameter Track&quot;</strong> <img alt="Add Parameter Track Button" src="../../assets/Images/Icons/Icon_Add_Param.png">, que abrirá um menu mostrando as diferentes opções disponíveis:</p>
+  <p><img alt="Adding A Parameter Track To An Asset In The Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Add_Parameter.png">Selecionando qualquer opção deste menu, ou gravando diretamente da IDE, será criada uma ou mais
+    faixas de parâmetros sob a faixa de ativos principal, e também adicionar uma <a class="glossterm" data-glossterm="chave de parâmetro" href="#">chave de parâmetro</a> à <span class="notranslate">Folha de Drogas</span>, colorida da mesma forma que a cor da faixa de ativos principal:</p>
+  <p><img alt="Parameter Tracks In The Track Panel And Dope Sheet" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_ParameterTracks.png">Uma vez que você adicione uma faixa de parâmetros à faixa principal de ativos, a <span class="notranslate">folha de drogadição</span> terá uma barra colorida
+    para mostrar o comprimento da pista do ativo em quadros, e haverá <strong>teclas de parâmetros </strong><span class="notranslate">(quadros-chave</span>) adicionadas nos pontos onde se deseja que ocorra uma mudança no parâmetro. Estas chaves podem ser vistas na imagem acima como simples &quot;pontos&quot;.
+    em um quadro. Quando uma faixa tem teclas de parâmetros como esta, o parâmetro a que se referem será interpolado (usando <a class="glossterm" data-glossterm="interpolação linear" href="#">interpolação linear</a>) por padrão entre cada um dos pontos mostrados.
+    Por exemplo, se você tiver um parâmetro de rotação e no frame 0 ele é ajustado para 90°, então no frame 30 ele é de 180°, então no frame 15 ele será de 135°. Você pode realmente ver a mudança nos valores ao longo do tempo, selecionando o parâmetro faixa e depois &quot;scrubbing&quot;.
+    a cabeça de brincadeira na <span class="notranslate">folha de papelão</span>:</p>
+  <p><img alt="Interpolating Between Parameter Keys" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Changing_Parameter.gif" /></p>
+  <p>Note que para todas as faixas de parâmetros você pode desativar a interpolação linear padrão entre diferentes teclas a partir do botão direito do mouse <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> menu na faixa de parâmetros, que
+    significa que as transições entre os valores dos parâmetros ocorrerão <em>instantaneamente </em>no quadro dado, em vez de gradualmente ao longo do tempo:</p>
+  <p><img alt="Disable Linear Interpolation On Parameter Track" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_RMB_Menu_Params.png">Além de poder escolher o tipo de transição para as faixas de parâmetros, o menu RMB também lhe oferece
+    as seguintes opções:</p>
+  <ul class="colour">
+    <li><strong>Cortar</strong>, <strong>Copiar</strong> e <strong>Colar</strong>: Estas opções permitem cortar/copiar/colar faixas de ativos ou parâmetros.</li>
+    <li><strong>Faixa(s) duplicada</strong>(s): Isto criará uma duplicata da(s) trilha(s) atualmente selecionada(s). Se esta for uma pista ativa, também duplicará as pistas paramétricas associadas a ela.</li>
+    <li><strong>Apagar rastro(s)</strong>: Isto apagará a(s) faixa(s) selecionada(s). Se você excluir uma faixa ativa, as faixas de parâmetros associadas a ela também serão removidas, porém você pode excluir as faixas de parâmetros individualmente.</li>
+    <li><strong>Grupo</strong>: Usando esta opção em um espaço vazio no Painel de Pista criará uma pasta de grupo que você poderá então usar para ajudar a manter seus ativos em um formato mais ordenado. Você pode adicionar um ativo a um grupo simplesmente clicando sobre ele e arrastando
+      na pasta. Se você já selecionou uma faixa ou faixas, então usando esta opção não apenas criará uma pasta de grupo, mas adicionará a(s) faixa(s) a ela(s).</li>
+    <li><strong>Renomear</strong>: Você pode usar esta opção para renomear qualquer faixa de ativos ou pasta de grupo.</li>
+  </ul>
+  <p>Uma característica importante dos rastros de ativos e parâmetros é a capacidade de rastrear e agrupar os rastros <strong>dos pais </strong>. Se você arrasta um rastro de ativo para outro no painel de trilhos, o primeiro ativo se torna um <strong>filho </strong>do ativo que foi abandonado.
+    que, por sua vez, se torna o <strong>pai</strong>. Todas as faixas de parâmetros atribuídas à faixa de ativos pai serão então automaticamente aplicadas às faixas de ativos filhos, para que você possa ter vários sprites (por exemplo) todos usando uma única posição
+    trilha de ativos a mover:<img alt="Parent And Child Sprites Share Parameters" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Parenting.gif" style="cursor: nwse-resize;">O mesmo pode ser feito usando grupos. Você pode criar uma pasta de grupo
+    clicando no botão na parte inferior do painel de pistas e depois arrastando e soltando as pistas de recursos que você deseja agrupar na pasta do grupo. Estes ativos ainda manterão suas próprias faixas de parâmetros, mas você pode então dar parâmetros adicionais
+    faixas de parâmetros para o grupo e todos os bens do grupo serão afetados por estas faixas de parâmetros, bem como por suas próprias faixas de parâmetros individuais.</p>
+  <p>Ao trabalhar com o painel de pistas, os atalhos usuais do teclado também podem ser usados, ou seja: <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> e o botão esquerdo do mouse <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> para selecionar uma ou mais pistas em qualquer ordem, <img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55"> e o botão esquerdo do mouse <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> para selecionar pistas consecutivas, e você também pode cortá-las, copiá-las e colá-las usando as combinações de teclas <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> +&quot;<span class="inline">X</span>&quot;, <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">C</span>&quot; e <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">V</span>&quot;.</p>
+  <p>Essa é a base do uso do editor de pistas, mas abaixo entramos um pouco mais em detalhes sobre para que serve cada uma das diferentes seções e como utilizá-las:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Mudança de orientação</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">O botão de orientação de mudança <img data-cke-saved-src="../../assets/Images/Icons/Icon_ChangeOrientation.png" src="../../assets/Images/Icons/Icon_ChangeOrientation.png" class="icon" alt="Change Orientation Icon"> pode ser usado para mudar a forma como o
+      O Editor de Seqüências exibe as diferentes seções. Por padrão, você terá a Vista de Cnavas na parte superior e o Editor de Pistas e a Folha de Dopes na parte inferior, mas isto pode ser alterado clicando no botão para percorrer os diferentes layouts, ou clicando em
+      o botão Opções <img alt="Icon Grid Menu" class="icon" height="24" data-cke-saved-src="../../assets/Images/Icons/Icon_CanvasOptions.png" src="../../assets/Images/Icons/Icon_CanvasOptions.png" width="10"> para abrir um menu e selecionar o layout
+      que você quer. Os seguintes layouts estão disponíveis:</p>
+    <table class="icons" style="margin-left: 32auto">
+      <tbody>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_SplitWindow.png" src="../../assets/Images/Icons/Icon_Seq_SplitWindow.png" alt="Split Window Sequence Editor Button" /></td>
+          <td class="icons"><strong>Janela Dividida</strong></td>
+          <td class="text">
+            <p>Com esta opção, o Sequence Editor será dividido em duas janelas separadas, onde a janela principal da IDE mostrará a visualização da tela na área de trabalho completa e a nova janela mostrará a <span class="notranslate">Dope Sheet</span> e o Track Editor. Clicando novamente no botão, será
+              mudar o layout novamente e remover a janela extra.</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Top.png" src="../../assets/Images/Icons/Icon_Seq_Top.png" alt="Snap Top Sequence Editor Button" /></td>
+          <td class="icons"><b>Topo do Snap</b></td>
+          <td class="text">
+            <p>Esta opção encaixa o Track Editor e o Dopesheet na parte superior da IDE.</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Right.png" src="../../assets/Images/Icons/Icon_Seq_Right.png" alt="Snap Right Sequence Editor Button" /></td>
+          <td class="icons"><strong>Estalar à direita</strong></td>
+          <td class="text">
+            <p>Esta opção encaixa o Track Editor e o Dopesheet à direita da IDE.</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Bottom.png" src="../../assets/Images/Icons/Icon_Seq_Bottom.png" alt="Snap Bottom Sequence Editor Button" /></td>
+          <td class="icons"><strong>Fundo do Snap</strong></td>
+          <td class="text">
+            <p>Esta opção encaixa o Track Editor e o Dopesheet na parte inferior da IDE (esta é a visão padrão.</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Left.png" src="../../assets/Images/Icons/Icon_Seq_Left.png" alt="Snap Left Sequence Editor Button" /></td>
+          <td class="icons"><strong>Esquerda</strong></td>
+          <td class="text">
+            <p>Esta opção encaixa o Track Editor e o Dopesheet à esquerda da IDE.</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot">Você também pode redefinir o layout do Sequence Editor a qualquer momento, clicando na opção Reset <img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Reset.png" src="../../assets/Images/Icons/Icon_Seq_Reset.png" class="icon" alt="Reset Editor Layout Button">. Isto restaurará o editor ao seu estado padrão e reabrirá qualquer seção que tenha sido fechada.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Busca de pistas</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Esta caixa de busca permite que você pesquise rapidamente as várias faixas da seqüência para encontrar aquela que deseja editar. Digitando qualquer texto aqui, você saberá quantas faixas de ativos foram encontradas com essa seqüência, e também destacará as setas
+      para o lado da caixa de busca. Clicando nestas setas, saltaremos para o primeiro e consecutivo ativo que preencha os critérios de busca.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Faixas de ativos</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Cada ativo que for adicionado a uma seqüência terá seu próprio rastro, e estes estão listados aqui. Se a pista do ativo tiver algum parâmetro definido para ele, então estes também serão mostrados abaixo como pistas de parâmetros. Você pode expandir ou contratar o parâmetro
+      faixas clicando em <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> no ícone da seta à esquerda do nome da faixa, e você pode editar o nome da faixa usando um duplo clique lento <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> na faixa e depois dando-lhe o nome de sua escolha. Note que não há restrições quanto ao nome que você dá e você pode usar espaços, caracteres não alfanuméricos
+      e inicie-os com um número se desejar.</p>
+    <p class="dropspot">Os diferentes tipos de faixas de parâmetros disponíveis são explicados com mais detalhes na seção &quot;Adicionando<strong>faixas de parâmetros&quot;</strong>, mais abaixo nesta página.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Controles chave</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Uma vez que você tenha adicionado uma faixa de parâmetros, você pode adicionar e remover chaves de parâmetros a quadros específicos para definir o valor para esse parâmetro. Isto pode ser feito usando a &quot;<strong>Record Key&quot;</strong> <img alt="Add Keys Icon" class="icon" src="../../assets/Images/Icons/Icon_Seq_Add.png"> ou &quot; Delete key&quot;. <strong><img alt="Delete Keys Icon" class="icon" src="../../assets/Images/Icons/Icon_Seq_Delete.png"> </strong>(veja a seção &quot;<strong>Controles de chave de</strong> faixa<strong>&quot; para</strong> mais informações),
+      ou você pode fazê-lo usando os <strong>Controles Chave</strong> no próprio parâmetro. Para usar estes controles, você precisa posicionar a cabeça de jogo na <span class="notranslate">Folha de Droga</span> no quadro que deseja editar, e então você pode clicar no ícone circular &quot;chave&quot;.
+      à esquerda da faixa de parâmetros. Se o quadro não tiver nenhuma chave atribuída a ele, o círculo estará &quot;vazio&quot; e clicando nele, será acrescentada uma nova chave e será possível editar o valor do parâmetro. Se o quadro já tiver uma chave, então o círculo será
+      &quot;preenchido&quot; e clicar nele removerá a chave do quadro:</p>
+    <p class="dropspot"><img alt="Adding And Removing Parameter Keys Using The Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Add_Param_Key.gif">Você também notará que na imagem acima você pode usar os botões de seta de cada lado
+      do marcador de chave de parâmetro para saltar rapidamente entre os quadros de chave na <span class="notranslate">folha de papelão</span> também, sem ter que posicionar a cabeça de brincadeira manualmente.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Valores dos parâmetros</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">Quando uma faixa de parâmetros tiver sido adicionada, você pode editar os valores de alguns deles simplesmente ajustando a cabeça de jogo na <span class="notranslate">Folha de Droga</span> para o quadro com a chave que você deseja alterar e então usar os diferentes widgets de tela para editar a posição, rotação,
+      escala ou origem do bem. Essas mudanças serão refletidas no valor chave para esse quadro. Entretanto, nem todos os parâmetros podem ser editados desta forma, ou podem não ser suficientemente precisos para suas necessidades, e nestes casos você pode editar o valor do parâmetro
+      diretamente clicando sobre ela na pista e ajustando-a ao valor requerido para o tipo de parâmetro.</p>
+    <p class="dropspot">Observe que algumas faixas de parâmetros podem ter um ícone de &quot;link&quot; <img alt="Track Link Icon" height="14" src="../../assets/Images/Icons/Icon_Track_Link.png" width="14"> ao lado de seus valores, o que significa que elas podem ser ligadas entre si. Isto é feito por
+      clicando no ícone para ativar/desativar o link, e quando ativado, a edição de um valor também definirá o outro.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Eventos</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">De forma semelhante aos objetos regulares, as seqüências podem ter eventos que podem executar algum código atribuído a eles. O código é atribuído sob a forma de uma <a href="../../GameMaker_Language/GML_Overview/Script_Functions.htm">função de script</a> que pode ter
+      sem argumentos e será chamado quando o evento for acionado.</p>
+    <p class="dropspot">Os eventos são adicionados clicando no botão <strong>Adicionar Evento</strong> <img alt="Add Event Icon" src="../../assets/Images/Icons/Icon_AddEvent.png"> que abrirá a seguinte janela:</p>
+    <p class="dropspot"><img alt="Sequence Editor Add Event Window" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Events.png" /></p>
+    <p class="dropspot">Os eventos listados aqui são os seguintes:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Criar </strong>- Este evento acontece quando uma instância da seqüência é criada pela primeira vez, e é a primeira coisa que acontece dentro de uma seqüência colocada na sala através do editor da sala quando uma sala é inserida.</li>
+      <li class="dropspot"><strong>Destroy </strong>- Este evento é executado quando uma instância da seqüência é destruída, e será executado antes do evento Clean Up (ver abaixo).</li>
+      <li class="dropspot"><strong>Clean Up</strong> - Este evento será chamado após qualquer evento que remova uma instância da seqüência da sala. Portanto, ele será acionado se a seqüência for destruída, se a sala terminar, ou se o jogo terminar, e for projetado para executar
+        qualquer tarefa que você precise executar uma vez quando a instância da seqüência é retirada do jogo por qualquer motivo. Se você destruiu a instância de seqüência usando, por exemplo, layer_sequence_destroy(), então este evento será chamado após o Destroy
+        Evento (ver acima).</li>
+      <li class="dropspot"><strong>Etapa Inicial</strong> / <strong>Etapa </strong>/ <strong>Etapa Final</strong> - O Evento da Etapa é um evento que é verificado a cada etapa (moldura) do jogo enquanto a instância da seqüência existe, e é dividido em três partes: início, etapa e
+        fim. Para a maioria das coisas, o evento da etapa padrão será bom de usar, mas às vezes você quer um pouco mais de controle sobre o que o código funciona e em que momento, para que você tenha acesso aos eventos da etapa inicial e final, e estes eventos serão sempre
+        acionadas na mesma ordem a cada passo (moldura) do jogo. <strong>Importante!</strong> Se a seqüência for pausada, estes eventos <em>não </em>serão acionados, e quando o jogo for retomado, eles serão acionados no <em>próximo frame após a seqüência começar a jogar novamente</em>.
+        Observe também que a ordem dos eventos não é influenciada pela direção da cabeça do jogo, e mesmo que a seqüência esteja jogando para trás, os eventos ainda serão executados como Começo, Passo e Fim.</li>
+      <li class="dropspot"><strong>Evento Async</strong>: Este é o equivalente do objeto <a href="../Object_Properties/Async_Events.htm">Asynchronous System Event</a>. <strong>Importante!</strong> Se a seqüência for pausada, este evento <em>não </em>será acionado.</li>
+    </ul>
+    <p class="dropspot">A cada evento pode ser atribuída uma única função que será chamada quando o evento for acionado. Você pode atribuir a função usando a caixa de entrada para a ventilação, e clicando no botão de seta abrirá o editor de scripts para a função a ser editada.
+      Você também pode clicar no botão Criar Novo na parte inferior para criar um novo recurso de script com funções &quot;boilerplate&quot; já definidas e prontas para serem preenchidas. Note que você pode mudar os nomes das funções para qualquer coisa que você precisar e não
+      têm que usar os nomes predefinidos, e você também pode remover qualquer definição de função que não seja necessária. É importante notar que as funções usadas para eventos em seqüência não podem aceitar nenhum argumento.</p>
+    <p class="dropspot">Os eventos sequenciais também podem ser adicionados e editados usando código. Para mais informações, por favor, veja <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Events_Moments_Broadcast.htm">aqui</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Controles do<span class="notranslate">quadro-chave</span> </a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot">Os botões de controle do <span class="notranslate">quadro de chaves</span> são uma das maneiras que você pode adicionar, remover ou editar chaves específicas na <span class="notranslate">folha de drogados</span>. Os botões são os seguintes:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><img alt="Split Keys Icon" src="../../assets/Images/Icons/Icon_Seq_Split.png"> - Este é o botão &quot;Split selected keys&quot; (Dividir chaves selecionadas). Quando você tiver selecionado uma ou mais chaves de parâmetros na <span class="notranslate">folha de dope</span>, você pode então clicar neste botão e elas irão
+        ser dividido em duas chaves separadas na posição de cabeça de jogo da linha do tempo:<br>
+        <img alt="Split Asset and Parameter Keys" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Split.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+      <li class="dropspot"><img alt="Delete Keys Icon" src="../../assets/Images/Icons/Icon_Seq_Delete.png"> - Este é o botão &quot;Delete selected keys&quot; (Apagar chaves selecionadas). Quando você tiver selecionado uma ou mais chaves de parâmetros na <span class="notranslate">folha de dope</span>, você pode então clicar neste botão e elas
+        será apagado:<br>
+        <img alt="Delete Parameter Keys" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Delete.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+      <li class="dropspot"><img alt="Add Keys Icon" src="../../assets/Images/Icons/Icon_Seq_Add.png"> - Este é o botão &quot;Recordar uma nova chave&quot;. Quando você tiver selecionado uma chave de ativos na <span class="notranslate">folha de papel</span> e pressionar este botão, novas chaves de parâmetros serão adicionadas ao
+        como pistas de parâmetros, e as teclas de parâmetros serão adicionadas como pontos na linha de tempo da <span class="notranslate">folha de papel</span> na posição de cabeça de jogo:<br>
+        <img alt="Add Parameter Keys At Playhead Position" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Record.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+      <li class="dropspot"><img alt="Record Keys Icon" src="../../assets/Images/Icons/Icon_Seq_Record.png"> - Este é o botão &quot;Automatically Record Changes&quot;. Quando isto for ativado, quaisquer mudanças feitas no ativo dentro da tela serão automaticamente registradas
+        e as faixas de parâmetros apropriados e as teclas de parâmetros adicionadas na posição de cabeça de brincadeira na <span class="notranslate">folha de papelão</span>. Por exemplo, se você mover o playhead do quadro 0 para o quadro 10 e depois na tela mover o ativo 100 pixels para a direita, um parâmetro
+        a faixa será adicionada para posição, e as teclas de parâmetro serão adicionadas no quadro 0 (a posição inicial) e no quadro 10 (a posição do playhead) e quando você pressionar &quot;Play&quot; na seqüência, o ativo se moverá 100px para a direita mais de dez
+        quadros.
+       <br>
+        <img alt="Automatically Record Parameter Keys" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Auto.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+    </ul>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Visíveis / Óculos de bloqueio</a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">Tanto as faixas de ativos como as faixas de parâmetros têm um botão para alternar a visibilidade da faixa <img alt="Track Visibility Icon" src="../../assets/Images/Icons/Icon_Track_Visible.png"> e para bloquear a faixa <img alt="Track Lock Icon" src="../../assets/Images/Icons/Icon_Track_Lock.png">. Se você desativar a visibilidade da faixa, ela não será mostrada quando a seqüência for executada em uma sala, nem será mostrada na tela de seqüência durante o teste, e alternar a visibilidade de uma faixa de ativos também alternará a visibilidade.
+      de seus rastros de parâmetros. Bloquear uma pista significa simplesmente que esta pista não poderá mais ser editada de forma alguma. Note que as faixas que são invisíveis serão desenhadas desbotadas na <span class="notranslate">folha de papelão</span>, enquanto as faixas que estão bloqueadas serão desenhadas com uma sobreposição,
+      para que você possa ver imediatamente em que estado se encontra cada trilha:</p>
+    <p class="dropspot"><img alt="Locked And Invisible Tracks In The Dope Sheet" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Locked_And_Visible.png" /> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">Cor da pista</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot">A cada faixa de ativos que você criar será atribuída uma cor aleatória pela IDE para facilitar a identificação na <span class="notranslate">Folha de Drogas</span>. Esta cor pode ser alterada a qualquer momento, bastando clicar na barra de cores da trilha e, em seguida, selecionar a cor desejada
+      para usar a partir da janela do Colour Picker que se abre. Qualquer cor selecionada para uma faixa de parâmetros será automaticamente aplicada a todas as faixas de parâmetros associadas, porém você pode então editar a cor de cada faixa de parâmetros individualmente para que seja diferente.
+      se necessário. Observe que se você mudar novamente a cor da faixa de ativos, isto anulará quaisquer alterações feitas nas faixas de parâmetros.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">Adição de trilhas de parâmetros</a></p>
+  <div class="droptext" data-targetname="drop-down9">
+    <p class="dropspot">O botão Adicionar parâmetro <img alt="Add Parameter Track Icon" height="15" src="../../assets/Images/Icons/Icon_Add_Param.png" width="15"> pode ser usado para adicionar uma única faixa de parâmetro à faixa de ativos selecionada. Como mencionado anteriormente nesta página, o parâmetro
+      As pistas podem ser de vários tipos diferentes, dependendo do bem com o qual estão relacionadas. Abaixo está uma lista de todas as diferentes faixas de parâmetros disponíveis e a que elas se referem, bem como os ativos aos quais podem ser aplicadas:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Posição</strong>: Esta faixa de parâmetros pode ser adicionada a qualquer um dos quatro tipos de ativos da seqüência<em>(sprites</em>, <em>objetos</em>, <em>sons </em>ou <em>seqüências</em>) e é usada para definir a posição espacial dentro da seqüência para o
+        ativo. É preciso um valor X e um valor Y.</li>
+      <li class="dropspot"><strong>Rotação</strong>: Como o parâmetro de posição, o parâmetro de rotação está disponível para <em>todos os </em>ativos em seqüência e pode ser usado para definir a rotação em graus para o ativo. Tenha em mente que o <span class="notranslate">GameMaker Studio 2</span> calcula a rotação <em>no sentido anti-horário</em>,
+        começando com 0° à direita, portanto 90° está acima, 180° à esquerda e 270° está abaixo.</li>
+      <li class="dropspot"><strong>Origem</strong>: O parâmetro de origem está disponível para os ativos <em>sprite</em>, <em>objeto </em>e <em>seqüência </em>e pode ser usado para definir a posição X e Y da origem do ativo. A alteração da origem afetará a forma como o ativo é
+        posicionado, girado e escalonado.</li>
+      <li class="dropspot"><strong>Escala</strong>: O parâmetro de escala está disponível para <em>sprite</em>, <em>objeto </em>e ativos de <em>seqüência </em>e é usado para definir a escala horizontal e vertical do ativo. Isto afetará a forma como o ativo é renderizado na IDE e
+        em <span class="notranslate">tempo de execução</span>, e é calculado como um valor escalar, onde 100% é o tamanho padrão do ativo, 50% seria metade do tamanho, e 200% seria o dobro do tamanho. Observe que você tem a possibilidade de ligar os valores da escala horizontal e vertical clicando
+        o botão &quot;link&quot; <img alt="Track Link Icon" height="14" src="../../assets/Images/Icons/Icon_Track_Link.png" width="14">. Isto significa que a mudança de um valor também mudará automaticamente o outro.</li>
+      <li class="dropspot"><strong>Índice de imagem</strong> e <strong>velocidade da imagem</strong>: Esses parâmetros só estão disponíveis para <em>sprite </em>e <em>objetos </em>ativos e podem ser usados para alterar o quadro de animação atual (veja a página no <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_index.htm">índice de imagem</a> para
+        mais informações) assim como a velocidade atual da animação, que é definida usando FPS e funciona da mesma forma que o valor definido para o sprite que está sendo usado no editor sprite.</li>
+      <li class="dropspot"><strong>Multiplicação de cores</strong>: Este parâmetro só está disponível para <em>sprite </em>e <em>objetos </em>ativos e pode ser usado para mudar a cor atual da mistura para o duende que está sendo desenhado. Isto é o equivalente a definir o valor da <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_blend.htm">image_blend</a> 
+        e qualquer cor definida aqui será &quot;multiplicada&quot; (ou seja, misturada) com a cor do duende, e um valor de branco (#ffffffffff) indica que nenhuma mistura deve ocorrer. Observe que ao trabalhar com este tipo de faixa, você pode definir o
+        cor digitando manualmente o valor hexadecimal, ou você pode clicar na amostra de cor para abrir o <span class="notranslate">GameMaker Studio 2</span> Colour Picker. Observe que as cores são dadas no formato <a class="glossterm" data-glossterm="ARGB" href="#">ARGB</a>, assim você pode definir um valor
+        para alfa usando este tipo de faixa de parâmetros (o Colour Picker também permite que você defina o valor alfa). Isto seria o equivalente a definir o <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_alpha.htm">image_alpha</a> para
+        o duende.</li>
+      <li class="dropspot"><strong>Volume</strong>: O parâmetro de volume só se aplica a faixas de ativos <em>sonoros </em>e pode ser usado para definir o ganho do som (o ganho real do ativo sonoro não será alterado, pois é essencialmente um emissor que é usado para o ativo
+        em seqüências). O valor do volume é calculado como uma porcentagem, onde 0% não é volume e 100% é volume total.</li>
+      <li class="dropspot"><strong>Breu</strong>: O parâmetro de inclinação só se aplica a faixas de ativos <em>sonoros </em>e pode ser usado para definir a inclinação do som (como no caso do volume, o ganho real do ativo sonoro não será alterado, pois é essencialmente um emissor que é usado
+        para a pista de ativos em seqüências). O valor do tom é calculado como uma porcentagem, 100% é o tom &quot;natural&quot; do som, e menos de 100% irá baixá-lo enquanto que mais de 100% irá elevá-lo.</li>
+      <li class="dropspot"><strong>Falloff</strong>: O parâmetro falloff só se aplica a faixas de ativos <em>sonoros </em>e atualmente não está implementado.</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">Ações de rastreamento</a></p>
+  <div class="droptext" data-targetname="drop-down10">
+    <p class="dropspot">Os botões na parte inferior do editor de pistas são as diferentes ações de pistas e podem ser usados para os seguintes propósitos:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><img alt="Add Track Icon" src="../../assets/Images/Icons/Icon_AddAsset.png"> - Este botão abrirá o Asset Explorer para você escolher um ativo para usar como uma nova pista. Uma vez selecionada, a trilha do ativo será criada e os quadros serão adicionados no Dope
+        Folha na posição atual de playhead.</li>
+      <li class="dropspot"><img alt="Duplicate Asset Icon" src="../../assets/Images/Icons/Icon_DuplicateAsset.png"> - Quando você tiver selecionado uma ou mais faixas de ativos no editor de faixas, clicando neste botão as duplicará (junto com quaisquer faixas de parâmetros que elas possam
+        conter).
+      </li>
+      <li class="dropspot"><img alt="Clip Mask Icon" src="../../assets/Images/Icons/Icon_AddClipMask.png"> - Clicando aqui criará um <strong>grupo</strong> especial <strong>de máscara de recorte</strong> onde você pode dar sprites para usar como máscaras e sprites a serem mascarados. Veja <a href="Clipping_Masks.htm">aqui</a> para mais informações.</li>
+      <li class="dropspot"><img alt="Group Folder Icon" height="18" src="../../assets/Images/Icons/Icon_AddGroup.png" width="25"> - Clicando aqui, será adicionada uma nova pasta de grupo ao editor de pistas, que poderá então ser usada para organizar melhor as pistas. Você pode adicionar uma faixa t um grupo
+        arrastando a faixa para a pasta do grupo e você pode removê-la novamente, arrastando-a para fora da pasta. Note que qualquer recurso que for adicionado a uma pasta de grupo será automaticamente atribuído à cor da pasta, embora você possa então editar a faixa
+        cor para as pistas individuais para que seja diferente, se necessário.</li>
+      <li class="dropspot"><img alt="Track Delete Icon" src="../../assets/Images/Icons/Icon_DeleteTrack.png"> - Como é de se esperar, clicando aqui, a(s) faixa(s) selecionada(s) será(ão) apagada(s). Se esta for uma faixa ativa, então todas as faixas de parâmetros que ela contém também serão excluídas, embora
+        você pode usá-lo em faixas de parâmetros selecionados para apagá-los por conta própria sem remover as faixas de ativos aos quais estão associados. Se você usar isto em uma pasta de grupo vazia, então a pasta será excluída, entretanto, se houver alguma trilha no
+        será exibido um aviso, pois ao apagar uma pasta você também removerá todas as faixas que estiverem dentro dela.</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p>Há mais duas páginas com informações relacionadas a trilhas e parâmetros que também são de interesse, a primeira é sobre o uso de recursos das <a href="../Animation_Curves.htm">Curvas de Animação</a> para gerar trilhas de parâmetros, e a segunda descreve como
+    para criar <strong>Máscaras de Clipping</strong>:</p>
+  <ul class="colour">
+    <li><a href="Using_Animation_Curves.htm">Usando curvas de animação</a></li>
+    <li><a href="Clipping_Masks.htm">Máscaras de grampear</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Sequences.htm">Sequências</a></div>
+        <div style="float:right">A seguir: <a href="Clipping_Masks.htm">Máscaras de grampear</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sequences - The Track Panel
+Track Panel
+-->
+  <!-- TAGS
+sequences_track_panel
+-->
+
+</body></html>

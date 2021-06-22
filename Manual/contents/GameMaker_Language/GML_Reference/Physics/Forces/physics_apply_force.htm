@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_apply_force</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_apply_force" />
+  <meta name="rh-index-keywords" content="physics_apply_force" />
+  <meta name="search-keywords" content="physics_apply_force" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_apply_force</h1>
+  <p>Quando se trabalha com física, é preciso aplicar não somente a gravidade aos objetos, mas também as forças. Uma força é qualquer influência que faz um objeto sofrer uma mudança de velocidade, uma mudança de direção ou uma mudança de forma, e é definida no mundo físico <span class="notranslate">GameMaker Studio 2</span> da mesma forma que nós definimos a gravidade, obtendo o vetor dos dois componentes xforce/yforce. Deve-se notar que as forças não são aplicadas ao centro de massa do objeto, mas sim em um ponto da sala e elas mudarão o
+    direção e velocidade, assim como o torque (spin) dependente de quaisquer outras forças que estejam trabalhando no objeto (como a gravidade). Aqui está um exemplo de imagem para ajudar a ilustrar:</p>
+  <p><img alt="Apply physics force illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_apply_force_image.png">No exemplo acima, o objeto de mola na parte inferior criou uma força sobre a bola
+    objeto para que ele se mova em uma direção diferente. A força exata é definida pelo vetor que obtemos dos componentes xforce/yforce em relação às coordenadas xpos/ypos - o que significa simplesmente que a força é calculada como a distância a partir de xpos/ypos
+    para xforce/yforce em Newtons (sendo um Newton definido como a quantidade de força líquida necessária para acelerar uma massa de um quilograma a uma taxa de um metro por segundo ao quadrado) e a direção é o ângulo que obtemos de xpos/ypos para xforce/yforce. O
+    código para uma colisão como a acima iria no caso de colisão do objeto de mola e seria algo parecido com o fornecido no exemplo abaixo.</p>
+  <p class="note"><b>NOTA</b>: O mundo da física usa medidores para todos os seus cálculos, e a proporção de pixels por metro é definida no editor da sala ou usando <span style="font-size:1px;"><a href="../The_Physics_World/physics_world_create.htm"><tt style="font-size: 14px">physics_world_create()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">physics_apply_force(xpos, ypos, xforce, yforce)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>xpos</td>
+        <td>A coordenada x <i>na sala</i> onde a força será aplicada</td>
+      </tr>
+      <tr>
+        <td>ypos</td>
+        <td>A coordenada y <i>na sala</i> onde a força será aplicada</td>
+      </tr>
+      <tr>
+        <td>xforce</td>
+        <td>o componente x do vetor de força</td>
+      </tr>
+      <tr>
+        <td>yforce</td>
+        <td>o componente y do vetor de força</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">com (outros)<br> {
+    <br> physics_apply_force(x, y, 0, -30);<br> }
+  </p>
+  <p>O código acima aplicará o código ao <i>outro</i> objeto na colisão com uma força de 30 Newtons e uma direção.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Forces.htm">Forças</a></div>
+        <div style="float:right">A seguir: <a href="physics_apply_impulse.htm">physics_apply_impulse</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_apply_force
+-->
+  <!-- TAGS
+physics_apply_force
+-->
+</body>
+</html>

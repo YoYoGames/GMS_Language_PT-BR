@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>font_texture_page_size</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function font_texture_page_size" />
+  <meta name="rh-index-keywords" content="font_texture_page_size" />
+  <meta name="search-keywords" content="font_texture_page_size" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>font_texture_page_size</h1>
+  <p>Esta <b>variável incorporada</b> pode ser usada para obter ou definir o tamanho da página de textura ao usar a função <a href="font_add.htm"><tt>font_add()</tt></a>. Ao adicionar uma fonte usando essa função, o <span class="notranslate">GameMaker Studio 2</span> irá
+    criar um cache de página de textura dos glifos necessários até o tamanho definido por esta variável. O processo é o seguinte:</p>
+  <ul class="colour">
+    <li>Cada personagem que você usa é colocado em cache a partir da fonte em uma página de textura</li>
+    <li>Quando a página de textura estiver cheia (porque você usa caracteres grandes ou muitos caracteres diferentes), <span class="notranslate">o GameMaker Studio 2</span> removerá os caracteres do cache e os substituirá por novos caracteres que você precisa</li>
+    <li>O<span class="notranslate">GameMaker Studio 2</span> tenta não fazer a textura muito grande porque nem todos os dispositivos podem lidar com texturas grandes, e tenta não fazer a textura muito pequena porque remover e readicionar os caracteres à textura leva tempo para a CPU
+      e faz com que seu jogo corra lentamente</li>
+  </ul>
+  <p>Se você acha que precisa de uma página de textura maior ou menor do que a 1024px padrão que o <span class="notranslate">GameMaker Studio 2</span> usa, você pode definir o valor usando esta variável incorporada. Se você não estiver usando a função <tt>font_add()</tt>,
+    então a configuração não terá efeito no desempenho de seus jogos, pois as fontes adicionadas na IDE estão em cache nas páginas de textura regular (que você pode controlar a partir do <a href="../../../../The_Asset_Editors/Fonts.htm">Editor de Fonte</a> e
+    as <a href="../../../../Settings/Game_Options.htm">opções de jogo</a> para a plataforma alvo).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">font_texture_page_size;</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (largura/altura máxima em pixels)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">font_texture_page_size = 512;<br> newfont = font_add(&quot;Arial&quot;, 24, true, true, 32, 128);</p>
+  <p>O código acima define a página de textura do cache da fonte para um tamanho máximo de 512px e depois adiciona uma nova fonte ao jogo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Fonts.htm">Fontes</a></div>
+        <div style="float:right">Próximo: <a href="font_get_name.htm">font_get_name</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_texture_page_size
+-->
+  <!-- TAGS
+font_texture_page_size
+-->
+</body>
+</html>

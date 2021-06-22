@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sequence_is_is_finished</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_is_finished" />
+  <meta name="rh-index-keywords" content="layer_sequence_is_finished" />
+  <meta name="search-keywords" content="layer_sequence_is_finished" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sequence_is_is_finished</h1>
+  <p>Com esta função você fornece a identificação do elemento de seqüência - como retornado por <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a> ou por uma das <a href="../General_Layer_Functions/General_Layer_Functions.htm">funções dos elementos da camada</a> - e verificará se a seqüência está terminada ou não, retornando <tt>verdadeira</tt> se estiver, e <tt>falsa</tt> se não estiver. Note que isto só é aplicável quando a seqüência <i>não</i> está definida para loop ou ping-pong no modo de reprodução.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">layer_sequence_is_finished(sequence_element_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>sequence_element_id</td>
+        <td>O valor de identificação único do elemento de seqüência para o alvo</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if layer_sequence_is_finished(title_sequence) != 0<br> {
+    <br> alarm[0] = room_speed * 3;<br> layer_sequence_play(title_sequence);
+    <br> }
+  </p>
+  <p>O código acima verifica se o ID do elemento de seqüência armazenado na variável &quot;title_sequence&quot; está terminado, e se é ele que começa a tocar novamente e estabelece um alarme.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sequence_Layers.htm">Sequência de camadas</a></div>
+        <div style="float:right">Próximo: <a href="layer_sequence_exists.htm">layer_sequence_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_is_finished
+-->
+  <!-- TAGS
+layer_sequence_is_finished
+-->
+</body>
+</html>

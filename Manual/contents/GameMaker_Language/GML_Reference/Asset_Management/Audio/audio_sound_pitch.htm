@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_sound_pitch</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_sound_pitch" />
+  <meta name="rh-index-keywords" content="audio_sound_pitch" />
+  <meta name="search-keywords" content="audio_sound_pitch" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_sound_pitch</h1>
+  <p>Esta função pode ser usada para mudar o tom de um determinado som. O som pode ser referenciado a partir de um índice para um som individual que está sendo tocado e que foi armazenado em uma variável ao usar o <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a> ou 
+    <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a> ou um ativo real do Navegador de Ativos. Se for um índice de um som tocado, então somente essa instância será alterada, entretanto, ao usar um ativo sonoro do Navegador de Ativos, todos
+      Outras instâncias sendo tocadas desse som serão alteradas.</p>
+  <p>O argumento do pitch é um <i>multiplicador de pitch</i>, na medida em que o valor de entrada multiplica o pitch atual por esse valor, de modo que o valor padrão de 1 não é alteração do pitch, enquanto um valor inferior a 1 irá diminuir o pitch e maior que 1 irá
+    levantar o passo. É melhor usar pequenos incrementos para esta função, pois qualquer valor abaixo de 0 ou acima de 5 pode não ser audível de qualquer forma. Vale notar que a mudança total de inclinação permitida é fixada em (1/256) - 256 oitavas, de modo que qualquer valor acima ou abaixo de
+    isto não será registrado.</p>
+  <p class="note"><b>OBSERVAÇÃO: </b>O valor fixado acima é o que o <span class="notranslate">GameMaker Studio 2</span> tenta fixar o intervalo, mas este valor <b>não</b> é garantido em todas as plataformas alvo. <span class="notranslate">iOS</span>, por exemplo,
+    (1/256) - 8, então você pode precisar experimentar em cada plataforma alvo e ter diferentes versões de um recurso sonoro, cada uma pré-alinhada, caso você precise de valores de oitava mais altos ou mais baixos.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">audio_sound_pitch(index, pitch);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice do som a mudar.</td>
+      </tr>
+      <tr>
+        <td>tom</td>
+        <td>O multiplicador de passo (padrão 1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var s_engine = audio_play_sound(snd_CarEngine, 10, false);<br> switch (gear)<br> {
+    <br> caso 1: audio_sound_pitch(s_engine, 0.8); pausa;<br> caso 2: audio_sound_pitch(s_engine, 0.9); pausa;<br> caso 3: audio_sound_pitch(s_engine, 0.95); pausa;<br> caso 4: audio_sound_pitch(s_engine, 1); pausa;<br> caso 5: audio_sound_pitch(s_engine, 0.95),
+    1.2); pausa;<br> }
+  </p>
+  <p>O código acima mudará o tom do áudio reproduzido a partir do som indexado na variável &quot;s_engine&quot;, com base no valor da variável &quot;gear&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Audio.htm">Áudio</a></div>
+        <div style="float:right">Próximo: <a href="audio_sound_get_pitch.htm">áudio_sound_get_pitch</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_sound_pitch
+-->
+  <!-- TAGS
+audio_sound_pitch
+-->
+</body>
+</html>

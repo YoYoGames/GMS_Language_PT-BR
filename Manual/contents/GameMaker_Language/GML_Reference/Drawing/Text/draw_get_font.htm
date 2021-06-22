@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_get_font</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_get_font" />
+  <meta name="rh-index-keywords" content="draw_get_font" />
+  <meta name="search-keywords" content="draw_get_font" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_get_font</h1>
+  <p>Esta função receberá a fonte atualmente designada para o texto do desenho. A função retornará -1 se nenhuma fonte for definida, ou o valor de identificação (um inteiro positivo) para o recurso de fonte atribuído.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">draw_get_font();</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Número inteiro (-1 ou valor de identificação da fonte)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if draw_get_font() != fnt_MainMenu<br> {
+    <br> draw_set_colour(c_blue);
+    <br> draw_set_font(fnt_MainMenu);
+    <br> }
+    <br> draw_text(room_width / 2, 200, &quot;MENU&quot; );</p>
+  <p>O código acima verificará qual fonte está sendo usada para desenho e se não é fnt_MainMenu <tt>,</tt> então a fonte e a cor do desenho são definidas antes que algum texto seja desenhado para a tela.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Text.htm">Texto</a></div>
+        <div style="float:right">Próximo: <a href="draw_get_halign.htm">draw_get_halign</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_get_font
+-->
+  <!-- TAGS
+draw_get_font
+-->
+</body>
+</html>

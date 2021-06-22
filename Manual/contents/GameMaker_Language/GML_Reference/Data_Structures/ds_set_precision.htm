@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_set_precision</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_set_precision" />
+  <meta name="rh-index-keywords" content="ds_set_precision" />
+  <meta name="search-keywords" content="ds_set_precision" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_set_precision</h1>
+  <p>Ao comparar valores, por exemplo, ao pesquisar em um mapa ou ordenar uma lista, o <span class="notranslate">GameMaker Studio 2</span> deve decidir quando dois valores são iguais. Para valores de cordas e valores inteiros, isto é claro, mas para números reais, devido à flutuação
+    erros de arredondamento de pontos, números aparentemente iguais podem facilmente se tornar desiguais. Por exemplo, é possível que (5 / <b> 3) * 3</b> não <i>seja</i> igual a 5! Para ajudar a evitar isto, um valor de precisão
+    é usado em todas as funções de números reais, e quando a <i>diferença entre dois números é menor</i> do que esta precisão, eles são considerados iguais. A precisão padrão de 0,0000001 é usada em todas as funções de estrutura de dados.
+    a menos que seja alterado por esta função.</p>
+  <p class="note"><b>NOTA</b>: Esta precisão é usada em todas as estruturas de dados, mas não em outras comparações no <span class="notranslate">GML</span>!</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">ds_set_precision(prec);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>prec</td>
+        <td>O valor de precisão (padrão 0,0000001)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Devoluções:N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">ds_set_precision(0.0001);</p>
+  <p>O código acima mudará a configuração padrão de precisão para todas as funções da estrutura de dados.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Data_Structures.htm">Estruturas de dados</a></div>
+        <div style="float:right">Próximo: ds_exists</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_set_precision
+-->
+  <!-- TAGS
+ds_set_precision
+-->
+
+</body></html>

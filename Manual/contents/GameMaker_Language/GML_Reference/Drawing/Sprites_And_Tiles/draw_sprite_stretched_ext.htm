@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_sprite_stretched_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_sprite_stretched_ext" />
+  <meta name="rh-index-keywords" content="draw_sprite_stretched_ext" />
+  <meta name="search-keywords" content="draw_sprite_stretched_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_sprite_stretched_ext</h1>
+  <p>Esta função faz exatamente o mesmo que o <a href="draw_sprite_stretched.htm"><tt>draw_sprite_stretched()</tt></a> com a capacidade adicional de definir a mistura de cores e o valor alfa para o duende quando este é desenhado (semelhante à função
+    <a href="draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a>).</p>
+  <p class="note"><b>NOTA</b>: A mistura de cores só é recomendada para o alvo HTML5 quando a WebGL está habilitada, embora você ainda possa definir a cor da mistura se ela não estiver habilitada e ela irá misturar o sprite como normal. Entretanto, toda mistura desta forma cria uma duplicata
+    sprite, que é então armazenado no cache e utilizado quando necessário. Isto está longe de ser ideal e se você usar mudanças múltiplas de cor, isso irá diminuir o desempenho de seus jogos a menos que você ative o WebGL. se você não quiser usar o WebGL, então você pode definir
+    o tamanho do cache da fonte para tentar limitá-lo, caso seja necessário, utilizando a função <span style="font-size:1px;"><a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_set_cache_size_ext.htm"><tt style="font-size: 14px">sprite_set_cache_sizee()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">draw_sprite_stretched_ext(sprite, subimg, x, y, w, h, cor, alfa);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>O índice do duende a desenhar.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td>O subimg (frame) do duende a desenhar (image_index ou -1 correlacionado com o frame atual da animação no objeto).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A coordenada x de onde desenhar o duende.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A coordenada y de onde desenhar o duende.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>A largura da área que o duende esticado irá ocupar.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>A altura da área que o duende esticado irá ocupar.</td>
+      </tr>
+      <tr>
+        <td>cor</td>
+        <td>A cor com a qual se deve misturar o duende. c_white é para exibi-lo normalmente.</td>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>O alfa do duende (de 0 a 1 onde 0 é transparente e 1 opaco).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">draw_sprite_stretched_ext(sprite_index, image_index, x, y, sprite_width, sprite_height / 2, c_white, 0,5);</p>
+  <p>Isto atrairá as instâncias atribuídas ao duende e sua subimagem com o canto esquerdo na posição x/y da instância. Sua largura é igual à do duende, e a altura é a altura do duende dividida por dois. Ela também será misturada normalmente, mas terá
+    um valor alfa parcialmente transparente.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sprites_And_Tiles.htm">Sprites e Azulejos</a></div>
+        <div style="float:right">A seguir: <a href="draw_sprite_pos.htm">draw_sprite_pos</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite_stretched_ext
+-->
+  <!-- TAGS
+draw_sprite_stretched_ext
+-->
+</body>
+</html>

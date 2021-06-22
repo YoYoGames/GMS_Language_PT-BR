@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>camera_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for camera_create" />
+  <meta name="rh-index-keywords" content="camera_create" />
+  <meta name="search-keywords" content="camera_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>camera_create</h1>
+  <p>Esta função criará uma câmera &quot;vazia&quot;, ou seja: uma câmera sem nenhuma configuração de visão ou projeção definida. Uma vez criada a câmera, pode-se então usar as diferentes <a href="../../Maths_And_Numbers/Matrix_Functions/Matrix_Functions.htm">funções de matriz</a> para definir as matrizes de visão e projeção. Você também pode usar esta função para criar a câmera e então usar as diferentes funções <tt>camera_set_*</tt> para configurar a visão, no entanto, observe que você <i>deve</i> fornecer pelo menos uma posição e tamanho de visão,
+    caso contrário a câmera resultante não será válida e dará resultados estranhos se aplicada a uma porta de visualização (se você não definir o objeto seguinte, bordas ou velocidade de movimento estas serão definidas para os valores padrão para uma câmera de visualização no Editor de Sala).</p>
+  <p>Note que as câmeras são como todos os recursos dinâmicos e ocuparão a memória quando criadas. Isto significa que você precisa tomar cuidado para não criar câmeras desnecessariamente e destruir aquelas que você não precisa chamando a função <a href="camera_destroy.htm"><tt>camera_destroy()</tt></a>.
+    Isto também significa que as câmeras persistirão de sala para sala se atribuídas a uma variável <tt>global</tt> (elas persistirão quando atribuídas a uma instância ou a variáveis locais também, mas você não pode acessá-las depois de mudar de sala, daí o vazamento de memória), portanto
+    que você pode - por exemplo - criar uma nova câmera, atribuí-la a uma variável global, e então no início de cada sala definir as matrizes de visão e projeção necessárias e a porta de visão que você precisa usar.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">camera_create();</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real (valor único de identificação da câmera)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">view_camera[0] = camera_create();<br> var viewmat = matrix_build_lookat(640, 240, -10, 640, 240, 0, 0, 0, 1, 0);<br> var projmat = matrix_build_projection_ortho(640, 480, 1.0, 32000.0);<br> camera_set_view_mat(view_camera[0], viewmat);<br> camera_set_proj_mat(view_camera[0], viewmat),
+    projmat);</p>
+  <p>O código acima cria uma nova câmera e atribui sua identificação para visualização[0]. As matrizes de visão e projeção são então criadas e armazenadas em variáveis locais antes de serem usadas para configurar a câmera.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Cameras_And_View_Ports.htm">Câmeras e Ver Portos</a></div>
+        <div style="float:right">Próximo: <a href="camera_create_view.htm">camera_create_view</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_create
+-->
+  <!-- TAGS
+camera_create
+-->
+</body>
+</html>

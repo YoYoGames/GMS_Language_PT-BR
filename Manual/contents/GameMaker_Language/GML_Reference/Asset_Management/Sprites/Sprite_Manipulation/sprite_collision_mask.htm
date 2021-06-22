@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_collision_mask</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_collision_mask" />
+  <meta name="rh-index-keywords" content="sprite_collision_mask" />
+  <meta name="search-keywords" content="sprite_collision_mask" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_collision_mask</h1>
+  <p>Com esta função você pode definir as propriedades da máscara de colisão que um duende deve ter. Se você selecionar automático (0) ou imagem completa (1) como o modo caixa de delimitação, então os valores individuais da caixa de delimitação podem ser ajustados para 0.
+    máscara definida (2), você terá que definir estes valores. Os diferentes valores da caixa de delimitação são sempre relativos ao canto superior esquerdo do duende (independentemente da origem x e y) que é considerada posição (0, 0).</p>
+  <p>A definição do tipo de máscara define a forma geral para a própria máscara, mas note que qualquer coisa que não seja uma máscara retangular exigirá mais poder de processamento ao resolver colisões, com uma queda subseqüente no desempenho. Em geral, você deve apenas
+    usar outros tipos de máscara que não sejam retangulares quando absolutamente necessário.</p>
+  <p class="note"><b>NOTA</b>: Esta função não permite o tipo de máscara de colisão <b>retangular girada</b>.</p>
+  <p>O tipo de máscara que pode ser ajustada será uma das constantes a seguir:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td><tt>bboxkind_rectangular</tt></td>
+        <td>Uma forma retangular (não rotativa) de máscara de colisão retangular</td>
+      </tr>
+      <tr>
+        <td><tt>bboxkind_ellipse</tt></td>
+        <td>Uma forma de máscara de colisão elíptica</td>
+      </tr>
+      <tr>
+        <td><tt>bboxkind_diamond</tt></td>
+        <td>Uma forma de máscara de colisão com diamante</td>
+      </tr>
+      <tr>
+        <td><tt>bboxkind_precise</tt></td>
+        <td>Uma máscara de colisão precisa, onde a máscara estará de acordo com os pixels não transparentes do duende, com base no valor de tolerância dado (ver abaixo))</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> Finalmente, a tolerância é usada para definir a precisão da máscara (quando usada com uma máscara de &quot;imagem completa&quot;, isso não terá efeito), com uma tolerância de 0 significando que a máscara seguirá cada pixel que tiver uma transparência
+    acima de 0, enquanto outros valores deslocarão o perímetro da máscara de colisão, dependendo da transparência dos pixels.</p>
+  <p class="note"><b>NOTA</b>: Esta função é útil apenas para sprites <b>bitmap</b> e não funcionará com sprites SWF ou JSON (Espinha).</p>
+  <p class="note"><b>NOTA</b>: Esta função só funcionará em sprites adicionados ou sprites duplicados e <b>não</b> diretamente em recursos pré-fabricados. Você pode duplicar os sprites usando a função <span style="font-size:1px;"><a href="sprite_duplicate.htm"><tt style="font-size: 14px">sprite_duplicate()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">sprite_collision_mask(ind, sepmasks, bboxmode, bbbleft, bbtop, bbright, bbbottom, kind, tolerance);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>O índice do duende para definir a caixa de delimitação.</td>
+      </tr>
+      <tr>
+        <td>sepmasks</td>
+        <td>Seja para criar máscaras de colisão para cada subimagem do duende<tt>(verdadeiro</tt>), ou uma máscara para todos<tt>(falsa</tt>).</td>
+      </tr>
+      <tr>
+        <td>bboxmode</td>
+        <td>Que tipo de caixa de delimitação a ser usada. 0 = automático, 1 = imagem completa, 2 = definido pelo usuário.</td>
+      </tr>
+      <tr>
+        <td>bbleft</td>
+        <td>A posição esquerda máxima da caixa delimitadora.</td>
+      </tr>
+      <tr>
+        <td>bbtop</td>
+        <td>A posição máxima de topo da caixa delimitadora.</td>
+      </tr>
+      <tr>
+        <td>bbright</td>
+        <td>A posição máxima correta da caixa delimitadora.</td>
+      </tr>
+      <tr>
+        <td>bbbottom</td>
+        <td>A posição inferior máxima da caixa delimitadora.</td>
+      </tr>
+      <tr>
+        <td>tipo</td>
+        <td>O tipo de máscara, uma constante (veja a tabela na descrição).</td>
+      </tr>
+      <tr>
+        <td>tolerância</td>
+        <td>Indica a tolerância no valor de transparência (0= sem tolerância, 255= tolerância total).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">spr = sprite_add(&quot;player_5.png&quot;, 16, true, true, 0, 0);<br> sprite_collision_mask(spr, true, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0);</p>
+  <p>O código acima carrega um sprite de uma fonte externa e armazena o novo índice na variável &quot;spr&quot;. O código então define o novo sprite para ter uma máscara de colisão precisa para cada uma de suas sub-imagens.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sprite_Manipulation.htm">Manipulação de Sprite</a></div>
+        <div style="float:right">Próximo: <a href="sprite_nineslice_create.htm">sprite_nineslice_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_collision_mask
+-->
+  <!-- TAGS
+sprite_collision_mask
+-->
+</body>
+</html>

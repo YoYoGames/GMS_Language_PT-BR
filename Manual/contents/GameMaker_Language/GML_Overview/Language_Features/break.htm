@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>intervalo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the break function" />
+  <meta name="rh-index-keywords" content="break" />
+  <meta name="search-keywords" content="break" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>intervalo</h1>
+  <p>A declaração <span class="inline"><tt>break</tt></span> é usada para terminar prematuramente um <a href="for.htm"><tt>para</tt></a>, <a href="repeat.htm"><tt>repita</tt></a>, <a href="while.htm"><tt>enquanto</tt></a> ou <a href="do___until.htm"><tt>fazer / até</tt></a>    de algum tipo, ou para dizer um <a href="switch.htm"><tt>interruptor</tt></a> declaração para terminar nesse ponto, ou para terminar prematuramente um <a href="with.htm"><tt>com</tt></a> chamada. Consulte as páginas individuais destas diferentes funções para obter mais informações sobre o
+    explicação aprofundada de como ele pode ser usado em cada circunstância. Observe que se a <tt>pausa</tt> for usada fora de qualquer um destes contextos, isso dará um erro.</p>
+  <p>Abaixo você pode ver alguns exemplos básicos de como <span class="inline">break</span> pode ser usado, e sua sintaxe é simples:</p>
+  <p class="code">pausa;</p>
+  <p><tt>romper</tt> em um loop <tt>:</tt> </p>
+  <p class="code">for (var i = 0; i &lt; 10; i += 1)<br> {
+    <br> if (array[i] == 234)<br> {
+    <br> pausa;
+    <br> }
+    <br> }
+    <br> num = i;</p>
+  <p><tt>quebra</tt> em um loop de <tt>repetição</tt>:</p>
+  <p class="code">var i = 0;<br> var temp = 0;<br> repetir (10)<br> {
+    <br> temp += array[i];<br> if (temp &gt; max_total)<br> {
+    <br> break;
+    <br> }
+    <br> mais
+    <br> {
+    <br> i += 1;<br> }
+    <br> }
+  </p>
+  <p><tt>quebra</tt> em um loop de <tt>tempo</tt>:</p>
+  <p class="code">var i = 0;<br> while (!place_free(x, y))<br> {
+    <br> x = random(room_width);<br> y = random(room_height);<br> if (i &gt; 50)<br> {
+    <br> break;
+    <br> }
+    <br> mais
+    <br> {
+    <br> i+=1;
+    <br> }
+    <br> }
+  </p>
+  <p><span class="inline">break</span> em um loop <span class="inline">do / until</span>:</p>
+  <p class="code">var _id = noone;<br> do
+    <br> {<br> _id = lista[| 0];<br> se a instância_existir(_id)<br> {<br> _break;<br> } <br> ds_list_delete(list, 0);<br> } <br> até (ds_list_empty(list));<br> target = _id;</p>
+  <p><tt>quebrar</tt> ao usar <tt>com</tt>:</p>
+  <p class="code">var count = 0;<br> com (obj_Enemy)<br> {
+    <br> contar+++;
+    <br> if (contagem &gt; 10)<br> {
+    <br> pausa;
+    <br> }
+    <br> hp = 100;<br> }
+  </p>
+  <p><span class="inline">break</span> em um <span class="inline">switch</span>:</p>
+  <p class="code">switch (teclado_chave)<br> {
+    <br> case vk_left:<br> case ord(&quot;A&quot;):<br> x -= 4;<br> break;
+    <br> caso vk_direita:<br> caso ord(&quot;D&quot;):<br> x += 4;<br> pausa;
+    <br> caso vk_up:<br> caso ord(&quot;W&quot;):<br> y -= 4;<br> pausa;
+    <br> caso vk_down:<br> caso ord(&quot;S&quot;):<br> y += 4;<br> pausa;
+    <br> }
+  </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Language_Features.htm">Características lingüísticas</a></div>
+        <div style="float:right">Próximo: <a href="continue.htm">continuar</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+break
+-->
+  <!-- TAGS
+break
+-->
+</body>
+</html>

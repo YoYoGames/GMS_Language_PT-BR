@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Quartos</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Rooms" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Rooms" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Quartos</h1>
+  <p>As salas são criadas no <a href="../../../../The_Asset_Editors/Rooms.htm">Room Editor</a> no <span class="notranslate">GameMaker Studio 2</span><span> e </span>são onde tudo acontece em seu jogo. Você deve ter pelo menos uma sala em qualquer jogo para que ele funcione, mas você pode
+    precisam de muito mais, dependendo do tipo de jogo e de como você estrutura seu projeto. Esta seção tem todas as funções e variáveis gerais <span class="notranslate">do GML</span> relacionadas às salas e para obter informações sobre elas, bem como para definir certas propriedades dentro
+    eles.</p>
+  <p>As seguintes <a href="../../../GML_Overview/Variables/Global_Variables.htm">variáveis</a> e funções <a href="../../../GML_Overview/Variables/Global_Variables.htm">globais</a> podem ser usadas para obter informações básicas sobre qualquer espaço:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="room_first.htm">room_first</a></li>
+    <li><a href="room_last.htm">quarto_last</a></li>
+    <li><a href="room_next.htm">room_next</a></li>
+    <li><a href="room_previous.htm">room_previous</a></li>
+    <li><a href="room.htm">sala</a></li>
+    <li><a href="room_speed.htm">room_speed</a></li>
+    <li><a href="room_height.htm">altura_do_quarto</a></li>
+    <li><a href="room_width.htm">largura_da_sala</a></li>
+    <li><a href="room_persistent.htm">room_persistent</a></li>
+  </ul>
+  <p> </p>
+  <p>Você também pode usar as seguintes funções para obter o nome da sala atual (conforme definido no <a href="../../../../Introduction/The_Asset_Browser.htm">Navegador de Ativos</a>), bem como mover-se entre as salas:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="room_get_name.htm">nome_do_quarto_get_name</a></li>
+    <li><a href="room_goto.htm">room_goto</a></li>
+    <li><a href="room_goto_next.htm">room_goto_next</a></li>
+    <li><a href="room_goto_previous.htm">room_goto_previous</a></li>
+    <li><a href="room_restart.htm">room_restart</a></li>
+  </ul>
+  <p> </p>
+  <p>A seguir, temos uma série de funções que podem ser usadas para mudar de sala e seu conteúdo ou mesmo criar novas salas e acrescentá-las. Deve-se observar que estas funções <i>nunca</i> devem <i>ser executadas de dentro da sala que se deseja mudar</i>, mas sim
+    ser executado primeiro a partir de uma instância em outra sala. Observe também que, se você mudar qualquer ativo da sala desta maneira, a mudança é <strong>permanente</strong> e será mantida por toda a duração do jogo, mesmo se você chamar a função room_restart()
+    (fechar e reiniciar o jogo irá reiniciar as propriedades da sala, no entanto).</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="room_exists.htm">room_exists</a></li>
+    <li><a href="room_add.htm">room_add</a></li>
+    <li><a href="room_duplicate.htm">room_duplicate</a></li>
+    <li><a href="room_assign.htm">atribuição_de_quarto</a></li>
+    <li><a href="room_instance_add.htm">room_instance_add</a></li>
+    <li><a href="room_instance_clear.htm">room_instance_clear</a></li>
+    <li><a href="room_set_height.htm">altura_do_sala</a></li>
+    <li><a href="room_set_width.htm">largura_do_servidor</a></li>
+    <li><a href="room_set_persistent.htm">room_set_persistent</a></li>
+    <li><a href="room_set_view_enabled.htm">room_set_view_enabled</a></li>
+    <li><a href="room_set_viewport.htm">room_set_viewport</a></li>
+    <li><a href="room_get_viewport.htm">room_get_viewport</a></li>
+    <li><a href="room_set_camera.htm">room_set_camera</a></li>
+    <li><a href="room_get_camera.htm">room_get_camera</a></li>
+  </ul>
+  <p> </p>
+  <p>Há também uma série de diferentes funções relacionadas à criação e manipulação dos diferentes tipos de elementos que podem ser colocados em camadas na sala. Estas funções estão listadas nas seções apropriadas para cada tipo de elemento listado abaixo:</p>
+  <ul class="colour">
+    <li><a href="General_Layer_Functions/General_Layer_Functions.htm">Funções gerais da camada</a></li>
+    <li><a href="Tile_Map_Layers/Tile_Map_Layers.htm">Camadas do mapa de azulejos</a></li>
+    <li><a href="Background_Layers/Background_Layers.htm">Camadas de fundo</a></li>
+    <li><a href="Sprite_Layers/Sprite_Layers.htm">Camadas de Sprite</a></li>
+    <li><a href="Sequence_Layers/Sequence_Layers.htm">Sequência de camadas</a></li>
+  </ul>
+  <p> </p>
+  <p>Uma coisa importante a ser notada ao criar camadas de espaço é que <i>você pode ter vários tipos diferentes de elementos em uma camada</i>. Assim, por exemplo, você pode ter uma camada para os inimigos, e nessa camada há as instâncias inimigas, bem como certos ativos sprite
+    que só estão relacionados a esse inimigo. Ou você poderia ter um elemento de fundo com um elemento de mapa de azulejos para criar o aspecto de uma sala. Isto não é permitido no editor da sala, mas ao criar as coisas dinamicamente você pode fazer isto, e é por isso que as funções
+    como <a href="General_Layer_Functions/layer_get_all_elements.htm"><tt>layer_get_all_elements()</tt></a> existem.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Asset_Management.htm">Gestão de ativos</a></div>
+        <div style="float:right">A seguir: <a href="../Assets_And_Tags/Assets_And_Tags.htm">Ativos e etiquetas</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Rooms
+Room Layers
+Layer Functions
+-->
+  <!-- TAGS
+room_functions
+-->
+</body>
+</html>

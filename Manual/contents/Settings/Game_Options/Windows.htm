@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Windows</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that details the Windows Game Options" />
+  <meta name="rh-index-keywords" content="Game Options - Windows" />
+  <meta name="search-keywords" content="Windows Game Options" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Opções de jogos<span class="notranslate">do Windows</span> </h1>
+  <p>Esta seção descreve as diferentes opções disponíveis para você que controlam como seus projetos de jogos <span class="notranslate">Windows</span> serão compilados. As diferentes seções são:</p>
+  <p> </p>
+  <h2>Geral</h2>
+  <p><img alt="Windows General Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_General_Options.png">A página <strong>Geral </strong>para jogos <span class="notranslate">Windows</span> é onde você deve fornecer as informações necessárias para que <span class="notranslate">o Windows</span> exiba
+    quando seu jogo tiver sido instalado e estiver em funcionamento. Estas informações vão na seção <strong>Informações sobre o produto</strong> e devem ser preenchidas completamente.</p>
+  <p>A seção <strong>Opções </strong>desta janela permite que você escolha para onde o pacote do jogo será instalado, seja para as pastas &quot;<span class="inline">%localappdata%</span>&quot; ou &quot;<span class="inline">%appdata%</span>&quot;, como
+    bem como se deve configurar o <strong>Copy exe para pasta de saída</strong>. Em geral, você nunca deve precisar desta opção, mas ela é fornecida para aqueles usuários que possuem várias DLL's que se comunicam entre si e com seu jogo, e quando ativada, ela
+    manter o jogo EXE na pasta de saída ao testar, em vez de colocá-lo na pasta <em>Temp </em>.</p>
+  <p>A seguir você pode definir a <strong>Margem de Sono do<span class="notranslate">Windows</span></strong>. Esta opção está relacionada à redução da gagueira ao executar seu jogo em sistemas específicos. Basicamente, se seu jogo estiver rodando mais rápido que a velocidade de seu quarto, o <span class="notranslate">GameMaker Studio 2</span> &quot;dormirá&quot;.
+    pelo tempo restante, mas este sono pode ser bastante impreciso e você pode muitas vezes terminar o sono por mais tempo do que o necessário, fazendo com que seu quadro demore mais, o que causa a gagueira. Para contornar isto, podemos dormir por menos tempo e depois sentar-nos em um lugar apertado.
+    loop pelo restante do tempo para torná-lo mais preciso - embora o problema de sentar em loop é que isso faz com que o uso da CPU aumente, o que, por sua vez, pode fazer com que a temperatura de sua CPU aumente e seu ventilador funcione mais rápido. Por padrão, este valor
+    está ajustado para 10, e em 99,99% dos casos você estará bem com isso, mas para máquinas de baixa gama ou para máquinas com muitos processos de fundo em execução esta pode não ser uma solução ideal (ou para máquinas de muito alta gama também) e um valor de 1 ou 15
+    ou algo que possa ser necessário. Observe que esta é uma configuração muito específica do sistema e o que funciona em sua máquina construída pode não ser apropriado para outro usuário, e como tal, em caso de dúvida, deixá-la configurada para 10.</p>
+  <p class="note"><strong>NOTA</strong>: Além da Margem de Sono, você pode controlar ainda mais seu desempenho e consumo de energia no <span class="notranslate">Windows</span>, ajustando a <a href="../../GameMaker_Language/GML_Reference/OS_And_Compiler/scheduler_resolution_set.htm">resolução do agendador de fios</a> em tempo de execução <span class="notranslate">.</span></p>
+  <p>A próxima opção é <strong>Habilitar <span class="notranslate">o vapor</span></strong> para seu jogo. Se você ativar esta opção, certifique-se de ter o <span class="notranslate">Steamworks</span>SDK instalado (veja <a href="../../Setting_Up_And_Version_Information/Platform_Preferences/Steam.htm">aqui</a>), e que
+    você adicionou o <strong><span class="notranslate">Steam</span></strong> App ID nas <a href="../Game_Options.htm">Opções Gerais</a> para o jogo. Observe que se você estiver executando <span class="notranslate">o GameMaker Studio 2</span> no <span class="notranslate">Windows</span> e a partir da versão <span class="notranslate">Steam</span> da IDE e estiver desenvolvendo jogos
+    para <span class="notranslate">Steam</span>, então você também pode precisar verificar a opção <strong>Usar lançador alternativo para</strong> aplicação de <strong> <span class="notranslate">Steam</span></strong>. O que esta opção faz é lançar seu jogo ao testar usando um programa de lançador alternativo para evitar que ele seja sinalizado pelo <span class="notranslate">Steam</span>
+    com o ID de aplicação do <span class="notranslate">GameMaker Studio 2</span> ao invés do ID de sua própria aplicação de jogo. Você só deve habilitar isto quando estiver desenvolvendo para o <span class="notranslate">Steam</span> e se tiver problemas para lançar seu jogo.</p>
+  <p>A penúltima opção que você tem é a opção de <strong>Desativar o sistema de arquivo sandbox</strong>. Ao verificar isso, o <span class="notranslate">GameMaker Studio 2</span> será desativado para salvar e carregar arquivos, permitindo que seus jogos acessem arquivos de qualquer lugar do sistema.
+    correndo o jogo. Esta opção é desmarcada por padrão, pois recomendamos que você mantenha a caixa de areia <span class="notranslate">GameMaker Studio 2</span> para arquivos em todos os sistemas e, quando marcada, algumas áreas de salvamento/carga podem ainda não estar disponíveis, dependendo das permissões de nível de sistema operacional.
+    Para mais informações sobre o sandbox, consulte as páginas do <a href="../../Additional_Information/The_File_System.htm">sistema de arquivos</a> do <span class="notranslate">GameMaker Studio 2</span>.</p>
+  <p>Finalmente, você tem a opção de fazer com que o <span class="notranslate">GameMaker Studio 2</span> crie um executável x64 para seus projetos <span class="notranslate">Windows</span>. Quando ativada, esta opção criará um executável de 64 bits para seu jogo quando ele for compilado, e <strong>recomendamos fortemente que todos os novos projetos utilizem esta opção</strong>.
+    Este se tornará o formato padrão (e único) para executáveis <span class="notranslate">Windows</span> no futuro a longo prazo, uma vez que o executável de 32 bits estará sendo gradualmente eliminado. Note que, quando ativado, qualquer extensão dll sendo usada pelo projeto também precisará ser de 64 bits (veja <a href="../../The_Asset_Editors/Extensions.htm">aqui</a> para mais informações).</p>
+  <p> </p>
+  <h2>Gráficos</h2>
+  <p><img alt="Windows Graphics Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_Graphics_Options.png">As opções gráficas são aquelas que você deve configurar para determinar como seu jogo irá utilizar a placa gráfica de seu
+    PC <span class="notranslate">Windows</span> alvo. As seguintes opções estão incluídas para que você possa modificar:</p>
+  <ul class="colour">
+    <li><strong>Cursor de exibição</strong>: Quando isto for verificado, o cursor das janelas regulares será mostrado, e desmarcá-lo significará que nenhum cursor será mostrado a menos que você tenha criado um em seu código de jogo. Isto está ativado por padrão.</li>
+    <li><strong>Iniciar tela cheia</strong>: Se isto for verificado, o jogo começará no modo de tela cheia, caso contrário, começará em tela cheia. Isto é desligado por padrão.</li>
+    <li><strong>Permitir <span class="notranslate">a troca de</span></strong> tela cheia: Com isso, o usuário pode mudar de tela cheia para janela e voltar usando os atalhos padrão do <span class="notranslate">Windows</span>. Isto é desligado por padrão.</li>
+    <li><strong>Interpolar as cores entre os pixels</strong>: Ativa a <a class="glossterm" data-glossterm="interpolação linear" href="#">interpolação linear</a>, que basicamente &quot;suaviza&quot; os pixels. Para gráficos com pixels nítidos, deve ser desligado, mas
+      Se você tiver uma boa combinação de alfa e gráficos suaves, é melhor deixá-la ligada, por padrão.</li>
+    <li><strong>Use a sincronização para evitar rasgos</strong>: Esta sincronização ativa ou desativa a <a class="glossterm" data-glossterm="v-sync" href="#">sincronização v-sync</a>. Note que se você tiver um jogo com uma velocidade de sala de 120 e o jogador tiver um monitor com uma taxa de atualização
+      de 60, ligando esta opção, sua velocidade de jogo também será fixada em 60. Esta opção está desligada por padrão.</li>
+    <li><strong>Permitir o redimensionamento da janela</strong>: A verificação disto permite ao usuário mudar o tamanho da janela do jogo (a opção Janela sem Fronteiras precisa estar desligada para que isto funcione). Esta opção está desativada por padrão.</li>
+    <li><strong>Janela sem fronteiras</strong>: Ao verificar isso, seu jogo será executado com uma janela sem bordas, removendo os botões normais de minimizar, maximizar e fechar, assim como o título do jogo. Isto é desligado por padrão.</li>
+    <li><strong>Escala</strong>: Aqui você pode optar por manter a relação de aspecto (assim uma sala de 4:3 será &quot;encaixotada&quot; em um 16:9) ou escalar completamente (esticando a imagem para caber na tela inteira).<br>
+      <br>
+      <span style="font-size:16px;"><strong>ADVERTÊNCIA!</strong> <em><span class="notranslate">A</span>desativação da superfície de aplicação desabilitará todas as opções de escalonamento definidas nas Opções de Jogo <span class="notranslate">do Windows</span> até que ela seja ligada novamente. Veja a superfície de aplicação para mais detalhes.</em></span></li>
+  </ul>
+  <p>Finalmente, há a opção de definir o tamanho da <a class="glossterm" data-glossterm="página de textura" href="macOS.htm#">página de textura</a>. O tamanho padrão (e o mais compatível) é 2048x2048, mas você pode escolher entre 256x256 até 8192x8192. Lá
+    é também um botão marcado <strong><strong>Pré-visualização </strong></strong>que gerará as páginas de textura para esta plataforma e depois abrirá uma janela para que você possa ver como elas são. Isto pode ser muito útil se você desejar ver como são as páginas de textura
+    estruturada e para evitar ter páginas de textura maiores (ou menores) do que o necessário. Para maiores informações sobre páginas de textura, por favor, veja <a href="../Texture_Information/Texture_Pages.htm">aqui</a>.</p>
+  <p class="note"><strong>NOTA</strong>: Esteja ciente de que quanto maior o tamanho da página de textura, menos compatível seu jogo estará nos PCs com especificações mais baixas.</p>
+  <p> </p>
+  <h2>Imagens</h2>
+  <p><img alt="Windows Images Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_Images_Options.png">A seção de imagens é onde você fornece as imagens que seu jogo requer. Para <span class="notranslate">Windows</span>, você precisa fornecer um arquivo de <strong>ícones</strong> (que deve estar no formato <span class="inline">.ico</span> ) e também uma tela de splash (que pode ser <span class="inline">.png</span>, <span class="inline">.bmp</span>, <span class="inline">.jpg</span> ou <span class="inline">.gif</span> format).
+    A tela splash será mostrada enquanto o jogo carrega, e pode ser habilitada ou desabilitada verificando a opção <strong>Use Splash Screen</strong> (que está desligada por padrão).</p>
+  <p>Vale notar que o <span class="notranslate">GameMaker Studio 2</span> possui uma ferramenta <a href="../../IDE_Tools/Project_Image_Generator.htm">Gerador de Imagens de Projeto</a> que pode ser usada para criar automaticamente todas as imagens necessárias para todas as diferentes plataformas alvo de seu jogo
+    está sendo compilado para. Se você usar esta ferramenta, você deve revisar as imagens criadas para garantir que elas sejam o que você precisa.</p>
+  <p> </p>
+  <h2>Instalador</h2>
+  <p><img alt="Windows Installer Options" class="center" src="../../assets/Images/Settings/Game_Options/Windows_Installer_Options.png">Os jogos<span class="notranslate">para Windows</span> podem ser criados com um <strong>instalador </strong>e aqui você pode definir as diversas configurações e gráficos
+    que o <span class="notranslate">GameMaker Studio 2</span> usará ao criá-lo. Antes de mais nada, temos as opções gráficas que definirão o visual do próprio instalador:</p>
+  <ul class="colour">
+    <li><strong>Acabado</strong>: O gráfico que aparece na página &quot;Acabado&quot; do instalador. Deve estar no formato <span class="inline">*.bmp</span> e medir 164x314px.</li>
+    <li><strong>Cabeçalho</strong>: O gráfico que aparece enquanto o instalador está rodando. Deve estar no formato <span class="inline">*.bmp</span> e medir 150x57px.</li>
+  </ul>
+  <p>Você também pode apontar para um arquivo específico de <strong>Contrato de Licença</strong> (um exemplo é fornecido com o <span class="notranslate">GameMaker Studio 2</span>) e um <strong>arquivo de script</strong> personalizado <strong>NSI</strong> (detalhes <a href="http://nsis.sourceforge.net/Main_Page">aqui</a>) caso você precise
+    um, ou clique nos botões apropriados para retornar aos arquivos padrão fornecidos com o <span class="notranslate">GameMaker Studio 2</span>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Game_Options.htm">Opções de jogo</a></div>
+        <div style="float:right">A seguir: <a href="macOS.htm"><span class="notranslate">macOS</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Windows</span> Game Options
+NSIS
+Installer
+-->
+  <!-- TAGS
+windows_options
+-->
+
+</body></html>

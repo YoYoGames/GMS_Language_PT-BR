@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>física_aplicar_impulso</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_apply_impulse" />
+  <meta name="rh-index-keywords" content="physics_apply_impulse" />
+  <meta name="search-keywords" content="physics_apply_impulse" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>física_aplicar_impulso</h1>
+  <p>Você não só pode aplicar força e gravidade a um objeto com a física no <span class="notranslate">GameMaker Studio 2</span>, mas também pode aplicar um impulso. Isto é ligeiramente diferente de uma força na medida em que quando ela é aplicada afetará <i>imediatamente </i>a velocidade, e,
+    potencialmente o torque (ou &quot;spin&quot;) do objeto, particularmente se o ponto escolhido para aplicar o impulso não estiver alinhado com o centro de massa (nota: o centro de massa não é <i>necessariamente o mesmo</i> que a origem!). Aqui está uma ilustração:</p>
+  <p><img alt="Apply physics impulse illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_apply_impulse_image.png">Como você pode ver, o jogador clicou na bola e isso lhe deu um impulso
+    para passar para a parte superior direita, girando à medida que avança. O impulso exato é definido pelo vetor que obtemos dos componentes ximpulso/yimpulso em relação às coordenadas xpos/ypos - o que significa simplesmente que o impulso é calculado como a distância de
+    xpos/ypos para ximpulso/yimpulso em Newtons, e a direção é o ângulo que obtemos de xpos/ypos para ximpulso/yimpulso.</p>
+  <p class="note"><b>NOTA</b>: O mundo da física usa medidores para todos os seus cálculos, e a proporção de pixels por metro é definida no editor da sala ou usando <span style="font-size:1px;"><a href="../The_Physics_World/physics_world_create.htm"><tt style="font-size: 14px">physics_world_create()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">physics_apply_impulse(xpos, ypos, ximpulse, yimpulse)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>xpos</td>
+        <td>A coordenada x <i>na sala</i> onde o impulso será aplicado</td>
+      </tr>
+      <tr>
+        <td>ypos</td>
+        <td>A coordenada y <i>na sala</i> onde o impulso será aplicado</td>
+      </tr>
+      <tr>
+        <td>ximpulse</td>
+        <td>o componente x do vetor de impulso</td>
+      </tr>
+      <tr>
+        <td>yimpulse</td>
+        <td>o componente y do vetor de impulso</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">if mouse_check_button_pressed(mb_left)<br> {
+    <br> com (place_meeting(mouse_x, mouse_y, all))<br> {
+    <br> physics_apply_impulse(mouse_x, mouse_y, -10 + irandom(20), -10 + irandom(20));<br> }
+    <br> }
+  </p>
+  <p>O código acima aplicará um impulso com um vetor aleatório a uma instância que está na posição do mouse quando o botão esquerdo é pressionado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Forces.htm">Forças</a></div>
+        <div style="float:right">A seguir: <a href="physics_apply_local_force.htm">physics_apply_local_force</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_apply_impulse
+-->
+  <!-- TAGS
+physics_apply_impulse
+-->
+</body>
+</html>

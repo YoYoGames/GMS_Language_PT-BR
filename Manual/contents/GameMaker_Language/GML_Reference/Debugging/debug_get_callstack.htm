@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>debug_get_callstack</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for debug_get_callstack" />
+  <meta name="rh-index-keywords" content="debug_get_callstack" />
+  <meta name="search-keywords" content="debug_get_callstack" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>debug_get_callstack</h1>
+  <p>Esta função gera um conjunto de strings como o &quot;calltack&quot; onde o script atual é listado primeiro, e depois todos os outros scripts que foram executados para que o script atual fosse executado. O formato exato das strings varia dependendo
+    na plataforma alvo escolhida, mas terá principalmente o nome do roteiro/evento, depois dois pontos : e o número da linha, semelhante a este:</p>
+  <p class="code"><tt>&quot;gml_Script_script2:1&quot;<br>
+&quot;gml_Script_script1:32&quot;<br>
+&quot;gml_Script_script0:64&quot;<br>
+&quot;gml_Object_object0_Create_0:1&quot;</tt></p>
+  <p>A função permite que um argumento opcional seja passado, que é a profundidade máxima do calltack retornado. Este valor é o número de scripts que estão incluídos na matriz retornada, a partir do script atual. Se este argumento não for
+    especificado, então o calltack completo será devolvido.</p>
+  <p>Note que a matriz retornada sempre conterá 0 em sua última posição, após a listagem dos scripts de chamada.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">debug_get_callstack([maxdepth])</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>[maxdepth]</td>
+        <td>A profundidade máxima do calltack</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Array</p>
+  <p> </p>
+  <h4><b>Exemplo:</b></h4>
+  <p class="code">se debug_mode<br> {
+    <br> if keyboard_check(vk_escape)<br> {
+    <br> var _a = debug_get_callstack(4);<br> for (var i = 0; i &lt; array_length_id(_a); ++i;) <br> {
+    <br> show_debug_message(_a[i]);
+    <br> }
+    <br> }
+    <br> }
+  </p>
+  <p>O código acima verifica se o modo de depuração está ativado e, se estiver, verifica se uma chave está sendo mantida pressionada. Nesse caso, ele emite a pilha de chamadas atuais para o console, com uma profundidade máxima de 4.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Debugging.htm">Depuração</a></div>
+        <div style="float:right">Próxima: <a href="exception_unhandled_handler.htm">exception_unhandled_handler</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+debug_get_callstack
+-->
+  <!-- TAGS
+debug_get_callstack
+-->
+</body>
+</html>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>motion_add</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function motion_add" />
+  <meta name="rh-index-keywords" content="motion_add" />
+  <meta name="search-keywords" content="motion_add" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>motion_add</h1>
+  <p>Esta função modificará os atuais <span class="inline"><a href="../../Asset_Management/Instances/Instance_Variables/direction.htm">direction</a></span> e <span class="inline"><a href="../../Asset_Management/Instances/Instance_Variables/speed.htm">speed</a></span> de
+    a instância que executa o código, combinando os valores dados com os valores atuais. Se você deseja simplesmente alterar estes valores, você deve estar usando a função <span class="inline"><a href="motion_set.htm">motion_set()</a></span>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">motion_add(dir, speed);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>dir</td>
+        <td>A direção adicionada.</td>
+      </tr>
+      <tr>
+        <td>velocidade</td>
+        <td>A velocidade acrescida.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var pdir;<br> pdir = point_direction(other.x, other.y, x, y);<br> motion_add(pdir, other.speed);<br> if speed &gt; 8 speed = 8;</p>
+  <p>o código acima seria chamado no caso de colisão com outro objeto. Ele acrescenta à direção do movimento e à velocidade da instância um vetor baseado na posição e na velocidade da outra instância envolvida na colisão. Ele então limita o
+    velocidade se ultrapassar 8 (pixels por passo).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Movement.htm">Movimento</a></div>
+        <div style="float:right">Próximo: <a href="motion_set.htm">motion_set</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+motion_add
+-->
+  <!-- TAGS
+motion_add
+-->
+</body>
+</html>

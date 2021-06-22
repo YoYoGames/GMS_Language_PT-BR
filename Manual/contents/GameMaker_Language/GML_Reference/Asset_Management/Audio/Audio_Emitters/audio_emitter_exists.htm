@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_emitter_existe</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_emitter_exists" />
+  <meta name="rh-index-keywords" content="audio_emitter_exists" />
+  <meta name="search-keywords" content="audio_emitter_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_emitter_existe</h1>
+  <p>Esta função retorna se um emissor de áudio existe<tt>(verdadeiro</tt>) ou não<tt>(falso</tt>). Note que se o índice que você procura não foi rubricado anteriormente, esta função causará um erro, pois está procurando por índices inexistentes.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">audio_emitter_exists(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice do emissor para verificar a existência do mesmo.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se o audio_emitter_existe(s_emit)<br> {
+    <br> audio_play_sound_on(s_emit, snd_Explode, false, 1);<br> }
+    <br> mais
+    <br> {
+    <br> s_emit = audio_emitter_create();<br> audio_play_sound_on(s_emit, snd_Explode, false, 1);<br> }
+  </p>
+  <p>O código acima verifica se existe um emissor, indexado na variável (previamente rubricada) &quot;s_emit&quot;. Se ele faz então um som é tocado através dele, mas se não faz, ele é criado e então o som é tocado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Audio_Emitters.htm">Emissores de áudio</a></div>
+        <div style="float:right">Próximo: <a href="audio_emitter_position.htm">posição_emissor_de_áudio</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_emitter_exists
+-->
+  <!-- TAGS
+audio_emitter_exists
+-->
+</body>
+</html>

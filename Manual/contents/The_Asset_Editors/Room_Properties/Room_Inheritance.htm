@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Herança do quarto</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the inheritance functionality of rooms" />
+  <meta name="rh-index-keywords" content="Rooms - Inheritance" />
+  <meta name="search-keywords" content="room inheritance,inherit,inheritance" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Herança do quarto</h1>
+  <p>Uma característica importante do editor da sala é a <strong>herança</strong>. Herança significa que você pode criar um quarto &quot;pai&quot; e a partir daí criar um quarto &quot;filho&quot; que herdará todas as propriedades do quarto pai. Esta criança
+    O quarto é essencialmente um <em>clone </em>dos pais, e tudo nele está <strong>ligado ao quarto dos pais</strong>. Isto significa que se você mudar a visão no quarto dos pais, ou mover um azulejo, ou adicionar instâncias, isto será refletido no quarto da criança.
+    Não apenas isso, no quarto infantil você pode desativar seletivamente a herança para camadas específicas, instâncias, bens ou qualquer outra coisa que seja necessária.</p>
+  <p>Uma sala que tenha herdado propriedades terá os botões de herança acesos - como mostra a imagem abaixo - e você poderá então usá-los para ativar ou desativar a herança para a camada ou recurso em questão, etc...</p>
+  <p><img alt="Room Inherit Buttons" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_Inheritance.png">Isto pode ser um pouco difícil de visualizar no início, então vamos dar um exemplo: digamos que você tem uma sala com uma cidade e um castelo em
+    o meio. A cidade e o castelo são desenhados usando diferentes camadas de azulejos e você também tem instâncias e alguns caminhos para os NPCs andarem por aí. Você quer tê-lo para que no jogo o castelo seja destruído, mas tudo mais na cidade parece
+    e se comporta da mesma forma. Você criaria o quarto inicial com tudo como de costume, depois criaria um quarto infantil que herdaria as camadas do quarto dos pais. No quarto infantil, você desligaria a herança para a camada de azulejos (ou até mesmo o quarto individual).
+    azulejos) para a área do castelo e eles se movem/adicionam/apagam os azulejos para criar o visual do castelo destruído. Quando um jogador entra naquela sala, todas as instâncias da sala dos pais e todos os azulejos, etc... permanecerão exatamente iguais, exceto os do castelo destruído.
+    castelo.</p>
+  <p class="note"><strong>IMPORTANTE!</strong> Se você editar qualquer propriedade herdada, ela desligará automaticamente a herança na seção a que pertence sem ter que primeiro alternar o botão herdar.</p>
+  <p>Para criar uma herança de espaço, basta selecionar o espaço de onde deseja criar uma criança no <a href="../../Introduction/The_Asset_Browser.htm">Navegador de Bens</a> e depois clicar com o botão direito do mouse em <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21">. Isto abrirá o menu do quarto e lá você poderá selecionar <strong>Criar Criança </strong>para criar um novo quarto infantil. Isto será criado e &quot;anexado&quot; visualmente aos pais no Navegador de Ativos:</p>
+  <p><img alt="Room Inheritance" class="center" src="../../assets/Images/Asset_Editors/Editor_RoomInheritance.png">Para mudar a ordem e/ou herança de quartos você precisa usar o <a href="../../Settings/The_Room_Manager.htm">Room Manager</a>, que você
+    pode abrir usando o menu no canto superior direito do Navegador de Ativos. Aqui você pode ir para a aba <em>Herança </em>e depois clicar em <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> e arrastar qualquer sala para qualquer outra sala para
+    fazer com que se torne um filho daquele quarto (ou arrastar um quarto de criança de um dos pais e quebrar a herança).</p>
+  <p>Observe que, dentro de uma divisão, a herança é de várias camadas e você pode verificar itens individuais, grupos de itens em uma única camada, propriedades de itens ou divisões inteiras como herança, e você também pode herdar de divisões consecutivas (assim, a divisão C herda da divisão
+    B, que por sua vez herdou da sala A). Se você criar uma sala base sem nada nela, exceto a configuração da vista - por exemplo - você pode então criar todas as outras salas como sendo seus filhos e todos eles herdarão as propriedades da vista dos pais.
+    espaço. Mas você pode ir um passo além e criar outra sala base com a sala &quot;vista&quot; como seu pai que detém a <a class="glossterm" data-glossterm="GUI" href="#">instância</a> geral da GUI e os controladores necessários em cada sala de jogo.
+    Agora você pode criar salas para crianças a partir disto e elas herdarão tanto os controladores e GUIs da sala dos pais como também a configuração da vista dos pais daquela sala!</p>
+  <p>Como você pode esperar ver, a herança é muito poderosa e você pode usá-la para manter uma estrutura de salas muito mais limpa, acelerar o fluxo de trabalho e geralmente otimizar o tempo que você gasta fazendo e projetando salas.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Rooms.htm">O Editor da Sala</a></div>
+        <div style="float:right">A seguir: <a href="Layer_Properties.htm">Tipos de camadas e propriedades</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Room Inheritance
+-->
+  <!-- TAGS
+rooms_inheritance
+-->
+
+</body></html>

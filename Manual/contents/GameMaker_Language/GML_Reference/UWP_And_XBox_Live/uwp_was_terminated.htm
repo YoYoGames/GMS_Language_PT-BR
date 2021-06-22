@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>uwp_was_terminated</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for uwp_was_terminated" />
+  <meta name="rh-index-keywords" content="uwp_was_terminated" />
+  <meta name="search-keywords" content="uwp_was_terminated" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>uwp_was_terminated</h1>
+  <p>Com esta função você pode descobrir se o jogo foi desligado anteriormente pelo sistema (ou seja, não é a primeira execução do jogo). Se tiver sido, a função retornará <tt>verdadeiro</tt>, caso contrário retornará <tt>falso</tt>. Um exemplo de
+    seria verificá-lo e ver se o jogo foi encerrado anteriormente pelo sistema, e depois (se voltar a <tt>ser verdade</tt>) carregar a etapa anterior em que o jogador se encontrava no jogo. Se o alvo for a <span class="notranslate">XBox One</span>, então o comportamento necessário dos jogos
+    se isto for detectado será diferente entre as diferentes versões dos documentos de certificação, então vale a pena verificar a última versão para ver o que o jogo <i>deve fazer</i>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">uwp_was_terminated();</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se xboxlivewas_terminated()<br> {
+    <br> buffer_load(&quot;Player_Save.sav&quot;);
+    <br> global.GameLoaded = true;<br> }
+  </p>
+  <p>O código acima verifica se o aplicativo foi encerrado anteriormente pelo sistema e, em caso afirmativo, carrega um buffer e define uma variável global.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="UWP_And_XBox_Live.htm">UWP e XBox Live</a></div>
+        <div style="float:right">Próximo: <a href="uwp_was_closed_by_user.htm">uwp_was_closed_by_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+uwp_was_terminated
+-->
+  <!-- TAGS
+uwp_was_terminated
+-->
+</body>
+</html>

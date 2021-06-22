@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Comentários sobre o JSDoc Script</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains how JSDoc Script Comments work" />
+  <meta name="rh-index-keywords" content="Code Editor - JSDoc Comments,JSDoc" />
+  <meta name="search-keywords" content="JSDoc,JSDoc Comments" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Comentários sobre o JSDoc Script</h1>
+  <p>Se você deseja que suas funções personalizadas tenham conclusão de código e mostrar os argumentos necessários de uma maneira específica no editor de código, então você precisa adicionar alguns comentários <a href="https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html">em estilo JSDoc</a>. Estes comentários são usados para dizer ao recurso de auto-completar como a função deve ser usada e preenchida no <a href="../Scripts.htm">editor de scripts</a>.</p>
+  <p>O formato para um cabeçalho de função típico seria ter o nome da função, a descrição da função e depois a lista dos diferentes argumentos (parâmetros) que a função leva, certificando-se de iniciar cada linha com uma barra invertida tripla&quot;.
+    <span class="inline">///</span> &quot;, pois isso diz ao GameMaker <span class="notranslate">Studio 2 para</span> analisar o comentário como sendo estilo JSDoc. Os próprios comentários precisam receber um identificador (precedido por &quot;<span class="inline">@</span>&quot;) e o conteúdo, e o disponível
+    Os identificadores são os seguintes:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Identificador</th>
+        <th>Conteúdo</th>
+      </tr>
+      <tr>
+        <td><span class="inline">@function</span> / <span class="inline">@func</span></td>
+        <td>O nome completo da função e os argumentos para a função, por exemplo:<br>
+          <span class="inline"><tt>my_func(x, y, colour)</tt></span>.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">@description</span> / <span class="inline">@desc</span></td>
+        <td>Uma descrição geral do que a função faz.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">@param</span> / <span class="inline">@arg</span> / <span class="inline">@argument</span></td>
+        <td>O tipo de argumento (opcional), incluído em <span class="inline">{}</span>, o nome do argumento, e uma breve descrição (com espaços entre eles)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Para ter uma idéia de como isto funcionaria ao escrever suas próprias funções, vamos tomar este exemplo básico:</p>
+  <p class="code">função is_same_object(_id, _obj)<br> {
+    <br> if (_id.object_index == _obj)<br> {<br> return true;<br> } <br> else return false;<br> }
+  </p>
+  <p>Tudo o que este roteiro faz é verificar se uma instância tem o mesmo <span class="inline">object_index</span> como um determinado objeto e seria chamada simplesmente como:</p>
+  <p class="code">if is_same_object(id, obj_Player)<br> {
+    <br> instance_destroy()<br> }
+  </p>
+  <p>No entanto, escrevendo isso no editor de código mostrará diretamente os nomes das variáveis de argumento<tt>(_id</tt> e <tt>_obj</tt>), que na maioria dos casos não é muito descritivo. Você pode usar o JSDoc para definir nomes e descrições de argumentos personalizados, juntamente com
+    informações para a função também:</p>
+  <p class="code">//// @function is_same_object(id, object)<br> /// @description Compare um índice de instância com um índice de objeto.<br> //// @param {real} inst_id O valor único do ID da instância a verificar.<br> /// @param {real}
+    object_id O índice de objetos a ser verificado.<br>
+    <br> função is_same_object(_id, _obj)<br> {
+    <br> if (_id.object_index == _obj)<br> {<br> return true;<br> } <br> ou então retornar falso;<br> }
+  </p>
+  <p>Agora, ao chamar esta função em qualquer lugar em seu projeto, você verá os novos nomes dos argumentos que foram inseridos nos comentários do JSDoc:</p>
+  <p><img alt="JSDoc Example" class="center" height="652" src="../../assets/Images/Scripting_Reference/Additional_Information/JavaDoc_Example.png" width="672" /></p>
+  <p>Na imagem acima, a parte superior mostra a função no auto-completar e a parte inferior mostra como funciona o auxiliar de argumento na parte inferior. Note que tanto a parte opcional &quot;tipo&quot; quanto a parte obrigatória &quot;descrição&quot; do <span class="inline">@param</span> não são exibidas por padrão no código IDE completo, e para vê-las você deve ativar as opções nas Preferências do GML.</p>
+  <p>Você pode embrulhar um nome de argumento <tt> entre</tt> parênteses para indicar que ele é opcional. O editor de código esperará então qualquer número de argumentos entre o mínimo exigido de argumentos e o número total de argumentos. Por exemplo, veja o seguinte
+    função:</p>
+  <p class="code">//// @function animate_position(end_x, end_y, start_x, start_y)<br> /// @desc Anima a instância até o ponto final, do ponto inicial opcional<br> //// @arg end_x<br> //// @arg end_y<br> /// @arg [start_x]<br> //// @arg [start_y]<br>
+    <br> function animate_position (x1, y1, x2, y2)<br> {
+    <br> // Código de função<br> }
+  </p>
+  <p>Os argumentos <tt>start_x</tt> e <tt>start_y</tt> são marcados como opcionais, o que significa que o editor de código esperará agora 2 a 4 argumentos, como pode ser visto na mensagem de aviso:</p>
+  <p><img class="center" height="150" src="../../assets/Images/Scripting_Reference/Additional_Information/JavaDoc_Optional.png" width="537" /></p>
+  <p class="note"><strong>NOTA</strong>: Você terá o mesmo comportamento se usar argumentos opcionais na declaração de função. Veja as <a href="../../GameMaker_Language/GML_Overview/Script_Functions.htm">funções do script</a> para mais informações.</p>
+  <p>Como os scripts podem ter múltiplas funções neles, você pode adicionar comentários JSDoc para cada um deles antes de sua declaração:</p>
+  <p><img alt="Multiple Functions With JSDoc Comments Example" class="center" src="../../assets/Images/Scripting_Reference/Additional_Information/JavaDoc_MultipleFunctions.png" /></p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Scripts.htm">O Editor Roteiro</a></div>
+        <div style="float:right">A seguir: <a href="Code_Snippets.htm">Código Snippets</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+JSDoc Script Comments
+-->
+  <!-- TAGS
+jsdoc_comments
+-->
+</body>
+</html>

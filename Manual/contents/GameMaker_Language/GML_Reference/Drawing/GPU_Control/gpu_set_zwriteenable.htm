@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_zwriteenable</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_zwriteenable" />
+  <meta name="rh-index-keywords" content="gpu_set_zwriteenable" />
+  <meta name="search-keywords" content="gpu_set_zwriteenable" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_zwriteenable</h1>
+  <p>Esta função pode ser usada para ativar<tt>(verdadeiro</tt>) e desativar<tt>(falso</tt>) o pedido de profundidade usando o z-buffer. Quando uma instância é renderizada no <span class="notranslate">GameMaker Studio 2</span>, a profundidade de um pixel gerado (sua coordenada z) é armazenada no z-buffer,
+    então, se outra instância da cena deve ser renderizada no mesmo pixel, as duas profundidades são comparadas (teste z - veja <a href="gpu_set_ztestenable.htm"><tt>gpu_set_ztestenable()</tt></a>) e o que está &quot;mais perto&quot; do observador é então salvo
+    para o z-buffer, substituindo o antigo. Entretanto, isto nem sempre é o que você deseja que aconteça e há momentos em que você pode querer que algo seja atraído sobre tudo o resto, não importa qual seja seu valor z. Nesses casos, você pode usar esta função
+    para desligar a escrita no z-buffer e assim forçar o que está sendo desenhado a ser desenhado sobre tudo o resto. Note que a descrição dada aqui é para o modo de comparação <i>padrão</i> do teste z, mas isso pode ser alterado</p>
+  <p>O valor padrão é que o z-buffering está ativado<tt>(verdadeiro</tt>).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">gpu_set_zwriteenable(enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>habilitar</td>
+        <td>O modo de comparação a ser usado (ver lista acima)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">gpu_set_zwriteenable(false);<br> com (obj_Menu_Containers)<br> {
+    <br> draw_self();
+    <br> }
+    <br> gpu_set_zwriteenable(true);
+  </p>
+  <p>O código acima desliga a escrita de z-buffer, desenha uma série de objetos, e então o liga novamente para continuar desenhando.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="GPU_Control.htm">Controle de GPU</a></div>
+        <div style="float:right">Próximo: <a href="gpu_set_fog.htm">gpu_set_fog</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_zwriteenable
+-->
+  <!-- TAGS
+gpu_set_zwriteenable
+-->
+</body>
+</html>

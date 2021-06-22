@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Colisões</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for Collision functions and variables" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="collisions,collision functions" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Colisões</h1>
+  <p>Ao planejar moções ou decidir sobre determinadas ações, muitas vezes é importante ver se há colisões com outros objetos em determinados lugares do mundo do jogo, e muitas vezes escolher a colisão certa para o trabalho é a tarefa mais importante
+    de todos. O <span class="notranslate">GameMaker Studio 2</span> tem uma série de funções incorporadas para ajudá-lo a lidar com colisões corretamente e de acordo com as necessidades de seu projeto.</p>
+  <p class="note"><b>IMPORTANTE!</b> Todas as funções de colisão funcionam usando posições inteiras, independentemente dos valores de entrada. Quaisquer valores não inteiros serão arredondados para o número inteiro mais próximo.</p>
+  <p> </p>
+  <h2><label for="one">Verificação de colisão simples</label></h2>
+  <p>As seguintes funções tratam das várias maneiras pelas quais você pode ter uma instância de verificação de colisões com outra instância:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="place_empty.htm">place_empty</a></li>
+    <li><a href="place_free.htm">place_free</a></li>
+    <li><a href="place_meeting.htm">place_meeting</a></li>
+    <li><a href="position_empty.htm">position_empty</a></li>
+    <li><a href="position_meeting.htm">position_meeting</a></li>
+    <li><a href="position_change.htm">mudança_de_posição</a></li>
+    <li><a href="position_destroy.htm">position_destroy</a></li>
+    <li><a href="../../Asset_Management/Instances/instance_place.htm">exemplo_lugar</a></li>
+    <li><a href="../../Asset_Management/Instances/instance_place_list.htm">lista_de_lugares_da_classe</a></li>
+    <li><a href="../../Asset_Management/Instances/instance_position.htm">posição_da_classe</a></li>
+    <li><a href="../../Asset_Management/Instances/instance_position_list.htm">lista_de_posições_da_classe</a></li>
+  </ul>
+  <p> </p>
+  <h2>Verificação avançada de colisão</h2>
+  <p>As seguintes rotinas podem ser usadas para isto (assim como outras funções detalhadas nas seções relativas a <b>Movimentação</b> e <b>Instâncias</b>). Estas funções de colisão funcionam todas de maneira ligeiramente diferente, mas mantêm três argumentos comuns
+    que explicaremos aqui:</p>
+  <ul class="colour">
+    <li><b>obj.</b> É aqui que especificamos o objeto com o qual a função tem de verificar uma colisão. Pode ser uma identificação de instância, um tipo de objeto, ou a palavra-chave GM especial <b>all</b>. Também vale a pena notar que se o tipo de objeto escolhido for o designado
+     <b>pais</b> de outros objetos, então todos os <i>filhos</i> daquele objeto também serão incluídos neste cheque.<b></b></li>
+    <li><b>pré</b>. Isto pode ser <tt>verdadeiro</tt> ou <tt>falso</tt> e está relacionado com a precisão da verificação de colisão. Se for definido como <tt>verdadeiro</tt>, então as colisões precisas devem ser calculadas (mas somente se o objeto a ser verificado tiver &quot;precisão&quot;.
+      marcado para sua detecção de colisão em suas propriedades de máscara), que é uma tarefa um pouco mais complexa para a CPU e, portanto, deve ser usada com cautela. Se <tt>forem falsas</tt>, as colisões serão calculadas com base na caixa de delimitação do objeto a ser verificado.
+      para.<b></b></li>
+    <li><b>não me</b>. Talvez seja necessário verificar se há colisões com um objeto que tenha o mesmo índice que o objeto que executa o código, assim, para evitar que o código encontre uma colisão com ele mesmo, você pode definir isto como <tt>verdadeiro</tt>. Se você estiver procurando especificamente
+      por exemplo, o objeto que executa o código, ou não é importante, ele pode ser deixado como <tt>falso</tt>.</li>
+  </ul>
+  <p>As funções básicas retornarão ou a identificação de uma instância encontrada em colisão, ou a palavra-chave especial <tt>noone</tt> quando não há colisão, enquanto as funções de <i>lista</i> retornarão o número de instâncias que estão em colisão e povoam
+    uma lista de DS pré-fabricados com suas identificações. Observe que se houver múltiplas colisões com as áreas definidas por estas funções e instâncias do objeto dado, apenas <i>uma</i> identificação de instância é devolvida, e pode ser <i>qualquer uma das instâncias na colisão</i>.</p>
+  <p>Existem as seguintes funções que lidam com colisões avançadas.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="collision_circle.htm">círculo_de_colisão</a></li>
+    <li><a href="collision_circle_list.htm">lista_de_colisão_círculo</a></li>
+    <li><a href="collision_ellipse.htm">colisão_elipse</a></li>
+    <li><a href="collision_ellipse_list.htm">lista_de_colisão_elipse</a></li>
+    <li><a href="collision_line.htm">linha_de_colisão</a></li>
+    <li><a href="collision_line_list.htm">lista_de_linha_de_colisão</a></li>
+    <li><a href="collision_point.htm">ponto_de_colisão</a></li>
+    <li><a href="collision_point_list.htm">lista_de_pontos_de_colisão</a></li>
+    <li><a href="collision_rectangle.htm">colisão_rectângulo</a></li>
+    <li><a href="collision_rectangle_list.htm">lista_de_ângulo_de_colisão</a></li>
+  </ul>
+  <p> </p>
+  <h2>Verificação de colisão sem máscara</h2>
+  <p>Todas as funções acima estão relacionadas às <i>instâncias de</i> verificação de colisão e, como tal, dependem da máscara de colisão que é definida para a instância. Entretanto, há muitos momentos em que é necessário verificar a existência de &quot;colisões&quot; com um ponto
+    ou uma área, especialmente quando sua instância não tem um duende designado, ou quando você está trabalhando com o mouse, etc... Portanto, o <span class="notranslate">GameMaker Studio 2</span> também fornece as seguintes funções para ajudá-lo nessas situações:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="point_in_rectangle.htm">point_in_rectangle</a></li>
+    <li><a href="point_in_triangle.htm">point_in_triangle</a></li>
+    <li><a href="point_in_circle.htm">point_in_circle</a></li>
+    <li><a href="rectangle_in_rectangle.htm">retângulo_em_ângulo_reto</a></li>
+    <li><a href="rectangle_in_triangle.htm">retângulo_em_triângulo</a></li>
+    <li><a href="rectangle_in_circle.htm">retângulo_em_círculo</a></li>
+  </ul>
+  <p> </p>
+  <h2>Colisões Físicas</h2>
+  <p>Ao utilizar a construção em física, as funções de colisão acima não têm garantia de funcionar para instâncias habilitadas em física. Isto se deve principalmente ao fato de que estas instâncias não usam mais a maioria das variáveis habituais embutidas (em vez disso, a física
+    As instâncias habilitadas têm seu <a href="../../Physics/Physics_Variables/Physics_Variables.htm">próprio conjunto de variáveis</a>) e também não utilizam a máscara de colisão ou a caixa de delimitação, uma vez que, em seu lugar, utilizam <a href="../../Physics/Fixtures/Fixtures.htm">acessórios</a>. Entretanto, existe uma função especial para testar colisões com a física ativada que verifica se há sobreposição de dispositivos:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../../Physics/physics_test_overlap.htm">fisica_test_overlap</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Movement_And_Collisions.htm">Movimento e colisões</a></div>
+        <div style="float:right">A seguir: <a href="../Movement/Movement.htm">Movimento</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Collision Functions
+-->
+  <!-- TAGS
+collision_functions
+-->
+</body>
+</html>

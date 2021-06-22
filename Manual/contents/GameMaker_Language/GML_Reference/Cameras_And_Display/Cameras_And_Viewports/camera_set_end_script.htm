@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>camera_set_end_script</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for camera_set_end_script" />
+  <meta name="rh-index-keywords" content="camera_set_end_script" />
+  <meta name="search-keywords" content="camera_set_end_script" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>camera_set_end_script</h1>
+  <p>Esta função pode ser usada para definir uma <a href="../../../GML_Overview/Script_Functions.htm">função de script</a> que será chamada no final de cada quadro de jogo que a câmera é atribuída a uma porta de visualização visível e ativa, depois de tudo para essa visualização
+    câmera foi renderizada. Você dá o valor único de identificação da câmera (como retornado pelos diferentes <a href="camera_create.htm"><tt>camera_create()</tt></a> funções) e a identificação da função a ser chamada. A ordem na qual as funções anexadas às câmeras
+    e a renderização real da visão da câmera é a seguinte:</p>
+  <ul class="colour">
+    <li>As câmeras para todas as portas de visualização visíveis e ativas têm sua <b>função de atualização </b>chamada</li>
+    <li>Depois, para cada vista:
+      <ul>
+        <li>A <b>função de início </b>da câmera para essa visão é chamada</li>
+        <li>Os eventos do sorteio são executados para essa visão</li>
+        <li>A <b>função final </b>para a câmera é chamada</li>
+      </ul>
+    </li>
+    <li>Passe para a próxima visão visível ativa e repita...</li>
+  </ul>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">camera_set_end_script(camera_id, script)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>camera_id</td>
+        <td>O valor único de identificação da câmera retornou quando você criou a câmera.</td>
+      </tr>
+      <tr>
+        <td>roteiro</td>
+        <td>O roteiro para executar cada frame do jogo</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">camera_set_end_script(view_camera[0], endCamera);</p>
+  <p>O código acima define o roteiro final para a câmera designada para visualizar a porta [0].</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Cameras_And_View_Ports.htm">Câmeras e Ver Portos</a></div>
+        <div style="float:right">Próximo: <a href="camera_set_view_pos.htm">camera_set_view_pos</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_set_end_script
+-->
+  <!-- TAGS
+camera_set_end_script
+-->
+</body>
+</html>

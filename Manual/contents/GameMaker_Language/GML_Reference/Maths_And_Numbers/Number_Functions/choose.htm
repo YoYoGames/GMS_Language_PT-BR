@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>escolha</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for choose" />
+  <meta name="rh-index-keywords" content="choose" />
+  <meta name="search-keywords" content="choose" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>escolha</h1>
+  <p>s vezes você quer especificar algo diferente dos números para uma seleção aleatória, ou os números que você quer não estão em nenhuma ordem real ou dentro de qualquer faixa definida. Nesses casos, você usaria <tt>escolher()</tt> para gerar um resultado aleatório. Por exemplo, digamos
+    você deseja criar um objeto com um duende aleatório no início, então você poderia usar esta função para definir o índice de duende para um de um conjunto de determinados sprites. Note que você pode ter tantos quantos desejar (note que mais argumentos significarão que a função
+    será mais lento a analisar).</p>
+  <p class="note"><b>NOTA</b>: Esta função retornará o mesmo valor toda vez que o jogo for executado novamente devido ao fato de que <span class="notranslate">o GameMaker Studio 2</span> gera a mesma semente inicial aleatória toda vez para fazer do código de depuração uma tarefa muito mais fácil. Para evitar este comportamento, use
+    <span style="font-size:1px;"><a href="randomise.htm"><tt style="font-size: 14px">aleatoriedade()</tt></a></span> no início de seu jogo.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">choose(val0, val1, val2... max_val);</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>val0... max_val</td>
+        <td>Um valor de entrada que pode ser string, inteiro, variável ou constante.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Um dos argumentos apresentados</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">sprite_index = choose(spr_Cactus, spr_Flower, spr_Tree, spr_Shrub);<br> hp = choose(5, 8, 15, 32, 40);<br> name = choose(&quot;John&quot;, &quot;Steven&quot;, &quot;Graham&quot;, &quot;Jack&quot;, &quot;Emily&quot;, &quot;Tina&quot;, &quot;Jill&quot;,
+    &quot;Helen&quot;);</p>
+  <p>O código acima usa para definir uma série de propriedades para o exemplo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Number_Functions.htm">Funções Numéricas</a></div>
+        <div style="float:right">Próximo: <a href="random.htm">aleatório</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+choose
+-->
+  <!-- TAGS
+choose
+-->
+
+</body></html>

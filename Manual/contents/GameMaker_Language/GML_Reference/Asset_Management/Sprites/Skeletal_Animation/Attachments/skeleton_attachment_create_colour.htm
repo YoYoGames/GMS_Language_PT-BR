@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>esqueleto_criar_côr_cores</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_attachment_create_colour" />
+  <meta name="rh-index-keywords" content="skeleton_attachment_create_colour,skeleton_attachment_create_color" />
+  <meta name="search-keywords" content="skeleton_attachment_create_colour,skeleton_attachment_create_color" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>esqueleto_criar_côr_cores</h1>
+  <p>Quando você cria um duende de animação esquelética, você pode atribuir <i>ranhuras de fixação</i> e <i>anexos</i> para ir nelas. Estas são simplesmente imagens (sprites) que são separadas da animação, mas quando anexadas se moverão junto com o osso, elas são
+    anexado a. Normalmente você atribuiria estes anexos em seu programa de animação (Coluna vertebral), mas com esta função você pode criar seu próprio anexo em tempo de execução usando um ativo sprite de seu jogo. a função requer que você dê um nome ao anexo (como
+    um cordel) e então definir o <a href="../../Sprite_Instance_Variables/sprite_index.htm"><tt>sprite_index</tt></a> e <a href="../../Sprite_Instance_Variables/image_index.htm"><tt>image_index</tt></a> para usar, assim como a origem x e y (que pode
+    ser diferente daquela definida pelo duende nas propriedades do duende), e você também pode definir qualquer transformação que desejar aplicar à imagem quando anexada, bem como a cor a ser misturada com a imagem e seu alfa (transparência)
+    valor. Se o anexo foi criado com sucesso a função retornará <tt>1</tt> e se não foi (você forneceu um índice sprite inválido, ou o sprite de base não é um sprite da coluna vertebral) então ele retornará <tt>-1</tt>.</p>
+  <p>Vale a pena notar que o duende de exemplo pode ter uma cor de mistura e uma configuração alfa (<a href="../../Sprite_Instance_Variables/image_blend.htm"><tt>image_blend</tt></a> e <a href="../../Sprite_Instance_Variables/image_alpha.htm"><tt>image_alpha</tt></a>),
+    assim como a ranhura de fixação (veja a função <a href="../Slots/skeleton_slot_colour_set.htm"><tt>conjunto_esqueleto_de_squema_cores()</tt></a>), e assim a cor final e o alfa que o duende de fixação designado para o slot terá será um composto
+    de todos esses valores.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">esqueleto_criar_côr(nome, duende, ind, xorigem, yorigem, escala x, escala y, podridão, cor, alfa);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>nome</td>
+        <td>O nome (como um fio) do anexo a ser criado.</td>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>O sprite_index para obter a imagem de anexo.</td>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>A imagem_index para obter a imagem de anexo.</td>
+      </tr>
+      <tr>
+        <td>xorigem</td>
+        <td>A origem x para a imagem que está sendo utilizada.</td>
+      </tr>
+      <tr>
+        <td>yorigin</td>
+        <td>A origem y para a imagem que está sendo utilizada.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>A escala horizontal da imagem, como um multiplicador: 1 = escala normal, 0,5 é metade, etc...</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>A escala vertical da imagem, como um multiplicador: 1 = escala normal, 0,5 é metade, etc...</td>
+      </tr>
+      <tr>
+        <td>podridão</td>
+        <td>A rotação da imagem: 0 = normal, 90 = girada 90° no sentido anti-horário, etc.</td>
+      </tr>
+      <tr>
+        <td>Cor</td>
+        <td>O valor de cor a usar (Um valor constante, inteiro ou hexadecimal).</td>
+      </tr>
+      <tr>
+        <td>Alfa</td>
+        <td>O valor alfa a ser usado (de 0 a 1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">1 se bem-sucedido, -1 se não</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">esqueleto_criar_cores(&quot;espada&quot;, spr_Weapons, 0, 0, 80, 1, 1, 1, 90, c_red, 1);<br> skeleton_attachment_create_colour(&quot;faca&quot;, spr_Weapons, 1, 0, 45, 1, 1, 90, c_yellow, 1);<br> skeleton_attachment_create_colour(&quot;besta_cruzada&quot;,
+    spr_Weapons, 0, 10, 30, 1, 1, 1, 0, c_white, 0,5);<br> skeleton_attachment_set(&quot;slot_leftHand&quot;, choose(&quot;espada&quot;, &quot;faca&quot;, &quot;crossbow&quot;));</p>
+  <p>O código acima verificaria o nome do anexo atualmente atribuído para o slot chamado &quot;slot_leftHand&quot; e se uma cadeia vazia for devolvida, um novo sprite é anexado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Attachments.htm">Anexos:</a></div>
+        <div style="float:right">A seguir: <a href="../Bones/skeleton_bone_data_get.htm">esqueleto_dados_esqueleto</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_attachment_create_colour
+skeleton_attachment_create_color
+-->
+  <!-- TAGS
+skeleton_attachment_create_colour
+-->
+</body>
+</html>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>shop_leave_rating</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for shop_leave_rating" />
+  <meta name="rh-index-keywords" content="shop_leave_rating" />
+  <meta name="search-keywords" content="shop_leave_rating" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>shop_leave_rating</h1>
+  <p>Esta função abre um diálogo dependente do SO onde você pode pedir ao usuário para publicar uma classificação ou comentário em uma determinada página. Você pode definir o texto que deve aparecer no diálogo, assim como o texto que você deseja aparecer nos dois botões e o URL
+    onde o comentário tem de ser publicado.</p>
+  <p class="note"><b>NOTA</b>: Esta função é apenas para alvos <span class="notranslate">Android</span> e <span class="notranslate">iOS</span>.</p>
+  <p class="note"><b>IMPORTANTE!</b> Em <b><span class="notranslate">iOS</span></b>Quando se utiliza TestFlight, em desenvolvimento, o prompt será exibido, mas você não poderá fazer nada. Uma vez que seu aplicativo esteja na App Store, este botão se torna ativo e o usuário tem a opção de
+    escrever uma resenha ou deixar uma classificação. Note que se você distribuir o jogo através do TestFlight, esta janela pode nem mesmo ser mostrada.</p>
+  <p> </p>
+  <h4><b>Sintaxe:</b></h4>
+  <p class="code">shop_leave_rating(text, yes_string, no_string, url)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>texto</td>
+        <td>Texto que aparece no diálogo.</td>
+      </tr>
+      <tr>
+        <td>sim_string</td>
+        <td>Texto que aparece no botão &quot;sim&quot;.</td>
+      </tr>
+      <tr>
+        <td>no_string</td>
+        <td>Texto que aparece no botão &quot;não&quot;.</td>
+      </tr>
+      <tr>
+        <td>url</td>
+        <td>A URL completa para onde o comentário deve ser enviado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se temporizador &lt;= 0<br> {
+    <br> shop_leave_rating(&quot;Obrigado por jogar o jogo! Por que não deixar um comentário&quot;, &quot;Ok!&quot;, &quot;Hoje não!&quot;, &quot;<br> &quot;); http://MacSweeney/comments timer = 10000000;<br> }
+    <br> mais
+    <br> {
+    <br> timer -= 1;<br> }
+  </p>
+  <p>O código acima pedirá ao usuário que deixe um comentário se a variável &quot;timer&quot; tiver contado até 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Dialog.htm">Diálogo</a></div>
+        <div style="float:right">Próximo: <a href="get_login_async.htm">get_login_async</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+shop_leave_rating
+-->
+  <!-- TAGS
+shop_leave_rating
+-->
+</body>
+</html>

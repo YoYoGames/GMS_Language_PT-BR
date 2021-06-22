@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>fisic_fixture_set_sensor</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_set_sensor" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_sensor" />
+  <meta name="search-keywords" content="physics_fixture_set_sensor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>fisic_fixture_set_sensor</h1>
+  <p>Algumas vezes você vai querer que seu jogo detecte e reconheça quando duas instâncias com acessórios colidem, mas não tenha nenhuma reação física à colisão. Isto pode ser feito convertendo o acessório em um sensor, o que basicamente significa que eles
+    geram um evento de colisão mas sem resposta física para que você possa usar estas instâncias como &quot;gatilhos&quot; para que outros eventos aconteçam na sala de jogos. Qualquer luminária pode ser sinalizada como um sensor, e não faz diferença se a instância
+    está vinculado a estática ou em movimento.</p>
+  <p class="note"><b>OBSERVAÇÃO</b>: Um sensor disparará o evento de colisão <b>apenas</b> quando a colisão <b>ocorrer pela primeira vez</b>, o que significa que você não receberá um fluxo de eventos de colisão, uma vez que os dois corpos continuam a se sobrepor (que é o que tradicionalmente ocorreria). Se eles
+    parar a sobreposição e a sobreposição subseqüentemente, haverá outro evento de colisão desencadeado.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">physics_fixture_set_sensor(fixture, state)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>fixação</td>
+        <td>o índice da fixação</td>
+      </tr>
+      <tr>
+        <td>estado</td>
+        <td>se uma fixação é um sensor (verdadeiro) ou não (falso)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">physics_fixture_set_sensor(fix_Cloud, 1);</p>
+  <p>O código acima tornará verdadeiro o estado do sensor da fixação indexada em &quot;fix_Cloud&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Fixtures.htm">Instalações</a></div>
+        <div style="float:right">Próximo: <a href="physics_fixture_set_kinematic.htm">fisica_fixture_set_kinematic</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_sensor
+-->
+  <!-- TAGS
+physics_fixture_set_sensor
+-->
+</body>
+</html>

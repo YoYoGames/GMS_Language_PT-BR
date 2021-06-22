@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_get_id</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_get_id" />
+  <meta name="rh-index-keywords" content="layer_get_id" />
+  <meta name="search-keywords" content="layer_get_id" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_get_id</h1>
+  <p>Esta função pode ser usada para obter o valor de identificação único para uma determinada <b>camada</b>. Na IDE, todas as camadas têm um nome e um tipo, e para poder editá-las ou alterá-las através do código é necessário dar o valor de <b>ID da camada</b>. Esta função é usada para recuperar
+    esta identificação usando o nome (um fio) da camada (como escrito na IDE). Se você criar uma nova camada através de código usando a função <a href="layer_create.htm"><tt>layer_create()</tt></a> então essa função retornará o valor único de identificação em seu lugar
+    (camadas criadas dinamicamente não recebem nomes). Note que se você der o nome de uma camada que não existe na sala atual, então você receberá um erro e o projeto irá cair.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">layer_get_id(layer_name)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>nome_da_camada</td>
+        <td>O nome da camada (um cordel)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Valor de identificação da camada (Real), ou -1 se a camada especificada não existir</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var near = instance_nearest(x, y, obj_Tree);<br> var layer_id = layer_get_id(&quot;Instances Front&quot;);<br> layer_add_instance(layer_id, near);</p>
+  <p>O código acima obterá primeiro o índice da instância mais próxima à posição x/y dada e o armazenará em uma variável local. Em seguida, ele obtém a identificação única da camada da instância para a camada chamada &quot;Instances Front&quot;, e move a instância encontrada para
+    essa camada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="General_Layer_Functions.htm">Funções gerais da camada</a></div>
+        <div style="float:right">Próximo: <a href="layer_get_depth.htm">layer_get_depth</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_get_id
+-->
+  <!-- TAGS
+layer_get_id
+-->
+</body>
+</html>

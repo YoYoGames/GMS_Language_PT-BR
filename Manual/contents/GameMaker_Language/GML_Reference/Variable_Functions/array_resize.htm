@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>array_resize</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function array_resize" />
+  <meta name="rh-index-keywords" content="array_resize" />
+  <meta name="search-keywords" content="array_resize" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>array_resize</h1>
+  <p>Com esta função você pode redimensionar uma dimensão de matriz existente para ser um novo tamanho. Você fornece a matriz a ser redimensionada assim como o novo número de índices para a matriz, e a função redimensionará essa matriz. Note que esta função é projetada para redimensionar
+    um array <i>até</i> um comprimento menor, pois você pode redimensionar simplesmente ajustando um novo índice no array. Dito isto, se você o usar para dimensionar um array, então quaisquer novos índices serão definidos para o valor padrão de 0.</p>
+  <p>Esta função também pode ser usada para matrizes multidimensionais, desde que você especifique qual dimensão deseja redimensionar ao fornecer o índice da matriz, seguindo este padrão:</p>
+  <p class="code">// Redimensionar a primeira dimensão da matriz<br> array_resize(my_array, 10);<br>
+    <br> // Redimensionar a segunda dimensão da matriz<br> array_resize(my_array[0], 10);<br>
+    <br> // Redimensionar a terceira dimensão da matriz<br> array_resize(my_array[0][0], 10);<br>
+    <br> // etc...</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">array_resize(array_index, new_size);</p>
+  
+    <table>
+      <tbody>
+        <tr>
+          <th>Argumento</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>array_index</td>
+          <td>O índice da matriz a ser redimensionada.</td>
+        </tr>
+        <tr>
+          <td>novo_tamanho</td>
+          <td>O novo tamanho para a matriz (um número inteiro, a partir de 0).</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se array_length(a) &gt; 10<br> {
+    <br> array_resize(a, 10);<br> }
+  </p>
+  <p>O código acima verifica o comprimento de uma matriz e, se ela tiver mais de 10 índices, é redimensionada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Variable_Functions.htm">Funções variáveis</a></div>
+        <div style="float:right">Próximo: <a href="array_length_1d.htm">array_length_1d</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_resize
+-->
+  <!-- TAGS
+array_resize
+-->
+</body>
+</html>

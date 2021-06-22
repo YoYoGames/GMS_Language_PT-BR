@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>lista_de_ângulo_de_colisão</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion collision_rectangle_list" />
+  <meta name="rh-index-keywords" content="collision_rectangle_list" />
+  <meta name="search-keywords" content="collision_rectangle_list" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>lista_de_ângulo_de_colisão</h1>
+  <p>Esta função é a mesma que a <a href="collision_rectangle.htm"><tt>collision_rectangle()</tt></a> apenas, em vez de apenas detectar uma instância em colisão de cada vez, ele detectará várias instâncias. Você fornece as posições x/y da
+    superior esquerdo e inferior direito da área a ser verificada juntamente com o objeto a ser verificado, e você pode definir a verificação para ser precisa (nesse caso todas as instâncias a serem verificadas precisarão ter máscaras de colisão <i>precisas</i> ) e se a verificação deve incluir
+    a instância de chamada ou não.</p>
+  <p>Você também fornece uma <a href="../../Data_Structures/DS_Lists/DS_Lists.htm">lista DS</a>, portanto o <a href="../../Asset_Management/Instances/Instance_Variables/id.htm"><tt>id</tt></a> valores de quaisquer instâncias que estejam colidindo com a instância de chamada
+    ser adicionado ao final da lista fornecida. Você pode <a href="../../Data_Structures/DS_Lists/ds_list_clear.htm">limpar</a> a lista antes de chamar esta função para que ela contenha apenas os resultados desta chamada de função. Você também tem a opção de pedir a
+    instâncias com base em suas distâncias do centro da área retangular até suas origens. A função retorna o número de instâncias encontradas, ou 0 se nenhuma for encontrada.</p>
+  <p>Note que ao invés de um índice de objetos você pode fornecer a <a href="../../../GML_Overview/Instance_Keywords.htm">palavra-chave da instância</a> <span class="inline">all</span>, para verificar todas as instâncias na sala atual, o que pode incluir a instância em execução
+    o código (dependendo do argumento <span class="inline">notme</span> ).</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">collision_rectangle_list(x1, y1, x2, y2, obj, prec, notme, list, ordered);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>A coordenada x do lado esquerdo do retângulo a ser verificado.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>A coordenada y do lado superior do retângulo a verificar.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>A coordenada x do lado direito do retângulo a ser verificado.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>A coordenada y do lado inferior do retângulo a verificar.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>O objeto a ser verificado, por exemplo, colisões.</td>
+      </tr>
+      <tr>
+        <td>prec</td>
+        <td>Se a verificação é baseada em colisões precisas<tt>(verdadeiro</tt>, que é mais lento) ou em sua caixa de delimitação em geral<tt>(falso</tt>, mais rápido).</td>
+      </tr>
+      <tr>
+        <td>notme</td>
+        <td>Se a instância de chamada, se relevante, deve ser excluída<tt>(verdadeira</tt>) ou não<tt>(falsa</tt>).</td>
+      </tr>
+      <tr>
+        <td>lista</td>
+        <td>A lista DS a ser utilizada para armazenar as identificações de ocorrências de colisão.</td>
+      </tr>
+      <tr>
+        <td>encomendado</td>
+        <td>Se a lista deve ser ordenada por distância<tt>(verdadeira</tt>) ou não<tt>(falsa</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Inteiro (O número de instâncias encontradas em colisão)</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var _list = ds_list_create();<br> var _num = collision_rectangle_list(x - 100, y - 100, x + 100, y + 100, obj_Enemy, false, true, _list, false);<br> if _num &gt; 0<br> {
+    <br> for (var i = 0; i &lt; _num; ++i;)<br> {
+    <br> instance_destroy(_list[| i]);<br> }
+    <br> }
+    <br> ds_list_destroy(_list);
+  </p>
+  <p>O código acima verificará uma área retangular de 100 pixels ao redor da posição da instância de chamada para colisões com instâncias de &quot;obj_Enemy&quot;. Se houver alguma colisão, então a lista pré-criada é passada em loop e cada instância que foi
+    na colisão é destruída.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Collisions.htm">Colisões</a></div>
+        <div style="float:right">Próximo: <a href="point_in_rectangle.htm">point_in_rectangle</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+collision_rectangle_list
+-->
+  <!-- TAGS
+collision_rectangle_list
+-->
+</body>
+</html>

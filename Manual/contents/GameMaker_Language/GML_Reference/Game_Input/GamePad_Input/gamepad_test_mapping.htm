@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_test_mapping</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_test_mapping" />
+  <meta name="rh-index-keywords" content="gamepad_test_mapping" />
+  <meta name="search-keywords" content="gamepad_test_mapping" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_test_mapping</h1>
+  <p>Esta função pode ser usada para definir o mapeamento do gamepad sobre os alvos que o permitem. Você fornece o índice &quot;slot&quot; para o gamepad definir e, em seguida, a cadeia do mapa, que deveria ter sido criada usando o formato SDL com os seguintes campos:</p>
+  <p class="code">&lt;guia&gt;,&lt;descrição&gt;,plataforma:&lt;nome da plataforma&gt;,&lt;ligações&gt;</p>
+  <p>Os detalhes que devem ser incluídos em cada um desses campos são:</p>
+  <ul class="colour">
+    <li><tt>guia</tt> - uma seqüência de dígitos e letras que identifica de forma única um tipo de dispositivo (isto pode ser recuperado usando o <a href="gamepad_get_guid.htm"><tt>gamepad_get_guid()</tt></a> função)</li>
+    <li><tt>descrição</tt> - uma descrição Ascii do dispositivo (que pode ser recuperada usando o <a href="gamepad_get_description.htm"><tt>gamepad_get_description()</tt></a> função)</li>
+    <li><tt>plataforma-nome</tt> - será ou &quot;plataforma:android&quot;, &quot;plataforma:janelas&quot;, &quot;linux&quot;, ou &quot;mac&quot; (note que isto será anexado automaticamente <b>à string quando você chamar esta função, e assim você</b>
+      não é necessário fornecê-lo ao construir suas próprias cordas de mapeamento)</li>
+    <li><tt>bindings</tt> - um conjunto de entradas separadas por um ',' para ligar a entrada real a <span class="notranslate">constantes</span> GML específicas</li>
+  </ul>
+  <p>A lista de entradas separadas por vírgulas segue um formato específico para cada entrada:</p>
+  <p class="code">&lt;abstract-gp-nome&gt;:&lt;-value-binding&gt;</p>
+  <p>Aqui <tt>&lt;versão de valor&gt; (ou seja:</tt> a entrada direta do gamepad) pode ser qualquer uma das seguintes:</p>
+  <ul class="colour">
+    <li><tt>a&lt;N&gt; -</tt> Isto representa um eixo do gamepad, onde o &lt;N&gt; é um dos eixos de 0 a <a href="gamepad_axis_count.htm"><tt>gamepad_axis_count()</tt></a> -1</li>
+    <li><tt>b&lt;N&gt; -</tt> Isto representa um botão do gamepad, onde o &lt;N&gt; é um dos botões de 0 a <a href="gamepad_button_count.htm"><tt>gamepad_button_count()</tt></a> -1</li>
+    <li><tt>h&lt;N&gt;.&lt;mask&gt; - Isto</tt> representa um chapéu do gamepad, onde o &lt;N&gt; representa um chapéu de 0 a <a href="gamepad_hat_count.htm"><tt>gamepad_hat_count()</tt></a> -1, e a <tt>&lt;máscara&gt;</tt> será ou 1, 2, 4, ou 8.</li>
+  </ul>
+  <p>Cada valor de entrada deve ser vinculado a um nome SDL, que é expresso como <tt>&lt;&gt;abstract-gp-name&gt; , que</tt>, por sua vez, está vinculado a uma <span class="notranslate">constante</span> GML. A tabela abaixo mostra a equivalência entre o nome SDL e a constante <span class="notranslate">GameMaker Studio 2</span>:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Nome SDL</th>
+        <th>Nome<span class="notranslate">GML</span> </th>
+      </tr>
+      <tr>
+        <td><tt>a</tt></td>
+        <td>gp_face1</td>
+      </tr>
+      <tr>
+        <td><tt>b</tt></td>
+        <td>gp_face2</td>
+      </tr>
+      <tr>
+        <td><tt>x</tt></td>
+        <td>gp_face3</td>
+      </tr>
+      <tr>
+        <td><tt>y</tt></td>
+        <td>gp_face4</td>
+      </tr>
+      <tr>
+        <td><tt>lefthoulder</tt></td>
+        <td>gp_shoulderl</td>
+      </tr>
+      <tr>
+        <td><tt>lefttrigger</tt></td>
+        <td>gp_shoulderlb</td>
+      </tr>
+      <tr>
+        <td><tt>direitos de propriedade</tt></td>
+        <td>gp_shoulderr</td>
+      </tr>
+      <tr>
+        <td><tt>righttrigger</tt></td>
+        <td>gp_shoulderrb</td>
+      </tr>
+      <tr>
+        <td><tt>guia</tt></td>
+        <td>gp_select</td>
+      </tr>
+      <tr>
+        <td><tt>início</tt></td>
+        <td>gp_start</td>
+      </tr>
+      <tr>
+        <td><tt>vara esquerda</tt></td>
+        <td>gp_stickl</td>
+      </tr>
+      <tr>
+        <td><tt>pauzinho de direitos</tt></td>
+        <td>gp_stickr</td>
+      </tr>
+      <tr>
+        <td><tt>dpup</tt></td>
+        <td>gp_padu</td>
+      </tr>
+      <tr>
+        <td><tt>dpdown</tt></td>
+        <td>gp_padl</td>
+      </tr>
+      <tr>
+        <td><tt>dpleft</tt></td>
+        <td>gp_padr</td>
+      </tr>
+      <tr>
+        <td><tt>dpright</tt></td>
+        <td>gp_padd</td>
+      </tr>
+      <tr>
+        <td><tt>leftx</tt></td>
+        <td>gp_axislh</td>
+      </tr>
+      <tr>
+        <td><tt>esquerda</tt></td>
+        <td>gp_axislv</td>
+      </tr>
+      <tr>
+        <td><tt>rightx</tt></td>
+        <td>gp_axisrh</td>
+      </tr>
+      <tr>
+        <td><tt>à direita</tt></td>
+        <td>gp_axisrv</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> Quando você tiver construído sua cadeia de mapeamento, ela deve se parecer com algo assim:</p>
+  <p class="code">&quot;050000005e040000fd020000ffff3f00,Xbox Wireless Controller,a:b0,b:b1,start:b4,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b6,lefthoulder:b9,lefttick:b7,lefttrigger:a4,leftx:a0,lefty:a1,righthoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,x:b2,y:b3,platform:android&quot;.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">gamepad_test_mapping(index, mapping_string);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>Qual o &quot;slot&quot; do índice gamepad a ser definido.</td>
+      </tr>
+      <tr>
+        <td>cor</td>
+        <td>A cadeia do mapa a ser usada (veja a descrição para mais informações).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var mapping = gamepad_get_guid(global.padIndex) + &quot;,&quot; + gamepad_get_description(global.padIndex);<br> var len = array_length(global.PadInstances);<br> for( i = 0; i &lt; len; i += 2)<br> {
+    <br> var esquerda = global.PadInstances[i];<br> var direita = global.PadInstances[i+1];<br> mapping += &quot;,&quot; + left.sdlLabel + &quot;:&quot; + right.binding;<br> }
+    <br> gamepad_test_mapping(global.padIndex, mapping);</p>
+  <p>O código acima percorrerá várias instâncias e utilizará os valores de diferentes variáveis que elas contêm para criar uma cadeia de mapeamento, que é então definida para uso no painel de jogo no índice do slot dado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Gamepad_Input.htm">Entrada Gamepad</a></div>
+        <div style="float:right">Próximo: <a href="gamepad_remove_mapping.htm">gamepad_remove_mapping</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_test_mapping
+-->
+  <!-- TAGS
+gamepad_test_mapping
+-->
+
+</body></html>

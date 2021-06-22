@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_text_colour</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_text_colour" />
+  <meta name="rh-index-keywords" content="draw_text_colour,draw_text_color" />
+  <meta name="search-keywords" content="draw_text_colour,draw_text_color" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_text_colour</h1>
+  <p>Esta função irá desenhar texto de forma semelhante a <a href="draw_text.htm"><tt>draw_text</tt><tt>()</tt><tt></tt></a> somente agora você pode escolher as cores a serem usadas para colorir o texto, bem como o valor alfa, e estes novos valores serão usados em seu lugar
+    da cor do desenho de base e alfa.</p>
+  <p class="note"><b>NOTA</b>: A mistura gradual não está disponível para o alvo HTML5 a menos que a WebGL esteja habilitada, embora você ainda possa definir as cores da mistura e ela irá misturar a fonte com a primeira cor dada. No entanto, toda mistura desta forma cria uma duplicata
+    A fonte que é então armazenada no cache e usada quando necessário, que está longe de ser a ideal e se você usar mudanças múltiplas de cor irá diminuir o desempenho de seus jogos. Você pode definir o tamanho do cache da fonte para tentar limitá-lo, caso seja necessário.
+    usando a função <a href="../../Asset_Management/Fonts/font_set_cache_size.htm"><tt style="font-size: 14px">font_set_cache_size()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">draw_text_colour(x, y, string, c1, c2, c3, c4, alfa);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>A coordenada x do fio desenhado.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>A coordenada y da corda desenhada.</td>
+      </tr>
+      <tr>
+        <td>corda</td>
+        <td>O fio para desenhar.</td>
+      </tr>
+      <tr>
+        <td>c1</td>
+        <td>A cor para a parte superior esquerda do texto desenhado.</td>
+      </tr>
+      <tr>
+        <td>c2</td>
+        <td>A cor para a parte superior direita do texto desenhado.</td>
+      </tr>
+      <tr>
+        <td>c3</td>
+        <td>A cor para a parte inferior direita do texto desenhado.</td>
+      </tr>
+      <tr>
+        <td>c4</td>
+        <td>A cor para a parte inferior esquerda do texto desenhado.</td>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>O alfa para o texto.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">draw_set_colour(c_white);<br> draw_text(100, 100, &quot;Saúde&quot;);<br> draw_text_colour(100, 200, string(health), c_lime, c_lime, c_green, c_green, 1);</p>
+  <p>O código acima desenhará duas seções de texto na mesma linha, sendo o primeiro texto desenhado em branco (pois essa é a cor do desenho base) e o segundo texto desenhado com um gradiente de verde lima a verde normal.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Text.htm">Texto</a></div>
+        <div style="float:right">A seguir: <a href="draw_text_transformed.htm">draw_text_transformed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_text_colour
+draw_text_color
+-->
+  <!-- TAGS
+draw_text_colour
+-->
+</body>
+</html>

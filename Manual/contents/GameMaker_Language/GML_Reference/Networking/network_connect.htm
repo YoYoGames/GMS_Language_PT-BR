@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>network_connect</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for network_connect" />
+  <meta name="rh-index-keywords" content="network_connect" />
+  <meta name="search-keywords" content="network_connect" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>network_connect</h1>
+  <p>Com esta função, você pode enviar um pedido para se conectar a um servidor. A função leva a <i>identificação do soquete</i> para se conectar (veja <a href="network_create_socket.htm"><tt>network_create_socket()</tt></a>) e exige que você forneça o endereço IP para se conectar
+    para (um fio), bem como a porta de passagem, e se a conexão falhar, um valor inferior a 0 será devolvido. A conexão usa um protocolo especial que garante que somente os jogos <span class="notranslate">GameMaker Studio 2</span> se conectem entre si, porém se você precisar
+    para conectar a um servidor que não seja um jogo <span class="notranslate">GameMaker Studio 2</span>, você pode usar <a href="network_connect_raw.htm"><tt>network_connect_raw()</tt></a>. Note que por padrão a função é síncrona, o que significa que seu jogo pode parecer &quot;pendurado&quot;.
+    à medida que a conexão é feita. Você pode definir um valor de timeout para a conexão, ou, alternativamente, tornar a criação assíncrona, usando a função <tt><a href="network_set_config.htm">network_set_config()</a></tt>ou, alternativamente, usar a função
+    <span class="inline"><a href="network_connect_async.htm">network_connect_async()</a></span> ao invés disso.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">network_connect(socket, url, porta);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>soquete</td>
+        <td>A identificação do soquete a ser utilizado.</td>
+      </tr>
+      <tr>
+        <td>url</td>
+        <td>A URL ou IP a que se conectar (uma cadeia).</td>
+      </tr>
+      <tr>
+        <td>porto</td>
+        <td>A porta a ser conectada.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">cliente = network_create_socket(network_socket_tcp);<br> network_connect(client, &quot;192.134.0.1&quot;, 6510);</p>
+  <p>O código acima criará um novo soquete TCP e então tentará se conectar através dele ao endereço IP dado na porta 6510.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Networking.htm">Rede</a></div>
+        <div style="float:right">Próximo: <a href="network_connect_async.htm">network_connect_async</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+network_connect
+-->
+  <!-- TAGS
+network_connect
+-->
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>room_exists</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_exists" />
+  <meta name="rh-index-keywords" content="room_exists" />
+  <meta name="search-keywords" content="room_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>room_exists</h1>
+  <p>Com esta função, você pode verificar e ver se a sala que você especifica existe ou não. Esta função toma o <i>índice da</i> sala (um número real) e <b>não</b> o nome da sala (uma cadeia). Esta função é mais útil quando você está criando salas dinamicamente
+    usando a função <a href="room_add.htm"><tt>room_add()</tt></a>mas você também pode usar as variáveis <b>somente de leitura</b> <a href="room_first.htm"><tt>room_first</tt></a> e <a href="room_last.htm"><tt>quarto_last</tt></a> ou as funções <a href="room_next.htm"><tt>room_next()</tt></a>    e <a href="room_previous.htm"><tt>room_previous()</tt></a> para obter um índice específico da sala, ou fornecer uma variável que tenha armazenado o índice de qualquer outra sala em seu jogo.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">room_exists(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice da sala a verificar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se o room_exists(global.rm[0])<br> {
+    <br> room_goto(global.rm[0]);
+    <br> }
+  </p>
+  <p>O código acima verifica se a sala indexada na matriz &quot;global.rm[]&quot; existe e se existe, então vai para aquela sala.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Rooms.htm">Quartos</a></div>
+        <div style="float:right">Próximo: <a href="room_add.htm">room_add</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_exists
+-->
+  <!-- TAGS
+room_exists
+-->
+</body>
+</html>

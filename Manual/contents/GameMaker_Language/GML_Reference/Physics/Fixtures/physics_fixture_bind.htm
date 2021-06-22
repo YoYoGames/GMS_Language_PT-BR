@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_bind</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_bind" />
+  <meta name="rh-index-keywords" content="physics_fixture_bind" />
+  <meta name="search-keywords" content="physics_fixture_bind" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_fixture_bind</h1>
+  <p>Uma vez que tenhamos definido nossa fixação, ela tem que ser vinculada a uma instância. Isto significa que suas <i>propriedades</i> são transferidas para a instância selecionada, <b>e não para o acessório em si</b>, de modo que um acessório pode ser vinculado a múltiplas instâncias, se todas forem
+    ter as mesmas propriedades. Você pode especificar um índice de objetos para o alvo e todas as instâncias presentes na sala no momento receberão essas propriedades de fixação (mas não quaisquer novas instâncias do objeto criado posteriormente), ou você pode usar o
+    palavras-chave <i>outras</i> e <i>todas</i>. Você pode até mesmo especificar um objeto dos pais e todas as instâncias de crianças com esse pai também receberão a fixação. Uma vez que a fixação tenha sido vinculada a todas as instâncias que você precisa, ela pode ser apagada se não mais
+    necessárias e as instâncias com essas propriedades de fixação não serão afetadas e manterão essas propriedades.</p>
+  <p>A fixação será ligada à instância com o centro da massa sendo posicionado na origem da instância, e os dispositivos poligonais são ligados com base na posição dos pontos <i>em</i> relação à origem. Se você precisar que sua luminária seja amarrada
+    a um ponto que não seja a origem, então você deve estar usando <a href="physics_fixture_bind_ext.htm"><tt>physics_fixture_bind_ext()</tt></a>.</p>
+  <p><img alt="Physics fixture binding example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_bind_image.png">A função também retornará um valor &quot;id&quot; único para a fixação do limite
+   <b>(não a fixação em si</b>) que pode então ser usada para remover (&quot;un-bind&quot;) as propriedades físicas da instância usando a função <a href="physics_remove_fixture.htm"><tt>physics_remove_fixture()</tt></a>. Isto permite que você acrescente
+    e remover propriedades físicas de uma instância sem destruir e recriar objetos.</p>
+  <p class="note"><b>OBSERVAÇÃO</b>: Os equipamentos devem ser apagados quando não forem mais necessários, pois se não o fizerem pode causar um vazamento de memória que irá diminuir a velocidade e, por fim, travar seu jogo.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">physics_fixture_bind(fixture, target)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>fixação</td>
+        <td>a fixação que deve ser amarrada</td>
+      </tr>
+      <tr>
+        <td>alvo</td>
+        <td>a instância alvo que deve receber a fixação (pode ser uma identificação de instância, uma identificação de objeto, <i>outra</i>, ou <i>todas</i>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">var fix, inst;<br> fix = physics_fixture_create();<br> physics_fixture_set_circle_shape(fix, 16);<br> physics_fixture_set_density(fix, 1.0);<br> inst = instance_create_layer(x, y, &quot;Instances&quot;, genericBodyObject);<br> my_fix = physics_fixture_bind(fix, 1.0),
+    inst);<br> physics_fixture_delete(fix);
+  </p>
+  <p>O código acima criará uma fixação e atribuirá seu índice à variável &quot;fixação&quot;. Ele então define a forma e a densidade da fixação antes de vinculá-la à instância que foi criada com o índice para a fixação <b>vinculada</b> armazenada em
+    a variável &quot;my_fix&quot;. Finalmente, a fixação é apagada para evitar vazamentos de memória, uma vez que não é mais necessária.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Fixtures.htm">Instalações</a></div>
+        <div style="float:right">A seguir: <a href="physics_fixture_bind_ext.htm">physics_fixture_bind_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_bind
+-->
+  <!-- TAGS
+physics_fixture_bind
+-->
+</body>
+</html>

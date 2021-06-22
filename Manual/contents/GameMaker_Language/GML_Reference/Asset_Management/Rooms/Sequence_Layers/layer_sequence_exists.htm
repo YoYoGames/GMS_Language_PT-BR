@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sequence_exists</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_exists" />
+  <meta name="rh-index-keywords" content="layer_sequence_exists" />
+  <meta name="search-keywords" content="layer_sequence_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sequence_exists</h1>
+  <p>Com esta função você pode verificar se existe um elemento de seqüência na camada dada. Você fornece o ID da camada que pode ser uma seqüência do nome da camada - como definido no editor da sala - ou o ID exclusivo da camada - como retornado pela função <a href="../General_Layer_Functions/layer_get_id.htm"><tt>layer_get_id()</tt></a>,
+    bem como a identificação do elemento de seqüência - como retornado por <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a> ou por uma das <a href="../General_Layer_Functions/General_Layer_Functions.htm">funções dos elementos da camada</a> - e ele retornará
+   <tt>verdadeiro</tt> se o elemento em questão existir ou <tt>falso</tt> de outra forma.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">layer_sequence_exists(layer_id, sequence_element_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>layer_ID</td>
+        <td>A identificação única ou nome da camada a ser verificada</td>
+      </tr>
+      <tr>
+        <td>sequence_element_id</td>
+        <td>O valor de identificação único do elemento de seqüência para o alvo</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">se !layer_sequence_exists(&quot;Background&quot;, my_seq)<br> {
+    <br> my_seq = layer_sequence_create(&quot;Background&quot;, 0, 0, seq_AnimatedBackground);<br> layer_sequence_pause(my_seq);
+    <br> }
+  </p>
+  <p>O código acima verifica se o elemento seqüencial existe, e se não existe, então cria uma nova seqüência na camada dada, então o pausa.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Sequence_Layers.htm">Sequência de camadas</a></div>
+        <div style="float:right">Próximo: <a href="layer_sequence_create.htm">layer_sequence_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_exists
+-->
+  <!-- TAGS
+layer_sequence_exists
+-->
+</body>
+</html>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Sequências</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Sequences" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Sequences" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Sequências</h1>
+  <p>As seqüências são geralmente criadas na IDE usando o <a href="../../../../The_Asset_Editors/Sequences.htm">editor Sequence</a>, mas também podem ser criadas e editadas usando código. Entretanto, antes de olhar para as funções disponíveis, é importante
+    para entender a forma como as seqüências são definidas no <span class="notranslate">GameMaker</span> e os diferentes termos que serão utilizados.</p>
+  <p>Para começar, no nível superior, você tem um <b>elemento de seqüência</b>. Isto é o que você coloca em uma camada em uma sala, seja através do Room Editor ou em código usando as <a href="../Rooms/Sequence_Layers/Sequence_Layers.htm">funções</a> apropriadas <a href="../Rooms/Sequence_Layers/Sequence_Layers.htm">da camada</a>.
+    O elemento da camada não tem propriedades reais além de um valor de identificação do elemento, mas esta identificação é necessária para usar as funções de camada acima mencionadas para alterar a reprodução da seqüência ou para acessar os dados da seqüência.</p>
+  <p>Em seguida, você tem <b>objetos de seqüência</b> e <b>instâncias de seqüência</b> como você tem objetos e instâncias gerais. Um <i>objeto</i> seqüencial é o recurso básico, como você o criou no <b>Navegador de Ativos</b> ou usando a função <a href="sequence_create.htm"><tt>sequence_create()</tt></a>,
+    e a <i>instância de</i> seqüência é a &quot;cópia&quot; desse objeto de seqüência que foi colocado em uma sala como um elemento em uma camada. Pense em objetos seqüenciais como esquemas e instâncias seqüenciais como a criação a partir desses esquemas. Sequência
+    objetos e instâncias são <a href="../../../GML_Overview/Structs.htm">estruturas</a> e - ao contrário dos objetos normais - uma estrutura de objetos em seqüência pode ser editada em <span class="notranslate">tempo de execução</span>, o que afetará todas as outras instâncias dessa seqüência quando você as criar como elementos
+    (e qualquer edição feita em um objeto sequencial <b>não</b> será reiniciada reiniciando o jogo ou a sala usando as funções <tt>room_restart()</tt> ou <tt>game_restart()</tt> ). A estrutura da instância sequencial contém alguns parâmetros para controlar a reprodução
+    e coisas (isto é explicado com mais detalhes abaixo), bem como a estrutura de <b>dados da seqüência</b>.</p>
+  <p>Finalmente, como mencionado acima, você tem os <b>dados da seqüência</b>, que é outra estrutura. Esta estrutura contém <i>todos os</i> dados sobre a seqüência. As faixas que ela contém, as propriedades que essas faixas possuem, a velocidade de reprodução e muito mais. A estrutura exata
+    Os detalhes do conteúdo desta estrutura são descritos abaixo, mas basicamente consiste de estruturas de <b>rastreamento de ativos</b> e estruturas de <b>rastreamento de parâmetros</b> que utilizam <b>dados de<span class="notranslate">estrutura de chaves</span></b> para realmente executar ações enquanto a seqüência é executada.</p>
+  <p>Os elementos sequenciais são tratados usando as <a href="../Rooms/Sequence_Layers/Sequence_Layers.htm">funções da camada de</a> divisão, mas para objetos sequenciais, instâncias e dados temos as seguintes funções:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="sequence_exists.htm">Sequência_existe</a></li>
+    <li><a href="sequence_create.htm">sequence_create</a></li>
+    <li><a href="sequence_destroy.htm">sequence_destroy</a></li>
+    <li><a href="sequence_get.htm">sequence_get</a></li>
+    <li><a href="sequence_track_new.htm">sequence_track_new</a></li>
+    <li><a href="sequence_keyframe_new.htm">sequence_keyframe_new</a></li>
+    <li><a href="sequence_keyframedata_new.htm">sequence_keyframedata_new</a></li>
+    <li><a href="sequence_get_objects.htm">Sequência_get_objects</a></li>
+    <li><a href="sequence_instance_override_object.htm">sequence_instance_override_object</a></li>
+  </ul>
+  <p> </p>
+  <p>Há também uma <strong>variável incorporada</strong> associada às instâncias que pode ser usada para determinar se a instância foi ou não usada em uma seqüência:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="in_sequence.htm">in_sequence</a></li>
+  </ul>
+  <p class="note"><strong>IMPORTANTE!</strong> Se sua seqüência tiver alguma instância nela, essas instâncias não devem mudar seu <span class="inline"><span style="font-size:14px;">image_xscale</span> / <span class="inline"><span style="font-size:14px;">image_yscale</span> /
+    <span class="inline"><span style="font-size:14px;">imagem_ângulo</span></span> / <span class="inline"><span style="font-size:14px;">x</span> / <span class="inline"><span style="font-size:14px;">y</span> variáveis como elas serão sobrescritas quando a seqüência
+      atualiza cada passo depois de começar a ser jogado.</p>
+  <p> </p>
+  <p>Antes de utilizar estas funções para criar ou editar seqüências, recomendamos que você leia as descrições detalhadas dadas abaixo para as propriedades estruturais. Uma visão geral de como criar uma nova seqüência seria:</p>
+  <ul class="colour">
+    <li>Criar o novo objeto de seqüência usando a função <a href="sequence_create.htm"><tt>seqeunce_create()</tt></a> e armazenar o índice de objetos de seqüência em uma variável. Este índice lhe dá acesso à estrutura de objetos de seqüência.</li>
+  </ul>
+  <p class="code">myseq = sequence_create();</p>
+  <ul class="colour">
+    <li>Definir os valores de nível superior do objeto de seqüência como comprimento, modo de jogo, velocidade de jogo, etc... Por exemplo:</li>
+  </ul>
+  <p class="code">myseq.length = 120;<br> myseq.loopmode = seqplay_pingpong</p>
+  <ul class="colour">
+    <li>Antes que você possa adicionar faixas ao objeto de seqüência, você precisa criá-las, então agora você criaria uma série de faixas de <i>ativos</i> que foram definidas com a função <a href="sequence_track_new.htm"><tt>sequence_track_new()</tt></a>. Note que
+      em código, não há realmente nenhuma diferença entre faixas de ativos e faixas de parâmetros - todas elas são simplesmente faixas e como elas se comportam dependerá do tipo de faixa que você criar e se são atribuídas como sub-faixas a uma faixa de nível superior ou não.
+      Assim, você criaria uma faixa para um ativo e, em seguida, atribuiria subfaixas para os diferentes parâmetros a ela e estas subfaixas atuariam como faixas de <i>parâmetros</i> para o ativo. O exemplo abaixo cria um único trilho gráfico para o ativo que
+      ser adicionado à seqüência mais tarde:</li>
+  </ul>
+  <p class="code">var mytracks = array_create(1);<br> mytracks[0] = sequence_track_new(seqtracktype_graphic);</p>
+  <ul class="colour">
+    <li>Cada faixa de ativos precisa ter alguns dados para dizer a seqüência como vai ficar, ou sua posição, etc... e isso é adicionado na forma de <i><span class="notranslate">quadros-chave</span></i>. No nível superior para uma pista de ativos, você pode definir <span class="notranslate">quadros-chave</span> para várias coisas (listadas no
+      na seção Estrutura da Pista, abaixo), mas observe que, como são <span class="notranslate">quadros-chave</span> da Pista, eles não serão interpolados e simplesmente mudarão o valor a que se referem quando o quadro dado for atingido. Cada <span class="notranslate">quadro-chave</span> é uma estrutura que é adicionada a uma matriz,
+      e então esta matriz é atribuída à faixa de ativos. Para criar a estrutura do <span class="notranslate">quadro-chave</span>, chamaríamos a função <a href="sequence_keyframe_new.htm"><tt>sequence_keyframe_new()</tt></a> e para povoar o <span class="notranslate">quadro-chave</span> com os dados necessários, usaríamos
+      a função <a href="sequence_keyframedata_new.htm"><tt>sequence_keyframedata_new()</tt></a>:</li>
+  </ul>
+  <p class="code">// Criar uma nova estrutura de <span class="notranslate">quadros-chave</span> para uma faixa de recursos gráficos e adicioná-la a uma matriz (pois você pode ter várias chaves em uma matriz)<br> var graphickeys = array_create(1);<br> graphickeys[0] = sequence_keyframe_new(seqtracktype_graphic);<br> // Definir os gráficos
+    dados de nível superior do <span class="notranslate">keyframe</span> para a posição e comprimento do <span class="notranslate">keyframe</span>, etc...<br> graphkeys[0].frame = 0;<br> graphkeys[0].length = 1;<br> graphkeys[0].stretch = true;<br> graphkeys[0].disabled = false;<br> // Criar os dados do canal que irão
+    entrar neste <span class="notranslate">quadro-chave</span> (novamente um array, pois cada chave pode ter múltiplos canais de dados do <span class="notranslate">quadro-chave</span> )<br> var graphkeydata = array_create(1);<br> graphkeydata[0] = sequence_keyframedata_new(seqtracktype_graphic);<br> graphkeydata[0].spriteIndex
+    = spr_Platform;<br> graphkeydata[0].channel = 0;<br> // Adicionar os canais de dados <span class="notranslate">do keyframe</span> ao <span class="notranslate">keyframe</span>da faixa gráfica<br> graphkeys[0].channels = graphkeydata;<br> // Adicionar os <span class="notranslate">keyframes</span> definidos à faixa<br> mytracks[0].name = &quot;TestGraphicTrack&quot;;<br> mytracks[0]. keyframes<span class="notranslate">= graphkeys</span>;</p>
+  <ul class="colour">
+    <li>Agora precisamos criar uma faixa de parâmetros que designaremos como uma sub-faixa para a faixa gráfica que acabamos de criar. Isto será feito de maneira semelhante como mostrado acima, somente agora precisamos dar à pista um nome que mostre seu propósito, neste caso
+      &quot;posição&quot;, já que usaremos esta faixa para mover a faixa gráfica ao longo dos quadros de animação da seqüência:</li>
+  </ul>
+  <p class="code">// Criar uma nova estrutura de parâmetros de pista para a posição do gráfico<br> var paramtracks = array_create(1);<br> paramtracks[0] = sequence_track_new(seqtracktype_real);<br> paramtracks[0].name = &quot;position&quot;;<br> paramtracks[0].interpolation
+    = verdadeiro;<br> // Criar a estrutura do <span class="notranslate">quadro-chave</span> para manter os dados do canal de parâmetros e definir a posição do quadro para o <span class="notranslate">quadro-chave</span><br> var paramkeys = array_create(2);<br> paramkeys[0] = sequence_keyframe_new(seqtracktype_real);<br> paramkeys[0].frame =
+    0;<br> paramkeys[1] = sequence_keyframe_new(seqtracktype_real);<br> paramkeys[1].frame = 120;<br> // Criar a estrutura de dados do <span class="notranslate">keyframe</span><br> var paramkeydata1 = array_create(2);<br> paramkeydata1[0] = sequence_keyframedata_new(seqtracktype_real);<br> paramkeydata1[0].channel = 0; // Canal 0 para uma faixa de posição é a posição X<br> paramkeydata1[0].value = 0;<br> paramkeydata1[1] = sequence_keyframedata_new(seqtracktype_real);<br> paramkeydata1[1].channel = 1; // Canal 1 para uma posição
+    track é a posição Y<br> paramkeydata1[1].value = 0;<br> var paramkeydata2 = array_create(2);<br> paramkeydata2[0] = sequence_keyframedata_new(seqtracktype_real);<br> paramkeydata2[0].channel = 0;<br> paramkeydata2[0].value = room_width;<br> paramkeydata2[1] = sequence_keyframedata_new(seqtracktype_real);<br> paramkeydata2[1].channel = 1;<br> paramkeydata2[1].value = room_height;<br> // Atribuir as estruturas de dados <span class="notranslate">do quadro-chave</span> aos canais para cada chave<br> paramkeys[0].channels = paramkeydata1;<br> paramkeys[1].channels = paramkeydata2;<br> // Atribuir as chaves à faixa de parâmetros<br> paramtracks[0].<span class="notranslate">keyframes</span> = paramkeys;</p>
+  <ul class="colour">
+    <li>Com isso feito, a última coisa a fazer é atribuir a faixa de parâmetros como uma sub-faixa ao nosso principal ativo gráfico que criamos no início e depois atribuir essas faixas à seqüência da qual podemos então criar uma instância na sala:</li>
+  </ul>
+  <p class="code">mytracks[0].tracks = paramtracks;<br> myseq.tracks = mytracks;<br> layer_sequence_create(&quot;Assets_1&quot;, 0, 0, myseq);</p>
+  <p>As instruções acima criam um objeto de seqüência muito simples que desenha um duende na posição (0, 0) <i>da seqüência</i> e depois o move para o canto inferior direito e de volta em um loop. Como mencionado, há uma série de lugares onde você precisa
+    para acessar diferentes estruturas para dar ou obter dados sobre a seqüência, e as seções abaixo listam todas as diferentes propriedades que essas estruturas contêm:</p>
+  <ul class="colour">
+    <li><a name="object"></a><a href="Sequence_Structs/The_Sequence_Object_Struct.htm"><label for="1">A estrutura sequencial do objeto</label></a></li>
+    <li><a name="instance"></a><a href="Sequence_Structs/The_Sequence_Instance_Struct.htm"><label for="2">A estrutura da instância seqüencial</label></a></li>
+    <li><a name="track"></a><a href="Sequence_Structs/The_Track_Struct.htm"><label for="3">A estrutura da via</label></a></li>
+    <li><a name="keyframe"></a><a href="Sequence_Structs/The_Keyframe_Struct.htm"><label for="4">A estrutura do <span class="notranslate">Keyframe</span> </label></a></li>
+    <li><a name="keyframe_data"></a><a href="Sequence_Structs/The_Keyframe_Data_Struct.htm"><label for="5">A estrutura de dados <span class="notranslate">do Keyframe</span> </label></a></li>
+  </ul>
+  <p> </p>
+  <p>Finalmente, é possível adicionar código a seqüências que podem ser acionadas como um <strong>evento</strong> por <strong>momento</strong> ou como uma <strong>mensagem de transmissão</strong>. Isto é explicado na íntegra na página seguinte:</p>
+  <ul class="colour">
+    <li><a href="Sequence_Events_Moments_Broadcast.htm">Eventos, Momentos e Mensagens de Radiodifusão</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="../Asset_Management.htm">Gestão de ativos</a></div>
+        <div style="float:right">A seguir: <a href="../Fonts/Fonts.htm">Fontes</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sequences
+-->
+  <!-- TAGS
+sequence_functions
+-->
+</body>
+</html>

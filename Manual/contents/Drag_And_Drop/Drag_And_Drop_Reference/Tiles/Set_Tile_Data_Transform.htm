@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Transformação de dados de azulejos</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Tile Data Transform action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Tile Data Transform" />
+  <meta name="search-keywords" content="Set Tile Data Transform" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Tile Data Transform Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Set_Tile_Data_Transform.png"> Transformação de dados de azulejos</h1>
+  <p>Com esta ação, você pode mudar uma das três transformações de azulejos nos dados do azulejo. Você fornece a variável que contém os dados do azulejo, depois seleciona a transformação a ser trocada. Clicando na caixa de seleção &quot;Aplicar&quot;, será aplicada a transformação e
+    desmarcando-o, ele será removido. Os dados do azulejo são simplesmente um valor que reflete o índice do azulejo junto com as transformações aplicadas, bem como qualquer máscara de azulejo personalizada que você tenha usado, e esta ação permite que você altere três desses valores:
+    Virar, espelhar e girar. Note que você normalmente desejará obter os dados do azulejo primeiro usando ou <a href="Get_Tile_Data_In_Cell.htm">Get Tile Data In Cell</a> ou <a href="Get_Tile_Data_At_Pixel.htm">Get Tile Data At Pixel</a>, então aplique o
+    transformar(s) e depois ajustar o azulejo no mapa do azulejo novamente usando <a href="Set_Tile_Data_In_Cell.htm">Set Tile Data In Cell</a> ou <a href="Set_Tile_Data_At_Pixel.htm">Set Tile Data At Pixel</a>, uma vez que esta ação <i>só define um valor mas não o aplica ao azulejo do qual foi tirado</i>.
+    Para mais informações sobre os dados do azulejo, consulte a seção <span class="notranslate">GML</span> sobre <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/Tile_Map_Layers.htm">Funções do Mapa de Azulejo</a>.</p>
+  <p> </p>
+  <h4>Sintaxe de ação:</h4>
+  <p><img alt="Set Tile Data Transform Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/a_Tiles_Set_Tile_Data_Transform.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>Telha</td>
+        <td>Os dados do azulejo a ser mudado</td>
+      </tr>
+      <tr>
+        <td>Transformar</td>
+        <td>A transformação a aplicar/remover</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p><img alt="Set Tile Data Transform Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/e_Tiles_Set_Tile_Data_Transform.png">O código de bloco de ação acima obtém os dados do azulejo na posição do mouse e então
+    verifica se o azulejo teve uma transformação de rotação aplicada a ele. Se tiver, então a transformação é reinicializada e os dados do azulejo colocam o azulejo na posição novamente.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="Tile_Actions.htm">Ações em telhas</a></div>
+        <div style="float:right">A seguir: <a href="Get_Tile_Data_Transform.htm">Obter transformação de dados de azulejos</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Tile Data Transform
+-->
+  <!-- TAGS
+action_tile_set_transform
+-->
+</body>
+</html>

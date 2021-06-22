@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>os_get_language</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for os_get_language" />
+  <meta name="rh-index-keywords" content="os_get_language" />
+  <meta name="search-keywords" content="os_get_language" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>os_get_language</h1>
+  <p>Esta função retorna uma string com as duas letras Código de Idioma para o sistema operacional que está rodando o jogo, conforme definido pela norma <a href="http://en.wikipedia.org/wiki/ISO_639" target="_blank">ISO639</a>. Se a informação não estiver disponível, ela conterá
+    simplesmente um fio vazio &quot;&quot;, ou &quot;en&quot; para a língua &quot;inglesa&quot;. Observe que alguns idiomas também têm um Código Regional relevante, portanto, para distinguir entre diferentes regiões de um mesmo país, use a função <a href="os_get_region.htm"><tt>os_get_region()</tt></a>.</p>
+  <p>A tabela a seguir mostra exemplos de alguns dos principais códigos de linguagem de duas letras, conforme definido pela ISO 639:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Idioma</th>
+        <th>Código</th>
+      </tr>
+      <tr>
+        <td>árabe</td>
+        <td>ar</td>
+      </tr>
+      <tr>
+        <td>Chinês</td>
+        <td>zh</td>
+      </tr>
+      <tr>
+        <td>Dinamarquês</td>
+        <td>da</td>
+      </tr>
+      <tr>
+        <td>Inglês</td>
+        <td>pt</td>
+      </tr>
+      <tr>
+        <td>Francês</td>
+        <td>fr</td>
+      </tr>
+      <tr>
+        <td>Alemão</td>
+        <td>de</td>
+      </tr>
+      <tr>
+        <td>Grego</td>
+        <td>el</td>
+      </tr>
+      <tr>
+        <td>Italiano</td>
+        <td>it</td>
+      </tr>
+      <tr>
+        <td>Japonês</td>
+        <td>ja</td>
+      </tr>
+      <tr>
+        <td>Norueguês</td>
+        <td>não</td>
+      </tr>
+      <tr>
+        <td>Polonês</td>
+        <td>pl</td>
+      </tr>
+      <tr>
+        <td>Português</td>
+        <td>pt</td>
+      </tr>
+      <tr>
+        <td>Russo</td>
+        <td>ru</td>
+      </tr>
+      <tr>
+        <td>Espanhol</td>
+        <td>es</td>
+      </tr>
+      <tr>
+        <td>Sueco</td>
+        <td>sv</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p class="note"><b>NOTA</b>: Este não é o código do país de localização que é devolvido, mas o código do idioma do sistema operacional.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">os_get_language()</p>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">Cordão</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">switch (os_get_language())<br> {
+    <br> caso &quot;es&quot;: ini_open(&quot;spanish.ini&quot;); pausa;<br> caso &quot;fr&quot;: ini_open(&quot;french.ini&quot;); pausa;<br> caso &quot;it&quot;: ini_open(&quot;italian.ini&quot;); pausa;<br> padrão: ini_open(&quot;english.ini&quot;);
+    pausa;<br>;
+  </p>
+  <p>O código acima verifica o idioma do sistema operacional e abre um arquivo <tt>*.ini</tt> diferente, dependendo do valor retornado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="OS_And_Compiler.htm">OS E Compilador</a></div>
+        <div style="float:right">Próximo: <a href="os_get_region.htm">os_get_region</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+os_get_language
+-->
+  <!-- TAGS
+os_get_language
+-->
+</body>
+</html>

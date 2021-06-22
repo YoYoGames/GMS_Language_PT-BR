@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_grid_read</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_read" />
+  <meta name="rh-index-keywords" content="ds_grid_read" />
+  <meta name="search-keywords" content="ds_grid_read" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_read</h1>
+  <p>Esta função pode ser usada para converter uma corda que foi criada anteriormente pela função <a href="ds_grid_write.htm"><tt>ds_grid_write()</tt></a> de volta a uma grade DS. A grade DS deve ter sido criada anteriormente (veja o exemplo abaixo). Nota
+    que se a estrutura de dados foi criada com versões anteriores de <i><span class="notranslate">GameMaker</span></i> você deve adicionar o argumento opcional &quot;legado&quot;, definindo-o como verdadeiro, já que <tt>o</tt> formato das cordas foi alterado com esta versão.</p>
+  <p> </p>
+  <h4>Sintaxe:</h4>
+  <p class="code">ds_grid_read(index, string [, legado]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descrição</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>O índice da grade a ser lido.</td>
+      </tr>
+      <tr>
+        <td>corda</td>
+        <td>O fio para ler na grade do DS.</td>
+      </tr>
+      <tr>
+        <td>legado<i>(opcional</i>)</td>
+        <td>Pode ser <tt>verdadeiro</tt> ou <tt>falso</tt> ou omitido completamente.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devoluções:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Exemplo:</h4>
+  <p class="code">grid = ds_grid_create(room_width div 32, room_height div 32);<br> ini_open(&quot;Save.ini&quot;);
+    <br> ds_grid_read(grid, ini_read_string(&quot;Save&quot;, &quot;0&quot;, &quot;&quot;));<br> ini_close()
+  </p>
+  <p>O código acima cria uma grade DS com base no tamanho da sala (cada 32x32 quadrados de pixels representa uma célula da grade) e então lê um conjunto de dados da grade previamente salvos de um arquivo ini para a nova grade DS.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Voltar: <a href="DS_Grids.htm">Grades DS</a></div>
+        <div style="float:right">Próximo: <a href="ds_grid_write.htm">ds_grid_write</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos os direitos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_read
+-->
+  <!-- TAGS
+ds_grid_read
+-->
+</body>
+</html>
