@@ -1,0 +1,152 @@
+
+  
+  uwp_check_privilege
+  Com esta função você pode verificar se um determinado usuário tem um privilégio escolhido. A função retornará verdadeiro ou falso no Evento Assíncrono do Sistema, dependendo se o privilégio está ativado ou não, e se você definir o argumento de tentativa_resolução para
+    verdadeiro e o privilégio não está habilitado, ele também abrirá um diálogo no sistema (suspendendo o jogo) para solicitar ao usuário que atualize a conta ou o que for necessário para obter o privilégio. Se o usuário então habilitar a opção necessária, a função
+    retornar verdadeiro.
+  A função exige que você use uma das seguintes constantes para o pedido de privilégio:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        uwp_privilege_internet_browsing
+        Verifique se a navegação na Internet é permitida
+      
+      
+        uwp_privilege_social_network_sharing
+        Verificar se é permitido o compartilhamento com redes sociais
+      
+      
+        uwp_privilege_share_kinect_content
+        Verificar se é permitido compartilhar o controlador Kinect
+      
+      
+        uwp_privilege_video_communications
+        Verifique se a comunicação por vídeo é permitida
+      
+      
+        uwp_privilege_communications
+        Verificar se a comunicação pela Internet é permitida
+      
+      
+        uwp_privilege_user_created_content
+        Verificar se o acesso ao conteúdo criado pelo usuário é permitido
+      
+      
+        uwp_privilege_multiplayer_sessions
+        Verifique se as sessões multiplayer online são permitidas
+      
+      
+        uwp_privilege_sessions
+        Verifique se as sessões on-line são permitidas
+      
+      
+        uwp_privilege_fitness_upload
+        Verificar se o carregamento de dados de aptidão é permitido
+      
+    
+  
+   
+  Uma vez que a função tenha sido chamada, na XBox One ela acionará um evento do Sistema Assíncrono quando o resultado da chamada de retorno tiver sido recebido, que terá o DS especial
+    mapa async_load. Este mapa deve então ser analisado para a seguinte chave:
+  
+    " event_type" - deve conter o valor "check_privilege_result" se o evento foi acionado por esta função
+  
+  Se o tipo de evento estiver relacionado a esta função, haverá também as seguintes chaves adicionais quando a função for chamada na XBox:
+  
+    "resultado" - Será uma ou mais das seguintes constantes (valores combinados):
+      
+        
+          
+            Constante
+            Descrição
+            Valor
+          
+          
+            uwp_privilege_result_no_issue
+            Não há questões de privilégio com o usuário
+            0
+          
+          
+            uwp_privilege_result_purchase_required
+            O usuário deve comprar algo adicional, geralmente uma assinatura, para ter acesso
+            1
+          
+          
+            uwp_privilege_result_aborted
+            O cheque foi abortado
+            2
+          
+          
+            uwp_privilege_result_banned
+            O usuário é banido
+            4
+          
+          
+            uwp_privilege_result_restricted
+            O usuário está restrito ao acesso, geralmente através do controle dos pais
+            8
+          
+        
+      
+    
+    
+    "privilégio" - será uma das constantes listadas acima para uso na função, para que você possa verificar qual privilégio você solicitou no caso de verificações múltiplas.
+  
+  Se o projeto for executado em uma plataforma UWP que não seja a XBox One, então o Evento Async não será acionado e, em vez disso, a função retornará imediatamente ao murchar -1, 0, ou 1 onde:
+  
+    -1 significa -1 que o usuário não tem o privilégio
+    0 significa que a função não foi capaz de consultar o usuário
+    1 significa que o usuário tem o privilégio.
+  
+   
+  Sintaxe:
+  uwp_check_privilege(user_id, privilégio, tentativa_resolução);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        user_id
+        O ponteiro de identificação do usuário a ser verificado.
+      
+      
+        privilégio
+        O privilégio constante a ser verificado (ver descrição, acima).
+      
+      
+        tentativa_resolução
+        Habilitar a tentativa de uma resolução se definida como verdadeira, ou ignorar se definida como falsa.
+      
+    
+  
+   
+  Devoluções:
+  Inteiro
+   
+  Exemplo:
+  var user_one = xboxlive_get_user(0); if (xboxlive_user_is_signed_in(user_one)) {
+     uwp_check_privilege(user_one, xboxlive_privilege_multiplayer_sessions, true); }
+  
+  Os itens acima verificam se o usuário está conectado e se é ele que verifica a permissão das sessões multiplayer.
+   
+   
+   
+  
+    
+      
+        Voltar: UWP e XBox Live
+        Próximo: uwp_suspend
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

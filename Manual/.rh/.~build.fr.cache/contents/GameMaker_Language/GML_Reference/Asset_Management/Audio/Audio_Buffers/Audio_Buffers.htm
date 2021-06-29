@@ -1,0 +1,52 @@
+
+  
+  Buffers de áudio
+  Você pode usar buffers de áudio para carregar, salvar e manipular arquivos de áudio dentro de seus jogos. Estes buffers são criados de antemão utilizando as funções de buffer apropriadas e então você pode utilizar as seguintes funções
+    para criar um som a ser usado em seu projeto:
+   
+  
+    audio_criate_buffer_sound
+    audio_free_buffer_sound
+  
+   
+  Note que uma vez criado um som de um buffer de áudio, você não está criando um novo som na memória, mas sim apontando para a posição dentro do buffer onde o som é armazenado. Você não deve alterar este buffer depois de um som ter sido
+    associado a ele, caso contrário você obterá resultados inesperados, e não poderá apagar o buffer enquanto um som estiver associado a ele. Em vez disso, libere o som (ou sons) primeiro e, em seguida, apague o buffer. Uma vez que você tenha criado seu novo recurso de áudio a partir de
+    um buffer, você pode usar seu valor de índice em qualquer uma das funções de áudio regulares para tocá-lo, alterar seu ganho ou tom, pausá-lo, etc... Note que o buffer usado para carregar o áudio só pode suportar sons PCM, portanto formatos como OGG não
+    ser apoiado.
+  Uma outra característica do áudio em buffer é que você pode usar um buffer para criar uma fila de áudio que pode então ser transmitida para o dispositivo que executa seu projeto. Uma fila de áudio leva um buffer regular que você já preencheu anteriormente com dados de áudio, e permite
+    você para "apontar" para partes dele e dizer ao GameMaker Studio 2: Studio para transmitir o áudio em uma determinada ordem a partir daquele buffer. As funções disponíveis para as filas de áudio são:
+   
+  
+    audio_create_play_queue
+    audio_free_play_queue
+    audio_queue_sound
+  
+   
+  Uma vez criada uma fila, você pode então usar o índice de fila retornado, assim como usaria o índice de som para qualquer som normal para tocá-lo, pausá-lo, reiniciá-lo ou mudar o seu ganho e tom. A única coisa que você não pode fazer é obter o comprimento da faixa
+    ou definir a posição da faixa, mas, além disso, uma fila de áudio pode ser usada como qualquer outro som. Você também deve observar que algumas das funções da fila de áudio também acionarão um Evento Assíncrono de Reprodução de Áudio.
+  Os buffers de áudio também lhe permitirão gravar som de qualquer uma das fontes disponíveis (como microfones ou o sistema operacional), que podem então ser enfileirados e transmitidos usando as funções acima (por exemplo). A gravação de áudio desencadeará um Evento Assíncrono de Gravação de Áudio que conterá informações específicas sobre o que está sendo gravado.
+     Para a gravação de áudio, as seguintes funções estão disponíveis:
+   
+  
+    audio_start_recording
+    audio_stop_recording
+    audio_get_recorder_count
+    audio_get_recorder_info
+  
+   
+  NOTA: A maioria das plataformas , exceto HTML5, suporta a gravação de áudio de alguma forma, mas isso não significa que todos os dispositivos o permitam, mesmo que a plataforma o permita, então você deve sempre verificar se o audio_get_recorder_count()    retorna um valor maior que 0 para verificar se os dispositivos de gravação estão disponíveis antes de utilizar o restante das funções de gravação.
+   
+   
+   
+  
+    
+      
+        Voltar: Áudio
+        A seguir: Sincronização de áudio
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

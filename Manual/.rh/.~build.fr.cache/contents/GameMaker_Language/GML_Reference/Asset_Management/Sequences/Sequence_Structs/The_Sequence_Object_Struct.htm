@@ -1,0 +1,89 @@
+
+  
+  A estrutura sequencial do objeto
+  Um objeto sequencial é o nome dado à estrutura recuperada do ativo sequencial como definido no navegador de ativos para seu jogo. Esta estrutura terá as seguintes propriedades que podem ser alteradas:
+  
+    nome: Este é o nome da seqüência como um fio e você pode obter ou definir este valor conforme necessário. Observe que as seqüências criadas usando a função sequence_create() não terá um nome e isto
+      será simplesmente um fio vazio "".
+    loopmode: Este é o modo de reprodução do objeto em seqüência e pode ser obtido ou definido. Ele retornará (ou pode ser definido para) as seguintes constantes:
+  
+  
+    
+      
+        Constante
+        Descrição
+        Valor
+      
+      
+        seqplay_oneshot
+        A seqüência tocará uma vez e depois parará quando estiver terminada.
+        0
+      
+      
+        seqplay_loop
+        A seqüência fará um loop, com o playhead voltando ao início quando chegar ao final da região de reprodução.
+        1
+      
+      
+        seqplay_pingpong
+        A seqüência fará um loop, com o playhead invertendo a direção quando chegar ao final da região de reprodução.
+        2
+      
+    
+  
+   
+  
+    playbackSpeed: Especifica a velocidade de reprodução da seqüência, que é interpretada como quadros por segundo ou quadros por quadro, dependendo do tipo de reproduçãoSpeedType (veja abaixo). Você pode obter ou definir este valor.
+    playbackSpeedType: Isto especifica como a playbackSpeed deve ser interpretada e você pode obter ou definir este valor. Você pode usar uma das seguintes constantes para definir o valor (ou uma destas constantes será devolvida se for verificado
+      a propriedade):
+  
+  
+    
+      
+        Constante
+        Descrição
+        Valor
+      
+      
+        spritespeed_framespersecond
+        Especifica que playbackSpeed deve ser interpretado como frames-per-second
+        0
+      
+      
+        spritespeed_framespergameframe
+        Especifica que playbackSpeed deve ser interpretado como frames-per-game-frame.
+        1
+      
+    
+  
+   
+  
+    comprimento: O comprimento da seqüência em quadros. Você pode obter ou definir este valor, mas note que fazer uma seqüência mais curta pode causar problemas se uma instância de seqüência referenciando esta seqüência tiver seu playhead definido para além do novo comprimento.
+    volume: Este é um valor escalar de 0 a 1 que é usado para escalar o volume de todas as faixas de áudio na seqüência. Você pode obter ou definir este valor e ele modificará a saída de áudio global para todas as faixas - por exemplo, se você tiver uma faixa de áudio
+      com um volume de 0,8 e depois definir a propriedade de volume da seqüência para 0,5, a faixa de áudio terá um volume final de 0,4.
+    xorigem: Esta é a origem da seqüência ao longo do eixo X. Você pode obter ou definir este valor.
+    yorigin: Esta é a origem da seqüência ao longo do eixo Y. Você pode obter ou definir este valor.
+    mensagemEventKeyframes: Isto permite o acesso aos keyframes de eventos de mensagens para a seqüência. Você pode obter ou definir estes eventos de mensagem, e ao obter esta propriedade é devolvido um conjunto de estruturas de quadros-chave, e para definir a propriedade você
+      deve fornecer uma série de estruturas de quadros-chave. Para mais informações, consulte a página sobre Eventos e Momentos Sequenciais.
+    momentKeyframes: Isto permite o acesso aos quadros-chave de eventos do momento para a seqüência. Você pode obter ou definir estes eventos de momento, e ao obter esta propriedade é devolvido um conjunto de estruturas de quadros-chave, e para definir a propriedade você deve fornecer
+      uma série de estruturas de quadros-chave. Para mais informações, consulte a página sobre Eventos e Momentos Sequenciais.
+    pistas: Isto permite o acesso à lista de faixas de ativos no nível superior da seqüência. Você pode obter ou definir esta propriedade, e ao obter esta propriedade é devolvido um conjunto de estruturas de pistas, e para definir a propriedade você deve
+      fornecer um conjunto de estruturas de esteiras. Para mais informações, por favor, consulte a seção sobre Estruturas de trilhos.
+  
+  Observe que se você quiser acessar as propriedades de uma seqüência que foi criada no navegador de ativos, você deve primeiro chamar a função sequence_get() no índice de ativos para recuperar a estrutura do objeto de seqüência.
+    Observe também que quaisquer mudanças feitas nesta estrutura de seqüência significarão que todas as outras instâncias deste ativo de seqüência também terão estas mudanças, e elas serão mantidas enquanto o jogo estiver em execução, mesmo se você chamar a função game_restart().
+   
+   
+   
+  
+    
+      
+        Voltar: Sequências
+        A seguir: A estrutura da instância seqüencial
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

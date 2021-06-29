@@ -1,0 +1,48 @@
+
+
+
+
+
+  
+  rodada
+  Tal como diz, redondo() leva um número real e o arredonda para cima ou para baixo até o inteiro mais próximo. No caso especial em que o número fornecido é exatamente um meio-inteiro (1,5, 17,5, -2,5, etc), o número será arredondado para o valor par mais próximo, por exemplo, 2,5 seria arredondado para 2, enquanto 3,5 seria arredondado para 4. Este tipo de arredondamento é chamado de arredondamento de banqueiros e sobre grandes números de iterações ou quando se usa matemática de ponto flutuante, ele dá um arredondamento estatisticamente melhor
+    do que a mais tradicional abordagem "arredondar para cima se for superior a 0,5 e arredondar para baixo se não for assim".
+  O que isto significa é que se a fração de um valor for 0,5, então o resultado arredondado é o número inteiro mais próximo do valor de entrada. Assim, por exemplo, 23,5 passa a 24, assim como 24,5, enquanto -23,5 passa a -24, assim como -24,5. Este método trata de forma positiva
+    e valores negativos simetricamente, portanto, está livre de enviesamento de sinais e, mais importante, para distribuições razoáveis de valores, o valor esperado (médio) dos números arredondados é o mesmo que o dos números originais.
+   
+  Sintaxe:
+  redonda(n);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        n
+        O número a arredondar.
+      
+    
+  
+   
+  Devoluções:
+  Inteiro
+   
+  Exemplo:
+  pontuação += rodada(hp / 5);
+  O código acima adicionará um número inteiro arredondado ao valor da pontuação.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções Numéricas
+        Próximo: chão
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

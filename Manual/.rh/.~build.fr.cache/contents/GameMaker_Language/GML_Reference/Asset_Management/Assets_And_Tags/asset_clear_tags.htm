@@ -1,0 +1,106 @@
+
+  
+  marcas_de_activo
+  Com esta função, você pode limpar todas as tags presentes em qualquer ativo a partir do navegador de ativos. Você fornece ou o nome do ativo (como uma string) ou seu índice de ativos, e se você fornecer um valor de índice de ativos, então você precisará fornecer o tipo de ativo opcional
+    argumento (uma constante), pois ativos de diferentes tipos podem ter o mesmo índice, mesmo que não possam ter o mesmo nome. Os tipos de ativos disponíveis estão listados na tabela abaixo:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        asset_object
+        O nome dado refere-se a um objeto.
+      
+      
+        asset_sprite
+        O nome dado refere-se a um duende.
+      
+      
+        asset_sound
+        O nome dado refere-se a um som.
+      
+      
+        asset_room
+        O nome dado refere-se a uma sala.
+      
+      
+        asset_tiles
+        O nome dado refere-se a um conjunto de azulejos.
+      
+      
+        asset_path
+        O nome dado refere-se a um caminho.
+      
+      
+        asset_script
+        O nome dado refere-se a um roteiro.
+      
+      
+        asset_font
+        O nome dado refere-se a uma fonte.
+      
+      
+        asset_timeline
+        O nome dado refere-se a uma linha de tempo.
+      
+      
+        asset_shader
+        O nome dado refere-se a um shader.
+      
+      
+        asset_animationcurve
+        O nome dado refere-se a uma Curva de Animação.
+      
+      
+        asset_sequence
+        O nome dado refere-se a uma sequência.
+      
+    
+  
+   
+  Se a função conseguir limpar as etiquetas, ela retornará verdadeira, caso contrário, retornará falsa.
+   
+   
+  Sintaxe:
+  asset_clear_tags(name,[asset_type]));
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome_ou_index
+        O nome do bem (uma cadeia) ou seu valor de índice (um número inteiro).
+      
+      
+        [asset_type]
+        OPCIONAL! O tipo de ativo do qual as etiquetas devem ser retiradas, usado apenas quando se fornece um índice para o primeiro argumento.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  asset_clear_tags(obj_Enemy_Parent, asset_object);
+  O código acima limpará todas as etiquetas do bem objeto em questão.
+   
+   
+   
+  
+    
+      
+        Voltar: Ativos e Etiquetas
+        Próximo: asset_get_index
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

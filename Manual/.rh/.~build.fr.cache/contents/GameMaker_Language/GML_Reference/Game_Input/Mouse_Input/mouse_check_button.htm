@@ -1,0 +1,80 @@
+
+  
+  mouse_check_button
+  Esta função retornará verdadeiro se o botão do mouse que está sendo verificado for mantido pressionado ou falso se não o for. Você fornece o botão do mouse para verificar a partir de uma das seguintes constantes:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        mb_esquerda
+        O botão esquerdo do mouse
+      
+      
+        mb_middle
+        O botão central do mouse (isto pode não ser válido para todas as plataformas alvo)
+      
+      
+        mb_right
+        O botão direito do mouse
+      
+      
+        mb_side1*
+        Botão do lado do mouse 1
+      
+      
+        mb_side2*
+        Botão do lado do mouse 2
+      
+      
+        mb_any
+        Qualquer um dos botões do mouse
+      
+      
+        mb_none
+        Sem botão do mouse
+      
+    
+  
+   * NOTA: Os botões mb_side1 e mb_side2 estão disponíveis apenas no Windows, macOS, Ubuntu e HTML5.
+  Sintaxe:
+  mouse_check_button(numb);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dormente
+        Qual a constante do botão do mouse a verificar.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if mouse_check_button(mb_left) {
+     instance_create_layer(mouse_x, mouse_y, "Effects", obj_Star); }
+  
+  O código acima verificará o botão esquerdo do mouse e cada passo que ele for mantido para baixo criará uma instância do objeto indexado em "obj_Star".
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada do mouse
+        Próximo: botão_de_marque_do_mouse_pressionado
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

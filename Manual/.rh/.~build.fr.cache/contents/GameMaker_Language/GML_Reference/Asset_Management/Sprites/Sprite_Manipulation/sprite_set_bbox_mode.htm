@@ -1,0 +1,70 @@
+
+  
+  sprite_set_bbox_mode
+  Esta função pode ser usada para definir o modo de caixa delimitadora para um duende. Você fornece o índice sprite e o modo a ser usado, que deve ser uma das constantes a seguir:
+  
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        bboxmode_automático
+        Automático - A caixa de delimitação será calculada automaticamente, com base no ajuste de tolerância para o duende
+      
+      
+        bboxmode_fullimage
+        Full Image - A caixa de delimitação será ajustada para usar toda a largura e altura do duende, independentemente da tolerância e dos pixels "vazios".
+      
+      
+        bboxmode_manual
+        Manual - A caixa de delimitação está sendo definida manualmente para valores definidos pelo usuário, o que requer o uso da função sprite_set_bbox()
+      
+    
+  
+   
+  OBSERVAÇÃO: Esta função afeta o ativo sprite de modo que todas as outras instâncias com este sprite terão o mesmo modo de caixa delimitadora.
+   
+  Sintaxe:
+  sprite_set_bbox_mode(ind, modo);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do sprite para mudar o modo de.
+      
+      
+        modo
+        O modo a definir (uma constante).
+      
+    
+  
+   
+  Devoluções
+  N/A
+   
+  Exemplo:
+  if sprite_get_bbox_mode(sprite_index) != 0 {
+     sprite_set_bbox_mode(sprite_index, bboxmode_automatic); }
+  
+  O acima verifica o modo bbox para o duende atual e se não for automático, então ele é definido para esse valor.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação de Sprite
+        Próximo: sprite_set_bbox
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,50 @@
+
+  
+  gpu_set_tex_max_aniso_ext
+  Com esta função você pode definir o nível máximo de anisotropia ao usar o modo de filtro tf_anisotropic (veja gpu_get_tex_mip_filter() para maiores informações) em um amostrador de sombreador. Você fornece o
+    valor do índice para o amostrador de sombreamento (como retornado pela função shader_get_sampler_index()e depois um valor dentro da faixa de 1 e 16 para definir o nível.
+   
+  Sintaxe:
+  gpu_set_tex_max_aniso_ext(sampler_index, maxaniso);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice_de_amostragem
+        O índice do amostrador de sombreamento para obter
+      
+      
+        maxaniso
+        O nível anisotrópico máximo a ser usado (padrão: 16).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var _sampleIndex = shader_get_sampler_index(shd_Glass, "s_Background"); var _spriteTex = sprite_get_texture(sprite_index, 0); shader_set (shd_Glass);
+     if gpu_get_tex_max_aniso_ext(_sampleIndex) != 8 {
+     gpu_set_tex_max_aniso_ext(_sampleIndex, 8); }
+     text_set_set_stage(_sampleIndex , _spriteTex); shader_reset();
+  
+  O código acima estabelece o nível máximo de anisotropia para 8 para o determinado amostrador de textura de sombreamento, caso ainda não tenha sido estabelecido para 8.
+   
+   
+   
+  
+    
+      
+        Voltar: Mipmapping
+        Próximo: gpu_set_tex_mip_enable
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,52 @@
+
+  
+  janela_set_fullscreen
+  Com esta função, você pode configurar a janela do jogo para ser tela cheia(verdadeiro) ou não(falso). Observe que para a macOS alvo, você deve ter desmarcado a opção "Start In Fullscreen" e marcado a opção "Allow
+    a opção "o jogador redimensionar a janela de jogo" nas Opções de Jogo , caso contrário, esta função falhará. Observe também que esta função não funcionará em HTML5 a menos que seja adicionada como "clicável".
+    chamada de retorno (veja aqui para mais detalhes).
+   
+  Sintaxe:
+  window_set_fullscreen(full);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        completo
+        Seja para configurar a tela para tela cheia (verdadeira) ou não (falsa).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if mouse_check_button_pressed(mb_left) {
+     if window_get_fullscreen() {
+     window_set_fullscreen(false);
+     }
+     else
+     {
+     window_set_fullscreen(true);
+     }
+     }
+  
+  O código acima verifica se há um botão do mouse pressionado e depois ajusta a janela para tela cheia se ainda não estiver, ou ajusta para janela se já estiver.
+   
+   
+   
+  
+    
+      
+        Voltar: A Janela de Jogo
+        Próximo: window_set_position
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

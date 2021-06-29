@@ -1,0 +1,33 @@
+
+  
+  vértice_criate_buffer
+  Com esta função você pode criar um novo buffer de vértices. Este é um buffer especial de crescimento criado pelo GameMaker Studio 2 que é pré-formatado para uso na construção de primitivos (para uso com shaders, por exemplo). A função irá retornar um
+    "Pointer" (índice) para o buffer que deve então ser usado em todas as chamadas posteriores a ele.
+  Ao utilizar um buffer de vértices criado com esta função você simplesmente chama vértice_begin() para começar a atribuir-lhe dados de vértices para começar a definir seu primitivo personalizado, que será então mantido no buffer pronto para
+    submissão ao sombreador. O buffer pode ser reutilizado quando necessário (a menos que você tenha usado o vértice_freeze() função), com cada chamada de vértice_begin() limpando o anterior
+    dados do buffer prontos para aceitar os novos dados.
+   
+  Sintaxe:
+  vértice_criate_buffer();
+   
+  Devoluções:
+  Apontador
+   
+  Exemplo:
+  v_buff = vertex_create_buffer();
+  O código acima criará um novo buffer de vértices e armazenará sua alça na variável "v_buff".
+   
+   
+   
+  
+    
+      
+        Voltar: Primitivos e formatos de vértices
+        Próximo: vertex_create_buffer_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

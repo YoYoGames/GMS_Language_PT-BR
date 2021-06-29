@@ -1,0 +1,43 @@
+
+  
+  Criação de conjuntos de azulejos
+  Osconjuntos de azulejos são criados a partir de sprites, mas também são classificados como um tipo de ativo separado, uma vez que a maneira como o GameMaker Studio 2 os manipula é um pouco diferente tanto para sprites quanto para objetos. Portanto, um conjunto de azulejos é uma coleção de azulejos criados
+    juntos em um sprite, e uma telha é simplesmente um recurso gráfico que é adicionado a uma sala GameMaker Studio 2 como parte de um  mapa de azulejos. Estes mapas de azulejos são então atraídos para o
+    com muito pouco processamento de CPU/GPU, tornando-os ideais para projetar qualquer item estático em níveis.
+  Para tornar o processamento de telhas tão rápido, elas têm certas restrições, sendo que a mais básica é que elas só podem ser retangulares ou quadradas (se você quiser outra coisa que não seja isto, então você precisará criar um duende normal
+    e usar a camada de ativos no editor da sala, mas discutiremos isso na última seção sobre salas). Outras restrições incluem o fato de que elas só podem ser giradas em 90°, ou espelhadas ou invertidas, e elas podem
+    ser animado somente com quadros que numerem uma potência de 2 (ou seja: 2, 4, 8, 16, etc...).
+  Vamos dar uma olhada em um exemplo simples de um conjunto de azulejos - alguns azulejos de parede quadrada para um jogo de cima para baixo:
+  
+  Para começar, precisamos transformá-lo em um conjunto de azulejos sprite, o que seria feito no Sprite Editor/ImageEditor (ou uma imagem externa
+    editor e depois importado como um duende). O duende final deve ser algo parecido com isto:
+   Note que o primeiro ladrilho está em branco nessa imagem. A forma como o mapa de azulejos da sala é armazenado no GameMaker Studio 2 significa
+    que o primeiro azulejo terá sempre que estar sempre em branco, pois é essencialmente o azulejo "apagar" ou o azulejo "espaço vazio" (este azulejo "em branco" terá um valor índice de 0 - os azulejos são indexados com um valor que
+    começa em 0 e conta da esquerda para a direita, de cima para baixo). Assim, ao criar seus conjuntos de azulejos, o canto superior esquerdo terá sempre que estar vazio desta forma. Observe também que enquanto a imagem acima mostra um conjunto completo de azulejos com 47 azulejos, você pode
+    não precisa de tantos, pois você pode girar e inverter os azulejos ao colocá-los mais tarde no editor da sala.
+  Com o sprite criado, podemos ir em frente e definir o conjunto de azulejos em si, o que significa que primeiro você tem que criar um novo recurso de conjunto de azulejos, clicando com o botão direito do mouse em  o recurso Conjunto de Azulejos
+    pasta e selecionando Criar. Isto abrirá o Editor de Conjunto de Ladrilhos onde você poderá então adicionar o sprite e definir suas propriedades:
+  
+  Ajustamos o tamanho do conjunto de azulejos para 64px, e deixamos o resto das opções em seus valores padrão, já que não temos necessidade de offsets ou algo parecido (os valores de offset são úteis para qualquer conjunto de azulejos que tenha espaços ao redor de cada um dos
+    azulejos). Você vai querer nomear o conjunto de azulejos usando um prefixo apropriado como " ts_" para que você possa facilmente identificá-lo mais tarde, e note que as mesmas restrições se aplicam aos sprites, ou seja: o nome não pode começar
+    com um número, e só pode usar o símbolo "_" e os caracteres alfanuméricos.
+  Agora você pode fechar o editor do conjunto de azulejos, pois pode usar o conjunto de azulejos "como está" para criar camadas de mapas de azulejos no editor da sala, porém, se quiser saber mais sobre as funções avançadas do editor do conjunto de azulejos, veja a seguinte seção de
+    o manual:
+  
+    Editores: O editor do conjunto de azulejos
+  
+  Agora para passar a falar em adicionar efeitos sonoros ao seu projeto...
+   
+   
+  
+    
+      
+        Voltar: Índice
+        A seguir: Criando Efeitos Sonoros
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

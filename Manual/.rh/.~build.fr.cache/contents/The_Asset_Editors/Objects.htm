@@ -1,0 +1,92 @@
+
+  
+  O editor de objeto
+  Os objetos são o recurso que usamos para controlar aspectos de um jogo e para fazer coisas específicas. Na maioria das vezes, eles têm um duende associado a eles
+    para que você os veja nas salas de jogo, mas às vezes eles são usados como um controlador "nos bastidores" para fazer coisas relacionadas ao usuário ou para cronometrar, etc... Eles podem receber comportamentos e podem reagir a certos eventos, bem como a
+    uns aos outros, e a maioria das coisas que você vê em um jogo são baseadas em objetos e suas interações. Agora, nós dizemos "baseado em" porque você não coloca objetos diretamente nas salas de jogo, mas coloca instâncias desses objetos que são basicamente cópias (ou clones, se preferir) do recurso objeto. Isto é uma coisa muito importante a lembrar, pois instâncias e objetos não são a mesma coisa e cada um tem seu próprio conjunto de funções que podem afetar
+    eles.
+  Para esclarecer isto, pense em um jogo feito com o GameMaker Studio 2. Todos os personagens, monstros, bolas, paredes, etc... são todos objetos que você cria no Navegador de Ativos. Você então arrasta o objeto para
+    uma sala no Room Editor para criar uma instância copiada do modelo de objeto básico. A instância na sala pode então ser alterada no próprio editor ou através de código, para que possa ser escalonada, ou colorida, ou ter
+    outros detalhes modificados a partir do objeto "base". Portanto, quando falamos de algo que afeta ou altera uma instância, queremos dizer que afeta uma cópia em particular de um objeto em uma sala. Somente essa única instância é
+    sendo afetados enquanto todos os demais não são afetados. Mas, quando falamos em afetar ou mudar um objeto, queremos dizer que estamos modificando o objeto no Navegador de Ativos e tudo o que fizermos a ele será refletido em todas as instâncias criadas
+    a partir desse ponto também. Portanto, o objeto é o modelo para a instância, e a instância é o que colocamos em uma sala para fazer nosso jogo.
+  Para criar um objeto em seu jogo, você pode clicar com o botão direito do mouse  no Navegador de Ativos e clicar na opção Criar objeto. Isto abrirá a janela na
+    início desta página com as seguintes seções:
+  Detalhes
+  
+    Aqui você pode dar um nome ao seu objeto. Este nome nunca deve conter espaços nem caracteres não autorizados (somente caracteres alfanuméricos e a barra inferior "_" são permitidos) e deve ser curto, mas memorável, para que você possa identificar facilmente os recursos
+      mais tarde, quando você pode ter muitos deles. Por exemplo, muitas pessoas usam um prefixo ou um sufixo para identificar as diferenças entre os recursos, como "obj_Ship" ou "Ship_obj".
+    Em seguida, você pode escolher o duende para o objeto, caso deseje que ele tenha um. Clique com o botão esquerdo do mouse  na caixa do sprite e o Asset Explorer aparecerá com uma lista de todos os sprites disponíveis no Asset Browser:
+    Você pode então selecionar aquele que você deseja usar para o objeto. Com um duende atribuído ao objeto, você pode clicar no botão Edit Sprite  para alterar as propriedades do duende, ou - se você não tiver um duende para o objeto mas desejar criar um - você pode clicar
+      o botão Adicionar Sprite  para criar um novo ativo sprite e atribuí-lo. Você também pode editar a imagem do bem sprite que foi
+      atribuído clicando no botão Edit Image  para abrir o Editor de Imagem.
+     
+  
+  Máscara de colisão
+  
+    Sob a área de atribuição de sprite você tem um botão para escolher uma Máscara de Colisão específica. Por padrão, um objeto irá gerar propriedades de colisão com base no duende atribuído a ele, mas há casos em que você pode querer
+      colisões a serem baseadas em uma forma diferente de um duende diferente. Por exemplo, você pode ter um jogo de cima para baixo onde o duende principal tem uma máscara de colisão retangular, mas para tornar as colisões mais suaves uma máscara circular pode ser melhor. Nesses casos
+      você pode clicar no botão Máscara de Colisão e selecionar outro recurso sprite, então agora instâncias do objeto tirarão o sprite atribuído, mas colisões de base do sprite da máscara. Você pode encontrar mais informações sobre a colisão
+      máscaras da página no Editor Sprite.
+     
+  
+  Imóveis
+  
+    Aqui são apresentadas a você as seguintes opções para seu objeto:
+    
+      Visível: Visível indica se as instâncias deste objeto são visíveis quando a sala começa. Normalmente, a maioria das instâncias são visíveis, mas às vezes é útil ter as invisíveis - por exemplo, você pode usá-las como pontos de passagem para
+        controlar um monstro em movimento, ou para controlar valores e executar certas ações cronometradas. Os objetos invisíveis ainda reagirão aos eventos e se tiverem um duende ou uma máscara atribuída a eles, também reagirão se outras instâncias colidirem com eles...
+        eles simplesmente não podem ser vistos e não executam seu Evento de Sorteio. Por padrão, a bandeira visível é verificada.
+      Sólido: Quando você assinala uma instância como sendo sólida, você está dizendo ao GameMaker Studio 2 que ele deve tentar resolver qualquer colisão antes de acionar um Evento de Colisão. Esta é uma funcionalidade muito básica, e na realidade
+        tudo o que faz é mover a instância de volta para a posição em que se encontrava no momento anterior à detecção de uma colisão antes de executar qualquer código ou DnD™que esteja no próprio Evento de Colisão, e como tal é de uso limitado.
+      Persistente: Um objeto persistente é aquele que não vai embora quando a sala é trocada, mas sim "persiste" e é transportado para a nova sala. Ele só desaparecerá quando você o destruir explicitamente, seja com
+        uma ação de destruição ou em código. Isto significa que se você colocar um objeto persistente em uma sala, ele ainda estará disponível em todas as salas subseqüentes e continuará a executar quaisquer ações atribuídas aos eventos em suas propriedades de objeto, exceto a
+       Criar Evento, que só é disparado uma vez quando é criado inicialmente e não quando você muda para uma nova sala. Isto é útil para quando você tem, por exemplo, um personagem principal que se move de sala em sala e deseja manter
+        as variáveis dentro da mesma instância, mas você deve tomar muito cuidado para criar e destruir corretamente os objetos persistentes, já que pode facilmente introduzir erros em seu projeto por engano.
+    
+    Persistência e camadas de quartos  
+    
+      Quando você cria uma instância com persistência habilitada em uma sala, lhe será atribuída uma camada ou uma profundidade (dependendo de qual função você usou para criar a instância do objeto). Quando a sala é trocada, e se a seguinte sala não tiver
+        uma camada com o mesmo nome ou profundidade que a designada, então uma nova camada será criada para a instância que persiste nas salas. Se você der uma camada com o mesmo nome quando a instância for criada, então a nova camada também será
+        ser nomeado da mesma forma que a camada original, enquanto que se você atribuir uma profundidade à instância, então a nova camada será nomeada "_layer_XXX", onde "XXX" é um valor hexadecimal usado para dar
+        a camada um nome único. Estas camadas serão removidas da sala no Room End. 
+         Outra coisa a se notar sobre camadas e instâncias persistentes é que se você tiver atribuído à instância uma camada nomeada na criação, e houver outra camada nas seguintes salas com o mesmo nome, então a instância persistente será atribuída
+        para a camada com o mesmo nome, independentemente da profundidade da camada.
+         Finalmente, se uma instância persistente se mover para uma sala com uma camada na mesma profundidade em que a instância foi criada, ela não será atribuída a esta camada, mas uma nova camada será criada na mesma profundidade (a seguir
+        a convenção de nomenclatura explicada acima).
+    
+    Persistência e eventos
+    
+      Como mencionado anteriormente, um objeto persistente só executará seu Evento de Criação uma única vez, mas também terá seus eventos Início do Jogo, Fim do Jogo, Início da Sala e Fim da Sala acionados nos momentos apropriados. Entretanto, se você reiniciar o jogo (com, por exemplo, a função game_restart() ) todos os objetos persistentes serão removidos e só existirão quando criados novamente pelo jogo.
+         Observe também que se você desativar um objeto persistente, ele não passará mais de uma sala para outra a menos que seja reativado antes que o evento Room End seja acionado. A reativação requer uma etapa completa do jogo para ocorrer,
+        portanto, usar o evento Room End real para isso não funciona, pois não dá ao jogo um passo completo para reativar o objeto, então você precisa ter isso em mente ao usar a desativação junto com objetos persistentes e planejar seu
+        codifique em conformidade.
+    
+    
+      Utiliza a Física: Ao marcar a caixa Física de Usos você está dizendo ao GameMaker Studio 2 que este objeto deve fazer parte de um mundo físico (como definido noEditor de Sala ). Verificando isto, você também
+        abra uma outra janela encadeada onde você pode definir as propriedades físicas de todas as instâncias deste objeto. Mais informações sobre isto podem ser encontradas na seção sobre Objetos Físicos.
+    
+  
+   
+  A última parte do Object Editor é ocupada com as diferentes opções de objetos, cada uma das quais é discutida em sua página, vinculada abaixo:
+  
+    Eventos Objeto
+    Objetos dos pais
+    Objetos Físicos
+    Variáveis Objeto
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Os Editores de Ativos
+        A seguir: Caminhos
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

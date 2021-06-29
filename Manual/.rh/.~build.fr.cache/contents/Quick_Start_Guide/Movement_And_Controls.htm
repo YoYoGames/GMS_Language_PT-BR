@@ -1,0 +1,152 @@
+
+  
+  Movimento e controles
+  A seção anterior deste Guia Rápido deu alguns exemplos para desenhar coisas para a tela, mas apenas desenhar coisas não é muito bom se você não puder movê-las também... então nesta seção nós estaremos dando
+    você alguns exemplos de movimento para seus objetos, bem como alguns esquemas básicos de controle para diferentes tipos de jogos. Todos os exemplos são dados usando Drag e Drop™(DnD™), assim como a linguagem GameMaker(GML), para que você possa usar o que mais lhe apetecer
+    confortável com. Note que não vamos explicar as coisas com muita profundidade aqui, pois queremos que você comece a fazer as coisas o mais rápido possível, por isso encorajamos você a explorar quaisquer links à medida que for avançando e a usar a função "procurar".
+    do manual para procurar informações adicionais sobre qualquer coisa que você não esteja certo.
+  Antes de continuar, você pode querer fazer um novo projeto ( GML ou DnD™) a partir da página inicial, e adicionar (ou criar) alguns sprites, bem como um ou dois objetos - já que lhe daremos alguns
+    código que você pode testar usando estes - e certifique-se de que o projeto tem um espaço para colocar instâncias. Não se preocupe muito com a aparência dos sprites que você faz, como até mesmo um simples quadrado branco fará, e uma vez que você tenha tudo pronto
+    você pode começar a trabalhar com os exemplos listados abaixo.
+   
+  Mova-se em direção ao Rato
+  
+    Uma das maneiras mais simples de fazer um objeto se mover e interagir com o jogador é usar o mouse, e neste exemplo mostraremos como usar algum código básico para fazer um objeto se mover para onde o usuário tiver clicado o botão esquerdo do mouse
+       .
+    Para começar, abrir um objeto, atribuir-lhe um duende e, em seguida, dar-lhe um evento Global Left Mouse Down:
+    
+    Usamos os eventos globais do mouse porque eles detectam um clique em qualquer lugar da sala, enquanto os eventos regulares do mouse só detectarão um clique se o mouse realmente clicar dentro da caixa de delimitação da instância. Neste evento, queremos adicionar este DnD™ou GML:
+    
+    move_towards_point(mouse_x, mouse_y, 2);
+    Aqui estamos dizendo à instância para avançar em direção a uma posição na tela, neste caso a posição "mouse_x" e "mouse_y" ("mouse_x").
+      e "mouse_y" são variáveis  embutidas quesempre seguram a posição atual do cursor do mouse). O DnD™
+      faz isso através da configuração do "direction" e " speed". Variáveis de instância,
+      enquanto o GML faz isso usando a função move_towards_point() (isto também define o speed e
+      direction  variáveis, apenas em uma função única e fácil de usar).
+    Coloque uma instância deste objeto em uma sala e depois aperte o botão Play , depois clique em  ao redor
+      o espaço para que a instância se mova em direção ao mouse:
+    Ótimo! A instância do objeto agora se move para onde você clicou, e se você segurar o botão, a instância
+      continuará apenas seguindo o cursor do mouse. No entanto, há um problema... Depois de clicar uma vez e soltar, a instância continuará em movimento e eventualmente sairá da sala! Há uma série de maneiras de consertar isso, e qual você escolhe
+      dependerá do que você quer fazer, mas a solução mais fácil por enquanto é simplesmente adicionar um evento Global Mouse Button Released, então adicione isso agora ao objeto e dê a ele este código:
+    
+    velocidade = 0;
+    Com isso, a instância só seguirá o cursor do mouse enquanto o botão do mouse estiver pressionado, e quando você soltar o botão, ele parará de se mover. Pressione Play  e teste-o agora.
+    Antes de deixarmos este exemplo, há uma última questão que precisamos resolver... Se você clicar e segurar o botão do mouse, mas não mover o cursor, então a instância se moverá em direção ao cursor e então "vibrará" em torno dele.
+      Isto porque a instância está se movendo mais rápido do que 1 pixel de cada vez e por isso "sobre-ataca" a posição e depois tenta se mover para trás, e depois sobre-ataca novamente, etc... (faça a velocidade de movimento 5 ou algo parecido para ver a questão se
+      não é imediatamente óbvio).
+    Para resolver isto, precisamos adicionar um Evento de Etapa ao objeto com este código:
+    
+    var _dist = point_distance(x, y, mouse_x, mouse_y); if _dist <= speed { speed = 0; }
+    Aqui apenas verificamos a distância da instância até a posição do mouse, e se for igual ou menor que a velocidade atual, ajustamos a velocidade para 0.
+      não temos aquela desagradável questão de "vibração".
+     
+  
+  Movimento de 4 e 8 vias com o Teclado
+  
+    Logo no início deste guia, mostramos o seguinte DnD™e o código GML para mover uma instância para a direita por dois pixels a cada passo do jogo:
+    
+    x = x + 2;
+    Este tipo de movimento é chamado movimento posicional , pois estamos essencialmente pegando a instância e colocando-a novamente em uma nova posição toda vez que o código é executado. O que vamos fazer neste exemplo é mostrar-lhe como
+      para usar este tipo de movimento para mover uma instância em 4 direções: para cima, para baixo, esquerda e direita.
+    Para começar, abra um objeto e atribua-lhe um duende. Agora, poderíamos acrescentar em vários Eventos de Teclado neste ponto, e em cada um deles ter a instância movimentar-se na direção desejada, no entanto, queremos apenas que o jogador possa mover
+      em uma direção de cada vez e fazer isso apenas com os eventos do teclado é um pouco mais complicado do que fazer isso usando código. Em vez disso, vamos usar o Step Event - que você deve adicionar agora ao objeto - com o seguinte
+     DnD™ou GML para usar as Setas para se mover:
+    
+    if keyboard_check(vk_left) { x = x - 2; }  else if keyboard_check(vk_right) { x = x + 2; }  ou se teclado_check(vk_up) { y = y - 2; }  caso contrário, se teclado_check(vk_down) { y = y - 2; }
+    Estamos usando uma estrutura " if... else if... else if..." para garantir que a instância só se moverá em uma direção de cada vez, e assim a instância só deverá ser capaz de mover-se para cima, para baixo, para a esquerda ou para a direita, mas não
+      diagonalmente. Coloque uma instância do objeto em uma sala e pressione o botão Play   para testá-lo agora! Se tudo tiver corrido corretamente, você deve ter algo
+      assim:
+    
+    Podemos modificar este código para converter o movimento de 4 vias em 8 vias facilmente também... basta remover os comandos " else" dos blocos de código para que tudo se pareça com isto:
+    
+    if keyboard_check(vk_left) { x = x - 2; }  if keyboard_check(vk_right) { x = x + 2; }  if keyboard_check(vk_up) { y = y - 2; }  if keyboard_check(vk_down) { y = y - 2; }
+    Agora, quando você apertar o botão Play (Reproduzir)  , ele se parecerá com algo assim:
+    
+    Uma última coisa que vale a pena notar para os usuários que codificam com GML . Ao usar o DnD™você pode selecionar a tecla do teclado que deseja usar a partir de uma lista suspensa, mas com o GML não é tão simples assim. Há uma série de Constantes de Teclado que
+      você pode usar - como as constantes das teclas de seta mostradas no código acima - mas não há constantes para as teclas alfanuméricas. Estas são tratadas de forma ligeiramente diferente, e exigem que você use a função ord().
+      O código abaixo mostra como isto funcionaria usando WASD em vez das setas do teclado:
+    if keyboard_check(ord("A")) { x = x - 2; }  if keyboard_check(ord("D")) { x = x + 2; }  if keyboard_check(ord("W")) { y = y - 2; }  if keyboard_check(ord("S")) { y = y - 2; }
+     
+  
+  Movimento Gamepad
+  
+    Nós cobrimos o movimento do mouse e do teclado, o que significa que é hora de cobrir o movimento do gamepad. Agora, não vamos cobrir o d-pad, pois isso realmente funciona exatamente como usar o teclado (basta mudar o teclado
+      funções no exemplo acima para gamepad_button_check() ou se o botão Gamepad estiver desligado),
+      Portanto, neste exemplo, vamos analisar a utilização do bastão analógico para o movimento.
+    Para começar, precisamos detectar o gamepad que está sendo usado. Os gamepads recebem um valor de ID de 0 a 11, então usaremos um laço " for" para detectar a ID de qualquer gamepad conectado e armazenar este valor de ID em uma variável
+      para uso futuro. Uma vez que desejamos apenas setear o primeiro gamepad que está conectado e não todos, usaremos o comando " break" após detectarmos um gamepad para que ele "quebre" o loop (para
+      exemplo, se o primeiro gamepad conectado for ID 4, então o laço só funcionará 5 vezes, verificando os valores de ID 0 - 4 e depois saindo do laço quando o gamepad for encontrado). Então, faça (ou abra) um objeto, atribua-lhe um sprite, e então acrescente
+      um Create Event com o seguinte:
+    
+    gamepad_id = -1; for (var i = 0; i < 12; i += 1;) { if gamepad_is_connected(i) { gamepad_id = i; gamepad_set_axis_deadzone(gamepad_id, 0.2); break; }  }
+    
+    Note que no código acima estabelecemos o  deadzone para o gamepad. Isto porque os bastões analógicos em diferentes marcas de tapetes de jogo terão uma sensibilidade diferente, e às vezes
+      eles podem ser tão sensíveis que, se você não definir uma zona morta, eles podem causar movimentos indesejados em seus jogos. Portanto, definimos a zona morta com um valor como 0,2 para dizer ao GameMaker Studio 2 para ignorar qualquer valor de game stick abaixo desse valor absoluto.
+    Para adicionar o movimento real, precisaremos de um Evento Passo , então adicione isso agora e dê o seguinte DnD™ou GML:
+    
+    se gamepad_id > -1 { var _h = gamepad_axis_value(gamepad_id, gp_axislh); var _v = gamepad_axis_value(gamepad_id, gp_axislv); x += _h * 4; y += _v * 4; }
+    Aqui estamos verificando o bastão esquerdo para movimento horizontal ou vertical. As funções do eixo retornam um valor entre -1 e 1, então para o eixo horizontal -1 é esquerda, 0 não está se movendo e 1 é direita, e para o eixo vertical é -1 para
+      para cima, 0 para não se mover e 1 para baixo. Observe também que os valores estão entre -1 e 1, portanto - por exemplo - o eixo horizontal poderia retornar um valor de 0,5, o que significa que o bastão está a meio caminho entre a posição de "descanso" e totalmente empurrado
+      à direita. Por esta razão, multiplicamos então o valor por 4 (você pode multiplicar por qualquer valor realmente, dependendo da velocidade que você quer que a instância se mova) - isso significa que a velocidade da instância variará dependendo de quanto de um movimento tem
+      foi feito no eixo do bastão.
+    Coloque uma instância deste objeto em uma sala e pressione o botão Play  e, em seguida, mova-se usando o bastão esquerdo de sua conexão
+      gamepad. Você deveria ver algo como isto:
+    
+     
+  
+  Movimento Avançado de 8 Vias
+  
+    Neste exemplo final, vamos revisitar nosso código de movimento de 8 vias e abordar um problema que ele tem, que é que o movimento diagonal é na verdade mais rápido que o movimento para cima/baixo/esquerda/direita. Isto é simplesmente porque ao mover-se em diagonal, você está se movendo
+      ao longo da hipotenusa de um triângulo em ângulo recto criado pelos valores do movimento x/y:
+    
+    Para tornar mais claro o que está acontecendo, vamos remover todo o texto e os sprites e simplesmente mostrar a mesma linha de movimento rodada 45° para que seja horizontal:
+    
+    Como você pode ver, a diferença é bastante óbvia, e se a instância se move mais de 1 ou 2 pixels por degrau, então se torna muito perceptível que o movimento diagonal é muito mais rápido! Então, como limitar isso? Há uma série de caminhos a seguir
+      sobre isto, mas vamos nos concentrar em apenas uma delas, porque introduz algumas funções e conceitos que serão úteis para você mais tarde em seus jogos.
+    Para lidar com isso, vamos ter que armazenar os valores de entrada das teclas pressionadas independentemente emvariáveis, e então verificá-las e movê-las de acordo com
+      à combinação de teclas que foram pressionadas. Portanto, para isto você precisará de um objeto com um duende designado, e você precisará dar-lhe um Evento Passo com o seguinte DnD™ ouGML:
+    
+    NOTA: Dividimos o DnD™acima em duas colunas para facilitar a visualização, mas no editor DnD™, ele será colocado consecutivamente.
+    var _esquerda = teclado_check(vk_esquerda); var _direita = teclado_check(vk_direita); var _up = teclado_check(vk_up); var _down = teclado_check(vk_down); var _hspd = _direita - _esquerda; var _vspd = _down - _up;
+    Precisaremos acrescentar mais algum código para realmente nos movermos, mas antes disso, vamos apenas explicar um pouco. Queremos converter esquerda/direita/cima/baixo em valores de velocidade horizontais e verticais equivalentes, de modo que estamos obtendo o valor de cada
+      e depois fazer algumas contas básicas para obter os valores de velocidade. Isto funciona porque se uma tecla estiver sendo pressionada, então a ação ou função de verificação retornará "1", e se não estiver sendo pressionada, então a função retornará
+      0. Assim, se - por exemplo - a direita está sendo pressionada, você tem "1 - 0 = 1" para o " _hspd", e se a esquerda está sendo pressionada, você tem "0 - 1 = -1" para o " _hspd".
+      (e se ambos forem pressionados, então é "1 - 1 = 0", então a instância não se moverá). Lembre-se, em uma sala GameMaker Studio 2, para mover para a direita adicionamos à posição x e para mover para a esquerda subtraímos, então isto
+      nos dará um valor positivo ou negativo que podemos adicionar ou subtrair para nos movermos horizontal ou verticalmente, dependendo da entrada do teclado.
+    Agora podemos adicionar o código que realmente move a instância, então - ainda no Step Event, e após o código acima - adicione isto:
+    
+    if (_hspd != 0 || _vspd != 0) { var _spd = 4; var _dir = point_direction(0, 0, _hspd, _yspd); var _xadd = lengthdir_x(_spd, _dir); var _yadd = lengthdir_y(_spd, _dir); x = x + _xadd; y
+      = y + _yadd; }
+    O código acima verifica primeiro se uma de duasexpressões é verdadeira, ou seja: se as variáveis de velocidade horizontal ou vertical não são 0. Observe como o "
+      if " verificação GML usa o símbolo " ||". Isto significa " or" ao programar, portanto - em linguagem simples - você está verificando
+    se a variável _hspd não for igual a zero ou se a variável _vspd não for igual a zero
+    Você pode juntar várias expressões em " if", e há várias maneiras diferentes de avaliar essas expressões (para mais informações, consulte a seção sobre Expressões aqui ).
+    A seção seguinte do código armazena um valor para a velocidade real do movimento em uma variável e depois recebe uma direção usando os valores _hspd e _vspd , que podem ser -1, 0, ou 1. A função de direção
+      cheques a partir de (0, 0), pois não estamos usando coordenadas de sala e, em vez disso, queremos que ela seja avaliada como uma direção de 0° a 360° com base nos valores variáveis. O diagrama a seguir ilustra melhor o que está acontecendo do que tentar explicá-lo em
+      palavras:
+    
+    NOTA: A direção no GameMaker Studio 2 é calculada no sentido anti-horário, portanto 0° e 360° são para a direita, 90° é para cima, 180° é para a direita e 270° é para baixo.
+    Finalmente, usamos o lengthdir_x() e lengthdir_y() funções
+      para realmente mover a variável. Estes são  vetor  funções que tomam um comprimento (distância) e uma direção e depois calcular a nova posição no eixo dado com base nestas
+      valores (ver as descrições das funções para uma explicação mais detalhada).
+    Isso é muito para absorver de uma só vez, e não se preocupe se você não entender tudo isso! Com o tempo, você entenderá! Tudo o que falta fazer agora é adicionar uma instância deste objeto a uma sala, e depois pressionar o botão Play  ,
+      e você deve ter um movimento suave como seda de 8 vias sem nenhuma das questões relacionadas à movimentação em diagonal:
+    
+  
+   
+  Com estes exemplos - e os anteriores para o desenho - esperamos que você tenha um entendimento suficiente para começar a fazer seus próprios projetos! A última página deste Guia de Início Rápido contém um resumo de algumas das coisas que você aprendeu como
+    bem como links para materiais de aprendizagem adicionais.
+   
+   
+  
+    
+      
+        Voltar: Índice
+        A seguir: Sumário
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

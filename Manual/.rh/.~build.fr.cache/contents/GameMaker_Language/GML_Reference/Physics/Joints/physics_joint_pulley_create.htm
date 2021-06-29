@@ -1,0 +1,95 @@
+
+  
+  physics_joint_pulley_create
+  A articulação da polia é usada para conectar duas instâncias dentro do mundo da física de tal forma que o movimento de uma influenciará diretamente o movimento da outra. Estas juntas são primeiramente ancoradas no espaço mundial em dois pontos, cada uma conectada a uma instância
+    em seu centro de massa. Isto pode ser mudado definindo as coordenadas locais da âncora x/y em relação à origem da instância, o que significa que a conexão real da instância ao ponto de ancoragem do mundo físico pode ser compensada em outro lugar que não
+    sua origem. A imagem a seguir ilustra isto:
+  Se você olhar para o inst2 você pode ver que seu ponto de ancoragem local foi deslocado 20 pixels para a "esquerda".
+    de sua origem (Lembre-se! Os pontos de ancoragem mundiais são definidos usando as coordenadas da sala, enquanto os pontos de ancoragem locais são definidos em relação à origem da instância). Você também pode especificar uma relação para a articulação da polia, que diz um lado ou
+    a outra para mover-se mais rápido, com um valor abaixo de 1 fazendo a primeira instância mover-se mais rápido (E.G. 0,5 fará com que se mova duas vezes mais rápido) e um valor acima de 1 fazendo com que a segunda instância se mova mais rápido (E.G. 2 fará com que se mova duas vezes mais rápido).
+  Como em todas as juntas, se você definir o valor "col" como verdadeiro, então as duas instâncias podem interagir e colidir uma com a outra, mas somente se elas tiverem eventos de colisão, porém, se for definido como falso, elas não irão colidir
+    não importa o que aconteça.
+   
+  Sintaxe:
+  physics_joint_pulley_create(inst1, inst2, w_anchor1_x, w_anchor1_y, w_anchor2_x, w_anchor2_y, l_anchor1_x, l_anchor1_y, l_anchor2_x, l_anchor2_y, ratio, col)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        inst1
+        A primeira instância para se conectar com a junta
+      
+      
+        inst2
+        A segunda instância para se conectar com a junta
+      
+      
+        w_anchor1_x
+        A coordenada x onde a primeira parte da articulação está ancorada, dentro do mundo do jogo
+      
+      
+        w_anchor1_y
+        A coordenada y onde a primeira parte da articulação está ancorada, dentro do mundo do jogo
+      
+      
+        w_anchor2_x
+        A coordenada x onde a segunda parte da articulação está ancorada, dentro do mundo do jogo
+      
+      
+        w_anchor2_y
+        A coordenada y onde a segunda parte da articulação está ancorada, dentro do mundo do jogo
+      
+      
+        l_anchor1_x
+        A coordenada x local onde a articulação 1 está ancorada na primeira instância
+      
+      
+        l_anchor1_y
+        A coordenada y local onde a articulação 1 está ancorada na primeira instância
+      
+      
+        l_anchor2_x
+        A coordenada local x onde a articulação 2 está ancorada à segunda instância
+      
+      
+        l_anchor2_y
+        A coordenada y local onde a articulação 2 está ancorada à segunda instância
+      
+      
+        relação
+        Estabelecer a relação de velocidade entre duas instâncias
+      
+      
+        col
+        Se as duas instâncias podem colidir (verdadeiras) ou não (falsas)
+      
+    
+  
+   
+  Devoluções:
+  Inteiro (índice da junta)
+   
+  Exemplo:
+  var t_fix, inst1, inst2; t_fix = physics_fixture_create(); physics_fixture_set_circle_shape(t_fix, 20); inst1 = instance_create_layer(150, room_height - 90, "Instances", obj_Block); inst2 = instance_create_layer(300, room_height
+    - 90, "Instances", obj_block); physics_fixture_bind(t_fix, inst1); physics_fixture_bind(t_fix, inst2); physics_joint_pulley_create(inst1, inst2, 150, room_height - 140, 300, room_height - 140, 0, 0, 0, 0, 0, 2, 0); physics_fixture_delete(t_fix);
+  
+  O código acima cria e define uma nova fixação, cria duas instâncias de "obj_Block", e depois vincula esta fixação a duas delas. Em seguida, ele passa a definir uma articulação de polia entre estas instâncias, sem compensação para as articulações, uma proporção de 2:1 (significando
+    esse instinto2 se moverá mais rapidamente). Não ocorrem colisões entre as duas instâncias na polia.
+   
+   
+   
+  
+    
+      
+        Voltar: Juntas
+        A seguir: physics_joint_gear_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

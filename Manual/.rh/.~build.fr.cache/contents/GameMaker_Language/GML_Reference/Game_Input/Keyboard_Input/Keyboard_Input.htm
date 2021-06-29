@@ -1,0 +1,233 @@
+
+  
+  Teclado de entrada
+  Ao lidar com o teclado no GameMaker Studio 2, você tem uma variedade de funções que podem ser usadas para reconhecer diferentes estados do teclado como pressionado ou liberado. Há também algumas que armazenam todas as teclas pressionadas como um fio ou que podem
+    dizer-lhe qual foi a última tecla pressionada, assim como outras que lhe permitem limpar completamente o estado do teclado.
+  OBSERVAÇÃO: Estas funções foram projetadas somente para plataformas de desktop Windows/Mac/Ubuntu. Você pode encontrar algumas das variáveis e constantes embutidas não são válidas em outras plataformas e muitas das funções não funcionarão em celulares.
+  Cada caractere de entrada de uma chave (ou chaves múltiplas) é definido por seu código UTF8, que é um valor numérico. Este valor pode ser recuperado para qualquer caractere usando o código UTF8. ord()    mas, o GameMaker Studio 2 também possui uma série de constantes para as teclas especiais de teclado mais utilizadas e uma série de funções especiais. Tipicamente você usaria uma combinação de ord( ) com as funções de teclado_check*(),
+    algo como isto:
+  if keyboard_check(ord("A")) {
+     hspeed = -5; }
+  
+  Portanto, o acima vai verificar a tecla "A" e, se estiver sendo pressionada, então vai definir a velocidade horizontal do objeto para -5. Note que usando ord() desta forma só funcionará corretamente se a cadeia de entrada for apenas um caractere
+    A função ord() retornará um valor UTF8 completo, mas as funções keyboard_check*() detectarão apenas A - Z e 0 - 9 . Mas e se
+    você quer usar as setas do teclado? Ou se você quiser modificar uma ação usando a tecla "shift"? Bem, para esse GameMaker Studio 2 tem uma série de vk_ constantes(vk_ significa chave virtual) que você pode usar no lugar
+    de ord():
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        vk_nokey
+        código de chave que representa que nenhuma tecla é pressionada
+      
+      
+        vk_anykey
+        código de chave que representa que qualquer chave é pressionada
+      
+      
+        vk_esquerda
+        código de chave para a tecla de seta à esquerda
+      
+      
+        vk_right
+        código de chave para a tecla de seta para a direita
+      
+      
+        vk_up
+        código de chave para a tecla de seta para cima
+      
+      
+        vk_down
+        código de chave para a tecla de seta para baixo
+      
+      
+        vk_enter
+        digite a chave
+      
+      
+        vk_escape
+        chave de escape
+      
+      
+        vk_space
+        chave de espaço
+      
+      
+        vk_shift
+        qualquer uma das chaves de turno
+      
+      
+        vk_control
+        qualquer uma das chaves de controle
+      
+      
+        vk_alt
+        chave alt
+      
+      
+        vk_backspace
+        tecla backspace
+      
+      
+        vk_tab
+        chave de tabulação
+      
+      
+        vk_home
+        chave de casa
+      
+      
+        vk_end
+        chave final
+      
+      
+        vk_delete
+        apagar chave
+      
+      
+        vk_insert
+        inserir chave
+      
+      
+        vk_pageup
+        chave pageup
+      
+      
+        vk_pagedown
+        chave de paginação
+      
+      
+        vk_pause
+        chave de pausa/quebrar
+      
+      
+        vk_printscreen
+        tela de impressão/chave de impressão/sysrq
+      
+      
+        vk_f1 ... vk_f12
+        código de chave para as teclas de função F1 a F12
+      
+      
+        vk_numpad0 ... vk_numpad9
+        teclas numéricas no teclado numérico
+      
+      
+        vk_multiply
+        tecla multiplicadora no teclado numérico
+      
+      
+        vk_divide
+        tecla de divisão no teclado numérico
+      
+      
+        vk_add
+        adicionar chave no teclado numérico
+      
+      
+        vk_subtract
+        tecla de subtração no teclado numérico
+      
+      
+        vk_decimal
+        teclas de ponto decimal no teclado numérico
+      
+    
+  
+   
+  As seguintes constantes só podem ser usadas com teclado_check_direct():
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        vk_lshift
+        chave do turno da esquerda
+      
+      
+        vk_lcontrol
+        chave de controle esquerda
+      
+      
+        vk_lalt
+        chave alt esquerda
+      
+      
+        vk_rshift
+        chave do turno direito
+      
+      
+        vk_rcontrol
+        chave de controle correta
+      
+      
+        vk_ralt
+        chave alt direita
+      
+    
+  
+   
+  O seguinte é um pequeno exemplo de como usar o vk_ constantes:
+  if keyboard_check_pressed(vk_tab) {
+     instance_create_layer(x, y, "Controllers", obj_Menu); }
+  
+  O código acima detectará se a tecla "Tab" é pressionada e criará uma instância de objeto "obj_Menu" se for.
+  Se você precisar verificar um caractere chave que não seja 0 - 9, A - Z ou uma das constantes VK, então você deve estar verificando uma das variáveis do teclado_*, como o teclado_lastchar, por exemplo:
+  var _key = keyboard_lastchar; if ord(_key) == ord("ç") {
+     show_debug_message("ç key pressed"); }
+  
+  As seguintes funções estão disponíveis para uso quando se trabalha com um teclado:
+  OBSERVAÇÃO: Estas funções não funcionarão quando se utiliza um teclado virtual na tela.
+  
+    io_clear
+    teclado_check
+    teclado_check_pressed
+    teclado_check_released
+    teclado_check_direct
+    keyboard_clear
+    teclado_set_map
+    teclado_get_map
+    keyboard_unset_map
+    teclado_set_numlock
+    teclado_get_numlock
+  
+   
+  Há também algumas funções que podem ser usadas para simular pressionamentos de teclas:
+   
+  
+    teclado_key_press
+    teclados_chaves_liberação
+  
+   
+  Finalmente, as seguintes variáveis são incorporadas ao GameMaker Studio 2 e podem ser acessadas para obter informações sobre o estado e a entrada do teclado:
+  NOTA: Ao utilizar o Teclado Virtual, somente o teclado_string será atualizada com
+    a entrada do teclado.
+   
+  
+    teclado_chave
+    teclado_última tecla
+    teclado_lastchar
+    teclado_string
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada de jogo
+        A seguir: Entrada do mouse
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

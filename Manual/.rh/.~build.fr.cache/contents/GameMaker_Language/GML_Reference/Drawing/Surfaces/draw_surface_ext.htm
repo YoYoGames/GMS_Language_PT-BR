@@ -1,0 +1,71 @@
+
+  
+  draw_surface_ext
+  Esta função irá desenhar a superfície dada como na função draw_surface() mas com opções adicionais para alterar a escala, mistura, rotação e alfa da superfície a ser desenhada. A mudança destes valores faz
+   não modificar o recurso de forma alguma (apenas como ele é desenhado).
+  NOTA: Quando se trabalha com superfícies há a possibilidade de que elas possam deixar de existir a qualquer momento devido a serem armazenadas na memória de textura. Você deve SEMPRE verificar se uma superfície existe usando superfície_existe()    antes de referenciá-los diretamente.
+   
+  Sintaxe:
+  draw_surface_ext(id, x, y, xscale, yscale, podridão, col, alfa);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        O valor único de identificação da superfície a ser desenhada.
+      
+      
+        x
+        A posição x de onde desenhar a superfície.
+      
+      
+        y
+        A posição y de onde desenhar a superfície.
+      
+      
+        xscale
+        A escala horizontal.
+      
+      
+        yscale
+        A escala vertical.
+      
+      
+        podridão
+        A rotação ou ângulo para desenhar a superfície.
+      
+      
+        col
+        A cor com a qual se deve misturar a superfície.
+      
+      
+        alfa
+        A transparência alfa para desenhar a superfície.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_surface_ext(surf, 0, 0, 0, 2, 2, 0, c_red, 0,5);
+  O código acima desenhará uma superfície indexada na variável "surf" na posição (0,0) na sala, com o dobro da escala original, misturada em vermelho e semi-transparente.
+   
+   
+   
+  
+    
+      
+        Voltar: Superfícies
+        Próximo: draw_surface_parte
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

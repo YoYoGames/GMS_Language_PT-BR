@@ -1,0 +1,47 @@
+
+  
+  vapor_ugc_query_set_allow_cached_response
+  Esta função pode ser usada para filtrar qualquer consulta UGC, especificamente para solicitar que a consulta verifique o cache local em vez de on-line. O tratamento da consulta é o valor retornado quando você criou a consulta (usando, por exemplo, steam_ugc_create_query_user())
+    e o segundo argumento ou é verdadeiro ou falso. A função retornará verdadeiro se o filtro de consulta tiver sido configurado corretamente, ou falso de outra forma.
+   
+  Sintaxe:
+  steam_ugc_query_set_allow_cached_response(ugc_query_handle , cache);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ugc_query_handle
+        O cabo de consulta a ser usado.
+      
+      
+        cache
+        Se a consulta deve verificar o cache local ou não.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var query_handle = steam_ugc_create_query_all(ugc_query_RankedByTrend, ugc_match_Items, 1); steam_ugc_query_add_required_tag(query_handle, "RPG"); steam_ugc_query_set_return_long_description(query_handle, true); steam_ugc_query_set_allow_cached_response(query_handle, true),
+    verdadeiro); query_ID = steam_ugc_send_query(query_handle);
+  O código acima cria um pedido de consulta e armazena seu tratamento em uma variável local para uso futuro nas demais funções que definem melhor o pedido de consulta antes de enviar a consulta.
+   
+   
+   
+  
+    
+      
+        Voltar: UGC
+        Próximo: steam_ugc_send_query
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

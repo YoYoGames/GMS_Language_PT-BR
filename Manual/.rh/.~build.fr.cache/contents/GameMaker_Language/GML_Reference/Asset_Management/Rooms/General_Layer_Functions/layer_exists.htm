@@ -1,0 +1,45 @@
+
+  
+  camada_existe
+  Esta função pode ser usada para verificar se a camada em questão existe. Você fornece a identificação da camada (que você obtém quando cria a camada usando layer_create()) ou o nome da camada (como um fio - isto terá um desempenho
+    impacto) e a função devolverá um valor booleano de verdadeiro se existir ou falso se não existir.
+  NOTA: Esta função funciona dentro do escopo da sala alvo atual - por padrão a sala na qual a função é chamada - que pode ser definida usando a função layer_set_target_room().
+   
+  Sintaxe:
+  layer_exists(layer_name)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome_da_camada
+        O nome da camada (um fio ou valor de identificação)
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se !layer_exists(global.tileLayer) {
+     global.tileLayer = layer_create(1000); }
+  
+  O código acima verificará se a camada armazenada na variável global realmente existe, e se não existe, então ela é criada.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próximo: layer_get_id
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

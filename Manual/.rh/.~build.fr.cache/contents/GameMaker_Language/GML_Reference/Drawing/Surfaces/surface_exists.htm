@@ -1,0 +1,51 @@
+
+  
+  superfície_existe
+  Esta função é essencial quando se trabalha com superfícies, devido à sua natureza volátil. As superfícies são sempre mantidas na memória de textura, o que significa que podem ser destruídas de um momento para o outro (por exemplo, quando uma proteção de tela começa nas janelas, ou
+    quando minimizado em um dispositivo Android ), então você deve sempre verificar se existe uma superfície antes de fazer qualquer coisa com ela (isto inclui desenhá-la para a tela). O código de exemplo abaixo mostra um uso típico deste comando no evento de sorteio de uma instância
+    para verificar uma superfície e recriá-la caso tenha sido removida (note que a superfície terá sido originalmente criada no evento de criação do objeto).
+   
+  Sintaxe:
+  surface_exists(surface_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        surface_id
+        A identificação da superfície a ser verificada.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se !surface_exists(surf) {
+     surf = surface_create(1024, 1024); }
+     mais
+     {
+     se view_current = 1 {
+     draw_surface(surf,0,0);
+     }
+     }
+  
+  O código acima verificará se existe uma superfície indexada na variável "surf", e se não existir, ela será recriada. Se ela existe, então verifica para ver qual vista está sendo desenhada atualmente e se é vista[1] desenha a superfície.
+   
+   
+   
+  
+    
+      
+        Voltar: Superfícies
+        Próximo: surface_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,47 @@
+
+  
+  layer_set_target_room
+  Quando você chama esta função você está dizendo ao GameMaker Studio 2 que todas as outras funções de camada devem ser aplicadas à sala em questão. Desta forma, você pode mudar ou gerar camadas e conteúdos de camadas em uma sala que não é a
+    sala atual. Quando você terminar de adicionar camadas ou elementos de camadas a uma sala, chame a função layer_reset_target_room() para reiniciar o alvo da sala (ou chamar esta função novamente com um argumento de sala
+    de -1). Note que esta função só pode ser usada em salas diferentes da sala atual, e é projetada para que você possa adicionar/remover camadas e elementos de camadas em salas diferentes da sala que está atualmente em funcionamento.
+  ADVERTÊNCIA! Ao visar outra sala, você pode usar todas as funções de camadas regulares , exceto que você não pode criar instâncias usando instance_create_layer()    ou instance_create_depth()nem a camada funcionará layer_add_instance()    estar disponível.
+   
+  Sintaxe:
+  layer_set_target_room(room)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sala
+        O espaço a ser reservado para todas as outras funções da camada
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  layer_set_target_room(rm_Game); var l = layer_get_id("SpriteAssets"); repeat(50)
+     { var _x = random(room_get_width(rm_Game)); var _y = random(room_get_height(rm_Game)); layer_sprite_create(l, _x, _y, spr_Trees); }  layer_reset_target_room();
+  
+  O código acima define a sala alvo para a sala "rm_Game" e então obtém a identificação da camada chamada "SpriteAssets" naquela sala. Este ID de camada é então usado para adicionar 50 ativos sprite aleatórios à camada, antes do alvo da camada
+    é reajustado para a sala atual.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próxima: sala_get_target_camada
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

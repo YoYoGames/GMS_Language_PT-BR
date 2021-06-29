@@ -1,0 +1,47 @@
+
+  
+  draw_getpixel
+  Com esta função você pode obter o valor de cor de qualquer pixel que está sendo atraído para o alvo de renderização atual. Isto significa que os resultados dependerão do evento no qual a função é chamada, e também da superfície alvo que está sendo usada. Observe que
+    isto não retornará nenhum valor alfa, para que você possa usar draw_getpixel_ext().
+  OBSERVAÇÃO: Esta função causará um grande impacto no desempenho e, portanto, só deve ser usada quando absolutamente necessário.
+   
+  Sintaxe:
+  draw_getpixel(x, y);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A coordenada x do pixel a verificar
+      
+      
+        y
+        A coordenada y do pixel a verificar
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  draw_set_colour(draw_getpixel(500.200));
+  O código acima definirá a cor do desenho para todos os textos, formas e primitivas para a cor do pixel em (500.200) na tela do jogo.
+   
+   
+   
+  
+    
+      
+        Voltar: Cor e Alfa
+        Próximo: draw_getpixel_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

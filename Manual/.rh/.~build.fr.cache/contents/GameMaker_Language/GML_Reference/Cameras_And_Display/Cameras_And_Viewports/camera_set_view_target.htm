@@ -1,0 +1,47 @@
+
+  
+  camera_set_view_target
+  Você pode usar esta função para definir o seguinte alvo da câmera de visão dentro da sala. Você dá o valor único de identificação da câmera (como retornado pelos diferentes camera_create() funções) e depois dar a instância alvo
+    ou identificação do objeto para o qual você deseja definir a visão da câmera. Note que se você escolher um ID de objeto e houver mais de uma instância desse objeto na sala, não há como o GameMaker Studio 2 saber qual instância você deseja seguir e
+    para que pudesse ser qualquer um deles.
+   
+  Sintaxe:
+  camera_set_view_target(camera_id, instance_id/object_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        camera_id
+        O valor único de identificação da câmera retornou quando você criou a câmera
+      
+      
+        instance_id/object_id
+        Instância ou objeto para ter o alvo da câmera para seguir
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  camera_set_view_target(view_camera[0], id);
+  O código acima definirá o alvo da câmera de visualização para a câmera designada para visualizar a porta[0] para a da instância que estiver executando o código.
+   
+   
+   
+  
+    
+      
+        Voltar: Câmeras e Ver Portos
+        Próximo: camera_set_default
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,65 @@
+
+  
+  conjunto_esqueleto_de_estado_esqueleto
+  Sua animação esquelética é composta de um número de "ossos", que você terá definido e dado nomes em seu programa de animação, e esta função pode ser usada para definir certos dados para o osso nomeado a qualquer momento. Note que estes dados
+    definir a pose atual para o esqueleto, dependendo do conjunto de animação utilizado, e a função requer um mapa DS previamente criado, que deve ter as seguintes chaves e suas
+    valores requeridos:
+  
+    "x": A posição local x do osso em relação ao osso-mãe.
+      
+    "y": A posição local y do osso em relação ao osso-mãe.
+      
+    "ângulo": A rotação local do osso em relação ao osso-mãe.
+      
+    "escala x": A escala horizontal local do osso.
+      
+    "escala y": A escala vertical local do osso.
+      
+    "pai": O nome (um fio) do osso pai.
+  
+  Esta função é fornecida para que você possa "interceptar" os dados da animação e modificá-los antes de serem desenhados na tela, e como tal você gostaria de usá-los no evento Other - Animation Update, uma vez que este evento é acionado pouco antes dos Eventos do Sorteio.
+  Note que você pode usar o mesmo mapa que você preencheu usando o esqueleto_esqueleto_esqueleto_esqueleto() mesmo que contenha as chaves e valores adicionais do "Mundo". Como estes se referem a valores somente de leitura, defini-los com esta função não terá nenhum efeito.
+   
+  Sintaxe:
+  esqueleto_esqueleto_esqueleto(osso, mapa);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        osso
+        O nome (como um fio) do osso.
+      
+      
+        mapa
+        O mapa DS (anteriormente criado) que armazena os dados ósseos.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var map = ds_map_create(); skeleton_bone_bone_state_get("head", map); var xx = ds_map_find_value(map, "worldX"); var yy = ds_map_find_value(map, "worldY"); var deltax = mouse_x - (x + xx); var deltay
+    = mouse_y - (y + yy); var angle = -radtodeg(arctan2(deltay, deltax)); ds_map_replace(map, "angle", angle); skeleton_bone_bone_state_set("head", map); ds_map_destroy(map);
+  
+  O código acima cria um mapa DS e depois o preenche com os dados do osso chamado "cabeça". Ele então extrai a posição mundial para o osso, e usa esses dados para definir o "ângulo" do osso para rastrear a posição do mouse no
+    jogo.
+   
+   
+   
+  
+    
+      
+        Voltar: Bones
+        A seguir: lista_esqueleto_esqueleto
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,104 @@
+
+  
+  Sequências
+  As seqüências são geralmente criadas na IDE usando o editor Sequence, mas também podem ser criadas e editadas usando código. Entretanto, antes de olhar para as funções disponíveis, é importante
+    para entender a forma como as seqüências são definidas no GameMaker e os diferentes termos que serão utilizados.
+  Para começar, no nível superior, você tem um elemento de seqüência. Isto é o que você coloca em uma camada em uma sala, seja através do Room Editor ou em código usando as funções apropriadas da camada.
+    O elemento da camada não tem propriedades reais além de um valor de identificação do elemento, mas esta identificação é necessária para usar as funções de camada acima mencionadas para alterar a reprodução da seqüência ou para acessar os dados da seqüência.
+  Em seguida, você tem objetos de seqüência e instâncias de seqüência como você tem objetos e instâncias gerais. Um objeto seqüencial é o recurso básico, como você o criou no Navegador de Ativos ou usando a função sequence_create(),
+    e a instância de seqüência é a "cópia" desse objeto de seqüência que foi colocado em uma sala como um elemento em uma camada. Pense em objetos seqüenciais como esquemas e instâncias seqüenciais como a criação a partir desses esquemas. Sequência
+    objetos e instâncias são estruturas e - ao contrário dos objetos normais - uma estrutura de objetos em seqüência pode ser editada em tempo de execução, o que afetará todas as outras instâncias dessa seqüência quando você as criar como elementos
+    (e qualquer edição feita em um objeto sequencial não será reiniciada reiniciando o jogo ou a sala usando as funções room_restart() ou game_restart() ). A estrutura da instância sequencial contém alguns parâmetros para controlar a reprodução
+    e coisas (isto é explicado com mais detalhes abaixo), bem como a estrutura de dados da seqüência.
+  Finalmente, como mencionado acima, você tem os dados da seqüência, que é outra estrutura. Esta estrutura contém todos os dados sobre a seqüência. As faixas que ela contém, as propriedades que essas faixas possuem, a velocidade de reprodução e muito mais. A estrutura exata
+    Os detalhes do conteúdo desta estrutura são descritos abaixo, mas basicamente consiste de estruturas de rastreamento de ativos e estruturas de rastreamento de parâmetros que utilizam dados deestrutura de chaves para realmente executar ações enquanto a seqüência é executada.
+  Os elementos sequenciais são tratados usando as funções da camada de divisão, mas para objetos sequenciais, instâncias e dados temos as seguintes funções:
+   
+  
+    Sequência_existe
+    sequence_create
+    sequence_destroy
+    sequence_get
+    sequence_track_new
+    sequence_keyframe_new
+    sequence_keyframedata_new
+    Sequência_get_objects
+    sequence_instance_override_object
+  
+   
+  Há também uma variável incorporada associada às instâncias que pode ser usada para determinar se a instância foi ou não usada em uma seqüência:
+   
+  
+    in_sequence
+  
+  IMPORTANTE! Se sua seqüência tiver alguma instância nela, essas instâncias não devem mudar seu image_xscale / image_yscale /
+    imagem_ângulo / x / y variáveis como elas serão sobrescritas quando a seqüência
+      atualiza cada passo depois de começar a ser jogado.
+   
+  Antes de utilizar estas funções para criar ou editar seqüências, recomendamos que você leia as descrições detalhadas dadas abaixo para as propriedades estruturais. Uma visão geral de como criar uma nova seqüência seria:
+  
+    Criar o novo objeto de seqüência usando a função seqeunce_create() e armazenar o índice de objetos de seqüência em uma variável. Este índice lhe dá acesso à estrutura de objetos de seqüência.
+  
+  myseq = sequence_create();
+  
+    Definir os valores de nível superior do objeto de seqüência como comprimento, modo de jogo, velocidade de jogo, etc... Por exemplo:
+  
+  myseq.length = 120; myseq.loopmode = seqplay_pingpong
+  
+    Antes que você possa adicionar faixas ao objeto de seqüência, você precisa criá-las, então agora você criaria uma série de faixas de ativos que foram definidas com a função sequence_track_new(). Note que
+      em código, não há realmente nenhuma diferença entre faixas de ativos e faixas de parâmetros - todas elas são simplesmente faixas e como elas se comportam dependerá do tipo de faixa que você criar e se são atribuídas como sub-faixas a uma faixa de nível superior ou não.
+      Assim, você criaria uma faixa para um ativo e, em seguida, atribuiria subfaixas para os diferentes parâmetros a ela e estas subfaixas atuariam como faixas de parâmetros para o ativo. O exemplo abaixo cria um único trilho gráfico para o ativo que
+      ser adicionado à seqüência mais tarde:
+  
+  var mytracks = array_create(1); mytracks[0] = sequence_track_new(seqtracktype_graphic);
+  
+    Cada faixa de ativos precisa ter alguns dados para dizer a seqüência como vai ficar, ou sua posição, etc... e isso é adicionado na forma de quadros-chave. No nível superior para uma pista de ativos, você pode definir quadros-chave para várias coisas (listadas no
+      na seção Estrutura da Pista, abaixo), mas observe que, como são quadros-chave da Pista, eles não serão interpolados e simplesmente mudarão o valor a que se referem quando o quadro dado for atingido. Cada quadro-chave é uma estrutura que é adicionada a uma matriz,
+      e então esta matriz é atribuída à faixa de ativos. Para criar a estrutura do quadro-chave, chamaríamos a função sequence_keyframe_new() e para povoar o quadro-chave com os dados necessários, usaríamos
+      a função sequence_keyframedata_new():
+  
+  // Criar uma nova estrutura de quadros-chave para uma faixa de recursos gráficos e adicioná-la a uma matriz (pois você pode ter várias chaves em uma matriz) var graphickeys = array_create(1); graphickeys[0] = sequence_keyframe_new(seqtracktype_graphic); // Definir os gráficos
+    dados de nível superior do keyframe para a posição e comprimento do keyframe, etc... graphkeys[0].frame = 0; graphkeys[0].length = 1; graphkeys[0].stretch = true; graphkeys[0].disabled = false; // Criar os dados do canal que irão
+    entrar neste quadro-chave (novamente um array, pois cada chave pode ter múltiplos canais de dados do quadro-chave ) var graphkeydata = array_create(1); graphkeydata[0] = sequence_keyframedata_new(seqtracktype_graphic); graphkeydata[0].spriteIndex
+    = spr_Platform; graphkeydata[0].channel = 0; // Adicionar os canais de dados do keyframe ao keyframeda faixa gráfica graphkeys[0].channels = graphkeydata; // Adicionar os keyframes definidos à faixa mytracks[0].name = "TestGraphicTrack"; mytracks[0]. keyframes= graphkeys;
+  
+    Agora precisamos criar uma faixa de parâmetros que designaremos como uma sub-faixa para a faixa gráfica que acabamos de criar. Isto será feito de maneira semelhante como mostrado acima, somente agora precisamos dar à pista um nome que mostre seu propósito, neste caso
+      "posição", já que usaremos esta faixa para mover a faixa gráfica ao longo dos quadros de animação da seqüência:
+  
+  // Criar uma nova estrutura de parâmetros de pista para a posição do gráfico var paramtracks = array_create(1); paramtracks[0] = sequence_track_new(seqtracktype_real); paramtracks[0].name = "position"; paramtracks[0].interpolation
+    = verdadeiro; // Criar a estrutura do quadro-chave para manter os dados do canal de parâmetros e definir a posição do quadro para o quadro-chave var paramkeys = array_create(2); paramkeys[0] = sequence_keyframe_new(seqtracktype_real); paramkeys[0].frame =
+    0; paramkeys[1] = sequence_keyframe_new(seqtracktype_real); paramkeys[1].frame = 120; // Criar a estrutura de dados do keyframe var paramkeydata1 = array_create(2); paramkeydata1[0] = sequence_keyframedata_new(seqtracktype_real); paramkeydata1[0].channel = 0; // Canal 0 para uma faixa de posição é a posição X paramkeydata1[0].value = 0; paramkeydata1[1] = sequence_keyframedata_new(seqtracktype_real); paramkeydata1[1].channel = 1; // Canal 1 para uma posição
+    track é a posição Y paramkeydata1[1].value = 0; var paramkeydata2 = array_create(2); paramkeydata2[0] = sequence_keyframedata_new(seqtracktype_real); paramkeydata2[0].channel = 0; paramkeydata2[0].value = room_width; paramkeydata2[1] = sequence_keyframedata_new(seqtracktype_real); paramkeydata2[1].channel = 1; paramkeydata2[1].value = room_height; // Atribuir as estruturas de dados do quadro-chave aos canais para cada chave paramkeys[0].channels = paramkeydata1; paramkeys[1].channels = paramkeydata2; // Atribuir as chaves à faixa de parâmetros paramtracks[0].keyframes = paramkeys;
+  
+    Com isso feito, a última coisa a fazer é atribuir a faixa de parâmetros como uma sub-faixa ao nosso principal ativo gráfico que criamos no início e depois atribuir essas faixas à seqüência da qual podemos então criar uma instância na sala:
+  
+  mytracks[0].tracks = paramtracks; myseq.tracks = mytracks; layer_sequence_create("Assets_1", 0, 0, myseq);
+  As instruções acima criam um objeto de seqüência muito simples que desenha um duende na posição (0, 0) da seqüência e depois o move para o canto inferior direito e de volta em um loop. Como mencionado, há uma série de lugares onde você precisa
+    para acessar diferentes estruturas para dar ou obter dados sobre a seqüência, e as seções abaixo listam todas as diferentes propriedades que essas estruturas contêm:
+  
+    A estrutura sequencial do objeto
+    A estrutura da instância seqüencial
+    A estrutura da via
+    A estrutura do Keyframe 
+    A estrutura de dados do Keyframe 
+  
+   
+  Finalmente, é possível adicionar código a seqüências que podem ser acionadas como um evento por momento ou como uma mensagem de transmissão. Isto é explicado na íntegra na página seguinte:
+  
+    Eventos, Momentos e Mensagens de Radiodifusão
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Gestão de ativos
+        A seguir: Fontes
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

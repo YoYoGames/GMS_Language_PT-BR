@@ -1,0 +1,41 @@
+
+  
+  ansi_char
+  Esta função retorna uma cadeia contendo o caractere com o valor bruto BYTE definido. Isto não será, e não deve ser exibido, mas será salvo corretamente no disco para uso na codificação.
+   
+  Sintaxe:
+  ansi_char(val);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        val
+        O valor do byte bruto.
+      
+    
+  
+   
+  Devoluções:
+  Cordel (caracter único)
+   
+  Exemplo:
+  var str1 = ansi_char($EF); var str2 = ansi_char($BBB); var str3 = ansi_char($BF); file_text_write_string(global.saveFile, str1 + str2 + str3);
+  O código acima cria uma seqüência a partir de dados de bytes brutos e a grava em um arquivo (previamente aberto).
+   
+   
+   
+  
+    
+      
+        Voltar: Cordas
+        Próximo: chr
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

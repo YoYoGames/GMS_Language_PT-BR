@@ -1,0 +1,47 @@
+
+  
+   Transformação de dados de azulejos
+  Com esta ação, você pode mudar uma das três transformações de azulejos nos dados do azulejo. Você fornece a variável que contém os dados do azulejo, depois seleciona a transformação a ser trocada. Clicando na caixa de seleção "Aplicar", será aplicada a transformação e
+    desmarcando-o, ele será removido. Os dados do azulejo são simplesmente um valor que reflete o índice do azulejo junto com as transformações aplicadas, bem como qualquer máscara de azulejo personalizada que você tenha usado, e esta ação permite que você altere três desses valores:
+    Virar, espelhar e girar. Note que você normalmente desejará obter os dados do azulejo primeiro usando ou Get Tile Data In Cell ou Get Tile Data At Pixel, então aplique o
+    transformar(s) e depois ajustar o azulejo no mapa do azulejo novamente usando Set Tile Data In Cell ou Set Tile Data At Pixel, uma vez que esta ação só define um valor mas não o aplica ao azulejo do qual foi tirado.
+    Para mais informações sobre os dados do azulejo, consulte a seção GML sobre Funções do Mapa de Azulejo.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Telha
+        Os dados do azulejo a ser mudado
+      
+      
+        Transformar
+        A transformação a aplicar/remover
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima obtém os dados do azulejo na posição do mouse e então
+    verifica se o azulejo teve uma transformação de rotação aplicada a ele. Se tiver, então a transformação é reinicializada e os dados do azulejo colocam o azulejo na posição novamente.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações em telhas
+        A seguir: Obter transformação de dados de azulejos
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

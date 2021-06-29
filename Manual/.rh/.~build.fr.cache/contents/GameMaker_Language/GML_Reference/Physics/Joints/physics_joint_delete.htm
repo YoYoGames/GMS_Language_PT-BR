@@ -1,0 +1,50 @@
+
+  
+  physics_joint_delete
+  Uma vez que duas instâncias com representações físicas tenham sido vinculadas por uma junta, esta pode ser apagada novamente a qualquer momento. Normalmente isto acontecerá automaticamente quando uma das duas instâncias for destruída, ou quando a sala terminar, mas há momentos em que você
+    pode desejar fazer isto manualmente. Nesses casos, você usaria esta função.
+  Também deve ser observado que sempre que uma instância que faz parte de uma junta de engrenagens for destruída, a junta de engrenagens deve ser eliminada usando esta função antes de qualquer uma das instâncias envolvidas na formação do
+    (mas as juntas restantes serão apagadas automaticamente), por exemplo, no caso de destruição da instância.
+   
+  Sintaxe:
+  physics_joint_delete(joint)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        conjunto
+        O índice da junta que você deseja excluir
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var reactionForceX, reactionForceY, reactionForce; if shipJoint {
+     reactionForceX = physics_joint_get_value(shipJoint, phy_joint_reaction_force_x); reactionForceY = physics_joint_get_value(shipJoint, phy_joint_reaction_force_x); reactionForce = sqrt((reactionForceX + reactionForceX) +
+    (reactionForceY + reactionForceY)); if reactionForce > 2 {
+     physics_joint_delete(shipJoint);
+     shipJoint = -1; }
+     }
+  
+  O código acima verifica se a variável "shipJoint" contém um índice conjunto e se contém, calcula então a força que está sendo aplicada a essa junta usando as duas constantes. Finalmente, se a força total for maior que 2, a junta é apagada.
+   
+   
+   
+  
+    
+      
+        Voltar: Juntas
+        A seguir: physics_joint_enable_motor
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,97 @@
+
+  
+  Objetos e Instâncias
+  Com os recursos que você viu até agora você pode adicionar algumas imagens e sons agradáveis ao navegador de recursos do jogo, mas eles ainda não fazem nada no jogo em si! Para isso, precisamos dos recursos mais importantes de todos no GameMaker Studio 2, o recurso Objeto .
+    Os objetos são um ativo especial que usamos para controlar aspectos de um jogo e para fazer coisas específicas. Na maioria das vezes, eles têm um duende associado a eles para que você possa vê-los nas salas de jogo, mas às vezes eles são usados como um "por trás do
+    cenas" objetos controladores para fazer coisas como estatísticas de pistas, ou definir temporizações para cut-scenes, etc... Os objetos podem ter comportamentos e podem reagir a certos eventos, assim como uns aos outros, e a maioria das coisas que você vê em
+    um jogo é baseado em objetos e suas interações com o usuário e uns com os outros.
+  Agora, não podemos falar de Objetos sem falar de Instâncias . Em um jogo feito com o GameMaker Studio 2, os personagens, monstros, bolas, paredes, etc... que você vê no jogo são na verdade todos considerados como sendo instâncias.
+    Uma instância é essencialmente uma "cópia" de um objeto que é encontrada no Navegador de Ativos e depois colocada em uma sala (pense em objetos como modelos para instâncias). Portanto, quando falamos de algo que afeta ou altera uma instância,
+    queremos dizer que uma determinada cópia de um objeto em uma sala está sendo afetada enquanto todas as outras não estão, mas quando falamos em afetar ou mudar um objeto, queremos dizer que qualquer coisa que fizermos a ele será refletida em todas as instâncias criadas a partir disso
+    apontar também. Portanto, o objeto é o modelo para a instância, e a instância é o que colocamos em uma sala para fazer nosso jogo.
+  Para criar um novo ativo objeto, é o mesmo que para todos os outros ativos e basta clicar com o botão direito do mouse  na pasta de ativos Objetos e selecionar Criar (ou clicar com o botão direito do mouse
+    em qualquer parte do Navegador de Ativos e selecione Criar Objeto).
+  
+  Esta é a janela do Object Editor e mostra as propriedades atuais do objeto, e a primeira coisa que você deve fazer é nomear o objeto, novamente usando um prefixo como " obj_" ou
+    algum outro identificador. Em geral, para que um objeto desenhe qualquer coisa e registre colisões com instâncias de outros objetos, ele precisa ter um duende atribuído a ele, que é adicionado usando o botão . Isto abrirá o Asset Explorer onde você pode selecionar o duende para usar (você também pode arrastar sprites do Asset Browser e soltá-los no Editor de Objetos para atribuí-los):
+  
+  Se você ainda não tiver um duende apropriado, você pode clicar em  no botão New Sprite  para criar um novo ativo sprite e editá-lo como desejar, assim como se você tivesse criado o ativo através das opções padrão de criação de duendes, somente agora ele será automaticamente atribuído ao objeto que você tinha aberto quando você começou a criá-lo. Uma vez
+    você pode também clicar em  nos botões Edit Sprite  ou Edit Image  para editar ou as imagens do próprio duende ou o ativo do duende. Isto pode ser mais rápido do que primeiro encontrar o duende no Navegador de Ativos e depois indicar
+    você quer editá-lo.
+  Uma vez adicionado ou criado o sprite, você pode alterar algumas outras propriedades do objeto, como se ele deve ser visível ou não - por exemplo - ou que tipo de máscara de colisão ele deve ter. Para jogos simples, você provavelmente
+    não precisam mudar nada aqui e agora podem continuar a acrescentar eventos ao objeto.
+  Os eventos são momentos discretos no loop do jogo onde as coisas são feitas para acontecer com base no que você programou para eles. O GameMaker Studio 2 trabalha com ciclos destes eventos - desde o momento em que uma sala é iniciada até o momento em que é terminada, há um
+    loop do jogo em que a cada etapa é executada uma série de eventos, e você pode escolher colocar o código GML ou DnD™ações em suas instâncias que respondam a esses eventos (uma etapa é um momento no tempo do jogo, governado pela configuração da velocidade do jogo
+    - também chamada de "moldura").
+  Para adicionar um evento, clique em  no botão Adicionar Evento:
+  
+  Acima você pode ver todas as diferentes Categorias de Eventos, algumas das quais contêm outras sub-categorias. Não passaremos por todos os eventos aqui, mas cobriremos brevemente os cinco mais importantes:
+  
+    
+      
+        
+        Criar Evento
+        Este evento acontece quando uma instância do objeto é criada pela primeira vez, e é a primeira coisa que acontece dentro de uma instância que foi colocada na sala através do editor da sala quando uma sala é entrada. Isto significa que este evento é o
+          lugar ideal para inicializar variáveis, iniciar linhas de tempo, definir caminhos etc... e fazer qualquer outra coisa que geralmente só precisa ser feita uma vez ou apenas quando uma instância aparece pela primeira vez na sala.
+      
+      
+        
+        Etapa Evento
+        OGameMaker Studio 2 divide o tempo de jogo em etapas com a velocidade do jogo definindo quantas dessas etapas devem ser por segundo. Uma etapa, é basicamente o loop que corre constantemente com todos os eventos sendo verificados e acionados conforme necessário.
+          enquanto o jogo decorre, por isso, como você pode imaginar, o Step Event é um evento que é verificado em cada etapa do jogo enquanto a instância existe. Observe que a categoria Step Event tem três subcategorias para "afinar" o tempo dentro de
+          o exemplo, mas em geral você usará mais o Evento de Etapa principal.
+      
+      
+        
+        Evento de colisão
+        Obviamente, ao fazer um jogo, é muito importante que você saiba quando duas (ou mais) instâncias de um objeto colidiram, e para isso temos o evento da colisão. Este é um evento que você coloca em um objeto e depois especifica contra qual outro
+          objeto que você deve estar verificando se há colisões. Uma vez adicionado o evento e escolhido o objeto a ser verificado, você pode adicionar o código GML ou DnD™para resolver a colisão.
+      
+      
+        
+        Evento de sorteio
+        Existem vários eventos de sorteio diferentes dentro da categoria de eventos de sorteio, mas o que você mais usa é o que está no topo simplesmente chamado de "Sorteio". Este evento geral de sorteio será chamado, como o evento de etapa, de cada quadro de jogo, mas funciona
+          de duas maneiras diferentes. A primeira é quando não se adiciona este evento ao objeto. Quando não há um evento de sorteio especificado , então o GameMaker Studio 2 irá, por padrão, desenhar o duende atribuído ao objeto, usando qualquer transformação que
+          foram aplicados em outro lugar no objeto (como para mudar seu tamanho ou mistura alfa), portanto, mesmo quando nenhum Evento de Sorteio está listado na lista de Eventos, ele ainda está sendo executado e ainda desenhará para a tela quando uma instância é colocada em uma sala. O
+          A segunda maneira de funcionar é quando você adiciona o evento em si e inclui qualquer GML ou DnD™nele. Adicionar algo ao evento diz ao GameMaker Studio 2 " Eu quero controlar o que você desenha para instâncias deste objeto" e ele é completamente
+          sobrepõe o sorteio padrão. Isto significa que você pode ter um objeto com um duende designado, então defina o evento do sorteio para desenhar o texto e o duende não será desenhado como você não disse ao GameMaker Studio 2 para desenhá-lo, embora o texto seja.
+      
+      
+        
+        Evento Destroy
+        Este evento é o último evento a ser executado quando uma instância é destruída. É freqüentemente negligenciado quando se adicionam comportamentos a objetos, mas pode ser muito útil - por exemplo, para criar efeitos de explosão ou de partículas quando um inimigo é morto,
+          ou para re-despertar uma nova instância do objeto em outra parte da sala, ou mesmo para adicionar pontos a uma pontuação.
+      
+    
+  
+  
+    
+  
+  Para maiores informações sobre todos os diferentes eventos, por favor, veja aqui.
+  Adicionar um evento abrirá o editor de código ou o editor Drag e Drop™, dependendo do tipo de projeto que você estiver criando. Nesta janela você pode agora adicionar as ações GML ou DnD™que você deseja realizar cada vez que esse evento for acionado dentro de
+    o loop do jogo. Um objeto típico com eventos e código será parecido com este:
+  
+  Você pode encontrar mais informações sobre o uso de GML e DnD™em seus eventos de objeto nas duas páginas fornecidas abaixo:
+  
+    Drag e Drop™Visão geral
+    Visão geral dalinguagem GameMaker 
+  
+  E você pode encontrar uma explicação completa de todas as diferentes partes do Editor de Objetos aqui:
+  
+    Editores: O editor de objeto
+  
+  A próxima parte deste guia abordará mais um tipo de recurso, Seqüências...
+   
+   
+  
+    
+      
+        Voltar: Índice
+        A seguir: Sequências
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

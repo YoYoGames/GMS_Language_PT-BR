@@ -1,0 +1,101 @@
+
+  
+  draw_surface_general
+  Esta função combina a função draw_surface_ext() com a função draw_surface_part()de modo que cada canto do
+    a parte final da superfície pode ser misturada com uma cor individual.
+  NOTA: A mistura gradual não está disponível para o alvo HTML5, a menos que a WebGL esteja habilitada.
+  NOTA: Quando se trabalha com superfícies há a possibilidade de que elas possam deixar de existir a qualquer momento devido a serem armazenadas na memória de textura. Você deve SEMPRE verificar se uma superfície existe usando superfície_existe()    antes de referenciá-los diretamente.
+   
+  Sintaxe:
+  draw_surface_general(id, left, top, w, h, x, y, xscale, yscale, rot, c1, c2, c3, c4, alpha);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        O valor único de identificação da superfície a ser desenhada.
+      
+      
+        esquerda
+        A posição esquerda na superfície da peça a ser desenhada.
+      
+      
+        topo
+        A posição superior na superfície da peça a ser desenhada.
+      
+      
+        w
+        A largura da peça a ser desenhada, a partir da esquerda.
+      
+      
+        h
+        A altura da peça a ser sorteada, de cima.
+      
+      
+        x
+        A posição x de onde desenhar a superfície.
+      
+      
+        y
+        A posição y de onde desenhar a superfície.
+      
+      
+        xscale
+        A escala horizontal para desenhar a superfície com.
+      
+      
+        yscale
+        A escala vertical para desenhar a superfície com.
+      
+      
+        podridão
+        A rotação ou ângulo para desenhar a superfície com.
+      
+      
+        c1
+        A cor do canto superior esquerdo da superfície.
+      
+      
+        c2
+        A cor do canto superior direito da superfície.
+      
+      
+        c3
+        A cor do canto inferior direito da superfície.
+      
+      
+        c4
+        A cor do canto inferior esquerdo da superfície.
+      
+      
+        alfa
+        A transparência alfa para desenhar a superfície com...
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_surface_general(surf, 8, 8, 32, 32, x, y, 2, 0,5, 180, c_white, c_white, c_black, c_black, 1);
+  Isto desenhará uma área de 32x32 pixels de 8x8 pixels para a superfície. Ela será esticada para dobrar sua largura habitual, mas a metade de sua altura habitual. Será opaco, e de cabeça para baixo. A área superior da superfície será branca misturada e, portanto, normal, mas
+    a área inferior será preta, o que significa que a superfície irá do normal para a silhueta para baixo em um gradiente suave.
+   
+   
+   
+  
+    
+      
+        Voltar: Superfícies
+        Próximo: superfície_de_aplicação
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

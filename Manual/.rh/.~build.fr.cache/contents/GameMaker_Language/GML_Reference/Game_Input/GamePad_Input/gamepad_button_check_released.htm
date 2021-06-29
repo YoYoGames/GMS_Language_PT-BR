@@ -1,0 +1,49 @@
+
+  
+  gamepad_button_check_released
+  Esta função retornará verdadeiro ou falso, dependendo se o botão gamepad dado for detectado como tendo sido liberado ou não. Note que esta função só acionará uma vez para o botão no momento em que ele tiver sido liberado.
+    Para que ela acione novamente o botão deve primeiro ser pressionado e depois liberado uma vez mais. Se você estiver verificando um botão analógico, então a verificação levará em consideração a configuração do limiar e somente
+    retornar true quando o valor de entrada bruta for inferior ao limite determinado (você pode obter este valor bruto usando a função gamepad_button_value()).
+   
+  Sintaxe:
+  gamepad_button_check_released(dispositivo, botão);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dispositivo
+        Qual dispositivo de controle de jogo "slot" a ser verificado.
+      
+      
+        botão
+        Qual botão do gamepad é constante a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se gamepad_button_check_released(0, gp_select) {
+     audio_play_sound(snd_Button, 0, false); global.Pause = !global.Pause; }
+  
+  O código acima detectará se o botão "select" do controle de jogo conectado ao dispositivo "slot" 0 foi pressionado ou não e alternará a variável global "Pause".
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada Gamepad
+        Próximo: gamepad_button_count
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

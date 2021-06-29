@@ -1,0 +1,66 @@
+
+
+
+
+
+  
+  matrix_get
+  Esta função retorna uma matriz de 16 valores, correspondente ao tipo de matriz 4x4 dado, onde a linha 1 é elementos [0 - 3], a linha 2 é elementos [4 -7], etc... (veja a imagem na página principal).
+    As matrizes disponíveis são visão, projeção e mundo, para as quais você usaria uma das constantes a seguir:
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        matrix_view
+        A matriz de visão atual
+      
+      
+        matrix_projection
+        A matriz de projeção atual
+      
+      
+        matrix_world
+        A matriz mundial atual
+      
+    
+  
+   
+  Sintaxe:
+  matrix_get(type);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tipo
+        O tipo de matriz para obter os valores de (ver as constantes listadas acima)
+      
+    
+  
+   
+  Devoluções:
+  Array (16 elementos)
+   
+  Exemplo:
+  v_array = matrix_get(matrix_view);
+  O código acima obterá os valores da matriz de visão atual e povoará a matriz "v_array" com eles.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções da Matriz
+        Próximo: matriz_set
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

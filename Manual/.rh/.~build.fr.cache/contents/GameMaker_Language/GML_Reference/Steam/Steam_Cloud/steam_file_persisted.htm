@@ -1,0 +1,44 @@
+
+  
+  vapor_file_persisted
+  Com esta função você pode verificar o arquivo dado para ver se ele foi sincronizado com o Steam Cloud. Um valor de retorno de verdadeiro significa que está, enquanto falso significa que não está.
+   
+  Sintaxe:
+  steam_file_persisted(filename);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome do arquivo
+        O nome do arquivo a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if !steam_file_persisted("Save.txt") {
+     steam_file_share("Save.txt");
+     }
+  
+  O código acima verificará se um arquivo foi armazenado no Steam Cloud, e se não o tiver, então o sincronizará.
+   
+   
+   
+  
+    
+      
+        Voltar: Nuvem devapor
+        Próximo: steam_file_write
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

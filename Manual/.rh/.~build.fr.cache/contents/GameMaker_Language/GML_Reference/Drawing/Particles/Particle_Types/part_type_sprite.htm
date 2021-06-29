@@ -1,0 +1,62 @@
+
+  
+  part_type_sprite
+  Esta função pode ser usada para definir um tipo de partícula para usar um duende personalizado dos ativos do jogo. Você pode selecionar o duende e então dizer ao GameMaker Studio 2 para usar o duende e animá-lo ou não, e se você escolher animado, então você também pode escolher
+    ter as subimagens alteradas em um intervalo tal que a animação começará e terminará no início e no final da vida útil de cada partícula criada (de modo que se você tiver uma vida útil definida para um mínimo de 15 etapas e um máximo de 30 etapas, não importa o
+    valor a vida tem a animação será feita para caber, com ela correndo mais rápido para os tempos de vida mais curtos e mais lento para os mais longos). Você também pode escolher uma subimagem aleatória para que, se o duende não for animado, uma imagem diferente seja
+    escolhida aleatoriamente para criar o duende, ou se a partícula for animada, ela iniciará a animação em um ponto aleatório.
+   
+  Sintaxe:
+  part_type_sprite(ind, sprite, animate, stretch, random);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do tipo de partícula a ser mudado.
+      
+      
+        sprite
+        O índice do duende para definir o tipo de partícula.
+      
+      
+        animar
+        Se seguir a animação do duende normalmente (verdadeiro) ou não (falso).
+      
+      
+        trecho
+        Seja para esticar a animação do duende para corresponder à vida útil da partícula (verdadeira) ou não (falsa).
+      
+      
+        aleatório
+        Se escolher uma subimagem aleatória (verdadeira) ou não (falsa).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  global.p1 = part_type_create(); part_type_sprite(global.p1 , spr_Coins, 1, 0, 0); part_type_size(global.p1, 1, 3, 0, 0); part_type_scale(global.p1, 1, 1); part_type_colour1(global.p1, c_white); part_type_alpha2(global.p1, 1,
+    0); part_type_speed(global.p1, 2, 4, 0, 0, 0); part_type_direction(global.p1, 0, 180, 0, 0, 0); part_type_gravity(global.p1, 0.20, 270); part_type_orientation(global.p1, 0, 0, 0, 0, 1); part_type_blend(global.p1, 1); part_type_life(global.p1,
+    15, 60);
+  O código acima define o tipo de partícula indexada na variável global "p1" à forma do duende indexado em "spr_Coins", e depois define várias outras propriedades de partícula.
+   
+   
+   
+  
+    
+      
+        Voltar: Tipos de Partículas
+        Próximo: tamanho_da_peça
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

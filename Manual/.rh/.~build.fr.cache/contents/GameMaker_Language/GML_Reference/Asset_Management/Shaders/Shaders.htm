@@ -1,0 +1,141 @@
+
+  
+  Shaders
+  Os shaders são uma ferramenta incrivelmente poderosa para manipular o que e como as coisas são renderizadas à tela pela placa gráfica. Uma vez que estes minúsculos programas são realmente executados na placa de vídeo
+    Isto significa que eles são extremamente rápidos de processar, liberando valiosos ciclos de CPU para mais lógica de jogo.
+  Para criar um Shader você precisará ter escrito tanto um  Shader Vertex como um  ShaderFragment Shader (também conhecido como Pixel Shader) usando o EditorShader, e mesmo se (por exemplo)
+    você só deseja mudar as posições dos vértices por exemplo, ou se você só quer mudar os valores de cor dos pixels, você ainda precisará de ambos os programas para que um sombreador completo funcione.
+  NOTA: Os shaders não permitem que você altere o valor de nenhuma variável que você transfira para eles, e assim estes serão chamados de constantesshader em toda a documentação que se refere a eles.
+  Para uma visão completa das funções e variáveis GLSL ES disponíveis que você pode usar para programar os sombreadores propriamente ditos, consulte as Páginas de Referência do OpenGL ES Shading Language (GLSL ES).
+    O link a seguir também é útil pois contém algumas fichas de referência rápida para a API OpenGL ES (note que apenas as duas últimas fichas mostradas são aplicáveis ao GameMaker Studio 2): Cartões de Referência OpenGL ES.
+  Usar um shader em seus projetos é muito simples e requer apenas algumas linhas de código para obter o uso mais básico do mesmo:
+  shader_set(myShader); draw_self();
+     shader_reset();
+  
+  Como você pode ver, eles são usados de maneira semelhante para misturar modos e superfícies, onde você primeiro seleciona (define) o sombreador, desenha o que você quer usando-o, e depois reinicia o alvo de sorteio novamente. Se você desejar renderizar a tela inteira através de um shader,
+    e não apenas um único duende ou fundo, você precisará montar uma superfície para capturar a vista atual, e depois passar essa superfície para o sombreador (veja Superfícies para mais informações).
+  NOTA: Os shaders, como qualquer coisa relacionada ao desenho, só podem ser usados no evento do sorteio. Vale notar também que, se você estiver tentando usar um valor de cor em um sombreador e o objeto não tiver textura, os resultados ficarão pretos.
+  Se o shader que você está usando tem valores de entrada, estes são definidos usando as funções uniformes. Primeiro você obteria o cabo uniforme (que é essencialmente um valor de identificação para o uniforme a ser definido) usando a função shader_get_uniform() em
+    o Create Event of the instance usando o shader, e depois armazenar estas alças em variáveis, algo como isto:
+  colour_to_find = shader_get_uniform(sShaderDemo5, "f_Colour1"); colour_to_set = shader_get_uniform(sShaderDemo5, "f_Colour2");
+  Uma vez que você tenha as alças uniformes, elas podem então ser definidas no código de sombreamento para o Evento de Sorteio como este:
+  shader_set(sShaderDemo5); shader_set_uniform_f(color_to_find, 1,1,1 ); shader_set_uniform_f(color_to_set, 1,0,0 ); draw_sprite(sprite_index,image_index,x+24, y); shader_reset();
+  
+  Uma última coisa a ser observada é que, embora os shaders sejam aceitos em todas as plataformas, eles ainda são específicos do dispositivo e se o hardware ou software do dispositivo não puder usar shaders, então você receberá um erro. Portanto, recomenda-se que você verifique se
+    o sombreador foi compilado antes de se colocar uniformes ou usar o próprio sombreador, desta forma:
+  if(shader_is_compiled(myShader)) {
+     shader_set(myShader);
+     draw_self();
+     shader_reset();
+     }
+     else show_debug_message(" Shader failed");
+  Como um cheque extra você também pode chamar a função shaders_are_supported() para ver se o hardware até mesmo suporta shaders. Em geral, você faria estas verificações no início do jogo e armazenaria os resultados como um
+   variável global para depois verificar mais tarde.
+  É importante notar que o GameMaker Studio 2 também suporta algumas Macros de compilação condicional que podem ser usadas dentro dos shaders GLSL ES para que possam executar código alternativo em plataformas específicas suportadas. As macros e as plataformas que eles irão
+    a serem gerados são mostrados na tabela abaixo:
+   
+  
+    
+      
+        MacroShader 
+        Valor
+        Plataforma Alvo
+      
+      
+        SIM_GLSLES_
+        1
+        Todas as plataformas alvo
+      
+      
+        YYY_GLSL_
+        2
+        Mac e Ubuntu(Linux)
+      
+      
+        YYY_HLSL11_
+        3
+        Windows, UWP, XboxOne
+      
+      
+        YYY_PSSL_
+        4
+        PS4
+      
+    
+  
+   
+  Quando você compila seu projeto GameMaker Studio 2 em qualquer uma das plataformas listadas usando um shader no formato GLSL ES, será gerada uma das macros acima que poderá ser usada e verificada no código do shader como este:
+  #ifdef _YY_HLSL11_ // HLSL shader code here #else
+     // Código de shader GLSL aqui #endif
+  
+  Se você é novo em shaders ou quer um guia mais completo para criá-los e usá-los usando o GameMaker Studio 2, por favor, veja a página seguinte do manual:
+  
+    Guia para o uso de Shaders
+  
+   
+  As seguintes funções estão disponíveis para desenho e ajuste de shaders:
+   
+  
+    shader_get_name
+    shader_get_uniform
+    shader_get_sampler_index
+    shader_set
+    shader_set_uniform_f
+    shader_set_uniform_f_array
+    shader_set_uniform_i
+    shader_set_uniform_i_array
+    shader_set_uniform_matrix
+    shader_set_uniform_matrix_array
+    shader_reset
+    shader_is_compiled
+    shaders_are_supported
+    shader_current
+  
+   
+  Temos também uma função especial que define um estado global para todos os shaders:
+  
+    shader_enable_corner_id
+  
+   
+  Ao trabalhar com amostradores de textura em shaders, você precisará de informações sobre a textura utilizada, caso em que você pode utilizar as seguintes funções:
+   
+  
+    sprite_get_texture
+    sprite_get_uvs
+    font_get_texture
+    font_get_uvs
+    textura_get_width
+    Textura_esquadre_altura
+    textura_get_texel_width
+    textura_get_texel_height
+    textura_set_set_stage
+    gpu_set_texfilter_ext
+    gpu_set_texrepeat
+  
+   
+  Embora este manual não abranja nenhuma das funções e variáveis do sombreador Open GL, ele contém uma lista das que são exclusivas do GameMaker Studio 2. Estas constantes não fazem parte da especificação da Open GL para shaders e são fornecidas
+    para simplificar a integração de shaders em seus projetos.
+  
+    Constantes desombreamento 
+  
+   
+  Finalmente, o GameMaker Studio 2 permite que você defina seus próprios formatos de vértices a partir dos quais você pode criar seus próprios primitivos personalizados. Isto pode acelerar muito as operações de sombreamento ou pode ser usado para ampliar suas capacidades e criar efeitos surpreendentes.
+    Você pode encontrar informações sobre isto nas seções seguintes:
+  
+    Primitivos e formatos de vértices
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Gestão de ativos
+        A seguir: Sequências
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

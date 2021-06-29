@@ -1,0 +1,35 @@
+
+  
+  steam_get_quota_total
+  Ao utilizar o Steam Cloud para armazenar e sincronizar arquivos, você deve configurar a cota de espaço que seu jogo precisará. Esta cota é aplicada em cada jogo Nuvem, por usuário, por jogo, assim, por exemplo, se a cota para o Jogo X
+    é de 1 megabyte, então cada conta Steam que possui o Game X pode armazenar, no máximo, 1 megabyte de dados associados a esse jogo na Nuvem. Qualquer outro jogo com Nuvem que o usuário possua (digamos, Jogo Y) não será afetado pelos dados armazenados pelo Jogo X.
+    A cota padrão para novos jogos Steamworksé de um gigabyte, mas você pode mudar isto do painel de controle do jogo Steamworks.
+  OBSERVAÇÃO: Uma vez esgotada a cota, o arquivo escrito falhará. Se você acha que pode ser possível que a cota se esgote para o usuário de seu jogo, você deve criar um código para lidar com ele, pois ao não fazer nada você deixa os usuários em uma situação em que
+    eles não conseguem consertar as coisas e isso levará a uma má experiência de seu jogo.
+   
+  Sintaxe:
+  steam_get_quota_total();
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  if steam_is_cloud_enabled_for_app() {
+     quota = steam_get_quota_total(); }
+  
+  O código acima verifica se a nuvem de vapor está habilitada para o jogo e, em caso afirmativo, obtém o tamanho da cota de armazenamento e a armazena em uma variável.
+   
+   
+   
+  
+    
+      
+        Voltar: Nuvem devapor
+        Próximo: steam_get_quota_free
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

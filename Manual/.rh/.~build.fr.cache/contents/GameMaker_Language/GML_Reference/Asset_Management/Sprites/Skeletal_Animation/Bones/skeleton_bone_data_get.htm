@@ -1,0 +1,56 @@
+
+  
+  esqueleto_dados_do_osso_get
+  Sua animação esquelética é composta de uma série de "ossos", que você terá definido e dado nomes em seu programa de animação. Essa função pode ser usada para obter informações sobre o osso nomeado a qualquer momento e armazenar os dados em um arquivo vazio
+   Mapa DS, que você deve ter criado anteriormente. Observe que estes dados se referem à pose padrão do esqueleto, e não à pose atual que está sendo desenhada. Se você precisar dos dados
+    da pose atual, use esqueleto_esqueleto_esqueleto_esqueleto().
+  Quando você chamar esta função, o mapa será preenchido com as seguintes teclas:
+  
+    "x": A posição local x do osso em relação ao osso-mãe.
+    "y": A posição local y do osso em relação ao osso-mãe.
+    "ângulo": A rotação local do osso em relação ao osso-mãe.
+    "escala x": A escala horizontal local do osso, em referência ao osso-mãe.
+    "escala y": A escala vertical local do osso, em referência ao osso-mãe.
+    "pai": O nome (um fio) do osso pai.
+  
+   
+  Sintaxe:
+  skeleton_bone_data_get(osso, mapa);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        osso
+        O nome (como um fio) do osso.
+      
+      
+        mapa
+        O mapa DS (anteriormente criado) que armazena os dados ósseos.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  bone_map = ds_map_create(); skeleton_bone_data_get("leftarm", bone_map);
+  O código acima cria um mapa DS e depois o preenche com os dados do osso chamado "braço esquerdo".
+   
+   
+   
+  
+    
+      
+        Voltar: Bones
+        A seguir: conjunto_de_dados_esqueleto_esqueleto
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

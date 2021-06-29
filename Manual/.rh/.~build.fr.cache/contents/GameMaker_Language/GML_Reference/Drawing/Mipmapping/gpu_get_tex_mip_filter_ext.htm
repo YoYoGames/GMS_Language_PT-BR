@@ -1,0 +1,67 @@
+
+  
+  gpu_get_tex_mip_filter_ext
+  Com esta função você pode obter o modo atual de filtro mip para um determinado amostrador de sombreador. Você fornece o valor do índice para o amostrador de shader (como retornado pela função shader_get_sampler_index(),
+    e a função retornará uma das constantes de valor da modalidade listada abaixo.
+   
+  Sintaxe:
+  gpu_get_tex_mip_filter_ext(sampler_index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice_de_amostragem
+        O índice do amostrador de sombreamento para obter
+      
+    
+  
+   
+  Devoluções:
+  Constante (listado abaixo):
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        tf_point
+        Isto significa que a mistura entre os níveis do mipmap é desativada, o que pode causar transições de textura visíveis, mas dá o melhor desempenho.
+      
+      
+        tf_linear
+        Isto significa que a mistura entre níveis de mipmap está habilitada (também conhecida como filtragem trilinear), que suaviza as transições de textura, mas dará um pequeno golpe no desempenho.
+      
+      
+        tf_anisotropic
+        Isto significa que a filtragem anisotrópica é habilitada, o que melhora muito a qualidade da transição de textura e pode reduzir o embaçamento visível com outros modos de filtragem, mas tem o maior impacto no desempenho.
+      
+    
+  
+   
+   
+  Exemplo:
+  var _sampleIndex = shader_get_sampler_index(shd_Glass, "s_Background"); var _spriteTex = sprite_get_texture(sprite_index, 0); shader_set (shd_Glass);
+     if gpu_get_tex_mip_filter_ext(_sampleIndex) != tf_point {
+     gpu_set_tex_mip_filter_ext(_sampleIndex, tf_point); }
+     text_set_set_stage(_sampleIndex , _spriteTex); shader_reset();
+  
+  O código acima define o modo de filtro mip para tf_point (desabilitando o mipmapping) para o amostrador de textura de sombreamento dado, caso ainda não tenha sido definido.
+   
+   
+   
+  
+    
+      
+        Voltar: Mipmapping
+        Próximo: gpu_get_tex_mip_bias
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

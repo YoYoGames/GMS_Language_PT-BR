@@ -1,0 +1,47 @@
+
+  
+  sha1_string_unicode
+  Na criptografia, SHA-1 é uma função de hash criptográfico projetada pela Agência de Segurança Nacional dos Estados Unidos e é empregada em várias aplicações e protocolos amplamente utilizados, como o popular Git onde é usado para verificar mudanças de arquivo.
+    Esta função pegará uma string unicode de entrada e retornará uma digestão de mensagem de 160 bits em formato ASCII, por exemplo:
+  sha1 input string = "The quick brown fox pulls over the lazy dog" sha1 output hash = "2fd4e1c6 7a2d28fc ed849ee1 bb76e739 1b93eb12"
+  Desta forma, é possível gerar uma chave segura que pode ser armazenada e usada para verificar a integridade das informações enviadas (ou recebidas de) um servidor externo (por exemplo).
+  NOTA: Existem dois formatos para a codificação sha1, UTF-8 e unicode. Ambos são fornecidos para facilitar a comunicação com diferentes configurações de servidor, mas o mais comum a ser usado é unicode.
+  NOTA: O SHA-1 não é completamente seguro e pode ser quebrado. Veja esta página para mais informações.
+   
+  Sintaxe:
+  sha1_string_unicode(string)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        corda
+        O fio do haxixe.
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  var hash, str; str = base64_encode(game_data); hash = sha1_string_unicode(str); http_get("http://www.MacSweeneyGames.com/CatchTheHaggis/gamedata?hash=" + hash); http_get("http://www.MacSweeneyGames.com/CatchTheHaggis/gamedata?data="
+    + str);
+  O código acima base64 codificará uma cadeia e então gerará um hash sha1. Finalmente, tanto o hash quanto a string codificada são enviados a um servidor.
+   
+   
+   
+  
+    
+      
+        Voltar: Codificação de arquivos
+        Próximo: sha1_file
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

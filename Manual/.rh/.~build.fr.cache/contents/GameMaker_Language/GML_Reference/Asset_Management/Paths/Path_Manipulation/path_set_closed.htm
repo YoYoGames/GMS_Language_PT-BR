@@ -1,0 +1,48 @@
+
+  
+  caminho_de_série_fechada
+  Esta função pode ser usada para marcar um determinado caminho como aberto (falso) ou fechado (verdadeiro). Um caminho fechado tem seu ponto inicial conectado a seu ponto final, formando um loop, e um caminho aberto tem um início e fim definitivo, não conectado. Esta função muda o ativo do caminho real,
+    Se isto não for o que você precisa, então você deve usar uma função como path_duplicate() para criar uma cópia do caminho primeiro, então chame esta função sobre o bem duplicado (não esqueça de chamar path_delete() sobre o bem quando não for mais necessário).
+   
+   
+  Sintaxe:
+  path_set_closed(índice, fechado);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do caminho para a mudança.
+      
+      
+        fechado
+        Se o caminho está fechado (verdadeiro) ou não (falso).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  path_set_closed(pth_Patrol, true);
+  Isto definirá o caminho dado como sendo um caminho fechado.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação do caminho
+        Próximo: caminho_set_kind
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,46 @@
+
+  
+  part_particles_clear
+  Com esta função você pode limpar da sala todas as partículas atualmente criadas pelo sistema. Ela não reinicia ou remove os próprios tipos de partículas, apenas sua representação visual, e se você tiver qualquer objeto que esteja transmitindo partículas de
+    um emissor, estas partículas desaparecem, mas começarão a aparecer novamente no próximo passo depois de chamar este código.
+   
+  Sintaxe:
+  part_particles_clear(ind);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do sistema de partícula.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se (vidas <= 0) {
+     part_particles_clear(global.Sname);
+     room_goto(rm_intro);
+     }
+  
+  O código acima verificará o valor da variável "vidas" e, se for igual a 0, limpa todas as partículas do sistema e, em seguida, muda de espaço.
+   
+   
+   
+  
+    
+      
+        Voltar: Sistemas de Partículas
+        Próximo: part_particles_count
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

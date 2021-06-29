@@ -1,0 +1,47 @@
+
+  
+  vapor_set_achievement
+  Com esta função você pode dizer ao Steam API para premiar ("set") uma conquista para o jogador. Estas conquistas deveriam ter sido definidas na página de contas do painel de controle Steamworkspara seu jogo e a seqüência que é passada para a função
+    deve corresponder ao utilizado como o nome API no painel de controle. O Steam Game Overlay exibirá um painel de notificação ao usuário informando sobre a realização que recebeu, a menos que a realização já tenha sido concedida, em
+    caso em que nada vai acontecer.
+   
+  Sintaxe:
+  steam_set_achievement(ach_name);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ach_name
+        O nome da realização a ser estabelecida (string).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se hp <= 0 {
+     global.Death += 1; if global.Deaths == 10 {
+     if !vapor_get_achievement("ach_Player_Dies_Ten_Times") vapor_set_achievement("ach_Player_Dies_Ten_Times"); }
+     }
+  
+  O código acima recompensará o jogador uma conquista se a variável global "Mortes" for igual a 10 e se a conquista ainda não tiver sido concedida.
+   
+   
+   
+  
+    
+      
+        Voltar: Conquistas e estatísticas
+        Próximo: steam_get_achievement
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

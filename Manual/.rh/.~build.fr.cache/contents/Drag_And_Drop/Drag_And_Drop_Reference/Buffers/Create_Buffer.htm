@@ -1,0 +1,48 @@
+
+  
+   Criar Tampão
+  Esta ação pode ser usada para alocar uma parte da memória como buffer em seu jogo, com a função retornando o valor único de id de buffer que deve ser armazenado em uma variável e usado para todas as chamadas adicionais de função ao buffer. Você pode fornecer
+    uma variável global, uma variável de instância ou fazer com que a ação crie uma variável local temporária para armazenar a identificação do buffer. Observe que você pode criar buffers adicionais clicando no ícone de mais  ao lado de
+    a ação, e selecionando outra variável para segurar a identificação do buffer.
+  NOTA: É importante que você remova da memória qualquer recurso criado dinamicamente como este quando não precisar mais deles para evitar vazamentos de memória, então quando terminar com o buffer que você criou, você deve liberá-lo novamente
+    usando a ação Delete Buffer (no evento Other - Clean Up, por exemplo). Isto é especialmente importante para lembrar quando se utiliza uma ação de
+    como se você não removesse o buffer novamente antes do final do evento ou do roteiro de ação, então você não poderá mais acessá-lo e poderá ter problemas mais tarde.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Buffer
+        O índice tampão (armazenado em uma variável)
+      
+      
+        Valor
+        O valor a acrescentar à lista
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima cria uma variável global e depois um buffer, atribuindo o exclusivo
+    identificação do buffer para a variável. Este buffer tem dois pedaços de dados escritos.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações Tampão
+        A seguir: Buffer de cópia
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

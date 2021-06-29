@@ -1,0 +1,56 @@
+
+  
+  debug_get_callstack
+  Esta função gera um conjunto de strings como o "calltack" onde o script atual é listado primeiro, e depois todos os outros scripts que foram executados para que o script atual fosse executado. O formato exato das strings varia dependendo
+    na plataforma alvo escolhida, mas terá principalmente o nome do roteiro/evento, depois dois pontos : e o número da linha, semelhante a este:
+  "gml_Script_script2:1"
+"gml_Script_script1:32"
+"gml_Script_script0:64"
+"gml_Object_object0_Create_0:1"
+  A função permite que um argumento opcional seja passado, que é a profundidade máxima do calltack retornado. Este valor é o número de scripts que estão incluídos na matriz retornada, a partir do script atual. Se este argumento não for
+    especificado, então o calltack completo será devolvido.
+  Note que a matriz retornada sempre conterá 0 em sua última posição, após a listagem dos scripts de chamada.
+   
+  Sintaxe:
+  debug_get_callstack([maxdepth])
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        [maxdepth]
+        A profundidade máxima do calltack
+      
+    
+  
+   
+  Devoluções:
+  Array
+   
+  Exemplo:
+  se debug_mode {
+     if keyboard_check(vk_escape) {
+     var _a = debug_get_callstack(4); for (var i = 0; i < array_length_id(_a); ++i;)  {
+     show_debug_message(_a[i]);
+     }
+     }
+     }
+  
+  O código acima verifica se o modo de depuração está ativado e, se estiver, verifica se uma chave está sendo mantida pressionada. Nesse caso, ele emite a pilha de chamadas atuais para o console, com uma profundidade máxima de 4.
+   
+   
+   
+  
+    
+      
+        Voltar: Depuração
+        Próxima: exception_unhandled_handler
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

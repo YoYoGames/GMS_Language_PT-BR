@@ -1,0 +1,50 @@
+
+  
+  ds_map_secure_save_buffer
+  Esta função salvará um mapa DS previamente criado para um buffer. Você fornece o valor de identificação do mapa DS (como retornado pela função ds_map_create()) e a identificação do buffer para o qual escrever (como retornado pela função
+    buffer_create()). Observe que se o mapa DS que está sendo salvo contém uma matriz, esta será convertida em uma lista DS quando for salvo.
+  IMPORTANTE! O arquivo seguro de mapa DS salvo só pode ser carregado no dispositivo que o criou, e se você tentar carregar um arquivo que foi salvo em um dispositivo diferente, então ele não funcionará.
+   
+  Sintaxe:
+  ds_map_secure_save_buffer(filename);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        O valor de identificação do mapa DS.
+      
+      
+        tampão
+        O valor de identificação do buffer.
+      
+    
+  
+   
+  Devoluções:
+  Inteiro (DS map index)
+   
+  Exemplo:
+  buff = buffer_create(128,buffer_grow,4); var map = ds_map_create(); ds_map_add(map,"bob","ajob");
+     ds_map_add(map,"money",10);
+     ds_map_secure_save_buffer(map,"buff"); ds_map_destroy(map);
+  
+  O código acima criará um buffer e um mapa DS, depois povoará o mapa com alguns valores e o escreverá no buffer antes de deletar o mapa.
+   
+   
+   
+  
+    
+      
+        Voltar: DS Maps
+        Próximo: ds_map_secure_load
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,65 @@
+
+  
+  Controle geral do jogo
+  Essas funções e variáveis estão todas relacionadas à funcionalidade específica do jogo, como carregamento/reserva ou reinício, etc...
+  As seguintes variáveis de escopo global integradas são úteis para depurar seu jogo - elas podem ser usadas como saída para um arquivo de log no caso de problemas, por exemplo - como
+    bem como para mostrar ao usuário o ID de construção atual, etc..:
+   
+  
+    jogo_id
+    game_save_id
+    game_display_name
+    nome_do_projeto_do_jogo
+  
+   
+  As seguintes funções são utilizadas para o controle geral do jogo:
+   
+  
+    fim_de_jogo
+    jogo_restart
+    jogo_load
+    jogo_load_buffer
+    jogo_save
+    jogo_save_buffer
+    game_get_speed
+    game_set_speed_speed
+  
+   
+  Para ajudá-lo a criar e manter a pontuação máxima para seus jogos, o GameMaker Studio 2 cria uma matriz global de pontuação máxima de 10 lugares que você pode acessar, adicionar e alterar para criar sua própria pontuação máxima personalizada.
+    listas sem muito alarido. Esta funcionalidade é local para o jogo e funciona em todas as plataformas, de modo que você pode facilmente armazenar e manter uma tabela básica de pontuação alta usando estas funções junto com as Funções de Manuseio de Arquivos.
+  Existem as seguintes funções que lidam com a lista interna de pontuação alta.
+   
+  
+    highscore_add
+    highscore_name
+    highscore_value
+    highscore_clear
+  
+   
+  OGameMaker Studio 2 também inclui uma função para desenhar as notas altas na tela como uma lista, porém é muito básico e é recomendado que você use isso para depuração mais do que qualquer outra coisa, pois fazer sua própria tabela de pontuação alta é
+    fácil e lhe dará muito mais controle sobre como ela é exibida:
+   
+  
+    draw_highscore
+  
+   
+  Finalmente, temos uma função que lhe permite atribuir um sprite ao cursor do mouse:
+   
+  
+    cursor_sprite
+  
+   
+   
+   
+  
+    
+      
+        Voltar: ReferênciaGML
+        A seguir: Movimento e colisões
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

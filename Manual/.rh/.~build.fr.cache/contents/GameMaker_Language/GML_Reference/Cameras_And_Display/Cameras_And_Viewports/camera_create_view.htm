@@ -1,0 +1,82 @@
+
+  
+  camera_create_view
+  Esta função criará uma nova câmera e então definirá sua visão para a sala, antes de retornar o valor de identificação único para identificar a câmera em futuras chamadas de função. A câmera será criada usando os valores que você definir nesta função para posição, tamanho
+    e outros detalhes que se correlacionam com os valores que você estabelece no Room Editor (ver aqui). Note que esta função pode assumir um número variável de argumentos com apenas a posição x/y e largura/altura
+    argumentos sendo obrigatórios. Quaisquer argumentos não fornecidos utilizarão seus argumentos padrão.
+  Note que as câmeras são como todos os recursos dinâmicos e ocuparão a memória quando criadas. Isto significa que você precisa tomar cuidado para não criar câmeras desnecessariamente e destruir aquelas que você não precisa chamando a função camera_destroy().
+    Isto também significa que as câmeras persistirão de sala para sala se atribuídas a uma variável global (elas persistirão quando atribuídas a uma instância ou a variáveis locais também, mas você não pode acessá-las depois de mudar de sala, daí o vazamento de memória), portanto
+    que você pode - por exemplo - criar uma nova câmera, atribuí-la a uma variável global e, no início de cada sala, usar as funções camera_set_* para definir as propriedades antes de atribuí-la a uma porta de visualização.
+   
+  Sintaxe:
+  camera_create_view(room_x, room_y, width, height, [angle, object, x_speed, y_speed, x_border, y_border])
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        room_x
+        A posição x (dentro da sala) do lado esquerdo da área que a vista da câmera captura.
+      
+      
+        quarto_y
+        A posição y (dentro da sala) do topo da área que a vista da câmera captura.
+      
+      
+        largura
+        A largura da área que a vista capta.
+      
+      
+        altura
+        A altura da área que a vista capta.
+      
+      
+        ângulo
+        O ângulo a ser definido para a visão da câmera (de 0° - 360°, o padrão é 0).
+      
+      
+        objeto
+        O ID do objeto (ou ID da instância) para a visualização da câmera a seguir (o padrão é -1, sem objeto).
+      
+      
+        x_velocidade
+        A velocidade horizontal máxima em que a vista pode se mover (definida como -1 para "instantâneo" seguinte, o padrão é -1).
+      
+      
+        y_speed
+        A velocidade vertical máxima em que a vista pode se mover (definida como -1 para "instantâneo" seguinte, o padrão é -1).
+      
+      
+        x_fronteira
+        O espaço horizontal mínimo entre a borda da área de visão e a instância a ser seguida (antes que a visão comece a se mover e se for definida para seguir uma instância, o padrão é 0).
+      
+      
+        y_fronteira
+        O espaço vertical mínimo entre a borda da área de visão e a instância a ser seguida (antes que a visão comece a se mover e se for definida para seguir uma instância, o padrão é 0).
+      
+    
+  
+   
+  Devoluções:
+  Real (valor único de identificação da câmera)
+   
+  Exemplo:
+  camera_destroy(view_camera[0]); view_camera[0] = camera_create_view(0, 0, 640, 480, 0, obj_Player, 5, 5, -1, -1, -1);
+  O código acima remove a câmera atual designada para viewport[0] e então cria uma nova câmera, define suas propriedades de visualização e então a atribui para viewport[0].
+   
+   
+   
+  
+    
+      
+        Voltar: Câmeras e Ver Portos
+        Próximo: camera_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

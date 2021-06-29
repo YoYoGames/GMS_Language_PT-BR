@@ -1,0 +1,96 @@
+
+  
+  xboxlive_stats_get_leaderboard
+  Esta função pode ser usada para recuperar uma tabela de classificação global para uma determinada estatística. Você fornece o ID do usuário (como retornado, por exemplo, pela função xboxlive_get_user()), o
+    stat string (como definido quando você o registrou como um "Featured Stat"), e então você especifica uma série de detalhes sobre quais informações do leaderboard você quer recuperar. Observe que você só pode recuperar um quadro de líderes global para
+    estatísticas, mas não para as estatísticas de cordas.
+  IMPORTANTE! As estatísticas utilizadas nas placas de líderes globais devem ser registradas como "Estatísticas em Destaque" no XDP/WindowsDev Center, caso contrário, um erro será devolvido. Se você deseja quadros de líderes locais (sociais), por favor veja a função xboxlive_stats_get_social_leaderboard().
+  A função irá gerar uma chamada de retorno que irá acionar um Evento Assíncrono do Sistema. Este evento terá o mapa DS integrado.  async_load     que deve então ser analisado para as seguintes chaves:
+  
+    "id" - Realizará o constante evento
+    "evento" - Segura a corda " GetLeaderboardComplete".
+    "userid" - O ID do usuário associado à solicitação
+    "erro" - 0 se bem sucedido, algum outro valor se tiver havido um erro. Os dois seguintes são os erros mais comuns devolvidos:
+      
+        2145844844: Não é possível encontrar o quadro de líderes solicitado (o estatuto não está registrado como um estatuto em destaque)
+        -2145844848: Má solicitação (a estatística não é um tipo de quadro de comando válido, ou seja: uma corda)
+      
+    
+    " errormessage" - Uma cadeia com uma mensagem de erro, se houver alguma disponível
+    "display_name" - A identificação única para o painel de controle, conforme definido no painel do fornecedor.
+    "numentries" - O número de entradas no quadro de líderes que você recebeu.
+  
+  O restante do mapa DS também conterá os dados do quadro de líderes com o seguinte formato (onde "N" é a posição nos dados do quadro de líderes, de 0 a "numentries"):
+  
+    "PlayerN" - O nome do jogador, onde "N" é um valor inteiro correspondente à sua posição dentro da lista de entradas do quadro de líderes.
+    "PlayeridN" - A identificação única do usuário do jogador, "N".
+    "RankN" - A classificação do jogador "N" dentro da tabela de liderança.
+    Pontuação "N"- A pontuação do jogador "N".
+  
+   
+  Sintaxe:
+  xboxlive_stats_get_leaderboard(user_id, stat, num_entries, start_rank, start_at_user, ascending);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        user_id
+        O ID do usuário para obter o quadro de líderes para
+      
+      
+        stat
+        O estatuto (como cordel) para criar o quadro de líderes globais a partir
+      
+      
+        num_entries
+        O número de entradas do quadro de líderes globais a recuperar
+      
+      
+        start_rank
+        A posição no quadro de líderes para começar (use 0 se o argumento "start_at_user" for definido como verdadeiro)
+      
+      
+        start_at_user
+        Definido como verdadeiro para começar no posto de identificação do usuário, falso caso contrário (definido como falso se o argumento "start_rank" for qualquer coisa diferente de 0)
+      
+      
+        ascendente
+        Ajustar para verdadeiro para ordem ascendente e falso para ordem descendente
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo ampliado:
+  A seguir, um exemplo ampliado de como esta função pode ser utilizada. Para começar, você a chamaria em algum evento como Room Start ou Create:
+  xboxlive_stats_get_leaderboard(user_id, "GlobalTime", 20, 1, falso, verdadeiro);
+  O código acima seria chamado para obter uma lista de todas as posições de liderança social para o jogo, e geraria uma chamada de retorno de Evento Assíncrono Social, que trataríamos da seguinte forma:
+  if (async_load[? "id"] == achievement_stat_event) {
+     if (async_load[? "event"] == "GetLeaderboardComplete") {
+     global.numentries = async_load[? "numentries"]; for(var i = 0; i < numentries; i++;) {
+     global.playername[i] = async_load[? "Player" + string(i)]; global.playerid[i] = async_load[? "Playerid" + string(i)]; global.playerrank[i] = async_load[? "Rank" + string(i)]; global.playerscore[i] = async_load[? "Score" + string(i)]; }
+     }
+     }
+  
+  O código acima verifica o mapa DS retornado no Evento Assíncrono Social e se seu "id" corresponde à constante a ser verificada, então verifica se o evento foi acionado pelos dados do quadro de líderes retornados antes de fazer looping pelo mapa
+    e armazenando todos os diferentes valores em uma série de matrizes globais.
+   
+   
+   
+  
+    
+      
+        Voltar: Estatísticas e Quadros de Líderes
+        Próximo: xboxlive_stats_get_social_leaderboard
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

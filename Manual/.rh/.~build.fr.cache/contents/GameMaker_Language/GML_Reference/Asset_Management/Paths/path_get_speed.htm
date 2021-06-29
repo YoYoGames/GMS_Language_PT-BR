@@ -1,0 +1,48 @@
+
+  
+  path_get_speed
+  Esta função retorna o fator de velocidade de qualquer posição em um caminho. A posição deve ser um valor entre 0 e 1 (você pode usar posição_do_caminhopor exemplo, se você precisar da corrente
+    posição da instância), sendo 0 a posição inicial e 1 a final. O valor retornado será o fator pelo qual o real caminho_velocidade está sendo definido. Por exemplo, em um caminho
+    com apenas dois pontos, 0 e 1, onde o fator de velocidade ponto 0 é 100 e o fator de velocidade ponto 1 é 0, a função path_get_speed(path, 0,5) retornará 50.
+   
+  Sintaxe:
+  path_get_speed(ind, pos);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do caminho a ser verificado.
+      
+      
+        pos
+        Até que ponto do caminho a ser percorrido. Entre 0 (início) e 1 (fim), pode ser decimal.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  speed = path_get_speed(pth_Patrol, 0,5) / 20;
+  Isto ajustará a velocidade da instância de chamada para o fator velocidade do ponto exatamente na metade do caminho dado, dividido por 20. Portanto, se o fator de velocidade encontrado for o padrão 100, ele ajustará a velocidade da instância chamadora para 5.
+   
+   
+   
+  
+    
+      
+        Voltar: Caminhos
+        Próximo: path_get_x
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

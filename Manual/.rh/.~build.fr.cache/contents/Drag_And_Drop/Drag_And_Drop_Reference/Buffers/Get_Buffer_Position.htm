@@ -1,0 +1,45 @@
+
+  
+   Obter posição tampão
+  Esta ação pode ser usada para recuperar a posição atual de leitura/escrita para o buffer. Quando você cria um buffer, a posição de leitura/gravação é definida em 0 bytes, e à medida que você adiciona dados ao buffer, esta posição se moverá sequencialmente, o que significa que
+    você pode usar esta ação para obter o número de bytes no buffer que está definido a qualquer momento. Você fornece o valor único de identificação do buffer como retornado pela ação Criar buffer e depois dar uma variável alvo para retornar
+    o valor da posição para. A variável alvo pode ser sinalizada como sendo uma variável local temporária, neste caso será criada para você e removida da memória novamente no final do script de ação ou evento atual.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Buffer
+        O índice tampão (armazenado em uma variável)
+      
+      
+        Posição
+        A posição de leitura/escrita (em bytes) dentro do buffer
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima obtém a posição de leitura/escrita para o buffer dado
+    e se não for 0 (ou seja: no início do buffer), é definido para o início do buffer.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações Tampão
+        A seguir: Se o tampão existir
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

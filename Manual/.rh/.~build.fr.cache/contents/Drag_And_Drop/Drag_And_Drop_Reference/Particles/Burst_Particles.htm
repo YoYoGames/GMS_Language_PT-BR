@@ -1,0 +1,58 @@
+
+  
+   Partículas de ruptura
+  Esta ação permite que você quebre as partículas a qualquer momento sem depender de um emissor. Você fornece o valor de identificação único para que o sistema crie as partículas dentro (como retornado quando você criou o sistema com a ação Criar Sistema de Partículas)
+    e a identificação única do tipo de partícula a criar (como retornado quando você criou o tipo de partícula com a ação Criar Tipo de Partícula), bem como a posição x/y para criá-las e o número a criar.
+    A posição pode ser uma posição absoluta dentro da sala, ou você pode assinalá-la como sendo uma posição relativa à instância que está chamando a ação.
+  Você pode chamar esta ação de cada quadro de jogo para replicar o efeito de fluxo de um emissor, ou você pode chamá-lo uma vez em um evento (como o Evento Destroy) para simplesmente explodir as partículas.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Sistema
+        O valor de identificação do sistema de partículas a usar
+      
+      
+        Tipo
+        O valor de identificação do tipo de partícula a rebentar
+      
+      
+        X
+        A posição x para romper as partículas em
+      
+      
+        Y
+        Eles se posicionam para romper as partículas em
+      
+      
+        Conde
+        O número de partículas a serem explodidas
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima irá verificar se a instância mudou de posição
+    desde que a última estrutura do jogo foi atualizada e, se a tiver, rebentará algumas partículas na nova posição.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações com Partículas
+        A seguir: Criar Emissor de Partículas
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

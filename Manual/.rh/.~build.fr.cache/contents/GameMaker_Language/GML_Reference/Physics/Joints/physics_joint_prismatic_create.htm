@@ -1,0 +1,103 @@
+
+  
+  physics_joint_prismatic_create
+  Como uma junta revoluta, a junta prismática tem apenas um grau de liberdade, mas com esta junta é direcional em relação a um eixo em vez de rotacional e realmente impede qualquer forma de rotação. Aqui está uma imagem para ajudá-lo a visualizar como isto funciona:
+  Temos duas instâncias unidas no ponto de ancoragem, com um eixo de movimento
+    definido a partir do vetor as duas coordenadas w_eixo x/y em relação às (0,0) coordenadas do mundo físico (assim um componente x de 0 e um componente y de 1 (0,1) faria da junta uma junta prismática vertical). Esta junta só pode então se mover
+    em relação a este eixo, como uma mola ou um pistão. Se você definir o limite trans inferior ou superior, você está basicamente limitando a quantidade de movimento ao longo deste eixo, onde a posição 0 é o ponto exato que você definiu com w_anchor x/y, portanto um
+    valor iria para a "esquerda" daquele ponto ao longo do eixo e um valor positivo para a "direita" como mostrado no diagrama seguinte (perceba que "esquerda" e "direita" são termos relativos!):
+  Você também pode definir a junta como tendo ou não um motor. Isto significa que, quando não influenciada
+    por uma colisão a junta se moverá em uma direção ao longo do eixo. esta direção é definida pela velocidade do motor, com um número positivo sendo em direção às coordenadas do eixo ("direita") e um número negativo sendo em direção ao ponto de ancoragem ("esquerda").
+    O argumento "max_motor_force" é para limitar a velocidade do movimento de modo que não se obtenha um motor em perpétua aceleração e para limitar a influência que uma colisão pode ter sobre o movimento. Desta forma, você pode usar um motor conjunto
+    para simular o atrito da junta, ajustando a velocidade da junta a zero e a força máxima a algum valor pequeno, mas significativo. O motor tentará evitar que a junta se mova, mas cederá a uma carga significativa.
+  Como em todas as juntas, se você definir o valor "col" como verdadeiro, então as duas instâncias podem interagir e colidir uma com a outra, mas somente se elas tiverem eventos de colisão, porém, se for definido como falso, elas não irão colidir
+    não importa o que aconteça.
+   
+  Sintaxe:
+  physics_joint_prismatic_create(inst1, inst2, w_anchor_x, w_anchor_y, w_axis_x, w_axis_x, lower_trans_limit, upper_trans_limit, limit, max_motor_force, motor_speed, motor, col)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        inst1
+        A primeira instância para se conectar com a junta
+      
+      
+        inst2
+        A segunda instância para se conectar com a junta
+      
+      
+        w_anchor_x
+        A coordenada x onde a articulação está ancorada, dentro do mundo do jogo
+      
+      
+        w_anchor_y
+        A coordenada y onde a articulação está ancorada, dentro do mundo do jogo
+      
+      
+        w_axis_x
+        O componente x do vetor do eixo
+      
+      
+        w_axis_y
+        O componente y do vetor do eixo
+      
+      
+        limite_baixo_de_trans
+        O limite inferior permitido para o movimento articular
+      
+      
+        limite_superior_de_trans
+        O limite inferior permitido para o movimento articular
+      
+      
+        limite
+        Se limitar o movimento da articulação (verdadeiro) ou não (falso)
+      
+      
+        max_motor_force
+        Define a velocidade máxima de movimento para o motor
+      
+      
+        velocidade_do_motor
+        Esta é a velocidade na qual o motor deve se mover
+      
+      
+        motor
+        Se o motor deve estar ativo (verdadeiro) ou não (falso)
+      
+      
+        col
+        Se as duas instâncias podem colidir (verdadeiras) ou não (falsas)
+      
+    
+  
+   
+  Devoluções:
+  Inteiro (índice da junta)
+   
+  Exemplo:
+  var mainFixture, o_id; mainFixture = physics_fixture_create(); physics_fixture_set_circle_shape(mainFixture, sprite_get_width(sprite_index) / 2); o_id = instance_create_layer(x+25, y, "Instances", obj_Piston); physics_fixture_bind(mainFixture_bind(mainFixture),
+    id); physics_fixture_bind(mainFixture, o_id); physics_joint_prismatic_create(id, o_id, x, y, 0, 10, 0, 0, 0, 0, 5, 0, 1, 1); physics_fixture_delete(mainFixture);
+  
+  O código acima cria e define uma nova fixação e depois cria uma instância de "obj_Piston", ligando a fixação criada aos dois novos objetos. Eles são então unidos por uma junta prismática com a posição da âncora nas mesmas coordenadas x/y
+    da primeira instância e um eixo formado pelo vetor da posição x/y e o eixo x/y (neste caso 0,10, que é "para baixo"). Não há limites para a quantidade de movimento ao longo deste eixo, mas adicionamos um motor com velocidade 0
+    e uma força máxima de 5 para simular o atrito articular.
+   
+   
+   
+  
+    
+      
+        Voltar: Juntas
+        A seguir: physics_joint_pulley_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

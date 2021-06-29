@@ -1,0 +1,60 @@
+
+  
+  Sistemas de Partículas
+  Antes que você possa criar partículas, você precisa criar um sistema de partículas. Este é um "recipiente" onde você coloca suas partículas e emissores (se precisar deles) prontos para uso, e você pode colocar tantas ou tão poucas partículas em qualquer sistema quanto você
+    pensar necessário, e você pode ter tantos sistemas quantos você achar necessário também. Entretanto, é sempre melhor manter este número tão pequeno quanto possível devido ao fato de que cada sistema, emissor e partícula ocupa memória e ter um número excessivo deles
+    pode retardar seu jogo ou causar problemas. Por exemplo, se você precisar que alguns efeitos apareçam acima das instâncias, e outros efeitos apareçam abaixo das instâncias, você criaria dois sistemas e definiria suas profundidades para obter o efeito desejado, com todas as partículas
+    que são adicionados a cada sistema a ser desenhado na profundidade especificada.
+  Como um sistema de partículas é um recurso criado dinamicamente, você deve criá-lo e armazenar o índice retornado em uma variável para referenciar o sistema em todas as outras chamadas de função, e é muito importante que você também destrua o sistema quando ele não estiver mais
+    necessário ou então você terá um vazamento de memória que irá diminuir a velocidade e, eventualmente, quebrar seu jogo. Também vale a pena notar que os sistemas de partículas viverão para sempre após a sua criação, mesmo que o índice não seja mais armazenado. Portanto, mesmo que você mude
+    espaço ou reiniciar o jogo, os sistemas e as partículas permanecerão, e serão visíveis, em todas as outras salas, então é melhor certificar-se de destruí-los quando não precisar mais deles.
+  As funções básicas para a criação de um sistema de partículas estão listadas abaixo:
+   
+  
+    part_system_existe
+    part_system_create
+    part_system_create_layer
+    part_system_get_layer
+    part_system_layer
+    part_system_depth
+    posição_do_sistema_parte
+    part_system_clear
+    part_system_destroy
+    part_particles_clear
+    part_particles_count
+  
+   
+  Uma vez que as partículas são adicionadas a um sistema de partículas e depois explodem ou fluem para a sala, elas são normalmente atualizadas automaticamente a cada etapa e desenhadas com base nos parâmetros que você utilizou para defini-las. No entanto, às vezes pode ser necessário controlar
+    quando e como o sistema é atualizado, bem como como o sistema deve ser desenhado, e para isso o GameMaker Studio 2 fornece as seguintes funções:
+   
+  
+    part_system_automatic_update
+    part_system_automatic_draw
+    part_system_update
+    part_system_drawit
+    part_system_draw_order
+  
+   
+  Você pode usar emissores de partículas para estourar ou espalhar partículas de uma área, mas em muitos casos isso não é necessário e na verdade é melhor apenas criar as partículas
+    diretamente, utilizando as seguintes funções:
+   
+  
+    part_particles_create
+    part_particles_create_colour
+  
+   
+   
+   
+   
+  
+    
+      
+        Voltar: Partículas
+        A seguir: Tipos de Partículas
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

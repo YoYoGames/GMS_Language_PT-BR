@@ -1,0 +1,81 @@
+
+  
+  Entrada do dispositivo
+  Quando seu jogo estiver sendo direcionado para aquelas plataformas que permitem multi-toque, você deve estar usando estas funções. Elas funcionam da mesma forma que um PC funcionaria se tivesse vários ratos conectados e as constantes que estão sendo verificadas são as mesmas que aquelas
+    usado para as funções padrão do mouse:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        mb_esquerda
+        O botão esquerdo do mouse
+      
+      
+        mb_middle
+        O botão central do mouse (isto pode não ser válido para todas as plataformas alvo)
+      
+      
+        mb_right
+        O botão direito do mouse
+      
+      
+        mb_side1*
+        Botão do lado do mouse 1
+      
+      
+        mb_side2*
+        Botão do lado do mouse 2
+      
+      
+        mb_any
+        Qualquer um dos botões do mouse
+      
+      
+        mb_none
+        Sem botão do mouse
+      
+    
+  
+   * NOTA: Os botões mb_side1 e mb_side2 estão disponíveis apenas no Windows, macOS, Ubuntu e HTML5.
+  Todas as funções podem ter um valor de "toque" que corresponde a um toque no display do dispositivo, porém o número máximo de toques que podem ser detectados dependerá muito do dispositivo e do sistema operacional sendo executado. Por exemplo, alguns Androidde baixa potência
+    Os dispositivos podem ser capazes de detectar apenas 2 ou 3 toques ao mesmo tempo, enquanto um dispositivo UWP pode ser capaz de detectar até 10 toques. Observe também que nos dispositivos com tela sensível ao toque, um toque duplo é devolvido como o equivalente a um evento com o botão direito do mouse. Portanto, se você
+    necessidade de detectar várias torneiras em sucessão rápida, por exemplo, você precisará verificar tanto a mb_esquerda como a mb_direita. Esta funcionalidade pode ser ativada ou desativada usando dispositivo_mouse_dbclick_enable().
+  Abaixo você pode encontrar uma lista de todas as funções de controle específicas do dispositivo:
+   
+  
+    dispositivo_mouse_check_button
+    dispositivo_mouse_check_button_press
+    device_mouse_check_button_released
+    dispositivo_mouse_dbclick_enable
+    dispositivo_mouse_x
+    dispositivo_mouse_y
+    dispositivo_mouse_raw_x
+    dispositivo_mouse_raw_y
+    dispositivo_mouse_x_to_gui
+    dispositivo_mouse_y_to_gui
+    device_is_keypad_open
+    dispositivo_get_tilt_x
+    dispositivo_get_tilt_y
+    device_get_tilt_z
+  
+   
+  Observe que em dispositivos móveis(Android, iOS e Windows Phone), você pode usar o botão voltar a qualquer momento, pois ele é mapeado para o backspace do teclado que é a constante vk_backspace do teclado do GameMaker Studio 2, assim você pode fazer verificações para aquela chave e executar ações nesses dispositivos como se o botão voltar tivesse sido usado. Observe também que o alvo HTML5 só aceitará a entrada correta para o "dispositivo 0" ao usar estas funções.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada de jogo
+        A seguir: Entrada por gestos
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,69 @@
+
+  
+  Arquivos de reversão
+  Nas seções anteriores, você já viu como criar um repositório e comprometer-se com ele, mas o que acontece se você cometer um erro e quiser "voltar" a um
+    comprometer-se? Vamos cometer um erro deliberado e ver como podemos lidar com ele então...
+  Antes de mais nada, crie um novo recurso - neste exemplo faremos um recurso Script - e inicialmente você não verá nenhum ícone de status, já que, no que diz respeito ao controle da fonte, ele ainda não existe. No recurso de script, acrescente uma linha simples
+    de código, como:
+  show_debug_message("Olá Mundo");
+  Se você agora fechar o editor de código, o script será salvo e o ícone do arquivo modificado  aparecerá ao lado dele no Navegador de Ativos.
+    Agora, abra a janela Comprometer e você verá que há quatro mudanças encenadas, à medida que novos recursos são automaticamente adicionados:
+  As mudanças serão encenadas:
+  
+    o arquivo do projeto .yyp 
+    um arquivo view
+    o próprio roteiro do GML 
+    o arquivo .yy que faz referência a ele
+  
+  Você deve digitar uma mensagem de compromisso e depois clicar no botão Comprometer , exatamente como explicamos anteriormente. Agora, voltamos ao nosso script e mudamos a linha de código para (por exemplo):
+  show_debug_message("Olá Mundo, como você está?");
+  Quando fechamos o editor de código, novamente um ícone vermelho  será exibido ao lado do roteiro, mas percebemos que cometemos um erro com nosso código e queremos
+    voltar a uma versão anterior para corrigi-la (obviamente, você poderia simplesmente abrir o roteiro e corrigi-lo facilmente, já que o exemplo é tão simples, mas em grandes projetos que normalmente não é uma abordagem viável). O que precisamos fazer é reverter nosso
+    mudanças.
+  Para reverter uma mudança, precisamos primeiro abrir novamente a janela de compromisso, então vamos para Controle de Fonte > Cometer Mudanças mais uma vez. Nosso arquivo modificado estará novamente pronto para o committing, mas isto não é o que nós queremos
+    então clicamos no botão Unstage All para retirá-lo da área de encenação.
+  Se clicarmos agora com o botão direito  no arquivo que mudamos, teremos um menu de contexto com uma opção para Reverter o caminho:
+  Quando você selecionar esta opção, você reverterá os arquivos de volta ao estado anterior em que se encontravam.
+  IMPORTANTE! Ao reverter, você receberá uma mensagem pedindo para recarregar ou salvar o projeto atual devido ao verificador de arquivos que detecta mudanças no disco:
+    . Você deve clicar em Recarregar e não salvar, pois salvar salvará o que é memória em vez de recarregar os arquivos revertidos.
+  Tudo isso é ótimo para quando você edita algo e quer mudar de volta sem já ter feito um compromisso, mas e quando você cometeu uma ou mais mudanças e quer voltar a um compromisso anterior ? Bem, vamos editar
+    nosso roteiro novamente para dizer:
+  show_debug_message("Esta é uma má idéia");
+  Agora nós nos comprometemos, como antes, a colocá-lo sob controle de fonte. Portanto, esta foi uma má idéia e queremos retroceder, o que significa que para começar precisamos abrir a janela Controle de Fonte > Ver Histórico. Aqui veremos uma
+    lista de todos os commits anteriores agora nesta janela, começando com o commit inicial, o commit para o roteiro, e depois o commit para o roteiro que editamos como uma "má idéia":
+  Agora temos duas opções. Podemos reverter uma revisão inteira - que reverterá todos os arquivos que foram alterados para aqueles do compromisso escolhido -
+    ou podemos optar por reverter um caminho - que simplesmente reverterá um único arquivo. Vamos fazer a primeira opção para começar:
+  
+    Clique direito  nosso segundo compromisso no painel " Commit History" (o compromisso "Olá Mundo").
+    Selecione Reverter para esta revisão e, em seguida, escolha Carregar novamente na mensagem de aviso.
+  
+  Você deve ver que o script agora tem um ícone de status vermelho , e se abrirmos o script, teremos o seguinte
+  Podemos então fazer um compromisso sobre o projeto e voltaremos ao ponto onde estávamos mais uma vez. No entanto, também podemos desfazer essa ação
+    para o arquivo e ter nossa "má idéia" se comprometendo de volta fazendo o seguinte:
+  
+    Abra a janela de mudanças de compromisso.
+    Desfaça o roteiro com o código "Olá Mundo" nele.
+    Clique direito  e Revert Path.
+  
+  Agora estamos de volta a ter o arquivo errado no projeto novamente! Bem, podemos aproveitar esta oportunidade para reverter apenas esse caminho do arquivo em vez de reverter tudo para uma revisão anterior. Para isso, temos que fazer o seguinte:
+  
+    Abra a janela Ver Histórico.
+    Clique sobre o segundo compromisso (o compromisso "Olá Mundo").
+    Clique direito  em nosso script GML no painel de Arquivos e selecione Revert Path.
+  
+  Devemos voltar a ter nosso código "Hello World" e podemos então fazer um novo compromisso para atualizar o controle da fonte novamente com o arquivo corrigido.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle da fonte
+        A seguir: Clonando um Repositório 
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

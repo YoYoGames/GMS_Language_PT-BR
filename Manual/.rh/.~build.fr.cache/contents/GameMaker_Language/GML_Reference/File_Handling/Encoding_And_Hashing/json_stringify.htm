@@ -1,0 +1,62 @@
+
+  
+  json_stringify
+  Com esta função você pode converter estruturas e matrizes únicas ou aninhadas em uma cadeia JSON válida. Você fornece o valor inicial a ser usado (um índice de array ou uma referência estrutural) e então a função a "stringará", convertendo-a em uma string JSON válida,
+    conversão de matrizes GameMaker em matrizes JSON, e estruturas GameMaker em objetos JSON.
+  Ao utilizar esta função, há algumas coisas importantes a serem observadas:
+  
+    A função não  converterá mapas DS, listas ou qualquer outra estrutura de dados em JSON, e simplesmente armazenará o valor do índice interno para a estrutura (que é de pouca utilidade, pois o índice mudará entre as execuções do jogo), e como tal
+      você não deve tentar restringir qualquer valor que possa conter referências a estruturas de dados (para isso você tem json_encode()).
+    A função converterá praticamente qualquer valor em uma string JSON "válida", porém os valores reais contidos na string podem não ser exatamente o que você espera devido à forma como o padrão JSON opera:
+       "JSON é agnóstico sobre números. Em qualquer linguagem de programação, pode haver uma variedade de tipos de números de várias capacidades e complementos, fixos ou flutuantes, binários ou decimais. Isso pode fazer com que haja intercâmbio entre diferentes programações
+      idiomas difíceis. O JSON, ao invés disso, oferece apenas a representação de números que os humanos usam: uma seqüência de dígitos. Todas as linguagens de programação sabem como fazer sentido das seqüências de dígitos mesmo que discordem nas representações internas".
+       Para mais informações, consulte a Norma ECMA JSON.
+    Se você incluir um int64 nos valores a converter para o JSON, ele o escreverá como um int se estiver no intervalo válido para um int32, como um duplo se puder fazê-lo sem perder precisão ou (se nenhum desses casos for aplicável) como uma string com um identificador " @i64@" antes dele e " $i64$" depois dele. Quando você vier a analisar novamente o JSON GameMaker Studio 2 pegará esses identificadores e reconverterá o valor de volta para uma int64. Isto significa que
+      que se o JSON for destinado a um servidor ou algum outro alvo que não seja o GameMaker, esses valores não serão apropriados e, portanto, devem ser evitados.
+    Se você incluir infinity, -infinity ou NaN nos valores a serem convertidos ao JSON, eles serão codificados como cordas, pois esses valores não fazem parte do padrão JSON, e
+      ao analisar o JSON resultante, eles não serão convertidos novamente em seus valores de tempo de execução e permanecerão como cordas. Observe que NaN será convertido em "nan" (minúsculas) após a stringificação.
+    Deve-se tomar cuidado ao escrever qualquer string JSON devolvida para um arquivo ini, pois as especificações ini podem causar problemas ao usar citações e caracteres de escape. Veja a função ini_write_string()      para mais informações.
+  
+   
+   
+   
+  Sintaxe:
+  json_stringify(val)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        val
+        O valor de referência para uma estrutura ou matriz a ser convertida em uma cadeia JSON
+      
+    
+  
+   
+  Devoluções:
+  corda
+   
+  Exemplo:
+  var _contents = { versão : "1", data: { webSocket : 1, ipv4Address : "95.39.220.218", ipv6Address : "0000:0000:0000:0000:0000:ffff:5f27:dcda", header
+    : "Você está recebendo um pacote", body : "Este pacote está vazio e somente para testes", },  };
+     packet = json_stringify(mapa);
+  O código acima converterá a estrutura "_contentes" em uma string JSON e armazenará a string em uma variável. A cadeia real seria como esta:
+  {"versão": "1", "myObj": { "cabeçalho": "Você está recebendo um pacote", "webSocket": 1, "body": "Um pacote de queijo e batatas fritas de cebola", "ipv4Address": "95.39.220.218",
+    "ipv6Address": "0000:0000:0000:0000:0000:ffff:5f27:dcda" } }
+   
+   
+   
+  
+    
+      
+        Voltar: Codificação de arquivos
+        Próximo: json_parse
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

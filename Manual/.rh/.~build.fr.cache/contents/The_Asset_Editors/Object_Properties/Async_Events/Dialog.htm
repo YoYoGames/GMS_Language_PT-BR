@@ -1,0 +1,27 @@
+
+  
+  Diálogo
+  O evento assíncrono do Diálogo só é acionado quando recebe uma ligação de retorno de um dos
+   funções especiais de diálogo assíncrono, como get_login_async() (por favor
+    ver esta função para um exemplo de código estendido de como este evento é utilizado).
+  Estes eventos são os que pedem algum tipo de entrada de usuário, que pode ser um nome, detalhes de login, um número ou uma cor, etc... Como a maioria dos dispositivos não gosta de ficar sentado em loop esperando por uma resposta, eles têm que ser assíncronos e o GameMaker Studio 2 irá
+    continuam a funcionar em segundo plano enquanto estas funções têm um diálogo aberto e até obterem a entrada do usuário necessária que aciona este evento. Isto significa que se o diálogo estiver aberto enquanto um jogo estiver em andamento, você deve tomar medidas para pausar o
+    até que o diálogo de retorno seja recebido.
+  Novamente, um Mapa DS é devolvido com a identificação contida na variável especial async_load.
+    Os valores mantidos neste mapa dependerão da função utilizada, e você deve consultar as entradas individuais para cada função neste manual para obter mais detalhes.
+  NOTA: As funções de diálogo assíncrono são  apenas para depuração e testee não devem ser usadas em jogos lançados. Para isso, você deve criar uma interface de usuário personalizada para receber informações dos jogadores, para que você tenha controle total sobre a aparência e o comportamento dos diálogos.
+   
+   
+   
+  
+    
+      
+        Voltar: Eventos Async
+        A seguir: HTTP
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,51 @@
+
+  
+  fisica_gravidade_mundo
+  Como em todas as funções físicas, a fisics_world_gravity() só funcionará em uma instância se a sala tiver um mundo físico definido para ela no editor da sala ou usando physics_world_create(). Ele irá
+    então use o ponto de definição 0,0 do mundo físico para calcular a direção e a força da gravidade com base no vetor calculado a partir das entradas xg e yg. Aqui estão algumas imagens para ilustrar...
+  Como você pode ver, as coordenadas xg,yg são relativas à posição de 0,0, como definido para
+    o mundo da física, e a própria gravidade é calculada como um vetor desses dois componentes. Assim, os valores padrão de 0,10 lhe darão uma direção da gravidade para baixo (270 graus) com uma aceleração de 10 metros por segundo ao quadrado. Note os metros por segundo ao quadrado!
+    Como todas as funções físicas, a gravidade é calculada usando metros como medida de base, de modo que a escala de pixel a metro que você define na função physics_world_create é importante aqui. A gravidade também é cumulativa sobre o objeto (mas a
+    a quantidade exata depende do que você definiu para a função fisica_fixture_set_linear_damping()), o que significa que em uma sala com uma velocidade de 60, sem amortecimento, a instância
+    irá acelerar em 10 metros por segundo, a cada segundo - o que, se você tiver uma escala de 0,1 pixel a metro é o mesmo que dizer que irá acelerar a uma velocidade de 100 pixels por segundo em 60 passos.
+   
+  Sintaxe:
+  physics_world_gravity(xg, yg)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        xg
+        O componente x do vetor de gravidade
+      
+      
+        yg
+        O componente y do vetor de gravidade
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  physics_world_gravity(-5, 0);
+  O código acima definirá a gravidade a ser (assumindo que a física da sala 0,0 esteja definida para cima à esquerda) para a direita - 0 graus - com uma aceleração de 5 metros por segundo ao quadrado.
+   
+   
+   
+  
+    
+      
+        Voltar: O Mundo da Física
+        Próxima: física_world_update_iterations
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

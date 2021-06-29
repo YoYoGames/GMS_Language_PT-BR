@@ -1,0 +1,55 @@
+
+  
+  audio_get_listener_info
+  Esta função criará um mapa DS e o preencherá com informações para o ouvinte em questão.
+  NOTA: Você é responsável pela destruição do Mapa DS devolvido usando a função apropriada.
+  O mapa DS conterá as seguintes chaves:
+  
+    " nome"- O nome do ouvinte, como uma cadeia, sendo "default" o nome padrão do ouvinte na maioria das plataformas alvo
+    "máscara"- A máscara de bits para o ouvinte
+    " index" - O valor único do índice do ouvinte
+  
+  O valor da máscara pode ser usado para definir um som ou emissor para tocar de múltiplos ouvintes ao mesmo tempo, simplesmente usando o bitwise ou "|" para gerar uma máscara para o som (veja o código de exemplo abaixo), enquanto o índice é usado para definir as propriedades
+    como posição ou velocidade para um determinado ouvinte usando funções como audio_listener_set_position().
+   
+  Sintaxe:
+  audio_get_listener_info(num);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        num
+        O número do ouvinte para o qual obter os dados.
+      
+    
+  
+   
+  Devoluções:
+  ds_map
+   
+  Exemplo:
+  var num = audio_get_listener_count(); var mask = 0; for(var i = 0; i < num; ++i;) {
+     var info = audio_get_listener_info(i); var m = audio_listener_get_data(info[? "máscara"]); mask = mask | m; ds_map_destroy(info);
+     }
+     audio_set_listener_mask(máscara);
+  
+  O código acima verifica o número de ouvintes disponíveis e, em seguida, faz um loop através deles, que são combinados para criar uma máscara de bit único que é aplicada ao ouvinte global.
+   
+   
+   
+  
+    
+      
+        Voltar: Ouvintes de áudio
+        Próximo: audio_get_listener_mask
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

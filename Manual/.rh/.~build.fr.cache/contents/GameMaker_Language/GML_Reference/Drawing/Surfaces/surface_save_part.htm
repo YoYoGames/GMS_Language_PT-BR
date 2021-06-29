@@ -1,0 +1,64 @@
+
+  
+  superfície_save_parte
+  Esta função salvará uma parte de uma superfície para o disco usando o nome do arquivo dado. A superfície deve ser salva em formato *.png, e a posição (x,y) deve ser dada como coordenadas locais da superfície, tendo em mente que a parte superior esquerda
+    canto da superfície é sempre (0,0).
+   
+  Sintaxe:
+  surface_save_part(surface_id, fname, x, y, width, height);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        surface_id
+        A identificação da superfície a ser definida como alvo do desenho.
+      
+      
+        fname
+        O nome do arquivo de imagem gravado.
+      
+      
+        x
+        A posição inicial x dentro da superfície.
+      
+      
+        y
+        A posição inicial y dentro da superfície.
+      
+      
+        largura
+        A largura da peça a ser salva.
+      
+      
+        altura
+        A altura da peça a ser salva.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se keyboard_check_pressed(ord("S") {
+     surface_save_part(surf, "test.png", 0, 0, 100, 100); }
+  
+  O código acima verificará se o usuário pressiona a tecla "S" no teclado e se o faz salvará uma parte da superfície indexada na variável "surf" ao disco.
+   
+   
+   
+  
+    
+      
+        Voltar: Superfícies
+        Próximo: draw_surface
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

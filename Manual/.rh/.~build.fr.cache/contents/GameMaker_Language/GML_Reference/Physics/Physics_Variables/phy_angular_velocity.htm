@@ -1,0 +1,35 @@
+
+  
+  f_velocidade_angular
+  Esta variável pode ser usada para definir a velocidade angular da instância, ou pode ser usada para obter a velocidade angular atual, em graus por segundo e o valor usado pode ser positivo (para rotação no sentido horário) ou negativo (para rotação no sentido anti-horário).
+    Se você definir isto em uma instância que antes era estática (ou seja: tem uma densidade de 0), ela se tornará um objeto cinemático e começará a girar
+   
+  Sintaxe:
+  f_velocidade_angular;
+   
+  Devoluções:
+  Real (valor de ponto flutuante de precisão único, ou indefinido se a instância não estiver habilitada fisicamente)
+   
+  Exemplo:
+  if abs(phy_angular_velocity) > 0 {
+     phy_angular_velocity -= sign(phy_angular_velocity) * 0.01; }
+     mais
+     {
+     phy_angular_velocity = 0; }
+  
+  O código acima verificará a velocidade angular da instância e se não for 0, então adicionará (ou subtrairá) uma pequena quantidade a cada passo até que o valor seja 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis Físicas
+        Próxima: phy_angular_damping
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

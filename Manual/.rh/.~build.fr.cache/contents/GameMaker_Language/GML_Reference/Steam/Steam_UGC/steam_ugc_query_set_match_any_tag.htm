@@ -1,0 +1,47 @@
+
+  
+  steam_ugc_query_set_match_match_any_tag
+  Esta função pode ser usada para filtrar qualquer consulta UGC, especificamente para ligar ou desligar a correspondência de tags. O controle da consulta é o valor retornado quando você criou a consulta (usando, por exemplo, steam_ugc_create_query_user())
+    e o segundo argumento ou é verdadeiro ou falso, dependendo se você precisa de uma verificação para as etiquetas correspondentes. A função retornará verdadeiro se o filtro de consulta foi configurado corretamente, ou falso caso contrário.
+   
+  Sintaxe:
+  steam_ugc_query_set_match_match_any_tag(ugc_query_handle , match_any_tag);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ugc_query_handle
+        O cabo de consulta a ser usado.
+      
+      
+        match_any_tag
+        Define se as etiquetas dos itens da UGC devem ou não corresponder a alguma coisa.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var query_handle = steam_ugc_create_query_all(ugc_query_RankedByVote, ugc_match_Items, 1); steam_ugc_query_set_match_match_any_tag(query_handle, false);  steam_ugc_query_add_excluded_tag(query_handle, "walking simulator"); steam_ugc_query_set_return_long_description(query_handle,
+    true); steam_ugc_query_set_allow_cached_response(query_handle, true); query_ID = steam_ugc_send_query(query_handle);
+  O código acima cria um pedido de consulta e armazena seu tratamento em uma variável local para uso futuro nas demais funções que definem melhor o pedido de consulta antes de enviar a consulta.
+   
+   
+   
+  
+    
+      
+        Voltar: UGC
+        Próximo: steam_ugc_query_set_search_text
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,32 @@
+
+  
+  uwp_license_trial_time_remaining
+  Esta função retornará o número aproximado de segundos até que um teste baseado no tempo expire. O valor retornado por esta função é inútil se a experiência não for baseada no tempo ou se o jogo não estiver em modo de experiência.
+   
+  Sintaxe:
+  uwp_license_trial_time_remaining();
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  se uwp_license_trial_version() {
+     var secs = uwp_license_trial_time_remaining() mod 60; var mins = uwp_license_trial_time_remaining() div 60; var hours = mins div 60; se secs < 10 secs = "0" + string(secs) else secs = string(secs);  if mins > 60 mins -= (horas * 60); if mins < 10 mins = "0" + string(mins) else mins = string(mins); if hours > 9 hours = "9" else hours = string(hours); time_string = hours + ":
+    + mins + ":" + segs; }
+  
+  O código acima verifica se o jogo está sendo executado com uma licença de teste e se é ele que cria uma seqüência com o tempo até que a licença expire.
+   
+   
+   
+  
+    
+      
+        Voltar: UWP e XBox Live
+        Próximo: uwp_check_privilege
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,50 @@
+
+  
+  vertex_create_buffer_from_buffer
+  Como com a função vértice_criate_buffer()Esta função criará um novo buffer de vértices, só que agora os dados de vértices que armazena são copiados do buffer regular que é especificado como a fonte. O buffer
+    criado é um buffer especial de crescimento que é pré-formatado com o formato de vértice para construir primitivos para uso com (por exemplo) shaders. Esta função requer que você forneça o ponteiro para um buffer regular previamente criado, e um vértice
+    formato que deve ser aplicado aos dados copiados.
+   
+  Sintaxe:
+  vertex_create_buffer_from_buffer(buffer, formato);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O buffer para criar o buffer de vértices.
+      
+      
+        formato
+        O formato primitivo do vértice a ser utilizado.
+      
+    
+  
+   
+  Devoluções:
+  Apontador
+   
+  Exemplo:
+  vertex_format_begin(); vertex_format_add_position_3d();
+     vertex_format_add_colour();
+     vertex_format_add_textcoord();
+     var my_format = vtex_format_end(); v_buff = vtex_create_buffer_from_buffer(global.modelBuff, myFormat);
+  O código acima criará um novo formato de vértice e então criará um novo buffer de vértice a partir de um buffer regular criado anteriormente, aplicando a ele o formato de vértice personalizado.
+   
+   
+   
+  
+    
+      
+        Voltar: Primitivos e formatos de vértices
+        A seguir: vertex_create_buffer_from_buffer_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

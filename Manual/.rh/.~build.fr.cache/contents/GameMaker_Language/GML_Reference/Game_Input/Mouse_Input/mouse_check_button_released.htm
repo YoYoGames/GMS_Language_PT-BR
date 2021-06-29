@@ -1,0 +1,83 @@
+
+  
+  mouse_check_button_released
+  Esta função retornará verdadeiro se o botão do mouse que está sendo verificado tiver sido liberado ou falso se não tiver sido. Esta função só será acionada uma vez para qualquer botão do mouse quando ele for liberado e para acionar novamente o botão
+    precisará ter sido pressionada e liberada novamente. Você fornece o botão do mouse para verificar a partir de uma das seguintes constantes:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        mb_esquerda
+        O botão esquerdo do mouse
+      
+      
+        mb_middle
+        O botão central do mouse (isto pode não ser válido para todas as plataformas alvo)
+      
+      
+        mb_right
+        O botão direito do mouse
+      
+      
+        mb_side1*
+        Botão do lado do mouse 1
+      
+      
+        mb_side2*
+        Botão do lado do mouse 2
+      
+      
+        mb_any
+        Qualquer um dos botões do mouse
+      
+      
+        mb_none
+        Sem botão do mouse
+      
+    
+  
+   *
+   NOTA: Os botões mb_side1 e mb_side2 estão disponíveis apenas no Windows, macOS, Ubuntu e HTML5.
+  Sintaxe:
+  mouse_check_button_released(numb);
+   
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dormente
+        Qual a constante do botão do mouse a verificar.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if mouse_check_button_released(mb_right) {
+     speed = point_distance(x, y, mouse_x, mouse_y) / 10; }
+  
+  O código acima verificará se o botão direito do mouse foi liberado e se ele tem a velocidade da instância para um décimo da distância entre a posição x/y atual e a posição x/y do mouse.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada do mouse
+        Próximo: mouse_clear
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

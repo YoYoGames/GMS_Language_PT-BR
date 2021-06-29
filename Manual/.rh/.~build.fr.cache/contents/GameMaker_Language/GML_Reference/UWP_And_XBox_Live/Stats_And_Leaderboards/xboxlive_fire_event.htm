@@ -1,0 +1,46 @@
+
+  
+  xboxlive_read_player_leader_leaderboard
+  Esta função pode ser usada para disparar um evento estatutário. O argumento "event_name" é o nome do evento a ser disparado conforme definido no console XDP para seu jogo, e os seguintes parâmetros adicionais também dependerão do que você tiver configurado
+    para o estatuto. A função retornará 0 se o evento foi enviado (e deve ser recebido/processado pelo servidor) ou -1 se houve um erro (ou seja: seu evento não foi configurado, pois o arquivo de manifesto de eventos incluído no projeto diz outro número).
+   
+  Sintaxe:
+  xboxlive_fire_event(event_name, [stat_parameters]);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome_do_evento
+        O nome do evento a ser disparado.
+      
+      
+        stat_parâmetros
+        [OPCIONAL] Parâmetros adicionais a acrescentar ao evento.
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  var _user = xboxlive_get_user(0); var _uid = xboxlive_user_id_id_for_user(_user); resultado = xboxlive_fire_event("PlayerSessionStart", _uid, global.guid_str, 0, 42, 42);
+  O código acima obtém algumas informações sobre o usuário e, em seguida, dispara um evento estatutário junto com estes (e outros) dados.
+   
+   
+   
+  
+    
+      
+        Voltar: Estatísticas e Quadros de Líderes
+        Próximo:  xboxlive_stats_setup 
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

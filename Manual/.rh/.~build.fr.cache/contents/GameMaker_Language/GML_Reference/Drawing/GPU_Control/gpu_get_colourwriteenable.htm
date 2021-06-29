@@ -1,0 +1,37 @@
+
+  
+  gpu_get_colourwriteenable
+  Esta função pode ser usada para recuperar os valores atuais de gravação a cores. A função retorna uma matriz de 4 elementos 1D com os seguintes elementos que serão verdadeiros (habilitados) ou falsos (desabilitados). Por padrão, todas as cores
+    A redação está posta em prática:
+  
+    [0] = Canal vermelho habilitado/desabilitado
+    [1] = Canal verde habilitado/desabilitado
+    [2] = Canal azul habilitado/desabilitado
+    [3] = Canal Alfa habilitado/desabilitado
+  
+   
+  Sintaxe:
+  gpu_get_colorwriteenable();
+   
+  Devoluções:
+  4 elementos 1D array (Veja acima para detalhes)
+   
+  Exemplo:
+  var cw = gpu_get_colorwriteenable(); cw[3] = falso; gpu_set_colorwriteenable(cw);
+  
+  O código acima obtém os valores atuais de escrita por cor e então define o componente alfa como falso.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle de GPU
+        Próximo: gpu_get_alphatestenable
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

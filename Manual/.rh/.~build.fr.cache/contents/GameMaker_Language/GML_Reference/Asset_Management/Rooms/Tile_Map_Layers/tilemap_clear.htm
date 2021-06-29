@@ -1,0 +1,47 @@
+
+  
+  tilemap_clear
+  Usando esta função você pode limpar/ajustar todas as telhas em um determinado mapa de telhas. Você dá o ID do elemento do mapa de azulejos (que você obtém quando cria um elemento do mapa de azulejos usando layer_tilemap_create() ou quando você usa
+    a função layer_tilemap_get_id()), e então fornecer os dados do azulejo que você deseja limpar a camada. Um valor padrão de 0 limpará todos os azulejos da camada (essencialmente tornando todos os azulejos "vazios"),
+    enquanto você pode usar as funções dedicadas do tile_* para criar seus próprios dados de azulejos para limpar o mapa de azulejos com.
+   
+  Sintaxe:
+  tilemap_clear(tilemap_element_id, tiledata)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tilemap_element_id
+        O valor de identificação único do elemento do mapa de azulejos a ser mudado
+      
+      
+        tiledata
+        Os dados dos azulejos a serem usados para limpar a camada
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var layer_id = layer_get_id("Forest"); var tile_id = layer_tilemap_get_id(layer_id); tilemap_clear(tile_id, 0);
+  O código acima obtém o valor de identificação de um mapa de azulejos criado no editor da sala, e depois o limpa usando azulejos "vazios".
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas do mapa de azulejos
+        Próximo: tilemap_x
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,63 @@
+
+  
+  draw_text_transformed
+  Esta função irá desenhar texto de forma semelhante a draw_text() somente agora você pode escolher escalar o texto ao longo do eixo horizontal ou vertical (efetivamente esticando-o ou encolhendo-o) e também ter
+    O GameMaker Studio 2 desenha-o em um ângulo (onde 0 é normal e cada grau sobre 0 gira o texto no sentido anti-horário).
+   
+  Sintaxe:
+  draw_text_transformed(x, y, string, xscale, yscale, angle);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A coordenada x do fio desenhado.
+      
+      
+        y
+        A coordenada y da corda desenhada.
+      
+      
+        corda
+        O fio para desenhar.
+      
+      
+        xscale
+        A escala horizontal (padrão 1).
+      
+      
+        yscale
+        A escala vertical (padrão 1).
+      
+      
+        ângulo
+        O ângulo do texto.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_set_halign(fa_center); draw_set_valign(fa_middle);
+     image_angle += 1; draw_text_transformed(room_width / 2, room_height / 2, "GAME OVER!", 2, 2, image_angle);
+  O código acima desenhará o texto dado no meio da sala, girando redondo e escalonando para o dobro de seu tamanho original.
+   
+   
+   
+  
+    
+      
+        Voltar: Texto
+        Próximo: draw_text_ext_colour
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

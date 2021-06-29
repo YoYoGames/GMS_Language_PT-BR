@@ -1,0 +1,33 @@
+
+  
+  bbox_left
+  Esta variável lida somente retorna a posição (ao longo do eixo x) dentro da sala da caixa de delimitação da mão esquerda para a instância, onde a caixa de delimitação é definida pela largura e altura máximas da máscara para a instância
+    (conforme estabelecido pelo sprite_index ou pelo mask_index). Mesmo quando um duende tem uma máscara de colisão precisa, a caixa de delimitação existe e é
+    usada para certas coisas, e assim você pode usar esta variável para encontrá-la. Observe que quando a instância não tem sprite atribuído o valor retornado será o mesmo que a instância X posição.
+   
+  Sintaxe:
+  bbox_left;
+   
+  Devoluções:
+  Real (inteiro)
+   
+  Exemplo:
+  se bbox_left < 0 {
+     x = sprite_xoffset; }
+  
+  O código acima verifica se a caixa delimitadora da instância está fora da sala e se é ela que coloca a instância em uma nova posição.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis de Sprite Instance
+        Próximo: bbox_top
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

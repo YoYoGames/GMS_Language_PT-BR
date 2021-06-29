@@ -1,0 +1,37 @@
+
+  
+  saída
+  A declaração de saída tem a seguinte sintaxe:
+  saída;
+  saída simplesmente termina a execução da função, método ou evento do roteiro atual. Note ali
+    é uma pequena diferença no uso aqui, dependendo do escopo:
+  
+    Se você usar a saída em uma função ou método de script, ele simplesmente sairá da função e retornará ao código que chamou a função.
+    Se você usar a saída em um bloco de código dentro de um evento do objeto, ele sairá do evento inteiro, mesmo que haja vários blocos de código separados depois que exit tiver sido chamado.
+    Se você usar a saída em um evento pai e chamar esse evento usando event_inherited() em um objeto infantil, somente o evento dos pais sairá e o
+      O evento da criança (que se chamou event_inherited()) vai continuar.
+  
+  Quando usado em um evento, a saída é normalmente usada para evitar que uma instância execute qualquer outro código quando uma condição específica tiver sido atendida (ou não). O código abaixo descreve um exemplo de como ele poderia ser usado, neste caso, dentro de um Evento de Colisão,
+    embora possa ser usado em qualquer caso.
+  se (!visível) {
+     saída;
+     }
+    
+     other.hp -= ataque; other.coins -= 4; coins += 4;
+  O código acima verifica se a instância atual não é visível, nesse caso sai do bloco de código, caso contrário, ele vai em frente e executa o resto do código.
+  OBSERVAÇÃO: Não termina a execução do jogo. Para isso você precisa usar a função game_end().
+   
+   
+   
+  
+    
+      
+        Voltar: Características lingüísticas
+        Próximo: com
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

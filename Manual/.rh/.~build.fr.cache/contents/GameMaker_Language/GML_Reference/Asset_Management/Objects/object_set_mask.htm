@@ -1,0 +1,49 @@
+
+  
+  object_set_mask
+  Com esta função você pode definir o índice de máscara de um objeto específico (para mais informações sobre máscaras veja The Object Editor). Isto significa que todas as instâncias deste objeto que são criadas após a máscara ter sido mudada serão criadas com esta nova máscara, enquanto as instâncias que já estão na sala podem não ser afetadas. Você pode definir isto como -1 para remover um duende de máscara e assim, por padrão, para a máscara definida para o duende do objeto (ou sem máscaras se nenhum duende tiver sido
+    escolhido).
+  Por favor, note que esta não é uma função de instância! Você pode definir o índice de máscara de instâncias individuais usando a função máscara_index variável e, portanto, têm dez instâncias, todas com uma
+    máscara ao objeto a partir do qual foram criados, e mesmo se você mudar o índice de máscara do objeto usando esta função, todas as instâncias que estão atualmente na sala permanecerão como estavam, e somente as instâncias criadas após a chamada da função começarão
+    com a nova máscara.
+   
+  Sintaxe:
+  object_set_mask(index, spr);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do objeto a ser modificado.
+      
+      
+        spr
+        O novo duende a ser usado como máscara do objeto.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if (global.level == 10) { object_set_mask(obj_Platform, spr_mask_10); }
+  O código acima verifica o valor da variável global e depois muda o índice de máscara do objeto "obj_Platform" se este for igual a dez.
+   
+   
+   
+  
+    
+      
+        Voltar: Objetos
+        Próximo: object_set_persistent
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

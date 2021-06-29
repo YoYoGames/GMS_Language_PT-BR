@@ -1,0 +1,46 @@
+
+  
+  dispositivo_mouse_dbclick_enable
+  Esta função pode ser usada para configurar o dispositivo para detectar um toque duplo do mb_esquerda (botão esquerdo do mouse) como um toque mb_direita (botão direito do mouse) ou não. Por padrão, isto é definido como verdadeiro, o que significa que toda vez que o usuário tocar o
+    duas vezes rapidamente e consecutivamente, o valor de retorno é o mesmo como se o botão direito do mouse tivesse sido clicado. Quando isto estiver ligado, o primeiro toque será detectado como mb_esquerda, e o segundo como mb_direita, portanto, certifique-se de que
+    qualquer código utilizado leva isso em conta.
+   
+  Sintaxe:
+  device_mouse_dbclick_enable(bool);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        bool
+        Colocar a detecção com duplo clique em(verdadeiro) ou desligado(falso).
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if os_type == os_windows ||| os_type == os_mac {
+     device_mouse_dbclick_enable(false);
+     }
+  
+  O código acima verifica se o dispositivo que executa o jogo é um PC Windows ou um Mac e, se for um deles, desabilita a função de duplo toque.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada do dispositivo
+        Próximo: device_mouse_x
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

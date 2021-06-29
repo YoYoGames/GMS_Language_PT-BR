@@ -1,0 +1,46 @@
+
+  
+  font_add_enable_aaa
+  Esta função pode ser usada para ativar ou desativar o anti-aliasing (AA) para fontes adicionadas usando font_add(). Esta função precisa ser chamada antes de adicionar qualquer fonte e configuração
+    A sua conversão em verdadeiro permitirá o AA, e a sua conversão em falso o desativará. Por padrão o AA está habilitado. Note que isto não terá efeito sobre as fontes que foram adicionadas antes da função
+    foi chamada, e a função só precisa ser chamada uma vez quando a fonte é adicionada, e não a cada desenho/passo que a fonte está sendo usada.
+   
+  Sintaxe:
+  font_add_enable_aaa(enable);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        habilitar
+        Quer para ativar(verdadeiro) ou desativar(falso) AA para fontes adicionadas.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if !font_addd_get_enable_aaa() {
+     font_add_enable_aaa(true);
+     }
+  
+  O código acima verifica o status do anti-aliasing para fontes adicionadas e se ele não estiver ativado, então nós o habilitamos.
+   
+   
+   
+  
+    
+      
+        Voltar: Fontes
+        A seguir: font_addd_get_enable_aaa
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

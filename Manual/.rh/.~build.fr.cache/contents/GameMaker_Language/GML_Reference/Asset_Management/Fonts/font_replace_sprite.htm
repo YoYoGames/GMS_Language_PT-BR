@@ -1,0 +1,65 @@
+
+  
+  font_replace_sprite
+  Com esta função, você pode usar uma "faixa de duende" para substituir um recurso de fonte duende criado anteriormente, onde cada subimagem seria um símbolo ou letra individual. O índice é o número do mapa UTF8 para o primeiro caractere a ser usado e os intervalos
+    para usar são as mesmas que você usaria para uma fonte normal, começando com "!", mas lembre-se que você só deve incluir o que você precisa e que você deve estar usando o ord() para obter a função correta
+    Valor UTF8 para a letra inicial.
+  Você também pode definir o espaçamento para que a fonte seja proporcional(verdadeira) ou não(falsa), onde uma fonte proporcional é espaçada com base na largura real das letras (assim, a letra "i" ocupa menos espaço do que a letra "w",
+    por exemplo), enquanto uma fonte não proporcional será espaçada com base na largura da subimagem, como uma fonte monoespaçada. Finalmente, você pode definir o espaço a ser deixado entre cada letra ao escrever, e este pode ser qualquer valor inteiro, sendo que 0 não é espaço (a letra "w", por exemplo).
+    letras "tocarão" se forem proporcionais). 
+  Se a função falhar, então falhará silenciosamente sem substituir a fonte sprite dada.
+  t também vale a pena notar que não pode haver espaços no mapa de caracteres, de modo que se você, por exemplo, usar '.' e '0' mas não '/', você precisa incluir '/' de qualquer forma ou deixar uma subimagem em branco entre o
+    dois caracteres usados. A imagem abaixo mostra um típico layout de fonte sprite:
+   
+  Sintaxe:
+  font_replace_sprite(ind, spr, first, prop, sep);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice da fonte que será substituído (ou seja, todas as referências a este recurso passado esta função se referirão à nova fonte, não à original).
+      
+      
+        spr
+        O duende para adicionar uma fonte baseada em.
+      
+      
+        primeiro
+        O índice do primeiro personagem disponível.
+      
+      
+        adereço
+        Se o espaço branco ao redor de cada letra deve ser removido (se falso, a fonte criada será monoespaçada, caso contrário, será como a maioria das fontes regulares).
+      
+      
+        sep
+        O espaço entre cada letra, 0 significando a direita de uma letra apenas toca a esquerda da letra seguinte.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  font_replace_sprite(global.Font, working_directory + "Sprites\spr_Font.png", ord("!"), true, 2);
+  O código acima substituirá o ativo de fonte indexado na variável global "Font" por um novo ativo de fonte de um arquivo de imagem externo.
+   
+   
+   
+  
+    
+      
+        Voltar: Fontes
+        Próximo: font_replace_sprite_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

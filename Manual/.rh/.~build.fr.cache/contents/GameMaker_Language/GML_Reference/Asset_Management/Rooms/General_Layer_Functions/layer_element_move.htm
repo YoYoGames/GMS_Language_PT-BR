@@ -1,0 +1,50 @@
+
+  
+  layer_element_move
+  Você pode usar esta função para mover um elemento de uma camada para outra. Você dá o ID do elemento, como retornado pela função usada para criar o elemento ou o editor da sala ou a função layer_get_all_elements(),
+    e então você dá a identificação da camada (que você obtém quando cria a camada usando layer_create()) ou o nome da camada (como um fio - isto terá um impacto no desempenho).
+   
+  Sintaxe:
+  layer_element_move(element_id, layer_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        element_id
+        O valor de identificação único do elemento a mover
+      
+      
+        layer_id
+        O valor de identificação único da camada para a qual mover o elemento (ou o nome da camada como uma corda)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var a = layer_get_all_elements(layer); asset_layer = layer_create(-100); for (var i = 0; i Alt; array_length(a); i++;)  {
+     if layer_get_element_type(a[i]) == layerelementtype_sprite {
+     layer_element_move(a[i], asset_layer) }
+     }
+  
+  O código acima obtém os elementos na camada à qual a instância que executa o código é atribuída, depois verifica se são ativos sprite, e se são movidos para a camada com o ID armazenado na variável "asset_layer".
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próximo: layer_set_visible
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

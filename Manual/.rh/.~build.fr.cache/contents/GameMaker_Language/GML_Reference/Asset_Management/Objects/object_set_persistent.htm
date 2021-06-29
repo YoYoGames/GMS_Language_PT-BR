@@ -1,0 +1,55 @@
+
+  
+  object_set_persistent
+  Com esta função você pode definir a persistência de um objeto específico. Um objeto persistente é "transportado" de sala para sala e mantém suas propriedades o tempo todo (para mais informações sobre persistência, consulte a seção sobre o Editor de Objetos ).
+    Definir a persistência do objeto significa que todas as instâncias deste objeto que são criadas após a persistência ter sido alterada serão criadas persistentes, enquanto as instâncias que já estão na sala podem não ser afetadas.
+  Quando você cria uma instância com persistência habilitada em uma sala, lhe será atribuída uma camada ou uma profundidade (dependendo de qual função você usou para criar a instância do objeto). Quando a sala é trocada, e se a seguinte sala não tiver
+    uma camada com o mesmo nome ou profundidade que a designada, então uma nova camada será criada para a instância que persiste nas salas. Se você deu uma camada nomeada quando a instância foi criada, então a nova camada também será nomeada com o mesmo
+    como camada original, enquanto que se você atribuir uma profundidade à instância, então a nova camada será denominada " _layer_XXX", onde "XXX" é um valor hexadecimal usado para dar à camada um nome único. Estas camadas serão removidas da sala
+    no Room End. Outra coisa a se notar sobre as camadas e instâncias persistentes é que se você tiver atribuído à instância uma camada nomeada na criação, e houver outra camada nas seguintes salas com o mesmo nome, então a instância persistente será
+    atribuído à camada com o mesmo nome, independentemente da profundidade da camada. Finalmente, se uma instância persistente se move para uma sala com uma camada na mesma profundidade em que a instância foi criada, ela não será atribuída a esta camada, mas
+    ao invés disso, uma nova camada será criada na mesma profundidade (seguindo a convenção de nomenclatura explicada anteriormente).
+  Por favor, note que esta não é uma função de instância! Você pode definir a bandeira persistente de instâncias individuais usando a persistente e, portanto, todas as dez instâncias foram marcadas como persistentes.
+    mesmo que o objeto em questão tenha a bandeira definida como falsa no IDE, e mesmo que você mude a bandeira persistente do objeto para verdadeiro usando esta função, todas as instâncias que atualmente na sala permanecerão como estavam, e apenas instâncias criadas
+    depois de chamar a função, começará com a bandeira persistente como verdadeira.
+   
+  Sintaxe:
+  object_set_persistent(index, pers);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do objeto a ser modificado.
+      
+      
+        pers
+        Se o objeto deve ser assinalado como persistente(verdadeiro) ou não(falso).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if (room == rm_final) { object_set_persistent(obj_Player, false); }  instance_create_layer(32, 32, "Instances", obj_Player);
+  O código acima verifica em que sala a instância está atualmente e se está na "rm_final" especificada, então define a persistência do objeto "obj_Player" como falsa e então cria a instância.
+   
+   
+   
+  
+    
+      
+        Voltar: Objetos
+        Próximo: object_set_solid
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

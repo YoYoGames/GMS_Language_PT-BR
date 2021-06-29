@@ -1,0 +1,47 @@
+
+  
+   Conjunto Gamepad Axis Deadzone
+  Esta ação pode ser usada para definir a "zona morta" do eixo do bastão de jogo. Você especifica o índice do controle de jogo a ser definido, e então define um valor de 0 a 1 e se a quantidade de entrada for menor que o valor dado, o eixo da vareta do controle de jogo é considerado
+    Note que este é um cenário global que afetará todos os eixos do bastão conectados.
+  Note que isso não modifica a saída da ação Get Gamepad Axis, que sempre retornará um valor de -1 e 0, e 0 e 1. Por exemplo, ajustar a zona morta para 0,2 significa que empurrar o bastão para a direita
+    só comece a retornar um valor de 0 - 1 quando o valor do eixo bruto for superior a 0,2 - então quando o valor bruto for 0,2, o valor de retorno será 0, quando o valor bruto for 0,5, o valor de retorno será 0,375, ou se o valor bruto for 0,9, então o retorno
+    valor seria de 0,875.
+   
+  Sintaxe de ação:
+  
+   
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Gamepad
+        O índice gamepad.
+      
+      
+        Zona morta
+        O valor da zona morta (0 - 1)
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima define a zona morta para todos os índices do gamepad como 0,2.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações Gamepad
+        A seguir: Se o botão Gamepad for pressionado
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

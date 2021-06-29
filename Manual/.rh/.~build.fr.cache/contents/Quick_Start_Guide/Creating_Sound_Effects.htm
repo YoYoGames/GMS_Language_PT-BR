@@ -1,0 +1,37 @@
+
+  
+  Criação de efeitos sonoros
+  Todos os jogos têm que ter efeitos sonoros - e a maioria também tem música - o que significa que você precisa poder adicioná-los ao seu jogo no GameMaker Studio 2. Isto é feito através do Editor de som,
+    que é aberto sempre que você cria um novo ativo Sound no Navegador de Ativos:
+  
+  Os sons no GameMaker Studio 2 podem ser descomprimidos ou comprimidos, com sons comprimidos tendo opções adicionais sobre como lidar com eles em tempo de execução. Os sons não comprimidos são aqueles que foram salvos como arquivos no formato WAV, enquanto os sons comprimidos podem ser no formato MP3 ou OGG. Em geral, você vai querer que pequenos efeitos sonoros sejam WAV - como sons de disparo, ou sons de botão,
+    etc.... - e efeitos maiores ou música a ser MP3 ou OGG. Como com os outros recursos diferentes, é recomendado que você nomeie seus sons usando um prefixo apropriado como " snd_".
+    para que você possa identificá-lo facilmente mais tarde.
+  NOTA: Um som não comprimido significa simplesmente que não teve nenhum tipo de compressão  algoritmo aplicado a ele. Aplicar compressão a um som significa que ele exigirá menos espaço de armazenamento, mas também significa que ele precisa ser descomprimido antes de tocar, e como os pequenos efeitos sonoros são geralmente usados muito e muito rapidamente - e não consomem
+    muito espaço de armazenamento - você não quer o custo adicional de descompactação da CPU quando ela está sendo jogada. Entretanto, como coisas como arquivos de música geralmente podem ser arquivos muito grandes, você quer que eles sejam compactados, pois eles ocuparão menos espaço de armazenamento.
+    espaço dessa forma, e o custo adicional de descompressão da CPU é insignificante, uma vez que geralmente são jogados apenas um de cada vez.
+  Adicionar um som é tão simples quanto clicar no botão de adicionar som  e depois navegar no explorador de arquivos que se abre para o arquivo que você deseja usar (você também pode arrastar e
+    liberar arquivos de som no IDE GameMaker Studio 2 e eles serão adicionados como um novo recurso sonoro). Uma vez selecionado e carregado, você pode então visualizá-lo usando os controles de reprodução mostrados, bem como alterar certos atributos para como o
+    arquivo deve ser exportado. Se você não tem certeza disso, então simplesmente deixe tudo "como está", embora se você estiver adicionando música ou sons no formato MP3 / OGG, você provavelmente deveria mudar
+    para o formato Comprimido - Não em fluxo contínuo.
+  Você pode encontrar mais informações sobre o editor de som na página ligada abaixo:
+  
+    Editores: O Editor de Som
+  
+  Note que os sons ocupam muito espaço em disco, portanto, você deve ter cuidado ao criá-los para seus projetos de jogo. Você realmente precisa de um efeito sonoro de 48KHz que só toca por uma fração de segundo? Provavelmente não! Então, pense em reduzir a taxa de amostragem aqui para 11025 ou 22050 para efeitos, e para coisas mais longas como música ou para efeitos de looping, pense também em usar um formato comprimido. Note também que se você planeja usar efeitos de áudio posicional em 3D,
+    então o arquivo de som inicial deve ser mono.
+  Você pode fechar o editor de som agora e podemos passar a olhar para Objetos e Instâncias...
+   
+   
+  
+    
+      
+        Voltar: Índice
+        A seguir: Objetos e Instâncias
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

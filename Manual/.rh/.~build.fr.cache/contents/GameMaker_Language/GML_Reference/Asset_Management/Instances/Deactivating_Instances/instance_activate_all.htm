@@ -1,0 +1,31 @@
+
+  
+  instance_activate_all
+  Com esta função você pode dizer ao GameMaker Studio 2 para ativar todas as instâncias que tenham sido desativadas anteriormente em uma sala. Note que a ativação não é instantânea, e uma instância que tenha sido ativada desta forma não será considerada
+    estar ativo até o final do evento em que a função foi chamada.
+   
+  Sintaxe:
+  instance_activate_all();
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  instance_activate_all(); var _vx = camera_get_view_x(view_camera[0]); var _vy = camera_get_view_y(view_camera[0]); var _vw = camera_get_view_width(view_camera[0]); var _vh = camera_get_view_height(view_camera[0]); instance_deactivate_region(_vx
+    - 64, _vy - 64, _vw + 128, _vh + 128, falso, falso);
+  O código acima ativa todas as instâncias dentro da sala e depois desativa aquelas que estão 64px fora dos limites da visão atual da câmera.
+   
+   
+   
+  
+    
+      
+        Voltar: Desativação de Instâncias
+        A seguir: instance_activate_object
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

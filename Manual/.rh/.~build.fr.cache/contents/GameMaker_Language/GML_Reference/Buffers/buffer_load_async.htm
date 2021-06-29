@@ -1,0 +1,68 @@
+
+  
+  buffer_load_async
+  Com esta função você pode carregar um arquivo que você criou anteriormente usando o buffer_save() (ou qualquer uma das outras funções para salvar buffers) em um buffer. O "offset" define o início
+    posição dentro do buffer para carregamento (em bytes), e o "tamanho" é o tamanho da área do buffer a ser carregada a partir desse offset (também em bytes). Você pode fornecer um valor de -1 para o argumento do tamanho e todo o buffer será carregado.
+    Note que a função será carregada a partir de uma pasta "padrão", que não precisa ser incluída como parte do caminho do arquivo que você fornecer. Esta pasta será criada se ela não existir ou quando você salvar um arquivo usando buffer_save_async().
+  A função retorna um valor de identificação único que pode então ser usado no evento Salvar / Carregar Assíncrono para verificar o async_load    valor de identificação, como mostrado no exemplo ampliado abaixo. O mapa de assim-chamada no evento terá os dois pares chave/valor a seguir:
+  
+    "id": a identificação da função async como retornada pela função save.
+    "status": retornará verdadeiro se os dados foram salvos/carregados corretamente, e falso caso contrário.
+  
+  NOTA: Em HTML5, este é o método preferido para carregar um arquivo se você estiver carregando de um servidor e não de um armazenamento local, pois o carregamento síncrono foi depreciado na maioria dos navegadores e eventualmente será obsoleto.
+   
+  Sintaxe:
+  buffer_load_async(buffer, nome do arquivo, offset, tamanho);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O índice do buffer a ser carregado.
+      
+      
+        nome do arquivo
+        O nome do arquivo a ser carregado.
+      
+      
+        offset
+        A compensação dentro do buffer para carregar a (em bytes).
+      
+      
+        tamanho
+        O tamanho da área tampão a ser carregada (em bytes).
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo ampliado:
+  A função buffer_load_async( ) pode ser chamada a partir de qualquer evento, e como é assíncrona, a ligação de retorno pode ser quase instantânea ou pode levar vários segundos. Chamar a função é simples e pareceria algo parecido com isto:
+  loadid = buffer_load_async(buff, "Player_Save.sav", 0, 16384);
+  O código acima carrega o conteúdo do arquivo "Player_Save.sav" para o buffer dado, armazenando o ID da chamada de função na variável " loadid". Quando a carga estiver completa, o evento assíncrono Salvar/Carregar será
+    acionado e você pode analisar o mapa async_load para a identificação correta da função, desta forma:
+  if ds_map_find_value(async_load, "id") == loadid {
+     if ds_map_find_value(async_load, "status") == falso {
+     show_debug_message("Carga falhou!"); }
+     }
+  
+  O código acima verificará primeiro a identificação do mapa DS que foi criado, depois verificará o status da chamada de retorno, postando uma mensagem de depuração se tiver havido algum problema.
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: buffer_load_partial
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

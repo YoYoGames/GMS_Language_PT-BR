@@ -1,0 +1,61 @@
+
+  
+  audio_debug
+  Esta função pode ser usada para exibir informações de depuração sobre o sistema de áudio, com verdadeira ligação e falsa para desligá-lo. Quando você estiver depurando o áudio desta forma, a sobreposição mostrará as seguintes informações:
+  
+  
+    Cabo - O cabo de fonte OpenAL (único para cada som tocado)
+    Cabo de dados - O cabo de buffer OpenAL (mostra o mesmo valor para vários sons com o mesmo cabo de fonte)
+    Buffers processados - quantos buffers já foram jogados
+    Buffers enfileirados - quantos buffers foram enfileirados (e ainda estão esperando para jogar)
+    Ganho - O valor de ganho para o áudio (0 - 65536)
+    Play Offset - a posição da amostra (posição de jogo atual) no buffer atual
+    Barras de amortecedores em fila de espera - um pequeno diagrama da caixa dos amortecedores processados/queued com o offset de jogo (posição atual) desenhado como uma linha azul
+  
+  Para grupos sincronizados de áudio, você também tem a função audio_sync_group_debug().
+  NOTA: Esta função não funciona na plataforma de destino HTML5.
+   
+  Sintaxe:
+  audio_debug(enable);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        habilitar
+        Habilitar (definir para verdadeiro) ou desabilitar(falso) a depuração de áudio.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if (debug_mode) {
+     audio_debug(true);
+     }
+     mais
+     {
+     audio_debug(falso);
+     }
+  
+  O código acima ligará ou desligará a camada de depuração de áudio, dependendo se o jogo está ou não em modo de depuração.
+   
+   
+   
+  
+    
+      
+        Voltar: Áudio
+        Próximo: áudio_system_is_available
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

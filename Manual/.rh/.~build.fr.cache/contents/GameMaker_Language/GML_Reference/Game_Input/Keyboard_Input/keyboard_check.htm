@@ -1,0 +1,48 @@
+
+
+
+
+  
+  teclado_check
+  Com esta função, você pode verificar se uma chave está ou não pressionada. Ao contrário da função teclado_check_pressed() ou keyboard_check_released() funções que
+    são acionados apenas uma vez quando a tecla é pressionada ou liberada, esta função é acionada a cada passo em que a tecla é mantida pressionada. A função terá um valor de código de chave como retornado pela função ord()    (somente letras maiúsculas de A-Z ou números de 0-9), ou qualquer uma das constantes vk_* listadas na página principal de Entrada do Teclado.
+   
+  Sintaxe:
+  keyboard_check(key);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        chave
+        A chave para verificar o estado de down.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  
+  if keyboard_check(vk_left) {
+     x -= 5; }
+  
+  O código acima verificará se a tecla de seta está sendo pressionada e moverá a instância 5 pixels deixados a cada passo que ela retorna verdadeiro.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada de Teclado
+        Próximo: teclado_check_pressed
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

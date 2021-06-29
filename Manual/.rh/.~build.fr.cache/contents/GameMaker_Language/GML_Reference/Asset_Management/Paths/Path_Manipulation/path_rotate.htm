@@ -1,0 +1,52 @@
+
+  
+  caminho_rota
+  Você pode usar esta função para girar um determinado caminho ao redor de seu centro. Lembre-se de que no GameMaker Studio 2 (a menos que você esteja usando física) os ângulos são calculados no sentido anti-horário, portanto, girar o caminho em 90 graus seria
+    girar o caminho para a esquerda. Esta função muda o recurso do caminho real, e assim afetará permanentemente como o caminho é usado por todas as instâncias no jogo desde o momento em que a função é usada até o final de
+    o jogo. Se isto não for o que você precisa, então você deve usar uma função como path_duplicate() para criar uma cópia do caminho primeiro, então chame esta função sobre o bem duplicado (não
+    esqueça de chamar path_delete() sobre o ativo quando ele não for mais necessário).
+  
+  OBSERVAÇÃO: Uma vez atribuído um caminho a uma instância usando o path_start() você pode usar a variável path_orientation 
+    para mudar a rotação do caminho também.
+   
+  Sintaxe:
+  path_rotate(índice, ângulo);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do caminho a ser percorrido.
+      
+      
+        ângulo
+        O ângulo de rotação dos graus.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  path_rotate(pth_Patrol, 90);
+  Isto giraria os 90 graus dados no sentido anti-horário.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação do caminho
+        Próximo: caminho_escala
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

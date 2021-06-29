@@ -1,0 +1,52 @@
+
+  
+  tileset_get_uvs
+  Esta função retorna uma matriz com as coordenadas UV e outros dados para a textura do conjunto de azulejos dado na página de textura. A função retorna um array com os 8 elementos a seguir:
+  
+    [0] = esquerda
+    [1] = topo
+    [2] = direito
+    [3] = fundo
+    [4] = quantidade de pixels que o compilador de bens aparou do lado esquerdo do conjunto de azulejos
+    [5] = quantidade de pixels que o compilador de bens aparou do lado superior do conjunto de azulejos
+    [6] = porcentagem normalizada de dados de pixels da largura original do conjunto de azulejos que foi salva na página de textura
+    [7] = porcentagem normalizada de dados de pixels da altura original do conjunto de azulejos que foi salva na página de textura
+  
+  Esta matriz pode então ser usada em outras funções de desenho, particularmente quando se trabalha em 3D ou usando as funções primitivas 2D, bem como quando se trabalha com o Shader funções.
+   
+  Sintaxe:
+  tileset_get_uvs(tileset);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        conjunto de azulejos
+        O índice do conjunto de azulejos a ser utilizado.
+      
+    
+  
+   
+  Devoluções
+  Array (1D, 8 elementos)
+   
+  Exemplo:
+  var tex = tileset_get_uvs(tl_Grass); tex_left = tex[0]; tex_top = tex[1]; tex_right = tex[2]; tex_bottom = tex[3];
+  O código acima armazenará as coordenadas UV para o conjunto de azulejos dado em uma matriz local e então atribuirá os valores às variáveis de instância.
+   
+   
+   
+  
+    
+      
+        Voltar: Conjuntos de azulejos
+        Próximo: tileset_get_name
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

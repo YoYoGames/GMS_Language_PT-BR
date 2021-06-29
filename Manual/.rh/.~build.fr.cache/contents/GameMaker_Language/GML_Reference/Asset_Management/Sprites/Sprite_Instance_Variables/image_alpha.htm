@@ -1,0 +1,31 @@
+
+  
+  image_alpha
+  Esta variável é usada para obter ou para definir o valor alfa para o duende. O alfa é sempre calculado como um valor entre 0 e 1 onde 0 é completamente transparente e 1 é completamente opaco. Observe que para que as mudanças nesta variável sejam visíveis, o
+   não deve ter nenhum evento de sorteio (e, portanto, o GameMaker Studio 2 irá, por padrão, sortear o duende) ou ser sorteado usando uma das funções de desenho estendido, como 
+    draw_self() ou draw_sprite_ext().
+   
+  Sintaxe:
+  image_alpha;
+   
+  Devoluções:
+  Real (entre 0 e 1 - valor de ponto flutuante de precisão único)
+   
+  Exemplo:
+  image_alpha = clamp(image_alpha - 0.01, 0, 1);
+  O código acima reduzirá lentamente o image_alpha até chegar a 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis de Sprite Instance
+        Próximo: image_angle
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

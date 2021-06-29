@@ -1,0 +1,47 @@
+
+  
+  audio_emitter_free
+  Com esta função você pode remover da memória o emissor em questão. Isto deve ser feito sempre que o emissor não for mais utilizado na sala ou no jogo, ou seja: no Evento de Destruição de
+    a instância ou no Evento Room End, caso contrário você pode acabar com um vazamento de memória que irá desacelerar e, eventualmente, quebrar seu jogo.
+   
+  Sintaxe:
+  audio_emitter_free(emissora);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        emissora
+        O índice do emissor a liberar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se vive = 0 {
+     audio_emitter_free(s_emit);
+     room_goto(rm_Menu);
+     }
+  
+  O código acima verifica o valor da variável global "vidas" e se ela retornar 0, destruirá o emissor indexado na variável "s_emit" e então irá para a sala indexada na variável "rm_Menu".
+   
+   
+   
+  
+    
+      
+        Voltar: Emissores de áudio
+        Próximo: audio_play_sound_on
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

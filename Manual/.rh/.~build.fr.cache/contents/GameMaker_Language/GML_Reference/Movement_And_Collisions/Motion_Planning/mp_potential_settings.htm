@@ -1,0 +1,62 @@
+
+  
+  mp_potencial_settings
+  As funções mp_potencial_ fazem seu trabalho usando uma série de parâmetros que podem ser alterados usando esta função. Globalmente o método funciona da seguinte forma: primeiro tenta se mover diretamente em direção ao objetivo, olhando uma série de passos à frente que podem
+    ser definido com o parâmetro "à frente" (o valor padrão é 3). Reduzir este valor significa que a instância começará a mudar de direção mais tarde, pois não "vê" tão à frente, e aumentá-lo significa que começará a mudar de direção
+    mais cedo. Se esta verificação leva a uma colisão, então começa a olhar mais para a esquerda e para a direita da direção ideal, em linha reta. Ele faz isto em etapas de tamanho "rotstep" (o valor padrão é 10), e reduzindo isto dá
+    a instância terá mais possibilidades de movimentação, mas será mais lenta, pois precisa de mais poder de processamento.
+  O parâmetro "maxrot" é um pouco mais difícil de explicar! A instância tem uma direção de movimento de corrente, e maxrot (valor padrão é 30) indica o quanto é permitido variar sua direção de cada lado dessa direção de corrente em um
+    passo. Portanto, mesmo que possa se mover, por exemplo, diretamente para o objetivo, só o fará se não violar esta mudança máxima de direção. Se você fizer do maxrot um grande valor, então a instância pode mudar muito de direção em cada passo, e isto tornará mais fácil
+    para encontrar um caminho curto, mas o caminho será mais feio e menos natural. Se você fizer o valor menor, então o caminho será mais suave, mas pode levar desvios mais longos (e às vezes até falhar em encontrar o objetivo). Finalmente, quando nenhum passo pode ser dado, o comportamento
+    depende do valor do parâmetro "no local". Se no local for verdadeiro (o valor padrão), então a instância girará no local pelo valor indicado com "maxrot" e se for falso, não se moverá de forma alguma. Definindo-o como falso
+    é útil, por exemplo, para carros, mas reduz a chance de a instância encontrar um caminho.
+   
+  Sintaxe:
+  mp_potencial_settings(maxrot, apodrecimento, adiante, no local)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        maxrot
+        O número de graus de cada lado da direção atual que a instância pode girar em uma etapa
+      
+      
+        passo
+        O número de graus de cada lado da direção atual que a instância pode verificar para uma colisão
+      
+      
+        adiante
+        O número de passos à frente que a instância pode verificar se há uma colisão. Os valores maiores são mais lentos do que os menores.
+      
+      
+        no local
+        Use isto para permitir que a instância gire no local quando não for encontrado nenhum caminho (verdadeiro) ou não (falso)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  mp_potencial_settings(45, 5, 5, 0);
+  O código acima irá definir as funções mp_potencial_ para usar as seguintes configurações: a instância pode olhar para frente cinco passos, mudar a direção 45 graus cada passo, olhar 5 graus para cada lado da direção atual se houver um obstáculo e
+    não girar no momento em que há uma colisão.
+   
+   
+   
+  
+    
+      
+        Voltar: Planejamento de Movimento
+        Próximo: mp_potencial_step
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

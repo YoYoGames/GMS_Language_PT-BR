@@ -1,0 +1,48 @@
+
+  
+  ds_grid_height
+  Esta função devolverá a altura da grade dada. Este valor é o número de células que a grade tem ao longo do eixo y e é sempre um número inteiro, como mostra a imagem abaixo:
+  
+   
+  Sintaxe:
+  ds_grid_height(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        Este índice da grade para encontrar a altura de.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  para (var i = 0; i < ds_grid_width(grid); ++i;)  {
+     para (var j = 0; j < ds_grid_height(grid); ++j;)  {
+     if (ds_grid_get(grid, i, j) == 1) {
+     instance_create_Layer(i * 32, j * 32, "Walls", obj_Wall); }
+     }
+     }
+  
+  O código acima passará através da grade DS indexada na variável "grid" e se o valor encontrado em qualquer célula específica for igual a 1, criará então uma instância de "obj_Wall" na posição apropriada dentro da sala.
+   
+   
+   
+  
+    
+      
+        Voltar: Grades DS
+        Próximo: ds_grid_resize
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,46 @@
+
+  
+  instance_exists
+  Esta função pode ser usada de duas maneiras, dependendo do que você deseja verificar. Você pode dar-lhe um objeto_index para verificar, caso em que esta função retornará verdadeiro se alguma instância ativa do objeto especificado existir na sala atual,
+    ou você também pode fornecê-lo com uma identificação de instância, caso em que esta função retornará à realidade se essa instância específica existir e estiver ativa na sala atual.
+  Observe que esta função não leva em conta as instâncias que foram desativadas usando as funções de desativação da instância.
+   
+  Sintaxe:
+  instance_exists(obj);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        obj
+        O objeto ou instância para verificar a existência de.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se !instance_exists(obj_Enemy) {
+     pontuação += 200; room_goto(rm_hiscores);
+     }
+  
+  O código acima verifica se existe alguma instância do objeto "obj_Enemy" e, se não existir, adiciona à variável "score" e muda de espaço.
+   
+   
+   
+  
+    
+      
+        Voltar: Instâncias
+        Próximo: instance_change
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

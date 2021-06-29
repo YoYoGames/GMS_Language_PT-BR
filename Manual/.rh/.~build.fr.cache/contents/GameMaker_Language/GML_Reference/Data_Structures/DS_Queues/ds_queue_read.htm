@@ -1,0 +1,55 @@
+
+  
+  ds_queue_read
+  Com esta função você pode recriar uma fila de DS salva (uma que tenha sido escrita anteriormente como um fio usando ds_queue_write()). É preciso primeiro criar uma nova fila de DS para ler a seqüência e, se a fila de DS já
+    existe e tem informações armazenadas nele, então isto será liberado antes da leitura. Esta função é de vital importância ao criar mecanismos de economia/carga para seu jogo. Observe que se a estrutura de dados foi criada com versões anteriores de GameMaker    você deve adicionar o argumento opcional "legado", definindo-o como verdadeiro, já que o formato das cordas foi alterado com esta versão.
+   
+  Sintaxe:
+  ds_queue_read(id, str [, legacy]));
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação da estrutura de dados a ser lida.
+      
+      
+        str
+        O fio a partir do qual ler.
+      
+      
+        legado(opcional)
+        Pode ser verdadeiro ou falso ou omitido completamente.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  queue = ds_queue_create(); ini_open("save.ini");
+     var str = ini_read_string("Queues", "0", ""); if (str != "") {
+     ds_queue_read(queue, str); }
+     ini_close();
+  
+  O código acima cria uma fila e armazena o índice na variável "fila". Em seguida, ele abre um arquivo ini e lê uma string a partir dele, verificando se a string não é retornada como vazia primeiro. Esta cadeia de caracteres é então lida em
+    a fila DS recém-criada.
+   
+   
+   
+  
+    
+      
+        Voltar: Filas de DS
+        Próximo: ds_queue_write
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

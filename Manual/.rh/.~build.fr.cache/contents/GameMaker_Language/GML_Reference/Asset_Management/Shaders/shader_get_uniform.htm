@@ -1,0 +1,47 @@
+
+  
+  shader_get_uniform
+  Como você não pode alterar o valor de uma constante de sombreador dentro do próprio sombreador, você tem que defini-lo antes de chamar o sombreador usando uma das funções do conjunto uniforme disponível. Entretanto, para poder fazer isso você deve primeiro chamar este
+    função para obter o "cabo" da constante de sombreamento que você vai querer mudar.
+  NOTA: Embora um shader seja composto de dois programas discretos (vértice e fragmento) esta função não diferenciará entre os dois e devolverá o cabo da constante do shader de qualquer um deles.
+   
+  Sintaxe:
+  shader_get_uniform(shader, uniforme);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        shader
+        O índice do sombreador a ser usado.
+      
+      
+        uniforme
+        A constante de sombreamento para obter o cabo de (um cordel).
+      
+    
+  
+   
+  Devoluções:
+  Real (Cabo uniforme)
+   
+  Exemplo:
+  shader_params= shader_get_uniform(shd_glass, "u_vRefractColour");
+  O código acima terá o cabo da constante de sombreamento "u_vRefractColour".
+   
+   
+   
+  
+    
+      
+        Voltar: Shaders
+        Próximo: shader_get_sampler_index
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

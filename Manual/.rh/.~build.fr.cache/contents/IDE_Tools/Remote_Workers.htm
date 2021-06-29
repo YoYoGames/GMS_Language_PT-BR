@@ -1,0 +1,89 @@
+
+  
+  Trabalhadores remotos
+  Quando você compila seu jogo, geralmente usa o trabalhador "Local", que é o computador no qual o GameMaker Studio 2 foi instalado. Entretanto, em algumas circunstâncias, você pode precisar usar outro computador para construir seus projetos. Por exemplo, o GameMaker Studio 2 é o computador em que você pode precisar usar outro computador para construir seus projetos,
+    se você estiver trabalhando em um Mac e quiser construir um projeto Windows, então você gostaria de configurar um Operador Remoto e ter um PC Windows para fazer a construção. Essencialmente, quando você usa um trabalhador remoto, o GameMaker Studio 2 enviará todos
+    os arquivos necessários da máquina (local) em que está rodando para a máquina do trabalhador remoto, e então usar essa máquina para construir o executável final para o projeto (seja salvando-o na máquina remota, ou devolvendo-o à máquina local posteriormente).
+    Entretanto, antes de poder usar esta funcionalidade, você terá que ter instalado certas ferramentas na máquina de construção e realizado alguma configuração, o que explicaremos aqui.
+  IMPORTANTE! Você pode configurar um trabalhador remoto usando um PC Windows local e um PC Windows remoto, ou entre um PC Mac local e um PC Windows remoto, mas atualmente você não pode configurar um PC Windows (ou Mac) local e um PC Mac remoto, ou seja: você não pode
+    ter um trabalhador remoto Mac, apenas um trabalhador Windows.
+  Configuração inicial
+  
+    Para configurar um trabalhador remoto, você precisará primeiro instalar o aplicativo de ferramenta de construção do trabalhador remoto no PC que será utilizado. Você pode encontrar esta ferramenta indo ao Menu Build no GameMaker Studio 2 na máquina local e selecionando a opção "ShowRemote Worker Installer":
+    Alternativamente, você pode clicar no ícone "olho" no Gerente de destino , e obter
+      o instalador do Trabalhador Remoto dessa forma:
+    
+       O instalador será chamado de algo como "GameMakerStudio-Remote-Installer-X.X.X.X.XXX.exe".
+      e você precisa copiá-lo para o PC que você deseja usar como trabalhador remoto (você não precisa ter o GameMaker Studio 2 instalado no trabalhador remoto, apenas este programa).
+    Depois de copiá-lo para o PC de construção, instale-o seguindo as instruções na tela e quando o instalador tiver terminado, você poderá ser solicitado pelo sistema operacional para acesso através do firewall à sua rede. Uma vez que você conceder o acesso, o instalador abrirá então
+      uma página em seu navegador e você deve anotar o endereço IP e o número da porta mostrados nesta página, pois você precisará dele para o próximo passo.
+    Agora você precisa voltar para a máquina onde você tem o GameMaker Studio
+      2 instalado e clique no botão Target Manager  para abrir a janela Target Manager,
+      e lá vá para a seção Trabalhador e clique no botão Adicionar Trabalhador . Isto abrirá então a seção
+      janela seguinte:
+    Aqui você precisa dar um nome ao seu Trabalhador Remoto (isto é o que
+      ser mostrado na lista de Operários no Gerente de Destino) e, em seguida, na seção Nome do Anfitrião, acrescente o endereço junto com o porto que lhe foi mostrado e anotado anteriormente a partir da máquina do trabalhador.
+    Se tudo correu corretamente, você deve agora receber uma mensagem dizendo que você pode se conectar com sucesso à máquina do trabalhador remoto. Uma vez instalado e conectado ao seu computador IDE principal, você terá que ir e configurar a máquina do trabalhador remoto local.
+      Construa configurações para cada plataforma (veja a seção abaixo para mais detalhes) antes de poder compilar seu projeto.
+     
+  
+  Ajustes remotos
+  
+    A página de configurações mostra os diferentes caminhos e configurações de construção para a aplicação Remote Worker. No topo das configurações você tem os diferentes caminhos que serão usados pela aplicação do Trabalhador Remoto e antes de fazer qualquer coisa
+      Caso contrário, estes devem ser revisados e definidos para caminhos alternativos, se necessário (em geral, os caminhos padrão devem ser bons). Você pode acessar a página de configurações do Trabalhador Remoto usando qualquer um dos seguintes métodos:
+    
+      Clique no link "Configurações" na parte superior da página do Operador Remoto que se abre no navegador da sua máquina remota:
+      Use o RMB no ícone da bandeja do Trabalhador Remoto para abrir as configurações no navegador da sua máquina remota:
+      Em sua máquina local, abra o Gerenciador de Destino e clique no ícone "engrenagem" no topo, abra as configurações do trabalhador em uma janela em sua máquina local:
+    
+    Isto mostrará a página de configurações onde você pode ver (e definir) as diferentes opções que permitem definir os caminhos para a construção de seu projeto:
+    
+  
+  Configurações locais de construção
+  
+    Após verificar os caminhos para a aplicação do Trabalhador Remoto a ser utilizada, você pode então definir (se necessário) as diferentes Configurações de Construção Local. Diferentes plataformas exigirão diferentes ferramentas de construção a serem instaladas no PC de construção e no PC remoto.
+      trabalhadores precisarão ser capazes de usá-los para construir seus jogos através da página Configurações . As primeiras configurações aqui são as configurações Gerais :
+    Aqui você pode montar o Porto para o
+     Servidor de Ajuda e a porta para o Debugger usar. Estes podem ser alterados caso você tenha qualquer problema de conexão ao usar o módulo de depuração, mas em geral devem ser deixados nos valores padrão.
+    Agora você pode ir em frente e configurar as diferentes opções para as plataformas que o Operário Remoto pode construir:
+    Se você tiver acesso à plataforma de destino do Windows,
+      você deve ser capaz de construir usando o trabalhador remoto no PC Windows imediatamente, usando a opção Máquina Virtual (VM). Entretanto, se você desejar usar o CompiladorYoYo (YYC), também precisará definir o caminho para o Visual Studio no PC de construção. Para detalhes completos sobre como configurar um PC Windows para compilar seus projetos, consulte o seguinte artigo do helpdesk:
+    
+      Configurando para Windows
+    
+    
+  
+  Compilação
+  
+    Uma vez que você tenha seu Trabalhador Remoto configurado e tenha completado as Configurações de Construção Local (veja a seção acima), você pode começar a usá-lo para compilar seus jogos. Para isso, é simplesmente um caso de selecionar o Operador Remoto do Gerenciador de Alvos
+      selecionando a plataforma a ser testada/compilada, assim como quaisquer outras opções (como tipo de compilação ou configuração), e pressionando Play  ou Create Executable .
+    NOTA: As plataformas disponíveis no Gerenciador de Alvos mudarão dependendo das capacidades do computador do Trabalhador Remoto, e nem todos os alvos estarão disponíveis. Observe também que não há um alvo "Teste" para Trabalhadores Remotos.
+    Se você estiver simplesmente executando o projeto, então a máquina Remote Worker irá compilá-lo e executá-lo, mas se você estiver criando um executável, então a Remote Worker compilará o projeto e então retornará um arquivo *.zip para o
+      máquina local para economizar.
+    Deve-se notar que nem o botão Debug  nem o botão Clean  estarão disponíveis quando se utilizar um Operador Remoto. Observe também que atualmente só é possível realizar uma construção remota por vez.
+    
+  
+   Uma vez que você tenha o Operador Remoto instalado e funcionando em sua máquina remota, ele aparecerá na barra de tarefas como um ícone, e você pode clicar com o botão direito do mouse sobre ele para trazer à tona as seguintes opções
+  
+  
+    Aberto: Abra o aplicativo Remote Worker em seu navegador padrão.
+    Mostrar Log: Abra o arquivo de log para o Operador Remoto em seu navegador.
+    Configurações de rede: Aqui você pode filtrar quais máquinas você deseja poder enviar construções para a máquina do Operário Remoto. Cada filtro pode ser um filtro estilo CIDR ou um hostname de uma máquina para permitir. Você deve estar ciente de que se quiser que várias máquinas se conectem a um trabalhador remoto, ou se estiver misturando tipos de conexão (por exemplo: com e sem fio), então pode ser necessário editar aqui o intervalo de IP permitido.
+    Editar Configurações: Abra o menu Configurações do trabalhador remoto (explicado na seção Configurações, acima).
+    Saída: Sair do aplicativo Remote Worker. Isto significa que você não poderá mais se conectar (nem compilar) com o aplicativo de uma máquina local até reiniciar o aplicativo do Trabalhador Remoto.
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Ferramentas IDE adicionais
+        A seguir: Controle da fonte
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

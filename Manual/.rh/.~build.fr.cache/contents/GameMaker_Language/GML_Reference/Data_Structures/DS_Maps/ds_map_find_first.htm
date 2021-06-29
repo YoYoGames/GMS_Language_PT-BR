@@ -1,0 +1,48 @@
+
+  
+  ds_map_find_first
+  Esta função retorna a primeira chave armazenada no mapa DS. Esta não é a primeira chave na ordem em que você as adicionou! Os mapas DS não são armazenados de forma linear, para isso use a lista DS, então tudo o que isso faz é encontrar a
+    primeira chave como armazenada pelo computador. Isto pode ser útil se você tiver que iterar através do mapa DS procurando por algo, mas deve ser evitado se possível, pois pode ser lento.
+  Note que esta função retornará indefinida se o mapa DS dado estiver vazio.
+   
+  Sintaxe:
+  ds_map_find_first(id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação do mapa a ser utilizado.
+      
+    
+  
+   
+  Devoluções:
+  Real, de corda ou indefinido
+   
+  Exemplo:
+  var size = ds_map_size(inventory) ; var key = ds_map_find_first(inventory); for (var i = 0; i < size; i++;) {
+     if key != "ouro" {
+     key = ds_map_find_next(inventário, chave); }
+     ou break; }
+  
+  O código acima cria algumas variáveis temporárias e depois obtém o tamanho do mapa DS e encontra a primeira chave como armazenada pelo computador no mapa. Ele então usa um laço para iterar através do mapa DS procurando o valor da chave "ouro". Se
+    encontra-o, ele rompe o laço.
+   
+   
+   
+  
+    
+      
+        Voltar: DS Maps
+        Próximo: ds_map_find_last
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

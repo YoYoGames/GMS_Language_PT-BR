@@ -1,0 +1,48 @@
+
+  
+  layer_get_depth
+  Você pode usar esta função para obter o valor de profundidade associado a uma determinada camada. Você fornece a identificação da camada (que você obtém quando cria a camada usando layer_create()) ou o nome da camada (como um fio - este
+    terá um impacto no desempenho) e a função retornará essa profundidade de camadas como um número real. Note que a profundidade é definida como sendo maior quanto mais longe da câmera e menor quanto mais perto da câmera, portanto, se você tiver
+    três camadas com profundidades -100, 0, 100, as camadas serão desenhadas na ordem 100, 0, -100, de modo que a camada "superior" (ou seja, a mais próxima à vista da câmera e assim desenhada sobre tudo o resto) será a camada com a profundidade -100.
+  A imagem a seguir mostra um esquema de como funciona a profundidade para camadas:
+  Note que se você fornecer um valor de identificação de camada inválido, você receberá um erro.
+   
+  Sintaxe:
+  layer_get_depth(layer_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada para obter a profundidade de (ou o nome da camada como uma corda)
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  if layer_get_depth(global.temp_layer) != -100 {
+     layer_destroy(global.temp_layer);
+     global.temp_layer = layer_create(-100); }
+  
+  O código acima verifica a profundidade de um ID de camada armazenado em uma variável global e se não for -100, destrói a camada e a recria na profundidade de -100.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próximo: layer_get_id_id_at_depth
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

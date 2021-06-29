@@ -1,0 +1,58 @@
+
+  
+  mp_grid_add_cell
+  Com esta função podemos marcar células individuais dentro da grade MP como sendo "proibidas", o que significa que as funções de localização do caminho nunca as cruzarão. Agora, normalmente se trabalha em coordenadas x/y da sala, e não em coordenadas de células da grade MP. Portanto, vamos considerar a seguinte imagem que mostra como os dois podem se correlacionar:
+  Como você pode ver, a mp_grid é numerada como uma série de células (começando em 0,0 na parte superior esquerda
+    ), e quando você coloca esta grade sobre a sala há uma correlação direta entre as coordenadas da sala (que também começam em 0,0 no canto superior esquerdo) e as células dentro da grade. Na imagem, você pode ver que uma instância na posição 260.130
+    cai sobre a célula de grade 8,4. Você pode calcular matematicamente a célula exata na qual uma posição cai facilmente, dividindo o número pela resolução da grade e depois arredondando para baixo ou, se estiver usando a energia de 2 resoluções da grade (como 8,
+    16, 32 etc...) você pode usar os operadores bitwise. Deve-se observar que a operação bitwise é mais rápida e o exemplo abaixo mostra os dois métodos.
+   
+  Sintaxe:
+  mp_grid_add_cell(id, h, v);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        Índice da rede mp_ que deve ser usada
+      
+      
+        h
+        Posição horizontal da célula na grade
+      
+      
+        v
+        Posição vertical da célula na grade
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  com (obj_Wall) {
+     mp_grid_add_cell(grid, floor(x / 32), floor(y / 32)); }
+     com (obj_Door) {
+     mp_grid_add_cell(grid, x>>5, y>>5); }
+  
+  O código acima fará com que toda "obj_Wall" e toda obj_Door adicionem suas posições de célula equivalentes na mp_grid indexada na variável "grid". Na primeira parte do exemplo, isto é feito tomando as coordenadas x/y do objeto
+    e dividindo-as pela resolução da grade (usando o piso para manter os valores como inteiros), e na segunda parte (já que a resolução da grade é uma potência de 2) é feita através da mudança das coordenadas x,y de 5 lugares para a direita.
+   
+   
+   
+  
+    
+      
+        Voltar: Planejamento de Movimento
+        Próximo: mp_grid_add_instances
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

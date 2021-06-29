@@ -1,0 +1,54 @@
+
+  
+  draw_vertex_colour
+  Esta função define a posição de um vértice para um primitivo, com sua própria cor e ajuste alfa. O aspecto final do primitivo dependerá do tipo primitivo escolhido para desenhar e da ordem com que você adicionar os vértices a ele (veja draw_primitive_begin()    para maiores informações) e os vértices com cores e alfas diferentes se misturarão suavemente de um para o outro. Para terminar e desenhar o primitivo você deve chamar draw_primitive_end().
+   
+  Sintaxe:
+  draw_vertex_colour(x, y, col, alfa)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A coordenada x do vértice.
+      
+      
+        y
+        A coordenada y do vértice.
+      
+      
+        col
+        A cor com que se deve desenhar este vértice.
+      
+      
+        alfa
+        O alfa para desenhar este vértice com (0-1).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_primitive_begin(pr_trianglelist); draw_vertex_colour(100, 100, c_blue, 0.1); draw_vertex_colour(100, 200, c_red, 0.1); draw_vertex_colour(150, 150, c_green, 1); draw_primitive_end();
+  
+  O código acima desenhará um triângulo semitransparente com cada vértice colorido de uma cor diferente.
+   
+   
+   
+  
+    
+      
+        Voltar: Primitivos e formatos de vértices
+        Próximo: draw_vertex_texture
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

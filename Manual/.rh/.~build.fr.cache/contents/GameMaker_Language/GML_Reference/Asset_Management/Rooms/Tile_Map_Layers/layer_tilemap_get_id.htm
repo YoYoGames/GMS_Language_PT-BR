@@ -1,0 +1,45 @@
+
+  
+  layer_tilemap_get_id
+  Esta função pode ser usada para recuperar o valor de identificação único do elemento do mapa de azulejos em uma camada. Você fornece o ID da camada (que você obtém quando cria a camada usando layer_create()) ou
+    o nome da camada (como um fio - isto terá um impacto no desempenho) e a função retornará o valor de identificação associado ao elemento do mapa de azulejos na camada. Note que esta função é especificamente projetada para uso com mapas de azulejos que tenham sido
+    adicionado na IDE, como se você adicionasse um mapa de azulejos a uma camada através de código usando a função layer_tilemap_create()então ele devolverá a identificação única para o elemento do mapa de azulejos adicionado. Se o ID dado do mapa de azulejos
+    estiver incorreta ou o mapa de azulejos não existir, a função retornará -1.
+   
+  Sintaxe:
+  layer_tilemap_get_id(layer_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada a ser alvo (ou o nome da camada como uma corda)
+      
+    
+  
+   
+  Devoluções:
+  valor de identificação do elemento do mapa de azulejos (Real) ou -1
+   
+  Exemplo:
+  var lay_id = layer_get_id("tilemap_trees"); var tile_id = layer_map_get_id(lay_id); layer_tilemap_destroy(tile_id);
+  
+  O código acima obterá o ID da camada chamada "tilemap_trees" e então o utilizará para obter o ID do elemento do mapa de azulejos naquela camada. Este ID é então usado para remover o mapa de azulejos da camada.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas do mapa de azulejos
+        A seguir: layer_tilemap_exists
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,49 @@
+
+  
+  string_pos
+  Esta função retornará a posição do caractere de uma instância de uma sub-corda dentro de uma corda, pesquisando desde o início da corda (para pesquisar desde o final, use a função string_last_pos()). O
+    retornará 0 se não for encontrada, ou a posição do primeiro caractere da sub-corda se for encontrada. Tenha em mente que para as cadeias de suporte herdadas são indexadas a partir de 1, portanto 1 é a primeira posição na cadeia, e não 0 como você pode
+    esperar. Um uso para isto é para filtrar palavras que podem ser consideradas ofensivas, ou para encontrar o lugar correto para inserir algum texto em outra cadeia.
+   
+  Sintaxe:
+  string_pos(substrato, str);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        substr
+        O substrato a ser procurado no cordão.
+      
+      
+        str
+        O fio.
+      
+    
+  
+   
+  Devoluções:
+  Inteiro
+   
+  Exemplo:
+  if (string_pos(",", texto) != 0) {
+     string_insert(nome, texto, string_pos(",", texto)); }
+  
+  O código acima procura uma vírgula na string armazenada na variável "texto", e se encontrar uma, insere o "nome" do substrato nessa posição.
+   
+   
+   
+  
+    
+      
+        Voltar: Cordas
+        Próximo: string_pos_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

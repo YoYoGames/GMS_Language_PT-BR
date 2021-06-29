@@ -1,0 +1,97 @@
+
+  
+  As Nove Estruturas em Fatias
+  Uma estrutura de nove fatias pode ser criada usando sprite_nineslice_create()ou recuperado
+    de um duende usando sprite_get_nineslice(). Esta estrutura conterá propriedades que podem ser alteradas e aplicadas a um duende usando
+    sprite_set_nineslice().
+  Se recuperada de um duende, a mudança de valores nesta estrutura afetará o duende original.
+  As seguintes propriedades estarão disponíveis nesta estrutura:
+  
+    habilitado: Este booleano será verdadeiro se Nove fatias estiverem ativadas para o duende, e falso se estiver
+      inválido. Você pode modificar isto para habilitar ou desabilitar Nove fatias para o duende.
+    esquerda: Este é o desvio para a guia esquerda no eixo x, em relação à borda esquerda do duende.
+    certo: Este é o desvio para a guia direita no eixo x, em relação à borda direita do duende.
+    topo: Este é o desvio para a guia superior no eixo y, em relação à borda superior do duende.
+    inferior: Este é o desvio para a guia inferior no eixo y, em relação à borda inferior do duende.
+    modo azulejo: Isto retorna uma matriz contendo os Modos de Ladrilho para a borda e as fatias centrais.
+  
+  O Modo Tile de cada fatia pode ser lido ou modificado usando estas constantes como índice de array:
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        nineslice_esquerda
+        A fatia da borda esquerda
+      
+      
+        nineslice_top
+        A fatia superior da borda
+      
+      
+        nineslice_right
+        A fatia da borda direita
+      
+      
+        nineslice_bottom
+        A fatia inferior da borda
+      
+      
+        nineslice_centre
+        A fatia central
+      
+    
+  
+  O Modo Tile para uma fatia será (ou pode ser definido para) uma das seguintes constantes:
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        nineslice_stretch
+        A fatia será esticada
+      
+      
+        nineslice_repeat
+        A fatia será repetida
+      
+      
+        nineslice_mirror
+        A fatia será repetida por espelhamento
+      
+      
+        nineslice_blank
+        A fatia não será esticada ou repetida, resultando em uma área em branco após a fatia
+      
+      
+        nineslice_hide
+        A fatia não aparecerá de forma alguma
+      
+    
+  
+  Como o modo azulejo é uma matriz, você precisa usar a sintaxe da matriz para mudar o modo azulejo de uma fatia. O exemplo de código abaixo define o Modo Tilemode da fatia superior como Repeat:
+  Exemplo:
+  var _nineslice = sprite_get_nineslice(spr_box);
+
+_nineslice.tilemode[nineslice_top] = nineslice_repeat;
+    
+    
+  
+  Veja esta página para mais informações sobre a técnica das Nove Fatias.
+   
+  
+    
+      
+        Voltar: Gestão de ativos
+        A seguir: Conjuntos de azulejos
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

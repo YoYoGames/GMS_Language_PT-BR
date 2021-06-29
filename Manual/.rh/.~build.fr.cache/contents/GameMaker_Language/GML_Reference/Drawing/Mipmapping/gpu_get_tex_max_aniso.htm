@@ -1,0 +1,33 @@
+
+  
+  gpu_get_tex_max_aniso
+  Com esta função você pode obter o nível máximo atual de anisotropia ao usar o modo de filtro tf_anisotropic (veja gpu_get_tex_mip_filter() para mais informações). O valor retornado será
+    variam entre 1 e 16.
+   
+  Sintaxe:
+  gpu_get_tex_max_aniso();
+   
+  Devoluções:
+  Real (padrão: 16)
+   
+  Exemplo:
+  if gpu_get_tex_max_aniso() != 8 {
+     gpu_set_tex_max_aniso(8);
+     }
+  
+  O código acima verificará o nível máximo atual de filtragem anisotrópica e, se não for 8, está ajustado para 8.
+   
+   
+   
+  
+    
+      
+        Voltar: Mipmapping
+        Próximo: gpu_get_tex_max_aniso_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

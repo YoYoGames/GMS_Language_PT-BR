@@ -1,0 +1,51 @@
+
+  
+  valor_junto_físico
+  Certas propriedades da junta podem ser alteradas e definidas mesmo após a criação da junta. Há uma série de constantes que podem ser usadas nesta função e que podem ser encontradas aqui: Constantes de Articulação Física.
+   
+  Sintaxe:
+  physics_joint_set_value(conjunto, campo, valor)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        conjunto
+        O índice da junta que você deseja mudar
+      
+      
+        campo
+        A constante para a propriedade conjunta que você deseja mudar
+      
+      
+        valor
+        O novo valor para a propriedade conjunta
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if physics_joint_get_value(revJoint, phy_joint_max_motor_torque) < 2 {
+     physics_joint_set_value(revJoint, phy_joint_max_motor_torque, 2); }
+  
+  O código acima verifica se o torque máximo do motor das juntas está ajustado para menos de 2 e se é 2.
+   
+   
+   
+  
+    
+      
+        Voltar: Juntas
+        A seguir: física_distância_distância_criar
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

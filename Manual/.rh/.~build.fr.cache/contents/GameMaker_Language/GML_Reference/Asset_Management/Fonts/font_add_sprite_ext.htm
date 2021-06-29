@@ -1,0 +1,66 @@
+
+  
+  font_add_sprite_ext
+  Com esta função você pode usar uma "faixa de sprite" (o sprite em si deve ser um ativo sprite do Navegador de Ativos, ou um sprite que você adicionou aos recursos do jogo usando o sprite_add ) para criar um novo ativo de fonte, onde cada subimagem
+    seria um símbolo ou letra individual. Ao contrário do normal, o font_add_sprite() que tem uma ordem específica para as sub-imagens do duende, esta função mapeará as sub-imagens do duende com base no argumento
+    "string_map" da função. Este argumento é uma string que você pode usar para dizer ao GameMaker Studio 2 qual a ordem das sub-imagens da fonte sprite e ele as mapeará automaticamente ao escrever o texto. Assim, por exemplo, se você tiver um "string-map" (mapa de strings)
+    de "AaBbccDdEeFfGgHh", sua fonte sprite deve ter as subimagens ordenadas desta forma. Você pode definir "espaço" como sendo qualquer caractere que você queira, por exemplo uma única linha do tamanho que você quer que o espaço seja, e todos os espaços
+    no texto será renderizada nessa largura (mas a imagem escolhida nunca será renderizada), ou se você não fornecer um duende por espaço, então a largura do caractere mais largo na fonte do duende será usada em seu lugar.
+  Você também pode definir o espaçamento para que a fonte seja proporcional(verdadeira) ou não(falsa), onde uma fonte proporcional é espaçada com base na largura real das letras (assim, a letra "i" ocupa menos espaço do que a letra "w",
+    por exemplo), enquanto uma fonte não proporcional será espaçada com base na largura da subimagem, como uma fonte monoespaçada. Finalmente, você pode definir o espaço a ser deixado entre cada letra ao escrever, e este pode ser qualquer valor inteiro, sendo que 0 não é espaço (a letra "w", por exemplo).
+    letras "tocarão" se forem proporcionais). A função retorna um valor de índice que deve ser armazenado em uma variável, pois isso será necessário em todos os outros códigos que se referem a essa fonte, ou retornará -1 se a função falhar para qualquer
+    razão.
+  Vale a pena notar que para que as funções de alinhamento de fontes funcionem (como draw_set_halign()) então o font sprite deve ter sua origem definida no canto superior esquerdo. Se você usar outros valores
+    então você precisará levar em consideração a compensação de origem ao desenhar o texto usando a fonte.
+  NOTA: Quando você carrega uma fonte no GameMaker Studio 2 você deve se lembrar de removê-la novamente (com font_delete()) quando não é mais necessário, caso contrário
+    é o risco de um vazamento de memória que irá diminuir a velocidade e, eventualmente, quebrar seu jogo.
+   
+  Sintaxe:
+  font_add_sprite_ext(spr, string_map, prop, sep);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        spr
+        O duende para adicionar uma fonte baseada em.
+      
+      
+        string_map
+        Corda da qual é tirada a ordem de subimagem sprite.
+      
+      
+        adereço
+        Definir como fonte proporcional ou não.
+      
+      
+        sep
+        O espaço a ser deixado entre cada carta.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  global.Font = font_add_sprite_ext(spr_CalcFont, "0123456789+-*/=", true, 2);
+  O código acima criará um novo recurso de fonte a partir da variável "spr_CalcFont" e armazenará o índice da nova fonte na variável "global.Font". As sub-imagens da fonte sprite serão mapeadas para a string
+    especificado.
+   
+   
+   
+  
+    
+      
+        Voltar: Fontes
+        Próximo: font_replace
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

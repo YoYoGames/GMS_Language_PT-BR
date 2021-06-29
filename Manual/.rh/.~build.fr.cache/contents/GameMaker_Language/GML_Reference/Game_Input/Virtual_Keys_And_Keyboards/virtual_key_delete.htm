@@ -1,0 +1,47 @@
+
+
+
+
+  
+  virtual_key_delete
+  Se seu jogo tem diferentes salas ou instâncias para controlar menus e jogabilidade e outras coisas, então é provável que você precise mudar a posição e os mapas de chaves de suas chaves virtuais em algum momento. Para isso, você pode usar esta função para excluir
+    os antigos antes de criar os novos (se necessário). A função exige que você forneça a identificação da chave virtual para apagar - como retornado por virtual_key_add().
+  Note que qualquer chave virtual será automaticamente removida da sala quando a sala for trocada, portanto esta função só é necessária quando se deseja remover manualmente as chaves antes que a própria sala tenha terminado.
+   
+  Sintaxe
+  virtual_key_delete(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice da chave virtual para apagar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  virtual_key_delete(global.left);
+  O código acima elimina a chave virtual indexada na variável global "global.Left".
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Chaves e Teclados Virtuais
+        Próximo: keyboard_virtual_show
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

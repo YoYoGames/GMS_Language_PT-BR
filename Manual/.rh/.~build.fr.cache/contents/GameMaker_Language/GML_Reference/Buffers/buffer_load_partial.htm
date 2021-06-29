@@ -1,0 +1,56 @@
+
+  
+  buffer_load_partial
+  Esta função irá carregar alguns dos dados do buffer que foram salvos anteriormente usando o buffer_save() funções em um buffer já criado. Você dá o id do buffer previamente criado para carregar, depois o arquivo de buffer salvo para carregar e depois o offset do início do buffer (em bytes) a partir do qual você deseja carregar os dados. Os seguintes argumentos são para definir o comprimento dos dados do buffer (em bytes) a partir do ponto de deslocamento inicial que se deseja carregar e o ponto de deslocamento para carregar os dados no buffer (novamente, em bytes).
+   
+  Sintaxe:
+  buffer_load_partial(buffer, filename, offset, src_len, dest_offset);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O índice do buffer a ser carregado.
+      
+      
+        nome do arquivo
+        O nome do arquivo a ser carregado.
+      
+      
+        offset
+        A compensação dentro do buffer para carregar a (em bytes).
+      
+      
+        src_len
+        O comprimento da parte do amortecedor a ser carregada (em bytes).
+      
+      
+        dest_offset
+        O offset onde começar a colocar os dados parciais no novo buffer (em bytes).
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  buff = buffer_create(256, buffer_grow, 1); var _file = "save.dat"; var _so = 6; var _sl = 5; var _do= 0; buffer_load_partial(buff, _file, _so, _sl, _do);
+  O código acima criará um novo buffer de "crescimento" e então carregará em uma parte dos dados salvos no arquivo "save.dat" para ele.
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: buffer_compress
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

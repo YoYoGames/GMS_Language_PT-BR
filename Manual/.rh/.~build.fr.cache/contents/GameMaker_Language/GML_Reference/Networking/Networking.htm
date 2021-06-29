@@ -1,0 +1,53 @@
+
+  
+  Trabalho em rede
+  As funções de rede do GameMaker Studio 2 são baseadas em soquetes, que é um padrão da indústria em todas as plataformas. Com os soquetes, você tem a capacidade de criar tanto clientes quanto servidores usando GML simples, o que permite criar até mesmo um único
+    jogo de jogador usando o modelo cliente/servidor (algo que permitirá que o multiplayer seja adicionado facilmente mais tarde).
+  Basicamente, um soquete é um objeto que pode enviar, receber, conectar e escutar as portas da rede. Estas funções tratam apenas de conexões TCP/IP, que é no que a Internet se baseia (IPv4, para ser mais preciso). Em essência, isto permite que você
+    conectar um soquete usando um endereço IP (digamos 192.168.1.10) a outro soquete em outro endereço IP (digamos 192.168.1.11). Uma vez conectados, estes dois soquetes podem enviar dados para frente e para trás usando as funções network_send_* (como network_send_packet())
+    e o evento assíncrono dedicado que é acionado por eles. Este evento assíncrono gerará um mapa DS contendo os dados recebidos, bem como outros detalhes, e você pode encontrar os detalhes completos
+    na seção sobre o Evento Network Async.
+  Em vez de programas que precisam ler e lidar com cada bit de tráfego de rede que entra em uma máquina, os endereços IP também lidam com portas, que são numeradas de 0 a 65535. Isto permite que cada programa obtenha apenas os pacotes de dados que lhe interessam.
+    em, e não tudo o que foi enviado por cada programa. Isto também economiza tempo considerável da CPU, pois reduz seriamente o processamento de dados, de modo que com o GameMaker Studio 2 você também pode "ouvir" as portas. Assim, um servidor criará um socket, e então
+    amarrá-lo a um porto específico para ser ouvido. Será então notificado das conexões, desconexões e transferências de dados daquele soquete.
+  Os próprios "pacotes" de dados são formados por dados binários retirados de um buffer. Este buffer pode ser criado e manipulado usando as funções do GameMaker Studio 2 Buffer.
+  Vale notar que se você estiver criando um projeto para o alvo HTML5, então você não poderá usar o servidor para criar funções devido às restrições do navegador e terá que escrever seu próprio servidor para esta plataforma usando algo como Electron ou
+   NodeJS. Observe também que se seu jogo é plataforma cruzada e você antecipa a conexão a uma instância HTML5 do jogo a partir de um servidor rodando em um dispositivo móvel ou desktop, então seu servidor só pode se comunicar com a instância HTML5
+    usando o protocolo Web Socket (isto é feito usando a constante network_socket_ws - veja network_create_server() para mais informações). Isto significa que seu servidor pode ter que criar dois soquetes
+    em diferentes portas, uma para conectar a alvos não HTML5(Android, Windows, etc...) e outra para conectar ao alvo HTML5.
+  As seguintes funções existem para que você possa utilizar em rede:
+   
+  
+    network_create_server
+    rede_criar_servidor_servidor_desenhar
+    network_create_socket
+    network_create_socket_ext
+    network_connect
+    network_connect_async
+    network_connect_raw
+    network_connect_async_raw
+    network_resolve
+    network_set_config
+    network_set_timeout
+    network_send_broadcast
+    network_send_packet
+    network_send_raw
+    network_send_udp
+    network_send_udp_raw
+    network_destroy
+  
+   
+   
+   
+  
+    
+      
+        Voltar: ReferênciaGML
+        A seguir: Web
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

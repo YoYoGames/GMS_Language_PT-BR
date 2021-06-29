@@ -1,0 +1,47 @@
+
+  
+  gamepad_get_guid
+  Com esta função você pode recuperar o GUID para o gamepad conectado a um determinado índice de slots. Você fornece o slot do gamepad para verificar (de 0 a 11), e a função retornará uma das seguintes seqüências:
+  
+    "nenhum"se não houver um GUID disponível ou se não houver um gamepad conectado
+    "índice de dispositivo fora de alcance" se o índice de ranhura do gamepad estiver fora de alcance
+    O GUID string, algo como "050000005e040000fd020000fd020000ffff3f00", se o slot tiver um gamepad atribuído e puder obter o GUID para ele
+  
+  Esta função seria normalmente usada em conjunto com gamepad_get_description() para gerar parte da cadeia SDL necessária para refazer os controladores no Windows, Android e macOS.
+   
+  Sintaxe:
+  gamepad_get_guid(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        Qual o índice de "slot" do gamepad a ser verificado
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  var _guid = gamepad_get_guid(global.PadIndex); var _desc = gamepad_get_description(global.PadIndex); global.GamepadID = _guid + "," + _desc;
+  O código acima recebe o GUID e a descrição dos nomes, depois os concatenam e armazenam a string final em uma variável global para referência futura.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada Gamepad
+        Próximo:  gamepad_get_device_count 
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

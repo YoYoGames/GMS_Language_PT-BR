@@ -1,0 +1,51 @@
+
+  
+  ds_map_replace
+  Com esta função você pode alterar o valor para a chave dada dentro de um mapa DS. Você fornece o índice para o mapa (como retornado pela função ds_map_create())
+    e depois a chave para substituir - um fio ou um inteiro - e o valor para substituir o valor da chave por. Se a chave dada não existir, então ela será criada para você, e se existir, então o valor atual será substituído pelo novo valor.
+    valor. A função retornará true se a chave existir e o valor for substituído, e false se a chave não existir e uma nova chave tiver sido criada com o valor.
+   
+  Sintaxe:
+  ds_map_replace( id, key, val );
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A id do mapa para mudar.
+      
+      
+        chave
+        A chave com o valor que deve ser substituída pela nova
+      
+      
+        val
+        O novo valor para substituir o valor dado por
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  ds_map_replace(inventário, "torso", 55);
+  O código acima procura no mapa DS a chave "torso" e quando ela o encontra (ou é criada se não existir) o valor atual é substituído pelo especificado.
+   
+   
+   
+  
+    
+      
+        Voltar: DS Maps
+        Próximo: ds_map_delete
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,34 @@
+
+  
+  evento_erecido
+  Esta função chamará o evento atual do objeto pai da instância. Normalmente, quando uma instância tem um objeto pai, ela herda automaticamente todos os mesmos eventos que o objeto pai, mas se (por exemplo) seu objeto pai tiver um evento de criação e
+    você adiciona um ao seu objeto filho, todas as instâncias do objeto filho executarão o novo evento de criação que você adicionou e não o que está no objeto pai. Caso você precise usar tanto o evento do objeto pai quanto o evento do objeto filho
+    do mesmo tipo, você deve usar esta função, pois ela executará o evento objeto pai antes de continuar com o resto do código ou ações que o evento criança contém.
+   
+  Sintaxe:
+  event_inherited();
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  event_inherited(); switch (sprite_index) {
+     caso spr_Enemy_1: dmg += 2; pausa; caso spr_Enemy_4: dmg -= 1; pausa; caso spr_Enemy_10: dmg +=10; pausa; }
+  
+  O código acima chama o evento pai herdado (no qual inicializamos a variável "dmg") e depois modificamos a variável "dmg". Se não houver um evento pai especificado para
+    a instância executando este código, receberíamos um erro de "variável desconhecida", pois dmg não foi definido.
+   
+   
+   
+  
+    
+      
+        Voltar: Eventos de geração de objetos
+        Próximo: event_perform
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

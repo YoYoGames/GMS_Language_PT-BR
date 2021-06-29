@@ -1,0 +1,84 @@
+
+  
+  steam_ugc_request_item_detail
+  Esta função pode ser usada para recuperar informações sobre um determinado ID de arquivo. Você dá o ID do arquivo e fornece uma idade máxima para verificação (veja os documentos Steam para mais informações), então a função retorna um valor único de ID assimétrico que pode ser usado para verificar
+    os detalhes corretamente no eventoSteam Async. Este evento terá o async_load    Mapa DS que será povoado com os seguintes pares de chaves/valores:
+  
+    " id" - A identificação assimétrica retornada pela função que acionou o evento
+    "resultado" - O resultado da operação (um valor real). Este será ou a constante GML ugc_result_success ou algum outro número real. Portanto, você deve verificar esta constante para garantir que a chamada foi bem sucedida, e se
+      caso contrário, alguma coisa não funcionou corretamente. Os demais valores possíveis retornados são mostrados como resultado do valor EResult " Steam " e você deve ver o steamclientpublic .h nos cabeçalhos do SDK para todos os 89 valores possíveis.
+    " event_type" - A string " ugc_item_details"
+    "cached_data" - Será verdadeiro se os detalhes retornados forem do cache local ou falso se forem tirados do servidor
+    "published_file_id" " -Dispõe o único arquivo de identificação publicado para o item
+    " file_type" - O tipo de arquivo utilizado
+    "creator_app_id" - O ID de vapor do criador do item
+    "consumer_app_id" - O ID de vapor do item consumidor
+    " título" - O título do item
+    "descrição" - A descrição do item
+    "steam_id_owner" - O ID de vapor do proprietário do item
+    "time_created" - A hora em que o item foi criado pela primeira vez
+    "time_updated" - A última vez que o item foi atualizado
+    "time_added_to_user_list" - A hora em que o item foi subscrito
+    "visibilidade" - A visibilidade do item (ver steam_ugc_set_item_visibility() para as constantes devolvidas)
+    "proibido"- Se o item foi proibido (verdadeiro) ounão (falso)
+    "accepted_for_use" - Se o item foi aceito para uso (verdadeiro) ounão (falso)
+    " tags_truncated" - Versão curta das tags como uma matriz
+    " tags"- Um conjunto de tags para o item
+    "handle_file" - O exclusivohandle_file para o item
+    "handle_preview_file" - O cabo exclusivo para a visualização da imagem do item (pode ser usado como um argumento com vapor_ugc_download() para baixar uma imagem prévia)
+    " nome do arquivo" - O nome do arquivo do item
+    "tamanho_do_arquivo" - O tamanho do arquivo do item
+    "preview_file_size" - O tamanho da imagem de pré-visualização
+    "url"- A URL completa para o item
+    "Votos_up" - O número de votos acima recebidos
+    "votos_baixo" - O número de votos recebidos
+    " pontuação" - A pontuação total do item
+    "account_id_owner" - O ID da conta do proprietário do Steam ID (isto pode ser usado na função steam_ugc_create_query_user_ex())
+  
+   
+  Sintaxe:
+  steam_ugc_request_item_details(published_file_id, max_age_seconds);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        published_file_id
+        O ID do arquivo único para a UGC a ser verificado.
+      
+      
+        max_age_seconds
+        A "idade" dos dados a serem verificados (recomendado 30 - 60 segundos).
+      
+    
+  
+   
+  Devoluções:
+  Identificação Async
+   
+  Exemplo ampliado:
+  Neste exemplo, enviamos um pedido de detalhes de um item e depois analisamos o mapa DS assimétrico resultante para definir algumas variáveis. Primeiro enviamos a solicitação:
+  steam_details= steam_ugc_request_item_details(global.fileID, 60);
+  O código acima solicitará detalhes sobre o item com o ID do arquivo armazenado na variável global e acionará um evento Steam Async com as informações retornadas. Neste evento, podemos então analisar o mapa e armazenar alguns dos valores em variáveis que
+    pode então ser usado para exibir as informações ao usuário:
+  var map_id = async_load[? "id"]; var result = async_load[? "result"]; if (map_id == steam_details) && ( result== ugc_result_success) {
+     mTitle = async_load[? "title"]; mDesc = async_load[? "description"]; mTags = async_load[? "tags"]; m_hPreviewFile = async_load[? "handle_preview_file"]; m_hOwnerSteamId
+    = async_load[? " steam_id_owner"]; mOwnerAccountId = async_load[? "account_id_owner"]; mPubFileId = async_load[? "published_file_id"]; mScore = async_load[? "score"]; }
+  
+   
+   
+   
+  
+    
+      
+        Voltar: UGC
+        Próximo: steam_ugc_create_query_user
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

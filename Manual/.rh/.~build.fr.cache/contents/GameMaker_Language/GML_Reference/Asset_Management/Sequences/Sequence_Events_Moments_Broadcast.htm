@@ -1,0 +1,95 @@
+
+  
+  Eventos, Momentos e Mensagens de Radiodifusão
+  Além de todas as propriedades listadas aqui para uma estruturação de seqüência, você também tem a possibilidade de adicionar propriedades especiais de "ação" a uma seqüência. Há três tipos diferentes de
+    estas propriedades de "ação" que podem ser adicionadas a um objeto de seqüência - Eventos. Momentos e mensagens de radiodifusão - e cada um deles é explicado em mais detalhes
+    nas seções abaixo.
+   
+  Eventos Sequenciais
+  Os objetos seqüenciais podem ter eventos adicionados a eles, e estes eventos são análogos aos eventos utilizados pelos bens objeto. Os eventos atribuídos a um objeto de seqüência ocorrerão em uma ordem específica, seja uma vez em uma ordem definida
+    momento no ciclo de vida da seqüência, ou cada quadro que a seqüência está em execução. Nesta seção, discutimos como estes eventos são tratados usando código, mas eles também podem ser adicionados usando o Editor de Seqüências.
+    Note que a ordem dos eventos listados aqui não é influenciada pela direção do playhead, e mesmo que a seqüência esteja tocando ao contrário, os eventos continuarão a ser executados na ordem dada
+    abaixo.
+  Os eventos disponíveis são:
+  
+    Criar: isto é acionado quando uma instância de seqüência é criada em uma camada.
+    Destruir: isto é acionado quando uma instância em seqüência em uma camada é destruída.
+    Limpeza: isto é acionado quando uma instância de seqüência é coletada de lixo.
+    Etapa: acionada um pouco antes do evento da etapa habitual do objeto. Importante! Se a seqüência for interrompida, este evento não será acionado até o próximo passo após a seqüência começar a tocar novamente.
+    Passo Inicial: acionado pouco antes do evento de início do passo do objeto. Importante! Se a seqüência for pausada, este evento não será acionado até o próximo passo após a seqüência começar a tocar novamente.
+    Etapa final: acionado imediatamente antes do evento de fim de etapa do objeto. Importante! Se a seqüência for interrompida, este evento não será acionado até o próximo passo após a seqüência começar a tocar novamente.
+    Sistema Async: acionou o mesmo que qualquer objeto Sistema Assíncrono Manipuladores de eventos. Importante! Se a seqüência for pausada, este evento não será acionado.
+    Mensagem de radiodifusão: acionada durante a atualização da seqüência como um quadro-chave de mensagem de radiodifusão é encontrado.
+  
+  Todos os eventos precisam estar associados a funções definidas em um script, portanto, para configurar um evento, uma variável de método deve ser atribuída a um imóvel com o correto
+    nome que indica a seqüência que evento deve chamar a função. A sintaxe para isto é a seguinte:
+  
+  <Sequência_estrutura>.<propriedade_do_evento> = método(<estrutura_de_sequência>, <nome_da_função>);
+  As propriedades de estruturação da seqüência para os diferentes eventos são as seguintes:
+  
+    event_create
+    event_destroy
+    event_clean_up
+    evento_step
+    event_step_begin
+    event_step_end_end
+    event_async_system
+    event_broadcast_message
+  
+  Para dar um exemplo de uso, digamos que queremos que a seqüência inverta a direção quando for detectado um clique esquerdo do botão do mouse. Primeiro precisaríamos criar um script com a função que queremos chamar, algo como isto:
+  //// @function seq_reverse();
+     function seq_reverse() {
+     if mouse_check_button_pressed(mb_left) {
+     if self.headDirection == seqdir_right {
+     self.headDirection = seqdir_left; }
+     else self.headDirection = seqdir_right; }
+     }
+  
+  Nesta função, tudo o que estamos fazendo é ouvir um clique do mouse e depois inverter a direção de reprodução da seqüência à qual o método foi vinculado. Você notará que atualmente você não é capaz de passar nenhum parâmetro para as funções
+    que estão ligadas a essas propriedades, e em todos os casos o self dentro do escopo da função é atribuída para ser a instância de seqüência.
+  OBSERVAÇÃO: Vale notar que no roteiro acima o auto identificador pode ser omitido e só é usado para mostrar explicitamente o escopo da variável do método que está sendo usado para este exemplo.
+  Para atribuir isto a uma seqüência, você faria algo assim:
+  var _seq = sequence_get(Sequence1); _seq.event_step = method(_seq, seq_reverse);
+  Atribuímos agora um evento de etapa ao objeto sequencial com uma função para detectar quando um mouse é pressionado e então mudar a direção da cabeça de jogo da instância sequencial depois de ter
+    foi criado em uma sala.
+   
+  Momentos
+  Um momento de seqüência é uma ação de código única que é disparada em um ou mais quadros especificados à medida que a seqüência é executada. Estes momentos de código são - como nos eventos (explicados acima) - simplesmente variáveis de método pré-definidas que
+    são acionados no quadro dado. Por exemplo, digamos que você queira uma seqüência para criar uma instância "bala" em um frame específico da animação - primeiro você precisaria criar a função que deve ser usada para esta ação, algo como isto:
+  //// @function seq_shoot();
+     seq_shoot = function() {
+     instance_create_layer(sequence.xorigin, sequence.yorigin, "Instances", obj_Bullet); }
+  
+  Você então adicionaria isto a uma moldura no momento em que a estrutura da seqüência é propriedade daKeyframes. Esta é essencialmente uma faixa "especial" que só é usada para este fim e, portanto, só pode levar dados de quadros-chave que 
+    está associado a ações momentâneas que você deseja que a seqüência tenha. Esta faixa é criada da mesma forma que você criaria qualquer outra faixa, criando estruturas de quadros-chave e preenchendo-as com dados de quadros-chave, onde o canal 0 é o único canal
+    que você pode usar e o tipo de pista é seqtracktype_moment. Abaixo está um exemplo de como isto seria criado, usando a função que definimos acima para disparar sobre os momentos dados (quadros):
+  var _seq = sequence_get(my_Seq); var _k = array_create(3); _k[0] = sequence_keyframe_new(seqtracktype_moment); _k[0].frame = 60; _k[1] = sequence_keyframe_new(seqtracktype_moment); _k[1].frame = 120; _k[2] = sequence_keyframe_new(seqtracktype_moment); _k[2].frame = 180; var _d = array_create(1); _d[0] = sequence_keyframedata_new(seqtracktype_moment); _d[0].channel = 0; _d[0].event = method(_d[0], seq_shoot); _k[0].channels = _d; _k[1].channels = _d; _k[2].channels
+    = _d; _seq.momentKeyframes = _k;
+  O código acima simplesmente definirá os quadros 60, 120 e 180 da faixa do "momento" para chamar o método de seq_shoot. Você notará que atualmente você não é capaz de passar nenhum parâmetro para as funções que são usadas para cada
+    momento, e em todos os casos a auto-variável dentro do escopo da função é atribuída para ser a instância da seqüência (você geralmente não precisa usar a auto-variável , mas sob alguma
+    casos em que pode ser útil).
+   
+  Mensagens de radiodifusão
+  Seqüências podem ser feitas para gerar mensagens de transmissão, cujas simples cordas são adicionadas a quadros específicos ao longo da linha de tempo da animação, e quando esse ponto da linha de tempo é atingido, então a cadeia será transmitida para todos
+    instâncias de objeto que o escutam. Você pode adicionar estas mensagens na IDE usando o editor Sequence, mas elas também podem ser criadas e editadas usando código.
+  Para criar uma mensagem de transmissão em uma seqüência usando GML, é necessário adicioná-las a um quadro na mensagemEventKeyframes propriedade da estrutura da seqüência. Esta é essencialmente uma faixa "especial" que só é usada
+    para este fim e, portanto, só pode levar os dados do quadro-chave que estão associados às mensagens transmitidas que você deseja que a seqüência tenha. Esta faixa é criada da mesma forma que você criaria qualquer outra faixa, criando estruturas de keyframe e
+    preenchendo-os com dados do keyframe, onde o canal 0 é o único canal que você pode usar e o tipo de pista é seqtracktype_message. Abaixo está um exemplo de como isto seria criado:
+  var _seq = sequence_get(my_Seq); var _k = array_create(2); _k[0] = sequence_keyframe_new(seqtracktype_message); _k[0].frame = 60; _k[1] = sequence_keyframe_new(seqtracktype_message); _k[1].frame = 120; var _m1 = array_create(2); _m1[0] = "Olá"; _m1[1] = "Mundo"; var _m2 = array_create(1);  _m2[0] = "This is a Broadcast Message"; var _d1 = array_create(1); _d1[0] = sequence_keyframedata_new(seqtracktype_message); _d1[0].channel = 0; _d1[0].events = _m1; var _d2 = array_create(1); _d2[0] = sequence_keyframedata_new(seqtracktype_message); _d2[0].channel = 0; _d2[0].events = _m2; _k[0].channels = _d1; _k[1].channels = _d2; _seq.messageEventKeyframes = _k;
+  Você notará que o texto da mensagem é passado para o canal de dados do quadro-chave como uma matriz. Isto porque você pode transmitir várias mensagens no mesmo quadro, e ter diferentes instâncias de objetos escutando-as e reagindo de forma diferente, dependendo de
+    a mensagem que eles estão realmente esperando.
+  Uma vez que uma mensagem transmitida tenha sido emitida pela seqüência, você pode analisá-la usando o evento Outra > Mensagem transmitida em instâncias de objeto, que é explicado em detalhes aqui.
+   
+   
+   
+  
+    
+      
+        Voltar: Sequências
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

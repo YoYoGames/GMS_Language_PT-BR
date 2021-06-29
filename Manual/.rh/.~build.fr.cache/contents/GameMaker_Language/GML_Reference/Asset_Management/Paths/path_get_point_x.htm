@@ -1,0 +1,50 @@
+
+  
+  caminho_get_point_x
+  Esta função retornará a posição x (em coordenadas de sala) do ponto que você digitar para o caminho que você indexar. Se o ponto estiver fora do intervalo do caminho (ou seja: um caminho tem 8 pontos e você pede a posição x do ponto 10), então um valor
+    de 0 será devolvido.
+   
+  Sintaxe:
+  path_get_point_x(index, n);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do caminho a ser verificado.
+      
+      
+        n
+        A identidade do ponto a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  
+  if (path_position == 1) {
+     var _num = path_get_number(pth_Patrol); var _pos = floor(random(_num)); x = path_get_point_x(pth_Patrol, _pos); y = path_get_point_y(pth_Patrol, _pos); path_position = (1 / _num) * _pos; }
+  
+  O código acima irá verificar se uma instância está no final de um caminho. Se for, escolherá um ponto aleatório no caminho e moverá a instância para esse ponto.
+   
+   
+   
+  
+    
+      
+        Voltar: Caminhos
+        Próximo: caminho_get_point_y
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

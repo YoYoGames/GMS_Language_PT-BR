@@ -1,0 +1,34 @@
+
+  
+  uwp_suspend
+  Esta função indica ao sistema que o aplicativo terminou de salvar dados após a detecção de um pedido de suspensão. A chamada desta função é um requisito para a apresentação do Xbox One, e deve ser sempre usada em conjunto com a função
+    uwp_is_suspending()como mostrado no exemplo abaixo.
+   
+  Sintaxe:
+  uwp_suspend();
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se uwp_is_suspending() {
+     scr_Save_Game_Data();
+     uwp_suspend();
+     }
+  
+  O código acima verifica se o aplicativo está entrando em suspensão e se é ele que chama um script para salvar os dados do jogo antes de suspendê-lo.
+   
+   
+   
+  
+    
+      
+        Voltar: UWP e XBox Live
+        Próximo: uwp_is_suspending
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

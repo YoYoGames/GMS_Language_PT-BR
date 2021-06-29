@@ -1,0 +1,39 @@
+
+  
+  Ladrilhos Animados
+  Os azulejos são geralmente considerados células estáticas dentro da sala de jogos, porém com o GameMaker Studio 2 é possível animá-los, da mesma forma que se anima um duende. Por que não usar apenas sprites, você pergunta? Bem, os sprites têm uma certa sobrecarga de processamento devido
+    a eles estarem associados a uma caixa de delimitação e à forma em que são renderizados, mas as telhas têm uma carga de processamento muito menor e, portanto, são mais rápidas de renderizar. No entanto, isto tem um preço, na medida em que com animações de conjuntos de azulejos você está limitado a
+    criando animações que devem ser uma potência de dois comprimentos - ou seja: de 2, 4, 8, 16, etc... quadros - e obviamente devem ser criadas dentro da grade de azulejos, e todas elas devem animar na mesma velocidade (na base de um conjunto por telha). Entretanto, mesmo
+    Com estas limitações, os azulejos animados são uma característica poderosa que pode ser usada para acrescentar vida e cor a ambientes e fundos estáticos.
+  Para criar uma animação de azulejos você deve primeiro ter um conjunto de azulejos que tenha os azulejos necessários dentro de uma imagem sprite (mas não como quadros sprite, então um único grande quadro sprite com todas as imagens de animação dentro dele), e então no Editor de Conjunto de Azulejos você clica no botão Animação de Azulejos para trazer à tona o Editor de Animação:
+  A imagem de exemplo acima é uma imagem única com todos os quadros de animação contidos nela, mas deve ser notado que a imagem poderia
+    também contém outras peças que não sejam de animação, já que você pode usar um único conjunto de peças maciças e depois "escolher a cereja" as partes da animação a partir das quais você deseja criar a animação. Por exemplo, você poderia ter um grande conjunto de azulejos de paisagem com árvores,
+    terra e água, e dentro do conjunto de azulejos têm vários azulejos a serem animados para fazer a ondulação da água.
+  Para criar uma animação de azulejos você primeiro tem que adicionar uma animação à biblioteca de animação clicando no botão Add Animation  , que irá
+    adicionar uma tira de animação vazia à biblioteca e solicitar que você selecione um número de quadros a serem usados:
+  Você será então apresentado com uma visão de cada frame de animação vazio, com o frame inicial destacado para você:
+  Se você então voltar para a imagem do conjunto de azulejos à esquerda do editor, você pode clicar  em qualquer azulejo para adicioná-lo à animação e o quadro avançará para o próximo. Clicando em  em azulejos sucessivos, você preencherá o quadro
+    animação, que você pode então visualizar clicando no botão "play" ao lado dos quadros:
+  Uma vez que você tenha feito isso, sua animação se tornará parte da biblioteca de animação e quando você entrar no Editor da Sala você poderá selecioná-la e colocá-la dentro da sala. Note que se você selecionar qualquer um dos azulejos de uma animação para colocar em uma sala, esse azulejo irá animar a partir do azulejo selecionado, para que você possa "dessincronizar" uma animação, colocando separadamente
+    dentro da sala e todos eles irão animar. A única ressalva é que a velocidade de animação será sempre a mesma, já que é definida para todo o conjunto de azulejos e não para animações individuais dentro da biblioteca.
+  Algumas coisas a serem observadas sobre os azulejos que estão sendo usados em animações:
+  
+    Se a telha tiver sua própria animação especificada (portanto, há uma animação onde ela é definida como a primeira telha), então ela usará essa animação.
+    Se o azulejo não tem sua própria animação, mas é usado apenas em uma outra animação, então ele usará essa animação começando na primeira posição em que o azulejo está presente na animação.
+    Se o azulejo não tiver sua própria animação e for usado em várias outras animações, então ele não irá animar em absoluto. Você precisará especificar explicitamente uma animação com ela como o primeiro azulejo.
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Conjuntos de azulejos
+        A seguir: Pisos para automóveis
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

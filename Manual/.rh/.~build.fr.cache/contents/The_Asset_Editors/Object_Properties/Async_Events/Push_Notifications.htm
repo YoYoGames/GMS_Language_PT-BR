@@ -1,0 +1,40 @@
+
+  
+  Notificações Push
+  O Evento de Notificação Push é aquele que é acionado pelo retorno da chamada de notificações push    no sistema operacional do dispositivo, seja de uma fonte local, utilizando a função push_local_notification()ou
+    a partir de uma fonte remota (ou seja: seu servidor). Ele gera um DS Map que é exclusivo para este evento e é armazenado na variável especial  async_load     (veja as funções individuais que acionam eventos assíncronos para exemplos de códigos que explicam o uso deste evento em mais detalhes). Este mapa DS tem as seguintes chaves:
+  
+    "type": O valor pode ser "local" para uma notificação local do dispositivo, "remoto" para uma notificação remota, ou "registrar" para registro de notificação remota.
+    "status": O valor será "1" para o sucesso ou "0" para um erro.
+  
+  Pode haver entradas chave adicionais com base no "tipo" retornado e no valor "status". Para "status", se um erro tiver sido retornado ("0"), então você também terá a seguinte chave:
+  
+    "error": Contém detalhes sobre o erro recebido.
+  
+  Se o valor "status" for 1 (ou seja: sem erros) então o mapa DS conterá os seguintes valores adicionais, dependendo do valor da chave "tipo":
+  
+    "reg_id": Se o "tipo" recebido foi "registrar", então esta chave manterá o id de registro do dispositivo para notificações remotas.
+    "data": Se o "tipo" recebido foi "local" ou "remoto", então esta chave manterá a carga útil de cordas que você definiu quando chamou a função de notificação.
+  
+  Para entender isto melhor, criamos um pequeno exemplo abaixo para que você possa ver. Neste exemplo, enviaremos uma notificação local usando o seguinte código:
+  var fireTime = date_inc_day(date_current_datetime(), 1); var data = "daily_reward"; push_local_notification(fireTime, "Ahoy!", "Catch The Haggis Has A Present", data);
+  Isto definirá um timer para "empurrar" uma notificação para o dispositivo quando um dia tiver passado. Quando o dia terminar, se seu jogo estiver em segundo plano ou não estiver em execução, uma notificação será mostrada ao usuário com o título e a mensagem (em
+   iOS, o nome do jogo é mostrado e o título é ignorado), e então será chamado um Evento Assíncrono de Notificação de Push. Note que se o jogo estiver em primeiro plano quando chegar a hora da notificação, ele não será mostrado, mas o evento assíncrono ainda será acionado.
+    No próprio evento, você lidaria com a chamada de retorno algo como isto:
+  var type = ds_map_find_value(async_load, "type"); var status = ds_map_find_value(async_load, "status");  if status === 0 { //erro de algum tipo var error = ds_map_find_value(async_load, "error"); show_debug_message("error=" + string(error)); }  mais
+     { if type == "register" { global.reg_id = ds_map_find_value(async_load, "reg_id"); }  else { var data = ds_map_find_value(async_load, "data"); if data == "daily_reward" { global.Gold += 1000; }  }  }
+   
+   
+   
+  
+    
+      
+        Voltar: Eventos Async
+        A seguir: Salvar / Carregar
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

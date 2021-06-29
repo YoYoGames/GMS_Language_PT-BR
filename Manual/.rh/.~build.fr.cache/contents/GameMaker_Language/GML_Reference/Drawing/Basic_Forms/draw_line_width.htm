@@ -1,0 +1,60 @@
+
+  
+  largura_de_traço
+  Com esta função você pode traçar uma linha de uma largura especificada entre quaisquer dois pontos na sala de jogo. Observe que a linha a ser desenhada pode precisar de valores diferentes (+/-1 no x, y) para ser desenhada com as dimensões desejadas devido às diferenças entre
+    as várias plataformas suportadas.
+  NOTA: Se você quiser desenhar uma forma usando um sombreador, você deve estar ciente de que a maioria dos sombreadores espera as seguintes entradas: vértice, textura, cor. Entretanto, ao utilizar esta função, apenas os dados de vértice e cor estão sendo passados para dentro, e assim o
+   shader não pode desenhar nada (ou desenhar algo, mas não corretamente). Se você precisar desenhar formas desta maneira, então o sombreador deve ser personalizado tendo isto em mente.
+   
+  Sintaxe:
+  draw_line_width(x1, y1, x2, y2, w);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x1
+        A coordenada x do início da linha.
+      
+      
+        y1
+        A coordenada y do início da linha.
+      
+      
+        x2
+        A coordenada x do final da linha.
+      
+      
+        y2
+        A coordenada y do final da linha.
+      
+      
+        w
+        A largura da linha em pixels.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_set_colour(c_red); draw_line_width(100, 100, 200, 200, 6);
+  Isto desenhará uma linha diagonal vermelha, de 6 pixels de largura, do ponto (100.100) ao ponto (200.200).
+   
+   
+   
+  
+    
+      
+        Voltar: Formulários básicos
+        Próxima: desenho_linha_largura_color
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,45 @@
+
+  
+  audio_emitter_get_gain
+  Esta função retorna o ganho (volume) atual definido para o emissor de áudio dado, normalmente entre 0 e 1, onde 0 é silencioso e 1 é volume total. Note que em algumas plataformas você pode ter um ganho maior que 1, embora um valor de 1 seja considerado
+    "volume completo" e qualquer coisa maior pode introduzir clipagem de áudio.
+   
+  Sintaxe:
+  audio_emitter_get_gain(emitter);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        emissora
+        O índice do emissor a ser utilizado.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  if audio_emitter_get_gain(emitter_player) < 1 {
+     audio_emitter_gain(emitter_player, 1); }
+  
+  O código acima verifica o ganho atual de um determinado emissor e, se for menor que 1, é ajustado para 1.
+   
+   
+   
+  
+    
+      
+        Voltar: Emissores de áudio
+        Próximo: áudio_emissor_get_pitch
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

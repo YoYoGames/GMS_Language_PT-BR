@@ -1,0 +1,52 @@
+
+  
+  conjunto_esqueleto_animação_esqueleto
+  Uma vez que você tenha atribuído um duende de animação esquelético a sua instância, você pode então definir qual conjunto de animação ele deve usar a qualquer momento com esta função. Quando você criou seu sprite (in Spine), você terá definido várias animações
+    conjuntos para diferentes estados e nomeou cada um deles apropriadamente. Esses nomes são o que você usará para dizer ao GameMaker Studio 2 qual conjunto de animação deve ser usado a qualquer momento em seu jogo. Por exemplo, se seu sprite é para um jogo de plataforma, então você pode ter
+    um conjunto de "salto", um conjunto de "corrida" e um conjunto de "ociosidade" todos contidos dentro de um duende e você pode alternar entre eles em seu jogo usando esta função.
+  Note que a definição de uma nova animação desta forma irá reinicializar o image_index a 0, iniciando o novo conjunto de animação desde o início de seu ciclo de animação. Se este não for o
+    comportamento desejado, então você pode definir um valor "mix" usando skeleton_animation_mix() e quando você definir uma nova animação, ela será facilmente interpolada com o conjunto anterior. Você também deve fazer
+    com certeza terá um quadro-chave no início de cada animação para evitar que os dados sejam retidos de animações anteriores, a menos que você planeje usar trilhas de animação separadas.
+   
+  Sintaxe:
+  skeleton_animation_set(animname);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        animname
+        O nome (uma cadeia) do conjunto de animação a ser utilizado.
+      
+    
+  
+   
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if keyboard_check_pressed(vk_space) {
+     if skeleton_animation_get() != "pular" {
+     skeleton_animation_set("salto");
+     }
+     }
+  
+  O código acima mudará o conjunto de animação sendo usado para o conjunto de "salto" quando a tecla de espaço for pressionada, mas somente se o conjunto atual sendo usado ainda não estiver "pulando".
+   
+   
+   
+  
+    
+      
+        Voltar: Animação
+        Próximo: esqueleto_animação_get_ext_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

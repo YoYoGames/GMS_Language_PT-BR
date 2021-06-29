@@ -1,0 +1,44 @@
+
+  
+  layer_get_x
+  Você pode usar esta função para recuperar a posição x da camada dentro da sala atualmente escopada. Você fornece a identificação da camada (que você obtém quando cria a camada usando layer_create()) ou o nome da camada (como
+    uma cadeia - isto terá um impacto no desempenho) e a função retorna um número real para a posição x da camada, relativo à posição (0,0) da sala. O valor padrão é 0.
+   
+  Sintaxe:
+  layer_get_x(layer_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada para obter a posição x de
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var lay_id = layer_get_id("Sprites"); if layer_get_x(lay_id) != 0 || layer_get_y(lay_id) != 0 {
+     layer_x(lay_id, 0); layer_y(lay_id, 0); }
+  
+  O código acima verifica a posição da camada dada e se não estiver definido para (0, 0), então está definido para essa posição.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próximo: layer_get_y
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

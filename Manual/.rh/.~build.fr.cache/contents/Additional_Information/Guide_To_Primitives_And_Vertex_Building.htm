@@ -1,0 +1,118 @@
+
+  
+  Guia de Primitivos e Construção de Vértices
+  Este guia aborda brevemente como construir e usar primitivos usando formatos de vértices e amortecedores de vértices personalizados. 
+  Em geral, quando você começa a trabalhar com 3D, efeitos especiais, processos de desenho complexos ou shaders, você não precisa se preocupar muito com o formato de vértice que está sendo usado, uma vez que o GameMaker Studio 2 irá automaticamente configurar e passar através dos dados do vértice para você. Entretanto, às vezes é necessário criar seus próprios dados de vértices e formatá-los para adequá-los, especialmente quando você precisa aumentar a velocidade, ou deseja passar informações extras. Por exemplo, o padrão
+    O formato do vértice inclui uma posição x, y, z 3D, cor (com alfa) e coordenadas de textura UV, que, se você mesmo estivesse criando, se pareceria com algo parecido:
+  vertex_format_begin(); vertex_format_add_position_3d();
+     vertex_format_add_colour();
+     vertex_format_add_textcoord();
+     my_format = vértice_format_end();
+  Entretanto, se você estiver usando apenas (por exemplo) um sombreador para manipular a posição do vértice, então não haveria necessidade de passar pelos dados de cor ou textura. Neste caso, você criaria seu próprio formato como tal:
+  vertex_format_begin(); vertex_format_add_position_3d();
+     my_format = vértice_format_end();
+  No total, há cinco atributos de vértices diferentes que você pode usar ao definir um formato de vértice:
+  
+    Cor
+    Normal
+    Posição
+    Posição 3D
+    Coordenação da textura
+  
+  Em geral, você deve sempre fornecer posição ou posição 3D como parte do formato, mas todas as outras são opcionais.
+  Você deve observar que, uma vez criado seu formato de vértice, a ordem na qual você definiu os atributos do vértice deve ser honrada ao construir seus primitivos. Portanto, se você definiu um formato de vértice como posição, cor,
+    e coordenadas de textura, então você deve adicionar estes atributos ao primitivo na mesma ordem, caso contrário, você receberá um erro. Observe também que, como qualquer outro recurso dinâmico, um formato de vértice requer memória e, portanto, deve ser removido.
+    quando não for necessário usar a função vértice_format_delete().
+  Quaisquer primitivos que você constrói são mantidos em um tampão de vértice. Este deve ser criado de antemão e depois referenciado pelas funções que são usadas para construir seu primitivo. O buffer de vértices pode ser reutilizado tantas vezes quantas forem necessárias para criar diferentes
+    primitivos, ou pode ser "congelado" para manter um tipo primitivo específico para a duração de seu jogo ou nível (que é a abordagem mais rápida, portanto, se você sabe que um primitivo que você constrói não mudará, então você deve sempre usar esta opção).
+  Um exemplo de um único triângulo primitivo sendo construído é mostrado no seguinte código:
+  // CREATE EVENT v_buff = vertex_create_buffer(); vertex_begin(v_buff, global.my_format); vertex_position(v_buff, 10, 10); vertex_colour(v_buff, c_white, 1); vertex_texcoord(v_buff, 0, 0); vertex_position(v_buff, 110, 10); vertex_colour(v_buff, c_white, 1);  vertex_texcoord(v_buff, 1, 0); vertex_position(v_buff, 110, 110); vertex_colour(v_buff, c_white, 1); vertex_texcoord(v_buff, 1, 1); vertex_end(v_buff);
+    
+     // DRAW EVENT var tex = sprite_get_texture(spr_Background, 0); shader_set(shd_shimmer);
+     vertex_submit(v_buff, pr_trianglelist, tex); shader_reset();
+  
+  Aqui criamos primeiro nosso buffer de vértices no Create Event of the instance, depois começamos a definição dos diferentes vértices que compõem nosso triângulo primitivo, dando a posição, a cor e a textura UV coordenada para cada um dos
+    três pontos que queremos utilizar. Terminamos então a definição do vértice, e sabemos que o buffer do vértice com estes dados do vértice é armazenado na variável "v_buff".  
+  NOTA: Se o conteúdo do buffer fosse atualizado constantemente, o buffer seria criado, dados os dados do vértice, e depois seria destruído novamente - após ter sido desenhado - tudo na mesma etapa.
+  Em seguida, desenhamos o conteúdo do buffer de vértices no Evento de Sorteio usando um shader. Este é um exemplo muito simples, e é basicamente como o GameMaker Studio 2 funciona internamente, ou seja: quando você desenha um duende, o GameMaker cria um buffer de vértices com quatro vértices
+    criando dois triângulos (que fazem um quadrado, também chamado "quad"), e texturizam esses dois triângulos com a imagem do duende. Quando desenhamos este duende, estamos apresentando o buffer de vértices e seu conteúdo é desenhado para a tela.
+  Você notará quando submetemos o tampão de vértice para desenho, nós fornecemos um tipo primitivo. O tipo de primitivo que você usa pode ser um ponto, uma lista de linhas ou faixa, ou uma lista ou faixa triangular, mas não são permitidos ventiladores triangulares, uma vez que a maioria dos móveis
+    não aceitará esse tipo primitivo de hardware. Não se esqueça de formatar corretamente seu buffer de vértices para o tipo de primitivo que será usado para desenhá-lo. Por exemplo, desenhar um triângulo primitivo de dois triângulos como uma lista triangular requer 6 pontos,
+    mas como uma faixa triangular requer apenas 4 pontos. O tipo que você usa depende de você e dependerá do que você está querendo desenhar e do efeito que você quer alcançar.
+  Um último ponto importante a ser observado ao utilizar seus próprios amortecedores de vértices desta forma é como isso afeta os lotes de vértices que são enviados para a GPU. Quando você cria um buffer de vértices, você está criando o nível mais baixo de dados gráficos, portanto, quando você desenha todos
+    que acontece é que o GameMaker Studio 2 envia seu buffer diretamente para a placa gráfica. Por causa disso, se você quiser um batching melhor, você mesmo deve resolver isso e armazenar as coisas que você deseja batch dentro do mesmo buffer.
+  Como já mencionamos acima, os formatos de vértices são construídos usando juntos os 5 tipos de atributos seguintes (adicionados através da função adequada de vértice_formato_add_* ):
+  
+    Cor
+    Normal
+    Posição
+    Posição 3D
+    Coordenação da textura
+  
+  Dentro do sombreador GLSL ES, estes tipos são reconhecidos utilizando os 4 atributos seguintes:
+  
+    Cor
+    Normal
+    Posição
+    Coordenação da textura
+  
+  Agora, isto pode parecer estranho, pois parece que podemos especificar mais tipos de atributos em nosso formato de vértice do que podemos no sombreador de vértices. Entretanto, no shader Position e no 3D Position são tratados como o mesmo atributo, exceto que
+    Espera-se que a posição tenha apenas as coordenadas "x" e "y", enquanto a posição 3D tem as coordenadas "x ", "y " e "z". Então, como você mapeia o que está em seu formato de vértice para como você define atributos em seu shader ? Vamos
+    começar olhando para um conjunto típico de atributos do sombreador padrão:
+   
+  atributo vec3 in_Position; // (x,y,z) // atributo vec3 in_Normal; // (x,y,z) não utilizado neste shader. atributo vec4 in_Colour; // (r,g,b,a) atributo vec2 in_TextureCoord; // (u,v)
+  E aqui está um pedaço de código que estabelece um formato de vértice compatível com este sombreador :
+  vertex_format_begin(); vertex_format_add_position_3d();
+     vertex_format_add_colour();
+     vertex_format_add_textcoord();
+     my_format = vértice_format_end();
+  Agora, como o atributo de sombreamento se iguala ao tipo de formato de vértice? É apenas baseado na convenção de nomenclatura:
+  
+    mapas "in_Position" para vertex_format_add_position / _3d()
+    mapas "in_Colour" para vertex_format_add_colour ()
+    
+    mapas "in_TextureCoord" para vertex_format_add_textcoord ()
+      
+    
+  
+  
+    Agora, as coisas ficam mais complicadas quando você tem vários atributos do mesmo tipo, mas as coisas ainda se baseiam na mesma convenção de nomes. Agora vamos procurar fornecer coordenadas adicionais de cor e textura, pois só pode haver uma Posição e um atributo Normal no formato sombreado ou vértice, mas pode haver múltiplos atributos de cor ou textura.
+  Ao adicionar atributos de cor adicionais a seu shader, um número precisa ser adicionado ao final do atributo shader para indicar a qual entrada específica no formato de vértice o atributo mapeia. Aqui está um exemplo - primeiro o formato do vértice:
+  vertex_format_begin(); vertex_format_add_position_3d();
+     vertex_format_add_colour();
+     vertex_format_add_colour();
+     vertex_format_add_textcoord();
+     my_format = vértice_format_end();
+  E agora os atributos de sombreamento associados:
+  atributo vec3 in_Position; // (x,y,z) atributo vec4 in_Colour0; // (r,g,b,a) atributo vec4 in_Colour1; // (r,g,b,a) atributo vec2 in_TextureCoord; // (u,v)
+  Neste caso, os mapas in_Colour0 para o primeiro vertex_format_add_colour() e in_Colour1 para o segundo.
+  As coordenadas da textura são tratadas de forma ligeiramente diferente da cor. Basicamente, qualquer coisa que não seja chamada de in_Position , in_Normal ou um dos atributos in_Colour [0 ...] é tratada como uma coordenada de textura. A ordem em que eles
+    são definidos, na lista de atributos no sombreador, é o que denota qual atributo no formato de vértice a que eles mapeiam. Veja o exemplo GML a seguir:
+  vertex_format_begin(); vertex_format_add_position_3d();
+     vertex_format_add_colour();
+     vertex_format_add_textcoord();
+     vértice_format_add_textcoord();
+     vértice_format_add_textcoord();
+     my_format = vértice_format_end();
+  E o código de sombreamento ficaria algo parecido com isto:
+  atributo vec3 in_Position; // (x,y,z) atributo vec4 in_Colour; // (r,g,b,a) atributo vec2 in_myTexcoord; // (u,v) atributo vec2 in_TextureCoord; // (u,v) atributo vec2 in_Something; // (u,v)
+  Neste exemplo, in_myTexcoord, in_TextureCoord e in_Something map para os três atributos sucessivos de coordenadas de textura definidos no formato de vértice.
+  Você pode encontrar uma lista completa de todas as funções necessárias para criar formatos de vértices, amortecedores de vértices e primitivos na página seguinte:
+  
+    Primitivos e formatos de vértices
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Informações adicionais
+        A seguir: Guia para a utilização de emendas
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

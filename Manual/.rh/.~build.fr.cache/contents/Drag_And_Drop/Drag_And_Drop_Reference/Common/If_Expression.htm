@@ -1,0 +1,51 @@
+
+  
+   Se Expressão
+  Esta ação é usada para verificar se uma expressão é verdadeira ou falsa, e você pode verificar qualquer expressão lógica aqui, desde que ela avalie um ou outro valor. Por exemplo, qualquer uma das seguintes expressões pode ser usada:
+  x < (largura_da_sala / 2) a == b ++val >= 100
+  Se você assinalar o argumento "Não", então as expressões acima serão negadas, por exemplo "==" torna-se "not=". Observe também que a expressão não está limitada a valores numéricos e você pode verificar strings, ponteiros, IDs de recursos ou qualquer outra coisa que uma função possa retornar ou usar (veja a seção sobre tipos de dados para mais informações), mas você não pode comparar dois tipos de dados diferentes sem obter um erro - por exemplo, se você tentar usar uma string e um número inteiro na expressão, você obterá um erro. Para mais informações sobre expressões, veja aqui.
+  NOTA IMPORTANTE: Devido a questões de precisão de ponto flutuante, verificar se dois valores são exatamente iguais pode retornar falsos, já que um pode ser exatamente 1, enquanto
+    a outra pode ser 1.00000000000001. Isto pode ser evitado usando a ação Decimal para Inteiro antes de verificar ou usando as expressões "maior que (>)" ou "menor que (<)".
+  Note que para adicionar ações no bloco "if", elas devem ser descartadas ao lado da ação, como mostrado na imagem abaixo:
+  Estas ações serão executadas agora se o "se" for avaliado como verdadeiro, enquanto
+    quaisquer ações descartadas em outro lugar serão executadas após o bloco "se". Note que você pode "empilhar" expressões na mesma ação, clicando no ícone "mais  ao lado de
+    a ação, e dando outra expressão para verificar. Isto verificará se todas as expressões dadas retornam verdadeiras em uma única verificação e só executará o código de ação adicionado se o fizerem (veja o exemplo dado abaixo).
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Expressão
+        A expressão a ser verificada.
+      
+      
+        Não
+        Preparado para verificar se a expressão não é verdadeira.
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima verifica se a variável de instância "player_score" é a variável "player_score".
+    é maior que 1000 e que a variável de instância "player_level" é menor que 10. Se ambas as verificações retornarem verdadeiras, então o código de ação passa a atribuir novos valores a estas variáveis.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações Comuns
+        A seguir: Se Indefinido
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

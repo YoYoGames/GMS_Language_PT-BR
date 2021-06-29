@@ -1,0 +1,48 @@
+
+  
+  show_debug_message
+  Esta função criará uma mensagem de depuração personalizada que é mostrada na janela do compilador em tempo de execução. Note que a mensagem pode ser ou uma string ou um número real, mas se você precisar de ambos, então o número terá que ser convertido em string primeiro usando
+    o cordão() (veja o exemplo abaixo) e que, se o número tiver mais de duas casas decimais, então você deve usar string_format() para mostrá-los
+    pois, por padrão, as casas decimais são arredondadas para as duas casas decimais mais próximas (assim, "1,2468" seria mostrado como "1,25" na janela de saída).
+  As mensagens de depuração mostradas com esta função serão mostradas na Janela de saída do compilador, na parte inferior da IDE, bem como na Vista Gráfica de
+    o depurador ao executar o jogo no Modo de Depuração. Se você só quer ver mensagens no Modo de Depuração, então você provavelmente deveria estar usando debug_event() ao invés disso.
+   
+  Sintaxe:
+  show_debug_message(string);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        corda
+        A mensagem debug personalizada para mostrar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se !instance_exists(obj_Exit) {
+     show_debug_message("Exit not created!"); show_debug_message("Error Num: " + string(global.error)); game_end();
+     }
+  
+  O código acima verifica se uma instância existe e se não existe, uma mensagem de debug é mostrada na janela de compilação e o jogo é encerrado.
+   
+   
+   
+  
+    
+      
+        Voltar: Depuração
+        Próximo: show_debug_overlay
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

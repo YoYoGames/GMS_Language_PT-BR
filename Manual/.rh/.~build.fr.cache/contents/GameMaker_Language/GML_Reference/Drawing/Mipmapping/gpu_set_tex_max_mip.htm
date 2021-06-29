@@ -1,0 +1,45 @@
+
+  
+  gpu_set_tex_max_mip
+  Com esta função você pode definir o nível máximo de mipmap atualmente definido que deve ser usado, onde um valor de 0 é a maior resolução, 1 é usar o primeiro mipmap, 2 é o segundo etc... Note que isto pode ser bastante útil para evitar sangramento de artefatos
+    Ao renderizar texturas, por exemplo, ajustar a borda da página de textura para 8px e depois ajustar o nível máximo do mipmap para 3 garantirá que você não terá nenhum problema de sangramento a distâncias maiores de renderização.
+   
+  Sintaxe:
+  gpu_set_tex_max_mip(maxmip);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        maxmip
+        O nível máximo do mipmap (padrão: 16)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se gpu_get_tex_max_mip() != 4 {
+     gpu_set_tex_max_mip(4);
+     }
+  
+  O código acima verificará o nível máximo atual do mipmap e, se não for 4, está ajustado para 4.
+   
+   
+   
+  
+    
+      
+        Voltar: Mipmapping
+        Próximo: gpu_set_tex_max_mip_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

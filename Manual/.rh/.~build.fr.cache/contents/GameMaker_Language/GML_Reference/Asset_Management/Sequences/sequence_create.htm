@@ -1,0 +1,32 @@
+
+  
+  sequence_create
+  Com esta função você pode criar um novo objeto de seqüência ao qual você pode então adicionar faixas. A função retorna uma estrutura que você pode então acessar para configurar a nova seqüência que você criou. O conteúdo
+    desta estrutura estão detalhadas nesta página. A estrutura de objetos de seqüência pode então ser usada para criar instâncias da seqüência em uma camada da sala usando a função layer_sequence_create().
+    Note que ao criar objetos em seqüência desta maneira você deve removê-los novamente chamando a função sequence_destroy() quando não forem mais necessários, caso contrário, você terá um vazamento de memória que
+    pode diminuir a velocidade e, eventualmente, acabar com seu jogo.
+   
+  Sintaxe:
+  sequence_create();
+   
+  Devoluções:
+  Estrutura
+   
+  Exemplo:
+  myseq = sequence_create(); myseq.length = 120; myseq.loopmode = seqplay_pingpong;
+  O código acima cria uma nova estrutura de objetos de seqüência e define seu comprimento de reprodução e modo loop.
+   
+   
+   
+  
+    
+      
+        Voltar: Sequências
+        Próximo: sequence_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

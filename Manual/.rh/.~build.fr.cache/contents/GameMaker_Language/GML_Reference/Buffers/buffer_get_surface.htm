@@ -1,0 +1,53 @@
+
+  
+  superfície_de_solução
+  Com esta função você pode escrever as informações de uma superfície para um determinado buffer. O buffer deve ter sido criado anteriormente e deve ser um buffer de crescimento alinhado de 1byte de tamanho aproximado (em bytes) da superfície que você vai escrever.
+    As informações para a superfície serão sempre escritas no início do buffer (independentemente da posição de busca), mas você pode escolher um valor de offset (em bytes) para mover a posição de escrita para onde você precisar desde o início do buffer.
+    Observe que a função escreve cada pixel da superfície no buffer usando uma formatação BGRA no alvo do Windows, mas em outros alvos pode ser diferente dependendo do sistema operacional ou mesmo do dispositivo.
+  NOTA: Esta função foi alterada a partir da atualização do GameMaker Studio 2.3.1. As versões anteriores utilizavam a constante buffer_surface_copy, que é
+    agora depreciado.
+   
+  Sintaxe:
+  buffer_get_surface(buffer, superfície, offset);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O índice do buffer a ser utilizado.
+      
+      
+        superfície
+        O índice da superfície a ser utilizada.
+      
+      
+        offset
+        O valor da compensação de dados (em bytes).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  buffer_get_surface(buff, application_surface, 0);
+  O código acima copiará os dados armazenados na superfície da aplicação para o buffer indexado na variável "buff", sem compensação.
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: superfície_superfície_de_tampão
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

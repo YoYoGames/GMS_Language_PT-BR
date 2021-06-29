@@ -1,0 +1,44 @@
+
+  
+  layer_get_vspeed
+  Você pode usar esta função para recuperar a velocidade vertical (em pixels por frame de jogo) da camada dentro da sala atualmente escopada. Você fornece a identificação da camada (que você obtém quando cria a camada usando layer_create())
+    ou o nome da camada (como uma string - isso terá um impacto no desempenho) e a função retorna um número real para a velocidade vertical, onde um valor positivo é para baixo e um valor negativo para cima. O valor padrão é 0 (a menos que definido no editor da sala).
+   
+  Sintaxe:
+  layer_get_vspeed(layer_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada para obter a velocidade vertical a partir
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var lay_id = layer_get_id("Sprites"); if layer_get_hspeed(lay_id) != 0 || layer_get_vspeed(lay_id) != 0 {
+     layer_hspeed(lay_id, 0); layer_vspeed(lay_id, 0); }
+  
+  O código acima verifica as velocidades horizontal e vertical da camada dada e, se ambas não estiverem ambas ajustadas a 0, então é ajustado para 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próximo: layer_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

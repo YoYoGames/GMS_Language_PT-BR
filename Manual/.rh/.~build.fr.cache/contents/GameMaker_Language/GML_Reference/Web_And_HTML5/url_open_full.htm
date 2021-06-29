@@ -1,0 +1,132 @@
+
+  
+  url_open_full
+  Isto abrirá a URL especificada no navegador do dispositivo alvo escolhido, ou, se você estiver usando o módulo HTML5, no navegador atualmente aberto. O parâmetro "alvo" que você especifica é o mesmo que o "nome" padrão do JavaScript
+    quando você usa o método open( ) (esteja ciente de que tudo menos " _self" pode resultar no bloqueio do navegador, ou perguntar ao usuário se ele deseja permitir isso) e as "opções" são as mesmas que o JavaScript "specs".
+    para controlar quais propriedades a nova janela/tabela deve exibir (nem todos os navegadores podem suportar todas as características).
+  Os alvos válidos são:
+   
+  
+    
+      
+        Meta
+        Descrição
+      
+      
+        em branco
+        Abre o documento vinculado em uma nova janela ou aba (isto não funcionará se os pop-ups estiverem sendo bloqueados pelo usuário, caso em que você pode usar o clicável_* funções em seu lugar).
+      
+      
+        _self
+        Abre o documento vinculado no mesmo quadro em que foi clicado (este é o padrão).
+      
+      
+        pai
+        Abre o documento vinculado no quadro superior.
+      
+      
+        _topo
+        Abre o documento vinculado no corpo completo da janela.
+      
+    
+  
+   
+  As opções válidas são:
+   
+  
+    
+      
+        Parâmetros
+        Descrição
+      
+      
+        height=[px]''.
+        A altura da janela, com o valor mínimo sendo 100.
+      
+      
+        width=[px]''.
+        A largura da janela, com o valor mínimo sendo 100.
+      
+      
+        esquerda=[px]''.
+        A posição esquerda da janela.
+      
+      
+        top=[px]''.
+        A posição superior da janela (apenas IE).
+      
+      
+        localização=[booleano]''.
+        Se deve ou não exibir o campo de endereço (o padrão é 1).
+      
+      
+        menubar=[boolean]''.
+        Se a barra de menu deve ou não ser exibida (o padrão é 1).
+      
+      
+        redimensionável=[booleano]''.
+        Se a janela é redimensionável ou não (o padrão é 1).
+      
+      
+        scrollbars=[boolean]''.
+        Se deve ou não exibir barras de rolagem (o padrão é 1).
+      
+      
+        status=[boolean]''.
+        Adicionar ou não uma barra de status (o padrão é 1).
+      
+      
+        titlebar=[boolean]''.
+        Se a barra de título deve ou não ser exibida. Isto é ignorado a menos que a aplicação de chamada seja uma aplicação HTML ou uma caixa de diálogo confiável (o padrão é 1);
+      
+      
+        barra de ferramentas=[booleano]''.
+        Se a barra de ferramentas do navegador deve ou não ser exibida (o padrão é sim).
+      
+    
+  
+   
+  Sintaxe:
+  url_open_full(url, alvo, opções);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        url
+        O URL (endereço do site) para o qual o link deve ser criado.
+      
+      
+        alvo
+        Esta é a área de destino para abrir a URL em (ver descrição).
+      
+      
+        opções
+        Opções padrão de navegador (ver descrição).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  url_open_full("http://yoyogames.com", "_blank", "resizable=0, height=200, scrollbars=0");
+  Isto abriria a página inicial do YoYo Games em uma nova janela que não pode ser redimensionada, tem uma altura de 200 pixels e não tem barras de rolagem.
+   
+   
+   
+  
+    
+      
+        Voltar: Web e HTML5
+        Próximo: url_get_domain
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

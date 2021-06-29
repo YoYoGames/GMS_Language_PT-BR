@@ -1,0 +1,33 @@
+
+  
+  draw_get_font
+  Esta função receberá a fonte atualmente designada para o texto do desenho. A função retornará -1 se nenhuma fonte for definida, ou o valor de identificação (um inteiro positivo) para o recurso de fonte atribuído.
+   
+  Sintaxe:
+  draw_get_font();
+   
+  Devoluções:
+  Número inteiro (-1 ou valor de identificação da fonte)
+   
+  Exemplo:
+  if draw_get_font() != fnt_MainMenu {
+     draw_set_colour(c_blue);
+     draw_set_font(fnt_MainMenu);
+     }
+     draw_text(room_width / 2, 200, "MENU" );
+  O código acima verificará qual fonte está sendo usada para desenho e se não é fnt_MainMenu , então a fonte e a cor do desenho são definidas antes que algum texto seja desenhado para a tela.
+   
+   
+   
+  
+    
+      
+        Voltar: Texto
+        Próximo: draw_get_halign
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

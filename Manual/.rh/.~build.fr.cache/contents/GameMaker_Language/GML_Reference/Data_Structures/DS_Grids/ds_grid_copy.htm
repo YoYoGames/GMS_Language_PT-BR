@@ -1,0 +1,45 @@
+
+  
+  ds_grid_copy
+  Com esta função, você pode copiar o conteúdo de uma grade para outra. Ambas as grades devem ter sido criadas anteriormente usando o ds_grid_create() função.
+   
+  Sintaxe:
+  ds_grid_copy(destino, fonte);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        destino
+        Este índice da grade para copiar.
+      
+      
+        fonte
+        Este índice da grade para copiar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  n_grid = ds_grid_create(ds_grid_width(a_grid), ds_grid_height(a_grid)); ds_grid_copy(n_grid, a_grid); ds_grid_clear(a_grid, -1)
+  O código acima cria uma nova grade DS, com base na largura e altura de uma grade criada anteriormente, e depois copia as informações da grade anterior para a nova grade. Finalmente, ele limpa a grade antiga para que todas as células tenham um valor -1.
+   
+   
+   
+  
+    
+      
+        Voltar: Grades DS
+        Próximo: ds_grid_read
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

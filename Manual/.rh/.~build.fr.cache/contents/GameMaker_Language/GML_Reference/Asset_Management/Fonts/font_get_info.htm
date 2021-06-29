@@ -1,0 +1,163 @@
+
+  
+  font_get_info
+  Esta função é usada para recuperar informações para a fonte em questão. Você fornece um índice de fontes (que pode ser um ativo adicionado através do Navegador de Ativos ou uma fonte adicionada em tempo de execução) e a função retorna uma estrutura com as seguintes variáveis:
+   
+  
+    
+      
+        Nome da variável
+        Tipo de dados
+        Descrição
+      
+      
+        ascenderOffset
+        real
+        O deslocamento máximo da linha de base até o topo da fonte (em pixels)
+      
+      
+        tamanho
+        real
+        O tamanho aproximado da fonte (em pixels)
+      
+      
+        spriteIndex
+        ativo (real)
+        O índice sprite para a fonte se foi criado a partir de um duende, caso contrário -1
+      
+      
+        textura
+        ativo (real)
+        -1 se a fonte foi criada a partir de um duende, caso contrário, o ID da textura da fonte
+      
+      
+        nome
+        corda
+        O nome da fonte
+      
+      
+        ousado
+        booleano
+        verdadeira se a fonte for em negrito, caso contrário falsa (ver NOTA abaixo)
+      
+      
+        itálico
+        booleano
+        verdadeiro se a fonte for itálico, caso contrário falso (ver NOTA abaixo)
+      
+      
+        glifos
+        estrutura
+        Uma estrutura contendo informações para cada glifo na fonte (mais informações são dadas abaixo)
+      
+    
+  
+  NOTA: O em negrito eitálico refletem apenas as configurações do usuário para a fonte, portanto, podem não ser precisos para as fontes que são negrito ou itálico por padrão.
+  Se a fonte fornecida não existir, a função retornará indefinida .
+  Observe também que mudar os valores de qualquer uma destas variáveis, ou quaisquer variáveis contidas dentro da estrutura dos glifos, não mudará a forma como a fonte é renderizada, portanto, esta informação deve ser considerada somente leitura.
+  Estrutura dos Glifos
+  A variável glifos na estrutura retornada será uma estrutura por si só, contendo informações para cada glifo incluído na fonte. Cada variável nesta estrutura será um nome característico de um glifo, que conterá uma estrutura contendo informações
+    para aquele glifo. Você pode imaginar estas estruturas aninhadas no seguinte formato (a partir da estrutura principal):
+  { glifos: { A: {}, B: {}, C: {}, // ...outros glifos }, // ...outras informações da fonte }
+  
+  Você pode usar o nome do personagem de um glifo para recuperar suas informações da estrutura, tal como no código a seguir:
+  var _font_info = font_get_info(Font1);
+     var _info_A = _font_info.glyphs[$ "A"]; // $ é um acessor estrutural
+     show_debug_message(_info_A);
+  
+  O código acima obtém a estrutura de glifos para o caractere "A" e imprime-o no log de saída. Você também pode substituir a string ("A" ) por uma variável que contenha uma string, o que lhe permitirá obter informações para qualquer glifo através
+    essa variável em tempo de execução.
+  A estrutura retornada para um glifo conterá as seguintes variáveis:
+  NOTA: Em HTML5, a estrutura dos glifos estará vazia para quaisquer fontes de arquivo carregadas (como *.ttf ou *.otf), pois o tempo de execução não terá informações sobre esses glifos.
+  
+    
+      
+        Nome da variável
+        Tipo de dados
+        Descrição
+      
+      
+        char
+        real
+        Se a fonte foi criada a partir de um duende, este será o índice de imagem do glifo desse duende, caso contrário, será seu número de caracteres Unicode
+          
+         Nota: Todas as variáveis abaixo disso não estarão presentes na estrutura se a fonte foi criada a partir de um duende.
+      
+      
+        x
+        real
+        A posição X do glifo na página de textura (em texis)
+      
+      
+        y
+        real
+        A posição em Y do glifo na página de textura (em texis)
+      
+      
+        w
+        real
+        A largura do glifo na página de textura (em texis)
+      
+      
+        h
+        real
+        A altura do glifo na página de textura (em texis)
+      
+      
+        turno
+        real
+        O número de pixels a deslocar para a direita ao avançar para o próximo personagem (pode ser negativo para deslocar para a esquerda)
+      
+      
+        offset
+        real
+        O número de pixels para compensar horizontalmente a renderização deste glifo (pode ser positivo ou negativo)
+      
+      
+        kerning
+        matriz
+        Um conjunto de números inteiros contendo informações perspicazes em pares (ou grupos de 2). O primeiro inteiro em um par é o valor Unicode para um personagem, e o segundo inteiro é a quantidade a ser adicionada ao valor de deslocamento desse personagem (pode ser positivo ou
+          negativo) se for precedido pelo caráter deste glifo.
+      
+    
+  
+  NOTA: Para fontes de arquivo carregadas em tempo de execução, os valores x e y para um glifo podem ser -1 se ainda não tiver sido renderizado, pois não terá posição na página de textura utilizada para o cache.
+   
+  Sintaxe:
+  font_get_info(font);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fonte
+        A fonte para a qual a informação deve ser recuperada.
+      
+    
+  
+   
+  Devoluções:
+  Estruturas (ou indefinidas)
+   
+  Exemplo:
+  var _info = font_get_info(my_font);
+     if (_info != undefined && _info.bold) {
+     image_xscale *= 2; image_yscale *= 2; }
+  
+  Este código recupera informações para a fonte armazenada na variável my_font. Se o valor retornado não estiverindefinido e a fonte dada estiver em negrito, a escala da instância é duplicada.
+   
+   
+  
+    
+      
+        Voltar: Fontes
+        A seguir: font_exists
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

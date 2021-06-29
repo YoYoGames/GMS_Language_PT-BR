@@ -1,0 +1,49 @@
+
+  
+  tamanho_da_janela
+  Com esta função, você pode mudar o tamanho da janela do jogo. Se você usar esta função para mudar o tamanho da janela do jogo, o conteúdo da janela será escalado para caber com uma proporção de 1:1 na tela de fundo, o que manterá a imagem nítida.
+    e claro (embora escalonado se a janela for diferente do tamanho da sala ou da vista). Por exemplo, se você tiver uma janela de 200 x 150 pixels, e o jogador esticar a janela arrastando as bordas, o tamanho final da janela pode ser de 400 x 300 pixels, mas o desenho
+    A tela é STILL 200 x 150, o que dá uma imagem desfocada, já que a proporção de pixels é agora de 1:2. Entretanto, se você usar esta função para definir o tamanho da janela, a proporção 1:1 é mantida, mesmo que a imagem seja escalonada para se ajustar ao novo tamanho da janela.
+   
+  Sintaxe:
+  window_set_size( w, h );
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        w
+        A nova largura da janela.
+      
+      
+        h
+        A nova altura da janela.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if mouse_check_button_pressed(mb_left) {
+     global.scale += 1; window_set_size(200 * global.scale, 150 * global.scale); }
+  
+  O código acima mudará o tamanho da janela com base no valor da variável "global.scale" quando o botão do mouse for pressionado.
+   
+   
+   
+  
+    
+      
+        Voltar: A Janela de Jogo
+        Próximo: window_set_rectangle
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,54 @@
+
+
+
+
+  
+  virtual_key_hide
+  Uma vez criada sua chave virtual para seus dispositivos, você pode precisar depurar e testar se ela está posicionada e funcionando corretamente e para isso você chamaria a função virtual_key_show(). No entanto,
+    você pode precisar ativar e desativar esta visão, para que você também possa ocultar a chave virtual com esta função, usando o índice da chave virtual que você deseja ocultar (previamente criada e armazenada usando virtual_key_add()).
+    Uma vez que você esteja satisfeito com as coisas, é recomendável que você crie e coloque seu próprio gráfico em sua área.
+   
+  Sintaxe
+  virtual_key_hide(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice da chave virtual a esconder.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if global.Debug {
+     virtual_key_show(global.left);
+     }
+     mais
+     {
+     virtual_key_hide(global.left);
+     }
+  
+  O código acima verifica a variável global "global.Debug" e, se for verdadeiro, então a chave virtual indexada na variável "global.Left" será desenhada na tela, e se for falsa, então a chave será escondida.
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Chaves e Teclados Virtuais
+        Próximo: virtual_key_delete
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

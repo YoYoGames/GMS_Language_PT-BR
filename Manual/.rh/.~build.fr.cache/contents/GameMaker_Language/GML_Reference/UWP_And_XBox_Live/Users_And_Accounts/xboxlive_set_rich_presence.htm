@@ -1,0 +1,61 @@
+
+  
+  xboxlive_set_rich_presence
+  Esta função irá definir a rica cadeia de presença para o usuário em questão. Uma cadeia de presença rica mostra a atividade dentro do jogo de um usuário após o nome do jogo que o usuário está jogando, separado por um hífen. Esta cadeia de caracteres é exibida sob o nome de um jogador.
+    Gamertag na lista "Friends & Clubs", bem como no perfil do usuário do Xbox Live do jogador.
+  Ao usar esta função, você precisa fornecer o ponteiro de identificação do usuário para o usuário, e então você pode marcar o usuário como ativo no jogo ou não (usando verdadeiro/falso). Se definido como falso, então a cadeia de presença rica será
+    anexado com "/afk" ou algo apropriado. O próximo argumento é o rico ID de cadeia de presença para mostrar, e então finalmente você pode (opcionalmente) fornecer uma cadeia de serviços_config_id. Note que este é um argumento opcional, pois se você
+    chamaram xboxlive_stats_setup() você não precisa passar o service_config_id aqui.
+  Para mais informações sobre a presença rica e como configurar as cordas a serem usadas no centro parceiro, consulte a seguinte documentação da Microsoft:
+  
+    Visão geral das cordas de presença
+  
+   
+  Sintaxe:
+  xboxlive_set_rich_presence(user_id, is_user_active, rich_presence_string, [service_config_id])
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        user_id
+        O ponteiro de identificação do usuário a ser verificado.
+      
+      
+        is_user_active
+        Marcar o usuário como ativo ou não.
+      
+      
+        rich_presence_string
+        O rico ID de cadeia de presença a usar (como definido no Centro de Parceiros - máximo 50 caracteres)
+      
+      
+        service_config_id
+        [OPCIONAL] Esta é a string config_id para o jogo.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var pad_uid = xboxlive_user_for_pad(0); xboxlive_set_rich_presence(pad_uid, true, "Playing_Challenge");
+  O código acima obtém o ponteiro de identificação do usuário para o usuário atribuído ao slot do gamepad [0], e então define a cadeia de presença rica para esse usuário.
+   
+   
+   
+  
+    
+      
+        Voltar: Usuários e Contas
+        Próximo: xboxlive_gamedisplayname_for_user
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

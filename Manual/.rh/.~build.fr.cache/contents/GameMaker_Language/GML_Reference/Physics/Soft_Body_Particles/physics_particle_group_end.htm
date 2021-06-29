@@ -1,0 +1,31 @@
+
+  
+  física_física_grupo_de_partículas_final
+  Esta função é utilizada para terminar a definição da forma de um grupo de partículas. Chamando esta função criará as partículas dentro dos parâmetros de forma determinados, e também retornará um valor de identificação que pode ser armazenado e usado em outras funções para interações
+    com o grupo de partículas.
+   
+  Sintaxe:
+  física_particle_group_end()
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile; var groupflags = phy_particle_group_flag_solid; physics_particle_group_begin(flags, groupflags, mouse_x, mouse_y, 0, 0, 0, c_white, 1, 1, 2); physics_particle_group_circle_circle(100);
+     mLastGroup = physics_particle_group_end();
+  O código acima armazena as bandeiras para o tipo de partícula e as propriedades do grupo de partículas em variáveis e depois as utiliza para criar um grupo de partículas circular com um raio de 100px na posição do mouse. A identificação para o grupo que foi criado é armazenada
+    na variável "mLastGroup".
+   
+   
+  
+    
+      
+        Voltar: Partículas macias do corpo
+        A seguir: fisica_particle_group_join
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

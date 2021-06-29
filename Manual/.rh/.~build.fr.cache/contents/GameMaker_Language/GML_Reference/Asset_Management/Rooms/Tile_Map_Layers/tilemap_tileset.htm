@@ -1,0 +1,47 @@
+
+  
+  tilemap_tileset
+  Usando esta função, você pode alterar o recurso do conjunto de azulejos atribuído a um determinado elemento do mapa de azulejos em uma camada. Você dá o ID do elemento do mapa de azulejo (que você obtém quando cria um elemento do mapa de azulejo usando layer_tilemap_create()    ou quando você usa a função layer_tilemap_get_id()), e depois fornecer um índice do conjunto de azulejos e o mapa de azulejos receberá o novo duende.
+   
+  Sintaxe:
+  tilemap_tileset(tilemap_element_id, tileset_index)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tilemap_element_id
+        O valor de identificação único do elemento do mapa de azulejos a ser mudado
+      
+      
+        tileset_index
+        O novo índice do conjunto de azulejos a usar
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var lay_id = layer_get_id("Tiles_trees"); var tile_id = layer_tilemap_get_id(lay_id); if tilemap_get_tileset(tile_id) != ts_Nighttime {
+     tilemap_tileset(tilemap_id, ts_Nighttime); }
+  
+  O código acima verifica o conjunto atual de azulejos atribuído ao mapa de azulejos na camada "Tiles_trees" e se não for "ts_Nighttime" então esse conjunto de azulejos é atribuído ao mapa de azulejos.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas do mapa de azulejos
+        Próximo: tilemap_clear
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

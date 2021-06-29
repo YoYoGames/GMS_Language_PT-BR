@@ -1,0 +1,49 @@
+
+  
+  textura_set_set_stage
+  Esta função irá definir uma textura a ser utilizada para o "slot" do estágio dado. O número de "slots" de estágio disponíveis dependerá da plataforma para a qual você está compilando, com um máximo de 8 disponíveis para Windows, Mac e Linux, mas com um
+    É importante notar também que o primeiro estágio "slot" é sempre usado automaticamente pelo GameMaker Studio 2.
+  NOTA: Esta função não fará nada fora do contexto de um sombreador em funcionamento! Ver Shaders para mais informações.
+   
+  Sintaxe:
+  text_set_set_stage(stage, tex);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        estágio
+        A textura "ranhura" a ser utilizada.
+      
+      
+        tex
+        A textura a ser utilizada.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  glassshader_bgsampler = shader_get_sampler_index(GlassShader, "s_BackgroundSampler") spr = sprite_get_texture(sprite_index, 0); shader_set (GlassShader);
+     text_set_set_stage(glassshader_bgsampler, spr); shader_reset();
+  
+  O código acima obterá o cabo para o amostrador dentro do sombreador indexado como "GlassShader"e então definirá esse sombreador constante para a textura do duende dado.
+   
+   
+   
+  
+    
+      
+        Voltar: Texturas
+        A seguir: textura_escala_global
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

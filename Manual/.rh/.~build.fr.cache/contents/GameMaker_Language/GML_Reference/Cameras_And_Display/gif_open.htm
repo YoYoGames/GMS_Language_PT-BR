@@ -1,0 +1,63 @@
+
+  
+  gif_open
+  Com esta função você pode criar uma imagem em formato GIF vazia, pronta para ter dados adicionados a ela. Quando você chama a função, você precisa especificar a largura e a altura do GIF (em pixels, e não há limite superior de tamanho, exceto para a memória disponível),
+    e a função retornará o valor de identificação único usado para identificar o presente em funções subseqüentes, ou retornará -1 se o gif não puder ser inicializado (por exemplo, se a largura/altura for muito grande para a memória disponível). Você também pode especificar
+    um argumento opcional para definir a "cor clara" para o GIF. Este é um valor RGB (sem componente alfa), e limpará o gif para esta cor antes que qualquer coisa seja adicionada a ele. Se você não fornecer um argumento de cor clara, a cor padrão
+    de preto será utilizado.
+  Note que ao usar esta função você deve chamar gif_save() para finalizar a criação do GIF antes de abrir outro arquivo para gravação (assim, para cada gif_open() deve haver um gif_save() de acompanhamento).
+   
+  Sintaxe:
+  gif_open(largura, altura, [clear_colour]));
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        largura
+        A largura do gif a criar
+      
+      
+        altura
+        A altura do gif a criar
+      
+      
+        [clear_colour]
+        [Opcional] A cor (RGB) para limpar o gif para
+      
+    
+  
+   
+  Devoluções:
+  Inteiro
+   
+  Exemplo:
+  se save_gif == verdadeiro {
+     if count === 0 {
+     gif_image = gif_open(room_width, room_height); }
+     ou se contar < 30 {
+     gif_add_surface(gif_image, application_surface, 6/100); }
+     mais
+     {
+     gif_save(gif_image, "GameCapture.gif"); count = 0; save_gif = false; }
+     contar+++;
+     }
+  
+  O código acima criará um arquivo de imagem GIF com 30 quadros tirados da superfície da aplicação e depois o salvará.
+   
+   
+   
+  
+    
+      Câmeras e Display
+        Voltar: 
+        Próximo: gif_add_surface
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,77 @@
+
+  
+  Controle de GPU
+  Ao desenhar coisas em uma sala, muitas vezes será necessário um controle mais granular sobre exatamente como o desenho será feito. Você pode desejar que não haja mistura alfa, ou pode requerer abate, ou pode precisar ligar a interpolação de textura ou
+    desligado. Tudo isso é possível - e muito mais! - usando as funções de controle da GPU listadas abaixo. Note que a maioria destas funções são globais no escopo e uma vez definidas ou alteradas afetarão como tudo é desenhado a partir de então.
+  As seguintes funções podem ser usadas para obter os valores das diferentes propriedades da GPU:
+   
+  
+    gpu_get_blendenable
+    gpu_get_ztestenable
+    gpu_get_zfunc
+    gpu_get_zwriteenable
+    gpu_get_fog
+    gpu_get_cullmode
+    gpu_get_blendmode
+    gpu_get_blendmode_ext
+    gpu_get_blendmode_ext_sepalpha
+    gpu_get_blendmode_src
+    gpu_get_blendmode_dest
+    gpu_get_blendmode_srcalpha
+    gpu_get_blendmode_destalpha
+    gpu_get_colourwriteenable
+    gpu_get_alphatestenable
+    gpu_get_alphatestref
+    gpu_get_texfilter
+    gpu_get_texfilter_ext
+    gpu_get_texrepeat
+    gpu_get_texrepeat_ext
+  
+   
+  As seguintes funções podem ser usadas para definir os valores de diferentes propriedades da GPU:
+   
+  
+    gpu_set_blendenable
+    gpu_set_ztestenable
+    gpu_set_zfunc
+    gpu_set_zwriteenable
+    gpu_set_fog
+    gpu_set_cullmode
+    gpu_set_blendmode
+    gpu_set_blendmode_ext
+    gpu_set_blendmode_ext_sepalpha
+    gpu_set_colorwriteenable
+    gpu_set_alphatestenable
+    gpu_set_alphatestref
+    gpu_set_texfilter
+    gpu_set_texfilter_ext
+    gpu_set_texrepeat
+    gpu_set_texrepeat_ext
+  
+  Observe que antes de usar as funções do modo de mistura é importante entender como elas funcionam para que você obtenha os resultados corretos ao aplicá-las. Para isso, criamos o seguinte guia:
+  
+    Guia para a utilização de emendas
+  
+  Finalmente, há as seguintes funções que podem ser usadas para manipular a pilha de GPU:
+   
+  
+    gpu_push_state
+    gpu_pop_state
+    gpu_get_state
+    gpu_set_set_state
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Desenho
+        A seguir: Mipmapping
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

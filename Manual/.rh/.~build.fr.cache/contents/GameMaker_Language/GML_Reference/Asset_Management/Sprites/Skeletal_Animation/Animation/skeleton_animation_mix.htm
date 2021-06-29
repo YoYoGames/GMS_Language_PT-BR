@@ -1,0 +1,52 @@
+
+  
+  esqueleto_mix_animação
+  Você pode trocar facilmente os conjuntos de animação usando o esqueleto_set_animação() mas isso pode causar um salto ou gagueira, já que uma animação é trocada por outra. Para evitar isso, você pode definir o valor da mistura
+    entre dois conjuntos de animação e o duende irá interpolar entre eles. normalmente você gostaria de fazer isso no Evento Criar da instância com a animação esquelética, pois ela só precisa de um conjunto uma vez, e o GameMaker Studio 2 irá interpolar tudo mais
+    mudanças no sprite usando os conjuntos de animação nesse caso. Note que o valor de duração é de 0 a 1, onde um valor de 0,5 teria uma interpolação "metade e metade" de um conjunto para o outro.
+   
+  Sintaxe:
+  skeleton_animation_mix(animfrom, animto, duração);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        animfrom
+        O nome (uma cadeia) do primeiro conjunto de animação de onde se interpolar.
+      
+      
+        animto
+        O nome (uma cadeia) do segundo conjunto de animação para interpolar.
+      
+      
+        duração
+        A duração da interpolação (de 0 a 1)
+      
+    
+  
+   
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  skeleton_animation_set("walk"); skeleton_animation_mix("walk", "jump", 0.2); skeleton_animation_mix("jump", "walk", 0.4);
+  O código acima iria no Create Event de uma instância com um duende de animação esquelético e define a duração da mistura de animação para interpolar entre os dois conjuntos de animações "andar" e "pular".
+   
+   
+   
+  
+    
+      
+        Voltar: Animação
+        A seguir: lista_esqueleto_animação_esqueleto
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

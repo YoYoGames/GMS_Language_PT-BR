@@ -1,0 +1,33 @@
+
+  
+  conquistas_conquistas
+  Esta função abrirá a página de realizações para a plataforma escolhida. Observe que esta é uma função assíncrona, ou seja: seu jogo continuará a ser executado em segundo plano enquanto a página de realizações estiver sendo mostrada. Como tal, você deve ser
+    cuidado onde você usa isto e certifique-se de pausar o jogo ou apenas permitir que ele seja mostrado em áreas de seu jogo onde ele não interferirá com o jogo.
+   
+  Sintaxe:
+  realizações_conquistas()
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se a realização_disponível() {
+     global.Pause = true; instance_create_layer(0, 0, "Controllers", obj_Pause); achievement_show_achievements();
+     }
+  
+  O código acima verifica se o quadro de líderes e o serviço de realizações escolhido está disponível e, em caso afirmativo, define uma variável global e cria uma instância de "pausa" do controlador antes de chamar a função para mostrar as realizações na tela.
+   
+   
+   
+  
+    
+      
+        Voltar: Conquistas e Quadros de Líderes
+        Próxima: quadros_de_conquista
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

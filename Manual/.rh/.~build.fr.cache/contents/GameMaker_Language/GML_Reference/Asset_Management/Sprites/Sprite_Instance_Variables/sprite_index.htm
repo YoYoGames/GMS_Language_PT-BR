@@ -1,0 +1,39 @@
+
+  
+  sprite_index
+  Esta variável retorna o índice do sprite atual para a instância, ou -1 se a instância não tiver sprite associado a ela. Você pode alterá-la para dar à instância um duende diferente, dando-lhe o nome de um duende da árvore de recursos ou por
+    usando uma variável que tem um sprite indexado externamente. A mudança do duende não altera o índice do quadro atualmente visível, portanto, se você mudar o duende no quadro número 3, o novo duende será desenhado com esse quadro visível.
+    (assumindo que tenha o mesmo número de quadros).
+   
+  Sintaxe:
+  sprite_index;
+   
+  Devoluções:
+  Real (número inteiro - valor do índice de recursos)
+   
+  Exemplo:
+  com (obj_Check) {
+     if !collision_line(x, y, other.x, other.x, other.y, obj_Wall, false, true) {
+     sprite_index = spr_spotted; }
+     else
+     {
+     sprite_index = spr_clear; }
+     }
+  
+  O código acima passará por todas as instâncias de "obj_Check" verificando se há uma linha de colisão entre elas e a instância que executa o código. O sprite dessas instâncias será alterado de acordo com o valor de retorno (verdadeiro ou falso) para a
+    linha de colisão.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis de Sprite Instance
+        Próximo: sprite_width
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

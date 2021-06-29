@@ -1,0 +1,60 @@
+
+  
+  audio_emitter_falloff
+  Com esta função você pode definir a distância de queda para um emissor. Esta é a distância do ouvinte que o emissor tem que estar antes que o som tenha "caído" para um volume de 0. O valor padrão
+    pois este é 100, mas tenha cuidado ao definir este valor para qualquer valor inferior a 1, pois isso tornará qualquer som reproduzido através deste emissor inaudível para o ouvinte, porém qualquer outro valor fará com que o som se desvaneça ainda mais que
+    o emissor é do ouvinte.
+  Como o som em si vai depender da referência de falloff (que é a distância sob a qual o volume da fonte normalmente cairia pela metade) e o fator de roll off (que afeta o som além da distância de referência de falloff apenas).
+    O fator padrão é normalmente 1, e o efeito dos diferentes valores de falloff dependerá do modelo escolhido.
+  Para um guia completo dos diferentes modelos de falloff e como estes valores são usados, consulte a função audio_falloff_set_model().
+   
+  Sintaxe:
+  audio_emitter_falloff(emissor, falloff_ref, falloff_max, falloff_factor);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        emissora
+        O índice do emissor a mudar.
+      
+      
+        falloff_ref
+        A referência de falloff em relação ao ouvinte (grampo).
+      
+      
+        falloff_max
+        A distância máxima de falloff em relação ao ouvinte.
+      
+      
+        falloff_factor
+        O fator falloff (default 1).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  s_emit = audio_emitter_create(); audio_emitter_position(s_emit, x, y, 0); audio_emitter_falloff(s_emit, 100, 300, 1);
+  O código acima cria um emissor de áudio e atribui seu índice à variável "s_emit". Este emissor é então colocado na posição da instância que o cria e recebe uma distância de queda de 300, o que significa que quando o emissor está mais distante, o índice é atribuído à variável "s_emit".
+    que 300 pixels da posição do ouvinte ficará em silêncio. Seu fator de falloff é o padrão 1 e a referência de falloff é 100, portanto, a 100 pixels do ouvinte, o falloff começará.
+   
+   
+   
+  
+    
+      
+        Voltar: Emissores de áudio
+        Próximo: ganho_emissor_de_áudio
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

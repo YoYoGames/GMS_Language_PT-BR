@@ -1,0 +1,57 @@
+
+  
+  instance_change
+  Você pode usar esta função para transformar uma instância de um objeto em outra instância de um objeto diferente e, ao fazê-lo, decidir se deseja realizar as instâncias iniciais Destruir e Limpar Eventos e as novas instâncias Criar Evento. Desta forma,
+    você pode ter (por exemplo) uma troca de bomba em uma explosão - nesse caso, o argumento "perf" seria provavelmente verdadeiro, pois você gostaria que a bomba realizasse seu Evento de Destruição e Evento de Limpeza, bem como a explosão para realizar sua Criação
+    Evento - ou você poderia ter seu personagem de jogador mudado para um diferente - nesse caso o argumento "perf" provavelmente seria falso, pois você não quer que as instâncias realizem seus eventos Criar e Destruir/Limpar.
+  Vale notar que mudar a instância significa que você não deve realizar mais ações com essa instância até o próximo passo, em particular tentando acessar variáveis etc..., pois isso causará um erro. Basicamente, você muda a instância, mas
+    não está realmente disponível até o final da etapa atual, portanto, acessar qualquer uma das variáveis que ela contém diretamente (por exemplo, chamando obj_Changed.x) não funcionará.
+  ADVERTÊNCIA! Ao mudar uma instância física habilitada, as propriedades físicas não serão transfer idas para a nova instância em que se está mudando. Portanto, você deve ter o código em vigor para "transferir" o estado físico da instância atual
+    instância para a nova instância, ou ter definido as propriedades físicas das novas instâncias em seu Create Event, ou no editor de objetos. Por este motivo, recomenda-se não utilizar esta função com instâncias habilitadas para física, mas sim utilizar
+    uma combinação de instance_destroy() e instance_create_layer().
+  
+   
+  Sintaxe:
+  instance_change(obj, perf);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        obj
+        O novo objeto em que o objeto chamador se transformará.
+      
+      
+        perf
+        Seja para executar os novos objetos criar e destruir eventos (verdadeiros) ou não (falsos).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if keyboard_check(vk_enter) {
+     instance_change(obj_Player_Swimming, false); exit;
+     }
+  
+  O código acima transformará a instância de chamada em uma instância de "obj_Player_Swimming" sem executar as instâncias originais destruir evento nem as novas instâncias criar evento quando o usuário pressiona a tecla "Enter", saindo do
+    bloco de código quando terminado.
+   
+   
+   
+  
+    
+      
+        Voltar: Instâncias
+        Próximo: instance_copy
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

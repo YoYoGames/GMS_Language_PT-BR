@@ -1,0 +1,45 @@
+
+  
+  file_text_open_write
+  Esta função abre o arquivo de texto com o nome de arquivo indicado apenas para escrita (se o arquivo não existir, ele é criado), retornando a identificação única do arquivo que deve ser armazenado em uma variável, pois ele será usado para todos os outros
+    ações relacionadas a esse arquivo. Note que se o arquivo não puder ser criado (por causa de um nome de arquivo ilegal, por exemplo), a função retornará -1.
+  OBSERVAÇÃO: Você só pode ter um máximo de 32 arquivos abertos a qualquer momento. Você também deve sempre fechar os arquivos quando terminar, pois isto escreve as informações e libera a memória associada ao arquivo.
+  ATENÇÃO! Esta função pode não funcionar como você espera devido ao GameMaker Studio 2 ser lixado! Consulte a seção sobre o Sistema de Arquivos para maiores informações.
+   
+  Sintaxe:
+  file_text_open_write(fname);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fname
+        O nome do arquivo para o qual escrever.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var file; file = file_text_open_write(working_directory + "level.txt"); file_text_write_string(file, level_data); file_text_close(file);
+  
+  O código acima abrirá o arquivo "level.txt" para escrita e então escreverá a string armazenada na variável "level_data" antes de finalmente fechar o arquivo novamente.
+   
+   
+   
+  
+    
+      
+        Voltar: Arquivos de texto
+        Próximo: file_text_open_append
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

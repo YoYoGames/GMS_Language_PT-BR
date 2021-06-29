@@ -1,0 +1,78 @@
+
+  
+  tampão_seek
+  Esta função pode ser usada para mover-se através de um buffer, encontrando o início, o fim, ou uma posição relativa à que foi usada pela última vez ao ler ou escrever dados. O valor "offset" é o offset (em bytes) para adicionar à posição de busca dada,
+    por exemplo, se a base for relativa e o deslocamento for 4, então a posição tampão se moverá ao longo de 4 bytes a partir de sua posição atual. Por favor, observe o seguinte:
+  
+    Você pode usar valores negativos para o offset para buscar de volta através do buffer, bem como valores positivos.
+    Se o buffer for do tipo "embrulho" e você compensar o fim do buffer, a posição de busca também será embrulhada.
+    Se o buffer não for do tipo "embrulho", a busca se fixará ao início ou ao fim do buffer, mesmo quando o deslocamento levaria a busca para fora dos limites do buffer.
+  
+  As constantes a seguir são aceitas como o argumento "base" para procurar:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        buffer_seek_start
+        O início do buffer
+      
+      
+        buffer_seek_relative
+        Uma posição em relação à posição atual de leitura/gravação
+      
+      
+        buffer_seek_end
+        O fim do buffer
+      
+    
+  
+   
+   
+  Sintaxe:
+  buffer_seek(buffer, base, offset);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O índice do buffer a ser utilizado.
+      
+      
+        base
+        A posição de base a buscar.
+      
+      
+        offset
+        O valor da compensação de dados.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  buffer_seek(buff, buffer_seek_start, 0); buffer_write(buff, buffer_s16, 0); buffer_write(buff, buffer_s16, x); buffer_write(buff, buffer_s16, y);
+  O código acima encontra o início do buffer com o id armazenado na variável "buff" eles escrevem uma série de valores inteiros assinados de 16 bits para ele.
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: buffer_tell
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

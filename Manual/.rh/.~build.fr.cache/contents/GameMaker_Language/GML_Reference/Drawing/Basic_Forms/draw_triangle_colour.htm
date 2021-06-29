@@ -1,0 +1,80 @@
+
+  
+  draw_triangle_colour
+  Com esta função você pode desenhar tanto um esboço de um triângulo como um triângulo preenchido. Se for preenchido você pode definir as cores individuais para cada ponto de canto e se estas cores não forem as mesmas, você terá um efeito de gradiente de um para o outro.
+    (as configurações de cores sobreporão o conjunto de cores de base com a função draw_set_colour()).
+  NOTA: Se você quiser desenhar uma forma usando um sombreador, você deve estar ciente de que a maioria dos sombreadores espera as seguintes entradas: vértice, textura, cor. Entretanto, ao utilizar esta função, apenas os dados de vértice e cor estão sendo passados para dentro, e assim o
+   shader não pode desenhar nada (ou desenhar algo, mas não corretamente). Se você precisar desenhar formas desta maneira, então o sombreador deve ser personalizado tendo isto em mente.
+   
+  Sintaxe:
+  draw_triangle_colour(x1, y1, x2, y2, x3, y3, col1, col2, col3, esboço);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x1
+        A coordenada x do primeiro canto do triângulo.
+      
+      
+        y1
+        A coordenada y do primeiro canto do triângulo.
+      
+      
+        x2
+        A coordenada x do segundo canto do triângulo.
+      
+      
+        y2
+        A coordenada y do segundo canto do triângulo.
+      
+      
+        x3
+        A coordenada x do terceiro canto do triângulo.
+      
+      
+        y3
+        A coordenada y do terceiro canto do triângulo.
+      
+      
+        col1
+        A cor do primeiro canto.
+      
+      
+        col2
+        A cor do segundo canto.
+      
+      
+        col3
+        A cor do terceiro canto.
+      
+      
+        esboço
+        Se o triângulo é um esboço (verdadeiro) ou preenchido (falso).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_triangle_colour(200, 200, 300, 300, 200, 200, 300, c_red, c_blue, c_blue, false);
+  Isto desenharia um triângulo isósceles cheio em ângulo reto com o vermelho no ângulo reto, azul nos outros dois cantos.
+   
+   
+   
+  
+    
+      
+        Voltar: Formulários básicos
+        Próximo: draw_set_circle_precision
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

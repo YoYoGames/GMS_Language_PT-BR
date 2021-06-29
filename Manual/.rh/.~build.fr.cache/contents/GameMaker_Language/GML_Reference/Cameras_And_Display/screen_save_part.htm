@@ -1,0 +1,64 @@
+
+  
+  peça_de_salvamento_da_tela
+  Com esta função você pode salvar uma captura de tela de uma parte do jogo como ela aparece atualmente na tela do jogo. As coordenadas de seleção são baseadas no tamanho absoluto da tela (ou janela se não for tela cheia), portanto (0,0) é sempre a parte superior
+    canto esquerdo da tela (ou janela). Abaixo está uma imagem que mostra como esta função funciona:
+  O arquivo será salvo no diretório de trabalho de
+    o jogo. É importante notar que a função foi projetada para ser chamada no Evento Final do Sorteio GUI, que deve dar resultados consistentes em todas as plataformas. A sua utilização em qualquer outro evento pode não funcionar como esperado, e pode dar resultados diferentes.
+    resultados em diferentes alvos e até mesmo dispositivos.
+  OBSERVAÇÃO: Esta função não funciona com o alvo HTML5.
+   
+  Sintaxe:
+  screen_save_part(fname,x,y,w,h);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fname
+        O nome do arquivo para a captura de tela para salvar
+      
+      
+        x
+        A coordenada x do canto superior esquerdo da área da tela a ser capturada
+      
+      
+        y
+        A coordenada y do canto superior esquerdo da área da tela a ser capturada
+      
+      
+        w
+        A largura da área da tela a ser capturada
+      
+      
+        h
+        A altura da área da tela a ser capturada
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se keyboard_check_pressed(ord("S")) {
+     screen_save_part("Screens\Screen_" + string(num++) + ".png", 0, 0, 100, 100) }
+  
+  O código acima tira uma captura de tela de uma parte da tela do jogo que tem 100 pixels quadrados quando o usuário pressiona a tecla "S". Esta captura de tela é salva em uma pasta específica e numerada usando uma variável que é então incrementada.
+   
+   
+   
+  
+    
+      Câmeras e Display
+        Voltar: 
+        Próximo: gif_open
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,120 @@
+
+  
+  Opções do jogoAmazon Fire (Legado)
+  IMPORTANTE! Esta página é válida somente para aquelas pessoas que possuem uma licença de legado com o Amazon Fire como plataforma de destino separada. Novas licenças suportam os dispositivos Fire através das Opções de JogoAndroid.
+  Esta seção descreve as diferentes opções disponíveis para você que controlam como seus projetos de jogos Amazon Fire serão compilados. As diferentes seções são:
+   
+  Geral
+  A primeira parte da seção Geral é dedicada às Informações sobre o Produto e ao
+   Construir configurações. Você deve preencher as informações do Produto, que incluem o Nome de Exibição do Projeto, suas informações de Pacote, que consiste de um Domínio, Empresa e Produto.
+    As informações da embalagem só podem ser compostas de letras de A-Z e números 0-9, sem símbolos ou outros caracteres especiais, nem devem ter caracteres maiúsculos. Estes detalhes serão então usados para gerar um ID de pacote com o formato
+    "com.company.myappname".
+  OBSERVAÇÃO: Se você já configurou o Android opções de jogo alvo, você pode clicar no botão " Syncfrom Android" no topo para transferir as informações relevantes do alvo Android
+    para o incêndio amazônico.
+  Em seguida, você precisa definir as Ferramentas de Construção, bem como as versões Target, Minimum e Compile SDK.
+  NOTA: Há também uma opção para a versão "Biblioteca de suporte" a ser utilizada. Do GameMaker Studio v2.2.4 e acima, isto não é mais necessário e quaisquer valores utilizados aqui serão ignorados. A configuração é mantida
+    para uso com projetos legados que requerem um tempo de execução anterior ao 2.2.4.
+  As Ferramentas de Construção (e Biblioteca de Suporte se necessário) são usadas quando o GameMaker Studio 2 constrói seu jogo para o alvo Android/AmazonFire e devem ser definidas para valores apropriados com base nas ferramentas que você tem instaladas usando o Android Studio.
+  
+    O SDK alvo indica que você testou seu aplicativo (até e inclusive) na versão que você especifica aqui. Isto é simplesmente para dar ao sistema operacional Android uma idéia de como ele deve lidar com seu aplicativo em termos de características do sistema operacional. Para todos os aspectos práticos
+      Para fins, a maioria dos aplicativos vai querer definir o Target SDK para a última versão lançada da API (como usada pela configuração do Compile SDK). Isto garantirá que seu aplicativo tenha a melhor aparência possível nos dispositivos Android mais recentes. Note que a partir de novembro
+      2019 O Google fez do nível 28 da API a meta necessária.
+    A versão SDK mínima é o nível API mínimo que executará seu projeto. A partir de novembro de 2019, o Google fez do nível 16 da API o mínimo absoluto exigido, mas se você adicionar extensões, elas poderão exigir um nível mínimo de API mais alto.
+    A versão Compile SDK é a versão da API contra a qual o projeto é compilado. Isto significa que você pode usar os recursos da API do Android incluídos nessa versão da API. Se você tentar usar as funcionalidades da API 16 - por exemplo - mas definir o Compile
+      SDK 15, então você receberá um erro de compilação. Entretanto, se você configurar o Compile SDK para 28, ainda poderá executar o aplicativo em um dispositivo API 26 (assim como todas as outras versões anteriores também).
+  
+  Você pode selecionar a partir de uma das configurações de alvo predefinidas clicando no botão Pré-popular valores SDK para o nível API escolhido, que abrirá uma lista de diferentes APIs para escolher. Selecionando qualquer uma delas, serão preenchidos todos os
+    Arquivos SDK com valores apropriados que você pode então usar ou editar conforme necessário.
+  NOTA: Você deve ter instalado as APIs apropriadas no SDK Manager do Android ou através do Android Studio para que seus projetos possam ser compilados corretamente.
+  A segunda parte da seção Geral cobre as diferentes Orientações em que seu jogo pode ser executado
+    para a melhor experiência do usuário. As opções disponíveis são:
+  
+    Retrato
+    Portrait-flipped
+    Paisagem
+    Landscape-flipped
+  
+  Finalmente, você tem as seguintes opções diversas:
+  
+    Habilitar o suporte a Bluetooth/iCade: Isto adicionará suporte para os controles de jogo bluetooth ou iCade ao seu projeto de jogo. Isto está ativado por padrão.
+    Executar análise do código de cotão: Quando esta opção estiver marcada, as ferramentas de construção executarão uma análise do código de cotão no projeto à medida que este for sendo construído, dando uma verificação de erro mais profunda e mostrando mais informações na janela de saída à medida que o projeto compila
+      (um arquivo LOG também será criado, com o caminho para o arquivo mostrado no final da compilação na Janela de Saída). Note que nem tudo sinalizado pela análise de cotão como um erro é necessariamente problemático.
+      para seu jogo, e ter isto habilitado pode significar que seu jogo não se compila mais, mesmo que quando estiver desligado, ele compilará e correrá bem. Essencialmente isto é apenas para depuração, e a opção está desligada por padrão.
+    Local de instalação: Aqui você pode definir o Local de Instalação padrão para seu jogo. Isto pode ser definido como Automático, neste caso o jogo será instalado no local escolhido pelo usuário em seu dispositivo, ou
+      pode ser configurado para Preferir Externo que sempre tentará instalar o jogo para o armazenamento externo do dispositivo.
+  
+  Você também pode definir aqui a Margem de Dormir do Fogo da Amazônia. Esta opção está relacionada à redução da gagueira ao executar seu jogo em sistemas específicos. Basicamente, se seu jogo estiver rodando mais rápido que a velocidade de seu quarto, o GameMaker Studio 2 "dormirá".
+    pelo tempo restante, mas este sono pode ser bastante impreciso e você pode muitas vezes terminar o sono por mais tempo do que o necessário, fazendo com que seu quadro demore mais, o que causa gagueira. Para contornar isto, podemos dormir por menos tempo e depois sentar-nos em um lugar apertado.
+    loop pelo restante do tempo para torná-lo mais preciso - embora o problema de sentar em loop é que isso faz com que o uso da CPU aumente, o que, por sua vez, pode fazer com que a temperatura de sua CPU aumente e seu dispositivo use mais bateria. Por padrão,
+    este valor é ajustado para 4, e em 99,99% dos casos você estará bem com isto, mas para dispositivos de baixa extremidade ou para dispositivos com muitos processos de fundo executando esta pode não ser uma solução ideal e um valor de 5 até 10 pode ser necessário. No entanto, note que
+    que esta é uma configuração muito específica do dispositivo e o que funciona em seu dispositivo de construção pode não ser apropriado para outro usuário, e como tal, em caso de dúvida, deixá-lo ajustado para 4.
+   
+  Gráficos
+  Aqui você pode alterar os seguintes detalhes relacionados a como seu jogo será exibido, com as seguintes opções disponíveis:
+  
+    Interpolar as cores entre os pixels: Ativa a interpolação linear, que basicamente "suaviza" os pixels. Para gráficos de pixel nítidos, deve ser
+      mas se você tiver misturas alfa agradáveis e gráficos alisados é melhor deixá-lo ligado. Isto está ligado por padrão.
+    Profundidade da cor da tela: Isto pode ser usado para definir a profundidade de cor para renderização a 16bit ou 24bit. Isto afetará a compatibilidade com alguns dispositivos mais antigos se for ajustado para 24bit, e também aumentará o ashmem que
+      é necessária (esta é a memória compartilhada nos dispositivos do AmazonFire).
+    Escala: Aqui você pode selecionar a escala da tela de desenho mantendo a relação de aspecto dentro da tela do dispositivo - adicionando "acolchoamento" ao redor das bordas para caber na tela - ou você pode selecionar ter a tela de desenho esticada para caber
+      a tela do dispositivo.
+  
+  Finalmente, há a opção de definir o tamanho da página de textura. O tamanho padrão (e o mais compatível) é 2048x2048, mas você pode escolher entre 256x256 até 8192x8192. Lá
+    é também um botão marcado Pré-visualização que gerará as páginas de textura para esta plataforma e depois abrirá uma janela para que você possa ver como elas são. Isto pode ser muito útil se você desejar ver como são as páginas de textura
+    estruturada e para evitar ter páginas de textura maiores (ou menores) do que o necessário. Para maiores informações sobre páginas de textura, por favor, veja aqui.
+  NOTA: Esteja ciente de que quanto maior o tamanho da página de textura, menos compatível seu jogo será com diferentes navegadores e dispositivos.
+   
+  Ícones
+  Esta seção permite adicionar as várias imagens de ícones que seu projeto precisará para as diferentes páginas da loja
+    e dispositivos. Todas as imagens de ícones devem ser criadas como arquivos de 24 bits *.png com os tamanhos apropriados indicados.
+  Vale notar que o GameMaker Studio 2 possui uma ferramenta Gerador de Imagens de Projeto que pode ser usada para criar automaticamente todas as imagens necessárias para todas as diferentes plataformas alvo de seu jogo
+    está sendo compilado para. Se você usar esta ferramenta, você deve revisar as imagens criadas para garantir que elas sejam o que você precisa. A ferramenta gerará tanto ícones quanto imagens (veja a seção abaixo).
+   
+  Imagens
+  Aqui você pode definir a Cor da Borda que será usada como fundo para as telas de respingo que não estão definidas para serem preenchidas
+    a tela inteira. Você também pode adicionar telas Splash ao seu arquivo final do jogo, tanto para os modos paisagem e retrato , que serão mostrados enquanto o jogo carrega no dispositivo. Esta tela deve ser um arquivo *.png de 24 bits,
+    e é recomendado ter o mesmo tamanho que a primeira sala (ou vista) de seu jogo. Se você exigir que a tela de respingo seja mostrada por um tempo específico, então você também pode configurá-la aqui de 0 a 10 segundos (o tempo padrão de 0 significa que ela só mostrará
+    para a duração do carregamento do ativo). Você também pode definir como a tela de respingo deve ser exibida a partir das seguintes opções:
+  
+    Mantenha a relação de aspecto: Isto manterá a relação de aspecto da imagem em comparação com a tela do dispositivo, adicionando "acolchoamento" ao redor das bordas onde for necessário.
+    Cortar à medida: Isto manterá a imagem 1:1 com a tela do dispositivo e cortará (ou almofada) as bordas, conforme necessário.
+    Esticar: Isto esticará a imagem para preencher a tela do dispositivo (e pode distorcer a imagem mostrada).
+  
+  Finalmente você pode definir a Banner Image, que também é um 24bit *.png.
+   
+  Permissões
+  A partir desta aba você pode alterar algumas das permissões que seu jogo pode solicitar dentro do Manifesto de Fogo da Amazônia. GameMaker
+    O Studio 2 atribuirá permissões automaticamente, conforme necessário, com base nas funções que o jogo utiliza, no entanto, você pode achar que precisa de uma permissão para seu jogo que não foi atribuída corretamente (por exemplo, quando você usa extensões personalizadas) em
+    qual caso assinale a caixa de permissão necessária.
+  A lista abaixo descreve as permissões que estão disponíveis:
+  
+    WRITE_EXTERNAL_STORAGE: Permitirá que seu jogo escreva para armazenamento externo.
+    READ_PHONE_STATE: Permitir somente acesso de leitura ao estado telefônico.
+    ACCESS_NETWORK_STATE: Permita que seu jogo tenha acesso a informações sobre redes.
+    INTERNET: Permita que seu jogo abra soquetes de rede.
+    BLUETOOTH: Permitirá que seu jogo se conecte a dispositivos Bluetooth emparelhados.
+    RECORD_AUDIO: Permitirá que seu jogo grave a entrada de áudio a partir do microfone.
+  
+  NOTA: Se você não tem certeza de que precisa delas, provavelmente deveria deixá-las sem verificação por padrão e deixar o GameMaker Studio 2 lidar com as permissões para seu jogo.
+  O setor de Permissões de Incêndio da Amazônia também tem uma área onde você pode injetar permissões nas Tags de Aplicação doAndroid no manifesto.xml Android. Você pode encontrar uma lista completa de tags disponíveis no Android
+    documentação aqui:
+  
+    Desenvolvedor doAndroid: Etiquetas de aplicação
+  
+  Vale notar que para API 28 e acima, você não terá mais permissão para usar qualquer chamada web externa usando "http" - "https" é necessário em seu lugar - a menos que você acrescente
+    a seguinte etiqueta:
+  android:usaCleartextTraffic = "true" (verdadeiro)
+   
+   
+   
+  
+    
+      
+        Voltar: Opções de jogo
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

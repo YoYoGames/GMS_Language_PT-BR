@@ -1,0 +1,80 @@
+
+  
+  audio_create_play_queue
+  Esta função prepara uma fila de segurança para o áudio. Você passa o formato de dados (apenas buffer_u8 ou buffer_s16 são suportados atualmente), a taxa de amostragem (que pode estar entre 1000hz e 48000hz), e os canais que o áudio requer de
+    uma das constantes listadas abaixo:
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        audio_mono
+        Áudio mono (canal único).
+      
+      
+        audio_stereo
+        Áudio estéreo (canal duplo).
+      
+      
+        audio_3D
+        Áudio 3D (5.1).
+      
+    
+  
+   Note que você deve liberar quaisquer filas de áudio criadas com esta função quando não for mais necessário para evitar vazamentos de memória usando a função audio_free_play_queue().
+  Esta função desencadeará um Evento Assíncrono de Reprodução de Áudio quando a fila chegar ao fim e, neste evento, um mapa DS especial
+    ser criado na variável async_load com os seguintes pares de chaves/valores:
+  
+    " queue_id"- a fila que terminou de jogar dados
+    "buffer_id" - o buffer que não está mais sendo jogado a partir
+    "queue_shutdown" - isto é ajustado para 0 durante a reprodução normal e 1 quando o evento é recebido porque audio_free_play_queue() foi chamado. Quando isto é ajustado para 1, você não
+      não quer enfileirar mais nenhum dado.
+  
+   
+  Sintaxe:
+  audio_create_play_queue(queueFormat, queueRate, queueCheueChannels);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        queueFormat
+        O formato dos dados buffer a usar(buffer_u8 ou buffer_s16).
+      
+      
+        fila
+        A taxa de amostragem dos dados na fila tampão.
+      
+      
+        canais de fila
+        Os canais a serem utilizados a partir de uma das constantes listadas abaixo.
+      
+    
+  
+   
+  Devoluções:
+  Real (Buffer ID)
+   
+  Exemplo:
+  audio_queue = audio_create_play_queue(buffer_s16, 11052, audio_mono);
+  O código acima cria uma nova fila de áudio e atribui sua identificação a uma variável para referência futura.
+   
+   
+   
+  
+    
+      
+        Voltar: Buffers de áudio
+        Próximo: audio_free_play_queue
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

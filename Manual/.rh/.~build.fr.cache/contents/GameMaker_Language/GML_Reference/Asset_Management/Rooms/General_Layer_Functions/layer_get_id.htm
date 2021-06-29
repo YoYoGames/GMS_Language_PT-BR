@@ -1,0 +1,44 @@
+
+  
+  layer_get_id
+  Esta função pode ser usada para obter o valor de identificação único para uma determinada camada. Na IDE, todas as camadas têm um nome e um tipo, e para poder editá-las ou alterá-las através do código é necessário dar o valor de ID da camada. Esta função é usada para recuperar
+    esta identificação usando o nome (um fio) da camada (como escrito na IDE). Se você criar uma nova camada através de código usando a função layer_create() então essa função retornará o valor único de identificação em seu lugar
+    (camadas criadas dinamicamente não recebem nomes). Note que se você der o nome de uma camada que não existe na sala atual, então você receberá um erro e o projeto irá cair.
+   
+  Sintaxe:
+  layer_get_id(layer_name)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome_da_camada
+        O nome da camada (um cordel)
+      
+    
+  
+   
+  Devoluções:
+  Valor de identificação da camada (Real), ou -1 se a camada especificada não existir
+   
+  Exemplo:
+  var near = instance_nearest(x, y, obj_Tree); var layer_id = layer_get_id("Instances Front"); layer_add_instance(layer_id, near);
+  O código acima obterá primeiro o índice da instância mais próxima à posição x/y dada e o armazenará em uma variável local. Em seguida, ele obtém a identificação única da camada da instância para a camada chamada "Instances Front", e move a instância encontrada para
+    essa camada.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próximo: layer_get_depth
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

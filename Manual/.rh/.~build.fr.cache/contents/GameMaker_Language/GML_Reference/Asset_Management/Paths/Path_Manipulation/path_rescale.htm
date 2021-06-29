@@ -1,0 +1,51 @@
+
+  
+  caminho_escala
+  Esta função pode ser usada para redimensionar o trajeto dado ao longo de ambos (ou de um ou de outro) os eixos vertical e horizontal, movendo basicamente cada um dos pontos do trajeto para uma nova posição correspondente a esta escala ao redor do centro do trajeto. Esta função altera o ativo real da trajetória,
+    e assim afetará permanentemente como o caminho é usado por todas as instâncias do jogo desde o momento em que a função é usada até o final do jogo. Se isto não for o que você precisa, então você deve usar uma função como path_duplicate() para criar uma cópia do caminho primeiro, depois chamar esta função no ativo duplicado (não se esqueça de chamar path_delete() no ativo quando não for mais necessário).
+   
+  Sintaxe:
+  path_rescale(índice, escala x, escala y);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do caminho para a escala.
+      
+      
+        xscale
+        Pelo que multiplicar a escala horizontal atual. A escala padrão é 1.
+      
+      
+        yscale
+        Pelo que multiplicar a escala vertical atual. A escala padrão é 1.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  path_rescale(pth_AI, 3, 3);
+  Isto redimensionaria o caminho dado para três vezes seu tamanho original.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação do caminho
+        Próximo: caminho_fechado_fechado
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

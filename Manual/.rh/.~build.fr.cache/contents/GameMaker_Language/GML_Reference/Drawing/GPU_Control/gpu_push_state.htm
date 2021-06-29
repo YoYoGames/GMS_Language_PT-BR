@@ -1,0 +1,37 @@
+
+  
+  gpu_push_state
+  Com esta função você pode empurrar o estado atual da GPU para uma pilha para ser usada posteriormente. Você geralmente usaria isto se quisesse "salvar" o estado atual da GPU (coisas como modo de mistura, escrita alfa, abate, etc... tudo será empurrado para a
+    stack), depois desenhar algo com configurações diferentes, e então reiniciar a GPU stack para o que ela era antes (chamando gpu_pop_state()).
+   
+  Sintaxe:
+  gpu_push_state();
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  gpu_push_state(); gpu_set_blendmode(bm_add);
+     gpu_set_blendenable(false);
+     gpu_set_cullmode(true);
+     com (obj_Effect_Parent) {
+     draw_self();
+     }
+     gpu_pop_state();
+  
+  O código acima "salvará" o estado atual da GPU na pilha, então mudará certas configurações da GPU e desenhará um grupo de instâncias antes de redefinir o estado da GPU para o que era anteriormente.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle de GPU
+        Próximo: gpu_pop_state
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

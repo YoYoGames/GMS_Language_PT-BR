@@ -1,0 +1,47 @@
+
+  
+  layer_get_visible
+  Com esta função você pode verificar se uma camada é visível ou não. Você fornece a identificação da camada (que você obtém quando cria a camada usando layer_create()) ou o nome da camada (como um fio - isto terá um desempenho
+    impacto) e a função voltará a ser verdadeira se for visível, e falsa se não o for.
+   
+  Sintaxe:
+  layer_get_visible(layer_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada a ser alvo (ou o nome da camada como uma corda)
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var lay_id = layer_get_id("Instâncias"); if layer_get_visible(lay_id) {
+     layer_set_visible(lay_id, false); }
+     mais
+     {
+     layer_set_visible(lay_id, true); }
+  
+  O código acima obtém o valor de identificação para a camada chamada "Instâncias" no editor da sala, então usa a identificação para verificar se a camada está visível ou não, alternando a visibilidade da camada dependendo do valor retornado.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próximo: layer_depth
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

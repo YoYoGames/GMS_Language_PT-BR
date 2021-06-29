@@ -1,0 +1,44 @@
+
+  
+  sprite_delete
+  Esta função eliminará um duende do jogo, liberando qualquer memória que estivesse reservada para ele. Esta é uma função muito importante para aqueles momentos em que você precisa criar e alterar sprites de fontes externas (como carregar um sprite de um arquivo com
+    sprite_add() , ou duplicar um duende usando sprite_duplicate()) e deve ser sempre usado para remover aqueles bens que não são mais
+    necessário para um jogo, ou para limpar um ativo indexado de uma variável antes de reatribuir outro ativo a essa variável. Isto não pode ser usado para apagar sprites que estão incluídos no jogo como parte dos ativos do Navegador de Ativos.
+   
+  Sintaxe:
+  sprite_delete(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do duende a ser apagado.
+      
+    
+  
+   
+  Devoluções
+  N/A
+   
+  Exemplo:
+  var spr = sprite_create_from_surface(aplicação_surface, 0, 0, 32, 32, false, false, 16, 16); sprite_merge(spr_Player, spr); sprite_delete(spr);
+  
+  O código acima cria uma variável local e depois armazena o índice do duende criado a partir da superfície da aplicação. Este sprite é então fundido com o ativo indexado na variável "spr_Player" antes de ser removido da memória novamente.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação de Sprite
+        A seguir: sprite_set_alpha_from_sprite
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

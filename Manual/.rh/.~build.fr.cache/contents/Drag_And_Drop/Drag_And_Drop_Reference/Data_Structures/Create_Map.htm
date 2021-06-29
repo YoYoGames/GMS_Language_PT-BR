@@ -1,0 +1,46 @@
+
+  
+   Criar mapa
+  Esta ação criará uma nova estrutura de dados do mapa e retornará o valor do índice para que você possa posteriormente acessar o mapa através das outras ações de Estrutura de Dados. O índice do mapa será retornado para a Variável de destino que você fornecer, que pode ter sido criada
+    mais cedo usando a opção Atribuir Variável ou Declarar Temp, ou você pode marcar a caixa de seleção "Temp" para nomear e criar uma variável local temporária para
+    armazenar o valor até o final do roteiro ou evento. Uma estrutura de dados do mapa recém-criada é considerada "vazia", ou seja: não contém entradas de chave/valor do mapa. Observe que você pode criar mapas DS adicionais clicando no ícone mais  ao lado de
+    a ação, e selecionando outra variável para segurar a identificação do mapa.
+  IMPORTANTE! A criação de qualquer estrutura de dados utiliza a memória na plataforma alvo, e como tal todas as estruturas de dados devem ser livres quando não forem mais necessárias, usando a ação Free Data Structure (Estrutura de dados livre), caso contrário você obtém uma
+    vazamento de memória que pode prejudicar o desempenho de seus jogos ou até mesmo causar a sua queda. Isto é particularmente relevante ao usar variáveis locais temporárias para armazenar índices de estrutura de dados, já que estas variáveis são removidas no final do código ou evento, mas
+    isso não significa que a estrutura de dados seja removida também! A estrutura de dados ainda existirá, só que você não terá como referenciá-la, então ou use uma variável de instância e libere a estrutura em um momento posterior, ou libere a estrutura antes do final de
+    o evento ou função, se seu índice estiver armazenado em uma variável temporária.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Meta
+        A variável alvo para armazenar o índice do mapa em
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima cria uma nova variável de instância e uma nova estrutura de dados cartográficos. O
+    O valor do índice do mapa é armazenado na variável e depois usado para adicionar dois itens ao mapa.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações de estrutura de dados
+        A seguir: Criar rede
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

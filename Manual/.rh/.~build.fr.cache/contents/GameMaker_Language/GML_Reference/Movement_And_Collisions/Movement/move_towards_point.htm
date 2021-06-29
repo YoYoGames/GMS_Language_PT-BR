@@ -1,0 +1,54 @@
+
+  
+  move_towards_point
+  Esta função simplesmente diz à instância que está executando o código para se mover em direção a um ponto definido a uma velocidade definida. Tenha em mente que cabe a você dizer-lhe o que fazer quando chegar lá, pois não vai parar por si só. Isto significa que você pode obter uma "vibração".
+    à medida que se move (por exemplo) 3 pixels para frente, ultrapassa a posição alvo x/y por 2, depois move 3 pixels para trás novamente, ultrapassando o ponto alvo por um e assim por diante... Há várias maneiras de evitar isso, por exemplo, usando
+    distância_ao_ponto() para ver quão longe do local especificado a instância está antes de se mudar.
+  NOTA: esta função define a velocidade da instância, então mesmo que você pare de usar este código, a instância continuará se movendo na direção anterior, então é necessário definir a instância velocidade    a 0 se você desejar que pare. Veja o exemplo de código abaixo.
+   
+  Sintaxe:
+  move_towards_point( x, y, sp );
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A posição x do ponto para o qual se deve avançar.
+      
+      
+        y
+        A posição y do ponto para o qual se deve avançar.
+      
+      
+        sp
+        A velocidade de movimentação em pixels por passo.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if point_distance(x, y, target.x, target.y) > 5 {
+     move_towards_point(target.x, target.y, 5); }
+     outra velocidade = 0;
+  O código acima moverá a instância em direção à posição da instância indexada na variável "alvo" a uma velocidade de 5 pixels por etapa. Uma vez alcançada essa posição, a velocidade é ajustada para 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Movimento
+        Próximo: move_bounce_all
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

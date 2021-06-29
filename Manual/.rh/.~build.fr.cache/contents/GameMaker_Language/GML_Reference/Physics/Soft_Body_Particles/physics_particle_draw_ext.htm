@@ -1,0 +1,77 @@
+
+  
+  physics_particle_draw_ext
+  Esta função desenhará um duende na posição de todas as partículas que compartilham o mesmo valor de categoria definido pelo usuário, e que têm bandeiras que coincidem com as definidas para a máscara. O valor da máscara é definido da mesma forma que o usuário definiria o
+    quando se criam as partículas (ver as funções physics_particle_create() por exemplo), ou seja: usar o bitwise ou "|" para mascarar os bits apropriados para cada bandeira.
+  NOTA: Esta função desenhará todas as partículas na simulação física com bandeiras que coincidam com as da máscara, sejam elas partículas individuais ou grupos, se a categoria do usuário for a mesma.
+  A partícula desenhada ignorará a cor e os valores alfa definidos quando você a criou, e será desenhada usando os parâmetros de escala, ângulo, cor e alfa dados nesta função. Note que isto é puramente para desenhar um duende na posição da partícula
+    e de forma alguma afeta o comportamento da partícula.
+   
+  Sintaxe:
+  physics_particle_draw_ext(tipemask, category, sprite, subimg, xscale, yscale, ang, col, alpha)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        typemask
+        A máscara para comparar as bandeiras de partículas com.
+      
+      
+        categoria
+        A categoria definida pelo usuário para desenhar (use 0 para desenhar todas as categorias).
+      
+      
+        sprite
+        O duende a ser utilizado para cada partícula.
+      
+      
+        subimg
+        A imagem_index do duende a desenhar.
+      
+      
+        xscale
+        O fator de escala a ser aplicado ao duende ao longo do eixo x.
+      
+      
+        yscale
+        O fator de escala a ser aplicado ao duende ao longo do eixo y.
+      
+      
+        ang
+        O ângulo (em graus) para desenhar o duende.
+      
+      
+        col
+        A cor a ser misturada com o duende (o padrão é c_white).
+      
+      
+        alfa
+        O valor alfa a ser usado no desenho (0 - 1).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile; physics_particle_draw_ext(flags, 2, sprBlob, 0, 2, 2, 0, c_white, 0.5);
+  O código acima desenhará um duende para todas as partículas da categoria "2" definida pelo usuário que tenham as mesmas bandeiras que a máscara dada, escalada por 2 ao longo de ambos os eixos e com um alfa de 0,5.
+   
+   
+   
+  
+    
+      
+        Voltar: Partículas macias do corpo
+        Próximo: Physics_particle_count
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

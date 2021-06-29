@@ -1,0 +1,59 @@
+
+  
+  buffer_fill
+  Esta função pode ser usada para preencher um buffer previamente criado com um determinado tipo e valor de dados. Os dados com os quais você preenche o buffer devem estar de acordo com o argumento "tipo" desta função, o que significa que você não pode tentar preencher com um
+    e usar o tipo inteiro de 16 bits não assinado, por exemplo. As constantes do tipo são as mesmas que as utilizadas pelo buffer_read() e buffer_write() funções. O "tamanho".
+    é o tamanho do buffer (em bytes) que você deseja preencher, enquanto o offset é o valor do offset (também em bytes) desde o início do buffer até o início do preenchimento.
+   
+  Sintaxe:
+  buffer_fill(buffer, offset, tipo, valor, tamanho);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O índice do buffer a ser preenchido.
+      
+      
+        offset
+        O valor da compensação de dados (em bytes).
+      
+      
+        tipo
+        O tipo de dados que devem ser escritos no buffer (ver a lista de constantes aqui).
+      
+      
+        valor
+        Os dados a serem escritos.
+      
+      
+        tamanho
+        O tamanho do buffer (em bytes) que você deseja preencher.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  map_buffer = buffer_create(16384, buffer_fixed, 0); buffer_fill(map_buffer, 0, buffer_u16, 0, 16384);
+  O código acima encontra o início do buffer com o id armazenado na variável "buff" eles escrevem uma série de valores inteiros assinados de 16 bits para ele.
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: buffer_seek
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

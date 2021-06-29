@@ -1,0 +1,45 @@
+
+  
+  ds_priority_find_min
+  Com esta função você pode encontrar o valor armazenado na fila de prioridade mais baixa, e se mais de um valor tiver a mesma prioridade, qualquer um deles poderá ser devolvido em qualquer ordem. Entretanto, ao contrário de ds_priority_delete_delete_min(),
+    esta função não removerá o valor da fila.
+   
+  Sintaxe:
+  ds_priority_find_min(id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação da fila prioritária a ser usada.
+      
+    
+  
+   
+  Devoluções:
+  Real ou String
+   
+  Exemplo:
+  se ai_move {
+     script_execute(ds_priority_find_min(ai_priority));
+     }
+  
+  O código acima verifica uma variável de instância e se ela retornar verdadeiro, executará uma função de script indexada na fila de prioridade com o menor valor de prioridade.
+   
+   
+   
+  
+    
+      
+        Voltar: Filas de espera prioritárias DS
+        Próximo: ds_priority_find_priority
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

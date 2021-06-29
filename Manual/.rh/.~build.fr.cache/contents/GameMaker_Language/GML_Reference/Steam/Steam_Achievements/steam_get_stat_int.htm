@@ -1,0 +1,44 @@
+
+  
+  steam_get_stat_int
+  Com esta função, você pode obter o valor de uma estatística inteira específica assinada. A estatística deve ter sido previamente definida na página de contas do painel de controle Steamworkspara seu jogo e a string que é passada para a função deve
+    corresponde àquele usado como o nome API no painel de controle.
+   
+  Sintaxe:
+  steam_get_stat_int(stat_name);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        stat_name
+        O nome da estatística a ser obtida (um fio).
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  xp += 100; steam_set_stat_int("Total_XP", vapor_get_stat_int("Total_XP") + 100); if steam_get_stat_int( "Total_XP") > 1000 {
+     if !vapor_get_achievement("Ach_1000XP") vapor_set_achievement("Ach_1000XP"); }
+  
+  O código acima estabelece uma estatística e depois verifica o valor final para que ele decida se deve ou não conceder uma conquista.
+   
+   
+   
+  
+    
+      
+        Voltar: Conquistas e estatísticas
+        Próximo: steam_get_stat_float
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

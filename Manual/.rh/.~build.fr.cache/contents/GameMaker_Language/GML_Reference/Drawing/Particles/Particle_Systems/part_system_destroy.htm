@@ -1,0 +1,43 @@
+
+  
+  part_system_destroy
+  Com esta função você pode destruir um determinado sistema de partículas e removê-lo da memória. Isto deve sempre ser chamado quando o sistema não é mais necessário, como no final de uma sala, ou no evento de destruição de uma instância, caso contrário você poderia acabar com
+    partículas que aparecem em salas posteriores e nenhuma maneira de removê-las, bem como um vazamento de memória que acabará por quebrar seu jogo.
+  NOTA: Esta função também destruirá e removerá quaisquer emissores que possam ter sido criados e associados ao sistema que está sendo destruído.
+   
+  Sintaxe:
+  part_system_destroy(ind);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do sistema de partículas a destruir.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if (global.player_hp <= 0) { part_system_destroy(p_sys); room_goto_next(); }
+  O código acima verifica se um valor global da variável é menor ou igual a zero, e se é então destrói o sistema de partículas referenciado na variável em questão e depois vai para a sala ao lado.
+   
+   
+   
+  
+    
+      
+        Voltar: Sistemas de Partículas
+        Próximo: part_particles_clear
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

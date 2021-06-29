@@ -1,0 +1,53 @@
+
+  
+  Ref_ref_create fraco
+  Com esta função você pode verificar a fraca referência a várias estruturas para ver se elas ainda estão "vivas" ou não. Você fornece uma série de referências fracas para verificar (cada uma delas é fraca).
+    referência deveria ter sido criada usando a função weak_ref_create()), e a função retornará true se qualquer das estruturas ainda são
+    ser referenciado em algum lugar ou false se não forem e tiverem sido coletados. Note que se você fornecer um array onde qualquer um dos valores não seja uma referência fraca, a função retornará undefined.
+  Note que a função também leva dois argumentos opcionais, onde o primeiro permite fornecer um índice inicial na matriz para verificar, bem como um argumento para definir o número de posições (comprimento) a partir desse índice para verificar. Somente os índices da matriz
+    dentro desses parâmetros serão verificados.
+   
+  Sintaxe:
+  weak_ref_any_alive(weak_ref, [índice], [comprimento]));
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Ref_fraqueza
+        A fraca referência à estrutura que você deseja verificar.
+      
+      
+        [índice]
+        OPCIONAL! O índice na matriz para começar a verificar a partir de
+      
+      
+        [comprimento]
+        OPCIONAL! O número de posições do índice dado para verificar
+      
+    
+  
+   
+  Devoluções:
+  Booleano (ou indefinido)
+   
+  Exemplo:
+  if weak_ref_any_alive(inventory_ref_array) { instance_destroy(obj_Inventory_Control); }
+  O código acima verifica uma série de referências fracas e, se alguma ainda estiver viva, uma instância é destruída.
+   
+   
+   
+  
+    
+      
+        Voltar: Coleta de Lixo
+        Próximo: gc_collect
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

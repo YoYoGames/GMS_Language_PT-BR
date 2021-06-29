@@ -1,0 +1,33 @@
+
+  
+  vapor_é_apto_a_sobre_camada
+  Ao utilizar o Steam API, esta função pode ser chamada para verificar se o Steam API cliente tem a funcionalidade de sobreposição ativada.
+   
+  Sintaxe:
+  steam_is_overlay_enabled();
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  global.steam_api= falso; if steam_initialised() {
+     if steam_stats_ready() && steam_is_overlay_enabled() {
+     global.steamapi= true; }
+     }
+  
+  O código acima definirá uma variável global como verdadeira se a API do cliente Steam for inicializada corretamente, juntamente com as estatísticas e a funcionalidade de sobreposição do Steam, ou definirá a variável como falsa de outra forma.
+   
+   
+   
+  
+    
+      
+        Voltar: Sobreposição avapor
+        Próximo: vapor_é_ativado_sobre_ativado
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

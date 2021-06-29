@@ -1,0 +1,48 @@
+
+  
+  mapa_móvel_altura_do_set
+  Esta função pode ser usada para redimensionar um elemento do mapa de azulejos. Você dá o ID do elemento do mapa de azulejos (que você obtém quando cria um elemento do mapa de azulejos usando layer_tilemap_create() ou quando você usa a função layer_tilemap_get_id()),
+    e a nova altura do mapa de azulejos em células de azulejos.
+   
+  Sintaxe:
+  tilemap_set_height(tilemap_element_id, altura)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tilemap_element_id
+        O valor de identificação único do elemento do mapa de azulejos para definir a altura de
+      
+      
+        altura
+        O valor da altura (em "células")
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var lay_id = layer_get_id("Tiles_Walls"); var map_id = layer_tilemap_get_id(lay_id); if tilemap_get_height(map_id) != room_height div 16 {
+     tilemap_set_height(map_id, room_height div 16); }
+  
+  O código acima verifica a largura de um mapa de azulejos específico e, se não for o tamanho correto, então a largura é definida.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas do mapa de azulejos
+        Próximo: mapa_get_mask do azulejo
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

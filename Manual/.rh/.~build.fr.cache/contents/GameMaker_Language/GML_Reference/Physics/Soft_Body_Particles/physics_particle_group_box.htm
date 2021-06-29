@@ -1,0 +1,47 @@
+
+  
+  caixa_de_grupos_de_partículas_físicas
+  Esta função irá definir a forma do grupo de partículas que está sendo criado. Primeiro é preciso ter começado a definição do grupo usando a função fisica_particle_group_begin()e então você
+    usar esta função para definir a metade da largura e a metade da altura do grupo em pixels - aproximada porque a largura e a altura exatas dependerão do tamanho das partículas base, conforme definido pelo physics_particle_set_radius()    A simulação física tenta "encaixar" o maior número possível de partículas na forma definida. Finalmente, é preciso chamar física_particle_group_end() para criar o grupo
+    de partículas na sala.
+   
+  Sintaxe:
+  physics_particle_group_box(halfWidth, halfHeight)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        meiaLargura
+        A metade da largura da caixa.
+      
+      
+        meiaAltura
+        A metade da altura da caixa.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile; var groupflags = phy_particle_group_flag_solid;  physics_particle_group_begin(flags, groupflags, mouse_x, mouse_y, 0, 0, 0, 0, 0, c_white, 1, 1, 2); physics_particle_group_box(100, 100); mLastGroup = physics_particle_group_end();
+  O código acima armazena as bandeiras para o tipo de partícula e as propriedades do grupo de partículas em variáveis e depois as utiliza para criar um grupo de partículas retangular com lados de 200px na posição do mouse.
+   
+   
+   
+  
+    
+      
+        Voltar: Partículas macias do corpo
+        A seguir: physics_particle_group_polygon
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,99 @@
+
+  
+  display_set_sleep_margin
+  Esta função pode ser usada para definir o valor da margem de sono usada para o tempo de renderização de seu jogo, e requer um valor de milissegundos. Os valores padrão são os seguintes:
+   
+  
+    
+      
+        Plataforma
+        Milissegundos
+      
+      
+        Windows
+        10
+      
+      
+        macOS
+        10
+      
+      
+        Ubuntu
+        10
+      
+      
+        HTML5
+        10
+      
+      
+        Android
+        4
+      
+      
+        iOS
+        4
+      
+      
+        Windows UWP
+        10
+      
+      
+        Xbox
+        10
+      
+      
+        PS4
+        10
+      
+      
+        Nintendo Troca
+        10
+      
+    
+  
+   
+  Note que mesmo que o método de tempo seja definido para usar o tempo vsync, a margem de sono terá algum efeito sobre a renderização do jogo e, portanto, você deve tomar cuidado ao definir este valor. Para maiores informações sobre o tempo de exibição, por favor veja display_set_timing_method().
+  NOTA: Além da Margem de Sono, você pode controlar ainda mais seu desempenho e consumo de energia no Windows, ajustando a resolução do agendador de fios em tempo de execução .
+   
+  Sintaxe:
+  display_set_sleep_margin(milisegundos);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        milissegundos
+        O número de milissegundos para a margem de sono
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se display_get_timing_method() != tm_sleep {
+     display_set_set_timing_method(tm_sleep);
+     if display_get_sleep_margin() != 20 {
+     display_set_sleep_sleep_margin(20);
+     }
+     }
+  
+  O código acima verificará o método de tempo e, se não estiver ajustado para tm_sleep , será ajustado para isso e a margem de sono será ajustada para 20.
+   
+   
+   
+  
+    
+      Câmeras e Display
+        Voltar: 
+        Próximo: screen_save
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

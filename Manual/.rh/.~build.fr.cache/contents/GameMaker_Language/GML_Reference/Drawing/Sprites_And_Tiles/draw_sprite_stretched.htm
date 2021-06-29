@@ -1,0 +1,64 @@
+
+  
+  draw_sprite_stretched
+  Esta função simplesmente pega um recurso sprite e o estica sobre a largura e altura determinadas para que ele ocupe aquela área. Como no caso de draw_sprite() você pode especificar um duende e uma subimagem para desenho, depois o
+    posição x / y na sala para que o duende seja desenhado em e finalmente uma largura e uma altura (que devem ser valores de pixel). A imagem abaixo mostra o resultado desta função com diferentes conjuntos de argumentos:
+  
+  NOTA: Ao desenhar com esta função, o duende x desvio e y desvio são ignorados e o duende será desenhado com o canto superior esquerdo na posição x / y especificada na sala.
+   
+  Sintaxe:
+  draw_sprite_stretched(sprite, subimg, x, y, w, h);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sprite
+        O índice do duende a desenhar.
+      
+      
+        subimg
+        O subimg (frame) do duende a desenhar (image_index ou -1 correlacionado com o frame atual da animação no objeto).
+      
+      
+        x
+        A coordenada x de onde desenhar o duende.
+      
+      
+        y
+        A coordenada y de onde desenhar o duende.
+      
+      
+        w
+        A largura da área que o duende esticado irá ocupar.
+      
+      
+        h
+        A altura da área que o duende esticado irá ocupar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_sprite_stretched(sprite_index, image_index, x, y, sprite_width, sprite_height / 2);
+  Isto desenhará o sprite atribuído à instância e sua subimagem com o canto esquerdo na posição x/y da instância. Sua largura é igual à do duende, e a altura do duende é a altura do duende dividida por dois.
+   
+   
+   
+  
+    
+      
+        Voltar: Sprites e Azulejos
+        Próximo: draw_sprite_stretched_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

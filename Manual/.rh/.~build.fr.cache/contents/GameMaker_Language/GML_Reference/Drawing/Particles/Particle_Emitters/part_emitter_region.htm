@@ -1,0 +1,123 @@
+
+  
+  part_emitter_region
+  Esta função é usada para definir sua posição de um emissor de partículas dentro da sala atual. Você especifica a caixa de delimitação da área dentro da função e então usa qualquer uma de uma série de constantes para definir a forma final do emissor dentro desta delimitação
+    caixa, bem como a distribuição das partículas dentro da forma. As constantes disponíveis para as formas de distribuição estão listadas abaixo:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        ps_shape_rectangle
+        Uma forma retangular que preenche a área em questão.
+      
+      
+        ps_shape_ellipse
+        Uma elipse, com a largura e a altura definidas pela área.
+      
+      
+        ps_shape_diamond
+        Uma forma de diamante com os pontos na metade da largura e na metade da altura.
+      
+      
+        ps_shape_line
+        Uma única linha, onde o ponto inicial é a esquerda e o superior e o ponto final é a direita e o inferior.
+      
+    
+  
+   
+  Além das formas de distribuição, você também pode definir a curva de distribuição para as partículas que devem ser
+    emitidos. As constantes disponíveis para as curvas de distribuição estão listadas abaixo:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        ps_distr_linear
+        Uma distribuição linear onde todas as partículas têm uma chance igual de aparecer em qualquer lugar da área.
+      
+      
+        ps_distr_gaussian
+        Uma distribuição gaussiana onde mais partículas são geradas no centro do que nas bordas.
+      
+      
+        ps_distr_invgaussian
+        Uma distribuição gaussiana inversa onde são geradas mais partículas nas bordas do que no centro.
+      
+    
+  
+   
+  
+  NOTA: Se você precisar que o emissor se mova com uma instância, você terá que usar esta função no evento da etapa e atualizar a posição do emissor dessa forma. Também vale a pena notar que para emissões pontuais onde não é necessário criar partículas
+    sobre uma área ou com uma distribuição específica, muitas vezes é mais fácil de usar part_particles_create().
+   
+  Sintaxe:
+  part_emitter_region(ps, ind, xmin, xmax, ymin, ymax, forma, distribuição);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ps
+        O sistema de partículas em que está o emissor.
+      
+      
+        ind
+        O índice do emissor a ser definido.
+      
+      
+        xmin
+        A coordenada x do lado esquerdo da região.
+      
+      
+        xmax
+        A coordenada x do lado direito.
+      
+      
+        ymin
+        A coordenada y da parte superior da região.
+      
+      
+        ymax
+        A coordenada y do fundo da região.
+      
+      
+        forma
+        A forma da região.
+      
+      
+        distribuição
+        O estilo de distribuição das partículas.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  part_emitter_region(global.Sname , emit_1, x - 50, x + 50, y - 50, y + 50, ps_shape_ellipse, ps_distr_linear);
+  O código acima definirá um emissor para uma forma elíptica de 100px de altura e 100px de largura em torno da posição atual (x,y) da instância que executa o código.
+   
+   
+   
+  
+    
+      
+        Voltar: Emissores de Partículas
+        Próximo: part_emitter_burst
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

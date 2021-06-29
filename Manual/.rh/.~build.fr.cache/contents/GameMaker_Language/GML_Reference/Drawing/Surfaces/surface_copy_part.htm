@@ -1,0 +1,78 @@
+
+  
+  parte_da_cópia_de_superfície
+  Esta função simplesmente tira a imagem de uma superfície e a copia para outra na posição local especificada dentro daquela superfície (onde a posição (0,0) é o canto superior esquerdo da superfície de destino). Você pode especificar uma posição local x e y
+    para copiar, assim como a largura e a altura da seção. Observe que estas são coordenadas baseadas no tamanho da superfície e não na posição em que a superfície está sendo desenhada na sala. Se a superfície de destino já tiver informações
+    isto será sobrescrito pela cópia, e a função não altera de forma alguma a superfície da fonte.
+  NOTA: Quando se trabalha com superfícies há a possibilidade de que elas possam deixar de existir a qualquer momento devido a serem armazenadas na memória de textura. Você deve SEMPRE verificar se uma superfície existe usando superfície_existe()    antes de referenciá-los diretamente.
+   
+  Sintaxe:
+  surface_copy_part(destino, x, y, fonte, xs, ys, ws, hs);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        destino
+        A identificação da superfície para copiar a outra superfície para.
+      
+      
+        x
+        A posição x para copiar para.
+      
+      
+        y
+        A posição y para copiar para.
+      
+      
+        fonte
+        A identificação da superfície a ser copiada.
+      
+      
+        xs
+        A posição x na superfície da fonte de onde copiar.
+      
+      
+        ys
+        A posição y na superfície da fonte de onde copiar.
+      
+      
+        ws
+        A largura da área na superfície da fonte de onde copiar.
+      
+      
+        hs
+        A altura da área na superfície da fonte de onde copiar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se view_current == 0 {
+     surface_copy_part(surf, 0, 0, temp_surf, 0, 0, view_xview[1] - mouse_x, view_yview[1] - mouse_y); }
+     mais
+     {
+     draw_surface(surf, 0, 0); }
+  
+  O código acima verificará a vista atual sendo desenhada e se é vista[0] copia a superfície indexada na variável "temp_surf" para a superfície indexada na variável "surf". A área copiada corresponde a um retângulo formado
+    pela posição relativa do mouse dentro da superfície como seria desenhado em vista[1]. Se a vista atual for outra coisa que não seja vista[0] a superfície "surf" é desenhada para a tela.
+   
+   
+   
+  
+    
+      
+        Voltar: Superfícies
+        A seguir: superfície_de_profundidade_disponível
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

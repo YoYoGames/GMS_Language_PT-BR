@@ -1,0 +1,46 @@
+
+  
+  ds_map_copy
+  Você pode usar esta função para copiar o conteúdo de um mapa para outro que você tenha criado anteriormente usando ds_map_create(). Se o mapa DS para o qual está sendo copiado não estiver vazio,
+    então, esta função a limpará primeiro antes de copiar. O mapa original do DS permanece inalterado por este processo.
+   
+  Sintaxe:
+  ds_map_copy(id, fonte);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação do mapa que você está copiando para
+      
+      
+        fonte
+        A identificação do mapa que você está copiando de
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  inventory_2 = ds_map_create(); ds_map_copy(inventory_2, inventory_1);
+  O código acima criará um novo mapa e o atribuirá à variável "inventário_2". Ele então copiará o conteúdo do mapa DS indexado na variável "inventory_1" para este novo mapa.
+   
+   
+   
+  
+    
+      
+        Voltar: DS Maps
+        Próximo: ds_map_replace
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

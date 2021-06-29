@@ -1,0 +1,168 @@
+
+  
+  Opções de jogosAndroid 
+  Esta seção descreve as diferentes opções disponíveis para você que controlam como seus projetos de jogo Android serão compilados. As diferentes seções são:
+   
+  Geral
+  A primeira parte da seção Geral é dedicada às Informações do Produto e às Configurações de Construção.
+    Você deve preencher as informações do Produto, que incluem o Nome de Exibição do Projeto, suas informações de Pacote, que consiste de um Domínio, Empresa e Produto. As informações do pacote
+    só pode ser composto de letras de A-Z e números 0-9, sem símbolos ou outros caracteres especiais, nem deve ter caracteres maiúsculos. Estes detalhes serão então usados para gerar um ID de pacote com o formato "com.company.myappname".
+  Em seguida, você precisa definir as Ferramentas de Construção, bem como as versões Target, Minimum e Compile SDK.
+  NOTA: Há também uma opção para a versão "Biblioteca de suporte" a ser utilizada. Do GameMaker Studio v2.2.4 e acima, isto não é mais necessário e quaisquer valores utilizados aqui serão ignorados. A configuração é mantida
+    para uso com projetos legados que requerem um tempo de execução anterior ao 2.2.4.
+  As Ferramentas de Construção (e Biblioteca de Suporte se necessário) são usadas quando o GameMaker Studio 2 constrói seu jogo para o alvo Android e devem ser definidas para valores apropriados com base nas ferramentas que você tem instaladas usando o Android Studio.
+  
+    O SDK alvo indica que você testou seu aplicativo (até e inclusive) na versão que você especifica aqui. Isto é simplesmente para dar ao sistema operacional Android uma idéia de como ele deve lidar com seu aplicativo em termos de características do sistema operacional. Para todos os aspectos práticos
+      Para fins de desenvolvimento, a maioria dos aplicativos vai querer definir o Target SDK para a última versão lançada da API (como usada pela configuração do Compile SDK). Isto garantirá que seu aplicativo tenha a melhor aparência possível nos dispositivos Android mais recentes. Note que a partir de novembro
+      2019 O Google fez do nível 28 da API a meta necessária.
+    A versão SDK mínima é o nível API mínimo que executará seu projeto. A partir de novembro de 2019, o Google fez do nível 16 da API o mínimo absoluto exigido, mas se você adicionar extensões, elas poderão exigir um nível mínimo de API mais alto.
+    A versão Compile SDK é a versão da API contra a qual o projeto é compilado. Isto significa que você pode usar os recursos da API do Android incluídos nessa versão da API. Se você tentar usar as funcionalidades da API 16 - por exemplo - mas definir o Compile
+      SDK 15, então você receberá um erro de compilação. Entretanto, se você configurar o Compile SDK para 28, ainda poderá executar o aplicativo em um dispositivo API 26 (assim como todas as outras versões anteriores também).
+  
+  Você pode selecionar a partir de uma das configurações de alvo predefinidas clicando no botão Pré-popular valores SDK para o nível API escolhido, que abrirá uma lista de diferentes APIs para escolher. Selecionando qualquer uma delas, serão preenchidos todos os
+    Arquivos SDK com valores apropriados que você pode então usar ou editar conforme necessário.
+  NOTA: Você deve ter instalado as APIs apropriadas no SDK Manager do Android ou através do Android Studio para que seus projetos possam ser compilados corretamente.
+  
+  A segunda parte da seção Geral abrange as Arquiteturas de CPU para construir, com as seguintes opções disponíveis (você pode selecionar todas elas ou apenas aquelas que você precisar, mas note que cada uma delas irá adicionar ao tamanho final de
+    o apk compilado):
+  
+    Construir para ARMV5 (verificado por padrão)
+    Construir para ARMV7 (Verificado por padrão)
+    Construir para x86 (verificado por padrão)
+    Build for Mips (verificado por padrão)
+    Construir para ARM64
+    Construir para x86_64
+  
+  Depois de configurar isso, você pode selecionar as diferentes Orientações nas quais seu jogo pode ser executado para obter a melhor experiência de usuário. As opções disponíveis são:
+  
+    Retrato
+    Portrait-flipped
+    Paisagem
+    Landscape-flipped
+  
+  Finalmente, você tem as seguintes opções diversas:
+  
+    Habilitar o suporte para Bluetooth/iCade: Isto adicionará suporte para os controles de jogo bluetooth ou iCade ao seu projeto de jogo. Isto está ativado por padrão.
+    Executar análise do código de cotão: Quando esta opção estiver marcada, as ferramentas de construção executarão uma análise do código de cotão no projeto à medida que este for sendo construído, dando uma verificação de erro mais profunda e mostrando mais informações na janela de saída à medida que o projeto compila
+      (um arquivo LOG também será criado, com o caminho para o arquivo mostrado no final da compilação na Janela de Saída). Note que nem tudo sinalizado pela análise de cotão como um erro é necessariamente problemático.
+      para seu jogo, e ter isto habilitado pode significar que seu jogo não mais se compila, mesmo que quando estiver desligado, ele compilará e correrá bem. Essencialmente isto é apenas para depuração, e a opção está desligada por padrão.
+    Local de instalação: Aqui você pode definir o Local de Instalação padrão para seu jogo. Isto pode ser definido como Automático, neste caso o jogo será instalado no local escolhido pelo usuário em seu dispositivo, ou
+      pode ser configurado para Preferir Externo que sempre tentará instalar o jogo para o armazenamento externo do dispositivo.
+  
+  Você também pode definir aqui a Margem de Sono do Android. Esta opção está relacionada à redução da gagueira ao executar seu jogo em sistemas específicos. Basicamente, se seu jogo estiver rodando mais rápido que a velocidade de seu quarto, o GameMaker Studio 2 "dormirá".
+    pelo tempo restante, mas este sono pode ser bastante impreciso e você pode muitas vezes terminar o sono por mais tempo do que o necessário, fazendo com que seu quadro demore mais que o necessário, o que causa gagueira. Para contornar isto, podemos dormir por menos tempo e depois sentar-nos em um lugar apertado.
+    loop pelo restante do tempo para torná-lo mais preciso - embora o problema de sentar em loop é que isso faz com que o uso da CPU aumente, o que, por sua vez, pode fazer com que a temperatura de sua CPU aumente e seu dispositivo use mais bateria. Por padrão,
+    este valor é ajustado para 4, e em 99,99% dos casos você estará bem com isto, mas para dispositivos de baixa extremidade ou para dispositivos com muitos processos de fundo executando esta pode não ser uma solução ideal e um valor de 5 até 10 pode ser necessário. No entanto, note que
+    que esta é uma configuração muito específica do dispositivo e o que funciona em seu dispositivo de construção pode não ser apropriado para outro usuário, e como tal, em caso de dúvida, deixá-lo ajustado para 4.
+   
+  Ícones adaptativos
+  OAndroid 8.0 (API nível 26) introduziu ícones de lançamento adaptativos para seus jogos, e estes ícones podem exibir
+    uma variedade de formas através de diferentes modelos de dispositivos. Para lidar com isso, é necessário fornecer uma série de imagens em primeiro plano e de fundo para que seus ícones sejam exibidos em diferentes tamanhos. Estes tamanhos de ícones são:
+  
+    81x81 pixels (LDPI)
+    108x108 pixels MDPI)
+    162x162 pixels (HDPI)
+    216x216 pixels (XHDPI)
+    324x324 pixels (XXHDPI)
+    432x432 pixels (XXXHDPI)
+  
+  Você pode fornecer cada imagem forround e de fundo individualmente, ou você pode optar por Gerar Ícones a partir do Arquivo. Isto significa que o GameMaker Studio 2 irá gerar as imagens de ícones necessárias a partir de um arquivo base (XXXHDPI). Você precisa fornecer uma imagem para cada
+    o primeiro plano e o fundo e então clique no botão Generate, e os ícones serão criados para você. As imagens devem estar todas no formato *.png.
+  É importante entender que seus ícones adaptativos podem ser mascarados em qualquer dispositivo e, portanto, você também tem a opção de ver como eles ficarão junto com essas máscaras no menu Preview Adaptive Icons:
+  Note que isto é simplesmente uma prévia de como o ícone poderia parecer com a máscara selecionada, e a configuração não afetará
+    como os ícones são exportados e exibidos, pois isso depende do dispositivo e do sistema operacional em que o jogo será executado. Observe também que estes ícones não são criados para você como parte da geração de imagem feita ao usar a ferramenta Project Image Generator.
+   
+  Gráficos
+  Aqui você pode alterar os seguintes detalhes relacionados a como seu jogo será exibido, com as seguintes opções disponíveis:
+  
+    Interpolar as cores entre os pixels: Ativa a interpolação linear, que basicamente "suaviza" os pixels. Para gráficos de pixel nítidos, deve ser
+      mas se você tiver misturas alfa agradáveis e gráficos alisados é melhor deixá-lo ligado. Isto está ligado por padrão.
+    Profundidade da cor da tela: Isto pode ser usado para definir a profundidade de cor para renderização a 16bit ou 24bit. Isto afetará a compatibilidade com alguns dispositivos mais antigos se for ajustado para 24bit, e também aumentará o ashmem que
+      é necessária (esta é a memória compartilhada nos dispositivos do AmazonFire).
+    Suporte de dispositivos: Esta opção definirá se o suporte será somente para dispositivos que tenham uma GPU dedicada, ou todos os dispositivos. Basicamente, se seu jogo tem alguma função avançada de desenho como mistura alfa, mistura aditiva, superfícies, etc... você
+      deve limitá-lo aos dispositivos que têm uma GPU, caso contrário você corre o risco de obter comentários negativos e uma classificação ruim para seu jogo devido a erros gráficos ou falhas em dispositivos mais antigos.
+    Escala: Aqui você pode selecionar a escala da tela de desenho mantendo a relação de aspecto dentro da tela do dispositivo - adicionando "estofamento" ao redor das bordas para caber na tela - ou você pode selecionar que a tela de desenho seja esticada para caber
+      a tela do dispositivo.
+  
+  Finalmente, há a opção de definir o tamanho da página de textura. O tamanho padrão (e o mais compatível) é 2048x2048, mas você pode escolher entre 256x256 até 8192x8192. Lá
+    é também um botão marcado Preview que irá gerar as páginas de textura para esta plataforma e depois abrir uma janela para que você possa ver como elas ficam. Isto pode ser muito útil se você desejar ver como as páginas de textura são estruturadas e
+    para evitar ter páginas de textura maiores (ou menores) do que o necessário. Para maiores informações sobre páginas de textura, por favor, veja aqui.
+  NOTA: Esteja ciente de que quanto maior o tamanho da página de textura, menos compatível seu jogo será com diferentes navegadores e dispositivos.
+   
+  Ícones
+  Esta seção permite adicionar as várias imagens de ícones que seu projeto precisará para as diferentes páginas e dispositivos da loja.
+    Todas as imagens de ícones devem ser criadas como arquivos de 24 bits *.png dos tamanhos apropriados indicados.
+  Vale notar que o GameMaker Studio 2 possui uma ferramenta Gerador de Imagens de Projeto que pode ser usada para criar automaticamente todas as imagens necessárias para todas as diferentes plataformas alvo de seu jogo
+    está sendo compilado para. Se você usar esta ferramenta, você deve revisar as imagens criadas para garantir que elas sejam o que você precisa. A ferramenta gerará tanto ícones quanto imagens (veja a seção abaixo).
+   
+  Imagens
+  Aqui você pode definir a Cor da Borda que será usada como fundo para as telas de respingo que não estão definidas para preencher o
+    tela cheia. Você também pode adicionar telas Splash ao seu arquivo final do jogo, tanto para os modos paisagem e retrato , que serão mostrados enquanto o jogo carrega no dispositivo. Esta tela deve ser um arquivo *.png de 24 bits,
+    e é recomendado ter o mesmo tamanho que a primeira sala (ou vista) de seu jogo. Se você exigir que a tela de respingo seja mostrada por um tempo específico, então você também pode configurá-la aqui de 0 a 10 segundos (o tempo padrão de 0 significa que ela só mostrará
+    para a duração do carregamento do ativo). Você também pode definir como a tela de respingo deve ser exibida a partir das seguintes opções:
+  
+    Mantenha a relação de aspecto: Isto manterá a relação de aspecto da imagem em comparação com a tela do dispositivo, adicionando "acolchoamento" ao redor das bordas onde for necessário.
+    Cortar à medida: Isto manterá a imagem 1:1 com a tela do dispositivo e cortará (ou almofada) as bordas, conforme necessário.
+    Esticar: Isto esticará a imagem para preencher a tela do dispositivo (e pode distorcer a imagem mostrada).
+  
+  Finalmente você pode configurar a Banner Image para o jogo em aparelhos de TV Android, que também é um 24bit *.png.
+   
+  Embalagem
+  
+  Uma das características do uso do Google Play para seus jogos Android é a capacidade de licenciar seus jogos. Isto significa que seus jogos serão controlados pelo Google para que somente as pessoas que tenham feito o download através de seu mercado sejam capazes de
+    para jogar o jogo, evitando assim que cópias ilegais de seu produto sejam distribuídas.
+  Para ativar esta função em seu jogo, você precisa copiar sua chave pública para a caixa com o rótulo Google Licencing Public Key. Esta licença pode ser encontrada indo à sua página do Google Play Developers e depois selecionando o jogo que você deseja editar. Uma vez na página de perfil do jogo, vá até a seção intitulada "Serviços e APIs" e lá você deverá encontrar a chave pública necessária para que esta funcionalidade seja ativada.
+  Uma vez ativado, se alguém que não está autorizado a possuir seu jogo tentar jogá-lo, será mostrada uma caixa de mensagem pop-up que os informará que a licença não pode ser encontrada em seu dispositivo, e então lhes dará a opção de tentar novamente e testar novamente,
+    ou sair do jogo.
+  Outra característica do Licensing é que seu jogo pode usar APK Expansions. Esta é uma forma de contornar o tamanho máximo de 50MB imposto pelo Google Play (e somente Google Play). Ele criará seu jogo em duas partes: um pequeno arquivo *.apk e um arquivo *.zip maior que conterá todos os ativos de seus jogos, ambos carregados na loja. Quando o usuário executar seu jogo pela primeira vez, o zip será baixado e desempacotado. Você pode encontrar mais detalhes sobre isto
+    opção aqui.
+  Você também pode usar o Google Dynamic Asset Delivery para criar pacotes de aplicativos de até 1GB ao usar a opção *.aab de exportação. Este pacote reúne todos os ativos do jogo como ativos de "tempo de instalação" que são instalados junto com o próprio aplicativo. Você pode
+    Encontre mais detalhes sobre esta característica aqui.
+  Finalmente, você tem a opção de preparar o pacote final do aplicativo como um jogo de TVAndroid (você só deve assinalá-lo se seu jogo estiver de acordo com as diretrizes da TVAndroid).
+   
+  Permissões
+  A partir desta aba você pode alterar algumas das permissões que seu jogo pode solicitar dentro do Manifesto do Android. GameMaker Studio 2
+    atribuirá permissões automaticamente, conforme necessário, com base nas funções que o jogo utiliza, no entanto, você pode achar que precisa de uma permissão para seu jogo que não foi corretamente atribuída (por exemplo, quando você usa extensões personalizadas); nesse caso
+    marque a caixa de permissão necessária.
+  A lista abaixo descreve as permissões que estão disponíveis:
+  
+    WRITE_EXTERNAL_STORAGE: Permitirá que seu jogo escreva para armazenamento externo.
+    READ_PHONE_STATE: Permitir somente acesso de leitura ao estado telefônico.
+    ACCESS_NETWORK_STATE: Permita que seu jogo tenha acesso a informações sobre redes.
+    INTERNET: Permita que seu jogo abra soquetes de rede.
+    BLUETOOTH: Permitirá que seu jogo se conecte a dispositivos Bluetooth emparelhados.
+    RECORD_AUDIO: Permitirá que seu jogo grave a entrada de áudio a partir do microfone.
+  
+  NOTA: Se você não tem certeza de que precisa delas, provavelmente deveria deixá-las sem verificação por padrão e deixar o GameMaker Studio 2 lidar com as permissões para seu jogo.
+  A seção Android Permissions também tem uma área onde você pode injetar permissões nas etiquetas de aplicação do Android no manifesto.xml Android. Você pode encontrar uma lista completa de tags disponíveis na documentação do Android 
+    aqui:
+  
+    Desenvolvedor doAndroid: Etiquetas de aplicação
+  
+  Vale notar que para API 28 e acima, você não terá mais permissão para usar qualquer chamada web externa usando "http" - "https" é necessário, a menos que você acrescente
+    a seguinte etiqueta:
+  andróide:usaCl
+   
+  Social
+  Esta seção é para permitir diferentes características sociais em seu jogo Android. As seguintes opções podem ser escolhidas:
+  
+    Facebook: Se você precisar das funções do Facebook, você precisa selecionar esta caixa de seleção e então fornecer a ID do aplicativo do Facebook e o Nome do aplicativo do Facebook. Observe que todas as funções do Facebook são acessadas através de um
+      e quando você marcar a caixa Usar Facebook pela primeira vez, você será solicitado a baixar e instalar a extensão do Facebook a partir do Mercado.
+    Google - Habilitar a economia de nuvens: Ao verificar isso, o Google Cloud Saving poderá fazer o download e instalar a extensão relevante do Mercado.
+      Veja a seção sobre economia de nuvens na página Funções Assíncronas.
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Opções de jogo
+        A seguir: iOS
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

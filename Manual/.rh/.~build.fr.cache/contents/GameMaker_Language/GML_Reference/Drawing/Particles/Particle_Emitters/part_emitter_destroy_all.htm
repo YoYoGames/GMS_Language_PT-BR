@@ -1,0 +1,46 @@
+
+  
+  part_emitter_destroy_all
+  Esta função removerá todos os emissores definidos do sistema dado e os limpará da memória (isto também impedirá que quaisquer partículas sejam produzidas pelo emissor dado, mas NÃO os removerá da sala). Esta função deve sempre
+    ser chamado quando os emissores não forem mais necessários para que o sistema evite vazamentos de memória e erros.
+   
+  Sintaxe:
+  part_emitter_destroy_all( ps );
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ps
+        O sistema de partículas para destruir todos os emissores de.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se vive = 0 {
+     part_emitter_destroy_all(global.Sname);
+     room_goto(rm_Menu);
+     }
+  
+  O código acima verifica as "vidas" da variável global construída e, se for 0, destrói todos os emissores de partículas e, em seguida, muda de espaço.
+   
+   
+   
+  
+    
+      
+        Voltar: Emissores de Partículas
+        Próximo: part_emitter_existe
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

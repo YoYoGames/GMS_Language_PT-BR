@@ -1,0 +1,60 @@
+
+  
+  draw_rectangle
+  Com esta função você pode desenhar um contorno de um retângulo ou um retângulo preenchido onde a posição (x1,y1) é o canto superior esquerdo e a posição (x2,y2) é o canto inferior direito. Favor observar que o retângulo que está sendo desenhado pode precisar de diferentes
+    (+/-1 nos valores x, y ou largura ou altura) a serem desenhados com as dimensões desejadas devido às diferenças entre as várias plataformas suportadas.
+  NOTA: Se você quiser desenhar uma forma usando um sombreador, você deve estar ciente de que a maioria dos sombreadores espera as seguintes entradas: vértice, textura, cor. Entretanto, ao utilizar esta função, apenas os dados de vértice e cor estão sendo passados para dentro, e assim o
+   shader não pode desenhar nada (ou desenhar algo, mas não corretamente). Se você precisar desenhar formas desta maneira, então o sombreador deve ser personalizado tendo isto em mente.
+   
+  Sintaxe:
+  draw_rectangle(x1, y1, x2, y2, esboço);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x1
+        A coordenada x do canto superior esquerdo do retângulo.
+      
+      
+        y1
+        A coordenada y do canto superior esquerdo do retângulo.
+      
+      
+        x2
+        A coordenada x do canto inferior direito do retângulo.
+      
+      
+        y2
+        A coordenada y do canto inferior direito do retângulo.
+      
+      
+        esboço
+        Se o retângulo é desenhado preenchido (falso) ou como um contorno de um pixel de largura (verdadeiro).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_set_colour(c_yellow); draw_rectangle(100, 100, 300, 200, true);
+  Isto desenhará um contorno retangular, com seu canto superior esquerdo em (100.100) e seu canto inferior direito em (300.200).
+   
+   
+   
+  
+    
+      
+        Voltar: Formulários básicos
+        A seguir: draw_rectangle_colour
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

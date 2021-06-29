@@ -1,0 +1,106 @@
+
+  
+  Relógios
+  A idéia do Debugger é permitir que você "observe" cada detalhe de seu jogo. Isto é feito usando "janelas de relógio" que, por padrão, são abertas na janela de saída acoplada.
+    no fundo da IDE. Você pode clicar em cada uma das diferentes abas para ver os relógios que elas contêm, alguns dos quais podem ser atualizados em tempo real (quando a depuração em tempo real  estiver ativada a partir da barra de ferramentas do Debugger) enquanto outros exigirão que o depurador tenha pausado o jogo.
+  Quando você estiver observando variáveis em qualquer uma das janelas, pode ser um dos vários tipos de dados. Entretanto, devido à forma como o GameMaker Studio 2 armazena certas coisas, o Debugger nem sempre sabe exatamente o que o
+    variável mantém. Isto porque os valores internos de identificação para estruturas de dados ou instâncias são inteiros e, portanto, o Debugger nem sempre sabe se o valor inteiro sendo armazenado em uma variável é para uma estrutura de dados ou uma instância ou é
+    simplesmente um valor inteiro. Por esse motivo, você pode clicar com o botão direito do mouse  em qualquer valor variável e obter uma janela pop-up que lista os tipos de dados disponíveis
+    que esta variável poderia ser:
+  Strings e arrays não permitem esta opção, e vale a pena notar que mesmo que uma estrutura de dados seja armazenada em uma variável de instância, seu número de identificação
+    é global, portanto, se você tiver quatro instâncias e cada uma criar uma ds_list (por exemplo), cada lista terá um ID de 0 a 3, e nem todas elas serão 0.
+  Uma vez selecionado seu tipo de dados, a variável então mostrará as entradas na estrutura simplesmente clicando no pequeno  ao lado de seu nome. Isto expandirá as estruturas
+    e você também pode alterar alguns dos valores das variáveis mostradas simplesmente clicando duas vezes  sobre o valor e dando-lhe um novo valor.
+  NOTA: você não pode reatribuir arrays ou estruturas de dados desta forma, mas pode alterar alguns de seus conteúdos (você não pode alterar os valores "chave" nos mapas, nem o valor de prioridade para as filas prioritárias).
+  Abaixo você pode encontrar uma lista de cada uma das diferentes janelas do relógio, juntamente com uma explicação do que elas são e como usá-las:
+  Locais
+  
+    A janela Locals mostra as propriedades do passo atual, que inclui o nome do evento atual (ou roteiro) sendo
+      rodar, o offset no código da Máquina Virtual (VM) para o script atual (a sigla "PC" é para "contador de programas"), a instância "self" rodando
+      o bloco de código, e a "outra" instância no evento. Esta última parte só é válida quando o evento é um evento de colisão ou quando há um "with" usado no código. Se a instância estiver em colisão,
+      "outro" mostrará a outra instância (e suas variáveis) na colisão, mas se for uma with então a instância "Self" torna-se a instância que está rodando o código, enquanto "Other" é então a instância
+      que realmente contém o with. Em todos os outros momentos, "outros" simplesmente mostrará os mesmos dados que "Self".
+    Note que as instâncias "Self" e "Other" podem ser expandidas clicando em  para ver um
+      lista de todas as variáveis locais e de instância que são atualmente declaradas para o bloco de código que está sendo atravessado. Se você clicar com o botão direito do mouse  em um valor, você pode definir seu tipo para ver detalhes das estruturas de dados.
+    
+  
+  Globais
+  
+    A janela Globals mostrará uma lista de
+      todas as variáveis globais declaradas atualmente e seus valores. Se você clicar com o botão direito do mouse  sobre um valor, você pode definir seu tipo para ver detalhes das estruturas de dados.
+    
+  
+  Relógios
+  
+    Esta janela é para você adicionar uma variável específica que
+      que você quer acompanhar. Esta pode ser uma variável de escopo global ou de instância , uma variável embutida ou mesmo uma matriz ou estrutura de dados. Se o código da instância for
+      A variável observada será mostrada aqui, o que significa que você pode facilmente rastrear um valor sem ter que procurá-lo nas janelas Locals ou Globals . Se você clicar com o botão direito do mouse em  sobre um valor, você pode definir seu tipo, apagá-lo ou limpar todos os relógios da janela. 
+    
+  
+  Instância
+  
+    Como o nome indica, esta janela mostrará todas as variáveis de instância ,
+      variáveis locais para o evento da instância, variáveis incorporadas e estruturas associadas à instância que está sendo atravessada na janela Fonte (se uma instância estiver sendo referenciada usando
+      a palavra-chave "outro" ou a declaração with , então esta janela mostrará que, em vez disso, as propriedades das instâncias). Se você clicar com o botão direito do mouse em  sobre um valor, você pode definir seu tipo, apagá-lo ou limpar todos os relógios da janela. 
+    
+  
+  Todas as instâncias
+  
+    Caso você precise ver todas as instâncias que
+      estão atualmente na sala, você pode selecionar esta janela e eles serão listados. Você também pode ver o estado de qualquer variável incorporada, variáveis de instância ou estruturas que eles têm, e você pode corrigir
+      clique em  sobre um valor para definir seu tipo.
+    
+  
+  Instância Selecionada
+  
+    Esta janela é para quando
+      você seleciona uma instância de seu jogo. Isto é feito simplesmente pausando o jogo e depois clicando em qualquer instância visível dentro da janela do jogo. A instância encontrada abaixo do cursor do mouse terá então suas informações exibidas na janela do jogo.
+      Janela de instância, onde você pode ver que está construída em variáveis, variáveis de instância, e estrutura o mesmo que para a janela de Instâncias.
+    
+  
+  Estados de Renderização
+  
+    Este relógio mostra-lhe todas as informações disponíveis
+      para o estado do quadro atual a ser renderizado, como o desenho alfa ou a cor de preenchimento. Isto não pode ser atualizado em tempo real, então você precisará fazer uma pausa no jogo para atualizar e obter o quadro
+      detalhes.
+    
+    
+  
+  Superfícies / Texturas
+  
+    Este relógio permite que você veja
+      exatamente o que está sendo desenhado para qualquer superfície que você tenha em seu jogo (incluindo a superfície de aplicação), bem como ver aspáginas de texturaque estão na memória. Você pode selecionar a partir de texturas ou superfícies no menu na parte inferior do relógio, e depois passar o mouse sobre a textura ou identificação da superfície para que ela seja exibida em uma janela pop-up:
+    Note que o depurador deve ser pausado antes que estes sejam atualizados.
+    
+  
+  Perfil
+  
+    Esta janela é onde você pode ver o perfil atual do sistema para o jogo sendo testado e é onde você pode verificar tudo em seu jogo desde eventos inteiros até chamadas de função individuais para ver como eles estão se desempenhando e identificar
+      quaisquer áreas problemáticas ou gargalos. Para maiores informações sobre perfil, veja a página seguinte: 
+    
+      O Perfilador
+    
+    
+  
+  Buffer
+  
+    Se você rubricou algum buffer em seu jogo, então esta janela lhe mostrará os dados do buffer. Você pode selecionar qualquer buffer criado definindo o valor de ID do buffer, que começará em 0 para o primeiro buffer criado
+      em seu jogo, e aumentar em 1 para cada buffer consecutivo:
+    Se você clicar com o botão direito do mouse  na janela de dados ou clicar no botão de exibição de dados, você pode selecionar como os dados são exibidos, definindo o alinhamento e o tipo, e você também pode definir como
+      os dados são dispostos a partir da caixa de seleção de colunas. Há uma janela suspensa aqui onde você pode selecionar a partir de uma lista padrão de layouts.
+  
+   
+   
+   
+  
+    
+      
+        Voltar: O Depurador
+        A seguir: O Perfilador
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

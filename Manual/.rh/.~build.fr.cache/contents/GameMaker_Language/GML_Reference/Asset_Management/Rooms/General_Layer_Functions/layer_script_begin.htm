@@ -1,0 +1,70 @@
+
+  
+  layer_script_begin
+  Com esta função você pode atribuir uma função de roteiro a uma camada e ela será chamada antes que a camada seja renderizada. Ao adicionar uma função a uma camada, desta forma, ela será executada no início.
+    de cada um dos diferentes eventos de sorteio para que você possa verificar na função atribuída qual evento está atualmente renderizando e adaptar o código para se adequar. Isto pode ser feito verificando a função tipo_de_evento    e/ou o número_do_evento (ver o exemplo ampliado abaixo). Observe que a função não se destina a ser chamada em nenhum evento de sorteio ou evento de etapa, mas apenas precisa ser chamada
+    no início da sala no Código de Criação de Sala ou no Criar Evento / Início de Sala Evento de uma instância.
+   
+  Sintaxe:
+  layer_script_begin(layer_id, script);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada a ser alvo (ou o nome da camada como uma corda)
+      
+      
+        roteiro
+        O índice de função do roteiro a ser atribuído à camada
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo ampliado:
+  Neste exemplo estendido, mostraremos primeiro como uma simples função de script é estruturada para definir alguns dados uniformes de sombreador de modo que, quando a camada dada for desenhada, esta função será executada e o sombreador funcionará corretamente. No exemplo, vale a pena
+    observando como verificamos qual evento está sendo chamado para que o resto da função seja executado apenas no evento específico que exigimos que seja trabalhado - neste caso, apenas no evento principal de sorteio:
+  //// @function layer_shader_start(); function layer_shader_start()
+     {
+     if event_type == ev_draw {
+     se event_number == 0 {
+     colour_to_find = shader_get_uniform(sShaderDemo5, "f_Colour1"); colour_to_set = shader_get_uniform(sShaderDemo5, "f_Colour2"); shader_set(s_ColourChanger);
+     shader_set_uniform_f(color_to_find, 1,1,1 ); shader_set_uniform_f(color_to_set, 1,0,0 ); }
+     }
+     }
+  
+  Teríamos então uma função companheira para reiniciar o sombreador depois de todo o desenho ter sido feito:
+  //// @function layer_shader_end(); function layer_shader_end()
+     {
+     if event_type == ev_draw {
+     se event_number == 0 {
+     shader_reset();
+     }
+     }
+     }
+  
+  Agora que definimos nossas funções de roteiro para definir o sombreador, temos então que atribuí-las a uma camada específica para que a camada saiba chamá-las. Isto seria feito no código de criação da sala, ou no evento de criação ou início da sala de alguns
+    objeto controlador (eles não precisam ser definidos a cada passo, mas sim uma vez no início da sala, ou quando a camada é inicialmente criada):
+  var lay_id = layer_get_id("Instâncias"); layer_script_begin(lay_id, layer_shader_start); layer_script_end(lay_id, layer_shader_end);
+  Este bloco de código final atribui os scripts à camada.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próximo: layer_script_end_end
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

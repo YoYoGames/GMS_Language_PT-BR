@@ -1,0 +1,69 @@
+
+  
+  OS E Compilador
+  Ao criar jogos entre plataformas, muitas vezes é de vital importância que você obtenha os detalhes do sistema operacional que o dispositivo que está rodando seu jogo está usando. Coisas como o idioma, a versão ou o estado da rede podem ser todas usadas para adaptar seu
+    para o sistema que o executa e torna a experiência do usuário final a melhor possível, portanto, o GameMaker Studio 2 tem uma série de funções especiais que podem ser usadas para obter as informações necessárias.
+  As seguintes funções e variáveis existem para você usar para obter certos detalhes sobre o sistema operacional ou navegador que está rodando seu jogo:
+   
+  
+    os_browser
+    os_device
+    os_type
+    os_version
+    os_is_paused
+    os_is_network_connected
+    os_get_config
+    os_get_language
+    os_get_region
+    os_get_info
+    os_powersave_enable
+    os_lock_orientation
+    os_check_permission
+    os_request_permission
+  
+   
+  Algumas funções são pré-compiladas quando você executa seu jogo (ou seja: elas são usadas para definir como o jogo final será compilado), e algumas também são para uso quando o jogo tiver sido compilado para obter detalhes específicos sobre o ambiente de tempo de execução. Aqui
+    você pode encontrar a lista completa destas funções:
+   
+  
+    GM_build_date
+    GM_versão
+    GM_runtime_version
+    gml_release_mode
+    gml_pragma
+    parâmetro_contagem
+    parâmetro_string
+    ambiente_get_variable
+  
+   
+  No Windows, a resolução do agendador de threads do Windows é definida para 1ms por padrão quando seu jogo é executado. As seguintes funções estão disponíveis para recuperar e alterar a resolução do agendador de threads do Windows em tempo de execução:
+   
+  
+    agendador_resolução_get
+    conjunto_de_resolução_agendador
+  
+   
+  Finalmente, ao trabalhar com Extensões você pode precisar ser capaz de definir e chamar funções externas em tempo de execução, e assim você usaria o seguinte:
+  NOTA: Estas são funções herdadas e você deve definir qualquer função de extensão dentro do próprio Editor de Extensão.
+  NOTA: Estas funções são para a Windows e macOS apenas plataformas-alvo.
+   
+  
+    externo_define
+    chamada_externa
+    externo_livre
+  
+   
+   
+   
+  
+    
+      
+        Voltar: ReferênciaGML
+        A seguir: Depuração
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

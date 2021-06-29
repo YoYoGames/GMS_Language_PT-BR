@@ -1,0 +1,82 @@
+
+  
+  steam_ugc_send_query
+  Esta função pode ser usada para enviar um pedido de consulta. Primeiro você define a consulta usando as funções apropriadas de steam_ugc_create_query_* () que retornarão um "query Handle". Esta alça é então usada para definir filtros etc.... antes de ser
+    usado nesta função para enviar o pedido de consulta. A função retorna um valor único de identificação async que pode ser usado para verificar os detalhes corretamente no eventoSteam Async.
+    Este evento terá a função async_load Mapa DS que será povoado com os seguintes pares de chaves/valores:
+  
+    " id" - A identificação assimétrica retornada pela função que acionou o evento
+    "resultado" - O resultado da operação (um valor real). Este será ou a constante GML ugc_result_success ou algum outro número real. Portanto, você deve verificar esta constante para garantir que a chamada foi bem sucedida, e se
+      caso contrário, alguma coisa não funcionou corretamente. Os demais valores possíveis retornados são mostrados como resultado do valor EResult " Steam " e você deve ver o steamclientpublic .h nos cabeçalhos do SDK para todos os 89 valores possíveis.
+    " event_type" - A corda " ugc_query"
+    "num_resultados" - O número de resultados retornados (máx 50 )
+    "Total_matching" - O número total de resultados correspondentes
+    "cached_data" - Indica se esses dados foram recuperados do cache local em disco ou não (será verdadeiro ou falso) 
+    "results_list" - Um índice de lista DS, onde cada entrada da lista é um índice de DS Map contendo detalhes do item em particular
+  
+  Quando você obtém o evento assimétrico tipo "ugc_query", você pode então analisar a lista de resultados e extrair as seguintes informações de cada um dos mapas DS (um mapa por item na lista):
+  
+    "published_file_id" " -Dispõe o único arquivo de identificação publicado para o item
+    " file_type" - O tipo de arquivo utilizado
+    "creator_app_id" - O ID de vapor do criador do item
+    "consumer_app_id" - O ID de vapor do item consumidor
+    " título" - O título do item
+    "descrição" - A descrição do item
+    "steam_id_owner" - O ID de vapor do proprietário do item
+    "time_created" - A hora em que o item foi criado pela primeira vez
+    "time_updated" - A última vez que o item foi atualizado
+    "time_added_to_user_list" - A hora em que o item foi subscrito
+    "visibilidade" - A visibilidade do item (ver steam_ugc_set_item_visibility() para as constantes devolvidas)
+    "proibido"- Se o item foi proibido (verdadeiro) ounão (falso)
+    "accepted_for_use" - Se o item foi aceito para uso (verdadeiro) ounão (falso)
+    " tags_truncated" - Versão curta das tags como uma matriz
+    " tags"- Um fio contendo as tags para o item, cada uma separada por uma vírgula
+    "handle_file" - O exclusivohandle_file para o item
+    "handle_preview_file" - O cabo exclusivo para a visualização da imagem do item (pode ser usado como um argumento com vapor_ugc_download() para baixar uma imagem prévia)
+    " nome do arquivo" - O nome do arquivo do item
+    "tamanho_do_arquivo" - O tamanho do arquivo do item
+    "preview_file_size" - O tamanho da imagem de pré-visualização
+    "url"- A URL completa para o item
+    "Votos_up" - O número de votos acima recebidos
+    "votos_baixo" - O número de votos recebidos
+    " pontuação" - A pontuação total do item
+    "account_id_owner" - O ID da conta do proprietário do Steam ID (isto pode ser usado na função steam_ugc_create_query_user_ex())
+  
+   
+  Sintaxe:
+  steam_ugc_send_query(ugc_query_handle);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ugc_query_handle
+        O cabo de consulta a ser enviado.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var query_handle = steam_ugc_create_query_all(ugc_query_RankedByTrend, ugc_match_Items, 1); steam_ugc_query_add_required_tag(query_handle, "RPG"); steam_ugc_query_set_return_long_description(query_handle, true); steam_ugc_query_set_allow_cached_response(query_handle, true),
+    verdadeiro); query_ID = steam_ugc_send_query(query_handle);
+  O código acima cria um pedido de consulta e armazena seu tratamento em uma variável local para uso futuro nas demais funções que definem melhor o pedido de consulta antes de enviar a consulta.
+   
+   
+   
+  
+    
+      
+        Voltar: UGC
+        Próximo: vapor_ugc_download
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

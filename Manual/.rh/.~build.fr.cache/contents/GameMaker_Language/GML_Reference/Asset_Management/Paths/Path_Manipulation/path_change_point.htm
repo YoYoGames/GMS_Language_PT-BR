@@ -1,0 +1,63 @@
+
+  
+  caminho_mudança_ponto
+  Com esta função você pode mudar a posição e/ou o fator de velocidade de qualquer ponto previamente definido para um caminho (o caminho pode ter sido criado no editor de caminhos ou através de código usando caminho_add()). Se usado em um
+    do Navegador de Ativos, observe que a função mudará o ativo real, e assim afetará permanentemente como o caminho é usado por todas as instâncias no jogo desde o momento em que a função é usada até o final do jogo. Se
+    isto não é o que você precisa, então você deve usar uma função como path_duplicate() para criar uma cópia do caminho primeiro, depois chamar esta função sobre o bem duplicado (não se esqueça de
+    ligue para path_delete() sobre o bem quando ele não for mais necessário).
+   
+  Sintaxe:
+  path_change_point(index, n, x, y, speed);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do caminho a ser percorrido para mudar um ponto de.
+      
+      
+        n
+        O ponto definidor para mudar os atributos de.
+      
+      
+        x
+        A nova coordenada x (relativa ao caminho) do ponto.
+      
+      
+        y
+        A nova coordenada y (relativa ao caminho) do ponto.
+      
+      
+        velocidade
+        O novo fator de velocidade do ponto.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  para (var i = 0; i < path_get_number(path0); ++i;)  {
+     var px = path_get_point_x(pth_Patrol, i) + 64 - aleatório(128); var py = path_get_point_y(pth_Patrol, i) + 64 - aleatório(128); path_change_point(pth_Patrol, i, px, py, 100); }
+  
+  O código acima percorre todos os pontos do caminho indexados como "path0" e reposiciona todos os pontos para uma posição aleatória dentro de uma área de 128x128 pixels.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação do caminho
+        Próximo: caminho_ponto_inserto
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

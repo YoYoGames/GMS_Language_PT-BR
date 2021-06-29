@@ -1,0 +1,53 @@
+
+  
+  file_bin_open
+  Esta função abrirá o arquivo binário com o nome indicado. O modo indica o que pode ser feito com o arquivo:
+  
+    0 = leitura
+    1 = escrita
+    2 = tanto a leitura como a escrita
+  
+  Quando o arquivo não existe, ele é criado e a função retorna a identificação do arquivo que deve ser usado nas outras funções. Você pode abrir vários arquivos ao mesmo tempo (32 no máximo), mas não se esqueça de fechá-los uma vez que tenha terminado com eles.
+  ADVERTÊNCIA! Esta função pode não funcionar como você espera devido ao GameMaker Studio 2 ser lixado! Consulte a seção sobre o Sistema de Arquivos para maiores informações.
+  NOTA: Estas funções não funcionam quando o módulo alvo é HTML5.
+   
+  Sintaxe:
+  file_bin_open(fname, mode);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fname
+        O nome do arquivo a ser lido.
+      
+      
+        modo
+        o indicador do que pode ser feito com o arquivo.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  file = file_bin_open("myfile.bin", 2);
+  Isto abriria um arquivo do mesmo diretório do jogo, e atribuiria seu índice à variável "arquivo".
+   
+   
+   
+  
+    
+      
+        Voltar: Arquivos binários
+        Próximo: file_bin_rewrite
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

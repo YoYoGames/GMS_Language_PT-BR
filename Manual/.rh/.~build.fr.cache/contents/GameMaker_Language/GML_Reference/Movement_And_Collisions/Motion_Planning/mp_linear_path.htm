@@ -1,0 +1,60 @@
+
+  
+  mp_linear_path
+  Esta função calcula um caminho linear da posição atual da instância até o ponto especificado pelos valores "xgoal" e "ygoal". Ela utiliza o tamanho do passo indicado, o mesmo que na função mp_linear_step().
+    O caminho indicado já deve existir e será sobrescrito pelo novo caminho e a função retornará se um caminho completo for encontrado (verdadeiro) ou não (falso). Se falso for retornado, então um caminho ainda é gerado, mas só chegará até a posição
+    onde o caminho estava bloqueado.
+  NOTA: Esta função não move a instância. Ela estabelece apenas um caminho, e você deve usar as funções de Caminho para se movimentar.
+   
+  Sintaxe:
+  mp_linear_path(caminho, xgoal, ygoal, stepize, checkall);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        caminho
+        O índice do caminho a ser utilizado.
+      
+      
+        xgoal
+        A posição alvo x.
+      
+      
+        ygoal
+        A posição y alvo.
+      
+      
+        stepsize
+        A velocidade que a instância se move em pixels por passo.
+      
+      
+        checkall
+        Quer para verificar se há colisões com todas as instâncias (verdadeiras) ou apenas com as sólidas (falsas).
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if mp_linear_path(path, obj_Player.x, obj_Player.y, 2, 0) { path_start(path, 2, 0, 0); }
+  Isto faz com que o objeto verifique e veja se existe um caminho linear de sua posição atual até a posição de "obj_Player". Se houver, então ele inicia o caminho.
+   
+   
+   
+  
+    
+      
+        Voltar: Planejamento de Movimento
+        Próximo: mp_linear_path_object
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

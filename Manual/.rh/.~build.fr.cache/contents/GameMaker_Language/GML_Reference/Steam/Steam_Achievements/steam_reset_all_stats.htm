@@ -1,0 +1,34 @@
+
+  
+  vapor_reset_all_stats
+  Com esta função você pode redefinir todas as estatísticas para o usuário atual para seus valores padrão (como definido no painel de controle da Steamworkspara seu jogo). Recomenda-se que você só utilize esta função como ferramenta de depuração ao desenvolver
+    seu jogo.
+   
+  Sintaxe:
+  vapor_reset_all_stats();
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  ini_open("Save.ini"); if global.Version != ini_read_real("Data", "Version", 0) {
+     ini_write_real("Data", "Version", global.Version); steam_reset_all_stats ();
+     }
+     ini_close();
+  
+  O código acima compara um valor armazenado em um arquivo ini com o de uma variável global e, se forem diferentes, ele redefine as estatísticas do jogo.
+   
+   
+   
+  
+    
+      
+        Voltar: Conquistas e estatísticas
+        Próxima: vapor_reset_all_stats_achievements
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

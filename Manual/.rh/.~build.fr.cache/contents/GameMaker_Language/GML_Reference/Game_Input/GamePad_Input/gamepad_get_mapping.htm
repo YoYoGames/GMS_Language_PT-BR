@@ -1,0 +1,54 @@
+
+
+
+
+  
+  gamepad_get_mapping
+  Esta função pode ser usada para recuperar a cadeia de mapeamento para o gamepad. Esta cadeia de caracteres será uma ou outra:
+  
+    A linha atual do mapa para o gamepad, por exemplo:
+     "050000005e040000fd020000ffff3f00,Xbox Wireless Controller,a:b0,b:b1,start:b4,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b6,lefthoulder:b9,lefttick:b7,lefttrigger:a4,leftx:a0,lefty:a1,righthoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,x:b2,y:b3,platform:android".
+
+    
+    Uma cadeia com "sem mapeamento" se não houver um conjunto de mapeamento (isto não é o mesmo que quando não há mapeamento disponível)
+    Uma cadeia com "índice de dispositivo fora de alcance" se o índice do slot não for um índice de gamepad válido
+    Uma cadeia vazia "" se não houver um mapeamento disponível para o gamepad conectado
+  
+  Para mais informações sobre a formatação da seqüência de mapas devolvidos, consulte a função gamepad_test_mapping().
+   
+  Sintaxe:
+  gamepad_get_mapping(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        De qual "ranhura" do índice gamepad para obter o mapeamento.
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  var _gpMap = gamepad_get_mapping(global.PadIndex); show_debug_message("Gamepad Mapping = " + _gpMap);
+  O código acima obtém a cadeia de caracteres do mapa para o slot gamepad dado e, em seguida, o envia para o console para a depuração.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada Gamepad
+        Próximo: gamepad_test_mapping
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

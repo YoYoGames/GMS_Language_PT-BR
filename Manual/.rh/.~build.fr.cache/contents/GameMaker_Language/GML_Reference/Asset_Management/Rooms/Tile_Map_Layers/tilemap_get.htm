@@ -1,0 +1,55 @@
+
+  
+  tilemap_get
+  Usando esta função você pode recuperar os dados do azulejo a partir de uma célula do elemento do mapa de azulejos. Você dá o ID do elemento do mapa de azulejo (que você obtém quando cria um elemento do mapa de azulejo usando layer_tilemap_create() ou
+    quando você usa a função layer_tilemap_get_id()), bem como a posição das células x e y e a função devolverá os dados do azulejo "blob". Estes dados são essencialmente uma pequena máscara que contém
+    o índice de azulejos, as booleanas de flip/rotate/mirror e quaisquer dados de máscara que tenham sido aplicados (ver tilemap_set_mask() para detalhes), e o valor dos dados resultantes pode então ser usado nas funções tile_* 
+    para mudar as propriedades de uma telha. Note que estamos usando posições x/y de célula com base no tamanho da grade do mapa de azulejos e não como uma posição na sala, portanto "cell_x" é um valor de 0 a largura do mapa de azulejos,
+    e "cell_y" é um valor de 0 até a altura do mapa de azulejos. Se você precisar obter os dados para um azulejo em uma posição específica da sala, então você precisa usar a função tilemap_get_at_pixel().
+  IMPORTANTE! Se as telhas no mapa de azulejos tiverem sido inalteradas (ou seja: não estão giradas ou viradas, etc...), então o valor de retorno dos dados do conjunto de azulejos será exatamente igual ao índice do azulejo no conjunto de azulejos. Assim, você pode criar "colisão
+    mapas" de telhas usando uma telha no índice 1 do conjunto de telhas - por exemplo - então use esta função para verificar 1 ou 0 (uma telha vazia) para calcular as colisões.
+   
+  Sintaxe:
+  tilemap_get(tilemap_element_id, cell_x, cell_y);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tilemap_element_id
+        O valor de identificação único do elemento do mapa de azulejos para obter os dados de
+      
+      
+        x_cell
+        A célula ao longo do eixo x para obter os dados do azulejo
+      
+      
+        y_cell
+        A célula ao longo do eixo y para obter os dados do azulejo
+      
+    
+  
+   
+  Devoluções:
+  Real (-1 se houver um erro)
+   
+  Exemplo:
+  var lay_id = layer_get_id("Tiles_sky"); var map_id = layer_tilemap_get_id(lay_id); var data = tilemap_get(map_id, 0, 0); data = tile_set_flip(data, true); tilemap_set(map_id, data, 0, 0);
+  O código acima obtém a identificação para o mapa de azulejos na camada "Tiles_Sky" e depois a usa para obter os dados do azulejo na célula (0, 0). Estes dados do azulejo são então virados antes de serem usados para definir o azulejo no mapa de azulejos novamente.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas do mapa de azulejos
+        Próximo: tilemap_get_at_pixel
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

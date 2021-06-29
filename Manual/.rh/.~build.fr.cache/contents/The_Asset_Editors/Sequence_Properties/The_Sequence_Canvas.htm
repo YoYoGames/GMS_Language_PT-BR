@@ -1,0 +1,86 @@
+
+  
+  A Tela Seqüencial
+  Ao criar sequências para seus projetos, uma grande parte do trabalho será feita na tela do Editor de Seqüências. A tela é simplesmente a área que será usada para conter os elementos da seqüência, e
+    também define o que será mostrado quando a seqüência for adicionada a uma sala a ser exibida. Quando se cria uma seqüência pela primeira vez, a tela será definida para o tamanho padrão de 1366px por 768px, mas isto pode ser alterado da Caixa de ferramentas por
+    clicando no  ao lado do botão Canvas Frame Toggle :
+  O tamanho da tela define uma área visual dentro da qual colocar os ativos que compõem a seqüência, mas a moldura é
+    simplesmente um guia de tamanho e não afetará como as coisas são renderizadas, ou seja: se você colocar um ativo sprite fora do quadro e adicionar a seqüência a uma sala, o ativo ainda será renderizado.
+  A moldura também é usada para abrigar quaisquer imagens de referência que você queira usar para orientar o posicionamento dos ativos dentro da seqüência. Uma imagem de referência pode ser adicionada a partir do mesmo menu de Opções de Tela onde você define o tamanho
+    da moldura da tela, e será usada como imagem de fundo para a tela de seqüência. Isto permite posicionar as coisas de acordo com - por exemplo - uma maquete de UI de um artista de projeto:
+  Note que as imagens de referência não são armazenadas com o projeto e não serão renderizadas quando a seqüência for adicionada a uma sala.
+  Uma vez que você tenha a tela configurada como você quer, você pode começar a adicionar ativos a ela. Isto é feito simplesmente arrastando-os do Navegador de Ativos para a tela, o que criará um rastro de ativos no Painel de Telas:
+  Os ativos que podem ser adicionados a uma seqüência são os seguintes:
+  
+    Sprites
+    Objetos
+    Sons
+    Sequências
+  
+  Uma vez adicionados os recursos necessários, eles podem ser colocados em suas posições iniciais para a animação, e também podem ser transformados usando os vários Gizmos de Controle de Transformação diferentes. Estes são acessados em dois diferentes
+    maneiras:
+  
+    Movendo o mouse para as bordas do ativo na tela e clicando em  e arrastando (note que o cursor irá mudar para mostrar as diferentes transformações
+      que será alterado):
+      
+    Usando o transform gizmo na origem do bem, que você pode mudar da caixa de ferramentas de lona:
+      
+  
+  Quando você tiver definido as transformações iniciais para o bem (se necessário) você pode então usar a tela para adicionarchaves de parâmetroà pista do bem no Painel de Pista.
+    Um exemplo simples de como isto funciona seria uma transformação de posição básica, onde você colocaria o ativo em sua posição inicial, depois moveria a cabeça de jogo no Folha de Droga    para a estrutura que você quer que o movimento termine, e então mova o bem novamente:
+  Como você pode ver na imagem acima, as novas posições estão sendo automaticamente gravadas na pista como nós ativamos
+    "Automatically Record Changes"  no Track Panel. Você também pode ver que uma linha pontilhada foi adicionada à vista da tela para indicar o movimento através
+    tempo do bem. Se você não tiver a gravação automática habilitada, você ainda poderá adicionar pontos movendo o ativo, depois ajustando o playhead e finalmente clicando no botão "Record a new key" .
+  Um último ponto que vale a pena mencionar é que a tela permite que você use e adicione guias inteligentes, que são diretrizes que podem ser adicionadas à tela para que os bens possam ser alinhados contra eles. Por padrão, a tela apresentará
+    e guias verticais ao redor do ponto central, assim como uma guia retangular ao redor da "borda" da tela de seqüência, com base no tamanho da tela. Estas guias não serão renderizadas na seqüência final quando adicionadas a uma sala e são apenas
+    para ajudar você a ter uma idéia do espaço e para ajudar a posicionar as coisas. Você também pode adicionar seus próprios guias clicando em  em uma régua e depois arrastando para
+    a lona:
+  Para remover um guia, basta clicar sobre ele e depois arrastá-lo de volta para as réguas novamente. Quando você tiver guias adicionados a uma seqüência,
+    movendo um bem em volta, "estalará" para a guia quando a caixa de delimitação ou origem estiver suficientemente próxima, e guias inteligentes extras serão mostrados para marcar as distâncias entre os bens, bem como para marcar bens que estão todos na mesma guia ou em
+    a mesma posição (estas são de cor diferente):
+  
+   
+   
+  Menu RMB e navegação
+  Para navegar ao redor da tela, você pode usar os mesmos controles básicos de um espaço de trabalho normal, ou seja: Use o botão do meio do mouse  e arraste para girar a tela (ou, alternativamente
+    use o  + ), e você pode rolar horizontalmente com o mouse
+     ou aumentar e diminuir o zoom usando a tecla  /  e a roda do mouse .
+  Para selecionar um ativo, basta clicar no botão esquerdo do mouse  sobre ele, ou você pode selecionar vários ativos usando  /  e  para clicar em cada ativo. Você também pode selecionar
+    múltiplos ativos usando  e depois clicando em  e arrastando. Isto
+    criará uma "caixa" na tela e qualquer ativo que tocar a área da caixa será selecionado.
+  Quando você tem um bem ou bens selecionados, você pode cortá-los, copiá-los e colá-los usando as combinações de teclas  /  +"X",  /  + "C" e  /  + "V".
+  Observe que quando múltiplos ativos são selecionados na tela, haverá uma caixa de delimitação mostrada para cada ativo, e uma caixa de delimitação maior mostrada para todos eles combinados. Você pode mudar como
+    esta caixa limitadora se comporta a partir dos ícones no canto superior esquerdo:
+  Clicando no ícone do círculo, o dispositivo de controle de transformação mudará para a origem da caixa de delimitação completa para todos os bens selecionados,
+    enquanto clicar no ícone da caixa mostrará um widget de controle individual para cada ativo na seleção. Você pode mover ativos agrupados e copiá-los/colar, etc... assim como faria para um único ativo.
+  Se você tem vários ativos que estão sobrepostos e deseja selecionar um específico sem perturbar o resto, então você pode passar o mouse sobre eles para trazer à tona a Item Toolbox que mostrará uma lista de ícones para cada item sob
+    o mouse. Você pode então clicar em um desses itens para selecioná-lo e editá-lo:
+  Você também tem uma série de opções adicionais disponíveis a partir do botão direito do mouse  ao clicar sobre qualquer ativo na seqüência:
+  . As opções disponíveis aqui são:
+  
+    Registro: esta opção permite que você grave chaves de parâmetros para o(s) ativo(s), e se você pairar sobre ele você verá opções para gravar a escala, rotação ou  posição.
+    Grupo: Selecionando isto, será criada uma nova pasta de grupo no Painel de Pista, e o(s) ativo(s) selecionado(s) será(ão) movido(s) para dentro dela.
+    Renomear: Ao clicar nisto, a pista será destacada no Painel de Pista, e o nome será tornado editável, pronto para que você possa mudá-lo.
+    Encontrar em Folha: Ao clicar nisto, o ativo selecionado terá sua chave destacada na Folha de Droga.
+    Encontre outro: Ao clicar aqui, uma lista de todos os outros ativos do mesmo tipo será mostrada para você selecionar um deles.
+    Selecione: Ao clicar nisto, uma lista de todos os ativos que estão sobrepostos na posição clicada será mostrada, e você poderá selecionar qualquer um deles para edição.
+    Remover chave: Quando você seleciona isto, a chave de faixa de ativos será removida da folha de drogados na posição atual de cabeça de jogo. A pista em si ainda existirá, assim como qualquer pista de parâmetro que ela contenha, e você poderá readicionar outro ativo
+      para a pista, arrastando-a do Navegador de Ativos para a folha de papelão.
+    Remover trilha: Isto removerá a faixa de ativos (e as faixas de parâmetros, se houver alguma atribuída a ela) do Painel de Faixas, bem como todas as chaves relacionadas a ela na Folha de Drogas.
+    Editor aberto: Isto abrirá o ativo para edição no editor padrão para o tipo de ativo.
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Sequências
+        A seguir: O Painel de Pista
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

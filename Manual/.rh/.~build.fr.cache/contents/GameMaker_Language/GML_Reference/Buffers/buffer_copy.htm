@@ -1,0 +1,59 @@
+
+  
+  buffer_copy
+  Esta função pode ser usada para copiar um segmento (ou todos) dos dados armazenados em um buffer para outro. Ao utilizar dois buffers e copiar de um para o outro, ambos os buffers devem ter sido previamente criados utilizando a função buffer_create()    (por exemplo), e você pode especificar um offset de dados (em bytes) para o ponto inicial dos dados a serem copiados do buffer de origem em relação ao início do buffer, bem como outro offset de dados para definir a posição para copiar os dados para
+    no buffer de destino.
+  NOTA: Você não pode copiar para o mesmo buffer.
+   
+  Sintaxe:
+  buffer_copy(src_buffer, src_offset, tamanho, dest_buffer, dest_offset);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        src_buffer
+        O índice do buffer de onde copiar.
+      
+      
+        src_offset
+        A compensação de dados para começar a copiar de (em bytes).
+      
+      
+        tamanho
+        O tamanho dos dados a serem copiados (em bytes).
+      
+      
+        dest_buffer
+        O índice do buffer para o qual copiar.
+      
+      
+        dest_offset
+        A posição offset para copiar os dados para (em bytes).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  buffer_copy(buff1, 0, 2048, buff2, 2048);
+  O código acima copiará os dados armazenados no buffer indexado na variável "buff1", e depois os colará no buffer indexado na variável "buff2", mas compensado por 2048 bytes.
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: buffer_copy_from_vertex_buffer
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

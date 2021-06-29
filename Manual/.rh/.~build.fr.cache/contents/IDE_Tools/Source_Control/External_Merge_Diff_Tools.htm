@@ -1,0 +1,57 @@
+
+  
+  Ferramentas externas de fusão/difusão
+  Quando você trabalha em um projeto com outras pessoas, sempre há uma chance de haver um conflito, pois várias pessoas editam o mesmo arquivo e a maioria dos sistemas de controle de fonte pode fazer uma boa tentativa de fundir qualquer arquivo em conflito, mas quando há mudanças
+    no mesmo lugar, é necessário um pouco de ajuda para saber o que fazer - é aqui que entra uma ferramenta de fusão para mostrar as mudanças, e deixar você decidir.
+  Como cada ferramenta de fusão é diferente, há quatro macros que podem ser usadas para ajudar a especificar arquivos que podem ser configurados a partir da janela Conflitos , clicando no botão Escolher ferramenta de fusão:
+  
+  Ao clicar nesse botão, a janela de Preferências será aberta no plugin Git:
+  Aqui você fornece um caminho para a ferramenta de fusão escolhida e depois uma macro (ou macros) de Opções da Ferramenta de fusão para usar ao decidir
+    o que fazer, com as seguintes opções disponíveis:
+  
+    ${scm_mine}: caminho para sua versão
+    ${scm_thers}: caminho para sua versão
+    ${scm_base}: caminho para a versão antes que as mudanças conflitantes ocorressem
+    ${scm_merged}: caminho para onde a ferramenta de fusão deve economizar para
+  
+  Como uma ajuda para a configuração, quando você der um caminho para certas ferramentas de fusão, o GameMaker Studio 2 preencherá alguns padrões para começar, dependendo da ferramenta escolhida:
+  
+    KDiff3: ${scm_theirs} ${scm_mine} -o ${scm_merged}
+    Meld: ${scm_mine} ${scm_merged} ${scm_theirs}
+    Notepadd++: ${scm_merged}
+    TortoiseMerge: /base:${scm_base} /theirs:${scm_theirs} /mine:${scm_mine} /merged:${scm_merged}
+  
+  Observe que se você não tiver (ou não quiser usar) uma ferramenta de fusão, então você pode abrir o script na IDE e tentar corrigi-lo a partir daí.
+  Então, voltando ao nosso exemplo Conflito, como indicado na seção sobre Conflitos... Fizemos uma atração do mestre e um dos arquivos está em conflito. Isto abre a janela de Controle de Conflitos de Origem, onde você pode
+    clique no script em conflito, e agora clique em Merge, já que você configurou sua ferramenta Merge. Clicar em Merge abrirá a ferramenta onde você pode lidar com o conflito e então usar a(s) macro(s) fornecida(s) para fazer o
+    mudanças. Uma vez terminada e fechada a ferramenta de fusão, a IDE GameMaker Studio 2 mostrará a seguinte janela de confirmação:
+  Basta responder "Sim" a esta solicitação, pois você mesmo acabou de fazê-lo usando a ferramenta de fusão, e então você precisa comprometer-se com isso
+    mudança para significar o fim da operação de fusão(Controle da fonte > Mudanças de compromisso). A janela Commit agora mostrará que uma fusão está em andamento, bem como mostrará alguns arquivos não escalonados:
+  Estes arquivos não encadeados são nosso arquivo de roteiro com a adição de .base, .ours e .theirs. Podemos apagar todos eles com segurança, então clique  no superior e depois  +  no inferior para selecionar
+    a todos eles. Em seguida, clicamos com o botão direito do mouse nos arquivos selecionados e escolhemos Eliminar caminho para removê-los. Há também uma mensagem de compromisso pré-preenchida para nós, afirmando que isto foi uma fusão, e que houve um conflito (podemos acrescentar a isto
+    ou editá-lo como desejarmos).
+  Podemos clicar em Comprometer agora.
+  Devido ao fato de que você pode ter problemas com outros arquivos, isso significa que seu fluxo de trabalho ao utilizar repositórios remotos ou compartilhados deve ser o seguinte:
+  Fazer mudanças > Salvar > Comprometer > Puxar > Fundir > Empurrar
+  Você também deve criar uma Ferramenta Diff para uso quando fizer compromissos com um repositório. Isto é configurado a partir das Preferências, o mesmo que para a ferramenta Fundir:
+  A ferramenta Diff é configurada da mesma maneira que a ferramenta Merge, mas só usa o ${scm_base} e
+    ${scm_theirs} opções - neste caso, ${scm_base} representa o arquivo não modificado, enquanto ${scm_theirs} representa o estado atual do arquivo. As opções da ferramenta devem
+    ser pré-povoado com as opções padrão para Meld, KDiff3 e TortoiseMerge, assim como eram para a ferramenta Merge. Note que o GameMaker Studio 2 não suporta a saída de
+    arquivos diff correções, portanto, não há padrão para o Notepad++.
+  Para visualizar as mudanças entre as revisões atuais e as anteriores usando a ferramenta Diff, basta abrir a janela Commit e depois clicar duas vezes em um arquivo. Se a ferramenta tiver sido configurada corretamente, ela será lançada e você poderá ver as mudanças
+    entre os arquivos.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle da fonte
+        A seguir: Configurando o Plugin GIT
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

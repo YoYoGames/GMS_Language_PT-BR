@@ -1,0 +1,42 @@
+
+  
+  buffer_decompress
+  Com esta função, você pode descomprimir um buffer previamente comprimido usando compressão zlib. Você fornece o ID do buffer para descomprimir, e a função retornará um novo ID do buffer que contém o
+    dados. Se a descompressão falhou (por exemplo, você está fornecendo um buffer que não foi comprimido), então a função retornará um valor inferior a 0.
+   
+  Sintaxe:
+  buffer_decompress(buffer);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O índice do buffer para descomprimir.
+      
+    
+  
+   
+  Devoluções:
+  Identificação do tampão
+   
+  Exemplo:
+  var cmpBuff = buffer_load("Player_Save.sav"); var srcBuff = buffer_decompress(cmpBuff); global.DataString = buffer_read(srcBuff, buffer_string);
+  O código acima irá primeiro carregar um buffer salvo, depois descomprimi-lo e finalmente ler os dados da string do buffer descomprimido em uma variável global.
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: buffer_async_group_begin
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

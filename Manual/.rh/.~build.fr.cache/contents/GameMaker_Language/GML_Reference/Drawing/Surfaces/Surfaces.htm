@@ -1,0 +1,150 @@
+
+  
+  Superfícies
+  Nos eventos normais de sorteio, o GameMaker Studio 2 não desenha diretamente para a tela, mas sim para uma superfície chamada superfície de aplicação. Esta superfície é basicamente uma "tela" em branco que pode ser manipulada posteriormente.
+    antes de ser atraído para a tela quando necessário, e na maioria dos casos o GameMaker Studio 2 trata disso para você (embora você também possa manipulá-lo em código para shaders, escalas e muitas outras coisas - mais detalhes são dados abaixo).
+  Entretanto, além desta superfície de aplicação, você também pode criar suas próprias superfícies e usá-las para criar efeitos especiais deslumbrantes ou sutis em seu jogo. Por exemplo, você pode usar superfícies para "pegar" instâncias, que depois podem ser destruídas,
+    e desta forma você pode criar um efeito de decalque onde o duende por exemplo é exibido na superfície como se ele ainda existisse, permitindo efeitos gráficos como detritos, sangue, etc... sem nenhuma sobrecarga real de processamento. Outra coisa que você pode
+    fazer com superfícies é usá-las como texturas a serem manipuladas, ou para criar sprites "on the fly", ou para criar sobreposições complexas. na verdade, os usos para superfícies são infinitos!
+  Superfícies normais são bastante fáceis de usar, mas há algumas regras básicas a serem seguidas quando você as utiliza:
+  
+    Primeiro, você deve perceber que as superfícies(exceto a superfície de aplicação) são "voláteis". Isto significa que se o dispositivo ou janela perder o foco ou for minimizado (bons exemplos são quando você ALT +Tab para janela diferente e de volta às janelas,
+      ou em um dispositivo Android quando o aplicativo perde o foco devido a uma chamada), então a superfície pode ser destruída. Isto porque ela é armazenada apenas na memória de textura(VRAM) e
+      pode ser sobregravada quando a plataforma alvo precisa dessa memória para algo mais, o que significa que você deve sempre têm algum tipo de código à prova de falhas, geralmente com o superfície_existe()      função.
+  
+  NOTA: Isso não parece acontecer com sprites ou outros recursos visuais (mas na verdade acontece!), pois eles também são armazenados em memória comum (RAM) e quando são removidos da memória de textura (VRAM), são imediatamente restaurados de
+    memória regular quando o jogo recupera o foco.
+  
+    Em segundo lugar, você deve observar que as superfícies podem exigir grandes quantidades de VRAM para serem usadas, e assim você deve tentar mantê-las tão pequenas quanto possível. Normalmente, você tentaria mantê-las não maiores do que o tamanho da vista ou da janela de exibição.
+    Em terceiro lugar, você só deve criar superfícies no evento do sorteio. Se você criar uma superfície no Create Event de uma instância, você poderá obter potencialmente o mesmo índice que a superfície da aplicação. Isto pode então causar muitos problemas
+      e confusão, pois você pensa que está usando sua própria superfície, mas na verdade está usando o alvo de renderização atual. Você também deve sempre tentar limitar o desenho a uma superfície também no evento de sorteio, já que, devido à forma otimizada em que o GameMaker
+      O Studio 2 desenha para a tela, é recomendável que você mantenha todas as funções de desenho dentro do evento de sorteio - isto inclui limpar uma superfície quando ela é criada pela primeira vez, etc... O sorteio para uma superfície fora do evento de sorteio é possível e pode
+      até mesmo ser necessário para alguns efeitos, mas não é assim que deve ser feito.
+    Em quarto lugar, quando o desenho é feito manualmente, a superfície está sempre na posição de (0,0). Isto significa que talvez seja necessário converter coordenadas absolutas em coordenadas relativas para a superfície. Por exemplo, se você tiver um
+      superfície do tamanho da câmera e desejar desenhar algo que é atualmente visível na câmera para essa superfície, você deve subtrair as coordenadas x e y das coordenadas x e y reais para obter uma posição relativa para a superfície (0,0)
+      posição. Assim, o código ficaria algo parecido com isto:
+  
+  se view_current = 0 { surface_set_target(surf);
+     com (obj_Effect) {
+     var _vx = camera_get_view_x(view_camera[1]); var _vy = camera_get_view_y(view_camera[1]); draw_sprite(sprite_index, image_index, x - _vx, y - _vy); }
+     surface_reset_target();
+     }
+     mais
+     {
+     draw_surface(surf, 0, 0); }
+  
+  
+    Finalmente, vale notar que o desenho para uma superfície levará em consideração a cor e o componente alfa de cada pixel, tanto da própria superfície como também do que está sendo desenhado para ela. Isto pode levar a algumas coisas pouco intuitivas
+      resultados (por exemplo, desenhar um duende com 0,5 alfa para uma superfície com 0 alfa dará um alfa final de 0,25). As razões para isto estão explicadas na página seguinte, e recomendamos que você o leia antes de trabalhar com superfícies: Guia para a utilização de emendas
+  
+  NOTA: Isto não é verdade para a superfície de aplicação, apenas superfícies criadas pelo usuário.
+  O uso básico de uma superfície seria o seguinte:
+  
+    Primeiro você cria uma superfície e atribui seu índice a uma variável.
+    Em seguida, você definiria o objetivo do desenho para a superfície, em vez do visor.
+    Em seguida, você desenharia as coisas que deseja, bem como realizaria quaisquer outras manipulações.
+    Uma vez terminado, você zera o alvo do desenho para que todos os outros desenhos aconteçam novamente na tela.
+    Finalmente, você desenharia a superfície (ou a usaria em um sombreador, ou o que for necessário).
+  
+  Uma coisa a se notar é que caso você precise desenhar toda a tela para uma superfície (incluindo azulejos, fundos, etc...) você pode simplesmente acessar a própria superfície de aplicação (veja abaixo para mais detalhes) ou você pode atribuir uma superfície a uma porta de visualização
+    usando a variável view_surface_id[0..7] como com isto, tudo o que for visível nessa vista porto será atraído para a superfície correspondente.
+  As seguintes funções existem para lidar com superfícies (estas funções são específicas para criar e manipular superfícies, mas para realmente desenhá-las para a tela você deve estar usando as funções específicas de desenho que podem ser encontradas abaixo):
+   
+  
+    superfície_existe
+    superfície_criar
+    superfície_criar_texto
+    tamanho_da_superfície
+    surface_set_target
+    superfície_set_alvo_texto
+    superfície_get_target
+    superfície_get_target_ext_ext
+    surface_reset_target
+    cópia_da_superfície
+    parte_da_cópia_de_superfície
+    superfície_depth_disable
+    altura_da_superfície
+    largura_da_superfície
+    superfície_get_texture
+    surface_get_depth_disable
+    surface_getpixel
+    superfície_getpixel_ext
+    livre_de_superfície
+    superfície_save
+    superfície_save_parte
+  
+   
+  As seguintes funções existem para superfícies de desenho:
+  NOTA: Quando se trabalha com superfícies há a possibilidade de que elas possam deixar de existir a qualquer momento devido ao fato de serem armazenadas na memória de textura. Você deve SEMPRE verificar se uma superfície existe usando superfície_existe() antes de
+    referenciando-as diretamente.
+   
+  
+    draw_surface
+    draw_surface_ext
+    parte_superfície_de_sorte
+    draw_surface_part_ext_ext
+    draw_surface_stretched
+    draw_surface_stretched_ext
+    draw_surface_tiled
+    draw_surface_tiled_ext
+    draw_surface_general
+  
+   
+  Finalmente, você tem duas funções para armazenar e recuperar superfícies em Buffers:
+   
+  
+    superfície_de_solução
+    superfície_superfície_de_tampão
+  
+   
+  Como mencionado acima, o GameMaker Studio 2 na verdade, não apresenta a maioria das coisas diretamente na tela, mas as apresenta na superfície da aplicação. Esta é essencialmente uma superfície - como qualquer outra que você possa fazer usando o
+    funções de superfície - e como tal pode ser manipulada, atraída, enviada a shaders, etc... Basicamente, qualquer coisa que você normalmente faria com uma superfície que você criou também pode ser aplicada à superfície de aplicação.
+  NOTA: A única coisa que você não pode fazer com a superfície de aplicação é liberá-la. Ela sempre existe, embora o valor do índice para acessá-la possa mudar.
+  Quando você executa seu jogo, esta superfície é criada na primeira vez que o evento do sorteio é chamado em cada nova sala em que você entra, o que significa que nada é desenhado até que
+    ponto. Entretanto, você ainda pode obter a posição da superfície de aplicação e redimensioná-la no Create Event ou em qualquer outro evento sem receber nenhum erro e os valores utilizados serão relevantes para a superfície quando ela for criada. A seqüência real de
+    eventos para a criação e desenho da superfície de aplicação são os seguintes:
+  
+    Evento de pré-desenho --- > a superfície de aplicação é criada (se não existir) e o objetivo de renderização é definido
+    Para cada porto de visão visível, ou, se nenhum porto de visão estiver ativo, uma vez
+      
+        Evento de início do sorteio
+        Evento de sorteio
+        Evento final do sorteio --- > a superfície de aplicação renderiza o alvo é reinicializada aqui
+      
+    
+    Evento pós-sorteio --- > a superfície de aplicação é agora atraída para o buffer de exibição por padrão 
+	                 (embora você possa desligar isso usando application_surface_draw_enable())
+    Sorteio GUI evento de início
+    Sorteio do evento GUI
+    Sorteio GUI evento final
+  
+  O uso desta superfície significa que você pode facilmente criar transições incríveis usando shaders, ou pegar a tela e envolvê-la em uma forma 3D, ou simplesmente escalar um jogo de baixa resolução até qualquer tela de resolução... As possibilidades são infinitas!
+  Para acessar esta superfície, você precisa usar a superfície da variável global application_surface incorporada, que é explicada na página seguinte:
+   
+  
+    aplicação_surface
+  
+   
+  Você também tem algumas funções especializadas que são projetadas apenas para uso com a superfície de aplicação:
+   
+  
+    aplicação_surface_enable
+    aplicação_surface_é_activada_a_a
+    aplicação_get_position
+    application_surface_draw_enable
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Desenho
+        A seguir: Iluminação
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

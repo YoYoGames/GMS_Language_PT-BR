@@ -1,0 +1,88 @@
+
+  
+  física_partícula_get_data_particle
+  Esta função retorna várias informações sobre uma única partícula na simulação física usando as bandeiras verificadas. O índice de partícula (seu ID) é o que foi retornado pela função physics_particle_create(),
+    e o buffer utilizado deve ter sido criado anteriormente usando a função buffer_create(). Deve ser do tipo "crescer", com o tamanho aproximado do retorno esperado.
+    dados. As bandeiras em si são definidas usando as constantes dadas abaixo, e você usaria o bitwise ou "|" para criar um único valor de bandeira para obter as informações desejadas.
+   
+  
+    
+      
+        Constante
+        Descrição
+        Tipo de dados
+      
+      
+        bandeiras tipo phy_particle_data_flag
+        O valor das bandeiras para a partícula.
+        buffer_u32
+      
+      
+        phy_particle_data_flag_position
+        A posição x e y da partícula.
+        2 x buffer_f32
+      
+      
+        phy_particle_data_flag_velocity
+        A velocidade horizontal e vertical.
+        2 x buffer_f32
+      
+      
+        phy_particle_data_flag_colour
+        A cor e o valor alfa (hexadecimal).
+        buffer_f32
+      
+      
+        phy_particle_data_category
+        A categoria da partícula (como definida quando você criou a partícula).
+        buffer_u32
+      
+    
+  
+   
+  Sintaxe:
+  physics_particle_get_data_particle(ind, buffer, flags)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice (ID) da partícula da qual se deve obter os dados.
+      
+      
+        tampão
+        O buffer (anteriormente criado) a ser usado para armazenar os dados.
+      
+      
+        bandeiras
+        As bandeiras a serem usadas para extrair dados sobre tipos específicos de partículas.
+      
+    
+  
+   
+  Devoluções:
+  Dados tampão
+   
+  Exemplo:
+  var part = physics_particle_data_create(flags, x, y, x_vel, y_vel, c_white, 1, 1) var flags = phy_particle_data_flag_position | phy_particle_data_flag_velocity; var buffer = buffer_create(16, buffer_grow, 4); physics_particle_get_data_particle(part,
+    buffer, flags); px = buffer_read(buffer, buffer_f32); py = buffer_read(buffer, buffer_f32); pvelx = buffer_read(buffer, buffer_f32); pvely = buffer_read(buffer, buffer_f32); buffer_delete(buffer);
+  
+  O código acima obtém a posição e velocidade da partícula indexada pela variável "parte" e armazena os dados em uma série de variáveis.
+   
+   
+   
+  
+    
+      
+        Voltar: Partículas macias do corpo
+        A seguir: dados_de_agrupamento_de_agrupamento_física
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

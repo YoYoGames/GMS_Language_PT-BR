@@ -1,0 +1,99 @@
+
+  
+  network_set_config
+  Com esta função, você pode definir diferentes configurações de rede.
+  OBSERVAÇÃO: Esta função não funcionará quando utilizada em um projeto em execução no alvo HTML5.
+  Estas configurações são dadas como constantes e a configuração dependerá da constante que você tiver escolhido. A tabela abaixo lista as constantes disponíveis e suas configurações:
+   
+  
+    
+      
+        Constante
+        Descrição
+        Configuração
+      
+      
+        network_config_connect_timeout
+        Defina um valor de tempo limite de conexão
+        Um valor em milissegundos
+      
+      
+        network_config_use_non_blocking_socket
+        Diga ao GameMaker Studio 2 para não bloquear a conexão.
+        0 = bloco, 1 = não bloquear
+      
+      
+        network_config_enable_reliable_udp
+        Permite o protocolo "UDP confiável" para um soquete UDP existente
+        A identificação do soquete para o alvo
+      
+      
+        network_config_disable_relable_udp
+        Desabilita o protocolo "UDP confiável" para um UDP bloqueado existente.
+        A identificação do soquete para o alvo
+      
+      
+        network_config_avoid_time_wait
+        Define o valor de timeout SO_LINGER para 0 para um soquete TCP de saída
+        A identificação do soquete para o alvo
+      
+    
+  
+  
+     A primeira opção(network_config_connect_timeout) simplesmente define o tempo limite para conexão a um servidor, mas não muda o comportamento da conexão além do tempo que você tem que esperar. É recomendável que você não defina isto também
+    e mantê-lo em cerca de 1000 para um jogo LAN apenas ou cerca de 4000 para a Internet, ou o jogo pode falhar em se conectar aleatoriamente. Se você deseja definir um valor de timeout para enviar/receber pacotes, então use a função network_set_timeout().
+  A segunda opção(network_config_use_non_blocking_socket) significa que todas as funções de conexão de rede retornarão um socket_id instantaneamente, mas você não pode enviar ou receber nesse socket até que receba um evento de rede assimétrica.
+    O evento acionado terá a chave "type" definida para network_type_non_blocking_connect (você pode encontrar mais detalhes na página no Networking Asynchronous Event).
+    Esta é uma configuração global, pois o GameMaker Studio 2 não suporta uma mistura de bloqueio e não-bloqueio em uma aplicação.
+  A terceira e quarta opções(network_config_enable_reliable_udp, network_config_disable_reliable_udp) são para habilitar ou desabilitar o protocolo confiável UDP do GameMaker Studio 2 e, como tal, só devem ser usadas com conexões UDP.
+    O que "confiável" neste caso significa que, quando ativado em ambas as extremidades de uma conexão, o GameMaker Studio 2 tentará verificar se seus pacotes chegaram corretamente e reenviará os que não chegaram (nota, não garantimos
+    em seus pacotes chegarão em ordem de transmissão). Ao utilizar um tipo de soquete confiável, haverá um cabeçalho de 12 bytes adicionado a todos os pacotes udp que contém informações necessárias ao GameMaker Studio 2 para verificar se o pacote contém erros e se falta reenviar
+    pacotes. Os seguintes pontos são dignos de nota ao utilizar esta opção:
+  
+    O protocolo deve ser ativado/desativado de ambos os lados antes de enviar seus dados, e quaisquer dados enviados ou recebidos antes que a opção tenha sido ativada/desativada não serão afetados.
+    Você pode ativar ou desativar o protocolo para qualquer ID de soquete várias vezes, desde que isso seja devidamente gerenciado tanto no lado do servidor quanto no lado do cliente
+    É possível ter dois soquetes UDP separados, um com UDP confiável habilitado para um com UDP confiável desabilitado para o outro.
+  
+  A opção final, network_config_avoid_time_wait é apenas para conexões TCP e pode ser usada para definir o valor SO_LINGER para 0 o evitar grandes números de conexões TIME_WAIT noestado, amarrando todos os recursos disponíveis em um servidor. Este
+    A mudança é permanente enquanto a tomada está viva e não pode ser desfeita.
+   
+  Sintaxe:
+  network_set_config(config_value, setting);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        config_value
+        A constante de configuração a ser configurada (consulte a tabela no topo desta página).
+      
+      
+        cenário
+        A definição do valor de configuração.
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  network_set_config(network_config_connect_timeout, 1000); network_set_config(network_config_use_non_blocking_socket, 1);
+  O código acima definirá o tempo limite para a conexão de rede para 1000ms e dirá ao GameMaker Studio 2 para não bloquear a conexão.
+   
+   
+   
+  
+    
+      
+        Voltar: Rede
+        Próximo: network_set_timeout
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

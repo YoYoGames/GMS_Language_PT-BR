@@ -1,0 +1,87 @@
+
+  
+  draw_skeleton_instance
+  Esta função é apenas para uso com instâncias que tenham sprites atribuídos a eles criados usando o programa de animação esquelética Spine. Enquanto você pode desenhar estes sprites usando as funções normais de desenho (como draw_self()),
+    há momentos em que você pode querer desenhar uma única moldura ou mostrar uma mudança na textura da pele sem realmente mudar as propriedades do duende, por exemplo. Nestes casos, você pode desenhar o duende que foi designado para a instância com esta função,
+    onde você dá a identificação da instância única e depois o nome da animação para obter o quadro (um fio, como definido dentro do programa usado para fazer o duende). Em seguida, você dá o nome da pele para usar (novamente, como definido quando o duende foi feito), e um
+    valor da moldura. O valor do frame é para dizer ao GameMaker Studio 2 que parte da animação deve ser mostrada e é um valor entre 0 e o image_number. O resto dos argumentos são
+    o mesmo que os utilizados para o desenho normal de duendes e mudará a escala, o ângulo, a cor da mistura e o alfa do quadro de animação final a ser desenhado.
+  ADVERTÊNCIA! Devido à forma como as animações esqueléticas são interpoladas entre vários quadros "chave", há uma sobrecarga adicional associada a esta chamada e, portanto, é recomendável que você evite desenhar sprites com base no esqueleto usando
+    este método, a menos que seja absolutamente necessário.
+   
+  Sintaxe:
+  draw_skeleton_instance(exemplo, animname, skinname, frame, x, y, xscale, yscale, podridão, cor, alfa);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        exemplo
+        O índice da instância de onde extrair o duende.
+      
+      
+        animname
+        O nome da animação para obter o quadro de (um fio).
+      
+      
+        skinname
+        O nome da pele a ser usada (um fio).
+      
+      
+        quadro
+        O quadro de animação a desenhar (de 0 a image_number - 1).
+      
+      
+        x
+        A coordenada x de onde desenhar o duende.
+      
+      
+        y
+        A coordenada y de onde desenhar o duende.
+      
+      
+        xscale
+        A escalada horizontal do duende, como um multiplicador: 1 = escalada normal, 0,5 é metade, etc...
+      
+      
+        yscale
+        A escalada vertical do duende, como um multiplicador: 1 = escalada normal, 0,5 é metade, etc...
+      
+      
+        podridão
+        A rotação do duende. 0=normal, 90=voltada 90 graus no sentido anti-horário, etc.
+      
+      
+        cor
+        A cor com a qual se deve misturar o duende.
+      
+      
+        alfa
+        O alfa do duende (de 0 a 1 onde 0 é transparente e 1 opaco).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_skeleton_instance(obj_Player, "jump", "skin1", 0, x, y, 1, 1, 1, 0, c_white, 1);
+  O código acima desenhará o primeiro frame do duende de animação esquelético atribuído à instância dada, usando o conjunto de animação "salto" e a skin definida como "skin1".
+   
+   
+   
+  
+    
+      
+        Voltar: Desenho e Diversos
+        Próxima: desenho_esqueleto_colisão
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

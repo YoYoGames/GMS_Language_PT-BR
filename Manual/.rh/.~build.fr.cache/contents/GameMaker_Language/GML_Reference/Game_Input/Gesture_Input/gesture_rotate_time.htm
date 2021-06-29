@@ -1,0 +1,37 @@
+
+
+
+
+  
+  gesto_rotate_time
+  Esta função é usada para definir o tempo dentro do qual um par de toques deve estar girando em uma direção consistente para que um gesto de início de rotação seja acionado. O tempo é
+    medido em segundos e tem um valor padrão de 0,16s.
+  IMPORTANTE! Atualmente, para um jogo de 60fps você só pode definir isto para no máximo um segundo, caso contrário, não serão detectadas rotações. Isto aumentará para um framrate inferior, por exemplo, um jogo de 30fps pode ter um tempo máximo de 2 segundos.
+   
+  Sintaxe:
+  gesture_rotate_time();
+   
+  Devoluções:
+  Real (polegadas)
+   
+  Exemplo:
+  if gesture_get_rotate_time() != 0.1 {
+     gesture_rotate_time(0.1);
+     }
+  
+  O código acima verifica se o tempo de rotação dos gestos está configurado para 0,1 segundos e se não está configurado para esse valor.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada por gestos
+        Próximo: gesto_rotate_angle
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

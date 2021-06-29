@@ -1,0 +1,46 @@
+
+  
+  layer_tilemap_destroy
+  Esta função destruirá o elemento dado do mapa de azulejos. Você fornece o ID do mapa de azulejos (que você obtém ao criar o mapa de azulejos usando layer_tilemap_create() ou quando você usa a identificação da camada junto com layer_get_tilemap_id())
+    e isto irá removê-lo. Note que isto não remove a camada, apenas o mapa de azulejos dela, e se o mapa de azulejos for um que foi adicionado no editor da sala, então na próxima vez que você sair da sala e depois retornar, o mapa de azulejos será recriado.
+    novamente. Entretanto, se a sala for persistente, o mapa de azulejos será removido a menos que a persistência da sala seja desligada novamente.
+   
+  Sintaxe:
+  layer_tilemap_destroy(tilemap_element_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tilemap_element_id
+        O valor de identificação único do mapa de azulejos a ser destruído
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var lay_id = layer_get_id("Tiles_trees"); var tile_id = layer_tilemap_get_id(lay_id); se layer_tilemap_existir(lay_id, tile_id) {
+     layer_tilemap_destroy(tile_id);
+     }
+  
+  O código acima verifica a camada "Tiles_trees" para ver se o elemento dado do mapa de azulejos existe e se existe, então ele é destruído (mas não a camada).
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas do mapa de azulejos
+        Próximo: tilemap_tileset
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

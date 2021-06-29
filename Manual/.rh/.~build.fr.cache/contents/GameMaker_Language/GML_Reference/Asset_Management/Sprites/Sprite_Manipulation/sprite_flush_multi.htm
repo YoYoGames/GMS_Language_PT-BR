@@ -1,0 +1,44 @@
+
+  
+  sprite_flush_multi
+  Com esta função você pode remover da memória de textura qualquer número de páginas de textura para os sprites dados. Você fornece os índices sprite como uma matriz e as páginas de textura a que eles são designados serão removidas da memória de textura. Observe que se um dos
+    as páginas de textura são usadas em outro lugar na sala (por outro sprite ou um fundo, etc...) você pode ter um pequeno acerto de desempenho, pois a página é imediatamente recarregada de volta à memória, portanto, deve-se ter cuidado ao usar esta função.
+    Note que a função retornará -1 se não houver suporte para os recursos escolhidos, ou retornará 0 se todos funcionarem corretamente.
+   
+  Sintaxe:
+  sprite_flush_multi(array);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        matriz
+        Array com os índices de sprite para nivelar
+      
+    
+  
+   
+  Devoluções:
+  Int (-1 ou 0)
+   
+  Exemplo:
+  spr_a[0] = spr_Player_Aura1; spr_a[1] = spr_Player_Aura2; spr_a[2] = spr_Player_Aura3; spr_a[3] = spr_Player_Aura4; sprite_flush_multi(spr_a);
+  
+  O código acima cria uma matriz onde cada elemento contém um índice sprite. Esta matriz é então usada para limpar essas texturas sprite da memória.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação de Sprite
+        Próximo: sprite_prefetch
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

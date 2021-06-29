@@ -1,0 +1,54 @@
+
+  
+  gpu_set_texrepeat
+  Esta função pode ser usada para indicar ao GameMaker Studio 2 se as texturas devem ser repetidas(verdadeiras) ou não(falsas) quando usadas para modelos e primitivas. Normalmente as larguras e alturas das texturas estão na faixa de 0 a 1, mas se você especificar
+    um valor maior que 1 por padrão o restante não é desenhado (toda a textura será desenhada com uma seção "vazia" correspondente à porcentagem acima de 1 que é utilizada. Portanto, um valor de 2 para uma textura largura ou altura desenharia a textura em
+    metade do espaço e deixar a outra metade vazia). Entretanto, ao utilizar esta função para definir a repetição verdadeira a textura se repete automaticamente sobre todos os modelos e primitivos. O caso de uso provável para estas funções é para repetir uma textura em 3D, mas
+    para que funcione e não puxar imagens do resto da página de textura, o duende usado precisará ser marcado como estando em uma "Página de Textura Separada" no Editor do Sprite.
+  OBSERVAÇÃO: Sprites e fundos são sempre desenhados sem repetição, portanto, uma vez que você desenha um sprite ou fundo, este valor é redefinido para falso. Este comportamento padrão não afetará as configurações do estágio de textura (ou seja: chamar a função irá, mas
+    a configuração interna para falso não).
+  OBSERVAÇÃO: Este ajuste sobreporá qualquer etapa de textura repetirá o ajuste para shaders ao usar a função gpu_set_texrepeat_ext().
+   
+  Sintaxe:
+  gpu_set_texrepeat(enable);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        habilitar
+        Ativar ou desativar a filtragem da textura(verdadeiro / falso)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se gpu_get_texrepeat() {
+     gpu_set_texrepeat(false);
+     }
+     mais
+     {
+     gpu_set_texrepeat(true);
+     }
+  
+  O código acima verifica se a repetição da textura está ligada ou desligada e a liga em conformidade.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle de GPU
+        Próximo: gpu_set_texrepeat_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

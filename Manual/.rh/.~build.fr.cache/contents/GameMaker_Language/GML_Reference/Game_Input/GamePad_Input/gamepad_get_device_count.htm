@@ -1,0 +1,31 @@
+
+  
+  gamepad_get_device_count
+  Esta função lhe dirá uma de duas coisas. Ou o número de game pads conectados, ou o número de "slots" disponíveis para os game pads a serem conectados. O valor real de retorno dependerá da plataforma e da configuração interna
+    dessa plataforma e, como tal, essa função deve ser usada em conjunto com a função gamepad_is_connected() para garantir o número exato de almofadas conectadas a qualquer momento.
+   
+  Sintaxe:
+  gamepad_get_device_count();
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var gp_num = gamepad_get_device_count(); for (var i = 0; i < gp_num; i++;) { if gamepad_is_connected(i) { global.gp[i] = true; }  mais { global.gp[i]
+    = falso; }  }
+  O código acima faz loops através dos blocos de jogo disponíveis (ou slots de gamepad) e então verifica cada um deles em busca de um gamepad conectado. o valor retornado é então usado para definir um array global como verdadeiro ou falso para uso em verificações futuras.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada Gamepad
+        Próximo:  gamepad_get_description 
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

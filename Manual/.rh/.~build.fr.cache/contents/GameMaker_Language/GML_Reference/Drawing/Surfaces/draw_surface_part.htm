@@ -1,0 +1,67 @@
+
+  
+  parte_superfície_de_sorte
+  Com esta função você pode desenhar parte de qualquer superfície em uma determinada posição dentro da sala. Como com draw_surface() você pode especificar uma superfície, mas então você precisa especificar as coordenadas relativas dentro do
+    superfície de uma área a ser selecionada para o desenho. Isto significa que uma posição esquerda de 0 e uma posição superior de 0 seria o canto superior esquerdo da superfície e todas as outras coordenadas deveriam ser tomadas a partir dessa posição.
+  NOTA: Quando se trabalha com superfícies há a possibilidade de que elas possam deixar de existir a qualquer momento devido a serem armazenadas na memória de textura. Você deve SEMPRE verificar se uma superfície existe usando superfície_existe()    antes de referenciá-los diretamente.
+   
+  Sintaxe:
+  draw_surface_part(id, left, top, w, h, x, y);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        O valor único de identificação da superfície a ser desenhada.
+      
+      
+        esquerda
+        A posição esquerda na superfície da peça a ser desenhada.
+      
+      
+        topo
+        A posição superior na superfície da peça a ser desenhada.
+      
+      
+        w
+        A largura da peça a ser desenhada, a partir da esquerda.
+      
+      
+        h
+        A altura da peça a ser desenhada, de cima.
+      
+      
+        x
+        A posição x de onde desenhar a superfície.
+      
+      
+        y
+        A posição y de onde desenhar a superfície.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_surface_part(surf, 8, 8, 32, 32, 32, x, y);
+  Isto desenhará uma área 32x32 8px por 8px da parte superior esquerda da superfície indexada em "surf", na posição das instâncias (x,y).
+   
+   
+   
+  
+    
+      
+        Voltar: Superfícies
+        A seguir: draw_surface_part_ext_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

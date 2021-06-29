@@ -1,0 +1,48 @@
+
+  
+  uwp_show_help
+  Esta função lança o aplicativo de ajuda Xbox One que exibirá o arquivo de ajuda de seu jogo (que é um arquivo em formato HTML que você já carregou anteriormente no XBox Developer Portal). Note que um ID de usuário é especificado ao chamar esta função
+    para que a informação local do usuário possa ser usada ao exibi-la. O usuário pode recuperar o ID do usuário com as funções xboxlive_get_user(), xboxlive_get_activating_user(),
+    ou uwp_license_trial_user().
+   
+  Sintaxe:
+  uwp_show_help(user_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        user_id
+        O ponteiro de identificação do usuário para abrir o arquivo de ajuda.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se gamepad_button_check_pressed(0, gp_start) {
+     if uwp_license_trial_version() {
+     var _uid = uwp_license_trial_user; uwp_show_help(_uid);
+     }
+     }
+  
+  O código acima verifica se um botão é pressionado e depois verifica o aplicativo para ver se ele está funcionando com uma licença de teste. Se estiver, então ele obtém o ID de usuário para licença e abre o arquivo de ajuda para esse usuário.
+   
+   
+   
+  
+    
+      
+        Voltar: UWP e XBox Live
+        Próximo: uwp_license_trial_version
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

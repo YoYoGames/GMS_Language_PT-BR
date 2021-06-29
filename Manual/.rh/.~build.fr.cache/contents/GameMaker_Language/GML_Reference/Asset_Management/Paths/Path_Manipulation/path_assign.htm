@@ -1,0 +1,48 @@
+
+  
+  path_assign
+  Com esta função você pode copiar os dados do caminho de um caminho para outro. O caminho a ser copiado será apagado primeiro (caso tenha algum ponto de caminho) e será completamente sobregravado pelo caminho sendo
+    copiado de. Nenhum dos caminhos é eliminado no processo e o resultado são dois caminhos, com dois índices diferentes, mas exatamente a mesma forma e pontos. Em geral, você gostaria de usar esta função em um caminho criado usando path_add(),
+    uma vez que se você usá-lo em um ativo do caminho, ele afetará permanentemente o caminho para todas as instâncias do jogo desde o momento em que a função é usada até o final do jogo.
+   
+  Sintaxe:
+  path_assign(índice, caminho);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do caminho a ser sobregravado.
+      
+      
+        caminho
+        O índice do caminho que irá sobrescrever o 'índice'.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  mypath = path_add(); path_assign(mypath, choose(path_1, path_2, path_3));
+  O código acima criará um novo caminho vazio indexado na variável "mypath" e então copiará sobre os dados do caminho a partir de um dos três recursos de caminho disponíveis.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação do caminho
+        Próximo: path_delete
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

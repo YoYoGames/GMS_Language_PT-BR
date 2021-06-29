@@ -1,0 +1,57 @@
+
+  
+  mp_grid_clear_clear_rectangle
+  Com esta função você pode definir uma área nas coordenadas da sala que, então, limpará as células correspondentes na grade MP especificada. Mesmo que uma célula esteja parcialmente dentro da região retangular definida, ela será limpa.
+   
+  Sintaxe:
+  mp_grid_clear_clear_rectangle(id, x1, y1, x2, y2);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        Índice da rede mp_ que deve ser usada
+      
+      
+        x1
+        A coordenada x do lado esquerdo do retângulo a ser verificado.
+      
+      
+        y1
+        A coordenada y do lado superior do retângulo a verificar.
+      
+      
+        x2
+        A coordenada x do lado direito do retângulo a ser verificado.
+      
+      
+        y2
+        A coordenada x do lado inferior do retângulo a verificar.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  mp_grid_clear_clear_rectangle(grid, 0, 0, 100, 200);
+  O código acima marcará como livres todas as células da grade mp_ indexada na variável "grid" que se enquadram na área de 0,0 a 100.200.
+   
+   
+   
+  
+    
+      
+        Voltar: Planejamento de Movimento
+        Próximo: mp_grid_to_ds_grid
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

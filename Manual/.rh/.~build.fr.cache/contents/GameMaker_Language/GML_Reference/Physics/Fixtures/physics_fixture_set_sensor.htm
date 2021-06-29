@@ -1,0 +1,49 @@
+
+  
+  fisic_fixture_set_sensor
+  Algumas vezes você vai querer que seu jogo detecte e reconheça quando duas instâncias com acessórios colidem, mas não tenha nenhuma reação física à colisão. Isto pode ser feito convertendo o acessório em um sensor, o que basicamente significa que eles
+    geram um evento de colisão mas sem resposta física para que você possa usar estas instâncias como "gatilhos" para que outros eventos aconteçam na sala de jogos. Qualquer luminária pode ser sinalizada como um sensor, e não faz diferença se a instância
+    está vinculado a estática ou em movimento.
+  OBSERVAÇÃO: Um sensor disparará o evento de colisão apenas quando a colisão ocorrer pela primeira vez, o que significa que você não receberá um fluxo de eventos de colisão, uma vez que os dois corpos continuam a se sobrepor (que é o que tradicionalmente ocorreria). Se eles
+    parar a sobreposição e a sobreposição subseqüentemente, haverá outro evento de colisão desencadeado.
+   
+  Sintaxe:
+  physics_fixture_set_sensor(fixture, state)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fixação
+        o índice da fixação
+      
+      
+        estado
+        se uma fixação é um sensor (verdadeiro) ou não (falso)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  physics_fixture_set_sensor(fix_Cloud, 1);
+  O código acima tornará verdadeiro o estado do sensor da fixação indexada em "fix_Cloud".
+   
+   
+   
+  
+    
+      
+        Voltar: Instalações
+        Próximo: fisica_fixture_set_kinematic
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

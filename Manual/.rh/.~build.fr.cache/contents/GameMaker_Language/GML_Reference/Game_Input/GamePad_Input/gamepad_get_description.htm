@@ -1,0 +1,52 @@
+
+
+
+
+  
+  gamepad_get_description
+  Esta função retornará uma string com a descrição do gamepad dado, por exemplo, um controlador PS3 pode retornar uma string semelhante a "PLAYSTATION(R)3 Controller", ou um controlador XBox360 pode retornar "Xbox 360 Controller (XInput
+    GAMEPAD PADRÃO)". Esta string é dependente do hardware e o valor retornado dependerá do gamepad conectado ao dispositivo "slot" que está sendo verificado.
+   
+  Sintaxe:
+  gamepad_get_description(device);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dispositivo
+        Qual "ranhura" para obter o nome do "gamepad".
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  var gp_num = gamepad_get_device_count(); for (var i = 0; i < gp_num; i++;) {
+     if gamepad_is_connected(i) {
+     draw_text(32, 32 + (i * 32), gamepad_get_description(i)); }
+     else
+     {
+     draw_text(32, 32 + (i * 32), "No Gamepad Connected"); }
+     }
+  
+  O código acima passará por todos os slots do gamepad para verificar se há dispositivos conectados e então desenhar algum texto para a tela com base no fato de um gamepad estar ou não conectado ao slot.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada Gamepad
+        A seguir:  gamepad_get_button_threshold 
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

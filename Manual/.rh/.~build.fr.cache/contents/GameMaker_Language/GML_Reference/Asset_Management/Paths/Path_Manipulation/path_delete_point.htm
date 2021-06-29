@@ -1,0 +1,52 @@
+
+  
+  caminho_ponto_de_apagamento
+  Com esta função, você pode remover um ponto do caminho especificado. Os pontos do caminho são numerados a partir de 0, portanto o primeiro ponto é sempre o 0º ponto e o último ponto do caminho será path_get_number() - 1. se você
+    chamar esta função em um ativo do caminho, então a remoção do ponto será permanente e todas as instâncias designadas ao caminho no futuro estarão perdendo o ponto que foi removido. Se isto não for o que você precisa, então você deve usar
+    uma função como path_duplicate() para criar primeiro uma cópia do caminho, depois chamar esta função sobre o bem duplicado (não se esqueça de chamar path_delete() sobre o bem quando este não for mais necessário).
+   
+  Sintaxe:
+  path_delete_point(ind, n);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do caminho para apagar um ponto de.
+      
+      
+        n
+        O ponto definidor para apagar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var _col = true; while (_col) {
+     var _num = caminho_get_number(mypath) - 1; if (_num > 2) { var _x1 = caminho_get_point_x(my_path, _num); var _y1 = caminho_get_point_y(my_path, _num); var _x2 = caminho_get_point_x(my_path, _num -1); var
+    _y2 = path_get_point_y(my_path, _num -1); if collision_line(_x1, _y1, _x2, _y2, _y2, obj_Wall, true, false) { path_delete_point(mypath, _num); _num -= 1; }  else _col = falso; 
+      }  else _col = falso; }
+  
+  O código acima gera um laço que verifica os pontos de trás para frente do final para uma colisão com o objeto em questão. Se for encontrada uma colisão, um ponto do caminho é excluído, até que não haja colisão, ou o caminho tenha apenas 2 pontos de comprimento.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação do caminho
+        Próximo: pontos_de_caminho
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

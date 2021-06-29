@@ -1,0 +1,54 @@
+
+  
+  buffer_base64_decode_ext
+  Com esta função você pode decodificar uma cadeia codificada base64 (criada usando o buffer_base64_encode() função) em um buffer. Ao contrário da função buffer_base64_decode(),
+    isto não criará um buffer para você, mas sim você já deveria ter criado o buffer (veja buffer_create()), cuja identificação você usaria então com esta função. O "offset" é o
+    posição dentro do buffer para decodificar a seqüência dada (em bytes).
+   
+  Sintaxe:
+  buffer_base64_decode_ext(buffer, string, offset);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O índice do buffer para decodificar a corda.
+      
+      
+        corda
+        O fio codificado base64 para decodificar.
+      
+      
+        offset
+        O valor da compensação de dados.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  buff = buffer_create(16384, buffer_grow, 2); ini_open("Save.ini");
+     var str = ini_read_string("Save", "Slot1", ""); buffer_base64_decode_ext(buff, str, 0); ini_close();
+  
+  O código acima criará um buffer e armazenará a identificação única para ele na variável "buff", depois abrirá um arquivo ini e lerá uma string a partir dele na variável local "str". Esta string é então decodificada no buffer recém-criado, antes de
+    fechando novamente o arquivo ini.
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: tamanho_utilizado_de_tampão
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,94 @@
+
+  
+  tentar / apanhar / finalmente
+  A tentativa, captura e finalmente as declarações podem ser usadas em seu jogo para verificação de erros e permitir que você teste blocos de código e controle o que acontece se alguma exceção detempo de execução ocorrer. O uso destas evitará que a exceção termine o jogo e mostre a mensagem de erro padrão para o usuário, mas isto significa que você terá que lidar com o que acontece em seguida neste caso, como salvar arquivos de log - por exemplo - e terminar o
+    jogo graciosamente (note que se você optar por nada fazer, seu jogo pode se tornar instável e não funcionar corretamente).
+  A sintaxe mais básica da tentativa é a seguinte:
+  tente {
+     <statement1>;
+     <statement2>;
+     ... }
+  
+  No entanto, ter uma tentativa sem nada para realmente lidar com qualquer exceção que o código possa produzir não será muito útil, por isso costumamos emparelhá-lo com um senão, com a seguinte sintaxe:
+  tente {
+     <statement1>;
+     <statement2>;
+     ...
+     }
+     catch(<variavel>)
+     {
+     <statement1>;
+     <statement2>;
+     ...
+     }
+  
+  O que a captura permite executar um código extra fornecido no bloco seguinte quando uma exceção da tentativa anterior tiver sido capturada. Se esta for uma exceção de tempo de execução, então a variável fornecida pode ser usada para acessar uma estrutura que conterá as seguintes informações:
+  { mensagem : "", // uma string que é uma mensagem curta para esta exceção longMessage : "", // uma string que é uma mensagem mais longa para esta exceção script : "", // uma string
+    que descreve de onde veio a exceção stacktrace : [ "", "" ], // um conjunto de cordas que é a estrutura da pilha a exceção foi gerada }
+  
+  Um exemplo simples de uso é mostrado abaixo:
+  var a = 0, b = 0, c = 0; tente
+     {
+     c = a div b; }
+     catch( _exceção) {
+     show_debug_message(_exception.message);
+     show_debug_message(_exception.longMessage);
+     show_debug_message(_exception.script);
+     show_debug_message(_exception.stacktrace);
+     }
+  
+  Pode ser que você queira executar algum código independentemente de uma exceção ter sido lançada ou não, e para isso você pode adicionar um bloco final. A sintaxe finally é:
+  finalmente {
+     <statement1>;
+     <statement2>;
+     etc....
+     }
+  
+  Vale a pena notar que você pode ter qualquer combinação destes juntos, ou seja
+  
+    tentar / finalmente
+    tentar / pegar
+    tentar / apanhar / finalmente
+  
+  Note que dentro do bloco final você não pode usar quebra, continuar, saída ou retornar declarações como
+    não têm significado neste contexto e o compilador irá gerar um erro se forem utilizados.
+  Finalmente, você também pode aninhar várias tentativas / capturas / finalmente umas dentro das outras, por exemplo:
+  var a = 0, b = 0, c = 0; tente
+     {
+     tente
+     {
+     c = a div b; }
+     finalmente
+     {
+     ++a;
+     }
+     }
+     catch(_exceção)
+     {
+     ++a;
+     show_debug_message(_exception.message);
+     show_debug_message(_exception.longMessage);
+     show_debug_message(_exception.script);
+     show_debug_message(_exception.stacktrace);
+     }
+     finalmente
+     {
+     show_debug_message("a = " + string(a)); }
+  
+  Vale notar que você pode assumir a mensagem de erro padrão do GML e usar seu próprio código de manuseio, chamando a função exception_unhandled_handler(). Este
+    A Runtime_Functions.htm">função detempo de execução permite que você forneça um método personalizado a ser usado que será chamado sempre que qualquer exceção não-deslaçada ocorrer em seu jogo.
+   
+   
+   
+  
+    
+      
+        Voltar: Características lingüísticas
+        Próximo: arremessar
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

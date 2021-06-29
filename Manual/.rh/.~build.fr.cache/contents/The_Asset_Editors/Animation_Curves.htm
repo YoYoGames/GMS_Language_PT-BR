@@ -1,0 +1,78 @@
+
+  
+  O Editor de Curvas de Animação
+  Uma curva de animação é um ativo que contém uma ou mais curvas que representam como um valor muda com o tempo, e pode usar interpolação linear, interpolação suave ou interpolação bezier para ir entre diferentes pontos da curva. Os valores definidos no eixo vertical podem estar entre quaisquer dois valores (entre -1 e 1 por padrão) e a duração ao longo do eixo horizontal é sempre normalizada de 0 a 1, tornando mais fácil
+    almeje diferentes faixas de tempo usando multiplicadores em seu código de jogo ou estique-os para caber em uma pista no Editor de Seqüências.
+  As curvas de animação são compostas por "canais" e cada canal pode ter suas próprias configurações de curvas, o que permite - por exemplo - descrever uma posição espacial com dois canais para a localização x/y, ou um gradiente de cor com 4 canais para
+    representam um formato de cor. Os ativos da curva de animação podem ser usados quando se trabalha com Seqüências e também podem ser acessados usando código, tornando-os uma ferramenta poderosa ao criar seus jogos.
+  Quando você criar um recurso de curva de animação pela primeira vez, a janela do editor se abrirá e lhe apresentará as seguintes seções:
+  Nome da Curva
+  
+    Aqui você pode dar a sua curva de animação um nome único(somente caracteres alfanuméricos e o símbolo "_" sublinhado). Este nome é o que será usado para se referir à curva e a todos os seus canais
+      ao acessá-la através de código ou em uma seqüência.
+     
+  
+  Biblioteca de curvas
+  
+    O botão  abre o Biblioteca de Curvas de Animação janela,
+      que permite mudar o tipo de curva da Curva de Animação e aplicar uma predefinição ao canal selecionado.
+    Veja a seção sobre a Biblioteca de Curvas de Animação para informações
+      sobre Tipos de Curvas e Pré-definições. Note que ao abrir a janela através do botão , o modo de aplicação "Overwrite " será selecionado por padrão.
+  
+  Lista de canais
+  
+    A lista de canais é onde você pode adicionar e nomear os diferentes canais que irão compor seu ativo da curva de animação. Por padrão, quando você cria uma curva de animação pela primeira vez, um canal terá sido adicionado para você e você pode adicionar outros canais, clicando em
+      no botão  à esquerda do nome da curva. Cada canal deve ter um nome único (usando somente caracteres alfanuméricos e o símbolo "_" sublinhado),
+      e você também pode definir a cor para o canal clicando duas vezes em  na amostra de cores à esquerda, que abrirá o seletor de cores para que você possa escolher uma nova cor.
+      Para renomear o canal, você pode fazer um duplo clique lento  e renomear, e você também pode usar o botão direito do mouse  para abrir um menu onde você pode escolher renomear, mudar a cor ou excluir o canal.
+    Os canais podem ser expandidos clicando na seta ao lado do nome para mostrar cada um dos pontos na curva do canal, e estes pontos podem ser editados manualmente clicando no valor atual e digitando o novo valor.
+    Você pode alternar a visibilidade do canal clicando no ícone "olho" , ou apagar o canal clicando no ícone "bin" .
+     
+  
+  Faixa de canais
+  
+    O botão Channel Range é usado para definir o alcance vertical visual para o Editor de Canais. Por padrão, isto será definido de -1 a 1, mas clicando neste botão abrirá a seguinte janela:
+    A alteração destes valores mudará a forma como os dados são representados na seção Editor de Canal, permitindo que você
+      ter valores mais altos/mais baixos ao longo da curva do canal do que apenas -1 a 1. Note que isto é puramente visual e não prende os valores para o canal.
+     
+  
+  Editor de canais
+  
+    O Editor de Canal mostra uma representação visual dos diferentes canais utilizados na curva de animação. Por padrão, todos os canais serão mostrados aqui, mas você só pode editar o canal atualmente selecionado da Lista de Canais, que será destacado
+      no editor. Você pode mudar a posição de qualquer um dos pontos ao longo da curva do canal clicando em  sobre eles e arrastando-os dentro do editor, mas note que o
+      O primeiro e último ponto só podem ser alterados ao longo do eixo vertical e seu valor horizontal será sempre 0 e 1, respectivamente.
+    Você pode adicionar pontos diretamente à curva do canal movendo o mouse próximo à linha do canal principal e clicando em  quando o cursor mudar para o " AddPoint".
+      e você pode então editar estes pontos clicando em  e arrastando ou alterando seus valores nas opções expandidas de canais na Lista de Canais:
+    Você pode editar vários pontos ao mesmo tempo clicando em  e arrastando dentro do editor para selecionar todos os pontos que deseja editar ou usando  /  +  para adicionar pontos à seleção individualmente. Soltando o botão do mouse e depois clicando novamente em qualquer um dos pontos da seleção
+      e o arrastamento irá movê-los todos juntos:
+    Você pode  clicar com o botão direito do mouse em qualquer lugar no Editor de Canal para abrir a janela da Biblioteca de Curvas de Animação (somente quando o Tipo de Curva selecionado for Bezier). A aplicação de uma predefinição desta forma afetará todo o canal. Para modificar apenas uma parte do canal, você pode  clicar com o botão direito do mouse em uma linha individual para aplicar uma predefinição, ou selecionar várias linhas clicando  e arrastando, depois  clicar com o botão direito do mouse na seleção para aplicar uma predefinição às linhas selecionadas.
+    Note que ao abrir a janela da Biblioteca de Curvas de Animação através do Editor de Canal, o Modo de Aplicação "Entre" será selecionado por padrão.
+     
+  
+  Controles de Zoom
+  
+    Os controles de zoom permitem expandir  ou contratar  o
+      escala vertical das curvas de canal no Editor de Canal. Você também pode clicar no botão "Center Fit"  para que a visualização do Editor de Canais seja ajustada.
+      para que a escala se ajuste a todos os pontos da curva de canal dentro do editor, centralizada em torno da faixa média dos valores:
+    
+     
+  
+   
+  Para informações sobre os diferentes Tempo de execução funções que podem ser usadas juntamente com curvas de animação, consulte a seção seguinte do manual:
+  
+    Funções da Curva de Animação
+  
+   
+   
+  
+    
+      
+        Voltar: Os Editores de Ativos
+        A seguir: Biblioteca de Curvas de Animação
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

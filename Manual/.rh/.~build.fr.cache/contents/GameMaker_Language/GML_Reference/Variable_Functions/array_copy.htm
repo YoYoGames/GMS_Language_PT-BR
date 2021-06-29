@@ -1,0 +1,65 @@
+
+  
+  array_copy
+  Com esta função você pode copiar toda ou parte de um array para outro array em qualquer posição. Você precisa fornecer tanto a matriz de origem quanto a de destino (ambas precisam ter sido criadas anteriormente), bem como uma posição dentro da matriz de origem para copiar
+    de e uma posição dentro da matriz de destino para copiar para. Finalmente, é preciso especificar o comprimento da matriz (ou o comprimento da peça que se deseja copiar). Se os dados sendo copiados excederem o comprimento da matriz de destino, a matriz irá
+    ser estendido para aceitar os dados.
+  Esta função também pode ser usada para matrizes multidimensionais, desde que você especifique qual dimensão deseja copiar ao fornecer o índice da matriz, seguindo este padrão:
+  // Cópia da primeira dimensão de um array // para a segunda dimensão de um array array_copy(item_array, 0, inventory_array[0], 0, len);
+     // Cópia da terceira dimensão de um array // para a primeira dimensão de um array array_copy(item_array[0][0], 0, inventory_array, 0, len);
+     // etc...
+   
+  Sintaxe:
+  array_copy(dest, dest_index, src, src_index, length);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dest
+        A identificação da matriz para a qual copiar.
+      
+      
+        dest_index
+        O índice dentro da matriz para o qual copiar.
+      
+      
+        src
+        A identificação da matriz de onde copiar.
+      
+      
+        src_index
+        O índice com a matriz de onde começar a copiar.
+      
+      
+        comprimento
+        O comprimento (número de índices de matriz) a ser copiado.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if !array_equals(inventory_array, item_array) {
+     var len = array_length(inventory_array); array_copy(item_array, 0, inventory_array, 0, len); }
+  
+  O código acima verificará duas arrays para ver se elas possuem valores equivalentes, e se elas não possuem, então o código copiará todo o conteúdo da array "inventory_array" para a array "item_array".
+   
+   
+   
+  
+    
+      
+        Voltar: Funções variáveis
+        Próximo: array_equals
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

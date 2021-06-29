@@ -1,0 +1,43 @@
+
+  
+  camera_get_update_script
+  Esta função pode ser usada para recuperar a identificação da função de script atribuída como o script de atualização para a câmera em questão. Se nenhum script for atribuído, a função retornará -1.
+   
+  Sintaxe:
+  camera_get_update_script(camera_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        camera_id
+        O valor único de identificação da câmera retornou quando você criou a câmera
+      
+    
+  
+   
+  Devoluções:
+  ID da função Script ou -1 se nenhuma função for atribuída
+   
+  Exemplo:
+  var scr = camera_get_update_script(camera_view[0]); if scr != scr_cutscene {
+     camera_set_update_script(camera_view[0], scr_cutscene); }
+  
+  O código acima verifica a função de script atribuída como função de atualização para a câmera atribuída à porta de visualização[0] e, se não for "cutScene", é definida para esse script.
+   
+   
+   
+  
+    
+      
+        Voltar: Câmeras e Ver Portos
+        Próximo: camera_get_begin_script
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

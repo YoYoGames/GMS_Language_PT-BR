@@ -1,0 +1,33 @@
+
+  
+  image_number
+  Esta variável só pode ser usada para obter o número de sub-imagens de um duende que foi atribuído a uma instância (se você precisar do número de sub-imagens para um duende diferente daquele atribuído à instância você
+    deve usar sprite_get_number()). Observe que quando houver (por exemplo) 1 subimagem, esta variável retornará "1", mas o índice da imagem_ dessa subimagem
+    é 0.
+   
+  Sintaxe:
+  image_number;
+   
+  Devoluções:
+  Real (valor de ponto flutuante de precisão único)
+   
+  Exemplo:
+  if image_speed > 0 {
+     if image_index > image_number - 1 instance_destroy(); }
+  
+  O código acima verifica se o duende está animando, e se está, então verifica se a imagem_index atual é maior que o número de sub-imagens e se está destruindo a instância.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis de Sprite Instance
+        Próximo: image_speed
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

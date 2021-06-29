@@ -1,0 +1,46 @@
+
+  
+  audio_existe
+  Esta função retorna se um som existe(verdadeiro) ou não(falso). Note que se o índice que você procura não foi rubricado anteriormente, esta função causará um erro, pois está procurando por índices de ativos inexistentes. O
+    som a ser verificado pode ser uma única instância de um som (o índice de sons individuais que estão sendo reproduzidos pode ser armazenado em uma variável ao usar o audio_play_sound() ou audio_play_sound_at() funções)
+    ou um bem sólido.
+   
+  Sintaxe:
+  audio_exists(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do som para verificar a existência de.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se o audio_existe(global.Music) {
+     audio_play_sound(global.Music, 0, true); }
+  
+  O código acima verifica se existe um som. Se existir, ele é ajustado para tocar em loop.
+   
+   
+   
+  
+    
+      
+        Voltar: Áudio
+        Próximo: audio_get_name
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

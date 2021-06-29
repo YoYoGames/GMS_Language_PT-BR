@@ -1,0 +1,43 @@
+
+  
+  linha do tempo_delete
+  Com esta função você pode excluir qualquer linha de tempo de seu jogo. se esta linha de tempo foi criada no GameMaker Studio 2 Asset Browser, por favor note que ela é removida completamente do jogo e tentando chamar o indexado
+    linha de tempo novamente após o uso desta função causará um erro. Se a linha de tempo foi criada dinamicamente usando a linha do tempo_add() função, então esta função deve ser usada no momento
+    que a linha de tempo não é mais necessária para evitar qualquer vazamento de memória que possa retardar (e eventualmente travar) seu jogo.
+   
+  Sintaxe:
+  timeline_delete(ind);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice da linha do tempo a ser apagado.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se a linha do tempo_existe(global.tl) { timeline_delete(global.tl); }
+  O código acima verifica se existe uma linha de tempo e se ela está indexada na variável global "tl" e, em caso afirmativo, apaga essa linha de tempo.
+   
+   
+   
+  
+    
+      
+        Voltar: Cronogramas
+        Próximo: linha do tempo_momento_add_script
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

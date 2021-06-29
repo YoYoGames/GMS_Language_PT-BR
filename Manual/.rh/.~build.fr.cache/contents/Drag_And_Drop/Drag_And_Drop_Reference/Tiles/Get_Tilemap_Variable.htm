@@ -1,0 +1,58 @@
+
+  
+   Obter a variável Tilemap
+  Com esta ação você pode recuperar qualquer uma de um determinado número de variáveis para o elemento do mapa de azulejos em uma camada. Quando você cria uma camada de azulejo no editor da sala, esta camada contém um elemento de mapa de azulejo que é então preenchido com azulejos de um conjunto de azulejos. Este elemento do mapa de azulejos tem certos valores associados a ele, como uma posição de offset, o conjunto de azulejos sendo usado, a largura, altura, etc... A lista completa de valores que você pode obter é:
+  
+    X Coordenada: A posição ao longo do eixo x na camada onde o elemento do mapa de azulejos foi colocado.
+    Coordenada Y: A posição ao longo do eixo y na camada onde o elemento do mapa de azulejos foi colocado.
+    Colunas: A largura (definida como o número de colunas de células de azulejo) do elemento do mapa de azulejos.
+    Linhas: A altura (definida como o número de linhas de células de azulejos) do elemento do mapa de azulejos.
+    Largura da telha: A largura de uma única célula de telha.
+    Altura do azulejo: A altura de uma única célula de ladrilho.
+    Recurso do conjunto de azulejos: O recurso de conjunto de azulejos que foi atribuído ao elemento do mapa de azulejos para desenho.
+    Moldura atual: A moldura atual sendo desenhada para azulejos animados.
+    Máscara: Os dados da máscara para o elemento do mapa de azulejos.
+    Máscara Global: Os dados globais da máscara para todos os elementos do mapa de azulejos.
+  
+  Ao usar esta ação, você fornece o nome da camada (um fio, como definido no Editor de Sala) para obter os dados do elemento do mapa de azulejos, depois o tipo de dados que você quer recuperar (como mostrado na lista acima). O valor retornado será então armazenado em
+    a variável alvo que pode ter sido criada anteriormente ou pode ser uma nova variável temporária (se você marcar a caixa de seleção "Temp"). Observe que você pode recuperar valores adicionais clicando no ícone "plus  ao lado de
+    a ação, e selecionando outra variável e dando outra variável para armazenar o valor retornado.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Camada
+        A camada para obter dados de
+      
+      
+        Variável
+        A variável para recuperar o valor de (como listado acima)
+      
+    
+  
+   
+  Exemplo:
+  O código do bloco de ação acima verifica se as telhas na camada "Floor_Tiles" (Piso_Piso)
+    está usando o conjunto "tl_PalaceRuins", e se não estiverem, então eles estão configurados para usá-lo.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações em telhas
+        A seguir: Definir dados do azulejo no Pixel
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

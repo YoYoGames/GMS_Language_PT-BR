@@ -1,0 +1,53 @@
+
+  
+  achievement_post
+  Você pode usar esta função para enviar suas realizações para o quadro de líderes escolhido e serviço de realizações. No Android, você precisará da identificação da realização como uma seqüência (esta é a identificação única da realização que foi atribuída quando você configurou a realização),
+    enquanto em todas as outras plataformas você fornece o nome da realização como um fio, e então você dá a porcentagem que você completou para obter a realização (0 - Nenhum, 100 - Completado). A função desencadeará um Evento Assíncrono Social onde o retorno async_load O mapa DS terá os seguintes pares chave/valor:
+  
+    "tipo"- Este é o tipo de evento que foi disparado, que será a seqüência " achievement_post_resultado" para esta função.
+    "id" - Este é o ID do evento, e, para esta função, retornará uma constante GML GooglePlayServices_EVENT_ID_POST_ACHIEVEMENT .
+    "achievement_id" - Esta é a identificação única de realização que foi atualizada.
+    "status" - Este será 1 se a realização foi atualizada com sucesso, ou 0 se a solicitação falhou
+  
+   
+  Sintaxe:
+  achievement_post(realização, porcentagem)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        realização
+        O nome/ID da realização.
+      
+      
+        por cento
+        A porcentagem da realização concluída.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se achievement_available() { achievement_post(global.Achievement[0], 100); }
+  
+  O código acima verifica se o quadro de líderes e o serviço de realizações escolhido está disponível e, em caso afirmativo, publica uma realização.
+   
+   
+   
+  
+    
+      
+        Voltar: Conquistas e Quadros de Líderes
+        Próximo: nota_de_conquista
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

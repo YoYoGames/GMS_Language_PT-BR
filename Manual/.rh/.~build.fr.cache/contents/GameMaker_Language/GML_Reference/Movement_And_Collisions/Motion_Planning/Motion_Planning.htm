@@ -1,0 +1,82 @@
+
+  
+  Planejamento de movimento
+  Em muitos jogos você quer que os adversários, NPC's, inimigos, etc... interajam com o jogador e mostrem certa inteligência ao se moverem, ou seja: você quer que eles evitem obstáculos, planejem rotas e geralmente não tropecem em tudo no seu caminho! Para ajudar em
+    este GameMaker Studio 2 tem uma série de funções que tratam de planejamento de movimento. Note que embora estas sejam projetadas para coisas como inimigos de jogos, elas podem ser usadas para todos os tipos de coisas como criar uma maneira suave
+    para introduzir texto, ou para criar transições, etc... Entretanto, o que quer que você escolha usar da lista abaixo em seu jogo, deve ser notado que em muitas situações um único conjunto de funções não lhe dará uma solução perfeita e que você terá que
+    "misture e combine" as funções, usando uma ou outra, dependendo da situação dentro de seu jogo.
+  O planejamento de movimento no GameMaker Studio 2 é tratado pelas funções mp_, as quais estão divididas nos três grupos seguintes:
+   
+  Funções lineares
+  Este tipo de função tenta calcular um caminho livre de colisões para a instância. Uma vez calculado este caminho, você pode atribuí-lo à instância para avançar em direção ao objetivo. O cálculo da trajetória levará algum tempo, mas depois disso a execução
+    do caminho será rápido. É claro que isto só é válido se a situação não tiver mudado nesse meio tempo. Por exemplo, se os obstáculos mudarem, você possivelmente precisará recalcular o caminho. Repare novamente que estas funções podem falhar e que nenhum caminho pode
+    ser encontrado, por exemplo.
+   
+  
+    mp_linear_step
+    mp_linear_objeto_de_passo
+    mp_linear_path
+    mp_objeto_de_caminho_linear
+  
+   
+  Funções Potenciais
+   
+  Estas são as funções básicas de prevenção e boas para a IA simples. Elas funcionam fazendo com que uma instância dê um passo em direção a uma determinada posição de objetivo enquanto tenta ir direto se possível, mas tomando uma direção diferente se necessário. Estas funções devem
+    ser usado no Evento de Etapa de uma instância.
+   
+  
+    mp_potencial_settings
+    mp_potencial_step
+    mp_potencial_objecto_de_passo
+    mp_potencial_caminho
+    mp_potencial_objeto_do_caminho
+  
+   
+  Funções da grade
+   
+  O tipo final de função utiliza um mecanismo muito mais complexo baseado em uma abordagem baseada em grade (às vezes chamado de algoritmo A*). Ela terá muito mais sucesso em encontrar caminhos (embora ainda possa falhar) e encontrará os caminhos mais curtos possíveis
+    mas requer mais trabalho de seu lado para configurá-lo.
+  A idéia global é a seguinte - Antes de tudo, criamos uma grade que cobre a sala (ou a parte relevante da mesma). Você pode escolher usar uma grade fina, que será mais lenta, ou uma grade grosseira, mas ambas devem ser baseadas na resolução da sala
+    para que a localização do caminho seja a mais precisa possível. Por exemplo, se você tiver uma sala com 400x200 pixels, você pode ter uma resolução de grade de 40, ou 20, ou 10... tudo depende de quão preciso o caminho precisa ser e de quanto processamento você quer
+   GameMaker a fazer para gerá-lo.
+  Em seguida, para todos os objetos relevantes que queremos evitar, precisamos determinar as células de grade que elas se sobrepõem (com base em suas caixas de delimitação ou em seus duendes precisos) e marcar essas células como sendo proibidas. Assim, uma célula será marcada como sendo totalmente proibida,
+    mesmo que um obstáculo seja apenas parcialmente sobreposto.
+  Finalmente, especificamos uma posição inicial e uma posição de objetivo, ambas devem estar em células livres, e a função então calcula o caminho mais curto possível entre estas duas posições. O caminho será percorrido entre os centros de todas as células livres, portanto
+    se as células forem suficientemente grandes para que a instância colocada em seu centro fique completamente dentro dela, isso será um sucesso. Este caminho é então atribuído à instância a seguir usando o caminho_* funções.
+    Você deve perceber como é importante o tamanho da célula para isto, pois as células devem ser suficientemente grandes para que o objeto em movimento colocado com sua origem no centro de uma célula fique completamente dentro da célula. (Tenha cuidado com a posição da origem
+    do objeto. Perceba também que você pode mudar o caminho se a origem do objeto não estiver em seu centro). Por outro lado, quanto menores forem as células, mais caminhos possíveis existirão. Se você fizer células muito grandes, as aberturas entre os obstáculos podem se fechar
+    porque todas as células se cruzam com um obstáculo.
+   
+  
+    mp_grid_create
+    mp_grid_destroy
+    mp_grid_path
+    mp_grid_add_cell
+    mp_grid_add_instances
+    mp_grid_add_rectangle
+    mp_grid_get_cell
+    mp_grid_clear_all
+    mp_grid_clear_cell
+    mp_grid_clear_clear_rectangle
+    mp_grid_to_ds_grid
+    mp_grid_draw
+  
+   
+  A abordagem baseada em grade é muito poderosa (e é usada em muitos jogos profissionais), mas exige que você faça uma reflexão cuidadosa, pois é preciso determinar qual área e tamanho de célula são bons o suficiente para resolver o jogo. Além disso, você deve determinar quais objetos
+    deve ser evitada e se a verificação precisa é importante. Todos estes parâmetros influenciam fortemente a eficiência da abordagem. Você também deve decidir se é realmente necessário, pois talvez seja uma das funções menos dispendiosas do mp_*.
+    pode fazer o trabalho da mesma forma.
+   
+   
+   
+  
+    
+      
+        Voltar: Movimento e colisões
+        A seguir: Colisões
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

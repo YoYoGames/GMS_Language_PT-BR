@@ -1,0 +1,98 @@
+
+  
+  steam_create_leaderboard
+  Com esta função, você pode criar um novo quadro de líderes para seu jogo. O primeiro argumento é uma string que define o nome de seu quadro de líderes, e este nome deve ser usado em qualquer outra chamada de função relacionada com o quadro de líderes que está sendo criado. Você pode
+    depois definir o método de ordenação (ver as constantes listadas abaixo), bem como a forma de exibição das informações (novamente, uma das constantes listadas abaixo). A função retornará um valor -1 se não criar a tabela de classificação ou um valor
+    maior do que -1 se tiver tido sucesso.
+  NOTA: Se você tiver criado anteriormente um quadro de líderes com o mesmo nome (seja através de código ou através de sua página Steam para o jogo) esta função será ignorada!
+   
+  
+    
+      
+        Ordenar constante
+        Descrição
+      
+      
+        lb_sort_none
+        Sem classificação. As informações serão exibidas "como estão".
+      
+      
+        lb_sort_ascending
+        Ordenar o quadro de líderes em ordem ascendente.
+      
+      
+        lb_sort_descending
+        Ordenar o quadro de líderes em ordem decrescente.
+      
+    
+  
+   
+  
+    
+      
+        Mostrar Constante
+        Descrição
+      
+      
+        lb_disp_none
+        Mostrar o quadro de líderes "como está".
+      
+      
+        lb_disp_numeric
+        Mostrar o quadro de líderes como uma exibição numérica.
+      
+      
+        lb_disp_time_sec
+        Mostrar os valores do quadro de líderes como tempos, com o valor base sendo de segundos.
+      
+      
+        lb_disp_time_ms
+        Mostrar os valores do quadro de líderes como tempos, sendo o valor de base mili-segundos.
+      
+    
+  
+   
+  Sintaxe:
+  steam_create_leaderboard(lb_name, sort_method, display_type);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        lb_nome
+        O nome do quadro de líderes que você está criando (um cordel).
+      
+      
+        sort_method
+        O método para classificar as entradas do quadro de líderes (ver constantes listadas abaixo).
+      
+      
+        display_type
+        A maneira de exibir o quadro de líderes para o usuário (ver constantes listadas abaixo).
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  steam_create_leaderboard("Game Times", lb_sort_ascending, lb_disp_time_sec);
+  O código acima criará um quadro de líderes chamado "Game Times", e o definirá para exibir os resultados em ordem ascendente e com uma exibição em segundos.
+   
+   
+   
+  
+    
+      
+        Voltar: Painéis de Liderança
+        Próximo: steam_upload_score
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

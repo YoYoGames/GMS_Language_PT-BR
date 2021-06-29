@@ -1,0 +1,55 @@
+
+  
+  Sprites de Animação Esquelética
+  As funções encontradas nesta seção são apenas para uso com sprites que tenham sido importados de um arquivo de animação esquelético (especificamente, os arquivos JSON que Lombada exportação)
+    e pode ser usado para obter informações sobre um ativo de animação em seu jogo, bem como para definir certas propriedades dentro de uma animação. Estas funções podem ser usadas juntamente com as funções e variáveis regulares do sprite, permitindo-lhe (por exemplo)
+    misture duas animações de esqueleto usando estas funções especiais e, ao mesmo tempo, defina a escala da imagem usando as variáveis normais da instância sprite (para mais informações sobre as variáveis da instância sprite, veja aqui).
+  NOTA: Para maiores informações sobre importação de sprites de animação esquelética feitos com Espinha, consulte a seção Importando Sprites Não-Bitmap.
+  Você pode saber mais sobre as funções para estes tipos de sprites nas seções abaixo:
+   
+  
+    Animação
+    Peles
+    Anexos
+    Bones
+    Caça-níqueis
+    Desenho e Diversos
+  
+   
+   
+  Suporte Tint Black
+  Esta característica permite que as áreas escuras das ranhuras da Coluna vertebral sejam coloridas de forma diferente das áreas claras (esta é uma característica da IDE da Coluna vertebral, veja a seção Tint black aqui mais detalhes). Atualmente, para fazer uso deste recurso no GameMaker Studio 2, você deve usar um shader quando
+    desenhando um duende de espinha que o utiliza. Este shader contém uma variável uniforme global chamada " gm_SpineTintBlackColour" que o corredor preenche com a cor preta de lata atual, recuperada automaticamente dos dados da Coluna vertebral. O sombreador
+    necessário é mostrado abaixo:
+  O Vertex Shader (este é o mesmo que o vertex shader padrão de passagem)
+  atributo vec3 in_Position; // (x,y,z) atributo vec4 in_Colour; // (r,g,b,a) atributo vec2 in_TextureCoord; // (u,v)
+     variando vec2 v_vTexcoord; variando vec4 v_vColour;
+     void main() {
+     vec4 object_space_pos = vec4( in_Position.x, in_Position.y, in_Position.z, 1.0); gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * object_space_pos; v_vColour = in_Colour; v_vTexcoord = in_TextureCoord; }
+  
+  O Fragment Shader:
+  variando vec2 v_vTexcoord; variando vec4 v_vColour;
+     uniforme vec4 gm_SpineTintBlackColour; // Este é o uniforme que contém a cor preta de lata
+     void main() {
+     vec4 tb = gm_SpineTintBlackColour; vec4 texcol = text2D( gm_BaseTexture, v_vTexcoord ); vec4 outcol; outcol.rgb = v_vColour.rgb * texcol.rgb; outcol.rgb += tb.rgb * ((tb.a * (texcol.a - 1.0)) + (1.0 - texcol.rgb)); //
+    Esta linha realiza a lógica de mistura de lata preta outcol.a = v_vColour.a * texcol.a; gl_FragColor = outcol; }
+  
+  Você usaria isto primeiro chamando o sombreador, depois desenhando o duende, depois reiniciando o sombreador, algo como isto:
+  shader_set(shd_spine_tint_tint_black); draw_self();
+     shader_reset();
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Sprites
+        A seguir: Informações Sprite
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

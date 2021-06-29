@@ -1,0 +1,69 @@
+
+  
+  xboxlive_agegroup_for_user
+  Esta função retornará uma das quatro constantes (mostradas abaixo) para indicar a faixa etária atribuída ao ponteiro de identificação do usuário especificado.
+   
+  Sintaxe:
+  xboxlive_agegroup_for_user(user_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        user_id
+        O ID do usuário (um ponteiro) para verificar
+      
+    
+  
+   
+   
+  Devoluções:
+  Constante
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        xboxlive_agegroup_unknown
+        A faixa etária para o usuário é desconhecida
+      
+      
+        xboxlive_agegroup_child
+        A faixa etária do usuário está entre 8 e 12 anos (inclusive)
+      
+      
+        xboxlive_agegroup_teen
+        A faixa etária do usuário está entre 13 e 17 anos (inclusive, e entre 13 e 19 anos na Coréia do Sul)
+      
+      
+        xboxlive_agegroup_adult
+        A faixa etária do usuário é de 18 anos ou mais (ou 20 e mais na Coréia do Sul
+      
+    
+  
+   
+   
+  Exemplo:
+  var _age = xboxlive_agegroup_for_user(xboxlive_get_activating_user()); if _age != xboxlive_agegroup_adult {
+     global.ContentControl = true; }
+     else global.ContentControl = falso;
+  O código acima verifica a faixa etária do usuário ativador e define uma variável global como verdadeira ou falsa, dependendo da constante retornada.
+   
+   
+   
+  
+    
+      
+        Voltar: Usuários e Contas
+        Próximo: xboxlive_gamerscore_for_user
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

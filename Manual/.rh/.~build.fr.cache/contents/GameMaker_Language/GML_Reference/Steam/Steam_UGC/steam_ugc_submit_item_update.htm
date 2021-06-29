@@ -1,0 +1,56 @@
+
+  
+  steam_ugc_submit_item_update
+  Esta função submeterá o item UGC inexplicado pelo cabo dado aos servidores da Steam Workshop, adicionando as notas de mudança a serem usadas para o item dado. As notas de modificação devem ser uma string e a alça de atualização é o valor retornado quando você chama o
+    função steam_ugc_start_item_update(). Ao utilizar esta função, ele retornará um valor de identificação assimétrica que pode ser analisado quando o evento assíncronoa vapor for acionado para relatar a criação do item. O evento conterá os seguintes valores chave/mapa no async_load Mapa DS:
+  
+    " id" - O ID assimétrico retornado pela função de chamada
+    "resultado" - O resultado da operação (um valor real). Este será ou a constante GML ugc_result_success ou algum outro número real. Portanto, você deve verificar esta constante para garantir que a chamada foi bem sucedida, e se
+      caso contrário, alguma coisa não funcionou corretamente. Os demais valores possíveis retornados são mostrados como resultado do valor EResult " Steam " e você deve ver o steamclientpublic .h nos cabeçalhos do SDK para todos os 89 valores possíveis.
+    "event_type" - Esta chave conterá o valor " ugc_update_item".
+    " legal_required" - Será verdadeiro ou falso (veja os documentos Steam para mais detalhes)
+  
+   
+  Sintaxe:
+  steam_ugc_submit_item_update(ugc_update_handle, change_note);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ugc_update_handle
+        O cabo único para a UGC a ser atualizado.
+      
+      
+        change_note
+        As notas de mudança (um fio) a serem usadas para o item.
+      
+    
+  
+   
+  Devoluções:
+  Identificação Async
+   
+  Exemplo:
+  var app_id = steam_get_app_id(); var updateHandle = steam_ugc_start_item_update(app_id, global.Publish_ID); steam_ugc_set_item_title(updateHandle, "My workshop item(3)!"); steam_ugc_set_item_description( updateHandle, "testing
+    workshop..."); steam_ugc_set_item_visibility(updateHandle, ugc_visibility_public); var tagArray; tagArray[0] = "Test"; tagArray[1] = "New"; steam_ugc_set_item_tags( updateHandle, tagArray); steam_ugc_set_item_preview (updateHandle,
+    "promo.jpg"); steam_ugc_set_item_content(updateHandle, "WorkshopContent1"); requestId = steam_ugc_submit_item_update(updateHandle, "Version 1.2");
+  O código acima obtém o ID do jogo, então usa-o junto com um ID de arquivo publicado anteriormente para gerar uma alça de atualização para o item. Este cabo é então usado para atualizar várias informações antes que a atualização seja empurrada para o Workshop.
+    servidores.
+   
+   
+   
+  
+    
+      
+        Voltar: UGC
+        Próximo: steam_ugc_get_item_update_progress
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

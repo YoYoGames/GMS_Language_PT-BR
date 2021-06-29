@@ -1,0 +1,59 @@
+
+  
+  vértice_argb
+  Esta função definirá os valores ARGB para o vértice que está sendo definido atualmente para o primitivo personalizado. Você fornece o buffer para escrever os dados, bem como os valores vermelho, verde, azul e alfa
+    que você deseja usar como um único inteiro de 32 bits sem assinatura - amostra alfa nos 8 bits mais altos, seguido pela amostra vermelha, amostra verde e finalmente a amostra azul nos 8 bits mais baixos. Você pode usar a notação hexadecimal ($AARRGGBB) um número real ou usar qualquer
+    das funções make_colour_*() para definir o valor da cor.
+   
+  Sintaxe:
+  vertex_argb(buffer, argb);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O buffer para escrever as informações.
+      
+      
+        a
+        O valor alfa para a cor (0 - 255).
+      
+      
+        r
+        A parte vermelha de uma cor (0 - 255).
+      
+      
+        g
+        O componente verde faz parte de uma cor (0 - 255).
+      
+      
+        b
+        A parte azul de uma cor (0 - 255).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  vertex_argb(buff, $FFFFFFFFFFFF);
+  O código acima definirá os valores ARGB do vértice que está sendo definido como branco.
+   
+   
+   
+  
+    
+      
+        Voltar: Primitivos e formatos de vértices
+        Próximo: vertex_texcoord
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

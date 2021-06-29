@@ -1,0 +1,55 @@
+
+  
+  xboxlive_get_savedata_user
+  Esta função retornará uma constante (mostrada abaixo) para ajudar a depurar por que uma função de arquivo falhou para que você possa tomar a ação apropriada em seu código de jogo. Quando uma das funções de arquivo falha, você pode chamar a função para descobrir exatamente qual foi o erro
+    foi.
+  NOTA: Ao utilizar as funções assíncronas de salvar/carregar, o async_load    O mapa terá uma chave extra, "erro", que também conterá uma das constantes (mostradas abaixo).
+   
+  Sintaxe:
+  xboxlive_get_file_error();
+   
+  Devoluções:
+  Constante
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        xboxlive_fileerror_outoflocalstorage
+        Se isto ocorrer ao mesmo tempo em que se economiza, isto significa que todo o espaço de jogo disponível foi utilizado, e o usuário declinou a oferta (apresentada pelo sistema operacional) de liberação de espaço. O jogo deve confirmar com o usuário que ele pretende continuar jogando
+          sem economizar. Se eles ainda quiserem poder salvar, o jogo deve tentar novamente a operação de salvar.
+      
+      
+        xboxlive_fileerror_quotaexcedido
+        Se isto ocorrer, o jogo deve notificar o usuário de que ele não pode salvar mais dados até que ele liberte algum espaço, e então apresentá-lo com uma maneira de fazer isto.
+      
+      
+        xboxlive_fileerror_noerror
+        A função de salvar ou carregar o arquivo foi realizada sem problemas.
+      
+    
+  
+   
+   
+  Exemplo:
+  buffer_save(buff, "SaveGame.bin"); if (xboxlive_get_file_error() != xboxlive_file_error_noerror) {
+     show_debug_message("Salvar falhou. Código de erro = " + string(xboxlive_get_file_error())); }
+  
+  O código acima verifica se houve um erro ao salvar e, em caso afirmativo, o código de erro é impresso para o console.
+   
+   
+   
+  
+    
+      
+        Voltar: Salvando dados
+        Próximo: xboxlive_set_set_savedata_user
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

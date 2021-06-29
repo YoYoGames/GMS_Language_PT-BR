@@ -1,0 +1,37 @@
+
+  
+  esqueleto_get_minmax
+  Esta função retornará uma matriz com o valor total da caixa de delimitação para todas as caixas de delimitação individuais atribuídas a um duende de animação de esqueleto. A matriz retornada terá 4 elementos:
+  
+    [0] - a posição mínima x para todas as caixas delimitadoras
+    [1] - a posição mínima y para todas as caixas delimitadoras
+    [2] - a posição x máxima para todas as caixas delimitadoras
+    [3] - a posição y máxima para todas as caixas delimitadoras
+  
+   
+  Sintaxe:
+  skeleton_get_minmax();
+   
+  Devoluções:
+  Array (4 elementos: xMin, yMin, xMax, yMax)
+   
+  Exemplo:
+  var frame = skeleton_animation_get_frame(0); if frame > 0 && frame < 2 {
+     var box = skeleton_get_minmax(); var ww = (box[2] - box[0]) / 2; var hh = (box[3] - box[1]) / 2; part_particles_create(global.p_sys, box[0] + ww, box[1] + hh, global.Stars, 10); }
+  
+  O código acima verificará o quadro atual da animação designado para a faixa 0 e então estourará algumas partículas de um ponto no meio da caixa de delimitação total para o duende.
+   
+   
+   
+  
+    
+      
+        Voltar: Desenho e Diversos
+        A seguir: esqueletos_get_num_bounds
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

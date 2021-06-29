@@ -1,0 +1,55 @@
+
+  
+  posição_da_classe
+  Com esta função você pode verificar uma posição para uma colisão com outra instância ou todas as instâncias de um objeto. Quando você usa esta função você está verificando um único ponto na sala para uma instância ou um objeto. Esta verificação será feita em relação ao limite
+    caixa da instância ou contra a máscara da instância se essa instância tiver colisões precisas verificadas e devolverá a instância única id. Se você não precisa da identificação da instância de colisão, você
+    deve considerar o uso de position_meeting() ao invés disso. Esta função também aceita as palavras-chaveespeciais
+    todos e other e devolverá a palavra-chave noone se não ocorrer nenhuma colisão ou o valor de identificação único da instância encontrada caso ocorra uma colisão.
+   
+  Sintaxe:
+  instance_position( x, y, obj );
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A posição x para verificar as instâncias.
+      
+      
+        y
+        A posição y para verificar as instâncias.
+      
+      
+        obj
+        O objeto a ser verificado em casos de.
+      
+    
+  
+   
+  Devoluções:
+  Real (ou um valor de identificação de instância ou a palavra-chave noone)
+   
+  Exemplo:
+  var inst; inst = instance_position(mouse_x, mouse_y, obj_Pause_Button); if (inst != noone) {
+     com (inst) image_index=1; instance_create_layer(room_width / 2, 0, "Controllers", obj_Menu); }
+  
+  O código acima verificará uma colisão com uma instância de "obj_Pause_Button" na posição do mouse, e se houver uma, então usará o id retornado para definir seu índice de imagem para um novo valor antes de criar uma nova instância do objeto
+    "obj_Menu".
+   
+   
+   
+  
+    
+      
+        Voltar: Instâncias
+        Próximo: lista_de_posições_da_classe
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

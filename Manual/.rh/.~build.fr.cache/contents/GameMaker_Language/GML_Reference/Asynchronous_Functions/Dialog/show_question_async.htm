@@ -1,0 +1,52 @@
+
+  
+  show_question_async
+  Esta função abre uma janela e exibe ao usuário a pergunta que você define na função. Esta é uma função assíncrona, e como tal o GameMaker Studio 2 não bloqueia o dispositivo em que está sendo executado enquanto espera por uma resposta, mas sim
+    continua a realizar eventos como de costume. A função tem dois botões que mostram "Sim" e "Não", e uma vez que o usuário tenha pressionado um, é acionado um evento de Diálogo Assíncrono que, somente durante a duração desse evento, irá
+    ter um mapa DS armazenado na variável async_load.
+  Este mapa conterá as duas chaves, " id" e " status". "id"é o valor que foi retornado pela função quando chamado, enquanto o "status" será verdadeiro ou falso para "Sim" e "Não" respectivamente . 
+  NOTA: Esta função é  apenas para depuração e testee não deve ser usada em jogos lançados. Para isso, você deve criar uma interface de usuário personalizada para receber informações dos jogadores, para que você tenha controle total sobre a aparência e o comportamento dos diálogos.
+   
+  Sintaxe:
+  show_question_async(string);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Cordão
+        A pergunta a ser feita ao usuário.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo ampliado:
+  O evento de pressão do mouse esquerdo (por exemplo) do objeto que está mostrando a mensagem teria o seguinte código:
+  msg = show_question_async("Você quer comprar alguma armadura para " + string(armadura[0, 5]) + "moedas?");
+  O acima mostrará uma pergunta com a seqüência dada, solicitando que o usuário pressione "sim" ou "não". A identificação da função é armazenada na variável "msg" e será usada no evento de Diálogo Assíncrono, como mostrado abaixo:
+  var i_d, stat; i_d = ds_map_find_value(async_load, "id"); if i_d == msg {
+     if ds_map_find_value(async_load, "status") {
+     coins -= armour[0,5]; global.protection += armour[0,0]; }
+     }
+  
+  O código acima verifica a chave "id" do Mapa DS retornado em relação ao valor armazenado na variável "msg". Se forem iguais, ele verifica se um dos dois botões foi pressionado e se retorna verdadeiro, então deduz um valor de uma variável e adiciona um valor a uma variável global também.
+   
+   
+   
+  
+    
+      
+        Voltar: Diálogo
+        Próximo: shop_leave_rating
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

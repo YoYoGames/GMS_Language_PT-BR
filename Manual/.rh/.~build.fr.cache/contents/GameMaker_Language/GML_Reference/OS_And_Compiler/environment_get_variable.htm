@@ -1,0 +1,44 @@
+
+  
+  ambiente_get_variable
+  Esta função retorna o valor (uma string) da variável de ambiente com o nome dado (também uma string). Você pode obter as variáveis de ambiente disponíveis em macOS e Ubuntu(Linux) digitando "env" no aplicativo terminal, e para
+    informações sobre variáveis de ambiente Windows, se você estiver usando o prompt de comando então digite " echo%PATH%", e usando PowerShell é " ls env". Note que tanto no MacOS quanto no Ubuntu(Linux) o "HOME" é "HOME".
+    irá retornar o caminho " ~/" que mapeia para " /Users/<username>" em macOS e " /home/<username> " no Ubuntu (Linux).
+  NOTA: Esta função é somente para Windows, macOS e Ubuntu(Linux).
+   
+  Sintaxe:
+  ambiente_get_variable(nome);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome
+        O nome (uma cadeia) da variável de ambiente a ser verificada.
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  e_str = ambiente_get_variable("APPDATA");
+  O código acima retornará o caminho completo para a variável ambiental " %appdata%", que normalmente é " C:\Users\\PDATA\Roaming".
+   
+   
+   
+  
+    
+      
+        Voltar: OS E Compilador
+        Próximo: external_define
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

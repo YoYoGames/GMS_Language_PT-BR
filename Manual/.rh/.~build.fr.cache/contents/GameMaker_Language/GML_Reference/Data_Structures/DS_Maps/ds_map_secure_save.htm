@@ -1,0 +1,48 @@
+
+  
+  ds_map_secure_save
+  Esta função salvará o conteúdo do mapa DS em um arquivo que está ligado ao dispositivo em que foi criado (o que significa que não pode ser lido se transferido para qualquer outro dispositivo). O arquivo em si pode ter quase qualquer extensão (por exemplo, *.dat,
+   *.json, *.bin, etc...) e será ofuscado e armazenado para armazenamento local na plataforma alvo. Você pode então carregar novamente o ds_map usando a função ds_map_secure_load(). Note que se
+    o mapa DS que está sendo salvo contém uma matriz, esta matriz será convertida em uma lista DS ao invés disso quando salvo.
+  IMPORTANTE! Uma das características de um arquivo seguro salvo é que ele está travado no dispositivo em que foi criado, de modo que você não pode carregar um arquivo salvo em um dispositivo em um projeto em execução em outro dispositivo.
+   
+  Sintaxe:
+  ds_map_secure_save(map, filename);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        mapa
+        A identificação da estrutura de dados a usar
+      
+      
+        nome do arquivo
+        O nome do arquivo para salvar o mapa para
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  ds_map_secure_save(purchase_map, "p_data.dat");
+  O código acima salvará o mapa DS indexado na variável "p_data" para o arquivo dado para posterior recuperação.
+   
+   
+   
+  
+    
+      
+        Voltar: DS Maps
+        Próximo: ds_map_secure_save_buffer
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

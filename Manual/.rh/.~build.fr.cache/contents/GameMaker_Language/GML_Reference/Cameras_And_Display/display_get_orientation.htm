@@ -1,0 +1,61 @@
+
+  
+  orientação para a exposição
+  Esta função retornará uma das duas constantes do GameMaker Studio 2 tem que lhe dizer se o dispositivo que executa o jogo está sendo mantido no modo paisagem ou retrato (veja a tabela abaixo). Note que esta função pode não detectar corretamente a orientação
+    do dispositivo quando usado no módulo de destino HTML5. No entanto, isto é facilmente imitado pelo uso do seguinte script:
+  return (browser_width < browser_height);
+  Voltará verdadeiro para o retrato e falso para a paisagem.
+   
+  Sintaxe:
+  display_get_orientation()
+   
+  Devoluções:
+  Constante
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        display_landscape
+        O dispositivo está sendo segurado horizontalmente ou seja: a borda mais longa é da esquerda para a direita, e o botão de menu é do lado direito.
+      
+      
+        display_landscape_flipped
+        Como acima, somente agora o botão de menu está à esquerda.
+      
+      
+        display_portrait
+        O dispositivo está sendo segurado verticalmente, ou seja: a borda mais longa é de cima para baixo, e o botão de menu está na parte inferior.
+      
+      
+        display_portrait_flipped
+        Como acima, somente agora o botão de menu está no topo.
+      
+    
+  
+   
+  Exemplo:
+  se display_get_orientation() == display_landscape {
+     global.Config = 0; }
+     mais
+     {
+     global.Config = 1; }
+  
+  O código acima verifica a orientação do dispositivo e define uma variável global, dependendo do valor retornado.
+   
+   
+   
+  
+    
+      Câmeras e Display
+        Voltar: 
+        A seguir: display_get_dpi_x
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

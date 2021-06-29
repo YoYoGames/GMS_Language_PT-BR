@@ -1,0 +1,61 @@
+
+  
+  exemplo_destroy
+  Você chama esta função sempre que desejar "destruir" uma instância, normalmente desencadeando um Evento de Destruição e também um Evento de Limpeza.
+    Isto irá removê-lo da sala até que a sala seja reiniciada (a menos que a sala seja persistente). Chamar a função sem argumentos simplesmente destruirá a instância que está atualmente em escopo e executando o código, mas você pode fornecer um
+    argumento "id" e direcione uma instância específica usando o valor da instância id, ou você pode direcionar todas as instâncias de um determinado objeto usando um object_index.
+    Por exemplo:
+  instance_destroy(other); // destruir a "outra" instância em um Evento de Colisão instance_destroy(obj_Bullet); // destruir TODAS as instâncias do objeto "obj_Bullet".
+  A segunda bandeira opcional permite "desligar" o Evento Destroy, por exemplo, sendo destruído. Por padrão o Evento Destroy será sempre realizado, mas se você definir esta bandeira como falsa, então você pode fazer o
+    se destruir e pular a realização desse evento.
+  IMPORTANTE! Isto irá pular o Evento Destroy, mas o evento Clean Up ainda será chamado.
+  Vale notar que quando se destrói uma instância, seu evento de destruição é chamado imediatamente após o código ou ação que chama a função de destruição. Além disso, embora o evento de destruição seja realizado, a instância não é imediatamente removida do jogo,
+    e continuará a executar o código contido no evento atual. Somente quando o evento atual terminar, ele será removido do jogo.
+  Portanto, se você tem, por exemplo, este código:
+  f hp <= 0 instance_destroy(); pontuação += 10;
+  A variável "score" será incrementada mesmo que a função instance_destroy tenha sido chamada, e a instância será finalmente removida de seu jogo no final do evento. Tenha cuidado com isso, como se você tivesse (por exemplo)
+    criou um recurso dinâmico por exemplo, como uma estrutura de dados, e depois destruiu esse recurso no evento de destruição, se houver alguma referência a ele após a função ou ação de destruição ter sido realizada, então você terá um "desconhecido
+    erro "recurso", pois o evento de destruição o removeu do jogo.
+   
+  Sintaxe:
+  instance_destroy([id, execute_flag_event_flag]);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        O ID da instância ou índice_objeto a destruir (opcional, o padrão é a instância de chamada)
+      
+      
+        execute_flag_event_flag
+        Definir como verdadeiro ou falso para realizar ou não o evento de destruição (opcional, o padrão é verdadeiro)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if bbox_right < 0 || bbox_left > room_width ||| bbox_bottom < 0 || bbox_top > room_height {
+     instance_destroy(id, false); }
+  
+  O código acima destruirá a instância executando o código sem chamar o Evento Destrutivo se a instância estiver fora dos limites da sala.
+   
+   
+   
+  
+    
+      
+        Voltar: Instâncias
+        Próximo: instance_exists
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

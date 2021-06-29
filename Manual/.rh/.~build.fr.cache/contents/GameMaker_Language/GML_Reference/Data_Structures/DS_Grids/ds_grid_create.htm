@@ -1,0 +1,47 @@
+
+  
+  ds_grid_create
+  Com esta função você pode criar uma nova estrutura de dados da grade DS com a largura e altura da célula especificada. Esta função retorna uma identificação que deve ser usada em todas as outras funções que lidam com esta grade DS.
+  IMPORTANTE! Quando você cria uma estrutura de dados, o valor do índice para identificá-lo é um valor inteiro começando em 0. Isso significa que estruturas de dados de diferentes tipos podem ter o mesmo valor de índice, portanto, em caso de dúvida, você deve estar usando o
+    ds_exists() antes de acessá-los. Observe também que os índices são reutilizados, de modo que um valor de índice de estrutura de dados destruída pode ser usado por um índice recém-criado posteriormente.
+   
+  Sintaxe:
+  ds_grid_create(w, h);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        w
+        A largura da grade a ser criada.
+      
+      
+        h
+        A altura da grade a ser criada.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  mygrid = ds_grid_create(10, 10)
+  Isto cria uma grade de 10 células de altura e 10 células de largura.
+   
+   
+   
+  
+    
+      
+        Voltar: Grades DS
+        Próximo: ds_grid_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

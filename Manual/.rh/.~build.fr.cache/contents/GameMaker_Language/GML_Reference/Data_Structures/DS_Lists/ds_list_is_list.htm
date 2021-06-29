@@ -1,0 +1,51 @@
+
+  
+  ds_list_is_list
+  Com esta função, você pode verificar se outra lista DS está armazenada na posição determinada dentro de uma lista DS. Se a posição dada contém um DS list ID, então a função retornará verdadeiro, caso contrário, retornará falso.
+   
+  Sintaxe:
+  ds_list_is_list(id, pos);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação da lista a ser verificada.
+      
+      
+        pos
+        A posição dentro da lista a ser verificada.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var tamanho = ds_list_size(ships) ; for (var i = 0; i < tamanho; i++;) {
+     if ds_list_is_list(ships, i) {
+     ds_list_destroy(i);
+     }
+     }
+     ds_list_destroy(ships);
+  
+  O código acima passa por uma lista DS e verifica se alguma das entradas contém outras identificações da lista. Se eles contêm, estas listas são destruídas, e então a lista principal é destruída após a conclusão do laço.
+   
+   
+   
+  
+    
+      
+        Voltar: Listas DS
+        Próximo: ds_list_is_map
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

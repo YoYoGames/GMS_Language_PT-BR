@@ -1,0 +1,81 @@
+
+  
+  Camadas do mapa de azulejos
+  O GameMaker Studio 2 Room Editor permite que você adicione azulejos em qualquer sala usando camadas. Como o nome indica, uma camada de mapa de azulejos é simplesmente uma coleção de conjuntos de azulejos que são todos
+    considerado como estando na mesma profundidade dentro da sala, e empilhando camadas você pode fazer com que algumas coisas se sobreponham a outras ou se subtraiam a outras. Você também pode controlar certos aspectos das camadas a partir do código, adicionando ou removendo coisas, ou alterando certas propriedades do
+    camada ou o que ela contém em tempo de execução. Observe que no editor da sala você está limitado a um mapa de azulejos por camada (o Camada de azulejos), mas quando se trabalha com eles em
+    código, você pode ter vários mapas de azulejos atribuídos a uma única camada, com cada mapa tendo sua própria identificação e propriedades únicas, portanto:
+  
+    O conjunto de azulejos é o recurso que você utiliza para criar camadas de azulejos e mapas de azulejos
+    A camada de azulejos é o que você cria no Editor de Sala para adicionar conjuntos de azulejos a
+    O mapa de azulejos é o que você chama de coleção de azulejos que são adicionados a uma camada, seja no editor da sala ou através de código, como um único elemento sobre essa camada
+  
+  Abaixo está uma lista de todas as funções que podem ser usadas para a edição de camadas de mapas de azulejos:
+   
+  
+    layer_tilemap_get_id
+    layer_tilemap_existe
+    layer_tilemap_create
+    layer_tilemap_destroy
+    tilemap_tileset
+    tilemap_clear
+    tilemap_x
+    mapa do azulejo_y
+    tilemap_set
+    mapa_do_cartão_de_fixos_na_pixel
+    mapa_modelo_do_cartão
+    mapa_modelo_modelo_global
+    tilemap_set_width
+    mapa_móvel_altura_do_set
+    mapa_get_mask do azulejo
+    tilemap_get_global_mask
+    tilemap_get_tileset
+    tilemap_get_frame
+    mapa_get_móvel_largura_do_móvel
+    mapa de azulejos_get_tile_height
+    tilemap_get_width
+    tilemap_get_height
+    tilemap_get_x
+    tilemap_get_y
+    tilemap_get
+    tilemap_get_at_pixel
+    tilemap_get_cell_x_at_pixel
+    tilemap_get_cell_y_at_pixel
+    draw_tilemap
+  
+   
+  Além das funções listadas acima para definir mapas de azulejos, você também tem uma série de funções que podem ser usadas para manipular os dados de azulejos individuais. Uma "bolha" de dados de azulejos é composta do índice de azulejos mais alguns bits extras para mostrar se
+    a telha foi girada, virada ou espelhada. Você também tem a possibilidade de adicionar sua própria bit-máscara aos dados do ladrilho, embora isto seja apenas para usuários avançados, pois você estará mascarando os bits que estão reservados para o índice de ladrilho - essencialmente
+    existem 19 bits reservados para seus índices de azulejos, mas se você usar apenas 8 deles, então você tem onze bits restantes que podem ser usados para criar uma máscara personalizada. Esta máscara pode então ser usada e verificada em código para criar colisões personalizadas de azulejos ou o que quer que seja.
+    Entretanto, você normalmente não precisaria criar seus próprios blobs de dados de azulejos, e em vez disso usaria a função tilemap_get() para obter os dados do azulejo, então você os manipularia usando as funções abaixo, e então
+    você o ajustaria novamente usando tilemap_set().
+  Abaixo está uma lista de todas as funções que podem ser usadas para a edição de azulejos individuais:
+   
+  
+    tile_get_empty
+    tile_get_index
+    tile_get_flip
+    tile_get_mirror
+    tile_get_rotate
+    tile_set_empty
+    tile_set_index
+    tile_set_flip
+    espelho_de_série
+    set_set_rotate
+    draw_tile
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Quartos
+        A seguir: Camadas de fundo
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,46 @@
+
+  
+  room_goto
+  Esta função permite que você vá a qualquer sala em seu projeto de jogo, seja criado usando código ou no Navegador de Ativos. Você fornece o índice da sala (armazenado na variável para o nome da sala, ou como uma variável retornada da função room_add()).
+    Note que a sala não mudará até o final do evento onde a função foi chamada, portanto, qualquer código após esta ter sido chamada ainda será executado se no mesmo evento. A ressalva a isto é que qualquer código que cria instâncias que são chamadas depois de
+    isto, não vai criar a instância e assim deve ser chamado antes de mudar de sala. Esta função também acionará o evento Room End.
+  Nota: As identificações de salas não são baseadas em seu pedido no Navegador de Ativos ou no Gerente de Sala, e por isso você deve evitar fornecer um valor numérico diretamente. Ao invés disso, use a constante de sala para
+    o bem que você deseja referir (que é simplesmente seu nome) ou recuperá-lo através de uma função.
+  Sintaxe:
+  room_goto(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice da sala para onde ir.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  switch (global.level) {
+     caso 0: room_goto(rm_level1); pausa; caso 1: room_goto(rm_level2); pausa; caso 2: room_goto(rm_level3); pausa; }
+  
+  O código acima verificará uma variável global e uma sala de mudança com base no valor que ela contém.
+   
+   
+   
+  
+    
+      
+        Voltar: Quartos
+        Próximo: room_goto_next
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

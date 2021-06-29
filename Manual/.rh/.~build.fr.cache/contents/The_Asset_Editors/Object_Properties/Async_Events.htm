@@ -1,0 +1,115 @@
+
+  
+  Os eventos da Async
+  
+  Um Evento Assíncrono é aquele que é disparado quando o GameMaker Studio 2 recebe uma chamada de retorno de alguma fonte externa, que pode ser da web ou do dispositivo que está rodando seu jogo. Basicamente,
+    você diz ao GameMaker Studio 2 para fazer algo - como carregar uma imagem - e ele começará a fazer isso, mas continuará a fazer o que tiver que fazer enquanto estiver trabalhando. Então, quando o pedido for concluído, uma ligação de retorno será enviada para o GameMaker.
+    O Studio 2 e quaisquer Eventos Assíncronos definidos para esse tipo de callback serão demitidos.
+  Observe que os Eventos Assíncronos são disparados para todas as instâncias que os têm, muito parecidos com os eventos do teclado, de modo que você pode - por exemplo - fazer uma chamada http_get() em uma instância, mas ter o Evento HTTP Assíncrono em outra para lidar com a chamada de retorno.
+  NOTA: Você deve estar ciente de que, devido à proteção XSS nos navegadores, as solicitações e tentativas de carregar recursos através de domínios são bloqueadas e podem parecer retornar resultados em branco ao usar qualquer um dos seguintes eventos.
+  Há vários tipos de eventos associados à categoria de eventos assíncronos, e todos eles são explicados nas seções abaixo:
+  NOTA: A variável async_load  que é mencionado
+    nas seções seguintes só é válida nestes eventos, pois o mapa DS que ele aponta é criado no início do evento, depois apagado novamente no final, com esta variável sendo redefinida para um valor -1 em todos os outros momentos.
+  
+    Reprodução de áudio
+    Gravação de áudio
+    Nuvem
+    Diálogo
+    HTTP
+    Na compra de aplicativos
+    Imagem carregada
+    Trabalho em rede
+    Notificações Push
+    Economizar / Carregar
+    Social
+    Vapor
+    Sistema
+  
+   
+  Pode ser que se você estiver fazendo extensões para diferentes plataformas, você gostaria de direcionar um ou mais desses eventos assíncronos para chamadas de retorno de suas funções de extensão. Para este fim, você pode encontrar uma tabela abaixo que descreve cada uma das funções internas
+    constantes do nome do evento e seu valor de identificação correspondente. Note que estas constantes de evento são apenas para uso com extensões!
+   
+  
+    
+      
+        Constante
+        Valor
+      
+      
+        EVENT_OTHER_WEB_IMAGE_LOAD 
+        60
+      
+      
+        EVENT_OTHER_WEB_SOUND_SOUND_LOAD 
+        61
+      
+      
+        EVENT_OTHER_WEB_ASYNC 
+        62
+      
+      
+        EVENT_OTHER_DIALOG_ASYNC 
+        63
+      
+      
+        EVENT_OTHER_WEB_IAP 
+        66
+      
+      
+        EVENT_OTHER_WEB_CLOUD 
+        67
+      
+      
+        EVENT_OTHER_WEB_NETWORKING 
+        68
+      
+      
+        EVENT_OTHER_WEB_STEAM 
+        69
+      
+      
+        EVENTO_OUTROS_SOCIAIS 
+        70
+      
+      
+        EVENT_OTHER_PUSH_NOTIFICATION 
+        71
+      
+      
+        EVENT_OTHER_ASYNC_SAVE_LOAD 
+        72
+      
+      
+        EVENT_OTHER_AUDIO_RECORDING 
+        73
+      
+      
+        EVENT_OTHER_AUDIO_PLAYBACK 
+        74
+      
+      
+        EVENT_OTHER_SYSTEM_EVENT 
+        75
+      
+      
+        EVENT_OTHER_MESSAGE_EVENT 
+        76
+      
+    
+  
+   
+   
+   
+   
+  
+    
+      
+        Voltar: Eventos Objeto
+        A seguir: Eventos de gestos
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

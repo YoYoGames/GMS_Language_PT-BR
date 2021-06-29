@@ -1,0 +1,55 @@
+
+
+
+
+  
+  virtual_key_show
+  Uma vez criada sua chave virtual para seus dispositivos, você pode precisar depurar e testar se ela está corretamente posicionada e funcionando corretamente. Para isso você chamaria esta função, usando o índice da chave virtual que você deseja ver (anteriormente
+    criado e armazenado usando virtual_key_add()) que desenhará um retângulo colorido para representar a chave na tela. Uma vez que você esteja satisfeito com as coisas, é recomendável que você crie e coloque seu próprio gráfico
+    em sua área.
+  NOTA: O retângulo sendo desenhado será afetado pelas opções de mistura, cor e alfa definidas pelas funções de desenho correspondentes.
+   
+  Sintaxe
+  virtual_key_show(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice da chave virtual a mostrar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if global.Debug {
+     virtual_key_show(global.left);
+     }
+     mais
+     {
+     virtual_key_hide(global.left);
+     }
+  
+  O código acima verifica a variável global "global.Debug" e, se for verdadeiro, então a chave virtual indexada na variável "global.Left" será desenhada na tela, e se for falsa, então a chave será escondida.
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Chaves e Teclados Virtuais
+        Próximo: virtual_key_hide
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

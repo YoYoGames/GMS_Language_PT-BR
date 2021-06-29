@@ -1,0 +1,59 @@
+
+  
+   Decimal ao Inteiro
+  Esta ação tomará um número decimal e o converterá em um número inteiro. Você dá o valor a ser convertido e então seleciona o tipo de arredondamento que deve ser feito para transformá-lo em um valor inteiro. Os tipos de arredondamento disponíveis são:
+  
+    Redondo: Isto toma um número decimal e o arredonda para cima ou para baixo para o número inteiro mais próximo. No caso especial em que o número fornecido for exatamente meio número inteiro (por exemplo, 1,5, 17,5, -2,5, etc...), o número será arredondado para
+      o valor par mais próximo, por exemplo, 2,5 seria arredondado para 2, enquanto 3,5 seria arredondado para 4. Este tipo de arredondamento é chamado de arredondamento de banqueiros e sobre grandes números de iterações ou quando se usa matemática de ponto flutuante, ele dá uma estatística
+      melhor arredondamento do que a abordagem mais tradicional "arredondar para cima se for superior a .5 e arredondar para baixo se não for assim".
+    Ceil: Isto tomará um valor decimal e o arredondará para o número inteiro mais próximo. Ao contrário do arredondamento (acima), isto não leva em consideração a parte decimal do valor, portanto um número como 5,0000001 ainda seria arredondado para 6. Vale a pena
+      observando que se você estiver usando a ação Random ( Número Aleatório) Obtenha um número ale atório para gerar um valor decimal aleatório e depois chamando esta ação para arredondá-lo para cima, então você poderá obter resultados inesperados. A ação aleatória
+      e usando o "Ceil", isso não dará 1, mas 0, então se você conseguir um decimal aleatório de 0 a 9 e usar essa função, você pode esperar obter números inteiros de 1 a 10, mas na realidade você pode obter números inteiros de
+      0 a 10. Esta é uma possibilidade remota, mas deve ser levada em consideração ao utilizar esta ação.
+    Piso: Isto pegará um valor decimal e o arredondará para o valor inteiro mais próximo. Ao contrário do arredondamento (acima), isto não leva em consideração a parte decimal do valor, portanto um número como 5,999999999 ainda seria arredondado para baixo para
+      5.
+  
+  Uma vez selecionado o tipo de arredondamento, você deve fornecer o número a ser arredondado (isto pode ser uma variável), e então dar uma variável alvo para retornar o novo valor inteiro (que pode ser marcado como uma variável local temporária).
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Arredondamento
+        O tipo de arredondamento a ser usado para obter o inteiro (ver descrição acima)
+      
+      
+        Número
+        O número decimal a arredondar para um número inteiro
+      
+      
+        Meta
+        A variável alvo para armazenar o inteiro retornado
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima toma um valor decimal e o converte em um número inteiro,
+    armazenando o valor retornado em uma variável local temporária. Este valor é então transformado em um fio e atraído para a tela.
+   
+   
+   
+  
+    
+      
+        Voltar: Tipo de dados Ações
+        A seguir: String To Number
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

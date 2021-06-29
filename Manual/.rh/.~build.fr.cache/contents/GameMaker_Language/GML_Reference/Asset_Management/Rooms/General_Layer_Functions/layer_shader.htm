@@ -1,0 +1,49 @@
+
+  
+  layer_shader
+  Com esta função você pode atribuir um recurso de sombreamento a qualquer camada e a camada será então renderizada usando esse sombreador. Você fornece ou o valor de identificação único da camada ou o nome da camada (como uma string - isto terá um impacto no desempenho).
+    junto com a identificação do sombreador a ser usado. O shader deve ter sido criado anteriormente no Asset Browser e o índice do shader (o nome do recurso shader ) é então passado para esta função. Se a camada atribuída tiver instâncias adicionadas a ela, então
+    o shader será aplicado a todos os eventos de sorteio que a instância utilizar - por exemplo, se a instância tiver um evento Draw GUI Begin, então o shader será aplicado automaticamente a ele. O sombreador também afetará quaisquer outros elementos gráficos desenhados
+    sobre essa camada, como bens de duende ou mapas de azulejos.
+  Observe que a função não se destina a ser chamada em nenhum evento de sorteio ou evento de etapa, mas apenas no início da sala no Código de Criação de Sala ou no Criar Evento / Evento de Início de Sala de uma instância.
+   
+  Sintaxe:
+  layer_shader(layer_id, shader)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada a ser alvo (ou o nome da camada como uma corda)
+      
+      
+        shader
+        O índice de sombreamento a ser atribuído à camada
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var lay_id = layer_get_id("Instâncias"); layer_shader(lay_id, shd_Sepia);
+  O código acima atribuirá o recurso sombreador "shd_Sepia" à camada dada para todos os desenhos.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próximo: layer_get_script_begin
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

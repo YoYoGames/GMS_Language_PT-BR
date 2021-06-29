@@ -1,0 +1,47 @@
+
+  
+  layer_sprite_alpha
+  Esta função controla o alfa (transparência) do duende na camada do ativo. Você dá a identificação do elemento sprite (que você obtém quando cria um elemento sprite usando layer_sprite_create() ou quando você usa
+    a função layer_sprite_get_id()), e então definir o valor alfa a ser usado. O alfa pode ser entre 0 (totalmente transparente) e 1 (totalmente opaco) com o valor alfa padrão para o elemento sprite sendo 1. Nota
+    que se a camada à qual o elemento sprite foi atribuído não for visível - ou o próprio elemento tiver sido tornado invisível - você não verá nenhuma diferença com esta função até que a camada ou elemento tenha sido tornado visível novamente.
+   
+  Sintaxe:
+  layer_sprite_alpha(sprite_element_id, alpha);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sprite_element_id
+        O valor de identificação único do elemento sprite a mudar
+      
+      
+        alfa
+        O alfa para duende sprite, de 0 a 1 (padrão é 1)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var lay_id = layer_get_id("Asset_sky"); var spr_id = layer_sprite_get_id(lay_id, "Clouds"); layer_sprite_alpha(spr_id, random(1));
+  O código acima obtém o valor de identificação do ativo sprite chamado "Clouds" atribuído à camada "Asset_sky" e então define seu alfa para um valor aleatório entre 0 e 1.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de Sprite
+        Próximo: layer_sprite_x
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

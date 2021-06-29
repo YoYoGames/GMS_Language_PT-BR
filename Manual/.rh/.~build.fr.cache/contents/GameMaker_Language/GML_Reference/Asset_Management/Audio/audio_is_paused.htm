@@ -1,0 +1,47 @@
+
+  
+  audio_is_paused
+  Esta função verificará o som dado para ver se ele está em pausa no momento. O som pode ser uma única instância de um som (o índice de sons individuais que estão sendo reproduzidos pode ser armazenado em uma variável ao usar o audio_play_sound() ou
+    audio_play_sound_at() funções) ou um bem sonoro, em cujo caso todas as instâncias do som dado serão verificadas e, se alguma delas for pausada, a função retornará verdadeira de outra forma
+      retornará falso.
+   
+  Sintaxe:
+  audio_is_paused(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do som a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if audio_is_paused(snd_Waterfall) {
+     audio_resume_sound(snd_Waterfall);
+     }
+  
+  O código acima verifica se o som indexado na variável "snd_Waterfall" está atualmente pausado e se ele retorna verdadeiro, então a reprodução do som será retomada.
+   
+   
+   
+  
+    
+      
+        Voltar: Áudio
+        Próximo: audio_create_stream
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

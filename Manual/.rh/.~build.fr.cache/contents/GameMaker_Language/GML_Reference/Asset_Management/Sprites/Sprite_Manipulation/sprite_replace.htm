@@ -1,0 +1,83 @@
+
+  
+  sprite_replace
+  Esta função funciona quase exatamente da mesma maneira que sprite_add()Só que, em vez de devolver o índice do duende que você está importando, ele sobrescreve um índice de duende criado anteriormente. Ao usar o
+    esta função você deve usar um índice sprite que foi criado e armazenado em uma variável usando outras funções como sprite_add() ou  sprite_create_from_surface(),
+    ou mesmo sprite_duplicate()em vez de um bem de um duende de árvore de recursos. Você pode substituir um duende dos recursos do jogo usando esta função, mas fazer isso significa que
+    você perderá o ID de referência para o duende que você está substituindo, independentemente de chamar o game_restart() ou não, e por isso não é recomendado. Independentemente do duende ser substituído, esta função criará uma nova página de textura para o duende e
+    portanto, deve-se ter cuidado ao utilizá-lo, pois pode afetar negativamente o desempenho ao aumentar o número de trocas de textura necessárias para a renderização.
+  O arquivo de imagem a ser carregado deve estar sempre no formato *.png e todas as imagens a serem transformadas em sprites animados devem ter um formato "strip" (veja a imagem abaixo).
+    Elas serão divididas no número de sub-imagens especificadas seguindo a regra largura do sprite = largura da tira / sub imagens.
+  
+  Como você pode ver na imagem acima, o duende foi colocado sobre um fundo roxo escuro, e isto pode ser removido colocando o argumento "removeback" em realidade. Isto funciona verificando o píxel inferior esquerdo 
+    do duende para a cor ali e depois a utiliza como cor a ser removida. Por exemplo, na imagem acima, se tivéssemos a cor do píxel inferior esquerdo como verde, todas as partes verdes do duende teriam sido removidas e o restante do píxel roxo
+    histórico ignorado.
+  Se você escolher a opção "removeback", você também pode querer que o GameMaker Studio 2 suavize as bordas do duende definindo o argumento "suave" como verdadeiro. Tudo o que isso faz é criar
+    uma borda semi-transparente ao redor das bordas do duende depois de ter tido seu fundo removido.
+  Finalmente, você também pode especificar a origem x e y para o duende. Este é o ponto onde o duende é "fixo" na instância que o utiliza, e é sempre calculado em relação ao canto superior esquerdo 0,0
+    de uma subimagem sprite. Assim, por exemplo, um duende de 32 x 32 pixels com estes valores definidos para (16,16) terá sua origem no centro.
+  Por padrão, todos os novos sprites têm suas caixas de delimitação calculadas automaticamente (a caixa exata dependerá do tamanho e da transparência do sprite), entretanto você pode querer personalizar isso, nesse caso você também deve usar a função     sprite_collision_mask().
+  NOTA: Dependendo da plataforma de destino escolhida, você está limitado quanto ao local de onde pode salvar e carregar arquivos. Consulte Manuseio de arquivos para mais informações.
+  NOTA: Você deve estar ciente de que se você estiver usando esta função em seu jogo HTML5 para carregar recursos de um servidor externo, então, devido à proteção XSS em navegadores, tentativas de carregar recursos de vários domínios podem ser bloqueadas e podem
+    parecem retornar resultados em branco.
+   
+  Sintaxe:
+  sprite_replace(ind, fname, imgnumb, removeback, smooth, xorig, yorig);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do duende a ser substituído permanentemente.
+      
+      
+        fname
+        O nome do arquivo da imagem para fazer o novo duende.
+      
+      
+        imgnumb
+        O número de armações que o duende será cortado na horizontal. 1 = uma única imagem / *.gif.
+      
+      
+        remover
+        Indica se todos os pixels com a cor de fundo (píxel inferior esquerdo) devem ser transparentes.
+      
+      
+        smooth
+        Indica se é necessário suavizar as bordas.
+      
+      
+        xorig
+        A coordenada x da origem, relativa ao canto superior esquerdo do duende.
+      
+      
+        yorig
+        A coordenada y da origem, relativa ao canto superior esquerdo do duende.
+      
+    
+  
+   
+  Devoluções
+  N/A
+   
+  Exemplo:
+  sprite_replace(spr_banner, "gravemaker.png", 1, falso, falso, 0, 0);
+  O código acima substituirá o ativo de imagem indexado em "spr_banner" por outro carregado a partir de uma fonte externa.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação de Sprite
+        Próximo: sprite_duplicate
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

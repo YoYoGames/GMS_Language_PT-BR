@@ -1,0 +1,30 @@
+
+  
+  novo
+  O novo operador pode ser usado para criar uma estrutura com uma função que é chamada com os argumentos dados. A função pode então preencher a estrutura com variáveis a partir dos argumentos - assim como o evento de criação de uma instância irá definir a estrutura inicial.
+    variáveis para a instância - e então o novo operador devolverá a estrutura. Antes de utilizar este operador é importante notar que a função dada deve ser sinalizada como uma função construtora, caso contrário o novo operador não criará a estrutura (o exemplo de código abaixo mostra isto, e para maiores informações, por favor veja a página sobre Estruturas).
+  NOTA: Você pode verificar uma estrutura para descobrir qual função foi usada para criá-la usando a função de tempo de execução instância de().
+  Este operador tem a seguinte sintaxe:
+  <variável> = novo <função> (<argumento>, <argumento>, ...);
+  Quando você utiliza o novo operador junto com uma função, ele retornará uma referência estrutural que é armazenada na variável dada, permitindo que você acesse a estrutura e quaisquer variáveis que foram criadas dentro dela pela função.
+  O exemplo a seguir mostra uma função que foi definida para ser usada como construtor:
+  função init_struct(_a, _b, _c) construtor {
+     a = _a; b = _b; c = _c; }
+  
+  Esta função pode então ser usada junto com o novo operador para criar uma estrutura e preenchê-la com as variáveis definidas para os valores dos argumentos usados na função, como esta:
+  mystruct = novo init_struct(10, 100, "Olá Mundo");
+  É importante notar que a chamada de novas funções que não tenham sido marcadas como construtor causará uma exceção detempo de execução.
+   
+   
+  
+    
+      
+        Voltar: Características lingüísticas
+        Próximo: apagar
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

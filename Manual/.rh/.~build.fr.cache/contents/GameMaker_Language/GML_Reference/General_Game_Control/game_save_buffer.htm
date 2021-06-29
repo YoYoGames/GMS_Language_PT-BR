@@ -1,0 +1,47 @@
+
+  
+  jogo_save_buffer
+  Esta é uma variante do game_save() Por isso, leia primeiro sua página, pois ela contém informações importantes relacionadas ao seu uso e também a esta função.
+  Com esta função você pode salvar o estado atual do jogo para um buffer "grow" previamente criado (ver Buffers) que pode então ser carregado novamente a qualquer momento usando jogo_load_buffer()    função. Esta função é projetada para uso em uma única sala de cada vez (ou seja: não é aconselhável fazer um buffer salvo em uma sala, depois tentar carregar o buffer de outra) e deve ser usada idealmente apenas para pontos de controle ou reinícios de nível.
+  NOTA: Esta função é muito limitada e foi projetada para que o iniciante tenha um sistema de ponto de verificação funcionando rapidamente, mas os usuários mais avançados podem preferir codificar seu próprio sistema usando as funções de Arquivo,
+    devido ao fato de que o jogo não irá salvar nenhum dos recursos dinâmicos como estruturas de dados, superfícies, sprites adicionados, etc.
+   
+  Sintaxe:
+  game_save_buffer(buffer);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        A identificação do buffer a ser guardado.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se keyboard_check_pressed(ord("S")) {
+     global.Checkpoint = verdadeiro; game_save_buffer(save_buff);
+     }
+  
+  O código acima definirá uma variável global como verdadeira e então salvará o estado atual do jogo para o buffer indexado na variável "save_buff" quando a tecla "S" for pressionada.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle geral do jogo
+        Próximo: game_get_speed
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

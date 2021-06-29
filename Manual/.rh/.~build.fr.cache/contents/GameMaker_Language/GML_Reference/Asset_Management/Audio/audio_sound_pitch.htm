@@ -1,0 +1,56 @@
+
+  
+  audio_sound_pitch
+  Esta função pode ser usada para mudar o tom de um determinado som. O som pode ser referenciado a partir de um índice para um som individual que está sendo tocado e que foi armazenado em uma variável ao usar o audio_play_sound() ou 
+    audio_play_sound_at() ou um ativo real do Navegador de Ativos. Se for um índice de um som tocado, então somente essa instância será alterada, entretanto, ao usar um ativo sonoro do Navegador de Ativos, todos
+      Outras instâncias sendo tocadas desse som serão alteradas.
+  O argumento do pitch é um multiplicador de pitch, na medida em que o valor de entrada multiplica o pitch atual por esse valor, de modo que o valor padrão de 1 não é alteração do pitch, enquanto um valor inferior a 1 irá diminuir o pitch e maior que 1 irá
+    levantar o passo. É melhor usar pequenos incrementos para esta função, pois qualquer valor abaixo de 0 ou acima de 5 pode não ser audível de qualquer forma. Vale notar que a mudança total de inclinação permitida é fixada em (1/256) - 256 oitavas, de modo que qualquer valor acima ou abaixo de
+    isto não será registrado.
+  OBSERVAÇÃO: O valor fixado acima é o que o GameMaker Studio 2 tenta fixar o intervalo, mas este valor não é garantido em todas as plataformas alvo. iOS, por exemplo,
+    (1/256) - 8, então você pode precisar experimentar em cada plataforma alvo e ter diferentes versões de um recurso sonoro, cada uma pré-alinhada, caso você precise de valores de oitava mais altos ou mais baixos.
+   
+  Sintaxe:
+  audio_sound_pitch(index, pitch);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do som a mudar.
+      
+      
+        tom
+        O multiplicador de passo (padrão 1).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var s_engine = audio_play_sound(snd_CarEngine, 10, false); switch (gear) {
+     caso 1: audio_sound_pitch(s_engine, 0.8); pausa; caso 2: audio_sound_pitch(s_engine, 0.9); pausa; caso 3: audio_sound_pitch(s_engine, 0.95); pausa; caso 4: audio_sound_pitch(s_engine, 1); pausa; caso 5: audio_sound_pitch(s_engine, 0.95),
+    1.2); pausa; }
+  
+  O código acima mudará o tom do áudio reproduzido a partir do som indexado na variável "s_engine", com base no valor da variável "gear".
+   
+   
+   
+  
+    
+      
+        Voltar: Áudio
+        Próximo: áudio_sound_get_pitch
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

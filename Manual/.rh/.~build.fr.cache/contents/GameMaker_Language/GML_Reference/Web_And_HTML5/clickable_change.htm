@@ -1,0 +1,56 @@
+
+  
+  clickable_change
+  Com esta função você pode mudar o sprite e a posição de um ícone clicável previamente criado com clickable_add(). Observe que a posição é baseada na janela, não na lona, (0,0) posição
+    e que o duende deve ser referenciado diretamente da página de textura (ver: sprite_get_tpe()).
+   
+  Sintaxe:
+  clickable_change(index, tpe, x, y)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do ícone clicável para mudar.
+      
+      
+        tpe
+        A entrada da página de textura para o duende a ser utilizado.
+      
+      
+        x
+        A nova posição x dentro da janela.
+      
+      
+        y
+        A nova posição y dentro da janela.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  interruptor (sala) {
+     caso rm_Menu: clickable_change(global.Help_Icon, sprite_get_tpe(spr_MS_Help, 1), 32, 32); pausa; caso rm_Game: clickable_change(global.Help_Icon, sprite_get_tpe(spr_MS_Help, 0), 200, 32); pausa; }
+  
+  O código acima mudará o índice de imagem e a posição do ícone clicável indexado na variável "global.Help", dependendo da sala atual.
+   
+   
+   
+  
+    
+      
+        Voltar: Web e HTML5
+        Próximo: clickable_change_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

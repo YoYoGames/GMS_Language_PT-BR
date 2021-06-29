@@ -1,0 +1,45 @@
+
+  
+  esqueleto_aparelhagem_esqueleto
+  Um duende de animação esquelético pode ter outros sprites adicionados como anexos, com esses sprites sendo adicionados a um slot nomeado (o nome é dado quando você cria o slot anexo em seu programa de animação) e eles serão desenhados junto com a animação
+    do duende atual. Com esta função você pode obter o nome (como um fio) do acessório para o slot dado do duende atualmente atribuído. Observe que os sprites anexados são referenciados através de sua cadeia de nomes, conforme atribuído na coluna vertebral, ou
+    quando você ligou para esqueleto_criar_aplicação().
+   
+  Sintaxe:
+  esqueleto_esqueleto_esqueleto(ranhura);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ranhura
+        O nome da ranhura (um fio) para obter a fixação de.
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  if skeleton_attachment_get("slot_leftHand") == "" {
+     skeleton_attachment_set("slot_leftHand", choose("sword", "spear", "knife")); }
+  
+  O código acima verificaria o nome do anexo atualmente atribuído para o slot chamado "slot_leftHand" e se uma cadeia vazia for devolvida, um novo sprite é anexado.
+   
+   
+   
+  
+    
+      
+        Voltar: Anexos:
+        Próximo: conjunto_esqueleto_de_encaixe
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

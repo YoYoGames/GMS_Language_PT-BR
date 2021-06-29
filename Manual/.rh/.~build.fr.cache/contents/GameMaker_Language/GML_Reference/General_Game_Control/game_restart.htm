@@ -1,0 +1,37 @@
+
+  
+  jogo_restart
+  Com esta função, você pode reiniciar o jogo. Isto é essencialmente o mesmo que executar o jogo pela primeira vez e assim o Evento de Início do Jogo será acionado, assim como o Evento de Fim do Jogo. Entretanto, deve-se observar que certas coisas não serão reiniciadas quando esta função for chamada:
+  
+    As variáveis globais não serão reinicializadas a menos que sejam explicitamente codificadas como tal - por exemplo, a pontuação da variável global incorporada não começará a zero após um reinício do jogo, se já tiver sido modificada no jogo.
+    O estado da GPU não será alterado (portanto, se você tiver definido a cor do sorteio ou alfa, por exemplo, ela permanecerá no valor alterado).
+    A velocidade do jogo permanecerá no que quer que você tenha definido em seu código de jogo (se você o alterar, esta alteração será perpetuada).
+    Qualquer ativo do Navegador de Ativos que tenha sido alterado em tempo de execução dentro do jogo - por exemplo, se você alterar a origem de um recurso sprite ou mudar a posição de um recurso do caminho - não será redefinido.
+    Recursos dinâmicos como tampões, superfícies, estruturas de dados ou sprites importados também não serão limpos ou removidos (embora você possa perder referências a eles, portanto tenha cuidado ao usar esta função para usar referências globais para o recurso dinâmico,
+      ou para limpá-los antes que a função seja chamada).
+    
+  
+  Sintaxe:
+  game_restart();
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se teclado_check_pressed(ord("R")) jogo_restart();
+  Isto reiniciaria o jogo quando o jogador pressionasse a tecla "R".
+   
+   
+   
+  
+    
+      
+        Voltar: Controle geral do jogo
+        Próximo: game_load
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

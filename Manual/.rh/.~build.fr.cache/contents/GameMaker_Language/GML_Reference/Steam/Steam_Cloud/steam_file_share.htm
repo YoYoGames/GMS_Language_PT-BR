@@ -1,0 +1,45 @@
+
+  
+  steam_file_share
+  Com esta função, você pode forçar seu jogo a sincronizar o arquivo dado com a Nuvem de Vapor. Isto não é normalmente necessário devido ao fato de que o jogo se sincronizará automaticamente no final da sessão do jogador, nem é recomendado
+    por Vapor, mas pode ser útil para garantir que as informações sensíveis sejam sincronizadas imediatamente. A função retornará um valor 0 se falhar por qualquer razão e um valor maior que 0 se for bem sucedida.
+   
+  Sintaxe:
+  steam_file_share(filename);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome do arquivo
+        O nome do arquivo é sincronizado.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  if !steam_file_persisted("Save.txt") {
+     steam_file_share("Save.txt");
+     }
+  
+  O código acima verificará se um arquivo foi armazenado no Steam Cloud, e se não o tiver, então o sincronizará.
+   
+   
+   
+  
+    
+      
+        Voltar: Nuvem devapor
+        Próximo: steam_file_delete
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

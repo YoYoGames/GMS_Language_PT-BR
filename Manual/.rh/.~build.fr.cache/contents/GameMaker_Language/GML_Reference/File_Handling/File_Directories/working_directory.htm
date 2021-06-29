@@ -1,0 +1,38 @@
+
+  
+  diretorio_de_trabalho
+  O Working_directory pode realmente retornar dois valores diferentes, dependendo para o que você está usando-o. Se você estiver escrevendo um arquivo em disco, o working_directory aponta para a área de armazenamento local que é reservada para seu jogo no alvo
+    (no windows este é o "%LOCALAPPDATA%/gamedir/" onde o " gamedir " é o diretório com o nome de seu jogo). Entretanto, ao ler a partir do disco, o diretório working_directory pode ser o armazenamento local ou a área onde os arquivos incluídos são armazenados.
+  NOTA: A variável working_directory retornará o caminho incluindo a contrabarra final.
+  Por exemplo, se você tiver um arquivo *.txt padrão incluído com seu jogo e lê-lo na memória usando o diretório working_directory, então esse arquivo será retirado da área onde os arquivos incluídos são armazenados. Se você optar então por escrever esse
+    informações em um arquivo de texto usando o working_directory, isto escreverá o arquivo no armazenamento local das plataformas de destino, onde será lido da próxima vez a menos que você instrua o GameMaker Studio 2 a excluir o arquivo, neste caso o working_directory apontará novamente para a área onde os arquivos incluídos são armazenados.
+  Vale notar que , em geral, não é necessário usar isto e simplesmente chamar o nome do arquivo (mais qualquer informação adicional do caminho) é suficiente, por exemplo, isto:
+  file_text_open_read(directório_de_trabalho + "my_file.txt");
+  seria melhor fazer assim:
+  file_text_open_read("my_file.txt");
+  ADVERTÊNCIA! Esta função pode não funcionar como você espera devido ao GameMaker Studio 2 ser lixado! Consulte a seção sobre o Sistema de Arquivos para maiores informações.
+   
+  Sintaxe:
+  diretorio_de_trabalho
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  ini_open(directório_de_trabalho + "temp_ini.ini");
+  Isto abrirá um arquivo ini do diretório de trabalho do jogo (criando-o se ele ainda não existir). Este pode ser o armazenamento local, ou a área onde os arquivos incluídos estão, dependendo se o arquivo que está sendo procurado existe em qualquer um dos lugares.
+   
+   
+   
+  
+    
+      
+        Voltar: Diretórios de arquivos
+        Próximo: program_directory
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

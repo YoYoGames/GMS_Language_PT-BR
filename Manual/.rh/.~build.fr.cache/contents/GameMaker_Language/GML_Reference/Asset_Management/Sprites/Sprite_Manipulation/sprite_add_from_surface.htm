@@ -1,0 +1,76 @@
+
+  
+  sprite_add_from_surface
+  Esta função funciona exatamente da mesma forma que sprite_create_from_surface() somente em vez de criar um novo duende da área da superfície indexada que você seleciona, ele
+    adiciona a área definida da superfície como uma nova subimagem a um duende previamente criado (isto significa que você não pode adicioná-la diretamente a um duende da árvore de recursos, mas apenas a um duende criado anteriormente a partir de uma superfície, ou a um duende que tenha sido duplicado
+    de um duende de recursos usando sprite_duplicate()).
+  Deve-se observar que a memória utilizada ao adicionar um duende desta forma será maior do que se espera. Isto porque o GameMaker Studio 2 irá armazenar o duende como uma página de textura e 
+    também será armazenada na memória GPU, portanto, a memória total será maior do que o esperado para um arquivo de imagem do mesmo sprite.
+   
+  Sintaxe:
+  sprite_add_from_surface(index, surface, x, y, w, h, removeback, smooth);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do sprite para adicionar a nova imagem.
+      
+      
+        superfície
+        O índice da superfície a partir da qual se obtém a imagem.
+      
+      
+        x
+        A posição x para copiar de.
+      
+      
+        y
+        A posição y para copiar de.
+      
+      
+        w
+        A largura da área a ser copiada (a partir da posição x).
+      
+      
+        h
+        A altura da área a ser copiada (a partir da posição y).
+      
+      
+        remover
+        Indica se todos os pixels com a cor de fundo (píxel inferior esquerdo) devem ser transparentes.
+      
+      
+        smooth
+        Indica se é necessário suavizar as bordas.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  spr_custom = sprite_create_from_surface(surf, 0, 0, 32, 32, true, true, 16, 16); var i; for (i = 1; i < 8; i +=1) {
+     sprite_add_from_surface(spr_Custom, surf, i, 0, 32, 32, true, true, 16, 16); }
+  
+  O código acima cria um sprite da superfície indexada na variável "surf", atribuindo seu índice à variável "spr_Custom", e então usa um laço para se mover através da superfície e capturar
+    várias seções que são adicionadas ao sprite como sub-imagens.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação de Sprite
+        Próximo: sprite_collision_mask
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

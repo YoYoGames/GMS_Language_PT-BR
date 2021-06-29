@@ -1,0 +1,47 @@
+
+  
+  room_get_camera
+  Com esta função você pode obter a identificação de índice única da câmera atribuída a uma visão específica em uma sala que não seja a atual. Você dá a sala a usar, a porta de visualização a usar (de 0 a 7) e a função retornará um índice de câmera.
+   
+  Sintaxe:
+  room_get_camera(rm, vind);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        rm
+        O índice da sala para obter a visão da câmera de
+      
+      
+        vind
+        O índice da porta de visão para obter a câmera de
+      
+    
+  
+   
+  Devoluções:
+  Real (Índice de câmeras)
+   
+  Exemplo:
+  var cam = room_get_camera(rm_Game, 0); if cam != global.MainCam {
+     room_set_camera(rm_Game, 0, global.MainCam); }
+  
+  O código acima atribui uma câmera em uma sala recém-criada para visualizar a porta [0].
+   
+   
+   
+  
+    
+      
+        Voltar: Quartos
+        Próximo: room_first
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

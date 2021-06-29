@@ -1,0 +1,43 @@
+
+  
+  sprite_get_bbox_top
+  Esta função retorna a posição relativa da parte superior da caixa delimitadora do duende. Este valor é dado como um valor relativo baseado no canto superior esquerdo do ativo sprite básico sendo (0,0). é o mesmo valor que pode ser encontrado no editor sprite
+    para as propriedades da máscara de colisão. A imagem abaixo mostra como ela é calculada:
+  
+   
+  Sintaxe:
+  sprite_get_bbox_top(ind);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do sprite a ser verificado.
+      
+    
+  
+   
+  Devoluções
+  Real
+   
+  Exemplo:
+  var ww, hh; ww = sprite_get_bbox_left(sprite_index) - sprite_get_bbox_right(sprite_index); hh = sprite_get_bbox_bottom(sprite_index) - sprite_get_bbox_top(sprite_index);
+  O código acima calcula a largura e a altura da máscara de colisão com base nas posições laterais relativas da caixa de delimitação.
+   
+   
+   
+  
+    
+      
+        Voltar: Informações Sprite
+        Próximo: sprite_get_bbox_mode
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

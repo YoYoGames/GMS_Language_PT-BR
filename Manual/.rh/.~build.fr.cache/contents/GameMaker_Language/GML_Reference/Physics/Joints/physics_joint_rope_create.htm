@@ -1,0 +1,79 @@
+
+  
+  physics_joint_rope_create
+  Uma junta de corda é aquela que é usada para unir duas instâncias que você quer manter uma distância constante, não importa que outras forças estejam agindo sobre ela. Com uma junta à distância, você pode obter "alongamento da junta", onde as duas fixações se separarão
+    e se comportar de forma estranha deve ser colocada muita tensão na junta, porém a junta de corda não o faz e não vai se esticar além do comprimento máximo definido. Quando se cria uma junta de corda, as duas instâncias já devem ser criadas e
+    ter uma fixação atribuída, então você define os dois pontos de ancoragem nas coordenadas da sala. O primeiro ponto de ancoragem é conectado à instância 1, o segundo ponto de ancoragem é conectado à instância 2 e a distância e o argumento do comprimento máximo define o máximo
+    restrição de comprimento na junta. A imagem abaixo mostra como isto funciona:
+  Como você pode ver, os pontos de ancoragem são especificados como coordenadas da sala, portanto é preciso ter cuidado ao definir
+    especialmente se as instâncias estão sendo criadas ao mesmo tempo que as juntas, em vez de serem colocadas na sala através do editor da sala. Você também deve perceber que as articulações são criadas independentemente do tamanho do duende das instâncias.
+    ou as luminárias que eles anexaram. Portanto, se você criar uma junta de corda em outro lugar que não seja a origem da instância, ela ainda é válida e restringirá as duas instâncias em relação à posição em que foi criada. Se você definir o "col
+    as duas instâncias podem interagir e colidir uma com a outra, mas somente se tiverem eventos de colisão, no entanto, se for definido como falso, elas não irão colidir, não importa o que aconteça.
+   
+  Sintaxe:
+  physics_joint_rope_create(inst1, inst2, w_anchor1_x, w_anchor1_y, w_anchor2_x, w_anchor2_y, maxlength, col)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        inst1
+        A primeira instância para se conectar com a junta
+      
+      
+        inst2
+        A segunda instância para se conectar com a junta
+      
+      
+        w_anchor1_x
+        A primeira coordenada x para a articulação, dentro do mundo do jogo
+      
+      
+        w_anchor1_y
+        A primeira coordenada y para a articulação, dentro do mundo do jogo
+      
+      
+        w_anchor2_x
+        A segunda coordenada x para a articulação, dentro do mundo do jogo
+      
+      
+        w_anchor2_y
+        a segunda coordenada y para a articulação, dentro do mundo do jogo
+      
+      
+        maxlength
+        O comprimento máximo que a junta pode "esticar
+      
+      
+        col
+        Se as duas instâncias podem colidir (verdadeiras) ou não (falsas)
+      
+    
+  
+   
+  Devoluções:
+  Inteiro (índice da junta)
+   
+  Exemplo:
+  var mainFixture, o_id; mainFixture = physics_fixture_create(); physics_fixture_set_circle_shape(mainFixture, sprite_get_width(sprite_index) / 2); o_id=instance_create_layer(x+300, y, "Instances", obj_Rudder); physics_fixture_bind(mainFixture_bind(mainFixture),
+    id); physics_fixture_bind(mainFixture, o_id); physics_joint_rope_create(id, o_id, x + 50, y, o_id.x - 50, o_id.y, 300, 0); physics_fixture_delete(mainFixture);
+  
+  O código acima cria e define uma nova fixação e depois cria uma instância de "obj_Rudder". A fixação é então atribuída à instância que está executando o código, assim como a recém-criada e é criada uma junta de corda entre elas.
+    Finalmente, a fixação é apagada, pois não é mais necessária.
+   
+   
+   
+  
+    
+      
+        Voltar: Juntas
+        A seguir: physics_joint_wheel_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

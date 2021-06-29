@@ -1,0 +1,47 @@
+
+  
+   Obter dados de azulejos na célula
+  Com esta ação você pode obter os dados de uma célula de azulejo em uma camada de mapa de azulejo. Os dados do azulejo são simplesmente um valor que reflete o índice do azulejo junto com os valores de virar, espelhar e girar,
+    bem como qualquer máscara de azulejo personalizada que você tenha usado. Com esta ação, você primeiro fornece a camada a ser alvo usando o nome da camada (um fio), como definido no editor da sala, e depois a coluna e linha da camada do mapa de azulejos para obter os dados do azulejo.
+    para. A "célula" é a área na grade do mapa de azulejos que contém o azulejo do qual você deseja obter os dados, então se seus azulejos são 16x16, por exemplo, e a sala é 1024x768 o mapa de azulejos terá 64 colunas e 48 filas.
+  NOTA: A camada selecionada deve ter sido definida como uma camada de mapa de azulejos no editor da sala, caso contrário, você poderá receber erros.
+  O valor retornado será então armazenado na variável de destino que pode ter sido criada anteriormente ou pode ser uma nova variável temporária (se você marcar a caixa de seleção "Temp"). Para mais informações sobre os dados dos azulejos, consulte a seção GML sobre Funções do Mapa de Azulejos.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Camada
+        A camada para obter a telha de
+      
+      
+        Coluna
+        A coluna (da esquerda para a direita) da célula
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima passa por cada célula de ladrilho na sala, recupera
+    os dados do azulejo para a célula, espelha-o, e em seguida, define a célula novamente.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações em telhas
+        A seguir: Transformação de dados de azulejos
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

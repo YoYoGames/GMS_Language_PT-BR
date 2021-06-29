@@ -1,0 +1,100 @@
+
+  
+  Vapor
+  Este evento só pode ser acionado por ligações de retorno dealguns dos
+    as funções Steam API e retornará um Mapa DS armazenado na variável async_load,
+    contendo diferentes pares chave/valor, dependendo da função de retorno de chamada da função que desencadeou o evento. O mapa sempre conterá a chave "event_type" que pode então ser analisada para encontrar o tipo de função
+    que acionou o evento e alterou o código necessário para adequá-lo.
+  Ao chamar qualquer função que acione este evento, ele gerará um valor de identificação único, que deve ser armazenado em uma variável e verificado, já que o mapa de assimetria_carga sempre conterá uma chave de identificação que você pode então analisar e garantir que você está respondendo
+    para o evento correto. De fato, o mapa sempre terá as seguintes chaves, independentemente da função Vapor utilizada para gerar a resposta assimétrica:
+  
+    "id" - A identificação assimétrica retornada pela função que acionou o evento
+    "result" - O resultado da operação (um valor real). Este será ou a constante GML ugc_result_success ou algum outro número real. Você deve verificar esta constante para garantir
+      que a chamada foi bem sucedida, e se outro valor for devolvido, algo não funcionou corretamente. O resto dos valores possíveis retornados são mostrados como resultado do valor Vapor "EResult" e você deve
+      ver steamclientpublic.h nos cabeçalhos do SDK para todos os valores possíveis.
+    "event_type" - Uma cadeia denotando o tipo de evento (veja abaixo os detalhes)
+  
+   
+  Carregamento de dados
+  Ao utilizar as funções Steam para carregar um quadro de líderes ( steam _upload_score() ou steam_upload_score_buffer())
+    o mapa DS devolvido terá os seguintes pares chave/valor:
+  
+    "event_type" - Esta chave terá o valor "leaderboard_upload"
+    "post_id" - Esta chave deve corresponder ao valor de identificação retornado pela função de chamada de upload
+    "lb_name" - Esta chave contém o nome do quadro de líderes que foi afixado em
+    "success" - Será 1 se o cargo for bem sucedido, 0 falhou
+    "updated" - Será 1 se a pontuação do quadro de líderes foi realmente atualizada (ou seja: a nova pontuação foi melhor) ou 0 caso contrário
+    "score" - Esta chave contém a pontuação que foi publicada
+  
+  Você pode ver exemplos disso nas páginas para as funções de carregamento de partituras.
+   
+  Descarregamento de quadros de liderança
+  Ao utilizar as funções Steam para baixar um quadro de líderes (steam_download_scores(), steam_download_scores_around_user() ou
+    steam _download_friends_scores()) o mapa DS devolvido terá os seguintes pares chave/valor:
+  
+    "event_type" - Esta chave terá o valor "leaderboard_download"
+    "id" - Esta chave deve corresponder ao valor de identificação retornado pela função de chamada de download
+    "status" - O status da ligação de retorno, onde -1 é igual a um fracasso ou que nenhum resultado foi devolvido, e 0 é igual a um sucesso.
+    "lb_name" - Esta chave contém o nome do quadro de líderes que foi afixado em
+    "numEntries" - O número de "filas" de dados do quadro de líderes que estão sendo devolvidos.
+    "entries" - Uma cadeia de objetos JSON que contém outro mapa DS, que conterá ou a chave "default" (significando que nenhum resultado está contido dentro) ou a chave "
+      entries ", da qual você poderá então obter o valor de. Este valor retornado para "entries" será uma lista DS contendo cada uma das classificações do quadro de líderes, onde cada entrada da lista fará referência a outro DS Map que conterá as chaves "name", "score" e ".
+      rank ", e também poderá conter uma chave "data", dependendo da função utilizada para o upload.
+  
+  Mostraremos um exemplo de como funciona o download de dados de pontuação, solicitando a classificação dos dez primeiros colocados para um determinado quadro de líderes e analisando seus resultados no Evento Steam Async (para exemplos de upload, consulte as páginas de funções apropriadas). Para começar com
+    precisamos solicitar as pontuações com o seguinte código:
+  score_get = vapor_download_scores("Game Scores", 1, 10);
+  Isto enviará uma solicitação ao Steam Server para os resultados do quadro de líderes "Game Scores", armazenando a identificação assimétrica da solicitação na variável "score_get". Isto será então tratado no eventoSteam Async da seguinte maneira:
+  var async_id = ds_map_find_value(async_load, "id"); if async_id == score_get { var entries = ds_map_find_value(async_load, "entries");  var map = json_decode(entries); se ds_map_exists(map, "default") { ds_map_destroy(map); exit; }  else { var list = ds_map_find_value(map, "entries"); var len = ds_list_size(list); var entry; for(var i =
+    0; i < len; i++;)  { entry = ds_list_find_value(list, i ); steam_name[i] = ds_map_find_value(entry, "name"); steam_score [i]= ds_map_find_value(entry, "score"); steam_rank[i]
+    = ds_map_find_value(entry, "rank"); if (ds_map_exists(entry, "data")) { var data = ds_map_find_value(entry, "data")); var buffId = buffer_base64_decode(data); var message = buffer_read(buffId, buffer_string); show_debug_message( " -- mensagem anexada: " + string(message)); buffer_delete(buffId); }  ds_map_destroy(entry); }  ds_list_destroy(list) }  ds_map_destroy(map) }
+  O que fazemos aqui é primeiro verificar a chave "id" do mapa especial de assimetria_carga. Se este valor for o mesmo que o valor da função de retorno de chamada original (armazenado no "score_get").
+    ), então continuamos a processar os dados. A primeira coisa que fazemos é analisar o async_load DS Map para a chave "entries" que conterá um objeto JSON contendo o leaderboard
+    dados. Este objeto do JSON é então decodificado (ver json_decode()) como outro mapa DS, e este novo ID de mapa é armazenado no
+    variável "map".
+  Este mapa é verificado para a chave "default" e se esta for encontrada, então o mapa é destruído e o evento é encerrado. Se não for encontrada a chave "default", o código então analisará o
+    para extrair as informações necessárias sobre o quadro de líderes, primeiro extraindo uma Lista DS da chave "entries" do Mapa DS, e depois percorrendo cada entrada da lista para obter outro Mapa DS com a chave " " do
+    name , score e rank de cada entrada. Estes valores são então armazenados em arrays e então verificamos se existe um adicional "data".
+    adicional. Se houver (ou seja: a pontuação foi carregada com um pacote de dados adicional), então também analisamos isso e enviamos para o console do compilador para depuração, antes de destruir o buffer e depois continuamos a destruir o mapa. Note que se o "
+    data " estiver incluída, ela precisa ser decodificada usando a chave buffer_base64_decode() função antes dela
+    pode ser lido corretamente.
+  Uma vez terminado o laço, a lista de entradas é destruída, assim como o mapa do qual foi tirada. Não há necessidade de destruir o mapa async_load DS, pois este é tratado para você pelo GameMaker Studio 2.
+   
+  Download de UGC (Conteúdo gerado pelo usuário)
+  Ao usar as funções de Vapor para baixar o Conteúdo Gerado pelo Usuário (UGC), uma série delas desencadeará este evento. Entretanto, cada função irá gerar um
+    async_load Mapa DS com diferentes pares de chaves/valores (embora eles sempre conterão os pares gerais "id", "result" e "event_type").
+      ), portanto, consulte a página específica da função que está sendo utilizada para detalhes e exemplos.
+   
+  Eventos exclusivos da UGC
+  O Evento Steam Async também pode ser acionado quando um usuário assina um item fora do jogo - por exemplo, eles se abrem para um navegador e assinam um novo item e depois se abrem de volta ao jogo. Nestes casos, o mapa async_load conterá apenas os seguintes detalhes (e nenhum dos valores padrão listados no topo desta página):
+  
+    "event_type" - Esta chave manterá a constante ugc_item_installed.
+    "published_file_id" - o ID do item UGC recém-instalado (você pode usar a função steam_ugc_get_item_install_info() para 
+      obter o caminho para o item instalado)
+  
+  O evento Steam Async também pode ser acionado quando um item do workshop é subscrito - seja de dentro do aplicativo, ou externamente de um navegador de workshop - e nestes casos o mapa async_load conterá a seguinte chave/valor
+    pares:
+  
+    "event_type" - Esta chave manterá a constante ugc_item_subscribed.
+    "published_file_id" : Esta chave tem o ID do arquivo publicado do item recém-assinado
+  
+  O evento será acionado caso qualquer item também não esteja inscrito, com o mapa DS segurando o seguinte:
+  
+    "event_type" - Esta chave manterá a constante ugc_item_unsubscribed.
+    "published_file_id" : Esta chave tem o ID de arquivo publicado do item não-subscrito
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Eventos Async
+        A seguir: Sistema
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

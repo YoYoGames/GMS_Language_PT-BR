@@ -1,0 +1,57 @@
+
+  
+  layer_sprite_create
+  Com esta função você pode atribuir um recurso sprite a uma camada a ser utilizada em seu projeto. Você fornece o ID da camada (que você obtém quando cria a camada usando layer_create() ou quando
+    você usa o nome da camada junto com layer_get_id()), uma posição dentro da sala, e um índice sprite (que seria o nome do sprite como mostrado no Navegador de Ativos), e ele irá
+    ser adicionado à camada. A função retorna o valor de identificação único para o elemento, que pode então ser usado em outras funções de camada para sprites.
+   
+  Sintaxe:
+  layer_sprite_create(layer_id, x, y, sprite)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada a ser alvo
+      
+      
+        x
+        A posição x a usar
+      
+      
+        y
+        A posição y a usar
+      
+      
+        sprite
+        O índice sprite a ser utilizado
+      
+    
+  
+   
+  Devoluções:
+  ID do elemento duende (Real)
+   
+  Exemplo:
+  global.asset_layer = layer_create(10000); for (var i = 0; i< 10; i++;) {
+     var _x = random(room_width); var _y = room_height - 100; global.asset_spr_trees[i] = layer_sprite_create(global.asset_layer, _x, _y, spr_Trees); }
+  
+  O código acima cria uma nova camada e depois adiciona 10 novos elementos sprite a ela, armazenando a identificação de cada elemento em uma matriz.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de Sprite
+        Próximo: layer_sprite_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

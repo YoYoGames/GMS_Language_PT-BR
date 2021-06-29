@@ -1,0 +1,104 @@
+
+  
+  animcurve_get_channel
+  Esta função retornará a estrutura contendo os dados do canal para o canal especificado em um ativo da curva de animação. Você fornece o ID ou estrutura da curva de animação, assim como o nome ou índice do canal,
+    e a função retornará uma estrutura com o seguinte formato:
+   
+  
+    
+      
+        Nome da variável
+        Tipo de dados
+        Descrição
+      
+      
+        nome
+        corda
+        Este é o nome do canal.
+      
+      
+        tipo
+        constante
+        Esta será uma das constantes animcurvetype_linear para interpolação linear entre pontos, ou animcurvetype_catmullrom para uma interpolação "suave" entre os pontos utilizando a interpolação catmull-rom.
+      
+      
+        iterações
+        inteiro
+        Se o canal estiver usando interpolação catmull-rom ("suave"), isso detém quantos pontos foram gerados para cada segmento da curva (observe que esses pontos extras são internos à função e usados apenas para os cálculos de tempo de execução).
+          Se o canal estiver usando interpolação linear, este valor ainda existirá, mas pode ser ignorado, pois não tem influência sobre como a curva é interpolada.
+      
+      
+        pontos
+        ponteiro da matriz
+        Esta é uma matriz, onde cada item da matriz é uma estrutura de pontos.
+      
+    
+  
+   O ID da curva de animação é o nome da curva de animação como foi definida no Navegador de Ativos, ou o ponteiro estrutural como retornado pela função animcurve_create(). O nome do canal é uma cadeia que
+    refere-se ao canal como foi definido no ativo Curva de Animação, ou você pode fornecer um valor de índice, que é de 0 a n, onde n é o último canal no ativo da curva (por exemplo: se uma curva de animação tiver 4 canais, eles serão indexados
+    de 0 a 3). Note que passar um valor de índice exigirá menos processamento do que passar em um nome de canal. Se a função falhar (ou seja: não existe nenhum canal com o nome ou índice dado), então você receberá um erro.
+  Os pontos em um único canal são armazenados como estruturas em uma matriz, onde cada item da matriz é uma estrutura de ponto único. A estrutura de pontos tem as seguintes variáveis:
+   
+  
+    
+      
+        Nome da variável
+        Tipo de dados
+        Descrição
+      
+      
+        posx
+        real
+        A posição no tempo (normalizada de 0 a 1) do ponto.
+      
+      
+        valor
+        real
+        O valor do ponto.
+      
+    
+  
+   
+   
+  Sintaxe:
+  animcurve_get_channel(curve_struct_or_id, channel_name_or_index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        curva_ou_e_extracto
+        O identificador ou ponteiro estrutural da curva de animação para o alvo
+      
+      
+        nome_do_canal_ou_index
+        O nome do canal (uma cadeia) ou o índice do canal (um número inteiro).
+      
+    
+  
+   
+  Devoluções:
+  Estrutura
+   
+  Exemplo:
+  var _channeldata = animcurve_get_channel(ac_ButtonTween, 0); var _points = _channeldata.points; for (var i = 0; i < array_length(_points); ++i;)  {
+     _points[i].valor += 1; }
+  
+  O código acima recupera a estrutura de canal para o canal 0 no ativo da curva "ac_ButtonTween", depois percorre os pontos da curva do canal e adiciona um ao seu valor.
+   
+   
+   
+  
+    
+      
+        Voltar: Curvas de Animação
+        Próximo: animcurve_channel_evaluate
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

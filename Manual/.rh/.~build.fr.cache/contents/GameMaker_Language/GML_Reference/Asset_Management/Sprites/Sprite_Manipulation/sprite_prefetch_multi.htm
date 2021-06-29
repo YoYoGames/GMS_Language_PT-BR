@@ -1,0 +1,46 @@
+
+  
+  sprite_prefetch_multi
+  Esta função pode ser usada para pré-fetar (colocar na memória de textura) um número de páginas de textura que contenham os sprites dados. Você fornece uma matriz preenchida com os índices de sprite (como definido quando você criou o ativo sprite) e as páginas de textura que
+    que estão ligados serão carregados na memória. Note que a função retornará -1 se o prefetch não for suportado para o recurso escolhido ou se a plataforma alvo for HTML5, ou retornará 0 se
+    tudo funcionou corretamente.
+  OBSERVAÇÃO: Há um golpe de desempenho quando a textura é carregada na memória de textura na maioria dos dispositivos, por isso é recomendável que você ligue para sprite_prefetch_multi() em
+    qualquer gráfico necessário no início de um nível para evitar qualquer barraca.
+   
+  Sintaxe:
+  sprite_prefetch_multi
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        matriz
+        Array com os índices de sprite para buscar
+      
+    
+  
+   
+  Devoluções:
+  Int (-1 ou 0)
+   
+  Exemplo:
+  spr_a[0] = spr_Player_Aura1; spr_a[1] = spr_Player_Aura2; spr_a[2] = spr_Player_Aura3; spr_a[3] = spr_Player_Aura4; sprite_prefetch_multi(spr_a);
+  
+  O código acima cria uma matriz onde cada elemento contém um índice sprite. Este array é então usado para colocar essas texturas sprite na memória.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação de Sprite
+        Próximo: sprite_index
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

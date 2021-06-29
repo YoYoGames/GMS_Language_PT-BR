@@ -1,0 +1,48 @@
+
+  
+  pontos_de_caminho
+  Com esta função você pode remover todas as definições de pontos de um caminho, fazendo efetivamente um caminho "vazio". Isto não elimina o caminho, para isso você deve usar caminho_delete(),
+    No entanto, deve-se notar que esta função muda o ativo do caminho real, e assim afetará permanentemente como o caminho é usado por todas as instâncias no jogo desde o momento em que a função é usada até o final do jogo. Se isto
+    não é o que você precisa, então você deve usar uma função como path_duplicate() para criar uma cópia do caminho primeiro, depois chamar essa função no ativo duplicado (não se esqueça de chamar
+    path_delete() sobre o bem quando este não é mais necessário).
+   
+  Sintaxe:
+  path_clear_points(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do caminho a ser percorrido.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if path_get_number(mypath) > 0 {
+     path_clear_points(mypath);
+     }
+  
+  O código acima verifica se há algum ponto no caminho indexado na variável "mypath" e, se houver, limpa o caminho.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação do caminho
+        Próximo: path_append
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

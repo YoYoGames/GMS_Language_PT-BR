@@ -1,0 +1,88 @@
+
+  
+  dados_físicos_particulados_get_data
+  Esta função retorna várias informações sobre cada partícula na simulação física usando as bandeiras verificadas. O buffer utilizado deve ter sido criado anteriormente usando a função buffer_create(),
+    e deve ser do tipo "crescer", com o tamanho aproximado do dos dados de retorno esperados. As bandeiras são definidas usando qualquer uma das constantes dadas abaixo, e você usaria o bitwise ou "|" para criar um único valor de bandeira para obter as informações desejadas.
+   
+  
+    
+      
+        Constante
+        Descrição
+        Tipo de dados
+      
+      
+        bandeiras tipo phy_particle_data_flag
+        O valor das bandeiras para a partícula.
+        buffer_u32
+      
+      
+        phy_particle_data_flag_position
+        A posição x e y da partícula.
+        2 x buffer_f32
+      
+      
+        phy_particle_data_flag_velocity
+        A velocidade horizontal e vertical.
+        2 x buffer_f32
+      
+      
+        phy_particle_data_flag_colour
+        A cor e o valor alfa (hexadecimal).
+        buffer_f32
+      
+      
+        phy_particle_data_category
+        A categoria de partícula (como definida quando você criou a partícula ou grupo ao qual ela pertence).
+        buffer_u32
+      
+    
+  
+   
+  Sintaxe:
+  physics_particle_get_data(buffer, flags)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O buffer (anteriormente criado) a ser usado para armazenar os dados.
+      
+      
+        bandeiras
+        As bandeiras a serem usadas para extrair dados sobre tipos específicos de partículas.
+      
+    
+  
+   
+  Devoluções:
+  Dados tampão
+   
+  Exemplo:
+  var count = physics_particle_count(); var flags = phy_particle_data_flag_position | phy_particle_data_flag_colour; if (contagem > 0) {
+     var buffer = buffer_create(count * 12, buffer_grow, 4); physics_particle_get_data(buffer, flags); for (var n = 0; n < count; n++;) {
+     var xx = buffer_read(buffer, buffer_f32); var yy = buffer_read(buffer, buffer_f32); var argb = buffer_read(buffer, buffer_u32); var alfa = (argb >> 24) & 255; draw_sprite_ext(sprBlob,
+    0, xx, yy, 1, 1, 0, c_green, alpha); }
+     buffer_delete(tampão);
+     }
+  
+  O código acima obtém o número de partículas e cria uma variável com as bandeiras de dados para verificar, depois verifica se há alguma partícula na sala. Se houver, um buffer é criado e então preenchido com os dados das partículas, que são verificados e
+    usado para desenhar um duende na posição de partícula.
+   
+   
+   
+  
+    
+      
+        Voltar: Partículas macias do corpo
+        A seguir: física_partícula_get_data_particle
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

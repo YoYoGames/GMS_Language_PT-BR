@@ -1,0 +1,46 @@
+
+  
+   Destruir emissor de partículas
+  Esta ação "destruirá" o emissor de partículas em questão, ou seja: liberará a memória utilizada pelo emissor de partículas. Você fornece o ID do sistema de partículas ao qual o emissor pertence (como retornado pela ação Criar Sistema de Partículas)
+    e, em seguida, a identificação real do emissor (como retornado pela ação Criar Emissor de Partículas). Esta ação deve ser chamada sempre que você não precisar mais de um emissor de partículas em seu jogo, ou sempre que você desejar recriar
+    o emissor de partículas (por exemplo, pouco antes de chamar um reinício do jogo). Note que se o sistema de partículas ao qual o emissor foi designado não foi marcado como Persistente, então você não precisa chamar esta ação,
+    pois o emissor será limpo automaticamente no final da sala junto com o sistema de partículas.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Sistema
+        O valor de identificação do sistema que contém o emissor
+      
+      
+        Emissor
+        O valor de identificação do emissor a destruir
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima irá verificar uma variável de instância e
+    se tiver mais de 100, destruirá o emissor designado para a instância e depois irá para a sala ao lado.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações com Partículas
+        A seguir: Emitir Partículas
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,70 @@
+
+  
+  draw_roundrect_ext
+  Com esta função você pode desenhar um contorno de um retângulo arredondado ou um retângulo arredondado preenchido onde a posição (x1,y1) é o canto superior esquerdo e a posição (x2,y2) é o canto inferior direito. Você também deve fornecer valores de raio para o
+    eixos x e y (em pixels) e os cantos serão arredondados por esses valores. Você pode definir o quão preciso é o desenho dos cantos com a função draw_set_circle_precision(). Por favor, note que
+    o retângulo a ser desenhado pode precisar de valores diferentes (+/-1 no x, y, ou largura ou altura) para ser desenhado com as dimensões desejadas devido às diferenças entre as várias plataformas suportadas.
+  NOTA: Se você quiser desenhar uma forma usando um sombreador, você deve estar ciente de que a maioria dos sombreadores espera as seguintes entradas: vértice, textura, cor. Entretanto, ao utilizar esta função, apenas os dados de vértice e cor estão sendo passados para dentro, e assim o
+   shader não pode desenhar nada (ou desenhar algo, mas não corretamente). Se você precisar desenhar formas desta maneira, então o sombreador deve ser personalizado tendo isto em mente.
+   
+  Sintaxe:
+  draw_roundrect_ext(x1, y1, x2, y2, xrad, yrad, esboço);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x1
+        A coordenada x do canto superior esquerdo do retângulo arredondado (como se fosse um retângulo normal).
+      
+      
+        y1
+        A coordenada y do canto superior esquerdo do retângulo arredondado (como se fosse um retângulo normal).
+      
+      
+        x2
+        A coordenada x do canto inferior direito do retângulo arredondado (como se fosse um retângulo normal).
+      
+      
+        y2
+        A coordenada y do canto inferior direito do retângulo arredondado (como se fosse um retângulo normal).
+      
+      
+        xrad
+        O raio da curva ao longo do eixo x a partir dos cantos retangulares.
+      
+      
+        yrad
+        O raio da curva ao longo do eixo y a partir dos cantos do retângulo.
+      
+      
+        esboço
+        Se o retângulo arredondado é desenhado preenchido (falso) ou como um contorno de um pixel de largura (verdadeiro).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var dist = point_distance(x, y, mouse_x, mouse_y) / 10; draw_set_colour(c_lime);
+     draw_roundrect_ext(x - 50, y - 50, x + 50, y + 50, dist, dist, 0);
+  Isto desenhará um retângulo arredondado preenchido com os cantos arredondados por uma quantidade baseada na posição do mouse em relação à instância que está fazendo o desenho.
+   
+   
+   
+  
+    
+      
+        Voltar: Formulários básicos
+        A seguir: draw_roundrect_colour_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

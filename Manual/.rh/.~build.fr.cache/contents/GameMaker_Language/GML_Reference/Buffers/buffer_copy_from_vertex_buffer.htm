@@ -1,0 +1,59 @@
+
+  
+  buffer_copy_from_vertex_buffer
+  Esta função pode ser usada para copiar alguns (ou todos) os dados de vértices armazenados em um buffer de vértices em um buffer regular previamente criado. Ao copiar de um buffer de vértices para um buffer regular com esta função, ambos os buffers devem ter sido previamente criados
+    criado (usando o vértice_criate_buffer() e buffer_create() funções, por exemplo). Você pode especificar a gama de dados de vértices que você
+    deseja copiar para o buffer, onde o vértice inicial pode estar entre 0 e o número de vértices -1, e você pode dar o número de vértices a partir desse ponto para copiar. Você pode usar a função vértice_get_number()    no buffer de vértices para obter o número total de vértices armazenados. Finalmente, você dá o índice do buffer para copiar os dados do vértice, bem como uma compensação de dados para definir a posição para copiar os dados do vértice no buffer de destino.
+   
+  Sintaxe:
+  buffer_copy_from_vertex_buffer(vertex_buffer, start_vertex, num_vertices, dest_buffer, dest_offset);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        vértice_buffer
+        O índice do buffer de vértices a partir do qual copiar.
+      
+      
+        start_vertex
+        O vértice inicial.
+      
+      
+        num_vertices
+        O número total de vértices a serem utilizados.
+      
+      
+        dest_buffer
+        O índice do buffer para o qual copiar.
+      
+      
+        dest_offset
+        A posição offset para copiar os dados para (em bytes).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var v_num = vertex_get_number(model_buffer); buffer_copy_from_vertex_buffer(model_buffer, 0, v_num - 1, player_buffer, 0);
+  O código acima copiará os dados de vértices armazenados no buffer de vértices indexado na variável "model_buffer", e depois os colará no buffer indexado na variável "player_buffer".
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: buffer_get_type
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

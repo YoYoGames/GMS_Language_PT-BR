@@ -1,0 +1,47 @@
+
+  
+  md5_string_utf8
+  Na criptografia, MD5 (Message-Digest algoritmo 5) é uma função de hash criptográfico amplamente utilizada com um valor de hash de 128 bits e tem sido empregada em uma grande variedade de aplicações de segurança. Também é comumente usado para verificar a integridade de arquivos e strings.
+    Esta função irá pegar uma string UTF-8 de entrada (que tem um número variável de bytes por caractere) e retornar o hash MD5 hexadecimal de 32 caracteres que é único para essa string. Desta forma, você pode gerar uma chave segura que pode ser armazenada e utilizada
+    para verificar a integridade das informações enviadas (ou recebidas de) um servidor externo (por exemplo).
+  NOTA: Há dois formatos para a codificação MD5, UTF-8 e unicode. Ambos são fornecidos para facilitar a comunicação com diferentes configurações de servidor, mas o mais comum a ser usado é unicode.
+  NOTA: O MD5 não é completamente seguro e pode ser quebrado. Veja esta página para mais informações.
+  Sintaxe:
+  md5_string_utf8(string)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        corda
+        O fio do haxixe.
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  var hash, str; str = json_encode(hiscore_map); hash = md5_string_utf8(str); ini_open("local.ini");
+     ini_write_string("info", "0", hash); ini_close();
+     get[0] = http_post_string("http://www.MacSweeney Games.com/CatchTheHaggis?game_hiscores=" + string(global.game_id), str)
+  O código acima codificará um mapa DS em uma cadeia JSON. Um hash MD5 é então gerado e armazenado em um arquivo ini para que este possa ser usado posteriormente para verificar a integridade do JSON caso as mesmas informações sejam recebidas posteriormente do servidor. O JSON
+    é então enviado.
+   
+   
+   
+  
+    
+      
+        Voltar: Codificação de arquivos
+        Próximo: md5_string_unicode
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

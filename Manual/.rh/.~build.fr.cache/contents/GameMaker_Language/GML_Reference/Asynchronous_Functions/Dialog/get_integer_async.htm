@@ -1,0 +1,57 @@
+
+  
+  get_integer_async
+  Esta função abre uma janela e exibe uma mensagem assim como um espaço para o usuário inserir um valor (que conterá o valor padrão fornecido para começar). Esta é uma função assíncrona, e como tal o GameMaker Studio 2 não bloqueia
+    o dispositivo em que está sendo executado enquanto espera por uma resposta, mas continua a executar eventos como de costume. Uma vez que o usuário tenha digitado sua seqüência e pressionado o botão "Ok", um Diálogo    evento é acionado que, somente durante a duração desse evento, terá um mapa DS armazenado na variável async_load.
+  Este mapa conterá as três teclas, " id"," status" e "value". id" é ovalor que foi retornadopela função quando chamada, o "status" será verdadeiro para o botão "Ok" sendo pressionado, ou falso se a mensagem foi cancelada (onde aplicável, pois nem todas as plataformas alvo permitem que as mensagens sejam canceladas). Finalmente, o "valor" retornará o número inteiro que o usuário inseriu.
+    como uma cadeia (uma cadeia vazia "" será devolvida se nenhuma entrada for dada).
+  NOTA: Esta função é  apenas para depuração e testee não deve ser usada em jogos lançados. Para isso, você deve criar uma interface de usuário personalizada para receber informações dos jogadores, para que você tenha controle total sobre a aparência e o comportamento dos diálogos.
+   
+  Sintaxe:
+  get_integer_async(string, default);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Cordão
+        A mensagem a ser mostrada no diálogo.
+      
+      
+        padrão
+        O valor padrão.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo ampliado:
+  O evento de pressão do mouse esquerdo (por exemplo) do objeto que está mostrando a mensagem teria o seguinte código:
+  msg = get_integer_async("Quantos anos você tem?", 0);
+  O acima mostrará uma mensagem solicitando que o usuário insira uma string e pressione "Ok". A identificação da função é armazenada na variável "msg" e será usada no evento de Diálogos Assíncronos, como mostrado abaixo:
+  var i_d = ds_map_find_value(async_load, "id"); if i_d == msg {
+     if ds_map_find_value(async_load, "status") {
+     global.Age = ds_map_find_value(async_load, "value"); }
+     }
+  
+  O código acima verifica achave" id" do Mapa DS retornado em relação ao valor armazenado na variável "msg". Se forem os mesmos, verifica se "Ok" foi pressionado (em vez de a janela ser
+    fechado/cancelado) e se retornar verdadeiro, então define uma variável global a partir do inteiro retornado.
+   
+   
+   
+  
+    
+      
+        Voltar: Diálogo
+        Próximo: show_message_async
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

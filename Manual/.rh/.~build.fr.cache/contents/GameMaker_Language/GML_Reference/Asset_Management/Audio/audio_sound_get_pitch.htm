@@ -1,0 +1,45 @@
+
+  
+  audio_sound_get_pitch
+  Esta função pode ser usada para obter o tom de um determinado som. O som pode ser referenciado a partir de um índice para um som individual que está sendo tocado e que foi armazenado em uma variável ao usar o audio_play_sound() ou
+    audio_play_sound_at() ou um ativo real do Navegador de Ativos.
+   
+  Sintaxe:
+  audio_sound_get_pitch(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do som para obter o tom de voz.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  if audio_sound_get_pitch(snd_Explode) != 1 {
+     audio_sound_pitch(snd_Explode, 1); }
+  
+  O código acima mudará o tom do áudio reproduzido do som indexado como "snd_Explode", se seu tom não for igual a 1.
+   
+   
+   
+  
+    
+      
+        Voltar: Áudio
+        Próximo: áudio_som_é_poca_de_audio
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

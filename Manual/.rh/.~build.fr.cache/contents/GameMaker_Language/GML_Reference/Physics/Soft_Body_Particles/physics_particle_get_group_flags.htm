@@ -1,0 +1,44 @@
+
+  
+  bandeiras_de_agrupamento_de_artigos_físicos
+  Com esta função você pode recuperar as bandeiras do grupo para um grupo de partículas. O valor do grupo é aquele que foi retornado quando você criou o grupo de partículas usando a função física_particle_group_end(),
+    e a função retornará um valor que é o valor combinado das bandeiras atualmente definidas.
+   
+  Sintaxe:
+  physics_particle_get_group_flags(grupo)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        grupo
+        O grupo de partículas a obter.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var flags = physics_particle_get_group_flags(group, flags); if flags != phy_particle_group_flag_solid | phy_particle_group_flag_rigid {
+     flags = phy_particle_group_flag_solid | phy_particle_group_flag_rigid; physics_particle_set_group_flags(group, flags); }
+  
+  O código acima criará uma variável para armazenar o valor das bandeiras e depois a utilizará para verificar as bandeiras do grupo indexado na variável "grupo". Se não forem as mesmas, o grupo é definido com estas bandeiras.
+   
+   
+   
+  
+    
+      
+        Voltar: Partículas macias do corpo
+        A seguir: physics_particle_group_get_inertia
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,59 @@
+
+  
+  draw_ellipse
+  Com esta função você pode desenhar um esboço de uma elipse ou uma elipse cheia, definindo uma área retangular que terá então a elipse criada para caber. Você pode definir quão preciso é o desenho com a função draw_set_circle_precision().
+  NOTA: Se você quiser desenhar uma forma usando um sombreador, você deve estar ciente de que a maioria dos sombreadores espera as seguintes entradas: vértice, textura, cor. Entretanto, ao utilizar esta função, apenas os dados de vértice e cor estão sendo passados para dentro, e assim o
+   shader não pode desenhar nada (ou desenhar algo, mas não corretamente). Se você precisar desenhar formas desta maneira, então o sombreador deve ser personalizado tendo isto em mente.
+   
+  Sintaxe:
+  draw_ellipse(x1, y1, x2, y2, esboço);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x1
+        A coordenada x da esquerda da elipse.
+      
+      
+        y1
+        A coordenada y da parte superior da elipse.
+      
+      
+        x2
+        A coordenada x da direita da elipse.
+      
+      
+        y2
+        A coordenada y do fundo da elipse.
+      
+      
+        esboço
+        Se a elipse é desenhada preenchida (falsa) ou como um esboço de um pixel de largura (verdadeiro).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_set_colour(c_white); draw_ellipse(100, 100, 300, 200, false);
+  Isto desenhará uma elipse cheia dentro da área retangular definida.
+   
+   
+   
+  
+    
+      
+        Voltar: Formulários básicos
+        Próximo: draw_ellipse_colour
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

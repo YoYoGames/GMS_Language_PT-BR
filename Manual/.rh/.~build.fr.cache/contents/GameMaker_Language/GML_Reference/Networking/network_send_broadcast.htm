@@ -1,0 +1,57 @@
+
+  
+  network_send_broadcast
+  Com esta função você pode transmitir os dados de um buffer localmente para uma gama de endereços IP (para mais informações sobre buffers veja Referência - Buffers). O alcance é limitado ao do dispositivo que executa o servidor,
+    de tal forma que se o dispositivo tiver um IP de 92.168.11.130, então os dados serão transmitidos na faixa de 92.168.11.*. A função retornará o número de bytes de dados enviados, ou um número inferior a 0 se o envio falhar.
+  NOTA: Esta função só funcionará quando usada com UDP - seu servidor precisa ser TCP e seu cliente precisa ter um soquete cliente UDP criado com network_create_socket_ext()    a fim de receber quaisquer transmissões enviadas do servidor.
+  OBSERVAÇÃO: Esta função não funcionará quando utilizada em um projeto em execução no alvo HTML5.
+   
+  Sintaxe:
+  network_send_broadcast(socket, port, buffer, tamanho);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        soquete
+        A identificação do soquete a ser utilizado.
+      
+      
+        porto
+        A porta que o servidor irá utilizar.
+      
+      
+        tampão
+        A identificação do buffer de onde obter os dados.
+      
+      
+        tamanho
+        O tamanho (em bytes) dos dados.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  buffer_seek(broadcast_seek_buffer, buffer_seek_start, 0); buffer_write(broadcast_buffer, buffer_string, global.ServerName); network_send_broadcast(server, 6511, broadcast_buffer, buffer_tell(broadcast_buffer));
+  O código acima escreve a seqüência de nomes do servidor atual (armazenado em "global.ServerName"), depois escreve-o em um buffer binário com o id "broadcast_buffer". Estes dados são então transmitidos localmente para uma gama de IPs (o IP do dispositivo é
+    atualmente implícita como a faixa de base de transmissão) para a porta 6511.
+   
+   
+   
+  
+    
+      
+        Voltar: Rede
+        Próximo: network_send_packet
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,50 @@
+
+  
+  camada_add_instância
+  Esta função pode ser usada para mover uma determinada instância da camada em que se encontra atualmente para outra camada. Você fornece o ID da camada (que você obtém quando cria a camada usando layer_create()) ou o nome da camada (como
+    uma cadeia - isto terá um impacto no desempenho) e a identificação da instância para se mover entre as camadas. Por exemplo, digamos que seu jogador está sobre uma camada que está a uma profundidade inferior a outra camada e você quer que ela apareça atrás das camadas entre
+    os dois. Você pode usar esta função para mudar o jogador da camada de primeiro plano para a camada de segundo plano e fazê-lo aparecer atrás das outras camadas que estão sendo desenhadas.
+  NOTA: Esta função não pode ser usada para adicionar uma nova instância a uma camada. Você deve ter criado a instância anteriormente e armazenado sua identificação em uma variável.
+  NOTA: Esta função só é válida dentro do escopo da sala atual e não pode ser usada quando o escopo tiver sido alterado usando a função layer_set_target_room().
+   
+  Sintaxe:
+  layer_add_instance(layer_id, instance_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada de instância a ser alvo (ou o nome da camada como um fio)
+      
+      
+        exemplo_id
+        O valor único de identificação da instância para passar para a camada alvo
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var near = instance_nearest(x, y, obj_Tree); var layer_id = layer_get_id("Instances Front"); layer_add_instance(layer_id, near);
+  O código acima obterá primeiro o índice da instância mais próxima à posição x/y dada e o armazenará em uma variável local. Em seguida, ele obtém a identificação única da camada da instância para a camada chamada "Instances Front", e move a instância encontrada para
+    essa camada.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próximo: camada_has_instance
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

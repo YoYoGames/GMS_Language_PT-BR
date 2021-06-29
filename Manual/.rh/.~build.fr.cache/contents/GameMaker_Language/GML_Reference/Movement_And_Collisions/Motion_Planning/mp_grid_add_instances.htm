@@ -1,0 +1,53 @@
+
+  
+  mp_grid_add_instances
+  Esta função usa a máscara de colisão da instância (decidida pelas propriedades do duende ou pelo índice de máscara da instância de chamada) para marcar células como proibidas ou não em uma grade MP, onde células proibidas não podem ser cruzadas por nenhuma das funções de busca de caminhos.
+    Você pode especificar na função se deve ou não considerar colisões precisas e as células proibidas marcadas mudarão dependendo desta configuração. Esta imagem ilustra este comportamento:
+  As duas instâncias acima foram adicionadas à grade MP usando a função mp_grid_add_instances() com a definição precisa como verdadeira. Como você pode ver, a instância verde apenas marcou os quadrados da grade que ela "toca" como proibido, devido ao fato de que sua máscara de sprite também está configurada com precisão. Entretanto, a segunda instância marcou outros
+    células também que não parecem ser tocantes. Isto porque a máscara do duende não é ajustada com precisão, o que significa que mesmo que você esteja usando o ajuste preciso na função, somente a caixa de delimitação do duende será considerada. Isto
+    é também o que aconteceria se você definisse o argumento preciso da função como falso - mesmo instâncias com uma máscara de duende precisa serão adicionadas à grade com base em suas caixas de delimitação.
+   
+  Sintaxe:
+  mp_grid_add_instances(id, obj, prec);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        Índice da rede mp_ que deve ser usada
+      
+      
+        obj
+        Índice de objetos, ou id de instância, das instâncias a serem adicionadas à rede mp_grid
+      
+      
+        prec
+        Se a verificação é baseada em colisões pixel-perfect (verdadeiro = lento) ou em sua caixa de delimitação em geral (falso = rápido).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  mp_grid_add_instances(grid, obj_Wall, true);
+  O código acima adicionará todas as instâncias de "obj_Wall" na mp_grid indexada na variável "grid" usando a máscara de colisão precisa em vez da caixa de delimitação.
+   
+   
+   
+  
+    
+      
+        Voltar: Planejamento de Movimento
+        Próximo: mp_grid_add_rectangle
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

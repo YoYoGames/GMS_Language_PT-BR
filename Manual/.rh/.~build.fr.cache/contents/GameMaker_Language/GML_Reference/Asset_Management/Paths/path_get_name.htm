@@ -1,0 +1,45 @@
+
+  
+  path_get_name
+  Esta função devolverá o nome do caminho que é referenciado como uma corda. O nome é o que tiver sido usado para definir o caminho no editor ou (se o caminho tiver sido criado através de uma função de código) ele retornará uma string com o formato "
+   _newpathXX" onde "XX" é o número do caminho gerado, começando em 0 e incrementando por um cada vez que um novo caminho é criado. Observe que este é apenas um
+      e não pode ser usado para referenciar o caminho diretamente - para isso você precisaria da identificação do índice do caminho. Você pode, entretanto, usar esta cadeia de caracteres para obter o ID do índice do caminho usando a cadeia de caracteres retornada ao longo do caminho.
+      com a função asset_get_index().
+   
+  Sintaxe:
+  path_get_name(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do caminho a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  path_name = path_get_name(path_array[0]);
+  Isto definirá "path_name" para o nome do caminho indexado no array dado na posição 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Caminhos
+        Próximo: Path_get_number
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

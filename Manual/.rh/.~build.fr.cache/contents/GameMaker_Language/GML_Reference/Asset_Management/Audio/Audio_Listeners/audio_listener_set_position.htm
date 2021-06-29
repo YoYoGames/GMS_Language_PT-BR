@@ -1,0 +1,60 @@
+
+  
+  audio_listener_set_position
+  Com esta função, você pode mudar a posição de um determinado ouvinte dentro do espaço de áudio 3D. O índice padrão do ouvinte é 0, mas você pode usar a função audio_get_listener_info() para
+    obter os diferentes índices disponíveis para a plataforma alvo. A imagem de exemplo abaixo mostra a posição padrão para o ouvinte no espaço de áudio:
+  Como você pode ver, a posição padrão é (0, 0, 0), mas você normalmente usaria esta função
+    para mover o ouvinte com o objeto do jogador dentro de seu jogo e assim mudar a maneira como o áudio criado pelos emissores é ouvido pelo jogador, por exemplo, na imagem abaixo de um jogo de cima para baixo, a instância do jogador define o ouvinte que causará
+    o áudio dos vários emissores para "mudar" à medida que o jogador se move pelo nível:
+  
+   
+  Sintaxe:
+  audio_listener_set_position(index, x, y, z);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O ouvinte para obter os dados para (padrão 0).
+      
+      
+        x
+        A posição x do ouvinte (padrão 0).
+      
+      
+        y
+        A posição y do ouvinte (padrão 0).
+      
+      
+        z
+        A posição z do ouvinte (padrão 0).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var _vmat = camera_get_view_mat(view_camera[0]); audio_listener_set_position(global.Player_Listener, _vmat[0], _vmat[1], _vmat[2]); audio_listener_set_orientation(info[? "index"], _vmat[3], _vmat[4], _vmat[5], _vmat[6], _vmat[7],
+    _vmat[8]);
+  O código acima recupera a matriz de visualização para visualização da câmera [0] e depois a utiliza para definir a posição e orientação do ouvinte de áudio com a identificação armazenada na variável global "Player_Listener".
+   
+   
+   
+  
+    
+      
+        Voltar: Ouvintes de áudio
+        Próximo: audio_listener_set_velocity
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

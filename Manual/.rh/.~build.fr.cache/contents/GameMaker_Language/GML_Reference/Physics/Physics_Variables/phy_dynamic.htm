@@ -1,0 +1,33 @@
+
+  
+  fitodinâmica
+  Uma instância dinâmica é aquela que é totalmente simulada dentro do mundo da física e esta variável somente de leitura retornará verdadeira se a instância sendo verificada for totalmente simulada ou falsa se não for
+   
+  Sintaxe:
+  fitodinâmica;
+   
+  Devoluções:
+  Booleano (ou indefinido se a instância não estiver habilitada para física)
+   
+  Exemplo:
+  if other.phy_dynamic {
+     com (outros) {
+     var dir; dir = point_direction(x, y, other.x, other.y); physics_apply_impulse(x, y, x + lengthdir_x(100, dir), y + lengthdir_y(100, dir)); }
+     }
+  
+  O código acima cria uma nova instância e depois a define como sendo uma "bala" no mundo da física antes de dar-lhe um impulso maciço ao longo do eixo y.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis Físicas
+        Próximo: fitocinemático
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

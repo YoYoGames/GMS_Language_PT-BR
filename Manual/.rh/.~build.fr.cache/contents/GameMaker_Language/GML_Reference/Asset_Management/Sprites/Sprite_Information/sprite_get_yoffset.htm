@@ -1,0 +1,45 @@
+
+  
+  sprite_get_yoffset
+  Quando você define um duende no editor do duende, você precisa definir a origem para esse duende. Este é o ponto em que o duende será "anexado" ou "desenhado" quando usado com uma instância. Esta função retorna o parente
+    offset para o eixo y da origem com base no canto superior esquerdo sendo a posição 0,0, com um +y sendo para baixo e um -y sendo para cima a partir daí. A imagem a seguir ilustra isto:
+  
+   
+  Sintaxe:
+  sprite_get_yoffset(índice);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do duende para encontrar o início do yoffset de.
+      
+    
+  
+   
+  Devoluções
+  Real
+   
+  Exemplo:
+  if y - sprite_get_yoffset(sprite_index) < 0 {
+     y = sprite_get_yoffset(sprite_index); }
+  
+  O código acima garantirá que uma instância seja mantida dentro da sala com base no duende (para que o duende esteja sempre visível).
+   
+   
+   
+  
+    
+      
+        Voltar: Informações Sprite
+        Próximo: sprite_get_bbox_bottom
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

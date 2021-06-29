@@ -1,0 +1,46 @@
+
+  
+  position_empty
+  Esta função verificará se uma determinada posição entra em colisão com qualquer instância com uma máscara de colisão válida na posição em questão.
+   
+  Sintaxe:
+  position_empty(x, y);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A posição x a ser verificada.
+      
+      
+        y
+        A posição y a ser verificada.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var xx, yy; xx = random(room_width); yy = random(room_height); if position_empty(xx, yy) {
+     instance_create_layer(xx, yy, "Bullets", obj_Bomb); }
+  
+  Isto verificará uma posição aleatória em algum lugar na sala para uma colisão e se não houver nenhuma, criará uma instância de obj_Bomba.
+   
+   
+  
+    
+      
+        Voltar: Colisões
+        Próximo: position_meeting
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

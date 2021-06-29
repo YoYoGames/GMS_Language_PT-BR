@@ -1,0 +1,62 @@
+
+  
+  O Perfilador
+  O Debugger permite que você passe por seu código e encontre quaisquer problemas com a base de código, mas às vezes você precisa verificar detalhes mais sutis a fim de otimizar adequadamente seus jogos. A opção Perfil ajuda a fazer exatamente isso, dando
+    você uma visão geral do desempenho, mostrando o tempo necessário para chamar funções, scripts e até mesmo quanto tempo levou para concluir um evento específico.
+  Além da janela principal mostrando todos os diferentes eventos, scripts e funções que estão sendo chamados, você também tem as seguintes opções para usar o
+    Profiler:
+  Habilitar / Desabilitar
+  
+    Este é o botão para ativar ou desativar o Profiler. Quando ativado, o profiler será iniciado e você começará a ver eventos, scripts e funções na janela principal juntamente com diferentes valores de dados para cada um deles. Como estes dados são exibidos
+      dependerá do Mostrador de Tempo e do Modo de Visualização (ambos explicados com mais profundidade abaixo).
+    
+  
+  Exibição do tempo
+  
+    Esta caixa de seleção permite alternar entre o tempo médio e o tempo absoluto para o perfilador. Quando não for verificado, os valores mostrados na janela principal serão o número total de chamadas feitas para o
+      função, roteiro ou evento e o tempo total gasto (os tempos são em microssegundos) ao longo do perfil. Entretanto, se você habilitar isto, então estas colunas mostram o tempo médio gasto por etapa para cada função,
+      script ou evento, e o número médio de vezes que ele foi chamado.
+    
+  
+  Modo de visualização
+  
+    Este menu permite que você escolha o modo de visualização, que pode ser Top Down ou Bottom Up.
+    Selecionando o modo de visualização de cima para baixo mostrará o perfil de cima para baixo (mais ou menos o mesmo que a hierarquia de calltack) para que ele mostre o evento, depois o roteiro e depois quaisquer funções utilizadas. Note que você pode clicar duas vezes em  em qualquer uma das entradas para que ele seja aberto na janela de depuração Source , se você
+      ter um. Se você vir um ícone  ao lado de um nome, então há mais chamadas de script ou de função dentro dele.
+      e clicando na seção  irá expandir a árvore para mostrá-los.
+    Selecionando o modo de vista de baixo para cima, as coisas serão mostradas de baixo para cima para que você possa ver todas as funções e chamadas de script individualmente. Ao usar este modo de visualização, clicando em , a função ou script será expandido para mostrar o que realmente lhe chamou.
+    
+  
+  Ver Alvo
+  
+    O View Target permite que você escolha entre visualizar o GML (evento e dados de código) do projeto, os processos do motor de fundo ou ambos. Se você escolher "GML", então você terá os eventos, funções e scripts sendo chamados
+      cada passo enquanto a visão "Motor" mostrará apenas as chamadas do motor exigidas pelo projeto, permitindo que você veja quaisquer gargalos na maneira como seu projeto está lidando com as coisas. Se você selecionar "Ambos", então ambos os conjuntos de dados
+      ser exibido, mas note que quando combinado com a visão "Bottom Up", as diferentes chamadas de script e funções serão aninhadas dentro das chamadas do motor e você precisará clicar no  para expandi-las para vê-las.
+    
+  
+   Os dados do perfil são mostrados em quatro colunas e, clicando em qualquer uma delas, os dados serão ordenados de acordo com o critério da coluna.
+  
+  
+    Nome: Este é o nome do evento, roteiro ou função que está sendo chamado, e pode ter um  ao lado para denotar mais chamadas para ele ou
+      a partir dele (dependendo do Modo de Visualização que você selecionou). Você pode clicar duas vezes em  em qualquer um dos nomes para que ele abra o bloco de código
+      ou roteiro dentro da janela Fonte. Clicando no topo desta coluna, os nomes serão ordenados em ordem alfabética.
+    Tempo: Isto mostrará ou o tempo total que uma função (ou roteiro ou evento) levou durante a definição do perfil, ou o tempo médio que levou cada passo a ser chamado (dependendo da opção de Exibição de Tempo selecionada) e é exibido em microssegundos.
+    Chamadas: Aqui você pode ver o número total de chamadas para um determinado evento, função ou roteiro, ou o número médio de chamadas para ele em uma única etapa (novamente, dependendo da opção de exibição de tempo 
+      selecionado).
+    Passo%: O valor mostrado aqui é a porcentagem geral de um único passo que a chamada deu.
+  
+   
+   
+   
+  
+    
+      
+        Voltar: O Depurador
+        A seguir: Relógios
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

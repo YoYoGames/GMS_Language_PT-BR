@@ -1,0 +1,47 @@
+
+  
+  instance_deactivate_layer
+  Com esta função você pode desativar todas as instâncias atribuídas a uma camada específica. Você precisa fornecer o ID da camada, que pode ser o nome da camada como escrito no editor de código (como uma string) ou o valor real do ID da camada como retornado.
+    pela layer_create()e observe que você só pode desativar camadas de instância com esta função. Note que se você desativou uma camada que tem instâncias de objetos
+    marcado como Persistente, então você precisará reativar a camada novamente com a função instance_activate_layer() antes do vestiário, caso contrário, qualquer instância persistente na camada
+   não serão transportados e serão descartados. Observe também que a desativação não é instantânea, e uma instância que tenha sido desativada desta forma não será considerada inativa até o final do evento em que a função foi chamada.
+  NOTA: Se você desativar uma instância no início da sala (ou seja: do código de criação da sala, ou de uma instância criar evento de uma instância dentro da sala) todas as instâncias que são colocadas dentro da sala do editor da sala ainda executarão seu evento de criação antes de serem desativadas.
+  AVISO: A desativação de instâncias que têm a física habilitada NÃO irá impedir que seus dispositivos interajam dentro da simulação física. Para isso, você deve definir seus phy_active variável
+    para verdadeiro ou falso à medida que você ativa/desativa as instâncias.
+   
+  Sintaxe:
+  instance_deactivate_layer(obj);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        camada
+        A cadeia de identificação da camada (ou valor) a ser usada
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  instance_deactivate_layer("Enemy Layer"); var _vx = camera_get_view_x(view_camera[0]); var _vy = camera_get_view_y(view_camera[0]);  var _vw = camera_get_view_width(view_camera[0]); var _vh = camera_get_view_height(view_camera[0]); instance_activate_region(_vx - 64, _vy - 64, _vw + 128, _vh + 128, false);
+  O código acima desativa todas as instâncias atribuídas à camada "Enemy_Layer" e depois ativa uma região dentro da sala.
+   
+   
+   
+  
+    
+      
+        Voltar: Desativação de Instâncias
+        A seguir: instance_activate_all
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,45 @@
+
+  
+  instance_activate_layer
+  Com esta função você pode ativar uma camada que tenha sido desativada anteriormente. Você precisa fornecer o ID da camada, que pode ser o nome da camada como escrito no editor de código (como uma string) ou o valor real do ID da camada como retornado.
+    pela layer_create() e todas as instâncias desativadas nessa camada serão ativadas mais uma vez. Note que se você desativou uma camada que tem instâncias persistentes, você irá
+    precisam reativar a camada novamente com esta função antes do vestiário, caso contrário, quaisquer instâncias persistentes não serão transportadas e serão descartadas. Note também que a ativação não é instantânea, e uma instância que tenha sido ativada
+    Desta forma, não será considerado ativo até o final do evento em que a função foi chamada.
+   
+  Sintaxe:
+  instance_activate_layer(layer_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        A cadeia de identificação da camada (ou valor) a ser usada
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  instance_activate_all(); var _vx = camera_get_view_x(view_camera[0]); var _vy = camera_get_view_y(view_camera[0]); instance_deactivate_region(view_xview[0] - 64, view_yview - 64, _vx + 128, _vy + 128, false, false); instance_activate_layer("Player_Layer");
+  
+  O código acima ativa todas as instâncias dentro da sala e depois desativa aquelas que estão fora dos limites da visão atual da câmera, exceto as instâncias na camada "Player_Layer" que são reativadas novamente no final.
+   
+   
+   
+  
+    
+      
+        Voltar: Desativação de Instâncias
+        Próximo: instance_deactivate_all
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

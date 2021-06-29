@@ -1,0 +1,54 @@
+
+  
+  esqueleto_animação_set_ext_sext
+  Quando você define um conjunto de animação para seu sprite de animação esquelética, é atribuída a ele a faixa 0 internamente. Entretanto, você pode atribuir outros conjuntos a outras pistas (1 e acima) e desta forma, fazer com que seu duende toque duas (ou
+    mais) animações ao mesmo tempo. Note que o sprite deveria ter sido projetado em seu programa de animação com isto em mente, de modo que a animação "base" na faixa 0 tenha apenas keyframes para certos ossos, enquanto as faixas seguintes têm keyframes
+    para os outros. Por exemplo, se você tiver uma animação "walk" e seus quadros-chave só afetam as pernas do duende, você pode então ter um conjunto de animações de cabeça e de braço que você pode definir nas faixas 1 e 2 respectivamente, permitindo
+    você tenha um movimento de base e se adapte nele em tempo real enquanto o jogo está sendo jogado.
+   
+  Sintaxe:
+  esqueleto_animação_set_ext(animname, pista);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        animname
+        O nome (uma cadeia) do conjunto de animação a ser utilizado.
+      
+      
+        faixa
+        A pista para o conjunto de animação a ser utilizado.
+      
+    
+  
+   
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if mouse_check_button(mb_left) {
+     skeleton_animation_set_ext("bodyfight", 1); }
+     mais
+     {
+     skeleton_animation_set_ext("bodywalk", 1); }
+  
+  O código acima mudará o conjunto de animação sendo usado pela faixa 1 para o conjunto "bodyfight" ou o conjunto "bodywalk" quando o botão esquerdo do mouse for pressionado.
+   
+   
+   
+  
+    
+      
+        Voltar: Animação
+        Próximo: esqueleto_animação_get_duração
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

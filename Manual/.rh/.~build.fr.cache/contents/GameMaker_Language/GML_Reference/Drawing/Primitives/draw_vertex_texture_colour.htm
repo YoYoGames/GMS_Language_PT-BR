@@ -1,0 +1,66 @@
+
+  
+  draw_vertex_texture_colour
+  Esta função define a posição de um vértice texturizado para um primitivo. O aspecto final do primitivo dependerá do tipo primitivo escolhido para desenhar (Veja draw_primitive_begin() para mais informações),
+    a ordem com que você adiciona os vértices, a posição dos pontos de início e fim que você dá para a amostra de textura e os valores de cor e alfa que você definiu. Para manter a aparência da textura enquanto muda apenas o alfa, um valor
+    de -1 (ou c_white) pode ser usado para o argumento da cor. Para terminar e desenhar o primitivo você deve chamar draw_primitive_end().
+  OBSERVAÇÃO: Para que uma textura se repita, deve ser uma potência de dois em tamanho, ou seja: 32x32, 128x128, etc...
+   
+  Sintaxe:
+  draw_vertex_texture_colour(x, y, xtex, ytex, col, alfa)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A coordenada x do vértice.
+      
+      
+        y
+        A coordenada y do vértice.
+      
+      
+        xtex
+        A coordenada x dentro da textura.
+      
+      
+        ytex
+        A coordenada y dentro da textura.
+      
+      
+        col
+        A cor a ser misturada com a textura neste vértice (-1 ou c_white para não misturar).
+      
+      
+        alfa
+        O alfa para desenhar este vértice com (0-1).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_set_colour(c_white); var tex = sprite_get_texture(spr_Background, 0); draw_primitive_begin_texture(pr_trianglestrip, tex); draw_vertex_tex_texture_colour(0, 0, 0, 0, c_fuchsia, 1); draw_vertex_texture_colour(640, 0, 1, 0, c_yellow,
+    1); draw_vertex_texture_colour(0, 480, 0, 1, c_aqua, 1); draw_vertex_texture_colour(640, 480, 1, 1, 1, c_lime, 1); draw_primitive_end();
+  
+  O código acima desenhará uma faixa triangular de 4 vértices (fazendo um retângulo) texturizada com a textura mantida na variável "tex", e toda a textura será usada para cobrir a primitiva completa, e será misturada com quatro cores diferentes.
+   
+   
+   
+  
+    
+      
+        Voltar: Primitivos e formatos de vértices
+        Próximo: vértice_format_begin
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

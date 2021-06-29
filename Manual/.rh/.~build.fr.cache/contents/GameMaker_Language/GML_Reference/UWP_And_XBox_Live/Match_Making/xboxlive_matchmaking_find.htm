@@ -1,0 +1,67 @@
+
+  
+  xboxlive_matchmaking_find
+  Esta função buscará uma sessão multi-jogador usando o modelo Session Template, o funil de matchmaking e o modelo Secure Device Association, que você deveria ter criado antes no painel do XDP. O ID de usuário que você pode recuperar para um determinado
+    chamando o xboxlive_user_for_pad() função. A função retornará um valor único de Request ID, que pode então ser usado para identificar o Evento Assíncrono Social correto para esta função. Este evento será acionado quando a sessão tiver sido criada e conterá um Mapa DS na variável async_load com o seguinte
+    pares chave/valor:
+  
+    "requestid" - contém a identificação do pedido conforme retornado pela função de chamada
+    "status" - contém a seqüência "session_created" para informá-lo sobre que tipo de evento foi acionado.
+    "num_resultados" - contém 1 ou mais se uma sessão tiver sido encontrada, caso contrário contém 0.
+    "sessionid<index>" - contém o ID da sessão, ou -1 em caso de falha (<index/gt; é um valor de 0 a "num_resultados" - 1).
+    "sessionOwner<index>" - contém o ID do anfitrião da sessão se uma sessão tiver sido encontrada (<index> é um valor de 0 a "num_resultados" - 1).
+    "erro" - contém 0 em caso de sucesso, ou -1 em caso de fracasso
+  
+   
+  Sintaxe:
+  xboxlive_matchmaking_find(user_id, template, hopper, sdatemplate, [matchattributes]);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        user_id
+        O ponteiro de identificação do usuário a ser usado
+      
+      
+        modelo
+        O nome do modelo de sessão
+      
+      
+        funil
+        O nome da tremonha de fósforos
+      
+      
+        sdatemplate
+        O nome do modelo de associação de dispositivos seguros
+      
+      
+        matchattributes
+        [OPTATIVA]
+      
+    
+  
+   
+  Devoluções:
+  Solicitar ID (número inteiro)
+   
+  Exemplo:
+  var userID = xboxone_user_for_pad(global.PadIndex); result = xboxone_matchmaking_find(userID, "MatchTicketSession", "MatchTicketHopper", "PeerServerTraffic");
+  O acima mencionado recuperará o ID do usuário para o usuário no gamepad dado e então tentará encontrar uma sessão de casamenteira para eles.
+   
+   
+   
+  
+    
+      
+        Voltar: Fósforos
+        Próximo: xboxlive_matchmaking_session_get_users
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

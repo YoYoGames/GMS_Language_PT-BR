@@ -1,0 +1,175 @@
+
+  
+  Biblioteca de ação de estrutura de dados
+  
+  Nos jogos, muitas vezes você precisa armazenar informações de forma precisa e ordenada. Por exemplo, você pode precisar armazenar listas de itens que uma pessoa carrega ou pode querer armazenar uma grade de lugares que ainda precisam ser visitados. Agora, você pode usar múltiplas variáveis
+    para isso, mas se você quiser fazer operações mais complicadas, como classificar os dados ou procurar por um item em particular, você precisa escrever grandes blocos de código de ação que podem ser lentos de executar, difíceis de depurar e uma verdadeira dor de escrever!
+  Para remediar isso, o GameMaker Studio 2 possui uma série de estruturas de dados embutidas que podem ser acessadas através de funções especializadas. Há quatro tipos diferentes de estruturas de dados disponíveis através de Drag and Drop (há seis se você usar GML),
+    cada um tendo seus próprios prós e contras dependendo do tipo de informação que você está procurando armazenar e como você deseja manipulá-la mais tarde - os quatro tipos são
+  
+    
+      
+        
+        Listas
+        Uma lista é uma estrutura de dados que armazena informações seqüencialmente à medida que são adicionadas. Os índices da lista começam em 0 e subirão para cada item que for adicionado ao final da lista, embora você também possa inserir dados em uma posição diferente da última. Ao contrário da estrutura Stack data (explicada abaixo), você pode acessar os dados de qualquer índice da lista a qualquer momento.
+      
+      
+        
+        Mapas
+        A estrutura de dados do mapa é excepcionalmente útil, pois permite armazenar chave e valor pares. Por exemplo, um personagem em seu jogo pode ter uma quantidade de diferentes itens (chaves) e para cada item individual ele pode ter um número deles (valores), como em um RPG onde você pode ter 10 poções de saúde, 5 poções de mana e 100 de ouro. Os mapas mantêm esses pares todos juntos em um só lugar e você pode adicionar pares ao mapa e procurar o valor correspondente a certas chaves, bem como usar algumas funções simples. Os mapas não são classificados de nenhuma forma (reconhecível), o que significa que para encontrar uma certa chave você pode ter que iterar através de tudo (o que é muito lento), e também não há como segurar duas chaves que são iguais, nem pode atribuir uma chave a dois valores.
+      
+      
+        
+        Grades
+        Uma grade é um conjunto bidimensional de valores onde você define sua largura e altura. Isso define o número total de "células" da grade dentro da grade (a largura e a altura multiplicadas) e essas células são então usadas para manter diferentes valores de dados, que podem ser qualquer um dos tipos de dados permitidos. Este tipo de estrutura permite definir e recuperar o valor das células da grade dando a posição x (coluna) e y (linha) da mesma (tanto as linhas como as colunas começam em 0 e vão até a largura da grade - 1 e a altura da grade -1). Ao acessar as estruturas de dados da grade, você deve sempre tentar usar valores inteiros para a posição da célula, e todos os índices não inteiros serão nivelados pelo GameMaker
+          Studio 2 se você não o fizer. Se não for isso que você precisa, então você mesmo terá que fazer o arredondamento antes de passar o índice que você deseja verificar.
+      
+      
+        
+        Pilha
+        Uma estrutura de dados em pilha é uma estrutura chamada LIFO (last-in-first-out). Você pode empurrar os valores para uma pilha e removê-los novamente, estalando-os da pilha, e o valor que foi empurrado na pilha mais recentemente é o primeiro a ser estalado dela novamente (basta pensar em uma pilha de moedas, onde cada moeda que você adiciona tem que ser removida novamente antes de você poder chegar ao resto das moedas abaixo). As pilhas são freqüentemente usadas quando há interrupções para manusear, ou quando há funções recursivas, ou mesmo quando se constrói uma IA rudimentar para seus jogos.
+      
+    
+  
+   
+  Essencialmente, todas as estruturas de dados funcionam da mesma maneira - Você cria uma estrutura de dados e armazena seu valor de índice em uma variável. Você então usa este índice para referenciar a estrutura de dados em todas as outras chamadas de função que podem realizar operações sobre ele. Finalmente,
+    uma vez terminado, você destrói novamente a estrutura de dados para removê-la da memória. Você pode usar tantas estruturas quantas forem necessárias ao mesmo tempo, e todas as estruturas podem armazenar tanto as cordas como os valores reais.
+  NOTA: Como acontece com todos os recursos dinâmicos, as estruturas de dados ocupam a memória e assim devem ser sempre destruídas quando não são mais necessárias para evitar vazamentos de memória, o que irá retardar e, eventualmente, quebrar seu jogo.
+  A biblioteca da Estrutura de Dados tem as seguintes ações:
+   
+  
+    
+      
+        
+        Criar lista
+      
+      
+        
+        Criar mapa
+      
+      
+        
+        Criar Grade
+      
+      
+        
+        Criar Pilha
+      
+      
+        
+        Estrutura de dados clara
+      
+      
+        
+        Estrutura de dados livre
+      
+      
+        
+        Adicionar à lista
+      
+      
+        
+        Remover da lista
+      
+      
+        
+        Obter Item da Lista em
+      
+      
+        
+        Obter índice do item da lista
+      
+      
+        
+        Inserir na lista
+      
+      
+        
+        Obter a contagem de itens da lista
+      
+      
+        
+        Definir valor do mapa
+      
+      
+        
+        Obtenha Valor do Mapa
+      
+      
+        
+        Remover entrada do mapa
+      
+      
+        
+        Definir valor da grade
+      
+      
+        
+        Obtenha o valor da grade
+      
+      
+        
+        Grelha clara
+      
+      
+        
+        Push Onto Stack
+      
+      
+        
+        Pilha Pop
+      
+      
+        
+        Se a estrutura de dados existir
+      
+      
+        
+        Se a estrutura de dados Esvaziar
+      
+    
+  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  
+    
+      
+        Voltar: Índice
+        A seguir: Ações tampão
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,47 @@
+
+  
+  Conquistas e estatísticas
+  O Steam Stats and Achievements API fornece uma maneira fácil para que seu jogo forneça resultados persistentes, de roaming e acompanhamento estatístico para seus usuários. Os dados do usuário estão associados à sua conta Steam, e as conquistas de cada usuário e
+    As estatísticas podem ser formatadas e exibidas em seu Perfil da Comunidade Steam.
+  Além de oferecer recompensas altamente valorizadas aos jogadores de seus jogos, as realizações são úteis para incentivar e recompensar o trabalho em equipe e a interação dos jogadores, proporcionando uma dimensão extra aos objetivos do jogo e recompensando os usuários por gastarem mais
+    de seu tempo dentro do jogo, e como tal é recomendado que seu jogo tenha alguns. Eles são facilmente montados a partir do Painel de Controle de Vapor, mas será necessário que você crie ícones especiais para eles.
+  As estatísticas rastreiam informações de granulometria fina, tais como tempo de jogo, número de power-ups utilizados, etc. Você pode optar por usá-las simplesmente para rastrear dados internos do jogo - para que, por exemplo, você possa conceder uma conquista baseada na jogabilidade multi-sessão.
+    estatísticas coletadas do usuário através de vários computadores. Ou, você pode rastrear dados interessantes do jogo para exibição na página da Comunidade Steam do usuário, onde os usuários podem comparar suas próprias estatísticas com as de seus amigos.
+  As estatísticas vêm em três tipos - inteiros, flutuadores e médias - e o GameMaker Studio 2 permite que você modifique cada um deles de seu jogo, mas eles deveriam ter sido
+    rubricado anteriormente do painel de controle da Steamworkspara seu jogo.
+  NOTA: Você deve esperar até steam_stats_ready() retornou verdadeiro, antes de tentar
+    ler ou escrever estatísticas e realizações.
+  Mais detalhes e instruções sobre como utilizar estatísticas e realizações podem ser encontrados nas páginas seguintes, descrevendo as funções:
+   
+  
+    vapor_set_achievement
+    steam_get_achievement
+    vapor_clear_achievement
+    vapor_set_stat_int
+    vapor_set_stat_float
+    vapor_set_stat_avg_rate
+    steam_get_stat_int
+    steam_get_stat_float
+    steam_get_stat_avg_rate
+    vapor_reset_all_stats
+    vapor_reset_all_stats_achievements
+  
+   
+  Se o usuário no modo off-line, o Steam mantém um cache local das estatísticas e dos dados de realização para que as APIs possam ser usadas normalmente. Quaisquer estatísticas que não possam ser comprometidas são salvas para a próxima vez que o usuário estiver online. No caso de haver
+    foram modificações em mais de uma máquina, Steam fundirá automaticamente as realizações e escolherá o conjunto de estatísticas que teve mais progresso. Como o Steam mantém um cache local de dados de estatísticas, não é necessário que o jogo também mantenha
+    um cache local dos dados em disco, especialmente porque tais caches muitas vezes entram em conflito e quando o fazem parece que o usuário reverteu seu progresso, o que é uma experiência frustrante.
+   
+   
+   
+  
+    
+      
+        Voltar: Vapor
+        A seguir: Nuvem devapor
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

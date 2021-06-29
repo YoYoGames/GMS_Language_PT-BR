@@ -1,0 +1,48 @@
+
+  
+  font_get_uvs
+  Esta função retorna uma matriz com as coordenadas UV para a textura da fonte na página de textura, preenchendo a matriz com os seguintes valores:
+  
+    [0] = esquerda
+    [1] = topo
+    [2] = direito
+    [3] = fundo
+  
+  Este valor pode então ser usado em outras funções de desenho, particularmente no desenho em geral, quando se utilizam os primitivos, bem como o Shader funções.
+   
+  Sintaxe:
+  font_get_uvs(font);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fonte
+        O índice da fonte a ser usada.
+      
+    
+  
+   
+  Devoluções:
+  Array
+   
+  Exemplo:
+  var tex = font_get_uvs(fnt_Main); tex_left = tex[0]; tex_top = tex[1]; tex_right = tex[2]; tex_left = tex[3];
+  O código acima armazenará as coordenadas UV para o fundo dado em uma matriz local e então atribuirá os valores às variáveis de instância.
+   
+   
+   
+  
+    
+      
+        Voltar: Fontes
+        Próximo: font_get_info
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,48 @@
+
+  
+  sprite_get_texture
+  Esta função retorna um ponteiro especial para a página de textura sprite. Este valor pode então ser usado em outras funções de desenho, particularmente nas funções primitivas 2D,
+    bem como o Shader funções. Você pode obter mais informações sobre a página de textura retornada usando as diferentes funções de textura_ encontradas aqui.
+   
+  Sintaxe:
+  sprite_get_texture(spr, subimg);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        spr
+        O índice do duende a ser utilizado.
+      
+      
+        subimg
+        A subimagem do duende a ser usada.
+      
+    
+  
+   
+  Devoluções
+  Ponteiro (identificação da página de textura)
+   
+  Exemplo:
+  var tex; tex = sprite_get_texture(spr_Wall, 0); draw_primitive_begin_texture(pr_trianglestrip, tex); draw_vertex_texture(0, 0, 0, 0, 0); draw_vertex_texture(480, 0, 1, 0); draw_vertex_texture(480, 640, 1, 1, 1); draw_vertex_texture(0,
+    640, 0, 1); draw_primitive_end();
+  
+  O código acima desenhará uma faixa triangular de 4 vértices texturizados com a textura mantida na variável "tex".
+   
+   
+   
+  
+    
+      
+        Voltar: Informações Sprite
+        Próximo: sprite_get_uvs
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,54 @@
+
+  
+  room_get_viewport
+  Com esta função você pode recuperar os detalhes de uma porta de visualização em uma sala que não seja a atual. Você dá o ID da sala e o índice da porta de visualização a ser recuperada (de 0 a 7) e a função retornará uma matriz de 5 índices, onde:
+  
+    [0] = visível (Booleano: verdadeiro / falso)
+    [1] = x posição (real)
+    [2] = posição y (real)
+    [3] = largura (real)
+    [4] = altura (real)
+  
+   
+  Sintaxe:
+  room_get_viewport(rm, vind);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        rm
+        O índice da sala para obter os dados do viewport
+      
+      
+        vind
+        O índice do porto de vista para obter
+      
+    
+  
+   
+  Devoluções:
+  Array (5 elementos: visível, x, y, largura, altura)
+   
+  Exemplo:
+  v_vals = room_get_viewport(rm_Game, 0); if v_vals[0] == falso {
+     room_set_view(rm_Game, true, v_vals[1], v_vals[2], v_vals[3], v_vals[4]); }
+  
+  O código acima recupera os dados da porta de visualização para a sala em questão e depois verifica se a porta está marcada como visível. Se não estiver, a visualização dos dados da porta é definida para torná-la visível.
+   
+   
+   
+  
+    
+      
+        Voltar: Quartos
+        A seguir: room_set_camera
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,131 @@
+
+  
+  Tipos de dados
+  Nas seções anteriores cobrimos variáveis e suas regras de escopo, mas pouco foi dito sobre os diferentes tipos de dados que uma variável pode armazenar. Portanto, esta seção explica os diferentes tipos de dados que podem ser armazenados por uma variável.
+    tipos e para que eles podem ser usados.
+  Antes de continuar, vamos apenas explicar brevemente o que queremos dizer com "tipos de dados". Quando você cria uma variável, ela pode ser usada para armazenar informações, e quando você chama uma função, ela também pode armazenar informações retornadas. No entanto, estas informações
+    pode vir em vários "sabores" - por exemplo, pode ser um número real ou pode ser um fio. Estes diferentes tipos de valores usados são chamados de tipos de dados e ao usar a linguagem GameMaker eles podem
+    ser qualquer uma das seguintes:
+   
+  Cordas
+  
+    Uma cadeia é simplesmente qualquer texto que tenha sido colocado entre aspas "...". Você pode realizar certas operações em cordas, como adicionar duas cordas juntas para criar uma cadeia mais longa (concatenação) e também pode alterar as propriedades da cadeia e até mesmo extrair números reais dela. Para mais informações sobre as cordas e as funções das cordas, veja: ReferênciaGML- Cordas.
+     
+  
+  Números reais
+  
+    Os números reais são qualquer valor que não seja uma cadeia, nem qualquer outro tipo de dados possível. Portanto, 124, 45639.566546456, 0, -45.5 etc... são todos exemplos de números reais. Todos os números reais são armazenados como valores de ponto flutuante de precisão dupla ou número inteiro.
+      (ou 32 bit inteiros - int32 - ou 64 bit inteiros - int64), e o compilador otimizará sempre que possível (por exemplo, 0,0 será otimizado para o valor inteiro de 0). Ao lidar com
+      com qualquer valor que não seja um número inteiro, você pode experimentar pequenos erros de arredondamento devido à natureza da matemática de ponto flutuante. Para maiores informações sobre esta e outras funções relacionadas a números, por favor, veja: ReferênciaGML- Funções Numéricas.
+    NOTA: No alvo HTML5, todos os números reais são duplas.
+    Note que enquanto as variáveis criadas no GameMaker Studio 2 são todas armazenadas como números de ponto flutuante de precisão dupla ou inteiros, você ainda pode usar outros formatos ao lidar com extensões. Estes podem ser passados para o GameMaker Studio 2 a partir de uma extensão
+      e depois verificada usando a função is_*() apropriada, uma lista da qual pode ser encontrada aqui.
+     
+  
+  Arrays
+  
+    Uma matriz é um tipo de dado especial que pode ser usado para conter vários valores. Você atribui o array a uma variável e depois "preenche" diferentes índices do array com valores. Este array pode então ser passado para scripts e funções em uma base de passagem por referência, entretanto, se você modificar o array passado, ele se tornará então uma cópia do array original e assim precisará ser retornado para a variável original para que o array seja atualizado. Para mais informações sobre arrays, por favor, veja: Visão geral doGML- Arrays.
+     
+  
+  Structs
+  
+    Uma estrutura (às vezes chamada de "objeto leve") é uma estrutura de dados brutos que atua como um recipiente para variáveis de todos os tipos de dados. Você atribui uma estrutura a uma variável e na estrutura você pode então definir outras variáveis e estas podem então ser lidas ou escritas conforme necessário. Para obter informações mais detalhadas sobre estruturas, consulte a seção GML Overview - Structs.
+     
+  
+  Método Variáveis
+  
+    Uma variável de método é uma variável que foi atribuída a uma função e pode ser usada exatamente da mesma forma que você usaria uma função de tempo de execução GML. Para informações mais detalhadas, consulte a seção Variáveis de método.
+     
+  
+  Valores hexadecimais
+  
+    OGameMaker Studio 2 poderá aceitar as literaturas hexadecimais como valores legítimos. Os valores hexadecimais são especialmente comuns quando se trabalha com cores, mas podem ser usados em qualquer lugar em que um valor inteiro positivo seja necessário. Note que os valores hexadecimais podem
+      ser formatado de uma das duas maneiras a seguir, onde <abcd> seria o valor hexadecimal real:
+    $< abcd> 0x<
+     abcd>
+    Por exemplo, os seguintes valores podem ser expressos como hexadecimais, conforme mostrado:
+    11406 = $2c8e = 0x2c8e 16777215 = $ffffffff = 0xffffffff
+     
+  
+  Booleano
+  
+    Um booleano é simplesmente um valor que pode ser verdadeiro ou falso. Note que atualmente o GameMaker Studio 2 interpretará um número real igual ou inferior a 0,5 como um valor falso, e qualquer número real maior que 0,5 como sendo verdadeiro.
+      Isto não significa, entretanto, que você deve verificar 1 e 0 (ou qualquer outro número real) para verdadeiro e falso, pois também lhe são fornecidas as constantes verdadeiro e falso que devem sempre ser usadas em seu código para
+      prevenir quaisquer problemas caso tipos de dados booleanos reais sejam adicionados em uma atualização futura.
+    Você pode converter qualquer número real em um valor implicitamente booleano usando a seguinte função:
+    
+      bool
+    
+     
+  
+  Apontador
+  
+    Um ponteiro é um tipo de dado que "aponta" para um local de memória. Você não pode fazer operações em um ponteiro e ele é usado apenas para algumas funções muito específicas, como obter uma textura ou endereço de buffer da memória para outra função. Para exemplos
+      de funções que devolvem um ponteiro que você pode ver buffer_get_address() ou sprite_get_texture().
+    Há também uma função para verificar se um valor é um ponteiro (ver "Verificação detipos de dados", abaixo) e uma função para converter um valor em um ponteiro:
+    
+      ptr
+    
+    Você também pode usar (e receber de volta) os seguintes itens construídos em constantes ao usar as indicações:
+     
+    
+      
+        
+          Constante
+          Descrição
+        
+        
+          pointer_null
+          Esta constante indica que o ponteiro não está apontando para nada significativo (o mesmo que NULL em C++ ou nulo em C#)
+        
+        
+          pointer_invalid
+          Esta constante significa simplesmente que o valor não é um ponteiro válido
+        
+      
+    
+     
+  
+  Enum
+  
+    Um enumero é um "enumerador", e permite essencialmente criar seu próprio tipo de dados limitado com uma lista de valores constantes. Os enumeros são explicados em profundidade na página de Constantes.
+     
+  
+  Indefinido
+  
+    Um valor indefinido (também conhecido como um valor "nulo") é aquele em que uma expressão não tem um valor correto, embora seja sintaticamente correta, e assim deve retornar algo. Por exemplo, digamos que você tenha um mapa DS e use a função ds_map_find_value(). Agora, o que acontece quando o mapa não tem o valor que está sendo procurado? Bem, como a função está formatada corretamente, e a questão é que o valor não existe, então ele retornaria a constante indefinida, e você pode verificar esta constante como verificaria o valor verdadeiro ou qualquer outro valor.
+     
+  
+  NaN
+  
+    NaN significa "não um número", e é uma constante que pode ser devolvida quando o compilador não pode avaliar os resultados de uma operação como um número. Por exemplo, 0/0 não pode ser definido como um número real, e portanto é representado por NaN, ou a raiz quadrada de um número negativo - que é considerada um número "imaginário" - não pode ser representada como um número real, e portanto é representada por NaN.
+     
+  
+  Infinito
+  
+    O infinito constante refere-se a um número que é considerado infinito, como o resultado que você obteria ao dividir qualquer valor de ponto flutuante por zero, por exemplo: 1,0/0.
+  
+   
+  Você pode verificar o tipo de dados de qualquer variável usando as funções listadas na página a seguir:
+  
+    Funções variáveis
+  
+  Você também pode encontrar aqui tabelas do tipo aritmético que mostram os resultados de diferentes operações usando tipos de dados variáveis mistas:
+  
+    Tabelas de tipo
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Visão geral daGML
+        A seguir: Palavras-chave de instância
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

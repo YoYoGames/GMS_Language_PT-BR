@@ -1,0 +1,53 @@
+
+  
+  ds_map_set
+  Com esta função, você pode definir o valor de uma chave dentro de um determinado mapa DS. Você fornece o valor do DS map ID (como retornado pela função ds_map_create()), então dê a chave que você quer definir e o valor para defini-la
+    para. As chaves podem ser inteiros ou cordas, e se a chave dada não existir, então ela será criada para você e definida para o valor. Esta função é a mesma que a de usar o DS map accessor para definir/criar um
+    par chave do mapa/valor. A função não retorna nada, portanto, se você precisar verificar se o valor da chave foi substituído ou se uma nova chave foi criada, então você deve usar a função ds_map_replace().
+   
+  Sintaxe:
+  ds_map_set(id, chave, valor)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação do mapa a ser utilizado.
+      
+      
+        chave
+        A chave para definir.
+      
+      
+        valor
+        O valor para o qual se deve definir a chave.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if is_undefined(ds_map_find_value(map, "score")) {
+     ds_map_set(mapa, "pontuação", 0); }
+  
+  O código acima verificará se a chave dada existe e se não existe, então ela é criada e definida.
+   
+   
+   
+  
+    
+      
+        Voltar: DS Maps
+        Próximo: ds_map_read
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

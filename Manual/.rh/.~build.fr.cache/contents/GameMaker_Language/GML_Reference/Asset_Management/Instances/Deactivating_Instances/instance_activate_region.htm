@@ -1,0 +1,61 @@
+
+  
+  instance_activate_region
+  Com esta função você pode definir uma região dentro da sala para ativar instâncias que tenham sido desativadas anteriormente. Esta região pode ser marcada como "dentro" ou "fora", conforme demonstrado na imagem a seguir:
+  Você pode ver na imagem acima que a instância "maçã" está sempre ativa
+    porque, mesmo que o duende em si não se sobreponha à região, a caixa delimitadora sim. Portanto, as instâncias são consideradas dentro da região especificada quando sua caixa delimitadora se sobrepõe a ela, e o estado da máscara de colisão (preciso
+    ou não) não é levado em consideração. Note que a ativação não é instantânea, e uma instância que tenha sido ativada desta forma não será considerada ativa até o final do evento em que a função foi chamada.
+   
+  Sintaxe:
+  instance_activate_region(left, top, width, height, inside);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        esquerda
+        A coordenada x da esquerda da região retangular a ser ativada.
+      
+      
+        topo
+        A coordenada y da parte superior da região retangular para ativar.
+      
+      
+        largura
+        A largura da região a ser ativada.
+      
+      
+        altura
+        A altura da região a ser ativada.
+      
+      
+        dentro
+        Seja para ativar instâncias no interior da região (verdadeiro) ou no exterior (falso).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  instance_deactivate_all(true); var _vx = camera_get_view_x(view_camera[0]); var _vy = camera_get_view_y(view_camera[0]); var _vw = camera_get_view_width(view_camera[0]); var _vh = camera_get_view_height(view_camera[0]); instance_activate_region(_vx
+    - 64, _vy - 64, _vw + 128, _vh + 128, falso);
+  O código acima desativa todas as instâncias exceto aquela que está executando o código e depois ativa uma região dentro da sala.
+   
+   
+   
+  
+    
+      
+        Voltar: Desativação de Instâncias
+        A seguir: instance_activate_layer
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

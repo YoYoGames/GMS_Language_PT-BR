@@ -1,0 +1,50 @@
+
+  
+  draw_tilemap
+  Esta função pode ser usada para desenhar um determinado mapa de azulejos em qualquer parte da sala. Você dá o ID do elemento do mapa de azulejos (que você obtém quando cria um elemento do mapa de azulejos usando layer_tilemap_create()    ou quando você usa a função layer_tilemap_get_id()), depois dar a posição x/y para desenho (na sala). Note que isto simplesmente desenhará o mapa de azulejos em
+    o ponto especificado, usando a profundidade da camada da instância que está chamando a função. Ele não move o mapa de azulejos - nem o altera de forma alguma - e importa se o mapa de azulejos está sinalizado como visível ou não.
+   
+  Sintaxe:
+  draw_tilemap(tilemap_element_id, x, y);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tilemap_element_id
+        O valor de identificação único do elemento do mapa de azulejos para obter a posição da célula y de
+      
+      
+        x
+        A posição x dentro da sala para desenhar em
+      
+      
+        y
+        A posição y dentro da sala para desenhar em
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var lay_id = layer_get_id("Tiles_Effects"); var map_id = layer_tilemap_get_id(lay_id); draw_tilemap(map_id, mouse_x, mouse_y);
+  O código acima obtém o ID da camada e depois o usa para obter um ID específico do mapa de azulejos que, por sua vez, é usado para desenhar o mapa de azulejos na posição do mouse.
+   
+   
+   
+  
+    
+      
+        Voltar: Sprites e Azulejos
+        Próximo: draw_self
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

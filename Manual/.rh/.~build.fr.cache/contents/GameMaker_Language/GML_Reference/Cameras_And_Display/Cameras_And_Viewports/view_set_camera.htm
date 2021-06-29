@@ -1,0 +1,46 @@
+
+  
+  view_set_camera
+  Esta função irá definir uma câmera para uma porta de visualização específica. Você dá a porta de visão para definir (de 0 a 7), e fornece o valor único de identificação da câmera (como retornado pelo camera_create() funções ou quando você usa view_get_camera()).
+    Se você der um valor -1 como ID da câmera, então você estará removendo uma câmera da porta de visualização e observe que se essa porta de visualização estiver habilitada e visível, você poderá obter alguns resultados imprevisíveis.
+   
+  Sintaxe:
+  view_set_camera(view_port, camera_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        view_port
+        O porto de visão para o alvo (0 - 7)
+      
+      
+        camera_id
+        O valor único de identificação da câmera retornou quando você criou a câmera
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var cam = camera_create_view(0, 0, 640, 480, 0, obj_Player, 5, 5, -1, -1, -1); view_set_camera(0, cam);
+  O código acima criará uma nova câmera e então lhe atribuirá uma porta de visualização[0].
+   
+   
+   
+  
+    
+      
+        Voltar: Câmeras e Ver Portos
+        Próximo: view_set_visible
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,82 @@
+
+  
+  lista_de_colisão_círculo
+  Esta função é a mesma que a círculo_de_colisão() apenas, em vez de apenas detectar uma instância em colisão de cada vez, ele detectará várias instâncias. Você fornece a posição x/y do centro
+    da área circular a verificar juntamente com o raio e o objeto a verificar, e você pode definir a verificação para ser precisa (nesse caso todas as instâncias a serem verificadas precisarão ter máscaras de colisão precisas ) e se a verificação deve incluir
+    a instância de chamada ou não.
+  Você também fornece uma lista DS, portanto o id valores de quaisquer instâncias que estejam colidindo com a instância de chamada
+    ser adicionado ao final da lista fornecida. Você pode limpar a lista antes de chamar esta função para que ela contenha apenas os resultados desta chamada de função. Você também tem a opção de pedir a
+    instâncias com base em suas distâncias desde a origem da área circular até suas origens. A função retorna o número de instâncias encontradas, ou 0 se nenhuma for encontrada.
+  Note que ao invés de um índice de objetos você pode fornecer a palavra-chave da instância all, para verificar todas as instâncias na sala atual, o que pode incluir a instância em execução
+    o código (dependendo do argumento notme ).
+   
+  Sintaxe:
+  collision_circle_list(x1, y1, rad, obj, prec, notme, list, ordered);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x1
+        A coordenada x do centro do círculo a verificar.
+      
+      
+        y1
+        A coordenada y do centro do círculo a verificar.
+      
+      
+        rad
+        O raio (distância em pixels de seu centro até sua borda).
+      
+      
+        obj
+        O objeto a ser verificado, por exemplo, colisões.
+      
+      
+        prec
+        Se a verificação é baseada em colisões precisas(verdadeiro, que é mais lento) ou em sua caixa de delimitação em geral(falso, mais rápido).
+      
+      
+        notme
+        Se a instância de chamada, se relevante, deve ser excluída(verdadeira) ou não(falsa).
+      
+      
+        lista
+        A lista DS a ser utilizada para armazenar as identificações de ocorrências de colisão.
+      
+      
+        encomendado
+        Se a lista deve ser ordenada por distância(verdadeira) ou não(falsa).
+      
+    
+  
+   
+  Devoluções:
+  Int (O número de instâncias encontradas em colisão)
+   
+  Exemplo:
+  var _list = ds_list_create(); var _num = collision_circle_list(x, y, 100, obj_Enemy, false, true, _list, false); if (_num > 0) {
+     for (var i = 0; i < _num; ++i;) {
+     instance_destroy(_list[| i]); }
+     }
+     ds_list_destroy(_list);
+  
+  O código acima verificará uma área circular com um raio de 100 pixels ao redor da posição da instância de chamada para colisões com instâncias de "obj_Enemy". Se houver alguma colisão, então a lista pré-criada é passada em loop e cada instância
+    que estava na colisão é destruída.
+   
+   
+   
+  
+    
+      
+        Voltar: Colisões
+        Próximo: collision_ellipse
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

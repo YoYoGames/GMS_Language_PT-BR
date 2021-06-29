@@ -1,0 +1,49 @@
+
+  
+  posição_de_som_som_som_de_audio
+  Esta função definirá a posição (em segundos) dentro do arquivo de som para que o som seja reproduzido. O som pode ser uma única instância de um som (o índice para sons individuais que estão sendo reproduzidos pode ser armazenado em uma variável ao usar o 
+    audio_play_sound() ou audio_play_sound_at() funções) ou um ativo sólido. Se for uma identificação sonora única que você usa, então a posição mudará imediatamente
+      ao novo tempo dado, e se for um ativo do Navegador de Ativos, então todas as novas jogadas do som dado começarão no novo tempo. A função irá ignorar qualquer valor dado que seja maior do que a duração do som dado para o "índice".
+      do valor.
+   
+  Sintaxe:
+  audio_sound_set_track_position(index, time);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do som a mudar.
+      
+      
+        tempo
+        O tempo (em segundos) para definir o ponto de partida.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var snd = audio_play_sound(snd_MainTrack, 0, false); audio_sound_set_track_position(snd, 32);
+  O código acima toca um som e depois usa o valor de identificação retornado para definir a posição inicial para o som para 32 segundos.
+   
+   
+   
+  
+    
+      
+        Voltar: Áudio
+        Próximo: audio_sound_get_track_position
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,32 @@
+
+  
+  excluir
+  O operador delete é utilizado para desreferenciar uma estrutura, e tem a seguinte sintaxe:
+  apagar <variável>;
+  O que isto significa é que você chama o operador de eliminação junto com a variável que possui uma estrutura e removerá a referência específica à estrutura armazenada na variável dada (uma referência é simplesmente um valor que aponta para a área de memória
+    que está armazenando a estrutura e seu conteúdo). Se esta referência foi a última referência à estrutura em seu jogo, então o catador de lixo removerá a estrutura da memória em
+    uma iteração seguinte, normalmente logo no início da próxima etapa.
+  OBSERVAÇÃO: excluir só pode ser usado junto com variáveis, e não com expressões
+  Por padrão, estruturas sem outras referências em código serão coletadas automaticamente nas etapas seguintes ao seu uso, mas é uma boa prática usar este operador para sinalizá-las explicitamente para que o coletor de lixo as remova da memória em
+    o início da etapa seguinte, liberando a memória de forma rápida e mais eficiente.
+  O exemplo a seguir mostra uma estrutura sendo criada - por exemplo, no Create Event of an instance:
+  mystruct = {
+     a : 0, b : 100, c : "Hello World" }
+  
+  Esta estrutura será então utilizada nos eventos de instância como de costume, antes de finalmente ser sinalizada para a coleta de lixo no evento Clean Up, como este:
+  apagar mystruct;
+   
+   
+   
+  
+    
+      
+        Voltar: Características lingüísticas
+        A seguir: se/outros E Operadores Condicionais
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

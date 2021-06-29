@@ -1,0 +1,58 @@
+
+  
+  layer_sequence_headpos
+  Com esta função você pode definir a posição de cabeça de jogo de um elemento de seqüência para uma moldura específica. Você fornece o ID do elemento seqüencial conforme retornado por layer_sequence_create()    ou por uma das funções dos elementos da camada junto com a nova posição a ser definida. Observe que a posição está em quadros e se você definir um valor maior do que o número total de quadros
+    (ou menos de 0), então a posição final real do playhead dependerá do tipo de reprodução sequencial que foi selecionada, seguindo estas regras:
+  
+    Sem looping: A cabeça de brincadeira se fixará ao final do laço (ou ao início, se o valor dado for negativo)
+    Looping: O playhead voltará ao início da seqüência mais os quadros extras, por exemplo: se você definir o playhead em uma seqüência de 30 quadros para uma posição de quadro 45, a posição real do playhead acabará sendo 15. Se você der
+      um valor negativo, então o playhead da seqüência se envolverá na direção inversa.
+    Laço de ping-pong: O playhead avançará até o final e então voltará o número extra de quadros que estão sobre o comprimento total do quadro, invertendo a direção de reprodução, por exemplo: Se a seqüência for de 30 quadros e você definir o playhead
+      a 40, a posição final do playhead será 20 e a direção será invertida (descendo para 0). Note que nunca se deve dar um valor negativo para a reprodução do ping-pong de uma seqüência, pois pode ter resultados indefinidos.
+  
+  Estabelecer a posição da cabeça desta maneira não interromperá a reprodução e a seqüência simplesmente continuará a partir da nova posição da cabeça de reprodução, a menos que seja pausada.
+   
+  Sintaxe:
+  layer_sequence_headpos(sequence_element_id, position)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sequence_element_id
+        O valor de identificação único do elemento de seqüência para o alvo
+      
+      
+        posição
+        A posição dentro da seqüência (em quadros) para definir a posição de cabeça de jogo para (pode ser um valor decimal)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var a = layer_get_all_elements(layer); for (var i = 0; i < array_length(a); i++;)  {
+     if layer_get_element_type(a[i]) == layerelementtype_sequence {
+     layer_sequence_headpos(a[i], 0) }
+     }
+  
+  O código acima obtém as identificações de todos os elementos atribuídos à camada da instância que está executando o código. O código então verifica se algum dos elementos retornados são ativos em seqüência e se sua posição de cabeça de jogo está definida como 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Sequência de camadas
+        Próximo: layer_sequence_headdir
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

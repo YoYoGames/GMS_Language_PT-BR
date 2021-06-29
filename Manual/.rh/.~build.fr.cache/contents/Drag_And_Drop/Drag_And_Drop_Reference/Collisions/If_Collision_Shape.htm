@@ -1,0 +1,90 @@
+
+  
+   Se a forma de colisão
+  Esta ação é usada para verificar e ver se há uma colisão com uma instância de um determinado objeto dentro de uma determinada área moldada ou ao longo de uma linha. Você dá a forma (retângulo, elipse ou linha), o objeto a ser verificado, e então fornece as coordenadas para
+    os cantos superior esquerdo e inferior direito da forma utilizada, ou no caso de uma linha, as posições inicial e final. Estas podem ser posições absolutas dentro da sala de jogo, ou posições relativas à instância que está executando a ação. Você pode ver como
+    isto funciona na imagem abaixo:
+  Como você pode ver, os resultados dependerão da máscara de colisão da instância
+    sendo verificado, ou seja, a instância do objeto que você está procurando deve ter um duende atribuído ao sprite_index, ou um duende atribuído ao mask_index. Se não o fizer, não será detectado por estas funções,
+    independentemente de estar desenhando um duende ou não. Vale notar que qualquer instância que fique completamente dentro dos limites estabelecidos para a forma de elipse ou retângulo, também retornará uma colisão. A ação avaliará se 
+    uma colisão é detectada, ou falsa de outra forma, embora você também possa verificar a bandeira Not flag para verificar se não há uma colisão com a área moldada dada, e a ação só então avaliará como verdadeira se não houver colisões
+    são encontrados, caso contrário, serão avaliados como falsos. Você também pode definir a opção Excluir o Self para excluir a instância de chamada da verificação de colisão.
+  Em seguida, você pode checar/desmarcar a opção de Lista de Retorno. Verificando isto significa que a ação criará e preencherá uma lista estrutura de dados com todas as substânciasem colisão
+    com a forma e definir a variável alvo para a ID da lista DS. Quando desmarcada, ela só definirá a variável Alvo para um valor menor que 0 quando nenhuma colisão for detectada, ou o valor de identificação único de uma das instâncias na colisão.
+    (note que se várias instâncias estiverem em colisão, então você não tem como saber qual ID de instância será devolvida quando não estiver usando uma lista).
+  Se você selecionou retornar uma lista - e a variável Alvo não está definida como Temp - então você também pode selecionar a opção Alvo Livre. Quando definida como verdadeira, então a lista contida na variável de destino será destruída e
+    uma nova lista criada (e retornada à variável alvo) cada vez que você chama a ação. Desta forma, você pode reutilizar a mesma variável sem se preocupar com vazamentos de memória, pois, se você não marcar a opção Alvo Livre, você se torna responsável por
+    por destruir a lista antes de usar a variável novamente na ação. Observe que independentemente de esta opção estar marcada ou não, se você tiver definido a ação para Return List, então a variável alvo sempre conterá uma identificação da lista,
+    e, como tal, isso precisará ser liberado quando a instância for destruída ou a sala terminar (você pode usar o Limpeza por exemplo, juntamente com a ação Free Data Structure ).
+    Vale notar que você pode definir a opção Alvo Livre para usar uma variável pré-definida ou uma expressão e assim controlar quando a estrutura de dados da lista é liberada, definindo a variável em outro lugar (ou tendo resultados diferentes para a expressão)
+    desde que avalie para verdadeiro/falso.
+  Finalmente, você fornece a variável de destino que você deseja manter o valor retornado ou a ID da lista. Se você marcar a variável Alvo para manter o valor retornado como sendo uma variável Temp (local), então a ação criará esta variável para manter
+    o valor de retorno somente até o final do evento, neste caso a opção Free Target não faz nada e você será responsável pela destruição da lista DS se essa opção tiver sido verificada. Se nenhuma variável alvo for fornecida e a opção Lista de Retorno estiver marcada, nenhuma lista será criada.
+  IMPORTANTE! As colisões só serão registradas para aquelas instâncias que possuem uma máscara de colisão válida, ou seja: elas têm um duende atribuído ao sprite_index, ou um duende atribuído ao mask_index. Se as instâncias do objeto forem
+    Se a máscara de colisão não tiver sido verificada nesta ação, então a colisão não será detectada, independentemente do que a instância estiver desenhando no momento.
+  Note que para adicionar ações em um bloco "if", elas devem ser descartadas ao lado da ação, como mostrado na imagem abaixo:
+  
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Forma
+        A forma a usar
+      
+      
+        Objeto
+        O objeto a ser verificado para casos de
+      
+      
+        x1
+        A posição x para começar de
+      
+      
+        y1
+        A posição y para começar de
+      
+      
+        x2
+        A posição x para terminar em
+      
+      
+        y2
+        A posição y para terminar em
+      
+      
+        Alvo Livre
+        Pode ser definida para uma variável ou expressão, ou definida para verdadeiro/falso para controlar a liberação da memória da lista ao reutilizar uma variável da lista
+      
+      
+        Meta
+        A variável a ser alvo para o valor de retorno da ação
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima verifica se há uma colisão com qualquer instância do objeto".
+    obj_Enemy " dentro de um círculo de 100px em torno da posição das instâncias de chamada. A ação gera uma lista de todas as instâncias encontradas em colisão e armazena o ID da lista na variável alvo. Se a ação avalia para
+   Verdadeiro, então a lista é atravessada e cada instância com sua identificação armazenada na lista tem sua variável "hp" reduzida em 1. A lista DS é então liberada.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações de colisão
+        A seguir: Se o ponto de colisão
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

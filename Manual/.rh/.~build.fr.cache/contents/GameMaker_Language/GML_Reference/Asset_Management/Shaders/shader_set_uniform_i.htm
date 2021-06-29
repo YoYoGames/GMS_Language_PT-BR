@@ -1,0 +1,50 @@
+
+  
+  shader_set_uniform_i
+  Com esta função você pode definir o valor (ou valores) de uma constante de sombreamento. Você deve ter obtido previamente o "cabo" da constante usando a função shader_get_uniform()e
+    você terá que saber que tipo de constante é para passar o número correto de valores inteiros, ou seja: se você tem um vec2 você terá que passar dois valores para a função.
+  OBSERVAÇÃO: Todos os uniformes devem ser ajustados após a chamada da função shader_set()e antes de chamar 
+    shader_reset().
+   
+  Sintaxe:
+  shader_set_uniform_i(handle, valor1 [, valor2, valor3, valor4])
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        alça
+        O cabo do sombreador constante a ser ajustado.
+      
+      
+        valor1 ... valor4
+        O valor inteiro (ou valores) para definir a constante de sombreamento.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  shader_set(shader_glass); shader_params= shader_get_uniform(shader_glass, "u_vParams"); shader_set_uniform_i(shader_params, 0, 65, 255); draw_self();
+     shader_reset();
+  
+  O código acima obterá o cabo da constante shader "u_vParams" ( a vec3), e então definirá essa constante para os valores inteiros dados.
+   
+   
+   
+  
+    
+      
+        Voltar: Shaders
+        Próximo: shader_set_uniform_i_array
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

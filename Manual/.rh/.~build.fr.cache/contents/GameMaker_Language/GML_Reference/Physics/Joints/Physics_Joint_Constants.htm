@@ -1,0 +1,250 @@
+
+  
+  Constantes de Física Conjunta
+  Há um grande número de constantes incluídas dentro do GameMaker Studio 2 GML que são específicas para as articulações entre dispositivos no mundo da física. Estas podem ser usadas em conjunto com
+    muitas das diferentes funções conjuntas para definir ou obter informações delas em tempo real enquanto a simulação física está sendo executada. Você deve estar ciente, entretanto, que cálculos complexos são feitos quando você os chama, portanto, eles devem ser usados com cuidado
+    e somente quando necessário e observar que muitos são exclusivos de um tipo específico de junta. Observe também que embora você possa obter todos esses valores com a função apropriada, você só pode definir aqueles que estão marcados como não sendo apenas de leitura.
+  Em geral, estas constantes seriam usadas em conjunto com as seguintes funções:
+  
+    fisica_joint_get_value
+    valor_junto_físico
+  
+   
+  Geral
+  
+    As constantes a seguir podem ser aplicadas a qualquer um dos tipos de juntas disponíveis:
+    
+      
+        
+          Constante
+          Descrição
+          Somente leitura
+        
+        
+          phy_joint_anchor_1_x
+          A coordenada x do primeiro ponto de ancoragem da junta na sala
+          Sim
+        
+        
+          phy_joint_anchor_1_y
+          A coordenada y do primeiro ponto de ancoragem da junta na sala
+          Sim
+        
+        
+          phy_joint_anchor_2_x
+          A coordenada x do segundo ponto de ancoragem da junta na sala
+          Sim
+        
+        
+          phy_joint_anchor_2_y
+          A coordenada y do segundo ponto de ancoragem da junta na sala
+          Sim
+        
+        
+          phy_joint_reaction_force_x
+          Esta é a força de reação que está sendo aplicada à segunda instância em uma articulação na posição x âncora
+          Sim
+        
+        
+          phy_joint_reaction_force_y
+          Esta é a força de reação que está sendo aplicada à segunda instância em uma articulação na posição de âncora y
+          Sim
+        
+        
+          phy_joint_reaction_torque
+          Este é o torque sendo aplicado à segunda instância em uma junta na posição de ancoragem
+          Sim
+        
+      
+    
+  
+  
+    Motores
+  
+    Estas constantes são para aquelas juntas que têm um motor acoplado a elas (giratória, prismática, roda):
+    
+      
+        
+          Constante
+          Descrição
+          Somente leitura
+        
+        
+          phy_joint_max_motor_force
+          O valor especificado quando a junta foi criada para a força motora máxima
+          Não
+        
+        
+          phy_joint_max_motor_torque
+          O valor especificado quando a junta foi criada para o torque máximo do motor
+          Não
+        
+        
+          f_joint_motor_force
+          A força motora atual
+          Sim
+        
+        
+          f_joint_motor_speed
+          A velocidade atual do motor
+          Não
+        
+        
+          f_joint_motor_torque
+          O torque atual do motor
+          Sim
+        
+      
+    
+  
+  
+    Juntas Revolutas
+  
+    Para uma junta revoluta você pode usar a seguinte constante (assim como as constantes do motor, caso tenha sido acrescentada uma):
+    
+      
+        
+          Constante
+          Descrição
+          Somente leitura
+        
+        
+          phy_joint_angle
+          O ângulo que uma linha entre os dois pontos de ancoragem da junta faz. Isto é calculado usando as coordenadas do mundo físico ( não a sala GameMaker Studio 2 
+            coordenadas) em radianos.
+          Sim
+        
+        
+          limites de fí_joint_angle_limits
+          Habilitar ou desabilitar a limitação do ângulo da junta. Definir o valor como verdadeiro para habilitar ou falso para desabilitar.
+          Não
+        
+        
+          phy_joint_upper_angle_limit
+          O limite superior do ângulo para a junta em graus.
+          Não
+        
+        
+          f_joint_lower_angle_limit
+          O limite de ângulo inferior para a junta em graus.
+          Não
+        
+      
+    
+  
+  
+    Juntas prismáticas
+  
+    Para uma junta prismática, você pode usar a seguinte constante:
+    
+      
+        
+          Constante
+          Descrição
+          Somente leitura
+        
+        
+          phy_joint_translation
+          Obtém a distância entre as coordenadas da âncora x/y e as coordenadas locais x/y.
+          Sim
+        
+        
+          phy_joint_speed
+          A velocidade atual do movimento conjunto.
+          Sim
+        
+      
+    
+  
+  
+    Juntas à Distância, Juntas de Solda e Juntas de Roda
+  
+    Para uma distância, solda e juntas de roda você pode usar as seguintes constantes (assim como as de juntas de polias):
+    
+      
+        
+          Constante
+          Descrição
+          Somente leitura
+        
+        
+          f_joint_damping_ratio
+          A relação de amortecimento é não-dimensional e define a "mola" da junta. O valor para esta constante é tipicamente entre 0 e 1, mas pode ser maior, e a 1, o amortecimento é crítico, o que significa que todas as oscilações devem desaparecer.
+          Não
+        
+        
+          phy_joint_frequency
+          Isto retornará (ou definirá) a freqüência de oscilação para a junta, em hertz, e normalmente a freqüência deve ser menos da metade da freqüência do passo do tempo, conforme definido pela função physics_world_update_speed().
+          Não
+        
+        
+          fito_joint_length_1
+          Isto retornará o comprimento da junção das primeiras coordenadas locais x/y para as primeiras coordenadas de âncora x/y (Juntas de distância somente, só podem ser lidas de)
+          Sim
+        
+        
+          fito_joint_length_2
+          Isto retornará o comprimento da junta das segundas coordenadas locais x/y para as segundas coordenadas de âncora x/y (Juntas de distância somente, só podem ser escritas para)
+          Não
+        
+      
+    
+  
+  
+    Juntas de fricção
+  
+    Para uma junta de fricção você pode usar as seguintes constantes:
+    
+      
+        
+          Constante
+          Descrição
+          Somente leitura
+        
+        
+          phy_joint_max_torque
+          O valor máximo de torque para a junta.
+          Não
+        
+        
+          phy_joint_max_force
+          O valor máximo de força para a junta.
+          Não
+        
+      
+    
+  
+  
+    Juntas de corda
+  
+    Para uma junção por corda você pode usar a seguinte constante:
+    
+      
+        
+          Constante
+          Descrição
+          Somente leitura
+        
+        
+          f_joint_max_length
+          A extensão máxima para a conexão entre os dois pontos de ancoragem.
+          Não
+        
+      
+    
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Juntas
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

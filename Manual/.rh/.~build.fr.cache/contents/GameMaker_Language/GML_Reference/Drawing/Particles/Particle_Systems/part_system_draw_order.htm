@@ -1,0 +1,49 @@
+
+  
+  part_system_draw_order
+  Com esta função você pode definir a forma como as partículas são desenhadas quando criadas na tela. O sistema padrão usa uma aparência antiga > nova (a função é definida como verdadeira), onde as partículas antigas são desenhadas a uma profundidade maior do que as mais novas e
+    Assim, aparecem "por baixo" das novas partículas, mas definindo esta função como falsa, você pode inverter esta ordem e fazer com que as novas partículas sejam puxadas para cima e assim apareçam "por baixo" das partículas mais antigas. As imagens abaixo ilustram isto,
+    sendo a imagem à esquerda o valor padrão de verdadeiro e a imagem à direita a falsa:
+   
+  NOTA: Quando as partículas estão sendo desenhadas com um modo de mistura aditiva, o efeito desta função pode nem sempre ser óbvio.
+   
+  Sintaxe:
+  part_system_draw_order(ind, oldtonew);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do sistema de partículas a mudar.
+      
+      
+        oldtonew
+        Se as partículas antigas devem ser desenhadas atrás das mais novas (verdadeiras) ou vice versa (falso).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  mysystem = part_system_create(); part_system_draw_order(mysystem, true);
+  Isto criará um novo sistema de partículas com o índice "mysystem", e então define partículas para extrair partículas mais novas sobre as mais antigas.
+   
+   
+   
+  
+    
+      
+        Voltar: Sistemas de Partículas
+        Próximo: part_particles_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

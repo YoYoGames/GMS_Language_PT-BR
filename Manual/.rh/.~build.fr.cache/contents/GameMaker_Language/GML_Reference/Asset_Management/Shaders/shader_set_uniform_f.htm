@@ -1,0 +1,56 @@
+
+  
+  shader_set_uniform_f
+  Com esta função você pode definir o valor (ou valores) de uma constante de sombreamento. Você deve ter obtido previamente o "cabo" da constante usando a função shader_get_uniform()e
+    você terá que saber que tipo de constante é para passar o número correto de valores de ponto flutuante, ou seja: se você tem um vec2 você terá que passar dois valores para a função.
+  Uma exceção à regra acima é quando se trata de valores de cor de 32bit. Você pode passar para o sombreador até oito valores de cor de 32 bits e eles serão automaticamente convertidos para você em valores vec4 de 0 - 1.
+    o nome constante shader in_Colour, para uma única cor, ou in_Colour0, in_Colour1, etc... até in_Colour7 para valores de entrada múltiplos. O seguinte
+    para exemplos mostram como isto ficaria no próprio sombreador:
+      //Cor única atributo vec2 in_Position; atributo vec4 in_Colour; atributo vec2 in_TextureCoord;
+     //Cores múltiplas atributo vec2 in_Position; atributo vec4 in_Colour0; atributo vec4 in_Colour1; atributo vec2 in_TextureCoord;
+  Observe também que, se você quiser fazer normais comprimidos etc... usando um formato de 4 bytes de cor, então você também terá que usar o mesmo formato "in_Colour" como mostrado acima.
+  OBSERVAÇÃO: Todos os uniformes devem ser ajustados após a chamada da função shader_set()e antes de chamar 
+    shader_reset().
+   
+  Sintaxe:
+  shader_set_uniform_f(handle, valor1 [, valor2, valor3, valor4]));
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        alça
+        O cabo do sombreador constante a ser ajustado.
+      
+      
+        valor1 ... valor4
+        O valor do ponto flutuante (ou valores) para definir a constante de sombreamento.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  shader_set(shader_Glass); shader_params= shader_get_uniform(shader_glass, "u_vParams"); shader_set_uniform_f(shader_params, 0.1, 0.8, 0.25); draw_self();
+     shader_reset();
+  
+  O código acima obterá o cabo da constante shader "u_vParams" ( a vec3), então definirá essa constante para os valores dados.
+   
+   
+   
+  
+    
+      
+        Voltar: Shaders
+        Próximo: shader_set_uniform_f_array
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

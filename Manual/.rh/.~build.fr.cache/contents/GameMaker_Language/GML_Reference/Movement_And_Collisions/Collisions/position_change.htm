@@ -1,0 +1,56 @@
+
+  
+  mudança_de_posição
+  Esta função verificará uma posição para uma colisão com quaisquer instâncias no ponto determinado, e se houver uma, mudará todas as instâncias em colisão para serem instâncias do objeto escolhido. Você pode definir o argumento "perf" para
+   verdadeiro que forçará o GameMaker Studio 2 a realizar os eventos Destroy e Clean Up da instância encontrada, bem como o evento Create da nova instância, ou falso para não
+    realizar qualquer um desses eventos. Observe que, se você optar por não realizar os eventos Destroy, Clean Up e Create, qualquer instância criada que utilize uma variável normalmente definida no evento de criação irá travar o jogo, pois essa variável não irá mais
+    existem.
+   
+  Sintaxe:
+  position_change(x, y, obj, perf);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A coordenada x de onde mudar as instâncias de colisão.
+      
+      
+        y
+        A coordenada y de onde mudar as instâncias de colisão.
+      
+      
+        obj
+        O novo objeto em que o objeto chamador se transformará.
+      
+      
+        perf
+        Seja para realizar o evento de Criação desse novo objeto (verdadeiro) ou não (falso).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  position_change(200, 200, obj_Bird, true);
+  Isto transformará todas as instâncias que colidem no ponto (200.200) em uma instância de "obj_Bird", realizando "obj_Bird"s Create event for each of them in the process.
+   
+   
+   
+  
+    
+      
+        Voltar: Colisões
+        Próximo: position_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

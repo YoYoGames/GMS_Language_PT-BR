@@ -1,0 +1,47 @@
+
+  
+  camada_background_yscale
+  Esta função pode ser usada para definir a escala ao longo do eixo y de um elemento de fundo. Você dá a identificação do elemento de fundo (que você obtém quando cria um elemento de fundo usando layer_background_create()    ou quando você usa a função layer_background_get_id()), e então definir o valor da escala. O valor da escala que você dá é um multiplicador que será usado para mudar a maneira como o elemento de fundo é exibido,
+    onde um valor de 0,5 exibiria o elemento em meia escala, e um valor de 2 exibiria em escala dupla. Note que os valores negativos são válidos e "inverterão" o elemento em torno da posição (0,0), portanto uma escala x de -1 mostraria a
+    imagem invertida.
+   
+  Sintaxe:
+  layer_background_yscale(background_element_id, yscale);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        background_element_id
+        O valor de identificação único do elemento de fundo a ser mudado
+      
+      
+        velocidade
+        O multiplicador de velocidade/valor a ser usado para o elemento
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var lay_id = layer_get_id("Background_id_water"); var back_id = layer_background_get_id(lay_id); layer_background_yscale(back_id, -1);
+  O código acima obterá a identificação da camada chamada "Background_water" e depois a utilizará para obter a identificação do elemento de fundo nessa camada. Este ID é então usado para mudar a escala y do elemento.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de fundo
+        Próximo: fundo_camada_visível
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

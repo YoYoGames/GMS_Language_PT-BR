@@ -1,0 +1,50 @@
+
+  
+  caminho_tipo_de_série
+  Esta função pode ser usada para definir o tipo de caminho que você deseja que o recurso especificado seja. Este pode ser um caminho em linha reta (definido como 0) ou um caminho alisado (definido como 1), em cujo caso a precisão do caminho também deve ser levada em conta (a precisão
+    pode ser ajustado também usando caminho_set_precision()). Esta função muda o recurso do caminho real, e assim afetará permanentemente como o caminho é usado por todas as instâncias do jogo a partir do momento em que
+    a função é usada até o final do jogo. Se isso não for o que você precisa, então você deve usar uma função como path_duplicate() para criar uma cópia do caminho primeiro, então chame essa função
+    sobre o bem duplicado (não esqueça de ligar para path_delete() sobre o bem quando ele não for mais necessário).
+  
+   
+  Sintaxe:
+  path_set_kind(index, val);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do caminho para a mudança.
+      
+      
+        val
+        O tipo de caminho, 0 para reto ou 1 para liso.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  path_set_kind(pth_Patrol, true);
+  Isto definirá o caminho dado para ser um caminho "suave".
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação do caminho
+        Próximo: caminho_set_precisão
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

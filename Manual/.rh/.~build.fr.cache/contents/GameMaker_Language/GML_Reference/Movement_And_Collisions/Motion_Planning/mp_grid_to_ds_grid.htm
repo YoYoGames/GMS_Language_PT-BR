@@ -1,0 +1,46 @@
+
+  
+  mp_grid_to_ds_grid
+  Com esta função você pode copiar a grade MP dada em uma grade DS. A grade DS deve ter o mesmo tamanho que a grade MP, embora não precise ser (os dados serão perdidos se forem menores, e
+    se for maior, todas as células extras da grade serão 0). As células da grade DS conterão o valor -1 se a célula da grade MP estiver marcada como ocupada, ou será 0 se não estiver.
+   
+  Sintaxe:
+  mp_grid_to_ds_grid(fonte, destino);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fonte
+        Índice da rede mp_ que deve ser usada
+      
+      
+        destino
+        Índice da ds_grid que deve ser usada para copiar os dados da grade para.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  motion_grid = ds_grid_create(room_width / 32, room_height / 32); mp_grid_to_ds_grid(mp_grid, motion_grid);
+  O código acima criará uma nova grade DS e então copiará os dados da grade MP contidos na variável "mp_grid" para a nova grade DS.
+   
+   
+   
+  
+    
+      
+        Voltar: Planejamento de Movimento
+        Próximo: mp_grid_draw
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

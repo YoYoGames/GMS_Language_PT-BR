@@ -1,0 +1,86 @@
+
+  
+  layer_get_element_type
+  Você pode usar esta função para obter o tipo de elemento para o elemento em questão. Você fornece o valor único de identificação do elemento (por exemplo, como retornado a função que criou o elemento ou do editor da sala) e a função retornará um dos seguintes
+    constantes (ou -1 se o elemento não existir ou se o valor de identificação estiver errado):
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        layerelementtype_background
+        O elemento é um pano de fundo.
+      
+      
+        layerelementtype_instance
+        O elemento é um exemplo.
+      
+      
+        layerelementtype_sprite
+        O elemento é um bem precioso.
+      
+      
+        layerelementtype_tilemap
+        O elemento é um mapa de azulejos.
+      
+      
+        Layerelementtype_particlesystem
+        O elemento é um sistema de partículas.
+      
+      
+        Layerelementtype_tile
+        O elemento é uma peça de fundo herdada (isto só é válido para projetos que tenham sido importados de versões anteriores de GameMaker).
+      
+      
+        layerelementtype_sequence
+        O elemento é um ativo de seqüência.
+      
+    
+  
+   
+  Note que esta função é mais útil quando você tem vários tipos diferentes de elementos atribuídos a uma camada, e que você pode obter uma lista de todos os elementos de uma determinada camada usando a função layer_get_all_elements().
+   
+  Sintaxe:
+  layer_get_element_type(element_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        camada
+        O valor de identificação único do elemento para obter o tipo de
+      
+    
+  
+   
+  Devoluções:
+  Constante (ver tabela acima) ou -1 se o elemento não existe ou é inválido
+   
+  Exemplo:
+  var a = layer_get_all_elements(layer); for (var i = 0; i < array_length(a); i++;)  {
+     if layer_get_element_type(a[i]) == layerelementtype_sprite {
+     layer_sprite_destroy(a[i])
+     }
+     }
+  
+  O código acima obtém as identificações de todos os elementos da instância designados para a camada da instância que executa o código. O código então verifica se algum dos elementos retornados são bens sprite e se eles são destruídos.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próximo: layer_get_x
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

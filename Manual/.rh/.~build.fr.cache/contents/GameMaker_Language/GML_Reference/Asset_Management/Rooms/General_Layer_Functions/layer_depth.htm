@@ -1,0 +1,53 @@
+
+  
+  layer_depth
+  Esta função pode ser usada para alterar a profundidade da camada dada, alterando a ordem na qual seu conteúdo será apresentado à tela. Você fornece a identificação da camada (que você obtém quando cria a camada usando layer_create())
+    ou o nome da camada (como um fio - isto terá um impacto no desempenho) e então dar a nova profundidade para defini-la (uma forma de valor inteiro -16000 a 16000). A profundidade da camada é definida como sendo maior quando "mais longe" da câmera e menor
+    quando "mais próximo" da câmera, então se você tiver três camadas com profundidades -100, 0, 100, as camadas desenharão na ordem 100, 0, -100, de modo que a camada "superior" (ou seja, a mais próxima da visão da câmera e assim desenhada sobre tudo o resto)
+    ser a camada com a profundidade de -100.
+  A imagem a seguir mostra um esquema de como funciona a profundidade para camadas:
+  Note que você pode verificar a profundidade de uma camada a qualquer momento usando a função layer_get_depth().
+    Observe também que as profundidades mínima e máxima das camadas são de -16000 a 16000, e qualquer coisa fora dessas profundidades não será apresentada. Se você precisar de uma profundidade fora dessa faixa, então você precisará usar a função layer_force_draw_depth().
+   
+  Sintaxe:
+  layer_depth(layer_id, profundidade)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada para definir a profundidade de (ou o nome da camada como uma corda)
+      
+      
+        profundidade
+        A nova profundidade para a camada
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if layer_get_depth(layer) != -100 {
+     layer_depth(layer, -100); }
+  
+  O código acima obtém a profundidade da camada em que a instância que executa o código está, e se não estiver -100 então a profundidade é ajustada para -100.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        A seguir: layer_force_draw_depth
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

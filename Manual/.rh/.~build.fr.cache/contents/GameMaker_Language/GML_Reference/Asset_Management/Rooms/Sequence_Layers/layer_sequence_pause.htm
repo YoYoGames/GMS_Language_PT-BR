@@ -1,0 +1,44 @@
+
+  
+  layer_sequence_pause
+  Com esta função, você pode pausar a reprodução da seqüência dada. Você fornece a identificação do elemento de seqüência conforme retornado por layer_sequence_create() ou por uma das funções dos elementos de camada e a função fará uma pausa na seqüência até que você comece a reprodução novamente usando a função layer_sequence_play().
+   
+  Sintaxe:
+  layer_sequence_pause(sequence_element_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sequence_element_id
+        O valor de identificação único do elemento de seqüência para o alvo
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var _seq = layer_sequence_create("Background", 0, 0, seq_AnimatedBackground); if global.Pause {
+     layer_sequence_pause(_seq);
+     }
+  
+  O código acima cria uma nova seqüência e armazena sua identificação em uma variável local. Em seguida, ele verifica se o jogo está em pausa e se é ele que pausa a reprodução da seqüência.
+   
+   
+   
+  
+    
+      
+        Voltar: Sequência de camadas
+        Próximo: layer_sequence_play
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

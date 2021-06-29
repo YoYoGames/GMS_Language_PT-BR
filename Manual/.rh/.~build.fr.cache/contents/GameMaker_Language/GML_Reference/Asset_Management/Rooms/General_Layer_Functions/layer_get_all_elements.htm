@@ -1,0 +1,49 @@
+
+  
+  layer_get_all_elements
+  Você pode usar esta função para obter as identificações dos elementos da camada em questão. Você fornece o ID da camada (que você obtém quando cria a camada usando layer_create()) ou o nome da camada (como um fio - isto terá
+    um impacto no desempenho) e a função retornará uma matriz de IDs, onde cada entrada na matriz é uma identificação única para um elemento daquela camada. Por exemplo, se a camada for uma camada de ativos, a matriz
+    serão preenchidos com os valores de identificação para cada ativo sprite que for atribuído à camada. Note que usar código para trabalhar com camadas significa que você pode atribuir diferentes tipos de elementos à mesma camada - assim você pode ter ativos sprite junto com as instâncias,
+    por exemplo - nesse caso você pode então usar a função layer_get_element_type() para obter o tipo de elemento com o qual o ID se relaciona.
+   
+  Sintaxe:
+  layer_get_all_elements(layer_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada para obter os elementos de (ou o nome da camada como uma corda)
+      
+    
+  
+   
+  Devoluções:
+  Array (1D, preenchido com Element IDs)
+   
+  Exemplo:
+  var a = layer_get_all_elements(layer); for (var i = 0; i < array_length(a); i++;)  {
+     if layer_get_element_type(a[i]) == layerelementtype_sprite {
+     layer_sprite_destroy(a[i])
+     }
+     }
+  
+  O código acima obtém as identificações de todos os elementos da instância designados para a camada da instância que executa o código. O código então verifica se algum dos elementos retornados são bens sprite e se eles são destruídos.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próximo: camada_get_element_layer
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,73 @@
+
+  
+  audio_listener_set_orientation
+  Com esta função, você pode mudar a orientação do ouvinte dado dentro do espaço de áudio 3D. O índice padrão do ouvinte é 0, mas você pode usar a função audio_get_listener_info() para
+    obter os diferentes índices disponíveis para a plataforma alvo.
+  O olhar vetorial e vetor ascendente são baseados nos valores que são resolvidos a partir das posições relativas x, y e z dadas, e o padrão para (0, 0, -1) para o olhar vetorial e (0, 1, 0)
+    para o vetor ascendente, como mostrado na ilustração abaixo:
+  
+  Mudar a orientação do ouvinte com esta função mudará a forma como o som criado pelos emissores de áudio ao redor da sala de jogo é percebido pelo jogador de seu jogo. No exemplo abaixo, os sons criados pelo emissor quando o ouvinte está na sala de jogo.
+    A posição padrão parece vir de baixo e à direita do ouvinte, mas com a nova posição e orientação do ouvinte eles serão agora percebidos como vindo de cima e à direita.
+  
+   
+  Sintaxe:
+  audio_listener_set_orientation(index, lookat_x, lookat_y, lookat_z, up_x, up_y, up_z);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O ouvinte para definir a orientação de.
+      
+      
+        lookat_x
+        O vetor de aparência x (padrão 0).
+      
+      
+        lookat_y
+        O vetor y de aparência (padrão 0).
+      
+      
+        lookat_z
+        O vetor de aparência z (padrão -1).
+      
+      
+        up_x
+        O vetor x up (padrão 0).
+      
+      
+        up_y
+        O vetor y up (default 1).
+      
+      
+        up_z
+        O vetor z up (padrão 0).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var _m = camera_get_view_mat(view_camera[0]); audio_listener_set_position(global.Player_Listener, _m[0], _m[1], _m[2]); audio_listener_set_orientation(info[? "index"], _m[3], _m[4], _m[5], _m[6], _m[7], _m[8]);
+  O código acima recupera a matriz de visualização para visualização da câmera [0] e depois a utiliza para definir a posição e orientação do ouvinte de áudio com a identificação armazenada na variável global "Player_Listener".
+   
+   
+   
+  
+    
+      
+        Voltar: Ouvintes de áudio
+        Próximo: audio_get_listener_count
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

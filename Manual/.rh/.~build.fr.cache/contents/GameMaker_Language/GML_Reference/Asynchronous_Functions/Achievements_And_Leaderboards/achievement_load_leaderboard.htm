@@ -1,0 +1,99 @@
+
+  
+  achievement_load_leaderboard
+  Esta função enviará um pedido ao servidor para obter informações sobre o quadro de líderes em questão. O leaderboard deve ter sido criado anteriormente no painel de desenvolvedores para seu jogo e o ID dado é o que você deve fornecer como o primeiro argumento
+    da função. Ele desencadeará um Evento Assíncrono Social de retorno que contém o async_load    mapa povoado com os pares chave/valor relevantes. A chave de id deste Mapa DS é usada para identificar a chamada de retorno correta (pode haver mais de uma função de acionamento para qualquer evento assíncrono), e será emparelhada com a constante informação de achievement_leaderboard_info, bem como um número de outros pares de chaves/valores para cada jogador. O conteúdo exato do mapa é mostrado abaixo:
+  NOTA: esta função é para iOS somente.
+  
+    " id" - Para esta função deve ser feito_leaderboard_info
+    "leaderboardid" - A identificação única para o leaderboard, conforme definido no painel do fornecedor.
+    "numentries" - O número de entradas no quadro de líderes que você recebeu.
+    "PlayerN" - O nome do jogador, onde "N" é um valor inteiro correspondente à sua posição dentro da lista de entradas do quadro de líderes.
+    "PlayeridN" - A identificação única do usuário do jogador, "N".
+    "RankN" - A classificação do jogador "N" dentro da tabela de liderança.
+    Pontuação "N"- A pontuação do jogador "N".
+  
+  Você pode especificar a porção exata do quadro de líderes a mostrar dando um valor de índice mínimo e máximo, bem como solicitar que os resultados sejam filtrados para recuperar apenas as pontuações de seus amigos ou as divulgadas por todos os jogadores usando o seguinte
+   constantes do filtro:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        achievement_filter_friends_only 
+        Obtenha apenas as pontuações dos amigos jogadores.
+      
+      
+        achievement_filter_all_players 
+        Obtenha todas as pontuações para todos os jogadores.
+      
+    
+  
+   
+   
+  Sintaxe:
+  achievement_load_leaderboard(ident, minindex, maxindex, filter)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ident
+        A identificação única do painel de líderes, conforme mostrado no painel do desenvolvedor.
+      
+      
+        minindex
+        O valor inicial do índice para obter os dados do quadro de líderes.
+      
+      
+        maxindex
+        O valor máximo de índice para obter os dados do quadro de líderes.
+      
+      
+        filtro
+        Seja para filtrar os resultados para aqueles que estão em sua lista de amigos ou para todos os jogadores (veja a Descrição abaixo)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo ampliado:
+  O seguinte código seria provavelmente chamado depois que o jogador entrasse em sua conta de jogo usando achievement_login() para obter uma lista de todas as posições de liderança de amigos para o jogo, em qualquer um dos dois Android
+    ou iOS:
+  if os_type == os_ios {
+     achievement_load_leaderboard("CgkIs9_51u0PEAIQBw", 1, 100, achievement_filter_friends_only); }
+  
+  Isto enviará um pedido de informações sobre a tabela de liderança e gerará uma chamada assíncrona de retorno com o mapa especial de DS de carga assimétrica contendo os seguintes dados:
+  var ident = ds_map_find_value(async_load, "id"); if ident == achievement_leaderboard_info {
+     var lbid = ds_map_find_value(async_load,"leaderboardid"); if lbid == "CgkIs9_51u0PEAIQBw" ||| lbid == "leaderboard1id" {
+     global.numentries = ds_map_find_value(async_load,"numentries"); for(var i = 0; i < numentries; i++;) {
+     global.playername[i] = ds_map_find_value(async_load, "Player" + string(i)); global.playerid[i] = ds_map_find_value(async_load, "Playerid" + string(i)); global.playerrank[i] =
+    ds_map_find_value(async_load, "Rank" + string(i)); global.playerscore[i] = ds_map_find_value(async_load, "Score" + string(i)); achievement_get_pic(global.playerid[i]);
+     }
+     }
+     }
+  
+  O código acima verifica o Mapa DS retornado no Evento Assíncrono Social e se seu "id" corresponde à constante a ser verificada, então verifica se o quadro de líderes a ser enviado corresponde à chamada de função original antes
+    looping através do mapa e armazenando todos os diferentes valores em uma série de arrays. Ele também solicita uma imagem para cada uma das entradas no mapa (veja achievement_get_pic()).
+   
+   
+   
+  
+    
+      
+        Voltar: Conquistas e Quadros de Líderes
+        Próximo: achievement_load_progress
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

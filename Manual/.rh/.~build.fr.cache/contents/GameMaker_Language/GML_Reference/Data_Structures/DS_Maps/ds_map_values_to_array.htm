@@ -1,0 +1,55 @@
+
+  
+  ds_map_values_to_array
+  Com esta função você pode recuperar todos os valores que um mapa DS contém para cada chave no mapa. Você fornece o DS map ID para obter as chaves de (como retornado por ds_map_create()) e o
+    retornará um array onde cada entrada no array é um valor do mapa DS (por exemplo, se o mapa tiver 10 chaves, então um array de 10 entradas será retornado com cada entrada correspondente
+    a um valor para uma chave). A função tem um segundo argumento opcional onde você pode fornecer um array que você criou, caso em que os dados do valor da chave do mapa serão anexados a qualquer dado existente no array. Note que a função modificará
+    a matriz fornecida diretamente, mas também retornará uma referência a ela (ou uma referência a uma nova matriz se nenhuma for fornecida).
+   
+  Sintaxe:
+  ds_map_values_to_array(id, [array])
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação do mapa a ser utilizado.
+      
+      
+        [matriz]
+        OPCIONAL! A matriz para anexar os valores do mapa DS.
+      
+    
+  
+   
+  Devoluções:
+  Array
+   
+  Exemplo:
+  var _values = ds_map_values_to_array(lvl_score);
+var _total = 0;
+for (var i = 0; i < array_lengh(valores); ++i;)
+    {
+    _total += _valores[i];
+    }
+draw_text(32, 32, "pontuação total para todos os níveis = " + string(_total"));
+  O acima recupera todos os valores de um mapa DS para cada chave no mapa e os armazena em uma variável local como uma matriz. Em seguida, ele percorre a matriz e adiciona cada um dos valores a uma variável local que é então usada para exibir o total de todos os valores de uma variável local.
+    os valores.
+   
+   
+   
+  
+    
+      
+        Voltar: DS Maps
+        Próximo: ds_map_set
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

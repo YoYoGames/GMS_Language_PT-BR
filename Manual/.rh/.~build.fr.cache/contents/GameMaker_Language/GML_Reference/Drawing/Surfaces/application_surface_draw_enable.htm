@@ -1,0 +1,46 @@
+
+  
+  application_surface_draw_enable
+  Você pode usar esta função para ativar ou desativar o desenho automático da superfície da aplicação. Por padrão isto está habilitado, mas em muitos casos você vai querer assumir quando e como a superfície é desenhada (ao usar shaders, por exemplo), em que caso
+    você usaria esta função para defini-la como falsa, para que você mesmo a possa desenhar quando e como você precisar. É importante notar que quando você desliga o desenho automático e desenha a superfície da aplicação você mesmo, que você pode ver certos problemas
+    com o componente alfa dos sprites e a própria superfície. Isto porque o GameMaker Studio 2 desenhará a superfície de aplicação sem mistura alfa quando o desenho automático estiver ligado. Se você desligar o desenho automático, então você precisa
+    para lidar com isso você mesmo, usando o seguinte código (por exemplo):
+  gpu_set_blendenable(false); draw_surface_ext(application_surface, 0, 0, 1, 1, 1, 0, c_white, 1); gpu_set_blendenable(true);
+  
+   
+  Sintaxe:
+  application_surface_draw_enable(flag);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        bandeira
+        A bandeira será ou verdadeira (ativada, o valor padrão) ou falsa (desativada).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  application_surface_draw_enable(false);
+  O código acima irá desligar o desenho automático da superfície da aplicação.
+   
+   
+   
+  
+    
+      
+        Voltar: Superfícies
+        Próximo: superfície_existe
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,36 @@
+
+  
+  Gravação de áudio
+  Este evento só pode ser acionado pelo audio_start_recording() função
+    e retornará um Mapa DS armazenado na variável async_load,
+    contendo diferentes pares de chaves/valores, dependendo do retorno de chamada da função que acionou o evento.
+  As seguintes chaves estarão disponíveis no ds_map:
+  
+    "buffer_id" - a identificação do buffer temporário que você pode usar para recuperar os dados de áudio
+    "channel_index" - o índice do canal de gravação conforme retornado pela função de chamada da qual estes dados vieram
+    "data_len" - o tamanho dos dados (em bytes) que você recebeu
+  
+  NOTA: Como mencionado no início desta página, a variável async_load só é válida nos eventos assíncronos, pois o mapa DS que aponta é criado no início do evento,
+    e, em seguida, apagado novamente no final. Entretanto, observe que o buffer temporário no qual todo o áudio é armazenado com o mapa também será removido no final do evento, portanto você deve copiá-lo para um buffer personalizado se quiser mantê-lo para uso posterior.
+  No exemplo de uso abaixo, criaremos um buffer personalizado para armazenar nosso áudio gravado, e também configuraremos nosso jogo para gravar a partir da fonte de entrada 0:
+  channel_index = audio_start_recording(0); audio_buffer = buffer_create(len, buffer_fast, 1);
+  Cada passo do jogo, agora que a gravação é detectada, desencadeará um evento de gravação de áudio assíncrono onde você pode lidar com a entrada gravada algo como isto:
+  var canal = async_load[? "channel_index"]; if channel == channel_index { len = async_load[? "data_len"]; buffer_copy(async_load[? "buffer_id"], 0, len, audio_buffer, 0); }
+  Aqui nós simplesmente verificamos a chave "channel_index" para nos certificarmos de que ela corresponda ao valor retornado quando começamos a gravar, e se ela corresponde, copiamos o conteúdo do buffer temporário criado para este evento em nosso buffer personalizado. Depois disso, você pode
+    fazer o que você quiser com o buffer personalizado - você poderia tocá-lo usando as funções de áudio do buffer dedicado, você poderia processá-lo e enviá-lo pela rede, você poderia salvá-lo em disco... Uma vez que você tenha seu áudio gravado em um buffer, você pode fazer basicamente
+    o que você quiser.
+   
+   
+   
+  
+    
+      
+        Voltar: Eventos Async
+        A seguir: Nuvem
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

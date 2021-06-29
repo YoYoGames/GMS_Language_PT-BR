@@ -1,0 +1,54 @@
+
+  
+  densidade_de_série_física
+  A densidade de algo é definida como sua massa por unidade de volume, o que basicamente significa a quantidade de massa que é empilhada no espaço que ocupa no mundo. Assim, um balão teria uma densidade baixa, pois tem pouca massa que ocupa um grande espaço,
+    enquanto uma barra de chumbo teria uma alta densidade, pois tem uma grande massa, mas ocupa pouco espaço.
+  No mundo da física GameMaker Studio 2 2D, a massa é calculada automaticamente
+    para você a partir dos valores inseridos para a densidade e pela área da superfície da forma que você define para a fixação. Isto terá um impacto direto no grau de inércia de uma fixação, assim como na forma como ela reage a colisões e forças, portanto
+    se você fizer uma forma pequena com alta densidade, ela terá uma massa muito grande (como uma barra de chumbo), mas se você definir uma forma grande com baixa densidade, ela terá uma massa muito menor (como um balão).
+  NOTA: Se você deseja que a instância que vai receber o acessório seja estática (ou seja: imóvel no mundo do jogo) então a densidade deve ser ajustada para 0, dando-lhe essencialmente uma densidade infinita.
+  NOTA: Uma fixação estática pode ser feita cinemática (ou seja: pode mover-se mas sem os efeitos da força ou da gravidade) fazendo com que tenha uma densidade 0 e depois ajustando o phy_speed_x
+    , phy_speed_y
+    ou phy_angular_velocity
+     variáveis.
+   
+  Sintaxe:
+  fisic_fixture_set_density(fixação, densidade)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fixação
+        o índice da fixação
+      
+      
+        densidade
+        a densidade da luminária calculada em kg/m²
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  physics_fixture_set_density(fix_Balloon, 0.1);
+  O código acima definirá a densidade da fixação indexada em "fix_Ballon" para 0,1.
+   
+   
+   
+  
+    
+      
+        Voltar: Instalações
+        Próximo: Física_fixture_set_fricção
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

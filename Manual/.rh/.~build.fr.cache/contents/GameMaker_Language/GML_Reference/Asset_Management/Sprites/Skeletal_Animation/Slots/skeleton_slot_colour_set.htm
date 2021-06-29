@@ -1,0 +1,58 @@
+
+  
+  conjunto_esqueleto_de_squema_cores
+  Com esta função você pode definir uma cor e um alfa da ranhura de fixação para que todos os sprites ligados a ela sejam desenhados com estes valores de mistura. Tenha em mente que o exemplo sprite pode ter uma cor de mistura e um ajuste alfa (image_blend e
+    image_alpha), assim como o anexo (ver a função esqueleto_criar_cores()), e assim o
+    cor final e alfa que o duende de fixação designado para o slot terá será um composto de todos esses valores.
+   
+  Sintaxe:
+  esqueleto_squema_de_cores(ranhura, cor, alfa);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ranhura
+        O nome da ranhura a definir, um fio
+      
+      
+        cor
+        A cor a ser definida, seja um número inteiro, uma constante ou um valor hexadecimal.
+      
+      
+        alfa
+        O alfa para definir de 0 a 1.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  slot_list = ds_list_create(); skeleton_find_slot(mouse_x, mouse_y, slot_list); if !ds_list_empty(slot_list) {
+     para (var i = 0; i < ds_list_size(slot_list); ++i;)  {
+     if skeleton_slot_colour_get(slot_list[| i]) != c_white {
+     skeleton_slot_colour_set(slot_list[| i], c_white, 1); }
+     }
+     }
+  
+  O código acima cria uma lista DS e depois a preenche com os nomes dos slots encontrados na posição do mouse na sala. Em seguida, ele percorre a lista de slots e repõe a cor dos slots encontrados para branco com um alfa de 1 se a cor não for
+    já branco.
+   
+   
+   
+  
+    
+      
+        Voltar: Slots
+        A seguir: esqueleto_esqueleto_cor_esqueleto
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

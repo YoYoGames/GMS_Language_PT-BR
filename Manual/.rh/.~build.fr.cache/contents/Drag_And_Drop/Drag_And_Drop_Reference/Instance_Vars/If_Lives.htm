@@ -1,0 +1,61 @@
+
+  
+   Se Vive
+  Esta ação é usada para verificar o valor da variável de instância vive usando uma expressão específica. Você dá o tipo de expressão a ser conferida e o valor a ser conferido com as vidas atuais, e a declaração "se" irá
+    sempre retornam verdadeiros ou falsos, dependendo das expressões e valores utilizados. As expressões disponíveis são:
+  
+    Igual a - A variável e o valor são ambos exatamente iguais
+    Menos do que - A variável é menor do que o valor
+    Maior do que - A variável é maior do que o valor
+    Menor ou igual a - A variável é menor ou igual ao valor
+    Maior ou Igual a - A variável é maior ou igual ao valor
+  
+  Se você sinalizar o argumento Não, então as expressões acima serão negadas, por exemplo "igual a" torna-se " não igual a",então você estaria verificando se o valor de vida não é igual ao valor dado.
+  NOTA IMPORTANTE: Devido a questões de precisão de ponto flutuante, verificar se dois valores são exatamente iguais pode retornar falsos, já que um pode ser exatamente 1, enquanto
+    a outra pode ser 1.00000000000001. Isto pode ser evitado usando a ação Decimal para Inteiro antes de verificar ou usando as expressões "maior que" ou "menor que".
+  Note que para adicionar ações no bloco "se", elas devem ser descartadas ao lado da ação, como mostrado na imagem abaixo:
+  Estas ações serão executadas agora se o "se" for avaliado como verdadeiro, enquanto qualquer
+    ações abandonadas em outro lugar serão realizadas após o bloco "se".
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Não
+        Preparado para verificar se a expressão não é verdadeira.
+      
+      
+        Expressão
+        O tipo de expressão a ser usada para o cheque.
+      
+      
+        Valor
+        O valor a ser comparado com as vidas.
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima verificará o valor de vidas para ver se ele é menor ou igual
+    a 0 e se for, então a sala será reiniciada.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações variáveis de instância
+        A seguir: Se Saúde
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

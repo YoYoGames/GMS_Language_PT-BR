@@ -1,0 +1,45 @@
+
+  
+  physics_fixture_delete
+  Uma vez que uma vez que uma fixação tenha sido vinculada a uma instância que mantenha as propriedades de fixação, podemos remover a fixação da memória com esta função, particularmente se não planejamos mais usá-la novamente. Favor observar que a falha na remoção de fixações
+    depois de não serem mais necessários podem causar um vazamento de memória que irá diminuir a velocidade e, eventualmente, quebrar seu jogo, portanto, você deve tomar cuidado para limpar corretamente após definir e ligar os dispositivos.
+   
+  Sintaxe:
+  physics_fixture_delete(fixture)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fixação
+        a fixação que deve ser apagada da memória
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var fix, inst; fix = physics_fixture_create(); physics_fixture_set_circle_shape(fix, 16); physics_fixture_set_density(fix, 1.0); inst = instance_create_layer(x, y, "Instances", genericBodyObject); physics_fixture_bind(fix,
+    inst); physics_fixture_delete(fix);
+  
+  O código acima criará uma fixação e atribuirá seu índice à variável "fixação". Ele então define a forma e a densidade da fixação antes de vinculá-la à instância que foi criada com o índice armazenado na variável "inst".
+    Finalmente, o fixador é apagado para evitar vazamentos de memória, pois não é mais necessário.
+   
+   
+   
+  
+    
+      
+        Voltar: Instalações
+        Próximo: física_remove_fixture
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

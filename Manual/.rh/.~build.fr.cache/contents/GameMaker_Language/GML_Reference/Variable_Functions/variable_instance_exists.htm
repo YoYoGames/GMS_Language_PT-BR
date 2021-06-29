@@ -1,0 +1,48 @@
+
+  
+  variável_instância_existe
+  Com esta função você pode verificar se uma variável de escopo de instância existe ou não. Você fornece o valor único de identificação da instância (que pode ser encontrado nas propriedades da instância no editor da sala, ou é retornado quando você chama a função instance_create_layer()) bem como o nome da variável a ser verificada como uma string (ver código de exemplo abaixo).
+    A função retornará verdadeira se uma variável com o nome dado existir para a instância e falsa de outra forma.
+   
+  Sintaxe:
+  variable_instance_exists(instance_id, name);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        exemplo_id
+        O valor único de identificação da instância a ser verificada
+      
+      
+        nome
+        O nome da variável a ser verificada (como uma string)
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se !variable_instance_exists(id, "shields")) {
+     shields = 0; }
+  
+  O código acima verificará se a variável chamada "shields" existe na instância que executa o código e se não existe, então ela é criada e inicializada a 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções variáveis
+        A seguir: nomes_de_instância_variável_get_names
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

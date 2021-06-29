@@ -1,0 +1,45 @@
+
+  
+  part_system_clear
+  Com esta função você pode limpar o sistema indexado para seu estado padrão, removendo todos os emissores e redefinindo a profundidade e a posição (se eles tivessem sido alterados). Tenha cuidado ao usar esta função como se você tivesse qualquer ajuste ou estouro de instância ou qualquer outro
+    ação usando um emissor associado a este sistema, você receberá um erro, a menos que esteja usando o part_emitter_exists() função a ser verificada. Também não há necessidade de chamar a função part_emitter_destroy() função
+    pois isso também é tratado automaticamente.
+  NOTA: esta função limpará as partículas visíveis na sala, mas não limpa as propriedades das partículas, nem as remove da memória. Para isso você deve utilizar as funções part_type_clear()    e part_type_destroy().
+   
+  Sintaxe:
+  part_system_clear(ind);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do sistema de partículas a limpar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  part_system_clear(global.Sname);
+  O código acima limpará o sistema de partículas indexado na variável global "Sname" ao seu estado padrão.
+   
+   
+   
+   
+  
+    
+      
+        Voltar: Sistemas de Partículas
+        Próximo: part_system_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,95 @@
+
+  
+  physics_joint_wheel_create
+  Uma junta de roda simplesmente combina um pistão e uma junta giratória, como uma roda montada no amortecedor de choque de um carro. Você especifica o ponto de ancoragem para a junta, bem como as duas instâncias físicas habilitadas para a junta, e a primeira instância atuará como a "carroceria".
+    para a junta, enquanto a segunda será a "roda", e será permitido mover-se livremente ao redor do eixo da junta. Você também pode definir um vetor de eixo, que é a linha imaginária ao longo da qual a articulação atuará como uma "mola", permitindo a
+    roda para saltar para cima e para baixo ao longo dela à medida que encontra obstáculos (muito parecidos com a junta do pistão). A imagem a seguir ilustra isto:
+  Se você optar por habilitar um motor, então a segunda instância irá girar em torno da posição da âncora, e
+    você pode ajustar o torque máximo do motor usado para atingir a velocidade do motor desejada (N/m), bem como a velocidade na qual o motor deve girar. Como a junta de roda também tem um eixo ao longo do qual ela pode se mover, você pode ajustar a freqüência de oscilação (em Hz) como
+    bem como a relação de amortecimento para a junta - talvez seja necessário jogar com estes valores para afiná-los e é recomendável que você comece com valores menores e aumente-os até obter o efeito que você deseja.
+  Como em todas as juntas, se você definir o valor "col" como verdadeiro, então as duas instâncias podem interagir e colidir uma com a outra, mas somente se elas tiverem eventos de colisão, porém, se for definido como falso, elas não irão colidir
+    não importa o que aconteça.
+   
+  Sintaxe:
+  physics_joint_wheel_create(inst1, inst2, anchor_x, anchor_y, axis_x, axis_y, enableMotor, max_motor_torque, motor_speed, freq_hz, damping_ratio, col)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        inst1
+        A primeira instância para se conectar com a junta
+      
+      
+        inst2
+        A segunda instância para se conectar com a junta
+      
+      
+        anchor_x
+        A coordenada x onde a articulação está ancorada, dentro do mundo do jogo
+      
+      
+        âncora_y
+        A coordenada y onde a articulação está ancorada, dentro do mundo do jogo
+      
+      
+        eixo_x
+        O componente x do vetor do eixo da roda
+      
+      
+        eixo_y
+        O componente y do vetor do eixo da roda
+      
+      
+        enableMotor
+        Se o motor deve estar ativo (verdadeiro) ou não (falso)
+      
+      
+        max_motor_torque
+        Define o torque máximo do motor utilizado para atingir a velocidade desejada do motor (em Newtons por metro)
+      
+      
+        velocidade_do_motor
+        Esta é a velocidade na qual o motor deve girar
+      
+      
+        freq_hz
+        Esta é a freqüência de oscilação para a junta, em hertz
+      
+      
+        damping_ratio
+        Esta relação de amortecimento para a junta
+      
+      
+        col
+        Se as duas instâncias podem colidir (verdadeiras) ou não (falsas)
+      
+    
+  
+   
+  Devoluções:
+  Inteiro (índice da junta)
+   
+  Exemplo:
+  var mainFixture = physics_fixture_create(); physics_fixture_set_box_shape(mainFixture, 128, 32); var wheelFixture = physics_fixture_create(); physics_fixture_set_circle_shape(wheelFixture, 32); var o_id = instance_create_layer(x+25,
+    y + 100, "Instâncias", obj_Wheel); physics_fixture_bind(mainFixture, id); physics_fixture_bind(wheelFixture, o_id); physics_joint_wheel_create(id, o_id, o_id.x, o_id.y, 0, 1, true, 10, 1, 15, 6, false); physics_fixture_delete(mainFixture);
+     physics_fixture_delete(wheelFixture);
+  
+  O código acima cria e define dois novos dispositivos. Estes são então vinculados à instância de chamada e a uma nova instância que é criada antes de ter uma junta de roda aplicada para conectá-los, após o que os dispositivos são apagados da memória.
+   
+   
+   
+  
+    
+      
+        Voltar: Juntas
+        A seguir: physics_joint_weld_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,77 @@
+
+  
+  draw_rectangle_colour
+  Com esta função você pode desenhar um contorno de um retângulo ou um retângulo preenchido definindo uma área onde a posição (x1,y1) é o canto superior esquerdo e a posição (x2,y2) é o canto inferior direito. Se for preenchido, você pode definir o indivíduo
+    cores para cada ponto de canto e se essas cores não forem as mesmas, você terá um efeito de gradiente de um para o outro (as configurações de cores sobreporão o conjunto de cores de base com a função draw_set_colour()).
+    Favor observar que o retângulo a ser desenhado pode precisar de valores diferentes (+/-1 no x, y, ou largura ou altura) para ser desenhado com as dimensões desejadas devido às diferenças entre as várias plataformas suportadas.
+  NOTA: Se você quiser desenhar uma forma usando um sombreador, você deve estar ciente de que a maioria dos sombreadores espera as seguintes entradas: vértice, textura, cor. Entretanto, ao utilizar esta função, apenas os dados de vértice e cor estão sendo passados para dentro, e assim o
+   shader não pode desenhar nada (ou desenhar algo, mas não corretamente). Se você precisar desenhar formas desta maneira, então o sombreador deve ser personalizado tendo isto em mente.
+   
+  Sintaxe:
+  draw_rectangle_colour(x1, y1, x2, y2, col1, col2, col3, col4, esboço);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x1
+        A coordenada x da esquerda do retângulo.
+      
+      
+        y1
+        A coordenada y da parte superior do retângulo.
+      
+      
+        x2
+        A coordenada x da direita do retângulo.
+      
+      
+        y2
+        A coordenada y da parte inferior do retângulo.
+      
+      
+        col1
+        A cor do canto superior esquerdo.
+      
+      
+        col2
+        A cor do canto superior direito.
+      
+      
+        col3
+        A cor do canto inferior direito.
+      
+      
+        col4
+        A cor do canto inferior esquerdo.
+      
+      
+        esboço
+        Se o retângulo é um contorno (verdadeiro) ou preenchido (falso).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_rectangle_colour(50, 50, 200, 200, c_black, c_white, c_black, c_white, false);
+  Isto desenharia um quadrado preenchido com um gradiente preto/branco liso entre os cantos.
+   
+   
+   
+  
+    
+      
+        Voltar: Formulários básicos
+        Próximo: draw_roundrect
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

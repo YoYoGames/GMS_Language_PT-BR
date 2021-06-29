@@ -1,0 +1,58 @@
+
+  
+  Listas de DS
+  Uma lista DS é uma estrutura de dados que armazena informações seqüencialmente à medida que são adicionadas (muito parecida com uma matriz). As listas DS são estruturas de dados muito flexíveis que permitem adicionar valores no final ou inseri-los
+    em algum lugar no meio da lista, além de dar-lhe a capacidade de baralhar a ordem (para aleatorizar os valores) ou classificá-los em ordem ascendente ou descendente.
+  Ao acessar as estruturas de dados da lista DS, você deve sempre tentar usar valores inteiros para a posição da lista, e todos os índices não inteiros serão nivelados pelo GameMaker Studio 2 se você não o fizer. Se isso não for o que você precisa, então você precisará
+    faça o arredondamento antes de passar o índice que você deseja verificar.
+  NOTA: Como acontece com todos os recursos dinâmicos, as estruturas de dados ocupam a memória e assim devem ser sempre destruídas quando não são mais necessárias para evitar vazamentos de memória, o que irá retardar e, eventualmente, quebrar seu jogo.
+  NOTA: se você precisar verificar se existe uma estrutura de dados, você pode usar o ds_exists() função.
+  Além das funções específicas listadas abaixo, todos vocês podem usar uma expressão (chamada acessor) para adicionar ou modificar o conteúdo de sua lista DS. Este acessor parece semelhante a uma matriz 1D com a seguinte sintaxe:
+  list_index[| index]
+  Você pode encontrar mais informações, mais exemplos, a partir da página Visão Geral da GML em Accessors.
+  Existem as seguintes funções que lidam com listas DS.
+   
+  
+    ds_list_create
+    ds_list_destroy
+    ds_list_clear
+    ds_list_empty
+    ds_list_size
+    ds_list_add
+    ds_list_set
+    ds_list_delete
+    ds_list_find_index
+    ds_list_find_value
+    ds_list_insert
+    ds_list_replace
+    ds_list_shuffle
+    ds_list_sort
+    ds_list_copy
+    ds_list_read
+    ds_list_write
+  
+   
+  As listas Ds podem ser usadas para segurar mapas DS e outras listas DS também, e por isso temos algumas funções especiais que são usadas para "sinalizar" ou "marcar" posições dentro da lista como segurando essas estruturas de dados. Em
+    geral, isso não é necessário, mas tem a vantagem de coletar (destruir) automaticamente as estruturas de dados marcadas quando a lista mãe é destruída, e também é necessário quando usado em conjunto com o json_encode()    para que a lista e seus dados sejam devidamente codificados. As funções para isso são:
+   
+  
+    ds_list_as_list_as_list
+    ds_list_mark_as_map
+    ds_list_is_list
+    ds_list_is_map
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Estruturas de dados
+        A seguir: DS Maps
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

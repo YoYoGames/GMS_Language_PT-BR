@@ -1,0 +1,49 @@
+
+  
+  gamepad_axis_value
+  Você pode usar esta função para obter o valor dos diferentes eixos a partir de um determinado slot gamepad. Você fornece o índice do slot do controle de jogo para verificar, junto com uma constante de índice de eixo (como listado aqui), ou um valor inteiro entre
+   0 e gamepad_axis_count()-1. O valor retornado estará entre -1 e 1 para cada um dos eixos horizontais e verticais disponíveis.
+  Note que o valor retornado é normalizado para levar em consideração o valor definido para a zona morta do eixo (usando a função gamepad_set_axis_deadzone()), e assim será sempre
+    Por exemplo, se a zona morta for definida como 0,2, o empurrão do bastão para a direita só começará a retornar um valor de 0 - 1 quando o valor do eixo bruto for superior a 0,2 - assim, por exemplo, quando o valor bruto for 0,2, o
+    O valor de retorno será 0, quando o valor bruto estiver em 0,5, o valor de retorno será 0,375, ou se o valor bruto for 0,9, então o valor de retorno será 0,875.
+   
+  Sintaxe:
+  gamepad_axis_value(device, axisIndex);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dispositivo
+        Qual dispositivo de controle de jogo "slot" a ser verificado.
+      
+      
+        axisIndex
+        O índice de eixos a verificar (ver a lista constante).
+      
+    
+  
+   
+  Devoluções:
+  real
+   
+  Exemplo:
+  var haxis = gamepad_axis_value(0, gp_axislh); var vaxis = gamepad_axis_value(0, gp_axislv); direção = point_direction(0, 0, haxis, vaxis); velocidade = point_distance(0 ,0, haxis, vaxis) * 5;
+  O código acima define a velocidade e a direção da instância com base nos valores retornados do controlador analógico esquerdo do controle de jogo conectado ao dispositivo "slot" 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada Gamepad
+        Próximo:  gamepad_button_check 
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

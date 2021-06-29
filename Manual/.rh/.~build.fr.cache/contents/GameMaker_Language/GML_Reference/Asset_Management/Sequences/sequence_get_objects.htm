@@ -1,0 +1,45 @@
+
+  
+  Sequência_get_objects
+  Com esta função, você pode recuperar um conjunto de todos os índices de objetos que têm instâncias sendo criadas dentro da seqüência dada. Você fornece ou a estrutura de objetos da seqüência (como retornado pela função
+    sequence_create() ou sequence_get()) ou a identificação da seqüência (como retornada pela função layer_sequence_get_sequence() ou
+    da seqüência de propriedade estrutural da instância) e a função retornará uma matriz, onde cada item da matriz é um object_index para os diferentes objetos que estão sendo utilizados pela seqüência
+    para criar instâncias.
+   
+  Sintaxe:
+  sequence_get_objects(sequence_struct_or_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Sequência_de_estrutura_ou_e_id
+        A estrutura do objeto sequencial ou ID para obter os objetos.
+      
+    
+  
+   
+  Devoluções:
+  Array
+   
+   
+  Exemplo:
+  var _seq = sequence_get(seq_Logo); obj_array = sequence_get_objects(_seq);
+  O código acima obtém a estrutura de um objeto sequencial e então recupera os objetos que ele usa e armazena a matriz em uma variável.
+   
+   
+   
+  
+    
+      
+        Voltar: Sequências
+        A seguir: sequence_instance_override_object
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

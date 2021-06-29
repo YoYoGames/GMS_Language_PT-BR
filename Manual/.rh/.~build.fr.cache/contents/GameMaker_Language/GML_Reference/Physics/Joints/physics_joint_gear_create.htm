@@ -1,0 +1,67 @@
+
+  
+  physics_joint_gear_create
+  Se você quiser criar uma engenhoca mecânica sofisticada, você pode querer usar engrenagens. Em princípio, você pode criar engrenagens no GameMaker Studio 2 usando instâncias de composição para modelar dentes de engrenagens, mas isto não é muito eficiente e pode ser
+    entediante para o autor! Felizmente, existe um método mais simples, que é o de usar uma junta de engrenagens. Para fazer uma você precisa ter previamente definido seus dispositivos e criado as duas juntas básicas que vão compor sua engrenagem - estas devem ser compostas de uma junta revoluta e uma junta prismática ou outra junta revoluta. A imagem abaixo mostra como uma engrenagem normalmente seria criada
+    em um jogo:
+  Então o que acontece? Bem, uma vez que as duas juntas são adicionadas à engrenagem, a interação com uma delas terá um
+    efeito no outro, portanto, no exemplo acima, se você girar inst2, o inst3 se moverá para cima e para baixo, ou se você mover inst3 para cima e para baixo, então o inst2 se girará. Você também pode mudar a relação da engrenagem, o que significa que você precisa mover mais uma instância (ou
+    menos) para obter o efeito desejado. O código no exemplo na parte inferior mostra como algo como a imagem acima pode ser criado.
+  OBSERVAÇÃO: Se você precisar excluir qualquer uma das duas instâncias envolvidas na junta de engrenagem (ou apenas excluir suas juntas), então você deve excluir a junta de engrenagem primeiro usando physics_joint_delete()    ou então você receberá um erro!
+   
+  Sintaxe:
+  physics_joint_gear_create(inst1, inst2, joint_1, joint_2, ratio)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        inst1
+        A primeira instância para se conectar com a junta
+      
+      
+        inst2
+        A segunda instância para se conectar com a junta
+      
+      
+        joint_1
+        Uma junta revoluta previamente definida
+      
+      
+        joint_2
+        Uma junta revoluta ou prismática previamente definida
+      
+      
+        relação
+        Estabelecer a relação de velocidade entre as duas juntas
+      
+    
+  
+   
+  Devoluções:
+  Inteiro (índice da junta)
+   
+  Exemplo:
+  var t_fix, g_fix, inst1, inst2, inst3, r_joint, p_joint; g_fix = physics_fixture_fixture_create(); physics_fixture_set_box_shape(g_fix, 40, 10); t_fix = physics_fixture_create(); physics_fixture_set_circle_shape(t_fix, 10); physics_fixture_set_density(t_fix, 10),
+    0,5); inst1 = instance_create_layer(60, room_height - 30, "Background", obj_Ground); inst2 = instance_create_layer(40, room_height - 300, "Instances", obj_Cog); inst3 = instance_create_layer(150, room_height - 300,
+    "Instances", obj_Barrel); physics_fixture_bind(g_fix, inst1); physics_fixture_bind(t_fix, inst2); physics_fixture_bind(t_fix, inst3); r_joint = physics_create_revolute_joint(inst1, inst2, 40, room_height - 300, -80, 80,
+    1, 10, 0,5, 1, 0); p_joint = physics_create_prismatic_joint(inst1, inst3, 150, room_height - 300, 0, 1, -10, 10, true, 0, 0, 0, 0, 0, 0); physics_create_gear_joint(inst2, inst3, r_joint, p_joint, 0,5);
+  O código acima cria e define duas fixações e depois cria três instâncias, uma "obj_Ground" e duas outras, "obj_Cog" e "obj_Barrel". As fixações são então vinculadas a estas instâncias e duas juntas são criadas. A
+    junta revoluta entre o solo e a engrenagem, e uma junta prismática entre o solo e o barril. Finalmente, é criada uma junta de engrenagem entre a engrenagem e o cilindro, usando as juntas rotativas e prismáticas previamente definidas.
+   
+   
+   
+  
+    
+      
+        Voltar: Juntas
+        A seguir: physics_joint_rope_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,49 @@
+
+  
+  fisica_particle_group_join
+  Com esta função você pode unir dois grupos de partículas, e os grupos unidos se comportarão como se ambos fizessem parte de uma única entidade. Os grupos deveriam ter sido criados com bordas sobrepostas, como se, se ainda não estivessem em contato, eles
+    não serão unidas. A função leva os IDs exclusivos dos grupos para se unir, conforme retornado pela função física_particle_group_end()e você pode usar a função quantas vezes quiser para
+    um único grupo para unir vários corpos macios.
+   
+  Sintaxe:
+  fisic_particle_group_join(to, from)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        para
+        O primeiro grupo de partículas a aderir.
+      
+      
+        de
+        O segundo grupo de partículas a aderir.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile; var groupflags = phy_particle_group_flag_solid; physics_particle_group_begin(flags, groupflags, mouse_x- 45, mouse_y, 0, 0, 0, 0, c_white, 1, 1, 2); physics_particle_group_circle_circle(50);
+     var g1 = physics_particle_group_end(); physics_particle_group_begin(flags, groupflags, mouse_x + 45, mouse_y, 0, 0, 0, 0, c_white, 1, 1, 2); physics_particle_group_circle_circle(50);
+     var g2 = physics_particle_group_end(); physics_particle_group_join(g1, g2);
+  O código acima cria dois grupos de partículas circulares e os une.
+   
+   
+   
+  
+    
+      
+        Voltar: Partículas macias do corpo
+        Próxima: física_particle_group_delete
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

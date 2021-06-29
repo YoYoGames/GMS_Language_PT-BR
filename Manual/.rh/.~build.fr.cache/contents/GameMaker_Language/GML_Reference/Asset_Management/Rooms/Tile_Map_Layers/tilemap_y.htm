@@ -1,0 +1,45 @@
+
+  
+  mapa do azulejo_y
+  Esta função controla a posição ao longo do eixo y da sala do elemento do mapa de bens azulejos na camada. Você dá o ID do elemento do mapa de azulejos (que você obtém quando cria um elemento do mapa de azulejos usando layer_tilemap_create()    ou quando você usa a função layer_tilemap_get_id()), e então definir o valor y a ser usado (com base nas coordenadas da sala).
+   
+  Sintaxe:
+  tilemap_y(tilemap_element_id, y);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tilemap_element_id
+        O valor de identificação único do elemento do mapa de azulejos a ser mudado
+      
+      
+        y
+        A posição y para o mapa de azulejos
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var lay_id = layer_get_id("Asset_sky"); var map_id = layer_tilemap_get_id(lay_id); tilemap_y(map_id, irandom(room_height));
+  O código acima obtém o valor de identificação do ativo do mapa de azulejos atribuído à camada "Asset_sky" e então define sua posição y para um valor aleatório entre 0 e a altura da sala.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas do mapa de azulejos
+        Próximo: tilemap_set
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

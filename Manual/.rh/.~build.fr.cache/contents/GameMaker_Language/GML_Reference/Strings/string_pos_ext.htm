@@ -1,0 +1,52 @@
+
+  
+  string_pos_ext
+  Esta função retornará a posição de caracteres de uma instância de uma sub-cordilheira dentro de uma corda, procurando através da corda a partir da posição dada como posição inicial. A função retornará 0 se a cadeia de caracteres de busca não for encontrada, ou
+    a posição do primeiro caractere da cadeia de busca, se for. Tenha em mente que para as cadeias de suporte herdadas são indexadas a partir de 1, portanto 1 é a primeira posição na cadeia, não 0 como você pode esperar.
+   
+  Sintaxe:
+  string_pos_ext(substr, str, start_pos);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        substr
+        O substrato a ser procurado no cordão.
+      
+      
+        str
+        O fio.
+      
+      
+        start_pos
+        A posição de partida para a busca.
+      
+    
+  
+   
+  Devoluções:
+  Inteiro
+   
+  Exemplo:
+  if (string_pos_ext(",", texto, 20) != 0) {
+     string_insert(nome, texto, string_pos_ext(",", texto, 20)); }
+  
+  O código acima procura na string armazenada na variável "texto" por uma vírgula após o 20º caracter, e se encontrar uma, insere o "nome" do substrato nessa posição.
+   
+   
+   
+  
+    
+      
+        Voltar: Cordas
+        Próximo: string_last_pos
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

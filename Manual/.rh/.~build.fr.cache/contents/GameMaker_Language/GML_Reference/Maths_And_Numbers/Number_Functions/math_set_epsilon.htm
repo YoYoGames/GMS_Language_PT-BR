@@ -1,0 +1,62 @@
+
+
+
+
+
+  
+  matemático_set_epsilon
+  Epsilon é um valor utilizado para determinar se dois números sujeitos a erro de arredondamento estão suficientemente próximos para serem considerados "iguais". Ele é útil quando se trata de matemática de ponto flutuante, pois pode reduzir os "erros de arredondamento" que
+    As operações retornam valores que parecem incorretos ou contrários ao que se espera. Por exemplo, podemos ter adicionado um valor ao índice de imagem de um duende e esperar que o resultado seja um único inteiro, mas devido à natureza da matemática de ponto flutuante, o real
+    valor final acaba sendo algo como 5,0000002, portanto, quando temos o seguinte controle:
+  se image_index == 5 {
+     // fazer algo }
+  
+  O código não se comporta como esperado e retorna falso. Entretanto, se definirmos o valor epsilon para 0,000001, o valor image_index será arredondado para o número real mais próximo que é +/- 0,000001 do valor original,
+    fazendo com que a comparação acima volte a ser verdadeira.
+  O valor do epsilon será usado para todos os seguintes operadores inteiros:
+  
+    < : Menos de
+    > : Maior do que
+    == : Igual a
+    <= : Menos ou igual a
+    >= : Maior ou igual a
+    != : Não igual a
+  
+  Observe que a definição de um valor epsilon de 0 desativará todo o arredondamento, e usar um valor de 1 dará um erro.
+   
+  Sintaxe:
+  matemático_set_epsilon(epsilon);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        epsilon
+        O novo valor do epsilon (de 0 a 0,99999999999).
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  math_set_epsilon(0.0001);
+  Isto definirá o valor do epsilon para todas as operações adicionais de ponto flutuante.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções Numéricas
+        A seguir: math_get_epsilon
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

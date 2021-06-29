@@ -1,0 +1,63 @@
+
+  
+  Aplicação de ações em outras instâncias
+  A maioria das ações nas bibliotecas DnD™tem a opção de aplicar a ação de diferentes maneiras. Isto se chama definir o escopo da ação e pode ser uma de várias coisas:
+  Essencialmente o que você está dizendo ao GameMaker Studio 2 é qual instância deve executar a ação. O escopo padrão da ação
+    é self, o que significa que uma vez criado o objeto como uma instância na sala, essa instância executará o código de ação. Entretanto, isto nem sempre é o que você quer, e você pode querer que algumas ações afetem outras, ou até
+    todos, instâncias na sala. É aqui que entra a mudança do escopo da ação.
+  Os diferentes escopos de execução das ações estão listados abaixo, mas deve-se observar que mudar o escopo de uma ação desta forma somente aplicará o novo escopo a essa ação e não às ações subseqüentes na cadeia. Se você quiser aplicar
+    uma mudança de escopo de ação para múltiplas ações encadeadas, então use primeiro a opção Aplicar à... ação.
+   
+  Auto
+  
+    Este é o escopo padrão para uma ação e simplesmente declara que a ação deve ser chamada apenas pela instância que está executando o código.
+     
+  
+  Outros
+  
+    O escopo other tem duas funções principais, e o valor que ele retorna dependerá de onde e como você o utiliza. No evento de colisão, other retornará o valor único de identificação da instância
+      (um valor único que é usado para distinguir instâncias individuais de cada objeto), de modo que você pode, por exemplo, criar uma instância "bala" e ter um evento de colisão com uma instância "jogador" e, nesse caso, usar o escopo other para remover pontos de golpe do objeto "jogador" e depois retornar ao escopo self para destruir a instância "bala".
+    Fora do evento de colisão, a configuração other se comportará como se estivesse configurada para noone, a menos que esteja sendo chamada de dentro de um bloco de ações delimitado. O que isto significa é que se você mudar o
+      escopo de um grupo de ações para um objeto específico, então enquanto essas ações estão sendo chamadas, o escopo other devolverá a identificação da instância que inicialmente chamou o grupo de ação. Por exemplo, você poderia executar
+      um Aplicar a... ação e depois no próximo bloco de código definir o escopo para other para executar uma ação sobre a instância executando todo o bloco de eventos, e não o
+      exemplo que está sendo aplicado aos blocos de código. A imagem abaixo dá um exemplo:
+    Na imagem, estamos verificando se o mouse pressiona na instância, e se for detectado, mudamos de escopo usando a ação Aplicar a... Os próximos dois blocos de ação estão agora sendo chamados da instância "obj_Player" (se houver mais de um, então ele será executado para todos eles) e assim o objeto mudará seu sprite e então criará um objeto na outra posição,
+      ou seja: a posição do objeto que está executando o evento e detectou a pressão do mouse.
+     
+  
+  Todos
+  
+    Quando você amplia uma ação para todos, você está dizendo ao GameMaker Studio 2 para executar esse bloco para cada instância ativa dentro da sala atual. Por exemplo, criar uma ação de Destruir Instância de Objetos 
+      e definir seu escopo para all fará desaparecer cada instância da sala, não importa de que objeto tenham sido criados.
+     
+  
+  Objeto
+  
+    Uma ação também pode ser dada a um objeto por seu escopo. O que isto significa é que todas as instâncias do objeto em questão executarão essa ação ao mesmo tempo em que ela é chamada. Portanto, se você tiver 100 instâncias inimigas na sala, por exemplo, e
+      você quer defini-los todos para apontar para um ponto específico. Você chamaria o Set Point Direction e definiria o escopo de ação para o objeto "obj_Enemy" e quando este
+      é chamado, todas as instâncias desse objeto mudarão de direção.
+     
+  
+  Expressão
+  
+    O campo de entrada Expressão é para que você insira a identificação de uma instância específica na qual você deseja que a ação trabalhe. Pode ser o valor de identificação único atribuído a uma instância pelo Editor de Sala ou pode ser a identificação de uma instância que você tenha armazenado
+      em uma variável (onde a variável seria o valor de entrada) ou pode até mesmo ser uma expressão usando código, como mostrado na imagem abaixo:
+    Neste caso, uma instância chama o Set Sprite de
+      a instância criada pelo código dado para a Expressão. Note que, neste caso, a instância sendo criada executará primeiro seu Evento de Criação antes que a ação seja aplicada a ela.
+     
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Índice
+        A seguir: Roteiros de blocos de ação
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

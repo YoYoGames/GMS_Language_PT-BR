@@ -1,0 +1,55 @@
+
+  
+  draw_circle
+  Com esta função, você pode desenhar um contorno de um círculo ou um círculo preenchido. Você pode definir quão preciso é o desenho com a função draw_set_circle_precision().
+  NOTA: Se você quiser desenhar uma forma usando um sombreador, você deve estar ciente de que a maioria dos sombreadores espera as seguintes entradas: vértice, textura, cor. Entretanto, ao utilizar esta função, apenas os dados de vértice e cor estão sendo passados para dentro, e assim o
+   shader não pode desenhar nada (ou desenhar algo, mas não corretamente). Se você precisar desenhar formas desta maneira, então o sombreador deve ser personalizado tendo isto em mente.
+   
+  Sintaxe:
+  draw_circle(x, y, r, outline);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A coordenada x do centro do círculo.
+      
+      
+        y
+        A coordenada y do centro do círculo.
+      
+      
+        r
+        O raio do círculo (comprimento do centro até a borda)
+      
+      
+        esboço
+        Se o círculo é desenhado preenchido(falso) ou como um contorno de um pixel de largura(verdadeiro).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_set_colour(c_white); draw_circle(100, 100, 50, true);
+  Isto desenhará um contorno circular branco de um pixel com um raio de 50 pixels.
+   
+   
+   
+  
+    
+      
+        Voltar: Formulários básicos
+        A seguir: draw_circle_colour
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

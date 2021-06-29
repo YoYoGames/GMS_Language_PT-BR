@@ -1,0 +1,52 @@
+
+  
+  draw_text
+  Com esta função você pode desenhar qualquer corda em qualquer posição dentro da sala (para desenhar números reais você deve usar o corda() função para convertê-los em texto). Para combinar cordas, você pode
+    use + (veja exemplo abaixo) e você também pode usar \n dentro de uma string para adicionar uma quebra de linha de modo que ela seja desenhada sobre várias linhas (para informações sobre como formatar corretamente uma string e quais caracteres de escape você pode usar, veja aqui).
+    A cor do texto e o alfa são regidos pelos valores atuais da base alfa e da cor, conforme definido por draw_set_alpha() e draw_set_colour().
+  NOTA: A posição real do texto será influenciada pelos valores de alinhamento definidos por draw_set_halign() e draw_set_valign().
+   
+  Sintaxe:
+  draw_text(x, y, string);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A coordenada x do fio desenhado.
+      
+      
+        y
+        A coordenada y da corda desenhada.
+      
+      
+        corda
+        O fio para desenhar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_text(x, y, "Olá, " + global.Nome + "!\n Espero que você esteja bem!")
+  O código acima desenhará uma string na posição x/y da instância, que usará a string armazenada na variável global "Name" e a dividirá em duas linhas.
+   
+   
+   
+  
+    
+      
+        Voltar: Texto
+        Próximo: draw_text_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

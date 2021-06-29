@@ -1,0 +1,31 @@
+
+  
+  Ordem de avaliação
+  Ao programar seu jogo usando a linguagem GameMaker, você deve estar ciente de que os argumentos de chamada de função não são garantidos por uma ordem de avaliação. O que isto significa é que a ordem na qual as funções colocadas em seu código são executadas irá mudar
+    de plataforma para plataforma, portanto, você deve codificá-las de forma explícita. Isto se deve às diferenças de otimização entre as diferentes plataformas alvo, por exemplo, nos argumentos da função alvo do Windows podem ser avaliados da direita para a esquerda, mas
+    no alvo HTML5, eles podem ser avaliados da esquerda para a direita. Portanto, para evitar qualquer problema, é melhor não chamar várias funções nos argumentos de uma única chamada de função, já que você pode estar construindo com base na ordem de avaliação.
+  Para ver um exemplo do que isto significa, considere o seguinte código que tem uma função de script "buffer_get_info" que chama várias funções de tempo de execução e as usa como argumentos:
+  buffer_seek(buff, buffer_seek_start, 0); buffer_get_info(buff_read(buff, buffer_s8), buffer_read(buff, buffer_s16),buffer_read(buff, buffer_s16));
+  Agora, o problema aqui é que em algumas plataformas, o último buffer_read() será chamado primeiro, e assim todos os argumentos do script estarão errados já que os dados estão sendo lidos do buffer em ordem "reversa", como você faria
+    percebê-la. Isto tem o efeito de afetar todos os valores adicionais para a função buffer_read( ), portanto todos os argumentos sendo passados para esta função de script estarão errados!
+  Para contornar isto, você deve chamar explicitamente as funções na ordem requerida e armazenar os valores retornados em variáveis, como esta:
+  var val[0] = buffer_read(buff, buffer_s8); var val[1] = buffer_read(buff, buffer_s16); var val[2] = buffer_read(buff, buffer_s16); buffer_get_info(val[0], val[1], val[2]);
+  Embora possa parecer um método mais verboso, ele mantém tudo claro e evita quaisquer possíveis problemas com a ordem de avaliação.
+  Você também deve tomar cuidado ao usarexpressões, pois a ordem em que elas são avaliadas mudará dependendo de qual alvo você está compilando.
+    Portanto, ao usar expressões em seu código, certifique-se de usar parênteses () para controlar adequadamente a ordem das operações. Isto é muito importante para garantir o comportamento correto de seus jogos em todos os jogos de plataformas alvo
+    e é essencial para a plataforma HTML5. A página sobre expressões explica isto com mais detalhes.
+   
+   
+   
+  
+    
+      
+        Voltar: Visão geral daGML
+        A seguir: Expressões e Operadores
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

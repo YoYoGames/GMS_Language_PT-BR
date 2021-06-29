@@ -1,0 +1,79 @@
+
+  
+  Trabalho em rede
+  
+  O evento de rede é um evento que será acionado por qualquer tráfego de entrada na rede, e está ligado às funções de rede. Este evento gera um Mapa DS especial que
+    é exclusiva para este evento e é armazenada na variável especial async_load. Este mapa DS conterá informações diferentes, dependendo do tipo
+    de evento da rede que o gerou.
+   
+  Eventos comuns de trabalho em rede
+  As seguintes chaves são comuns a todas as funções de rede recebidas e estarão sempre presentes no mapa async_load:
+  
+    " tipo": Esta terá uma das constantes listadas na tabela abaixo como seu valor de retorno, e designa o tipo de evento de rede.
+    " id": O id do soquete (um número real, como retornado pela função network_create_server ou network_create_socket) que está recebendo o evento. Na maioria dos casos, o ID do socket retornado é o ID do socket TCP ou UDP que acionou
+      o evento, porém se o evento for acionado em um servidor e for um Evento de Dados (ver abaixo), então a ID do soquete é a do cliente que enviou os dados.
+    " ip": O endereço IP do soquete (como um fio).
+    "porto": A porta associada com o endereço IP (útil quando se trabalha com UDP).
+  
+  Os possíveis valores de retorno para a chave "tipo" podem ser qualquer uma das quatro constantes listadas abaixo:
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        network_type_connect
+        O evento foi acionado por uma conexão.
+      
+      
+        network_type_disconnect
+        O evento foi acionado por uma desconexão.
+      
+      
+        network_type_data
+        O evento foi acionado pelos dados recebidos.
+      
+      
+        network_type_non_blocking_connect
+        O evento foi acionado por uma conexão configurada como não-bloqueio (você pode usar a função network_set_config() para isto, ou
+          conectar usando network_connect_async() ou network_connect_async_raw()).
+      
+    
+  
+   
+  Conectando / Desconectando
+  Quando você tiver um evento do tipo network_type_connect ou network_type_disconnect, o mapa async_load terá a seguinte chave adicional:
+  
+    "soquete": Esta chave manterá a identificação do soquete de conexão/desconexão.
+  
+  Se o evento for do tipo network_type_non_blocking_connect, então adicionalmente haverá a seguinte chave:
+  
+    "bem-sucedido": Esta chave será 0 ou 1, onde 0 significa que a conexão foi temporizada e 1 significa que foi bem sucedida e o soquete está pronto para uso.
+  
+  Vale notar que o Evento de Rede não é acionado nos clientes quando o servidor se desconecta, e que nenhum dos eventos network_type_* será acionado nos clientes quando o servidor ao qual estão conectados
+    desconecta, mesmo que a conexão seja baseada em TCP.
+   
+  Recebimento de dados
+  Quando você tiver um evento do tipo network_type_data , o que significa que sua rede recebeu dados, o mapa criado terá as seguintes chaves:
+  
+    "tampão": Esta é a "identificação de buffer" única que é gerada pelo evento. Um buffer do tipo "crescer", byte alinhado a 1, é criado para manter o ID deve ser armazenado em uma variável e usado para todas as outras funções.
+      chamadas para o buffer neste evento. Assim como o mapa async_load, o buffer criado é automaticamente removido da memória no final deste evento. Para mais informações sobre os buffers, consulte Referência - Buffers.
+    " tamanho": Este é o tamanho (em bytes) dos dados buffer que estão sendo recebidos.
+  
+  NOTA: O buffer criado só é válido nestes eventos e será liberado quando o evento terminar.
+   
+   
+   
+  
+    
+      
+        Voltar: Eventos Async
+        A seguir: Notificações Push
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

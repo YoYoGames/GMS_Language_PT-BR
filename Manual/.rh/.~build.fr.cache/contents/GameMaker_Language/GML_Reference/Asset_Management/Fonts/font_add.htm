@@ -1,0 +1,184 @@
+
+  
+  font_add
+  Esta função pode ser usada para adicionar uma fonte ao seu jogo a partir daquelas fontes que estão instaladas no sistema em que está rodando. Você pode definir o tamanho da fonte (em pontos), assim como se a fonte deve ser em negrito ou itálico, e você pode
+    também definem a gama de caracteres a incluir. A função retorna um valor de índice que deve ser armazenado em uma variável, pois isso será necessário em todos os outros códigos que se referem a essa fonte, ou retornará -1 se a função falhar para qualquer
+    razão.
+  Para o módulo de destino HTML5, esta função só pode ser usada para adicionar Fontes Web, e só funcionará se o WebGL não estiver habilitado - se o WebGL estiver habilitado, você deve usar um recurso de fonte geral (ou seja: usando draw_set_font()    juntamente com uma fonte do Navegador de Ativos) ou fontes bitmap (ver font_add_sprite()).
+  IMPORTANTE! Ao visar HTML5, o texto em itálico e negrito só é suportado se o recurso de fonte ou a própria fonte da web tiver estes caracteres incluídos. Eles não serão sintetizados a partir da fonte de base.
+  A tabela a seguir mostra as fontes que são padrão em todos os navegadores e que devem estar disponíveis para uso sem problemas. Qualquer outra fonte pode ou não existir no computador ou dispositivo que está rodando seu jogo, portanto, o uso desta função
+    devem ser limitadas a essas fontes padrão:
+   
+  
+    
+      
+        Nome da fonteWindows 
+        Nome da fonte Mac
+        Família da fonte
+      
+      
+        Arial
+        Arial / Helvética
+        sans-serif
+      
+      
+        Preto Arial
+        Arial Black / Gadget
+        sans-serif
+      
+      
+        BD sem MS
+        BD sem MS
+        cursivo
+      
+      
+        Courier Novo
+        Courier Novo
+        monospaced
+      
+      
+        Geórgia
+        Geórgia
+        serif
+      
+      
+        Impacto
+        Impacto / Carvão vegetal
+        sans-serif
+      
+      
+        Lucida Console
+        Mônaco
+        monospaced
+      
+      
+        Lucida Sans Unicode
+        Lucida Grande
+        sans-serif
+      
+      
+        Palatino Linótipo / Livro Antiqua
+        Palatino
+        serif
+      
+      
+        Tahoma
+        Genebra
+        sans-serif
+      
+      
+        Times New Roman
+        Times New Roman / Times
+        serif
+      
+      
+        Trebuchet MS
+        Trebuchet MS
+        sans-serif
+      
+      
+        Verdana
+        Verdana / Genebra
+        sans-serif
+      
+      
+        Geórgia
+        Geórgia
+        serif
+      
+      
+        Símbolo
+        Símbolo
+        N/A
+      
+      
+        Webdings
+        Webdings
+        N/A
+      
+      
+        Reinos
+        Zapf Dingbats
+        N/A
+      
+      
+        MS Sans Serif
+        Genebra
+        sans-serif
+      
+      
+        MS Serif
+        Nova Iorque
+        sans-serif
+      
+    
+  
+  
+     Em todos os outros alvos (não Web), você pode usar esta função para adicionar uma fonte de um arquivo. O arquivo deve ser incluído no pacote do jogo usando a funcionalidade Arquivos Incluídos do GameMaker
+    Studio 2, e deve ser um arquivo de fonte em formato *.ttf ou *.otf, útil para adicionar fontes não-padrão como asiáticas ou árabes.
+  ADVERTÊNCIA! Se você incluir tal arquivo de fonte com um jogo, ele deve ser licenciado para distribuição com o jogo.
+  Ao carregar uma fonte de um arquivo desta forma, o tamanho da fonte é em pixels e o primeiro e último valores são ignorados, o que significa que todos os glifos da fonte serão adicionados. As fontes adicionadas desta forma são atribuídas a sua própria textura
+    Portanto, deve-se ter cuidado ao utilizar esta função, pois ela aumentará o número de trocas de textura ao desenhar. Vale notar também que as fontes podem parecer ligeiramente maiores quando desenhadas, já que os glifos podem ter partes que são desenhadas fora da
+    caixa de delimitação definida para a fonte. Você também deve estar ciente de que há uma limitação de cerca de 200 glifos que podem ser renderizados em um único quadro para uma determinada fonte.
+  Por padrão, as fontes adicionadas terão o anti-aliasing ativado. Entretanto, você pode verificar o estado de AA a qualquer momento usando a função font_addd_get_enable_aaa() e você pode habilitar/desabilitar o AA usando a função
+    font_add_enable_aaa().
+  NOTA: Quando você carregar uma fonte no GameMaker Studio 2: Studio você deve se lembrar de removê-la novamente (com font_delete()) quando não for mais necessário, caso contrário
+    há o risco de um vazamento de memória que irá diminuir a velocidade e, eventualmente, quebrar seu jogo.
+   
+  Sintaxe:
+  font_add(nome, tamanho, negrito, negrito, itálico, primeiro, último);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome
+        O nome da fonte a ser adicionada (por exemplo, 'Arial'), ou o caminho do arquivo se a fonte for um  arquivo *. ttf ou *.otf incluído.
+      
+      
+        tamanho
+        O tamanho da fonte - pontos para fontes Web, pixels para fontes de arquivo.
+      
+      
+        ousado
+        Se a fonte é ousada (verdadeira) ou não (falsa).
+      
+      
+        itálico
+        Se a fonte é itálica (verdadeira) ou não (falsa).
+      
+      
+        primeiro
+        O primeiro personagem a incluir (se você não tiver certeza, vá para 32).
+      
+      
+        último
+        O último personagem a incluir (se você não tiver certeza, vá para 128).
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  newfont = font_add("Arial", 24, true, true, 32, 128);
+  Isto criará uma nova fonte com tamanho 24pt, usa "Arial" que é negrito e itálico e o índice para esta nova fonte é armazenado na variável newfont. A gama de fontes inclui letras maiúsculas e minúsculas, números e todas as letras comuns
+    pontuação.
+   
+   
+   
+  
+    
+      
+        Voltar: Fontes
+        Próximo: font_add_sprite
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

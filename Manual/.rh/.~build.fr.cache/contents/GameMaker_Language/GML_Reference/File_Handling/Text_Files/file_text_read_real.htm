@@ -1,0 +1,46 @@
+
+  
+  file_text_read_real
+  Com esta função você pode ler um valor numérico real de um arquivo de texto e a função retorna esse valor para ser usado ou armazenado em uma variável.
+   
+  Sintaxe:
+  file_text_read_real(fileid);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fileid
+        A identificação do arquivo a ser lido.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var file = file_text_open_read(working_directory + "hiscore.txt"); for (var i = 0; i < 10; ++i;) {
+     scr[i] = file_text_read_real(file); file_text_readln(file);
+     scr_name[i] = file_text_read_string(file); file_text_readln(file);
+     }
+     file_text_close(file);
+  
+  O código acima abre um arquivo para leitura e depois percorre as linhas da leitura do arquivo alternadamente um valor numérico real e uma cadeia em duas matrizes diferentes para uso futuro. O arquivo é então fechado quando o loop tiver terminado.
+   
+   
+   
+  
+    
+      
+        Voltar: Arquivos de texto
+        Próximo: file_text_read_string
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

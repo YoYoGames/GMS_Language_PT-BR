@@ -1,0 +1,51 @@
+
+  
+  camera_set_view_border
+  Você pode usar esta função para definir a seguinte borda da câmera de visão dentro da sala. Você dá o valor único de identificação da câmera (como retornado pelas diferentes funções da câmera_criar ) e então dá o tamanho da borda x e o tamanho da borda y (horizontal
+    e vertical). Estes valores só serão usados quando a câmera de visualização tiver sido designada um alvo de instância a seguir (seja no Editor de Sala ou usando a função camera_set_view_target()) e relacionar
+    para quão longe da fronteira da visão a instância precisa estar antes que a visão atualize sua posição a seguir.
+   
+  Sintaxe:
+  camera_set_view_border(camera_id, x_border, y_border)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        camera_id
+        O valor único de identificação da câmera retornou quando você criou a câmera.
+      
+      
+        x_fronteira
+        A borda (em pixels) para a câmera de visão ao longo do eixo horizontal
+      
+      
+        y_fronteira
+        A borda (em pixels) para a câmera de visão ao longo do eixo vertical
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  camera_set_view_border(view_camera[0], 64, 64);
+  O código acima definirá a borda da câmera de visualização para a câmera designada para visualizar a porta[0].
+   
+   
+   
+  
+    
+      
+        Voltar: Câmeras e Ver Portos
+        Próximo: camera_set_view_angle
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

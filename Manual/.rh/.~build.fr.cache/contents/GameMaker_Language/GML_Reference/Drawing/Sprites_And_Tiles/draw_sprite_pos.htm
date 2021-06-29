@@ -1,0 +1,87 @@
+
+  
+  draw_sprite_pos
+  Com esta função você pode desenhar um duende distorcido sobre a área definida pelas quatro coordenadas de canto. Os dois primeiros argumentos são o duende a desenhar e a subimagem do duende (o mesmo que na função draw_sprite())
+    mas os próximos são aqueles que definem a posição de cada um dos quatro cantos da caixa delimitadora do duende dado. Estes devem ser dados no sentido horário, portanto a primeira coordenada é a superior esquerda, depois a superior direita, depois a inferior.
+    direita e finalmente a parte inferior esquerda. Você também pode definir um valor para que o alfa do duende o desenhe com transparência. A imagem abaixo ilustra como esta função funciona:
+  
+  ADVERTÊNCIA! A imagem acima é apenas para fins ilustrativos, e se você usar esta função em um duende, você terá resultados diferentes e poderá experimentar uma textura "tosquiada" devido à forma como um duende é construído a partir de um quadrante de primitivos.
+  NOTA: Esta função é útil apenas para sprites bitmap e não funcionará com sprites SWF ou JSON (Espinha).
+  NOTA: Ao utilizar esta função, você deve ter o ajuste de Cultura Automática desativado para páginas de textura.
+   
+  Sintaxe:
+  draw_sprite_pos(sprite, sprite, subimg, x1, y1, x2, y2, x3, y3, x4, y4, alfa);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sprite
+        O índice do duende a desenhar.
+      
+      
+        subimg
+        O subimg (frame) do duende a desenhar (image_index ou -1 correlacionado com o frame atual da animação no objeto).
+      
+      
+        x1
+        A primeira coordenada x.
+      
+      
+        y1
+        A primeira coordenada y.
+      
+      
+        x2
+        A segunda coordenada x.
+      
+      
+        y2
+        A segunda coordenada y.
+      
+      
+        x3
+        A terceira coordenada x.
+      
+      
+        y3
+        A terceira coordenada y.
+      
+      
+        x4
+        A quarta coordenada x.
+      
+      
+        y4
+        A quarta coordenada y.
+      
+      
+        alfa
+        O alfa do duende (de 0 a 1 onde 0 é transparente e 1 opaco).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_sprite_pos(sprite_index, image_index, x - 100, y - 50, x - 50, y +150, x + 100, y + 200, x + 100, y, 1);
+  O código acima desenhará o duende associado com a instância executando o código distorcido em torno da posição x/y da instância e com um alfa totalmente opaco.
+   
+   
+   
+  
+    
+      
+        Voltar: Sprites e Azulejos
+        Próximo: draw_sprite_tiled
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

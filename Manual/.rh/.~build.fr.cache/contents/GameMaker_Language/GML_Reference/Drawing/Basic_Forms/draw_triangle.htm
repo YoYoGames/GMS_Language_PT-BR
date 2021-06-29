@@ -1,0 +1,67 @@
+
+  
+  triângulo_de_sorteio
+  Com esta função você pode desenhar tanto um esboço de um triângulo como um triângulo preenchido.
+  NOTA: Se você quiser desenhar uma forma usando um sombreador, você deve estar ciente de que a maioria dos sombreadores espera as seguintes entradas: vértice, textura, cor. Entretanto, ao utilizar esta função, apenas os dados de vértices e cores estão sendo passados para dentro, e assim o
+   shader não pode desenhar nada (ou desenhar algo, mas não corretamente). Se você precisar desenhar formas desta maneira, então o sombreador deve ser personalizado tendo isto em mente.
+   
+  Sintaxe:
+  draw_triangle(x1, y1, x2, y2, x3, y3, esboço);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x1
+        A coordenada x do primeiro canto do triângulo.
+      
+      
+        y1
+        A coordenada y do primeiro canto do triângulo.
+      
+      
+        x2
+        A coordenada x do segundo canto do triângulo.
+      
+      
+        y2
+        A coordenada y do segundo canto do triângulo.
+      
+      
+        x3
+        A coordenada x do terceiro canto do triângulo.
+      
+      
+        y3
+        A coordenada y do terceiro canto do triângulo.
+      
+      
+        esboço
+        Se o triângulo é desenhado preenchido (falso) ou como um contorno largo de um pixel (verdadeiro).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_set_colour(c_aqua); draw_triangle(50, 50, 200, 50, 50, 50, 200, 0);
+  Isto desenhará um triângulo isósceles em ângulo reto cheio, com seu primeiro canto em (50,50), seu segundo em (200,50) e seu terceiro em (50,200).
+   
+   
+   
+  
+    
+      
+        Voltar: Formulários básicos
+        A seguir: draw_triangle_colour
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

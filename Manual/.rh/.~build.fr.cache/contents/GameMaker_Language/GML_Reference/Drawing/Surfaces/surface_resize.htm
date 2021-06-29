@@ -1,0 +1,54 @@
+
+  
+  tamanho_da_superfície
+  Esta função redimensionará uma superfície para as dimensões dadas (em pixels). O "surface_id" é o de uma superfície que você criou anteriormente, ou o application_sufacee a função será redimensionada
+    essa superfície. Note que isto não vai cultivar nem esticar o conteúdo da superfície, mas sim destruir a superfície atual e recriá-la com o mesmo cabo (surface_id) com as novas dimensões, o que significa que ela precisará ser limpa
+    e atraído novamente (a menos que seja a aplicação_surface, caso em que o GameMaker Studio 2 fará isso automaticamente).
+  NOTA: Se você estiver redimensionando a superfície de aplicação, estas mudanças não serão registradas até o início do próximo passador, o que significa que chamar o superfície_get_width()    ou altura_da_superfície() funções no mesmo evento ou etapa retornarão os valores anteriores.
+   
+  Sintaxe:
+  surface_resize(surface_id, w, h);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        surface_id
+        A identificação da superfície a ser mudada.
+      
+      
+        w
+        A largura da nova superfície.
+      
+      
+        h
+        A altura da nova superfície.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if view_wport[0] != surface_get_width(application_surface) || view_hport[0] != surface_get_height(application_surface) {
+     surface_resize(application_surface, view_wport[0],view_hport[0]); }
+  
+  O código acima verificará o tamanho da porta de visão em relação ao da superfície "aplication_surface" e se for diferente, a superfície será redimensionada.
+   
+   
+   
+  
+    
+      
+        Voltar: Superfícies
+        A seguir: alvo_de_série
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

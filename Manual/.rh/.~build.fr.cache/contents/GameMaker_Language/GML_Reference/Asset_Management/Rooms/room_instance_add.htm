@@ -1,0 +1,56 @@
+
+  
+  room_instance_add
+  Com esta função você pode adicionar uma instância em qualquer sala que não seja a atual e em qualquer posição dentro daquela sala. A função retorna o exclusivo id da instância que pode então
+    ser usado em outras chamadas de função para definir propriedades etc... dessa instância, mas somente depois que o jogo tiver entrado na sala especificada. Se você deseja criar uma instância na sala atual, você deve estar usando a função instance_create_layer(). Nota
+    que chamar esta função em uma sala de ativos criada no Navegador de Ativos adicionará permanentemente a instância à sala, e mesmo chamando game_restart() não retornará a sala ao seu estado original
+    (somente terminando o jogo e abrindo-o novamente começará com a sala em seu estado original novamente).
+   
+  Sintaxe:
+  room_instance_add(index, x, y, obj);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice da sala para adicionar uma instância de objeto.
+      
+      
+        x
+        A posição x da nova instância.
+      
+      
+        y
+        A posição y da nova instância.
+      
+      
+        obj
+        O objetivo de acrescentar uma instância de.
+      
+    
+  
+   
+  Devoluções:
+  Identificação da instância
+   
+  Exemplo:
+  global.rm = room_add(); room_assign(rm_Base, global.rm); room_instance_add(global.rm, 100, 100, obj_Player);
+  O código acima adicionará uma nova sala ao jogo e então copiará o conteúdo da sala indexada como "rm_Base" para dentro dela. Ele então adicionará uma instância do objeto "obj_player" na posição 100.100 desta nova sala.
+   
+   
+   
+  
+    
+      
+        Voltar: Quartos
+        A seguir: room_instance_clear
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

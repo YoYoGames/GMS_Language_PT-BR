@@ -1,0 +1,62 @@
+
+  
+  get_string_async
+  Esta função abre uma janela e exibe uma mensagem assim como um espaço para o usuário inserir uma string (que conterá a string padrão fornecida para começar). Esta é uma função assíncrona, e como tal o GameMaker Studio 2 não bloqueia
+    o dispositivo em que está sendo executado enquanto espera por uma resposta, mas continua a executar eventos como de costume. Uma vez que o usuário tenha digitado sua seqüência e pressionado o botão "Ok", um evento de diálogo assíncrono é 
+    acionado que, somente durante a duração desse evento, terá um mapa DS armazenado na variável async_load.
+  Este mapa conterá as três chaves, " id"," status" e "resultado". "id" é ovalor que foi retornado pela função quando chamado, o "status" irá
+    ser verdadeiro para o botão "Ok" sendo pressionado, ou falso se a mensagem foi cancelada (onde aplicável, pois nem todas as plataformas alvo permitem que a mensagem seja cancelada). Finalmente, o "resultado" retornará a seqüência
+    que a entrada do usuário (ou um fio vazio "" se nenhum foi fornecido).
+  NOTA: Esta função é  apenas para depuração e testee não deve ser usada em jogos lançados. Para isso, você deve criar uma interface de usuário personalizada para receber informações dos jogadores, para que você tenha controle total sobre a aparência e o comportamento dos diálogos.
+   
+  Sintaxe:
+  get_string_async(string, default);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Cordão
+        A mensagem a ser mostrada no diálogo.
+      
+      
+        padrão
+        A cadeia padrão.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo ampliado:
+   
+  O evento de pressão do mouse esquerdo (por exemplo) do objeto que está mostrando a mensagem teria o seguinte código:
+  msg = get_string_async("Qual é o seu nome?", "Anon");
+  O acima mostrará uma mensagem solicitando que o usuário insira uma string e pressione "Ok". A identificação da função é armazenada na variável "msg" e será usada no evento de Diálogos Assíncronos, como mostrado abaixo:
+  var i_d = ds_map_find_value(async_load, "id"); if i_d == msg {
+     if ds_map_find_value(async_load, "status") {
+     if ds_map_find_value(async_load, "resultado") != "" {
+     global.name = ds_map_find_value(async_load, "resultado"); }
+     }
+     }
+  
+  O código acima verifica a chave "id" do Mapa DS retornado em relação ao valor armazenado na variável "msg". Se forem os mesmos, verifica se "Ok" foi pressionado (ao invés de a janela ser fechada/cancelada).
+    e se ele retornar verdadeiro, então verifica o "resultado" de uma string para ter certeza de que nenhuma string vazia foi retornada antes de definir uma variável global.
+   
+   
+   
+  
+    
+      
+        Voltar: Diálogo
+        Próximo: get_integer_async
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

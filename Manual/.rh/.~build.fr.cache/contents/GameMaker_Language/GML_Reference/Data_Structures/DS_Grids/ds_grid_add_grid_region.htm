@@ -1,0 +1,71 @@
+
+  
+  ds_grid_add_grid_region
+  Esta função pode ser usada para adicionar todos os valores de todas as células encontradas dentro da área de origem de uma grade aos valores dentro da grade de destino, como ilustrado abaixo:
+  
+  NOTA: Você também pode usar esta função na mesma grade para adicionar valores de uma região da grade àqueles armazenados em outra (veja o exemplo de código abaixo).
+   
+  Sintaxe:
+  ds_grid_add_grid_region(index, source, x1, y1, x2, y2, xpos, ypos);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice da grade de destino.
+      
+      
+        fonte
+        O índice da grade de fontes.
+      
+      
+        x1
+        A posição esquerda da região de células para copiar a partir da grade de origem.
+      
+      
+        y1
+        A posição superior da região de células para copiar a partir da grade de origem.
+      
+      
+        x2
+        A posição correta da região de células para copiar a partir da grade de origem.
+      
+      
+        y2
+        A posição inferior da região de células a serem copiadas da grade de origem.
+      
+      
+        xpos
+        A posição x na grade de destino para adicionar a região de origem.
+      
+      
+        ypos
+        A posição y na grade de destino para adicionar a região de origem.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  ds_grid_add_grid_region(grid, grid, 0, 0, 1, 5, 2, 0)
+  O código acima copiaria a região das células de (0,0) a (1,5) da grade DS indexada na variável "grade" e as adicionaria às células da posição (2,0) da mesma grade DS .
+   
+   
+   
+  
+    
+      
+        Voltar: Grades DS
+        Próximo: ds_grid_multiply
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

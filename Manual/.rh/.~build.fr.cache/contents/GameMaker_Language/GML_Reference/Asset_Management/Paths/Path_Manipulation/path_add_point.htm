@@ -1,0 +1,61 @@
+
+  
+  caminho_ponto_add
+  Com esta função você pode adicionar um ponto ao caminho especificado e definir seu fator de velocidade. Este ponto é adicionado ao final da trajetória, independentemente da posição do ponto, e o fator é igual à porcentagem de caminho_velocidade que
+    o exemplo a seguir realmente acontece quando chega a este ponto do caminho. Se você deseja colocar um ponto do caminho em alguma outra posição que não seja o fim, você deve usar caminho_ponto_de_inserção().
+  Se usado em um caminho do Navegador de Ativos, observe que a função mudará o ativo real, e assim afetará permanentemente como o caminho é usado por todas as instâncias no jogo desde o momento em que a função é usada até o final do
+    jogo. Se isto não for o que você precisa, então você deve usar uma função como path_duplicate() para criar uma cópia do caminho primeiro, então chame esta função sobre o bem duplicado (não
+    esqueça de chamar path_delete() sobre o ativo quando ele não for mais necessário).
+   
+  Sintaxe:
+  path_add_point(índice, x, y, velocidade);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do caminho para adicionar o ponto a.
+      
+      
+        x
+        A coordenada x do novo ponto.
+      
+      
+        y
+        A coordenada y do novo ponto.
+      
+      
+        velocidade
+        O fator de velocidade do ponto (valor padrão é 100).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  
+  my_path = path_add(); for (var i = 0; i <= 360; i += 36;) {
+     path_add_point(my_path, x + lengthdir_x(50, i), y + lengthdir_y(50, i), 100); }
+  
+  O código acima criará um caminho circular em torno da posição x/y da instância que está executando o código.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação do caminho
+        Próximo: ponto_de_mudança_de_caminho
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

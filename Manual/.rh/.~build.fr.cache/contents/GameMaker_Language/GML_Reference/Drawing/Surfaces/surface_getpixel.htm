@@ -1,0 +1,51 @@
+
+  
+  surface_getpixel
+  Esta função pode ser usada para obter a cor de um pixel específico de uma superfície, usando as coordenadas locais da superfície onde (0,0) é o canto superior esquerdo. Esta função não deve ser usada com muita freqüência, pois é extremamente lenta e pode causar um
+    pausa em seu jogo.
+  NOTA: Quando se trabalha com superfícies há a possibilidade de que elas possam deixar de existir a qualquer momento devido ao fato de serem armazenadas na memória de textura. Você deve SEMPRE verificar se uma superfície existe usando superfície_existe()    antes de referenciá-los diretamente.
+   
+  Sintaxe:
+  surface_getpixel(surface_id, x, y);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        surface_id
+        A identificação da superfície.
+      
+      
+        x
+        A posição x na superfície a partir da qual se obtém o pixel.
+      
+      
+        y
+        A posição y na superfície a partir da qual se obtém o pixel.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  col = surface_getpixel(surf, 56, 78 );
+  Isto retornará a cor do pixel nas coordenadas (56,78) da superfície indexada na variável "surf".
+   
+   
+   
+  
+    
+      
+        Voltar: Superfícies
+        Próximo: superfície_getpixel_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

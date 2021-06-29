@@ -1,0 +1,33 @@
+
+  
+  Imagem carregada
+  Este evento é acionado quando você carrega uma imagem no GameMaker Studio 2, seja em HTML5, ou através de uma URL. Por exemplo, digamos que você queira carregar uma imagem sprite, e só mude a imagem sprite atual, por exemplo, para a nova imagem depois que ela for carregada. Você teria algo como isto no evento Create (ou em qualquer outro evento):
+  var _url = "http://www.angusgames.com/game/background1.png"; spr = sprite_add(_url, 0, falso, falso, 0, 0);
+  Isto agora começará a carregar a imagem no dispositivo ou no navegador, mas não irá bloquear o GameMaker Studio 2 enquanto ele espera que o arquivo seja carregado. Em vez disso, o GameMaker Studio 2 continuará funcionando normalmente até que a imagem seja carregada e a chamada de retorno acione o Evento de Carregamento de Imagem, onde um Mapa DS é criado e armazenado na variável especial
+    async_load. O mapa contém as seguintes informações:
+  
+    "filename": O caminho completo para o arquivo que você solicitou.
+    "id": A identificação do recurso que você carregou. Este será o mesmo que a variável para a qual você atribuiu o recurso.
+    "status": Retorna um valor inferior a 0 para um erro.
+  
+  Você então atribuiria a imagem recém-carregada a um duende neste evento. O exemplo de código a seguir demonstra como as informações devolvidas seriam utilizadas:
+  if ds_map_find_value(async_load, "id") == spr {
+     if ds_map_find_value(async_load, "status") >= 0 { sprite_index = spr; }  }
+  
+  O código acima irá primeiro verificar o id do mapa DS que foi criado, depois verificar o status da chamada de retorno. Se o valor for maior ou igual a 0 (sinalizando sucesso), o resultado de
+    a chamada de retorno será então usada para ajustar o índice sprite para a imagem recém-carregada.
+   
+   
+   
+  
+    
+      
+        Voltar: Eventos Async
+        A seguir: Rede
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

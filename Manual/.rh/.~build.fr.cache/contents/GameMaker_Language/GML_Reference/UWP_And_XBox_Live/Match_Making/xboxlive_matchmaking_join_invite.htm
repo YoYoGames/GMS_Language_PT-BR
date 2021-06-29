@@ -1,0 +1,55 @@
+
+  
+  xboxlive_matchmaking_join_invite
+  Esta função pode ser chamada para processar um convite de adesão uma vez que você tenha chamado com sucesso xboxlive_matchmaking_start(). Você fornece o ID do usuário local e os valores do convite (ID e ID do host)
+    que foram devolvidos quando o convite foi recebido, juntamente com o nome do Modelo de Sessão que você criou (um fio). Ele então se juntará ao usuário para a sessão para a qual foi convidado, e você receberá Eventos Assíncronos Sociais como
+    se você tivesse chamado xboxlive_matchmaking_find().
+   
+  Sintaxe:
+  xboxlive_matchmaking_join_invite(user_who_received_invite, invitation_id, invitation_host, sda_template_name);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        usuário_quem_recebeu_convidado
+        O ponteiro de identificação do usuário local.
+      
+      
+        convite_id
+        A identificação do convite.
+      
+      
+        convite_apresentador
+        O ID do anfitrião do convite.
+      
+      
+        sda_template_name
+        O nome do modelo de sessão.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var userID = xboxlive_user_for_pad(global.PadIndex); xboxlive_matchmaking_join_invite(userID, global.InviteID, global.InviteHost, global.SessionTemplate);
+  O acima exposto obtém a identificação do usuário para o gamepad dado e, em seguida, anexa para participar da sessão para a qual foram convidados.
+   
+   
+   
+  
+    
+      
+        Voltar: Fósforos
+        Próximo: xboxlive_matchmaking_start
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

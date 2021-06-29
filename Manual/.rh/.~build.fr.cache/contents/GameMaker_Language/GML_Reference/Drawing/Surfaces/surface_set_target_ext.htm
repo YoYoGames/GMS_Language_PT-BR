@@ -1,0 +1,46 @@
+
+  
+  superfície_set_alvo_texto
+  Esta função é para uso com as Shader Functions e define o MRT (0 - 3) para shaders de nível nativo (DX9, DX11, OpenGL).
+  NOTA: Quando se trabalha com superfícies há a possibilidade de que elas possam deixar de existir a qualquer momento devido ao fato de serem armazenadas na memória de textura. Você deve SEMPRE verificar se uma superfície existe usando superfície_existe()    antes de referenciá-los diretamente.
+   
+  Sintaxe:
+  surface_set_target_ext(index, surface_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice de renderização a ser usado (de 0 a 3).
+      
+      
+        surface_id
+        A identificação da superfície a ser utilizada.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  surface_set_target_ext(0, surf);
+  O código acima definirá a meta de renderização 0 para a identificação da superfície indexada na variável "surf".
+   
+   
+   
+  
+    
+      
+        Voltar: Superfícies
+        Próximo: superfície_get_target
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

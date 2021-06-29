@@ -1,0 +1,37 @@
+
+  
+  image_yscale
+  Este valor define a escala vertical (ao longo do eixo y) aplicada ao duende que foi atribuído à instância atual. Uma escala de 1 indica que não há escala (1:1), valores menores serão escalados para baixo (0,5, por exemplo, será metade da altura do duende),
+    valores maiores serão escalados e valores negativos espelharão o duende e o escalarão a menos que o valor utilizado seja exatamente -1 (neste caso o duende é apenas espelhado ao longo do eixo y, sem escala).
+    
+   
+  Sintaxe:
+  image_yscale;
+   
+  Devoluções:
+  Real (valor de ponto flutuante de precisão único)
+   
+  Exemplo:
+  se image_xscale < 5 {
+     image_xscale += 0.2; image_yscale = image_xscale; }
+     mais
+     {
+     instance_create_layer(x, y, "Effects", obj_Explosion); instance_destroy();
+     }
+  
+  O código acima escalona o duende e então, uma vez escalado para 5 vezes seu tamanho original, uma nova instância de outro objeto é criada e a instância é destruída.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis de Sprite Instance
+        Próximo: mask_index
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

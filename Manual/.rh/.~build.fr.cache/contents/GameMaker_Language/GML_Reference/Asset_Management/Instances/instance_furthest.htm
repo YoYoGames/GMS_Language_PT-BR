@@ -1,0 +1,54 @@
+
+  
+  instance_furthest
+  Esta função verificará todas as instâncias do objeto dado para ver qual está mais distante do ponto x/y dado. Todas as verificações serão da posição x/y dada até a origem (a posição x/y) das instâncias do objeto especificado. Se nenhuma instância
+    do objeto existente, a função retornará a palavra-chave noone, mas se houver instâncias, então retornará a id da instância encontrada.
+    Observe que se a instância executando o código tiver o mesmo índice de objetos que o objeto a ser verificado, então ele será incluído na verificação (isto inclui a verificação dos objetos dos pais se a instância chamadora for também um filho dos pais).
+   
+  Sintaxe:
+  instance_furthest(x, y, obj);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A posição x para checar por instâncias longe de.
+      
+      
+        y
+        A posição y para checar por instâncias longe de.
+      
+      
+        obj
+        O objeto a ser verificado em casos de.
+      
+    
+  
+   
+  Devoluções:
+  Real (ou um valor de identificação de instância ou a palavra-chave noone)
+   
+  Exemplo:
+  var inst; inst = instance_furthest(x, y, object_index); if inst != id {
+     draw_line(x, y, inst.x, inst.y); }
+  
+  O código acima encontrará a instância mais distante que compartilha o mesmo índice de objetos que a instância que executa o código e armazena o id em uma variável. Esta variável é então verificada para ver se é a mesma que o id da instância chamadora e, se for
+    não, uma linha é traçada entre as duas instâncias.
+   
+   
+   
+  
+    
+      
+        Voltar: Instâncias
+        Próximo: instance_nearest
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

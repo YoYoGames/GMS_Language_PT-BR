@@ -1,0 +1,54 @@
+
+  
+  script_execute
+  Esta função foi originalmente projetada para chamar recursos de script de forma dinâmica, mas com a introdução de funções definidas pelo usuário ela pode agora ser usada de duas maneiras:
+  
+    A primeira maneira é apoiar scripts legados, onde cada script era uma única função e o título do script era também o nome da função. Usado desta forma, funcionará como antes e executará um script criado pelo usuário e passará
+      os argumentos apresentados. Note que, neste caso, não se trata realmente de chamar o roteiro, mas sim, a função do roteiro com o mesmo nome dentro do roteiro. 
+    A segunda maneira é chamar uma função a partir de um recurso de script que contém múltiplas funções ou definições de variáveis. Neste caso, você forneceria o nome da função e os argumentos que ela requer, em vez do nome do script ativo. Note que isto só funcionará para funções de script e não para métodos, pois somente funções de script têm um ID de script atribuído a elas.
+  
+  Embora esta função tenha sido projetada principalmente para apoio ao legado, ela não é depreciada, pois ainda tem seu lugar em situações de chamadas em rede e procedimentos remotos. Vale ressaltar também que esta função
+    é lento, e usá-lo muito pode afetar negativamente o desempenho.
+  NOTA: Esta função não pode ser usada com funções embutidas.
+   
+  Sintaxe:
+  script_execute(scr, arg0, arg1, arg2..., etc...);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        scr
+        O nome da função/escrito que você deseja chamar
+      
+      
+        arg0, arg1, arg2..., etc....
+        Os diferentes argumentos que você quer passar para a função/escrito
+      
+    
+  
+   
+  Devoluções:
+  Dependerá do valor de retorno do roteiro/função a ser chamado
+   
+  Exemplo:
+  script_execute(choose(move_up, move_down, move_left, move_right), irandom(5));
+  O código do exemplo acima usará script_execute para escolher uma das quatro funções definidas pelo usuário (neste caso, relacionadas ao movimento) e passar um inteiro aleatório para ele como primeiro argumento.
+   
+   
+   
+  
+    
+      
+        Voltar: Roteiros
+        Próximo: script_execute_ext
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

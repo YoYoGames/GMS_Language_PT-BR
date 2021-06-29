@@ -1,0 +1,64 @@
+
+  
+  Variáveis globais
+  Uma descrição básica de uma variável global é aquela que, uma vez declarada, não pertence a nenhuma instância em particular e ainda pode ser acessada por todos. Assim como as variáveis locais, as variáveis globais devem ser declaradas
+    usando um identificador, mas ao contrário de uma variável local, uma variável global permanece na memória até o final do jogo. Assim, você pode criar uma variável global para acompanhar (por exemplo) o número de balas que o jogador tem e depois apenas atualizar
+    esta variável em diferentes pontos do jogo, forma qualquer instância ou função e em qualquer momento. Essencialmente, uma variável global não pertence a nenhuma instância específica e pode ser acessada, alterada e utilizada por todas as instâncias, e quaisquer alterações feitas no
+    são "globais", na medida em que todas as instâncias que utilizam a variável serão afetadas pela mudança. Vejamos um exemplo:
+  global.food = 5;
+  Declaramos a variável "food" escrevendo primeiro "global" e depois uma "." para dizer ao GameMaker Studio 2 que esta variável é agora de escopo global.
+    A partir de agora, precisaremos usar este formulário a qualquer momento que formos obrigados a acessar ou alterar esta variável de qualquer forma. Portanto, criamos uma nova variável chamada "food" e a declaramos como global. Agora, qualquer
+    instância ou função pode usar e alterar esta variável de qualquer forma e todas as outras instâncias irão "ver" isto. Por exemplo, podemos ter um objeto alimentar diferente com o qual o jogador colide e no evento de colisão que temos:
+  global.food +=1;
+  Temos também outro objeto que extrai este valor assim:
+  draw_text(32, 32, "food =" + string(global.food));
+  Com variáveis globais, podemos mudar os valores e ver essas mudanças refletidas em todas as instâncias dos objetos que fazem referência a essa variável. Como com as variáveis locais, é preciso tomar cuidado para não nomear suas variáveis globais da mesma forma que em qualquer instância.
+    variáveis, pois isso pode lhe causar problemas e fazer com que os erros se insinuem em seus jogos devido à sobreposição de variáveis, o que pode ser um problema difícil de depurar às vezes. Em geral, você deve ter um único objeto que declare todas as suas variáveis globais no mesmo
+    início do jogo (por exemplo, no evento Room Start da primeira instância do objeto colocado na primeira sala do jogo) ou uma única função de roteiro que os declara todos juntos, pois isso lhe dá um lugar útil para voltar e referenciar tudo de uma só vez caso você precise verificar um nome de variável ou editar um valor.
+  OGameMaker Studio 2 também tem uma coleção de variáveis globais "incorporadas", então você deve estar ciente delas, pois pode nomear uma de suas variáveis de instância como a mesma ou desejar ter sua própria variável global com o mesmo nome e se perguntar por que você está
+    recebendo erros! No entanto, são fáceis de identificar, pois são mostrados em uma cor diferente no editor de código e também aparecem na barra de auto-completar na parte inferior. A maioria das variáveis globais incorporadas são muito específicas e só serão utilizadas em
+    raras ocasiões - e estão listadas nas seções apropriadas do manual - mas há uma importante que é usada com freqüência e não está listada em nenhum outro lugar:
+  
+    async_load
+  
+  Há também três variáveis globais obsoletas que você deve estar ciente (estas variáveis são apenas projetadas para suportar projetos legados de versões anteriores do GameMaker e devem não ser utilizado em novos projetos):
+  
+    pontuação
+    saúde
+    vive
+  
+  Finalmente, há duas variáveis que podem ser usadas para funções e métodos de script:
+  
+    argumento
+    argument_count
+  
+  O seguinte formulário também pode ser usado para declarar variáveis globais, mas é incluído apenas para compatibilidade com versões anteriorese não é recomendado que você utilize este formulário para novos projetos, pois futuras versões do GameMaker podem não apoiá-lo.
+  A segunda forma de criar variáveis globais é declará-las como tais usando a declaração globalvar, da mesma forma que você faria com uma variável local usando a declaração var.
+  IMPORTANTE! A declaração globalvar é depreciada e suportada apenas para fins de legado. Você deve sempre usar o identificador global. para marcar variáveis globais.
+  Esta declaração (depreciada) seria utilizada da seguinte forma:
+  globalvar food; food = 5;
+  Uma vez declarada desta forma, a variável "alimento" agora é considerada global e não requer prefixo global, o que também significa que é muito mais difícil identificar variáveis globais em seu código e também é muito mais fácil obter a variável
+    sobrepor-se, pois você usa o mesmo nome variável em objetos diferentes ou a partir de extensões que você instalou. Uma vez declarada desta forma, a variável global é acessada da seguinte forma:
+  alimentos += 2;
+  ou:
+  draw_text(32, 32, "comida = " + string(comida));
+  Como você pode ver, sem nada para mostrar que a variável é global no escopo, você está se preparando potencialmente para muitos problemas sutis que possam surgir em seu jogo, e é por isso que esta declaração deve ser evitada.
+  Há algumas funções projetadas para ajudá-lo ao lidar com variáveis globais, que você pode encontrar na página seguinte:
+  
+    Funções variáveis
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis e Escopo de Variáveis
+        A seguir: Constantes
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

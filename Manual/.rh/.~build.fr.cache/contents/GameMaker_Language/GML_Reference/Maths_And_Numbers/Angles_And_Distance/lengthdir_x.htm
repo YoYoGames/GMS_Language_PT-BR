@@ -1,0 +1,50 @@
+
+
+
+
+  
+  lengthdir_x
+  Esta função é usada para obter o componente x de uma posição "len" pixels desde o ponto de partida e na direção "dir". Se você imaginar um círculo ao redor de sua instância, e depois imaginar um ponto em qualquer lugar desse círculo, para mover
+    até esse ponto, precisamos mover o objeto tantos pixels nessa direção... então essa função (quando usada com lengthdir_y()) obtém a posição desse ponto sobre o círculo a ser usado em código pela instância. Ver
+    a imagem abaixo para detalhes:
+  
+  Sintaxe:
+  lengthdir_x(len, dir);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        len
+        O comprimento do ponto de retorno.
+      
+      
+        dir
+        A direção do ponto de retorno.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var _xx = x + lengthdir_x(64, image_angle); var _yy = y + lengthdir_y(64, image_angle); instance_create_layer(_xx, _yyy, "Bullets", obj_bullet);
+  Isto criará uma instância de bala em(_xx, _yyy), que será 64 pixels da instância matriz na direção do ângulo da imagem.
+   
+   
+   
+  
+    
+      
+        Voltar: Ângulos e distância
+        Próximo: lengthdir_y
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

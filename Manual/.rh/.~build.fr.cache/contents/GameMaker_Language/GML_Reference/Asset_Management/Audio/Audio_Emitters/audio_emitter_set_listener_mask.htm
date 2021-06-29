@@ -1,0 +1,48 @@
+
+  
+  audio_emitter_set_listener_mask
+  Esta função pode ser usada para definir a máscara de bit para um emissor de modo que todos os sons tocados através do emissor só sejam tocados pelos ouvintes especificados. Você pode criar uma bit-máscara usando a função audio_get_listener_info() e
+    então usando o bitwise ou ("|") para criar uma máscara personalizada com aqueles ouvintes dos quais você precisa do som para tocar, e então aplicar esta máscara personalizada ao emissor. Esta máscara irá sobrepor-se ao padrão
+    máscara ou aquilo que você possa ter definido usando a função audio_set_listener_mask().
+   
+  Sintaxe:
+  audio_emitter_set_listener_mask(emitterID, máscara);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        emissorID
+        A identificação única do emissor para definir a máscara de
+      
+      
+        máscara
+        Os dados de bitmask a serem definidos para o som
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  s_emit = audio_emitter_create(); audio_emitter_set_listener_mask(snd, global.PlayerMask);
+  O código acima cria um emissor de áudio e depois define o(s) ouvinte(s) para tocar a partir do uso dos dados da máscara armazenados em uma variável global.
+   
+   
+   
+  
+    
+      
+        Voltar: Emissores de áudio
+        Próximo: audio_emitter_free
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

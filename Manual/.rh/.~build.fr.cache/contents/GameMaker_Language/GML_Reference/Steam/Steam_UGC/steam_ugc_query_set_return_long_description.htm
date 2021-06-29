@@ -1,0 +1,46 @@
+
+  
+  vapor_ugc_query_set_return_long_description
+  Esta função pode ser usada para filtrar ainda mais qualquer consulta UGC, especificamente para recuperar o texto descritivo longo no evento de retorno da chamada acionada quando a consulta foi enviada. O controle da consulta é o valor retornado quando você criou a consulta (usando, para
+    exemplo, steam_ugc_create_query_user()) e o segundo argumento ou é verdadeiro ou falso. A função retornará verdadeiro se o filtro de consulta foi configurado corretamente, ou falso caso contrário.
+   
+  Sintaxe:
+  steam_ugc_query_set_return_long_description(ugc_query_handle , long_description);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ugc_query_handle
+        O cabo de consulta a ser usado.
+      
+      
+        descrição_longa_descrição
+        Se a consulta deve retornar o texto descritivo longo.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var query_handle = steam_ugc_create_query_all(ugc_query_RankedByVote, ugc_match_Items, 1); steam_ugc_query_set_return_long_description(query_handle, true); steam_ugc_query_set_allow_cached_response(query_handle, true); query_ID = steam_ugc_send_query(query_handle);
+  O código acima cria um pedido de consulta e armazena seu tratamento em uma variável local para uso futuro nas demais funções que definem melhor o pedido de consulta antes de enviar a consulta.
+   
+   
+   
+  
+    
+      
+        Voltar: UGC
+        Próximo: steam_ugc_query_set_return_totally
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

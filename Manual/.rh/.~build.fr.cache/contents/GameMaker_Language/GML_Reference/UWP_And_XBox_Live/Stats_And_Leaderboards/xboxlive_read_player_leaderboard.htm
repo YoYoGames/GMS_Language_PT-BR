@@ -1,0 +1,94 @@
+
+  
+  xboxlive_read_player_leader_leaderboard
+  A função retornará informações do leaderboard para o nome do usuário dado. O quadro de líderes deve ter sido criado anteriormente no painel do XDP para seu jogo, e a chamada à função desencadeará um Evento Assíncrono Social de retorno que contém o async_load mapa povoado com os pares chave/valor relevantes. A chave "id" deste mapa DS é usada para identificar o retorno de chamada correto.
+    (pode haver mais de uma função de acionamento para qualquer evento assíncrono), e a TI será emparelhada com a constante informação do painel de resultados, bem como um número de outros pares de chaves/valores. O conteúdo exato do mapa é mostrado abaixo:
+  
+    " id" - Para esta função deve ser feito_leaderboard_info
+    "leaderboardid" - A identificação única para o painel de líderes, conforme definido no painel do fornecedor.
+    "numentries" - O número de entradas no quadro de líderes que você recebeu.
+    "PlayerN" - O nome do jogador, onde "N" é um valor inteiro correspondente à sua posição dentro da lista de entradas do quadro de líderes.
+    "PlayeridN" - A identificação única do usuário do jogador, "N".
+    "RankN" - A posição do jogador "N" dentro da tabela de liderança.
+    "Pontuação "N"" - A pontuação do jogador "N".
+  
+   A função exige que você dê uma das seguintes constantes para definir as propriedades do filtro:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        achievement_filter_all_players
+        Obtenha todas as pontuações.
+      
+      
+        achievement_filter_friends_only
+        Obtenha apenas pontuações de amigos, em ordem ascendente.
+      
+      
+        achievement_filter_favorites_only
+        Obtenha apenas as pontuações favoritas, em ordem ascendente
+      
+      
+        achievement_filter_friends_alt
+        Obtenha apenas pontuações de amigos em ordem decrescente.
+      
+      
+        achievement_filter_favorites_alt
+        Obtenha apenas as pontuações favoritas em ordem decrescente.
+      
+    
+  
+   
+   
+  Sintaxe:
+  xboxlive_read_player_leaderboard(nome_do_líder, nome_do_usuário, num_items, filtro_de_amigos);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome_do_título
+        O nome do quadro de líderes a ser lido, como estabelecido no XDP.
+      
+      
+        nome_do_usuário
+        O nome do usuário a ser lido.
+      
+      
+        num_items
+        O número de itens a serem recuperados.
+      
+      
+        amigo_filtro
+        Uma das constantes do filtro (veja a descrição, acima).
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var _user = xboxlive_user_for_pad(0); var _uid = xboxlive_user_id_id_id_para_user(_user); xboxlive_read_player_leaderboard("MyLeaderboard", _uid, 10, achievement_filter_all_players);
+  O código acima obtém a identificação do usuário e depois a utiliza para solicitar todos os dados do jogador para os primeiros 10 lugares do quadro de líderes dado.
+   
+   
+   
+  
+    
+      
+        Voltar: Estatísticas e Quadros de Líderes
+        Próximo: xboxlive_fire_event
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

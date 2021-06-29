@@ -1,0 +1,53 @@
+
+  
+  gpu_set_texfilter_ext
+  Esta função pode ser usada para definir a interpolação linear para um único "slot" de amostragem ao usar Shaders no GameMaker Studio 2. Quando isto é habilitado(verdadeiro) o amostrador
+    A textura será suavizada e se esta for desabilitada(falsa), então as imagens serão desenhadas com base no pixel mais próximo. O valor padrão é aquele definido pelas Opções Globais de Jogo para seu jogo, ou aquele definido usando a função gpu_set_texfilter().
+  OBSERVAÇÃO: Esta configuração será sobrevalorizada pelo valor definido ao chamar a função gpu_set_texfilter().
+  NOTA: No alvo HTML5, esta função só funcionará com WebGL habilitado.
+   
+  Sintaxe:
+  gpu_set_texfilter_ext(sampler_id, enable);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sampler_id
+        A identificação do amostrador a partir do shader.
+      
+      
+        habilitar
+        Ativar ou desativar a filtragem da textura(verdadeiro / falso)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var s_tex = shader_get_sampler_index(shader_glass, "s_NoiseSampler"); if gpu_get_texfilter_ext(s_tex) {
+     gpu_set_texfilter_ext(s_tex, false); }
+     mais
+     {
+     gpu_set_texfilter_ext(s_tex, true); }
+  
+  O código acima verifica se a filtragem de textura está ligada ou desligada para uma identificação específica do amostrador (armazenada em uma variável local) e a troca de acordo.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle de GPU
+        Próximo: gpu_set_texrepeat
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

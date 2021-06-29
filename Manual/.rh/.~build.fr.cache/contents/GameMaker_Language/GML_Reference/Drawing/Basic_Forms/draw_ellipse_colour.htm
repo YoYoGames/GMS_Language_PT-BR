@@ -1,0 +1,69 @@
+
+  
+  draw_ellipse_colour
+  Com esta função você pode desenhar um esboço de uma elipse ou uma elipse cheia, definindo uma área retangular que terá então a elipse criada para caber. Se ela for preenchida, você pode definir as cores de preenchimento interior e exterior. Se estas cores
+    não são iguais, você terá um efeito de gradiente de um para o outro (as configurações de cores sobreporão o conjunto de cores de base com a função draw_set_colour()). Você pode definir como
+    o desenho é preciso com a função draw_set_circle_precision().
+  NOTA: Se você quiser desenhar uma forma usando um sombreador, você deve estar ciente de que a maioria dos sombreadores espera as seguintes entradas: vértice, textura, cor. Entretanto, ao utilizar esta função, apenas os dados de vértice e cor estão sendo passados para dentro, e assim o
+   shader não pode desenhar nada (ou desenhar algo, mas não corretamente). Se você precisar desenhar formas desta maneira, então o sombreador deve ser personalizado tendo isto em mente.
+   
+  Sintaxe:
+  draw_ellipse_colour(x1, y1, x2, y2, col1, col2, esboço);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x1
+        A coordenada x da esquerda da elipse.
+      
+      
+        y1
+        A coordenada y da parte superior da elipse.
+      
+      
+        x2
+        A coordenada x da direita da elipse.
+      
+      
+        y2
+        A coordenada y do fundo da elipse.
+      
+      
+        col1
+        A cor do centro.
+      
+      
+        col2
+        A cor da borda.
+      
+      
+        esboço
+        Se a elipse é um esboço (verdadeiro) ou preenchido (falso).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_ellipse_colour(50, 50, 200, 100, c_black, c_white, false);
+  Isto desenharia uma elipse preenchida, esticada horizontalmente, com um centro preto e uma borda branca.
+   
+   
+   
+  
+    
+      
+        Voltar: Formulários básicos
+        Próximo: draw_line
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

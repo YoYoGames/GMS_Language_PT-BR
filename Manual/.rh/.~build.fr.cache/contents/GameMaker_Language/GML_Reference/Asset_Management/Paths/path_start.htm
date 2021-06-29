@@ -1,0 +1,87 @@
+
+  
+  path_start
+  Um caminho é criado a partir de uma série de pontos definidores que são ligados entre si e depois utilizados para planejar os movimentos de uma instância. Eles podem ser criados com código, ou no Editor de Caminhos e são atribuídos a uma instância
+    para usar no jogo. Você então usaria esta função para dizer a sua instância qual caminho seguir, que velocidade seguir o caminho (medido em pixels por passo), como se comportar quando chegar ao final do caminho, e se seguir o caminho absoluto ou relativo 
+    posição. Esta última parte significa que ou começa e segue o caminho exatamente como você projetou e o colocou no Path Editor (absoluto), ou começa e segue o caminho a partir da posição
+    em que a instância foi criada (relativa).
+  Como você pode ver na imagem acima, as duas instâncias estão seguindo o mesmo caminho iniciado com path_start(),
+    mas uma das instâncias está seguindo o caminho absoluto enquanto a outra está seguindo o caminho relativo. Deve-se observar que quando a instância relativa é definida como falsa (absoluta), a instância "pulará" para o início do caminho, não importando em que lugar
+    a sala onde é colocado.
+  As constantes usadas para definir o comportamento da instância quando ela chega ao final do caminho são as seguintes:
+  
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        path_action_stop
+        Terminar o caminho
+      
+      
+        path_action_restart
+        Continuar o caminho desde o início, pulando novamente para a posição inicial se o caminho não estiver fechado
+      
+      
+        path_action_continue
+        Continuar a partir da posição atual
+      
+      
+        path_action_reverse
+        Retroceder ao longo do caminho novamente (conseguido invertendo a velocidade do movimento do caminho)
+      
+    
+  
+   
+  Sintaxe:
+  path_start(caminho, velocidade, ação final, absoluto);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        caminho
+        O índice do caminho para começar.
+      
+      
+        velocidade
+        A velocidade da qual se deve seguir o caminho em pixels por passo, significando negativo retroceder.
+      
+      
+        endação
+        O que fazer quando o final do caminho é alcançado (ver as constantes listadas abaixo).
+      
+      
+        absoluto
+        Se a instância de chamada deve seguir o caminho absoluto como está no editor (verdadeiro) ou um caminho relativo para sua posição atual (falso).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  path_start(path, 4, path_action_reverse, 0);
+  Isto fará com que a instância de chamada siga o caminho indexado na variável "caminho" a uma velocidade de 4 pixels por passo. Ela seguirá o caminho em relação a sua própria posição, e quando chegar ao final, inverterá a direção e voltará a
+    como veio.
+   
+   
+   
+  
+    
+      
+        Voltar: Caminhos
+        Próximo: path_end
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

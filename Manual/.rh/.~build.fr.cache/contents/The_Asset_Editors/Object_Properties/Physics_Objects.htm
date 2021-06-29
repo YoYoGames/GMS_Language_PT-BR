@@ -1,0 +1,108 @@
+
+  
+  Objetos Físicos
+  Quando você cria um novo recurso de objeto pela primeira vez, há uma caixa de seleção marcada Uses Physics, que não é verificada por padrão. A seleção desta opção mudará radicalmente o comportamento de seu objeto quando uma instância dele for colocada
+    em uma sala, uma vez que isto liga as propriedades físicas do objeto e significa que seu movimento "tradicional" e funções de colisão não são mais válidos (mas somente quando a sala em que é colocado também está marcada como sendo uma sala de física. Ver
+    a seção sobre as Propriedades do Editor de Sala). Quando você verifica isto, a janela de recursos de objeto abre uma nova janela encadeada para o editor de física:
+  Antes de começar a editar os valores para os comportamentos físicos, é uma boa idéia primeiro definir a forma da colisão.
+    Com o sistema de colisão "normal", suas colisões são baseadas na máscara do duende atribuído ao objeto, mas com a física habilitada, este não é mais o caso. Precisamos atribuir nós mesmos uma forma de colisão ao objeto (isto é devidamente chamado de fixação, veja As Funções Físicas para mais informações), que pode ser um círculo, um retângulo ou um polígono.
+    forma que você mesmo define. Clicando no botão Modificar Forma de Colisão, abrirá a seguinte janela acorrentada para editar a forma:
+  Isto parece semelhante ao Path Editor, e funciona de forma muito semelhante. Entretanto, dependendo do
+    na máscara que você escolheu, pode ser bastante mais restritiva:
+  
+    Se você tem uma máscara circular , então você só pode puxar qualquer um dos pontos do caminho para fazer o diâmetro do círculo maior ou menor
+    Se você tiver uma máscara retangular , então você pode mover qualquer um dos quatro cantos, mas os correspondentes ajustarão a posição automaticamente para manter sempre um retângulo
+    Se você tiver uma máscara personalizada (polígono), ela deve ter um mínimo de 3 e um máximo de 8 pontos e deve ser convexa (ver imagem abaixo).
+  
+  Uma vez que você tenha definido sua forma, você precisa então definir as propriedades físicas básicas que seu objeto deve ter. Estas
+    são configurados alterando os seguintes parâmetros:
+   
+  Densidade
+  
+    A densidade de algo é definida como sua massa por unidade de volume, o que basicamente significa a quantidade de massa que é empilhada no espaço que ocupa no mundo. Assim, um balão teria uma densidade baixa, pois tem pouca massa que ocupa um grande espaço, enquanto
+      uma barra de chumbo teria uma alta densidade, pois tem uma grande massa, mas ocupa pouco espaço. No mundo físico GameMaker Studio 2 2D, a massa é calculada automaticamente para você a partir dos valores que você insere para a densidade e pela área de superfície do
+      forma que você define para a fixação. Isto terá um impacto direto no grau de inércia de uma luminária, bem como na forma como ela reage a colisões e forças, portanto, se você fizer uma forma pequena com alta densidade, ela terá uma massa muito grande (como uma barra de
+      chumbo), mas se você definir uma forma grande com baixa densidade, ela terá uma massa muito menor (como um balão).
+    Note que o ajuste da densidade para 0 criará uma fixação "estática" que é essencialmente infinitamente densa e não será afetada por forças externas ou colisões, exceto em casos especiais em que a instância foi criada como cinemática (ver 
+      abaixo para mais detalhes).
+     
+  
+  Restituição
+  
+    Em física, a restituição é definida como "o retorno de um objeto ou sistema ao seu estado original após deformação elástica", mas como os dispositivos no GameMaker Studio 2 são realmente corpos rígidos e não podem ser deformados, a restituição é realmente
+      uma forma de dizer o quão "saltitante" é o acessório. Este ajuste afetará o quanto um objeto "salta" quando colide com outros objetos e é co-dependente de outras forças que agem na instância como a gravidade e o atrito.
+     
+  
+  Grupo de colisão
+  
+    Por padrão, o grupo de colisão para todos os objetos físicos é 0, o que significa que eles vão interagir normalmente, o que por sua vez significa que eles devem ter um evento de colisão para interagir (um simples comentário fará para desencadear a colisão), caso contrário
+      nenhuma colisão será registrada. Entretanto, você também pode especificar que um objeto deve pertencer a um grupo específico, numerado, de colisão. Ao atribuir objetos a um grupo de colisão positiva (ou seja: três objetos estão todos em grupo
+      "2") você está dizendo ao GameMaker Studio 2 que as instâncias destes objetos devem sempre colidir, mesmo que não tenham nada em seu evento de colisão, obedecendo às propriedades físicas que você lhes atribuiu e
+      o quarto onde eles estão. Por outro lado, se você tiver objetos com um grupo de colisão negativa (ou seja: quatro objetos designados " -1"), você está dizendo ao GameMaker Studio 2 que estes nunca devem colidir , e qualquer colisão
+      os eventos entre eles serão ignorados.
+    NOTA: O uso de grupos de colisão aumenta drasticamente o processamento exigido pelo sistema físico e deve ser usado somente quando absolutamente necessário, e você deve ter o menor número possível de grupos.
+     
+  
+  Amortecimento Linear
+  
+    O amortecimento é usado para reduzir a velocidade do mundo físico de uma instância à medida que ela se move pela sala. Em princípio, isto é como o atrito contra uma superfície no mundo "real", mas no sistema físico do GameMaker Studio 2, o atrito é na verdade
+      só se aplicam quando duas instâncias com formas de colisão (dispositivos) estão em contato. Assim, você pode considerar o amortecimento linear como mais como "fricção de ar" que gradualmente retarda qualquer instância física em movimento ao longo do tempo, sem a necessidade de contato com
+      qualquer outra instância física.
+     
+  
+  Amortecimento angular
+  
+    Se você pensar em qualquer objeto em rotação no "mundo real", a menos que ele tenha um motor ou esteja no espaço, sua rotação irá diminuir com o tempo devido à influência de forças externas (como fricção mecânica ou fricção contra o ar ou a água)
+      ao seu redor). Podemos usar a opção de amortecimento angular para simular este efeito e reduzir a velocidade de rotação de instâncias no mundo da física, pois sem ela, qualquer instância rotativa continuaria a girar infinitamente.
+     
+  
+  Fricção
+  
+    O atrito é a força que resiste ao movimento relativo dos elementos materiais que deslizam um contra o outro, que no mundo da física do GameMaker Studio 2, se traduz como a perda de momento causada pela colisão de duas instâncias com os dispositivos físicos.
+      Assim, quando duas instâncias colidem, seu movimento é afetado por este valor, com um alto atrito causando uma perda de momento maior do que um valor menor.
+     
+  
+   
+  Finalmente, há três opções extras que podem ser assinaladas como ativadas ou desativadas para sua fixação, Sensor, Start Awake e Kinematic. Cada uma destas bandeiras mudará o comportamento de sua luminária nos seguintes casos
+    maneiras:
+   
+  Sensor
+  
+    Ao marcar esta caixa, você está dizendo ao GameMaker Studio 2 para basicamente "ignorar" as propriedades físicas do objeto, mas ainda assim retornar um evento de colisão com os objetos ao seu redor. Desta forma, você pode ter uma instância sem presença física
+      na sala, mas que pode reagir à colisão de outra instância, como o jogador, e fazer algo por sua vez, como abrir uma porta, ou desencadear algum tipo de ação em outro lugar da sala.
+    OBSERVAÇÃO: Um sensor disparará o evento de colisão apenas quando a colisão ocorrer pela primeira vez, o que significa que você não receberá um fluxo de eventos de colisão, uma vez que os dois corpos continuam a se sobrepor (que é o que tradicionalmente
+      ocorrem). Se eles pararem de se sobrepor e se sobreporem posteriormente, haverá outro evento de colisão desencadeado.
+     
+  
+  Iniciar Despertar
+  
+    Isto é verificado por padrão e representa o "estado" inicial da fixação no início da sala em que foi colocado. Normalmente você quer que ela esteja acordada (ou seja: participando do mundo da física) desde o início, mas às vezes isto
+      pode levar a certas instabilidades e efeitos indesejados devido ao início abrupto da simulação física. Para evitar estes efeitos, você pode desmarcar esta bandeira e a instância será criada com a fixação adormecida, e ela não participará de
+      a simulação física, a menos que algo atue sobre ela.
+    Note que as instâncias físicas serão marcadas como "adormecidas" quando não estiverem mais sob qualquer movimento ou tendo interação com qualquer outra instância física, e uma instância "adormecida" é simplesmente uma instância que atualmente não está sendo totalmente
+      processado pela simulação física (que economiza na sobrecarga da CPU).
+     
+  
+  Kinematic
+  
+    Haverá certas instâncias em um jogo baseado na física que você quer mover mas não deseja ser agido por forças como a gravidade, nem por forças incorridas por colisões com objetos dinâmicos (pense em plataformas móveis em um jogo de plataforma, pois
+      exemplo). Para tais objetos, a simples definição da densidade da fixação em 0 significará que a física assumirá que o objeto se destina a ser estático e que não reagirá a nada. No entanto, marcando esta caixa
+      fazer um objeto estático cinemático e embora ainda não seja afetado por colisões e forças como a gravidade, agora ele pode ser movido ou girado usando as variáveis apropriadas (veja phy_position_x e
+      phy_position_ypor exemplo).
+     
+  
+   
+   
+   
+  
+    
+      
+        Voltar: O Editor de Objetos
+        A seguir: Variáveis de Objeto
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

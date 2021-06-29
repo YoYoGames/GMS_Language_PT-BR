@@ -1,0 +1,38 @@
+
+  
+  fim_de_jogo
+  Com esta função, você pode encerrar o jogo (e o Evento Final do Jogo será acionado). Isto não acontecerá instantaneamente, mas sim no final da etapa atual, portanto, qualquer código
+    que você tem no mesmo passo após esta função ter sido chamada ainda será executada. Observe que esta função tem as seguintes restrições:
+  
+    Nos dispositivos Android, chamar game_end() empurrará o aplicativo para o fundo, mas não fechará o aplicativo. Isto deve ser feito pelo usuário.
+    No iOS ele não fará nada e silenciosamente falhará.
+    Em todos os consoles (incluindo o UWP quando rodando em um Xbox) ele pode travar o jogo ou, na melhor das hipóteses, falhar silenciosamente, e também pode ser uma submissão falhada, portanto, esta função não deve ser utilizada.
+    Em HTML5 terminará o jogo, mas deixará o usuário olhando para uma tela em branco na página web, e como tal não é recomendado que seja usado naquela plataforma alvo.
+    No Windows (incluindo UWP em um PC), Linux e macOS a função simplesmente termina o jogo e fecha a janela do jogo (o Evento Final do Jogo também será acionado).
+    
+  
+   
+  Sintaxe:
+  game_end();
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se teclado_check_pressed(vk_escape) game_end();
+  Isto terminaria o jogo se o jogador pressionasse a tecla "escape".
+   
+   
+   
+  
+    
+      
+        Voltar: Controle geral do jogo
+        Próximo: game_restart
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,45 @@
+
+  
+  exemplo_activar_objecto
+  Com esta função você pode ativar uma única instância ou todas as instâncias de um objeto específico de todos aqueles que tenham sido desativados anteriormente. Observe que se você desativou uma instância ou objeto que foi marcado como Persistente, então
+    você precisará reativá-lo novamente com esta função antes do vestiário, caso contrário, ele não será transportado e será descartado em seu lugar. Note também que a ativação não é instantânea, e uma instância que tenha sido ativada neste
+    não será considerado ativo até o final do evento em que a função foi chamada.
+   
+  Sintaxe:
+  instance_activate_object(obj);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        obj
+        O objeto ou instância a ser ativado (a palavra-chave tudo também pode ser usada).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  instance_activate_all(); var _vx = camera_get_view_x(view_camera[0]); var _vy = camera_get_view_y(view_camera[0]); var _vw = camera_get_view_width(view_camera[0]); var _vh = camera_get_view_height(view_camera[0]); instance_deactivate_region(_vx
+    - 64, _vy - 64, _vw + 128, _vh + 128, falso, falso); instance_activate_object(obj_Lights);
+  
+  O código acima ativa todas as instâncias dentro da sala e depois desativa aquelas que estão fora dos limites da visão atual da câmera, exceto o objeto "obj_Lights", que são reativados novamente no final.
+   
+   
+   
+  
+    
+      
+        Voltar: Desativação de Instâncias
+        A seguir: instance_activate_region
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

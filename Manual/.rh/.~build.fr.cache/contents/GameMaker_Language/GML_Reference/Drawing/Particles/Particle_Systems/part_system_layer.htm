@@ -1,0 +1,49 @@
+
+  
+  part_system_layer
+  Esta função pode ser usada para mudar um sistema de partículas de sua camada atual para um novo. Você fornece o valor de identificação do sistema de partícula (como retornado pela função part_system_create_layer()) e então
+    o ID da camada única (como retornado pela função layer_create() ou o nome da camada a ser usada como string - por exemplo "instance_layer" -
+    como definido no editor da sala), e o sistema será movido para a nova camada.
+   
+  Sintaxe:
+  part_system_layer(ps, layer);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ps
+        A identificação do sistema de partículas
+      
+      
+        camada
+        O novo ID da camada
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if (part_system_get_layer(global.p_sys) != "effects_layer") {
+     part_system_layer(global.p_sys, "effects_layer"; }
+  
+  O código acima verificará um sistema de partículas para ver em que camada está e, se não estiver na camada dada, será alterado.
+   
+   
+   
+  
+    
+      
+        Voltar: Sistemas de Partículas
+        Próximo: part_system_depth
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

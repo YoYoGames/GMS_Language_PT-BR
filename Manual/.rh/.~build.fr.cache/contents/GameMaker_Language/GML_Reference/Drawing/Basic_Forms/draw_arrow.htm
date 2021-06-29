@@ -1,0 +1,61 @@
+
+  
+  seta_de_sorteio
+  Esta função irá desenhar uma seta do ponto (x1,y1) para o ponto (x2,y2). A haste da seta é desenhada ao longo destes pontos com a cabeça da seta real sendo desenhada no final, onde o tamanho da ponta da seta é definido pelo argumento "tamanho" e
+    é calculado como sendo parte da haste para que o ponto final esteja sempre alinhado com a posição definida por x2,y2. A largura da cabeça da seta é calculada automaticamente em proporção ao comprimento.
+  NOTA: Se você quiser desenhar uma forma usando um sombreador, você deve estar ciente de que a maioria dos sombreadores espera as seguintes entradas: vértice, textura, cor. Entretanto, ao utilizar esta função, apenas os dados de vértice e cor estão sendo passados para dentro, e assim o
+   shader não pode desenhar nada (ou desenhar algo, mas não corretamente). Se você precisar desenhar formas desta maneira, então o sombreador deve ser personalizado tendo isto em mente.
+   
+  Sintaxe:
+  draw_arrow(x1, y1, x2, y2, tamanho);
+   
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x1
+        A coordenada x do início da linha.
+      
+      
+        y1
+        A coordenada y do início da linha.
+      
+      
+        x2
+        A coordenada x do final da linha (onde termina a ponta da flecha).
+      
+      
+        y2
+        A coordenada y do final da linha (onde termina a ponta da flecha).
+      
+      
+        tamanho
+        O comprimento da seta em pixels.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_arrow(x, y, mouse_x, mouse_y, 10);
+  O código acima desenhará uma seta desde a posição da instância até a posição do mouse, com a cabeça da seta com 10 pixels.
+   
+   
+   
+  
+    
+      
+        Voltar: Formulários básicos
+        Próximo: draw_circle
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

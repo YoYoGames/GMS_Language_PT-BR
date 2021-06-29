@@ -1,0 +1,208 @@
+
+  
+  Tipos de camadas e propriedades
+  Tudo o que entra na sala que você cria no Room Editor é colocado em uma camada. As camadas podem ser adicionadas, removidas e classificadas pelo Editor de Camadas, e vêm em uma variedade de tipos diferentes, cada um com seu
+    conjunto próprio de opções e forma de trabalho. Você não está limitado ao número de cada tipo de camada, e pode ter várias camadas de azulejo, ou camadas de caminho, ou camadas de instância, etc... Cada tipo de camada tem sua própria janela de propriedades onde você pode definir coisas diferentes, dependendo do tipo de camada. Você também pode alternar a visibilidade das camadas, com as camadas invisíveis não sendo processadas em tempo de execução (mas você pode torná-las visíveis novamente a qualquer momento usando a função apropriada de camada).
+  A imagem acima mostra o editor de camadas, com as camadas atuais sendo listadas na parte superior, e os diferentes botões para criar camadas na parte inferior.
+    Você pode renomear qualquer camada deste editor fazendo um duplo clique lento no nome (note que você não pode usar nada exceto números de letras e o caractere "_" abaixo da barra para nomes) e você também pode ligar ou desligar sua visibilidade clicando
+    o ícone do olho . Se o quarto herdou camadas de um quarto dos pais, você pode alternar a herança a partir do botão na parte inferior, mas note que
+    isto afetará todas as camadas (veja aqui para mais informações sobre herança). Você também pode usar  ou  /  e clicar com o botão esquerdo do mouse  em várias camadas para selecioná-las para duplicação ou exclusão (estas opções também estão disponíveis no menu  do lado direito do mouse).
+  Para ajudar a ordenar suas camadas e mantê-las arrumadas, você pode criar grupos de camadas em uma pasta de camadas, clicando no ícone da pasta . Você
+    também pode apagar uma ou mais camadas selecionadas clicando no botão de apagar . Todas as camadas terão um valor de profundidade ,
+    que define onde, na ordem de sorteio, essa camada será colocada quando seu conteúdo for entregue na sala. As camadas são desenhadas desde a maior profundidade até a menor, portanto, uma camada
+    a uma profundidade de -100 será traçada sobre uma camada com uma profundidade de 200.
+  IMPORTANTE! Há uma profundidade mínima e máxima de camada de -16000 a 16000. Qualquer coisa colocada em uma camada fora dessa faixa não será desenhada, embora todos os eventos ainda funcionem como normais para qualquer coisa na camada.
+  Se você clicar com o botão direito do mouse em  em qualquer camada, você obtém o menu de camadas:
+  Aqui você pode abrir a janela de propriedades da camada selecionada, apagar a camada, renomear a camada ou adicionar uma sub camada.
+    Se você optar por adicionar uma subcamada, então a camada atual receberá um ícone de "pasta" para mostrar que existem subcamadas anexadas, e a nova camada será criada abaixo dela, com uma aba à direita. Você pode então optar por ter a sub-camada
+    herdar suas propriedades da camada mãe, e também definir se ela deve herdar a visibilidade da camada mãe.
+  Observe que você pode arrastar camadas para cima ou para baixo na janela para reordená-las, e você pode selecionar e mover várias camadas também usando  +  para selecionar de uma camada para outra (incluindo todas as camadas intermediárias) ou  /  +  para selecionar camadas uma de cada vez. Se você colocar as camadas
+    em cima de uma pasta de camadas, elas serão movidas e colocadas como subcamadas da pasta para a qual você as deixou cair. Você também pode bloquear as camadas para que não possam ser editadas por engano usando o botão de bloqueio .
+  OBSERVAÇÃO: Na própria janela do editor, onde você coloca os diferentes ativos em suas camadas, você pode segurar "P" + em qualquer lugar para selecionar instantaneamente o ativo e pular para a camada que foi colocada
+    em.
+  Abaixo você pode encontrar uma visão geral de cada um dos tipos de camada disponíveis, bem como as propriedades editáveis para essa camada:
+   
+  Antecedentes
+  
+    Você pode adicionar uma nova camada de fundo, clicando no botão . Isto adicionará a nova camada, e então abrirá o fundo
+      janela de propriedades:
+    
+    Quando você cria uma nova camada de fundo, ela está vazia por padrão e assim desenha a cor de fundo definida. Se você não atribuir um sprite para a imagem da camada de fundo, isto é o que será desenhado, e você pode clicar na caixa de cores para abrir a
+      colhedor de cores e mudar a cor utilizada. Se você escolher um duende, então você pode marcar as opções de colocação de azulejos para colocá-lo horizontal ou verticalmente, ou para fazê-lo esticar a imagem para preencher toda a sala.
+    Se você quiser ter a rolagem de fundo em uma direção, você pode definir a velocidade horizontal e/ou vertical também (cada passo do jogo se moverá ao longo do acesso dado pelo número de pixels que você definir aqui), e você também pode reposicionar o fundo
+      imagem através da definição dos valores x e y offset. Você também pode definir a velocidade da animação para o fundo se o recurso sprite que você selecionou tiver múltiplas subimagens, embora isto esteja bloqueado por padrão para o valor que você definiu no Sprite
+      Editor para a imagem utilizada. Finalmente, você pode definir explicitamente a profundidade da camada, embora novamente por padrão isto esteja bloqueado e você pode simplesmente arrastar e reordenar a ordem da camada no Editor de Camadas para alterar este valor.
+    Note que você também pode alternar a herança para um fundo desta janela, clicando no botão no topo da janela.
+     
+  
+  Instâncias
+  
+    Você pode adicionar uma nova camada de instância, clicando no botão . Isto adicionará a nova camada, e então abrirá as propriedades da instância
+      janela:
+    
+    Esta janela mostra simplesmente uma lista de todas as instâncias que se encontram atualmente na camada. Você pode adicionar mais instâncias a uma camada
+      abrindo o Navegador de Ativos e depois arrastando objetos de lá para a sala, ou alternativamente você pode selecionar uma instância do Navegador de Ativos e então pressionar e segurar  para visualizar o recurso "in-situ", e se você clicar adicionalmente no botão esquerdo do mouse  você pode adicionar a instância e até mesmo "pintá-la" na camada da sala, mantendo o botão pressionado e movendo o mouse.
+    A lista de camadas pode ser ordenada clicando em  e arrastando uma instância da lista para a posição requerida, mas vale a pena notar que isto é puramente para organização
+      para fins dentro do editor da sala e se você quiser definir uma ordem de criação específica, use a Janela de Ordem de Criação, que pode ser aberta da janela Propriedades da Sala, ou do menu de contexto da Sala.
+    Clicando duas vezes em  em qualquer instância - seja no próprio editor da sala ou na lista de propriedades - abrirá uma nova janela para permitir que você modifique aspectos daquele único
+      instância:
+    
+    Por padrão, a instância terá um nome como "inst_38B0BFF", mas isso pode ser alterado
+      para tudo o que você quiser desde que o nome utilize apenas caracteres alfanuméricos e a barra inferior "_" (e sem espaços). Entretanto, vale a pena notar que o nome dado aqui (seja o que você dá, ou o padrão que a IDE dá)
+      é considerada uma constante e, portanto, deve ser única  para a instância. Isto também significa que ela pode ser usada no código n de seu jogo para identificar a instância, mas somente se você
+      estão na mesma sala que a instância.
+    Abaixo do nome da instância você tem botões para definir se a instância deve herdar da sala dos pais, mudar o objeto do qual você deseja que seja uma instância ou mesmo abrir o Editor de Objetos, caso você deseje mudar
+      qualquer coisa ali. Há um botão para verificar e editar variáveis através da janela Variável Objeto e você pode alterar as características iniciais desta instância também, definindo uma cor para misturar
+      com ele (branco por padrão), ou girando-o e virando-o. Você também pode escalar a instância ao longo de um ou ambos os eixos, e definir sua posição dentro da sala, bem como a velocidade da imagem e a moldura inicial para que o duende possa usar.
+    Finalmente você pode dar à instância algum código de criação que será executado diretamente após o código do evento de criação do objeto, e é exclusivo para esta instância (assim você pode, digamos, definir uma variável no objeto que toda instância terá então modificá-lo na criação
+      código para que seja um valor único para uma instância). Clicando nisto, uma janela de script será encadeada à instância onde você poderá adicionar qualquer função ou modificar qualquer variável e este código será executado diretamente após a instância.
+      foi criada e a instância Criar Evento foi executada. Observe que você pode ativar ou desativar a herança do código de criação, independentemente da herança da instância.
+    Vale notar que cada instância em uma camada é automaticamente sinalizada para exportação quando o jogo é feito. Entretanto, especialmente quando se trabalha com herança, pode ser que você não queira que instâncias específicas sejam adicionadas à sala
+      no jogo final (ou você pode ter uma instância de depuração em cada sala e simplesmente querer excluí-la do jogo final). Se este for o caso, então simplesmente desmarque a caixa de seleção "Exportar" à esquerda da instância no
+      evitará que ela seja exportada como parte do executável. É importante notar, entretanto, que se você tiver algum código que referencie a instância, então o jogo não será executado corretamente, então use este recurso com cuidado.
+     
+  
+  Mapas de azulejos
+  
+    Você pode adicionar uma nova camada de mapa de azulejos clicando no botão . Isto adicionará a nova camada, e então abrirá a janela Propriedades do Mapa de Pisos e a janela de Edição de Pisos :
+    No mapa de propriedades da camada de azulejo você pode alternar a herança para a camada, mudar o conjunto de azulejos que está sendo
+      usado e definir o desvio x ou y para a camada se você quiser que a grade da camada não se alinhe exatamente com a posição (0, 0) da sala. Você também pode definir a profundidade em que a camada deve ser renderizada (que tem seu próprio botão de herança exclusivo) e você pode "travar" esta profundidade também, o que impedirá qualquer edição posterior após ter sido criada.
+    Quando a janela de propriedades da camada for aberta, ela também abrirá a janela de Edição de Ladrilho, que mostra o conjunto de ladrilhos sendo usado (se você fechar esta janela por engano, poderá abri-la novamente no menu Sala > Edição de Ladrilho, no topo da IDE). Você pode clicar em  em qualquer ladrilho para selecioná-lo como o pincel atual e depois desenhá-los para a camada no editor da sala, clicando em
+       na tela da sala, ou, se você quiser desenhar vários azulejos juntos, você pode selecioná-los como um grupo clicando com o botão esquerdo do mouse  e arrastando-os para selecioná-los do conjunto de azulejos antes de desenhar. Se a gama de azulejos que você deseja desenhar juntos não estiver em um bloco, então você pode segurar  /  e então selecionar azulejos individuais usando o botão esquerdo do mouse  e criar um pincel personalizado dessa forma (você também pode remover azulejos de um pincel personalizado usando  + ). Observe que criar escovas personalizadas desta maneira é temporário e projetado para usos únicos, porém você pode usar o Modo de Edição na aba Escovas para criar escovas permanentes.
+      que será armazenado no ativo do conjunto de azulejos:
+    
+    Observe que a janela de edição de azulejos permite aumentar e diminuir o zoom do azulejo com a roda do mouse ou com os botões no topo, e você pode fazer uma panorâmica usando o botão do meio do mouse .
+      ou  + . Note que existe um
+      opção de grade também que pode ser ligada ou desligada para delimitar as telhas na janela, e você pode definir a cor da grade também, embora as telhas serão sempre encaixadas na grade, seja ela visível ou não.
+    A janela de Edição de Ladrilhos também permite que você selecione Pincéis, Pisos Animados e Pisos Automáticos na aba Bibliotecas, todos cobertos na seção do Editor de Ladrilhos.
+    Na parte superior do editor da sala, quando você tiver uma camada de azulejo selecionada, você verá um conjunto de ferramentas específicas para azulejos:
+    
+      
+        
+          
+          Lápis
+          Esta é a ferramenta do lápis. Ela usa o azulejo selecionado para pintar no Room Editor com o botão esquerdo do mouse  e você pode apagar com o botão direito do mouse . Note que o valor do índice para o azulejo é mostrado na parte inferior na Barra de Status da Sala no Editor de Sala, e se você tiver vários azulejos selecionados para pintura
+            (ou seja: uma escova), então será mostrada uma lista de todos os índices de azulejos utilizados.
+        
+        
+          
+          Apagador
+          Com a ferramenta de borracha você pode usar o botão esquerdo do mouse  para apagar um determinado azulejo no editor da sala. Essencialmente, tudo isso faz com que o índice de azulejos seja 0, que é
+            o reservado azulejo "vazio".
+        
+        
+          
+          Preencher
+          A ferramenta de preenchimento permite preencher uma camada inteira do mapa de azulejos ou uma seleção de azulejos com a escova de azulejos atual. O pincel que você utiliza pode ser um único azulejo ou uma escova composta de vários azulejos, ou mesmo um azulejo da biblioteca de animação e
+            clicando em  em uma camada, os ladrilhos serão então preenchidos com a escova escolhida. Se você não tiver utilizado a ferramenta de seleção, então o preenchimento funcionará em todas as telhas vazias consecutivas,
+            ou todas as telhas consecutivas do mesmo índice. Se você tiver uma seleção dentro da camada, então o preenchimento será limitado a dentro dessa seleção.
+        
+        
+          
+          Linha
+          Ao selecionar a Ferramenta de Linha, clicando em , então arrastar e soltar criará uma linha de ladrilhos entre onde você clicou e onde você soltou. Se você tiver uma
+            área da camada do mapa de azulejos selecionada usando a Ferramenta de Seleção, então a linha só será adicionada dentro dos limites de seleção. As linhas podem ser desenhadas usando uma única escova de azulejo, uma escova composta de vários azulejos, ou um azulejo animado da biblioteca.
+        
+        
+          
+          Rectângulo
+          Ao selecionar a Ferramenta Retângulo, clicando em  e arrastando e soltando criará um retângulo cheio de azulejos com o canto superior esquerdo onde você clica
+            e sendo o canto inferior direito onde você solta. Se você tiver uma área da camada do mapa de azulejos selecionada usando a Ferramenta de Seção, então o retângulo só será adicionado dentro dos limites de seleção. Os retângulos podem ser desenhados usando uma única escova de ladrilho,
+            uma escova composta de vários azulejos, ou um azulejo animado da biblioteca.
+        
+        
+          
+          Seleção
+          Esta é a ferramenta de seleção, que pode ser usada para definir uma área da camada de telha para trabalhar. Você pode clicar no botão esquerdo do mouse  e depois arrastar o mouse para
+            criar uma área retangular, ou você pode pressionar  /  +  para adicionar múltiplas seleções e  +  para limpar uma parte da seleção. Para limpar toda a seleção, você pode pressionar . Quando você tiver uma área de uma camada de telha selecionada, o resto das ferramentas (Lápis, Flip, Rotate, etc...) só funcionará dentro da área selecionada. Note que você também pode copiar ( / + "C"), cortar ( /  + "X") e colar ( /  + "
+            V") selecionados dentro do editor da sala, que então trocará a ferramenta para o Lápis e permitirá que você pinte a camada da sala com os azulejos selecionados.
+        
+        
+          
+          AutoTile
+          Clicar nesta ferramenta permite o estilo Auto tiling paint. Quando este estiver ativo, você pode selecionar qualquer ladrilho da aba Autotile Libraries, e então pintá-lo na camada da sala e o GameMaker Studio 2 irá mudá-lo automaticamente para combinar com o ambiente ao redor.
+            azulejos, desde que você tenha instalado corretamente a Aba Auto Tile. Note que a seleção de uma telha do conjunto de telhas que não faz parte das bibliotecas de autoteste irá redefinir a ferramenta de desenho para o padrão
+            Ferramenta de lápis.
+        
+        
+          
+          Herança
+          Com esta ferramenta você pode habilitar/desabilitar a herança para azulejos específicos em uma determinada camada. Para que isto funcione, o quarto deve primeiro ser um quarto infantil e a camada deve ter sua herança ativada em 
+            as propriedades das camadas. Quando neste estado, o editor da sala colorirá todos os azulejos herdados de vermelho por padrão, e clicando no botão direito do mouse  desligará a herança para aquele azulejo, e clicando no botão esquerdo do mouse  o religará novamente. Desta forma, você pode reutilizar elementos da "base".
+            de "base", trocando apenas seletivamente os ladrilhos que você precisa enquanto herda todo o resto.
+        
+        
+          
+          Flip
+          Clicando na ferramenta Flip com o botão esquerdo do mouse  (ou usando o atalho de teclado "X" ), o azulejo atualmente selecionado será virado
+            para desenhar ao longo do eixo horizontal , sem mudar a ferramenta de desenho (se você tiver um pincel personalizado selecionado para desenhar, todo o pincel será virado). Se você não tiver nenhuma telha selecionada para desenhar, mas tiver um grupo de telhas selecionadas em
+            uma camada, então a ferramenta de inverter inverterá as telhas selecionadas.
+        
+        
+          
+          Espelho
+          Clicando na ferramenta Espelho com o botão esquerdo do mouse  (ou usando o atalho do teclado " Y" ) espelhará o azulejo atualmente
+            selecionado para desenhar ao longo do eixo vertical , sem mudar a ferramenta de desenho (se você tiver um pincel personalizado selecionado para desenhar, o pincel inteiro se espelhará). Se você não tiver nenhuma telha selecionada para desenhar, mas tiver um grupo de telhas selecionadas
+            em uma camada, então a ferramenta Espelho espelhará as telhas selecionadas.
+        
+        
+          
+          Girar
+          Clicando na ferramenta Rodar com o botão esquerdo do mouse  (ou usando o atalho do teclado " Z" ), o azulejo girará atualmente
+            selecionado para desenhar 90° no sentido horário, sem mudar a ferramenta de desenho (se você tiver um pincel personalizado selecionado para desenhar, o pincel inteiro irá girar). Se você não tiver nenhuma telha selecionada para desenhar, mas tiver um grupo de telhas selecionadas para desenhar em um
+            e depois a ferramenta Rotate fará girar as telhas selecionadas.
+        
+      
+    
+    Observe que se você usar a Ferramenta de Seleção  para selecionar um grupo de azulejos na tela do editor da sala e depois cortá-los ou copiá-los,
+      eles se tornarão temporariamente o pincel atual para pintura.
+     
+  
+   Caminhos
+  
+    Você pode adicionar uma nova camada de caminho, clicando no botão . Isto adicionará a nova camada, e então abrirá a janela de propriedades do caminho:
+    Aqui você pode selecionar o caminho do Navegador de Ativos a ser usado para a camada e então mudar o tipo de conexão definida (ou
+      usando interpolação suave ou reta), bem como se é fechado ou não e a precisão com que o caminho deve ser criado. Observe também que você pode alternar o
+     herança aqui, e que você pode definir o caminho para ser uma cor específica (o padrão é vermelho) para melhor vê-los no editor. Se você não tiver nenhum recurso de caminho definido, você pode clicar no botão Novo 
+      para criar um. As camadas de caminho também têm um valor de profundidade associado a elas (bloqueadas por padrão), mesmo que nada seja realmente renderizado em seu jogo ao usá-las.
+    Vale notar que você também pode adicionar pontos ao caminho clicando no botão esquerdo do mouse , assim como remover pontos usando o botão direito do mouse , ou selecionar um ponto clicando nele e arrastando-o, tudo dentro do editor da sala real, tornando a criação e edição de caminhos muito fácil (embora você
+      ainda pode editar o caminho no Path Editor como de costume também). Se você segurar  /  +  em diferentes pontos do caminho, então todos eles serão selecionados e você poderá movê-los juntos ou
+      excluí-los todos da opção de menu (explicada abaixo).
+    Se você clicar com o botão direito do mouse em  na janela do editor da sala enquanto manipula um caminho, então você terá as seguintes opções:
+    Aqui você pode inverter a direção do caminho (isto terá pouco efeito visível, mas inverte a ordem na qual os pontos do caminho são
+      contados para que o ponto inicial se torne o ponto final e vice-versa), bem como virá-los horizontal ou verticalmente. Você também pode apagar o ponto selecionado deste menu. Note que você pode segurar "T", ".
+      S " ou "R", depois clique em  e arraste para traduzir, escalar ou girar o caminho inteiro.
+     
+  
+   Ativos
+  
+    Você pode adicionar uma nova camada de ativos, clicando no botão . Isto adicionará a nova camada, e então abrirá a janela de propriedades da camada de ativos:
+    Uma camada de ativo é simplesmente um ativo gráfico (sprite ou seqüência) que foi colocado na sala, independentemente de
+      e você pode colocá-las arrastando-as do Navegador de Ativos ou selecionando a que você deseja no Navegador de Ativos e depois usando  +  para "pintá-las". Os ativos Sprite são similares aos azulejos, somente eles podem ser totalmente animados - se o
+      sprite utilizado tem sub-imagens que serão mostradas - sem as restrições que estão em vigor para as telhas, ou seja: eles não são forçados a uma grade e as animações podem ser de qualquer comprimento e velocidade. As seqüências são "coleções" de sprites, sons e instâncias
+      que irá tocar quando a sala for entrada.
+    Ao colocar os ativos na camada de ativos, eles se encaixarão nos valores da grade definidos no topo do editor da sala para a grade, mas se você quiser colocá-los à mão livre, simplesmente desligue a grade ou use as teclas  /  e o botão esquerdo do mouse . Enquanto essas chaves estiverem pressionadas, você será livre para colocar o ativo em qualquer lugar, sem que ele se encaixe na resolução da grade.
+    Uma vez que você coloca um ativo na sala, você tem um certo controle sobre o seu aspecto clicando duas vezes em  para abrir a janela de propriedades do ativo:
+    Daqui você pode dar ao bem um nome único, definir se ele deve herdar do quarto dos pais, ou mudar o sprite ou a seqüência
+      que você quer que ele exiba. Para sequeunces, você pode definir a velocidade da animação e o quadro inicial do playhead, bem como a cor para se misturar com ele (branco por padrão) e a posição em
+      a sala. Também é possível alterar as características dos bens sprite, definindo uma cor para misturá-los (branco por padrão), ou girando e virando-o. Você também pode escalar os sprites ao longo de um ou de ambos os eixos, e definir sua posição dentro da sala.
+      Se o duende tiver sub-imagens, você pode escolher a velocidade da animação, assim como definir o frame inicial a ser mostrado.
+    Vale notar que cada ativo da camada é automaticamente sinalizado para exportação quando o jogo é feito. Entretanto, especialmente quando se trabalha com herança, pode ser que você não queira sprites específicos
+      a ser acrescentado à sala no jogo final. Se este for o caso, basta desmarcar a caixa de seleção "Exportar" à esquerda do duende na lista de propriedades da camada, para evitar que ele seja exportado como parte do executável.
+      É importante notar, entretanto, que se você tiver algum código que faça referência a esse ativo, então o jogo não será executado corretamente, então use este recurso com cuidado.
+  
+   
+   
+   
+  
+    
+      
+        Voltar: O Editor da Sala
+        A seguir: Propriedades dos quartos
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

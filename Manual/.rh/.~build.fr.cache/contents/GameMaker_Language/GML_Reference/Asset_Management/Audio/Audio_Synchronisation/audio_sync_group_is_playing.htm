@@ -1,0 +1,46 @@
+
+  
+  audio_sync_group_is_playing
+  Esta função pode ser usada para verificar se algum áudio em um grupo sincronizado está sendo reproduzido. É necessário fornecer o ID do grupo de sincronização conforme retornado pela função audio_create_sync_group().
+  NOTA: Esta funcionalidade não está disponível para a plataforma de destino HTML5.
+   
+  Sintaxe:
+  audio_sync_group_is_playing(group_index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        group_index
+        O índice do grupo a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if audio_sync_group_is_playing(group_one) {
+     audio_stop_sync_group(group_one);
+     }
+  
+  O código acima verifica se o grupo de sincronização_um está tocando no momento e se estiver, o grupo está parado.
+   
+   
+   
+  
+    
+      
+        Voltar: Sincronização de áudio
+        Próximo: audio_create_sync_group
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

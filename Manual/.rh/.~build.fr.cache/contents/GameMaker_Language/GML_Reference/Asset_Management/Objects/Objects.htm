@@ -1,0 +1,56 @@
+
+  
+  Objetos
+  No GameMaker Studio 2 você tem objetos e tem instâncias. Os objetos são essencialmente o modelo base para uma instância e, como tal, nunca estão presentes diretamente em uma sala... somente instâncias do objeto são colocadas na sala. Este
+    significa que se você quiser mudar algo para todas as instâncias que vai criar, então você pode fazê-lo mudando o objeto.
+  IMPORTANTE! Mudar qualquer coisa em um objeto não mudará nenhuma instância atualmente presente na sala, somente aquelas que são criadas após a mudança.
+  Você também pode acessar informações sobre um objeto base e usá-las para ditar comportamentos ou mudanças no jogo. Por exemplo, você pode fazer uma verificação para um ID do objeto pai, e no código a seguir, se for encontrado um exemplo com esse pai, você pode verificar
+    seu objeto_index para decidir o que deve ser feito.
+  OGameMaker Studio 2 oferece uma série de funções que permitem obter vários detalhes sobre um objeto. Note que um objeto não é uma instância (uma entidade dentro do jogo), é puramente um recurso a partir do qual todas as instâncias são criadas. Isto significa que
+    que os valores de retorno destas funções podem ser diferentes dos valores reais mostrados pelas instâncias na sala, pois uma vez criada uma instância, ela pode ser alterada através de código e ações em DnD™.
+   
+  
+    object_index
+    objeto_existe
+    object_get_name
+    object_get_mask
+    object_get_parent
+    object_get_persistent
+    objeto_get_solid
+    object_get_sprite
+    object_get_visible
+    object_get_physics
+    object_is_ancestor
+  
+   
+  Há também diversas funções que permitem definir as propriedades de um objeto. Deve-se observar que quaisquer instâncias deste objeto que já existam na sala podem não ser afetadas por estas funções, mas todas as novas instâncias deste objeto
+    criado na sala será, portanto é recomendável que você nunca altere as propriedades de um objeto quando instâncias desse objeto estiverem presentes na sala atual.
+   
+  
+    object_set_mask
+    object_set_persistent
+    object_set_solid
+    object_set_sprite
+    object_set_visible
+  
+   
+  Você também pode usar certas funções para gerar eventos a partir do código a partir de uma instância ou objeto específico. Estas funções podem ser muito úteis, especialmente quando se trata de Pais e Filhos,
+    e são descritas na seção seguinte:
+  
+    Eventos de geração de objetos
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Gestão de ativos
+        A seguir: Instâncias
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

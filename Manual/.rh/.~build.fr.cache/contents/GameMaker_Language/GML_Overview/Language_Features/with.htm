@@ -1,0 +1,86 @@
+
+  
+  com
+  Como indicado na seção Endereçando Variáveis em Outras Instâncias, é possível ler e alterar o valor das variáveis em instâncias e estruturas que não
+    o que atualmente executa qualquer código dado. Entretanto, em vários casos você quer fazer muito mais do que apenas alterar uma única variável dentro dessas outras instâncias, e pode querer executar ações de código mais complexas que requerem múltiplas funções
+    e linhas de código. Por exemplo, imagine que você queira mover todas as instâncias de um objeto de bola em seu jogo 8 pixels para baixo. Você pode pensar que isso é conseguido simplesmente pelo seguinte código:
+  obj_ball.y = obj_ball.y + 8;
+  Mas isto não é correto, pois o lado direito da atribuição recebe o valor da coordenada y da primeira bola e acrescenta 8 a ela. Em seguida este novo valor é definido como a coordenada y de todas as bolas, então o resultado é que todas as bolas recebem a mesma coordenada y,
+    e mesmo que você use o seguinte:
+  obj_ball.y += 8;
+  terá exatamente o mesmo efeito porque é simplesmente uma abreviação da primeira afirmação. Então, como podemos conseguir algo assim? É por isso que existe a declaração com GML. A declaração de with 
+    tem a seguinte sintaxe:
+  com (<expressão>) { <declaração>; <declaração>;... }
+  Para a expressão, você pode indicar uma ou mais instâncias (ou uma estrutura) para executar o código em, usando um ID de instância, o ID do objeto (que indica que todas as instâncias na sala
+    deste objeto é executar o bloco de código), a identificação da estrutura, ou uma das palavras-chave especiais(todas ou outras). Isto mudará então o escopo do código dentro dos colchetes
+    {} da instância, estrutura ou função que realmente detém o código para a instância (ou instâncias ou estrutura) dada na expressão.
+  Uma vez que a expressão tenha definido o escopo do with, a declaração será então executada para cada uma das instâncias indicadas, como se essa instância fosse a atual (
+    self ) exemplo. Assim, voltando ao nosso problema original, para mover todas as instâncias do objeto bola 8 pixels para baixo, você digitaria:
+  com (obj_ball) {
+     y += 8; }
+  
+  Essencialmente isto é um loop, e a cada iteração do loop, o código será executado em uma instância do objeto obj_ball.
+  Se você quiser executar várias declarações, basta incluí-las nos colchetes, o mesmo que você faria em torno de qualquer outro bloco de código. Assim, por exemplo, para mover todas as bolas em nosso exemplo para uma posição aleatória e dar-lhes uma velocidade e direção aleatórias,
+    que você usaria:
+  com (obj_ball) {
+     x = aleatório(room_width); y = aleatório(room_height); velocidade = 1 + aleatório(2); direção = aleatório(360); }
+  
+  Como mencionado acima, dentro da(s) declaração(ões), a instância ou estrutura indicada tornou-se a instância alvo (self) que executa o bloco de código, o que significa que a instância original (que contém o com e o
+    bloco de código inteiro) se tornou o outros instância. Assim - por exemplo - para mover todas as bolas para a posição da instância atual que realmente contém o código, você pode digitar isto:
+  com (obj_ball) {
+     x = outros.x; y = outros.y; }
+  
+  O com declaração é uma ferramenta extremamente poderosa e é útil em muitas, muitas circunstâncias, por isso é importante que você entenda completamente como ele pode ser usado. Para ajudar, há mais alguns exemplos de uso abaixo:
+  com (instance_create_layer(x, y, "Instances", obj_Ball)) {
+     speed = other.speed; direction = other.direction; }
+  
+  O código acima criará uma instância de obj_Ball e lhe atribuirá a velocidade e a direção da instância que executa todo o bloco de código.
+  com (instance_nearest(x, y, obj_Ball)) {
+     instance_destroy();
+     }
+  
+  O código acima destruirá a instância da obj_Ball mais próxima à instância que estiver executando o código.
+  with(clone_struct) { xx = other.x; yy = other.y; spd = other.speed; dir = other.direction; }
+  O código acima usa with para direcionar uma estrutura e definir as variáveis dos membros da estrutura para os valores armazenados na instância variáveis da instância que chama o código.
+  var _inst = noone; com (obj_ball) {
+     if (str > other.str) {
+     _inst = id; }
+     }
+     if (_inst != noone) {
+     target = _inst; }
+  
+  O código acima é um pouco mais complexo do que os anteriores devido a ele utilizar uma variável local. Esta variável é local tanto para o evento quanto para afunção de script e
+    não à instância ou estrutura e, portanto, pode ser usada e acessada por todas as instâncias que são referenciadas dentro do bloco de código. Assim, no código acima, definimos uma variável local para a palavra-chave especial noone e, em seguida, usamos o com construção
+    para que cada instância da obj_Ball verifique sua variável str em relação à da instância que executa o bloco de código. Se o valor da variável for maior, então eles armazenam sua identificação única na variável inst local, o que significa
+    que no final do código, somente a instância com valor maior que a instância de chamada (ou a palavra-chave noone se nenhuma for maior) será armazenada na variável local _inst.
+  Vale a pena notar que você pode usar as declarações especiais break e continue dentro de um
+    com chamada também. Usando break sairá imediatamente do bloco de códigos with e passará para qualquer código que esteja no evento ou função após a
+    with deveria ter terminado, por exemplo:
+  var count = 0; com (obj_Enemy) {
+     if (++conta > 10) {
+     pausa;
+     }
+     hp = 100; }
+  
+  O código acima percorre as instâncias na sala do objeto obj_Enemy e define a variável hp como 100 para os 10 primeiros que encontra. Se existirem mais de 10 instâncias, o com código
+    ligue para break e termine.
+  Um exemplo de utilização do continue em um loop with seria:
+  com (obj_Enemy_Parent) { if (invulnerable == true) { continue; }  hp -= 25; }
+  Este código percorrerá todas as instâncias com o pai obj_Enemy_Parent, depois verifica cada instância para ver se a variável de instância invulnerable é true ou não. Se
+    é, a palavra-chave continue termina a atual iteração do loop e passa para a próxima instância disponível, caso contrário, remove 25 da variável hp. Isto se repetirá até todas as instâncias
+    com esse pai foram verificados.
+   
+   
+   
+  
+    
+      
+        Voltar: Características lingüísticas
+        Próximo: retornar
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

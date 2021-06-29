@@ -1,0 +1,60 @@
+
+  
+  mp_linear_step
+  Com esta função, você diz a uma instância para dar um "passo" em direção a um ponto específico, especificado pelos valores xgoal e ygoal. O tamanho do passo (que é quantos pixels a instância deve mover cada passo) é indicado pelo tamanho dos passos, e
+    se a instância já estiver na posição, ela parará e não se moverá mais, ao contrário de outras funções mais simples, como move_towards_point(). O tamanho dos degraus é também a distância "à frente".
+    que o objeto verificará cada passo em busca de uma colisão, e você pode escolher se a instância pára em uma colisão com qualquer instância ou apenas aquelas que estão marcadas como sólidas. A função retornará se atingiu a posição de objetivo.
+    (verdadeiro) ou se tiver falhado (falso).
+  NOTA: Esta função não tenta fazer desvios se encontrar um obstáculo, ela simplesmente falha e pára de se mover.
+   
+  Sintaxe:
+  mp_linear_step(xgoal, ygoal, stepize, checkall);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        xgoal
+        A posição alvo x.
+      
+      
+        ygoal
+        A posição y alvo.
+      
+      
+        stepsize
+        A velocidade que a instância se move em pixels por passo.
+      
+      
+        checkall
+        Se verificar todas as instâncias (verdadeiras) ou apenas as sólidas (falsas).
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if mp_linear_step(mouse_x, mouse_y, 5, 0) {
+     instance_create_layer(x, y, "Effects", obj_Explosion); instance_destroy();
+     }
+  
+  O código acima fará o objeto se mover em direção ao mouse a uma velocidade de 5 pixels por passo. Uma vez alcançada a posição do mouse, ele criará um objeto "obj_Explosion" e se destruirá.
+   
+   
+   
+  
+    
+      
+        Voltar: Planejamento de Movimento
+        Próximo: mp_linear_step_object
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

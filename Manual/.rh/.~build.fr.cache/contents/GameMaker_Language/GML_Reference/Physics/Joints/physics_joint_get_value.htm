@@ -1,0 +1,54 @@
+
+  
+  fisica_joint_get_value
+  Ao utilizar uma série de constantes predefinidas, você pode pedir ao GameMaker Studio 2 que lhe diga uma série de coisas sobre o estado de qualquer conjunto. Isto é muito útil, pois lhe dá a possibilidade de apagar juntas ou alterar um comportamento de instâncias, dependendo do estado da junta.
+    sobre quaisquer que sejam suas necessidades no momento. Há uma série de constantes que podem ser usadas nesta função e que podem ser encontradas aqui: Constantes Físicas Conjuntas, mas esteja ciente de que cálculos complexos são feitos
+    quando você os chama, então eles devem ser usados com cuidado e somente quando necessário e observar que muitos são exclusivos de um tipo específico de junta.
+  Se o imóvel não existir (se, por exemplo, você verificar uma articulação de polias para tradução prismática) então 0 será o valor de retorno.
+   
+  Sintaxe:
+  physics_joint_get_value(conjunto, valor)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        conjunto
+        O índice da junta que você deseja testar
+      
+      
+        valor
+        A constante para a propriedade conjunta que você deseja testar
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  se o shipJoint {
+     var reactionForceX = physics_joint_get_value(shipJoint, phy_joint_reaction_force_x); var reactionForceY = physics_joint_get_value(shipJoint, phy_joint_reaction_force_y); var reactionForce = point_distance(0, 0, reactionForceX,
+    reactionForceY); if reactionForce > 2 {
+     physics_joint_delete(shipJoint);
+     shipJoint = -1; }
+     }
+  
+  O código acima verifica se a variável "shipJoint" contém um índice conjunto e se contém, calcula então a força que está sendo aplicada a essa junta usando as duas constantes. Finalmente, se a força total for maior que 2, a junta é apagada.
+   
+   
+   
+  
+    
+      
+        Voltar: Juntas
+        A seguir: physics_joint_set_value
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

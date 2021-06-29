@@ -1,0 +1,50 @@
+
+  
+  dispositivo_mouse_y
+  Esta função retorna a posição y de um toque no dispositivo. Se você estiver executando isto nos módulos HTML5 ou PC e Mac, então este valor é atualizado constantemente, desde que o dispositivo (geralmente um mouse) esteja conectado, porém para dispositivos móveis, este
+    só será atualizado enquanto a tela estiver sendo tocada e observe que o número máximo de toques que podem ser detectados dependerá muito do dispositivo sendo usado e do sistema operacional que ele executar. Observe também que no HTML5 somente o "dispositivo 0" funcionará
+    corretamente e outros dispositivos podem dar valores errados.
+   
+  Sintaxe:
+  device_mouse_y(device);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dispositivo
+        O dispositivo (de 0 a n) que está sendo verificado.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  se device_mouse_check_button(0, mb_left) {
+     if device_mouse_y(0) > y-32 && device_mouse_y(0) < y+32 {
+     press = true; }
+     else
+     {
+     press = falso; }
+     }
+  
+  O código acima verifica se o dispositivo está sendo pressionado e, em caso afirmativo, verifica a posição do dispositivo para ver se ele está dentro dos parâmetros. Se for, ele ajusta a variável "pressionado" para verdadeiro, outros sensatos o ajustam para falso.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada do dispositivo
+        Próximo: device_mouse_raw_x
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,50 @@
+
+  
+  audio_play_in_sync_group
+  Com esta função você pode atribuir um som a um grupo de sincronização previamente criado. O índice do grupo é o valor retornado quando você criou o grupo usando a função audio_create_sync_group()e o som
+    índice é o índice de qualquer som comprimido(*.ogg ou *.mp3) do Navegador de Ativos. Esta função apenas adiciona o som ao grupo, mas não toca o som, e será um valor > -1 se for bem sucedido e -1 se falhar,
+    onde um valor bem sucedido indica a ordem dos sons no grupo de sincronização (então 0 seria o primeiro som adicionado, 1 seria o segundo, etc...).
+  NOTA: Esta funcionalidade não está disponível para a plataforma de destino HTML5.
+   
+  Sintaxe:
+  audio_play_in_sync_group(group_index, sound_index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        group_index
+        O índice de grupo ao qual se deve atribuir o som.
+      
+      
+        sound_index
+        O índice de som a ser atribuído ao grupo.
+      
+    
+  
+   
+  Devoluções:
+  Índice
+   
+  Exemplo:
+  sg = audio_create_sync_group(true); audio_play_in_sync_group(sg, sound1); audio_play_in_sync_group(sg, sound2); audio_play_in_sync_group(sg, sound3); audio_play_in_sync_group(sg, sound4); audio_start_sync_group(sg);
+  
+  O acima exposto cria um novo grupo de sincronização e atribui o índice do grupo à variável "sg". Quatro sons são então adicionados ao grupo, com o ganho para três deles sendo ajustado para 0. Finalmente, o grupo de sincronização é tocado.
+   
+   
+   
+  
+    
+      
+        Voltar: Sincronização de áudio
+        Próximo: audio_start_sync_group
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

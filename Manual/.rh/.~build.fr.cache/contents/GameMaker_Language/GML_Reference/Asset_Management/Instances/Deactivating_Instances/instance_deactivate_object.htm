@@ -1,0 +1,46 @@
+
+  
+  instance_deactivate_object
+  Com esta função, você pode desativar uma única instância ou todas as instâncias de um objeto específico de todos aqueles que foram ativados anteriormente. Observe que se você desativou uma instância ou objeto que foi marcado como Persistente, então
+    você precisará reativá-lo novamente com a função instance_activate_object() antes do vestiário, caso contrário, ele não será transportado e será descartado. Note também que a desativação
+    não é instantânea, e uma instância que tenha sido desativada desta forma não será considerada inativa até o final do evento em que a função foi chamada.
+  NOTA: Se você desativar uma instância no início da sala (ou seja: do código de criação da sala, ou de uma instância criar evento de uma instância dentro da sala) todas as instâncias que são colocadas dentro da sala do editor da sala ainda executarão seu evento de criação antes de serem desativadas.
+  AVISO: A desativação de instâncias que têm a física habilitada NÃO irá impedir que seus dispositivos interajam dentro da simulação física. Para isso, você deve definir seus phy_active variável
+    para verdadeiro ou falso à medida que você ativa/desativa as instâncias.
+   
+  Sintaxe:
+  instance_deactivate_object(obj);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        obj
+        O objeto ou instância a ser desativado (a palavra-chave também pode ser usada).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  instance_deactivate_object(obj_Enemy); var _vx = camera_get_view_x(view_camera[0]); var _vy = camera_get_view_y(view_camera[0]);  var _vw = camera_get_view_width(view_camera[0]); var _vh = camera_get_view_height(view_camera[0]); instance_activate_region(_vx - 64, _vy - 64, _vw + 128, _vh + 128, false);
+  O código acima desativa todas as instâncias do objeto "obj_Enemy" e depois ativa uma região dentro da sala.
+   
+   
+   
+  
+    
+      
+        Voltar: Desativação de Instâncias
+        A seguir: instance_deactivate_region
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

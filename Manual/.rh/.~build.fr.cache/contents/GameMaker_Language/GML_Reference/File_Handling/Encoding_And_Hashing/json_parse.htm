@@ -1,0 +1,52 @@
+
+  
+  json_parse
+  Esta função pode ser usada para analisar uma cadeia JSON (previamente criada usando json_stringify ou de qualquer fonte válida), e convertê-la em uma coleção de arrays ou estruturas, onde uma matriz é o equivalente a um
+    A matriz JSON e uma estrutura é o equivalente de um objeto JSON. Você fornece a string para analisar, e a função retornará a matriz ou estrutura de nível superior que pode então ser verificada em seu código. Se você não tiver certeza do conteúdo do JSON, você pode
+    usar as diferentes Funções Variáveis (como typeof() ou variable_struct_get_names())
+    para verificar o conteúdo devolvido. Note que ao tentar analisar um valor inválido (ou seja: não uma string), será lançado um erro de exceção.
+  Se a cadeia JSON fornecida incluir "indefinido" como valor para qualquer propriedade, ela será convertida para pointer_null ao ser analisada.
+   
+  Sintaxe:
+  json_parse(json)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        json
+        O JSON a analisar (um fio)
+      
+    
+  
+   
+  Devoluções:
+  Estruturas e matrizes aninhadas
+   
+  Exemplo ampliado:
+  Neste exemplo, analisaremos a seguinte seqüência JSON que manteremos na variável "json":
+  json = "myObj]": "maçãs":10, "laranjas":12, "batatas":100000, "abacates":0, "myArray":[0, 1, 2, 2, 4, 0, 1, 5, 1]}"
+  Esta corda seria parsed algo assim:
+  data = json_parse(json); if variable_struct_exists(data, "myObj") {
+     if is_struct(data.myObj) { var _names = variable_struct_get_names(data.myObj); var _str = ""; for (var i = 0; i < array_length(_names); i++;)  { _str = _nomes[i] + ":
+    " + string(variable_struct_get(data.myObj, _names[i])); show_debug_message(_str); }  }  if variable_struct_exists(data, "myArray") { if is_array(data.myArray) { show_debug_message(data.myArray); }  }  }
+  
+  O código acima analisará a seqüência JSON dada, gerando a seguinte saída do console:
+  laranjas: 12 batatas: 100000 abacates: 0 maçãs: 10 [ 0,1,2,2,2,4,0,0,1,5,1 ]
+   
+   
+   
+  
+    
+      
+        Voltar: Codificação de arquivos
+        Próximo: base64_encode
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

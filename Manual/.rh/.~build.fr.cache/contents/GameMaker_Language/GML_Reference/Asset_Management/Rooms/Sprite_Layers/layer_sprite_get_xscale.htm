@@ -1,0 +1,43 @@
+
+  
+  escala_escrever_escrever_escrever_x
+  Esta função pode ser usada para obter o multiplicador de escala atual ao longo do eixo x para o elemento sprite. Você dá o ID do elemento sprite (que você obtém quando cria um elemento sprite usando layer_sprite_create()    ou quando você usa a função layer_sprite_get_id()), e a função retornará valor real para a escala x, onde 1 não é escalonável.
+   
+  Sintaxe:
+  layer_sprite_get_xscale(sprite_element_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sprite_element_id
+        O valor de identificação único do elemento sprite para obter as informações de
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var lay_id = layer_get_id("sprite_sky"); var spr_id = layer_sprite_get_id(lay_id, "Clouds"); if layer_sprite_get_xscale(spr_id) != 1 {
+     layer_sprite_xscale(spr_id, 1); }
+  
+  O código acima obterá a identificação da camada chamada "sprite_sky" e depois a utilizará para obter a identificação do elemento sprite naquela camada. Este ID é então usado para verificar o valor da escala x e se for algo diferente de 1, é definido como 1.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de Sprite
+        Próximo: layer_sprite_get_yscale
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,44 @@
+
+  
+  superfície_get_texture
+  Esta função retorna um ponteiro especial para a textura da superfície. Este valor pode então ser usado em outras funções de desenho, particularmente em geral 3D e em algumas das funções primitivas 2D.
+  NOTA: Quando se trabalha com superfícies há a possibilidade de que elas possam deixar de existir a qualquer momento devido a serem armazenadas na memória de textura. Você deve SEMPRE verificar se uma superfície existe usando superfície_existe()    antes de referenciá-los diretamente.
+   
+  Sintaxe:
+  surface_get_texture(surface_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        surface_id
+        A identificação da superfície para obter a largura de.
+      
+    
+  
+   
+  Devoluções:
+  Apontador
+   
+  Exemplo:
+  var tex; tex = surface_get_texture(surf); draw_primitive_begin_texture(pr_trianglestrip, tex); draw_vertex_texture(0, 480, 0, 0, 0); draw_vertex_texture(640, 480, 1, 0); draw_vertex_texture(640, 480, 1, 1); draw_vertex_texture(0,
+    480, 0, 1); draw_primitive_end();
+  
+  O código acima desenhará uma faixa triangular de 4 vértices texturizados com a textura mantida na variável "tex", que é ela mesma retirada de uma superfície previamente criada.
+   
+   
+   
+  
+    
+      
+        Voltar: Superfícies
+        Próximo: superfície_get_depth_disable
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

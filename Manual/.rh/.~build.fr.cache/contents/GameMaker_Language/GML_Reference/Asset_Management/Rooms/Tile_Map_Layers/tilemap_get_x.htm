@@ -1,0 +1,41 @@
+
+  
+  tilemap_get_x
+  Usando esta função você pode recuperar a posição x (dentro da sala) do elemento do mapa de azulejos. Você dá o ID do elemento do mapa de azulejos (que você obtém quando cria um elemento do mapa de azulejos usando layer_tilemap_create()    ou quando você usa a função layer_tilemap_get_id()), e a função retornará a posição do eixo x.
+   
+  Sintaxe:
+  tilemap_get_x(tilemap_element_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tilemap_element_id
+        O valor de identificação único do elemento do mapa de azulejos para obter a posição x de
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var lay_id = layer_get_id("Tiles_Walls"); var map_id = layer_tilemap_get_id(lay_id); var _x = tilemap_get_x(map_id); var _y = tilemap_get_y(map_id); tilemap_x(map_id, _x + 10); tilemap_y(map_id, _y + 10);
+  O código acima usa o ID do mapa de azulejos recuperado para obter a posição x e y do mapa de azulejos e depois usa esses valores para movê-lo.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas do mapa de azulejos
+        Próximo: tilemap_get_y
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

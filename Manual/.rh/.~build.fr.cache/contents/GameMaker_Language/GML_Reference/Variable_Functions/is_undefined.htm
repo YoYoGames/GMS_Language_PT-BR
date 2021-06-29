@@ -1,0 +1,46 @@
+
+  
+  is_undefined
+  Esta função retorna se uma determinada variável está definida ou não. Em alguns casos, você deseja verificar e ver que tipo de dado uma variável contém no GameMaker Studio 2 e é quando você usaria esta função. Ela retorna verdadeiro ou falso, dependendo do tipo de variável.
+    sobre se o valor está definido ou não.
+  NOTA: Esta função não pode ser usada para verificar a existência de uma variável. Use variable_instance_exists() ou 
+    variável_global_exists() ao invés disso.
+   
+  Sintaxe:
+  is_undefined(n);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        n
+        O argumento para verificar.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var val = ds_map_find_value(map, 13); if is_undefined(val) {
+     show_debug_message("Não existe entrada no mapa!"); }
+  
+  O código acima verifica a variável "val" para ver se ela é indefinida ou não e mostra uma mensagem de debug se ela é.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções variáveis
+        Próximo: is_nan
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,97 @@
+
+  
+  Biblioteca de Ação de Buffers
+  
+  Um buffer é uma região da memória física usada para armazenar dados temporariamente enquanto está sendo movida de um lugar para outro ou manipulada de alguma forma, por exemplo, você pode usar um buffer para armazenar dados do estado do jogo. O GameMaker Studio 2 tem uma série de
+    ações relacionadas com a criação, modificação e carregamento/salvamento de amortecedores, mas antes de utilizá-los, observe os seguintes pontos:
+  
+    Quando um buffer é criado, ele é automaticamente limpo e preenchido a 0.
+    O argumento do "tamanho" das funções do buffer sempre se refere ao tamanho em bytes do buffer.
+    DnD™os amortecedores estão sempre 1 byte alinhados. O "alinhamento" refere-se a como os dados são armazenados dentro de um buffer e é usado quando se utilizam as funções de buffer GML , mas
+      para o Drag And Drop, não é relevante.
+    Os dados em buffer são lidos e escritos de forma seqüencial (ou seja: você chama a ação Write Buffer três vezes, então ele escreverá os primeiros dados, seguirá em frente, à direita os segundos dados, seguirá em frente e então escreverá
+      os últimos dados), com algo chamado de valor "procurar" para dizer onde no buffer ocorrerá a próxima leitura/escrita.
+    Todos os dados são escritos no buffer e retornados do buffer como uma string, então se você tiver armazenado algum número real, você terá que usar uma das ações do tipo de dados para convertê-lo da string
+      para o valor.
+  
+  A memória utilizada para criar buffers é a memória do sistema, portanto, mesmo quando o jogo não tem foco, qualquer dado armazenado em um buffer deve ser seguro, entretanto, se o aplicativo for fechado ou reiniciado, ele será perdido. Também vale a pena notar que os buffers podem
+    também ser salvos como arquivos e depois carregados de volta ao jogo usando as ações do arquivo.
+  A página seguinte explica com mais detalhes como funcionam os buffers dentro do contexto do GameMaker Studio 2 e contém um par de exemplos de código GML:
+  
+    Usando amortecedores
+  
+  A biblioteca Buffer tem as seguintes ações:
+   
+  
+    
+      
+        
+        Criar Tampão
+      
+      
+        
+        Buffer de cópia
+      
+      
+        
+        Eliminar tampão
+      
+      
+        
+        Leia Buffer
+      
+      
+        
+        Buffer de escrita
+      
+      
+        
+        Procure um tampão
+      
+      
+        
+        Obter tamanho tampão
+      
+      
+        
+        Obter posição tampão
+      
+      
+        
+        Se o tampão existir
+      
+      
+        
+        Se o fim do tampão
+      
+    
+  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  
+    
+      
+        Voltar: Índice
+        A seguir: Ações de Arquivo
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

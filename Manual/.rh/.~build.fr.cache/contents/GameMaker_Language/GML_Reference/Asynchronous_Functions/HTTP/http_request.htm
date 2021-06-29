@@ -1,0 +1,70 @@
+
+  
+  http_request
+  Com esta função, você pode criar uma solicitação de cabeçalho HTTP para definir os parâmetros operacionais de uma transação HTTP, que pode ser usada para muitas coisas como (por exemplo) autenticação via cabeçalhos HTTP se você usar APIs RESTful. A função requer
+    o endereço IP completo do servidor a ser solicitado, bem como o tipo de solicitação a ser feita (como uma string, veja a nota abaixo): "GET", "HEAD", "POST", "PUT", "DELETE", "TRACE", "OPTIONS",
+    ou "CONNECT". Você também precisará fornecer um Mapa DS de pares chave/valor (como cordas, onde a chave é o campo do cabeçalho e o valor são os dados necessários para o cabeçalho), e
+    o argumento final é uma cadeia de dados opcional que você pode adicionar ao pedido, e se não for necessário, então pode ser 0 ou uma cadeia vazia "". Note que você também pode enviar um buffer (veja a seção sobre Buffers para mais detalhes), neste caso o último argumento seria a "manipulação" do buffer a ser enviado.
+  NOTA: os cabeçalhos HTTP normalmente seguem o formato "chave:valor", mas como o GMS cria estes pares para você a partir do ds_map, não há necessidade de incluir os dois pontos ":" em sua chave de mapa ou cadeias de valores.
+  NOTA: Ao usar um buffer para o argumento do corpo, se a posição de busca do buffer estiver no início (0), então nenhum corpo é enviado e o buffer é preenchido com a resposta da chamada http, mas se a posição de busca do buffer for diferente de zero, então o buffer
+    O conteúdo das cordas é enviado como o corpo.
+  NOTA: Você deve estar ciente de que, devido à proteção XSS nos navegadores, as solicitações e tentativas de carregamento de recursos através de domínios são bloqueadas e podem parecer retornar resultados em branco. Consulte a parte sobre Questões de Domínios Cruzados para maiores detalhes.
+  Este evento irá gerar uma "chamada de retorno" que é captada por qualquer evento HTTP , caso em que irá gerar um Mapa DS ( mais comumente conhecido como "dicionário")
+    que é exclusivo para este evento e que é armazenado na variável especial async_load. Este mapa DS tem as duas chaves a seguir relacionadas à função de solicitação:
+  
+    id: O ID que foi devolvido do comando. Se você disparar uma série de solicitações http_ então você precisa saber a qual você está recebendo a resposta, e assim você usaria este valor para comparar com o valor que você armazenou quando você originalmente
+      enviou o pedido para encontrar a pessoa certa.
+    response_headers: Se este tiver um valor maior ou igual a 0, ele contém um mapa DS que contém os cabeçalhos HTTP retornados com a resposta à solicitação HTTP.
+  
+   
+  Sintaxe:
+  http_request(url, método, cabeçalho_mapa, corpo);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        url
+        O endereço web do servidor do qual você deseja obter informações
+      
+      
+        método
+        O método de solicitação (normalmente "POST" ou "GET", mas todos os métodos são suportados)
+      
+      
+        header_map
+        Um ds_map com os campos de cabeçalho necessários
+      
+      
+        corpo
+        Os dados a serem transmitidos seguindo os cabeçalhos (pode ser um cabo buffer binário)
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var map = ds_map_create(); ds_map_add(map, "Host", "225.0.0.0.97:3000"); ds_map_add(map, "Connection", "keep-alive"); ds_map_add(map, "Content-Length", "169"); ds_map_add(map, "Content-Length", "169"),
+    "Cache-Control", "max-age=0"); ds_map_add(map, "Authorization", "básico eW95b19hZG1pbjpjNG5lZmllbGQ="); ds_map_add(map, "Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0,8"); ds_map_add(map, "User-Agent", "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, como Gecko) Chrome/31.0.1650.57 Safari/537.36"); ds_map_add(map, "Content-Type", "application/x-www-form-urlencoded"); ds_map_add(map, "Accept-Encoding", "gzip,deflate,sdch"); ds_map_add(map, "Accept-Language", "en-GB,en-US;q=0.8,en;q=0.6"); ds_map_add(map, "Cookie", "request_method=GET; _InAppPurchases_session=69bb6ef6eec2b"); var data="utf8=%E2%9C%93&authenticity_token=kPmS14DcYcuKgMFZUsN3XFfj3mhs%3D&product%5Bname%5D=CatchTheHaggis&product%5Bproduct_id%5D=http_test&commit=Create+Product"; request = http_request("http:225.0.0.97:3000/products",
+    "POST", mapa, dados);
+  O código acima cria um mapa DS com os cabeçalhos HTTP relevantes para a função e, em seguida, cria uma cadeia de dados para uso, pois esta é uma solicitação POST. Finalmente a função é chamada, com seu valor de ID sendo armazenado na variável "request" (solicitação) para
+    verificação no evento assíncrono HTTP.
+   
+   
+   
+  
+    
+      
+        Voltar: HTTP
+        Próximo: http_get
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,63 @@
+
+  
+  audio_play_sound_on
+  Com esta função você pode tocar qualquer recurso sonoro através de um emissor, com qualquer mudança no ganho do emissor, posição, tom ou velocidade afetando a forma como o usuário ouve o som final sendo tocado. Você fornece o índice do emissor a ser utilizado, o índice do som
+    do som a ser tocado e depois especificar se o som deve ou não ser laçoado. Finalmente, pode-se atribuir uma prioridade, que é então usada para determinar como os sons são tratados quando o número de sons tocados está acima do limite estabelecido pela função 
+    audio_channel_num(). Sons de prioridade mais baixa serão interrompidos em favor de sons de prioridade mais alta, e o valor da prioridade pode ser qualquer número real (o valor real é arbitrário, e pode ser de 0 a 1 ou 0 a 100, pois o GameMaker Studio 2 
+      dar-lhes a mesma prioridade). Observe que, quando se trata de prioridade, quanto maior o número, maior será a prioridade, de tal forma que um som com prioridade 100 será favorecido em relação a um som com
+      prioridade 1.
+  Esta função também retornará um número de índice único para o som que está sendo tocado, que pode então ser armazenado em uma variável para que você possa pausá-lo ou pará-lo com as funções apropriadas. Isto significa que se você tiver múltiplas instâncias do mesmo
+    som tocado a qualquer momento, você pode direcionar apenas uma instância desse som para lidar com o uso das funções de áudio.
+   
+  Sintaxe:
+  audio_play_sound_on(emissor, som, loop, prioridade);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        emissora
+        O índice do emissor a ser utilizado.
+      
+      
+        som
+        O índice do som a ser utilizado.
+      
+      
+        loop
+        Marque o som como looping ou não.
+      
+      
+        prioridade
+        Defina a prioridade do canal para o som.
+      
+    
+  
+   
+  Devoluções:
+  Índice
+   
+  Exemplo:
+  if global.SFX {
+     audio_play_sound_on(s_emit, snd_Explode, false, 1); }
+  
+  O código acima verifica a variável global "SFX" e se ela retornar verdadeiro então o som indexado na variável "snd_Explode" será reproduzido através do emissor indexado na variável "s_emit".
+    com uma prioridade baixa e sem looping.
+   
+   
+   
+  
+    
+      
+        Voltar: Emissores de áudio
+        A seguir: audio_emitter_get_gain
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

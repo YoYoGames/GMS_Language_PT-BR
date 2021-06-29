@@ -1,0 +1,55 @@
+
+  
+  show_message_async
+  Esta função abre uma janela e exibe ao usuário a mensagem que você define na função. Esta é uma função assíncrona, e como tal o GameMaker Studio 2 não bloqueia o dispositivo em que está sendo executado enquanto espera por uma resposta, mas sim
+    continua a realizar eventos como de costume. Uma vez que o usuário tenha pressionado o botão "Ok", um Diálogo evento é acionado que, pela duração
+    desse evento somente, terá um ds_map armazenado na variável async_load.
+  Este mapa conterá as duas chaves, "id" e "status", sendo "id" o valor que foi retornado pela função quando chamada, e sendo o "status" verdadeiro para o botão "Ok" sendo
+    pressionado, ou falso se a mensagem foi cancelada (quando disponível, pois nem todas as plataformas alvo permitem o cancelamento de diálogos).
+  NOTA: Esta função é  apenas para depuração e testee não deve ser usada em jogos lançados. Para isso, você deve criar uma interface de usuário personalizada para receber informações dos jogadores, para que você tenha controle total sobre a aparência e o comportamento dos diálogos.
+   
+  Sintaxe:
+  show_message_async(string);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Cordão
+        A mensagem a ser mostrada ao usuário.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo ampliado:
+  O evento de pressão do mouse esquerdo (por exemplo) do objeto que está mostrando a mensagem teria o seguinte código:
+  msg = show_message_async("Agora você será levado para a loja");
+  O acima mostrará uma mensagem com o fio dado. A identificação da mensagem é armazenada na variável "msg" e será usada no evento de Diálogos Assíncronos, como mostrado abaixo:
+  var i_d, stat; i_d = ds_map_find_value(async_load, "id"); if i_d == msg {
+     if ds_map_find_value(async_load, "status") {
+     url_open("https://play.google.com/store");
+     }
+     }
+  
+  O código acima verifica a chave "id" do Mapa DS retornado em relação ao valor armazenado na variável "msg". Se forem os mesmos, verifica se o botão "Ok" foi pressionado (em vez de a janela ser
+    fechado/cancelado) e se retornar verdadeiro, abre uma url.
+   
+   
+   
+  
+    
+      
+        Voltar: Diálogo
+        Próximo: show_question_async
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

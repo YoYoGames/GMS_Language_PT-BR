@@ -1,0 +1,51 @@
+
+  
+  zip_unzip
+  Esta função abrirá um arquivo zip armazenado e extrairá seu conteúdo para o diretório dado. Note que se você não fornecer um caminho completo para o diretório ZIP, então a raiz do drive atual será usada, e se você quiser colocá-lo em um caminho relativo
+    para o diretório de trabalho do pacote de jogos, então você deve usar o diretorio_de_trabalho variável como parte do caminho (caminhos relativos usando "..." ou "..." não funcionarão como esperado
+    portanto, deve ser evitada). Observe também que o zip deve fazer parte do pacote do jogo (ou seja: um Arquivo Incluído) ou ter sido baixado para a área de armazenamento usando http_get_file().
+  A função retornará um valor indicando o número de arquivos extraídos, ou retornará 0 ou menos se a extração tiver falhado.
+   
+  Sintaxe:
+  zip_unzip(zip_file, target_directory)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        zip_file
+        O arquivo zip para abrir
+      
+      
+        diretório-alvo
+        O diretório de destino para extrair os arquivos para
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var num = zip_unzip("/downloads/level_data.zip", working_directory + "extraído/"); if num <= 0 {
+     show_debug_message("Extraction Failed!"); }
+  
+  O código acima abrirá o arquivo zip armazenado no diretório "downloads" e extrairá seu conteúdo para o diretório "extraído" (criando esse diretório se ele ainda não existir) e então verificará se a extração tem
+    foi correto, mostrando uma mensagem de debug em caso de falha.
+   
+   
+   
+  
+    
+      
+        Voltar: Codificação de arquivos
+        Próximo: load_csv
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

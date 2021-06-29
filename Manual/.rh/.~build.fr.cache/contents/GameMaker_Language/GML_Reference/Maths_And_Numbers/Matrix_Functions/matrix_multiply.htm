@@ -1,0 +1,50 @@
+
+
+
+
+
+  
+  matrix_multiply
+  Com esta função, é possível multiplicar duas matrizes juntas para criar uma nova matriz de transformação. A função retornará o novo índice de matriz que deverá ser armazenado em uma variável para uso futuro.
+  NOTA: Você não pode usar uma constante de matriz como argumento com esta função, então se você deseja multiplicar a matriz de visualização (por exemplo) com uma matriz personalizada que você construiu, você deve primeiro chamar matrix_get()    e atribuir os valores da matriz de visão a uma variável da matriz, depois multiplicá-la por sua matriz personalizada, e então definir a matriz escolhida (visão, projeção ou mundo).
+   
+  Sintaxe:
+  matrix_multiply(matrix1, matrix2);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        matriz1
+        O primeiro índice matricial a ser utilizado.
+      
+      
+        matriz2
+        O segundo índice matricial a ser utilizado.
+      
+    
+  
+   
+  Devoluções:
+  Índice de Matriz (Matriz 4x4)
+   
+  Exemplo:
+  var v_matrix = matrix_get(matrix_view); var new_matrix = matrix_multiply(v_matrix, my_matrix); matrix_set(matrix_view, new_matrix);
+  O código acima obterá a matriz de visão atual, depois a multiplicará com uma matriz personalizada e depois usará o índice de matriz resultante para definir a matriz de visão novamente.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções da Matriz
+        Próximo: matrix_build_identity
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

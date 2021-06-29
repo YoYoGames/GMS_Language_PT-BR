@@ -1,0 +1,44 @@
+
+  
+  buffer_tell
+  Quando você lê ou escreve dados em um buffer usando o buffer_read() ou buffer_write() a posição atual de "buscar" é avançada pelos bytes escritos ou lidos, e com
+    esta função você pode obter a posição atual de "procura" para uso em outras funções tampão. Por exemplo, se seu alinhamento de buffer estiver definido para 4 bytes e você escrever um único pedaço de dados que seja 1 byte em tamanho, então faça um buffer_tell(),
+    No entanto, se você escrever outro dado, também 1 byte em tamanho, então faça um buffer_tell(), você receberá um valor de retorno de 5, pois o alinhamento "almofadou" os dados para aquela posição.
+   
+  Sintaxe:
+  buffer_tell(tampão);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O índice do buffer a ser utilizado.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var pos = buffer_tell(buff); buffer_seek(buff, buffer_seek_start, 0); val[0] = buffer_read(buff, buffer_S16); val[1] = buffer_read(buff, buffer_S16); val[2] = buffer_read(buff, buffer_S16); buffer_seek(buff, buffer_seek_start, pos);
+  O código acima armazenará a posição atual de busca dentro do buffer indexado na variável "buff" para a variável local "pos". A posição de busca do buffer será então definida para o início do buffer, e três pedaços de dados são
+    ler em um array, antes de finalmente redefinir a posição de busca do buffer para onde estava anteriormente.
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próxima: buffer_peek
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

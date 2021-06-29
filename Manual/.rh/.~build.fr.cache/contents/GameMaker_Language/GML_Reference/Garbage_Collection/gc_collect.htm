@@ -1,0 +1,34 @@
+
+  
+  gc_collect
+  Com esta função você pode acionar o coletor de lixo, forçando-o a funcionar no final do quadro atual (degrau). Vale notar que o coletor de lixo não precisa estar ativo para que isto funcione. Chamando esta função após desativar
+    o coletor de lixo (usando a função gc_enable()) permitirá que o coletor de lixo para um quadro no qual todos os objetos que foram marcados para coleta serão removidos da memória antes
+    o catador de lixo é novamente desativado.
+   
+  Sintaxe:
+  gc_collect();
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if (global.debug == true && keyboard_check_pressed(vk_f1)) {
+     gc_collect();
+     }
+  
+  O código acima verifica uma variável global e uma tecla sendo pressionada e se estas forem verdadeiras, então a coleta de lixo é acionada para o fim do quadro (etapa).
+   
+   
+   
+  
+    
+      
+        Voltar: Coleta de Lixo
+        Próximo: gc_target_frame_time
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

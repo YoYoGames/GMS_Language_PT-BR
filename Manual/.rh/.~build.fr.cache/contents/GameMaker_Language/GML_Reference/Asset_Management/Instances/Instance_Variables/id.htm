@@ -1,0 +1,38 @@
+
+  
+  id
+  Esta variável somente leitura contém o número de identificação único para a instância. Cada instância criada - seja através de código ou adicionando-os a uma sala no Room Editor - recebe um número que é usado internamente para identificar esta instância
+    e a variável id é o que você pode usar para referenciá-la. O id também é retornado (e pode ser armazenado em uma variável) quando uma instância é criada usando instance_create_layer() ou
+    instance_create_depth() , bem como outras funções de instância.
+  NOTA: O valor desta variável não é o mesmo que o identificador que a instância é dada no editor da sala e também é diferente do exemplo_id matriz
+    que contém todas as identificações de todas as instâncias atualmente ativas.
+   
+  Sintaxe:
+  id;
+   
+  Devoluções:
+  Real (número inteiro - valor de identificação da instância)
+   
+  Exemplo:
+  for(var i = 0; i < instance_count; i++;) {
+     if instance_id[i] != id {
+     instance_id[i].scr += 5; }
+     }
+  
+  O código acima adiciona 5 à variável "scr" para cada instância ativa na sala, exceto a que está executando o código. Isto é feito através de looping em TODAS as instâncias ativas (usando a array "instance_id" para retornar cada instância ativa
+    ID) e comparando-os com a variável "id" embutida, que é o ID da instância original que executa o código.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis de instância
+        A seguir: visível
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

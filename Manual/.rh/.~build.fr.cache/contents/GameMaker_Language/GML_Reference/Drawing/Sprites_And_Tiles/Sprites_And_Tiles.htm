@@ -1,0 +1,64 @@
+
+  
+  Sprites e Ladrilhos
+  Mesmo que você possa criar fundos no editor da sala e atribuir sprites às instâncias, muitas vezes isto não é suficientemente flexível para o jogo que você está fazendo. Por exemplo, se você tem uma instância que tem que desenhar um menu, você pode querer exibir vários
+    botões sprites de cada vez, ou se você tiver um jogo com fundos de paralaxe rolantes, você precisará ser capaz de configurá-los através de código em uma instância controladora de algum tipo. Nestas situações, você deve estar usando as seguintes funções que podem
+    desenhe o duende e os recursos de fundo em qualquer lugar da sala com algumas das funções que também permitem manipular a forma, tamanho, cor e alfa do duende para obter efeitos especiais.
+  Você pode atribuir um duende a uma instância e, por padrão, o GameMaker Studio 2 o desenhará com as propriedades dadas pelas diversas variáveis do duende,
+    No entanto, se você acrescentar algo ao evento do sorteio, você está "assumindo o controle" e deve dizer ao GameMaker Studio 2 exatamente o que deve desenhar. Isto significa que se você tiver que usar as seguintes funções para definir exatamente o que é a instância
+    para desenhar e onde está na sala para desenhá-la:
+   
+  
+    draw_self
+    draw_sprite
+    draw_sprite_ext
+    draw_sprite_general
+    draw_sprite_part
+    draw_sprite_part_ext
+    draw_sprite_stretched
+    draw_sprite_stretched_ext
+    draw_sprite_pos
+    draw_sprite_tiled
+    draw_sprite_tiled_ext
+  
+   
+  Se você estiver usando sprites no formato SWF, então também há opções adicionais para controlar o anti-aliasing usado no desenho (veja Importar Sprites Não-Bitmap para
+    mais informações sobre estes tipos de sprites). Note que estas funções funcionam em nível global e definirão o AA em todos os sprites vetoriais SWF desenhados depois de terem sido chamados.
+   
+  
+    draw_enable_swf_aaa
+    nível_de_sorteio_swf_aa
+    nível_get_swf_aa_de_sorteio
+  
+   
+  Além das funções listadas acima, há também duas funções especiais projetadas para uso com animações esqueléticas (ver Importar Sprites Não-Bitmap para
+    mais informações sobre estes tipos de sprites, e a seção Animações Esqueletais para funções específicas relacionadas a estes tipos de sprites):
+   
+  
+    draw_skeleton
+    draw_skeleton_instance
+    draw_skeleton_collision
+    tempo_esqueleto_de_sorteio
+  
+   
+  Os ladrilhos são desenhados automaticamente com base nos dados que contêm, no conjunto de ladrilhos utilizados e nas propriedades do mapa de ladrilhos. Entretanto, é possível desenhar azulejos individuais ou mapas de azulejos usando as seguintes funções:
+   
+  
+    draw_tile
+    draw_tilemap
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Desenho
+        A seguir: Texto
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

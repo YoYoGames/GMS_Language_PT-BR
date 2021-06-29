@@ -1,0 +1,265 @@
+
+  
+  O Painel de Pista
+  O que suas seqüências fazem são regidas pelos ativos e parâmetros que foram adicionados ao Painel de Pista. Você pode adicionar uma faixa ao
+    editor por qualquer um dos dois:
+  
+    arrastando um bem para a seqüência Tela
+    arrastando um bem para o próprio Painel de Pista
+    clicando no botão "Add Asset" (Adicionar Ativo)  na parte inferior do Painel de Pista.
+  
+  Este último método abrirá o Asset Explorer para você, onde você poderá escolher o bem a ser adicionado.
+  Independentemente do método escolhido, será feita uma nova trilha para o ativo. Esta pista é a pista principal para o ativo na seqüência e terá uma pista chave correspondente para o ativo na Folha de Dados na posição de cabeça de jogo:
+  Note que a cor da chave de ativos na folha de Dope Sheet pode ser definida a partir do Painel de Controle clicando na barra colorida na
+    fim. Isto abrirá o Colour Picker onde você pode escolher qual cor usar para as faixas chave na Folha de Drogas.
+  Cada ativo no editor de pistas também pode ter um conjunto de pistas de parâmetros adicionado a ele. Estas pistas são o que controla as várias propriedades (parâmetros) diferentes que podem ser modificadas
+    para a pista ao longo do tempo. Os diferentes parâmetros disponíveis são abordados em profundidade na seção "AdicionandoFaixas de Parâmetros" mais abaixo nesta página, mas para lhe dar uma idéia do que está disponível aqui é uma breve lista:
+  
+    Todos os bens: Posição e Rotação.
+    Sons: Breu e Volume.
+    Seqüências: Origem e Escala.
+    Sprites e Objetos: Origem, Escala, Índice de Imagem, Velocidade da Imagem e Multiplicação de Cores.
+  
+  Para adicionar uma faixa de parâmetros no editor, você pode habilitar "Automatically Record Changes"  no Painel de Faixas, que então adicionará as teclas de parâmetros
+    para qualquer mudança que você fizer em um bem na Tela na posição atual de cabeça de jogo, como mostrado aqui:
+  Alternativamente, você pode clicar no botão "AddParameter Track" , que abrirá um menu mostrando as diferentes opções disponíveis:
+  Selecionando qualquer opção deste menu, ou gravando diretamente da IDE, será criada uma ou mais
+    faixas de parâmetros sob a faixa de ativos principal, e também adicionar uma chave de parâmetro à Folha de Drogas, colorida da mesma forma que a cor da faixa de ativos principal:
+  Uma vez que você adicione uma faixa de parâmetros à faixa principal de ativos, a folha de drogadição terá uma barra colorida
+    para mostrar o comprimento da pista do ativo em quadros, e haverá teclas de parâmetros (quadros-chave) adicionadas nos pontos onde se deseja que ocorra uma mudança no parâmetro. Estas chaves podem ser vistas na imagem acima como simples "pontos".
+    em um quadro. Quando uma faixa tem teclas de parâmetros como esta, o parâmetro a que se referem será interpolado (usando interpolação linear) por padrão entre cada um dos pontos mostrados.
+    Por exemplo, se você tiver um parâmetro de rotação e no frame 0 ele é ajustado para 90°, então no frame 30 ele é de 180°, então no frame 15 ele será de 135°. Você pode realmente ver a mudança nos valores ao longo do tempo, selecionando o parâmetro faixa e depois "scrubbing".
+    a cabeça de brincadeira na folha de papelão:
+  
+  Note que para todas as faixas de parâmetros você pode desativar a interpolação linear padrão entre diferentes teclas a partir do botão direito do mouse  menu na faixa de parâmetros, que
+    significa que as transições entre os valores dos parâmetros ocorrerão instantaneamente no quadro dado, em vez de gradualmente ao longo do tempo:
+  Além de poder escolher o tipo de transição para as faixas de parâmetros, o menu RMB também lhe oferece
+    as seguintes opções:
+  
+    Cortar, Copiar e Colar: Estas opções permitem cortar/copiar/colar faixas de ativos ou parâmetros.
+    Faixa(s) duplicada(s): Isto criará uma duplicata da(s) trilha(s) atualmente selecionada(s). Se esta for uma pista ativa, também duplicará as pistas paramétricas associadas a ela.
+    Apagar rastro(s): Isto apagará a(s) faixa(s) selecionada(s). Se você excluir uma faixa ativa, as faixas de parâmetros associadas a ela também serão removidas, porém você pode excluir as faixas de parâmetros individualmente.
+    Grupo: Usando esta opção em um espaço vazio no Painel de Pista criará uma pasta de grupo que você poderá então usar para ajudar a manter seus ativos em um formato mais ordenado. Você pode adicionar um ativo a um grupo simplesmente clicando sobre ele e arrastando
+      na pasta. Se você já selecionou uma faixa ou faixas, então usando esta opção não apenas criará uma pasta de grupo, mas adicionará a(s) faixa(s) a ela(s).
+    Renomear: Você pode usar esta opção para renomear qualquer faixa de ativos ou pasta de grupo.
+  
+  Uma característica importante dos rastros de ativos e parâmetros é a capacidade de rastrear e agrupar os rastros dos pais . Se você arrasta um rastro de ativo para outro no painel de trilhos, o primeiro ativo se torna um filho do ativo que foi abandonado.
+    que, por sua vez, se torna o pai. Todas as faixas de parâmetros atribuídas à faixa de ativos pai serão então automaticamente aplicadas às faixas de ativos filhos, para que você possa ter vários sprites (por exemplo) todos usando uma única posição
+    trilha de ativos a mover:O mesmo pode ser feito usando grupos. Você pode criar uma pasta de grupo
+    clicando no botão na parte inferior do painel de pistas e depois arrastando e soltando as pistas de recursos que você deseja agrupar na pasta do grupo. Estes ativos ainda manterão suas próprias faixas de parâmetros, mas você pode então dar parâmetros adicionais
+    faixas de parâmetros para o grupo e todos os bens do grupo serão afetados por estas faixas de parâmetros, bem como por suas próprias faixas de parâmetros individuais.
+  Ao trabalhar com o painel de pistas, os atalhos usuais do teclado também podem ser usados, ou seja:  /  e o botão esquerdo do mouse  para selecionar uma ou mais pistas em qualquer ordem,  e o botão esquerdo do mouse  para selecionar pistas consecutivas, e você também pode cortá-las, copiá-las e colá-las usando as combinações de teclas  /  +"X",  /  + "C" e  /  + "V".
+  Essa é a base do uso do editor de pistas, mas abaixo entramos um pouco mais em detalhes sobre para que serve cada uma das diferentes seções e como utilizá-las:
+   
+  Mudança de orientação
+  
+    O botão de orientação de mudança  pode ser usado para mudar a forma como o
+      O Editor de Seqüências exibe as diferentes seções. Por padrão, você terá a Vista de Cnavas na parte superior e o Editor de Pistas e a Folha de Dopes na parte inferior, mas isto pode ser alterado clicando no botão para percorrer os diferentes layouts, ou clicando em
+      o botão Opções  para abrir um menu e selecionar o layout
+      que você quer. Os seguintes layouts estão disponíveis:
+    
+      
+        
+          
+          Janela Dividida
+          
+            Com esta opção, o Sequence Editor será dividido em duas janelas separadas, onde a janela principal da IDE mostrará a visualização da tela na área de trabalho completa e a nova janela mostrará a Dope Sheet e o Track Editor. Clicando novamente no botão, será
+              mudar o layout novamente e remover a janela extra.
+          
+        
+        
+          
+          Topo do Snap
+          
+            Esta opção encaixa o Track Editor e o Dopesheet na parte superior da IDE.
+          
+        
+        
+          
+          Estalar à direita
+          
+            Esta opção encaixa o Track Editor e o Dopesheet à direita da IDE.
+          
+        
+        
+          
+          Fundo do Snap
+          
+            Esta opção encaixa o Track Editor e o Dopesheet na parte inferior da IDE (esta é a visão padrão.
+          
+        
+        
+          
+          Esquerda
+          
+            Esta opção encaixa o Track Editor e o Dopesheet à esquerda da IDE.
+          
+        
+      
+    
+    Você também pode redefinir o layout do Sequence Editor a qualquer momento, clicando na opção Reset . Isto restaurará o editor ao seu estado padrão e reabrirá qualquer seção que tenha sido fechada.
+     
+  
+  Busca de pistas
+  
+    Esta caixa de busca permite que você pesquise rapidamente as várias faixas da seqüência para encontrar aquela que deseja editar. Digitando qualquer texto aqui, você saberá quantas faixas de ativos foram encontradas com essa seqüência, e também destacará as setas
+      para o lado da caixa de busca. Clicando nestas setas, saltaremos para o primeiro e consecutivo ativo que preencha os critérios de busca.
+     
+  
+  Faixas de ativos
+  
+    Cada ativo que for adicionado a uma seqüência terá seu próprio rastro, e estes estão listados aqui. Se a pista do ativo tiver algum parâmetro definido para ele, então estes também serão mostrados abaixo como pistas de parâmetros. Você pode expandir ou contratar o parâmetro
+      faixas clicando em  no ícone da seta à esquerda do nome da faixa, e você pode editar o nome da faixa usando um duplo clique lento  na faixa e depois dando-lhe o nome de sua escolha. Note que não há restrições quanto ao nome que você dá e você pode usar espaços, caracteres não alfanuméricos
+      e inicie-os com um número se desejar.
+    Os diferentes tipos de faixas de parâmetros disponíveis são explicados com mais detalhes na seção "Adicionandofaixas de parâmetros", mais abaixo nesta página.
+     
+  
+  Controles chave
+  
+    Uma vez que você tenha adicionado uma faixa de parâmetros, você pode adicionar e remover chaves de parâmetros a quadros específicos para definir o valor para esse parâmetro. Isto pode ser feito usando a "Record Key"  ou " Delete key".  (veja a seção "Controles de chave de faixa" para mais informações),
+      ou você pode fazê-lo usando os Controles Chave no próprio parâmetro. Para usar estes controles, você precisa posicionar a cabeça de jogo na Folha de Droga no quadro que deseja editar, e então você pode clicar no ícone circular "chave".
+      à esquerda da faixa de parâmetros. Se o quadro não tiver nenhuma chave atribuída a ele, o círculo estará "vazio" e clicando nele, será acrescentada uma nova chave e será possível editar o valor do parâmetro. Se o quadro já tiver uma chave, então o círculo será
+      "preenchido" e clicar nele removerá a chave do quadro:
+    Você também notará que na imagem acima você pode usar os botões de seta de cada lado
+      do marcador de chave de parâmetro para saltar rapidamente entre os quadros de chave na folha de papelão também, sem ter que posicionar a cabeça de brincadeira manualmente.
+     
+  
+  Valores dos parâmetros
+  
+    Quando uma faixa de parâmetros tiver sido adicionada, você pode editar os valores de alguns deles simplesmente ajustando a cabeça de jogo na Folha de Droga para o quadro com a chave que você deseja alterar e então usar os diferentes widgets de tela para editar a posição, rotação,
+      escala ou origem do bem. Essas mudanças serão refletidas no valor chave para esse quadro. Entretanto, nem todos os parâmetros podem ser editados desta forma, ou podem não ser suficientemente precisos para suas necessidades, e nestes casos você pode editar o valor do parâmetro
+      diretamente clicando sobre ela na pista e ajustando-a ao valor requerido para o tipo de parâmetro.
+    Observe que algumas faixas de parâmetros podem ter um ícone de "link"  ao lado de seus valores, o que significa que elas podem ser ligadas entre si. Isto é feito por
+      clicando no ícone para ativar/desativar o link, e quando ativado, a edição de um valor também definirá o outro.
+     
+  
+  Eventos
+  
+    De forma semelhante aos objetos regulares, as seqüências podem ter eventos que podem executar algum código atribuído a eles. O código é atribuído sob a forma de uma função de script que pode ter
+      sem argumentos e será chamado quando o evento for acionado.
+    Os eventos são adicionados clicando no botão Adicionar Evento  que abrirá a seguinte janela:
+    
+    Os eventos listados aqui são os seguintes:
+    
+      Criar - Este evento acontece quando uma instância da seqüência é criada pela primeira vez, e é a primeira coisa que acontece dentro de uma seqüência colocada na sala através do editor da sala quando uma sala é inserida.
+      Destroy - Este evento é executado quando uma instância da seqüência é destruída, e será executado antes do evento Clean Up (ver abaixo).
+      Clean Up - Este evento será chamado após qualquer evento que remova uma instância da seqüência da sala. Portanto, ele será acionado se a seqüência for destruída, se a sala terminar, ou se o jogo terminar, e for projetado para executar
+        qualquer tarefa que você precise executar uma vez quando a instância da seqüência é retirada do jogo por qualquer motivo. Se você destruiu a instância de seqüência usando, por exemplo, layer_sequence_destroy(), então este evento será chamado após o Destroy
+        Evento (ver acima).
+      Etapa Inicial / Etapa / Etapa Final - O Evento da Etapa é um evento que é verificado a cada etapa (moldura) do jogo enquanto a instância da seqüência existe, e é dividido em três partes: início, etapa e
+        fim. Para a maioria das coisas, o evento da etapa padrão será bom de usar, mas às vezes você quer um pouco mais de controle sobre o que o código funciona e em que momento, para que você tenha acesso aos eventos da etapa inicial e final, e estes eventos serão sempre
+        acionadas na mesma ordem a cada passo (moldura) do jogo. Importante! Se a seqüência for pausada, estes eventos não serão acionados, e quando o jogo for retomado, eles serão acionados no próximo frame após a seqüência começar a jogar novamente.
+        Observe também que a ordem dos eventos não é influenciada pela direção da cabeça do jogo, e mesmo que a seqüência esteja jogando para trás, os eventos ainda serão executados como Começo, Passo e Fim.
+      Evento Async: Este é o equivalente do objeto Asynchronous System Event. Importante! Se a seqüência for pausada, este evento não será acionado.
+    
+    A cada evento pode ser atribuída uma única função que será chamada quando o evento for acionado. Você pode atribuir a função usando a caixa de entrada para a ventilação, e clicando no botão de seta abrirá o editor de scripts para a função a ser editada.
+      Você também pode clicar no botão Criar Novo na parte inferior para criar um novo recurso de script com funções "boilerplate" já definidas e prontas para serem preenchidas. Note que você pode mudar os nomes das funções para qualquer coisa que você precisar e não
+      têm que usar os nomes predefinidos, e você também pode remover qualquer definição de função que não seja necessária. É importante notar que as funções usadas para eventos em seqüência não podem aceitar nenhum argumento.
+    Os eventos sequenciais também podem ser adicionados e editados usando código. Para mais informações, por favor, veja aqui.
+     
+  
+  Controles doquadro-chave 
+  
+    Os botões de controle do quadro de chaves são uma das maneiras que você pode adicionar, remover ou editar chaves específicas na folha de drogados. Os botões são os seguintes:
+    
+       - Este é o botão "Split selected keys" (Dividir chaves selecionadas). Quando você tiver selecionado uma ou mais chaves de parâmetros na folha de dope, você pode então clicar neste botão e elas irão
+        ser dividido em duas chaves separadas na posição de cabeça de jogo da linha do tempo:
+        
+       - Este é o botão "Delete selected keys" (Apagar chaves selecionadas). Quando você tiver selecionado uma ou mais chaves de parâmetros na folha de dope, você pode então clicar neste botão e elas
+        será apagado:
+        
+       - Este é o botão "Recordar uma nova chave". Quando você tiver selecionado uma chave de ativos na folha de papel e pressionar este botão, novas chaves de parâmetros serão adicionadas ao
+        como pistas de parâmetros, e as teclas de parâmetros serão adicionadas como pontos na linha de tempo da folha de papel na posição de cabeça de jogo:
+        
+       - Este é o botão "Automatically Record Changes". Quando isto for ativado, quaisquer mudanças feitas no ativo dentro da tela serão automaticamente registradas
+        e as faixas de parâmetros apropriados e as teclas de parâmetros adicionadas na posição de cabeça de brincadeira na folha de papelão. Por exemplo, se você mover o playhead do quadro 0 para o quadro 10 e depois na tela mover o ativo 100 pixels para a direita, um parâmetro
+        a faixa será adicionada para posição, e as teclas de parâmetro serão adicionadas no quadro 0 (a posição inicial) e no quadro 10 (a posição do playhead) e quando você pressionar "Play" na seqüência, o ativo se moverá 100px para a direita mais de dez
+        quadros.
+       
+        
+    
+  
+  Visíveis / Óculos de bloqueio
+  
+    Tanto as faixas de ativos como as faixas de parâmetros têm um botão para alternar a visibilidade da faixa  e para bloquear a faixa . Se você desativar a visibilidade da faixa, ela não será mostrada quando a seqüência for executada em uma sala, nem será mostrada na tela de seqüência durante o teste, e alternar a visibilidade de uma faixa de ativos também alternará a visibilidade.
+      de seus rastros de parâmetros. Bloquear uma pista significa simplesmente que esta pista não poderá mais ser editada de forma alguma. Note que as faixas que são invisíveis serão desenhadas desbotadas na folha de papelão, enquanto as faixas que estão bloqueadas serão desenhadas com uma sobreposição,
+      para que você possa ver imediatamente em que estado se encontra cada trilha:
+     
+  
+  Cor da pista
+  
+    A cada faixa de ativos que você criar será atribuída uma cor aleatória pela IDE para facilitar a identificação na Folha de Drogas. Esta cor pode ser alterada a qualquer momento, bastando clicar na barra de cores da trilha e, em seguida, selecionar a cor desejada
+      para usar a partir da janela do Colour Picker que se abre. Qualquer cor selecionada para uma faixa de parâmetros será automaticamente aplicada a todas as faixas de parâmetros associadas, porém você pode então editar a cor de cada faixa de parâmetros individualmente para que seja diferente.
+      se necessário. Observe que se você mudar novamente a cor da faixa de ativos, isto anulará quaisquer alterações feitas nas faixas de parâmetros.
+     
+  
+  Adição de trilhas de parâmetros
+  
+    O botão Adicionar parâmetro  pode ser usado para adicionar uma única faixa de parâmetro à faixa de ativos selecionada. Como mencionado anteriormente nesta página, o parâmetro
+      As pistas podem ser de vários tipos diferentes, dependendo do bem com o qual estão relacionadas. Abaixo está uma lista de todas as diferentes faixas de parâmetros disponíveis e a que elas se referem, bem como os ativos aos quais podem ser aplicadas:
+    
+      Posição: Esta faixa de parâmetros pode ser adicionada a qualquer um dos quatro tipos de ativos da seqüência(sprites, objetos, sons ou seqüências) e é usada para definir a posição espacial dentro da seqüência para o
+        ativo. É preciso um valor X e um valor Y.
+      Rotação: Como o parâmetro de posição, o parâmetro de rotação está disponível para todos os ativos em seqüência e pode ser usado para definir a rotação em graus para o ativo. Tenha em mente que o GameMaker Studio 2 calcula a rotação no sentido anti-horário,
+        começando com 0° à direita, portanto 90° está acima, 180° à esquerda e 270° está abaixo.
+      Origem: O parâmetro de origem está disponível para os ativos sprite, objeto e seqüência e pode ser usado para definir a posição X e Y da origem do ativo. A alteração da origem afetará a forma como o ativo é
+        posicionado, girado e escalonado.
+      Escala: O parâmetro de escala está disponível para sprite, objeto e ativos de seqüência e é usado para definir a escala horizontal e vertical do ativo. Isto afetará a forma como o ativo é renderizado na IDE e
+        em tempo de execução, e é calculado como um valor escalar, onde 100% é o tamanho padrão do ativo, 50% seria metade do tamanho, e 200% seria o dobro do tamanho. Observe que você tem a possibilidade de ligar os valores da escala horizontal e vertical clicando
+        o botão "link" . Isto significa que a mudança de um valor também mudará automaticamente o outro.
+      Índice de imagem e velocidade da imagem: Esses parâmetros só estão disponíveis para sprite e objetos ativos e podem ser usados para alterar o quadro de animação atual (veja a página no índice de imagem para
+        mais informações) assim como a velocidade atual da animação, que é definida usando FPS e funciona da mesma forma que o valor definido para o sprite que está sendo usado no editor sprite.
+      Multiplicação de cores: Este parâmetro só está disponível para sprite e objetos ativos e pode ser usado para mudar a cor atual da mistura para o duende que está sendo desenhado. Isto é o equivalente a definir o valor da image_blend 
+        e qualquer cor definida aqui será "multiplicada" (ou seja, misturada) com a cor do duende, e um valor de branco (#ffffffffff) indica que nenhuma mistura deve ocorrer. Observe que ao trabalhar com este tipo de faixa, você pode definir o
+        cor digitando manualmente o valor hexadecimal, ou você pode clicar na amostra de cor para abrir o GameMaker Studio 2 Colour Picker. Observe que as cores são dadas no formato ARGB, assim você pode definir um valor
+        para alfa usando este tipo de faixa de parâmetros (o Colour Picker também permite que você defina o valor alfa). Isto seria o equivalente a definir o image_alpha para
+        o duende.
+      Volume: O parâmetro de volume só se aplica a faixas de ativos sonoros e pode ser usado para definir o ganho do som (o ganho real do ativo sonoro não será alterado, pois é essencialmente um emissor que é usado para o ativo
+        em seqüências). O valor do volume é calculado como uma porcentagem, onde 0% não é volume e 100% é volume total.
+      Breu: O parâmetro de inclinação só se aplica a faixas de ativos sonoros e pode ser usado para definir a inclinação do som (como no caso do volume, o ganho real do ativo sonoro não será alterado, pois é essencialmente um emissor que é usado
+        para a pista de ativos em seqüências). O valor do tom é calculado como uma porcentagem, 100% é o tom "natural" do som, e menos de 100% irá baixá-lo enquanto que mais de 100% irá elevá-lo.
+      Falloff: O parâmetro falloff só se aplica a faixas de ativos sonoros e atualmente não está implementado.
+    
+     
+  
+  Ações de rastreamento
+  
+    Os botões na parte inferior do editor de pistas são as diferentes ações de pistas e podem ser usados para os seguintes propósitos:
+    
+       - Este botão abrirá o Asset Explorer para você escolher um ativo para usar como uma nova pista. Uma vez selecionada, a trilha do ativo será criada e os quadros serão adicionados no Dope
+        Folha na posição atual de playhead.
+       - Quando você tiver selecionado uma ou mais faixas de ativos no editor de faixas, clicando neste botão as duplicará (junto com quaisquer faixas de parâmetros que elas possam
+        conter).
+      
+       - Clicando aqui criará um grupo especial de máscara de recorte onde você pode dar sprites para usar como máscaras e sprites a serem mascarados. Veja aqui para mais informações.
+       - Clicando aqui, será adicionada uma nova pasta de grupo ao editor de pistas, que poderá então ser usada para organizar melhor as pistas. Você pode adicionar uma faixa t um grupo
+        arrastando a faixa para a pasta do grupo e você pode removê-la novamente, arrastando-a para fora da pasta. Note que qualquer recurso que for adicionado a uma pasta de grupo será automaticamente atribuído à cor da pasta, embora você possa então editar a faixa
+        cor para as pistas individuais para que seja diferente, se necessário.
+       - Como é de se esperar, clicando aqui, a(s) faixa(s) selecionada(s) será(ão) apagada(s). Se esta for uma faixa ativa, então todas as faixas de parâmetros que ela contém também serão excluídas, embora
+        você pode usá-lo em faixas de parâmetros selecionados para apagá-los por conta própria sem remover as faixas de ativos aos quais estão associados. Se você usar isto em uma pasta de grupo vazia, então a pasta será excluída, entretanto, se houver alguma trilha no
+        será exibido um aviso, pois ao apagar uma pasta você também removerá todas as faixas que estiverem dentro dela.
+    
+     
+  
+   
+  Há mais duas páginas com informações relacionadas a trilhas e parâmetros que também são de interesse, a primeira é sobre o uso de recursos das Curvas de Animação para gerar trilhas de parâmetros, e a segunda descreve como
+    para criar Máscaras de Clipping:
+  
+    Usando curvas de animação
+    Máscaras de grampear
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Sequências
+        A seguir: Máscaras de grampear
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

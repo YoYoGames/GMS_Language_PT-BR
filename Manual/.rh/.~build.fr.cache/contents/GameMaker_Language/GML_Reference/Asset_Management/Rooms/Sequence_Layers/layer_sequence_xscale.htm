@@ -1,0 +1,52 @@
+
+  
+  camada_seqüência_escala_x
+  Com esta função, você pode definir a escala X para o elemento de seqüência dado. Você fornece o ID do elemento seqüencial conforme retornado por layer_sequence_create() ou por uma das funções dos elementos da camada junto com a nova escala a ser estabelecida no eixo X e a seqüência será escalada por esta quantidade. Uma escala de 1 indica que não há escala (1:1), valores menores serão reduzidos (0,5, por exemplo, será metade da largura da seqüência), valores maiores serão reduzidos
+    Os valores acima e negativos espelharão a seqüência sobre sua origem e a escala, a menos que o valor utilizado seja exatamente -1 (neste caso, a seqüência é apenas espelhada sobre sua origem, sem escala).
+  É muito importante observar que a aplicação de escalas irregulares (por exemplo: escalonamento do eixo X em 3 e do eixo Y em 2) para seqüenciar elementos que contenham qualquer instância que utilize rotação, pode causar problemas com o desenho da instância, colisões, abates, e muitas outras coisas.
+    Basicamente, se sua seqüência se baseia em qualquer propriedade da instância, então não recomendamos que você combine escalas irregulares junto com a rotação da instância.
+  Observe também que você não deve alterar as variáveis image_xscale image_yscale  image_angle x y para qualquer
+    instâncias em uma seqüência que utiliza esta função, pois serão sobrescritas assim que a seqüência for atualizada após a chamada da função.
+   
+  Sintaxe:
+  layer_sequence_xscale(sequence_element_id, xscale)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sequence_element_id
+        O valor de identificação único do elemento de seqüência para o alvo
+      
+      
+        xscale
+        O novo valor da escala do eixo X a ser aplicado ao elemento de seqüência
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  seq_scale < 2 {
+     seq_scale += 0.01; layer_sequence_xscale(my_seq, seq_scale); layer_sequence_yscale(my_seq, seq_scale); }
+  
+  O código acima verifica o valor mantido na variável seq_scale, e se for inferior a 2, então ele adiciona o valor para definir a escala X e Y do elemento de seqüência referenciado na variável my_seq.
+   
+   
+   
+  
+    
+      
+        Voltar: Sequência de camadas
+        A seguir: escala_de_semestrela_de_camadas
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

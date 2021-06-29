@@ -1,0 +1,48 @@
+
+  
+  room_set_persistent
+  Com esta função, você pode mudar (ou definir) a persistência de qualquer espaço em seu jogo , exceto o atual. Uma sala com persistência assinalada como verdadeira manterá o estado de todas as instâncias dentro daquela sala se o jogador sair e
+    então retorna, enquanto que se a persistência for assinalada como falsa, será sempre reiniciada para o estado inicial. Você deve observar que uma sala persistente usa consideravelmente mais memória do que uma sala normal e não é recomendado ter demasiada
+    deles em seu jogo.
+  NOTA: Esta função NÃO funcionará para desativar a persistência se a sala já tiver sido visitada! Uma vez visitado, um quarto persistente é mantido na memória e para desligar a persistência você deve ir a esse quarto e definir o room_persistent    variável para falso e depois sair da sala novamente.
+   
+  Sintaxe:
+  room_set_persistent(index, val);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice da sala para definir a persistência de.
+      
+      
+        val
+        Se a sala deve ser persistente(verdadeira) ou não(falsa).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  global.myroom = room_add(); room_set_width(global.myroom, 640); room_set_height(global.myroom, 480); room_set_persistent(global.myroom, true);
+  Isto criará uma nova sala e armazenará seu índice na variável "global.myroom". Em seguida, fixará sua largura para 640 pixels, sua altura para 480 pixels, sua legenda para "Game Room" e sua persistência para "true".
+   
+   
+   
+  
+    
+      
+        Voltar: Quartos
+        A seguir: room_set_view_enabled
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

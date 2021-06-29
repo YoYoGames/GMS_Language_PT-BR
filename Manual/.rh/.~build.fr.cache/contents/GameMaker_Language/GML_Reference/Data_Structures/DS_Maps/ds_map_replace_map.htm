@@ -1,0 +1,51 @@
+
+  
+  ds_map_replace_map
+  Com esta função você pode substituir um Mapa DS que foi armazenado na "chave" dada por outro mapa que foi criado anteriormente. Esta função foi projetada para criar mapas compatíveis com JSON que você então codificaria usando
+    json_encode() e só deve ser usado em conjunto com essa funcionalidade.
+   
+  Sintaxe:
+  ds_map_replace_map(id, chave, valor)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        O id do ds_map a ser usado.
+      
+      
+        chave
+        A chave para substituir.
+      
+      
+        valor
+        O id do ds_map a ser usado para substituir o anteriormente armazenado na chave dada.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var temp_map = ds_map_create(); ds_map_add_list(temp_map, "list", j_list); ds_map_add(temp_map, "array", j_array);  ds_map_replace_map(j_map, "maps", temp_map); var j = json_encode(j_map); ds_map_destroy(temp_map);
+  
+  O código acima criará um Mapa DS e o preencherá com uma matriz e uma Lista DS antes de substituir um mapa previamente armazenado no Mapa DS "j_map".
+   
+   
+   
+  
+    
+      
+        Voltar: DS Maps
+        A seguir: ds_map_is_list
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,67 @@
+
+  
+  Método Variáveis
+  Uma variável de método é essencialmente uma variável que teve uma função atribuída a ela, "ligando" a função a uma instância e permitindo que você use a variável para se referir à função - da mesma forma que você usa um nome defunção de tempo de execução para se referir a uma função GML incorporada. A variável usada pode ser local, de instância ou global no escopo (veja aqui para mais informações sobre o escopo da variável).
+  A sintaxe para criar uma variável de método é a seguinte:
+  <nome variável> = função(<parametro1>, <parametro2>, etc... ) {
+     <statement1>; <statement1>;... }
+  
+  ou
+  função <nome variável>(<parametro1>, <parametro2>, etc... ) {
+     <statement1>; <statement1>;... }
+  
+  Em geral, porém, você usaria o primeiro formulário para métodos, e o segundo formulário para definir funções de script, já que o segundo formulário também atribuirá um índice de script ao nome da função, enquanto o primeiro
+    A forma será um método "verdadeiro" (e requer o uso do prefixo global se usado para definir uma função de script).
+  NOTA: Você pode verificar isto usando os dois formulários no projeto e depois chamando a função runtime tipoof() em cada um deles. Um deles será classificado como um "número" - uma vez que
+    retorna um ID de índice de roteiro - e o outro será classificado como um "método".
+  Portanto, tenha em mente que - em geral - estaremos sempre nos referindo a funções que não foram definidas com um índice de roteiro quando estamos falando de métodos e variáveis de métodos. 
+  Abaixo você pode ver três exemplos simples de criação de uma variável de método usando diferentes escopos:
+  // Local var _debug = function(message) {
+     show_debug_message(mensagem); }
+    
+     // Instância do_maths = function(val1, val2, val3) {
+     retorno (val1 * val2) - val3; }
+    
+     // Global global.pd = function(_x1, _y1, _x2, _y2); {
+     ponto de retorno_distância(_x1, _y1, _x2, _y2); }
+  
+  Observe que no código acima, os vários parâmetros que são dados como inputs para a função são todos nomeados e esses nomes são o que deve ser usado dentro da função para se referir aos diferentes inputs. Observe também que você pode usar a declaração return para retornar um valor de uma função para uso em outro lugar em seu código, e que uma função sem valor de retorno definido, retornará undefined.por padrão.
+  NOTA: Enquanto a variável estiver no escopo escolhido, a função real estará vinculada ao escopo em que foi inicialmente definida. Por exemplo, as funções de script são todas de escopo global e "não vinculadas".
+    (ou seja: não estão associadas a nenhuma instância), mas se você tiver uma função de script que cria outra função como uma variável de método dentro dela e então chamar esta função de script a partir de uma instância, a função usada dentro do script será vinculada à variável de instância como um método.
+    Em geral, isto não é algo que você nunca precisa pensar, mas para operações mais complexas com variáveis de método, vale a pena levar em consideração. Isto também se aplica quando se utiliza outras construções como with    - quando você cria uma variável de método dentro de um com, a função estará vinculada à instância que está atualmente em escopo.
+  Uma vez criada, a variável do método pode ser usada exatamente como uma função de tempo de execução ou uma função de script, por exemplo:
+  create_vec = function(_x1, _y1, _x2, _y2); {
+     var _array; _array[0] = point_distance(_x1, _y1, _x2, _y2); _array[1] = point_direction(_x1, _y1, _x2, _y2); return _array; }
+    
+     vec = create_vec(x, y, mouse_x, mouse_y);
+  As variáveis criadas dentro de uma função seguirão as mesmas regras do normal e serão escopadas de acordo com a palavra-chave utilizada ou com o escopo da chamada de função. No exemplo acima, usamos var para que a variável array esteja no
+    escopo local da função. Se não usássemos a palavra-chave, então a variável teria sido criada sobre o escopo da instância que chamou a função.
+  Os métodos, assim como as funções de script, também podem aceitar argumentos opcionais que têm valores padrão para quando não são passados:
+  create_attachment = function(_attachment, _x = x, _y = y) {
+     retorno instance_create_layer(_x, _y, layer, _attachment); }
+  
+  A função acima leva três argumentos, sendo que os dois últimos são opcionais. Se eles não forem passados quando a função for chamada, então eles usarão as coordenadas x e y da instância por padrão.
+  Note que se um argumento não for passado, e não tiver um valor padrão, então ele será igual a indefinido.
+  Os métodos também podem fazer uso de variáveis estáticas, que mantêm seus valores ao longo de cada chamada de função. Favor ler esta página para mais informações.
+  A seguir listamos algumas funções de ajuda associadas às variáveis do método:
+  
+    is_method
+    método
+    método_get_self
+    método_get_index
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Visão geral daGML
+        A seguir: Structs
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

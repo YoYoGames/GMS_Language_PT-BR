@@ -1,0 +1,52 @@
+
+  
+  exemplo de
+  Esta função pode ser usada para obter o nome da função que foi usada para criar uma estrutura quando a estrutura foi criada usando uma função construtora e o     novo operador. Você fornece a variável com a referência estrutural para verificação e a função retornará ou uma string com o nome da função ou indefinida. Observe que se você
+    passar a função uma estrutura literal (ou seja: uma estrutura que foi criada sem utilizar uma função construtora) então ela simplesmente retornará a string "estrutura". Esta função também pode ser usada para verificar se uma referência estrutural é uma referência fraca ou
+    não, neste caso a função retornará a string "weakref" em vez do nome da função que criou a estrutura para mais informações, veja a função weak_ref_create()).
+   
+  Sintaxe:
+  instanceof(struct_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        estrutura
+        A referência estrutural a ser usada.
+      
+    
+  
+   
+  Devoluções:
+  Cordão ou indefinido
+   
+  Exemplo ampliado:
+  Neste exemplo, devemos primeiro definir a função que será utilizada como o construtor da estrutura:
+  função init_struct(_a, _b, _c) construtor {
+     a = _a; b = _b; c = _c; }
+  
+  Esta função pode então ser usada junto com o novo operador para criar uma estrutura e preenchê-la com as variáveis definidas para os valores dos argumentos usados na função:
+  mystruct = novo init_struct(10, 100, "Olá Mundo");
+  Podemos então obter o nome da função que foi usada desta forma:
+  var _name = instanceof(mystruct); if is_string(_name) {
+     show_debug_message(_nome);
+     }
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Funções variáveis
+        Próximo: array_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,106 @@
+
+  
+  sprite_collision_mask
+  Com esta função você pode definir as propriedades da máscara de colisão que um duende deve ter. Se você selecionar automático (0) ou imagem completa (1) como o modo caixa de delimitação, então os valores individuais da caixa de delimitação podem ser ajustados para 0.
+    máscara definida (2), você terá que definir estes valores. Os diferentes valores da caixa de delimitação são sempre relativos ao canto superior esquerdo do duende (independentemente da origem x e y) que é considerada posição (0, 0).
+  A definição do tipo de máscara define a forma geral para a própria máscara, mas note que qualquer coisa que não seja uma máscara retangular exigirá mais poder de processamento ao resolver colisões, com uma queda subseqüente no desempenho. Em geral, você deve apenas
+    usar outros tipos de máscara que não sejam retangulares quando absolutamente necessário.
+  NOTA: Esta função não permite o tipo de máscara de colisão retangular girada.
+  O tipo de máscara que pode ser ajustada será uma das constantes a seguir:
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        bboxkind_rectangular
+        Uma forma retangular (não rotativa) de máscara de colisão retangular
+      
+      
+        bboxkind_ellipse
+        Uma forma de máscara de colisão elíptica
+      
+      
+        bboxkind_diamond
+        Uma forma de máscara de colisão com diamante
+      
+      
+        bboxkind_precise
+        Uma máscara de colisão precisa, onde a máscara estará de acordo com os pixels não transparentes do duende, com base no valor de tolerância dado (ver abaixo))
+      
+    
+  
+   Finalmente, a tolerância é usada para definir a precisão da máscara (quando usada com uma máscara de "imagem completa", isso não terá efeito), com uma tolerância de 0 significando que a máscara seguirá cada pixel que tiver uma transparência
+    acima de 0, enquanto outros valores deslocarão o perímetro da máscara de colisão, dependendo da transparência dos pixels.
+  NOTA: Esta função é útil apenas para sprites bitmap e não funcionará com sprites SWF ou JSON (Espinha).
+  NOTA: Esta função só funcionará em sprites adicionados ou sprites duplicados e não diretamente em recursos pré-fabricados. Você pode duplicar os sprites usando a função sprite_duplicate().
+   
+  Sintaxe:
+  sprite_collision_mask(ind, sepmasks, bboxmode, bbbleft, bbtop, bbright, bbbottom, kind, tolerance);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do duende para definir a caixa de delimitação.
+      
+      
+        sepmasks
+        Seja para criar máscaras de colisão para cada subimagem do duende(verdadeiro), ou uma máscara para todos(falsa).
+      
+      
+        bboxmode
+        Que tipo de caixa de delimitação a ser usada. 0 = automático, 1 = imagem completa, 2 = definido pelo usuário.
+      
+      
+        bbleft
+        A posição esquerda máxima da caixa delimitadora.
+      
+      
+        bbtop
+        A posição máxima de topo da caixa delimitadora.
+      
+      
+        bbright
+        A posição máxima correta da caixa delimitadora.
+      
+      
+        bbbottom
+        A posição inferior máxima da caixa delimitadora.
+      
+      
+        tipo
+        O tipo de máscara, uma constante (veja a tabela na descrição).
+      
+      
+        tolerância
+        Indica a tolerância no valor de transparência (0= sem tolerância, 255= tolerância total).
+      
+    
+  
+   
+  Devoluções
+  N/A
+   
+  Exemplo:
+  spr = sprite_add("player_5.png", 16, true, true, 0, 0); sprite_collision_mask(spr, true, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+  O código acima carrega um sprite de uma fonte externa e armazena o novo índice na variável "spr". O código então define o novo sprite para ter uma máscara de colisão precisa para cada uma de suas sub-imagens.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação de Sprite
+        Próximo: sprite_nineslice_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

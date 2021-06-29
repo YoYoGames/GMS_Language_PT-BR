@@ -1,0 +1,56 @@
+
+  
+  ds_priority_read
+  Com esta função você pode recriar uma prioridade DS salva (uma que tenha sido escrita anteriormente como uma string usando ds_priority_write()). É preciso primeiro criar uma nova prioridade DS para ler a seqüência, e se
+    a prioridade DS já existe e tem informações armazenadas nela, então isto será liberado antes da leitura. Esta função é de vital importância ao criar mecanismos de salvamento/carga para seu jogo. Observe que se a estrutura de dados foi criada com
+    versões de GameMaker você deve adicionar o argumento opcional "legado", definindo-o como verdadeiro, já que o formato das cordas foi alterado com esta versão.
+   
+  Sintaxe:
+  ds_priority_read(id, str [, legacy]));
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação da estrutura de dados a ser escrita.
+      
+      
+        str
+        O fio para escrever de.
+      
+      
+        legado(opcional)
+        Pode ser verdadeiro ou falso ou omitido completamente.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  p_queue = ds_priority_create(); ini_open("save.ini");
+     var str = ini_read_string("P_queues", "0", ""); if (str != "") {
+     ds_priority_read(p_queue, str); }
+     ini_close();
+  
+  O código acima cria uma fila de prioridade e armazena o índice na variável "p_queue". Em seguida, abre um arquivo ini e lê uma string a partir dele, verificando se a string não é retornada como vazia primeiro. Esta cadeia de caracteres é então
+    ler na prioridade DS recém-criada.
+   
+   
+   
+  
+    
+      
+        Voltar: Filas de espera prioritárias DS
+        Próximo: ds_priority_write
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

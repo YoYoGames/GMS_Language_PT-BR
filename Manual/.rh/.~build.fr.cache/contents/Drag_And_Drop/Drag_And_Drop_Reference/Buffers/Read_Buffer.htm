@@ -1,0 +1,45 @@
+
+  
+   Leia Buffer
+  Esta ação pode ser usada para ler dados de um buffer previamente criado. Você fornece o valor único de identificação do buffer (como retornado pela ação Criar buffer) e dá uma variável para armazenar o valor retornado. Se você marcar a variável
+    como uma variável local temporária, então ela será criada para você e descartada novamente no final do evento ou do roteiro de ação. Todos os dados são retornados como uma string, portanto, se você tiver armazenado algum número real, você terá que usar uma das Ações do Tipo de Dados para convertê-lo da string para o valor. Tenha em mente também que os buffers são lidos e escritos sequencialmente e assim a leitura de um buffer irá mover a posição "procurar" para a próxima entrada, o que significa que para ler vários pedaços de dados
+    você simplesmente chama esta ação de número de vezes necessário e armazena cada dado retornado em uma variável.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Buffer
+        O índice tampão (armazenado em uma variável)
+      
+      
+        Meta
+        A variável de destino para manter os dados retornados
+      
+    
+  
+   
+  Exemplo:
+  O código do bloco de ação acima define a posição de leitura/gravação do buffer para o início do buffer e
+    depois lê dois pedaços de dados, armazenando-os (como cordas) em variáveis locais temporárias. Estas variáveis são então usadas para desenhar os dados para a tela.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações Tampão
+        A seguir: Buffer de escrita
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

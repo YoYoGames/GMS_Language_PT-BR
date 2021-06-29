@@ -1,0 +1,67 @@
+
+  
+   Se Variável
+  Esta ação é usada para verificar o estado de uma determinada variável em relação a um determinado valor usando uma expressão específica. Uma declaração de "se" sempre retornará verdadeiro ou falso e as expressões para verificação podem ser qualquer uma das expressões de
+    seguintes:
+  
+    Igual a - A variável e o valor são ambos exatamente iguais
+    Menos do que - A variável é menor do que o valor
+    Maior do que - A variável é maior do que o valor
+    Menor ou igual a - A variável é menor ou igual ao valor
+    Maior ou Igual a - A variável é maior ou igual ao valor
+  
+  Se você assinalar o argumento "Não", então as expressões acima serão negadas, por exemplo "igual a" se torna " não igual a". Observe também que nem a variável nem os argumentos de valor estão limitados a valores numéricos.
+    e pode ser um fio, um ponteiro, uma identificação de recurso ou qualquer outra coisa que uma função possa retornar ou usar (veja a seção sobre tipos de dados para mais informações), mas você não pode comparar dois
+    diferentes tipos de dados sem obter um erro - por exemplo, se a variável segurar uma string e você tentar verificar se ela é igual a um número, então você obterá um erro de sintaxe.
+  NOTA IMPORTANTE: Devido a questões de precisão de ponto flutuante, verificar se dois valores são exatamente iguais pode retornar falsos, já que um pode ser exatamente 1, enquanto
+    a outra pode ser 1.00000000000001. Isto pode ser evitado usando a ação Decimal para Inteiro antes de verificar ou usando as expressões "maior que" ou "menor que".
+  Note que para adicionar ações no bloco "se", elas devem ser descartadas ao lado da ação, como mostrado na imagem abaixo:
+  Estas ações serão executadas agora se o "se" for avaliado como verdadeiro, enquanto qualquer
+    ações abandonadas em outro lugar serão realizadas após o bloco "se".
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Variável
+        O nome da variável a ser verificada.
+      
+      
+        Não
+        Preparado para verificar se a expressão não é verdadeira.
+      
+      
+        Expressão
+        O tipo de expressão a ser usada para o cheque.
+      
+      
+        Valor
+        O valor a ser verificado em relação à variável.
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima verifica uma variável "dir" para ver se é igual a 10, e se
+    é ela cria uma instância de "obj_Squirrel" e se não for, então destrói a instância.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações Comuns
+        A seguir: Se Expressão
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

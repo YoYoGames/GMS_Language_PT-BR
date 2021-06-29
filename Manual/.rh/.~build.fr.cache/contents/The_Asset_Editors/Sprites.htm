@@ -1,0 +1,221 @@
+
+  
+  O Editor Sprite
+  O Editor Sprite é onde você define as propriedades gerais dos sprites que
+    você faz. Você pode abrir esta janela criando um novo sprite (clique com o botão direito do mouse em  no Navegador de Ativos e selecione "Create
+    Sprite"), clicando duas vezes em  em um sprite existente ou clicando com o botão direito do mouse em  um sprite existente e selecionando "Propriedades".
+  As peças que compõem o Editor Sprite são as seguintes:
+   
+  Nome do duende
+  
+    Aqui você pode nomear o duende. O nome do duende é o que será usado durante todo o seu projeto de jogo para identificar o duende como um recurso e só pode ser alfanumérico e só pode usar o símbolo "_" na barra inferior. Enquanto você pode usar números no
+      nome sprites, o nome não pode começar com um número, pois isso faria dele um nome de recurso inválido quando se usa GML ou DnD™.
+     
+  
+  Propriedades da imagem
+  
+    Nesta seção você pode definir o tamanho da imagem clicando no botão Sprite Size . Isto abrirá a seguinte janela:
+    Aqui você pode ver uma prévia do sprite antes e depois da aplicação das transformações escolhidas, e a seção abaixo é
+      para definir as novas propriedades do duende e é dividido em duas partes:
+    
+      Imagem em escala: Com esta opção você pode redimensionar a tela de desenho do duende e qualquer imagem contida no duende será esticada e dimensionada para se ajustar ao novo tamanho. Você pode escolher a escala e manter a relação de aspecto da imagem base,
+        e você também pode escolher se deseja escalar em Pixels ou em Porcentagem. Dependendo do tipo de imagem com a qual você está trabalhando, você também pode querer permitir ou não a interpolação linear (em geral, a interpolação linear irá "suavizar" os pixels sobre
+        uma área e por isso é melhor deixar para a pixel art).
+      Redimensionar Tela: Esta opção redimensionará a tela de desenho para o novo tamanho sem escalonar o conteúdo. Você pode definir o ponto de "ancoragem" para o redimensionamento usando as setas direcionais e então definir o valor do tamanho. Há uma opção
+        para manter a relação de aspecto ao redimensionar a tela e na parte inferior você pode optar por definir os valores de redimensionamento em pixels ou como porcentagem.
+    
+    Quando você estiver satisfeito com o novo tamanho, você pode clicar em Aplicar para aplicar as mudanças e fechar a janela de propriedades de Redimensionamento. Observe que ao aplicar uma alteração na escala ou no tamanho a um duende, você pode escolher que a alteração seja aplicada à origem
+      do duende também, marcando a caixa de seleção Aplicar à Origem ao lado do botão Aplicar . Quando marcada - se a origem não for uma das configurações padrão e não estiver bloqueada no duende - então sua posição será escalada para
+      corresponder a mudança ao tamanho do duende. Quando não verificado, nenhuma escalada será aplicada à origem. Se a origem não for um valor personalizado ou estiver bloqueada, então ela será cinzenta e não estará disponível. Você pode definir esta opção para todos os sprites a partir do
+     Preferências do Editor Sprite.
+    NOTA: Esta opção está disponível apenas para sprites bitmap e será cinza para sprites de animação SWF ou esqueleto.
+    Nesta seção você também pode abrir o Editor de Imagens para desenhar seu sprite, ou clicar no botão "Importar" para importar um sprite previamente criado. Sprites podem ser importados dos mais comuns
+      formatos bitmap ( PNG, JPG, GIF, etc...) mas GameMaker Studio 2 também suporta sprites vetoriais (SWF) e sprites de animação esquelética (
+      Spine ). Para mais informações sobre estes formatos, consulte a seção sobre Sprites não-Bitmap. Observe que ao importar sprites bitmap você pode selecionar
+      múltiplos arquivos de imagem no explorador de arquivos e cada um será adicionado ao mesmo sprite como subimagens separadas (quadros).
+     
+  
+  Configurações de textura
+  
+    Esta seção da janela de propriedades do sprite trata de como o GameMaker Studio 2 armazena as imagens que compõem seu sprite empáginas de texturapara uso com
+      dispositivos e navegadores. Para plataformas desktop isto pode não ser muito importante, mas quando você começa a desenvolver para celular ou web o gerenciamento adequado de seus ativos de imagem (texturas) torna-se muito importante, pois texturas mal gerenciadas podem ter efeitos prejudiciais
+      efeito em seu jogo, causando problemas de desempenho.
+    As caixas de seleção Horizontally Tile e Tile Vertically não são, por padrão, verificadas, pois na maioria das vezes você não quer fazer sprites de azulejo. No entanto, em certas circunstâncias, você pode desejar que elas sejam azulejadas, o que significa que
+      você deve verificar estas opções, especialmente se você vai escalar a vista ou a sala, pois a escala pode introduzir artefatos nos gráficos de um jogo se a página de textura não for gerada corretamente.
+    Se seu duende vai ser usado como um mapa de textura em um jogo 3D, então você deve verificar a caixa Página de Textura Separada e o duende receberá uma página de textura toda própria (note que cada subimagem também terá sua própria textura
+      portanto, se seu duende tiver 10 imagens, você gerará 10 páginas de textura). Isto aumentará as necessidades de memória de textura de seu jogo e por isso é preciso ter muito cuidado ao utilizar esta opção. Observe também que, em geral, se seu sprite estiver usando esta opção
+      para 3D, então as texturas devem ser um poder de 2 (ou seja: 128x128, 256x256, 512x512 etc...).
+    A próxima opção é habilitar o Alfa Pré-Multiplicado para as imagens sprite. Quando ativado, isto pré-multiplicará o alfa de todas as subimagens do duende. Isto normalmente é necessário apenas para sprites de desenho em superfícies, ou para algumas imagens específicas
+      efeitos especiais. Para o uso normal de duende não deve ser notada nenhuma diferença entre o duende normal e o duende pré-multiplicado.
+    Temos também uma opção de Filtragem de Borda. Esta opção é especificamente para quando você tem a interpolação linear habilitada para seu jogo e está vendo "halos".
+      de cor ao redor de seus sprites. Isto é causado pela interpolação de hardware a partir de múltiplas fontes de textona página de textura de uma só vez, e pode ser particularmente
+      óbvio quando se escalam os jogos em resolução. Permitindo que isto filtre os pixels de borda para assumir a cor do pixel alfa sprite completo mais próximo e assim misture os pixels interpolados sem a auréola que estava presente anteriormente.
+    Finalmente, você pode escolher o grupo de textura ao qual você deseja que o recurso sprite pertença. Basicamente, um grupo de textura (previamente definido no Gerente do Grupo de Textura) é algo a que você
+      pode se configurar para que todos os recursos de imagem que você precisa para salas ou níveis específicos de seu jogo possam ser armazenados juntos. Assim, por exemplo, você pode ter todas as suas imagens de nível 1 em um grupo de textura, todas as suas imagens de nível 2 em outro etc... e
+      O GameMaker Studio 2 tentará colocar todos aqueles recursos agrupados na mesma página de textura para reduzir a troca de página de textura enquanto seu jogo estiver rodando na plataforma alvo escolhida.
+    NOTA: Isto pode não ser sempre necessário e o aumento de desempenho deste método dependerá se o dispositivo alvo é vinculado à CPU ou à GPU.
+    Você pode saber mais sobre as páginas de textura aqui.
+    Grupos de textura são relevantes apenas para imagens bitmap, e sprites não bitmap não serão atribuídos a grupos de textura e algumas das opções acima não estarão disponíveis
+      para eles. Alguns sprites que não são de mapa já terão sua própria página de textura única (sprites de animação de esqueleto) enquanto outros simplesmente não requerem texturas, pois são compostos de sprites vetoriais ( SWF sprites). Para mais informações, consulte a seção seguinte:
+    
+      Sprites não-Bitmap
+    
+     
+  
+  Máscara de colisão
+  
+    Todos os sprites têm uma máscara de colisão que corresponde à área do duende que será usada para detectar colisões quando o duende for atribuído a uma instância. Você pode primeiro definir o Modo para a máscara de colisão, que
+      pode ser uma das seguintes:
+    
+      Automático: O GameMaker Studio 2 calculará a máscara de colisão automaticamente com base nos valores alfa do duende (isto dependerá da configuração de Tolerância explicada abaixo).
+      Imagem completa: A máscara será calculada com os mesmos limites que os limites esquerdo, direito, superior e inferior do duende.
+      Manual: Selecionando isto significa que você deseja definir os limites da máscara de colisão usando os valores de entrada para esquerda, direita, superior e inferior.
+    
+    Além do Modo máscara de colisão, há também vários tipos de máscara de colisão que você pode escolher a partir do menu suspenso:
+    
+      Rectângulo: Uma simples máscara retangular de colisão. Esta é a mais rápida de ser resolvida quando usada em seu projeto.
+      Rectângulo girado: Esta é uma simples máscara retangular de colisão que girará junto com o valor image_angle da instância com o duende atribuído. Isto é mais lento de resolver do que o retangular normal
+        máscara de colisão, mas mais rápido que uma máscara de colisão precisa.
+      Elipse: Cria uma máscara de colisão elíptica. Isto é mais lento de resolver do que a máscara retangular.
+      Diamante: Cria uma máscara de colisão "diamante". Isto é mais lento de resolver e gera mais CPU sobre a cabeça do que as máscaras retangulares e elípticas.
+      Preciso: Isto cria uma máscara de colisão precisa com base no contorno do duende. Se o duende tiver múltiplas sub-imagens, então este será um composto das bordas de todas as sub-imagens colocadas umas sobre as outras.
+        Observe que a máscara precisa será recortada na caixa de delimitação se o Modo for definido como Manual e você alterar os valores padrão. Isto é muito lento e gera muita sobrecarga de CPU.
+      Preciso (por moldura): Isto cria uma máscara de colisão precisa por moldura (ou seja: a máscara mudará para se adaptar ao contorno de cada moldura diferente). Observe que a máscara precisa será recortada na caixa de delimitação se o Modo for definido como Manual e você alterar os valores padrão. Este é de longe o tipo mais lento de máscara de colisão a ser resolvido e deve ser evitado, exceto em casos muito, muito específicos e pouco freqüentes.
+        casos.
+      
+    
+    A imagem a seguir ilustra as diferentes opções de máscara:
+    As opções de verificação de colisão são muito importantes para seu jogo, pois influenciarão diretamente a forma como seus objetos interagem e como seu jogo funciona, com
+      as configurações erradas, mesmo tendo um impacto negativo sobre o desempenho geral. Por que isso acontece? Bem, sempre que duas instâncias se encontram, e ambas têm uma máscara válida, um evento de colisão é gerado pela verificação da sobreposição da caixa de delimitação e do
+      máscara, que pode ser precisa ou não, e adaptada ao índice de imagem ou não. Abaixo está uma imagem para ilustrar isto:
+    
+    Sob o ajuste da máscara de colisão, você tem o controle deslizante de tolerância alfa , que indica a tolerância para criar a máscara com respeito à transparência dos sprites pixels - com uma maior tolerância de pixels que são parcialmente
+      transparentes são deixadas fora da máscara, enquanto que com uma tolerância menor a máscara levará em conta esses pixels. Isto influencia tanto a caixa de delimitação (quando não definida para manual) quanto a máscara para uma verificação precisa da colisão.
+    Finalmente, você pode definir os limites da caixa de delimitação para a máscara. A caixa de delimitação é o nome dado à área retangular na qual a máscara de duende se encaixa. Somente pixels dentro desta caixa delimitadora são usados para a máscara e estarão envolvidos em
+      verificação de colisão, e por padrão isto é computado automaticamente, levando em conta a tolerância alfa. Se você tiver verificado "preciso (por moldura)", então isto será separado para cada subimagem também. Ao configurá-la você mesmo, você pode
+      insira os valores nas caixas para esquerda, direita superior e inferior, ou você pode clicar em  na janela de pré-visualização sprite e arrastá-la para "desenhar".
+      o duende. Observe que ao "desenhar" a caixa de delimitação, a máscara é gerada automaticamente para caber dentro dos valores finais, e a caixa de delimitação pode "cortar" a máscara.
+    Vale notar que se você for para a janela de visualização prévia, você pode ajustar a máscara de colisão usando as "alças" encontradas em cada canto. Clicando e arrastando-as, a máscara de colisão será ajustada da mesma forma que os valores de entrada para a delimitação.
+      caixa de diálogo.
+     
+  
+  Nove fatias
+  
+    Nove fatias (também conhecida como 9-slicing) é uma técnica utilizada para escalar imagens retangulares para preservar detalhes, fazendo com que elas mantenham sua forma original após a escalada. Veja a página em Nove Fatias para mais informações.
+    A seção Nove fatias do editor Sprite permite que você habilite Nove fatias em um sprite, e o pré-visualize
+      em ação dentro da janela de visualização das nove fatias, à direita.
+    A janela de visualização das Nove Fatias permite redimensionar a imagem e mostra como será a imagem final, depois que ela for redimensionada usando a técnica das Nove Fatias. Esta pré-visualização também pode ser girada.
+    A seção de Nove Fatias tem as seguintes opções:
+    
+      Ativar Nove Fatias: Esta opção controla se a escala de Nove Fatias é usada quando o duende é escalado. Quando ativada, a escala de nove fatias será usada para o duende (e qualquer instância de objeto que use esse duende) colocado em uma Sequência
+        ou uma camada de sala, e sprites escalonados desenhados usando draw_sprite_ext() e outras funções similares.
+        
+        NOTA: Nove fatias não funcionarão com funções que desenham apenas uma parte do duende ou o distorcem, tais como draw_sprite_part() e draw_sprite_pos()
+      
+      Guias: Esta seção mostra o offset de cada guia em seu eixo, e pode ser usada para alterar esses offsets. Estas guias também podem ser movidas dentro da janela de visualização Sprite, bastando arrastá-las com o mouse.
+        
+       NOTA:Qualquer guia no mesmo eixo não pode se cruzar, e arrastar uma sobre a outra resultará no empurrar da segunda guia.
+        
+         O deslocamento de cada guia é relativo a sua borda correspondente. Por exemplo, a guia esquerda é deslocada a partir da borda esquerda, a direita
+       
+         A cor e o alfa de cada guia podem ser alterados clicando no botão colorido ao lado da posição da guia.
+        
+      Destaque: Esta opção afeta a forma como uma fatia selecionada aparece na janela de pré-visualização do duende. "Inverted" destaca o duende com uma sobreposição, exceto para a fatia selecionada, e "Overlay"  destaca apenas a fatia selecionada com uma sobreposição.
+         A cor e o alfa da sobreposição podem ser alterados clicando no botão colorido ao lado do menu suspenso.
+      Fatia selecionada: Esta opção pode ser usada para selecionar uma fatia, escolhendo uma das fatias de borda (esquerda, superior, direita, inferior) e a do centro. Uma fatia também pode ser selecionada por  clicando com o botão esquerdo do mouse sobre ela na janela Sprite Preview, e clicando novamente sobre ela, ela será desmarcada.
+      Modo Tile: Esta opção é usada em conjunto com a opção Selected Slice, para controlar como a fatia aparece quando o duende é escalonado. Você pode aplicar um dos seguintes Modos de Ladrilho a cada fatia:
+        
+        
+          Esticar: A fatia será esticada para preencher a lacuna entre seus cantos conectados.
+          Repito: A fatia será repetida ou azulejada para preservar os detalhes.
+          Espelho: A fatia será repetida através de espelhamento.
+          Repetição em branco: A fatia aparecerá apenas uma vez, resultando em uma área em branco após ela.
+          Esconder: A fatia não aparecerá de forma alguma.
+        
+      
+    
+  
+  Mensagens de radiodifusão
+  
+    Este botão adicionará uma mensagem de transmissão à linha de tempo sprite, abrindo um diálogo onde você pode adicionar a mensagem a ser transmitida. A mensagem será adicionada onde quer que o playhead esteja na visualização do quadro e consiste de uma simples seqüência que pode ser capturada no Evento de Mensagem de Difusão quando for acionada e depois acionada.
+    Uma vez adicionada, a mensagem será mostrada no Frame View, e você pode clicar com o botão direito do mouse  para abrir um menu onde você pode apagar a mensagem ou editá-la. Para maiores informações sobre Mensagens de Radiodifusão, por favor veja aqui.
+     
+  
+  Velocidade da moldura
+  
+    Nesta seção você pode definir a velocidade na qual os quadros de animação devem ser reproduzidos a partir da caixa de entrada à esquerda. A configuração da velocidade dos quadros pode ser baseada em " Framespor segundo", ou" Frames porquadro de jogo",
+      onde uma configuração de 30 "Frames por segundo" mostrará 30 quadros da animação em um segundo, enquanto uma configuração de 30 "Frames por quadro de jogo" tentará mostrar todos os 30 quadros em um único passo do jogo, então "Frames por quadro de jogo".
+      são normalmente definidos para 1 ou menos (por exemplo: um frame por frame de jogo com velocidade de 0,5 mostrará um novo frame a cada duas etapas do jogo).
+    É importante notar que as configurações de velocidade do quadro não só afetarão a reprodução da animação na janela de visualização, mas também governarão como o duende é animado em seus jogos. A velocidade que você definir aqui mostrará a
+      sprite preview, uma vez que ele será executado no jogo com um multiplicador de velocidade de imagem de 1, mas isso pode ser definido em código usando o image_speed variável
+      o que significa que o duende pode correr mais rápido ou mais devagar, dependendo do que estiver programado. Assim, por exemplo, se você definir o duende para usar 10 "quadros por segundo" e depois definir o image_speed para 0,5, o jogo irá desenhar o duende
+      na metade da velocidade - 5 quadros por segundo. Por outro lado, se definirmos o image_speed para o mesmo sprite para 2, no jogo ele será desenhado animado duas vezes mais rápido - 20 quadros por segundo. Note que a velocidade do quadro também pode ser ajustada
+      no Editor de Imagem.
+     
+  
+  Origem do duende
+  
+    A barra superior do editor sprite contém as propriedades de origem do duende. Este é o ponto sobre o duende que corresponde a sua posição dentro da sala, ou seja: quando você cria uma instância em uma posição x/y particular, a origem do
+      o duende é colocado lá.
+    Por padrão, a origem é o canto superior esquerdo do duende, mas muitas vezes é mais conveniente usar o centro do meio ou você pode querer ter alguma outra posição usada (como para um personagem de jogo de plataforma você pode querer o centro inferior),
+      para que você possa clicar em  no menu suspenso de origem e selecionar um dos valores padrão. Você também pode definir a origem manualmente clicando em  na imagem de pré-visualização sprite que moverá a cruz do marcador de origem para o ponto em que você clicou, ou inserindo valores diferentes para x e y nas caixas correspondentes. Observe que você pode até mesmo definir uma origem fora da área de sprite, usando valores negativos de
+      números (para esquerda e para cima) ou números positivos maiores que a largura e altura do duende (para direita e para baixo), que podem ser muito úteis quando se trata de objetos que precisam desenhar sprites compostos.
+     
+  
+  Controles de Zoom
+  
+    Na parte superior direita da janela de pré-visualização você tem os controles de zoom. Estes botões controlam o nível atual de zoom sprite da pré-visualização. Você pode aumentar ou diminuir o zoom e clicar no botão  irá redefinir a visualização para 1:1 com o sprite sendo editado. Você também pode clicar no botão Window Fit  para fazer com que toda a pré-visualização da sprite caiba dentro de
+      a janela atual do editor (isto fará o zoom in/out, conforme apropriado, para que ela se ajuste). Observe que você pode aumentar e diminuir o zoom usando o  /  e a Roda do Rato , e pressionando  /  +  irá definir a visualização
+      ser 1:1 com o tamanho do duende atua sprite.
+     
+  
+  Pré-visualização
+  
+    A janela de pré-visualização do duende mostra o duende como ele aparecerá no jogo, e pode ser aumentado ou diminuído usando a roda do mouse , e pode ser lido ao redor usando o
+      botão do meio do mouse  e arrastar, ou alternativamente, usar a combinação  +  e arrastar. Você pode usar os controles de Moldura (explicados abaixo) para mudar também a forma como a imagem de visualização é exibida.
+    Esta janela também mostrará uma "cruz" que marca a origem do duende (veja a seção Origem do duende acima para mais detalhes), e também pode mostrar a máscara de colisão se essa opção estiver sendo editada (veja
+      a seção Máscara de Colisão, acima).
+     
+  
+  Controles de reprodução
+  
+    Os controles Playback são para reproduzir na janela de visualização a animação dos quadros, com o botão play  iniciando/parando o
+      animação e o botão Loop  usado para definir se os loops sprite  (volta ao frame 1 quando o último frame é alcançado) ou ping-pongs  (volta para trás através dos frames quando o último frame é alcançado).
+    Note que a opção loop/ping-pong não afetará a forma como o duende é exibido no jogo, portanto, definir estas opções no duende não mudará a forma como ele é exibido quando o jogo é compilado e executado. Isto também é verdade para os pontos de laço
+      que podem ser definidas na Frame View (veja abaixo para mais informações) - elas são puramente visíveis no editor sprite e concebidas para ajudá-lo a testar suas animações, mas não terão efeito sobre a forma como a animação sprite é exibida
+      em seus jogos.
+    Uma parte adicional dos Controles de Moldura é a exibição da moldura atual e a entrada um pouco mais adiante à esquerda. A caixa mostra o número total de quadros da animação sprite, bem como o quadro atual sendo mostrado. Você pode mudar
+      o quadro atual a qualquer momento, clicando na caixa de entrada e digitando o número do quadro que você deseja visualizar.
+    IMPORTANTE! Os quadros são mostrados numerados de 1 até o número máximo de quadros; no entanto, em seu código de jogo, os quadros serão numerados de 0 até o número máximo de quadros - 1.
+  
+  Estruturas
+  
+    Esta parte do editor sprite mostra cada um dos diferentes quadros que compõem um único conjunto sprite ao longo de uma linha de tempo sequencial. Você pode clicar  em qualquer quadro e arrastá-lo para a esquerda ou direita para alterar a ordem em que serão animados, e também pode clicar duas vezes  em qualquer quadro para lançar
+      o Editor de Imagem e editá-los. Você pode cortar, copiar e colar quadros usando os atalhos de teclado padrão ou usando o botão direito do mouse  opções de menu, e você também pode selecionar vários quadros para operar usando  /  + .
+    O menu do botão direito do mouse tem as seguintes opções:
+    
+    
+      Adicionar Frame - Adicione um novo frame à animação no final.
+      Inserir quadro - Inserir um novo quadro na animação após o quadro selecionado atualmente.
+      Cortar / Copiar / Colar - Cortar, copiar e colar um ou mais quadros.
+      Apagar quadros selecionados - Apagar o quadro ou quadros atualmente selecionados.
+    
+    Além da opção dada acima para esticar um quadro, você também pode posicionar o mouse na borda de um quadro e depois, quando o cursor mudar para uma seta dupla, basta clicar em  e arrastar para redimensionar o quadro de modo que leve mais tempo:
+    Um quadro esticado levará mais tempo para ser mostrado, como se você tivesse duplicado o mesmo quadro várias vezes. 
+    Finalmente, você também pode ampliar a linha de tempo do quadro usando as "alças" em ambos os lados da vista do quadro, como mostrado na imagem abaixo:
+    
+  
+   
+   
+  
+    
+      
+        Voltar: Os Editores de Ativos
+        A seguir: Conjuntos de azulejos
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

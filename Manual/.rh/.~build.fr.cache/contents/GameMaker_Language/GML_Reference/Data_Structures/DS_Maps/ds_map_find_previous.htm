@@ -1,0 +1,49 @@
+
+  
+  ds_map_find_previous
+  Esta função retorna a chave anterior armazenada no mapa DS antes da chave especificada na função. Isto pode ser útil se você tiver que iterar através do mapa DS procurando por algo, mas deve ser evitado se possível, pois pode ser lento. Se
+    não existe tal chave, então a função retornará indefinida. Você deve sempre verificar isto usando a is_undefined() função.
+   
+  Sintaxe:
+  ds_map_find_previous(id, key);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação do mapa a ser utilizado.
+      
+      
+        chave
+        A chave para encontrar a anterior.
+      
+    
+  
+   
+  Devoluções:
+  Real, de corda ou indefinido
+   
+  Exemplo:
+  var size = ds_map_size(inventory) - 1; var key = ds_map_find_last(inventory); for (var i = size; i > 0; i--;) {
+     if (chave != "ouro") { chave = ds_map_find_previous(inventário, chave); }  ou break; }
+  
+  O código acima cria algumas variáveis temporárias e então obtém o tamanho ds_map e encontra a última chave como armazenada pelo computador no mapa. Ele então usa um loop para iterar de volta através do ds_map em busca do valor da chave "ouro".
+    Se o encontrar, ele rompe o laço.
+   
+   
+   
+  
+    
+      
+        Voltar: DS Maps
+        Próximo: ds_map_find_value
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

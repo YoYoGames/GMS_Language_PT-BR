@@ -1,0 +1,69 @@
+
+  
+  lista_de_lugares_da_classe
+  Com esta função você pode verificar uma posição para uma colisão com todas as instâncias de um objeto usando a máscara de colisão da instância que executa o código para a verificação. Quando você usa esta função, você está efetivamente pedindo ao GameMaker Studio 2 para mover a instância
+    para a nova posição, verifique se houve uma colisão, depois volte para trás e diga se foi ou não encontrada uma colisão. Isto funcionará para colisões precisas, mas somente se tanto a instância como as instâncias do objeto a ser verificado tiverem uma colisão precisa.
+    máscaras selecionadas, caso contrário, são aplicadas apenas colisões de caixas de delimitação. A função irá preencher uma lista DS (previamente criada) com o exclusivo id    valores de todas as instâncias do objeto que são consideradas em colisão com a instância de chamada, e você tem a opção de ordenar a lista com base na distância da origem da instância fazendo a verificação até a origem das instâncias
+    encontrado em colisão. Note que a função também aceita a palavra-chave especial todosNeste caso, todas as instâncias encontradas em colisão serão listadas. A função retorna
+    o número de instâncias encontradas, ou 0 se nenhuma for encontrada.
+  Note que as coordenadas x/y dadas serão arredondadas para o inteiro mais próximo antes da verificação ser realizada, então se isso não for o que você precisa (ou se você estiver usando um produto GameMaker antigo), você deve pavimentar as coordenadas no
+    verificar:
+  instance_place_list(floor(x), floor(y), obj_Enemy, list, true).
+   
+  Sintaxe:
+  instance_place_list(x, y, obj, list, ordered);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A posição x para verificar as instâncias.
+      
+      
+        y
+        A posição y para verificar as instâncias.
+      
+      
+        obj
+        O objeto a ser verificado em casos de.
+      
+      
+        lista
+        A lista DS a ser utilizada para armazenar as identificações de ocorrências de colisão.
+      
+      
+        encomendado
+        Se a lista deve ser ordenada por distância(verdadeira) ou não(falsa).
+      
+    
+  
+   
+  Devoluções:
+  Int (O número de instâncias encontradas em colisão)
+   
+  Exemplo:
+  var _list = ds_list_create(); var _num = instance_place_list(x, y, obj_Enemy, _list, false); if _num > 0 {
+     for (var i = 0; i < _num; ++i;) {
+     instance_destroy(_list[| i]); }
+     }
+     ds_list_destroy(_list);
+  
+  O código acima verificará se há uma colisão com todas as instâncias encontradas na posição de instâncias de chamada. Estas serão adicionadas a uma lista DS, que é então ligada em loop para destruir cada uma das instâncias em colisão.
+   
+   
+   
+  
+    
+      
+        Voltar: Instâncias
+        Próximo: posição_da_classe
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

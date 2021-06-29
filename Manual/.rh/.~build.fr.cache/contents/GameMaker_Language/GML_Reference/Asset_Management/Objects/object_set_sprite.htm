@@ -1,0 +1,51 @@
+
+  
+  object_set_sprite
+  Com esta função você pode definir o índice sprite de um objeto específico. Isto significa que todas as instâncias deste objeto que forem criadas depois que o sprite_index tiver sido alterado serão criadas com este novo sprite_index, enquanto as instâncias que já estiverem
+    na sala pode não ser afetada.
+  Por favor, note que esta não é uma função de instância! Você pode definir o índice sprite de instâncias individuais usando a função sprite_index variável e, portanto, têm dez instâncias, todas com uma
+    diferentes sprite para o objeto a partir do qual foram criados, e mesmo se você alterar o índice sprite do objeto usando esta função, todas as instâncias que estão atualmente na sala permanecerão como estavam, e somente instâncias criadas após chamar a função
+    começará com o novo duende.
+   
+  Sintaxe:
+  object_set_sprite( índice, spr );
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do objeto a ser modificado.
+      
+      
+        spr
+        O duende a designar para o objeto.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  interruptor (sala) {
+     case rm_start: object_set_sprite(obj_Player, spr_uniform); break; case rm_middle: object_set_sprite(obj_Player, spr_swimsuit); break; case rm_end: object_set_sprite(obj_Player, spr_casual); break; }
+     instance_create_layer(32, 32, "Instances", obj_Player);
+  O código acima definirá o índice sprite do objeto "obj_Player" para valores diferentes, dependendo da sala em que a instância executando o código está atualmente. Em seguida, ele cria uma instância de "obj_Player".
+   
+   
+   
+  
+    
+      
+        Voltar: Objetos
+        Próximo: object_set_visible
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

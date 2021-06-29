@@ -1,0 +1,44 @@
+
+  
+  gc_get_stats
+  Com esta função você pode recuperar informações sobre o estado atual do coletor de lixo. A função retornará uma estrutura que terá as seguintes variáveis de membros (observe que "objetos" são
+    aqui se refere a qualquer coisa que possa ser coletada de lixo e não instâncias de objetos gerais, como definido no Navegador de Ativos):
+  
+    objects_touched - este é o número de objetos ativos que o coletor de lixo encontrou no quadro anterior. Isto varia de acordo com a geração que foi coletada.
+    objects_collected - o número de objetos que o coletor de lixo determinado não estava ativo no quadro anterior, e que, portanto, poderia ser apagado.
+    traversal_time - este é o tempo em microssegundos (no fio principal) que o coletor de lixo levou para descobrir quais objetos estavam ativos.
+    tempo de coleta - este é o tempo em microssegundos (em um fio separado) que o coletor de lixo levou para limpar os objetos considerados inativos.
+    gc_frame - este é um contador que é incrementado cada vez que ocorre uma passagem de coleta de lixo. Se a coleta de lixo for desativada, isto não aumentará.
+    generation_collected - este é o índice da geração que foi coletada por último. 0 é a geração mais jovem e 3 é atualmente a mais velha.
+    num_gerações - este é o número total de gerações de coleta de lixo.
+    num_objects_in_generation - esta é uma matriz (de tamanho num_gerações) contendo o número de objetos em cada geração.
+  
+  NOTA: Na plataforma alvo HTML5 a coleta de lixo é feita pelo mecanismo JavaScript e, portanto, as variáveis membros na estrutura acima retornarão todas 0 se esta função for usada naquela plataforma.
+  Ao utilizar esta função, observe que as informações mostradas para os objetos só são atualizadas quando o processamento de uma geração completa é concluído, o que pode levar vários quadros, dependendo da definição do tempo de quadro (veja aqui para mais informações sobre o tempo de quadro).
+   
+  Sintaxe:
+  gc_get_stats();
+   
+  Devoluções:
+  Estrutura
+   
+  Exemplo:
+  if (global.debug == true) {
+     var _s = gc_get_stats(); var _t = _s.traversal_time; var _c = _s.collection_time; show_debug_message("Traversal time = " + string(_t)) show_debug_message("Collection time = " + string(_c)) }
+  
+  O código acima verifica uma variável global e, se for verdade, obtém informações do coletor de garabges e as envia para o console como mensagens de depuração.
+   
+   
+   
+  
+    
+      
+        Voltar: Coleta de Lixo
+        Próximo: gc_enable
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

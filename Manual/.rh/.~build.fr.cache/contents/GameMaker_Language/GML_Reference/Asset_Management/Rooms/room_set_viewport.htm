@@ -1,0 +1,66 @@
+
+  
+  room_set_viewport
+  Com esta função você pode definir as propriedades da porta de visualização para qualquer sala do seu jogo, exceto a atual. Você fornece o índice da sala para definir a porta de visualização, o índice da porta de visualização (de 0 a 7) e então se a porta de visualização deve ser visível em
+    o início da sala ou não (definido como verdadeiro para tornar o porto visível, e falso de outra forma). Depois disso, define-se a coordenada x e y (correspondente à posição superior esquerda da porta de visualização) e depois a largura e altura em pixels.
+   
+  Sintaxe:
+  room_set_viewport(rm, vind, vis, xport, yport, wport, hport);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        rm
+        O índice da sala a definir
+      
+      
+        vind
+        O índice do porto de visão a definir
+      
+      
+        vis
+        A visibilidade do porto de visão(verdadeiro é visível, falso é invisível)
+      
+      
+        xportar
+        A posição x para o porto de vista na sala
+      
+      
+        yport
+        A posição y da vista do porto na sala
+      
+      
+        wport
+        A largura (em pixels) da porta de visualização
+      
+      
+        hport
+        A altura (em pixels) da porta de visualização
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  global.myroom = room_add(); room_set_width(global.myroom, 640); room_set_height(global.myroom, 480); room_set_viewport(global.myroom, 0, true, 0, 0, 640, 480);
+  Isto irá definir as propriedades da porta de visualização [0] na sala indexada na variável "global.myroom".
+   
+   
+   
+  
+    
+      
+        Voltar: Quartos
+        Próximo: room_get_viewport
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

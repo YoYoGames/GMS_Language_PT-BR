@@ -1,0 +1,50 @@
+
+  
+  forma_da_cade_física
+  Esta função define uma forma de "corrente" de fixação. Uma fixação em cadeia é composta de vários pontos, que são então conectados entre si usando formas de bordas para uni-los. A própria função toma o índice (ID) do fixador e pode dizer ao fixador
+    para fazer loop ou não. Ajustar isto para verdadeiro conectará o último ponto ao primeiro ponto com uma borda, enquanto que ajustar isto para falso não o fará. Note que esta função prepara a fixação para aceitar os pontos necessários para fazer a corrente,
+    e estes devem ser adicionados após chamar esta função usando fisic_fixture_add_point()como você faria na construção de um polígono.
+  Ao criar um acessório de corrente, você deve dar-lhe pelo menos dois pontos, mas não está limitado no número de pontos subseqüentes que você pode adicionar para compor o acessório acabado.
+   
+  Sintaxe:
+  physics_fixture_set_chain_shape(fixture, loop)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fixação
+        O índice da fixação
+      
+      
+        loop
+        Seja para fechar a cadeia(verdadeiro) ou não(falso).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var xx = -100; var yy = room_height / 2; var fix = physics_fixture_create(); physics_fixture_set_chain_shape(fix, false); for (var i = 0; i < 10; i++;) {
+     physics_fixture_add_point(fix, xx, yy); xx += 50 + random(150); yy = (room_height / 2) - 250 + irandom(500); }
+     physics_fixture_bind(fix, id);
+  O código acima criará uma linha de "bordas" com uma variedade de alturas ao longo do comprimento da sala.
+   
+   
+   
+  
+    
+      
+        Voltar: Instalações
+        A seguir: physics_fixture_set_polygon_sha
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

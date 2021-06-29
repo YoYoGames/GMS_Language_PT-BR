@@ -1,0 +1,64 @@
+
+  
+  draw_set_halign
+  Esta função é usada para alinhar o texto ao longo do eixo horizontal e mudar o alinhamento horizontal mudará a posição e a direção na qual todo o texto adicional é desenhado, sendo o valor padrão fa_esquerda. As seguintes constantes são
+    aceito:
+   
+  
+    
+      
+        Constante
+        Alinhamento
+      
+      
+        fa_esquerda
+        
+      
+      
+        fa_center
+        
+      
+      
+        fa_direita
+        
+      
+    
+  
+   
+  Sintaxe:
+  draw_set_halign(halign);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        halign
+        Alinhamento horizontal.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_set_halign(fa_left); draw_text(100, 32, "Score: " + string(score)); draw_set_halign(fa_right);
+     draw_text(room_width - 100, 32, "Health: " + string(health));
+  O código acima desenhará duas cordas na mesma linha, com a pontuação alinhada à esquerda e a saúde alinhada à direita.
+   
+   
+   
+  
+    
+      
+        Voltar: Texto
+        Próximo: draw_set_valign
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

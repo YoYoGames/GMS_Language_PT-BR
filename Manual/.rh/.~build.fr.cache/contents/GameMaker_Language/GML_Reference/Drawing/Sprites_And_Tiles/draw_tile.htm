@@ -1,0 +1,90 @@
+
+  
+  draw_tile
+  Com esta função você pode desenhar qualquer azulejo de um conjunto de azulejos - competir com rotações, viragens e espelhos - ajustando a moldura (se animada) e a posição dentro da sala. O valor do ID do conjunto de azulejos é o índice do conjunto de azulejos como definido no IDE e o azulejo
+    Os dados são os dados "blob" que contêm todas as informações sobre o índice de azulejos e as transformações que foram aplicadas. Você pode usar a função tilemap_get()    para obter os dados do azulejo que podem então ser manipulados usando as funções do azulejo, ou você mesmo pode construí-lo usando as seguintes constantes de azulejo junto com o valor do índice
+    do azulejo a criar:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        tile_rotate
+        Usado para definir/escondicionar o bit de rotação de uma bolha de dados de azulejos.
+      
+      
+        espelhado_móvel
+        Usado para definir/esconder o pedaço de espelho de uma bolha de dados de azulejos.
+      
+      
+        tile_flip
+        Usado para definir/escondicionar o pedaço de flip de um bloco de dados de azulejos.
+      
+      
+        màscara_index_index
+        Uma constante especial que é para "e" -ing com o blob de dados do azulejo para extrair o índice do azulejo.
+      
+    
+  
+   Você "ou" estas constantes com o valor do índice de azulejos para obter os azulejos finais:
+  var tiledata = 8 | tile_rotate | tile_flip;
+  O código acima simplesmente cria uma variável local para armazenar os azulejos para o azulejo com o índice 8 no conjunto de azulejos, que é girado e invertido. Isto pode então ser usado para desenhar o azulejo naquele índice a partir do conjunto de azulejos que você especificar. isto não é
+    ligado a qualquer camada do mapa de azulejos e o azulejo será desenhado na profundidade da camada da instância que faz o desenho, na posição x/y que você especificar na sala. Note que você também pode definir a moldura para desenhar. Se o azulejo indexado for parte de uma animação
+    Se o número do quadro estiver definido, então você pode definir aqui o número do quadro (de 0 ao número de quadros - 1) e o quadro indexado será simplesmente o indicador para o qual o quadro animado está sendo usado enquanto ele será o quadro dado que é desenhado. Se o azulejo não fizer parte de
+    um conjunto animado, então a moldura deve ser ajustada para 0.
+   
+  Sintaxe:
+  draw_tile(conjunto de azulejos, azulejos, moldura, x, y)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        conjunto de azulejos
+        A identificação do conjunto de azulejos a serem usados
+      
+      
+        tiledata
+        Os dados dos azulejos a usar
+      
+      
+        quadro
+        O número do quadro para o azulejo animado a ser utilizado (padrão 0 para azulejos não animados)
+      
+      
+        x
+        A posição x dentro da sala para desenhar em
+      
+      
+        y
+        A posição y dentro da sala para desenhar em
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var lay_id = layer_get_id("Tiles_sky"); var map_id = layer_map_get_id(lay_id); var data = tilemap_get(map_id, 0, 0); tile_set_flip(data, true); draw_tile(set_Wall, data, 0, x, y);
+  O código acima obterá os dados em um azulejo a partir do mapa de azulejos dado, então definirá a bandeira "flip" e usará esses dados para desenhar o azulejo flipado na posição da instância.
+   
+   
+   
+  
+    
+      
+        Voltar: Sprites e Azulejos
+        Próximo: draw_tilemap
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

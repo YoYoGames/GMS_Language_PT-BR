@@ -1,0 +1,68 @@
+
+  
+  gpu_set_cullmode
+  Esta função pode ser usada para definir o modo de abate de retaguarda. Um polígono (primitivo) tem um lado frontal e um lado posterior. Diz-se que o lado da frente é o lado onde os vértices são definidos em ordem anti-horária. Normalmente, ambos os lados
+    são desenhados, mas se você fizer uma forma fechada (como uma pirâmide) então isso é um desperdício de poder de processamento porque o lado de trás do triângulo nunca pode ser visto. É nestes casos que se pode ligar o corte da face traseira, pois isso economiza cerca de metade do
+    a quantidade de tempo de desenho, embora isso signifique que você tem a tarefa de definir seus polígonos da maneira correta para evitar problemas.
+  O valor do modo de abate utilizado deve ser uma das seguintes constantes (o valor padrão é cull_noculling):
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        nocultivo
+        Nenhum abate será feito
+      
+      
+        cull_clockwise
+        Todos os triângulos no sentido horário serão abatidos
+      
+      
+        cull_counterclockwise
+        Todos os triângulos no sentido anti-horário serão abatidos
+      
+    
+  
+   
+  Sintaxe:
+  gpu_set_cullmode(cullmode);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        cullmode
+        O modo de abate a utilizar (ver lista acima)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if gpu_get_cullmode() != cull_clockwise {
+     gpu_set_cullmode(cull_clockwise);
+     }
+  
+  O código acima obtém o modo cull atual e se não for no sentido cull_clockwise, é ajustado para essa constante.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle de GPU
+        Próximo: gpu_set_blendmode
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

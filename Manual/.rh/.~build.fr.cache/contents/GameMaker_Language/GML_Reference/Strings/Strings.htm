@@ -1,0 +1,147 @@
+
+  
+  Cordas
+  Em algum momento, ao fazer seu jogo, você precisará usar texto. O texto nos jogos é tratado usando as funções de string (uma string é apenas outra forma de dizer uma linha de texto) e o GameMaker Studio 2 tem um conjunto completo de funções que
+    permitem manipular as cordas de muitas maneiras, incluindo a inserção de uma corda em outra, a cópia das cordas e a capacidade de analisar as cordas para os dígitos ou as letras que elas contêm. Em geral, uma corda só pode ser criada
+    adicionando texto entre aspas duplas " " e cadeias de caracteres de aspas simples não são aceitas, nem você pode dividir a cadeia de caracteres em várias linhas e esperar que o GameMaker Studio 2 a renderize como se as quebras de linha fossem linhas novas (a menos que uma
+    O identificador literal @ é usado, como explicado abaixo).
+  Vale ressaltar que existem certas convenções que podem ser utilizadas na criação de cordas, a maioria preocupada com o uso de caracteres de escape. Estes são caracteres que são precedidos por um símbolo "\". Portanto, para
+    exemplo, se você quisesse colocar aspas dentro de uma cadeia, você teria algo assim:
+  str = "Olá Mundo";
+  OGameMaker Studio 2 também possui suporte completo a caracteres Unicode de quatro bytes de largura, permitindo que você decodifique e codifique caracteres Unicode nos limites superiores do padrão (incluindo - mas não limitado a - emoji). Para lidar com caracteres Unicode, você
+    pode usar o "\" para preceder qualquer Unicode literal - dígitos de hexadecimais precedem um "u", por exemplo "\u00e2" para "á"- onde
+    os dígitos são o número do caractere Unicode. Ao trabalhar com Unicode desta forma, você precisa estar ciente do fato de que o GameMaker Studio 2 interpretará todos os dígitos seguindo o "u", portanto
+    se você quisesse escrever "áa", por exemplo, você deveria usar:
+  "u00e2a"
+  ou
+  "\u00e2\u61"
+  ou
+  "\u00e2" + "a"
+  como só usar " \u00e2a" na verdade resultaria no personagem Unicode " ส" (tornando-seessencialmente"\u00e2a").
+  OGameMaker Studio 2 também pode lidar com qualquer literal hexadecimal - normalmente escrito como dígitos de hexadecimais seguindo "0x", por exemplo "0xff", onde os dígitos são o número de
+    o caráter a ser utilizado. No GameMaker Studio 2 estes são escritos usando " \x" e depois o valor hexadecimal. Estes e outros caracteres de escape pré-definidos estão listados na tabela abaixo:
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        \n
+        Newline
+      
+      
+        \r
+        Retorno do transporte
+      
+      
+        \b
+        Backspace (0x08)
+      
+      
+        \f
+        Alimentação de formulário (0x0c)
+      
+      
+        \t
+        Aba Horizontal (0x09)
+      
+      
+        \v
+        Aba vertical (0x0b)
+      
+      
+        \\
+        Contrabarra em si (0x5c)
+      
+      
+        \a
+        Alerta (0x07)
+      
+      
+        \u[Hex Digits]
+        Inserir caractere Unicode
+      
+      
+        \x [Hex Digits]
+        Inserir caráter literal hexadecimal
+      
+      
+        \Dígitos Octal
+        Inserir octal Unicode caractere
+      
+    
+  
+   
+  NOTA: As cordas suportam alimentação de formulário, aba vertical, etc... mas isto não significa que a renderização sim, e ao desenhar as cordas estes caracteres podem ser ignorados.
+  Você também pode criar literalmente uma cadeia de caracteres precedendo a cadeia inteira com o caracter @:
+  var test = @" Quebras de linha em várias linhas 
+     ";
+  
+  O código acima renderizará a cadeia sobre várias linhas como se houvesse um caractere de fuga de linha incluído. Uma string literal literal é similar à versão anterior do GameMaker, mas eles também usam aspas duplas ou simples e devem ser
+    prefixadas por um símbolo @, elas podem ser quebradas em várias linhas do arquivo de código e NÃO suportam caracteres fugidos, ou seja, @"Hello\World" não tentará fugir do símbolo W
+    no Mundo e será armazenado literalmente. Observe, porém, que ao usar literalmente uma corda como esta, você precisará quebrar a corda se desejar incluir aspas como parte da corda, ou seja, se você quiser incluir aspas como parte da corda:
+  var test = @"Olá " + "\"" + @"Mundo" + "\""
+  Outra coisa a ser observada é que o caractere Unicode 9647 (▯) é usado para substituir quaisquer glifos que você possa ter em sua fonte designada ao renderizá-la no evento do sorteio. Portanto, se sua fonte não tiver, por exemplo, o símbolo °, então escreva
+    90° produzirá de fato 90▯.
+  A seguinte lista de funções é toda para lidar com cordas:
+   
+  
+    ansi_char
+    chr
+    ord
+    real
+    corda
+    string_byte_at
+    string_byte_length
+    string_set_byte_at
+    string_char_at
+    string_ord_at
+    string_copy
+    string_count
+    string_delete
+    dígitos_de_filtro
+    string_format
+    string_insert
+    comprimento_de_filtro
+    cartas_de_filtro
+    string_lettersdigits
+    string_lower
+    string_pos
+    string_pos_ext
+    string_last_pos
+    string_last_pos_ext_ext
+    string_repeat
+    string_replace
+    string_replace_all
+    string_upper
+    altura_de_filtro
+    Altura_de_filtro
+    largura_de_filtro
+    largura_de_filtro_extra
+    string_hash_to_newline
+    is_string
+  
+   
+  Além daquelas funções que se relacionam especificamente com as cordas, o Windows alvo também permite que você use a área de transferência para obter e definir informações de texto:
+   
+  
+    clipboard_has_text
+    clipboard_get_text
+    clipboard_set_text
+  
+   
+   
+   
+  
+    
+      
+        Voltar: ReferênciaGML
+        A seguir: Matemática e Números
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

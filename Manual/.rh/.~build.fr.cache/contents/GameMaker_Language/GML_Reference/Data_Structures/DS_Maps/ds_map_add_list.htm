@@ -1,0 +1,52 @@
+
+  
+  ds_map_add_list
+  Com esta função você pode atribuir uma lista DS (previamente criada) a uma chave dentro do mapa DS dado. Esta função é projetada para criar mapas compatíveis com JSON que você então codificaria usando json_encode()    e só deve ser usado em conjunto com essa funcionalidade. Se um mapa DS tiver uma lista acrescentada desta forma, destruir o mapa pai também destruirá as listas contidas e liberará sua memória, e chamando ds_map_clear() em
+    o mapa pai também destruirá e limpará qualquer lista de bandeiras.
+   
+  Sintaxe:
+  ds_map_add_list(id, key, value)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação do mapa a ser utilizado.
+      
+      
+        chave
+        A chave para a lista adicionada.
+      
+      
+        valor
+        O id da lista a acrescentar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var j_list = ds_list_create(); ds_list_add(j_list, saúde); ds_list_add(j_list, vidas); ds_list_add(j_list, pontuação);  var j_map = ds_map_create(); ds_map_add_list(j_map, "lista", j_list); var j = json_encode(j_map); ds_map_destroy(j_map);
+  
+  O código acima criará uma lista e a preencherá com os vários valores das variáveis globais. Esta lista é então "aninhada" dentro de um mapa DS, e o mapa é então codificado em uma seqüência JSON, antes que o mapa seja
+    destruído, removendo-o, e qualquer lista que contenha, da memória.
+   
+   
+   
+  
+    
+      
+        Voltar: DS Maps
+        Próximo: ds_map_add_map
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

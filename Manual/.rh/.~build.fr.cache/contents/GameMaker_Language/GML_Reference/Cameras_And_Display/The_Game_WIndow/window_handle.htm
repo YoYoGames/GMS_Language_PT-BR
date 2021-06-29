@@ -1,0 +1,55 @@
+
+  
+  manípulo_da_janela
+  Com esta função você pode obter o valor de id interno do Windows (o HWND, um ponteiro). Esta função é realmente útil apenas para escritores de extensão que precisam da alça da janela para chamar API's do Windows em código DLL (o ponteiro retornado deve
+    ser lançado em uma corda e depois no C++ simplesmente lançá-lo em uma HWND). A tabela abaixo mostra as plataformas suportadas juntamente com o que elas retornam:
+   
+  
+    
+      
+        Plataforma
+        Devoluções
+      
+      
+        Windows
+        Janela HWND
+      
+      
+        macOS
+        Classe NSWindow
+      
+      
+        Ubuntu(Linux)
+        Punho XWindow
+      
+      
+        HTML5
+        Identificação de lona
+      
+    
+  
+   
+  Sintaxe:
+  window_handle();
+   
+  Devoluções:
+  Apontador
+   
+  Exemplo:
+  win_id = windows_handle();
+  O código acima armazenará a identificação da janela do jogo em uma variável.
+   
+   
+   
+  
+    
+      
+        Voltar: A Janela de Jogo
+        Próximo: window_get_caption
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

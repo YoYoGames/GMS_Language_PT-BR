@@ -1,0 +1,34 @@
+
+  
+  uwp_was_terminated
+  Com esta função você pode descobrir se o jogo foi desligado anteriormente pelo sistema (ou seja, não é a primeira execução do jogo). Se tiver sido, a função retornará verdadeiro, caso contrário retornará falso. Um exemplo de
+    seria verificá-lo e ver se o jogo foi encerrado anteriormente pelo sistema, e depois (se voltar a ser verdade) carregar a etapa anterior em que o jogador se encontrava no jogo. Se o alvo for a XBox One, então o comportamento necessário dos jogos
+    se isto for detectado será diferente entre as diferentes versões dos documentos de certificação, então vale a pena verificar a última versão para ver o que o jogo deve fazer.
+   
+  Sintaxe:
+  uwp_was_terminated();
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se xboxlivewas_terminated() {
+     buffer_load("Player_Save.sav");
+     global.GameLoaded = true; }
+  
+  O código acima verifica se o aplicativo foi encerrado anteriormente pelo sistema e, em caso afirmativo, carrega um buffer e define uma variável global.
+   
+   
+   
+  
+    
+      
+        Voltar: UWP e XBox Live
+        Próximo: uwp_was_closed_by_user
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

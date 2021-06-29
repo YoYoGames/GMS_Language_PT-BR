@@ -1,0 +1,81 @@
+
+  
+  gpu_set_blendmode
+  Quando o GameMaker Studio 2 vai desenhar um pixel, há uma cor de origem (a cor do pixel que vamos desenhar) e uma cor de destino (a cor que já está no pixel para o qual estamos desenhando), portanto, ao determinar a nova cor de
+    o pixel, as cores de origem e destino são calculados de acordo com o modo de mistura escolhido. Cada componente das cores é armazenado como um valor de ponto flutuante entre 0 e 1, e a nova cor é calculada multiplicando cada componente do
+    cor de origem por algum fator e multiplicando cada componente da cor de destino por algum outro fator e depois adicionando os resultados juntos, componente por componente.
+  Esta função permite definir o modo de mistura de quatro maneiras básicas usando as seguintes constantes:
+  
+    
+      
+        Constante
+        Descrição
+        Modo de mistura estendida
+      
+      
+        bm_normal
+        Mistura normal (o modo de mistura padrão).
+        (bm_src_alpha, bm_inv_src_alpha)
+      
+      
+        bm_add
+        Mistura aditiva. São adicionados valores de luminosidade das áreas claras.
+        (bm_src_alpha, bm_one)
+      
+      
+        bm_subtract
+        Mistura subtrativa. Os valores de luminosidade das áreas claras são subtraídos.
+        (bm_zero, bm_inv_src_colour)
+      
+      
+        bm_max
+        Mistura máxima. Semelhante à mistura aditiva.
+        (bm_src_alpha, bm_inv_src_color)
+      
+    
+  
+   
+  Como você pode ver na tabela acima, estes quatro modos de mistura são realmente compostos de modos de mistura estendida que podem ser encontrados na página que descreve gpu_set_blendmode_ext().
+  Para ajudá-lo a obter o máximo dos modos de mistura e para ajudar a entender como eles funcionam e como afetam a imagem final que está sendo desenhada para a tela, recomendamos que você leia o seguinte guia:
+  
+    Guia para a utilização de emendas
+  
+   
+  Sintaxe:
+  gpu_set_blendmode(mode);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        modo
+        O modo de mistura a usar (veja a tabela acima)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  gpu_set_blendmode(bm_add); draw_circle_colour(100, 100, 50, c_white, c_black, 0); gpu_set_blendmode(bm_normal);
+  
+  Isto transformará o preto em transparência, criando um efeito de "brilho" do branco sendo forte no exterior e gradualmente enfraquecendo ainda mais a partir do centro do círculo. O modo de mistura é reiniciado depois que o círculo é desenhado para garantir a mistura aditiva
+    não se aplica também a tudo o resto depois dele.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle de GPU
+        Próximo: gpu_set_blendmode_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

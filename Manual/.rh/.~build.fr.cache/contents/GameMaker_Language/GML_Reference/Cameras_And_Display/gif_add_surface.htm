@@ -1,0 +1,78 @@
+
+  
+  gif_add_surface
+  Com esta função você pode salvar um quadro em um arquivo GIF a partir de uma superfície. Você fornece o ID do arquivo GIF (como retornado pela função gif_open()) e uma identificação de superfície (conforme retornado pela função surface_create()),
+    bem como um tempo de atraso entre os quadros. O tempo de atraso é calculado em 1/100 de segundo, mas observe que uma vez criado o GIF, se você o utilizar para fins promocionais, por exemplo, diferentes navegadores podem interpretar o atraso do frame ligeiramente
+    diferente - veja aqui para mais detalhes. Você pode (opcionalmente) fornecer valores de desvio X e Y para a superfície que está sendo usada para adicionar a
+    o GIF, caso em que a peça atraída para o GIF começará a partir da posição offset e não da posição default (0,0), permitindo-lhe selecionar apenas uma seção da superfície a ser adicionada. Você também pode fornecer um valor de quantização, que é um número inteiro entre 0,0
+    e 3, onde 0 é quantização total e 3 é quantização zero (valores mais baixos terão uma degradação subsequente na qualidade, mas criarão um GIF menor). Note que não há muita diferença entre a qualidade padrão de 2, e a mais alta de 3,
+    e o uso do 3 irá retardar significativamente a criação do GIF, portanto, deve-se ter cuidado ao usar o valor máximo.
+  Observe que não há limites embutidos no número de quadros ou no tamanho desses quadros em seu GIF, mas se você usar muita memória, a função falhará e retornará -1, caso contrário, retornará 0.
+   
+  Sintaxe:
+  gif_add_surface(gif_index, surface, delay_time, [xoffset], [yoffset]));
+   
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        gif_index
+        A identificação do gif para adicionar os dados de superfície a
+      
+      
+        superfície
+        A identificação da superfície a ser usada como moldura adicionada
+      
+      
+        tempo_de_atraso
+        O tempo de atraso para o quadro (em 100 décimos de segundo)
+      
+      
+        [xoffset]
+        [Opcional] O deslocamento ao longo do eixo X da superfície para adicionar a partir
+      
+      
+        [yoffset]
+        [Opcional] O deslocamento ao longo do eixo Y da superfície para adicionar a partir
+      
+      
+        [quantização]
+        [Opcional] A quantidade de quantização de 0 a 3 (0 qualidade mais baixa, 3 qualidade mais alta, padrão é 2)
+      
+    
+  
+   
+  Devoluções:
+  Inteiro
+   
+  Exemplo:
+  se save_gif == verdadeiro {
+     if count === 0 {
+     gif_image = gif_open(room_width, room_height); }
+     ou se contar < 30 {
+     gif_add_surface(gif_image, application_surface, 6/100); }
+     mais
+     {
+     gif_save(gif_image, "GameCapture.gif"); count = 0; save_gif = false; }
+     contar+++;
+     }
+  
+  O código acima criará um arquivo de imagem GIF com 30 quadros tirados da superfície da aplicação e depois o salvará.
+   
+   
+   
+  
+    
+      Câmeras e Display
+        Voltar: 
+        Próximo: gif_save
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

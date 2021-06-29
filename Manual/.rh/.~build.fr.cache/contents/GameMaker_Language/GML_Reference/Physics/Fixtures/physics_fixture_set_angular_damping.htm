@@ -1,0 +1,46 @@
+
+  
+  fisica_fixture_set_angular_damping
+  Se você pensar em qualquer objeto em rotação no "mundo real", a menos que ele tenha um motor ou esteja no espaço, ele diminui com o tempo devido à influência de forças externas (como o atrito com o ar ao seu redor). Podemos usar a função physics_fixture_set_angular_damping( ) no GameMaker Studio 2 para simular este efeito e reduzir a velocidade de rotação de instâncias no mundo da física, pois, sem ela, qualquer instância rotativa continuaria a girar infinitamente. Os parâmetros de amortecimento devem estar entre 0 e infinito,
+    com 0 significando sem amortecimento, e infinito significando amortecimento total. Normalmente você usará um valor de amortecimento entre 0 e 1, mas você pode usar qualquer valor não-negativo se necessário.
+   
+  Sintaxe:
+  physics_fixture_set_angular_damping(fixture, damping)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fixação
+        o índice da fixação
+      
+      
+        amortecimento
+        o amortecimento angular da luminária, geralmente entre 0 e 1
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  physics_fixture_set_angular_damping(fix_Ball, 0.1);
+  O código acima definirá o amortecimento angular da fixação indexada em "fix_ball" para 0,1.
+   
+   
+   
+  
+    
+      
+        Voltar: Instalações
+        A seguir: substituição_de_fixação_física
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,52 @@
+
+  
+  draw_get_halign
+  Esta função é usada para obter o ajuste do alinhamento do texto ao longo do eixo horizontal, e retornará uma das constantes listadas abaixo.
+   
+  Sintaxe:
+  draw_get_halign();
+   
+  Devoluções:
+  Constante
+  
+    
+      
+        Constante
+        Alinhamento
+      
+      
+        fa_esquerda
+        
+      
+      
+        fa_center
+        
+      
+      
+        fa_direita
+        
+      
+    
+  
+   
+  Exemplo:
+  if draw_get_halign() != fa_left {
+     draw_set_halign(fa_left);
+     }
+     draw_text(100, 32, "Pontuação: " + string(pontuação));
+  O código acima verificará se o alinhamento do texto atual é alinhado à esquerda, e se não for, então será definido e então algum texto será desenhado.
+   
+   
+   
+  
+    
+      
+        Voltar: Texto
+        A seguir: draw_get_valign
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,79 @@
+
+
+
+
+
+  
+  dot_product
+  O produto ponto é um valor que expressa a relação angular entre dois vetores e é encontrado pegando dois vetores, multiplicando-os juntos e depois adicionando os resultados. O nome "produto de ponto" é derivado do ponto centralizado "-".
+    que é freqüentemente usado para designar esta operação (o nome alternativo "produto escalar" enfatiza a natureza escalar em vez de vetor do resultado).
+  A fórmula matemática real pode ser escrita desta forma:
+  
+  Assim, em 2D o produto dot de vetores a[x1,y1] e b[x2,2] é x1x2 + y1y2, o que significa que o produto dot_product no GameMaker Studio 2 é calculado como:
+  a - b = (x1*x2)+(y1*y2);
+  O curioso sobre o produto ponto é a relação que ele tem com o ângulo formado pelos vetores de entrada que podem ser expressos como:
+  a - b = (comprimento de a) * (comprimento de b) * cos(ângulo)
+  Ou seja, o produto pontilhado de dois vetores será igual ao cosseno do ângulo entre esses vetores, multiplicado pelo comprimento de cada um deles. Aqui está uma imagem para ilustrar:
+  
+  NOTA: Para mais informações sobre vetores, veja aqui.
+  Há algumas coisas que agora podemos afirmar a partir de quaisquer dois vetores em relação ao resultado de seu produto ponto:
+  
+    Se a e b forem perpendiculares (a 90 graus um ao outro), o resultado do produto ponto será zero, pois cos(ang) será zero
+    Se o ângulo entre a e b for inferior a 90 graus, o produto ponto será positivo (maior que zero), pois cos(ang) será positivo
+    Se o ângulo entre a e b for maior que 90 graus, o produto ponto será negativo (menos que zero), pois cos(ang) será negativo
+  
+  Então o que isso significa para aqueles de nós que fazem jogos? Bem, esta relação matemática pode ser usada em muitas circunstâncias, mas a melhor maneira de vê-la é construir um cenário real e ver por si mesmo o que está acontecendo. Um dos mais simples
+    A maneira de fazer isso é gerar uma simples "linha de visão" de um inimigo em, digamos, um jogo de plataforma, para que o inimigo "veja" o jogador se ele estiver a 90° de cada lado de seu vetor normal.
+  Basicamente, temos que obter o vetor normal do inimigo (ou seja: composto de uma direção e distância de visão)
+    e depois precisamos levar o vetor do jogador até o inimigo. Então obteremos o ponto_produto destes vetores, e se o resultado for positivo o jogador foi visto, e se for negativo ele não foi visto. O código real para que isto funcione é fornecido
+    no exemplo abaixo.
+   
+  Sintaxe:
+  dot_product(x1, y1, x2, y2)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x1
+        A coordenada x do primeiro vetor.
+      
+      
+        y1
+        A coordenada y do primeiro vetor.
+      
+      
+        x2
+        A coordenada x do segundo vetor.
+      
+      
+        y2
+        A coordenada y do segundo vetor.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var x1, y1, x2, y2; x1 = lengthdir_x(1, image_angle); y1 = lengthdir_y(1, image_angle); x2 = o_Player.x - x; y2 = o_Player.y - y; if dot_product(x1, y1, x2, y2) > 0 seen=true else see=false;
+  O código acima cria um vetor usando o ângulo de imagem das instâncias, e então obtém o vetor do objeto jogador "o_Player" para si mesmo. Finalmente, ele calcula o produto de pontos desses dois vetores e, se for maior que 0, define a variável
+    "visto" para verdadeiro, e se for igual ou inferior a 0, o define como "falso".
+   
+   
+   
+  
+    
+      
+        Voltar: Ângulos e distância
+        Próximo: dot_product_3d
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

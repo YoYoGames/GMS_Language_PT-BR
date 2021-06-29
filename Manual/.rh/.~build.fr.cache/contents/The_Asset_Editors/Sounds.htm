@@ -1,0 +1,84 @@
+
+  
+  O Editor de Som
+  O Editor de Som é onde você pode carregar os sons em um novo recurso de áudio, bem como definir suas propriedades. Para carregar um som, pressione o botão Load Sound à direita do nome do som. Um diálogo seletor de arquivo aparece, no qual você pode selecionar o arquivo de som. Este pode ser um arquivo WAV, um arquivo MP3 ou um arquivo OGG. Em
+    geral *.wav são usados para os efeitos sonoros curtos, pois embora sejam geralmente arquivos maiores, eles serão reproduzidos instantaneamente devido ao fato de que não precisam de nenhum tipo de decodificação para serem reproduzidos. *.mp3 ou *.ogg devem ser usados para música de fundo ou para efeitos sonoros de tamanho maior ou maior. Estes arquivos são muito menores do que um arquivo wave seria, mas têm uma pequena sobrecarga de CPU, pois têm de ser decodificados.
+    antes de ser jogado.
+  Uma vez que você tenha carregado seu arquivo, você pode visualizar o som usando o botão play que o fará em loop continuamente. Isto é muito útil, pois significa que você pode fazer alterações no volume usando o botão deslizante na parte inferior da janela e ouvir qual o efeito
+    terá no som. Há um botão de parada também, para que você possa interromper a visualização a qualquer momento.
+  A janela de som também tem outras opções que são explicadas abaixo:
+   
+  Nome e arquivo
+  
+    Aqui você pode clicar no botão Abrir para abrir o explorador de arquivos e escolher um arquivo de áudio para carregar. Você também pode definir o nome do novo recurso a partir do campo "Nome", à esquerda. Os nomes só podem ser alfanuméricos e só podem usar o
+      abaixo do símbolo "_", e não podem começar com um número.
+     
+  
+  Atributos
+  
+    Esta seção é para definir os atributos de som. Estes são os atributos que serão definidos quando você exportar seu jogo e afetarão a forma como o som é reproduzido no tempo de execução. Para efeitos sonoros (formatoWAV ), você vai querer
+      que sejam descomprimidos para que joguem rapidamente e não necessitem de decodificação. Note que usando esta opção converterá seu áudio para o formato WAV durante o tempo de compilação (no entanto, se os atributos definidos no Editor de Som corresponderem
+      os atributos do arquivo WAV de origem, então ele será simplesmente copiado). Para OGG e MP3, você geralmente desejaria uma das outras três opções disponíveis.
+    O áudiocomprimido forçará todos os seus arquivos de som (independentemente de serem WAV ou MP3) a serem comprimidos até Ogg Vorbis OGG arquivos de formato para todas as plataformas
+      (entretanto, se o áudio da fonte já for OGG, ele será simplesmente copiado sem ser recompactado). Estes sons são menores em disco, mas terão uma leve sobrecarga de CPU devido à necessidade de ser descomprimido e carregado na memória antes
+      sendo jogado, então você deve ter isso em mente se você deseja usar compressão em um jogo já intensivo de CPU.
+    Você pode mitigar um pouco esta sobrecarga da CPU optando por descomprimir na carga, o que colocará todos os sons na memória do dispositivo para uma reprodução mais rápida, às custas de uma maior utilização da memória.
+    Se você escolheu o áudio comprimido, você também pode escolher que seu som seja transmitido do disco. Um som transmitido será aquele que não é comprimido e reproduzido em tempo real, transmitido do disco em vez de carregado na memória. Streaming
+      é ideal para música, pois reduz a sobrecarga única de descomprimir o arquivo inteiro - o que pode causar uma pausa no jogo - mas não é recomendado para efeitos sonoros simples, onde o acerto na CPU é muito menor. Se você selecionar streamed audio, você
+     não será capaz de atribuir o som a um Grupo de Áudio e esta opção será desativada, pois os sons transmitidos não são embalados da mesma forma que os outros sons e você tem controle total sobre quando
+      eles são carregados, reproduzidos e descarregados usando código.
+    É importante observar que, ao visar a plataforma HTML5, o áudio streamed não será reproduzido quando o pedido de reprodução não se origina diretamente de uma interação do usuário (ou seja, um evento de toque, etc.). Entretanto, desde que o GameMaker Studio 2 faz fila para os eventos de clique
+      e só os manipula no próximo quadro, é impossível reproduzir áudio transmitido sem que o navegador o bloqueie. Para contornar isto, qualquer jogo em HTML5 tratará todo o áudio streamed como não streamed no motor, com exceção do áudio streamed
+      não sendo pré-carregado.
+    O que isso significa é que se seu jogo estiver rodando em um navegador, e - por exemplo - você tem 10 faixas de música que estão todas definidas como arquivos streamed mp3 , todas as 10 serão inicializadas como um áudio não streamed, mas elas não
+      mas não serão decodificadas imediatamente antes do jogo ser carregado, ao contrário do áudio normal que seria pré-carregado/descodificado imediatamente durante a fase de carregamento da tela.
+    Embora isto ultrapasse o problema e impeça qualquer aumento enorme nos tempos iniciais de carregamento, significa que pode resultar em um estado em que seu jogo tenha carregado, mas certos sons transmitidos ainda podem estar baixando ou decodificando. Para lidar com isso, você pode
+      usar a função GML audio_sound_is_playable() que verifica se um determinado som pode realmente ser tocado. Em HTML5
+      isto retornará false se o som ainda não estiver totalmente carregado ou decodificado, e true se estiver e puder ser reproduzido (em todas as outras plataformas sempre retornará verdadeiro).
+     
+  
+  Volume
+  
+    Aqui você pode definir o volume de reprodução para o som dado. Este valor é simplesmente o valor padrão onde se o deslizador estiver no meio - por exemplo - então o volume para aquele som quando usado no jogo será de 0,5. No entanto, isto será anulado
+      por qualquer mudança no ganho usando as funções de áudio em seu projeto. Além dos controles de volume, você também tem os controles Playback onde você pode visualizar o som, configurá-lo para loop ou rebobinar. Você também pode clicar no ícone  para abrir o som no Mixer de som.
+     
+  
+  Opções Alvo
+  
+    O painel de Opções Alvo é onde você define as taxas de conversão para seu jogo. Estas configurações afetarão como o som será exportado para a plataforma alvo, e o GameMaker Studio 2 converterá automaticamente seus arquivos de som para você - você simplesmente controla
+      a qualidade final desses sons quando convertidos. Geralmente as configurações padrão de qualidade de 16 bits (ou profundidade de bits), taxa de amostragem de 44100kHz e
+      A taxa de bits de 128kbps é perfeitamente adequada, mas pode ser que você deseje que os efeitos sonoros (por exemplo) tenham uma qualidade inferior e que a música tenha uma qualidade superior, caso em que estas configurações
+      pode ser alterado.
+    Você também pode escolher se a conversão deve ser mono, estéreo ou 3D. Se você planeja usar as funções emissoras de áudio para
+      criar efeitos sonoros 3D, você deve indicar isso aqui, caso contrário escolha mono ou estéreo, dependendo do uso que os sons serão utilizados. Se você escolher usar o som para áudio 3D, ele será exportado como um som mono.
+    NOTA: Quanto maior a qualidade do som, maior o arquivo, e isto deve ser levado em consideração ao decidir que taxa de bits e taxa de amostragem escolher.
+     
+  
+  Grupo de Áudio
+  
+    Você pode atribuir seu arquivo de áudio a um grupo de áudio específico. Estes são criados a partir da janela Grupos de Áudio e são usados para agrupar ativos de áudio para facilitar o gerenciamento de memória e volume.
+      controle.
+    
+    Uma vez que um arquivo de áudio tenha sido atribuído a um grupo, você pode então usar as funções específicas do grupo de áudio para alterá-las e carregá-las/descargá-las da memória. Veja a seção de referência sobre Funções de Áudio para
+      mais informações.
+    Se você selecionou o áudio streamed , esta opção será desativada, pois os sons streamed não são embalados da mesma forma que outros sons e não serão carregados na memória, mas, em vez disso, serão transmitidos diretamente do armazenamento
+      médio.
+    
+    Observe que enquanto o resto das propriedades de áudio são específicas da configuração, a configuração do grupo de áudio não é e um som pertencerá ao mesmo grupo em todas as configurações que você usar.
+     
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Os Editores de Ativos
+        A seguir: Sprites
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

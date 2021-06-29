@@ -1,0 +1,55 @@
+
+  
+  mp_grid_get_cell
+  Com esta função você pode verificar qualquer célula da mp_grid para ver se ela foi marcada como ocupada ou não, dando o índice da mp_grid (previamente criada) e as coordenadas x e y da célula para verificar. Se foi ou não ocupada ou a posição
+    sendo verificado está fora dos limites das grades então a função retornará -1 caso contrário retornará 0.
+   
+  Sintaxe:
+  mp_grid_get_cell(id, x , y);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        Índice da rede mp_ que deve ser usada
+      
+      
+        x1
+        A coordenada x da grade a ser verificada.
+      
+      
+        y1
+        A coordenada y da grade a ser verificada.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  if mp_grid_get_cell(grid, mouse_x div 16, mouse_y div 16) == -1 {
+     image_blend = c_red; }
+     mais
+     {
+     image_blend = c_lime; }
+  
+  O código acima verificará a célula mp_grid que corresponde à posição do mouse e, se estiver ocupada, define a variável image_blend para vermelho, e se não estiver ocupada, define para verde.
+   
+   
+   
+  
+    
+      
+        Voltar: Planejamento de Movimento
+        Próximo: mp_grid_clear_all
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

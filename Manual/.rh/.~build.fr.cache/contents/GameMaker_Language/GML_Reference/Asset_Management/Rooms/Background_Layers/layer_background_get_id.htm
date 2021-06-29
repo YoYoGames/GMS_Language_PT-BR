@@ -1,0 +1,43 @@
+
+  
+  layer_background_get_id
+  Esta função pode ser usada para recuperar o valor de identificação único do elemento de fundo em uma camada. Você fornece o ID da camada (que você obtém quando usa o nome da camada junto com layer_get_id())
+    e a função retornará o valor de identificação associado ao elemento de fundo na camada. Note que esta função é especificamente projetada para uso com fundos que foram adicionados no IDE, como se você adicionasse um fundo a uma camada através de
+    código usando a função layer_background_create()então ele devolverá a identificação única para o elemento de fundo adicionado.
+   
+  Sintaxe:
+  layer_background_get_id(layer_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada a ser alvo
+      
+    
+  
+   
+  Devoluções:
+  Valor de identificação do elemento de fundo (Real)
+   
+  Exemplo:
+  var lay_id = layer_get_id("Background_trees"); var back_id = layer_background_get_id(lay_id); layer_background_sprite(back_id, bck_Trees_Winter);
+  O código acima obterá a identificação da camada chamada "Background_trees" e depois a utilizará para obter a identificação do elemento de fundo nessa camada. Este ID é então usado para mudar o elemento sprite.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de fundo
+        A seguir: layer_background_exists
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

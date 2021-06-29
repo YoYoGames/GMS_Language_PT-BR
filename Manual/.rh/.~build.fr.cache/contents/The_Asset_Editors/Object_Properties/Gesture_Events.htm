@@ -1,0 +1,521 @@
+
+  
+  Os eventos gestuais
+  
+  Os eventos na categoria Eventos por gestos serão acionados sempre que o GameMaker Studio 2 detectar um "gesto" do mouse ou um evento com tela sensível ao toque (embora esses eventos por gestos sejam projetados especificamente para uso móvel, eles também podem ser usados em outros
+    alvos para detectar o mouse, embora não detectem toques múltiplos neste caso). O objetivo do sistema de gestos é tentar reconhecer entradas a um nível mais alto do que as funções de leitura direta por toque do mouse, e é projetado para simplificar a
+    implementação de entradas comumente usadas em dispositivos baseados no toque.
+  NOTA: Estes eventos não serão acionados na plataforma HTML5 devido à falta de suporte para multi-toque usando estes eventos naquela plataforma. Se você estiver procurando por gestos nesse alvo, então você deve estar usando as funções do dispositivo.
+  Você pode optar por detectar tanto gestos de instância quanto gestos globais , onde os eventos de gestos de instância só serão acionados quando o toque/clique inicial estiver em uma instância dentro da sala. Observe que a instância deve
+    têm uma máscara de colisão válida (veja as seções The Sprite Editor - Collision Mask e The Object Editor - Collision Mask para obter mais detalhes) para que este evento seja acionado. Eventos globais, no entanto,
+    será acionado tocando/clicando em qualquer lugar dentro da sala de jogos, e para todas as instâncias que tiverem o evento.
+  Quando um gesto é reconhecido, ele desencadeará um ou mais dos eventos disponíveis, e o evento desencadeado dependerá do tipo de gesto que foi detectado. Em todos os casos, no entanto, um Mapa DS irá
+    ser gerado para você e armazenado na variável incorporada event_data. As chaves disponíveis dependerão do tipo de evento pelo qual ele foi criado e são mostradas em cada uma das subseções abaixo.
+  NOTA: A variável event_data só é válida nestes eventos, pois o mapa DS que ela aponta é automaticamente criado no início do evento, depois destruído novamente no final, com esta variável sendo reinicializada.
+    a um valor de -1 em todos os outros momentos.
+  Vale notar que se você tiver múltiplas instâncias sob a posição que está sendo tocada e todas elas tiverem um evento gesto, então todas elas desencadearão, não apenas a instância "mais alta". Observe também que ao utilizar múltiplas vistas de câmera
+    e arrastando uma instância, os valores retornados serão baseados na visão em que você estava quando o toque/clique inicial foi recebido - isto é verdade para todos os eventos subsequentes naquele gesto para aquela instância. Portanto, tocar e arrastar uma instância em uma visão
+    depois de liberar o toque em outra visão, retornará valores relativos à visão inicial onde o gesto foi detectado pela primeira vez.
+   
+      Eventos Tap, Drag, And Flick
+  
+    Os eventos "Tap", "Drag" e "Flick" são todos baseados em um único toque ou clique do mouse na tela e o Mapa DS event_data conterá as seguintes teclas:
+    
+    
+    
+      
+        
+          Chave
+          Descrição
+        
+        
+          "gesture"
+           Este é um valor de identificação que é exclusivo do gesto que está em jogo. Isto permite ligar as diferentes partes dos gestos em várias partes (como início, arrasto e fim do arrasto).
+        
+        
+          "touch"
+           Este é o índice do toque que está sendo usado para o gesto. Em geral isto começará em 0 e aumentará para cada dedo que for segurado para baixo, depois voltará a 0 quando todos os dedos forem removidos, mas se o usuário estiver tocando a tela
+            em qualquer outro lugar quando este evento for acionado por outro toque, então o valor será maior que 0.
+        
+        
+          "posX"
+           Esta é a posição de espaço X do toque.
+        
+        
+          "posY"
+           Esta é a posição de espaço Y da sala do toque.
+        
+        
+          "rawposX"
+           Esta é a posição de janela bruta - espaço X do toque (equivalente a obter a posição do mouse usando device_mouse_raw_x()).
+        
+        
+          "rawposY"
+           Esta é a posição em Y da janela em bruto do toque (equivalente a obter a posição do mouse usando device_mouse_raw_y()).
+        
+        
+          "guiposX"
+           Esta é a posição gui-space X do toque (equivalente a obter a posição do mouse usando device_mouse_x_to_gui()).
+        
+        
+          "guiposY"
+           Esta é a posição gui-space Y do toque (equivalente a obter a posição do mouse usando device_mouse_y_to_gui()).
+        
+        
+          "diffX"
+           Esta é a diferença espaço-espaço X entre a posição do toque atual e a posição do último toque neste gesto.
+        
+        
+          "diffY"
+           Esta é a diferença de espaço-espaço Y entre a posição do toque atual e a posição do último toque neste gesto.
+        
+        
+          "rawdiffX"
+           Esta é a X diferença bruta entre a posição do toque atual e a posição do último toque neste gesto.
+        
+        
+          "rawdiffY"
+           Esta é a diferença em Y bruta entre a posição do toque atual e a posição do último toque neste gesto.
+        
+        
+          "guidiffX"
+           Esta é a diferença gui-space X entre a posição do toque atual e a posição do último toque neste gesto.
+        
+        
+          "guidiffY"
+           Esta é a diferença gui-space Y entre a posição do toque atual e a posição do último toque neste gesto.
+        
+        
+          "viewstartposX"
+           Esta é a posição inicial da sala X do gesto atual.
+        
+        
+          "viewstartposY"
+           Esta é a posição inicial da sala Y do gesto atual.
+        
+        
+          "rawstartposX"
+           Esta é a posição de partida em bruto X do gesto atual.
+        
+        
+          "rawstartposY"
+           Esta é a posição de partida em Y do gesto atual.
+        
+        
+          "guistartposX"
+           Esta é a posição de partida gui-space X do gesto atual.
+        
+        
+          "guistartposY"
+           Esta é a posição inicial do gesto atual no espaço Y.
+        
+        
+          "isflick"
+          
+
+			Disponível apenas no evento Drag End. Isto é definido como 1 se o fim do evento de arrasto for detectado como um flick, o que significa que você não precisa de um Flick Event separado se você estiver lidando com o arrasto de qualquer forma.
+        
+      
+    
+     
+    Toque
+    
+      O evento Tap será acionado quando uma instância tiver sido tocada ou clicada ou - se for um evento global - quando o jogo registrar um toque ou clique em qualquer lugar da sala. Um toque é considerado um toque e liberação rápidos, e se o toque também durar
+        longo, então será considerado um Drag (e acionará os eventos de Drag ao invés do evento de Tap). Este evento gerará um mapa DS event_data que poderá ser utilizado para obter informações sobre o evento. Por exemplo:
+      Criar Evento
+      x_goto = x; y_goto = y;
+      Evento de Torneira
+      x_goto = event_data[? "posX"]; y_goto = event_data[? "posY"];
+      Etapa Evento
+      var _pd = point_distance(x, y, x_goto, y_goto); move_towards_point(x_goto, y_goto, clamp(_pd, 0, 5);
+      O código acima detectará uma torneira na tela e então obterá a posição da torneira para mover a instância para essa posição. Note que se você quiser ter um tempo maior ou menor de detecção de torneira, então você pode configurá-la com a função gesture_drag_time().
+        Isto define o tempo entre a detecção inicial e a torneira se tornando um arrasto, portanto, ajuste-o para um valor mais alto para tornar a detecção da torneira mais longa ou um valor mais baixo para torná-la mais curta (o valor é em segundos e o valor padrão é 0,16).
+       
+    
+    Torneira dupla
+    
+      O evento Double Tap será acionado quando uma instância for tocada ou clicada duas vezes em sucessão rápida (ou - se for um evento global - quando o jogo registrar dois toques rápidos ou cliques em qualquer lugar da sala). Um toque duplo é considerado dois
+        toques rápidos e liberações, mas se qualquer um dos toques durar muito tempo, será considerado um Drag (e acionar os eventos do gesto Drag em vez do evento Double Tap). Este evento irá gerar um DS event_data 
+        mapa que você pode então utilizar para obter informações sobre o evento. Por exemplo:
+      Criar Evento
+      x_goto = x; y_goto = y;
+      Evento Double Tap
+      instance_destroy();
+      O código acima simplesmente detecta uma torneira dupla e depois destrói a instância. Observe que você pode definir o tempo entre as torneiras para acionar uma torneira dupla usando a função gesture_double_tap_time() (que
+        tem um valor padrão - em segundos - de 0,16) e você também pode definir a distância para detecção entre as torneiras com a função gesture_double_tap_distance() (se
+        uma segunda torneira é detectada fora desta distância e será considerada um evento de torneira regular).
+       
+    
+    Arrastar o início
+    
+      O evento Drag Start será acionado quando o usuário mantém um toque ou clique sem liberá-lo. Ele será acionado uma vez quando um tempo definido tiver passado após o toque inicial, que é de 0,16 segundos por padrão (embora você possa definir isto para qualquer
+        outro valor em segundos usando a função gesture_drag_time()). Após este evento ter sido acionado, e desde que
+        o usuário tem um toque/clique realizado, então o evento de arrastar será acionado a cada passo até que o toque/clique tenha sido liberado. Este evento gerará um mapa DS event_data que poderá ser utilizado para obter informações
+        sobre o evento. Por exemplo:
+      Criar Evento
+      drag_offsetX = 0; drag_offsetY = 0;
+      Evento de Arrastar
+      drag_offsetX = x - event_data[?"posX"]; drag_offsetY = y - event_data[?"posY"];
+      O código acima usa o evento Drag Start para obter a posição do toque/clique e usá-lo para definir um valor de offset para os eixos x e y. Isto pode então ser usado ao arrastar a instância para garantir que ela não "pule" para a posição
+        em que o toque/clique foi detectado (veja o evento de arrastamento abaixo para uma continuação deste exemplo).
+       
+    
+    Arrastando
+    
+      O evento de arrasto é acionado após o evento Drag Start, e será acionado para cada etapa que o usuário mantenha o toque/clique na instância (ou na tela, se for um evento global) e se mova mais do que o limite de arrasto definido.
+        Esta distância é de 0,1 polegadas por padrão, mas pode ser definida usando a função gesture_drag_distance(). Se não houver
+        movimento ou o movimento estiver abaixo do limite definido, o evento não será acionado. Este evento gerará um mapa DS event_data que poderá ser utilizado para obter informações sobre o evento. Por exemplo:
+      Criar Evento
+      drag_offsetX = 0; drag_offsetY = 0;
+      Evento de Arrastar
+      drag_offsetX = x - event_data[?"posX"]; drag_offsetY = y - event_data[?"posY"];
+      Evento de arrasto
+      x = event_data[?"posX"] + drag_offsetX; y = event_data[?"posY"] + drag_offsetY;
+      O código do exemplo acima usa as variáveis de offset definidas no evento Drag Start para mover a instância quando o evento Arrastar é acionado.
+       
+    
+    Extremidade de arrasto
+    
+      O evento Drag End é acionado quando o usuário libera o toque/clique na instância (ou na tela, se o evento for global). Este evento irá gerar um mapa DS event_data que poderá ser utilizado para obter informações sobre
+        o evento, mas neste caso o mapa terá uma chave extra: "isflick". Flick é calculado como a distância por segundo que o arrasto ocorreu, e o valor para o "isflick".
+        será verdadeiro se for maior do que a distância por segundo definida, ou falso de outra forma. Observe que o valor padrão é 2 polegadas por segundo, mas você pode defini-lo para outro valor usando a função gesture_flick_speed().
+        Observe também que existe um evento Flick dedicado que também será acionado se a variável "isflick" for verdadeira. Um exemplo de uso seria:
+      Criar Evento
+      flickVelX = 0,0; flickVelY = 0,0;
+      Evento Drag End
+      isFlick = event_data[?"isflick"]; if (isFlick) { flickVelX = event_data[?"diffX"]; flickVelY = event_data[?"diffY"]; }  else
+         { flickVelX = 0; flickVelY = 0; }
+      Etapa Evento
+      x += flickVelX; y += flickVelY; flickVelX *= 0,7; flickVelY *= 0,7;
+      O código acima simplesmente obtém a diferença na posição x e y do último evento de Arrastamento e do evento Drag End atual, e se o movimento foi maior que o limite do movimento, ele define algumas variáveis que são usadas para o movimento da instância
+        no evento da etapa.
+       
+    
+    Flick
+    
+      O evento Flick só é acionado quando um toque/clique é realizado, arrastado e então liberado e a distância entre a última posição de arrasto e a posição de liberação é maior que 2 polegadas por segundo (esta é a configuração padrão, embora esta
+        pode ser alterado usando a função gesture_flick_speed()). Este evento gerará um mapa DS event_data que você poderá utilizar para obter informações sobre o evento. Por exemplo:
+      Criar Evento
+      flickVelX = 0,0; flickVelY = 0,0;
+      Flick Event
+      flickVelX = event_data[?"diffX"]; flickVelY = event_data[?"diffY"];
+      Etapa Evento
+      x += flickVelX; y += flickVelY; flickVelX *= 0,7; flickVelY *= 0,7;
+      O código acima simplesmente obtém a diferença na posição x e y do último evento de arrastamento e do evento Flick atual, e se o movimento tiver sido maior que o limite do flick, ele define algumas variáveis que são usadas para o movimento da instância em
+        o evento da etapa.
+    
+     
+  
+  Eventos de Pinch 
+  
+    Os eventos "Pinch" são baseados em dois toques na tela dos dispositivos sendo reconhecidos ao mesmo tempo, onde um (ou ambos) se moveram mais de uma certa distância. O ângulo de movimento dos toques, juntamente com o movimento de cada toque, é o que irá
+      determinar a detecção de um evento Pinch ou Rotate, onde (no caso do tipo Pinch Event):
+    
+      Se um dos toques não estiver se movendo, o outro deve estar se movendo em direção a ele ou para longe dele dentro de um ângulo limite (que pode ser definido usando as funções gesture_pinch_angle_towards() e
+        - gesture_pinch_angle_away()).
+      Se ambos os toques estiverem em movimento, suas velocidades devem estar em direções aproximadamente opostas e a mesma verificação do limiar angular também é feita para garantir que os toques estejam se movendo em alinhamento aproximado.
+    
+    Quando dois toques e um movimento são detectados com os critérios acima, um Evento Pinch será acionado, e em cada um dos eventos o Mapa DS event_data será preenchido com as seguintes chaves:
+    
+    
+    
+      
+        
+          Chave
+          Descrição
+        
+        
+          "gesto".
+           Este é um valor de identificação que é exclusivo do gesto que está em jogo. Isto permite ligar as diferentes partes dos gestos em várias partes (como início, arrasto e fim do arrasto).
+        
+        
+          "touch1
+           Este é o índice do primeiro toque que está sendo usado como parte do gesto de beliscão. Em geral, este será 0, mas se o usuário estiver tocando a tela em qualquer outro lugar quando este evento for acionado por outro toque, então o valor será
+            maior que 0.
+        
+        
+          "touch2".
+           Este é o índice do segundo toque que está sendo usado como parte do gesto de beliscão. Em geral será 1 a mais do que o valor do toque1, mas pode ser algum outro valor dependendo do número de toques detectados em outro lugar.
+        
+        
+          "posX1"
+           Esta é a posição de espaço de sala X do primeiro toque.
+        
+        
+          "posY1"
+           Esta é a posição em Y do primeiro toque no espaço de sala.
+        
+        
+          "rawposX1"
+           Esta é a posição do primeiro toque no espaço X da janela bruta (equivalente a obter a posição do mouse usando device_mouse_raw_x()).
+        
+        
+          "rawposY1"
+           Esta é a posição em Y do primeiro toque (equivalente a obter a posição do mouse usando device_mouse_raw_y()).
+        
+        
+          "guiposX1"
+           Esta é a posição gui-space X do primeiro toque (equivalente a obter a posição do mouse usando device_mouse_x_to_gui()).
+        
+        
+          "guiposY1"
+           Esta é a posição gui-space Y do segundo toque (equivalente a obter a posição do mouse usando device_mouse_y_to_gui()).
+        
+        
+          "posX2
+           Esta é a posição de espaço X do segundo toque.
+        
+        
+          "posY2"
+           Esta é a posição de espaço Y do segundo toque.
+        
+        
+          "rawposX2"
+           Esta é a posição de espaço X da janela bruta do primeiro toque.
+        
+        
+          "rawposY2
+           Esta é a posição em Y da janela em bruto do segundo toque.
+        
+        
+          "guiposX2".
+           Esta é a posição gui-space X do segundo toque.
+        
+        
+          "guiposY2"
+           Esta é a posição gui-space Y do segundo toque.
+        
+        
+          "midpointX
+           A posição X do ponto médio entre os dois toques no espaço da sala.
+        
+        
+          "meio-pontoY
+           A posição em Y do ponto médio entre os dois toques no espaço da sala.
+        
+        
+          "rawmidpointX"
+           Esta é a posição do ponto médio no espaço X da janela bruta.
+        
+        
+          "rawmidpointY"
+           Esta é a posição em Y do ponto médio da janela em bruto.
+        
+        
+          "guimidpointX"
+           Esta é a posição gui-space X do ponto médio.
+        
+        
+          "guimidpointY"
+           Esta é a posição gui-space Y do ponto médio.
+        
+        
+          "escala de parentesco".
+           Esta é a diferença de escala em relação ao último evento deste gesto (assim, para Pinch In events isto será sempre menor que 1,0, enquanto para Pinch Out events será sempre maior que 1,0)
+        
+        
+          "absolutos".
+           Esta é a escala comparada com onde os dedos estavam quando o gesto começou (portanto, se a distância entre os dedos diminuiu pela metade, então esta será de 0,5, enquanto que se a distância duplicou será de 2,0).
+        
+      
+    
+     
+    Início de pinch
+    
+      O evento Pinch Start será acionado quando uma instância (ou a tela se o evento for global) for tocada por dois "dedos" (e o toque é mantido) e então um ou ambos os "dedos" são movidos. Se os toques se moverem
+        longe uns dos outros ou em direção uns aos outros mais do que a distância mínima de verificação (que é de 0,1 polegadas por padrão, mas pode ser definida usando a função gesture_pinch_distance()),
+        e o ângulo entre eles está dentro do valor definido (este valor padrão é de 45°, mas pode ser definido usando gesture_pinch_angle_towards() e
+        GameMaker_Language/GML_Reference/Game_Input/Gesture_Input/gesture_pinch_angle_away.htm">gesture_pinch_angle_away()), então um evento Pinch Start será acionado. Neste caso, você pode definir variáveis ou armazenar a data da posição para uso futuro. Por exemplo, o evento Pinch Start:
+      Evento Pinch Start
+      pinching = true; pinch_x = event_data[? "midpointX"]; pinch_y = event_data[? "midpointY"];
+      O código acima detectará um beliscão e armazenará a posição do meio para esse beliscão.
+       
+    
+    Beliscar dentro / beliscar fora
+    
+      Os eventos Pinch In e Pinch Out serão acionados a cada passo que a distância entre os dois toques que compõem o pinch muda acima do limite mínimo (ajustado para +/- 0,1 polegadas por padrão, mas você pode mudá-lo usando a função gesto_pinch_distance).
+        Se não houver movimento dos toques de pitada, estes eventos não serão acionados. Estes eventos gerarão um mapa DS event_data que você poderá então utilizar para obter informações sobre o evento. Por exemplo, um mapa de DS:
+      Evento Global Pinch In /Pinch Out
+      var _scale = event_data[? "relativescale"]; var _w = camera_get_view_width(view_camera[0]); var _h = camera_get_view_height(view_camera[0]); var _x = camera_get_view_x(view_camera[0]) + (_w / 2); var _y = camera_get_view_y(view_camera[0])
+        + (_h / 2);
+         _w *= _scale; _h = _w * (room_height / room_width); _x -= _w / 2; _y -= _h / 2;
+         camera_set_view_pos(view_camera[0], _x, _y); camera_set_view_size(view_camera[0], _w, _h);
+      O código acima escalará a visão com base na escala relativa dos toques de beliscão.
+       
+    
+    Fim da pinça
+    
+      O evento Pinch End será acionado quando o usuário liberar um (ou ambos) dos toques do dispositivo. Este evento gerará um mapa DS event_data que poderá ser utilizado para obter informações sobre o evento. Para
+        exemplo:
+      Evento Pinch End
+      var _pinchx = event_data[? "midpointX"]; var _pinchy = event_data[? "midpointY"]; var _w = camera_get_view_width(view_camera[0]); var _h = camera_get_view_height(view_camera[0]); var _x = _pinchx - (_w / 2); var _y = _pinchy - (_h / 2);
+         camera_set_view_pos(view_camera[0], _x, _y);
+      O código acima definirá a posição de visão a ser centrada no ponto médio dos dois toques que compõem a pitada quando os toques forem liberados.
+      
+    
+     
+  
+  Rotacionar eventos
+  
+    Os eventos "Rotate" são baseados em dois toques na tela dos dispositivos sendo reconhecidos ao mesmo tempo, e onde houve uma rotação angular consistente entre os dois dentro de um tempo específico. O ângulo de movimento dos toques junto com o
+      movimento de cada toque é o que determinará a detecção de um evento Pinch ou Rotate, onde (no caso do tipo Rotate Event):
+    
+      Dois toques devem ser realizados por um tempo mínimo especificado (o tempo padrão é de 0,16 segundos, mas você pode mudá-lo usando a função gesture_rotate_time()).
+      Dentro deste período mínimo de tempo, eles devem girar em uma direção consistente (se a direção de rotação mudar dentro deste tempo, então nenhuma rotação é iniciada).
+      A quantidade de rotação deve exceder o ângulo limite mínimo (que é definido como 5° por padrão, mas isso pode ser alterado usando a função gesture_rotate_angle()).
+    
+    Quando dois toques e um movimento são detectados com os critérios acima, um Evento Rotativo será acionado, e em cada um dos eventos o Mapa DS event_data será preenchido com as seguintes chaves:
+    
+    
+    
+      
+        
+          Chave
+          Descrição
+        
+        
+          "gesto".
+           Este é um valor de identificação que é exclusivo do gesto que está em jogo. Isto permite ligar as diferentes partes dos gestos em várias partes (como início, arrasto e fim do arrasto).
+        
+        
+          "touch1
+           Este é o índice do primeiro toque que está sendo usado como parte do gesto de beliscão. Em geral, este será 0, mas se o usuário estiver tocando a tela em qualquer outro lugar quando este evento for acionado por outro toque, então o valor será
+            maior que 0.
+        
+        
+          "touch2".
+           Este é o índice do segundo toque que está sendo usado como parte do gesto de beliscão. Em geral será 1 a mais do que o valor do toque1, mas pode ser algum outro valor dependendo do número de toques detectados em outro lugar.
+        
+        
+          "posX1"
+           Esta é a posição de espaço de sala X do primeiro toque.
+        
+        
+          "posY1"
+           Esta é a posição em Y do primeiro toque no espaço de sala.
+        
+        
+          "rawposX1"
+           Esta é a posição do primeiro toque no espaço X da janela bruta (equivalente a obter a posição do mouse usando device_mouse_raw_x()).
+        
+        
+          "rawposY1"
+           Esta é a posição em Y do primeiro toque (equivalente a obter a posição do mouse usando device_mouse_raw_y()).
+        
+        
+          "guiposX1"
+           Esta é a posição gui-space X do primeiro toque (equivalente a obter a posição do mouse usando device_mouse_x_to_gui()).
+        
+        
+          "guiposY1"
+           Esta é a posição gui-space Y do segundo toque (equivalente a obter a posição do mouse usando device_mouse_y_to_gui()).
+        
+        
+          "posX2
+           Esta é a posição de espaço X do segundo toque.
+        
+        
+          "posY2"
+           Esta é a posição de espaço Y do segundo toque.
+        
+        
+          "rawposX2"
+           Esta é a posição de espaço X da janela bruta do primeiro toque.
+        
+        
+          "rawposY2
+           Esta é a posição em Y da janela em bruto do segundo toque.
+        
+        
+          "guiposX2"
+           Esta é a posição gui-space X do segundo toque.
+        
+        
+          "guiposY2"
+           Esta é a posição gui-space Y do segundo toque.
+        
+        
+          "pivotX".
+           A posição X do ponto pivô de rotação no espaço da sala.
+        
+        
+          "pivotY"
+           A posição em Y do ponto pivô de rotação no espaço da sala.
+        
+        
+          "rawpivotX"
+           Esta é a posição em bruto da janela - espaço X do ponto pivô rotacional.
+        
+        
+          "rawpivotY"
+           Esta é a posição em Y do ponto de pivô rotativo no espaço vazio.
+        
+        
+          "guipivotX".
+           Esta é a posição gui-space X do ponto pivô rotacional.
+        
+        
+          "guipivotY"
+           Esta é a posição gui-space Y do ponto pivô rotacional.
+        
+        
+          "relativeangle" (relativo)
+           Esta é a diferença de rotação em relação ao último evento deste gesto, medido em graus
+        
+        
+          "absoluteangle" (ângulo absoluto)
+           Esta é a diferença de ângulo em relação a onde os dedos estavam quando o gesto começou, medido em graus. Assim, por exemplo, se os dedos tiverem girado um quarto de círculo desde o início do gesto, então este valor será de 90°.
+            ou -90°, dependendo da direção da rotação.
+        
+      
+    
+     
+    Rodar a partida
+    
+      O evento Rotate Start será acionado quando uma instância (ou a tela se o evento for global) for tocada por dois "dedos" (e o toque é mantido) e então um ou ambos os "dedos" são girados desde seu início
+        posição. A rotação dos toques precisa ter começado dentro de um curto período de tempo (0,16 segundos por padrão, mas pode ser definida usando a função gesture_rotate_time())
+        e ser maior do que o limite angular mínimo (por padrão 5°, mas isso pode ser alterado usando a função gesture_rotate_angle()).
+        Se estas verificações forem verdadeiras, então um evento Rotate Start será acionado e você poderá usá-lo para armazenar valores ou definir variáveis para uso com o restante dos eventos de rotação. Por exemplo, o evento Rotate Start:
+      Criar Evento
+      rotativo = falso; view_a = câmera_get_view_angle(view_camera[0]);
+      Evento de início de rotação
+      rotativo = verdadeiro;
+      O código acima simplesmente configura algumas variáveis para a rotação da câmera de visão e, em seguida, no evento Rotate Start, define uma delas como verdadeira.
+       
+    
+    Rotativo
+    
+      O evento rotativo será acionado a cada passo que os toques na tela girem ao redor um do outro, desde que o movimento seja maior que o limite angular mínimo (por padrão 5°, mas isso pode ser alterado usando a função gesture_rotate_angle()).
+        Este evento pode ser usado para definir variáveis e manipular instâncias, por exemplo:
+      Evento rotativo
+      var _relangle = event_data[?"relativeangle"]; var _a = camera_get_view_angle(view_camera[0]); _a += _relangle; camera_set_view_angle(view_camera[0], _a);
+      O código acima gira a visão da câmera dependendo do movimento rotacional dos toques no evento.
+       
+    
+    Fim de rotação
+    
+      O evento Rotate End será acionado quando um (ou ambos) os toques que compõem o gesto forem liberados da tela do dispositivo. Este evento pode ser usado para definir variáveis e manipular instâncias, por exemplo:
+      Evento final de rotação
+      rotativo = falso;
+      Etapa Evento
+      if !rotating { var _a = camera_get_view_angle(view_camera[0]); var _adif = angle_difference(view_a, _a); _a += median(-5, _adif, 5); camera_set_view_angle(view_camera[0], _a); }
+      O código acima usa o evento Rotate End para detectar quando o usuário interrompe o gesto e depois define uma variável. Esta variável é então utilizada no evento de etapa para girar a câmera de visão de volta à sua posição original.
+       
+    
+     
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Eventos Objeto
+        A seguir: Ordem do evento
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

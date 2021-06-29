@@ -1,0 +1,93 @@
+
+  
+   Set View Variable
+  Esta ação permite que você defina certas variáveis incorporadas relacionadas à forma como a porta de visualização exibirá as vistas da câmera da sala. Você seleciona a variável view port para editar, depois dá a view port ao alvo (de 0 a 7) e finalmente o novo valor
+    para a variável. A porta de visualização é a área da tela que será usada para desenhar uma determinada visão da câmera (como configurado no editor da sala), e as diferentes variáveis que você pode definir desta forma estão delineadas na tabela abaixo:
+  
+    
+      
+        Variável
+        Descrição
+      
+      
+        Camera
+        Isto é para definir o viewport para mostrar uma visão diferente da câmera. Você precisa fornecer o valor de identificação único da câmera para mudar (veja aqui para
+          mais informações).
+      
+      
+        Visibility
+        Esta é a alternância de visibilidade para a porta de visualização e espera um valor de verdadeiro ou falso onde a configuração para verdadeiro tornará a porta de visualização visível (ou seja: ela atrairá para a tela), e um valor de falso não atrairá
+          qualquer coisa para a tela.
+      
+      
+        View Port X Coordinate
+        Esta é a posição X da porta de visualização dentro da janela do jogo. Note que isso só é realmente necessário quando mais de uma porta de visualização está ativa - por exemplo, para criar um efeito de tela dividida - e se usada quando apenas uma porta está ativa, você obtém
+          resultados inesperados.
+      
+      
+        View Port Y Coordinate
+        Esta é a posição em Y da porta de visualização dentro da janela do jogo. Note que isso só é realmente necessário quando mais de uma porta de visualização está ativa - por exemplo, para criar um efeito de tela dividida - e se usada quando apenas uma porta está ativa, você obtém
+          resultados inesperados.
+      
+      
+        View Port Width
+        Esta é a largura (em pixels) da porta de visualização. A largura da porta de visão (ou portas de visão combinada se mais de uma estiver ativa) define a largura da janela do jogo ou da tela de fundo no início do jogo, mudando este valor após a
+          o jogo começou não terá efeito visível no tamanho da janela do jogo, a menos que seja chamado junto com a função GML window_set_size().
+          Observe também que se você tiver uma porta maior ou menor do que aquela atribuída à câmera, então a vista da câmera será escalada para baixo - ou para cima - para caber.
+      
+      
+        View Port Height
+        Esta é a altura (em pixels) da porta de visualização. A altura da porta de visualização (ou das portas de visualização combinada se mais de uma estiver ativa) define a altura da janela do jogo ou da tela de fundo no início do jogo, mudando este valor após
+          o jogo começou não terá efeito visível no tamanho da janela do jogo, a menos que seja chamado junto com a função GML window_set_size().
+          Observe também que se você tiver um tamanho de porta maior ou menor do que aquele atribuído à vista da câmera, então a vista da câmera será escalada para baixo - ou para cima - para caber.
+      
+      
+        View Port Surface ID
+        Com esta variável você pode definir o conteúdo de uma determinada porta de visão para desenhar em uma superfície, sendo que o valor que você fornece é o da superfície a ser utilizada para desenhar a porta de visão. Para maiores informações, por favor, veja aqui.
+      
+    
+  
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+   
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Variável
+        A variável construída em vista para definir
+      
+      
+        Ver
+        A vista porto a alvo (de 0 a 7)
+      
+      
+        Valor
+        O novo valor para a variável embutida
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima verificará se há uma tecla pressionada e, se for detectada, a tecla
+    tornar a porta de visualização [0] visível, caso contrário, ela a tornará invisível.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações da câmera
+        A seguir: Obter a variável View
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,45 @@
+
+  
+  load_csv
+  Esta função irá carregar um arquivo em formato CSV e convertê-lo em uma grade DS, retornando o valor de identificação único para a grade criada.
+   
+  Sintaxe:
+  load_csv(filename)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome do arquivo
+        O nome do arquivo a abrir (como um fio)
+      
+    
+  
+   
+  Devoluções:
+  DS Grid Index (real)
+   
+  Exemplo:
+  file_grid = load_csv("spreadsheet.csv"); var ww = ds_grid_width(file_grid); var hh = ds_grid_height(file_grid); var xx = 32; var yy = 32; for (var i = 0; i < ww; i++;) {
+     for (var j = 0; j < hh; j++;) {
+     draw_text(xx, yy, string(file_grid[# i, j])); yy += 32; }
+     yy = 32; xx += 32; }
+  
+  O código acima abrirá o arquivo CSV dado e armazenará a grade DS retornada na variável "file_grid". Esta grade é então comparada em um par de lops e o conteúdo é desenhado para a tela.
+   
+   
+   
+  
+    
+      
+        Voltar: Codificação de arquivos
+        Próximo: json_encode
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

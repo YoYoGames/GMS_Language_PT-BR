@@ -1,0 +1,48 @@
+
+
+
+
+  
+  teclado_check_released
+  Com esta função você pode verificar se uma chave foi liberada ou não. Ao contrário da função teclado_check() esta função só funcionará uma vez para cada vez que a chave for levantada, de modo que ela possa ser acionada novamente,
+    a chave deve ser primeiramente pressionada e depois liberada novamente. A função terá um valor de código de chave como retornado pela função ord() (somente letras maiúsculas de A-Z ou números de 0-9), ou qualquer um dos
+    constantes vk_* listadas na página principal de Entrada do Teclado.
+   
+  Sintaxe:
+  keyboard_check_released(key);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        chave
+        A chave para verificar o estado de liberação.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if keyboard_check_released(ord("P")) {
+     instance_create_layer(0, 0, "Controllers", obj_Pause); }
+  
+  O código acima verificará se a chave "P" foi liberada e, em caso afirmativo, criará uma instância de "obj_Pause".
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada de Teclado
+        Próximo: teclado_check_direct
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

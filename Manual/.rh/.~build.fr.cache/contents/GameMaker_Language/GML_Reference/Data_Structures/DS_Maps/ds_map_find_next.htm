@@ -1,0 +1,49 @@
+
+  
+  ds_map_find_next
+  Esta função retorna a próxima chave armazenada no mapa DS após a chave especificada na função. Isto pode ser útil se você tiver que iterar através do mapa DS procurando por algo, mas deve ser evitado se possível, pois pode ser lento. Se tal não for possível, a função
+    existe, então a função retornará indefinida. Você deve sempre verificar isto usando a is_undefined() função.
+   
+  Sintaxe:
+  ds_map_find_next(id, key);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação do mapa a ser utilizado.
+      
+      
+        chave
+        A chave para encontrar o próximo para.
+      
+    
+  
+   
+  Devoluções:
+  Real, de corda ou indefinido
+   
+  Exemplo:
+  var size = ds_map_size(inventory); var key = ds_map_find_first(inventory); for (var i = 0; i < size; i++;) {
+     if (chave != "ouro") { chave = ds_map_find_next(inventário, chave); }  ou break; }
+  
+  O código acima cria algumas variáveis temporárias e depois obtém o tamanho do mapa DS e encontra a primeira chave como armazenada pelo computador no mapa. Ele então usa um laço para iterar através do mapa DS procurando o valor da chave "ouro". Se
+    encontra-o, ele rompe o laço.
+   
+   
+   
+  
+    
+      
+        Voltar: DS Maps
+        Próximo: ds_map_find_previous
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

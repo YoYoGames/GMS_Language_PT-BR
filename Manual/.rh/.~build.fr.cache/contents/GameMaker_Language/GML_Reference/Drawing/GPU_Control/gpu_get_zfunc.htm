@@ -1,0 +1,42 @@
+
+  
+  gpu_get_zfunc
+  Esta função pode ser usada para recuperar o modo de comparação z. O valor retornado será uma das seguintes constantes (o valor padrão é cmpfunc_lessequal):
+  
+    cmpfunc_never
+    cmpfunc_less
+    cmpfunc_equal
+    cmpfunc_lessequal
+    cmpfunc_greater
+    cmpfunc_notequal
+    cmpfunc_greaterequal
+    cmpfunc_always
+  
+   
+  Sintaxe:
+  gpu_get_zfunc();
+   
+  Devoluções:
+  Constante (ver tabela acima)
+   
+  Exemplo:
+  if gpu_get_zfunc() != cmpfunc_greater {
+     gpu_set_zfunc(cmpfunc_greater);
+     }
+  
+  O código acima verifica se o método de teste z está configurado para cmpfunc_greater e se não estiver, então está configurado para aquela constante.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle de GPU
+        Próximo: gpu_get_zwriteenable
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

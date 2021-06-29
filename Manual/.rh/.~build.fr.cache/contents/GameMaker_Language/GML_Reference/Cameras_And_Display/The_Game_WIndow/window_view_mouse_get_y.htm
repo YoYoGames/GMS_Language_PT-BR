@@ -1,0 +1,46 @@
+
+  
+  window_view_mouse_get_y
+  Esta função retornará a posição do mouse em relação à vista selecionada.
+  NOTA: Para funções regulares do mouse, veja a seção sobre Entrada do Rato
+   
+  Sintaxe:
+  window_view_mouse_get_y( id );
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        O id da vista para comparar a posição do mouse com.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  if mouse_check_button_pressed(mb_left) {
+     var xx, yy; xx = window_view_mouse_get_x(0); yy = window_view_mouse_get_y(0); if xx > 0 && xx < 32 && yy > 0 && yy < 32 {
+     b_press[0] = true; }
+     }
+  
+  O código acima verificará se um botão do mouse está sendo pressionado, e se estiver, então obtém a posição do mouse em relação à vista[0] e a compara para ver se uma variável deve ser definida como verdadeira.
+   
+   
+   
+  
+    
+      
+        Voltar: A Janela de Jogo
+        Próximo: window_views_mouse_get_x
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

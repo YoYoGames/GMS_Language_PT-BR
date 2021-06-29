@@ -1,0 +1,43 @@
+
+  
+  método_get_self
+  Com esta função você pode recuperar a identificação da instância ou referência estrutural que é o auto contexto usado quando o método é chamado. Se a variável não for um método, então a função
+    retornará indefinido. Observe que a função também pode retornar a constante pointer_null, caso em que o self atual está sendo usado no momento da chamada.
+   
+  Sintaxe:
+  method_get_self(method);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        método
+        O método variável a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Inteiro, indefinido, ponteiro_nulo
+   
+  Exemplo:
+  var _self = method_get_self(light_properties); show_debug_message(string(_self));
+  
+  O código acima obtém o contexto próprio para a variável do método dado e o envia para o console.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções variáveis
+        Próximo: método_get_index
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

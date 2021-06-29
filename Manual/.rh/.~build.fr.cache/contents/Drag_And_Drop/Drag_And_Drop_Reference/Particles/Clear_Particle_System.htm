@@ -1,0 +1,43 @@
+
+  
+   Sistema de Partículas Claras
+  Com esta ação você pode limpar o sistema de partículas em questão para o seu estado padrão, removendo todos os emissores (também não há necessidade de chamar a ação Emissora de Partículas Destruidoras, já que esta é cuidada automaticamente).
+    e limpando todas as partículas da tela. Você fornece o valor de identificação único para o sistema limpar, como retornado quando você criou o sistema com a ação Criar Sistema de Partículas. Deve-se tomar cuidado ao usar o
+    esta ação, já que destrói todos os emissores associados ao sistema de partículas - isto significa que qualquer instância na sala que utiliza um emissor pode dar um erro, já que esse emissor não existe mais, então certifique-se de que a ação só é chamada quando
+    você não vai criar nenhuma nova partícula daquele emissor (para mais informações sobre emissores de partículas veja Criar Emissor de Partículas).
+  OBSERVAÇÃO: Esta ação só limpará as partículas visíveis na sala, mas não limpa as propriedades das partículas nem as remove da memória. Para isso você deve usar a ação Destruir Tipo de Partícula.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Sistema
+        O valor de identificação único para o sistema a ser destruído
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima limpará todas as partículas da tela
+    se o jogador tiver 0 ou menos vidas e depois reiniciar a sala.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações com Partículas
+        A seguir: Sistema de Partículas de Pausa
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

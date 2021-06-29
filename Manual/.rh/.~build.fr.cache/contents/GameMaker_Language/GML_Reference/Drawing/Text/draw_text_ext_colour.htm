@@ -1,0 +1,81 @@
+
+  
+  draw_text_ext_colour
+  Esta função é uma combinação da base draw_text() função com o texto_desenho_texto() e draw_text_colour()    permitindo definir cores gradientes para o texto, assim como o espaçamento entre linhas e a largura máxima por linha, tudo junto.
+  NOTA: A mistura gradual não está disponível para o alvo HTML5 a menos que a WebGL esteja habilitada, embora você ainda possa definir as cores da mistura e ela irá misturar a fonte com a primeira cor dada. No entanto, toda mistura desta forma cria uma duplicata
+    A fonte que é então armazenada no cache e usada quando necessário, que está longe de ser a ideal e se você usar mudanças múltiplas de cor irá diminuir o desempenho de seus jogos. Você pode definir o tamanho do cache da fonte para tentar limitá-lo, caso seja necessário.
+    usando a função font_set_cache_size().
+   
+  Sintaxe:
+  draw_text_ext_colour(x, y, string, sep, w, c1, c2, c3, c4, alfa);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A coordenada x do fio desenhado.
+      
+      
+        y
+        A coordenada y da corda desenhada.
+      
+      
+        corda
+        O fio para desenhar.
+      
+      
+        sep
+        A distância em pixels entre linhas de texto.
+      
+      
+        w
+        A largura máxima em pixels do fio antes de uma quebra de linha.
+      
+      
+        c1
+        A cor para a parte superior esquerda do texto desenhado.
+      
+      
+        c2
+        A cor para a parte superior direita do texto desenhado.
+      
+      
+        c3
+        A cor para a parte inferior direita do texto desenhado.
+      
+      
+        c4
+        A cor para a parte inferior esquerda do texto desenhado.
+      
+      
+        alfa
+        O alfa para o texto.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_text_ext_colour(200, 200, keyboard_string, 5, 300, c_blue, c_blue, c_navy, c_navy, 1);
+  O código acima desenhará qualquer texto que o usuário digitar no teclado, dividindo-o em novas linhas toda vez que o comprimento da linha exceder 300 pixels. o código também manterá uma separação de 5 pixels entre linhas caso isso ocorra.
+    Cada linha do texto será colorida usando um gradiente azul, com azul claro na parte superior e azul escuro na parte inferior.
+   
+   
+   
+  
+    
+      
+        Voltar: Texto
+        A seguir: draw_text_ext_transformed
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

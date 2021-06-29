@@ -1,0 +1,41 @@
+
+  
+  persistente
+  Esta variável pode ser lida para descobrir se a instância é marcada como persistente ou não, ou pode ser usada para definir persistência como verdadeira (persistente) ou falsa (não persistente) para a instância. Uma instância persistente é aquela que irá
+    ser "transportado" de sala em sala, o que significa (por exemplo) que ele só tem que ser criado uma vez no início do jogo e estará presente em todas as outras salas. Deve-se tomar cuidado com persistência, pois é fácil perder a noção de persistente
+    instâncias que podem levar a problemas mais tarde no desenvolvimento do jogo.
+  Quando você cria uma instância com persistência habilitada em uma sala, esta variável será definida como verdadeira e lhe será atribuída uma camada ou uma profundidade (dependendo da função que você usou para criar a instância do objeto). Quando a sala é trocada,
+    e se a seguinte sala não tiver uma camada com o mesmo nome ou profundidade que a designada, então uma nova camada será criada para a instância que está persistindo nas salas. Se você der uma camada nomeada quando a instância foi criada,
+    então a nova camada também será nomeada da mesma forma que a camada original, enquanto se você atribuir uma profundidade à instância, então a nova camada será nomeada " _layer_XXX", onde "XXX" é um valor hexadecimal usado para dar à camada um valor único
+    nome. Estas camadas serão removidas da sala no Room End. Outra coisa a se notar sobre camadas e instâncias persistentes é que se você tiver atribuído à instância uma camada nomeada na criação, e há outra camada nas seguintes salas com o
+    mesmo nome, então a instância persistente será atribuída à camada com o mesmo nome, independentemente da profundidade da camada. Finalmente, se uma instância persistente se mover para uma sala com uma camada na mesma profundidade em que a instância foi criada, ela
+   não será atribuído a esta camada, mas em vez disso será criada uma nova camada com a mesma profundidade (seguindo a convenção de nomenclatura explicada anteriormente).
+  Um objeto persistente ainda terá seus eventos Início do jogo, Fim do jogo, Início da sala e Fim da sala acionados, porém se você reiniciar o jogo (com, por exemplo, a função game_restart() ) todos os objetos persistentes
+    ser removido e só existir quando criado novamente pelo jogo. Observe também que se você desativar um objeto persistente, ele não passará mais de uma sala para outra, a menos que seja reativado antes que o evento Room End seja acionado.
+   
+  Sintaxe:
+  persistente;
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se !persistente {
+     persistente = verdadeiro; }
+  
+  O código acima verificará a instância para ver se a persistência é sinalizada como falsa e se a instância NÃO é persistente, a bandeira de persistência é colocada como verdadeira.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis de instância
+        Próximo: profundidade
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

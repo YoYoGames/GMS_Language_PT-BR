@@ -1,0 +1,99 @@
+
+  
+  physics_particle_set_flags
+  Com esta função você pode mudar as bandeiras de partículas para uma partícula individual. O valor do índice é o ID da partícula conforme retornado pela função physics_particle_create()enquanto as bandeiras são
+    o valor de retorno de uma combinação das seguintes constantes:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        phy_particle_flag_water
+        As propriedades padrão para uma partícula macia do corpo.
+      
+      
+        phy_particle_flag_zombie
+        Uma partícula de zumbi é aquela que será destruída em um único passo, com todas as outras marcadas desta forma.
+      
+      
+        phy_particle_flag_wall
+        Isto define a partícula como estática, essencialmente criando-a como um objeto imóvel na simulação física, pois eles permanecerão em uma posição fixa, não importa o que colida com eles. Você deve usar esta bandeira em vez de definir a densidade
+          a 0.
+      
+      
+        filigrana_flag_spring
+        As partículas de molas produzem o efeito de estarem presas umas às outras, como se fossem por uma mola. As partículas criadas com esta bandeira são "conectadas" em pares, sendo cada partícula conectada à que estava mais próxima uma da outra no momento da criação.
+          Uma vez emparelhadas, as partículas não mudam de "parceiros", e quanto mais longe uma força externa as puxa uma da outra, maior será a potência com que colidirão quando essa força externa for removida. Note que não importa a distância em que as partículas se emparelham.
+          partículas se afastam umas das outras, a conexão entre elas não se romperá.
+      
+      
+        phy_particle_flag_elastic
+        As partículas elásticas deformam-se e podem também saltar quando colidem com outros corpos rígidos na simulação da física.
+      
+      
+        phy_particle_flag_viscous
+        Uma partícula viscosa é aquela que exibe "aderência" ou "pegajosidade", como o óleo. As partículas viscosas se aglomerarão e se colarão mais.
+      
+      
+        phy_particle_flag_powder
+        As partículas de pó produzem um efeito de dispersão, como você pode ver com areia ou pó.
+      
+      
+        phy_particle_flag_tensile
+        As partículas de tração são usadas para produzir o efeito da tensão superficial, ou a curvatura esticada na superfície de um corpo de líquido. Elas podem ser usadas, por exemplo, para criar a tensão superficial que você veria em uma gota d'água. Uma vez que a tensão é
+          quebradas, as partículas saltam como se fossem elásticas, mas também continuam a se atrair umas às outras. Como resultado, as partículas tendem a formar aglomerados à medida que ressaltam.
+      
+      
+        phy_particle_flag_colourmixing
+        As partículas de mistura de cores assumem parte da cor de outras partículas com as quais colidem. Observe que se apenas uma das duas partículas que colidem for uma cor-mixagem, a outra partícula retém sua cor de pré-colisão.
+      
+    
+  
+   
+  Estas bandeiras usam a bit-masking para criar um valor de saída final que é então verificado para definir as diferentes propriedades básicas da partícula (sendo a propriedade base sempre a da phy_particle_flag_water). Por exemplo, se você quiser simular
+    um líquido viscoso com tensão superficial, você usaria o bitwise ou "|" para mascarar os bits apropriados, como mostrado no exemplo abaixo. Desta forma, você pode definir
+    propriedades diferentes (além das propriedades globais) para cada partícula individual criada, se você desejar.
+   
+  Sintaxe:
+  physics_particle_set_flags(index, flags)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice da partícula.
+      
+      
+        bandeiras
+        As bandeiras a serem colocadas sobre a partícula.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile; physics_particle_set_flags(p, flags);
+  O código acima criará uma variável para armazenar o valor das bandeiras e depois a utilizará para definir as bandeiras em uma partícula previamente criada com o índice armazenado na variável "p".
+   
+   
+   
+  
+    
+      
+        Voltar: Partículas macias do corpo
+        A seguir: bandeiras_de_categoria_de_artigos_físicos
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

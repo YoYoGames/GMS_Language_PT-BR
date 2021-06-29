@@ -1,0 +1,46 @@
+
+  
+  os_powersave_enable
+  Com esta função, você pode ligar ou desligar as características de economia de energia do dispositivo. Isto é importante, pois certos jogos (por exemplo, aqueles que utilizam as funções de inclinação) podem não gerar eventos que o sistema operacional possa interpretar como sendo de entrada do usuário e, portanto, desligar-se.
+    a tela ou sair do jogo. Ao definir esta função como falsa, você pode desativar os recursos de economia de energia e garantir que a tela (e o jogo) estejam sempre funcionando.
+  NOTA: Isto é limitado aos alvos iOS e Android.
+   
+  Sintaxe:
+  os_powersave_enable(flag)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        bandeira
+        Ajustar para verdadeiro ou falso para ativar ou desativar as funções de powersave.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if (os_type == os_android) ||| (os_type == os_ios) {
+     os_powersave_enable(false);
+     }
+  
+  O código acima verifica o tipo de sistema operacional e se é um Android ou um iOS, então os recursos de economia de energia são desativados.
+   
+   
+   
+  
+    
+      
+        Voltar: OS E Compilador
+        Próximo: os_lock_orientation
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

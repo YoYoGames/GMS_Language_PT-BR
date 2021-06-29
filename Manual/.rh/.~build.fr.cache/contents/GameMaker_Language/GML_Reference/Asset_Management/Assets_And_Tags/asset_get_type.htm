@@ -1,0 +1,110 @@
+
+  
+  asset_get_type
+  Com esta função, você pode obter o tipo de bem que está sendo referenciado a partir de seu nome (uma cadeia). Uma das constantes listadas abaixo será devolvida.
+   
+  Sintaxe:
+    
+  
+  asset_get_type(nome);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome
+        O nome do ativo do jogo para obter o tipo de (uma corda).
+      
+    
+  
+   
+  Devoluções:
+  Constante
+  
+    
+      
+        
+          Constante
+          Descrição
+        
+        
+          asset_object
+          O nome dado refere-se a um objeto.
+        
+        
+          asset_sprite
+          O nome dado refere-se a um duende.
+        
+        
+          asset_sound
+          O nome dado refere-se a um som.
+        
+        
+          asset_room
+          O nome dado refere-se a uma sala.
+        
+        
+          asset_tiles
+          O nome dado refere-se a um conjunto de azulejos.
+        
+        
+          asset_path
+          O nome dado refere-se a um caminho.
+        
+        
+          asset_script
+          O nome dado refere-se a um roteiro.
+        
+        
+          asset_font
+          O nome dado refere-se a uma fonte.
+        
+        
+          asset_timeline
+          O nome dado refere-se a uma linha de tempo.
+        
+        
+          asset_shader
+          O nome dado refere-se a um shader.
+        
+        
+          asset_animationcurve
+          O nome dado refere-se a uma Curva de Animação.
+        
+        
+          asset_sequence
+          O nome dado refere-se a uma sequência.
+        
+        
+          asset_unknown
+          O nome dado refere-se a um ativo que ou não existe, ou não é um dos listados acima.
+        
+      
+    
+  
+   
+  Exemplo:
+  if asset_get_type("pth_Path_" + string(global.Game)) == asset_unknown {
+     show_debug_message("O caminho não existe!!!"); }
+     mais
+     {
+     path_index = asset_get_index("pth_Path_" + string(global.Game)); }
+  
+  O código acima verifica um nome de ativo criado dinamicamente para ver se o ativo é do tipo correto. Se não for, então será mostrada uma mensagem de depuração, caso contrário o nome do ativo é usado para atribuir o ativo à instância.
+   
+   
+   
+  
+    
+      
+        Voltar: Ativos e Etiquetas
+        Próximo: tag_get_asset_ids
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

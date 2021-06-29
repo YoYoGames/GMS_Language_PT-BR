@@ -1,0 +1,45 @@
+
+  
+  Conflitos
+  Nesta seção vamos analisar a resolução de conflitos entre um repositório local clonado e um repositório principal. Assumindo que agora você esteja usando um repositório local, precisaremos editar um arquivo e então causar
+    algum tipo de conflito, então abra o roteiro de teste que temos usado e mude a mensagem "Olá Mundo" para algo como isto:
+  show_debug_message("Hello World, How Are You?");
+  Agora você deve salvar o projeto e comprometê-lo com o repositório local. Agora, como estamos ligados a um repositório mestre remoto (mesmo que seja um que tenhamos clonado no mesmo disco), precisamos fazer um Push para que as mudanças sejam feitas no master. Para isso, vá
+    para Controle de Fonte > Push Changes, o que nos dará uma atualização de status na guia Source Control Output:
+  Agora precisamos abrir nosso projeto original (não o clonado), então navegue até onde você o salvou em disco - ou simplesmente verifique os Projetos Recentes no menu File, como deve ser diretamente abaixo do atual - e carregue-o no GameMaker Studio 2. Uma maneira fácil de verificar se você tem o projeto certo é simplesmente verificar o script que você tem
+    e se a mensagem for "Olá Mundo", então você tem a mensagem certa, ou você pode abrir a janela Ver Histórico e verificar dessa forma.
+  Agora você precisa editar o roteiro novamente, então faça-o ler algo como isto:
+  show_debug_message("Isto causará um conflito");
+  Isto pode ser salvo em disco, e as mudanças comprometidas, mas se você tentar empurrar estas mudanças, você receberá a seguinte mensagem:
+  Alguém já fez mudanças que você ainda não fez! Isto significa que você precisa fazer um esforço
+    no repositório e veja qual é exatamente o problema, então vá para Controle de Fonte > Puxar Mudanças. Isto mostrará duas janelas, a primeira é um aviso sobre arquivos alterados (como em ações anteriores, você quer escolher
+   Recarregue aqui e não Salve), e a outra é a janela de Conflitos :
+  Esta janela mostrará os arquivos em conflito em uma lista à esquerda, e você pode selecionar os arquivos dessa lista usando o mouse esquerdo
+     (ou selecione vários arquivos usando  /  ou  junto com ). Você tem quatro opções para lidar com os arquivos em conflito, disponíveis a partir dos botões à direita:
+  
+    Use o deles - Isto irá sobregravar as mudanças que você fez com o do repositório remoto.
+    Use Mine - Isto irá anular as mudanças do repositório remoto com as que você acabou de fazer.
+    Fusão - Isto tentará abrir uma Ferramenta de Fusão Externa para lidar com o conflito.
+    Escolha a Ferramenta de Integração - Isto lhe permitirá configurar a Ferramenta de Integração (veja a seção sobre Ferramentas de Integração/Diff Externas para mais detalhes).
+  
+  Agora, você pode usar os botões para resolver o conflito, mas antes disso, vamos apenas abrir o arquivo em conflito para ver exatamente qual é a questão. Se você abrir o script que está em conflito, ele agora será parecido com este:
+  Isto mostra que "This Will Cause A Conflict" está na HEAD (isto é o que temos empurrado para o repositório local) e que
+    "Hello World, How Are You?" está sendo puxado do master, o repositório remoto. Você pode voltar para a janela Conflitos agora e clicar em Usar o deles para puxar o arquivo alterado e sobrescrever o arquivo HEAD atual. O script
+    será agora sinalizado como alterado e você deve fazer um novo compromisso e empurrar antes de continuar.
+  Note que poderíamos realmente corrigir isso na IDE GameMaker Studio 2. Se removermos as linhas 1, 2, 3 e 5 para que fiquemos apenas com show_debug_message("Hello World, How Are You?") e o salvarmos, isso eliminará o conflito,
+    como Git assumirá que você sabe o que está fazendo com seu próprio arquivo. No entanto, isto é passível de erro, por isso é recomendável instalar uma ferramenta de fusão, depois configurar e usar essa ferramenta em vez de tentar fundir manualmente.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle da fonte
+        A seguir: Ferramentas externas de fusão/difusão
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

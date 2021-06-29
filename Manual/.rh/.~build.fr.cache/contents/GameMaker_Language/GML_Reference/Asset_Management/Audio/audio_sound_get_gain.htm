@@ -1,0 +1,46 @@
+
+  
+  audio_sound_get_gain
+  Esta função devolverá o valor de ganho atual para o som dado. O som pode ser um referenciado a partir de um índice para um som individual que está sendo reproduzido e que foi armazenado em uma variável quando se utiliza o audio_play_sound() ou
+    audio_play_sound_at() ou um ativo real do Navegador de Ativos. O ganho é normalmente calculado como um valor de 0 a 1, mas em algumas plataformas você pode ter um ganho maior que 1, embora um valor de 1 seja considerado
+      "volume completo" e qualquer coisa maior pode introduzir clipagem de áudio.
+   
+  Sintaxe:
+  audio_sound_get_gain(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do som para obter o ganho de.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  if audio_sound_get_gain(snd_Music) != 1 {
+     audio_sound_gain(snd_Music, 1, 0); }
+  
+  O código acima mudará o ganho do áudio reproduzido a partir do som indexado como "snd_Music", se seu ganho não for igual a 1.
+   
+   
+   
+  
+    
+      
+        Voltar: Áudio
+        Próximo: audio_master_gain
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

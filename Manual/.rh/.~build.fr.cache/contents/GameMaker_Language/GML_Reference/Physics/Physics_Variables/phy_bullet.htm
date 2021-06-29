@@ -1,0 +1,32 @@
+
+  
+  phy_bullet
+  Esta variável define se a instância é ou não extremamente rápida (por exemplo, uma bala). O valor padrão é falso, mas se definido como verdadeiro, isto diz ao GameMaker Studio 2 que a instância estará se movendo a velocidades tão altas.
+    que exigirá uma detecção de colisão mais cara para garantir que não passe por outras instâncias sem ser detectada
+   
+  Sintaxe:
+  phy_bullet;
+   
+  Devoluções:
+  Booleano (ou indefinido se a instância não estiver habilitada para física)
+   
+  Exemplo:
+  com (instance_create_layer(x, y, "Bullets", obj_Shoot)) {
+     phy_bullet = true; physics_apply_local_impulse(0, 10, 0, 200); }
+  
+  O código acima cria uma nova instância e depois a define como sendo uma "bala" no mundo da física antes de dar-lhe um impulso maciço ao longo do eixo y.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis Físicas
+        Próximo: phy_speed
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,124 @@
+
+  
+  O editor de fontes
+  
+  Quando você deseja desenhar um texto em seu jogo, este texto é desenhado em uma fonte padrão Arial 12 pontos, mas para fazer textos mais interessantes ou de aparência única, você provavelmente vai querer usar fontes diferentes.
+    Portanto, para usar diferentes fontes que você tem em seu computador, você deve criar um recurso de fonte no GameMaker Studio 2. Isto é feito clicando com o botão direito do mouse em  no Navegador de Recursos e selecionando "Criar" -> "Fonte". Para cada tipo de fonte que você criar, especifique um tipo particular de fonte de seu computador, que pode
+    depois ser usado em seu jogo usando a ação ou código para definir uma fonte para desenho.
+  Quando você criar um recurso de fonte pela primeira vez, a janela do editor de fontes será aberta com as seguintes opções:
+  Detalhes
+  
+    Aqui você pode dar a sua fonte um nome único (somente caracteres alfanuméricos e o símbolo "_" abaixo da barra), assim como escolher a fonte a ser usada. A fonte deve ser instalada em sua máquina e, devido a problemas de licenciamento, o GameMaker Studio 2 não
+      armazenar os arquivos da fonte real com o arquivo do projeto por padrão, mas a fonte é renderizada a uma página de textura como uma série
+      de glifos bitmap. A página de textura será atribuída a um grupo de textura, que você pode escolher a partir da opção Grupo também aqui.
+    Se você quiser distribuir o arquivo da fonte real ( *.ttf ou *.otf somente) junto com o projeto ao fazer um ativo Marketplace ou por qualquer outro motivo, você pode verificar a opção Copiar para Projeto. Isto
+      abrirá o explorador de arquivos onde você poderá selecionar o arquivo de fonte e ele será então adicionado aos arquivos agrupados com o projeto.
+    IMPORTANTE! Você só deve usar fontes que você está legalmente autorizado e licenciado para redistribuir ou usar em seu projeto.
+     
+  
+  Predefinições
+  
+    Nesta seção você pode definir o tamanho (em pontos - o padrão é 12pt) e se a fonte deve ser desenhada em negrito ou itálico ou se deve ser aplicado anti-aliasing. A janela de visualização à direita
+      lhe mostrará o texto aproximadamente como ele aparecerá em seu jogo com o tamanho e as transformações que você especificou.
+    
+    
+  
+  Controles de alcance
+  
+    Ao criar um recurso de fonte, é raro que você queira incluir cada glifo para a fonte. É por isso que o GameMaker Studio 2 usa por padrão apenas os caracteres de 32 a 127 da fonte escolhida, pois isso nos dá os números e
+      as letras pequenas e maiúsculas juntamente com certos sinais de pontuação. Você pode, entretanto, alterar a faixa de caracteres utilizada para ajudar a otimizar seus jogos, ou seja: se você precisar apenas dos números de uma fonte específica, então selecione apenas os números. Para fazer
+      isto, você deve primeiro clicar no botão Apagar para limpar a faixa atual (você pode precisar selecionar a faixa para que isto funcione, clicando em  sobre isto na
+      janela de pré-visualização) e depois clique no botão Adicionar para adicionar uma nova faixa. Isto abrirá a seguinte janela encadeada:
+    
+    Esta janela tem alguns botões para ajudá-lo a estabelecer uma faixa padrão para sua fonte:
+       - A faixa Normal de 32 a 127
+       - A faixa ASCII de 0 a 255
+       - A faixa de Dígitos que contém apenas os 10 dígitos
+       - A faixa de Letras que contém apenas todas as letras maiúsculas e minúsculas
+    
+    Outros intervalos podem ser usados digitando o primeiro e o último índice de caracteres do intervalo que você deseja definir nas caixas de entrada do intervalo de caracteres (se um caractere não estiver no intervalo, ele é substituído por um espaço). Além destes botões e caixas de entrada,
+      você também tem duas outras opções que são especialmente úteis:
+    
+    
+      Do Código: se você clicar neste botão e depois clicar OK, o GameMaker Studio 2 analisará automaticamente seu código de jogo para cordas e depois criará diferentes intervalos de caracteres para cobrir todo o texto em seu jogo. Observe que ele procura por
+        todas as cordas (seja dentro de "" ou ''') e assim também pode incluir nomes de arquivos nas faixas de caracteres.
+      
+      De arquivo: isto funciona de forma similar à opção "de código" explicada acima. Se você clicar nele, você será solicitado a fornecer um arquivo, e então uma vez que isso for feito, você deverá clicar em OK. O GameMaker Studio 2 irá então analisar o
+        e criar intervalos de caracteres para o texto encontrado dentro dele.
+    
+    Observe que você pode editar manualmente o intervalo de texto adicionando ou excluindo glifos de texto diretamente na janela de visualização.
+     
+  
+  Controles de textura
+  
+    Como mencionado acima (na seção de Detalhes da Fonte) por padrão, todos os glifos da fonte serão renderizados em uma página de textura como parte de um grupo de textura para convertê-los em gráficos.
+      e quando o jogo for compilado, a fonte será adicionada a uma textura temporária para criar uma única imagem com todos os glifos de fonte necessários e então esta será adicionada ao grupo principal de textura para exportação. Os botões aqui são para afinar
+      como a textura da fonte é gerada ou para regenerar uma nova textura da fonte.
+    O botão Opções abrirá as opções avançadas de textura da fonte:
+    Estas opções podem, às vezes radicalmente, alterar a forma como uma fonte será exibida no jogo, e nem todas as fontes exigirão as mesmas configurações.
+      As opções a seguir são projetadas para dar a você a maior personalização possível para sua fonte:
+    
+      Sugestão: A dica de fonte (também conhecida como instrução) é o uso de instruções matemáticas para ajustar a exibição de uma fonte outline para que ela se alinhe com uma grade rasterizada. Em resoluções baixas de tela, a insinuação é fundamental para produzir
+        texto claro e legível, e aqui você pode selecionar entre diferentes algoritmos de insinuação para obter o melhor resultado possível. O padrão é "normal".
+      Opções Glyph: Estas opções podem ser usadas para mudar a forma como os glifos são carregados, habilitando/desabilitando diferentes operações. Estas são:
+        
+          Desativar a indicação: Isto desabilitará as fontes nativas de insinuação e o auto-hinteresse.
+          Desativar a auto-interpretação: Isto desabilitará a auto-interpretação e, em vez disso, usará as fontes nativas (se tiver uma). Note que isto substitui a opção "Preferir hinteria automática".
+          Preferir a auto-interpretação: Isto dirá ao GameMaker Studio 2 para preferir usar a auto-interpretação em vez de qualquer fonte nativa que a fonte possa ter. Note que isto é substituído pelas opções "Desativar Auto-interpretação" e "Desativar Dica".
+            opções.
+          
+          Empenos: Isto permitirá um ligeiro empenamento dos glifos para melhorar o alinhamento da grade. Note que isto requer o auto-hinter e um modo de insinuação "Normal".
+          Sem Escala: Quando esta opção for marcada, ela manterá os glifos em unidades de fonte e ignorará o tamanho solicitado. Isto implica em desabilitar a dica.
+          
+        
+        O estado padrão para todas as opções acima é desativado.
+      Interprete: Aqui você pode selecionar a versão TrueType que o GameMaker Studio 2 deve usar para a renderização das fontes. O padrão é TrueType v40.
+      Arredondamento: Esta opção é para definir o método de arredondamento ao converter de um ponto fixo decimal para um número inteiro. O padrão é "piso".
+    
+    O botão Regenerar pode ser usado para regenerar a textura da fonte. Isto é necessário se você quiser atualizar qualquer mudança que tenha feito em uma fonte existente, ou se você criou uma nova fonte e quiser ver como ela fica na visualização prévia.
+      Janela. Observe que você também pode regenerar fontes a partir do botão direito do menu  para a fonte (ou fontes) no Navegador de Ativos.
+    
+    É importante notar que quando você cria uma nova fonte pela primeira vez, se você não regenerar a textura no editor,
+      então a textura será criada na primeira vez que você correr ou testar seu jogo, mas essa é a única vez que será gerada automaticamente. Isto significa que uma vez que uma fonte tenha uma textura gerada, quaisquer mudanças feitas no recurso de fonte exigirão
+      que a fonte é regenerada para que as mudanças sejam visíveis no jogo, caso contrário, a textura da fonte "antiga" ainda será usada.
+    OGameMaker Studio 2 irá renderizar a textura da fonte gerada como um arquivo PNG junto com o resto dos arquivos do projeto, e se você carregar o projeto e a fonte base não for encontrada, então o jogo ainda exibirá o texto corretamente
+      utilizando a textura armazenada. Uma fonte ausente significará, entretanto, que você não poderá mais alterar nenhuma de suas propriedades, a não ser seu nome, família de fontes e grupo de textura (do Editor do Grupo de Textura).
+    
+    
+  
+  Modo de pré-visualização
+  
+    Nesta seção você pode escolher que a Janela de Visão Antecipada mostre ou algum texto de amostra da fonte selecionada, ou a imagem de textura renderizada que foi gerada para a fonte.
+     
+  
+  Pré-visualização
+  
+    O
+     Preview Window é onde você pode ver uma prévia da fonte, seja como uma amostra de texto, ou como uma textura. Quando a
+      O modo de pré-visualização está definido para
+     Amostra, você pode digitar qualquer texto que queira testar diretamente na janela de visualização para ver como ele fica, enquanto seleciona
+      O Game Preview mostrará a textura da imagem renderizada que foi gerada para a fonte. Se nenhuma imagem estiver presente, então você deve clicar no
+     Regenerar o botão para gerar a textura.
+    Note que a imagem da textura pode ser diferente da amostra, uma vez que a textura
+     não ser regenerada, a não ser que seja explicitamente dito para fazê-lo. Isto significa que, após ter gerado inicialmente uma textura de fonte, as alterações feitas no recurso de fonte não serão transferidas para o jogo, a menos que a textura seja regenerada.
+     
+  
+  Pré-visualização do alcance
+  
+    Aqui serão listadas as diferentes faixas de caracteres que você adicionou para a fonte. Os valores das faixas são mostrados à esquerda e os glifos de faixa que correspondem a esses valores são mostrados à direita.
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Os Editores de Ativos
+        A seguir: Notas
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

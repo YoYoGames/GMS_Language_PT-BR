@@ -1,0 +1,48 @@
+
+  
+  ds_stack_copy
+  Esta função pode ser usada para copiar o conteúdo de uma pilha para outra. Note que isto NÃO remove o conteúdo da pilha original, nem destrói a pilha original. Ao usar esta função, a pilha que está sendo copiada deve ter
+    foi previamente criada e se continha algum item antes da cópia, então estes serão limpos primeiro (significando que esta informação será perdida).
+   
+  Sintaxe:
+  ds_stack_copy(id, fonte);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação do NOVO stack.
+      
+      
+        fonte
+        A pilha ORIGINAL para copiar para a identificação.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  com (instance_create_layer(x, y, "Enemies", obj_Enemy)) {
+     stack = ds_stack_create(); ds_stack_copy(stack, other.stack); }
+  
+  A função acima cria uma nova instância e, nessa instância, cria uma nova pilha de DS e copia o conteúdo da pilha na instância que executa o bloco de código, para a nova pilha de instância criada.
+   
+   
+   
+  
+    
+      
+        Voltar: ds_stack_create
+        Próximo: ds_stack_top
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

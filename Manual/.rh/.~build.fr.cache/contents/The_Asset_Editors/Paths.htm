@@ -1,0 +1,80 @@
+
+  
+  O Editor do Caminho
+  Em algum momento, ao criar seus jogos, você pode precisar de uma de suas instâncias para seguir um caminho através de um nível. Agora, isto pode ser feito em código, simplesmente criando
+    um conjunto de posições dentro da sala e depois ter uma instância que se mova entre elas, mas isso pode ser uma tarefa difícil de ser montada e é difícil de mudar, testar e adaptar para diferentes instâncias. Por este motivo, o GameMaker Studio 2 tem recursos de caminhos e um
+    editor de caminhos dedicados.
+  A idéia básica é bastante simples - você define um caminho desenhando-o no editor de caminhos, então você pode colocar uma ação (ou código) no evento de criação de um objeto para dizer à instância para seguir esse caminho em particular. Você também pode definir a velocidade a ser seguida
+    o caminho e uma série de outras ações relacionadas com a posição e orientação do caminho dentro da sala. Quando você criar um recurso de caminho pela primeira vez, a janela do editor de caminhos será aberta com as seguintes opções:
+   
+  Propriedades do caminho
+  
+    Como em todos os recursos do GameMaker Studio 2 você deve dar um nome único a seu novo caminho, pois é isso que será usado para identificá-lo durante todo o jogo que você está fazendo, e um bom sistema que muitas pessoas usam é para prefixar (ou sufixar) o recurso
+      para fácil reconhecimento em código ou ações (por exemplo: path_Enemy_1 ou PowerUp_path). 
+    Uma vez nomeado o caminho, você pode começar a defini-lo colocando pontos no editor principal à direita, com cada ponto sendo adicionado à lista aqui, juntamente com sua posição e velocidade. O valor da velocidade para os pontos do caminho é definido por uma porcentagem
+      da velocidade em que a instância se move ao longo do caminho (o padrão é 100%). Portanto, se você iniciar uma instância a uma velocidade de 2 (2 pixels por passo) ao longo de um caminho e então um dos pontos do caminho tem um valor de velocidade de 50%, a instância irá reduzir a velocidade
+      à medida que se aproxima desta velocidade, aponta para uma velocidade de 1 (50% da velocidade do caminho). Da mesma forma, você pode ajustar a velocidade para 150% e a instância irá acelerar à medida que chegar ao ponto. Desta forma, você pode criar um movimento dinâmico agradável sem qualquer código.
+      qualquer que seja.
+    
+    Vale a pena notar que você pode clicar duas vezes  rapidamente em qualquer um dos pontos definidos na lista para
+      o ponto selecionado, ou clique duas vezes lentamente  em um dos valores para editá-lo manualmente (x, y, ou velocidade).
+    Você também pode especificar o tipo de conexão para todo o caminho e se o caminho deve ser fechado ou não (um caminho fechado conectará o último ponto do caminho com o primeiro). O tipo de conexão pode ser em linha reta, ou lisa , onde
+      uma conexão em linha reta simplesmente conecta os pontos de um caminho em uma base linear, com mudanças angulares em cada ponto, enquanto uma conexão suave criará um caminho muito mais suave que pode não passar diretamente por nenhum dos pontos, mas sim tomar um
+      linha aproximada, criando curvas agradáveis utilizando uma interpolação suave. Você também pode especificar a precisão para as curvas (o padrão é 4), que podem ser de 1 a 8, sendo 8 a
+      mais suave. A imagem abaixo mostra um exemplo de como estas opções afetam o caminho:
+    
+  
+  Edição do caminho
+  
+    Você pode adicionar pontos ao caminho clicando em  em qualquer lugar na janela de edição, e todos os cliques subseqüentes adicionarão outros pontos. Uma vez colocado no editor, um ponto pode ser movido por
+      clicando em  e arrastando sobre ele ou alterando os valores apresentados a você à esquerda para a posição X e Y e velocidade (ver Propriedades do caminho, acima). Você
+      pode usar  /  e clicar com o botão esquerdo do mouse  em vários pontos para selecioná-los juntos, e este grupo de pontos pode então ser arrastado e colocado como você desejar. Você pode pressionar  para apagar o ponto ou pontos selecionados também.
+    Há um menu adicional disponível na janela do editor quando você clica com o botão direito do mouse , mostrado abaixo:
+    Cada um dos itens deste menu funciona da seguinte forma:
+    
+      Eliminar pontos - Eliminar o ponto ou pontos selecionados.
+      Pan To Path - Pan a vista no editor para o centro do caminho.
+      Reverter - Reverter a ordem dos pontos do caminho. Isto não os move, mas muda a ordem em que serão processados para que o início seja o fim e vice-versa.
+      Flip - Virar o caminho ao longo do eixo horizontal.
+      Espelho - Virar o caminho ao longo do eixo vertical.
+    
+     
+     
+  
+  A Caixa de ferramentas
+  
+    Os botões da caixa de ferramentas no topo são onde você pode controlar como as coisas são desenhadas na janela do editor. Você pode ativar ou desativar a grade de fundo, bem como definir a adição de pontos de caminho a serem ou não encaixados nesta grade:
+    Os valores de snap indicam o tamanho das células da grade
+      e isto pode ser mudado para qualquer valor que você precisar. As demais ferramentas são dedicadas a aumentar e diminuir o zoom e a área do editor, e você pode clicar no botão  para reiniciar para ser 1:1 com o display. Observe que se você estiver muito longe de onde deseja desenhar o caminho, você pode usar o botão direito do mouse  menu, e então clicar em Pan to Path para rolar de volta para onde você estava trabalhando.
+    
+  
+  Pontos do caminho
+  
+    Os caminhos são simplesmente um conjunto de pontos unidos por uma linha. No editor, você coloca estes pontos usando o botão esquerdo do mouse . Você pode adicionar pontos em qualquer lugar do editor da sala e eles serão adicionados à lista de pontos consecutivamente para fazer um caminho. Se você colocar um ponto próximo a uma linha de conexão ou outro nó, o novo ponto será inserido no caminho em vez de ser adicionado a
+      (você pode definir a distância de detecção para isto nas Preferências). Você pode pressionar  /  e clicar  nos pontos já colocados para selecioná-los, e então quaisquer operações feitas nos pontos do caminho, como movê-los, serão aplicadas a todos
+      os pontos selecionados como um grupo. Para remover um ponto ou seleção de pontos, você pode clicar com o botão direito do mouse em  e selecionar "Delete
+      Point" ou pressione a tecla .
+    Observe que você também pode usar os seguintes atalhos para realizar algumas operações extras que não estão disponíveis através do menu do botão direito do mouse no(s) ponto(s) do caminho escolhido(s):
+    
+      T + : Traduzir (mover) os pontos do caminho
+      R + : Rotacionar os pontos do caminho
+      S + : Escalar os pontos do caminho
+    
+    
+    
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Os Editores de Ativos
+        A seguir: Quartos
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

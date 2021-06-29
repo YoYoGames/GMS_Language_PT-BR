@@ -1,0 +1,50 @@
+
+  
+  dispositivo_mouse_check_button
+  Esta função retorna verdadeiro ou falso, dependendo se o botão do mouse está sendo mantido pressionado sobre o dispositivo em questão. Para o botão do mouse, você pode fornecer uma das constantes listadas nesta página.
+  Esta função pode ser usada para telas sensíveis ao toque, e o argumento do dispositivo pode ser de 0 a n onde n é o número máximo de "dedos" que podem ser tocados na tela de uma só vez (o número máximo de toques que podem
+    ser detectado dependerá muito do dispositivo a ser utilizado e do sistema operacional que ele opera, mas a maioria dos dispositivos deve detectar pelo menos até 4). Note que mb_right só será detectado se um toque duplo for detectado (este comportamento pode ser desativado usando
+    a função dispositivo_mouse_dbclick_enable()).
+   
+  Sintaxe:
+  device_mouse_check_button(dispositivo, botão);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dispositivo
+        O dispositivo (de 0 a n) que está sendo verificado
+      
+      
+        botão
+        O botão do dispositivo que está sendo verificado.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se device_mouse_check_button(0, mb_left) && device_mouse_check_button(1, mb_left) {
+     room_goto(rm_Menu); }
+  
+  O código acima verifica se os dois toques estão sendo feitos ao mesmo tempo e se eles vão para outra sala.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada do dispositivo
+        A seguir: device_mouse_check_button_pressed
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,50 @@
+
+  
+  base64_código_de_tampão
+  Esta função converterá os dados do buffer dado em um formato base64 codificado em cadeia. Este é um esquema de codificação comumente usado para qualquer mídia que precise ser armazenada ou transferida pela Internet como texto, e renderiza o
+    produzem ilegível para o olho humano. Para usar isto, é necessário especificar um buffer já criado, o valor de offset (que é o ponto dentro do buffer no qual se deseja iniciar a codificação), bem como o tamanho, em bytes, da memória buffer a ser codificada.
+   
+  Sintaxe:
+  buffer_base64_encode(buffer, offset, tamanho);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O índice do buffer a ser utilizado.
+      
+      
+        offset
+        O valor da compensação de dados.
+      
+      
+        tamanho
+        O tamanho do amortecedor.
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  var b_str = buffer_base64_encode(buff, 0, buffer_get_size(buff))
+  O código acima criará a codificação dos dados completos armazenados no buffer indexado pela variável "buff", e armazenará a string retornada na variável local "b_str".
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: buffer_base64_decode
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

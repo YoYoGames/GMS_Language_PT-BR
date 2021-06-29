@@ -1,0 +1,54 @@
+
+  
+  mp_grid_clear_cell
+  Esta função pode ser usada para limpar uma "célula" específica de uma grade MP. As células não são calculadas como coordenadas da sala, mas sim como coordenadas da grade, onde (0,0) é o canto superior deixado da grade. isto significa que para limpar uma célula em uma
+    posição na sala, devemos mudar as coordenadas x e y em coordenadas celulares, dividindo-as pela resolução da grade MP. O exemplo de código abaixo mostra como isto funciona.
+   
+  Sintaxe:
+  mp_grid_clear_cell(id, h, v);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        Índice da rede mp_ que deve ser usada
+      
+      
+        h
+        Posição horizontal da célula a limpar
+      
+      
+        v
+        posição vertical da célula para limpar
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  com (obj_Box) {
+     mp_grid_clear_cell(grid, floor(x / 32), floor(y /32)); instance_destroy();
+     }
+  
+  O código acima fará com que todos os "obj_Box" se destruam e os fará marcar como livres as células que ocupavam na "mp_grid indexada na variável "grid". Neste exemplo, encontramos a célula apropriada tomando a coordenada x/y
+    do objeto e dividindo-os pela resolução da grade (usando o piso para manter os valores como números inteiros).
+   
+   
+   
+  
+    
+      
+        Voltar: Planejamento de Movimento
+        Próximo: mp_grid_clear_clear_rectangle
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

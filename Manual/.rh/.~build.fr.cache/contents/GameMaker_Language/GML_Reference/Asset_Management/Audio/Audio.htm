@@ -1,0 +1,90 @@
+
+  
+  Áudio
+  OGameMaker Studio 2 tem um mecanismo de áudio completo que se baseia nos formatos de som *.ogg, *.mp3 e *.wav. Sons destes tipos adicionados à IDE podem então ser usados em seu jogo usando as funções básicas de áudio mostradas abaixo. Para
+    coisas mais complexas do que efeitos sonoros básicos ou tocar uma única peça de música você pode se referir às funções de áudio avançadas que permitem modificar a forma como um som é tocado. Há também uma seleção de funções mais especializadas dedicadas ao streaming
+    áudio, áudio de posicionamento - para dar som 3D - e áudio de agrupamento.
+  IMPORTANTE! Ao usar áudio no alvo HTML5, você deve estar ciente de que nem todos os navegadores suportam Web Audio e, portanto, podem não reproduzir nenhum som para seu projeto quando executado. Você pode ter uma idéia geral do suporte a Web Audio no link a seguir:
+   Posso usar o Web Audio?
+  As seguintes funções são para lidar com o áudio da maneira mais simples e direta possível, evitando o uso de emissores e permitindo ao usuário gerar sons e tocar música facilmente, já que estes sons são sempre gerados na posição de ouvinte (veja a seção ligada abaixo para mais detalhes sobre o ouvinte) e, portanto, geralmente não são afetados por nenhuma mudança no ouvinte:
+   
+  
+    audio_existe
+    audio_get_name
+    audio_get_type
+    audio_play_sound
+    audio_play_sound_at
+    audio_pause_sound
+    audio_pause_all
+    audio_resume_sound
+    audio_resume_tudo
+    audio_stop_sound
+    audio_stop_all
+    audio_is_playing
+    audio_is_paused
+    audio_create_stream
+    audio_destroy_stream
+  
+   
+  As seguintes funções são projetadas para dar mais controle sobre como o motor de áudio funciona, e como os sons reproduzidos através dele serão "ouvidos" pelo ouvinte. Como tal, é recomendado que você tenha um bom conhecimento de como o resto funciona
+    do motor de áudio GameMaker Studio 2 funciona antes de utilizar qualquer uma das seguintes funções:
+   
+  
+    posição_de_som_som_som_de_audio
+    audio_sound_get_track_position
+    audio_sound_set_listener_mask
+    audio_sound_get_listener_mask
+    audio_sound_length
+    audio_sound_pitch
+    audio_sound_get_pitch
+    audio_sound_is_playable
+    audio_falloff_set_model_model
+    audio_sound_gain
+    audio_sound_get_gain
+    audio_master_gain
+    audio_set_master_gain
+    audio_get_master_gain
+    audio_channel_num
+    audio_debug
+  
+   
+  Outras funcionalidades avançadas, como a definição de ouvintes, gravação de áudio ou sincronização de várias faixas de áudio ao longo do tempo, podem ser encontradas nas subseções listadas abaixo:
+  
+    Emissores de áudio
+    Ouvintes de áudio
+    Grupos de áudio
+    Buffers de áudio
+    Sincronização de áudio
+  
+   
+   
+  Áudio Web
+  Ao criar jogos para a plataforma alvo HTML5, o mecanismo de áudio requer suporte de Web Audio, e isto, por sua vez, é um homem que às vezes seu áudio não toca quando ou como você espera. Isto porque o contexto do Web Audio pode não estar rodando
+    ou pode parar de correr quando seu jogo estiver sendo jogado. O que causa isto varia muito entre navegadores, e mesmo entre diferentes versões do mesmo navegador, e assim detectar quando o status do contexto de áudio da web muda é muito importante, por exemplo: para detectar
+    quando o contexto muda e pausa/arranca o áudio de looping como música de fundo.
+  Para ajudar nesta questão, o GameMaker Studio 2 tem duas formas distintas de detectar a mudança no status do contexto de Áudio na Web, utilizando a função a seguir:
+  
+    audio_system_is_available
+  
+   
+  Você também pode usar o Evento de Sistema Assíncrono, que será acionado sempre que o status do Áudio na Web mudar. Neste evento, você terá o async_load Mapa DS preenchido com a chave " event_type" que, por sua vez, segurará a string " audio_system_status" se for um evento de áudio. Quando esta chave existir, também haverá uma outrachave de"status" que
+    estar "disponível" ou" indisponível". Note que este evento será acionado em todas as plataformas, mas em tudo, exceto HTML5, será acionado apenas uma vez no Game Start quando o motor de áudio for o primeiro
+    rubricado. Para maiores informações, por favor, consulte a seção:
+  
+    O Evento do Sistema Assíncrono
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Gestão de ativos
+        A seguir: Caminhos
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

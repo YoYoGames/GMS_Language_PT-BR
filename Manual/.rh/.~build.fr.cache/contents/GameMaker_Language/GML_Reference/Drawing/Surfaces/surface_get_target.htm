@@ -1,0 +1,36 @@
+
+  
+  superfície_get_target
+  Com esta função, você pode obter a identificação da superfície atual que está sendo desenhada para desenho. Se você criou essa superfície usando surface_create()então este será o número inteiro positivo que é a identificação única para
+    essa superfície
+  Se nenhuma superfície personalizada for definida, mas a superfície padrão da aplicação_surface ainda estiver habilitada, então a função normalmente retornará 0. Entretanto, se você tiver manipulado a superfície_da_aplicação anteriormente, você pode querer verificar se o ID que você obteve
+    não corresponde ao valor atual da variável application_surface, caso esta não seja mais 0.
+  Se nenhuma superfície personalizada for definida e a superfície_de_aplicação padrão também tiver sido desativada, então a função retornará -1.
+   
+  Sintaxe:
+  surface_get_target();
+   
+  Devoluções:
+  Inteiro (-1 se não existir um alvo de superfície, caso contrário a identificação da superfície alvo)
+   
+  Exemplo:
+  surface_get_target() != -1 {
+     surface_reset_target();
+     }
+     draw_surface(surf, 0, 0);
+  O código acima verificará se o alvo atual é uma superfície ou não, e se for, ele repõe o alvo, então desenha uma superfície.
+   
+   
+   
+  
+    
+      
+        Voltar: Superfícies
+        Próximo: superfície_get_target_ext_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

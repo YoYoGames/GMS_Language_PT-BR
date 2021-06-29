@@ -1,0 +1,122 @@
+
+  
+  Expressões e Operadores
+  Uma expressão é uma frase matemática que pode conter números, variáveis, cadeias ou funções comuns, assim como um ou mais operadores (como adicionar, subtrair, multiplicar, etc...). Os valores usados em uma expressão podem ser números reais
+    (por exemplo 3.4 * 6), números hexadecimais começando com um sinal $ (por exemplo $00FFAA | $88FFAA), cadeias entre aspas duplas (por exemplo "hello" + "world") ou expressões mais complicadas usando múltiplos operadores e valores.
+  Para as expressões, existem os seguintes operadores (em ordem de prioridade):
+   
+  Atribuição (=)
+  
+    = - Usado para atribuir um valor a uma variável. Note que isto também pode ser usado para comparar variáveis no GameMaker Studio 2 e você pode ver isto em exemplos e códigos de outras pessoas. Entretanto, este é um legado do antigo GameMaker versões
+      e você deve usar o == operadores para comparar e = para atribuir, como mostrado nestes exemplos:
+    a = 12; velocidade = 5; val = (old_val + 5);
+     
+  
+  Combinando (&&, |||, ^^)
+  
+    &&, ||, ^^ (e, ou e xor) - Combine valores booleanos para dar valores verdadeiros ou falsos. Se algum dos exemplos a seguir se resolver como verdadeiro, então o código será executado:
+    se (a == b && c == d) {do algo...}  // e if (a == b ||| c ==d) {do something...}   // ou if (a == b ^^ c == d) {do alguma coisa...}  // xou
+     
+  
+  Comparando (<, <=, ==, !=, >, >=)
+  
+    <, <=, ==, !=, >, >= - Estas são comparações e só podem dar um resultado verdadeiro ou falso ( onde verdadeiro também pode ser interpretado como 1, e falso como 0). Exemplos de uso:
+    if (a < b) {do algo...} if (a != b) {do algo...}
+     
+  
+  Bitwise (|, &, ^, <<, >>)
+  
+    |, &, ^, <<<, >> : Você pode realizar operações bitwise com estes, onde | = bitwise ou, & = bitwise e, ^ = bitwise xor, <<< = shift left, >> = shift right. Exemplos de uso:
+    x = (x & $ffffffe0) + 32; if (y ^ $1f) > 0 {do algo...};
+    Você pode encontrar informações adicionais sobre como usar os operadores bitwise e o que eles fazem na seção: Operadores Bitwise.
+     
+  
+  Aritmética (+, -, *, /)
+  
+    +, -, *, / - Adicionar, subtrair, multiplicar e dividir. Exemplos de uso:
+    c = a * b; str = a + "mundo";
+    OBSERVAÇÃO: Os números de pontos flutuantes não param em Divide by Zero, pois eles terão um infinito como resposta. Se A e B forem números inteiros (int32 ou int64) então a divisão será feita como números inteiros (e a divisão por 0 será verificada e o erro será cometido.
+      Caso contrário, será feita como uma divisão em ponto flutuante (sem divisão por 0).
+     
+  
+  Incremento/Decremento (++, --)
+  
+    ++, --: Adicione ou subtraia um de um valor. Vale notar que colocar isto antes ou depois do valor a ser adicionado ou subtraído terá resultados ligeiramente diferentes. Por exemplo, o valor a ser adicionado ou subtraído:
+    
+      ++a irá incrementar a variável e retornar o valor incremental.
+      a++ incrementará a variável, mas retornará o valor antes de ser incrementado.
+    
+    Portanto, se você tem algo como isto:
+    var a = 1; show_debug_message(string(a++));
+       show_debug_message(string(++a)));
+    
+    A saída de depuração seria 1 e 3. Aqui estão alguns exemplos de uso:
+    for (var i = 0; i < 10; i++;) { faça algo... };
+    se (hit == verdadeiro) { --score; }
+    NOTA: Nas plataformas alvo do Compilador YoYo (aquelas marcadas (YYC)), estas expressões são avaliadas da esquerda para a direita, enquanto em todas as outras plataformas alvo são avaliadas da direita para a esquerda, o que significa que isto:
+    val = max(num, ++num, num+++);
+    dará resultados diferentes, dependendo da plataforma.
+     
+  
+  Divisão e Modulo (div, %, mod)
+  
+    div, mod (%) - Divisão e modulo, onde div lhe dá o valor que um valor pode ser dividido em produzir apenas um quociente inteiro, enquanto mod lhe dá apenas o restante de uma divisão. Note que você só pode div ou mod usando valores inteiros.
+      Exemplos de uso:
+    secs = time mod 60; time_str = string(time div 60);
+     
+  
+  Unário (!, -, ~)
+  
+    Além disso, existem os seguintes operadores unários:
+    
+      !: booleano "não", então !true == false
+      - : nega o próximo valor real ou inteiro (não válido para cordas ou booleans)
+      ~: nega o próximo valor bitwise
+    
+     
+  
+   
+  Como valores em todas as expressões você pode usar números, variáveis ou funções que retornam um valor, e subexpressões podem ser colocadas entre parênteses também. Todos os operadores trabalham para valores de números reais, mas as comparações também funcionam para strings e
+    o operador " +" pode ser usado para concatenar as cordas.
+  Ao fazer múltiplas operações em uma única expressão, é muito importante que você use parênteses () para separar a ordem de operação, já que plataformas diferentes podem executá-las de forma diferente se não for explicitamente declarado
+    desta forma. Por exemplo, considere o seguinte código:
+  a = b === c || d;
+  Os diferentes compiladores alvo realizarão as operações em diferentes ordens, uma vez que não são mostrados explicitamente, dando origem a resultados "estranhos" que você pode não esperar quando jogar seu jogo. para evitar isso, use o () para separar as partes, assim:
+  a = (b == c ||| d); // melhor a = ((b == c) ||| d); // melhor
+  Observe também que ao utilizar várias operações e expressões em um único bloco de código, estas também devem ser separadas. Por exemplo, o seguinte parece ser um código válido:
+  se my_var ==seu_var ++their_var;
+  No entanto, o compilador poderia interpretar isto de uma de duas maneiras:
+  se my_var == sua_var++ então sua_var;
+     // ou
+     se my_var == sua_var então ++ sua_var;
+  Agora, você pode dizer, olhando para o código, que um deles é um pouco estúpido, mas isso é porque sabemos o que queremos alcançar e o que queremos que aconteça, mas o compilador não sabe. Tudo o que ele vê são duas variáveis com o operador ++ entre
+    para que tenha que escolher a qual aplicá-lo. Portanto, você deve sempre colocar expressões, operações e declarações explicitamente entre parênteses. A versão correta do código acima deve ser:
+  if (my_var == sua_var) {
+     ++their_var;
+     }
+  
+  Isto pode parecer mais verboso, mas não há ambigüidade sobre as operações que estão sendo realizadas e ele compilará e se comportará de forma consistente em todas as plataformas. Observe também que enquanto você pode encadear expressões e declarações sem o uso de colchetes
+    no momento, esta é uma característica legada e o avanço pode ser depreciado e removido do GML, portanto, o uso de parênteses apropriados agora "garantirá a prova de futuro" de seu código (e é geralmente uma boa prática de qualquer forma).
+  Aqui estão alguns exemplos finais das várias expressões diferentes:
+  { x = 23 div 2; cor = $FFAA00 + $00BB12; str = "olá" + "mundo"; y += 5; x *= y; x = y << 2; x = 23 * ((2 + 4) / sin(y)); b = (x < 5) && !((x == 2) || (x == 4)); }
+  
+  Uma última coisa a ser notada é que há também alguma expressão "atalhos" chamados acessores para uso com certas Estruturas de Dados e Arrays.
+    Estes permitem adicionar ou substituir dados dentro destes formatos de forma rápida e fácil e sem o uso de qualquer chamada de função. Para obter detalhes completos, consulte a seguinte página
+  
+    Accessors
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Visão geral daGML
+        A seguir: Accessors
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

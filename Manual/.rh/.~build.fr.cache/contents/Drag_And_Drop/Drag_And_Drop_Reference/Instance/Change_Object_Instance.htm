@@ -1,0 +1,46 @@
+
+  
+   Alterar instância de objeto
+  Com esta ação, você pode transformar uma instância em outra instância. Você precisa especificar o objeto do qual a instância se transforma em outra instância, e a ação mudará a instância, realizando o Evento de Destruição e o Evento de Limpeza de
+    a instância inicial e o Evento de Criação da nova instância. Note que se você não especificar uma direção ou uma velocidade etc... então a nova instância "herdará" estes valores. Por exemplo, se a instância inicial tiver um ângulo_de_imagem (rotação)
+    de 180, viaja a 2px por tick do jogo e tem uma velocidade de imagem (velocidade de animação) de 0,5, então a instância em que se transforma manterá esses valores, a menos que seja explicitamente definida no evento Criar da nova instância.
+  Vale notar que mudar a instância significa que você não pode realizar mais ações com essa instância até o próximo tiquetaque do jogo, em particular tentando acessar variáveis etc... pois isso causará um erro. Basicamente, você
+    mudar a instância, mas ela não está realmente disponível até o final da etapa atual, portanto, acessar qualquer uma das variáveis que ela contém diretamente (por exemplo, chamada inst_change.x) não vai funcionar.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+  
+    
+      
+        
+          Argumento
+          Descrição
+        
+        
+          Objeto
+          O nome do objeto a ser mudado para uma instância de.
+        
+      
+    
+  
+   
+  Exemplo:
+  O código de bloqueio de ação acima verifica se há um pressionamento do mouse e se um é detectado
+    então ele muda a instância para outra diferente.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações de instância
+        A seguir: Contagem regressiva de alarmes
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

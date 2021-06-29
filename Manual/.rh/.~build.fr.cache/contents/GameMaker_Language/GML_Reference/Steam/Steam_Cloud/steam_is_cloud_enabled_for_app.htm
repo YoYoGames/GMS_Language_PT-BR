@@ -1,0 +1,33 @@
+
+  
+  vapor_é_activado_para_apo_a_aplicação
+  Com esta função, você pode verificar se o serviço Steam Cloud está habilitado para seu jogo. Ele retornará verdadeiro se for e falso caso contrário. Note que isto não significa automaticamente que você pode usar as funções de Nuvem
+    uma vez que o usuário pode desligar a sincronização de nuvens de seu cliente Steam. Você pode verificar isto usando a função steam_is_cloud_enabled_for_account()mas, mesmo que seja desativado para o
+    usuário (e habilitado para o jogo), as funções ainda funcionarão para armazenar e recuperar dados de uma cópia local de todos os arquivos, apenas não os carregará para a nuvem no final do jogo, nem sincronizará no início do jogo.
+   
+  Sintaxe:
+  steam_is_cloud_enabled_for_app();
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if steam_is_cloud_enabled_for_app() {
+     quota = steam_get_quota_total(); }
+  
+  O código acima verifica se a nuvem de vapor está habilitada para o jogo e, em caso afirmativo, obtém o tamanho da cota de armazenamento e a armazena em uma variável.
+   
+   
+   
+  
+    
+      
+        Voltar: Nuvem devapor
+        A seguir: vapor_é_activado_para_conta
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

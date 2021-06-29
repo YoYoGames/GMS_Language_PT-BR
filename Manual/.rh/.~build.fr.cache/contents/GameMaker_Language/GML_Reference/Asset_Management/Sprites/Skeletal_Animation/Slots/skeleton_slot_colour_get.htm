@@ -1,0 +1,48 @@
+
+  
+  esqueleto_esqueleto_cor_esqueleto
+  Com esta função você pode obter uma cor de ranhura de fixação. Você fornece o nome da ranhura (um fio) e a função retornará um valor inteiro para a cor.
+   
+  Sintaxe:
+  esqueleto_esqueleto_esqueleto_cor_esqueleto(ranhura);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ranhura
+        O nome do slot a verificar, um fio
+      
+    
+  
+   
+  Devoluções:
+  Inteiro
+   
+  Exemplo:
+  slot_list = ds_list_create(); skeleton_find_slot(mouse_x, mouse_y, slot_list); if !ds_list_empty(slot_list) {
+     para (var i = 0; i < ds_list_size(slot_list); ++i;)  {
+     if skeleton_slot_colour_get(slot_list[| i]) != c_white {
+     skeleton_slot_colour_set(slot_list[| i], c_white, 1); }
+     }
+     }
+  
+  O código acima cria uma lista DS e depois a preenche com os nomes dos slots encontrados na posição do mouse na sala. Em seguida, ele percorre a lista de slots e repõe a cor dos slots encontrados para branco com um alfa de 1 se a cor não for
+    já branco.
+   
+   
+   
+  
+    
+      
+        Voltar: Slots
+        A seguir: esqueleto_esqueleto_alpha_get
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

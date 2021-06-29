@@ -1,0 +1,64 @@
+
+
+
+
+  
+  data_set_timezone
+  Define o fuso horário base a ser usado para todas as demais funções de data e hora. Este fuso horário pode ser local (conforme definido pelo sistema) ou UTC, e você usaria uma das seguintes constantes para definir qual está sendo usada (por padrão
+    este é o horário local):
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        timezone_local
+        usar o fuso horário local conforme definido pelo sistema
+      
+      
+        timezone_utc
+        uso Tempo Universal Coordenado
+      
+    
+  
+   
+  Sintaxe:
+  date_set_timezone(timezone);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fuso horário
+        O fuso horário a ser usado para o horário base.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se (date_get_timezone() != timezone_utc) {
+     date_set_timezone(timezone_utc);
+     }
+  
+  Este código verifica a configuração do fuso horário base do jogo e, se não for UTC, ele o altera.
+   
+   
+   
+  
+    
+      
+        Voltar: Data e TIME
+        Próximo: date_get_timezone
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

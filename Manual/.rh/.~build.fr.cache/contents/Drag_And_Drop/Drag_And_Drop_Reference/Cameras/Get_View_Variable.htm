@@ -1,0 +1,85 @@
+
+  
+   Obter a variável View
+  Esta ação permite que você obtenha o valor de certas variáveis embutidas relacionadas a uma determinada porta de visão. Você seleciona a variável view port para recuperar, depois dá a view port para o alvo (de 0 a 7) e finalmente a variável alvo para manter o retorno
+    (isto pode ser sinalizado como sendo uma variável local temporária). A porta de visão é a área da tela que será usada para desenhar uma determinada visão da câmera (como configurado no editor da sala), e as diferentes variáveis que você é capaz de obter desta forma
+    estão descritos na tabela abaixo:
+  
+    
+      
+        Variável
+        Descrição
+      
+      
+        Camera
+        O valor retornado será o valor de identificação único da câmera a ser atribuída ao porto (veja aqui para mais informações).
+      
+      
+        Visibility
+        Isto retornará um valor de verdadeiro ou falso onde o verdadeiro é que a porta de visualização é visível (ou seja: está sendo atraída para a tela), e falso significa que nada está sendo desenhado.
+      
+      
+        View Port X Coordinate
+        Esta é a posição X da porta de visualização dentro da janela do jogo.
+      
+      
+        View Port Y Coordinate
+        Esta é a posição em Y da porta de visualização dentro da janela do jogo.
+      
+      
+        View Port Width
+        Esta é a largura (em pixels) da porta de visualização.
+      
+      
+        View Port Height
+        Esta é a altura (em pixels) da porta de visualização.
+      
+      
+        View Port Surface ID
+        Isto retornará o valor de identificação único para a superfície atribuída à porta de visualização ou -1 se nenhuma superfície tiver sido atribuída.
+      
+    
+  
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Variável
+        A variável construída em vista para obter
+      
+      
+        Ver
+        A vista porto a alvo (de 0 a 7)
+      
+      
+        Meta
+        A variável alvo para manter o valor retornado (pode ser marcada como uma variável local temporária)
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima recebe a identificação da câmera atual atribuída para visualização
+    porto [0] e depois verifica se é o mesmo que o armazenado em uma variável global. Se não for, a câmera é configurada para a nova.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações da câmera
+        A seguir: Set View Variable
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

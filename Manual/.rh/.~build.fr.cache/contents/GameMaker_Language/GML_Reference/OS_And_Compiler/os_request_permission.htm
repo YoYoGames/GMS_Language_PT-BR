@@ -1,0 +1,80 @@
+
+  
+  os_check_permission
+  Com esta função, você pode solicitar uma permissão específica. Você fornece a permissão para solicitar como string usando o formato " android.permission.<permission> ", de modo a solicitar a permissão RECORD_AUDIO (por exemplo)
+    você chamaria
+  os_request_permission("android.permission.RECORD_AUDIO");
+  A função irá acionar um Evento Assíncrono do Sistema onde o async_load    O mapa DS conterá os seguintes pares chave/valor:
+  
+    " tipo": Este é o tipo de evento que foi acionado e o valor será a string "permission_request_result".
+    "<permissão>": Esta será a permissão solicitada pela função como um fio, que conterá uma das seguintes constantes:
+      
+        
+          
+            Constante
+            Descrição
+          
+          
+            os_permission_granted
+            Isto indica que a permissão foi concedida
+          
+          
+            os_permission_denied
+            Isto indica que a permissão não foi concedida
+          
+        
+      
+    
+  
+   
+  Vale notar que as seguintes permissões são apoiadas nativamente pelo GameMaker Studio 2, mas são consideradas "perigosas" pelo Google e como tal devem ser explicitamente solicitadas (note também que algumas permissões podem ser solicitadas usando
+    as opções do jogoAndroid sem a necessidade desta função):
+  
+    android.permission.WRITE_EXTERNAL_STORAGE
+    android.permission.READ_PHONE_STATE
+    android.permission.RECORD_AUDIO
+  
+  Para mais informações sobre permissões de aplicativos, consulte a Documentação doAndroid.
+  IMPORTANTE! Esta função é para o Android apenas no alvo.
+   
+  Sintaxe:
+  os_request_permission(permissão)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        permissão
+        A permissão para solicitar (um fio)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if (os_type == os_android) {
+     if (os_check_permission("android.permission.INTERNET") == os_permission_denied) {
+     os_request_permission("android.permission.INTERNET");
+     }
+     }
+  
+  O código acima verifica o tipo de sistema operacional e se for Android, ele verifica as permissões e se a permissão "INTERNET" ainda não tiver sido concedida, ele a solicita.
+   
+   
+   
+  
+    
+      
+        Voltar: OS E Compilador
+        A seguir: GM_build_date
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

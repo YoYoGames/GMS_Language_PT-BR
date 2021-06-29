@@ -1,0 +1,45 @@
+
+  
+  ds_set_precision
+  Ao comparar valores, por exemplo, ao pesquisar em um mapa ou ordenar uma lista, o GameMaker Studio 2 deve decidir quando dois valores são iguais. Para valores de cordas e valores inteiros, isto é claro, mas para números reais, devido à flutuação
+    erros de arredondamento de pontos, números aparentemente iguais podem facilmente se tornar desiguais. Por exemplo, é possível que (5 /  3) * 3 não seja igual a 5! Para ajudar a evitar isto, um valor de precisão
+    é usado em todas as funções de números reais, e quando a diferença entre dois números é menor do que esta precisão, eles são considerados iguais. A precisão padrão de 0,0000001 é usada em todas as funções de estrutura de dados.
+    a menos que seja alterado por esta função.
+  NOTA: Esta precisão é usada em todas as estruturas de dados, mas não em outras comparações no GML!
+   
+  Sintaxe:
+  ds_set_precision(prec);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        prec
+        O valor de precisão (padrão 0,0000001)
+      
+    
+  
+   
+  Devoluções:
+  Devoluções:N/A
+   
+  Exemplo:
+  ds_set_precision(0.0001);
+  O código acima mudará a configuração padrão de precisão para todas as funções da estrutura de dados.
+   
+   
+   
+  
+    
+      
+        Voltar: Estruturas de dados
+        Próximo: ds_exists
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

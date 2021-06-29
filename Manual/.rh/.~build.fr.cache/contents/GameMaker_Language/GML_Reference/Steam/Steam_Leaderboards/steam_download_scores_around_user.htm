@@ -1,0 +1,53 @@
+
+  
+  vapor_download_scores_around_utilizador
+  Esta função é usada para recuperar as entradas do quadro de líderes em relação à entrada de usuários atuais. O parâmetro range_start é o número de entradas a serem recuperadas antes da entrada do usuário atual, e o parâmetro range_end é o número
+    de entradas após a entrada do usuário atual, e a entrada do usuário atual é sempre incluída nos resultados. Por exemplo, se o usuário atual é o número 5 em uma determinada tabela de líderes, então definindo a faixa inicial como -2 e a faixa final como
+    2 devolverão 5 entradas: 3 a 7. Se não houver entradas suficientes no quadro de líderes antes ou depois da entrada do usuário, Steam ajustará o intervalo para tentar retornar o número de entradas solicitadas. Por exemplo, se o usuário for o número 1 na tabela de classificação,
+    O início está definido para -2, e o final está definido para 2, Steam retornará as 5 primeiras entradas na tabela de liderança.
+   
+  Sintaxe:
+  steam_download_scores_around_user(lb_name, range_start, range_end);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        lb_nome
+        O nome do quadro de líderes do qual você está baixando as pontuações (um fio).
+      
+      
+        range_start
+        A posição inicial dentro da tabela de liderança.
+      
+      
+        range_end
+        A posição final dentro da tabela de liderança.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  score_get = vapor_download_scores_around_around_user("Game Scores", -4, 5);
+  Isto enviará uma solicitação ao Steam Server para uma faixa de 10 pontuações do quadro de líderes "Scores de Jogo", centrada no jogador e armazenará a identificação assimétrica da solicitação na variável "score_get". Esta será então
+    manuseados no EventoSteam Asynccomo mostrado no Exemplo Ampliado para steam_download_scores().
+   
+   
+   
+  
+    
+      
+        Voltar: Painéis de Liderança
+        Próximo: steam_download_friends_scores
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

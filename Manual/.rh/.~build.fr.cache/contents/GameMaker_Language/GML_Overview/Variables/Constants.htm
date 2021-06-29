@@ -1,0 +1,122 @@
+
+  
+  Constantes
+  Uma constante é um tipo de variável que é definida uma vez no início do jogo e depois nunca muda. Na verdade, os valores constantes não podem ser alterados após terem sido declarados. Isto os torna ideais para manter valores que são usados em todo o
+    jogo para identificar dados especiais.
+  Na linguagem GameMaker existem dois tipos de constantes definidas pelo usuário: macros e enums, ambos explicados abaixo. Observe também que qualquer valor que seja sempre o mesmo é classificado como uma constante, independentemente do
+   tipo de dado, por exemplo, um fio ou o número 3.
+  OBSERVAÇÃO: A linguagem GameMaker também tem uma série de valores constantes incorporados que são usados para identificar coisas específicas. Estes estão delineados nas páginas apropriadas para as funções de tempo de execução que os requerem na seção ReferênciaGML.
+   
+  Macros
+  Embora não sejam exatamente variáveis, as macros são semelhantes a elas na forma como são usadas, ou seja: elas são valores nomeados que você pode usar em todo o seu código para substituir valores codificados. Basicamente, uma macro
+    é uma variável denominada que detém um valor único constante de qualquer tipo de dado. Você pode definir suas próprias macros usando o Script Editor e depois usá-las em seu código e DnD™como se elas
+    eram variáveis regulares, com a única diferença de que elas não podem ser alteradas no jogo.
+  A estrutura sintáctica de uma macro é a seguinte:
+  #macro <variável>>valor> 
+  Por exemplo, digamos que você define a seguinte macro "total_weapons" (note o precedente "#" e a falta de dois pontos ";" no final):
+  #macro total_armas 10
+  Você então chamaria isto em seu código desta maneira:
+  if ++pos == total_armas {
+     pos = 0; }
+  
+  Note que você não seria capaz de alterar o valor constante, portanto, um código como este causará o travamento do jogo:
+  total_armas = 11;
+  Você pode definir uma macro em qualquer lugar em seu código ou em um script e ela será pré-compilada e incluída em seu jogo como se estivesse lá desde o início, mas recomendamos que você crie um recurso de script dedicado e defina todas as suas macros lá dentro.
+    Será mais fácil de organizar e debugar mais tarde!
+  Se você precisa do valor de uma macro para mudar em tempo de execução, então você provavelmente deve torná-la uma variável global, já que estas podem ser mudadas de código durante um jogo, a menos que você configure a macro para ser uma tempo de execução    função. Ao definir a macro para uma função, significa que esta função será chamada toda vez que você usar a macro. Por exemplo, a função macro:
+  #macro col make_colour_hsv(irandom(255), 255, 255)
+  Você então chamaria esta macro de algo parecido com isto:
+  image_blend = col;
+  O uso deste código fará com que a imagem misture uma cor diferente cada vez que a macro for usada. Vale notar que você também pode dividir as macros em várias linhas usando o caracter \ para mostrar onde a linha quebra.
+    Um exemplo seria algo como:
+  #macro hello show_debug_message("Hello" + \ string(player_name) + \ ", como você está hoje?")
+  Isto é puramente cosmético, pois a divisão de uma macro como esta não terá efeito sobre o resultado da macro final quando usada, e é simplesmente para dar suporte a textos de várias linhas em macros que têm linhas de código mais longas.
+  Uma característica muito importante das macros é que elas podem ser definidas para uso com Configurações (configs) específicas, o que significa que você pode ter o mesmo nome de macro, mas dar-lhe valores diferentes com base no atual
+    configuração selecionada. Por exemplo, digamos que você tenha uma configuração para anúncios Android e outra para anúncios iOS, então você poderia definir uma única macro para manter o valor de ID do aplicativo requerido:
+  #macro ad_id ""; #macro Android:ad_id "com.yoyogames.googlegame" #macro iOS:ad_id "com.yoyogames.appstoregame"
+  Como você pode ver, primeiro você dá o nome da configuração, depois um dois pontos : e depois o nome e o valor da macro. Note que você não pode ter nenhum espaço branco entre os dois pontos : e nem o nome da configuração nem o valor da
+    nome macro, caso contrário, você receberá um erro.
+   
+  Enums
+  Um enumero é um "enumerador", e permite essencialmente criar seu próprio tipo de dados limitado com uma lista de valores constantes, e eles têm a seguinte estrutura:
+  enumerar <variável> 
+    {
+        <constante> [= <valor> ],
+        <constante> [= <valor> ], // etc... }
+  No exemplo a seguir, criamos um enumero para as cores do arco-íris e lhe atribuímos várias constantes e valores padrão:
+  enum rainbowcolours { red, orange, yellow, green, blue, indigo, violet }
+  As entradas de enumeração só podem ser números inteiros ou expressões com enumeração anterior que avaliam para um número inteiro e, por padrão, são numeradas
+    de 0 para cima, portanto, nosso exemplo dado acima seria padrão para vermelho = 0, laranja = 1, amarelo = 2, etc...
+  Você também pode atribuir valores às variáveis do enumero no momento da criação:
+  enum enum_test { val = 10; } 
+     enum rainbowcolours { red = 5, orange = 5 * 2, yellow = 15, green = 20, blue = 25, indigo = 30, violet = 35 * enum_test.val }
+  Observe no exemplo acima que usamos outro enumero para criar uma expressão para "violeta". Isto só funcionará se o enumero a ser referenciado tiver sido criado antes do enumero que o está usando em uma expressão, mas não funcionará para variáveis ou
+    uma vez que o valor enumeral deve poder ser avaliado como uma constante quando o projeto está sendo compilado. Observe também que todos os valores de enumeração são avaliados para valores inteiros, e quando se cria
+    seus próprios valores inteiros devem estar cientes de que somente valores inteiros são permitidos para que os enumeros funcionem. Este valor pode ser qualquer número inteiro que um número de precisão duplo de ponto flutuante possa representar, inclusive valores negativos.
+  Para acessar posteriormente o valor dentro de um determinado tipo de enumeração, você pode usar o  método de ponto "...", assim:
+  variável = <nome_nome_enum>.< enum_variável>;
+  Como exemplo, vamos usar o enumero "rainbowcolours" que criamos no código acima:
+  colour_value = rainbowcolours.green * rainbowcolours.red;
+  A variável colour_value passaria a ter o valor 100 (20 * 5).
+  Observe que você não pode modificar os valores de nenhuma constante de enumeração após sua criação, da mesma forma que não pode modificar as macros após elas terem sido criadas.
+  NOTA: Os valores de enumeração são armazenados como int64s, portanto funcionando is_real() sobre eles retornarão falsos.
+   
+  Constantes Incorporadas
+  A tabela a seguir mostra uma lista das constantes incorporadas que podem ser devolvidas por algumas funções e operações em seus projetos:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        pointer_null
+        Esta constante indica que o ponteiro não está apontando para nada significativo (o mesmo que NULL em C++ ou nulo em C#)
+      
+      
+        pointer_invalid
+        Esta constante significa simplesmente que o valor não é um ponteiro válido
+      
+      
+        undefined
+        Esta constante é retornada quando uma função tem que retornar algo, mas não tem valor apropriado ou "correto" para retornar
+      
+      
+        NaN
+        Esta constante que pode ser retornada quando o compilador não pode avaliar os resultados de uma operação como um número - por exemplo, 0 / 0 não pode ser definida como um número real, e é, portanto, representada por NaN
+      
+      
+        infinity
+        Esta constante refere-se a um número considerado infinito, tal como o resultado que você obteria ao dividir qualquer valor de ponto flutuante por zero, por exemplo: 1,0/0.
+      
+      
+        true
+        Esta constante representa o valor 1, que é o que o GameMaker Studio avaliará como um "verdadeiro" booleano (note que qualquer valor igual ou maior que 1 será avaliado como true).
+      
+      
+        false
+        Esta constante representa o valor 0, que é o que o GameMaker Studio avaliará como um "falso" booleano (note que qualquer valor menor ou igual a 0 será avaliado como false).
+      
+      
+        pi
+        Esta constante representa o valor de pi: 3,141592653589793280 etc... embora o valor exato dependerá de vários fatores como o sistema operacional ou a plataforma a ser visada.
+      
+    
+  
+   
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis e Escopo de Variáveis
+        A seguir: Variáveis locais
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

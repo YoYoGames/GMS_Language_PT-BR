@@ -1,0 +1,57 @@
+
+  
+  mp_potencial_step
+  Esta função permite à instância dar um passo em direção a uma determinada posição definida por xgoal/ygoal, sempre tentando evitar obstáculos. Quando a instância se deparar com uma instância sólida (ou qualquer instância quando o checkall for verdadeiro), ela mudará a direção
+    de movimento para tentar evitar essa instância e se movimentar em torno dela. Esta abordagem não é garantia de funcionar, mas na maioria dos casos fáceis, ela irá efetivamente mover a instância em direção ao objetivo. A função retorna se o objetivo foi alcançado ou não.
+   
+  Sintaxe:
+  mp_potencial_step(xgoal, ygoal, stepize, checkall)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        xgoal
+        A posição alvo x.
+      
+      
+        ygoal
+        A posição y alvo.
+      
+      
+        stepsize
+        A velocidade que a instância se move em pixels por passo.
+      
+      
+        checkall
+        Se verificar todas as instâncias (verdadeiras) ou apenas as sólidas (falsas).
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if instance_exists(obj_Enemy) {
+     var inst; inst = instance_nearest(x, y, obj_Enemy); mp_potencial_step(inst.x, inst.y, 5, false); }
+  
+  O código acima verifica primeiro se há alguma instância de "obj_Enemy" na sala. Se houver, então encontra o mais próximo e armazena sua identificação em uma variável. Esta variável é então usada para dizer mp_potencial_step para mover o
+    instância com o código em direção à posição x/y do objeto que foi encontrado a uma velocidade de 5 pixels por etapa, evitando apenas as instâncias assinaladas como sólidas.
+   
+   
+   
+  
+    
+      
+        Voltar: Planejamento de Movimento
+        Próximo: mp_potencial_objeto_de_passo
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,47 @@
+
+  
+   Definir posição de áudio
+  Com esta ação, você pode definir um som para tocar em um momento específico. Você dá o som para tocar, e o tempo para começar, mas esta ação não tocará o som para você, ela simplesmente definirá a posição de tocar para o som. Para usar esta ação
+    você deve primeiro definir a posição e depois tocar o som usando a ação Play Audio, caso contrário, você não mudará de posição até a próxima vez que tocar o mesmo recurso sonoro (que começará no
+    novo cargo). A posição é definida em segundos - você pode usar valores decimais - e você pode obter o comprimento total do som usando a ação Obter comprimento de áudio, embora se você fornecer um valor maior do que o comprimento do
+    som desejado isto será embrulhado, então se o som for de 10 segundos e você der 12 segundos como posição inicial, o som começará a 2 segundos dentro.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Som
+        O bom recurso para definir a posição de jogo de
+      
+      
+        Hora
+        O tempo a ser ajustado (em segundos)
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima obtém a duração do jogo do dado recurso sonoro e armazena
+    em uma variável local temporária. Isto é então usado para gerar um valor aleatório entre 0 e o comprimento do som, que é então armazenado em uma variável local temporária diferente. Este novo valor aleatório é então usado para definir a posição inicial para a
+    som e o som é então tocado.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações de áudio
+        A seguir: Obter comprimento de áudio
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

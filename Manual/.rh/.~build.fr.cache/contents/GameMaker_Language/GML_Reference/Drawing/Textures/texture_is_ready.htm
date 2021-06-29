@@ -1,0 +1,46 @@
+
+  
+  texture_is_ready
+  Esta função pode ser usada para verificar se uma página de textura específica foi desempacotada e está pronta para uso, ou se um grupo de páginas de textura foi desempacotado e está pronto para uso. Você fornece o ID da página de textura única (como retornado pelas funções do grupo de textura_* ) ou a cadeia de ID do grupo de textura (como definido no Editor do Grupo de Textura), e a função retornará verdadeira se elas tiverem sido desempacotadas, ou falsa de outra forma.
+   
+  Sintaxe:
+  texture_is_ready(tex_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tex_id
+        O ID da página de textura (um número inteiro) ou um ID do grupo de textura (um fio)
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var _tex_array = textgroup_get_textures( "MainMenu"); for (var i = 0; i < array_length(_tex_array); ++i;)  {
+     if !text_is_ready(_tex_array[i]) {
+     text_prefetch(_tex_array[i]));
+     }
+     }
+  
+  O código acima recuperará os IDs de página de textura para o grupo de textura "MainMenu", então verifique se eles estão desempacotados, e se eles não estão pré-fetados na VRAM.
+   
+   
+   
+  
+    
+      
+        Voltar: Texturas
+        Próxima: texturas de grupo_get_textures
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

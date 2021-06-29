@@ -1,0 +1,119 @@
+
+  
+  animcurve_get
+  Esta função retornará uma estrutura contendo todos os dados para a curva de animação em questão. Você fornece o ID do ativo da curva de animação (como definido no Navegador de Ativos), e a função retornará uma estrutura
+    com as seguintes variáveis:
+   
+  
+    
+      
+        Nome da variável
+        Tipo de dados
+        Descrição
+      
+      
+        nome
+        corda
+        Este é o nome da curva de animação.
+      
+      
+        canais
+        ponteiro da matriz
+        Esta é uma matriz, onde cada item da matriz é uma estrutura de canais.
+      
+    
+  
+   A variável canais na estrutura é uma matriz onde cada item da matriz é uma estrutura com dados relativos a um canal dentro da curva. A estrutura do canal terá as seguintes variáveis:
+   
+  
+    
+      
+        Nome da variável
+        Tipo de dados
+        Descrição
+      
+      
+        nome
+        corda
+        Este é o nome do canal.
+      
+      
+        tipo
+        constante
+        Esta será uma das constantes animcurvetype_linear para interpolação linear entre pontos, ou animcurvetype_catmullrom para uma interpolação "suave" entre os pontos utilizando a interpolação catmull-rom.
+      
+      
+        iterações
+        inteiro
+        Se o canal estiver usando interpolação catmull-rom ("suave"), isso detém quantos pontos foram gerados para cada segmento da curva (observe que esses pontos extras são internos à função e usados apenas para os cálculos de tempo de execução).
+          Se o canal estiver usando interpolação linear, este valor ainda existirá, mas pode ser ignorado, pois não tem influência sobre como a curva é interpolada.
+      
+      
+        pontos
+        ponteiro da matriz
+        Esta é uma matriz, onde cada item da matriz é uma estrutura de pontos.
+      
+    
+  
+   Como nos canais, os pontos em um único canal são armazenados como estruturas em uma matriz, onde cada item da matriz é uma estrutura de ponto único. A estrutura de pontos tem as seguintes variáveis:
+   
+  
+    
+      
+        Nome da variável
+        Tipo de dados
+        Descrição
+      
+      
+        posx
+        real
+        A posição no tempo (normalizada de 0 a 1) do ponto.
+      
+      
+        valor
+        real
+        O valor do ponto.
+      
+    
+  
+   Note que se a função falhar (ou seja: o ID da Curva de Animação dada não existe) então a função retornará -1.
+   
+   
+  Sintaxe:
+  animcurve_get(curve_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        curve_id
+        O ID (índice) do navegador de ativos da curva de animação a obter.
+      
+    
+  
+   
+  Devoluções:
+  Estrutura ou -1
+   
+  Exemplo:
+  var _curve = animcurve_get(ac_ButtonTween); var _channel = _curve.channels[0]; if _channel.type != animcurvetype_linear {
+     _channel.type = animcurvetype_linear; }
+  
+  O código acima recupera a estrutura da curva de animação para o ativo da curva "ac_ButtonTween", então verifica o tipo de curva para o primeiro canal, e se não for linear, define-o como linear.
+   
+   
+   
+  
+    
+      
+        Voltar: Curvas de Animação
+        Próximo: animcurve_get_channel
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

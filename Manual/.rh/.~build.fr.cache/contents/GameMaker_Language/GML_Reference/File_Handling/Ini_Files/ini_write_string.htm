@@ -1,0 +1,54 @@
+
+  
+  ini_write_string
+  Você pode usar esta função para escrever uma string (texto) em um arquivo de dados ini. Os arquivos Ini são divididos em seções e, em seguida, cada seção é dividida em pares de chaves - valores. Assim, um arquivo ini típico se pareceria com algo assim:
+  Vale notar que o uso de aspas e caracteres de escape quando se escrevem cordas ini podem causar problemas quando mais tarde
+    lendo de volta os dados, pois eles podem ser truncados prematuramente. Por exemplo, escrever isto será um problema:
+  ini_write_string("test2", "seção", "olá Fritz");
+   
+   
+  Sintaxe:
+  ini_write_string(seção, chave, valor);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        seção
+        A seção do .ini para escrever.
+      
+      
+        chave
+        A chave dentro da seção relevante do .ini para escrever.
+      
+      
+        valor
+        O fio para escrever para o destino relevante.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  ini_open("savedata.ini"); ini_write_string("Save", "Player", global.Name); ini_close();
+  
+  O código acima abre um arquivo ini para leitura e escrita, depois escreve a string armazenada na variável global "Name" na seção "Save" com a chave "Player" antes de fechar o arquivo novamente.
+   
+   
+   
+  
+    
+      
+        Voltar: Arquivos de Inicia
+        Próximo: ini_read_real
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,53 @@
+
+  
+   Se o Botão Gamepad for liberado
+  Esta ação verifica quando um botão gamepad foi liberado para o índice gamepad dado. Ele retornará verdadeiro no único tique do jogo em que o botão for liberado e falso em todos os outros momentos. Se você ativar o modificador não modificador,
+    esta ação será revertida, e verificar se o botão não foi liberado, retornando falso no jogo, assinalando que foi liberado e verdadeiro em todos os outros momentos.
+  Se o botão a ser verificado for um botão analógico, então a liberação não será detectada até que o valor do botão tenha ficado abaixo do limite definido usando a ação Set Gamepad Button Threshold.
+  Note que para adicionar ações no bloco "se", elas devem ser descartadas ao lado da ação, como mostrado na imagem abaixo:
+  Estas ações serão executadas agora se o "se" avaliar
+   verdade, enquanto qualquer ação descartada em outro lugar será executada após o bloco "se".
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Gamepad
+        O índice gamepad.
+      
+      
+        Botão
+        O nome do botão a ser verificado.
+      
+      
+        Não
+        Negar o cheque (o verdadeiro torna-se falso e vice-versa)
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima pesquisa o estado do botão do gamepad 0 a cada passo e
+    se um botão estiver sendo mantido pressionado, ele verifica se o botão inicial está pressionado. Se a verificação for verdadeira na pressão inicial para baixo, um som é tocado, então, enquanto o botão é mantido pressionado para baixo, a velocidade da instância é ajustada para 10. Se o botão não estiver sendo pressionado, é emitido um som.
+    mantido pressionado, é feita uma verificação no botão de liberação para repor a velocidade em 0 novamente.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações Gamepad
+        A seguir: Gamepad Get Axis
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

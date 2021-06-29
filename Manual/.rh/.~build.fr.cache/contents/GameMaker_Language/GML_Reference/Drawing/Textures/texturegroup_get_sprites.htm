@@ -1,0 +1,44 @@
+
+  
+  grupo de textura_get_sprites
+  Com esta função, você pode recuperar o índice sprite de cada um dos sprites atribuídos às páginas de textura dentro do grupo de textura dado. Você fornece a cadeia de identificação do grupo de textura (como definido no Editor de Grupo de Textura) e a função retornará uma matriz 1D
+    onde cada entrada contém o índice sprite para um recurso sprite. Se a função falhar - ou seja: um grupo inválido é dado, ou o grupo não tem textura atribuída a ele - então a matriz estará vazia (0 comprimento).
+   
+  Sintaxe:
+  textgroup_get_sprites(tex_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tex
+        O nome do grupo de textura a verificar (um fio)
+      
+    
+  
+   
+  Devoluções:
+  1D array
+   
+  Exemplo:
+  var _tex_array = texturegroup_get_sprites( "MainMenu"); for (var i = 0; i < array_length(_tex_array); ++i;)  {
+     show_debug_message("Sprite " + string(i) + " Index:" + string(tex_array[i])); }
+  
+  O código acima recuperará os índices sprite para o grupo de textura "MainMenu", depois exibirá esses IDs na janela de saída do console.
+   
+   
+   
+  
+    
+      
+        Voltar: Texturas
+        Próximo: grupo de texturas_get_fonts
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

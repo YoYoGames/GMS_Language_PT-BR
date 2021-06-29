@@ -1,0 +1,61 @@
+
+  
+  Física
+  A integração de uma biblioteca física dedicada ao GameMaker Studio 2 significa que agora você pode assumir o controle de todos os aspectos do comportamento físico dos objetos dentro de seu mundo de jogo, particularmente colisões e interação de objetos. O "tradicional
+    tradicional" (o qual o GameMaker Studio 2 é o padrão) é um sistema "reativo", onde você verifica se há uma colisão e depois reage a essa colisão com o código que você coloca em objetos individuais. Isto é bom para jogos simples,
+    mas quando você tem um grande número de objetos e tem que codificar como todos eles reagem a diferentes situações no mundo do jogo, rapidamente se torna óbvio que este sistema simplesmente não é suficiente. É quando você tem que recorrer ao sistema de física do GameMaker Studio 2.
+  O sistema físico funciona de uma maneira muito diferente das colisões normais. É mais um sistema "passivo" onde você define uma série de propriedades para seus objetos no mundo do jogo, assim como as propriedades do próprio mundo do jogo, antes
+    quaisquer colisões ou interações ocorram. Estas "regras" codificadas então governarão a forma como tudo em seu mundo de jogo interage. Desta forma, com alguns códigos simples e a configuração correta da sala, você pode criar interações muito complexas entre
+    objetos e o mundo que ocorrerão e resolverão sem que você tenha que codificar para cada resultado possível.
+  Há algumas coisas que você deve observar ao trabalhar com o mundo da física do GameMaker Studio 2:
+  
+    O sistema físico existe "à parte" da estrutura básica da sala e da instância do GameMaker Studio 2, o que significa que seus timings e funções não estão necessariamente ligados à velocidade da sala e à ordem dos passos, como tudo mais.
+    O sistema físico substitui muitas das funções normais da instância... por exemplo, em vez de definir uma velocidade e uma direção para uma instância, se ela tiver sido declarada como sendo um corpo físico totalmente simulado, você usaria uma força ou impulso para fazê-la se mover no mundo do jogo, ou se ela não estiver habilitada para a física, você mesmo precisará definir as posições x e y. Isto requer um pouco de acostumação, então experimente com as funções da física e conheça como tudo funciona antes
+      tentando integrá-los ao seu projeto.
+    Você deve limitar o número de instâncias que são criadas, assim como o número de colisões e grupos de colisão com os quais o mundo da física tem que lidar. Você não pode ter milhares de ocorrências, todas com propriedades físicas e colisões
+      e esperar que tudo funcione bem devido ao fato de que a física requer alguns cálculos bastante intensivos, portanto, limite-se e otimize sempre que possível.
+    Ao configurar as colisões, use os pais o máximo possível, já que o sistema de colisão tem um número limitado de bits de colisão disponíveis para atribuir às instâncias do Box2D para detectar colisões. Por exemplo, se você tiver cinco objetos de parede diferentes,
+      não verifique cinco colisões, mas crie um objeto pai e o atribua às cinco paredes e depois tenha UMA verificação de colisão com o objeto pai. As propriedades físicas dos objetos não são herdadas apenas das colisões. Desta forma, você
+      pode manter seu jogo otimizado e livre de erros.
+    Tente não mover instâncias de um ponto da sala para outro de nenhuma outra forma que não seja usando as funções físicas (ou seja: não defina o manual de coordenadas x/y). Embora isto possa ser feito e em algumas circunstâncias possa ser necessário, geralmente é
+      a ser evitado devido aos resultados imprevisíveis que pode ter no motor da física, especialmente quando se tenta resolver colisões.
+    Deve-se tomar cuidado ao ligar os dispositivos, pois eles podem ser ligados a objetos e instâncias de forma independente. Isto significa que se você amarrar um acessório a (por exemplo) "o_Wall", todas as instâncias daquele objeto terão o acessório. Se você apenas
+      quer ligar um acessório a uma instância, então use a identificação dessa instância na função apropriada.
+    Esteja ciente de que, devido às diferenças na precisão do ponto flutuante, você pode descobrir que versões de seu jogo para diferentes plataformas alvo podem exibir um comportamento sutilmente diferente da versão padrão do Windows, embora cada versão seja autoconsistente.
+      através de execuções subseqüentes.
+    Para evitar instabilidades na simulação física, o Box2D limita a quantidade que um corpo pode girar e traduzir dentro de uma única atualização. As limitações aparentes irão variar de acordo com a precisão da simulação física de acordo com
+      com o número de atualizações e velocidade de atualização do mundo da física, e também de acordo com a escala do mundo da física. Isto significa que (por exemplo) se você tiver uma velocidade de atualização mundial de 60, a velocidade máxima de movimento seria de 20.
+  
+  As informações sobre as funções físicas podem ser encontradas nas páginas seguintes:
+   
+  
+    O mundo da Física
+    Forças
+    Instalações
+    Juntas
+    Partículas macias do corpo
+    Variáveis Físicas
+  
+   
+  Finalmente, existem algumas funções especiais de física que podem ser úteis para simulações de física mais avançadas. A primeira é para testes de possíveis colisões em um ponto específico da sala, e a segunda é para gerar massa e inércia personalizadas.
+    propriedades dentro de uma instância:
+   
+  
+    fisica_test_overlap
+    física_mass_properties
+  
+   
+   
+   
+  
+    
+      
+        Voltar: ReferênciaGML
+        A seguir: Em Compras App
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

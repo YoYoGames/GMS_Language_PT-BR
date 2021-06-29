@@ -1,0 +1,50 @@
+
+  
+  device_mouse_check_button_released
+  Esta função retorna verdadeiro ou falso, dependendo se o toque do dispositivo que você especificar foi liberado ou não. O argumento do dispositivo se refere ao número de toque do dispositivo, que pode ser de 0 a n e observar que o número máximo de
+    Os toques que podem ser detectados dependerão muito do dispositivo a ser utilizado e do sistema operacional (a maioria dos dispositivos suportará pelo menos 4 toques simultâneos). Esta função só é acionada uma vez pela ação de liberação real, e as constantes listadas
+   nesta página pode ser usado para verificar os botões do mouse. Note que mb_right só terá sido detectado se um toque duplo for detectado e mantido no segundo toque antes de ser liberado (este comportamento
+    pode ser desativado usando a função device_mouse_dbclick_enable()).
+   
+  Sintaxe:
+  device_mouse_check_button_released(device, button);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dispositivo
+        O dispositivo (de 0 a n) que está sendo verificado.
+      
+      
+        botão
+        O botão do dispositivo que está sendo verificado.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se device_mouse_check_button_released(0, mb_left) {
+     press=false; }
+  
+  O código acima verifica se o dispositivo foi pressionado e define uma variável como falsa, se for o caso.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada do dispositivo
+        Próximo: device_mouse_dbclick_enable
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

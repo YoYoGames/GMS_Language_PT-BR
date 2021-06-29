@@ -1,0 +1,64 @@
+
+  
+  point_in_rectangle
+  Ao utilizar esta função, você define uma área retangular e o GameMaker Studio 2 irá determinar se o ponto em questão está ou não dentro de seus limites. Se o ponto estiver dentro do retângulo definido, a função retornará verdadeiro caso contrário
+    a função retornará falsa.
+   
+  Sintaxe:
+  point_in_rectangle(px, py, x1, y1, x2, y2);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        px
+        A coordenada x do ponto a ser verificado.
+      
+      
+        py
+        A coordenada y do ponto a verificar.
+      
+      
+        x1
+        A coordenada x do lado esquerdo do retângulo a ser verificado.
+      
+      
+        y1
+        A coordenada y do lado superior do retângulo a verificar.
+      
+      
+        x2
+        A coordenada x do lado direito do retângulo a ser verificado.
+      
+      
+        y2
+        A coordenada y do lado inferior do retângulo a verificar.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if point_in_rectangle(mouse_x, mouse_y, x -10, y - 10, x + 10, y + 10) {
+     audio_play_sound(snd_click, 0, false); }
+  
+  Este código curto verifica a posição do mouse em relação à área retangular definida e toca um som se ele estiver dentro dos limites.
+   
+   
+   
+  
+    
+      
+        Voltar: Colisões
+        Próximo: point_in_triangle
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

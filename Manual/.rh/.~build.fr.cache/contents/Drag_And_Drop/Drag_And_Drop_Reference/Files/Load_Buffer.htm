@@ -1,0 +1,45 @@
+
+  
+   Buffer de carga
+  Com esta ação você pode carregar um buffer que foi salvo anteriormente com a ação Save Buffer. A ação criará um novo buffer, carregará o arquivo de dados nele e retornará o valor de identificação único para identificar o buffer para o
+    variável. Você fornece o nome do arquivo para carregar (como uma string) e uma variável para armazenar o ID do buffer retornado. Observe que se você marcar a variável como uma variável local temporária, você precisa ter certeza de excluir o buffer que esta função cria antes
+    o fim do roteiro de ação ou evento, caso contrário você perderá a referência a ele e terá um vazamento de memória quando a variável for descartada.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Nome do arquivo
+        O nome (como um fio) do arquivo a ser aberto
+      
+      
+        Meta
+        A variável alvo para manter o valor de identificação único para o buffer criado na carga
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima criará uma variável para armazenar dados de buffer e então verificará se um
+    arquivo de proteção de segurança já foi feito anteriormente. Se o arquivo existe, então ele é carregado na variável de buffer que criamos, mas se não existir, ele é criado, escrito e então salvo pronto para ser carregado na próxima vez.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações do arquivo
+        A seguir: Salve Buffer
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,137 @@
+
+  
+  O que é Programação?
+  Na seção anterior, delineamos como o GameMaker Studio 2 funciona para criar seu jogo, mas independentemente dos sprites, objetos ou salas que você tenha adicionado, nada acontecerá a menos que você o tenha programado 
+    para acontecer. Mas, o que é um programa?
+  No sentido geral, um programa é simplesmente um conjunto de instruções (ou  declaraçãos) que você dá ao computador para dizer-lhe para realizar certos
+    tarefas. Estas tarefas podem variar muito desde simplesmente dizer ao computador para desenhar algo para a tela, até calcular um valor baseado em alguma entrada do usuário e depois reagir a ela, mas em todos os casos é uma estrutura lógica que dará algum resultado.
+    Na página anterior, falamos sobre mover uma instância de um objeto para a direita em 2 pixels, então vamos dar uma olhada no programa real que faria isso:
+  Em Drag And Drop™(DnD™), seria assim:
+  
+  E usando a linguagem GameMaker(GML), seria parecido com isto:
+  x = x + 2;
+  Para entender o que está acontecendo acima, precisamos primeiro falar sobre Variáveis, e depois continuaremos a discutir Funções e finalmente Condicionais , já que estas três coisas são geralmente o que compõe
+    a maior parte de qualquer programa.
+   
+  Variáveis
+  
+    As variáveis são a pedra angular da programação, juntamente com as funções (que cobriremos brevemente dentro de momentos). Uma variável é simplesmente um valor nomeado, e no caso acima a variável é chamada de "x".
+      Agora, "x" pode ser qualquer valor, como -126, ou 583, ou mesmo 1,56378, mas o valor real de "x" é irrelevante, pois pode variar (daí o nome "variável"). O que é importante
+      é que pegamos o "x" e acrescentamos 2 a ele. Vale notar que neste caso "x" é uma variável embutida , o que significa que é uma variável que é criada
+      pelo GameMaker Studio 2 para todos os objetos, mas você também pode criar suas próprias variáveis.
+    Para criar uma variável, ela deve ser declarada antes de poder ser utilizada. Declarar uma variável é dizer ao GameMaker Studio 2 que esta nova variável existe e que ela tem um valor inicial. Para descalcificar uma variável, você simplesmente faria algo como
+      isto:
+    
+    ou:
+    pontos = 0;
+    Uma vez declarada uma variável, ela pode ser utilizada em outros códigos ou ações programadas. O ótimo das variáveis é que ela permite "reutilizar" um valor em vários lugares, sem ter que realmente se preocupar com o valor
+      é. Por exemplo, digamos que você tenha uma variável "damage" e a utilize em vários lugares para dizer ao GameMaker Studio 2 para lidar com uma certa quantidade de danos a outros objetos no jogo. Podemos declarar "damage".
+      como 20, mas depois decidimos que este é um valor muito grande e queremos mudá-lo para 10. Se tivéssemos usado o valor 20 em vez de uma variável, precisaríamos passar por todos os nossos códigos ou ações e mudar 20 para 10, o que consome tempo e erro.
+      propenso. Entretanto, o uso de uma variável significa que só temos que mudá-la uma vez para 10 quando a declaramos e o resto do código ou ações usarão este novo valor.
+    Vale ressaltar que existem muitos tipos diferentes de variáveis, e cada uma tem maneiras ligeiramente diferentes de ser usada. Não vamos cobrir isso aqui, mas você pode encontrar mais informações na seção Visão Geral da Linguagem do GameMaker no manual.
+    Entretanto, as variáveis são apenas a primeira parte da história. A próxima parte é o uso de Funções...
+     
+  
+  Funções
+  
+    A próxima parte importante da programação é o uso de funções junto com variáveis. Uma função é simplesmente uma instrução ao computador para fazer algo, e pode ter valores de entrada e de saída (ou seja: você pode dar
+      um valor para ele, e ele fará alguma operação e depois retornará um valor diferente), embora nem todas as funções exijam entrada, nem tenham uma saída. Para entender melhor isto, vejamos uma função integrada no GameMaker Studio 2.
+    A função que vamos analisar é instance_number()que, em DnD™, é a ação Get Instance Count.
+      Esta função/ação recuperará o número de instâncias de um determinado objeto na sala de jogo, e você o usará assim:
+    
+    ou:
+    number = instance_number(obj_Enemy);
+    Em ambos os exemplos acima, a função toma como valor de entrada um ID de objeto (o  argumento ou parâmetro) e dará um valor de saída (o valor de retorno ),
+      que é o número de instâncias do objeto dado presente na sala quando a função/ação foi chamada. Note que usamos uma variável para armazenar o valor retornado, a variável "number". Esta variável pode
+      ser declarado antes que este código seja executado, ou será considerado como sendo declarado quando o código for executado e o valor de retorno da função/ação atribuída a ele.
+    Vale notar que você não está limitado apenas ao uso da linguagem GameMaker ou das ações do DnD™e pode realmente construir suas próprias funções para ampliar o que é possível ao programar (você pode saber mais sobre isso aqui para GML e aqui para DnD™).
+    Você pode fazer muito com funções e variáveis, porém elas seriam praticamente inúteis sem a peça final importante da história da programação, os condicionantes...
+     
+  
+  Condicionais
+  
+    Uma grande parte da programação é feita de perguntas. Essas perguntas são geralmente simples, que podem ser avaliadas como verdadeiras ou falsas, e são chamadas de condicionantes (e os valores de true e
+      false  são chamados de valores booleanos ). O condicional mais comum e amplamente utilizado é a pergunta "if", que é usada para verificar se algo é true ou false e
+        então agir em conformidade. Um exemplo simples seria remover um personagem do jogo se sua saúde fosse abaixo de zero, o que, em linguagem simples, seria expresso como:
+    se a variável de caráter "hp" for menor ou igual a zero, então destrua-a.
+    Para transformar o acima exposto em código, teríamos isto:
+    
+    ou:
+    if (hp <= 0)
+       {
+       instance_destroy();
+       }
+    Então, acima fazemos a pergunta "se a variável hp é menor ou igual a 0" e então, se isso for avaliado como verdadeiro, chamamos a função instance_destroy() ou
+      a ação Destroy Object Instance. Note que o "then" (se algo... então algo...) está implícito e 
+      você não precisa adicioná-lo, e também note que no código GML usamos o aparelho {} para "bloquear" o código que queremos executar quando o " if" avalia para true (em
+     DnD™isto é simbolizado ao abandonar as ações à direita da "If" ação). Qualquer coisa adicionada entre os aparelhos só será executada se o " if" avaliar para
+      true , para que você possa ter mais de uma declaração executada em um único "bloco".
+    Mais uma coisa a se notar ao usar o condicional "if" é que podemos acrescentar uma declaração "else" a ele também, assim o condicional se tornaria "se algo avaliar
+      para true e depois fazer algo, senão fazer algo diferente". Desta forma, é possível lidar com uma expressão condicional retornando true  ou  false.
+      Vamos dar um exemplo disso também:
+    
+    ou:
+    if (contagem regressiva <= 0)
+       {
+       instance_create_layer(x, y, "Instâncias", obj_Bullet);
+       countdown = 30;
+       } 
+       mais
+      
+       {
+       contagem regressiva = contagem regressiva - 1;
+       }
+    O código acima se traduz em linguagem simples como:
+    se a variável de contagem regressiva for menor ou igual a zero então:
+       criar uma instância do objeto "obj_Bullet" na posição atual x/y na camada "instâncias",
+       redefinir a variável de contagem regressiva para 30.
+       mais:
+      
+       subtrair uma da variável de contagem regressiva.
+    Não se preocupe muito com a parte de criação da instância real do código acima, pois cobriremos isso com mais detalhes nas seções seguintes. O importante a entender aqui é que você pode criar expressões condicionais que verificam
+      se alguma coisa for true ou false e fazer com que seu programa responda de maneiras diferentes. Isto pode parecer uma coisa muito simples, mas na verdade é incrivelmente poderoso e formará a base para quase
+      tudo o que você faz ao programar no GameMaker Studio 2.
+  
+   
+  Então, para responder nossa pergunta de "O que é programação", podemos dizer que a programação está usando uma combinação de afirmações - que  podem usar  variável
+   s para formar  expressãos, funções para executar tarefas, e condicional
+     s para fazer perguntas - e, em seguida, executar estas declarações concomitantemente para atingir um objetivo. Abaixo você pode ver um programa um pouco mais complexo em DnD™e GML. Você pode adivinhar o que ele faz?
+  
+  ou:
+  if mouse_check_button_pressed(mb_left) == true
+     {
+     x = mouse_x
+     y = mouse_y
+     image_blend = c_red;
+     } 
+     else
+    
+     {
+     if mouse_check_button_released(mb_left) == true
+     {
+     image_blend = c_white;
+     } 
+     }
+  SpoilerO código acima verifica primeiro se um botão do mouse está sendo pressionado (o botão esquerdo do mouse, que é definido usando a constante " mb_left"),
+    e se tiver sido pressionado, então move a instância que executa o código para a posição atual do mouse (definida usando as variáveis embutidas " mouse_x" e " mouse_y") e
+    também define a cor da mistura de instância para o vermelho. Se o botão do mouse não tiver sido pressionado, então ele verifica se o botão do mouse foi solto, e se ele repõe a cor da mistura da instância para branco (note que
+    novamente, usamos algumas constantes  embutidas - " c_red" e " c_white" - para definir facilmente as cores).
+  
+   
+  Esperamos que você tenha agora um pouco mais de uma idéia do que é programação, então vamos explorar a IDE GameMaker Studio 2 e ver como adicionar recursos como sprites e 
+   objetos e outros recursos importantes que seu jogo vai precisar.
+   
+   
+   
+  
+    
+      
+        Voltar: Índice
+        A seguir: Criando Sprites
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

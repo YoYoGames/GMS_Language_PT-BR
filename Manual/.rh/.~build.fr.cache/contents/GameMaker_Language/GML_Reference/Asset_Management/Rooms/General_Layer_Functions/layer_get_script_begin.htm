@@ -1,0 +1,44 @@
+
+  
+  layer_get_script_begin
+  Você fornece a identificação da camada (que você obtém quando cria a camada usando layer_create()) ou o nome da camada (como uma string - isto terá um impacto no desempenho) e esta função retornará o índice da função de script da função designada para executar no início da renderização para aquela camada, ou retornará -1 se nenhuma função for designada. Você pode atribuir funções de script a uma camada com layer_script_begin() e
+    layer_script_end().
+   
+  Sintaxe:
+  layer_get_script_begin(layer_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada a ser alvo (ou o nome da camada como uma corda)
+      
+    
+  
+   
+  Devoluções:
+  Script Function Index (Real) ou -1 se nenhum script for atribuído
+   
+  Exemplo:
+  if layer_get_script_begin(layer) == -1 {
+     layer_script_begin(layer, scr_SetShaderValues); }
+  
+  O código acima verificará se a camada que executa o código tem uma função de script atribuída a ele e se não tem uma função atribuída.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próximo: layer_get_script_end_end
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

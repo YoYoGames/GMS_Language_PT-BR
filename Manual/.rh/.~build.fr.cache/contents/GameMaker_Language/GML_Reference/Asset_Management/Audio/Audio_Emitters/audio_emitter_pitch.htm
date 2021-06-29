@@ -1,0 +1,51 @@
+
+  
+  audio_emitter_pitch
+  Esta função pode ser usada para alterar o tom de todos os sons emitidos pelo emissor dado. É um multiplicador de tom, na medida em que o valor de entrada multiplica o tom atual por aquela quantidade, de modo que o valor padrão de 1 não é alteração do tom,
+    enquanto um valor inferior a 1 baixará o passo e maior que 1 aumentará o passo. É melhor usar pequenos incrementos para esta função, pois qualquer valor abaixo de 0 ou acima de 5 pode não ser audível de qualquer forma.
+  OBSERVAÇÃO: Se um som estiver sendo laçado através do emissor, a mudança no tom não será detectada a menos que o som seja interrompido e laçado novamente!
+   
+  Sintaxe:
+  audio_emitter_pitch(emissor, pitch);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        emissora
+        O índice do emissor a mudar.
+      
+      
+        tom
+        O multiplicador de passo (padrão 1).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  interruptor (engrenagem) {
+     caso 1: audio_emitter_pitch(s_emit, 0.8); pausa; caso 2: audio_emitter_pitch(s_emit, 0.9); pausa; caso 3: audio_emitter_pitch(s_emit, 0.95); pausa; caso 4: audio_emitter_pitch(s_emit, 1); pausa; caso 5: audio_emitter_pitch(s_emit, 0.95),
+    1.2); pausa; }
+  
+  O código acima mudará o tom do áudio reproduzido do emissor indexado na variável "s_emit", com base no valor da variável "gear".
+   
+   
+   
+  
+    
+      
+        Voltar: Emissores de áudio
+        Próximo: audio_emissor_set_listener_mask
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,44 @@
+
+  
+  alarm_get
+  Esta função pode ser usada para obter o valor atual do alarme dado. Você fornece o número do alarme de 0 a 11 e esta função retornará o valor que o alarme está atualmente ligado. Este é um método alternativo para obter o valor da matriz de alarme 
+    diretamente.
+   
+  Sintaxe:
+  alarm_get(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice de alarme a obter, de 0 a 11.
+      
+    
+  
+   
+  Devoluções:
+  Real (inteiro)
+   
+  Exemplo:
+  para (var i = 0; i < 12; i++) {
+     if alarm_get(i) > 0 alarm_set(i, -1); }
+  
+  O código acima verifica todos os alarmes na instância de chamada e, se forem maiores que 0, os coloca em -1, impedindo-os de continuar a contagem regressiva.
+   
+   
+   
+  
+    
+      
+        Voltar: Instâncias
+        Próximo: alarme_set
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

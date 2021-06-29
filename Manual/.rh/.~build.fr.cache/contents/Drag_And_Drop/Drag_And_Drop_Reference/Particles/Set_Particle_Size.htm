@@ -1,0 +1,61 @@
+
+  
+   Definir o tamanho da partícula
+  Esta ação é utilizada para definir o tamanho da partícula, que pode ser estática ou definida para incrementar/diminuir com o tempo. Você fornece o valor de identificação único para o tipo para definir o tamanho de (como retornado quando você criou o tipo com a ação Criar tipo de partícula)
+    e depois dar uma gama de tamanhos iniciais de partida, depois a quantidade de aumento e finalmente a "sacudida". O tamanho em que uma partícula é criada é um valor escalar, onde 1 é o mesmo tamanho da imagem da partícula base, 0,5 seria a metade do tamanho da
+    imagem de base e um valor de 2 seria o dobro. Se os tamanhos mínimo e máximo não forem os mesmos, então o tamanho inicial para qualquer partícula criada será um valor aleatório entre eles.
+  A opção de aumentar o tamanho de uma partícula permite que você insira um valor que será adicionado ao valor escalar básico de cada quadro de jogo da vida útil da partícula. Assim, definir este valor para, por exemplo, 0,1 adicionará 0,1 ao valor da escala de cada quadro de jogo.
+    Note que você pode usar valores negativos aqui também para fazer a escala da imagem da partícula descer também. Note que a diminuição da escala mínima que é aceita é -0,01 e o incremento mínimo é 0,01.
+  Finalmente, você pode definir a opção "sacudir". Este é um valor que será gerado aleatoriamente entre 0 e o valor que você dá e então adicionado ou subtraído ao tamanho de cada etapa da vida útil das partículas, fazendo com que a imagem desenhada flutue em
+    tamanho. Obviamente os valores maiores são mais pronunciados do que os menores, e este valor pode até mesmo ser negativo, sendo a faixa máxima entre -20 e 20.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Tipo
+        O valor de identificação único para o tipo de partícula para definir o tamanho de
+      
+      
+        Tamanho mínimo
+        A escala mínima para o tipo de partícula (padrão 0,1)
+      
+      
+        Tamanho máximo
+        A escala máxima para o tipo de partícula (padrão 1)
+      
+      
+        Aumentar
+        O valor a ser acrescentado ao tamanho do tipo de partícula em cada quadro de jogo (pode ser negativo, mínimo +/-0,01)
+      
+      
+        Wiggle
+        O valor máximo a ser adicionado ou subtraído aleatoriamente do tamanho das partículas por etapa (+/-20).
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima criará um novo tipo de partícula e atribuirá seu exclusivo
+    valor de identificação para uma variável global. Em seguida, ele passa a definir todas as propriedades para o tipo de partícula.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações com Partículas
+        A seguir: Set Particle Sprite
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

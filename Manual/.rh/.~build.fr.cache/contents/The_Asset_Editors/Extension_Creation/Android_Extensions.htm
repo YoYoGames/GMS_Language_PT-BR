@@ -1,0 +1,37 @@
+
+  
+  Extensões doAndroid 
+  Para criar uma extensão para o Android você tem que fazê-lo em duas partes. A primeira parte seria adicionar a extensão em si, junto com os arquivos necessários, etc... e a segunda é criar as funções e macros/constantes que a extensão requer.
+    As funções e constantes são adicionadas usando arquivos placeholder para agrupá-las, assim você adicionaria um placeholder e depois definiria as funções e macros como explicado na seção acima. Para adicionar o resto dos arquivos através de
+    necessidade de primeiro assinalar o Android caixa de seleção na seção Características Adicionais do editor:
+  
+  Aqui você dá os seguintes detalhes:
+  
+    Nome da classe: Sua extensão pode ter múltiplas classes, com cada classe tendo suas próprias funções e constantes, portanto, você deve dar-lhe um nome que reflita seu propósito.
+    Permissões doAndroid: Aqui você pode adicionar quaisquer permissões extras que sua extensão exigir. O que são essas permissões dependerá inteiramente do uso que a extensão tiver, e assim você deve verificar a documentação fornecida pelo Google para a plataforma Android, ou, se você estiver usando um SDK de terceiros, a documentação que vem com o SDK. Para adicionar uma nova permissão, você precisa clicar no botão  para adicionar uma permissão de espaço reservado, e depois fazer um slow  clique sobre isso para editá-la ao que for necessário. Você pode remover as permissões usando o botão .
+    Injetar nas dependências de graduação: Aqui você pode adicionar qualquer código extra que precise ser injetado (adicionado) nas dependências de Gradle build.
+    Injetar no AndroidManifest.xml Manifesto: Aqui você define qualquer código extra a ser injetado (adicionado) ao arquivo XML do Manifesto do Android quando seu jogo é construído para teste ou lançamento final. Certifique-se de revisar isto (e suas permissões) cuidadosamente
+      antes de submeter qualquer jogo à loja, pois configurações incorretas farão com que seu jogo seja reprovado para submissão.
+    Injetar no AndroidManifest.xml Aplicação: Aqui você define qualquer código extra a ser injetado (adicionado) ao arquivo XML do manifesto Android sob o cabeçalho Application quando seu jogo é construído para teste ou lançamento final. Certifique-se de revisar
+      isto (e suas permissões) cuidadosamente antes de submeter qualquer jogo à loja, pois configurações incorretas farão com que seu jogo seja reprovado para submissão.
+    Injetar no AndroidManifest.xml RunnerActivity: Aqui você define qualquer código extra a ser injetado (adicionado) no arquivo XML do Manifesto Android sob o cabeçalho RunnerActivity quando seu jogo é construído para teste ou lançamento final. Assegure-se de
+      revise isto (e suas permissões) cuidadosamente antes de submeter qualquer jogo à loja, pois configurações incorretas farão com que seu jogo seja reprovado para submissão.
+  
+  Uma vez configurado corretamente, você precisará adicionar os arquivos necessários para que seu pacote de extensão funcione. Para fazer isso, você precisa clicar nos botões na parte inferior, ou Adicionar SDK ou Adicionar Fonte e então navegar para os arquivos que você
+    desejo de acrescentar. Os arquivos adicionados serão armazenados no diretório AndroidSource junto com sua extensão. Você pode abrir este local a qualquer momento, clicando com o botão direito do mouse em  na extensão e selecionando Open Extension Directory.
+  Para mais informações sobre a criação de extensões Android, consulte a Base de ConhecimentoYoYo Games.
+   
+   
+   
+  
+    
+      
+        Voltar: O Editor de Extensão
+        Próximo: ExtensõesiOS
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

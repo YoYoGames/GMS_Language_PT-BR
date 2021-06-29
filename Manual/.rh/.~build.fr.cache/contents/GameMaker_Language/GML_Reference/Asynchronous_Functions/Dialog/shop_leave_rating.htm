@@ -1,0 +1,62 @@
+
+  
+  shop_leave_rating
+  Esta função abre um diálogo dependente do SO onde você pode pedir ao usuário para publicar uma classificação ou comentário em uma determinada página. Você pode definir o texto que deve aparecer no diálogo, assim como o texto que você deseja aparecer nos dois botões e o URL
+    onde o comentário tem de ser publicado.
+  NOTA: Esta função é apenas para alvos Android e iOS.
+  IMPORTANTE! Em iOSQuando se utiliza TestFlight, em desenvolvimento, o prompt será exibido, mas você não poderá fazer nada. Uma vez que seu aplicativo esteja na App Store, este botão se torna ativo e o usuário tem a opção de
+    escrever uma resenha ou deixar uma classificação. Note que se você distribuir o jogo através do TestFlight, esta janela pode nem mesmo ser mostrada.
+   
+  Sintaxe:
+  shop_leave_rating(text, yes_string, no_string, url)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        texto
+        Texto que aparece no diálogo.
+      
+      
+        sim_string
+        Texto que aparece no botão "sim".
+      
+      
+        no_string
+        Texto que aparece no botão "não".
+      
+      
+        url
+        A URL completa para onde o comentário deve ser enviado.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se temporizador <= 0 {
+     shop_leave_rating("Obrigado por jogar o jogo! Por que não deixar um comentário", "Ok!", "Hoje não!", " "); http://MacSweeney/comments timer = 10000000; }
+     mais
+     {
+     timer -= 1; }
+  
+  O código acima pedirá ao usuário que deixe um comentário se a variável "timer" tiver contado até 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Diálogo
+        Próximo: get_login_async
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

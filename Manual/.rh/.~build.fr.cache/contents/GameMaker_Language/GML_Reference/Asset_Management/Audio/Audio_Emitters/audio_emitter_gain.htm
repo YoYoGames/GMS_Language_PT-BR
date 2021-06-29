@@ -1,0 +1,55 @@
+
+  
+  audio_emitter_gain
+  Esta função define o ganho máximo (volume) para o som. O volume percebido para um som pode mudar dependendo do valor de queda e da posição que ele tem em relação ao ouvinte,
+    mas ao definir o ganho com esta função, o volume total nunca excederá o valor de ganho especificado. A imagem abaixo ilustra como o ganho afeta o volume do emissor quando a queda é maior que 0:
+  Esta função mudará o volume do som enquanto ele estiver sendo tocado, assim como todos os sons subseqüentes tocados.
+    através do emissor dado. Note que em algumas plataformas você pode ter um ganho superior a 1, embora um valor de 1 seja considerado "volume completo" e qualquer coisa maior possa introduzir clipping de áudio ou distorção.
+  OBSERVAÇÃO: o volume final também será influenciado pelo ganho de áudio global que foi definido pela função audio_master_gain().
+   
+  Sintaxe:
+  audio_emitter_gain(emissora, ganho);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        emissora
+        O índice do emissor a mudar.
+      
+      
+        ganhar
+        O ganho máximo (padrão 1).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se acima {
+     gain += 0,05; if gain >= 1 up = falso; }
+     mais
+     {
+     gain += 0,05; if gain <= 0 up = true; }
+     audio_emitter_gain(s_emit, gain);
+  O código acima define a variável "ganho" para valores diferentes e depois usa essa mesma variável para definir o ganho do emissor indexado na variável "s_emit".
+   
+   
+   
+  
+    
+      
+        Voltar: Emissores de áudio
+        Próximo: áudio_emissor_pitch
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,89 @@
+
+
+
+
+
+  
+  Funções Numéricas
+  Números reais no GameMaker Studio 2 são considerados números de ponto flutuante de precisão dupla - ou seja, eles têm um ponto decimal sem número fixo de dígitos
+    antes ou depois do ponto - ou inteiros - ou seja, são números inteiros sem valor decimal de pontos. 2, por exemplo, é um número inteiro, mas 2,01 é um ponto flutuante real.
+  NOTA: No alvo HTML5, todos os números reais são duplas.
+  Esta distinção entre inteiros e flutuadores é muito importante quando se trata de desenvolvimento de plataformas cruzadas, pois a precisão dos cálculos feitos em um PC Windows não é a mesma que a precisão desses mesmos cálculos.
+    quando feito em um dispositivo móvel. Isto significa que você deve prestar uma atenção especial ao fazer comparações, por exemplo:
+  se (image_index == 1) { faça algo... }
+  No exemplo acima, se temos ajustado a velocidade_da_imagem para 0,25 - por exemplo - então após quatro passos você pode assumir que o valor do índice_de_imagem seria 1, mas pode ser
+    um valor como 1,0000002 devido à forma como funciona a matemática de ponto flutuante e, portanto, a avaliação não será verdadeira. Estes tipos de erros podem ser bastante difíceis de depurar e por isso é sempre bom estar atento a eles e planejar com antecedência e usar
+    outros meios de verificação de valores ou usar as funções apropriadas de piso ou arredondamento (listadas abaixo) para converter o número a ser verificado em um número inteiro (para mais informações sobre matemática de ponto flutuante e por que isso é um problema, por favor veja aqui). Por exemplo, o código acima poderia ser escrito como:
+  if (floor(image_index) == 1) { faça algo... }
+  Também vale a pena notar que ao utilizar os alvos do CompiladorYoYo, todas as expressões e funções são avaliadas da esquerda para a direita, enquanto que em todas as outras plataformas alvo são avaliadas da direita para a esquerda,
+    o que significa que isto - por exemplo - dará resultados diferentes, dependendo da plataforma:
+  val = max(num, ++num, num+++);
+  NOTA: Para mais informações, consulte a seção sobre Ordem de Avaliação.
+  Você também pode usar uma função especial disponível no GameMaker Studio 2 para definir o valor epsilon para matemática de ponto flutuante. Quando um número real é arredondado para o número de vírgula flutuante mais próximo,
+    o epsilon (também conhecido como "epsilon máquina") forma um limite superior sobre o erro relativo, e você pode obter e definir o valor do epsilon usando as seguintes funções:
+   
+  
+    matemático_set_epsilon
+    math_get_epsilon
+  
+   
+  Todas estas funções tratam da utilização de números e valores aleatórios:
+  NOTA: Ao utilizar as funções aleatórias, o GameMaker Studio 2 mantém a mesma semente aleatória toda vez que você inicia o jogo. Isto torna a depuração muito mais fácil, pois você tem a garantia de que as funções aleatórias sempre retornarão no início.
+    o mesmo valor, porém, se você não desejar que isso aconteça, você deve primeiro definir uma nova semente aleatória logo no início do jogo, ou usando aleatoriedade() ou 
+    random_set_seed().
+   
+  
+    escolha
+    aleatório
+    gama_randômica
+    irracional
+    irandom_range
+    aleatório_set_seed
+    aleatório_get_seed
+    aleatorise
+  
+   
+  Todas estas são funções que irão arredondar valores de alguma forma, ou selecionar um único valor entre vários valores dados:
+   
+  
+    rodada
+    andar
+    frac
+    abs
+    assine
+    ceil
+    max
+    significa
+    mediana
+    min
+    lerp
+    braçadeira
+  
+   
+  Finalmente, uma coleção variada de funções matemáticas importantes:
+   
+  
+    exp
+    ln
+    energia
+    sqr
+    sqrt
+    log2
+    log10
+    logn
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Matemática e Números
+        A seguir: Vetores
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

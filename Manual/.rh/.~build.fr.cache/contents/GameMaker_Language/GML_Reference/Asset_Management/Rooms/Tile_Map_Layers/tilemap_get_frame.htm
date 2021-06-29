@@ -1,0 +1,48 @@
+
+  
+  tilemap_get_frame
+  Como as telhas podem ser animadas, às vezes pode ser útil saber qual moldura está sendo desenhada atualmente e reagir de acordo, portanto, com esta função você pode recuperar o índice de moldura atual para um determinado mapa de telhas. Você dá o ID do elemento do mapa de azulejos (que
+    você obtém quando cria um elemento de mapa de azulejos usando layer_tilemap_create() ou quando você usa a função layer_tilemap_get_id()), e a função retornará
+    o índice do quadro.
+   
+  Sintaxe:
+  tilemap_get_frame(tilemap_element_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tilemap_element_id
+        O valor de identificação único do elemento do mapa de azulejos para obter o índice de quadros de
+      
+    
+  
+   
+  Devoluções:
+  Real (entre 0 (inclusive) e o número máximo de quadros de animação (exclusivo))
+   
+  Exemplo:
+  var lay_id = layer_get_id("Tiles_Traps"); var map_id = layer_tilemap_get_id(lay_id); if tilemap_get_frame(map_id) >= 2 && tilemap_get_frame(map_id) < 4 {
+     global.activate = true; }
+     else
+     {
+     global.activate = false; }
+  
+  O código acima verifica o quadro de animação atual para o mapa de azulejos dado na camada dada, e define uma variável global com base no valor de retorno.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas do mapa de azulejos
+        A seguir: tilemap_get_tile_width
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

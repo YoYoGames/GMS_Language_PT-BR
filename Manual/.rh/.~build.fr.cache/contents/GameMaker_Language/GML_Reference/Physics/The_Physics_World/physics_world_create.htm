@@ -1,0 +1,46 @@
+
+  
+  physics_world_create
+  Mesmo que você tenha definido a física para seus objetos, sem um mundo para colocá-los dentro deles, o sistema de colisão tradicional do GameMaker Studio 2 será o padrão, então você precisa desta função para criar o sistema de física para a sala especificada
+    em um evento objeto, ou o próprio código de criação da sala (também pode ser definido sem o uso de código no editor da sala). Esta função associará um "mundo" físico com a sala e todas as instâncias criadas na sala se comportarão usando
+    a física que foi definida para eles e para o próprio mundo.
+  Você notará que temos um argumento que define uma relação entre tamanho de pixel e metros.
+    Isto porque as funções físicas funcionam usando medidas do mundo real e, portanto, devemos traduzir coordenadas e tamanhos de pixels para estas medidas do mundo real usando uma "escala de pixel a metro". Você vai querer ajustar o ajuste da escala de pixels até que o tamanho médio dos pixels dos objetos que você está usando se traduza aproximadamente em objetos físicos simulados de um tamanho apropriado, e acima você pode ver que nós o fixamos em 32 pixels sendo o equivalente a 1 metro. Deve-se notar que
+    que o sistema físico funcionará com proporções maiores e menores, mas que o melhor desempenho é quando as medidas do mundo real de seus objetos não forem inferiores a 0,1 metros e não superiores a 50 metros.
+   
+  Sintaxe:
+  physics_world_create(pixeltometrescale);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        escala de pixelometria
+        define a proporção de pixels na tela para metros no mundo real. Uma proporção de 32:1 será especificada como 1/32 (ou 0,03125).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  physics_world_create(1/32);
+  O código acima criará um mundo físico na sala atual com uma relação de escala de 32 pixels sendo o equivalente a 1 metro.
+   
+   
+   
+  
+    
+      
+        Voltar: O Mundo da Física
+        A seguir: gravidade_mundo_física
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

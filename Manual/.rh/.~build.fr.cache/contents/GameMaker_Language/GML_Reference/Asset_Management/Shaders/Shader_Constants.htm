@@ -1,0 +1,126 @@
+
+  
+  Constantes desombreamento 
+  Além das funções de sombreamento e constantes definidas nas Páginas de Referência OpenGL ES Shading Language (GLSL ES), há também um número
+    de constantes de shader disponíveis para você que são exclusivas do GameMaker Studio 2.
+  As constantes de matriz de exibição a seguir podem ser usadas como índices de matriz ao usar a constante de matriz de sombreamento gm_Matrices:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        MATRIX_VIEW
+        Esta constante de índice de matriz mantém o índice com a matriz de visão atual. O índice retornado seria usado como um valor de matriz ao chamar a constante gm_Matrices dentro do código shader.
+      
+      
+        MATRIX_PROJECTION
+        Esta constante de índice de matriz mantém o índice na matriz de projeção atual. O índice retornado seria usado como um valor de matriz ao chamar a constante gm_Matrices dentro do código shader.
+      
+      
+        MATRIX_WORLD
+        Esta constante de índice de matriz mantém o índice na matriz mundial atual. Isto pode ser usado para coisas como iluminação, se você tiver informações de luz no espaço mundial. O índice retornado seria usado como um valor de matriz quando se chama a constante gm_Matrices dentro do código shader.
+      
+      
+        MATRIX_WORLD_VIEW
+        Esta constante de índice de matriz mantém o índice com o resultado do mundo e as matrizes de visão multiplicadas juntas. Isto é freqüentemente usado para coisas como nevoeiro. O índice retornado seria usado como um valor de array ao chamar a constante gm_Matrices 
+          dentro do código de sombreamento.
+      
+      
+        MATRIX_WORLD_VIEW_PROJECTION
+        Esta constante de índice de matriz mantém o índice com o resultado do mundo, matrizes de visão e projeção multiplicadas juntas. Esta é a matriz de transformação normal utilizada para as posições dos vértices. O índice retornado seria usado como um valor de matriz quando
+          chamando a constante gm_Matrices dentro do código shader.
+      
+      
+        MATRIX_MAX
+        Isto não é um índice de matriz, mas retorna o tamanho da matriz no sombreador do vértice.
+      
+      
+        MAX_VS_LUZES
+        Isto não é um índice de matriz, mas retorna o número de luzes no sombreador do vértice.
+      
+    
+  
+   
+  A seguinte constante também está disponível para iluminação:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        MAX_VS_LUZES
+        O número máximo de luzes pontuais e direcionais disponíveis no sombreador
+      
+    
+  
+   
+  Os seguintes uniformes de matriz pré-definidos e constantes podem ser usados em seu shader para acessar os valores específicos do GameMaker Studio 2:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        gm_Matrices[matriz]
+        Esta constante de matriz retorna uma matriz de transformação e é um dos uniformes pré-definidos disponíveis que o GameMaker Studio 2 cria para você usar dentro do editor de código shader. O índice de matriz é escolhido a partir de uma das constantes listadas acima.
+      
+      
+        gm_BaseTexture
+        Esta é uma constante de amostragem 2D que retorna a textura do objeto atual, conforme definido pelo GameMaker Studio 2. Assim, seria o duende atual, superfície ou textura que normalmente seria usado ao desenhar sem que o sombreador fosse chamado.
+      
+      
+        gm_LightingEnabled
+        Isto pode ser usado para obter ou configurar a iluminação do GameMaker Studio 2 quando se usa 3D.
+      
+      
+        gm_FogStart
+        Isto pode ser usado para obter a distância onde os polígonos começam a ser misturados com a cor da neblina.
+      
+      
+        gm_RcpFogRange
+        Isto pode ser usado para obter a distância a que a neblina é máxima e nada mais pode ser visto.
+      
+      
+        gm_PS_FogEnabled
+        Isto retornará verdadeiro ou falso se a GPU tiver nevoeiro de pixels ativado ou não.
+      
+      
+        gm_FogColour
+        Isto pode ser usado para que a cor da neblina seja usada pelo GameMaker Studio 2.
+      
+      
+        gm_VS_FogEnabled
+        Isto retornará verdadeiro ou falso se a GPU tiver ou não o nevoeiro do vértice ativado.
+      
+      
+        gm_AlphaTestEnabled
+        Isto pode ser usado para obter o teste alfa no shader. Ver gpu_set_alphatestenable() para mais informações sobre os testes alfa.
+      
+      
+        gm_AlphaRefValue
+        Isto pode ser usado para obter o valor de referência atual do teste alfa. Ver gpu_set_alphatestref() para mais informações sobre a referência do teste alfa.
+      
+    
+  
+   
+   
+   
+   
+  
+    
+      
+        Voltar: Shaders
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

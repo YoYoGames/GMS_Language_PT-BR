@@ -1,0 +1,84 @@
+
+  
+  file_find_first
+  Esta função devolverá o nome do primeiro arquivo que satisfaça a máscara e os atributos. Se tal arquivo não existir, então uma cadeia vazia é devolvida. A máscara pode conter um caminho e pode conter wildchars, por exemplo 'C:\temp*.doc'. O
+    Os atributos dão os arquivos adicionais que você deseja ver, portanto os arquivos normais são sempre devolvidos quando satisfazem a máscara. Você pode somar as seguintes constantes para ver o tipo de arquivos que deseja (se não quiser adicionar nenhum atributo, use 0):
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        fa_readonly
+        Arquivos somente leitura
+      
+      
+        fa_hidden
+        Arquivos ocultos
+      
+      
+        fa_sysfile
+        Arquivos do sistema
+      
+      
+        fa_volumeid
+        Arquivos volumétricos
+      
+      
+        fa_directory
+        Diretórios
+      
+      
+        fa_archive
+        Arquivos arquivados
+      
+    
+  
+   
+  ATENÇÃO! Esta função pode não funcionar como você espera devido ao GameMaker Studio 2 ser lixado! Consulte a seção sobre o Sistema de Arquivos para maiores informações.
+  NOTA: Esta função não funcionará de forma alguma no alvo HTML5, e as bandeiras de filtro só funcionarão no Windows (use 0 para todas as outras plataformas).
+   
+  Sintaxe:
+  file_find_first(máscara, attr);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        máscara
+        A máscara a ser usada para a busca.
+      
+      
+        attr
+        O atributo específico do arquivo a ser procurado.
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  se o diretório_existe("\ Conteúdo do usuário") {
+     file = file_find_first("/User Content/*.doc", fa_readonly); }
+  
+  Isto irá verificar se o diretório especificado existe, então, se existir, vá lá e devolva o primeiro arquivo doc "somente leitura" encontrado.
+   
+   
+   
+  
+    
+      
+        Voltar: Sistema de arquivo
+        Próximo: file_find_next
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

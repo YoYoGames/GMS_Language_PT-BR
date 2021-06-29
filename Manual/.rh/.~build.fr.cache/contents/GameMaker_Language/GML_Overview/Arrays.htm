@@ -1,0 +1,146 @@
+
+  
+  Arrays
+  As matrizes podem ser extremamente úteis e são uma parte essencial da criação de jogos. Aqui estão apenas algumas coisas que seriam impossíveis (ou, pelo menos, muito mais difíceis) sem os arrays:
+  
+    Menus. Um ou dois conjuntos podem facilitar muito a criação de um bom sistema de menus.
+    RPGs. As matrizes são essenciais para fazer RPGs, porque ao invés de ter uma confusão de variáveis, você tem apenas algumas linhas, que você pode consultar a qualquer momento.
+    Jogos de cartas. Bom para manter o controle das cartas e das mãos.
+    Pontuações altas e outras estatísticas. Muito mais fácil de manter o controle de uma matriz do que múltiplas variáveis.
+  
+  Essa é apenas a ponta do iceberg, pois as matrizes são uma das ferramentas de programação mais fundamentais e úteis que você pode usar, e você ficaria surpreso com as aplicações que elas podem ter! Eles também são muito eficientes em termos de memória e geralmente rápidos de analisar,
+    tornando-os ideais para manter o desempenho ao máximo.
+  Uma matriz básica é classificada como tendo uma dimensão, mas você pode ter matrizes com mais de uma dimensão também. As seções abaixo explicam um pouco mais sobre os dois tipos de arrays: 
+   
+  1 Dimension Arrays
+  
+    Antes de continuarmos, vamos apenas esclarecer o que é realmente uma matriz e como ela está estruturada. Um array é simplesmente um tipo de dado que é atribuído a uma variável, e pode conter não apenas um valor, mas múltiplos
+      valores. A imagem abaixo mostra um esquema para uma matriz básica: 
+    
+    Isto é chamado de matriz 1D (uma dimensão), e como você pode ver, a matriz é armazenada na variável "a" e contém vários valores. Para acessar o array, você faria algo como o seguinte:
+    var _val = a[0]; show_debug_message(_val);
+    
+    O código acima obtém o valor da posição 0 da matriz "a" e, em seguida, o emite para o console, que - com base no conteúdo da matriz mostrada na imagem acima - emitiria 125. Se você fizesse o seguinte:
+    var _val = a[3]; show_debug_message(_val);
+    
+    A saída mostraria "Olá!".
+    Como você pode ver, você dá à matriz um nome de variável e depois um valor entre colchetes [], onde o valor é a posição na matriz para obter os dados. Portanto, essencialmente um array é um recipiente com um número de espaços para
+      e cada posição no recipiente tem um número específico para identificá-lo, que é o que colocamos no site []. Vale ressaltar que o conteúdo de uma matriz sempre começa em 0 e nunca pode ser negativo!
+    Mostramos como verificar uma matriz de dados, mas como criar a matriz para começar? Primeiro ela tem que ser inicializada antes de podermos utilizá-la ou o GameMaker Studio 2 nos dará um erro. Inicializar um array significa apenas que damos a cada
+      posição da matriz um valor inicial em preparação para que seja usada em outro lugar no código do projeto. Isto é importante lembrar, pois significa que você tem que fazer uma certa quantidade de planejamento antes de usar matrizes, mas é fácil o suficiente para inicializar
+      um usando um loop repetido como este.
+    var i = 9; repeat(10)
+       {
+       array[i] = 0; i -= 1; }
+    
+    Este código simples inicializará uma matriz de dez posições (de 0 a 9) para manter 0, ou seja: cada posição da matriz contém o valor 0. Você notará que o array foi inicializado ao contrário, com o último valor sendo definido primeiro. Isto
+      não é estritamente necessário, mas é a forma ideal de fazê-lo, pois reserva um espaço na memória que é o tamanho exato da matriz, enquanto que se você inicializar uma matriz de 0 para cima, a memória tem que ser reatribuída para cada
+      valor agregado (assim, para uma matriz de dez itens, inicializá-la em um loop mudaria a alocação de memória dez vezes). A diferença de velocidade é insignificante para arrays menores, mas os maiores devem ser otimizados o máximo possível desta forma.
+    NOTA: A exportação HTML5 é a exceção à regra acima, e quando o alvo deve ser a inicialização de matrizes em ordem consecutiva de 0 para cima.
+    Você também pode usar a função GML array_create() para rubricar uma matriz até um tamanho fixo, e você pode até criar matrizes "vazias" sem valores, por exemplo:
+    my_array= [];
+    Isto diz ao GameMaker que a variável "my_array" é um array, e você pode então adicionar valores a ela a qualquer momento no futuro. Entretanto, se você tentar acessar um valor em um array vazio, então você receberá um erro. Na verdade, você deve sempre tomar
+      cuidado para acessar apenas posições válidas de matriz, pois tentar acessar um valor fora de uma matriz também dará um erro. Por exemplo, isto causará o colapso do projeto quando executado:
+    my_array = array_create(5, 0); var _val = my_array[6];
+    A matriz só foi inicializada com 5 posições, mas tentamos obter a posição 7 - as matrizes são numeradas a partir de 0, portanto array[6] é a posição 7 - portanto, o jogo gera um erro e trava.
+    Mostramos como inicializar e matriz com o mesmo valor para cada posição, mas e se quisermos inicializar a matriz com valores diferentes para cada posição? Bem, para isso, temos que digitar manualmente cada posição, mas
+      há um belo truque para nos ajudar a manter o controle das coisas lá:
+    var _count = 3; array[_count] = "você?" count -= 1; array[_count] = "são " count -= 1; array[_count] = "Como " count -= 1; array[_count] = "Olá!" count -= 1;
+    Como você pode ver, não usamos nenhum número na matriz real, mas sim uma variável local para contar para baixo através dos valores. Isto é muito útil, especialmente para arrays maiores, pois significa que você não
+      não é necessário rastrear quantas posições existem nem em que número você está, pois o código irá cuidar disso para você. Você só precisa saber quantas posições totais a matriz tem que manter.
+    Finalmente, você pode atribuir os valores a uma matriz usando uma única chamada variável como esta:
+    var _a = [0, 1, 2, 3, 4]; var _b = [];
+    O acima mencionado criará duas matrizes como variáveis locais, a primeira já preenchida com 5 elementos e a segunda como uma matriz vazia pronta para ter valores adicionados.
+    Com isso feito, como utilizamos uma matriz para coisas práticas? Exatamente o mesmo que usaríamos uma variável normal, como mostram os exemplos a seguir:
+    // Adicione dois valores de array juntos total = array[0] + array[5];
+       // Verifique um valor de array if (array[9]) == 10 {
+       // fazer algo }
+      
+       // desenhe um valor de array draw_text(32, 32, array[3]);
+    Como as arrays são numeradas consecutivamente, isto significa que você pode fazer loop através delas para realizar ações extras também, assim como fizemos para inicializá-las:
+    var total = 0; for (var i = 0; i < 10; ++i;) {
+       total += array[i]; draw_text(32, 32 + (i * 32), array[i]); }
+       draw_text(32, 32 + (i * 32), total);
+    O código acima somará todos os valores de nossa matriz, desenhará cada um deles e desenhará o valor total no final.
+    A última coisa a mencionar sobre arrays é que você também pode apagar um array simplesmente "reatribuindo" a variável que o define a um único valor. Isto liberará a memória associada a todas as posições e valores para aquela matriz.
+      Por exemplo:
+    //Criar a matriz para (var i = 9; i > -1; --i;) {
+       a[i] = i; }
+       //Delete the array a = -1;
+    Se a matriz tiver múltiplas dimensões (ver abaixo), todas elas serão limpas também, e note que quando você cria matrizes em instâncias, estas não precisam ser limpas quando a instância é removida do jogo, pois serão removidas automaticamente
+      pelo catador de lixo no final da destruição ou no final do quarto. Entretanto, se qualquer uma das posições da matriz tiver referências a ativos dinâmicos - como sistemas de partículas, amortecedores ou estruturas de dados
+      - então estes terão de ser destruídos antes que a matriz seja apagada ou a instância seja destruída ou a sala termine.
+     
+  
+  Matrizes Multidimensionais
+  
+    Sabemos o que é uma matriz de 1 dimensão, mas no GameMaker Studio 2 você pode ter matrizes com múltiplas dimensões, que são essencialmente estruturadas como uma matriz dentro de uma matriz dentro de uma matriz... Por exemplo, o seguinte é um array 2D (duas dimensões)
+    array[0][0] = 5;
+    Isto está essencialmente dizendo ao GameMaker que a matriz é na verdade composta de várias matrizes 1D. Aqui está um exemplo estendido:
+    array[1][2] = 1; array[1][1] = "olá"; array[1][0] = 55,5; array[0][2] = sprite_index; array[0][1] = "mundo"; array[0][0] = -67,89;
+    Uma matriz multidimensional precisa ser inicializada antes de ser usada, a mesma que uma matriz 1D, e pode conter números reais, cordas e qualquer outro tipo de dados, como qualquer variável, tornando-os candidatos ideais para qualquer jogo
+      que precisa armazenar grandes quantidades de dados de uma maneira facilmente acessível (lembre-se, você pode passar facilmente através de uma matriz). Aqui está um exemplo final de como isto pode ser usado em um jogo real... Digamos que você queira desovar quatro inimigos diferentes em quatro diferentes
+      pontos em seu jogo, dependendo de um valor aleatório. Bem, podemos usar uma matriz com 2 dimensões para fazer isso e economizar a escrita de um monte de código.
+    Primeiro devemos inicializar o array que vamos usar no evento de criação de nosso objeto "controlador" (note o uso de comentários para lembrar o que cada entrada de array faz):
+    enemy[3][2] = 448; //y posição enemy[3][1] = 32; //x posição enemy[3][0] = obj_Slime; //Object enemy[2][2] = 448; enemy[2][1] = 608; enemy[2][0] = obj_Skeleton;  enemy[1][2] = 32; enemy[1][1] = 608; enemy[1][0] = obj_Knight; enemy[0][2] = 32; enemy[0][1] = 32; enemy[0][0] = obj_Ogre;
+    Agora temos os objetos para desovar instâncias e suas correspondentes coordenadas x e y dentro da sala, todos armazenados em nossa matriz. Isto agora pode ser usado da seguinte forma em outro evento do objeto controlador (um alarme, por exemplo, ou um pressionamento de tecla
+      evento):
+    //escupe um número aleatório de 0 a 3, inclusive var i = irandom(3); //Utilize o array para criar o objeto instance_create_layer(enemy[i][1], enemy[i][2], "Enemy_Layer", enemy[i][0]);
+    Esse código curto vai agora gerar um inimigo aleatório na sala de jogo, e ele usa muito menos código do que uma estrutura " se /então / else" ou mesmo um " switch", e comoa matriz é inicializada todos juntos no evento de criação
+      é MUITO mais fácil de editar e alterar qualquer um desses valores, já que eles não são codificados em código rígido no resto do código do projeto.
+    Deve-se notar também que o comprimento de cada dimensão da matriz pode ser diferente, de modo que você pode ter a dimensão da matriz inicial com um comprimento de 3, mas a segunda dimensão pode ter um comprimento diferente para cada um dos valores da matriz inicial
+      é designado, por exemplo:
+    array[2][2] = "3"; array[2][1] = "2"; array[2][0] = "1"; array[1][3] = "quatro"; array[1][2] = "três"; array[1][1] = "dois"; array[1][0] = "um"; array[0][1] = 2; array[0][0][0] = 1;
+    Finalmente, as matrizes multidimensionais não estão limitadas a apenas duas dimensões, e você pode ter 3, 4 ou mais dimensões para uma matriz, como exigido em seu código, apenas adicionando [n] argumentos adicionais, por exemplo
+     matriz[0][0][0][0] = 1; // Uma matriz tridimensional[0][0][0][0] = 1; // Uma matriz tetradimensional // etc...
+  
+   
+  Assim como as variáveis normais, você pode passar arrays para funções de script e variáveis de método a serem usadas e depois retornar à instância que chamou a função. Para fazer isto,
+    você simplesmente tem que especificar a variável da matriz (sem necessidade de cada uma das posições individuais, nem os parênteses [] ) e toda a matriz será passada por referência para a função. Entretanto, caso você mude qualquer
+    dos valores da matriz, a matriz será copiada em uma matriz temporária apenas para essa função. Note o uso da palavra temporária aqui! Você não está realmente passando o array em si para a função (como você faria um
+    variável), mas ao invés disso, você está solicitando que a função crie uma cópia desta matriz, que você irá alterar. Isto significa que você deve sempre retornar o array da função se desejar alterar qualquer valor do array (este comportamento
+    é chamado de "cópia porescrito").
+  OBSERVAÇÃO: Devido à forma como isto funciona internamente, a passagem de matrizes para funções pode afetar o desempenho, especialmente se a matriz for muito grande. Portanto, use esta funcionalidade com cuidado!
+  A título de exemplo, considere o seguinte código. Primeiro criamos o array que queremos usar e depois passamos esse array para a função:
+  para (var i = 9; i > -1; --i;) {
+     a[i] = i; }
+     my_array_func(a);
+  
+  A função em si é algo simples como:
+  my_array_func = function(array) {
+     for (var i = 9; i > -1; --i;) {
+     array[i] = i * 100; }
+     }
+  
+  Agora você esperaria que a matriz final mantivesse os valores 900, 800, 700, etc... MAS este não será o caso, já que não retornamos o array da função, então tudo o que mudamos foi a cópia temporária que foi criada quando passamos o array
+    como um argumento para a função, e quando a função tiver terminado que basicamente desaparece também. Para corrigir isso, deveríamos ter formatado o código da seguinte forma:
+  para (var i = 9; i > -1; --i;) {
+     a[i] = i; }
+     a = my_array_func(a);
+  E a função deve agora ter este aspecto:
+  my_array_func = function(array) {
+     for (var i = 9; i > -1; --i;) {
+     array[i] = i * 100; }
+     return array; }
+  
+  NOTA: O acima não é necessário se você não estiver mudando nenhum dos valores da matriz, mas sim simplesmente referenciando-os. A referência a um array não irá copiá-lo e será mais rápida para analisá-lo.
+  Também vale a pena notar que você pode usar o acessor @ para referenciar um array de uma função e alterar seus valores diretamente, o que economiza a sobrecarga da CPU de tê-la copiada para a função. Você pode encontrar mais informações sobre os acessores
+    e como eles funcionam, juntamente com um exemplo de arrays, a partir da página seguinte:
+  
+    Accessors
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Visão geral daGML
+        A seguir: Tipos de dados
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

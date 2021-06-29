@@ -1,0 +1,92 @@
+
+  
+  audio_falloff_set_model_model
+  Para adicionar mais versatilidade ao mecanismo de áudio, o GameMaker Studio 2 permite que você selecione o modelo de falloff que mais se adequa ao seu jogo. Este modelo será usado para todas as funções de áudio do jogo ou aplicativo, e assim você deve certificar-se de que o modelo que você
+    a escolha é a correta, pois cada uma afetará a forma como o ouvinte percebe os sons que você toca através dos emissores ou com a função audio_play_sound_at.
+  Ao definir falloff em seu jogo com as funções apropriadas, há três argumentos que você precisará definir, e cada um deles é apropriado para um modelo específico e afetará a forma como o som final é "ouvido" pelo jogador, dependendo
+    sobre a distância que o ouvinte está da fonte. Os três argumentos são:
+  
+    distância de referência - esta é a distância do ouvinte a distância sob a qual o volume do som tocado normalmente cairia pela metade antes de ser influenciado pelo fator de roll-off ou pela distância máxima especificada.
+    distância máxima - isto define a distância onde não haverá mais nenhuma atenuação do som da fonte. Este pode ser o ponto em que o som não é mais ouvido ou o ponto em que o volume do som não diminui mais abaixo
+      o limite mínimo definido pelo modelo escolhido.
+    fator falloff - O fator falloff é usado na atenuação da distância com base no modelo de distância inversa e estabelece o limiar mínimo final para um som com falloff.
+  
+  Os modelos falloff que são afetados por estes argumentos são representados no GameMaker Studio 2 pelas seguintes constantes (a tabela mostra os cálculos exatos usados também):
+   
+  
+    
+      
+        Constante
+        Função
+      
+      
+        audio_falloff_exponent_distance
+         gain = (listenener_distance / reference_distance) ^ (-falloff_factor)
+      
+      
+        audio_falloff_exponent_distance_clamped
+         distância = clamp(listener_distance, reference_distance, maximum_distance) ganho = (distância / distância_de_referência) ^ (-falloff_factor)
+      
+      
+        audio_falloff_inverse_distance
+         gain = distância_de_referência / (distância_de_referência + falloff_factor * (distância_de_referência - distância_de_referência))
+      
+      
+        audio_falloff_inverse_inverse_distance_clamped
+         distância = clamp(listener_distance, reference_distance, maximum_distance) ganho = reference_distance / (reference_distance + falloff_factor * (distância - distância - distância_de_referência))
+      
+      
+        audio_falloff_linear_distance
+         distância = min(distância, distância_máxima) ganho = (1 - falloff_factor * (distância - distância_de_referência) / (distância_máxima - distância_de_referência))
+      
+      
+        audio_falloff_linear_distance_clamped
+         distância = clamp(listener_distance, reference_distance, maximum_distance) ganho = (1 - falloff_factor * (distância - distância_de_referência) / (distância_máxima - distância_de_referência))
+      
+      
+        audio_falloff_none
+         ganho = 1
+      
+    
+  
+   Os seguintes gráficos são representações visuais de como as constantes acima funcionam e afetam o som que está sendo reproduzido:
+  
+   
+  Sintaxe:
+  audio_falloff_set_model(modelo);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        modelo
+        A constante usada para definir o modelo falloff.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  audio_falloff_set_model(audio_falloff_exponent_distance_clamped); audio_play_sound_at(snd_Waterfall, x, y, 0, 100, 300, 1, true, 1);
+  O código acima define o modelo falloff e depois toca o som indexado na variável "snd_Waterfall", que será laçado em sua posição de sala, com uma referência de queda de 100, uma distância de queda de 300, um fator de queda de 1 e um baixo
+    prioridade.
+   
+   
+   
+  
+    
+      
+        Voltar: Áudio
+        Próximo: ganho_de_som_audio
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

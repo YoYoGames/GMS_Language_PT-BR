@@ -1,0 +1,86 @@
+
+
+
+
+  
+  gamepad_set_option
+  Esta função pode ser usada para definir qualquer uma das opções disponíveis de gamepad. Você fornece o "slot" do controle de jogo para ativar a opção, assim como a seqüência de opções a ser ativada e o valor a ser usado. A cadeia de opções disponíveis dependerá da plataforma que
+    o projeto está sendo executado, como listado abaixo:
+   
+  
+    
+      
+        Opção
+        Plataforma
+        Descrição
+        Valor
+      
+      
+        "permitir_rotação"
+        tvOS
+        Definir se o Siri Remote será bloqueado por rotação (ou seja: só pode ser usado verticalmente) ou não. Quando destravado (um valor de rotação verdadeiro) o controle mudará a entrada, de tal forma que uma rotação de 90º para a esquerda fará a "direita".
+          lado do retorno do touch pad "para cima", etc... de tal forma que toda a entrada será relativa à orientação do dispositivo. Quando travado (um valor de falso) então a entrada não será alterada em relação à posição do controlador
+          e será sempre tratado como se o controlador estivesse em posição vertical.
+        Booleano
+      
+      
+        "dpad_absolute"
+        tvOS
+        Definir se o touchpad Siri Remote aceita entrada absoluta, ou entrada relativa. No modo absoluto (um valor de verdadeiro) o centro do touchpad é considerado a posição (0,0) - ou seja: onde o bastão analógico está em repouso ou onde o centro
+          do dpad seria - e o movimento em torno desta posição gerará entrada. Quando ajustado para relativo (um valor de falso então a posição (0,0) será considerada como sendo onde quer que o toque inicial no bloco seja feito e toda a entrada será
+          ser gerado a partir dessa posição, não o centro da almofada.
+        Booleano
+      
+    
+  
+   
+  Sintaxe:
+  gamepad_set_option(dispositivo, opção_nome, valor);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dispositivo
+        Qual dispositivo "slot" do gamepad a ser definido.
+      
+      
+        option_name
+        O nome da opção a ser definida (um fio, veja a tabela acima)
+      
+      
+        valor
+        O valor para definir a opção para (pode ser booleano, real, inteiro ou string - veja a tabela acima)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  for(var i = 0; i < 12; ++i;) {
+     if gamepad_is_connected(i) && gamepad_get_description(i) == " tvOS SiriRemote" {
+     if gamepad_get_option(i, "allow_rotation") == falso {
+     gamepad_set_option(i, "allow_rotation", true); }
+     }
+     }
+  
+  O código acima passa por todos os slots do gamepad e verifica a existência do "Siri Remote" na plataforma tvOS. Se for detectado, ele então define o controle remoto para permitir a rotação de entrada.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada Gamepad
+        Próximo:  gamepad_axis_count 
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

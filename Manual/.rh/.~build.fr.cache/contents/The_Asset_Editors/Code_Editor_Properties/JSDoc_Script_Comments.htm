@@ -1,0 +1,73 @@
+
+  
+  Comentários sobre o JSDoc Script
+  Se você deseja que suas funções personalizadas tenham conclusão de código e mostrar os argumentos necessários de uma maneira específica no editor de código, então você precisa adicionar alguns comentários em estilo JSDoc. Estes comentários são usados para dizer ao recurso de auto-completar como a função deve ser usada e preenchida no editor de scripts.
+  O formato para um cabeçalho de função típico seria ter o nome da função, a descrição da função e depois a lista dos diferentes argumentos (parâmetros) que a função leva, certificando-se de iniciar cada linha com uma barra invertida tripla".
+    /// ", pois isso diz ao GameMaker Studio 2 para analisar o comentário como sendo estilo JSDoc. Os próprios comentários precisam receber um identificador (precedido por "@") e o conteúdo, e o disponível
+    Os identificadores são os seguintes:
+   
+  
+    
+      
+        Identificador
+        Conteúdo
+      
+      
+        @function / @func
+        O nome completo da função e os argumentos para a função, por exemplo:
+          my_func(x, y, colour).
+      
+      
+        @description / @desc
+        Uma descrição geral do que a função faz.
+      
+      
+        @param / @arg / @argument
+        O tipo de argumento (opcional), incluído em {}, o nome do argumento, e uma breve descrição (com espaços entre eles)
+      
+    
+  
+   
+  Para ter uma idéia de como isto funcionaria ao escrever suas próprias funções, vamos tomar este exemplo básico:
+  função is_same_object(_id, _obj) {
+     if (_id.object_index == _obj) { return true; }  else return false; }
+  
+  Tudo o que este roteiro faz é verificar se uma instância tem o mesmo object_index como um determinado objeto e seria chamada simplesmente como:
+  if is_same_object(id, obj_Player) {
+     instance_destroy() }
+  
+  No entanto, escrevendo isso no editor de código mostrará diretamente os nomes das variáveis de argumento(_id e _obj), que na maioria dos casos não é muito descritivo. Você pode usar o JSDoc para definir nomes e descrições de argumentos personalizados, juntamente com
+    informações para a função também:
+  //// @function is_same_object(id, object) /// @description Compare um índice de instância com um índice de objeto. //// @param {real} inst_id O valor único do ID da instância a verificar. /// @param {real}
+    object_id O índice de objetos a ser verificado.
+     função is_same_object(_id, _obj) {
+     if (_id.object_index == _obj) { return true; }  ou então retornar falso; }
+  
+  Agora, ao chamar esta função em qualquer lugar em seu projeto, você verá os novos nomes dos argumentos que foram inseridos nos comentários do JSDoc:
+  
+  Na imagem acima, a parte superior mostra a função no auto-completar e a parte inferior mostra como funciona o auxiliar de argumento na parte inferior. Note que tanto a parte opcional "tipo" quanto a parte obrigatória "descrição" do @param não são exibidas por padrão no código IDE completo, e para vê-las você deve ativar as opções nas Preferências do GML.
+  Você pode embrulhar um nome de argumento  entre parênteses para indicar que ele é opcional. O editor de código esperará então qualquer número de argumentos entre o mínimo exigido de argumentos e o número total de argumentos. Por exemplo, veja o seguinte
+    função:
+  //// @function animate_position(end_x, end_y, start_x, start_y) /// @desc Anima a instância até o ponto final, do ponto inicial opcional //// @arg end_x //// @arg end_y /// @arg [start_x] //// @arg [start_y]
+     function animate_position (x1, y1, x2, y2) {
+     // Código de função }
+  
+  Os argumentos start_x e start_y são marcados como opcionais, o que significa que o editor de código esperará agora 2 a 4 argumentos, como pode ser visto na mensagem de aviso:
+  
+  NOTA: Você terá o mesmo comportamento se usar argumentos opcionais na declaração de função. Veja as funções do script para mais informações.
+  Como os scripts podem ter múltiplas funções neles, você pode adicionar comentários JSDoc para cada um deles antes de sua declaração:
+  
+   
+   
+  
+    
+      
+        Voltar: O Editor Roteiro
+        A seguir: Código Snippets
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

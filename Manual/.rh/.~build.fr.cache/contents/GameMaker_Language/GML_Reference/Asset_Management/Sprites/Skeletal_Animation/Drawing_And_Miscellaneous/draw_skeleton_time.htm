@@ -1,0 +1,80 @@
+
+  
+  tempo_esqueleto_de_sorteio
+  Esta função desenhará a animação dada usando a pele dada em um momento específico da animação. O valor do tempo deve estar entre 0 (o início) e a duração final da animação, que você pode encontrar usando a função esqueleto_animação_get_duração().
+    Você pode definir o valor do tempo para valores superiores à duração total da animação e a animação voltará ao início, mas corre o risco de perder a precisão do ponto flutuante como o tempo acumulado
+    fica maior.
+   
+  Sintaxe:
+  draw_skeleton_time(sprite, animname, skinname, time, x, y, xscale, yscale, yscale, rotineiramente, colorido)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sprite
+        O índice do duende a desenhar.
+      
+      
+        animname
+        O nome da animação para obter o quadro de (um fio).
+      
+      
+        skinname
+        O nome da pele a ser usada para desenho (um cordel).
+      
+      
+        tempo
+        O intervalo de tempo para desenhar a animação em (de 0 até a duração final, em segundos).
+      
+      
+        x
+        A coordenada x de onde desenhar o duende.
+      
+      
+        y
+        A coordenada y de onde desenhar o duende.
+      
+      
+        xscale
+        A escalada horizontal do duende, como um multiplicador: 1 = escalada normal, 0,5 é metade, etc...
+      
+      
+        yscale
+        A escalada vertical do duende, como um multiplicador: 1 = escalada normal, 0,5 é metade, etc...
+      
+      
+        podridão
+        A rotação do duende. 0=normal, 90=voltada 90 graus no sentido anti-horário, etc.
+      
+      
+        cor
+        A cor com a qual se deve misturar o duende.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var time += delta_time / 1000000; var d = skeleton_animation_get_duration("walk"); if time > d time -= d; draw_skeleton_time(sprite_index, "walk", "skin1", time, x, y, image_xscale, image_yscale, image_angle,
+    c_white);
+  O código acima desenhará o duende de animação esquelético dado usando o tempo delta para definir o frame que está sendo desenhado.
+   
+   
+   
+  
+    
+      
+        Voltar: Desenho e Diversos
+        Próximo: esqueleto_animação_get
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

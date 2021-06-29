@@ -1,0 +1,77 @@
+
+  
+  colisão_elipse
+  Collision_ellipse usa os primeiros quatro argumentos (x1,y1,x2,y2) para definir a largura e a altura de uma elipse dentro da sala atual e depois verifica se algum objeto que é definido pelo argumento "obj
+    está em colisão com essa área. Esta colisão pode ser verificada como precisa ou não, e você também pode optar por verificar, por exemplo, a execução do próprio código ou não. Considere esta imagem:
+  Aqui, o exemplo no meio é a utilização de uma elipse de colisão para verificar se
+    objetos de bola. Agora, os azuis não têm uma caixa de delimitação precisa e, como você pode ver, mesmo que o duende não esteja realmente tocando a elipse, a colisão ainda pode acontecer (mesmo se você definir a opção precisa na função como verdadeira) como
+    a caixa de delimitação daquele duende sobrelaça a área elíptica definida pelo círculo de colisão. Por outro lado, as bolas verdes só serão consideradas em colisão se o duende real sobrepor-se à elipse definida. Lembre-se, para colisões precisas
+    para ser considerado tanto o duende objeto como a função de colisão devem ter marcação precisa como em cima. Também deve ser observado que o valor de retorno da função pode ser o id de qualquer uma das instâncias consideradas como em colisão.
+  Note que ao invés de um índice de objetos você pode fornecer uma instância id para verificar uma instância específica, ou as palavras-chave da instância all, ou other (dependendo do evento e do escopo do código atual).
+   
+  Sintaxe:
+   
+  collision_ellipse(x1, y1, x2, y2, obj, prec, notme);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x1
+        A coordenada x do lado esquerdo da elipse a ser verificada.
+      
+      
+        y1
+        A coordenada y da parte superior da elipse a ser verificada.
+      
+      
+        x2
+        A coordenada x do lado direito da elipse a ser verificada.
+      
+      
+        y2
+        A coordenada y do lado inferior da elipse a verificar.
+      
+      
+        obj
+        O objeto a ser verificado, por exemplo, colisões.
+      
+      
+        prec
+        Se a verificação é baseada em colisões precisas(verdadeiro, que é mais lento) ou em sua caixa de delimitação em geral(falso, mais rápido).
+      
+      
+        notme
+        Se a instância de chamada, se relevante, deve ser excluída(verdadeira) ou não(falsa).
+      
+    
+  
+   
+  Devoluções:
+   
+  Identificação da instância ou de ninguém
+   
+  Exemplo:
+   
+  if collision_ellipse(50, 50, 200, 100, obj_Player, false, true) {
+     instance_create_layer(obj_Player.x, obj_Player.y, "Effects", obj_Splash); }
+  
+  Isto verificará uma zona elíptica dentro dos limites de 50x, 50y e 200x, 100y para o objeto "obj_Player". Se houver uma colisão com esse objeto, então ele criará uma instância de "obj_Splash" nas coordenadas x/y do obj_Player.
+   
+   
+   
+   
+  
+    
+      
+        Voltar: Colisões
+        Próximo: collision_ellipse_list
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

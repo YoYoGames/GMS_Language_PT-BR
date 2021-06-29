@@ -1,0 +1,68 @@
+
+  
+  
+    display_set_gui_maximise
+  
+  Esta função pode ser usada para maximizar a camada GUI e configurá-la para ser escalonada e compensada em relação às dimensões da tela, em vez da posição e dimensões padrão da superfície de aplicação. Por padrão, a camada GUI é 1:1 com a superfície da aplicação
+    resolução e desenhada também na posição (0,0) da superfície. Entretanto, isto nem sempre é o que se deseja e, portanto, pode-se usar esta função para defini-la a ser desenhada em relação à posição absoluta (0,0) da tela ou da janela do jogo. Que argumentos você
+    fornecer para esta função dependerá do efeito que você deseja que ela tenha sobre a camada GUI. A simples chamada da função sem argumentos irá definir a camada GUI a ser desenhada na posição (0,0) da tela ou da janela do jogo, com a largura e a altura
+    ser escalonado para se adequar a toda a área:
+  display_set_gui_maximise();
+  Entretanto, você pode definir o fator de escala para a camada GUI, e a largura e a altura serão escalonadas por essa quantidade. Lembre-se de que a camada GUI é sempre feita para se ajustar ao tamanho da tela ou da janela do jogo, ou da superfície de aplicação, portanto, a configuração
+    este valor para qualquer outra coisa que não seja 1, basicamente escalona a contagem de pixels ao longo da largura e da altura. Se seu display for 1024x768 e você definir o fator de escala em 0,5, então sua camada GUI terá a metade do tamanho do display, efetivamente dobrando
+    o tamanho do pixel:
+  display_set_gui_maximise(0,5, 0,5);
+  Estabelecendo os valores desta forma, também definirá a posição de sorteio para (0,0) da tela ou janela do jogo, de modo que você possa fornecer valores de compensação para "mover" a posição (0,0):
+  var pos = application_get_position(); display_set_gui_maximise(0.5, 0.5, pos[0], pos[1]);
+  Finalmente, você pode redefinir a camada GUI usando esta função, ajustando os fatores de escalonamento para -1. Isto ajustará a camada GUI para ter uma escala 1:1 novamente e definirá a posição de sorteio para a posição (0,0) da superfície da aplicação em vez do visor ou
+    janela.
+  display_set_gui_maximise(-1, -1);
+   
+  Sintaxe:
+  display_set_gui_maximise(xscale, yscale, xoffset, yoffset);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        xscale
+        <Opcional> O fator de escala horizontal (use -1 para redefinir para o padrão).
+      
+      
+        yscale
+        <Opcional> O fator de escalonamento vertical (use -1 para redefinir para o padrão).
+      
+      
+        xoffset
+        <Opcional> A posição x offset para o desenho.
+      
+      
+        yoffset
+        <Opcional> A posição y offset para o desenho.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  display_set_gui_size(display_get_width() / 2, display_get_height() / 2); display_set_gui_maximise(2, 2, 0, 0, 0);
+  O código acima bloqueará o evento GUI de sorteio na largura e altura determinadas, escalando todos os componentes para caber na tela, usando essa proporção.
+   
+   
+   
+  
+    
+      Câmeras e Display
+        Voltar: 
+        Próximo: display_set_ui_visibility
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

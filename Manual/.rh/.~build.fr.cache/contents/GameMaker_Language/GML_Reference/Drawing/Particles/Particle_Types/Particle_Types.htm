@@ -1,0 +1,86 @@
+
+  
+  Tipos de Partículas
+  Partículas são os efeitos gráficos que podem ser criados pelo uso de sistemas de partículas em um jogo. As partículas que você define usando estas funções podem ser usadas em qualquer sistema que você criar e o procedimento normal seria definir todas as suas partículas
+    uma vez no início de um jogo e armazenar seus valores de índice em variáveis globais. Estas variáveis globais podem então ser usadas para estourar, emitir ou criar partículas a qualquer momento durante todo o jogo. Você também pode criar, usar e depois destruir partículas conforme necessário.
+    se a memória é um problema ou se você deseja muitos tipos diferentes, mas apenas em pontos específicos de seu jogo. O que quer que você escolha, as partículas são um recurso muito versátil!
+  As partículas precisam ser criadas e ter seu índice armazenado em uma variável para que todas as outras rotinas de partículas possam acessá-las corretamente. As seguintes funções são usadas para criar, verificar, limpar e destruir os tipos de partículas:
+   
+  
+    part_type_exists
+    part_type_create
+    part_type_destroy
+    part_type_clear
+  
+   
+  Uma vez que você tenha criado seu tipo de partícula, você deve dar-lhe uma forma. Esta pode ser uma das 14 formas construídas, que são sprites de 64x64 pixels com mistura alfa, ou você pode usar seus próprios sprites que podem ser animados, estáticos ou usar
+    sub-imagens aleatórias. As seguintes funções definem a forma de base visual de cada partícula:
+   
+  
+    tipo_parte
+    part_type_sprite
+  
+   
+  A imagem a seguir mostra os 14 tipos de partículas incorporadas que você pode escolher:
+  Uma vez escolhido o duende para o tipo de partícula (ou uma forma padrão ou seu
+    próprio) você pode indicar o tamanho e a escala do mesmo. O tamanho pode ser especificado como um intervalo e todas as partículas serão criadas com um tamanho escolhido dentro de um determinado intervalo. A escala é o valor "base" para a escala dos eixos x e y da partícula antes de qualquer
+    variações de tamanho são adicionadas e as seguintes funções são usadas para controlar esses valores:
+   
+  
+    tamanho_da_peça
+    escala_parte_tipo
+  
+   
+  As partículas também podem ter uma orientação e movimento. Como na maioria das funções das partículas, a velocidade, direção e orientação são resolvidas como um valor aleatório que é selecionado de um determinado intervalo e pode ser definido com as seguintes funções:
+   
+  
+    part_type_speed
+    part_type_direction
+    part_type_gravity
+    orientação_parte_tipo
+  
+   
+  Uma vez que você tenha o estilo e o movimento de suas partículas ordenadas, você pode então definir seus valores de cor e alfa, ambos podem ser definidos como um valor absoluto durante toda a vida útil da partícula, ou como uma escala de valores que vão de um até o
+    outros gradualmente. Note que há também uma função especial que permite definir a mistura para partículas e seu ambiente, e isto pode ser normal ou aditivo e dá alguns efeitos fantásticos - As funções que governam a cor, alfa
+    e a mistura são:
+   
+  
+    part_type_colour_mix
+    part_type_colour_rgb
+    part_type_colour_hsv
+    part_type_colour1
+    part_type_colour2
+    part_type_colour3
+    part_type_alpha1
+    part_type_alpha2
+    part_type_alpha3
+    part_type_blend
+  
+   
+  As partículas existem na tela por um período limitado de tempo e isto é chamado de "vida útil". A vida útil das partículas é medida em etapas e (como funções anteriores) isto é expresso como uma faixa de valores a partir dos quais a partícula será dada
+    uma vida útil específica. Há também um par de funções interessantes que podem ser usadas para fazer as partículas gerarem outras partículas, seja em cada etapa ou quando elas "morrem" (ou seja: são removidas da tela), mas
+    tenha muito cuidado com essas funções, pois elas podem criar rapidamente milhares de partículas e quebrar o jogo! As funções que definem a vida útil e o passo ou a emissão de morte são as seguintes:
+   
+  
+    part_type_life
+    part_type_step
+    part_type_death
+  
+   
+  Vale ressaltar que a criação de partículas através de código pode muitas vezes ser um processo trabalhoso e demorado devido ao grande número de parâmetros que podem ser alterados e ajustados. Por esta razão, é recomendável que você procure e obtenha um
+    de algum tipo de Designer de Partículas (ou faça você mesmo!) para tirar o trabalho de criação de partículas.
+   
+   
+   
+  
+    
+      
+        Voltar: Partículas
+        A seguir: Emissores de Partículas
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,43 @@
+
+  
+  ini_section_delete
+  Com esta função você pode excluir uma seção inteira de um arquivo ini, que também removerá todos os pares de valores-chave que lhe estão associados.
+   
+  Sintaxe:
+  ini_section_delete(section);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        seção
+        A seção a ser excluída.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  ini_open("savedata.ini"); ini_write_real("save1", "Score", score ); ini_section_delete("save1");
+     ini_close();
+  
+  Este exemplo abrirá "savedata.ini" e escreverá um valor para "save1" > "Score". Em seguida, ele apagará a seção "save1" e fechará o arquivo .ini.
+   
+   
+   
+  
+    
+      
+        Voltar: Arquivos de Inicia
+        Próximo: ini_open_from_string
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

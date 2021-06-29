@@ -1,0 +1,86 @@
+
+  
+  audio_play_sound_at
+  Com esta função você pode reproduzir qualquer recurso sonoro em uma determinada posição dentro do espaço de áudio. Você fornece o índice de som e então atribui a ele uma posição dentro do espaço 3D. A posição padrão do ouvinte é (0, 0, 0), então isto significa que se o ouvinte
+    não foi movido e você quer que o som venha da esquerda (por exemplo), você deve definir a posição x para um valor negativo (para mais informações sobre como definir a posição do ouvinte, veja audio_listener_position()).
+  Você também pode definir uma distância de queda (0 fará o som silencioso, o padrão é 100) o que fará o som desvanecer à medida que se afasta da posição do ouvinte. A forma como o som é ouvido dependerá da referência da queda (que é a distância
+    sob o qual o volume para a fonte normalmente cairia pela metade) e o fator roll off (que afeta apenas o som além da distância de referência de falloff). O fator padrão é normalmente 1, e o efeito dos diferentes valores de falloff dependerá
+    sobre o modelo escolhido (para um guia completo dos diferentes modelos de falloff e como esses valores são utilizados, consulte a função audio_falloff_set_model()).
+  Os dois últimos argumentos são para definir se o som deve ou não ser laço e, finalmente, para atribuir uma prioridade ao som. Esta prioridade é então usada para determinar como os sons são tratados quando o número de sons tocados está acima do limite estabelecido pela função
+    audio_channel_num(). Sons de prioridade mais baixa serão interrompidos em favor de sons de prioridade mais alta, e o valor da prioridade pode ser qualquer número real (o valor real é arbitrário, e pode ser de 0 a 1 ou 0
+    a 100, uma vez que o GameMaker Studio 2 irá priorizá-los da mesma forma). Observe que, quando se trata de prioridade, quanto maior o número, maior será a prioridade, de modo que um som com prioridade 100 será favorecido em relação a um som com prioridade 1.
+  Esta função retornará um número de índice único para o som que está sendo tocado, que pode então ser armazenado em uma variável para que você possa pausá-lo ou pará-lo com as funções apropriadas. Isto significa que se você tiver várias instâncias do mesmo som
+    tocando a qualquer momento, você pode direcionar apenas uma instância desse som para lidar com o uso das funções de áudio.
+   
+  Sintaxe:
+  audio_play_sound_at(index, x, y, z, falloff_ref, falloff_max, falloff_factor, loop, priority);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do som a tocar.
+      
+      
+        x
+        A posição x.
+      
+      
+        y
+        A posição y.
+      
+      
+        z
+        A posição z.
+      
+      
+        falloff_ref
+        A referência de falloff em relação ao ouvinte (grampo).
+      
+      
+        falloff_max
+        A distância máxima de falloff em relação ao ouvinte.
+      
+      
+        falloff_factor
+        O fator falloff (default 1).
+      
+      
+        loop
+        Marque o som como looping ou não.
+      
+      
+        prioridade
+        Defina a prioridade do canal para o som.
+      
+    
+  
+   
+  Devoluções:
+  Índice (identificação sonora)
+   
+  Exemplo:
+  if global.SFX {
+     audio_play_sound_at(snd_Waterfall, x, y, 0, 100, 300, 1, true, 1); }
+  
+  O código acima verifica a variável global "SFX" e se ela retornar verdadeiro então o som indexado na variável "snd_Waterfall" será laçado em sua posição de sala, com uma referência de queda de 100, uma distância de queda de 300,
+    um fator de falha de 1 e uma baixa prioridade.
+   
+   
+   
+  
+    
+      
+        Voltar: Áudio
+        Próximo: audio_pause_sound
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

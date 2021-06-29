@@ -1,0 +1,58 @@
+
+  
+  audio_play_sound
+  Com esta função, você pode jogar qualquer recurso sonoro em seu jogo. Você fornece o índice de som e lhe atribui uma prioridade, que é então usada para determinar como os sons são tratados quando o número de sons jogados está acima do limite estabelecido pela função 
+    audio_channel_num(). Sons de prioridade mais baixa serão interrompidos em favor de sons de prioridade mais alta, e o valor da prioridade pode ser qualquer número real (o valor real é arbitrário, e pode ser de 0 a 1 ou 0 a 100, pois o GameMaker Studio 2 
+      dar-lhes a mesma prioridade). Observe que, quando se trata de prioridade, quanto maior o número, maior será a prioridade, de tal forma que um som com prioridade 100 será favorecido em relação a um som com
+      prioridade 1. O argumento final é para fazer o loop sonoro e configurá-lo para verdadeiro fará o loop sonoro até que ele seja parado e configurá-lo para falso tocará o som uma vez
+      somente.
+  Esta função também retornará um número de índice único para o som que está sendo tocado, que pode então ser armazenado em uma variável para que você possa pausá-lo ou pará-lo com as funções apropriadas. Isto significa que se você tiver múltiplas instâncias do mesmo
+    som tocado a qualquer momento, você pode direcionar apenas uma instância desse som para lidar com o uso das funções de áudio.
+   
+  Sintaxe:
+  audio_play_sound(índice, prioridade, loop);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do som a tocar.
+      
+      
+        prioridade
+        Defina a prioridade do canal para o som.
+      
+      
+        loop
+        Configura o som para loop ou não.
+      
+    
+  
+   
+  Devoluções:
+  Índice (identificação sonora)
+   
+  Exemplo:
+  se saúde <= 0 {
+     lives -= 1; audio_play_sound(snd_PlayerDead, 10, false); }
+  
+  O código acima verifica a variável global "saúde" e se ela for menor ou igual a 0, removerá 1 da variável global "vidas" e tocará um som.
+   
+   
+   
+  
+    
+      
+        Voltar: Áudio
+        Próximo: audio_play_sound_at
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,51 @@
+
+  
+  network_connect_raw_async
+  Com esta função, você pode enviar um pedido para se conectar a um servidor. A função leva a identificação do soquete para se conectar (veja network_create_socket()) e exige que você forneça o endereço IP para se conectar
+    para (um fio), bem como a porta de passagem, e se a conexão falhar, um valor inferior a 0 será devolvido. A diferença entre esta função e network_connect_async()é que este
+    pode se conectar a qualquer servidor e não faz nada com os dados brutos, o que significa que você mesmo tem que implementar os protocolos no final do servidor. Note que esta função é assíncrona, gerando um evento de Rede Assíncrona do tipo network_type_non_blocking_connect.
+   
+  Sintaxe:
+  network_connect_raw_async(socket, url, porta);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        soquete
+        A identificação do soquete a ser utilizado.
+      
+      
+        url
+        A URL ou IP a que se conectar (uma cadeia).
+      
+      
+        porto
+        A porta a ser conectada.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  cliente = network_create_socket(network_socket_tcp); network_connect_raw_async(client, "www.macsweeneygames.com", 6510);
+  O código acima criará um novo soquete TCP e então tentará criar uma conexão assíncrona "bruta" através dela para a URL dada na porta 6510.
+   
+   
+   
+  
+    
+      
+        Voltar: Rede
+        Próximo: Network_resolve
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,47 @@
+
+  
+  script_existe
+  Esta função retornará verdadeiro ou falso, dependendo se o roteiro ou a função de roteiro com o índice dado existe. Nota,
+    que isto não é uma string, mas sim o nome do ativo que contém o índice único para cada script (como apareceria no IDE) ou a variável do nome da função do script, como definido dentro do ativo do script (note que
+    isto não funcionará para as variáveis do método). Para mais informações sobre scripts, consulte The Script Editor.
+   
+  Sintaxe:
+  script_exists(scr);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        scr
+        O nome do roteiro que você quer verificar.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  script[0] = -1; script[1] = AI_Esquerda; script[2] = AI_Direita; var script_num = choose(0, 1, 2); se script_existir(script[script_num]) {
+     script_execute(script[script_num]);
+     }
+  
+  O exemplo acima acrescenta duas funções de script e um valor em uma matriz, depois procede para obter um número aleatório e usa-o para escolher uma função de script a ser executada, a menos que o -1 seja escolhido, caso em que nada acontecerá.
+   
+   
+   
+  
+    
+      
+        Voltar: Roteiros
+        Próximo: nome_get_name_do_script
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

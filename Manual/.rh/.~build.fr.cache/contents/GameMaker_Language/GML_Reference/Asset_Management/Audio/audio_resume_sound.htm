@@ -1,0 +1,54 @@
+
+  
+  audio_resume_sound
+  Com esta função você pode retomar qualquer som que esteja em pausa no momento (depois de usar a função audio_pause_sound()). O som pode ser uma instância única de um som (o índice para cada
+    sons sendo tocados podem ser armazenados em uma variável quando se utiliza o audio_play_sound() ou audio_play_sound_at() funções)
+    ou um ativo sólido, caso em que todas as instâncias do som dado serão reiniciadas.
+   
+  Sintaxe:
+  audio_resume_sound(índice);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do som a ser retomado.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se keyboard_check_pressed(ord("P")) {
+     global.Pause = !global.Pause; if global.Pause {
+     audio_pause_sound(snd_Waterfall);
+     }
+     else
+     {
+     audio_resume_sound(snd_Waterfall);
+     }
+     }
+  
+  O código acima verifica se a tecla "P" está pressionada e se detecta uma, define a variável global "Pause" como verdadeira ou falsa e , em seguida, ou pausa o som indexado na variável "snd_Waterfall".
+    ou retoma o som a partir de seu estado de pausa.
+   
+   
+   
+  
+    
+      
+        Voltar: Áudio
+        Próximo: audio_resume_tudo
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

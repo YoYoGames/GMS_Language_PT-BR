@@ -1,0 +1,47 @@
+
+  
+  shader_is_compiled
+  Esta função verificará um shader em tempo de execução para ter certeza de que ele foi compilado com sucesso. Se tiver, então a função retorna verdadeiro, caso contrário, retorna falso. Esta função deve ser
+    usado no início do jogo para garantir que a plataforma rodando seu jogo tenha compilado com sucesso quaisquer shaders usados (particularmente no Windows, onde alguns computadores podem estar usando DX9 com Shader Level 2.0 e não uma versão posterior usando Shader Level
+    3.0).
+  Se seu shader NÃO tiver sido compilado e você ligar shader_set() o jogo vai cair, então vale a pena ter algum tipo de verificação sempre que você estiver usando
+    qualquer outra coisa além de simples shaders GLSL ES.
+   
+  Sintaxe:
+  shader_is_compiled(shader);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        shader
+        O sombreador a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  global.GFX = falso; if(shader_is_compiled(sh_glass) && shader_is_compiled(sh_warp)) {
+     global.GFX = true; }
+  
+  O código acima definirá uma variável global como falsa, e então, se ambos os shaders que estão sendo verificados tiverem compilado corretamente, ela será definida como verdadeira.
+   
+   
+   
+  
+    
+      
+        Voltar: Shaders
+        Próximo: shaders_are_supported
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

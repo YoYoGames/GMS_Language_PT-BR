@@ -1,0 +1,58 @@
+
+  
+  layer_sequence_play
+  Com esta função, você pode iniciar a reprodução da seqüência dada. Você fornece a identificação do elemento de seqüência conforme retornado por layer_sequence_create() ou por uma das funções dos elementos de camada e a função jogará a seqüência, que você pode então pausar se necessário usando a função layer_sequence_pause().
+  IMPORTANTE! Se sua seqüência tiver alguma instância nela, essas instâncias não devem mudar seu image_xscale / image_yscale /
+    image_angle / x / y variáveis como elas serão sobrescritas quando a seqüência
+      atualiza cada passo depois de começar a ser jogado.
+   
+  Sintaxe:
+  layer_sequence_play(sequence_element_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sequence_element_id
+        O valor de identificação único do elemento de seqüência para o alvo
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se keyboard_check_pressed(ord("P")) {
+     global.Pause = !global.Pause; var a = layer_get_all_elements(layer); for (var i = 0; i < array_length(a); i++;)  {
+     if layer_get_element_type(a[i]) == layerelementtype_sequence {
+     if global.Pause {
+     layer_sequence_pause(a[i]);
+     }
+     mais
+     {
+     layer_sequence_play(a[i]);
+     }
+     }
+     }
+     }
+  
+  O código acima verifica se o jogo foi pausado ou não quando uma tecla é pressionada. Se o jogo for pausado, então ele percorre todos os elementos da seqüência na camada atual (a camada da instância de chamada) e pausa sua reprodução, e se o
+    o jogo não é pausado, então o loop começará sua reprodução novamente.
+   
+   
+   
+  
+    
+      
+        Voltar: Sequência de camadas
+        A seguir: escala_de_série_de_camadas
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

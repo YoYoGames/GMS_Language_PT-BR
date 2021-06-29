@@ -1,0 +1,62 @@
+
+  
+  gpu_get_blendmode
+  Esta função pode ser usada para recuperar o modo de mistura atual que está sendo usado para desenho. O valor retornado será uma das seguintes constantes (o valor padrão é bm_normal):
+   
+  
+    
+      
+        Constante
+        Descrição
+        Modo de mistura estendida
+      
+      
+        bm_normal
+        Mistura normal (o modo de mistura padrão).
+        (bm_src_alpha, bm_inv_src_alpha)
+      
+      
+        bm_add
+        Mistura aditiva. São adicionados valores de luminosidade das áreas claras.
+        (bm_src_alpha, bm_one)
+      
+      
+        bm_subtract
+        Mistura subtrativa. Os valores de luminosidade das áreas claras são subtraídos.
+        (bm_zero, bm_inv_src_colour)
+      
+      
+        bm_max
+        Mistura máxima. Semelhante à mistura aditiva.
+        (bm_src_alpha, bm_inv_src_color)
+      
+    
+  
+   
+  Sintaxe:
+  gpu_get_blendmode();
+   
+  Devoluções:
+  Constante (ver acima para constantes)
+   
+  Exemplo:
+  if gpu_get_blendmode() != bm_normal {
+     gpu_set_blendmode(bm_normal);
+     }
+  
+  O código acima recebe o modo de mistura atual e, se não for bm_normal, é ajustado para essa constante.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle de GPU
+        Próximo: gpu_get_blendmode_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

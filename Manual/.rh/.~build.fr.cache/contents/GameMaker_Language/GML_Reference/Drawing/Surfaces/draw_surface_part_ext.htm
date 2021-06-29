@@ -1,0 +1,84 @@
+
+  
+  draw_surface_part_ext_ext
+  Esta função irá desenhar uma parte da superfície escolhida na posição dada, seguindo as mesmas regras de acordo com draw_surface_part()só agora você pode escalar a peça, misturar uma cor com ela, ou mudar seu alfa
+    ao desenhá-la na tela (o mesmo que ao desenhar uma superfície com draw_surface_ext()).
+  NOTA: Ao trabalhar com superfícies há a possibilidade de que elas possam deixar de existir a qualquer momento devido ao fato de serem armazenadas na memória de textura. Você deve SEMPRE verificar se uma superfície existe usando superfície_existe()    antes de referenciá-los diretamente.
+   
+  Sintaxe:
+  draw_surface_part_ext(id, left, top, w, h, x, y, xscale, yscale, color, alpha);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        O valor único de identificação da superfície a ser desenhada.
+      
+      
+        esquerda
+        A posição esquerda na superfície da peça a ser desenhada.
+      
+      
+        topo
+        A posição superior na superfície da peça a ser desenhada.
+      
+      
+        w
+        A largura da peça a ser desenhada, a partir da esquerda.
+      
+      
+        h
+        A altura da peça a ser desenhada, de cima.
+      
+      
+        x
+        A posição x de onde desenhar a superfície.
+      
+      
+        y
+        A posição y de onde desenhar a superfície.
+      
+      
+        xscale
+        A escala horizontal com que a peça deve ser desenhada.
+      
+      
+        yscale
+        A escala vertical com que a peça deve ser desenhada.
+      
+      
+        cor
+        A mistura de cores com a peça deve ser desenhada.
+      
+      
+        alfa
+        A transparência alfa com que a peça deve ser desenhada.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_surface_part_ext(surf, 8, 8, 32, 32, x, y, 2, 0,5, c_black, 1);
+  Isto desenhará uma área de 32x32 pixels de 8x8 pixels para a superfície indexada na variável "surf". Ela será esticada para dobrar sua largura habitual, mas a metade de sua altura habitual. Será opaco e será misturado com preto (transformando-o em
+    uma silhueta).
+   
+   
+   
+  
+    
+      
+        Voltar: Superfícies
+        A seguir: draw_surface_stretched
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

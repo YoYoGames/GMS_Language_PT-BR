@@ -1,0 +1,53 @@
+
+  
+  path_shift
+  Com esta função você pode mudar um caminho ao longo do eixo horizontal e vertical. Observe que isto não terá efeito visível no jogo se a instância que segue o caminho a ser deslocado o seguir relativamente (ao invés de absolutamente) como o caminho
+    posição do caminho é então desconsiderada. Esta função muda o ativo do caminho real, e assim afetará permanentemente como o caminho é usado por todas as instâncias no jogo desde o momento em que a função é usada até o final do jogo. Se isto for
+    não o que você precisa, então você deve usar uma função como path_duplicate() para criar uma cópia do caminho primeiro, depois chamar essa função no ativo duplicado (não se esqueça de chamar
+    path_delete() no ativo quando este não é mais necessário).
+   
+  Sintaxe:
+  path_shift(index, xshift, yshift);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do caminho para a mudança.
+      
+      
+        xshift
+        O número de pixels horizontais para mudar o caminho. Negativo=esquerda, positivo=direito.
+      
+      
+        yshift
+        O número de pixels verticais para mudar o caminho. Negativo=alta, positivo=baixo.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  my_path = path_duplicate(pth_AI); path_shift(my_path, 50, 50); path_start(my_path, 4, path_action_reverse, true);
+  O código acima duplica um ativo do caminho e armazena seu valor de identificação em uma variável. Esta variável é então usada para mudar a posição do caminho duplicado e então a instância inicia o caminho.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação do caminho
+        Próximo: path_index
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,44 @@
+
+  
+  file_text_eof
+  Esta função retorna verdadeiro quando o final de um determinado arquivo de texto aberto for alcançado ou falso, se não for.
+   
+  Sintaxe:
+  file_text_eof(fileid);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fileid
+        A identificação do arquivo a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var num = 0; var file = file_text_open_read(working_directory + "Game_Data.txt"); while (!file_text_eof(file)) {
+     str[num++] = file_text_readln(file); }
+     file_text_close(file);
+  
+  O código acima abre um arquivo para escrita e depois percorre as linhas de texto já escritas no arquivo até o final, armazenando cada linha na matriz "str".
+   
+   
+   
+  
+    
+      
+        Voltar: Arquivos de texto
+        Próximo: file_text_close
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

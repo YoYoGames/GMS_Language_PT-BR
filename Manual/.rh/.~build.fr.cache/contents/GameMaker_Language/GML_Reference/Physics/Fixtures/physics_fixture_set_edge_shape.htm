@@ -1,0 +1,62 @@
+
+  
+  forma_de_série_física
+  Esta função define uma forma de fixação "borda". Uma forma de borda é simplesmente uma linha que irá gerar uma colisão quando outras fixações sobre ela, e pode ser muito útil para gerar (por exemplo) terreno, ou para criar bordas ao redor de uma sala.
+    A posição da borda é definida utilizando espaço local, ou seja: a posição x/y da instância é considerada (0,0), portanto, isto deve ser levado em consideração ao criá-las (no exemplo de código abaixo, a instância teria sido colocada em
+    (0,0) na sala para evitar complicações).
+   
+  Sintaxe:
+  physics_fixture_set_edge_shape(fixture, local_x1, local_y1, local_x2, local_y2)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fixação
+        o índice da fixação
+      
+      
+        local_x1
+        posição inicial x posição para a borda
+      
+      
+        local_y1
+        posição inicial para a borda
+      
+      
+        local_x2
+        posição final x posição para a borda
+      
+      
+        local_y2
+        posição final y para a borda
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var xx = 0; var y1 = room_height - 100; var y2 = room_height - 50 - irandom(100); for (var i = 0; i < 10; i++;) {
+     var fix = physics_fixture_create(); physics_fixture_set_edge_shape(fix, xx, y1, xx + 50, y2); physics_fixture_bind(fix, id); physics_fixture_delete(fix);
+     xx += 50; y1 = y2; y2 = room_height - 50 - irandom(100); }
+  
+  O código acima criará uma linha de "bordas" com uma variedade de alturas ao longo do comprimento da sala.
+   
+   
+   
+  
+    
+      
+        Voltar: Instalações
+        A seguir: forma_da_cade_física
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

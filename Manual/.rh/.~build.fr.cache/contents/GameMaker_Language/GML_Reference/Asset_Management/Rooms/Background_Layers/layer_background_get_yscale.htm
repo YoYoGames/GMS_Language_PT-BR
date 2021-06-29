@@ -1,0 +1,44 @@
+
+  
+  fundo_da_camada_esquadra_esquadra_esquadra_esquadra_esquadra
+  Esta função pode ser usada para obter o valor do multiplicador de escala atual do elemento de fundo. Você dá o ID do elemento de fundo (que você obtém quando cria um elemento de fundo usando layer_background_create()    ou quando você usa a função layer_background_get_id()), e a função retornará um valor real que representa o multiplicador de escala que está sendo usado para desenhar o duende. O valor padrão é 1.
+   
+  Sintaxe:
+  layer_background_get_yscale(background_element_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        background_element_id
+        O valor único de identificação do elemento de fundo para obter as informações de
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var lay_id = layer_get_id("Background_sky"); var back_id = layer_background_get_id(lay_id); if layer_background_get_yscale(back_id) != -1 {
+     layer_background_yscale(back_id, -1); }
+  
+  O código acima obterá a identificação da camada chamada "Background_sky" e depois a utilizará para obter a identificação do elemento de fundo nessa camada. Este ID é então usado para verificar a escala y para o elemento e se não for -1, ele é definido para
+    -1.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de fundo
+        Próximo: layer_background_get_id
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

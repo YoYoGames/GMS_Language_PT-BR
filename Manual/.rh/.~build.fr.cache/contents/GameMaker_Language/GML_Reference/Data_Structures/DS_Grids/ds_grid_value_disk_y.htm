@@ -1,0 +1,60 @@
+
+  
+  ds_grid_value_disk_y
+  Com esta função, você pode obter a coordenada y (dentro da região em forma de disco da grade) do valor que está sendo procurado. Você dá o índice da grade DS (como retornado por ds_grid_create()) junto com as posições x/y
+    para a célula central do disco. Em seguida, você dá o raio (como um valor inteiro) ao redor da célula central para pesquisar, antes de fornecer o valor a ser pesquisado. Se o valor a ser pesquisado não existir, então a função retornará -1.
+   
+  Sintaxe:
+  ds_grid_value_disk_y(index, xm, ym, r, val);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice da grade.
+      
+      
+        xm
+        A posição x do disco na grade.
+      
+      
+        ym
+        A posição y do disco na grade.
+      
+      
+        r
+        O raio do disco na grade.
+      
+      
+        val
+        O valor a encontrar.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  if ds_grid_value_disk_exists(grid, 5, 5, 5, val) {
+     xpos = ds_grid_value_disk_x(grid, 5, 5, 5, val); ypos = ds_grid_value_disk_y(grid, 5, 5, 5, val); }
+  
+  O código acima verifica uma grade DS para um valor específico dentro de uma região de disco. se for encontrado, ele então armazena a posição x e y do valor em duas variáveis para uso posterior.
+   
+   
+   
+  
+    
+      
+        Voltar: Grades DS
+        Próximo: ds_grid_copy
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

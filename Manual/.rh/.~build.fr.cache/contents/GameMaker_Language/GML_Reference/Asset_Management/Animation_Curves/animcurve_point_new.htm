@@ -1,0 +1,53 @@
+
+  
+  animcurve_point_new
+  Esta função pode ser usada para criar uma nova estrutura de pontos a ser adicionada a um canal de curva de animação. Quando criada uma estrutura de pontos está vazia e você precisa definir as seguintes variáveis para gerar o ponto
+    dados:
+   
+  
+    
+      
+        Nome da variável
+        Tipo de dados
+        Descrição
+      
+      
+        posx
+        real
+        A posição no tempo (normalizada de 0 a 1) do ponto.
+      
+      
+        valor
+        real
+        O valor do ponto.
+      
+    
+  
+   
+  Cada estrutura de pontos que você cria deve ser adicionada a uma matriz e esta é a matriz que é adicionada à variável "canais" de estrutura de canais da curva de animação (como mostrado no exemplo abaixo).
+   
+  Sintaxe:
+  animcurve_point_new();
+   
+  Devoluções:
+  Referência Estrutural
+   
+  Exemplo:
+  my_curve = animcurve_create(); my_curve.name = "My_Curve"; var _channels = array_create(1); _channels[0] = animcurve_channel_new(); _channels[0].name = "alpha"; _channels[0].type = animcurvetype_catmullrom; _channels[0].iterações = 8; var _points = array_create(3); _points[0] = animcurve_point_new(); _points[0].posx = 0; _points[0].value = 0; _points[1] = animcurve_point_new(); _points[1].posx = 0.5; _points[1].value
+    = 1; _pontos[2] = animcurve_point_new(); _pontos[2].posx = 1; _pontos[2].valor = 0; _canais[0].pontos = _pontos; my_curve.channels = _canais;
+  O código acima cria uma nova estrutura de curva de animação e a armazena na variável "my_curve". Esta estrutura é então preenchida com um nome e uma matriz de canais. A matriz de canais contém um único canal com três pontos.
+   
+   
+   
+  
+    
+      
+        Voltar: Curvas de Animação
+        Próximo: animcurve_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,47 @@
+
+  
+  part_type_destroy
+  Com esta função você pode remover o tipo de partícula especificado do jogo. Quando você usa esta função, todas as partículas do tipo em questão desaparecerão da sala e a própria partícula será removida da memória, portanto, esta função deve ser usada apenas
+    quando você não precisa mais da partícula.
+   
+  Sintaxe:
+  part_type_destroy(ind);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do tipo de partícula a ser destruída.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se part_particles_count(smoke_sys) = 0 {
+     part_type_destroy(smoke_part);
+     part_system_destroy(smoke_sys);
+     instance_destroy();
+     }
+     else alarm[0] = 1;
+  O código acima verifica um sistema de partículas para ver se alguma partícula está presentemente visível na sala e se não, as partículas, o sistema e a instância são destruídos.
+   
+   
+   
+  
+    
+      
+        Voltar: Tipos de Partículas
+        Próximo: part_type_clear
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

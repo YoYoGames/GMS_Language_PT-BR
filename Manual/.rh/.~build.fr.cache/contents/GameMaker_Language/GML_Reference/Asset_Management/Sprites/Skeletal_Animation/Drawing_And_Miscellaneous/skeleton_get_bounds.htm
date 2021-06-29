@@ -1,0 +1,56 @@
+
+  
+  esqueleto_get_bounds
+  Esta função retornará um conjunto de valores associados a qualquer caixa de delimitação para o duende de animação do esqueleto atualmente atribuído. Você fornece o número do índice da caixa de delimitação para obter os detalhes de (você pode recuperar o número total de delimitações
+    caixas para o duende usando a função esqueleto_get_num_bounds()) e a função retornará uma matriz com os seguintes elementos:
+  
+    [0] - o número de pontos na caixa delimitadora (um real)
+    [1] - o nome da caixa de delimitação (um cordel)
+    [2] - a posição x do primeiro ponto
+    [3] - a posição y do primeiro ponto
+    [etc...] - mais dados de posição x/y até o número de pontos na caixa delimitadora
+  
+   
+  Sintaxe:
+  skeleton_get_bounds(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice da caixa delimitadora para obter os valores de.
+      
+    
+  
+   
+  Devoluções:
+  Array (mínimo 2 elementos: numPoints, nome [, xPos, yPos, etc...])
+   
+  Exemplo:
+   
+  var num = skeleton_get_num_bounds(); var yy = 60; for(var i = 0; i < num; i++;) {
+     var b_info = skeleton_get_bounds(i); if b_info[0] > 0 {
+     var data = b_info[1] + ":"; for(var j = 0; j < b_info[0]; j++;) {
+     data += " (" + string(b_info[(j * 2) + 2]) + ", " + string(b_info[(j * 2) + 2 + 1]) + ")"; }
+     draw_text(20, yy, data); yy += 20; }
+     }
+  
+  O código acima passará por cada uma das caixas de delimitação associadas ao sprite atualmente atribuído e então desenhará esses dados como um fio para a tela.
+   
+   
+   
+  
+    
+      
+        Voltar: Desenho e Diversos
+        Próximo: esqueleto_colisão_desenhar_set
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

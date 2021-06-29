@@ -1,0 +1,46 @@
+
+  
+  audio_group_unload
+  Esta função irá descarregar todos os sons que estão marcados como pertencentes ao grupo de áudio em questão na memória. A função retornará verdadeira se o descarregamento for iniciado e falsa se o
+    A identificação do grupo é inválida, ou já foi sinalizada para descarga. Note que qualquer áudio que esteja sendo tocado atualmente quando esta função for chamada, será interrompido.
+   
+  Sintaxe:
+  audio_group_unload(groupID);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        groupID
+        O índice do grupo de áudio a descarregar (como definido na Janela Grupos de Áudio)
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if audio_group_is_loaded(audiogroup_level1) {
+     audio_group_unload(audiogroup_level1);
+     }
+  
+  O código acima verifica se um grupo de áudio foi carregado e se ele o descarrega.
+   
+   
+   
+  
+    
+      
+        Voltar: Grupos de Áudio
+        A seguir: audio_group_is_loaded
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

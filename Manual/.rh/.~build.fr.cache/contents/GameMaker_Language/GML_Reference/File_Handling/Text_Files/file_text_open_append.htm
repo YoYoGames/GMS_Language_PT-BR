@@ -1,0 +1,44 @@
+
+  
+  file_text_open_append
+  Esta função abre o arquivo de texto com o nome de arquivo indicado para escrita (se o arquivo não existir, ele é criado), retornando a identificação única do arquivo que deve ser armazenado em uma variável, pois ele será usado para todas as outras ações
+    a ver com esse arquivo. A posição dentro do arquivo para escrever é definida para a última linha de texto que o arquivo contém. Note que se o arquivo não puder ser criado (por causa de um nome de arquivo ilegal, por exemplo), a função retornará -1.
+  OBSERVAÇÃO: Você só pode ter um máximo de 32 arquivos abertos a qualquer momento. Você também deve sempre fechar os arquivos quando terminar, pois isto escreve as informações e libera a memória associada ao arquivo.
+  ATENÇÃO! Esta função pode não funcionar como você espera devido ao GameMaker Studio 2 ser lixado! Consulte a seção sobre o Sistema de Arquivos para maiores informações.
+   
+  Sintaxe:
+  file_text_open_append(fname);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fname
+        O nome do arquivo a ser anexado.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  file = file_text_open_append(directório_de_trabalho + "save.txt");
+  Isto abriria "save.txt" do mesmo diretório do jogo e armazenaria a identificação do arquivo na variável "file".
+   
+   
+   
+  
+    
+      
+        Voltar: Arquivos de texto
+        Próximo: file_text_open_from_string
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

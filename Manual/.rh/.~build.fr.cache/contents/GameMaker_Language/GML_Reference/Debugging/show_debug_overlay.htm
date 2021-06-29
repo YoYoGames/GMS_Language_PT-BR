@@ -1,0 +1,67 @@
+
+  
+  show_debug_overlay
+  Esta função pode ser usada para ligar e desligar a sobreposição de depuração padrão ao testar seu jogo e é desativada por padrão. A sobreposição de depuração mostra uma barra gráfica de uso da CPU/GPU na própria janela do jogo, juntamente com o valor real atual dos fps,
+    número de trocas de textura e o número de lotes de vértices (note que as trocas de textura e os lotes de vértices nunca serão zero e normalmente mostrarão valores de 2 ou 3, uma vez que mesmo com uma sala vazia um sem objetos GameMaker Studio 2 ainda tem que desenhar e lotear
+    coisas).
+  Esta barra é dividida em seções, sendo cada seção 1/60 de um segundo. Como você pode ver na imagem acima, a barra é composta de vários
+    cores:
+  
+    Verde - Processamento de entrada / saída (ou seja: teclado, mouse, gamepad, rede etc...)
+    Vermelho - A velocidade de atualização do evento da etapa
+    Amarelo - O tempo necessário para o evento do sorteio
+    Laranja - Tempo de atualização de depuração, que normalmente só é visível quando você usa o módulo de depuração
+    Branco - GPU deixado ao longo do tempo, que é o tempo gasto à espera que a GPU termine a renderização da moldura antes que a próxima possa começar
+    Cyan - O tempo de renderização do texto
+    Cinza - O tempo necessário para limpar a tela a cada etapa do sorteio
+    Azul - O tempo necessário para que o Coletor de Lixo funcione
+    Dark Red - A descarga da GPU, que é o tempo que a GPU leva para limpar imagens da memória
+  
+  Usando esta função você pode adicionar a sobreposição, seja no modo de depuração ou não, e desta forma, você pode ver como seu jogo funciona eficientemente e obter uma indicação visual de como ele está usando os recursos disponíveis, sem a sobrecarga de ter o depurador funcionando
+    ao lado.
+  OBSERVAÇÃO: Esta função não funcionará no alvo HTML5 devido à forma diferente de funcionamento em relação a todos os outros alvos.
+   
+  Sintaxe:
+  show_debug_overlay(enable);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        habilitar
+        ligar(verdadeiro) ou desligar(falso) a camada de depuração.
+        
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if global.debug {
+     show_debug_overlay(true);
+     }
+     mais
+     {
+     show_debug_overlay(false);
+     }
+  
+  O código acima irá ativar ou desativar o debug, dependendo do valor de uma variável global.
+   
+   
+   
+  
+    
+      
+        Voltar: Depuração
+        Próximo: code_is_compiled
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

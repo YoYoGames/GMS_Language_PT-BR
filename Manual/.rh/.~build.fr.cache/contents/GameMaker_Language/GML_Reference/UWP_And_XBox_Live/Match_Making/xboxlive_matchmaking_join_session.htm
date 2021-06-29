@@ -1,0 +1,71 @@
+
+  
+  xboxlive_matchmaking_join_session
+  Esta função permite que você participe de uma sessão específica através de uma alavanca de sessão. Isto é semelhante a um convite para uma sessão, mas é útil quando você tem seu próprio servidor realizando o matchmaking em vez de confiar no xbox live matchmaking.
+  A função exige que você forneça o ID do usuário - que você pode recuperar para um determinado bloco de jogo, chamando o xboxlive_user_for_pad() função - assim como o Dispositivo Seguro
+    Modelo de associação, que você deveria ter criado previamente no painel de controle do XDP.
+  Para a sessão, você precisará primeiro ter recuperado o "id de correlação" da sessão à qual você deseja participar. Quando a sessão original for criada, o evento social assíncrono será "session_created" e ele
+    incluir uma entrada "correlationid" no mapa retornado (ver xboxlive_matchmaking_create()). Você precisará ter esta identificação passada de volta para o servidor para que ela seja então passada quando
+    recebendo um pedido de matchmaking. Uma vez que o jogo de junção tenha recebido o "ID de correlação" de volta do servidor, eles podem então chamar esta função passando o ID de correlação como o argumento de tratamento da sessão.
+  A função retornará -1 se houver um erro (caso em que deve haver uma saída de console detalhando o problema), ou um valor de ID de solicitação de outra forma. O valor do ID de Solicitação pode então ser usado para identificar o Evento Assíncrono Social correto para esta função. Este evento será acionado quando a sessão tiver sido criada e conterá um Mapa DS na variável async_load com o seguinte
+    pares chave/valor:
+  
+    "requestid"- contém a identificação do pedido conforme retornado pela função de chamada
+    "status" - contém a seqüência "session_player_joined" para informá-lo sobre que tipo de evento foi acionado.
+    "sessionid" - contém o ID da sessão, ou -1 em caso de falha.
+    "sessionOwner< index> "- contém o ID do host da sessão se uma sessão tiver sido encontrada (< index> é um valorde 0 a "num_resultados" - 1)
+    " id" - contém a constante SESSÃO_DE_CONTECIMENTO
+    " erro" - será 0 se tudo estiver bem, ou -1 se algo falhar
+  
+  Quando um novo jogador entra na sessão, o mapa DS terá estes pares chave/valor:
+  
+    " id" - contém a constante SESSÃO_DE_CONTECIMENTO
+    "sessionid" - contém o ID da sessão
+    "status" - contém a seqüência "session_player_joined".
+    "requestid"- O valor de identificação que foi devolvido pela função que criou o pedido
+  
+   
+  Sintaxe:
+  xboxlive_matchmaking_join_session(user_id, session_handle, sdatemplate);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        user_id
+        O ponteiro de identificação do usuário a ser usado
+      
+      
+        session_handle
+        O "ID de correlação" a ser usado para a identificação da sessão (ver descrição, acima)
+      
+      
+        sdatemplate
+        O nome do modelo de associação de dispositivo seguro a ser usado
+      
+    
+  
+   
+  Devoluções:
+  Solicitar ID (número inteiro)
+   
+  Exemplo:
+  Request_ID = xboxlive_matchmaking_join_session(global.UserID, global.SessionID, "PeerServerTraffic");
+  O acima mencionado enviará uma solicitação para participar da sessão multiplayer em questão, armazenando o valor de identificação da solicitação em uma variável para que possa ser verificada no evento assíncrono.
+   
+   
+   
+  
+    
+      
+        Voltar: Fósforos
+        Próximo: xboxlive_matchmaking_session_leave
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

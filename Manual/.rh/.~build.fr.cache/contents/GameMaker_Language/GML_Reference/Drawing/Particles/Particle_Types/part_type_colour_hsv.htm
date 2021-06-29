@@ -1,0 +1,66 @@
+
+  
+  part_type_colour_hsv
+  Com esta função você pode definir uma tonalidade, saturação e faixa de valores para todas as partículas do tipo dado. Você fornece um valor mínimo e um valor máximo para cada um dos três componentes e as partículas criadas terão uma cor aleatória com base no
+    gama de parâmetros. Desta forma, é possível criar partículas da mesma tonalidade mas com diferentes saturações, ou de tonalidades diferentes mas com o mesmo valor (luminosidade) etc... Todos os valores devem estar entre 0 e 255.
+   
+  Sintaxe:
+  part_type_colour_hsv(ind, hmin, hmax, smin, smax, vmin, vmax);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do tipo de partícula a ser mudado.
+      
+      
+        hmin
+        O mínimo que pode ser o componente de tonalidade da cor final.
+      
+      
+        hmax
+        O máximo que pode ser o componente de tonalidade da cor final.
+      
+      
+        smin
+        O componente de saturação da cor final pode ser, no mínimo, o componente de saturação.
+      
+      
+        smax
+        O componente de saturação da cor final pode ser o máximo.
+      
+      
+        vmin
+        O valor mínimo da cor final pode ser o componente de valor.
+      
+      
+        vmax
+        O valor máximo da cor final pode ser o componente de valor.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  part_type_hsv(global.Stars, 0, 255, 0, 255, 255, 255, 255 );
+  O código acima estabelece que cada partícula emitida do tipo de partícula indexada na variável global "Estrelas" tenha cores e saturações diferentes, mas o mesmo valor (luminosidade).
+   
+   
+   
+  
+    
+      
+        Voltar: Tipos de Partículas
+        Próximo: part_type_colour1
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

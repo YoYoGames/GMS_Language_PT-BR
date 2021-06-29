@@ -1,0 +1,56 @@
+
+  
+  opção_de_tampão_async_group_option
+  Com esta função você pode definir algumas opções específicas de plataforma para o grupo tampão que está sendo salvo. As opções disponíveis são as seguintes:
+  
+    "subtítulo" ou"slottitle" -O valor para esta opção seria uma string, que será mostrada ao usuário ao gerenciar seus dados salvos no sistema operacional. Isto só é importante ao salvar os dados, não ao carregar novamente.
+    "showdialog" - O valor para esta opção é um verdadeiro ou falso booleano. Se definido como verdadeiro, quando você salvar ou carregar o GameMaker Studio 2 mostrará a interface do sistema, caso contrário, ele fará um quicksave/quickload
+      sem indicação de IU. Normalmente, você só precisa disto se estiver suportando vários slots salvos para permitir que o usuário escolha um slot, mas se você suportar apenas um slot por usuário, defina isto como falso.
+    "savepadindex" - Para esta opção você especificaria o índice do pad do jogador que está salvando ou carregando e o sistema irá escrever e ler os dados da pasta de salvamento deste jogador.
+    "Esta opção requer que você especifique o tamanho real em bytes que deseja salvar (para que você possa fazer um buffer_seek() e buffer_tell() para obter
+      que, por exemplo). Note que não é obrigatório fornecer este valor, pois todas as economias são pré-atribuídas com um espaço mínimo, que normalmente é de cerca de 10MB.
+  
+  IMPORTANTE! Esta função é atualmente válida apenas para os módulos alvo PSVita, PS4 e XBox One. Em todos os outros alvos, não fará nada.
+   
+  Sintaxe:
+  buffer_async_group_option(opção, valor);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        opção
+        A opção de definir.
+      
+      
+        valor
+        O valor a ser definido (pode ser string ou real, dependendo da opção).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  buffer_async_group_begin("save_folder_name"); buffer_async_group_option("showdialog", false); buffer_async_group_option("slottitle", "Catch The Haggis Save"); buffer_async_group_option("subtitle",
+    "Todos os seus haggis são salvos aqui"); save = buffer_save_async(buff, "Player_Save.sav", 0, 16384); buffer_async_group_end();
+  
+  O código acima inicia um grupo tampão e depois define as opções do grupo antes de definir 4 arquivos para salvar assincronamente. A definição do grupo é então terminada (momento em que a gravação começará).
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: buffer_async_group_end
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

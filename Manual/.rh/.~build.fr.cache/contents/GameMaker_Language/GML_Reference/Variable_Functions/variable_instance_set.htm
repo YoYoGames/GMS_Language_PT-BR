@@ -1,0 +1,53 @@
+
+  
+  conjunto_de_instância_variável
+  Com esta função você pode definir o valor de uma determinada variável em uma instância. Você fornece o valor único de identificação da instância (que pode ser encontrado nas propriedades da instância no
+    editor da sala, ou é retornado quando você chama a função instance_create_layer()), bem como o nome da variável para definir o valor de uma string (ver exemplo
+    código abaixo), e finalmente o valor a ser definido (pode ser qualquer tipo de dado válido). Se a variável não existir já na instância, ela será criada e, em seguida, será atribuído o valor.
+   
+  Sintaxe:
+  variable_instance_set(instance_id, name, val);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        exemplo_id
+        O valor de identificação único da instância a ser usada
+      
+      
+        nome
+        O nome da variável a ser definida (como uma string)
+      
+      
+        val
+        O valor para definir a variável para
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se !variable_instance_exists(id, "shields") {
+     variable_instance_set(id, "shields", 0); }
+  
+  O código acima verificará se existe uma variável de instância na instância de chamada e se ela não existe, então ela é criada e definida como 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções variáveis
+        A seguir: variable_global_exists
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

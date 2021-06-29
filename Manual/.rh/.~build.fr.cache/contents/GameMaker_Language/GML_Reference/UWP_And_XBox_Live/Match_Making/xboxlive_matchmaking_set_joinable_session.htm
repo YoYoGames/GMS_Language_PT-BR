@@ -1,0 +1,46 @@
+
+  
+  xboxlive_matchmaking_set_joinable_joinable_session
+  Esta função define uma sessão (previamente criada) para estar disponível para que outros usuários possam aderir através da interface do sistema. Um usuário só tem uma sessão juntada de uma vez, e quando ele sair da sessão (ou a sessão terminar) isto será liberado, entretanto você pode
+    limpá-lo manualmente, passando -1 para a discussão da sessão.
+   
+  Sintaxe:
+  xboxlive_matchmaking_set_joinable_session(local_user, session_that_is_joinable);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        local_user
+        O ponteiro de identificação do usuário local.
+      
+      
+        sessão_que_é_juntável
+        A identificação da sessão para torná-la acoplável, ou -1.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if (global.session_ID != -1) { xboxlive_matchmaking_set_joinable_session(xboxlive_user_for_pad(0), global.session_ID); }
+  O código acima verifica o valor de identificação da sessão válida e, se for detectado, define a sessão para ser juntada.
+   
+   
+   
+  
+    
+      
+        Voltar: Fósforos
+        Próximo: xboxlive_matchmaking_join_invite
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

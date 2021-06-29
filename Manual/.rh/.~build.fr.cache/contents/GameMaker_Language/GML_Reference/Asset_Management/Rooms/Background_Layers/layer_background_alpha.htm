@@ -1,0 +1,48 @@
+
+  
+  fundo_da_camada_alfa
+  Esta função controla o alfa (transparência) do duende de fundo. Você dá a identificação do elemento de fundo (que você obtém quando cria um elemento de fundo usando layer_background_create() ou quando
+    você usa a função layer_background_get_id()), e então definir o valor alfa a ser usado. Alfa pode ser entre 0 (totalmente transparente) e 1 (totalmente opaco) com o valor alfa padrão para o fundo
+    elemento sendo 1. Note que se a camada à qual o elemento de fundo foi atribuído não for visível - ou o próprio elemento tiver sido tornado invisível - você não verá nenhuma diferença com esta função até que a camada ou elemento tenha sido tornado visível
+    novamente.
+   
+  Sintaxe:
+  layer_background_alpha(background_element_id, alfa);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        background_element_id
+        O valor de identificação único do elemento de fundo a ser mudado
+      
+      
+        alfa
+        O alfa para o sprite de fundo, de 0 a 1 (padrão é 1)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var lay_id = layer_get_id("Background_sky"); var back_id = layer_background_get_id(lay_id); layer_background_alpha(back_id, random(1));
+  O código acima obtém o valor de identificação do fundo atribuído à camada "Background_sky" e então define seu alfa para um valor aleatório entre 0 e 1.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de fundo
+        Próximo: layer_background_index
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

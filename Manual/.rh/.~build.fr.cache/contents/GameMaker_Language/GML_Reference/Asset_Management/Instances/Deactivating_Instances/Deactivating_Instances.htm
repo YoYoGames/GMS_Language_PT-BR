@@ -1,0 +1,44 @@
+
+  
+  Desativação de Instâncias
+  OGameMaker Studio 2 oferece a possibilidade de "desligar" instâncias para que elas não sejam mais processadas de forma alguma. Tecnicamente, elas não existem mais, exceto como um ponteiro dentro do processo de desativação.
+    o que significa que uma instância desativada não pode ser manipulada ou alterada de forma alguma até que seja reativada novamente. Portanto, estas funções devem ser utilizadas com muito cuidado, pois podem causar problemas quando não são utilizadas corretamente, particularmente com
+    objetos persistentes, pois um objeto persistente que tenha sido desativado não será movido para a próxima sala, a menos que seja reativado primeiro (efetivamente eliminando-o do jogo). Observe também que a ativação e desativação não são instantâneas,
+    e uma instância que teve seu estado alterado desta forma não será considerada ativa/inativa até o final do evento em que a função foi chamada.
+  Normalmente não é necessário desativar instâncias a cada etapa de seu jogo e isto pode realmente causar problemas de desempenho ao seu jogo. Em vez disso, é recomendado que você só execute estas funções a cada poucos passos em um alarme (por exemplo), ou
+    se a visão da câmera mudou de posição, e é especialmente importante que você não use essas funções no evento do sorteio, pois isso pode levar a erros graves em seu jogo.
+  Uma instância desativada efetivamente deixa de existir no jogo, mas as instâncias individuais ainda podem ter suas variáveis acessadas. Entretanto, não é possível usar com (objeto) ou com (instância),
+    mas é preciso acessar a instância diretamente usando sua identificação única na forma a seguir:
+  val = inst.variável;
+  No exemplo acima, "inst" seria uma variável que contém a identificação da instância desativada, e esta é a única maneira de que uma instância desativada possa ser referenciada sem que ela tenha sido ativada anteriormente.
+  NOTA: Se você desativar uma instância no início da sala (ou seja: do código de criação da sala, ou de uma instância criar evento de uma instância dentro da sala) todas as instâncias que são colocadas dentro da sala do editor da sala ainda serão executadas
+    seu evento de criação antes de ser desativado.
+  AVISO: A desativação de instâncias que têm a física habilitada NÃO irá impedir que seus dispositivos interajam dentro da simulação física. Para isso, você deve definir sua variável f_ativa para
+    verdadeiro ou false à medida que você ativa/desativa as instâncias.
+  As seguintes funções existem para desativar instâncias:
+   
+  
+    instance_activate_all
+    exemplo_activar_objecto
+    instance_activate_region
+    instance_activate_layer
+    instance_deactivate_all
+    instance_deactivate_object
+    instance_deactivate_region
+    instance_deactivate_layer
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Instâncias
+        A seguir: Variáveis de instância
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

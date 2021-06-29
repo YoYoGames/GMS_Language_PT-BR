@@ -1,0 +1,46 @@
+
+  
+  audio_stop_sync_group
+  Esta função interromperá o grupo de sincronização dado se ele estiver jogando, sendo o índice do grupo o valor retornado quando você criou o grupo usando a função audio_create_sync_group().
+  NOTA: Esta funcionalidade não está disponível para a plataforma de destino HTML5.
+   
+  Sintaxe:
+  audio_stop_sync_group(group_index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        group_index
+        O índice do grupo para parar de jogar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if mouse_check_button_pressed(mb_left) {
+     audio_stop_sync_group(sg);
+     }
+  
+  O código acima verifica se há um clique do mouse e, se for detectado, pára o grupo de sincronização indexado na variável "sg".
+   
+   
+   
+  
+    
+      
+        Voltar: Sincronização de áudio
+        Próximo: audio_pause_sync_group
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

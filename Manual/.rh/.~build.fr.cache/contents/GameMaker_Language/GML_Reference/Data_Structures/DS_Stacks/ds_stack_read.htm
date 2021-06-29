@@ -1,0 +1,56 @@
+
+  
+  ds_stack_read
+  Com esta função você pode recriar uma pilha DS salva (uma que tenha sido escrita anteriormente como uma string usando ds_stack_write()). É preciso primeiro criar uma nova pilha de DS para ler a seqüência e, se a pilha de DS
+    já existe e tem informações nele armazenadas, então isto será esclarecido antes da leitura. Esta função é de vital importância ao criar mecanismos de economia/carga para seu jogo. Observe que se a estrutura de dados foi criada com versões anteriores de
+    GameMaker você deve adicionar o argumento opcional "legado", definindo-o como verdadeiro, já que o formato das cordas foi alterado com esta versão.
+   
+  Sintaxe:
+  ds_stack_read(id, str [, legacy] );
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação da estrutura de dados a ser lida.
+      
+      
+        str
+        O fio a partir do qual ler.
+      
+      
+        legado(opcional)
+        Pode ser verdadeiro ou falso ou omitido completamente.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  stack = ds_stack_create(); ini_open("save.ini");
+     var str = ini_read_string("Stacks", "0", ""); if (str != "") {
+     ds_stack_read(stack, str); }
+     ini_close();
+  
+  O código acima cria uma pilha e armazena o índice na variável "pilha". Em seguida, abre um arquivo ini e lê uma string a partir dele, verificando se a string não é retornada como vazia primeiro. Esta cadeia de caracteres é então lida em
+    a recém-criada pilha DS .
+   
+   
+   
+  
+    
+      
+        Voltar: ds_stack_create
+        Próximo: ds_stack_write
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

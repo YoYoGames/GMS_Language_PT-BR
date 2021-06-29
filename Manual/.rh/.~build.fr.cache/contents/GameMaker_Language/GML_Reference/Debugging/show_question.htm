@@ -1,0 +1,47 @@
+
+  
+  show_question
+  Esta função cria uma caixa de mensagens pop-up com dois botões para "Sim" e "Não". Ela retorna verdadeiro ou falso, dependendo de qual dos dois botões o usuário pressiona.
+  OBSERVAÇÃO: Esta função é para uso de depuração apenas em alvos Desktop, mas é depreciada em todos os outros alvos.
+   
+  Sintaxe:
+  show_question(str);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        str
+        O fio a ser mostrado na pergunta pop-up.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if (pontuação > 500) && debug_mode {
+     if show_question("Continuar para a próxima sala?") {
+     room_goto(rm_Level2);
+     }
+     else game_end(); }
+  
+  O código acima verificará a pontuação e se for mais de 500, perguntará ao usuário se ele deseja continuar ou não e se o botão "sim" for clicado irá para outra sala, mas se o botão "não" for selecionado, terminará o jogo.
+   
+   
+   
+  
+    
+      
+        Voltar: Depuração
+        Próximo: show_debug_message
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

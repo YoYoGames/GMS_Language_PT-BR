@@ -1,0 +1,60 @@
+
+  
+  draw_button
+  Esta função desenhará um "botão" muito simples e retangular usando a cor e o alfa atualmente selecionados, onde o argumento para cima define o aspecto do efeito de borda biselada, como mostrado na imagem abaixo:
+  NOTA: Se você está querendo desenhar uma forma usando um sombreador, você deve estar ciente de que a maioria dos sombreadores espera o
+    seguintes entradas: vértice, textura, cor. Entretanto, ao utilizar esta função, apenas dados de vértices e cores estão sendo passados, e assim o sombreador não pode desenhar nada (ou desenhar algo, mas não corretamente). Se você precisar desenhar formas desta maneira, então
+    o sombreador deve ser personalizado com isto em mente.
+   
+  Sintaxe:
+  draw_button(x1, y1, x2, y2, up);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x1
+        A coordenada x da esquerda do botão
+      
+      
+        y1
+        A coordenada y da parte superior do botão
+      
+      
+        x2
+        A coordenada x da direita do botão
+      
+      
+        y2
+        A coordenada y da parte inferior do botão
+      
+      
+        acima
+        Se o botão é para cima(verdadeiro) ou para baixo(falso)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_button(100, 100, 200, 150, !mouse_check_button(mb_left));
+  Isto atrairá um botão que aparecerá pressionado se o botão esquerdo do mouse for mantido pressionado.
+   
+   
+   
+  
+    
+      
+        Voltar: Formulários básicos
+        Próximo: draw_healthbar
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

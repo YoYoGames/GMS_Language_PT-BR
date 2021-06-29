@@ -1,0 +1,49 @@
+
+  
+  layer_sprite_change
+  Usando esta função você pode alterar o recurso sprite atribuído a um determinado elemento sprite em uma camada. Você dá o ID do elemento sprite (que você obtém quando cria um elemento sprite usando layer_sprite_create()    ou quando você usa a função layer_sprite_get_id()) e, em seguida, fornecer um ativo de índice sprite será alterado. Observe que se o duende tiver sub-imagens, ele também animará (isto pode ser controlado
+    usando o layer_sprite_index() e layer_sprite_speed() funções). Observe que você pode atribuir um valor -1 como novo índice sprite e nenhum sprite será mostrado,
+    embora o elemento ainda exista e ainda possa ser alterado mais tarde.
+   
+  Sintaxe:
+  layer_sprite_change(sprite_element_id, sprite_index)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sprite_element_id
+        O valor de identificação único do elemento sprite a mudar
+      
+      
+        sprite_index
+        O novo índice sprite a utilizar
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var s = layer_sprite_get_id(layer, global.Asset_sprite); se layer_sprite_get_sprite(s) != spr_Nighttime {
+     layer_sprite_change(s, spr_nighttime); }
+  
+  O código acima verifica o índice sprite do elemento com o ID armazenado na variável global global.Asset_sprite e se não for "spr_Nighttime", então esse sprite é atribuído ao elemento.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de Sprite
+        Próximo: layer_sprite_index
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

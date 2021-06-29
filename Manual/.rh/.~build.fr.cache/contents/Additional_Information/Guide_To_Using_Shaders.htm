@@ -1,0 +1,300 @@
+
+  
+  Guia para o uso de Shaders
+  Os shaders são freqüentemente usados para criar belos efeitos gráficos nos jogos. Eles também estão entre os recursos mais avançados oferecidos pelo GameMaker Studio 2, portanto é necessário que você tenha uma compreensão básica de programação e de como funciona o GameMaker Studio 2 
+    antes de começar a trabalhar com eles.
+  Então, o que é um sombreador? Inicialmente eles foram criados para fornecer sombra para iluminação (daí o nome), mas agora são usados para produzir uma enorme variedade de efeitos. O código Shader é semelhante ao código normal, mas é (quase sempre) executado pela GPU, não
+    a CPU. Esta diferença vem com seu próprio conjunto de regras e limitações, mas as cobriremos mais tarde.
+  Cada sombreador é composto de dois componentes separados: um  sombreador de vértice e um  sombreador de  fragmento (também chamado de  sombreador de pixel). Vamos começar com o sombreador de vértice. Cada duende é formado por um retângulo,
+    mas os computadores gostam de desenhar triângulos, por isso esses retângulos são divididos em dois triângulos (às vezes chamados de quadângulos). Isto nos deixa com seis vértices (cantos) por duende, mas dois deles são o mesmo, então devemos nos preocupar apenas com quatro.
+    Agora, imagine que temos um para loop que passa por cima de cada vértice e executa o código dentro do vértice sombreado para cada um. Isto nos permite mudar a posição e a cor do vértice antes de passá-lo para o sombreador do fragmento, uma vez que o sombreador do vértice é executado
+    mais cedo.
+  Eis como isso ficaria:
+  Para o sombreador de fragmentos, você pode imaginar o mesmo loop que antes, mas desta vez ele passa por cima de cada pixel em seu
+    sprite, dando-lhe informações tais como localização e cor daquele pixel. Em seu código de sombreador de fragmento, você realiza operações e cálculos para determinar a cor desse pixel para obter o efeito desejado. Por exemplo, se você quiser que um shader faça
+    seu duende seja preto e branco, então você calcularia qual tonalidade de cinza cada pixel precisa ser para criar o efeito.
+  Seria algo parecido com isto:
+  A razão pela qual o código Shader é normalmente executado pela GPU é que ele é mais eficiente. As CPUs modernas normalmente têm
+    entre dois a oito núcleos. Cada núcleo pode realizar uma tarefa de cada vez, portanto, aproveitando a vantagem de vários núcleos, podemos realizar tantas tarefas simultaneamente. Em contraste, as GPUs modernas podem realizar milhares, e até dezenas de milhares, de tarefas em execução
+    ao mesmo tempo. Isto é útil para os shaders porque podemos executar o código shader de milhares de pixels ao mesmo tempo. A limitação é que só temos acesso ao estado inicial do duende, portanto não sabemos de nenhuma modificação feita.
+    a outros pixels, já que ainda não podemos ter certeza de que o código foi executado neles.
+  NOTA: GameMaker Studio 2 permite aos usuários escrever shaders em GLSL (OpenGL Shader Language), HLSL (High-level Shader Language, usado quando se trabalha com DirectX), e GLSL ES (um subconjunto de
+    GLSL, que é comum em dispositivos móveis). Aqui estamos usando GLSL ES como a linguagem shader, já que é a que oferece a melhor compatibilidade entre as plataformas alvo. Geralmente esta é a que você sempre quer usar, a menos que você
+    têm necessidades muito específicas e compreendem a limitação dos outros idiomas sombreados. A matemática e as técnicas devem ser semelhantes entre as três línguas, porém, exceto por algumas diferenças de sintaxe aqui e ali.
+  O sombreador de vértices é executado primeiro, e como explicamos acima, ele trata de vértices. Ele é usado para calcular posições, normais e coordenadas de textura. Estes sombreadores não são particularmente úteis em 2D, uma vez que cada duende é normalmente
+    um quadrado, mas pode ser usado para fazer algumas inclinações, escalas, etc... Torna-se muito mais útil em 3D para cálculos de iluminação e deformações da malha. Os shaders de fragmentos são muito mais interessantes e são o que será coberto principalmente aqui, uma vez que o fragmento
+   shader é onde obtemos informações sobre nossas texturas e podemos ajustar a cor final de cada pixel em nossa imagem.
+   
+  Variáveis deShader 
+  Se você criou um shader no GameMaker Studio 2, você deve ter notado as seguintes palavras-chave no shader padrão de passagem. Estas palavras-chave ajudam o shader a entender a finalidade e o escopo de cada variável:
+  
+    Atributo: Estas são variáveis passadas pela OpenGL para osombreador de vértices . Estas podem mudar por vértice e são somente leitura. Estas incluem informações tais como posição do vértice, coordenadas de textura, cor do vértice, e vértice
+      normal.
+    Variável: Estas são variáveis usadas para passar dados entre o vértice e osshaders de fragmentos . Estão disponíveis para escrita no sombreador de vértice, mas são somente de leitura no sombreador de fragmento.
+    Uniforme: Estas são variáveis que mudam por objeto e são passadas pelo usuário para o shader. Elas podem ser usadas tanto no vértice quanto nos shaders de fragmentos, mas são somente de leitura.
+  
+  Você também verá o uso do vec como uma palavra-chave. Isto é usado para identificar uma variável vetorial no sombreador e logo você verá que vetores são muito importantes quando se trabalha com sombreadores . É por isso que eles são implementados como uma base
+    digite em GLSL. Se você não estiver familiarizado com eles, eles são um termo matemático representado como uma matriz com apenas uma coluna. Na programação, geralmente os representamos como uma matriz onde o número de componentes corresponde à dimensão. Duas e três dimensões
+    Os vetores são freqüentemente usados para posições, coordenadas de textura ou cores sem um canal alfa, enquanto os tetradimensionais são usados para cores com um canal alfa. Também podemos especificar se eles contêm booleanos, inteiros ou valores de ponto flutuante. O
+    A sintaxe para declarar um vetor é esta:
+  vec2 primeiroVec; // Vetor bidimensional de flutuadores vec3 segundoVec; // Vetor tridimensional de flutuadores vec4 terceiroVec; // Vetor tridimensional de flutuadores
+     bvec3 boolVec; // Vetor tridimensional de booleans ivec4 intVec; // Vetor tridimensional de booleans
+  Para inicializá-los, podemos usar o construtor para criar o vetor. É necessário fornecer o mesmo número de valores que o comprimento do vetor, mas é possível misturar e combinar escalares e vetores menores para atingir o comprimento alvo. Aqui estão alguns exemplos
+    disto:
+  // Vetor 2D simples com 2 valores escalares vec2 firstVec = vec2(2.0, 1.0); // Um vetor 4D usando 2 escalares e um vec2 cria os 4 valores vec4 secondVec = vec4(1.0, firstVec, 0.0); // Um vetor 3D usando 1 componente de um vec4 mais um
+    vec2 para criar os 3 valores vec3 terceiroVec = vec3(segundoVec.x, primeiroVec);
+  Também podemos atribuir-lhes outro vetor com o mesmo comprimento (ou abanar o vetor até que tenha o comprimento adequado, mas explicaremos isso em um momento):
+  vec3 primeiroVec; vec3 segundoVec = primeiroVec; vec4 terceiroVec = segundoVec.xyz; vec2 quartoVec = terceiroVec.zx;
+  Ao acessar componentes vetoriais na GLSL, temos algumas opções. A mais básica é tratar o vetor como uma matriz e acessar os componentes usando colchetes, como este:
+  vec4 myVec; myVec[0] = 1.0; myVec[1] = 0.0; myVec[2] = 2.0; myVec[3] = 1.0;
+  Entretanto, há outra maneira de acessar os componentes com a seguinte sintaxe:
+  vec4 myVec; myVec.x = 1.0; myVec.y = 2.0;
+  Isto usa os nomes dos componentes dentro do vetor para acessá-los. Pode-se usar x, y, z, ou w, para obter o primeiro, segundo, terceiro, ou quarto componentes, respectivamente. Referimo-nos a este método como suingue , porque a seguinte sintaxe também é
+    válido:
+  vec4 primeiroVec; vec3 segundoVec = primeiroVec.xyz; vec2 terceiroVec = segundoVec.zy; vec4 quartoVec = terceiroVec.yxxy;
+  Como você pode ver, podemos usar qualquer combinação de até quatro letras para criar um vetor com esse comprimento. Não podemos tentar acessar um componente que esteja fora dos limites (por exemplo, tentando acessar w em secondVec ou
+   terceiroVec, já que eles não têm um quarto componente). Também podemos repetir as letras e utilizá-las em qualquer ordem, desde que a variável vetorial à qual está sendo atribuída tenha o mesmo tamanho que o número de letras utilizadas.
+  Por razões óbvias, ao usar swizzle para definir valores de componentes, não se pode usar o mesmo componente duas vezes. Por exemplo, o texto abaixo não é válido, pois você está tentando definir o mesmo componente para dois valores diferentes:
+  myVec.xx = vec2(2.0, 3.0);
+  Por último, temos usado xyzw como nossa máscara swizzle, o que geralmente é o caso quando lidamos com posições. Há mais dois conjuntos de máscaras que você pode usar: rgba (usado para cores), ou stpq (usado para coordenadas de textura). Internamente, não há diferença entre estas máscaras, e as usamos apenas para tornar o código mais claro quanto ao que o vetor representa naquela instância. Além disso, não podemos combinar máscaras swizzle na mesma operação, portanto
+    isto é inválido:
+  myVec = outrosVec.ybp;
+  Essas foram muitas definições e informações, mas saber essas coisas é necessário para entender os próprios shaders.
+   
+  Criando um Shader
+  Quando você criar um shader no GameMaker Studio 2, ele abrirá dois arquivos para você: um shader de vértice (.vsh) e um shader de fragmento (.fsh). Este é o shader mais básico que você pode fazer, que leva um sprite,
+    lê a textura, e coloriza cada pixel com essa cor. Se você especificar cores de vértices ao desenhar, essas cores se misturarão com a textura.
+  Vamos analisar o código para um shader recentemente criado e analisá-lo, começando com o vértice shader.
+  // Passthrough Vertex Shader atributo vec3 in_Position; // (x,y,z) // atributo vec3 in_Normal; // (x,y,z) não usado neste shader. atributo vec4 in_Colour; // (r,g,b,a) atributo
+    vec2 in_TextureCoord; // (u,v)
+     variação vec2 v_vTexcoord; variação vec4 v_vColour;
+     void main() {
+     vec4 object_space_pos = vec4( in_Position.x, in_Position.y, in_Position.z, 1.0); gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * object_space_pos;      v_vColour = in_Colour; v_vTexcoord = in_TextureCoord; }
+  
+  Fora da função principal, vemos algumas declarações variáveis e seus qualificadores. Os atributos são-nos dados pelo GameMaker. As variáveis são criadas pelo usuário para passar essa informação para o shader do fragmento. Dentro da função principal,
+    temos os cálculos para encontrar a posição da tela do vértice:
+  
+    Primeiro, criamos um vec4 e o inicializamos com os componentes da posição, acrescentando um como quarto componente. Em álgebra linear, a convenção é que adicionamos um ao quarto componente se o vetor estiver representando
+      um ponto, ou um zero se ele representar um vetor real.
+    Em seguida, precisamos adicionar este quarto componente para multiplicá-lo com a matriz MATRIX_WORLD_VIEW_PROJECTION, que é uma matriz 4x4. Esta multiplicação projetará a posição mundial do vértice em coordenadas de tela.
+    Finalmente, passamos a coordenada de cor e textura do vértice para o sombreador do fragmento através de nossas variáveis variáveis variáveis variáveis.
+  
+  Este shader deve ser deixado em paz se você não estiver planejando jogar com posições de vértices e não será usado em nenhum dos exemplos dados abaixo porque todos os efeitos mostrados serão criados usando o shader de fragmento.
+  Vamos dar uma rápida olhada no shader do fragmento agora:
+  // Passthrough Fragment Shader variando vec2 v_vTexcoord; variando vec4 v_vColour;
+     void main() {
+     gl_FragColor = v_vColour * textura2D( gm_BaseTexture, v_vTexcoord ); }
+  
+  Como explicado anteriormente, a idéia por trás de um fragmento de sombreador é devolver a cor do pixel atual. Isto é feito atribuindo à variável gl_FragColor o valor final da cor. A função texture2D 
+    leva uma textura e um vec2 com as coordenadas UV que você deseja verificar nessa textura, que retorna um vec4 com a cor. Na passagem pelo shader, tudo o que estamos fazendo é agarrar a cor de
+    a textura na coordenada deste pixel e multiplicando-a pela cor do vértice associado a este pixel.
+  Agora que temos nosso primeiro shader, tudo o que temos que fazer para testá-lo é criar um objeto e atribuir-lhe um sprite, depois no Evento de Sorteio do objeto você define o shader desta forma:
+  // Evento de desenho shader_set(shdrColorOverlay);
+     draw_self();
+     shader_reset();
+  
+  Cada chamada de sorteio que fizermos entre shader_set() e shader_reset() irá
+    ter o sombreador aplicado a ele. Aqui, estamos desenhando o objeto sprite com nosso shader passthrough:
+  Como você deve ter adivinhado, isto não muda nada visualmente, já que é uma simples passagem
+   shader. Entretanto, as seções abaixo esboçam alguns passos simples que você pode tomar para modificar isto e mudar a maneira como o duende será desenhado. Cada seção mostra um sombreador diferente que você pode criar e usar em seus projetos, explicando os passos necessários
+    para criá-las e porque estamos fazendo as coisas do jeito que estamos fazendo.
+   
+   Shader desobreposição de cores
+  
+    Agora podemos editar o sombreador de base para fazer algo diferente. Não tocaremos na parte do shader do vértice, e somente editaremos o shader do fragmento , e para começar, faremos uma operação muito simples, que é fazer com que o shader desenhe o duende.
+      usando a cor vermelha. Faremos isso simplesmente mudando o gl_FragColor para ser vermelho, assim:
+    // Color Overlay Fragment Shader void main() {
+       gl_FragColor = vec4(1.0, 0.0, 0.0, 0.0, 1.0); }
+    
+    Isto nos dará o seguinte resultado:
+    Não é exatamente o que esperávamos! O que precisamos lembrar é que cada duende é, em última análise, um retângulo,
+      Portanto, a menos que consideremos a transparência - o que não temos - este é o resultado que teremos.
+    NOTA: Na imagem acima, o retângulo muda de tamanho porque o duende base teve o espaço "vazio" ao redor dele cortado automaticamente quando foi colocado na página de textura pelo GameMaker, então cada animação enquadra os triângulos
+      que a compõem são tamanhos diferentes para se ajustar ao tamanho cortado da moldura. Se você desativar esta opção, então você simplesmente terá um quadrado vermelho sem movimento na tela.
+    Acima mencionamos a função texture2D, e vamos usá-la para pegar a cor no pixel em que estamos trabalhando e obter a transparência do mesmo. O valor de retorno de texture2D é um
+      vec4 , onde os componentes são os vermelhos, verdes, azuis e alfa, nessa ordem. Podemos acessar o canal alfa colocando um período seguido por um a ou um w após o nome da variável. Isto corresponde a RGBA e XYZW, respectivamente.
+    Aqui está o código atualizado:
+    // Color Overlay Fragment Shader variando vec2 v_vTexcoord;
+       void main() {
+       vec4 texColor = text2D(gm_BaseTexture, v_vTexcoord); gl_FragColor = vec4(1.0, 0.0, 0.0, texColor.a); }
+    
+    Estamos agora atribuindo um novo vec4 para gl_FragColor, onde o canal vermelho é máximo, os canais verde e azul são zero, e o canal alfa é o mesmo que a textura original. A saída parece
+      assim:
+    Agora é isso que procurávamos! Substituímos a cor de cada pixel por vermelho, mas mantivemos
+      o canal alfa intacto.
+    Ter que mudar o sombreador cada vez que queremos usar uma cor diferente não é uma boa idéia, especialmente porque precisaríamos ter um sombreador separado para cada cor que queremos. Em vez disso, passaremos as informações de cor para o sombreador usando um uniforme.
+      Para fazer isso, precisamos primeiro de um ponteiro para o uniforme. Faremos isso no evento Create Event de nosso objeto que tem o duende, acrescentando:
+    // Criar evento _uniColor = shader_get_uniform(shdrColorOverlay, "u_color"); _color = [1.0, 1.0, 0.0, 1.0, 1.0];
+    Tudo que precisamos fazer é ligar para shader_get_uniform() para obter um ponteiro para o uniforme. Os parâmetros que precisamos passar são o sombreador
+      nome do ativo (sem cotação porque queremos passar o ID que o GameMaker gera para nós) e o nome da variável uniforme dentro do sombreador, desta vez como uma corda. Este nome precisa corresponder exatamente ao que está dentro do código do shader para ele
+      para trabalhar. Também adicionamos uma variável de cor para que possamos mudá-la em tempo de execução e fazer com que ela se lembre de nossas mudanças.
+    Agora o código em nosso evento de sorteio será ligeiramente alterado para passar a variável uniforme.
+    // Evento de desenho shader_set(shdrColorOverlay);
+       shader_set_uniform_f_array(_uniColor, _color); draw_self();
+       shader_reset();
+    
+    É o mesmo código de antes, mas antes de desenharmos qualquer coisa, precisamos passar todos os valores uniformes para o sombreador. Neste caso, estamos passando a cor como uma matriz de flutuadores. Quanto ao sombreador, vamos mudá-lo para incluir o uniforme e usá-lo,
+      assim se torna:
+    // Color Overlay Fragment Shader variação vec2 v_vTexcoord; uniforme vec4 u_color; void main() {
+       vec4 texColor = text2D(gm_BaseTexture, v_vTexcoord); gl_FragColor = vec4(u_color.rgb, texColor.a); }
+    
+    Declaramos uma variável com o mesmo nome que no shader create (u_color) e a passamos como os três primeiros componentes do vetor gl_FragColor, aproveitando o swizzling. Se compilarmos
+      novamente, devemos ver isto:
+    Agora o sombreador é muito mais útil e reutilizável. Cabe a você acrescentar mais funcionalidade
+      se você precisar para definir a cor (usando a variável _color) durante o tempo de execução.
+     
+  
+   ShaderPreto e Branco
+  
+    Fazer um sombreador preto e branco é uma ótima maneira de aprender mais sobre como funcionam os sombreadores, e muitos iniciantes começam tentando fazer isso, já que conceitualmente é bastante simples: pegar cada pixel e atribuir-lhe um tom de cinza. Mas será simples? Não
+      bastante...
+    
+    Ao utilizar a cor RGB, se todos os três componentes tiverem o mesmo valor, então obtemos um tom de cinza. A abordagem ingênua para criar um sombreador para usar esta idéia seria adicionar os três canais de cor (vermelho, verde e azul) e depois dividi-lo por três. Depois de
+      que você havia atribuído o valor aos três canais, criando assim um tom de cinza. Eis como se parece esse fragmento de sombreador:
+    // Shaderfragmento preto e branco variando vec2 v_vTexcoord; variando vec4 v_vColour;
+       void main() {
+       vec4 texColor = text2D(gm_BaseTexture, v_vTexcoord); float gray = (texColor.r + texColor.g + texColor.b) / 3.0; gl_FragColor = v_vColour * vec4(gray, gray, gray, texColor.a); }
+    
+    Uma coisa que você deve ter notado é que no código gl_FragColor, estamos multiplicando o vec4 com algo chamado v_vColour. Esta é uma variável passada pelo
+      vértice shader que nos diz a cor do vértice associado a este pixel. É sempre uma boa idéia multiplicar sua cor final calculada com a cor do vértice. Na maioria dos casos, ele não fará nada, mas se você mudou a cor do vértice no GML,
+      isto refletirá que (utilizando funções como draw_sprite_ext() ou draw_sprite_general() para
+      mudar o image_blend).
+    Quanto ao evento do sorteio, é bastante simples, já que não temos um uniforme para passar:
+    // Evento de desenho shader_set(shdrBlackAndWhite);
+       draw_self();
+       shader_reset();
+    
+    Vamos compilar e ver o que temos.
+    Isto já parece ótimo, certo? Bem, sim e não... há uma solução que é mais "correta", já que em vez disso
+      de adicionar os componentes e dividir por três, multiplicamos cada componente pelos valores padrão do NTSC para preto e branco. Aqui está o código de sombreamento modificado do fragmento:
+    // Shaderfragmento preto e branco variando vec2 v_vTexcoord;
+       void main() {
+       vec4 texColor = text2D(gm_BaseTexture, v_vTexcoord); float grey = dot(texColor.rgb, vec3(0.299, 0.587, 0.114)); gl_FragColor = vec4(gray, gray, gray, texColor.a); }
+    
+    Usamos o produto ponto como abreviação para multiplicar cada componente de texColor com os pesos corretos e depois os somamos juntos. Se você não está familiarizado com o produto ponto, isto é essencialmente o que está acontecendo:
+    float gray = (texColor.r * 0,299) + (texColor.g * 0,587) + (texColor.b * 0,114);
+    No final, parece muito parecido, mas é tecnicamente mais correto.
+    
+     
+  
+  Arco-íris Shader
+  
+    Nosso último exemplo de sombreamento é divertido e pode ser usado para dar vida a textos, botões e outras coisas. Vamos começar simples e adicionar funcionalidade gradualmente, uma vez que este shader é altamente personalizável. Há muito a ser coberto por este aqui,
+      Portanto, se você se sentir um pouco perdido ou confuso, por favor, volte atrás e releia algumas das seções acima.
+    A primeira coisa que queremos fazer é colorir os pixels com cada tonalidade, dependendo da posição horizontal do pixel. A maneira de fazer isso é definir a posição x para ser a matiz e depois converter do formato HSV (matiz, saturação, brilho) para RGB (vermelho, verde),
+      e azul) formato. Para isso, precisaremos escrever uma função auxiliar em nosso fragmento de sombreador que leva valores HSV e retorna um vetor RGB. Usaremos uma única função que faz isso sem a necessidade de qualquer declaração em if,
+      pois o uso de condicionadores em código de sombreamento torna os sombreadores muito lentos, e deve ser evitado.
+    Aqui está como é o sombreador nesta fase:
+    // Fragment Shader variação vec2 v_vTexcoord; variação vec4 v_vColour;
+       vec3 hsv2rgb(vec3 c)  {
+       vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0); vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www); return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y); }
+      
+       void main() {
+       vec3 col = vec3(v_vTexcoord.x, 1.0, 1.0); float alpha = textura2D(gm_BaseTexture, v_vTexcoord).a; gl_FragColor = v_vColour * vec4(hsv2rgb(col), alpha); }
+    
+    Há um pouco mais acontecendo aqui do que nos exemplos anteriores, mas a maior parte deve ser bastante óbvia para você agora. Primeiro, há a nossa função hsv2rgb, que leva um vec3 com nossa cor HSV
+      e retorna outro vec3 com nossa conversão RGB. Na função principal, começamos criando nossa cor HSV, onde a tonalidade é nossa posição x, e deixaremos a saturação e o brilho como 1,0 por enquanto. Então, obtemos
+      o alfa da textura, de modo que ele apenas colore nosso personagem duende e não todo o retângulo duende (como fizemos no exemplo da sobreposição de cores, acima). Finalmente, definimos nossa cor Fragmento para ser nossa cor HSV convertida em RGB com o alfa, multiplicado
+      pela cor do vértice (boa prática para fazer isto sempre).
+    Quanto ao nosso código de sorteio, ele é trivial no momento:
+    // Evento de desenho shader_set(shdrRainbow);
+       draw_self();
+       shader_reset();
+    
+    Vamos ver o que temos:
+    Estamos próximos do que queremos, mas há um problema: não estamos vendo todas as cores de uma só vez em todos os quadros
+      da animação, e as cores parecem mudar aleatoriamente. A razão é que assumimos que v_vTexcoord nos deu as coordenadas do duende, começando no canto superior esquerdo (0,0) e terminando no canto inferior direito.
+      (1,1), que é padrão em shaders. No entanto, para otimização, o GameMaker reúne o máximo de texturas que pode caber no que se chama uma página de textura, e por causa disso, esta
+      é como nossa textura realmente é:
+    Como explicado acima, v_vTexcoord nos dá as coordenadas absolutas do duende dentro de toda esta página de textura,
+      mas o que queremos é um valor de 0,0 a 1,0 que cubra apenas nosso duende atual. Este processo é chamado de normalização (obter um valor e traduzi-lo para uma faixa de 0 a 1). Para normalizar nossos valores horizontais, precisamos saber o valor de
+      valores de x0 e x1 na figura acima. Por sorte, o GameMaker tem uma função que nos dá a localização de cada canto de nosso sprite dentro da página de textura. Primeiro, precisamos ir até o Create Event e criar um uniforme para passar esses dados para
+      o sombreador:
+    // Create Event _uniUV = shader_get_uniform(shdrRainbow, "u_uv");
+    E modificamos o evento do sorteio para obter os valores e depois os passamos para o sombreador:
+    // Evento de desenho shader_set(shdrRainbow);
+       var uv = sprite_get_uvs(sprite_index, image_index); shader_set_uniform_f(_uniUV, uv[0], uv[2]); draw_self();
+       shader_reset();
+    
+    A função sprite_get_uvs() pega um sprite e um índice, e devolve um array com toneladas de informações,
+      tais como as coordenadas de cada canto, quantos pixels foram cortados para otimizá-lo, etc. Estamos interessados em dois desses valores: as coordenadas esquerda e direita do duende, que são armazenadas em uv[0] e uv[2], respectivamente. No shader do fragmento, usaremos esses valores agora para calcular a posição horizontal normalizada desta forma:
+    // Fragment Shader variação vec2 v_vTexcoord; variação vec4 v_vColour;
+       vec2 u_uv uniforme;
+       vec3 hsv2rgb(vec3 c)  {
+       vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0); vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www); return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y); }
+      
+       void main() {
+       float pos = (v_vTexcoord.x - u_uv[0]) / (u_uv[1] - u_uv[0]); vec3 col = vec3(pos, 1.0, 1.0); float alpha = text2D(gm_BaseTexture, v_vTexcoord).a; gl_FragColor = v_vColour * vec4(hsv2rgb(col), alpha); }
+    
+    Aqui adicionamos a variável uniforme na parte superior do arquivo com o mesmo nome que usamos no Create Event. Em seguida, calculamos a posição horizontal normalizada, traduzindo nossa atual coordenada x para a origem (
+      v_vTexcoord.x - u_uv[0] ) e depois a dividimos pela largura do duende para fazer o intervalo de 0 a 1 (u_uv[1] - u_uv[0]).
+    O resultado é:
+    Lá vamos nós! Isto é exatamente o que queríamos. Podemos ver todas as cores do espectro dentro
+      nosso duende.
+    Você pode ficar feliz com isso, mas podemos nos divertir um pouco mais com este sombreador. E se acrescentássemos uma compensação às cores com base no tempo para produzir movimento? Para fazer isso, precisaremos de duas variáveis extras para velocidade e tempo.
+      Também precisaremos de mais dois uniformes, um para cada uma das novas variáveis, de modo que o Create Event se torne:
+    // Create Event _uniUV = shader_get_uniform(shdrRainbow, "u_uv"); _uniTime = shader_get_uniform(shdrRainbow, "u_time"); _uniSpeed = shader_get_uniform( shdrRainbow, "u_speed"); _time = 0; _speed = 1.0;
+    Também precisamos aumentar o tempo a cada quadro, por isso, no Evento de Etapa, acrescentamos:
+    // Step Event _time += 1 / room_speed;
+    Vamos agora ao evento do sorteio para enviar estes uniformes para o shader:
+    // Evento de desenho shader_set(shdrRainbow);
+       var uv = sprite_get_uvs(sprite_index, image_index); shader_set_uniform_f(_uniUV, uv[0], uv[2]); shader_set_uniform_f(_uniSpeed, _speed); shader_set_uniform_f(_uniTime, _time); draw_self();
+       shader_reset();
+    
+    Finalmente, voltaremos ao nosso shader para usar realmente estas variáveis agora. O que faremos é multiplicar a velocidade com o tempo e adicioná-la à posição, desta forma:
+    // Fragment Shader variação vec2 v_vTexcoord; variação vec4 v_vColour;
+       vec2 u_uv uniforme; flutuação uniforme u_speed; flutuação uniforme u_time;
+       vec3 hsv2rgb(vec3 c)  {
+       vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0); vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www); return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y); }
+      
+       main() {
+       float pos = (v_vTexcoord.x - u_uv[0]) / (u_uv[1] - u_uv[0]); vec3 col = vec3((u_time * u_speed) + pos, 1.0, 1.0); float alpha = text2D(gm_BaseTexture, v_vTexcoord).a; gl_FragColor = v_vColour * vec4(hsv2rgb(col),
+      alfa);
+       }
+    
+    Se você fez tudo corretamente, você deveria estar vendo algo assim:
+    Para terminar este shader, acrescentaremos mais alguns uniformes para personalizá-lo ainda mais.
+      Os dois primeiros são para controlar a saturação e a luminosidade. O próximo chamamos "seção" e sua função é permitir que o usuário passe um número entre zero e um para determinar que porcentagem de todo o espectro vemos em
+      um tempo. Por último, adicionaremos uma variável chamada "mix", que especificará o quanto queremos misturar nossa cor de sombreamento com a cor da textura original (1,0 é tudo arco-íris, 0,0 é tudo textura). Como sempre, vamos começar adicionando as variáveis a
+      o Evento Criar:
+    // Create Event _uniUV = shader_get_uniform(shdrRainbow, "u_uv"); _uniTime = shader_get_uniform(shdrRainbow, "u_time"); _uniSpeed = shader_get_uniform( shdrRainbow, "u_speed"); _uniSection
+         = shader_get_uniform(shdrRainbow, "u_section"); _uniSaturação = shader_get_uniform(shdrRainbow, "u_saturação");  _uniBrightness = shader_get_uniform( shdrRainbow, "u_brightness"); _uniMix =
+     shader_get_uniform(shdrRainbow, "u_mix");
+       _time = 0; _speed = 1,0; _section = 0,5; _saturation = 0,7; _brightness = 0,8; _mix = 0,5;
+    Nosso evento de sorteio muda para incluir estes uniformes como este:
+    // Evento de desenho shader_set(shdrRainbow);
+       var uv = sprite_get_uvs(sprite_index, image_index); shader_set_uniform_f(_uniUV, uv[0], uv[2]); shader_set_uniform_f(_uniSpeed, _speed); shader_set_uniform_f(_uniTime, _time);  shader_set_uniform_f(_uniSaturação, _saturação); shader_set_uniform_f(_uniBrightness, _brightness); shader_set_uniform_f(_uniSection, _section); shader_set_uniform_f(_uniMix, _mix); draw_self();
+       shader_reset();
+    
+    Quanto ao sombreador, precisamos passar a saturação e o brilho para a cor, o que afetará a cor gerada por nossa função auxiliar. A seção precisa ser multiplicada pela nossa posição para reduzir o alcance. Também vamos agarrar toda a textura
+      para que possamos calcular nossa cor final, misturando a cor da textura com a conversão RGB de nossa cor. O último parâmetro da função de mistura determina a quantidade da segunda cor que queremos adicionar. Este é nosso código final de sombreamento:
+    // Fragment Shader variação vec2 v_vTexcoord; variação vec4 v_vColour;
+       flutuação uniforme vec2 u_uv; flutuação uniforme u_speed; flutuação uniforme u_time; flutuação uniforme u_saturação; flutuação uniforme u_brightness; flutuação uniforme u_section; flutuação uniforme u_mix;
+       vec3 hsv2rgb(vec3 c)  {
+       vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0); vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www); return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y); }
+      
+       void main() {
+       float pos = (v_vTexcoord.x - u_uv[0]) / (u_uv[1] - u_uv[0]); vec4 texColor = textura2D(gm_BaseTexture, v_vTexcoord);       vec3 col = vec3(u_section * ((u_time * u_speed) + pos), u_saturação, u_brightness); vec4 finalCol = mix(texColor, vec4(hsv2rgb(col), texColor.a), u_mix);      gl_FragColor = v_vColour * finalCol; }
+    
+    E nosso resultado final é este!
+    
+     
+  
+   
+  Esse é o fim deste pequeno guia e agora você deve ter uma melhor compreensão de como funcionam os shaders e alguns dos usos que eles podem ser dados. Você deve dedicar seu tempo para brincar com os shaders que você criou seguindo este guia, e tentar
+    experimente com eles fazer outras coisas - que tal criar um sombreador de borrão, ou um sombreador que faça uma tela monocromática estilo gameboy? - uma vez que os shaders são uma ferramenta incrivelmente poderosa para acrescentar complexidade visual e estilo aos seus jogos.
+   
+  YoYo Games gostaria de agradecer a Alejandro Hitti e Amazônia por nos permitir reproduzir este guia. Você pode encontrar a versão original no Blog da Amazon Developer.
+   
+  
+    
+      
+        Voltar: Informações adicionais
+        A seguir: Guia de Primitivos e Construção de Vértices
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

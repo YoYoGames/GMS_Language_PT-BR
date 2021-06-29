@@ -1,0 +1,42 @@
+
+  
+  object_get_mask
+  Esta função lhe dirá se o objeto que você está verificando tem ou não um índice de máscara, e se tiver, então retornará o índice dessa máscara, ou -1 se não tiver. Note que esta não é uma função de instância! Você pode ter um objeto com
+    nenhuma máscara enquanto uma instância desse mesmo objeto pode ter uma e vice-versa, ou podem até mesmo ter máscaras diferentes. Você pode definir um índice de máscaras de instâncias individuais usando o máscara_index    variável de instância.
+   
+  Sintaxe:
+  object_get_mask(obj);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        obj
+        O índice do objeto a ser verificado
+      
+    
+  
+   
+  Devoluções:
+  real
+   
+  Exemplo:
+  if (mask_index != object_get_mask(object_index)) { mask_index = object_get_mask(object_index); }
+  O exemplo acima verificará o índice da máscara da instância em relação à máscara do índice do objeto_da instância. Se eles não forem os mesmos, então ele atribuirá a mesma máscara que o índice de objeto tem à instância.
+   
+   
+   
+  
+    
+      
+        Voltar: Objetos
+        Próximo: object_get_parent
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,83 @@
+
+  
+  sprite_add
+  Com esta função você pode adicionar uma imagem como um sprite, carregando-a de uma fonte externa onde o arquivo de imagem a ser carregado deve estar sempre no formato *.png, *.gif, *.jpg/jpeg ou *.json( arquivos*json são usados para carregar sprites de animação de esqueleto feitos com Lombada). A função retorna o novo índice sprite que deve então ser usado em todos os outros códigos que se relacionam com o sprite. Se
+    você usa esta função com HTML5 ou está obtendo uma imagem de uma URL, esta função também irá gerar um evento assíncrono de imagem carregada. Veja esta página para
+    mais informações.
+  Todas as imagens que devem ser transformadas em sprites animados - exceto *.gif (veja abaixo) - devem ter um formato "strip" (veja a imagem abaixo) e serão divididas no número de subimagens especificadas seguindo a regra sprite width = largura de strip / sub images.
+  
+  Como você pode ver na imagem acima, o duende foi colocado sobre um fundo roxo escuro, e isto pode ser removido colocando o argumento "removeback" em realidade. Isto funciona verificando o píxel inferior esquerdo do duende para
+    a cor ali e depois a usa como a cor a ser removida. Por exemplo, na imagem acima, se tivéssemos a cor do pixel inferior esquerdo como verde, todas as partes verdes do duende teriam sido removidas e o resto do fundo roxo teria sido ignorado.
+  Se você escolher a opção "removeback", você também pode querer que o GameMaker Studio 2 suavize as bordas do duende definindo o argumento "suave" como verdadeiro. Tudo o que isso faz é criar uma borda semi-transparente ao redor das bordas do
+    o duende depois de ter tido seu fundo removido.
+  Finalmente, você também pode especificar a origem x e y para o duende. Este é o ponto onde o duende é "fixo" na instância que o utiliza, e é sempre calculado em relação ao canto superior esquerdo 0,0 de uma subimagem do duende. Portanto, o que significa que o duende é "fixo" na instância que o utiliza,
+    por exemplo, um duende de 32 x 32 pixels com estes valores definidos para (16,16) terá sua origem no centro.
+  Se você estiver adicionando uma imagem em formato *.gif, então você só precisa especificar o nome do arquivo e o número da imagem (que deve ser 1 para o primeiro quadro) e pode deixar todos os outros argumentos como 0, observando que somente a primeira imagem do GIF será carregada.
+    Para *.json sprites, o número da imagem deve ser 1, e as configurações "removeback" e "smooth" serão ignoradas.
+  Por padrão, todos os novos sprites têm suas caixas delimitadoras calculadas automaticamente (a caixa delimitadora exata dependerá do tamanho e da transparência do sprite), no entanto, você pode querer personalizar isso, caso em que você também deve usar a função
+    sprite_collision_mask().
+  Deve-se observar que a memória utilizada ao adicionar um duende desta forma será maior do que se espera. Isto porque o GameMaker Studio 2 irá armazenar o duende como uma página de textura e também será armazenado na memória GPU, portanto, a memória total
+    será maior do que o esperado para um arquivo de imagem do mesmo duende.
+  NOTA: Quando você carrega um duende no GameMaker Studio 2, você deve se lembrar de removê-lo novamente (com sprite_delete()) quando não for mais necessário, caso contrário há o risco de um vazamento de memória que irá diminuir e
+    acabam por quebrar seu jogo.
+  NOTA: Em iOSSe você estiver carregando um arquivo incluído a partir de uma pasta, ou seja: com um caminho algo como "Antecedentes/fundos1.png", você NÃO precisa incluir a pasta como parte do
+    e simplesmente fornecer o nome do arquivo é suficiente. Em todas as outras plataformas você deve fornecer a(s) pasta(s) como parte do caminho para o arquivo.
+  NOTA: Em HTML5, se você estiver carregando um sprite a partir de um servidor seguro, você pode precisar definir o tipo de origem cruzada e usar um caminho relativo ao invés de um caminho absoluto. Veja http_set_request_crossorigin() para
+    mais detalhes.
+   
+  Sintaxe:
+  sprite_add(fname, imgnumb, removeback, smooth, xorig, yorig);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fname
+        O nome (um caminho de arquivo de cadeia) do arquivo a ser adicionado.
+      
+      
+        imgnum
+        Use para indicar o número de sub-imagens (1 para uma única imagem ou para um *.gif).
+      
+      
+        remover
+        Indica se todos os pixels com a cor de fundo (píxel inferior esquerdo) devem ser transparentes.
+      
+      
+        smooth
+        Indica se as bordas devem ser suavizadas se forem transparentes.
+      
+      
+        xorig
+        Indicar a posição x da origem no duende.
+      
+      
+        yorig
+        Indicar a posição y da origem no duende.
+      
+    
+  
+   
+  Devoluções:
+  Real (valor de identificação sprite)
+   
+  Exemplo:
+  spr = sprite_add("player_5.png", 16, true, true, 0, 0);
+  O código acima carrega um duende para o jogo e armazena seu índice na variável "spr".
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação de Sprite
+        Próximo: sprite_replace
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

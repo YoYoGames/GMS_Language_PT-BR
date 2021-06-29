@@ -1,0 +1,87 @@
+
+  
+  sprite_create_from_surface
+  Com esta função você pode criar um sprite a partir de uma superfície previamente inicializada (o valor do índice de superfície é retornado quando você cria a superfície usando surface_create()). O x e
+    y as coordenadas que você então introduzir na função devem ser relativas à posição (0,0) da superfície (o canto superior esquerdo) e não à janela do jogo (nem à vista se você tiver uma ativa). Os argumentos de largura e altura estão em pixels e
+    definir a largura e a altura da parte da superfície a ser utilizada.
+  A definição do argumento "remover" como verdadeiro removerá uma cor do duende, verificando o píxel inferior esquerdo do duende para a cor lá e, em seguida, usando-a como a cor a ser removida.
+  Se você escolher a opção "removeback", você também pode querer que o GameMaker Studio 2 suavize as bordas do duende definindo o argumento "suave" como verdadeiro. Tudo o que isso faz é criar uma borda semi-transparente ao redor das bordas do
+    o duende depois de ter tido seu fundo removido.
+  Finalmente, você também pode especificar a origem x e y para o duende. Este é o ponto onde o duende é "fixo" na instância que o utiliza, e é sempre calculado em relação ao canto superior esquerdo 0,0 de uma subimagem do duende. Portanto, o que significa que o duende é "fixo" na instância que o utiliza,
+    por exemplo, um duende de 32 x 32 pixels com estes valores definidos para (16,16) terá sua origem no centro.
+  Por padrão, todos os novos sprites têm suas caixas de delimitação calculadas automaticamente (a caixa exata dependerá do tamanho e da transparência do sprite), entretanto você pode desejar personalizar isso, caso em que você também deve usar a função sprite_collision_mask().
+  NOTA: Quando você cria um duende no GameMaker Studio 2 com este método, você deve se lembrar de removê-lo novamente (com sprite_delete()) quando não for mais necessário, caso contrário há o risco de um vazamento de memória que
+    retardar e, eventualmente, acabar com seu jogo.
+   
+  Sintaxe:
+  sprite_create_from_surface(index, x, y, w, h, removeback, smooth, xorig, yorig);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice da superfície a ser criada a partir.
+      
+      
+        x
+        A posição x para copiar de.
+      
+      
+        y
+        A posição y para copiar de.
+      
+      
+        w
+        A largura da área a ser copiada (a partir da posição x).
+      
+      
+        h
+        A altura da área a ser copiada (a partir da posição y).
+      
+      
+        remover
+        Indica se todos os pixels com a cor de fundo (píxel inferior esquerdo) devem ser transparentes.
+      
+      
+        smooth
+        Indica se é necessário suavizar as bordas.
+      
+      
+        xorig
+        Indica a posição x da origem no duende.
+      
+      
+        yorig
+        Indica a posição y da origem no duende.
+      
+    
+  
+   
+  Devoluções
+  Real (valor único de identificação sprite)
+   
+  Exemplo:
+  var surf; surf = surface_create(32, 32); surface_set_target(surf);
+     draw_clear_alpha(c_black, 0); draw_sprite(spr_Body, 0, 0, 0, 0); draw_sprite(spr_Clothes, 0, 0, 0, 0); draw_sprite(spr_Hair, 0, 0, 0, 0); spr_custom = sprite_create_from_surface(surf, 0, 0, 32, 32, true, true, 16, 16); surface_reset_target();
+     surface_free(surf);
+  
+  O código acima cria uma superfície e armazena seu índice na variável local "surf". Em seguida, visa aquela superfície, limpa-a e desenha vários sprites uns em cima dos outros. Finalmente, cria um novo duende a partir da imagem composta desenhada no
+    e atribui seu índice ao "spr_Custom" antes de liberar a memória utilizada pela superfície.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação de Sprite
+        Próximo: sprite_add_from_surface
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

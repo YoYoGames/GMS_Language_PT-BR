@@ -1,0 +1,51 @@
+
+  
+  audio_free_play_queue
+  Esta função é utilizada para liberar a memória associada com a fila de áudio em questão. O índice da fila é o valor retornado quando você criou a fila usando a função audio_create_play_queue()e
+    esta função deve ser chamada quando a fila não for mais necessária para evitar vazamentos de memória. A liberação da fila interromperá qualquer som que estiver tocando, e não será possível apagar o buffer do qual um som está sendo transmitido até a fila que lhe é atribuída.
+    foi liberado. Esta função desencadeará um Evento Assíncrono de Reprodução de Áudio, e neste evento um mapa DS especial
+    ser criado na variável async_load com os seguintes pares de chaves/valores:
+  
+    " queue_id"- a fila que terminou de jogar dados
+    "buffer_id" - o buffer que não está mais sendo jogado a partir
+    "queue_shutdown" - isto é ajustado para 0 durante a reprodução normal e 1 quando o evento é recebido porque você liberou a fila com esta função. Quando isto é ajustado para 1, você não quer enfileirar mais nenhum dado.
+  
+   
+  Sintaxe:
+  audio_free_play_queue(queueIndex);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        queueIndex
+        O índice da fila para liberar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var q_id = async_load[? "queue_id_id"]; if (q_id == audio_queue) { audio_free_play_queue(audio_queue); buffer_delete(audio_buffer); }
+  O código acima iria no evento assíncrono de reprodução de áudio e verifica se o áudio que acabou de ser reproduzido é da "audio_queue".
+    e se é ele libera a fila e o buffer associado a ele.
+   
+   
+   
+  
+    
+      
+        Voltar: Buffers de áudio
+        Próximo: audio_queue_sound
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

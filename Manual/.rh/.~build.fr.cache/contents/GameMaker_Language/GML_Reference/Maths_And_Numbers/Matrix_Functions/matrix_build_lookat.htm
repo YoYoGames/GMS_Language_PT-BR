@@ -1,0 +1,81 @@
+
+
+
+
+
+  
+  matrix_build_lookat
+  Esta função constrói uma matriz "look-at" (vista) com base nos parâmetros especificados abaixo. Como esta função modifica a matriz de visão e não a matriz de projeção, deve-se primeiro inicializar a matriz de projeção usando a outra matriz
+    função matrix_build_projection_perspective()A câmera de visão é utilizada para mover a câmera dentro da projeção.
+  Para definir a visão, é necessário definir primeiro a posição de onde você olha, que é indicada pelos parâmetros (xfrom, yfrom, zfrom). Em seguida, você deve especificar a direção que você olha e isto é feito dando um segundo ponto para olhar em
+    com os argumentos (xto, yto, zto). Finalmente, você ainda pode girar a câmera ao redor da linha do ponto de vista para o ponto de vista, e para especificar isto, devemos dar um vetor "para cima" - a direção que está para cima na câmera. Isto é
+    dados pelos três últimos argumentos (xup, yup, zup).
+   
+  Sintaxe:
+  matrix_build_lookat(xfrom, yfrom, zfrom, xto, yto, zto, xup, yup, yup, zup);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        xfrom
+        A coordenada x da posição de onde se deve olhar.
+      
+      
+        yfrom
+        A coordenada y da posição de onde se deve olhar.
+      
+      
+        zfrom
+        A coordenada z da posição de onde se deve olhar.
+      
+      
+        xto
+        A coordenada x da posição a ser observada.
+      
+      
+        yto
+        A coordenada y da posição a ser observada.
+      
+      
+        zto
+        A coordenada z da posição a ser observada.
+      
+      
+        xup
+        A coordenada x do vetor "para cima".
+      
+      
+        yup
+        A coordenada y do vetor "para cima".
+      
+      
+        zup
+        A coordenada z do vetor "para cima".
+      
+    
+  
+   
+  Devoluções:
+  Índice matricial
+   
+  Exemplo:
+  viewmat = matrix_build_lookat(640, 240, -10, 640, 240, 0, 0, 1, 0); projmat = matrix_build_projection_ortho(640, 480, 1.0, 32000.0); camera_set_view_mat(view_camera[0], viewmat); camera_set_proj_mat(view_camera[0], projmat);
+  O código acima cria uma nova matriz de visualização e matriz ortográfica, armazena suas identificações em variáveis locais e depois as utiliza para definir as matrizes de visualização e projeção para a câmera designada para a porta de visualização[0].
+   
+   
+   
+  
+    
+      
+        Voltar: Funções da Matriz
+        Próximo: matrix_build_projection_ortho
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,55 @@
+
+  
+  xboxlive_pad_para_utilizador
+  Os usuários do Xbox podem ter vários blocos atribuídos a sua ID de usuário, com cada um deles preenchendo um "slot". Estes slots são numerados a partir de 0, e podem conter qualquer índice de pad, portanto, o slot 0 poderia ser atribuído ao pad 3 e o slot 1 poderia ser atribuído ao pad 2. Esta função
+    pode ser usado para obter o pad que é atribuído a qualquer slot, e é particularmente útil caso um usuário deixe um gamepad sem entrada por um determinado período de tempo, pois ele se desligará por si mesmo, para que você possa verificar qualquer ID de usuário usando esta função
+    para garantir que eles tenham um controle de jogo ativo, e se eles não reagirem de acordo (por exemplo) pausando seu jogo. Se o pad estiver ativo, seu valor de índice será retornado, mas se não, então a função retornará -1.
+  Observe que se um bloco em qualquer slot ficar inativo, os slots posteriores "deslizarão" para a posição vaga, portanto, se você tiver três blocos ativos atribuídos aos slots 0, 1 e 2, e o bloco no slot 0 estiver inativo, os slots 1 e para se tornar agora os slots 0 e
+    1, portanto o slot 0 deve sempre conter uma almofada ativa, a menos que todas as almofadas estejam desligadas (neste caso, ela retornará -1).
+   
+  Sintaxe:
+  xboxlive_pad_for_user(user_id, slot);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        user_id
+        O ID do usuário (um ponteiro) para verificar
+      
+      
+        user_id
+        O índice (um número inteiro) do slot do gamepad para verificar
+      
+    
+  
+   
+  Devoluções:
+  Apontador
+   
+  Exemplo:
+  if (xboxlive_pad_for_user(user_id, 0) == -1) {
+     for(var i = 0; i < gamepad_get_device_count(); i++;)  {
+     var u_id = xboxlive_user_for_pad(i); if (u_id == -1) {
+     async_ID = xboxlive_pad_for_user(i, u_id); }
+     }
+     }
+  
+  O código acima verifica o slot 0 para o ponteiro de identificação do usuário dado para ver se algum campo de jogo foi atribuído, e se não foi, então um é atribuído.
+   
+   
+   
+  
+    
+      
+        Voltar: Usuários e Contas
+        Próximo: xboxlive_pad_count_for_user
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

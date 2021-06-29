@@ -1,0 +1,49 @@
+
+  
+  ds_priority_destroy
+  Esta função removerá da memória a estrutura de dados da fila prioritária dada, liberando os recursos que estava usando e removendo todos os valores que continha. Esta função deve ser sempre utilizada quando você terminar de usar a fila de prioridade DS para
+    prevenir vazamentos de memória que podem diminuir a velocidade e travar seu jogo.
+  IMPORTANTE! Quando você cria uma estrutura de dados, o valor do índice para identificá-lo é um valor inteiro começando em 0. Isso significa que estruturas de dados de diferentes tipos podem ter o mesmo valor de índice, portanto, em caso de dúvida, você deve estar usando o
+    ds_exists() antes de acessá-los. Observe também que os índices são reutilizados, portanto um valor de índice de estrutura de dados destruído pode ser usado por um índice recém-criado posteriormente, por isso recomendamos sempre definir
+      a variável que manteve o índice DS em -1 após a destruição.
+   
+  Sintaxe:
+  ds_priority_destroy(id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação da estrutura de dados a ser removida.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se (vidas == 0) {
+     ds_priority_destroy(AI_queue);
+     AI_queue = -1; room_goto(rm_Menu);
+     }
+  
+  O código acima verificará o valor da variável global "vidas" construída e, se for 0, destruirá a fila de prioridade DS indexada na variável "AI_queue" e, em seguida, mudará de sala.
+   
+   
+   
+  
+    
+      
+        Voltar: Filas de espera prioritárias DS
+        Próximo: ds_priority_clear
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

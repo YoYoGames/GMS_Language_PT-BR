@@ -1,0 +1,46 @@
+
+  
+  gamepad_is_connected
+  Esta função retornará se um controle de jogo estiver conectado ao "slot" dado (retorna verdadeiro) ou não (retorna falso). Normalmente, esta função seria usada em conjunto com a função gamepad_get_device_count()    para obter o número correto de blocos de jogo e/ou "slots" do gamepad disponíveis. Note que pode haver um pequeno atraso entre o usuário conectando o gamepad e o GameMaker Studio 2 detectando-o como estando conectado (este é especialmente o
+    caso quando se trata de controladores conectados a bluetooth).
+  NOTA: Em alguns platfroms - especialmente consoles - esta função pode retornar falso imediatamente após um gamepad ter sido conectado/selecionado e pode precisar ser verificado em um alarme alguns quadros (passos) mais tarde para que ele detecte corretamente o
+    gamepad.
+   
+  Sintaxe:
+  gamepad_is_connected(numb);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dispositivo
+        Qual "ranhura" para verificar.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var gp_num = gamepad_get_device_count(); for (var i = 0; i < gp_num; i++;) {
+     if gamepad_is_connected(i) global.gp[i] = true else global.gp[i] = false; }
+  
+  O código acima faz loops através dos blocos de jogo disponíveis (ou slots de gamepad) e então verifica cada um deles em busca de um gamepad conectado. o valor retornado é então usado para definir um array global como verdadeiro ou falso para uso em verificações futuras.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada Gamepad
+        Próximo:  gamepad_get_guid 
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

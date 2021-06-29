@@ -1,0 +1,119 @@
+
+  
+  Criando uma extensão
+  Para criar uma extensão você precisa primeiro clicar com o botão direito do mouse em  no Navegador de Ativos e selecionar Criar Extensão. Isso abrirá a janela principal de propriedades da extensão:
+  Isto agora está pronto para você adicionar os arquivos e funções necessárias, e você também pode dar um nome à extensão aqui (seguindo a convenção habitual
+    de apenas letras/números e nenhum símbolo especial, exceto a barra inferior "_"). Você também pode definir o número da versão para a extensão, caso deseje.
+  Para adicionar um arquivo à nova extensão, você precisa clicar no ícone do menu  e selecionar um arquivo de espaço reservado ou o arquivo real que é necessário para
+    a plataforma alvo:
+  
+  Um espaço "genérico" é um arquivo que pode ser de qualquer tipo, exceto aqueles requeridos pelas plataformas específicas (portanto não há arquivos DLL ou SO , por exemplo), e não será usado exceto como "linker".
+    para conectar um conjunto de funções ou constantes com a extensão dada (geralmente é apenas para uso com extensões iOS e Android, o que é explicado nas seções abaixo para esses alvos). Você também pode adicionar " GML"e"JS".
+    para um uso mais específico.
+  Normalmente você não precisará usar placeholders a menos que construa para iOS e Android, então você escolheria a opção Adicionar Arquivos para adicionar qualquer um dos seguintes arquivos, dependendo da plataforma alvo para a qual eles são destinados:
+  
+    .gml: Este é um arquivo feito somente com a linguagem GameMaker e é compatível com todas as plataformas.
+    .js: Este é um formato de extensão JavaScript e só é compatível com os módulos de destino JS (HTML5).
+    .dll: Este é um formato de extensão de biblioteca com link dinâmico e só é compatível com os alvos Windows, UWP e Xbox One (cada alvo precisará de um arquivo *.dll diferente compatível com suas especificações).
+    .dylib: Este é o equivalente Mac de uma DLL e só é compatível com o alvo Mac (não iOS).
+    .so: Este é o equivalente Linux de uma DLL e só é compatível com o alvo Ubuntu(Linux).
+    .prx: Este é um formato de arquivo para adicionar funcionalidade ao alvo PS4 (cada alvo precisará de um arquivo diferente *.prx compatível com suas especificações).
+  
+  Você notará que não há nenhum tipo de arquivo para Android nem iOSO que se deve ao fato de sua configuração ser ligeiramente diferente. Mais abaixo você pode encontrar explicações sobre como montá-los, mas primeiro vamos olhar para criar
+    uma extensão GML geral para qualquer uma das plataformas alvo, uma vez que o processo é o mesmo para todas elas.
+  Para começar, você precisa criar o arquivo que vai ser utilizado. Para uma extensão GML, este seria um arquivo de texto (salvo com a extensão .gml ) e seria formatado algo como isto:
+  #define c_alice_blue return make_color_rgb(240.248.255);
+    
+     #define instance_create_colour var i = instance_create_layer(argument0, argument1, argument2); with (i) { image_blend = argument3; }  retornar i;
+  Como você pode ver, começamos cada seção com uma chamada #define, que no exemplo acima é usada para definir duas funções. Você não precisa fornecer campos de argumento para as funções, pois isso será adicionado mais tarde, basta usar
+    definir então o nome da função e ir em frente e adicionar o GML para combinar. Se você estivesse escrevendo uma extensão DLL ou JS, então o processo seria semelhante, mas no idioma correto para o formato do arquivo de extensão.
+  Uma vez feito isso, você precisa adicionar o arquivo à extensão (explicado acima) que irá encadear uma nova janela para as Propriedades das Extensões para as Propriedades do Arquivo:
+  
+  Aqui você selecionaria a plataforma alvo para a extensão (para GM você selecionaria todas elas), assim como renomearia o arquivo de extensão e definiria alguns outros detalhes, que cobriremos dentro de momentos. O Editor deve ser automaticamente preenchido com o arquivo de
+    funções incluídas em nosso arquivo GML, mas se não for, então você pode adicioná-las clicando no botão de menu de funções  e selecionar o que você deseja:
+  
+  Selecionando Adicionar Função, você poderá então adicionar uma função à extensão que poderá então ser chamada no GameMaker Studio 2 como você faria com qualquer uma das funções embutidas. Uma vez que a função tenha sido adicionada, a seguinte janela se abrirá para você definir as propriedades da função (ou você pode clicar duas vezes sobre a função para abri-la):
+  
+  Na imagem acima, povoamos o editor de funções com os detalhes da função instance_create_colour() que definimos em nosso script de extensão GML (o editor de funções não é apenas para definir funções GML
+    e será o mesmo para qualquer outro tipo de extensão). Você pode ver que demos à função um nome, que é o que você chamaria ao utilizar a função em seu projeto, e este nome não tem que corresponder ao utilizado na extensão - você pode
+    defina-o para o que você quiser e depois use a opção Nome Externo para vinculá-lo ao nome real definido na extensão. Abaixo você tem uma seção para definir o texto de Ajuda , que é o texto que será usado no código completo
+    e o texto de ajuda na parte inferior do editor de código.
+  Em seguida você pode definir o Tipo de Retorno, que pode ser um duplo (valor de ponto flutuante do número real) ou uma cadeia - se não houver nada retornado pela função externa
+    então isso não importa - e sob isso você define os argumentos que a função terá.
+  Os argumentos podem ser duplas ou cordas, e você pode adicioná-los clicando no botão adicionar  e
+    removê-los clicando no botão de remoção . Se sua função pode aceitar argumentos variáveis, você também deve verificar a caixa de seleção Argumentos de Comprimento Variável na parte inferior.
+  NOTA: Se você estiver criando um arquivo do Windows dll e ele tiver mais de quatro argumentos, todos os argumentos devem ser do mesmo tipo.
+  Uma vez feito tudo isso, a função está pronta para ser usada em um projeto e aparecerá em auto-completada e com código de cores também. As funções definidas também podem ser definidas como Funções Init ou Funções Finais, ou seja
+    que serão chamados automaticamente quando o jogo começar (Init) e quando o jogo terminar (Final).
+  IMPORTANTE! Todas as plataformas suportam a chamada de função Init, mas nem todas as plataformas realizarão a chamada de função Final. Isto porque certas plataformas simplesmente fecharão o aplicativo sem dar qualquer aviso ou tempo para
+    esta função a ser chamada. As plataformas que são afetadas por isto são: iOS, Android HTML5, PlayStation e XboxOne.
+  A outra opção que você tem é criar uma Macro. Uma macro pode ser um valor constante ou um snippet de código único (para mais informações sobre macros, veja aqui). Por exemplo, nós
+    poderia remover a função definida de nosso exemplo de extensão GML acima para a cor c_alice_blue e torná-la uma macro em seu lugar. Para fazer uma macro, basta clicar no botão Macros na janela Propriedades da Extensão:
+  
+  O editor aqui é praticamente auto-explicativo - você dá o nome da macro/constante e o valor, ou uma pequena linha de código. Note que se a macro for uma linha de código, ela será avaliada toda vez que a macro for chamada.
+  Ao trabalhar com múltiplas plataformas alvo, vale a pena notar que você pode criar uma única extensão com apenas um conjunto de funções/macros que funcionará em todas as plataformas. Isto é conseguido adicionando apenas uma das bibliotecas de links ao seu
+    como uma extensão e colocando o(s) outro(s) na lista de Arquivos de Proxy da janela Propriedades da Extensão. Por exemplo, digamos que você tenha uma extensão do Windows com o  dll "".
+    Haggis.dll ". Você simplesmente replicaria este  dll como um Mac  DyLib, nomeando-o "  libHaggis.dylib".
+    e certificando-se de que os nomes das funções internas correspondem aos do Windows original  dll. Este  DyLib seria então adicionado aos Arquivos de Proxy e definido para exportar
+    quando o jogo for executado no alvo Mac, e o GameMaker Studio 2 o utilizará automaticamente quando as funções de extensão forem chamadas.
+  Para adicionar um arquivo proxy, basta clicar no botão  na janela Propriedades da extensão e navegar até o local do arquivo.
+    Uma vez adicionado, você pode precisar mudar o alvo da extensão para o módulo apropriado, e quando você executar o jogo, ele será incluído como um proxy para aquela plataforma. Você também pode remover os arquivos proxy clicando no botão , que removerá o último da lista, cada um pressionado.
+  Uma vez que você tenha adicionado seus arquivos proxy, eles serão armazenados nos arquivos de projeto de seu jogo, na pasta Extensões (você pode encontrá-los facilmente clicando com o botão direito do mouse em  no
+    e selecionando Abrir no Explorer), portanto, se você precisar editá-los, você deve editar os arquivos copiados que estão empacotados com o jogo e não os originais, pois o GameMaker Studio 2 estará usando os do projeto para compilação.
+  É muito importante que seus arquivos proxy sigam as convenções de nomes listadas abaixo, pois o GameMaker Studio 2 analisará esses nomes e atribuirá o módulo alvo para o arquivo de acordo com sua extensão e nome e ligará automaticamente os arquivos para
+    você. Se você não seguir estas convenções, seu jogo pode não funcionar em tempo de execução, já que o GameMaker Studio 2 não será capaz de descobrir qual arquivo usar ou não carregará o arquivo corretamente.
+  As convenções de nomenclatura para cada plataforma alvo são dadas abaixo:
+    
+  
+    
+      
+        Plataforma
+        Nomes
+      
+      
+        Windows 32bit Tempo de execução
+        <Name>.dll, lib<Name>.dll
+      
+      
+        Windows 64bit Tempo de execução
+        <Name>_x64.dll, lib<Name>_x64.dll
+      
+      
+        Ubuntu(Linux)
+        <Name>.so, lib<Name>.so, <Name>_linux.so, lib<Name>_linux.so
+      
+      
+        macOS
+        <Name>.dylib, lib<Name>.dylib
+      
+      
+        HTML5
+        <Name>.js
+      
+      
+        PS4
+        <Name>.prx, lib< Name>.prx, < Name>_ps4.prx, lib< Name>_ps4.prx
+      
+      
+        XBox One
+        <Name>_xboxone.dll
+      
+    
+  
+   
+  Usando as convenções acima, você trocaria a parte <Name> pelo nome do arquivo base para o qual você está adicionando os arquivos proxy.
+   
+   
+   
+  
+    
+      
+        Voltar: O Editor de Extensão
+        A seguir: Extensões doAndroid
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

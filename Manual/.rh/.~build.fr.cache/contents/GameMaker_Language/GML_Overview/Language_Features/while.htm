@@ -1,0 +1,49 @@
+
+  
+  enquanto
+  A linguagem GameMaker tem uma série de formas de realizar loops, uma das mais importantes é o loop while. Esta função de loop tem a forma:
+  enquanto (<expressão>) { <declaração>; <declaração>;... }
+  Aqui você tem uma declaração que é iterada repetidamente com base nos resultados da avaliação de uma expressão, ou seja: com
+    um loop while, desde que a expressão avalie para true, a declaração (que também pode ser um bloco de código de múltiplas declarações com colchetes {}) é executada. Abaixo você pode encontrar
+    um exemplo de uma maneira típica de usar "enquanto":
+  while (place_meeting(x, y, obj_Wall)) {
+     x -= 1; }
+  
+  O código acima está verificando uma colisão entre a instância de chamada e uma instância de "parede", e realizará várias iterações enquantouma é
+    ocorrendo - movendo a instância deixada por um pixel - até que a instância não esteja mais em colisão.
+  Quando você deve usar um loop while? Ele deve ser usado sempre que você quiser repetir uma ou mais declarações, mas não sabe - ou se importa - quantas vezes ele tem que repetir, tendo em mente que se o
+    A avaliação inicial é false, as declarações podem nem mesmo ser executadas.
+  Por favor, não que você deva ser muito cuidadoso com os seus laços! Você pode facilmente fazer loops infinitos, neste caso seu jogo ficará pendurado e não reagirá mais a nenhuma entrada do usuário e precisará ser fechado à força. Por exemplo:
+  enquanto (!place_free(x, y)) {
+     x = random(room_width); y = random(room_height); }
+  
+  Agora, o código acima pode funcionar bem, mas também pode causar um loop infinito se a instância não conseguir encontrar uma posição vazia para onde se mover, e isto fará com que o jogo fique pendurado. Se você se encontrar em uma posição onde este tipo de coisa é uma possibilidade,
+    então você deve usar um tipo de loop diferente sem bloqueio, ou usar uma verificação variável adicional na expressão (você pode usar múltiplas expressões junto com o and (&&),
+    or (||) e xor (^^)operadores para o cheque):
+  var _check = 0; while ((!place_free(x, y)) && (_check < 100)) {
+     x = random(room_width); y = random(room_height); _check += 1; }
+     if _check >= 100 { // code failed, so deal with it }
+  Alternativamente, você pode usar a declaração break para quebrar o loop, por exemplo, o seguinte código gerará 100 números aleatórios e depois continuará, mesmo que a avaliação while seja sempre true:
+  var i = 0; enquanto (verdadeiro) {
+     x[i] = random(room_width); y[i] = random(room_height); if ((i++) >= 100) { break; }  }
+  
+  Você também pode usar a declaração de continuação em um loop while. Usando isto, terminará a atual iteração do loop e reiniciará o loop novamente em uma nova iteração, por exemplo:
+  var file = file_text_open_read("Game_Data.txt"); var _num = 0; while (!file_text_eof(file)) { var _s = file_text_readln(file); if (_s == "") { continue; }  str[num++] = _s; }  file_text_close(file);
+  
+  Este código acima abrirá um arquivo e lerá uma linha a partir dele cada iteração de loop até o final do conteúdo do arquivo. Se a linha sendo lida for uma string vazia, a atual iteração de loop é terminada usando a declaração continue e uma nova iteração será iniciada, caso contrário a string é adicionada a um array e a posição do array é incrementada.
+  Para mais exemplos de funções de loop, consulte as seções sobre repita, fazer... atée para.
+   
+   
+   
+  
+    
+      
+        Voltar: Características lingüísticas
+        Próximo: fazer / até
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

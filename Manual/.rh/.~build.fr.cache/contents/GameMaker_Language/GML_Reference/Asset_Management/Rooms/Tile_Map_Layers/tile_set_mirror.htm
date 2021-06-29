@@ -1,0 +1,46 @@
+
+  
+  espelho_de_série
+  Esta função pode ser usada para definir um determinado conjunto de dados de azulejos para espelhar o azulejo ou não. Você dá os dados do azulejo, que podem ser recuperados usando a função tilemap_get()e, em seguida, defina o argumento do espelho para verdadeiro se você quiser que o azulejo seja espelhado, ou falso se você quiser que o azulejo esteja em seu estado padrão, sem espelhamento. A função retornará um conjunto modificado de dados do azulejo que pode então ser aplicado usando a função tilemap_set()    função.
+   
+  Sintaxe:
+  tile_set_mirror(tileata, espelho)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tiledata
+        os dados da telha a definir
+      
+      
+        espelho
+        Ajustar para verdadeiro ao espelho e falso para deixá-lo como está
+      
+    
+  
+   
+  Devoluções:
+  Real (tileata)
+   
+  Exemplo:
+  var lay_id = layer_get_id("Tiles_sky"); var map_id = layer_tilemap_get_id(lay_id); var mx = tilemap_get_cell_x_at_pixel(map_id, mouse_x, mouse_y); var my = tilemap_get_cell_y_at_pixel(map_id, mouse_x, mouse_y); var data
+    = tilemap_get(map_id, mx, my); var bool = !tile_get_mirror(data); data = tile_set_mirror(data, bool); tilemap_set(map_id, data, mx, my);
+  O código acima obtém o ID do mapa de azulejos da camada dada e depois obtém a posição das células x e y para o azulejo sob o mouse. Esta posição é então usada para obter os dados do azulejo que é espelhado e depois usado para definir o azulejo novamente.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas do mapa de azulejos
+        Próximo: tile_set_rotate
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

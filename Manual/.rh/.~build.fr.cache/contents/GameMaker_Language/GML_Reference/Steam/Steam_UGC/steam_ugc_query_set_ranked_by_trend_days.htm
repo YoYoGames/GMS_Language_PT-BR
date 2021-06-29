@@ -1,0 +1,48 @@
+
+  
+  sa_conquista_de_vapor_de_vapor por_tend_dia
+  Esta função pode ser usada para filtrar ainda mais qualquer consulta UGC feita usando a constante ugc_query_RankedByTrend, especificamente para pesquisar durante um número de dias. O tratamento da consulta é o valor retornado quando você criou a consulta (usando, por exemplo, a constante ugc_query_RankedByTrend),
+    steam_ugc_create_query_user()) e o segundo argumento é o número de dias durante os quais você deseja que a consulta seja feita. A função retornará verdadeiro se o filtro de consulta tiver sido configurado corretamente,
+    ou falso de outra forma.
+   
+  Sintaxe:
+  vapor_ugc_query_set_ranked_by_trend_days(ugc_query_handle , days);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ugc_query_handle
+        O cabo de consulta a ser usado.
+      
+      
+        dias
+        O número de dias para consulta.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var query_handle = steam_ugc_create_query_all(ugc_query_RankedByTrend, ugc_match_Items, 1); steam_ugc_query_set_ranked_by_trend_days(query_handle, 5); steam_ugc_query_set_return_long_description(query_handle, true); steam_ugc_query_set_allow_cached_response(query_handle, 5),
+    verdadeiro); query_ID = steam_ugc_send_query(query_handle);
+  O código acima cria um pedido de consulta e armazena seu tratamento em uma variável local para uso futuro nas demais funções que definem melhor o pedido de consulta antes de enviar a consulta.
+   
+   
+   
+  
+    
+      
+        Voltar: UGC
+        Próxima: etiqueta_de_agulhas_de_vapor_add_requerida
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

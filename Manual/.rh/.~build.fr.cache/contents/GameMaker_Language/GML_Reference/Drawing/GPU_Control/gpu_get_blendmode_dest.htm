@@ -1,0 +1,83 @@
+
+  
+  gpu_get_blendmode_dest
+  Esta função pode ser usada para recuperar o fator atual do modo de mistura estendida de destino que está sendo usado para o desenho. O valor retornado será uma das seguintes constantes ("s" denota um valor tirado da fonte enquanto que um "d" é um "d".
+    d" denota um valor do destino):
+   
+  
+    
+      
+        Constante
+        Fator de mistura (Vermelho, Verde, Azul, Alfa)
+      
+      
+        bm_zero
+        (0, 0, 0, 0)
+      
+      
+        bm_one
+        (1, 1, 1, 1)
+      
+      
+        bm_src_colour
+        (Rs, Gs, Bs, As)
+      
+      
+        bm_inv_src_colour
+        (1-Rs, 1-Gs, 1-Bs, 1-As)
+      
+      
+        bm_src_alpha
+        (As, As, As, As, As)
+      
+      
+        bm_inv_src_alpha
+        (1-As, 1-As, 1-As, 1-As, 1-As)
+      
+      
+        bm_dest_alpha
+        (Anúncio, Anúncio, Anúncio, Anúncio)
+      
+      
+        bm_inv_dest_alpha
+        (1-Ad, 1-Ad, 1-Ad, 1-Ad, 1-Ad)
+      
+      
+        bm_dest_colour
+        (Rd, Gd, Bd, Ad)
+      
+      
+        bm_inv_dest_color
+        (1-Rd, 1-Gd, 1-Bd, 1-Ad)
+      
+      
+        bm_src_alpha_sat
+        (f, f, f, 1) onde f = min(As, 1-Ad)
+      
+    
+  
+   
+  Sintaxe:
+  gpu_get_blendmode_dest();
+   
+  Devoluções:
+  Constante (ver tabela acima)
+   
+  Exemplo:
+  var bm; bm[0] = gpu_get_blendmode_src(); bm[1] = gpu_get_blendmode_dest(); gpu_set_blendmode_ext_sepalpha(bm[0], bm[1], bm_inv_src_alpha, bm_inv_dest_colour);
+  O código acima cria uma matriz local e obtém os fatores de mistura atuais da fonte e do destino. Esta matriz é então usada para manipular o componente alfa dos fatores de mistura.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle de GPU
+        Próximo: gpu_get_blendmode_srcalpha
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

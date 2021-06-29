@@ -1,0 +1,32 @@
+
+  
+  view_xport
+  Com esta matriz construída você pode obter ou definir a posição x da porta de visão dada. A porta de visão é a área na tela onde a vista é desenhada, e você pode ter até 8 ativos a qualquer momento (o array é valores de 0 a 7 inclusive para dar 8
+    portos). Agora, o padrão para o GameMaker Studio 2 é que a janela do jogo (ou tela de fundo) tenha o mesmo tamanho da sala, porém quando você ativa as portas de visualização e as câmeras, este comportamento muda e o tamanho total da caixa de delimitação para todas as portas de visualização é usado. Portanto, se você tiver duas portas de visualização diferentes em duas posições diferentes, a área total que elas cobrem define o tamanho da janela do jogo. A imagem a seguir ilustra isto:
+  Se você tiver apenas uma porta de visualização, o valor x ou y da porta pode
+    têm alguns efeitos interessantes, mas normalmente não é prático (veja a imagem abaixo) e por isso é melhor manter a posição x e y como (0,0).
+  
+  Sintaxe:
+  view_xport[0 ... 7];
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  view_xport[0] = 0; view_yport[0] = 0;
+  O código acima repõe a posição da porta de visualização[0] para a posição (0,0) (canto superior esquerdo) do visor.
+   
+   
+   
+  
+    
+      
+        Voltar: Câmeras e Ver Portos
+        Próximo: view_yport
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

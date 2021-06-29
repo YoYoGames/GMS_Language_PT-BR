@@ -1,0 +1,45 @@
+
+  
+  velocidade_escrita_escrita_por_camada
+  Esta função pode ser usada para obter o valor atual do multiplicador de velocidade do elemento sprite. Você dá o ID do elemento sprite (que você obtém quando cria um elemento sprite usando layer_sprite_create() ou quando
+    você usa a função layer_sprite_get_id()), e a função retornará um valor real que representa o multiplicador de velocidade que está sendo usado para animar o duende. O valor padrão é 1.
+   
+  Sintaxe:
+  layer_sprite_get_speed(sprite_element_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sprite_element_id
+        O valor de identificação único do elemento sprite para obter as informações de
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var lay_id = layer_get_id("sprite_sky"); var spr_id = layer_sprite_get_id(lay_id, "Clouds"); if layer_sprite_get_speed(spr_id) > 0 {
+     layer_sprite_speed(spr_id, 0); }
+  
+  O código acima obterá a identificação da camada chamada "sprite_sky" e depois a utilizará para obter a identificação do elemento sprite naquela camada. Este ID é então usado para verificar a velocidade da animação para o elemento e se for maior que 0, ele é
+    ajustado a 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de Sprite
+        Próximo: camada_escreva_escreva_escreva_x
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

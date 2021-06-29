@@ -1,0 +1,45 @@
+
+  
+  network_destroy
+  Com esta função, você pode remover uma conexão de soquete de rede de seu jogo.
+  OBSERVAÇÃO: Esta função não funcionará quando utilizada em um projeto em execução no alvo HTML5.
+   
+  Sintaxe:
+  network_destroy(socket);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        soquete
+        A identificação do soquete a ser removido.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if !os_is_network_connected() {
+     network_destroy(sock);
+     }
+  
+  O código acima verificará se existe uma conexão de dados e se não for encontrada nenhuma, destruirá o soquete com a "meia" de identificação.
+   
+   
+   
+  
+    
+      
+        Voltar: Rede
+        Próximo: network_create_server
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

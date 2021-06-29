@@ -1,0 +1,59 @@
+
+  
+  mp_grid_add_rectangle
+  Esta função pede que você defina um retângulo dentro da sala, e então marca todas as células da grade MP "tocam" esse retângulo como sendo proibido, o que significa que as funções de localização de caminhos não podem cruzá-los. A imagem abaixo ilustra como isto funciona:
+  Como você pode ver, o retângulo definido por (50, 90) a (200, 180) marca todos os equivalentes
+    Células de grade MP que ele toca como sendo proibidas.
+   
+  Sintaxe:
+  mp_grid_add_rectangle(id, x1, y1, x2, y2);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        Índice da rede mp_ que deve ser usada
+      
+      
+        x1
+        A coordenada x do lado esquerdo do retângulo a ser verificado.
+      
+      
+        y1
+        A coordenada y do lado superior do retângulo a verificar.
+      
+      
+        x2
+        A coordenada x do lado direito do retângulo a ser verificado.
+      
+      
+        y2
+        A coordenada x do lado inferior do retângulo a verificar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  mp_grid_add_rectangle(grid, 0, 0, 100, 200);
+  O código acima marcará como proibidas todas as células da grade mp_ indexada na variável "grid" que se enquadram na área de 0,0 a 100.200.
+   
+   
+   
+  
+    
+      
+        Voltar: Planejamento de Movimento
+        Próximo: mp_grid_get_cell
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

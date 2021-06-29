@@ -1,0 +1,72 @@
+
+  
+  linha_de_colisão
+  Collision_line verifica ao longo de uma linha do ponto x1,y1 ao ponto x2,y2 para uma colisão com qualquer instância do objeto especificado pelo argumento "obj". esta verificação pode ser precisa ou não, mas para
+    para que as colisões sejam habilitadas, o objeto ou instância que você está verificando também deve ter as colisões precisas habilitadas para seus duendes. Caso contrário, a verificação padrão é baseada em caixas delimitadoras. A imagem a seguir ilustra como isto funciona:
+  Lembre-se, para que colisões precisas sejam consideradas tanto o objeto sprite
+    e a função de colisão deve ter uma marcação precisa como em. Também deve ser observado que o valor de retorno da função pode ser o id de qualquer uma das instâncias consideradas em colisão ao longo da linha, portanto, se três instâncias se sobrepuserem a
+    linha definida, qualquer uma de suas identificações poderia ser o valor de retorno da função.
+  Note que ao invés de um índice de objetos você pode fornecer uma instância id para verificar uma instância específica, ou as palavras-chave da instância all, ou other (dependendo do evento e do escopo do código atual).
+   
+  Sintaxe:
+  collision_line(x1, y1, x2, y2, obj, prec, notme);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x1
+        A coordenada x do início da linha.
+      
+      
+        y1
+        A coordenada y do início da linha.
+      
+      
+        x2
+        A coordenada x do final da linha.
+      
+      
+        y2
+        A coordenada y do final da linha.
+      
+      
+        obj
+        O objeto a ser verificado, por exemplo, colisões.
+      
+      
+        prec
+        Se a verificação é baseada em colisões precisas(verdadeiro, que é mais lento) ou em sua caixa de delimitação em geral(falso, mais rápido).
+      
+      
+        notme
+        Se a instância de chamada, se relevante, deve ser excluída(verdadeira) ou não(falsa).
+      
+    
+  
+   
+  Devoluções:
+  Identificação da instância ou de ninguém
+   
+  Exemplo:
+  com (obj_Enemy) {
+     if collision_line(100, 400, 100, 600, id, false, false) instance_destroy(); }
+  
+  Este código faz com que todas as instâncias de "obj_Enemy" verifiquem numa linha de 100x, 400y a 100x, 600y para uma colisão com eles mesmos, e se houver uma, então elas são destruídas.
+   
+   
+   
+  
+    
+      
+        Voltar: Colisões
+        Próximo: collision_line_list
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

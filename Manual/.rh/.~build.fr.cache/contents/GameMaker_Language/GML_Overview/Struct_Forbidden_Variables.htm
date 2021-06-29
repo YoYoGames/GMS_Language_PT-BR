@@ -1,0 +1,148 @@
+
+  
+  Estruturas Variáveis Proibidas
+  Ao criar uma estrutura, é possível utilizar certas variáveis embutidas como nomes de variáveis membros, por exemplo:
+  mystruct = { object_index : obj_Player, speed : 3, image_blend : c_red }
+  
+  Entretanto, somente variáveis locais e de escopo de instância incorporadas podem ser utilizadas desta forma e valores atribuídos como se fossem variáveis de membros estruturantes regulares. O uso de variáveis embutidas de escopo global é proibido e causará problemas com seu jogo.
+    Abaixo você pode encontrar uma lista completa destas variáveis para que você saiba quais evitar.
+  As seguintes variáveis globais embutidas estão todas disponíveis para uso em seus projetos, mas não podem ser usadas como variáveis estruturais de membros:
+  
+    argumento[n]
+    argumento0 ... argumento15
+    argument_count
+    async_load
+    debug_mode
+    pointer_invalid_invalid
+    pointer_null
+    indefinido
+    NaN
+    infinito
+    verdadeiro
+    falso
+    pi
+    sala
+    room_first
+    quarto_last
+    largura_da_sala
+    altura_do_quarto
+    room_persistent
+    pontuação
+    vive
+    saúde
+    jogo_id
+    game_display_name
+    nome_do_projeto_do_jogo
+    game_save_id
+    diretorio_de_trabalho
+    temp_directório
+    program_directory
+    exemplo_conta
+    exemplo_id
+    view_enabled
+    view_current
+    view_visible
+    view_xport
+    view_yport
+    view_wport
+    view_hport
+    view_surface_id
+    view_camera
+    mouse_x
+    mouse_y
+    mouse_button
+    último botão do mouse
+    teclado_chave
+    teclado_última tecla
+    teclado_lastchar
+    teclado_string
+    cursor_sprite
+    fps
+    fps_real
+    tempo_actual
+    ano_actual
+    mês_actual
+    dia_actual
+    dia_semana atual
+    hora_actual
+    minuto_actual
+    segundo_actual
+    tipo_de_evento
+    número_do_evento
+    event_object
+    evento_ação
+    aplicação_surface
+    font_texture_page_size
+    os_type
+    os_device
+    os_version
+    os_browser
+    largura_do_browser
+    altura_do_browser
+  
+   
+  Além dessas variáveis globais, há também uma série de variáveis globaisobsoletas incorporadas em que não estão disponíveis devido à possibilidade de serem incluídas em produtos legados importados(o GameMaker Studio 2 precisa reservar
+    estas variáveis para que possa reconhecê-las na importação e marcá-las para serem atualizadas/removidas):
+  
+    gamemaker_registered
+    gamemaker_progamemaker_version
+    error_occurred
+    error_last
+    secure_mode
+    show_score
+    show_lives
+    show_health
+    caption_score
+    caption_lives
+    caption_health
+    game_guid
+    argument_relative
+    room_caption
+    room_speed
+    view_xview
+    view_yview
+    view_wview
+    view_hview
+    view_angle
+    view_hborder
+    view_vborder
+    view_hspeed
+    view_vspeed
+    view_object
+    transition_kind
+    transition_steps
+    background_color
+    background_showcolor
+    background_colour
+    background_showcolour
+    background_visible
+    background_foreground
+    background_index
+    background_x
+    background_y
+    background_width
+    background_height
+    background_htiled
+    background_vtiled
+    background_xscale
+    background_yscale
+    background_hspeed
+    background_vspeed
+    background_blend
+    background_alpha
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Structs
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

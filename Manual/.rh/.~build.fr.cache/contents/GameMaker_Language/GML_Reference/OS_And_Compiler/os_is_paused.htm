@@ -1,0 +1,39 @@
+
+  
+  os_is_paused
+  Ao desenvolver para dispositivos móveis, você precisa ter uma maneira de verificar se o dispositivo ainda está ou não focado em seu jogo, especialmente como se seu jogo estivesse em um dispositivo iOS, Android ou Windows Phone, então ele pode ser interrompido por chamadas telefônicas e outros aplicativos.
+    Você pode usar esta função para verificar se o dispositivo está em pausa ou não.
+  Vale notar que esta função executará qualquer código que esteja contido dentro do bloco de código nos dispositivos, mas então o GameMaker Studio 2 será pausado imediatamente após, já que o dispositivo armazena o jogo como um processo de fundo. Portanto, se você tiver algo
+    Como o código de exemplo fornecido abaixo, a instância a ser criada não aparecerá ou executará nenhum de seus eventos até que o jogo tenha sido reiniciado do estado em cache. Isto significa que você pode preferir que a função os_is_paused chame um alarme e depois no evento de alarme (que será definido quando o dispositivo for pausado, mas não será executado até que ele não seja pausado) crie um menu de pausa, reinicie a música etc...
+  Se você estiver usando esta função nas plataformas Windows, Ubuntu(Linux), MacOS ou HTML5, então a função só é alternada por um passo para a verdade quando o jogo perde o foco, e então ele retornará falso novamente até que o jogo seja devolvido.
+    para se concentrar (e perde-o novamente). Isto porque estas plataformas não armazenam aplicativos e jogos, e assim estes continuarão a funcionar em segundo plano.
+  NOTA: Nos dispositivos móveis, os sons e a música serão interrompidos quando o os for pausado. Eles não serão reiniciados novamente, a menos que você os inicie especificamente com a função apropriada.
+   
+  Sintaxe:
+  os_is_paused()
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se os_is_paused() {
+     if !instance_exists(obj_PauseMenu) {
+     instance_create_layer(0, 0, "Controllers", obj_PauseMenu); }
+     }
+  
+  O código acima verifica se o jogo foi pausado, e se depois criou uma instância do objeto "obj_PauseMenu", se já não existir nenhuma.
+   
+   
+   
+  
+    
+      
+        Voltar: OS E Compilador
+        Próximo: os_is_network_connected
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,63 @@
+
+  
+  sprite_get_bbox_mode
+  Esta função retornará o "modo" atual para os cálculos da caixa delimitadora. Você fornece o índice do sprite para verificar, e a função retornará uma das constantes mostradas abaixo.
+   
+  Sintaxe:
+  sprite_get_bbox_mode(ind);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do sprite a ser verificado.
+      
+    
+  
+   
+  Devoluções
+  Constante
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        bboxmode_automático
+        Automático - A caixa de delimitação será calculada automaticamente, com base no ajuste de tolerância para o duende
+      
+      
+        bboxmode_fullimage
+        Full Image - A caixa de delimitação será ajustada para usar toda a largura e altura do duende, independentemente da tolerância e dos pixels "vazios".
+      
+      
+        bboxmode_manual
+        Manual - A caixa de delimitação foi definida manualmente para valores definidos pelo usuário (ou no editor sprite, ou usando a função sprite_set_bbox())
+      
+    
+  
+   
+  Exemplo:
+  if sprite_get_bbox_mode(sprite_index) != 0 {
+     sprite_set_bbox_mode(sprite_index, bboxmode_automatic); }
+  
+  O acima verifica o modo bbox para o sprite atual e se não for automático, então ele é ajustado para esse valor.
+   
+   
+   
+  
+    
+      
+        Voltar: Informações Sprite
+        Próximo: sprite_get_nineslice
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,47 @@
+
+
+
+
+  
+  gamepad_get_axis_deadzone
+  Esta função pode ser usada para obter o valor da "zona morta" do eixo do joystick. Você especifica o slot do dispositivo a ser obtido, e a função retornará um valor entre 0 e 1, onde o valor reflete o limiar sob o qual o eixo do joystick é considerado
+    para estar a 0.
+   
+  Sintaxe:
+  gamepad_get_axis_deadzone(dispositivo);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dispositivo
+        Qual dispositivo de controle de jogo "slot" a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  if gamepad_get_axis_deadzone(global.PadId) != 0.5 {
+     gamepad_set_axis_deadzone(global.PadId, 0.5); }
+  
+  O código acima verifica o limite do eixo analógico do campo de jogo conectado ao dispositivo "slot" armazenado na variável global e se não for o valor padrão de 0,5, ele é definido para esse valor.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada Gamepad
+        Próximo:  gamepad_get_option 
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

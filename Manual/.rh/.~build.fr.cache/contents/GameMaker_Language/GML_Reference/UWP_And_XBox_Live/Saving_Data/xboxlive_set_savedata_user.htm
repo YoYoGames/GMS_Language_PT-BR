@@ -1,0 +1,45 @@
+
+  
+  xboxlive_set_set_savedata_user
+  Esta função especifica que as futuras operações de arquivo que operam na área de salvar jogo (ou seja, todos os arquivos escritos, e lidos de arquivos que não estão na área do pacote) serão associados ao ponteiro de identificação do usuário especificado. Isto pode ser chamado com a mesma freqüência
+    conforme necessário para redirecionar os dados para o usuário apropriado, ou você pode usar o pointer_null constante para salvar para a área de armazenamento genérico da máquina.
+   
+  Sintaxe:
+  xboxlive_set_set_savedata_user(user_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        user_id
+        O ID do usuário (um ponteiro) a ser definido para salvar, ou ponteiro_nulo
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if (xboxlive_get_savedata_user() != user_id[0]) {
+     xboxlive_set_set_savedata_user(user_id[0]);
+     }
+  
+  O código acima verifica se um usuário está atualmente designado como alvo a ser salvo, e se não estiver, então ele é designado.
+   
+   
+   
+  
+    
+      
+        Voltar: Salvando dados
+        Próximo: xboxlive_get_savedata_user
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

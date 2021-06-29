@@ -1,0 +1,60 @@
+
+  
+  Vetores
+  Em algum momento, ao criar um jogo de qualquer complexidade, você provavelmente terá que lidar com vetores. Eles são usados na física, na IA, na trigonometria e em muitas outras situações, mas o que é um vetor? Bem, para dizer de forma simples, um vetor é
+    uma quantidade dirigida. Comecemos olhando para um vetor dimensional 1 - que é igual a um único número - desenhando uma linha numerada com uma seta começando em zero e terminando em 5.
+    a 5 e se desenhamos outra seta começando no 5 e terminando no 8, temos o vetor "b" que é igual a 3:
+  Você deve perceber que não importa onde um vetor começa, o que importa é quanto tempo ele é e que direção
+    entra. Assim, o vetor "b" começa em 5, tem 3 unidades de comprimento e aponta para a "direita", tornando-o idêntico a um vetor começando em 0 e indo para 3. Agora, você também pode adicionar estes vetores juntos, colocando os dois vetores "a
+    e "b" de ponta a ponta para obter o vetor "c", que é igual a 8. E os números negativos? Bem, se, na imagem acima, um vetor que aponta para a "direita" corresponde a um número positivo, você pode ver que um vetor
+    apontando para a "esquerda" corresponderia a um número negativo, fazendo de um vetor unidimensional nada mais que um número assinado (+/-). Isto explica o conceito essencial de um vetor: somente comprimento e direção ("esquerda").
+    ou "direita" neste caso) contam, e não a posição.
+  Então, e quanto aos vetores bidimensionais? Bem, podemos pensar neles como consistindo não apenas em "esquerda" e "direita", mas também em "para cima" e "para baixo":
+  Agora, esses ainda não são vetores de fato, pois ainda temos que reduzi-los usando seus
+    coordenadas de início e fim. Olhando o vetor "a", podemos ver que ele tem uma coordenada inicial de [2,2] e uma coordenada final de [4,3] e, portanto, para obter o vetor a partir dele, precisamos reduzi-lo, subtraindo as coordenadas finais do início
+    coordenadas como esta:
+  a = [(x2-x1), (y2-y1)] = [(4-2), (3-2)] = [2,1]
+  Vamos fazer o mesmo para o vetor b agora:
+  b = [(-1.2 -(-3.2)) ,(2.1 - 1.1)] = [2 ,1]
+  Notou algo? Esses dois vetores são os mesmos! Esta é mais uma demonstração de que um vetor não tem posição, apenas direção e comprimento, e podemos desenhar esses vetores em relação um ao outro em torno de um eixo local [0,0]:
+  Isto significa que um vetor 2D é definido por dois valores, uma posição "x" e uma posição "y" em relação a
+    o eixo local [0,0]. E quanto aos vetores 3D? Bem, eles têm a dimensão adicional de "profundidade" a ser contornada e seriam calculados como posições "x", "y" e "z" em torno de um eixo local algo como isto:
+  Um bom exemplo de um vetor usado no GameMaker Studio 2 é a propriedade da gravidade física no editor da sala. O
+    A gravidade é calculada como um vetor em torno de uma posição [0,0]. Portanto, se você definir a gravidade como [x0, y10], a gravidade seria reduzida com uma força de 10.
+  Normalmente, os vetores podem ser usados em muitas situações, mas às vezes você quer restringir seu valor (como quando lidamos com ângulos) e é por isso que os normalizamos . Este é essencialmente um truque matemático que é usado para converter um vetor
+    de comprimento n a um vetor de comprimento 1, o que significa que os componentes vetoriais se normalizam entre 0 e 1. Esses vetores também são chamados de vetores unitários:
+  Para calcular um vetor normalizado, devemos primeiro ter os componentes vetoriais originais, depois usá-los para obter
+    o comprimento do vetor. Em seguida, dividimos cada um dos componentes vetoriais por este comprimento para obter os componentes vetoriais normalizados que formam o vetor normalizado no qual a soma dos quadrados de todas as coordenadas é igual a 1. Aqui estão
+    como:
+  Primeiro pegamos as coordenadas do vetor e obtemos os componentes:
+  vx = (x2 - x1) = (7 - 1) = 6 vy = (y2 - y1) = (4 - 1) = 3
+  Em seguida, usamos esses valores para calcular o comprimento do vetor:
+  len = sqr(vx2 + vy2); // = sqr(36 + 9) = sqr(45) = 6.708203932499369
+  Agora, isso nos dá o comprimento exato do vetor "a", então vamos usar isso para normalizar os dois componentes vetoriais vx e vy:
+  vx = (vx/len); // = (6 / 6,708203932499369) = 0,8944271909999159 vy = (vy/len); // = (3 / 6,708203932499369) = 0,4472135954999579
+  Ótimo! Agora normalizamos os componentes do vetor! Mas de que serve na prática isso no contexto do GameMaker Studio 2? Ok, vamos dar um exemplo prático...
+  Digamos que você tem um jogo onde o jogador tem que atirar em um inimigo e você precisa saber quanto o objeto bala tem que se mover ao longo dos eixos x e y a cada passo para atingi-lo:
+  Para isso, você usaria as coordenadas do jogador e do inimigo para obter os componentes vetoriais e o comprimento, então
+    você os normalizaria para obter um valor entre 0 e 1 que finalmente se multiplicaria pela velocidade que você deseja que a bala viaje em cada passo. Estes dois valores finais seriam então armazenados e acrescentados às coordenadas iniciais x e y de cada etapa.
+    Parece complicado? Não é, veja (os valores foram arredondados a uma casa decimal para simplificar):
+  px = 100; py = 425; ex = 356; ey = 83; bullet_speed = 5;
+     vx = (ex - px); // = 256 vy = (ey - py); // = -342
+     len = sqrt(vx2 + vy2); // = sqrt(65536 + 116964) = 427.2
+     vx = vx / len; // = 0,6 vy = vy / len; // = 0,8
+     speed_x = vx * bullet_speed; // = 3 speed_y = vy * bullet_speed; // = 4
+  Portanto, para atingir o alvo, precisamos adicionar 3 às balas x coordenada e 4 à sua y coordenada a cada passo.
+   
+   
+   
+  
+    
+      
+        Voltar: Informações adicionais
+        A seguir: Guia para a utilização de amortecedores
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

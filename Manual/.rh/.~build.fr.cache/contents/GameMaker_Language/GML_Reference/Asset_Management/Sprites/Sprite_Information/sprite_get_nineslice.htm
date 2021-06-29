@@ -1,0 +1,43 @@
+
+  
+  sprite_get_nineslice
+  Esta função retorna a estrutura de nove fatias para um duende, contendo todas as suas propriedades de nove fatias conforme definido no Editor Sprite ou usando sprite_set_nineslice(). O conteúdo desta estrutura está detalhado nesta página.
+  Se o duende fornecido não tiver uma estrutura de Nove Fatias atribuída a ele, uma nova estrutura com propriedades padrão de Nove Fatias será criada para o duende e devolvida.
+   A alteração de quaisquer valores nesta estrutura modificará as propriedades de nove fatias do duende original, afetando quaisquer futuras chamadas de sorteio feitas com aquele duende.
+   
+  Sintaxe:
+  sprite_get_nineslice(ind);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do duende do qual a estrutura das Nove Fatias será recuperada
+      
+    
+  
+   
+  Devoluções:
+  Estrutura (ou -1 se o duende não existir)
+   
+  Exemplo:
+  var _box_nineslice = sprite_get_nineslice(spr_box_nineslice_0);
+     _box_nineslice.enabled = true; _box_nineslice.left = 10; _box_nineslice.right = 10; _box_nineslice.top = 10; _box_nineslice.bottom = 10;
+  O código acima recupera a estrutura de nove fatias de um duende, permite o corte de nove fatias para ele e define os offsets da guia.
+   
+   
+  
+    
+      
+        Voltar: Manipulação de Sprite
+        Próximo: sprite_get_tpe
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

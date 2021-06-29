@@ -1,0 +1,44 @@
+
+  
+  jogo_load_buffer
+  Com esta função você pode carregar um estado de jogo que já tenha sido salvo anteriormente. O jogo é carregado a partir de um buffer "crescer" criado anteriormente (ver Buffers) e o buffer deve ter tido um estado de jogo salvo nele
+    usando jogo_save_buffer() função.
+   
+  Sintaxe:
+  jogo_load_buffer_buffer(buffer);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        A identificação do buffer de onde carregar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se keyboard_check_pressed(ord("L")) {
+     if global.Checkpoint game_load_buffer(save_buff)(save_buff); }
+  
+  O código acima carregará um estado de jogo previamente salvo do buffer indexado na variável "save_buff", somente se a variável global for verdadeira, quando o jogador pressiona a tecla "L".
+   
+   
+   
+  
+    
+      
+        Voltar: Controle geral do jogo
+        Próximo: game_save
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

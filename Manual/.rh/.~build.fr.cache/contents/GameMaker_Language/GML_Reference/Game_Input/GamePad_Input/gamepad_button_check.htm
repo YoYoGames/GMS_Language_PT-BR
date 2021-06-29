@@ -1,0 +1,49 @@
+
+  
+  gamepad_button_check
+  Esta função retornará verdadeiro ou falso, dependendo se o botão gamepad dado for detectado como sendo mantido pressionado ou não. Se você estiver verificando um botão analógico, então a verificação levará em consideração a configuração do limiar e retornará apenas true enquanto o valor de entrada bruta estiver acima do limiar dado (você pode obter este valor bruto usando a função gamepad_button_value()).
+   
+  Sintaxe:
+  gamepad_button_check(dispositivo, botão);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dispositivo
+        Qual dispositivo de controle de jogo "slot" a ser verificado.
+      
+      
+        botão
+        Qual botão do gamepad é constante a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if gamepad_button_check(0, gp_face1) {
+     if canhoot = verdadeiro {
+     audio_play_sound(snd_Shoot, 0, false); instance_create_layer(x, y, "Bullets", obj_Bullet) canhoot = false; alarm[0] = room_speed / 2; }
+     }
+  
+  O código acima detectará se o botão inferior da face superior (o "X" em um controlador ps3) está sendo mantido para baixo e, em caso afirmativo, disparará uma "bala" e disparará um alarme.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada Gamepad
+        A seguir:  gamepad_button_check_pressed 
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

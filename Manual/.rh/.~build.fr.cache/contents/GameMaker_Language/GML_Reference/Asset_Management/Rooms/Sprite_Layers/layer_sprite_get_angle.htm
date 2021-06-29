@@ -1,0 +1,44 @@
+
+  
+  layer_sprite_get_angle
+  Esta função pode ser usada para obter o ângulo atual para o elemento sprite. Você dá o ID do elemento sprite (que você obtém quando cria um elemento sprite usando layer_sprite_create() ou quando você usa o
+    função layer_sprite_get_id()), e a função retornará valor real para o ângulo. Este valor estará entre 0 e 360, onde 0 representa a direita, 90 para cima, 180 para a esquerda e 270 para baixo.
+   
+  Sintaxe:
+  layer_sprite_get_angle(sprite_element_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sprite_element_id
+        O valor de identificação único do elemento sprite para obter as informações de
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var lay_id = layer_get_id("sprite_sky"); var spr_id = layer_sprite_get_id(lay_id, "Clouds"); se layer_sprite_get_angle(spr_id) != 0 {
+     layer_sprite_yscale(spr_id, 0); }
+  
+  O código acima obterá a identificação da camada chamada "sprite_sky" e depois a utilizará para obter a identificação do elemento sprite naquela camada. Este ID é então usado para verificar o ângulo e se for algo diferente de 0, é ajustado para 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de Sprite
+        Próximo: layer_sprite_get_blend
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

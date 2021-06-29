@@ -1,0 +1,49 @@
+
+  
+  object_set_visible
+  Com esta função você pode marcar um objeto específico como visível ou não (para mais informações sobre a bandeira "visível" veja a seção sobre o Editor de Objetos ). Isto significa que todas as instâncias
+    deste objeto que é criado depois que o visível foi mudado será criado com este novo estado, enquanto as instâncias que já estão na sala podem não ser afetadas.
+  Por favor, note que esta não é uma função de instância! Você pode definir a bandeira visível de instâncias individuais usando a visível variável e, portanto, têm dez instâncias todas marcadas como visíveis, mesmo
+    embora o objeto em questão tenha a bandeira definida como falsa no IDE, e mesmo que você mude a bandeira visível do objeto para verdadeira usando esta função, todas as instâncias que atualmente na sala permanecerão como estavam, e apenas instâncias criadas depois
+    chamando a função começará com a bandeira visível como verdadeira.
+   
+  Sintaxe:
+  object_set_visible( índice, vis );
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do objeto a ser modificado.
+      
+      
+        vis
+        A nova visibilidade do objeto (verdadeiro=visível, falso=invisível).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if !object_get_visible(obj_Block) { object_set_visible(obj_Block, true); }
+  O código acima verifica a bandeira visível do objeto "obj_Block" e, se for falso, é alterado para ser sinalizado como verdadeiro.
+   
+   
+   
+  
+    
+      
+        Voltar: Objetos
+        Próximo: object_index
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

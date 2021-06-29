@@ -1,0 +1,48 @@
+
+  
+  vapor_set_stat_int
+  Com esta função você pode definir uma estatística específica para um novo valor inteiro, assinado. A estatística deve ter sido previamente definida na página de contas do painel de controle Steamworkspara seu jogo e a string que é passada para a função deve
+    corresponde àquele usado como o nome API no painel de controle. Exemplos de quando você poderia usar isto são para acompanhar quantas vezes o jogador morre ou para acompanhar o progresso em direção a uma conquista.
+   
+  Sintaxe:
+  steam_set_stat_int(stat_name, valor);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        stat_name
+        O nome da estatística a ser definida (um fio).
+      
+      
+        valor
+        O valor (um inteiro de 32 bits) para definir a estatística.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  xp += 100; steam_set_stat_int("Total_XP", vapor_get_stat_int("Total_XP") + 100); if steam_get_stat_int( "Total_XP") > 1000 {
+     if !vapor_get_achievement("Ach_1000XP") vapor_set_achievement("Ach_1000XP"); }
+  
+  O código acima estabelece uma estatística e depois verifica o valor final para que ele decida se deve ou não conceder uma conquista.
+   
+   
+   
+  
+    
+      
+        Voltar: Conquistas e estatísticas
+        Próximo: steam_set_stat_float
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

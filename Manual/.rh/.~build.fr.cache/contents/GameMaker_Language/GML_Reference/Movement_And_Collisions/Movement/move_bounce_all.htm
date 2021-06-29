@@ -1,0 +1,47 @@
+
+  
+  move_bounce_all
+  Com esta função, você pode comandar uma instância para ressaltar todas as instâncias dentro da sala, com a única exceção daquelas que não têm sprite ou índice de máscara atribuído a elas. Você também pode dizer a ela para usar a verificação precisa de colisão quando ativada,
+    mas esteja ciente de que isto requer que todas as instâncias tenham máscaras precisas ativadas e irá atrasar muito seu jogo quando muitas instâncias estiverem envolvidas devido à quantidade de processamento que tem que ser feita. Isto deve ocorrer normalmente no caso de um
+    mas também pode ser usado seletivamente em um evento de colisão, como ilustrado pelo exemplo de código abaixo.
+   
+  Sintaxe:
+  move_bounce_all( adv );
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        adv
+        Seja para permitir o salto avançado (verdadeiro) ou não (falso).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se outro.visível {
+     move_bounce_all(false);
+     }
+  
+  O código acima seria colocado em um evento de colisão com outro objeto. Ele primeiro verifica se o objeto é visível e se ele é, então executa a ação move_bounce_all(). Note que, neste caso, o ressalto é seletivo e só
+    ser calculado para esta colisão, e não para cada instância, cada passo.
+   
+   
+   
+  
+    
+      
+        Voltar: Movimento
+        Próximo: move_bounce_solid
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

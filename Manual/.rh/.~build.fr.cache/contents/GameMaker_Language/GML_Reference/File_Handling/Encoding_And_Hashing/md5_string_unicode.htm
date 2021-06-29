@@ -1,0 +1,46 @@
+
+  
+  md5_string_unicode
+  Na criptografia, MD5 (Message-Digest algoritmo 5) é uma função de hash criptográfico amplamente utilizada com um valor de hash de 128 bits e tem sido empregada em uma grande variedade de aplicações de segurança. Também é comumente usado para verificar a integridade de arquivos e strings.
+    Esta função irá pegar uma string unicode de entrada (que é 16bits para cada char) e retornar o hash MD5 hexadecimal de 32 caracteres que é único para essa string. Desta forma, você pode gerar uma chave segura que pode ser armazenada e usada para verificar a integridade
+    das informações enviadas (ou recebidas) para (ou recebidas de) um servidor externo (por exemplo).
+  NOTA: Há dois formatos para a codificação MD5, UTF-8 e unicode. Ambos são fornecidos para facilitar a comunicação com diferentes configurações de servidor, mas o mais comum a ser usado é unicode.
+  NOTA: O MD5 não é completamente seguro e pode ser quebrado. Veja esta página para mais informações.
+   
+  Sintaxe:
+  md5_string_unicode(string)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        corda
+        O fio do haxixe.
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  var hash, str; str = base64_encode(game_data); hash = md5_string_unicode(str); http_get("http://www.MacSweeneyGames.com/CatchTheHaggis/gamedata?hash=" + hash); http_get("http://www.MacSweeneyGames.com/CatchTheHaggis/gamedata?data="
+    + str);
+  O código acima base64 codificará uma string e então gerará um hash MD5. Finalmente, tanto o hash quanto a string codificada são enviados a um servidor.
+   
+   
+   
+  
+    
+      
+        Voltar: Codificação de arquivos
+        Próximo: md5_file
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

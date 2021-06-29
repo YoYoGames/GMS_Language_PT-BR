@@ -1,0 +1,77 @@
+
+  
+  os_get_info
+  Esta função retorna um Mapa DS com informações detalhadas sobre o sistema operacional em que o jogo está sendo executado. As informações exatas retornadas dependerão do sistema operacional e do dispositivo, portanto é recomendável
+    que você teste esta função em todas as plataformas que você deseja direcionar e emitir os valores retornados usando uma função como show_debug_message(). Note que o mapa DS não é
+    automaticamente apagado da memória e você deve usar o ds_map_destroy() quando você não precisa mais dos dados que ela contém.
+  Abaixo você pode encontrar alguns detalhes sobre os dados extras que serão disponibilizados para o mapa DS específicos para as seguintes plataformas, e deve ser notado que em todas as plataformas exceto HTML5 o mapa terá a chave "is64bit".
+    que será true ou false, dependendo se o sistema operacional da plataforma é 64bit ou não.
+
+  
+   
+  Windows / UWP
+  
+    No Windows Desktop e Windows UWP, você obterá alguns dados extras do DX11 com as seguintes chaves disponíveis no mapa DS (útil para extensões):
+    
+      vídeo_d3d11_device - ponteiro para o dispositivo DX11
+      video_d3d11_contextos - ponteiro para o contexto DX11
+      video_adapter_vendorid - string com a identificação do fornecedor dos adaptadores
+      video_adapter_deviceid - string com o id do dispositivo adaptador
+      video_adapter_subsysid - string com o sub-sistema adaptador id
+      video_adapter_revision - string com o número de revisão do adaptador
+      video_adapter_dedicatedvideomemory - string com o tamanho da memória de vídeo
+      video_adapter_dedicatedsystemmemory - string com o tamanho da memória do sistema (usado pelo adaptador DX11)
+    
+     
+  
+  Android
+  
+    Sobre o Android você obterá alguns dados extras de várias APIs diferentes com as seguintes chaves disponíveis no mapa DS:
+    
+      android_tv - isto retornará verdadeiro se o dispositivo for detectado como sendo um dispositivo de TV Android, ou falso de outra forma
+      GL_VERSION - a versão do OpenGL conforme relatado pelo motorista
+      GL_VENDOR - o fornecedor da OpenGL, conforme relatado pelo motorista
+      GL_RENDERER - o renderizador da OpenGL, conforme relatado pelo motorista
+      GL_EXTENSIONS - as extensões da OpenGL que estão disponíveis conforme relatado pelo motorista
+      GL_SHADING_LANGUAGE_VERSION - a versão da GLSL que é suportada por este motorista OpenGL
+      GL_MAX_TEXTURE_SIZE - o tamanho máximo de textura suportado por este driver OpenGL
+      SDK_INT - valor do android.os.Build.VERSION.SDK_INT veja aqui para mais informações.
+      RELEASE - valor do android.os.Build.VERSION.RELEASE veja aqui para mais informações.
+      MODELO - valor do android.os.Build.MODEL veja aqui para mais informações.
+      DEVICE - valor do android.os.Build.DEVICE veja aqui para mais informações.
+      MANUFACTURER - valor do android.os.Build.MANUFACTURER veja aqui para mais informações.
+      CPU_ABI - valor do android.os.Build.CPU_ABI veja aqui para mais informações.
+      CPU_ABI2 - valor de android.os.Build.CPU_ABI2 veja aqui para mais informações.
+      BOOTLOADER - valor do android.os.Build.BOOTLOADER veja aqui para mais informações.
+      BOARD - valor do android.os.Build.BOARD veja aqui para mais informações.
+      VERSÃO - valor da versão os.version do sistema Android .getProperty método
+      REGIÃO - valores de user.region do sistema Android .getProperty método
+      VERSION_NAME - valor deste pacote versãoNome - veja aqui para mais informações.
+      PHYSICAL_KEYBOARD - se pensarmos que um teclado físico está disponível, então a corda "TRUE" de outra forma "FALSE" (FALSO)
+    
+     
+  
+   
+  Sintaxe:
+  os_get_info()
+   
+  Devoluções:
+  Real (ds_map index)
+   
+  Exemplo:
+  if (os_type == os_android) { var _info = os_get_info();      if (_info[? "android_tv"]) { global.android_tv = true; }  }
+  O código acima verifica se o sistema operacional atual é Android, recebe as informações do sistema operacional e lê o mapa retornado para verificar se o jogo está rodando em uma TV Android. Nesse caso, ele define uma variável global como verdadeira.
+   
+   
+  
+    
+      
+        Voltar: OS E Compilador
+        Próximo: os_powersave_enable
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

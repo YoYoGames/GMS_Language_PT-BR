@@ -1,0 +1,64 @@
+
+  
+  game_get_speed
+  Esta função pode ser usada para obter a velocidade do jogo como o número de quadros de jogo a serem executados por segundo ou como o número de micro segundos por quadro de jogo. Note que este não é o valor real da velocidade de corrida FPS (para isso use o fps_real variável)
+    mas sim o número de quadros de jogo (FPS) que o jogo tentará manter a cada segundo, ou a duração de cada quadro de jogo em microssegundos que o jogo tentará manter (MPF). Quando você usa esta função, você precisa dar um dos seguintes
+    constantes que determinarão o tipo do valor de retorno:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        gamepeed_fps
+        Obtém a velocidade do jogo usando quadros por segundo.
+      
+      
+        gamepeed_microseconds
+        Obtém a velocidade do jogo usando microssegundos por moldura.
+      
+    
+  
+   
+  Assim, por exemplo, se a velocidade do jogo for definida em 30 nas Opções de Jogo e você usar o tipo FPS, então a função retornará 30, mas se você usar o MPF, então a função retornará 33333.
+   
+  Sintaxe:
+  game_get_speed(tipo);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tipo
+        O tipo de método utilizado para obter a velocidade do jogo (ver as constantes acima).
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  if game_get_speed(gamespeed_fps) != 60 {
+     game_set_speed(60, gamespeed_fps); }
+  
+  O código acima verifica se o jogo está funcionando com uma velocidade de 60 FPS e se não estiver definido para 60 FPS.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle geral do jogo
+        Próximo: game_set_speed_speed
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

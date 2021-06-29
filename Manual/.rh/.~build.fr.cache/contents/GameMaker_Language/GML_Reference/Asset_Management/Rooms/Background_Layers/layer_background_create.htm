@@ -1,0 +1,47 @@
+
+  
+  layer_background_create
+  Com esta função você pode atribuir um recurso sprite a uma camada a ser usada como pano de fundo em seu projeto. Você fornece a identificação da camada (que você obtém quando cria a camada usando layer_create())
+    ou o nome da camada (como uma string - isso terá um impacto no desempenho) e um índice sprite (que seria o nome do sprite como mostrado no Navegador de Ativos), e ele será adicionado à camada. A função retorna o valor de identificação único para o elemento,
+    que pode então ser usado em outras funções de camadas para fundos.
+   
+  Sintaxe:
+  layer_background_create(layer_id, sprite)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada a ser alvo (ou o nome da camada como uma corda)
+      
+      
+        sprite
+        O índice sprite a ser utilizado
+      
+    
+  
+   
+  Devoluções:
+  Identificação do elemento de fundo (Real)
+   
+  Exemplo:
+  global.back_layer = layer_create(10000); global.back_trees = layer_background_create(global.back_layer, spr_Trees);
+  O código acima cria uma nova camada e depois adiciona um novo elemento de fundo, definindo um duende para ser a imagem de fundo utilizada.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de fundo
+        A seguir: layer_background_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

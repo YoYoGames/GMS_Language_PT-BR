@@ -1,0 +1,96 @@
+
+  
+  Sincronizar_nuvem
+  Esta função seria normalmente chamada no início de um novo jogo e é usada para recuperar o status atual do serviço de nuvem no início do jogo. A função retorna um valor de id único que seria então usado no evento da nuvem assíncrona para recuperar as informações relevantes do mapa DS que é criado.
+  Esta função enviará os dados para a nuvem, que então acionará o evento assíncrono apropriado. Neste evento, você pode verificar o retorno async_load Mapa DS
+    para os seguintes valores:
+  
+    "status": Isto contém o código de status, onde um valor negativo denota um erro, cuja descrição estará contida no "errorString". Um valor de 0 (ou um valor positivo) indica um sucesso (veja abaixo os valores exatos),
+      e o "resultadoString" conterá os dados retornados ou uma mensagem de sucesso.
+    "id": O id que foi retornado da função chamada. Se você disparar uma série de pedidos cloud_, então você precisa saber qual deles você está recebendo a resposta, e assim você usaria este valor para comparar com o valor que você
+      armazenado quando você originalmente enviou o pedido para encontrar o correto.
+    "descrição": A descrição do último arquivo carregado.
+    "resultString": Isto contém um fio que é a bolha de dados retornada da nuvem.
+    "errorString": retorna um Error String para qualquer erro.
+  
+  O significado exato da entrada do mapa de "status" retornado é explicado na tabela a seguir:
+   
+  
+    
+      
+        Status Valor
+        errorString / resultString
+        Descrição
+      
+      
+        -1
+        errorString = "Not logged in to <SERVICE>" (Não logado em <SERVICE>")
+        Você não conseguiu acessar o serviço em nuvem em questão
+      
+      
+        0
+        resultadoString = dados recuperados
+        Novos dados do jogo baixados da nuvem (seguindo uma chamada de cloud_synchronise)
+      
+      
+        1
+        resultString = "AlreadySynchronized" (já sincronizado)
+        Nenhum dado novo desde a última vez que você chamou cloud_synchronise
+      
+      
+        2
+        resultadoString = "ConflictDeferral"
+        Foi encontrado um conflito, mas o jogador optou por ignorá-lo
+      
+      
+        3
+        resultString = "GameUploadSuccess
+        dados de cloud_string_save() ou cloud_file_save() foi carregado com sucesso para a nuvem
+      
+      
+        -n
+        errorString = Descrição do erro
+        Qualquer outro número negativo significa uma falha de sincronização
+      
+    
+  
+   
+  Sintaxe:
+  cloud_synchronise();
+   
+  Devoluções:
+  Real
+   
+  Exemplo ampliado:
+  Esta função seria chamada em um evento como o Game Start Event ou em um objeto que é colocado na primeira sala de seu jogo, com a idéia de que você verifique o blob de dados atual do servidor da nuvem para ver se ele está
+    data ou não.
+  cloud_check = cloud_synchronise();
+  Você então gostaria de verificar o Mapa DS retornado no evento da nuvem assíncrona para obter o status e a string retornada, se houver, com algo como o seguinte código:
+  if ds_map_find_value(async_load, "id") == cloud_check {
+     if ds_map_find_value(async_load, "status") < 0 {
+     show_message_async("Cloud Services not available. Please check connectivity."); }
+     else
+     {
+     if ds_map_find_value(async_load, "status") == 0 {
+     var file = file_text_open_write("Save.txt"); file_text_write_string(file, ds_map_find_value(async_load, "resultString")); file_text_close(file);
+     }
+     }
+     }
+  
+  O código acima verifica se a chamada de função assíncrona correta está sendo revisada e, em seguida, continua para obter o status do mapa DS da nuvem retornada. se o status for um número negativo, algo deu errado e o usuário é informado, caso contrário
+    o código continuará e recuperará os dados sincronizados e os escreverá em um arquivo de texto para uso posterior.
+   
+   
+   
+  
+    
+      
+        Voltar: Economia de nuvens
+        Próximo: cloud_string_save
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

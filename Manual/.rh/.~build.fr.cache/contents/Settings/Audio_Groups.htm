@@ -1,0 +1,39 @@
+
+  
+  Grupos de áudio
+  O Gerente do Grupo de Áudio está disponível no menu Ferramentas no IDE. Aqui você pode
+   adicionar, excluir e renomear Grupos de Áudio, bem como definir suas opções de exportação de plataforma. O GameMaker Studio 2 permite atribuir cada um dos recursos de áudio (efeitos sonoros e música) a diferentes grupos de áudio
+    para tentar otimizar o número de sons que estão sendo tocados a qualquer momento, assim como dar-lhe mais controle sobre para que plataformas eles são exportados.
+  Para definir um grupo de áudio você precisa clicar em  no botão Add New que criará um novo grupo que você poderá então nomear. Para mudar o grupo,
+    clique em  no menu suspenso e selecione aquele que você deseja editar.
+  NOTA: Se você selecionar o áudio streamed para um som no Editor de Som, você não poderá atribuir o som a um Grupo de Áudio, pois os sons streamed não são empacotados da mesma forma que os outros
+    sons e você tem controle total sobre quando eles são carregados, tocados e descarregados usando código.
+  Para adicionar um som a um grupo de áudio, você precisa abrir o Editor de Som para esse som e então selecionar o grupo a partir da opção que você encontrará lá, ou alternativamente você pode adicionar ativos a um grupo de áudio através de
+    o botão direito do mouse  no menu do Navegador de Ativos. Você pode selecionar um ou mais ativos sonoros (ou
+    uma pasta de grupo de ativos inteira) e depois use o menu RMB para adicionar os sons a qualquer grupo. Você também pode clicar no botão Adicionar Recurso na parte inferior do Editor de Grupo de Áudio para adicionar ativos dessa forma.
+  Uma vez que você tenha um som adicionado a um grupo de áudio personalizado, então você pode usar esta janela para escolher seletivamente para qual plataforma exportar aquele som. Pode ser que por padrão você tenha todos os seus sons com a mais alta qualidade, mas para HTML5 (por exemplo)
+    você quer usar um arquivo de som de qualidade inferior para usar menos memória. Nesse caso, você adiciona os arquivos de qualidade inferior ao GameMaker Studio 2 e depois os atribui a um novo grupo de áudio. Você então selecionaria esse grupo de áudio no menu suspenso e definiria
+    para exportar somente para HTML5, e remover a exportação de HTML5 das opções de exportação do grupo de áudio de maior qualidade. É importante notar que você não pode alterar as opções de exportação para o grupo de áudio "padrão" e que ele sempre
+    ser exportado para todas as plataformas disponíveis quando se constrói um pacote final de jogo.
+  Uma vez que você tenha definido grupos de áudio e atribuído sons a eles, você pode vê-los na lista à esquerda quando você seleciona o grupo. Haverá sempre um grupo de áudio "padrão" disponível e todos os sons que estão dentro deste grupo estarão sempre
+    ser incluídos no pacote do jogo para todas as plataformas e todos eles serão carregados na memória ao iniciar (a menos que marcados como "streamed" nas propriedades do Sound Editor), mas quando você cria um grupo de áudio personalizado, os arquivos que são adicionados a ele
+   não será carregado na memória até que você chame a função audio_group_load(). Desta forma, você pode controlar
+    que áudio é residente na memória a qualquer momento. Observe também que para todas as funções do grupo de áudio, você precisará fornecer o valor de identificação do grupo de áudio.
+    Este é simplesmente o nome que você deu ao grupo de áudio.
+  Os grupos de áudio também estão vinculados às configurações. Ao selecionar uma configuração, você pode então abrir a janela Grupos de Áudio e selecionar os alvos de exportação do lado direito para essa configuração, e
+    então, a mudança de configurações mudará esses objetivos de saída. Note que não é possível definir recursos sólidos para grupos diferentes por configuração, apenas a meta de exportação para o grupo em questão.
+   
+   
+   
+  
+    
+      
+        Voltar: Configurações do jogo
+        A seguir: Grupos de Textura
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

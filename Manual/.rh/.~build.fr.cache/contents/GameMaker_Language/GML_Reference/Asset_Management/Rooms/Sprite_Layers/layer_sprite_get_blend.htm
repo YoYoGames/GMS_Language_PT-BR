@@ -1,0 +1,45 @@
+
+  
+  layer_sprite_get_blend
+  Esta função pode ser usada para obter a cor da mistura do elemento sprite. Você dá o ID do elemento sprite (que você obtém quando cria um elemento sprite usando layer_sprite_create() ou quando você usa a função
+    layer_sprite_get_id()), e a função retornará um valor real que representa a cor atribuída.
+   
+  Sintaxe:
+  layer_sprite_get_blend(sprite_element_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sprite_element_id
+        O valor de identificação único do elemento sprite para obter as informações de
+      
+    
+  
+   
+  Devoluções:
+  Valor da cor (Real)
+   
+  Exemplo:
+  var lay_id = layer_get_id("sprite_sky"); var back_id = layer_sprite_get_id(lay_id, "Clouds"); if layer_sprite_get_blend(back_id) == c_white {
+     layer_sprite_blend(back_id, make_colour_rgb(random(255), random(255), 255)); }
+  
+  O código acima obterá a identificação da camada chamada "sprite_sky" e depois a utilizará para obter a identificação do elemento sprite naquela camada. Este ID é então usado para verificar a cor da mistura do elemento e se ela é equivalente à constante c_branco,
+    então a mistura de elementos é definida para uma cor aleatória.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de Sprite
+        Próximo: layer_sprite_get_alpha
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

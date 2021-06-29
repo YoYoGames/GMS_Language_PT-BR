@@ -1,0 +1,48 @@
+
+  
+   Se houver algum objeto no local
+  Esta ação é usada para verificar e ver se há uma instância de qualquer objeto colocado em uma posição com base na máscara de colisão da instância de chamada. Você dá a posição, que pode ser uma posição absoluta ou uma posição relativa à instância,
+    e a ação voltará a ser verdadeira se houver uma colisão ou falsa se não houver. Você também pode verificar a bandeira "Não" para verificar se não há uma colisão na posição determinada, e a ação retornará verdadeira se não for encontrada nenhuma colisão e falsa se não houver. As colisões são calculadas com base na máscara de colisão da instância de chamada sobreposição da máscara de colisão de qualquer instância na posição (como se ela estivesse sendo "colocada" na posição).
+  IMPORTANTE! As colisões só serão registradas para aquelas instâncias que possuem uma máscara de colisão válida, ou seja: elas possuem um duende atribuído ao sprite_index, ou um duende atribuído ao mask_index. Se qualquer uma das instâncias em
+    a colisão não tem máscara de colisão então a colisão não será detectada, independentemente do que a instância estiver desenhando no momento.
+  Note que para adicionar ações em um bloco "if", elas devem ser descartadas ao lado da ação, como mostrado na imagem abaixo:
+  
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A posição x para verificar
+      
+      
+        y
+        A posição y para verificar
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima verifica se há uma colisão na posição em que a instância
+    é colocado e se for encontrado, mistura-se a instância com o vermelho, caso contrário deixa a mistura como normal (branco).
+   
+   
+   
+  
+    
+      
+        Voltar: Ações de colisão
+        A seguir: Se objeto no local
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

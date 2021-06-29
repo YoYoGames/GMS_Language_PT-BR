@@ -1,0 +1,44 @@
+
+  
+  fundo_camada_get_vtiled
+  Esta função pode ser usada para descobrir se o elemento de fundo está ou não ladrilhado verticalmente. Você dá a identificação do elemento de fundo (que você obtém quando cria um elemento de fundo usando layer_background_create()    ou quando você usa a função layer_background_get_id()), e a função retornará ou verdadeira se o elemento estiver atualmente azulejado, ou falsa se não estiver.
+   
+  Sintaxe:
+  layer_background_get_vtiled(background_element_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        background_element_id
+        O valor único de identificação do elemento de fundo para obter as informações de
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var lay_id = layer_get_id("Background_sky"); var back_id = layer_background_get_id(lay_id); if !layer_background_get_vtiled(back_id) {
+     layer_background_vtiled(back_id, true); }
+  
+  O código acima obterá a identificação da camada chamada "Background_sky" e depois a usará para obter a identificação do elemento de fundo nessa camada. Este ID é então usado para verificar se o elemento está em mosaico através do eixo vertical, e se está
+    não então está programado para fazer isso.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de fundo
+        Próximo: fundo_camada_esticar_esticar_esticar
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

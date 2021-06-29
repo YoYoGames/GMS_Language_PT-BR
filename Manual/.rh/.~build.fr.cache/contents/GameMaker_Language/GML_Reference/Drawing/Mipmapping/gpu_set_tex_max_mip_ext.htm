@@ -1,0 +1,51 @@
+
+  
+  gpu_set_tex_max_mip_ext
+  Com esta função você pode obter o nível máximo de mipmap atualmente definido, que deve ser usado para um determinado amostrador de sombreamento. Você fornece o valor do índice para o amostrador de shader (como retornado pela função shader_get_sampler_index(),
+    e a função retornará o nível máximo atual do mipmap, onde um valor de 0 é a maior resolução, 1 é usar o primeiro mipmap, 2 é o segundo etc... Note que isto pode ser bastante útil para evitar sangramento de artefatos ao renderizar texturas,
+    por exemplo, ajustar a borda da página de textura para 8px e depois ajustar o nível máximo do mipmap para 3 garantirá que você não terá nenhum problema de sangramento a distâncias maiores de renderização.
+   
+  Sintaxe:
+  gpu_set_tex_max_mip_ext(sampler_index, maxmip);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice_de_amostragem
+        O índice do amostrador de sombreamento para obter
+      
+      
+        maxmip
+        O valor máximo de nível mipmap a ser usado (padrão: 16)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var _sampleIndex = shader_get_sampler_index(shd_Glass, "s_Background"); var _spriteTex = sprite_get_texture(sprite_index, 0); shader_set (shd_Glass);
+     if gpu_get_tex_max_mip_ext(_sampleIndex) != 4 {
+     gpu_set_tex_max_mip_ext(_sampleIndex, 4); }
+     text_set_set_stage(_sampleIndex , _spriteTex); shader_reset();
+  
+  O código acima define o nível máximo do mipmap para 4 para o amostrador de textura de sombreamento dado, caso ainda não tenha sido definido para 4.
+   
+   
+   
+  
+    
+      
+        Voltar: Mipmapping
+        Próximo: gpu_set_tex_max_aniso
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

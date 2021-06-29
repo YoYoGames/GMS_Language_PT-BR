@@ -1,0 +1,85 @@
+
+  
+  os_device
+  Esta variável somente leitura contém um dos vários valores constantes listados abaixo para lhe dizer em qual dispositivo você está atualmente rodando o jogo. Note que esta variável é depreciada em favor da função os_get_info()    que retorna informações mais precisas sobre o dispositivo que executa o jogo.
+   
+  Sintaxe:
+  os_device
+   
+  Devoluções:
+  Constante
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        dispositivo_ios_ipad
+        iPad
+      
+      
+        dispositivo_ios_ipad_retina
+        iPad mais recente com tamanho de tela Retina de 2048 x 1536
+      
+      
+        device_ios_iphone6
+        iPhone6 com tamanho de tela 1334 x 750
+      
+      
+        device_ios_iphone6plus
+        iPhone maior 6 com display 1920 x 1080
+      
+      
+        device_ios_iphone5
+        iPhone5 com tamanho de tela 640 x 1136)
+      
+      
+        dispositivo_ios_iphone
+        iPhone/iPod Touch mais antigo (480 x 320 tela) ou telefone Android 
+      
+      
+        dispositivo_ios_iphone_retina
+        Novo iPhone/iPod Touch com tela Retina de 960 x 640
+      
+      
+        dispositivo_emulador
+        O dispositivo é na verdade um emulador(Windows Phone ou Android)
+      
+      
+        device_tablet
+        TábuaAndroid 
+      
+      
+        device_ios_unknown
+        Desconhecido ou não iOS
+      
+    
+  
+   
+  Exemplo:
+  if (os_browser = browser_not_a_browser) {
+     switch (os_device) {
+     caixa device_ios_ipad: global.Config = 2; pausa; caixa device_ios_iphone: global.Config = 3; pausa; caixa device_ios_iphone_retina: global.Config = 4; pausa; caixa device_ios_unknown: global.Config
+    = 5; pausa; }
+     }
+     mais
+     {
+     global.Config = 1; }
+  
+  O código acima verifica se o jogo está sendo executado em um navegador ou não e define uma variável global para um valor, dependendo do resultado da verificação.
+   
+   
+   
+  
+    
+      
+        Voltar: OS E Compilador
+        Próximo: os_type
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

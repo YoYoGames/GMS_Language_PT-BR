@@ -1,0 +1,47 @@
+
+  
+  lista_esqueleto_da_capa
+  Com esta função você pode preencher uma lista DS (pré-criada) com todos os nomes das peles incluídos como parte da animação do esqueleto sprite. Os nomes serão cordas e podem então ser
+    usado nas outras funções de pele de animação do esqueleto para estes tipos de duendes.
+   
+  Sintaxe:
+  skeleton_skin_list(sprite, list);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sprite
+        O índice sprite da animação do esqueleto da coluna vertebral para obter a lista.
+      
+      
+        lista
+        A identificação da lista DS a ser preenchida com os nomes da animação.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var list = ds_list_create(); skeleton_skin_list(sprite_index, list); var num = ds_list_size(list); skeleton_skin_set(list[| irandom(num - 1))); ds_list_destroy(list);
+  
+  O código acima cria uma lista DS e depois a preenche com os nomes da pele. Uma lista aleatória é então escolhida e aplicada à instância antes que a lista seja destruída.
+   
+   
+   
+  
+    
+      
+        Voltar: Peles
+        A seguir: esqueleto_esqueleto_aparelhagem_esqueleto
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

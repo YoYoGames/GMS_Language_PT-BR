@@ -1,0 +1,47 @@
+
+  
+  gamepad_button_value
+  Com esta função você pode obter o valor atual de um botão analógico, de 0 a 1, onde 0 é sem pressão e 1 é pressão total. Você fornece o índice de ranhura do gamepad para verificar, juntamente com uma constante de botão (como listado aqui),
+    ou um valor inteiro entre 0 e gamepad_button_count() -1.
+  Note que isto retornará o valor bruto para o botão, e não leva em conta a configuração para o limiar (veja aqui para mais informações sobre limiares).
+   
+  Sintaxe:
+  gamepad_button_value(dispositivo, botão);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dispositivo
+        Qual dispositivo de controle de jogo "slot" a ser verificado.
+      
+      
+        botão
+        Qual botão do gamepad é constante a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  speed = gamepad_button_value(0, gp_shoulderrb) * 4;
+  O código acima usa o valor do gatilho analógico do controle de jogo conectado ao dispositivo "slot" 0 para definir a velocidade da instância.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada Gamepad
+        Próximo: gamepad_hat_count
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

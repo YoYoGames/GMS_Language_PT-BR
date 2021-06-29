@@ -1,0 +1,74 @@
+
+  
+  vapor_download_scores
+  Esta função é utilizada para recuperar uma gama seqüencial de entradas por ranking de leaderboard. Os parâmetros start_idx e end_idx controlam o intervalo de posições solicitado, por exemplo, você pode exibir os 10 primeiros lugares em um quadro de classificação para
+    seu jogo ajustando o valor inicial para 1 e o valor final para 10. O nome do quadro de líderes é uma string que foi definida quando você criou o quadro de líderes usando a função steam_create_leaderboard(),
+    e a função retornará um valor que pode então ser usado para identificar a chamada de retorno no EventoSteam Async, ou retornará -1 se tiver falhado. Note que quando
+    baixando um quadro de líderes, a chave "entradas" do async_load mapa pode ter uma chave de "dados" adicional se algum dado buffer adicional foi
+    carregado junto com a pontuação(ver steam_upload_buffer_score_buffer()). Este buffer de dados será codificado na Base 64 e, portanto, você precisará usar a função buffer_base64_decode()    no buffer antes de ler os dados.
+   
+  Sintaxe:
+  steam_download_scores(lb_name, start_idx, end_idx);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        lb_nome
+        O nome do quadro de líderes do qual você está baixando as pontuações (um fio).
+      
+      
+        start_idx
+        A posição inicial dentro da tabela de liderança.
+      
+      
+        end_idx
+        A posição final dentro da tabela de liderança.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo ampliado:
+  Neste exemplo ampliado, solicitaremos a classificação dos dez primeiros colocados para o ranking e analisaremos seus resultados no EventoSteam Async. para começar, precisamos solicitar as pontuações com o seguinte código:
+  score_get = vapor_download_scores("Game Scores", 1, 10);
+  Isto enviará um pedido para o Steam Server para as pontuações do quadro de líderes "Scores do jogo", armazenando a identificação assimétrica do pedido na variável "score_get". isto será então tratado no Evento Steam Async da seguinte maneira
+  var async_id = ds_map_find_value(async_load, "id"); if async_id == score_get {
+     var entries = ds_map_find_value(async_load, "entries"); var map = json_decode(entries); if ds_map_exists(map, "default") {
+     ds_map_destroy(mapa);
+     saída;
+     }
+     mais
+     {
+     var list = ds_map_find_value(map, "entries"); var len = ds_list_size(list); var entry; for(var i = 0; i < len; i++;) {
+     entry = ds_list_find_value(list, i ); steam_name[i] = ds_map_find_value(entry, "name"); steam_score [i]= ds_map_find_value(entry, "score"); steam_rank[i] = ds_map_find_value(entry, "score"),
+    "ranking"); }
+     }
+     ds_map_destroy(mapa)
+     }
+  
+  O que fazemos aqui é verificar primeiro a chave "id" do mapa DS especial de assim-chamada. Se este valor for o mesmo que o valor da função call-back original (armazenado na variável "score_get"), então continuamos a processar o
+    dados. A primeira coisa que fazemos é analisar o mapa ds_load assimétrico para as "entradas" chave que conterá um objeto JSON contendo os dados do quadro de líderes. Este objeto JSON é então decodificado (ver json_decode())
+    como outro mapa DS, e esta nova identificação de mapa é armazenada na variável "mapa".
+  Este mapa é verificado quanto à chave "padrão" e se esta for encontrada, então o mapa é destruído e o evento é encerrado. Se nenhuma chave "padrão" for encontrada, o código então analisará o mapa para extrair as informações necessárias sobre o quadro de líderes,
+    primeiro extraindo uma lista DS da chave "entradas" do mapa DS, e depois fazendo um looping através de cada entrada da lista para obter outro mapa DS com o nome, pontuação e classificação de cada entrada. Estes valores são então armazenados em arrays.
+  Uma vez terminado o loop, o mapa JSON DS é destruído (que, por sua vez, destrói todos os mapas e listas internas). Não há necessidade de destruir o mapa DS async_load, pois este é tratado para você pelo GameMaker Studio 2.
+   
+   
+   
+  
+    
+      
+        Voltar: Painéis de Liderança
+        Próximo: vapor_download_scores_around_utilizador
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

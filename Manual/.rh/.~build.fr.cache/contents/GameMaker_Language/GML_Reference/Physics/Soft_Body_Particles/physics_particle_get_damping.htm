@@ -1,0 +1,31 @@
+
+  
+  fisica_particle_get_damping
+  Com esta função você pode descobrir qual é o amortecimento linear atual para partículas na simulação física (você pode definir este valor usando physics_particle_set_damping()).
+   
+  Sintaxe:
+  physics_particle_get_damping()
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  if (physics_particle_get_damping() < 1) {
+     physics_particle_set_damping(physics_particle_get_damping() + 0.01); }
+  
+  O código acima verificará o valor de amortecimento atual para todas as partículas do sistema e se for inferior a 1, então acrescentará 0,01 a ele.
+   
+   
+   
+  
+    
+      
+        Voltar: Partículas macias do corpo
+        A seguir: escala_de_partícula_esquema_de_gravura_física
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

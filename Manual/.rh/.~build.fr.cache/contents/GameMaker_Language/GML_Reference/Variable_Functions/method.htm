@@ -1,0 +1,51 @@
+
+  
+  método
+  Com esta função você pode vincular qualquer função que tenha sido previamente definida a uma determinada instância ou estrutura, criando uma variável de método que pode
+    ser usado mais tarde. Você fornece a identificação da instância a ser usada ( deve ser uma instância que esteja ativa e na sala, e não pode ser uma identificação de objeto) ou uma referência estrutural, assim como a identificação da função que você deseja vincular.
+    A função retornará um método que pode ser chamado a partir da variável à qual está atribuída (veja o exemplo de código abaixo). Vale notar que é possível vincular funções embutidas, assim como funções de usuário.
+    funções definidas, e você também pode fornecer indefinido como o argumento instância/estrutura, o que significa que o atual auto escopo
+    ser usado para a encadernação.
+   
+  Sintaxe:
+  método(struct_ref_ou_instance_id, função);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        struct_ref_ou_instance_id
+        A referência única ou valor de identificação da estrutura ou instância a usar (ou não definida para si mesmo)
+      
+      
+        função
+        A identificação da função a ser utilizada
+      
+    
+  
+   
+  Devoluções:
+  Método
+   
+  Exemplo:
+  var _inst = instance_position(mouse_x, mouse_y, obj_Enemy); se instance_exists(_inst) {
+     enemy_func = método(_inst, enemy_ai); }
+  
+  O código acima verificará se uma instância existe na posição dada e se ela faz, então uma função é ligada à instância e retornada como a variável do método "enemy_func".
+   
+   
+   
+  
+    
+      
+        Voltar: Funções variáveis
+        Próximo: o próprio método_get_self
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

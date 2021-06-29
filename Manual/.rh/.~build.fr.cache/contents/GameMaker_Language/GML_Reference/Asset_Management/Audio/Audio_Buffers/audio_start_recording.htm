@@ -1,0 +1,52 @@
+
+  
+  audio_start_recording
+  Esta função começará a gravar áudio a partir da fonte indexada do gravador. Você pode obter o número de fontes do gravador usando a função audio_get_recorder_count()e quando você começar a gravar o
+    O áudio será armazenado em um buffer temporário e começará a disparar um Evento Assíncrono de Gravação de Áudio. Este evento é acionado a cada passo que a gravação
+    ocorre e irá criar o mapa especial DS na variável async_load com o seguinte
+    pares chave/valor:
+  
+    "buffer_id" - a identificação do buffer temporário que você pode usar para recuperar os dados de áudio
+    "channel_index" - o índice do canal de gravação (como retornado pela função) de onde vieram estes dados
+    "data_len" - o comprimento dos dados (em bytes) que você recebeu
+  
+  Observe que após o evento assíncrono ter sido acionado, o áudio no buffer temporário será apagado, portanto você deverá copiar seus dados em um buffer personalizado que você tenha criado anteriormente.
+  NOTA: A maioria das plataformas , exceto HTML5, suporta a gravação de áudio de alguma forma, mas isso não significa que todos os dispositivos o permitam, mesmo que a plataforma o permita, então você deve sempre verificar se o audio_get_recorder_count()    retorna um valor maior que 0 para verificar se os dispositivos de gravação estão disponíveis antes de utilizar o restante das funções de gravação.
+   
+  Sintaxe:
+  audio_start_recording(recorder_index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        recorder_index
+        O índice da fonte do registrador a ser utilizado.
+      
+    
+  
+   
+  Devoluções:
+  Real (Buffer ID)
+   
+  Exemplo:
+  audio_record = audio_start_recording(0);
+  O código acima começa a gravar a partir da fonte do gravador 0, armazenando o índice de canal da gravação na variável "audio_record" para uso no evento assíncrono de gravação de áudio.
+   
+   
+   
+  
+    
+      
+        Voltar: Buffers de áudio
+        A seguir: Audio_stop_recording
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

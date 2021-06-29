@@ -1,0 +1,53 @@
+
+  
+  gpu_get_cullmode
+  Esta função pode ser usada para recuperar o modo de abate na face traseira. O valor retornado será uma das seguintes constantes (o valor padrão é cull_noculling):
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        cull_noculling
+        Nenhum abate será feito
+      
+      
+        cull_clockwise
+        Todos os triângulos no sentido horário serão abatidos
+      
+      
+        cull_counterclockwise
+        Todos os triângulos no sentido anti-horário serão abatidos
+      
+    
+  
+   
+  Sintaxe:
+  gpu_get_cullmode();
+   
+  Devoluções:
+  Constante (ver acima para constantes)
+   
+  Exemplo:
+  if gpu_get_cullmode() != cull_clockwise {
+     gpu_set_cullmode(cull_clockwise);
+     }
+  
+  O código acima obtém o modo cull atual e se não for no sentido cull_clockwise, é ajustado para essa constante.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle de GPU
+        Próximo: gpu_get_blendmode
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

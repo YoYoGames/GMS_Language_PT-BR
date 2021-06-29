@@ -1,0 +1,50 @@
+
+  
+  layer_background_sprite
+  Usando esta função, você pode definir o índice sprite do elemento de fundo. Você fornece o ID do elemento de fundo (que você obtém quando cria um elemento de fundo usando layer_background_create() ou
+    quando você usa a função layer_background_get_id()), e depois dar um índice sprite para ser usado. A imagem do elemento de fundo será substituída pelo novo sprite. Se você der um valor de -1, o elemento
+    não terá um duende designado (mas ainda existirá e poderá ter um duende designado novamente mais tarde).
+   
+  Sintaxe:
+  layer_background_sprite(background_element_id, sprite_index)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        background_element_id
+        O valor de identificação único do elemento de fundo a ser mudado
+      
+      
+        sprite_index
+        O índice sprite do duende a ser usado para o elemento de fundo
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var lay_id = layer_get_id("Background_sky"); var back_id = layer_background_get_id(lay_id); if layer_background_get_sprite(back_id) != spr_Clouds {
+     layer_background_sprite(back_id, spr_Clouds); }
+  
+  O código acima obterá a identificação da camada chamada "Background_sky" e depois a utilizará para obter a identificação do elemento de fundo nessa camada. Este ID é então usado para verificar o duende atribuído ao elemento, definindo-o para o duende "spr_Clouds".
+    se ainda não o for.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de fundo
+        Próximo: fundo_camada_cortado
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

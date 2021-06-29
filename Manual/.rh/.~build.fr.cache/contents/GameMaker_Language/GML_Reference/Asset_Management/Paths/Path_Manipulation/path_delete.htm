@@ -1,0 +1,48 @@
+
+  
+  path_delete
+  Você pode usar este código para remover um caminho da memória. Se este caminho tiver sido criado dinamicamente usando path_add()a variável que contém o índice do caminho não será mais válida para acessar o caminho, pois não mais
+    existe, e se o caminho foi criado usando o Path Editor, esse caminho não pode mais ser acessado em todo o jogo, pois você o está apagando permanentemente.
+   
+  Sintaxe:
+  path_delete(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do caminho a ser excluído.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+   
+  var t_path = path_add(); if mp_grid_path(grid, t_path, x, y, obj_Player.x, obj_Player.y, 1) {
+     path_assign(mypath, t_path); }
+     path_delete(t_path);
+  
+  O código acima irá criar um caminho e armazenar seu índice em uma variável local. Este caminho é então usado para armazenar um mp_grid_path() caminho gerado que, se for bem sucedido
+    ao encontrar seu caminho até o alvo, é então atribuído ao caminho indexado em "mypath". Finalmente, o "t_caminho" é excluído.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação do caminho
+        Próximo: Path_duplicate
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

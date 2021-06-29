@@ -1,0 +1,62 @@
+
+  
+  A estrutura de dados do Keyframe 
+  Quando você define uma estrutura dequadro-chave para uma pista, você também precisa definir os dados que serão associados a ela. Isto é composto de canais diferentes, e a cada canal pode ser dado um
+    tipo de dados, dependendo do tipo de pista para a qual você está definindo os dados do quadro-chave. Estas propriedades são:
+  
+    canal: Este é o canal ao qual os dados do quadro-chave devem ser aplicados. É um valor inteiro positivo começando em 0, e vale a pena notar que ao criar faixas de parâmetros para os quadros-chave de "posição" ou "escala",
+      então você precisa usar valores de canal muito específicos. Estes são: canal 0 é a posição X ou a escala X, canal 1 é a posição Y ou a escala Y.
+    spriteIndex: O índice do bem sprite a ser utilizado para a pista. Este bem só está disponível para pistas do tipo seqtracktype_graphic e você pode obtê-lo ou configurá-lo.
+    somIndex: O índice do ativo de áudio a ser utilizado para a faixa. Esta propriedade está disponível apenas para faixas do tipo seqtracktype_audio e você pode obtê-lo ou configurá-lo.
+    playbackMode: O modo de reprodução para o som. Esta propriedade está disponível apenas para faixas do tipo seqtracktype_audio e você pode obtê-lo ou configurá-lo. A propriedade deve ser uma das seguintes constantes:
+  
+  
+    
+      
+        Constante
+        Descrição
+        Valor
+      
+      
+        seqaudiokey_loop
+        O som será emitido em loop quando tocado.
+        0
+      
+      
+        seqaudiokey_oneshot
+        O som só tocará uma vez e depois parará.
+        1
+      
+    
+  
+   
+  
+    curva: Esta propriedade requer uma estrutura de curva de animação (veja aqui para mais informações) e só está disponível para pistas do tipo seqtracktype_real. Se não houver estrutura de curva
+      é usado, então o valor para este imóvel será -1.
+    valor: Esta propriedade é simplesmente um valor que está associado ao canal de dados do quadro-chave, e só está disponível para pistas do tipo seqtracktype_real quando não há estrutura de curva 
+      é fornecido.
+    cor: Esta propriedade retorna (ou requer, se for definida) uma matriz para o valor da cor do quadro-chave com o formato [A, R, G, B]. Isto só está disponível para faixas do tipo seqtracktype_colour.
+      Note que os valores para cada componente devem ser expressos entre 0 e 1, onde 0 corresponde ao valor HEX #00 e 1 corresponde ao valor HEX #FF (0 - 255 como mostrado no seletor de cores para faixas de cores no Editor de Seqüências).
+    seqüência: Esta propriedade retornará (ou requer, se for definida) uma estrutura de objetos de seqüência e só está disponível para pistas do tipo seqtracktype_sequence.
+    objetoIndex: Esta propriedade retornará (ou requer, se for definida) um índice de objetos e só está disponível para pistas do tipo seqtracktype_instance.
+    eventos: Esta propriedade permite o acesso aos eventos e mensagens transmitidas associadas à estrutura de dados do quadro-chave. Você pode obter ou definir esta propriedade, e ao obtê-la uma
+      é devolvido um conjunto de cordas, e ao defini-lo deve ser especificado um conjunto de cordas. Para mais informações sobre eventos, consulte a seção Eventos e Momentos Sequenciais. Este
+      só está disponível para pistas do tipo seqtracktype_message.
+    evento: Esta propriedade retornará (ou pode ser definida para) o método associado com a estrutura de dados do quadro-chave. Se nenhum método tiver sido especificado ou se você desejar remover
+      Esta propriedade só está disponível para pistas do tipo seqtracktype_moment.
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Sequências
+        A seguir: A estrutura sequencial do objeto
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

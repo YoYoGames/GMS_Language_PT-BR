@@ -1,0 +1,50 @@
+
+  
+  ds_grid_get
+  Esta função pode ser usada para obter o valor (seja um número real ou uma string) de qualquer célula dentro da grade DS dada. Se você passar coordenadas de grade inválidas para a função, então o valor retornado será indefinido e um erro será mostrado
+    na janela de saída.
+   
+  Sintaxe:
+  ds_grid_get(índice, x, y);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice da grade.
+      
+      
+        x
+        A posição x da célula da qual você quer encontrar o valor.
+      
+      
+        y
+        A posição y da célula da qual você quer encontrar o valor.
+      
+    
+  
+   
+  Devoluções:
+  Real ou String
+   
+  Exemplo:
+  var xx = irandom(ds_grid_width(grid) - 1); var yy = irandom(ds_grid_height(grid) - 1); val = ds_grid_get(grid, xx, yy)
+  O código acima seleciona uma célula aleatória da grade DS indexada na variável "grid" e armazena seu valor na variável "val".
+   
+   
+   
+  
+    
+      
+        Voltar: Grades DS
+        Próximo: ds_grid_get_max
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

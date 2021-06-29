@@ -1,0 +1,46 @@
+
+  
+  layer_background_destroy
+  Esta função destruirá o elemento de fundo dado. Você fornece a identificação do fundo (que você obtém quando cria o fundo usando layer_background_create() ou quando você usa a identificação por camadas ao longo
+    com layer_get_background_id()) e isto irá removê-lo. Note que isto não remove a camada, apenas o fundo da mesma, e se o fundo for um fundo que foi adicionado na sala
+    editor, então na próxima vez que você sair da sala e depois voltar, o fundo será recriado novamente. Entretanto, se a sala for persistente, o fundo será removido, a menos que a persistência da sala seja desligada novamente.
+   
+  Sintaxe:
+  layer_background_destroy(background_element_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        background_element_id
+        O valor único de identificação do fundo a ser destruído
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var lay_id = layer_get_id("Background_trees"); var bck_id = layer_background_get_id("Forrest"); se layer_background_exists(lay_id, bck_id) {
+     layer_background_destroy(bck_id);
+     }
+  
+  O código acima verifica a camada "Background_trees" para ver se o elemento de fundo dado existe e se ele existe, então ele é destruído (mas não a camada).
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de fundo
+        Próximo: fundo_camada_visível
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

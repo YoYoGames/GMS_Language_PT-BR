@@ -1,0 +1,54 @@
+
+  
+  part_emitter_burst
+  Esta função permite definir um emissor para rebentar um tipo específico de partícula e é tipicamente usada em alarmes e destruir eventos, pois é um código único que cria o número de partículas especificadas de uma só vez, seguindo a distribuição, forma e
+    posição definida pela função part_emitter_region(). Caso você precise que as partículas apareçam a cada passo, você deve estar usando a função part_emitter_stream()    em vez de chamar esta função a cada passo.
+   
+  Sintaxe:
+  part_emitter_burst(ps, ind, parttype, part number);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ps
+        O sistema de partículas em que está o emissor.
+      
+      
+        ind
+        O índice do emissor a partir do qual o emissor irrompe.
+      
+      
+        tipo de peça
+        O índice (tipo) das partículas a serem criadas.
+      
+      
+        número
+        O número de partículas a criar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  part_emitter_burst(global. Sname, p_emit1, p1, 30 + irandom(30));
+  O código acima irá estourar um número aleatório de partículas entre 30 e 60 do emissor escolhido.
+   
+   
+   
+  
+    
+      
+        Voltar: Emissores de Partículas
+        Próximo: part_emitter_stream
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

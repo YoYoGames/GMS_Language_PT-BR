@@ -1,0 +1,68 @@
+
+  
+  surface_set_target
+  Com esta função, você define todos os desenhos adicionais para a superfície alvo em vez da tela e desta forma você pode dizer ao GameMaker Studio 2 para desenhar apenas coisas específicas para a superfície especificada. Observe que se você não chamar surface_reset_target()    depois de terminar, nada será desenhado na tela, pois todos os outros desenhos (mesmo em outros casos) serão feitos na superfície. Você também deve perceber que nada será visto se a própria superfície não for desenhada na tela no desenho.
+    evento de uma instância. Você pode verificar o valor de retorno desta função também como uma ferramenta de depuração para verificar se o alvo de superfície foi definido ou não, sendo que um valor de retorno de 0 é uma falha na definição do alvo e qualquer outro valor positivo é um sucesso.
+  Uma coisa que deve ser notada é que as superfícies são empilhadas para que você não possa pular de alvo em alvo e depois reiniciar para o alvo normal de extração no final, mas sim abrir e fechar os alvos de renderização. Por exemplo, isto não funcionará corretamente:
+  surface_set_target(surf1); draw_text(32, 32, "surface1"); surface_set_target(surf2);
+     draw_text(32, 64, "surface2"); surface_reset_target();
+  
+  Em vez disso, você deve redefinir o alvo para cada uma das superfícies que você definir, assim como você deve usar parênteses de abertura e fechamento {} para blocos de código. Portanto, o acima deve ser escrito assim:
+  surface_set_target(surf1); draw_text(32, 32, "surface1"); surface_reset_target();
+     surface_set_target(surf2);
+     draw_text(32, 64, "surface2"); surface_reset_target();
+  
+  ou como este:
+  surface_set_target(surf1); draw_text(32, 32, "surface1"); surface_set_target(surf2);
+     draw_text(32, 64, "surface2"); surface_reset_target();
+     surface_reset_target();
+  
+  NOTA: Quando se trabalha com superfícies há a possibilidade de que elas possam deixar de existir a qualquer momento devido ao fato de serem armazenadas na memória de textura. Você deve SEMPRE verificar se uma superfície existe usando superfície_existe()    antes de referenciá-los diretamente.
+   
+  Sintaxe:
+  surface_set_target(surface_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        surface_id
+        A identificação da superfície a ser definida como alvo do desenho.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se view_current = 0 {
+     surface_set_target(surf);
+     com (obj_Effect) {
+     draw_self();
+     }
+     surface_reset_target();
+     }
+     mais
+     {
+     draw_surface(surf, 0, 0); }
+  
+  O código acima verificará para ver qual vista está sendo desenhada atualmente, e se é vista[0] ele define o alvo de sorteio para uma superfície e desenha todas as instâncias do objeto "obj_Effect" antes de redefinir o alvo de sorteio novamente. Se a vista não for visualizada[0].
+    a superfície é atraída para a tela.
+   
+   
+   
+  
+    
+      
+        Voltar: Superfícies
+        Próximo: superfície_set_alvo_ext_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,48 @@
+
+  
+  velocidade_escrita_por_camada
+  Esta função pode ser usada para definir a velocidade de uma imagem animada que tenha sido atribuída a um elemento sprite. Você dá o ID do elemento sprite (que você obtém quando cria um elemento sprite usando layer_sprite_create()    ou quando você usa a função layer_sprite_get_id()), e então definir a velocidade da animação. Se a IDE definiu a velocidade de animação para o duende costumava ser calculada como Frames Por Frame de Jogo, então a velocidade
+    O valor dado é um multiplicador, sendo 1 o valor padrão, e definindo-o como 0,5 será metade da velocidade da animação, enquanto que definindo-o como 1,5 será o dobro. Entretanto, se a IDE tiver definido a velocidade de animação para o sprite usado para ser calculado como
+    Frames Por Segundo, então o valor da velocidade dada é um valor literal de frames por segundo, então definindo este valor como 5, por exemplo, ajustará a animação para loop 5 frames a cada segundo que o jogo for executado. Se o sprite utilizado não tiver sub-imagens, esta função irá
+    não têm nenhum efeito.
+   
+  Sintaxe:
+  layer_sprite_speed(sprite_element_id, speed);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sprite_element_id
+        O valor de identificação único do elemento sprite a mudar
+      
+      
+        velocidade
+        O multiplicador de velocidade/valor a ser usado para o elemento
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var lay_id = layer_get_id("Assets_water"); var spr_id = layer_sprite_get_id(lay_id, "gfc_water"); layer_sprite_speed(spr_id, 0.5);
+  O código acima obterá a identificação da camada chamada "Assets_water" e depois a utilizará para obter a identificação do elemento sprite dado nessa camada. Este ID é então usado para mudar a velocidade da imagem do elemento.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de Sprite
+        Próximo: camada_escreva_xscale
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

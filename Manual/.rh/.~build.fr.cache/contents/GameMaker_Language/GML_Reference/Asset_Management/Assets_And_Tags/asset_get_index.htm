@@ -1,0 +1,45 @@
+
+  
+  asset_get_index
+  Você pode usar esta função para obter o índice de identificação único para um bem do jogo a partir de seu nome. Se o bem não for encontrado, a função retornará um valor de -1, caso contrário, retornará o id de índice único para o bem que está sendo verificado. Este id pode então
+    ser usado em outras funções como qualquer outro valor de índice, como o sprite_index ou o path_index,
+    por exemplo. Observe que embora esta função possa ser usada para referenciar ativos a partir de cordas (veja exemplo abaixo) você deve sempre certificar-se de que o ativo existe antes de usá-lo, caso contrário você poderá receber erros que irão travar seu jogo.
+   
+  Sintaxe:
+  asset_get_index(nome);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome
+        O nome do ativo do jogo para obter o índice de (uma corda).
+      
+    
+  
+   
+  Devoluções:
+  Índice de ativos (Inteiro)
+   
+  Exemplo:
+  var obj = asset_get_index("obj_Enemy_" + string(global.Level)); se obj > -1 {
+     instance_create_layer(random(room_width), random(room_height), obj, "Enemy_Layer"); }
+  
+  O código acima obterá um índice de objeto a partir de uma string, e se esse índice existir, criará uma instância do objeto no jogo.
+   
+   
+   
+  
+    
+      
+        Voltar: Ativos e Etiquetas
+        Próximo: asset_get_type
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

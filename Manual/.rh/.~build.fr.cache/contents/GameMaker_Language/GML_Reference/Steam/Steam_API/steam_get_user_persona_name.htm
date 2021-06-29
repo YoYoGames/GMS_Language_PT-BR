@@ -1,0 +1,48 @@
+
+  
+  steam_get_user_persona_name
+  Esta função pode ser usada para recuperar o nome do usuário (nome de tela) para qualquer ID de usuário específico. Você dá o ID do usuário e a função retorna um valor único de ID assimétrico que pode ser usado para verificar os detalhes corretamente no eventoSteam Async.
+    Este evento terá a função async_load Mapa DS que será povoado com os seguintes pares de chaves/valores:
+  
+    " id" - A identificação assimétrica retornada pela função que acionou o evento
+    " event_type" - A string " user_persona_name"
+    "steamid""- O valor de Steam ID usado para obter o nome do usuário.
+    "persona_name" - O nome do usuário para o ID de vapor dado
+  
+   
+  Sintaxe:
+  steam_get_user_persona_name(steamID);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        VaporID
+        A identificação a vapor única para um usuário.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  solicitação = steam_get_user_persona_name(global.UGC_UserID);
+  O código acima solicitará o nome do usuário do ID do usuário armazenado na variável global "UGC_UserID", armazenando o valor retornado em uma variável para análise no Evento Async.
+   
+   
+   
+  
+    
+      
+        Voltar: General SteamAPI
+        Próximo: steam_is_user_logged_on
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

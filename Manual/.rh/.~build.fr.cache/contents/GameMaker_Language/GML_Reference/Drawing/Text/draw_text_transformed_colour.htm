@@ -1,0 +1,85 @@
+
+  
+  draw_text_transformed_colour
+  Esta função é uma combinação da base draw_text() função com o draw_text_transformed() e draw_text_colour()    permitindo escalar e girar o texto, bem como colori-lo com um preenchimento gradiente e alterar seu valor alfa, ignorando as configurações básicas alfa e de cor para desenho.
+  NOTA: A mistura gradual não está disponível para o alvo HTML5 a menos que a WebGL esteja habilitada, embora você ainda possa definir as cores da mistura e ela irá misturar a fonte com a primeira cor dada. No entanto, toda mistura desta forma cria uma duplicata
+    A fonte que é então armazenada no cache e usada quando necessário, que está longe de ser a ideal e se você usar mudanças múltiplas de cor irá diminuir o desempenho de seus jogos. Você pode definir o tamanho do cache da fonte para tentar limitá-lo, caso seja necessário.
+    usando a função font_set_cache_size().
+   
+  Sintaxe:
+  draw_text_transformed_colour(x, y, string, xscale, yscale, angle, c1, c2, c3, c4, alpha);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A coordenada x do fio desenhado.
+      
+      
+        y
+        A coordenada y da corda desenhada.
+      
+      
+        corda
+        O fio para desenhar.
+      
+      
+        xscale
+        A escala horizontal.
+      
+      
+        yscale
+        A escala vertical.
+      
+      
+        ângulo
+        O ângulo do texto.
+      
+      
+        c1
+        A cor para a parte superior esquerda do texto desenhado.
+      
+      
+        c2
+        A cor para a parte superior direita do texto desenhado.
+      
+      
+        c3
+        A cor para a parte inferior direita do texto desenhado.
+      
+      
+        c4
+        A cor para a parte inferior esquerda do texto desenhado.
+      
+      
+        alfa
+        O alfa para o texto.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_set_halign(fa_center); draw_set_valign(fa_middle);
+     image_angle += 1; draw_text_transformed_colour(room_width / 2, room_height / 2, keyboard_string, 2, 2, image_angle, c_red, c_red, c_yellow, c_yellow, 0.5);
+  O código acima desenhará o texto dado no meio da sala, girando redondo e escalonado para o dobro de seu tamanho original, com um gradiente de cor passando de amarelo para vermelho, assim como um alfa de 0,5.
+   
+   
+   
+  
+    
+      
+        Voltar: Texto
+        Próximo: desenho_texto_texto_transformado_cores
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

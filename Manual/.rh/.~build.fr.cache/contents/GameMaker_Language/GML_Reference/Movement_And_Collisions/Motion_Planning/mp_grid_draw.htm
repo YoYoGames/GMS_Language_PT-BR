@@ -1,0 +1,45 @@
+
+  
+  mp_grid_draw
+  Esta função irá desenhar a grade MP especificada (conforme definido por mp_grid_create()), marcando as células livres como verdes e as células proibidas como vermelhas. Esta função é essencial como uma ferramenta de depuração, mas deve
+    Note que é muito lento e só funciona quando usado no evento de sorteio da instância, e que você pode definir o alfa do sorteio para mudar a opacidade da grade, permitindo que você o desenhe como uma sobreposição e veja o que está de fato no
+    espaço ao mesmo tempo.
+   
+  Sintaxe:
+  mp_grid_draw(id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        Índice da grelha mp_ que deve ser desenhada
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  draw_set_alpha(0.3); mp_grid_draw(grid);
+     draw_set_alpha(1);
+  
+  O código acima desenhará a mp_grid indexada na variável "grid" como uma sobreposição semi-transparente (mas somente se a instância que executa o código tiver uma profundidade inferior a todo o resto).
+   
+   
+   
+  
+    
+      
+        Voltar: Planejamento de Movimento
+        Próximo: mp_linear_step
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,309 @@
+
+  
+  Erros de corredor
+  Mesmo após a verificação da sintaxe no editor de código e depois de ter o compilador verificado seu código para erros de compilação, ainda há ocasiões em que algo pode dar errado. Na maioria dos casos, isto irá lançar um erro de execução da Máquina Virtual (VM) (também chamada de exceção detempo de execução) que se parece com isto:
+  Os erros de corredor são geralmente mais sérios do que os erros de compilação, pois isso significa que há algo seriamente errado com
+    seu código que nem o editor de código nem o compilador foram capazes de detectar, e como tal você deve prestar atenção a todos esses erros. Quando um ocorre, você pode usar o botão Copiar no pop-up para copiar o erro para a área de transferência.
+    que você pode então colar em um arquivo de texto (ou onde quer que seja) para referência futura.
+  A estrutura deste erro é a seguinte:
+  
+     Isto mostra o Evento em que o erro ocorreu, assim como o Objeto (onde aplicável).
+     Isto mostra o erro real.  Assim, mostra o alcance do erro
+      e o tipo de erro que ele é. O primeiro valor entre parênteses será a identificação da instância que estava executando o código - ou poderia ser um dos valores especiais listados na tabela abaixo - e o segundo é um valor interno que a YoYo Games
+      para identificar bugs e pode ser ignorado. No caso da imagem acima, está dizendo que a variável _image não foi definida (ou seja: não existe antes de ser acessada) no objeto obj_EA_DEMO_Control.
+     Isto mostra o número da linha em que o erro ocorre, bem como um trecho de
+      código mostrando a posição. Note que isto nem sempre é 100% preciso devido à forma como o jogo é compilado, mas deve ser suficiente para ajudá-lo a encontrar exatamente onde o problema está.
+  
+  Como mencionado acima, certas mensagens de erro identificarão o escopo não por um valor de identificação de instância, mas sim por um valor negativo . Estes valores podem ser usados para identificar a natureza exata do erro e o que ele se refere com os seguintes valores
+    possível:
+   
+  
+    
+      
+        Prefixo
+        Escopo
+      
+      
+        -1
+        Auto
+      
+      
+        -2
+        Outros
+      
+      
+        -3
+        Todos
+      
+      
+        -4
+        Noone
+      
+      
+        -5
+        Global
+      
+      
+        -6
+        Não Especificado
+      
+      
+        -7
+        Local
+      
+    
+  
+   
+  Os possíveis erros do VM Runner são os seguintes:
+   
+  
+    
+      
+        Erro
+        Mensagem
+        Operação
+        Descrição
+      
+      
+        DoSet
+        Tipo de comparação inválida
+        Tipos de dados
+        Isto denota que o corredor tentou comparar dois tipos de dados incompatíveis, como um número real com um fio.
+      
+      
+        DoConv
+        Erro de execução
+        Tipos de dados
+        Isto denota um erro na conversão de um tipo de dado em outro.
+      
+      
+        
+          
+        
+      
+      
+        DoAdd
+        Erro de execução
+        Matemática
+        Algo deu errado ao usar a expressão de adição (+).
+      
+      
+        DoMul
+        Erro de execução
+        Matemática
+        Algo deu errado ao usar a expressão de multiplicação (*).
+      
+      
+        DoSub
+        Erro de execução
+        Matemática
+        Algo deu errado ao usar a expressão subtração (-).
+      
+      
+        DoSub
+        Motor de Execução - Não pode operar em tipo string
+        Matemática
+        Você está tentando subtrair o tipo errado de variáveis (por exemplo, subtrair uma string de um real).
+      
+      
+        DoDiv
+        Erro de execução
+        Matemática
+        Algo deu errado ao usar a expressão da divisão (/ ou div).
+      
+      
+        DoDiv
+        Motor de Execução - Não pode operar em tipo string
+        Matemática
+        Você está tentando dividir o tipo errado de variáveis (por exemplo, dividir uma cadeia por um real).
+      
+      
+        DoDiv
+        Dividir por zero
+        Matemática
+        Você está tentando dividir por 0 (note que isto só acontecerá quando se usar a divisão inteira, dividindo um real (não zero) por 0 dará infinito como resposta, dividindo zero por zero dará NaN como resposta). Você pode verificar estes valores com
+          (is_infinity) e (is_nan)
+      
+      
+        DoMod
+        Erro de execução
+        Matemática
+        Algo deu errado ao usar a expressão modulo (mod).
+      
+      
+        DoMod
+        Motor de Execução - Não pode operar em tipo string
+        Matemática
+        Você está tentando usar o módulo (mod) no tipo errado de variáveis (por exemplo mod uma cadeia por um real).
+      
+      
+        
+          
+        
+      
+      
+        DoAnd
+        Erro de execução
+        Bitwise
+        Algo deu errado ao usar a expressão bitwise "and" (&).
+      
+      
+        DoAnd
+        Motor de Execução - Não pode operar em tipo string
+        Bitwise
+        Você está tentando usar bitwise "e" (&) no tipo errado de variáveis (por exemplo, tentando "e" uma cadeia com um real).
+      
+      
+        DoOr
+        Erro de execução
+        Bitwise
+        Algo deu errado ao usar a expressão "ou" bitwise (|).
+      
+      
+        DoOr
+        Motor de Execução - Não pode operar em tipo string
+        Bitwise
+        Você está tentando usar "ou" (|) sobre o tipo errado de variáveis (por exemplo, tentando "ou" uma cadeia com um real).
+      
+      
+        DoXor
+        Erro de execução
+        Bitwise
+        Algo deu errado ao usar a expressão bitwise "xor" (^).
+      
+      
+        DoXor
+        Motor de Execução - Não pode operar em tipo string
+        Bitwise
+        Você está tentando usar "xor" (^) sobre o tipo errado de variáveis (por exemplo, tentando "xor" uma cadeia com um real).
+      
+      
+        DoShl
+        Erro de execução
+        Bitwise
+        Alguma coisa deu errado quando o bitshifting deixou (<<) um valor.
+      
+      
+        DoShl
+        Motor de Execução - Não pode operar em tipo string
+        Bitwise
+        Você está tentando deixar o bitshift (<<) o tipo errado de variáveis (por exemplo, tentando fazer o bitshift de uma cadeia).
+      
+      
+        DoShr
+        Erro de execução
+        Bitwise
+        Algo correu mal quando o bitshifting deu certo (>>) um valor.
+      
+      
+        DoShr
+        Motor de Execução - Não pode operar em tipo string
+        Bitwise
+        Você está tentando corrigir o bitshift (>>) o tipo errado de variáveis (por exemplo, tentando fazer o bitshift de uma cadeia).
+      
+      
+        
+          
+        
+      
+      
+        DoNeg
+        Erro de execução
+        Negue
+        Você está tentando transformar um tipo de variável em negativa quando este tipo não permite tal operação.
+      
+      
+        DoNot
+        Erro de execução
+        Negue
+        Você está tentando "não" um tipo variável quando este tipo não permite tal operação.
+      
+      
+        
+          
+        
+      
+      
+        Push
+        Erro de Execução - Índice variável fora da faixa (var)
+        Pilha
+        A variável a ser acessada está fora da faixa estabelecida para o corredor.
+      
+      
+        Push
+        Variável Get (var)
+        Pilha
+        A variável em questão não foi definida ou é desconhecida.
+      
+      
+        Pop
+        Índice variável fora da faixa (var)
+        Pilha
+        A variável a ser acessada está fora da faixa estabelecida para o corredor.
+      
+      
+        Pop
+        Variável Get (var)
+        Pilha
+        A variável em questão não foi definida ou é desconhecida.
+      
+      
+        
+          
+        
+      
+      
+        With
+        Não é possível usar global com declaração
+        Com
+        Você tentou usar "global" como uma variável dentro de uma declaração "with", ou seja:
+          with (global)
+			   {
+			   //do something;
+			   }
+      
+      
+        With
+        Não é possível usar o local com declaração
+        Com
+        Você tentou usar "local" como uma variável dentro de uma declaração "with", ou seja:
+          with (local)
+			   {
+			   //do something;
+			   }
+      
+      
+        
+          
+        
+      
+      
+        DoCall
+        Erro de tipo de motor de execução
+        Motor
+        Este é um erro indefinido dentro da Máquina Virtual. Você deve preencher um relatório de erro se isto acontecer (veja: O Menu Ajuda para detalhes sobre como fazer isto.
+      
+      
+        Stack Overflow
+        -
+        Motor
+        Um estouro de pilha ocorre quando muita memória é usada na pilha de chamadas e quando seu jogo tenta usar mais espaço do que está disponível na pilha de chamadas (ou seja, quando tenta acessar memória além dos limites da pilha de chamadas, que é essencialmente
+          um buffer overflow), diz-se que a pilha transbordou, resultando em uma falha do programa. Reinicie seu computador e o GameMaker: Studio e, se o erro persistir, entre em contato com o suporte e/ou arquive um bug (como explicado acima).
+      
+    
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Relatório de erros
+        A seguir: Erros de sintaxe
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,483 @@
+
+  
+  sprite_get_info
+  Esta função é usada para recuperar informações para o duende em questão. Você fornece um índice sprite (que pode ser um ativo adicionado através do Navegador de Ativos ou um sprite adicionado em tempo de execução) e a função retorna uma estrutura com as seguintes variáveis:
+   
+  
+    
+      
+        Nome da variável
+        Tipo de dados
+        Descrição
+      
+      
+        largura
+        real
+        A largura do duende (em pixels)
+      
+      
+        altura
+        real
+        A altura do duende (em pixels)
+      
+      
+        xoffset
+        real
+        Offset/origem em X do duende (em pixels)
+      
+      
+        yoffset
+        real
+        Offset em Y/origem do duende (em pixels)
+      
+      
+        transparente
+        booleano
+        verdadeiro se o duende for marcado como transparente, caso contrário falso
+         (Isto só pode ser especificado através de sprite_add() ou funções similares, e será falsopara sprites criados na IDE)
+      
+      
+        smooth
+        booleano
+        verdadeiro se o duende for marcado como liso, caso contrário falso
+          (Isto só pode ser especificado através de sprite_add() ou funções similares, e será falso para sprites criados na IDE)
+        
+      
+      
+        tipo
+        real
+        O tipo de duende:
+         0 - Bitmap (Sprites regulares)
+         1 - SWF
+         2 - Coluna vertebral
+      
+      
+        bbox_left
+        real
+        Posição da borda esquerda da caixa delimitadora (em pixels)
+      
+      
+        bbox_top
+        real
+        Posição da borda superior da caixa delimitadora (em pixels)
+      
+      
+        bbox_right
+        real
+        Posição da borda direita da caixa delimitadora (em pixels)
+      
+      
+        bbox_bottom
+        real
+        Posição da borda inferior da caixa delimitadora (em pixels)
+      
+      
+        nome
+        corda
+        O nome do duende
+      
+      
+        num_subimages
+        real
+        O número de sub-imagens (ou quadros) no duende
+      
+      
+        use_mask
+        booleano
+        verdadeiro se este duende usa uma máscara de colisão, caso contrário falso
+      
+      
+        num_masks
+        real
+        O número de máscaras neste duende (será maior que 1 se o duende usar máscaras por estrutura)
+      
+      
+        nineslice
+        estrutura
+        A estrutura de Nove fatias para este duende, ou indefinida se não tiver nove dados de fatias
+      
+      
+        mensagens
+        matriz
+        Conjunto de mensagens de difusão para este duende, onde cada mensagem de difusão é uma estrutura contendo informações sobre a mensagem (mais informações em "Dados Gerais do duende")
+      
+      
+        frame_info
+        matriz
+        Conjunto de quadros para este duende, onde cada quadro é uma estrutura contendo informações sobre seu tempo (mais informações em "Dados gerais do duende")
+      
+    
+  
+  Esta variável adicional está disponível apenas para sprites Bitmap (regulares):
+  
+    
+      
+        Nome da variável
+        Tipo de dados
+        Descrição
+      
+      
+        quadros
+        matriz
+        Conjunto de quadros para este duende, onde cada quadro é uma estrutura contendo informações sobre sua textura (mais informações em "Bitmap Sprite Data")
+      
+    
+  
+  Estas variáveis adicionais estão disponíveis apenas para sprites de coluna:
+  
+    
+      
+        Nome da variável
+        Tipo de dados
+        Descrição
+      
+      
+        num_atlas
+        real
+        O número de texturas de atlas utilizadas
+      
+      
+        atlas_textura
+        matriz
+        Matriz de identificações de textura utilizada para o atlas
+      
+      
+        pré-multiplicado
+        booleano
+        verdadeiro se este duende for marcado como pré-multiplicado, caso contrário falso
+      
+      
+        nomes_de_animação
+        matriz
+        Array contendo os nomes de cada animação neste sprite
+      
+      
+        skin_names
+        matriz
+        Array contendo os nomes de cada pele deste duende
+      
+      
+        ossos
+        matriz
+        Matriz contendo estruturas para cada osso deste duende (mais informações em "Dados de duende da coluna vertebral")
+      
+      
+        vagas
+        matriz
+        Matriz contendo estruturas para cada fenda neste duende (mais informações em "Dados do duende da coluna vertebral")
+      
+    
+  
+   
+  A função retornará indefinida se o duende em questão não existir. Observe também que as informações retornadas nesta estrutura devem ser consideradas apenas de leitura, pois a modificação de qualquer uma destas variáveis não afetará o duende.
+  As seções abaixo contêm informações sobre as matrizes e estruturas incluídas na estrutura retornada com base no tipo sprite:
+  Dados gerais do Sprite
+  
+    Esta seção contém informações sobre as variáveis incluídas na estrutura para todos os tipos de sprites.
+    A variável mensagens é uma matriz que contém informações sobre as mensagens transmitidas que existem no sprite dado. Cada mensagem difundida nesta matriz é uma estrutura que contém as seguintes variáveis:
+    
+      
+        
+          Nome da variável
+          Tipo de dados
+          Descrição
+        
+        
+          quadro
+          real
+          O momento da transmissão desta mensagem desde o início da animação (em frames)
+        
+        
+          mensagem
+          corda
+          A cadeia de mensagens transmitidas
+        
+      
+    
+     
+    A variável frame_info é uma matriz que contém informações sobre os horários das frames do duende. Cada frame desta matriz é uma estrutura que contém as seguintes variáveis:
+    
+      
+        
+          Nome da variável
+          Tipo de dados
+          Descrição
+        
+        
+          quadro
+          real
+          O tempo para o início deste quadro (em quadros)
+        
+        
+          image_index
+          real
+          O índice de imagem deste quadro
+        
+      
+    
+     
+  
+  Dados Sprite Bitmap
+  
+    Esta seção contém informações sobre variáveis incluídas na estrutura para sprites Bitmap (sprites que não são sprites tipo Spine ou SWF).
+    A variável frames é uma matriz que contém informações sobre as texturas dos frames do duende. Cada frame desta matriz é uma estrutura que contém as seguintes variáveis:
+    
+      
+        
+          Nome da variável
+          Tipo de dados
+          Descrição
+        
+        
+          x
+          real
+          A posição X deste quadro em sua página de textura (em pixels)
+        
+        
+          y
+          real
+          A posição em Y deste quadro em sua página de textura (em pixels)
+        
+        
+          w
+          real
+          A largura lógica da moldura (em pixels) utilizada internamente
+        
+        
+          h
+          real
+          A altura lógica do quadro (em pixels) utilizado internamente
+        
+        
+          textura
+          real
+          A identificação da página de textura para este quadro
+        
+        
+          largura_ original
+          real
+          A largura original da moldura (em pixels)
+        
+        
+          altura_ original
+          real
+          A altura original da moldura (em pixels)
+        
+        
+          largura_da_culturas
+          real
+          A largura real da moldura na página de textura após o corte e a escala (uma vez que o GMS2 corta automaticamente o espaço vazio em torno de uma imagem e também o reduz se não couber)
+        
+        
+          altura_da_culturas
+          real
+          A altura real da moldura na página de textura após o corte e a escamação
+        
+        
+          x_offset
+          real
+          O deslocamento X da margem esquerda da imagem original para a margem esquerda da seção recortada
+        
+        
+          y_offset
+          real
+          O desvio em Y da borda superior da imagem original para a borda superior da seção recortada
+        
+      
+    
+     
+  
+  Dados do duende da coluna vertebral
+  
+    Esta seção contém informações sobre as variáveis incluídas na estrutura para Sprites de Coluna.
+    A variável ossos é um conjunto que contém informações sobre todos os ossos do duende da Coluna vertebral em questão. Cada osso desta matriz é uma estrutura que contém as seguintes variáveis:
+    
+      
+        
+          Nome da variável
+          Tipo de dados
+          Descrição
+        
+        
+          pai
+          corda
+          O nome do osso pai, ou indefinido se este osso não tiver um osso pai
+        
+        
+          nome
+          corda
+          O nome deste osso
+        
+        
+          índice
+          real
+          O índice deste osso
+        
+        
+          comprimento
+          real
+          O comprimento deste osso
+        
+        
+          x
+          real
+          A posição X deste osso
+        
+        
+          y
+          real
+          A posição em Y deste osso
+        
+        
+          rotação
+          real
+          A rotação deste osso
+        
+        
+          escala_x
+          real
+          (Interno à coluna vertebral) Valor da escala em X
+        
+        
+          escala_y
+          real
+          (Interno à coluna vertebral) Valor da escala em Y
+        
+        
+          shear_x
+          real
+          (Interno à coluna vertebral) Valor de cisalhamento em X
+        
+        
+          shear_y
+          real
+          (Interno à coluna vertebral) Valor de cisalhamento em Y
+        
+        
+          transform_mode
+          real
+          (Interno à coluna vertebral) O modo de transformação
+        
+      
+    
+     NOTA: Favor consultar a documentação da Coluna vertebral para maiores informações sobre as variáveis internas da coluna vertebral.
+    A variável slots é uma matriz que contém informações sobre todos os slots no sprite da Coluna vertebral dado. Cada slot nesta matriz é uma estrutura que contém as seguintes variáveis:
+    
+      
+        
+          Nome da variável
+          Tipo de dados
+          Descrição
+        
+        
+          nome
+          corda
+          O nome do espaço
+        
+        
+          índice
+          real
+          O índice do slot
+        
+        
+          osso
+          corda
+          O nome do osso do slot, ou "( nenhum)" se não houver osso para este slot
+        
+        
+          anexo
+          corda
+          Nome do anexo
+        
+        
+          vermelho
+          real
+          Componente vermelho da cor do slot (0-1)
+        
+        
+          verde
+          real
+          Componente verde da cor da ranhura (0-1)
+        
+        
+          azul
+          real
+          Componente azul da cor do slot (0-1)
+        
+        
+          alfa
+          real
+          Componente alfa da cor do slot (0-1)
+        
+        
+          blendMode
+          real
+          (Interno à coluna vertebral) Modo de mistura para o slot
+        
+        
+          vermelho_escuro*
+          real
+          Componente vermelho da cor escura do slot (0-1)
+        
+        
+          verde_escuro*
+          real
+          Componente verde do slot de cor escura (0-1)
+        
+        
+          azul_escuro*
+          real
+          Componente azul da ranhura de cor escura (0-1)
+        
+        
+          alfa_escuro*
+          corda
+          Componente alfa da cor escura do slot (0-1)
+        
+      
+    
+    * NOTA: As variáveis de cor escura só estão disponíveis se o slot tiver o Tint Black habilitado.
+     
+  
+   
+   
+  Sintaxe:
+  sprite_get_info(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do sprite para o qual obter as informações.
+      
+    
+  
+   
+  Devoluções
+  Estruturas (ou indefinidas)
+   
+  Exemplo:
+  var _info = sprite_get_info(sprite_index);
+     if (_info != undefined && _info.type == 0) {
+     var _messages = _info.messages; var _messageCount = array_length(_messages);      for (var i = 0; i < _messageCount; i ++) { var _message = _messages[i]; show_debug_message("Mensagem
+    em frame " + string(_message.frame) + ": " + _message.message); }  }
+  
+  O código acima obtém a estrutura de informação para o duende da instância, e então verifica se ele não está indefinido e se seu tipo é 0 (o que significa que é um duende de bitmap). Nesse caso, ele recebe a matriz de mensagens de transmissão para esse sprite e
+    então executa um loop para imprimir cada mensagem transmitida (junto com seu frame) para o log de saída.
+   
+   
+  
+    
+      
+        Voltar: Informações Sprite
+        Próximo: sprite_existe
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,48 @@
+
+  
+  tag_get_assets
+  Com esta função você pode recuperar os nomes de todos os bens que foram atribuídos à(s) determinada(s) etiqueta(s). Você fornece uma única cadeia de tags ou uma matriz, onde cada item da matriz é uma cadeia de tags.
+    A função irá retornar um array onde cada entrada é o nome (como uma string) do ativo com a tag dada. Se você precisar do índice único para o ativo, então você pode usar a função asset_get_index() ao longo de
+    com o nome de retorno. Se não houver ativos com a(s) etiqueta(s) dada(s), ou se houver um erro (por exemplo: as etiquetas dadas não existem), então uma matriz vazia será devolvida.
+   
+  Sintaxe:
+  tag_get_assets(tags);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        etiquetas
+        Uma única cadeia de tags de ativos ou uma matriz com várias tags de ativos.
+      
+    
+  
+   
+  Devoluções:
+  Array
+   
+  Exemplo:
+  backgrounds = ds_list_create(); var _assets = tag_get_assets("background"); for (var i = 0; i< array_length(_assets); ++i;)  {
+     if asset_get_type(_assets[i]) == asset_sprite {
+     ds_list_add(backgrounds, asset_get_index(_assets[i])); }
+     }
+  
+  O código acima cria uma lista, depois recupera os nomes de todos os bens com a etiqueta "background". Ele percorre a matriz de nomes retornados, verificando se algum deles é um ativo sprite, e se é o valor único do índice.
+    para o bem é adicionado à lista para uso futuro.
+   
+   
+   
+  
+    
+      
+        Voltar: Ativos e Etiquetas
+        Próximo: asset_get_tags
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

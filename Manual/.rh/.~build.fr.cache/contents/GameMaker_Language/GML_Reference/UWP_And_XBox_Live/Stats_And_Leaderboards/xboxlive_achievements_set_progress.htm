@@ -1,0 +1,54 @@
+
+  
+  xboxlive_achievements_set_progress
+  Esta função pode ser usada para atualizar o progresso de uma realização. Você fornece o ID do usuário conforme retornado, por exemplo, pela função xboxlive_get_user()e, em seguida, a seqüência de realizações
+    (este é o ID de realização conforme atribuído no XDP/Windows Dev Center quando ele foi criado). Finalmente, o valor de progresso é definido para um valor de 0 a 100. Note que o sistema de realização recusará atualizações que sejam inferiores ao progresso atual.
+    valor.
+   
+  Sintaxe:
+  xboxlive_achievements_set_progress(user_id, achievement, progress);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        user_id
+        O ID do usuário para definir a realização para
+      
+      
+        realização
+        A conquista a definir (um fio)
+      
+      
+        progresso
+        O valor de progresso a definir (de 0 a 100)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo ampliado:
+  A seguir, um exemplo ampliado de como esta função pode ser utilizada. Para começar, você a chamaria em algum evento como Room Start ou Create:
+  xboxlive_stats_get_social_leaderboard(user_id, "GlobalTime", 20, 1, falso, falso);
+  O código acima seria chamado para obter uma lista de todas as posições de liderança global para o jogo, e geraria uma chamada de retorno de Evento Assíncrono Social, que trataríamos da seguinte forma:
+  var _progress = (global.Level / global.LevelMax) * 100; xboxlive_achievements_set_progress(user_id, "Game_Completed", _progress);
+  O código acima cria um valor percentual baseado em algumas variáveis globais e depois o utiliza para definir o progresso da realização do "Game_Completed".
+   
+   
+   
+  
+    
+      
+        Voltar: Estatísticas e Quadros de Líderes
+        Próximo: xboxlive_get_stats_for_user
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

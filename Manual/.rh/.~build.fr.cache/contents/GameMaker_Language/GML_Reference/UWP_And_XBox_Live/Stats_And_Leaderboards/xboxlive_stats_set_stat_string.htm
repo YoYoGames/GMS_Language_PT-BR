@@ -1,0 +1,53 @@
+
+  
+  xboxlive_stats_set_stat_string
+  Esta função pode ser usada para definir uma estatística para uma string para o ID do usuário dado. O usuário fornece o ID de usuário conforme retornado pela (por exemplo) função xboxlive_get_user()então a cadeia estatutária
+    para definir(se a cadeia de caracteres caracteres não existir ainda, será criada uma nova letra e definida para o valor dado) e, em seguida, a cadeia para definir a letra. Note que o nome do stat deve ser alfanumérico apenas, sem símbolos ou espaços, mas a cadeia de caracteres
+    valor que você está definindo pode ter espaços e caracteres especiais.
+  Ao definir a cadeia de caracteres de estatística, qualquer cadeia anterior será anulada, portanto cabe a você determinar se a cadeia de caracteres de estatística deve ser atualizada ou não, comparando-a com a cadeia de caracteres de estatística atual com a nova antes de defini-la.
+  A função retornará -1 se houver um erro ou a identificação do usuário for inválida, ou qualquer outro valor se a função foi chamada com sucesso.
+   
+  Sintaxe:
+  xboxlive_stats_set_stat_string(user_id, stat, value);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        user_id
+        O ponteiro de identificação do usuário para definir a estatística para
+      
+      
+        stat
+        A estatística a definir (um fio)
+      
+      
+        valor
+        O valor para definir a estatística (um fio)
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  xboxlive_stats_set_stat_string(p_user_id, "LevelName", global.LevelName);
+  O código acima define a estatística "LevelName" para a string armazenada na variável global em questão. 
+   
+   
+   
+  
+    
+      
+        Voltar: Estatísticas e Quadros de Líderes
+        Próximo: xboxlive_stats_delete_delete_stat
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

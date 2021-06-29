@@ -1,0 +1,44 @@
+
+  
+  continuar
+  A declaração continua tem a seguinte sintaxe básica:
+  continuar;
+  Se usado dentro de uma declaração que forma um loop (para, repita, enquanto ou fazer / até), acabará imediatamente com a corrente
+   iteração e voltar ao início do laço iniciando uma nova iteração e omitindo qualquer código que venha após o continue dentro do laço. Ele também pode
+    ser usado dentro do com declaração, onde fará com que o código salte para a próxima instância e seja executado novamente. Note que se continuar for usado fora de qualquer um destes contextos, dará um erro.
+  Abaixo está um exemplo de utilização em um loop : 
+  var _val = 0; for (var i = 0; i < 10; i += 1) {
+     if (val_array[i] <= 0) { continuar; }  _val += val_array[i]; }
+     draw_text(32, 32, "Positive Values Total = " + string(_val));
+  Abaixo está um exemplo de uso em um loop while:
+  var file = file_text_open_read("Game_Data.txt"); var _num = 0; while (!file_text_eof(file)) { var _s = file_text_readln(file); if (_s == "") { continue; }  str[num++] = _s; }  file_text_close(file);
+  
+  Abaixo está um exemplo de uso em um loop do / until:
+  do {
+     var _x = random(room_width); var _y = random(room_height); if (instance_position(_x, y, obj_Enemy) {
+     continuar;
+     }
+     instance_create_layer(_x, _y, "Instances", obj_Enemy); }
+     até (instance_count(obj_Enemy) >= 10);
+  Abaixo você pode encontrar um exemplo de uso em um loop repeat:
+  repeat(10) {  var _x = random(room_width); var _y = random(room_height); if (instance_position(_x, y, obj_Enemy) {
+     continuar;
+     }
+     instance_create_layer(_x, _y, "Instances", obj_Enemy); }
+  Finalmente, um exemplo de uso em uma declaração em with:
+  com (obj_Enemy_Parent) { if (object_index == obj_Enemy_InDestructible) { continue; }  hp -= 100; if (hp <= 0) { instance_destroy(); }  }
+   
+   
+   
+  
+    
+      
+        Voltar: Características lingüísticas
+        Próximo: saída
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

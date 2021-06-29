@@ -1,0 +1,67 @@
+
+  
+  gml_pragma
+  A função gml_pragma afeta como o alvo dado compila seu código e deve ser chamado com os diferentes comandos para otimizar ainda mais a compilação final de seu projeto. Estes comandos são efetivamente pré-processados antes do
+    O jogo é compilado e assim a função pode ser colocada em qualquer lugar em seu projeto e ainda será processada antes que o jogo seja totalmente compilado. Os comandos disponíveis são os seguintes:
+  
+    "forceinline" - Quando a função é chamada com o pragma "forceinline" em uma função de script, o YYC compilará o projeto com a função inline, em vez de referenciada. Isto dará um processamento adicional
+      boost, mas deve-se ter cuidado ao utilizá-lo, pois ele também inflará o tamanho final do arquivo executável, especialmente se o código in-lined for grande e/ou utilizado em vários lugares diferentes, além de aumentar muito o tempo de compilação. Note que este pragma
+     só é válido quando se constrói usando o YYC.
+    "global", "[código gml]" - O pragma"global" permite chamar algum código GML formatado como uma string , em um escopo global, em tempo de compilação, antes que a primeira sala do jogo seja executada. Por exemplo:
+     gml_pragma("global", "Init()");
+      Isto chamará a função de script "Init" antes que a primeira sala do jogo seja executada. Note que o GML fornecido como segundo argumento deve ser uma constante de tempo de compilação, e também note que você não pode usar este pragma para criar instâncias
+      ou realizar quaisquer operações que requeiram uma sala (ou qualquer coisa em uma sala) para funcionar.
+    "PNGCrush" - O pragma "PNGCrush" utilizará o programa PNGCrush em cada textura criada. Note que isto pode acrescentar significativamente ao tempo que leva
+      para compilar o jogo, de modo que você não o quer sempre ligado, embora possa fazer economias significativas no tamanho do arquivo final.
+    "Texgroup.Scale", "[TextureGroupName]", " [Scale Divisor]" - A "Texgroup.Scale" escalará o grupo de textura em compilação. Você precisa dar dois argumentos adicionais aqui: o "[TexGroupName]",
+      que é o nome (uma corda) do grupo de textura à escala, e a "[Escala Divisor]" (também uma corda), que é o divisor que você deseja usar para a escala, ou seja
+     gml_pragma("Texgroup.Scale", "level1", "2");
+      Isto irá metade de todas as texturas do grupo de textura "nível1".
+    "UnityBuild", "[habilitar/desabilitar]" - Se você chamar a função com este pragma e definir o argumento habilitar/desabilitar como verdadeiro, então ao compilá-lo, ele irá colapsar todos os arquivos .cpp do projeto em um único arquivo
+      que depois utiliza para construir tudo, por exemplo:
+     gml_pragma("UnityBuild", "verdadeiro");
+      O benefício de fazer uma construção de unidade é que as construções são mais rápidas, mas o lado negativo é que ela faz uma construção completa cada vez, portanto, mesmo que você mude uma única parte do código, ela irá construir tudo novamente sem usar nenhum arquivo em cache. Isto tem
+      foi adicionado especificamente para a exportação do Xbox One utilizando o YYC, embora possa ser chamado para outras construções(apenas YYC). Para mais informações sobre construções de unidade, por favor, veja aqui.
+  
+  NOTA: O primeiro argumento para a função gml_pragma deve ser uma constante de tempo de compilação e não uma variável.
+   
+  Sintaxe:
+  gml_pragma(comando, [opcional...]);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        comando
+        Um fio com um dos comandos listados abaixo.
+      
+      
+        [opcional]
+        Alguns dos comandos disponíveis requerem um argumento ou argumentos opcionais. Estes são explicados abaixo para cada comando.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  gml_pragma("forceinline");
+  O código do exemplo acima forçará a função do script onde ele é usado para ser compilado.
+   
+   
+   
+  
+    
+      
+        Voltar: OS E Compilador
+        Próximo: parâmetro_contagem
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

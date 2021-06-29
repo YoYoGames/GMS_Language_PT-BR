@@ -1,0 +1,50 @@
+
+  
+  layer_sequence_exists
+  Com esta função você pode verificar se existe um elemento de seqüência na camada dada. Você fornece o ID da camada que pode ser uma seqüência do nome da camada - como definido no editor da sala - ou o ID exclusivo da camada - como retornado pela função layer_get_id(),
+    bem como a identificação do elemento de seqüência - como retornado por layer_sequence_create() ou por uma das funções dos elementos da camada - e ele retornará
+   verdadeiro se o elemento em questão existir ou falso de outra forma.
+   
+  Sintaxe:
+  layer_sequence_exists(layer_id, sequence_element_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_ID
+        A identificação única ou nome da camada a ser verificada
+      
+      
+        sequence_element_id
+        O valor de identificação único do elemento de seqüência para o alvo
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se !layer_sequence_exists("Background", my_seq) {
+     my_seq = layer_sequence_create("Background", 0, 0, seq_AnimatedBackground); layer_sequence_pause(my_seq);
+     }
+  
+  O código acima verifica se o elemento seqüencial existe, e se não existe, então cria uma nova seqüência na camada dada, então o pausa.
+   
+   
+   
+  
+    
+      
+        Voltar: Sequência de camadas
+        Próximo: layer_sequence_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

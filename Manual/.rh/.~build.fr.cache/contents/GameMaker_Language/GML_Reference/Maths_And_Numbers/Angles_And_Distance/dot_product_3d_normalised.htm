@@ -1,0 +1,69 @@
+
+  
+  dot_product_3d_normalised
+  O produto ponto é um valor que expressa a relação angular entre dois vetores e é encontrado pegando dois vetores, multiplicando-os juntos e depois adicionando os resultados. O nome "produto de ponto" é derivado do ponto centralizado "-".
+    que é freqüentemente usado para designar esta operação (o nome alternativo "produto escalar" enfatiza a natureza escalar em vez de vetor do resultado).
+  A fórmula matemática real pode ser escrita desta forma:
+  
+  Em 2D, o produto ponto de vetores a[x1,y1] e b[x2,y2] é x1x2 + y1y2, assim em 3D, o produto ponto de vetores a[x1,y1,z1] e b[x1,y1,z1] é x1x2 + y1y2 + z1z2. Portanto, o produto ponto_3d no GameMaker Studio 2 é calculado como:
+  a - b = (x1*x2) + (y1*y2) + (z1*z2);
+  E quanto ao produto de ponto normalizado? O produto de ponto normalizado foi corrigido de forma a trazer o valor de retorno para a faixa de -1 e 1 (veja Vetores para mais detalhes
+    informação), que é excepcionalmente útil em muitas circunstâncias, particularmente quando se trata de iluminação e outras funções 3D.
+   
+  Sintaxe:
+  dot_product_3d_normalised(x1, y1, z1, x2, y2, z2)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x1
+        A coordenada x do primeiro vetor.
+      
+      
+        y1
+        A coordenada y do primeiro vetor.
+      
+      
+        z1
+        A coordenada z do primeiro vetor.
+      
+      
+        x2
+        A coordenada x do segundo vetor.
+      
+      
+        y2
+        A coordenada y do segundo vetor.
+      
+      
+        z2
+        A coordenada z do segundo vetor.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var x1, y1, x2, y2; x1 = 0; y1 = 1; z1 = 0; x2 = o_Player.x - x; y2 = o_Player.y - y; z2 = o_Player.z - z; if dot_product_3d_normalised(x1, y1, z1, x2, y2, z2) > 0 above=true else above=false;
+  O código acima cria um vetor normal ao longo das instâncias do eixo y (para cima), e então obtém o vetor do objeto jogador "o_Player" para si mesmo. Finalmente, ele calcula o produto de ponto desses dois vetores e, se for maior bronze 0, define a variável
+    "acima" para o verdadeiro, e se for menor ou igual a 0, o define como "falso".
+   
+   
+   
+  
+    
+      
+        Voltar: Ângulos e distância
+        Próximo: ângulo_diferença
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

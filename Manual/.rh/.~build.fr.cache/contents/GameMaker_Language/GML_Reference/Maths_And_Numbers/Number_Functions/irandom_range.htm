@@ -1,0 +1,52 @@
+
+
+
+
+  
+  irandom_range
+  Esta função é semelhante a intervalo_random_range() somente com valores inteiros como entrada. Você fornece o valor baixo para a faixa, bem como o valor alto, e a função retornará um valor inteiro aleatório dentro de (e
+    incluindo) a faixa dada. Por exemplo, o irandom_range(10, 35) devolverá um número inteiro entre 10 e 35 inclusive.
+  Como com o irandom() podem ser usados números reais, neste caso eles serão arredondados para o EG inteiro mais próximo: irandom_range(6.2,9.9) dará um valor entre 6 e 9.
+  NOTA: Esta função retornará o mesmo valor toda vez que o jogo for executado de novo devido ao fato de que o GameMaker: Studio gera a mesma semente inicial aleatória toda vez para tornar a depuração de código uma tarefa muito mais fácil. Para evitar este comportamento, use
+    aleatoriedade() no início de seu jogo.
+   
+  Sintaxe:
+  irandom_range(n1, n2);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        n1
+        A extremidade baixa do intervalo a partir do qual o número aleatório será selecionado.
+      
+      
+        n2
+        O extremo alto do intervalo a partir do qual o número aleatório será selecionado.
+      
+    
+  
+   
+  Devoluções:
+  Inteiro
+   
+  Exemplo:
+  pontuação += alcance_irandom (500, 600);
+  Isto adicionará um valor inteiro entre 500 e 600 (inclusive) à pontuação total.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções Numéricas
+        A seguir: sementes_randômicas
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

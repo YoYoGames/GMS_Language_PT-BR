@@ -1,0 +1,98 @@
+
+  
+  Social
+  Este evento só pode ser acionado pelas ligações de retornode vários
+   funções sociais específicas e funções UWP Xbox Live e retornará um mapa DS armazenado na variável async_load,
+    contendo diferentes pares de chaves/valores, dependendo do retorno de chamada da função que acionou o evento.
+  O mapa DS conterá uma série de chaves, a mais importante das quais é a chave "id". Isto retornará uma constante que poderá então ser verificada em código para determinar qual dos muitos callbacks o evento recebeu.
+    Uma vez que você tenha analisado esta chave e comparado o valor retornado com as constantes disponíveis, você poderá então continuar a extrair o resto das informações do mapa.
+  As páginas de funções sobre Realizações e Leaderboards na seção Referência detalham as funções e callbacks
+    bem como as constantes usadas para acionar este evento, mas também há certas circunstâncias em que ele será acionado sem uma chamada de função do jogo que está em execução:
+  
+    quando seu jogo é lançado do painel do sistema operacional
+    quando você completa um desafio
+    quando outro jogador completa um desafio
+    quando o jogo é iniciado a partir do painel do sistema operacional, selecionando um desafio
+  
+  Qualquer uma das ligações acima desencadeará o Evento Social e um mapa async_load será gerado com os seguintes detalhes (note que há um valor chave diferente "id" para definir cada
+    das diferentes razões pelas quais o evento foi chamado, mas todos os outros conteúdos do mapa são os mesmos):
+  
+    "id" - O valor desta chave dependerá do tipo de chamada de retorno que desencadeará o evento. ela pode ser uma destas constantes:
+  
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        achievement_challenge_received
+        Um desafio foi recebido
+      
+      
+        achievement_challenge_completed
+        Um desafio foi vencido.
+      
+      
+        achievement_challenge_completed_by_remote
+        Um desafio foi vencido pelo outro jogador.
+      
+      
+        achievement_challenge_launched
+        O jogo foi lançado a partir do painel do sistema operacional com o desafio dado.
+      
+    
+  
+   
+  
+    "playerid" - A identificação do jogador para o desafio.
+    "issuerid" - A identidade da pessoa que lançou o desafio.
+    "state" - O estado do desafio, que terá um valor de 0 - 3 (como um fio) para inválido, pendente, concluído ou recusado.
+    "message" - A mensagem de texto para o desafio.
+    "issueddate" - A data de emissão para o desafio
+    "completeddate" - A data de conclusão para o desafio.
+    "type" - O tipo de desafio dado. Pode ser uma de duas constantes:
+  
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        achievement_type_score_challenge
+        Um desafio com base no valor da pontuação.
+      
+      
+        achievement_type_achievement_challenge
+        Um desafio baseado em uma conquista.
+      
+    
+  
+   
+  
+    "identifier" - O fio identificador para o desafio.
+    "score" - A pontuação empatada com o desafio.
+  
+  Abaixo você pode encontrar um pequeno trecho de código como exemplo de uso:
+  var ident = ds_map_find_value(async_load, "id" ); if ident == achievement_challenge_completed; { player_id = ds_map_find_value(async_load, "playerid"); issuer_id = ds_map_find_value(async_load, "issuerid");  state = ds_map_find_value(async_load, "state"); date_completed = ds_map_find_value(async_load, "complete date"); date_issued = ds_map_find_value(async_load, "issued date"); ach_type = ds_map_find_value(async_load, "issued date"),
+    "type"); ach_ident = ds_map_find_value(async_load, "identifier"); ach_score = ds_map_find_value(async_load, "score"); }
+  Para informações sobre este evento em conjunto com o alvo UWP e as funções da XBox Live, consulte a página seguinte:
+  
+    UWP e XBox ao vivo - Criação de jogos
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Eventos Async
+        A seguir: Vapor
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,50 @@
+
+  
+  audio_stop_sound
+  Esta função interromperá o som dado se ele estiver tocando no momento. O som pode ser uma única instância de um som (o índice para sons individuais que estão sendo tocados pode ser armazenado em uma variável quando se usa o audio_play_sound() ou
+    audio_play_sound_at() funções) ou um bem sonoro, em cujo caso todas as instâncias do som dado serão interrompidas.
+   
+  Sintaxe:
+  audio_stop_sound(índice);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do som a ser parado.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if !global.SFX {
+     audio_stop_sound(snd_Waterfall);
+     }
+     mais
+     {
+     audio_play_sound_at(snd_Waterfall, x, y, 0, 100, 300, 1, true, 1); }
+  
+  O código acima verifica a variável global "SFX" e se ela retornar falso , parará o som indexado na variável "snd_Waterfall" que está tocando atualmente, e se ela retornar verdadeiro,
+    ele fará o loop do som.
+   
+   
+   
+  
+    
+      
+        Voltar: Áudio
+        Próximo: audio_stop_all
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

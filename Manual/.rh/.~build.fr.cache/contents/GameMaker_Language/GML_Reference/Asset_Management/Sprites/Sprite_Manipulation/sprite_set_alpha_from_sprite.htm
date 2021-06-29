@@ -1,0 +1,67 @@
+
+  
+  sprite_set_alpha_from_sprite
+  Esta função utiliza o valor/saturação de um duende e o multiplica com o alfa do duende alvo. O ideal seria que o duende utilizado para gerar o novo mapa alfa fosse em escala de cinza, com as áreas brancas tendo um valor alfa equivalente a 1
+    (opaco), sendo as áreas negras equivalentes ao alfa 0 (transparente), e as áreas cinzas sendo um alfa entre 0 e 1. O duende que você está definindo o alfa não pode ser um recurso permanente, nem o duende que você usa para definir o alfa,
+    pois isso dará um erro. Isto significa que você deve criar dois sprites completamente novos "on the fly" de alguma forma para que a função funcione corretamente. Isto pode ser conseguido usando superfícies, ou criando um duende a partir da tela (o código
+    exemplo abaixo mostra como o efeito pode ser alcançado com superfícies).
+  NOTA: Esta função é útil apenas para sprites bitmap e não funcionará com sprites SWF ou JSON (Espinha).
+  Abaixo está uma imagem que ilustra como esta função funciona:
+  
+   
+  Sintaxe:
+  sprite_set_alpha_from_sprite(ind, spr);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do sprite para mudar o mapa de transparência.
+      
+      
+        spr
+        O índice do sprite para tomar os dados do mapa de transparência.
+      
+    
+  
+   
+  Devoluções
+  N/A
+   
+  Exemplo ampliado:
+  Neste exemplo ampliado, mostramos como é possível criar um duende de efeito especial a partir de dois recursos de duende. Para começar, precisamos ter uma variável controladora no evento Create da instância. Esta variável é para garantir que a sprite seja apenas
+    criado uma vez:
+  spr_create = true;
+  Uma vez feito isso, precisamos então ir ao Evento de Sorteio e adicionar este código:
+  se spr_create {
+     spr_create = false; var _sw = sprite_get_width(spr_Explosion_Alpha); var _sh = sprite_get_height(spr_Explosion_Alpha); var _xo = sprite_get_xoffset(spr_Gradient); var _yo = sprite_get_yoffset(spr_Gradient); var _surf = surface_create(_sw, _sh); surface_set_target(_surf);
+     draw_clear_alpha(c_black, 0); draw_sprite(spr_Gradient, 0, 0, 0, 0); sprite_index = sprite_create_from_surface(_surf, 0, 0, _sw, _sh, false, false, _xo, _yo); draw_clear_alpha(c_black, 0); draw_sprite(spr_Explosion_Alpha,
+    0, _xo, _yo); var _spr = sprite_create_from_surface(_surf, 0, 0, _sw, _sh, false, false, _xo, _yo); surface_reset_target();
+     surface_free(_surf);
+     sprite_set_alpha_from_sprite(sprite_index, _spr); sprite_delete(_spr);
+     }
+     draw_sprite(sprite_index, 0, x, y);
+  O código acima verifica primeiro se a variável de controle é verdadeira ou não, e se for, então executa o código para definir o alfa sprite, definindo a variável como falsa para evitar que o código funcione mais de uma vez. Neste caso, ele cria uma superfície
+    o tamanho da máscara alfa que desejamos usar, então desenha o duende que deve ter seu alfa modificado na superfície e cria um novo duende a partir dele, atribuindo-o como o índice de duende do objeto. O código então limpa a superfície e
+    desenha o duende do mapa alfa e cria outro novo duende, armazenando seu índice em uma variável local. Finalmente, o novo duende designado para o objeto recebe seu conjunto alfa deste duende temporário, a superfície é liberada e o duende temporário é
+    removido.
+  Há uma última coisa a fazer aqui, e que é remover da memória o duende que foi criado para o objeto quando não estiver em uso. Isto seria feito ou no Evento Destroy ou no Evento Room End como este:
+  sprite_delete(sprite_index);
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação de Sprite
+        Próximo: sprite_set_cache_size_s
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

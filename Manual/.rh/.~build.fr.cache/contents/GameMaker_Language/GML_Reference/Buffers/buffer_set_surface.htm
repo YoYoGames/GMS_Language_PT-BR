@@ -1,0 +1,51 @@
+
+  
+  superfície_superfície_de_tampão
+  Com esta função você pode escrever as informações de um buffer para uma determinada superfície. Tanto o buffer que está sendo lido quanto a superfície que está sendo escrita devem ter sido criados anteriormente, e você pode fornecer uma compensação no buffer para iniciar a leitura a partir dele.
+    Note que a leitura sempre começará no início do buffer mais o valor do offset e não na posição atual de busca mais o valor do offset.
+  NOTA: Esta função foi alterada a partir da atualização do GameMaker Studio 2.3.1. As versões anteriores utilizavam a constante buffer_surface_copy, que agora está obsoleta.
+   
+  Sintaxe:
+  buffer_set_surface(buffer, superfície, offset);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O índice do buffer a ser utilizado.
+      
+      
+        superfície
+        O índice da superfície a ser utilizada.
+      
+      
+        offset
+        O valor da compensação de dados.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  buffer_set_surface(buff, surface_surface_de_aplicação, 0);
+  O código acima copiará todos os dados armazenados no buffer indexado na variável "buff" para a superfície da aplicação, sem compensação.
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: tamanho_tampão
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

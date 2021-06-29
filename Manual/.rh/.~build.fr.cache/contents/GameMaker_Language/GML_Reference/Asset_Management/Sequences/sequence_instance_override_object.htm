@@ -1,0 +1,52 @@
+
+  
+  sequence_instance_override_object
+  Com esta função você pode anular (substituir) todas as instâncias de um objeto utilizado em uma seqüência por outro. Você fornece o ID da estrutura da instância sequencial (como retornado quando a instância sequencial foi criada na sala ou usando uma das camadas da sala
+    funções - veja aqui), bem como o índice de objetos (conforme definido no navegador de ativos) para o objeto que você deseja substituir. Finalmente, você dá um índice de objetos ou uma identificação de instância para usar como
+    o objeto que vai anular a seqüência (o fornecimento de uma identificação de instância irá simplesmente usar o objeto a partir do qual a instância foi criada como a anulação). Note que isto só pode ser feito em instâncias de seqüência (não em objetos de seqüência) e deve ser feito
+    antes que a seqüência comece a tocar, caso contrário não vai funcionar.
+   
+  Sintaxe:
+  sequence_instance_override_object(sequence_instance_struct, object_id, instance_or_object_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        estrutura_de_instância_seqüência
+        A estrutura da instância de seqüência a ser modificada.
+      
+      
+        object_id
+        O índice de objetos do objeto dentro da seqüência a ser substituída.
+      
+      
+        instance_or_object_id
+        O índice de objetos ou a identificação da instância a ser usada para anular os objetos da seqüência.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var _seq = layer_sequence_create("Background", 0, 0, seq_AnimatedBackground); var _seq_inst = layer_sequence_get_instance(_seq); sequence_instance_override_object(_seq_inst, obj_Trees_Winter, obj_Trees_Summer);
+  O código acima cria uma nova instância de seqüência na camada dada e depois a modifica para que todas as instâncias do objeto "obj_Trees_Winter" sejam substituídas por instâncias do objeto "obj_Trees_Summer".
+   
+   
+   
+  
+    
+      
+        Voltar: Sequências
+        Próximo: in_sequence
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

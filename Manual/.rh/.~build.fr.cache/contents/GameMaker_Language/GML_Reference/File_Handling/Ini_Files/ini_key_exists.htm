@@ -1,0 +1,49 @@
+
+  
+  ini_key_existe
+  Esta função verifica se existe uma chave no ini atualmente aberto e retornará verdadeira se existir ou falsa de outra forma. Esta não é uma verificação necessária para evitar erros, pois, quando uma chave não existe, a leitura a partir de uma chave inexistente
+    apenas retornará um valor padrão. Pode ser útil ver se um arquivo ini salvou dados específicos e algumas outras coisas, no entanto.
+   
+  Sintaxe:
+  ini_key_exists(seção, chave);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        seção
+        A seção no arquivo .ini aberto para verificar uma chave de acesso.
+      
+      
+        chave
+        A chave a ser verificada.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  ini_open("savedata.ini"); se !ini_key_existir("save1", "nome") {
+     global.name = "Player1"; }
+     ini_close();
+  
+  Isto definirá a variável global.name como "Player1" se não existir uma chave como "name".
+   
+   
+   
+  
+    
+      
+        Voltar: Arquivos de Inicia
+        Próximo: ini_section_existe
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

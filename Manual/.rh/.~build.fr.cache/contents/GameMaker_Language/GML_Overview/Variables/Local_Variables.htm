@@ -1,0 +1,54 @@
+
+  
+  Variáveis locais
+  Uma variável local é aquela que criamos apenas para um evento ou função específica e depois descartamos quando o evento ou função tiver terminado. Se ela for criada em uma função personalizada, então a variável local
+    só está disponível para a função e depois é descartada quando a função tiver terminado. Por que precisaríamos deles? Bem, as variáveis ocupam espaço na memória e pode ser que vamos usá-las apenas para uma operação ou função e, nesse caso, nós apenas
+    precisam tê-lo em memória durante aquele curto período de tempo em que é usado. Isto mantém sua base de código limpa e arrumada, além de manter o espaço de memória otimizado para as coisas que realmente precisam dele. Para declarar uma variável local, usamos o operador var.
+    assim:
+  var _i, _num, _str; _i = 0; _num = 24,5; _str = "Hello World";
+     // ou
+     var _i = 0, _num = 24,5, _str = "Hello World";
+     // ou
+     var _i = 0; var _num = 24,5; var _str = "Hello World";
+  Todas as variáveis criadas desta forma serão "esquecidas" (ou seja: removidas da memória) no final do evento (ou função) em que foram criadas. Você deve ter cuidado para que o nome que você dá a todas as variáveis declaradas var faça
+    não coincidir com outra variável de instância dentro do objeto que executa o código, e também certificar-se de que você não tem intenção de usar o valor armazenado naquela variável fora do evento ou função em que você o declara (nos exemplos acima, todos
+    as variáveis declaradas var foram definidas com o sublinhado "_" anterior ao nome da variável, mas isto não é necessário e é feito simplesmente para tornar mais óbvio no código que estamos lidando com uma variável local). Dito isto,
+    se você se encontrar em uma situação em que acha que uma variável local deve ser a mesma que uma variável de instância, então você pode usar a palavra-chave self para identificar a instância
+    variável como separada, por exemplo:
+  var hp = 10; com (obj_Enemy) {
+     self.hp -= hp; }
+  
+  As variáveis locais são muito usadas em programas, especialmente em loops para contar iterações, ou quando se usa um valor várias vezes em uma operação que não está indo
+    para ser repetido novamente. Aqui estão outros dois exemplos:
+  var _i = 0; repetir (10) {
+     inventário[_i] = 0; _i += 1; }
+  
+  O código acima cria uma variável local chamada "_i" e a coloca em 0, tudo na mesma linha. Observe que nas versões anteriores de GameMaker você tinha que declarar primeiro suas variáveis locais e depois atribuir
+    valores, mas nesta versão você pode declarar e atribuir-lhes um valor ao mesmo tempo. O código acima usa então esta variável para inicializar um array. Como a variável "_i".
+    não vai ser usada para nenhuma outra função na instância além desta, ela pode ser local no escopo. Aqui está mais um exemplo:
+  var _x, _y; _x = x - 32 + irandom(64); _y = y - 32 + irandom(64); instance_create_layer(_x, _y, "Effects", obj_blood);
+  Aqui usamos as variáveis locais "_x" e "_y" para armazenar algumas coordenadas aleatórias que depois usamos para criar uma instância. Neste exemplo, você pode ver que não é estritamente
+    necessário que utilizemos essas variáveis, mas por uma questão de legibilidade e facilidade de uso, nós o fazemos. É MUITO mais claro e óbvio o que estamos fazendo ali do que se utilizássemos este código:
+  instance_create_layer(x - 32 + irandom(64), y - 32 + irandom(64), "Effects", obj_guts);
+  Uma outra coisa sobre as variáveis locais declaradas var deve ser notada... Como elas são exclusivas do evento ou função que as executa, também podem ser usadas em qualquer outra instância através de código! Isto significa que podemos usar estas variáveis para definir
+    e mudar as coisas em outras instâncias usando a construção "with()" (veja a seção sobre escopo variável para mais informações). O código propriamente dito pareceria algo
+    assim:
+  var num = instance_number(obj_Enemy); com (obj_Enemy) {
+     if num>10 instance_destroy(); }
+  
+  O código acima funciona porque a variável declarada var é local para o evento (ou função) em que está contida, não para a instância, nem para o mundo do jogo, e portanto pode ser usada em qualquer função em qualquer objeto, desde que esteja no mesmo bloco de código.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis e Escopo de Variáveis
+        A seguir: Variáveis de instância
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,45 @@
+
+  
+  camada_destroy_instances
+  Esta função pode ser usada para destruir todas as instâncias atribuídas à camada em questão. Você fornece o ID da camada (que você obtém quando cria a camada usando layer_create()) ou o nome da camada (como um fio - este
+    terá um impacto no desempenho), e então todas as instâncias que estiverem na camada serão removidas do jogo, acionando seus eventos Destroy and Clean Up ( Destruição e Limpeza ).
+   
+  Sintaxe:
+  layer_destroy_instances(layer_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada para definir a profundidade de (ou o nome da camada como uma corda)
+      
+    
+  
+   
+  Devoluções:
+  Real (valor de identificação único para um exemplo)
+   
+  Exemplo:
+  if global.game_over {
+     layer_destroy_instances(layer);
+     }
+  
+  O código acima verificará uma variável global e, se for verdade, todas as instâncias que estiverem na camada da instância de chamada serão destruídas (incluindo a instância de chamada).
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próximo: layer_element_move
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

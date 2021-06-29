@@ -1,0 +1,48 @@
+
+  
+  xboxlive_get_user
+  Com esta função você pode recuperar o ponteiro de identificação do usuário para o usuário indexado. Se o usuário não existir, a função retornará o ponteiro_nulo constante em seu lugar. Você pode encontrar o número de usuários atualmente logados com a função
+    xboxlive_get_user_count().
+  IMPORTANTE: Esta função só deve ser usada com xboxlive_get_user_count() - não use esta função com gamepads. Use xboxlive_user_for_pad()
+    
+    ao invés disso.
+   
+   
+  Sintaxe:
+  xboxlive_get_user(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice (um número inteiro) para obter o ID do usuário.
+      
+    
+  
+   
+  Devoluções:
+  Apontador
+   
+  Exemplo:
+  for(var i = 0; i < xboxlive_get_user_count(); ++i;)  {
+     user_id[i] = xboxlive_get_user(i); }
+  
+  Os loops acima passam por todos os usuários assinados e armazenam seu ponteiro de identificação único em uma matriz.
+   
+   
+   
+  
+    
+      
+        Voltar: Usuários e Contas
+        Próximo: xboxlive_get_activating_user
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,114 @@
+
+  
+  window_set_cursor
+  Com esta função você pode ajustar o cursor para a janela do jogo para qualquer uma das constantes listadas abaixo (para encontrar o cursor atual sendo usado, você pode usar a função window_get_cursor() que também retornará
+    uma dessas constantes):
+   
+  
+    
+      
+        Constante
+        Cursor
+      
+      
+        cr_none
+         
+      
+      
+        cr_default
+        
+      
+      
+        cr_arrow
+        
+      
+      
+        cr_cross
+        
+      
+      
+        cr_beam
+        
+      
+      
+        cr_size_nesw
+        
+      
+      
+        cr_size_ns
+        
+      
+      
+        cr_size_nwse
+        
+      
+      
+        cr_size_we
+        
+      
+      
+        cr_uparrow
+        
+      
+      
+        cr_hourglass
+        
+      
+      
+        cr_drag
+        
+      
+      
+        cr_appstart
+        
+      
+      
+        cr_handpoint
+        
+      
+      
+        cr_size_all
+        
+      
+    
+  
+   
+  Sintaxe:
+  window_set_cursor(cursor);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        cursor
+        O cursor a ser ajustado para a janela do jogo.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if mouse_check_button_pressed(mb_left) {
+     window_set_cursor(cr_drag);
+     }
+  
+  O código acima mudará o cursor da janela para o cursor de arrastar da janela padrão se o botão esquerdo do mouse tiver sido pressionado.
+   
+   
+   
+  
+    
+      
+        Voltar: A Janela de Jogo
+        Próximo: window_set_min_width
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

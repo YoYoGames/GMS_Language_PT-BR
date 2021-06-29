@@ -1,0 +1,48 @@
+
+  
+  xboxlive_user_for_pad
+  Esta função retornará o ponteiro de identificação do usuário associado ao valor do índice gamepad dado, ou ponteiro_nulo se nenhum usuário estiver associado a ele. Note que esta função deve ser usada somente com índices gamepad, e não com xboxlive_get_user_count().
+   
+  Sintaxe:
+  xboxlive_user_for_pad(pad_index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        pad_index
+        O índice (um número inteiro) do slot do gamepad para verificar
+      
+    
+  
+   
+  Devoluções:
+  Apontador
+   
+  Exemplo:
+  for(var i = 0; i < 11; ++i;) {
+     var u_id = xboxlive_user_for_pad(i); if u_id != pointer_null {
+     pad_name[i] = xboxlive_gamedisplayname_for_user(u_id); }
+     else
+     {
+     pad_name[i] = "Press Play"; }
+     }
+  
+  O código acima passa por todos os slots de teclado disponíveis e verifica se há um ponteiro de identificação do usuário associado a ele. Se houver, um array é definido com o nome do display do usuário, caso contrário, o array é definido com algum texto padrão.
+   
+   
+   
+  
+    
+      
+        Voltar: Usuários e Contas
+        Próximo: xboxlive_pad_for_user
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

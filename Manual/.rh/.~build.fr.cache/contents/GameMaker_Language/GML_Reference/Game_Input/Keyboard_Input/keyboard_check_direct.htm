@@ -1,0 +1,48 @@
+
+
+
+
+  
+  teclado_check_direct
+  Esta função retornará verdadeiro se a chave com o código de chave particular for pressionada, ou falso se não for, verificando diretamente o hardware. Ela permite mais algumas verificações, em particular, você pode usar os códigos de chave vk_lshift, vk_lcontrol,
+   vk_lalt, vk_rshift, vk_rcontrol e vk_ralt para verificar se a tecla de deslocamento à esquerda ou à direita, controle ou alt está pressionada. A função terá um valor de código de chave como retornado pela função ord()    (somente letras maiúsculas de A-Z ou números de 0-9), ou qualquer uma das constantes vk_* listadas na página principal de Entrada do Teclado.
+  NOTA: Esta função está disponível apenas para o alvo padrão do Windows e o resultado é independente de qual aplicação tem foco.
+   
+  Sintaxe:
+  teclado_check_direct(key);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        chave
+        A chave para verificar o estado de down.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if keyboard_check_direct(vk_ralt) || keyboard_check_direct(vk_lalt) {
+     crouch = true; }
+  
+  O código acima verificará se as teclas alt esquerda ou direita foram pressionadas, e se elas têm a variável "agachar" para verdadeira.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada de Teclado
+        Próximo: keyboard_clear
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

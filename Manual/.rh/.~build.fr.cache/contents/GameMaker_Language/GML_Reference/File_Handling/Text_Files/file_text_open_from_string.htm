@@ -1,0 +1,44 @@
+
+  
+  file_text_open_from_string
+  Esta função criará um arquivo de texto a partir de uma string e o abrirá para leitura, retornando o arquivo "handle" que deve ser usado em todas as outras chamadas de função de arquivo para leitura a partir deste arquivo. Note que este arquivo é temporário e somente para leitura,
+    e, como tal, será removida da memória no momento em que for fechada.
+  OBSERVAÇÃO: Você só pode ter um máximo de 32 arquivos abertos a qualquer momento. Você também deve sempre fechar os arquivos quando terminar, pois isto escreve as informações e libera a memória associada ao arquivo.
+  ATENÇÃO! Esta função pode não funcionar como você espera devido ao GameMaker Studio 2 ser lixado! Consulte a seção sobre o Sistema de Arquivos para maiores informações.
+   
+  Sintaxe:
+  file_text_open_from_string(string);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        corda
+        O fio para criar o arquivo de.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  file = file_text_open_from_string(reset_str);
+  O código acima pega a string armazenada na variável "reset_str" e a utiliza para criar um arquivo de texto somente leitura. O "handle" para este arquivo é então armazenado na variável "file" para todas as outras funções de arquivo a serem usadas.
+   
+   
+   
+  
+    
+      
+        Voltar: Arquivos de texto
+        Próximo: file_text_read_real
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

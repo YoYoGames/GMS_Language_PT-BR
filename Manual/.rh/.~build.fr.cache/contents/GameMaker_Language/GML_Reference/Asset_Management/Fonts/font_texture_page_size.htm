@@ -1,0 +1,39 @@
+
+  
+  font_texture_page_size
+  Esta variável incorporada pode ser usada para obter ou definir o tamanho da página de textura ao usar a função font_add(). Ao adicionar uma fonte usando essa função, o GameMaker Studio 2 irá
+    criar um cache de página de textura dos glifos necessários até o tamanho definido por esta variável. O processo é o seguinte:
+  
+    Cada personagem que você usa é colocado em cache a partir da fonte em uma página de textura
+    Quando a página de textura estiver cheia (porque você usa caracteres grandes ou muitos caracteres diferentes), o GameMaker Studio 2 removerá os caracteres do cache e os substituirá por novos caracteres que você precisa
+    OGameMaker Studio 2 tenta não fazer a textura muito grande porque nem todos os dispositivos podem lidar com texturas grandes, e tenta não fazer a textura muito pequena porque remover e readicionar os caracteres à textura leva tempo para a CPU
+      e faz com que seu jogo corra lentamente
+  
+  Se você acha que precisa de uma página de textura maior ou menor do que a 1024px padrão que o GameMaker Studio 2 usa, você pode definir o valor usando esta variável incorporada. Se você não estiver usando a função font_add(),
+    então a configuração não terá efeito no desempenho de seus jogos, pois as fontes adicionadas na IDE estão em cache nas páginas de textura regular (que você pode controlar a partir do Editor de Fonte e
+    as opções de jogo para a plataforma alvo).
+   
+  Sintaxe:
+  font_texture_page_size;
+   
+  Devoluções:
+  Real (largura/altura máxima em pixels)
+   
+  Exemplo:
+  font_texture_page_size = 512; newfont = font_add("Arial", 24, true, true, 32, 128);
+  O código acima define a página de textura do cache da fonte para um tamanho máximo de 512px e depois adiciona uma nova fonte ao jogo.
+   
+   
+   
+  
+    
+      
+        Voltar: Fontes
+        Próximo: font_get_name
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

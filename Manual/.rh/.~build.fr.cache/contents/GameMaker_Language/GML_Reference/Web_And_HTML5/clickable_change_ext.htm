@@ -1,0 +1,65 @@
+
+  
+  clickable_change_ext
+  Com esta função você pode mudar o sprite e a posição de um ícone clicável previamente criado com clickable_add(). Tenha em mente que a posição é baseada na janela, não na tela, (0,0) posição
+    e que o duende deve ser referenciado diretamente da página de textura (ver: sprite_get_tpe()). Esta função também permite alterar a escala do duende
+    usado (como um multiplicador para que 1 seja o padrão, 0,5 seja metade e 2 seja o dobro) e o valor alfa de 0 (totalmente transparente) a 1 (totalmente opaco) para o ícone final na tela.
+   
+  Sintaxe:
+  clickable_change_ext(index, tpe, x, y, alpha, scale)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do ícone clicável para mudar.
+      
+      
+        tpe
+        A entrada da página de textura para o duende a ser utilizado
+      
+      
+        x
+        A nova posição x dentro da janela.
+      
+      
+        y
+        A nova posição y dentro da janela.
+      
+      
+        escala
+        A escala do ícone (padrão 1).
+      
+      
+        alfa
+        O alfa da imagem do ícone (padrão 1).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  interruptor (sala) {
+     case rm_Menu: clickable_change_ext(global.Help_Icon, sprite_get_tpe(spr_MS_Help, 1), 32, 32, 2, 1); break; case rm_Game: clickable_change_ext(global.Help_Icon, sprite_get_tpe(spr_MS_Help, 0), 200, 32, 1, 0.5); break; }
+  
+  O código acima mudará o índice de imagem e a posição do ícone clicável indexado na variável "global.Help" dependendo da sala atual, mudando a escala do ícone e alfa também.
+   
+   
+   
+  
+    
+      
+        Voltar: Web e HTML5
+        Próximo: clickable_set_style
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

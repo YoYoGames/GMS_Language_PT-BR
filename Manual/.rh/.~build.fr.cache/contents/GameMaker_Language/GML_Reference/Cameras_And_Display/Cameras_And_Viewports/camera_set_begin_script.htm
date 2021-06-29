@@ -1,0 +1,57 @@
+
+  
+  camera_set_begin_script
+  Esta função pode ser usada para definir uma função de script que será chamada no início de cada quadro de jogo que a câmera for atribuída a uma porta de visualização visível e ativa. Você dá à câmera única
+    valor de identificação (como retornado pelos diferentes camera_create() funções) e a identificação da função a ser chamada. A ordem na qual os scripts anexados às câmeras e a renderização real da visão da câmera é a seguinte:
+  
+    As câmeras para todas as portas de visualização visíveis e ativas têm sua função de atualização chamada
+    Depois, para cada vista:
+      
+        A função de início da câmera para essa visão é chamada
+        Os eventos do sorteio são executados para essa visão
+        A função final para a câmera é chamada
+      
+    
+    Passe para a próxima visão visível ativa e repita...
+  
+   
+  Sintaxe:
+  camera_set_begin_script(camera_id, script)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        camera_id
+        O valor único de identificação da câmera retornou quando você criou a câmera.
+      
+      
+        roteiro
+        A função do roteiro para executar cada frame do jogo
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  camera_set_begin_script(view_camera[0], beginCamera);
+  O código acima define a função begin script para a câmera designada para visualizar a porta [0].
+   
+   
+   
+  
+    
+      
+        Voltar: Câmeras e Ver Portos
+        Próximo: camera_set_end_script
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

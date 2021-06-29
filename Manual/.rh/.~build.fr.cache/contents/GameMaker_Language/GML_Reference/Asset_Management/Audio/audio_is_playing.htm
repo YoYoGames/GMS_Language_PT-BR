@@ -1,0 +1,47 @@
+
+  
+  audio_is_playing
+  Esta função verificará o som dado para ver se ele está tocando no momento. O som pode ser uma única instância de um som (o índice para sons individuais que estão sendo tocados pode ser armazenado em uma variável quando se usa o audio_play_sound() ou 
+    audio_play_sound_at() funções) ou um ativo sonoro, em cujo caso todas as instâncias do som dado serão verificadas e se alguma delas estiver desempenhando a função voltará a ser verdadeira de outra forma
+      retornará falso. Note que esta função ainda retornará verdadeiro se o som sendo verificado tiver sido pausado anteriormente usando o audio_pause_sound() função.
+   
+  Sintaxe:
+  audio_is_playing(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do som a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if !audio_is_playing(snd_Waterfall) {
+     audio_play_sound_at(snd_Waterfall, x, y, 0, 300, true, 1); }
+  
+  O código acima verifica se o som indexado na variável "snd_Waterfall" está tocando no momento e se ele retorna falso, então o som será laçado em sua posição de sala, com uma distância de queda
+    de 300 e uma prioridade baixa.
+   
+   
+   
+  
+    
+      
+        Voltar: Áudio
+        Próximo: audio_is_paused
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

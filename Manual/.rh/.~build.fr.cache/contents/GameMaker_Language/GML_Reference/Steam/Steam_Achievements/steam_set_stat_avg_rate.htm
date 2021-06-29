@@ -1,0 +1,61 @@
+
+  
+  vapor_set_stat_avg_rate
+  Esta função permite definir um tipo de estatística média com um efeito de "janela deslizante" sobre a média. O valor "session_count" é o valor atual que você deseja obter a média, enquanto o "session_length" é o valor
+    do tempo de jogo desde a última chamada para a função. Consulte o Exemplo ampliado abaixo para obter mais detalhes sobre como isto pode ser usado.
+   
+  Sintaxe:
+  steam_set_stat_avg_rate(stat_name, session_count, session_length);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        stat_name
+        O nome da estatística a ser definida (um fio).
+      
+      
+        contagem_sessão
+        O valor para obter a média de (um número real)
+      
+      
+        duração_da_sessão
+        O tempo decorrido desde a última vez que a estatística foi definida (um número real).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo ampliado:
+  Como a função estatística média pode ser complexa de entender, ilustraremos seu uso com o seguinte exemplo. Considere o caso em que você gostaria de rastrear uma estatística média, tal como "Pontos ganhos por hora". Uma abordagem seria
+    ter duas estatísticas: uma estatística inteira, "TotalPoints", e uma estatística flutuante " TotalPlayTimeHours", e então dividir os pontos totais pelo tempo total para obter o valor "Pontos por Hora".
+  Entretanto, uma vez que o jogador tenha acumulado uma quantidade significativa de tempo de jogo, a média calculada mudará extremamente lentamente, e quanto mais o usuário jogar o jogo, menos responsivo será essa média. Se o usuário tiver passado 100 horas jogando o
+    A média calculada "atrasará" em cerca de 50 horas e, se aumentarem sua habilidade, não verão o aumento de "Pontos por Hora" que esperam. Para contornar isso, podemos usar uma "janela deslizante".
+    para calcular apenas os "Pontos por hora" para as últimas 10 horas jogadas.
+  Portanto, para usar esta função, precisaríamos criar uma estatística de vapor (no painel de controle do jogo no Workshop) chamada "AvgPointsPerHour" e definir sua propriedade Window para 10. Agora, em seu jogo, você teria que adicionar algumas variáveis globais
+    em uma instância no início:
+  global.Pontos = 0; global.Tempo = 0;
+  Você então teria algum objeto controlador para contar a variável "Tempo" global em um alarme (por exemplo) a cada segundo, enquanto sua jogada afetaria a variável global "Pontos". Em intervalos regulares enquanto joga (novamente,
+    em um objeto controlador, talvez em um Alarme, ou em intervalos de sondagem do valor "Tempo") você definiria a estatística desta forma:
+  steam_set_stat_avg_rate("AvgPointsPerHour", global.Points, (global.Time / 3600)); global.Points = 0; global.Time = 0;
+  Note que dividimos o tempo por 3600, pois queremos o tempo em horas e não em segundos, e depois redefinimos a variável global "Pontos" e a variável global "Tempo" para 0, para que na próxima vez que a função for chamada, nós
+    obter uma nova média para a estatística. Agora, o que o Steam vai fazer é pegar este valor que você enviou e criar um valor médio ao longo do tempo que foi definido para nossa "janela".
+   
+   
+   
+  
+    
+      
+        Voltar: Conquistas e estatísticas
+        Próximo: steam_get_stat_int
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

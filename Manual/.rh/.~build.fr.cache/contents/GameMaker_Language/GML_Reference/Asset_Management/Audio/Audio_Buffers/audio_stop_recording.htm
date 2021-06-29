@@ -1,0 +1,45 @@
+
+  
+  audio_stop_recording
+  Esta função interromperá a gravação no canal do gravador em questão (o índice do canal é retornado quando você chama a função audio_start_recording()). Quando você parar de gravar, nenhum outro evento assíncrono de gravação de áudio será acionado para o canal do gravador em questão, de modo que você normalmente usaria esta função no canal real
+    evento assíncrono para garantir que você tenha capturado todos os dados.
+  NOTA: A maioria das plataformas , exceto HTML5, suporta a gravação de áudio de alguma forma, mas isso não significa que todos os dispositivos o permitam, mesmo que a plataforma o permita, então você deve sempre verificar se o audio_get_recorder_count() retorna um valor maior que 0 para verificar se os dispositivos de gravação estão disponíveis antes de usar
+    o resto das funções de gravação.
+   
+  Sintaxe:
+  audio_stop_recording(channel_index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        canal_index
+        O índice do canal do gravador para parar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  audio_stop_recording(audio_channel);
+  O código acima diz ao GameMaker Studio 2 para parar de gravar no índice de canais de áudio dado.
+   
+   
+   
+  
+    
+      
+        Voltar: Buffers de áudio
+        Próximo: audio_get_recorder_count
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

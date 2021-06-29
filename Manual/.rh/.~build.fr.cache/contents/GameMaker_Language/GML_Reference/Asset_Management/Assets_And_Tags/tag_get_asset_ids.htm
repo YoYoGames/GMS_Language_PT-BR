@@ -1,0 +1,105 @@
+
+  
+  tag_get_asset_ids
+  Com esta função, você pode obter todos os ativos de um determinado tipo que têm as tags atribuídas a eles. Você fornece uma única tag (como uma string) ou uma matriz, onde cada item da matriz é uma tag (como uma string), assim como o tipo de ativo a ser verificado.
+    o tipo de ativo deve ser uma das seguintes constantes:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        asset_object
+        O nome dado refere-se a um objeto.
+      
+      
+        asset_sprite
+        O nome dado refere-se a um duende.
+      
+      
+        asset_sound
+        O nome dado refere-se a um som.
+      
+      
+        asset_room
+        O nome dado refere-se a uma sala.
+      
+      
+        asset_tiles
+        O nome dado refere-se a um conjunto de azulejos.
+      
+      
+        asset_path
+        O nome dado refere-se a um caminho.
+      
+      
+        asset_script
+        O nome dado refere-se a um roteiro.
+      
+      
+        asset_font
+        O nome dado refere-se a uma fonte.
+      
+      
+        asset_timeline
+        O nome dado refere-se a uma linha de tempo.
+      
+      
+        asset_shader
+        O nome dado refere-se a um shader.
+      
+      
+        asset_animationcurve
+        O nome dado refere-se a uma Curva de Animação.
+      
+      
+        asset_sequence
+        O nome dado refere-se a uma sequência.
+      
+    
+  
+   
+  A função retornará uma matriz, onde cada item da matriz será um único valor de índice de ativos. Se não houver ativos do tipo que tenham a(s) etiqueta(s) dada(s), um array vazio será retornado.
+   
+  Sintaxe:
+  tag_get_asset_ids(tags, asset_type);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        etiquetas
+        Uma única cadeia de tags de ativos ou uma matriz com várias tags de ativos.
+      
+      
+        tipo_de_activos
+        Uma constante do tipo de ativo (listada acima)
+      
+    
+  
+   
+  Devoluções:
+  Array
+   
+  Exemplo:
+  var _paths = tag_get_asset_ids("enemy", asset_path); var _num = irandom(array_length(_paths) - 1); path_start(_paths[_num], 1, path_action_reverse, false);
+  O código acima usa a tag "inimigo" para encontrar todos os ativos do caminho com essa tag, antes de escolher uma ao acaso e atribuí-la à instância que executa o código.
+   
+   
+   
+  
+    
+      
+        Voltar: Ativos e Etiquetas
+        Próximo: tag_get_assets
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

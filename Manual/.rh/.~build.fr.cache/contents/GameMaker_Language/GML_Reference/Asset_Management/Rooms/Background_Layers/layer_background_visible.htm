@@ -1,0 +1,54 @@
+
+  
+  camada_background_visível
+  Usando esta função, você pode alternar a visibilidade dos elementos de fundo. Você fornece a identificação do elemento de fundo (que você obtém quando cria um elemento de fundo usando layer_background_create() ou quando
+    você usa a função layer_background_get_id()), e depois colocar o argumento visível em verdadeiro ou falso. Quando ajustado para verdadeiro o elemento será exibido, e quando ajustado para falso,
+    o elemento não será exibido. Note que isto depende da visibilidade da camada, e mesmo que o elemento de fundo esteja marcado como visível, ele não será desenhado se a camada sobre a qual ele está marcado como não visível.
+   
+  Sintaxe:
+  layer_background_visible(background_element_id, visible)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        background_element_id
+        O valor de identificação único do elemento de fundo a ser mudado
+      
+      
+        visível
+        A alternância de visibilidade, que pode ser verdadeira ou falsa
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if mouse_check_button_pressed(mb_left) {
+     var voltar = layer_background_get_id(layer); se layer_background_get_visible(back) {
+     layer_background_visible(back, false); }
+     else
+     {
+     layer_background_visible(back, true); }
+     }
+  
+  O código acima verifica se há um botão do mouse pressionado e, se for detectado, alternará a visibilidade de fundo do elemento de fundo atribuído à camada em que a instância que está executando o código está.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de fundo
+        Próximo: layer_background_sprite
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

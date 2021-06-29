@@ -1,0 +1,98 @@
+
+  
+  Os eventos do sorteio
+  A categoria de eventos do sorteio é aquela que tem todos os eventos que governam o que você vê na tela quando você dirige seu jogo. Ela é dividida em vários
+    separe os eventos para melhor lidar com os diferentes requisitos de desenho para seu jogo, e a imagem abaixo ilustra a ordem em que cada evento é realizado:
+  O evento de sorteio normal se divide em três subtipos: O Draw Begin, o Draw padrão e o
+    Eventos do Draw End. Em geral, você só precisará usar o evento de sorteio padrão e deve estar ciente de que todas as instâncias em uma sala terão este evento acionado a cada etapa do jogo, portanto este evento será sempre chamado de
+    já que a instância tem a bandeira visível posta em prática. É importante entender que mesmo que você não tenha definido nada para este subevento nas propriedades do objeto (ou seja: sem código nem ações), se o objeto tiver um duende atribuído, ele ainda terá um evento de sorteio que será acionado.
+    Isto porque o GameMaker Studio 2 tem duas maneiras de desenhar as coisas no evento de sorteio:
+  
+    o sorteio padrão, que é quando você define o duende nas propriedades do objeto e não coloca nenhuma ação ou código no evento de sorteio normal, e neste caso o GameMaker Studio 2 desenhará o duende atribuído automaticamente. Note que qualquer transformação
+      você realiza em outros eventos para mudar a escala da imagem, índice, mistura, etc... será refletido também enquanto o evento de sorteio estiver vazio.
+    o sorteio personalizado, que é quando você coloca o código ou ações no evento do sorteio. Isto está dizendo ao GameMaker Studio 2 " Eu quero controlar o que você desenha para instâncias deste objeto" e anula completamente o padrão
+      desenho. Isto significa que, por exemplo, você pode ter um objeto com um duende designado, depois definir o evento do sorteio para desenhar o texto e o texto será desenhado na tela, mas o duende não será desenhado, pois você não disse ao GameMaker Studio 2 para
+      desenhá-lo junto com o texto.
+  
+  O restante dos eventos do sorteio são explicados nas seções listadas abaixo:
+   
+  Início e Fim do Sorteio
+  
+    Além do evento de sorteio principal, você também tem um evento de  início de sorteio e um evento de fim de sorteio. Estes agem exatamente como um evento de Sorteio padrão (ou seja: eles desenharão o que você colocar neles a cada etapa do jogo e para
+      todos os viewports), mas eles não "sorteiam por padrão" nada se não tiverem sido explicitamente adicionados a um objeto, e sempre correrão antes/depois do evento de sorteio padrão. Assim, quando o jogo estiver em execução, você sempre terá o
+      Sorteio Evento inicial para todas as instâncias, depois o evento de sorteio para todas as instâncias, depois finalmente o evento de fim de sorteio para todas as instâncias.
+    Desta forma, você pode desenhar coisas ou definir propriedades do sorteio na etapa de início do sorteio em uma instância e ter certeza de que todas as instâncias com um evento de sorteio padrão ou evento de fim do sorteio utilizarão estas propriedades ou sortearão sobre o que a primeira instância tiver desenhado. Basicamente
+      é uma maneira segura de garantir que certas coisas sejam desenhadas em certos momentos, muito parecido com os eventos da Etapa Inicial e da Etapa Final .
+    Há algumas coisas a serem observadas ao desenhar coisas no GameMaker Studio 2, seja um duende que você está desenhando ou um shader , ou um buffer 3D:
+    
+      O evento de sorteio é um evento muito intensivo, pois é um dos eventos que consome mais tempo e recursos... para isso nunca é uma boa idéia fazer nada no evento de sorteio a não ser desenhar. Portanto, salve seu grande código ou ações complexas
+        para o evento Step ou Alarmes ou qualquer outro evento que se encaixe, mas deixe o evento de sorteio livre para o sorteio, pois é o que faz melhor.
+      Se o seu objeto teve o parâmetro visível definido para desativar (para que as instâncias do objeto não sejam desenhadas), então todos os eventos de sorteio são pulados (exceto o evento Redimensionar ). Isto significa que fazer uma instância
+        invisível impedirá que todos os códigos colocados em qualquer um desses eventos corram, portanto, não coloque códigos essenciais nos eventos de sorteio se eles não forem visíveis.
+      O que você desenha não tem nada a ver com o motor de colisão que você escolhe (tradicional ou físico), como é definido pelas propriedades do objeto e o duende (ou máscara) que o objeto foi dado.
+    
+     
+  
+  Desenho GUI
+  
+    O tipo de evento de desenho GUI se enquadra na categoria de evento de desenho e é projetado especificamente para desenhar elementos GUI que não são afetados pela escala ou rotação da câmera de visão. Isto significa que você
+      pode ter uma instância desenhar todos os elementos para seu HUD ou interface de usuário sem ter que basear todo o posicionamento dos elementos na posição da instância dentro da sala ou na posição
+      da visão atual da câmera.
+    Ao desenhar nestes eventos, é importante que você entenda que as coordenadas do desenho não mudam mesmo quando as vistas da câmera estão ativas e (0,0) é sempre o canto superior esquerdo da superfície da aplicação ou do visor (veja o
+      nota na parte inferior desta seção), e a largura e altura padrão são 1:1 com a superfície de aplicação. A ordenação de profundidade ainda é mantida entre diferentes instâncias em diferentes camadas (assim, uma instância em uma camada mais alta será desenhada sob
+      uma em uma camada inferior) e também dentro dos próprios eventos, já que o evento Draw GUI Begin desenhará primeiro para todas as instâncias, depois o GUI padrão Draw GUI desenhará para todas as instâncias sobre isso, e finalmente o evento Draw Gui End 
+      é acionado.
+    Desta forma, você pode desenhar coisas ou definir propriedades de desenho na GUI de Desenho Começa em uma instância e ter certeza de que todas as instâncias com uma GUI padrão de Desenho ou evento Draw GUI End utilizarão estas propriedades ou desenharão sobre o que a primeira instância tiver desenhado. Basicamente
+      é uma maneira segura de garantir que certas coisas sejam desenhadas em certos momentos, muito parecido com os eventos do Passo Inicial e do Passo Final.
+    Estes eventos também podem ser usados em conjunto com os eventos de Desenho normal (que serão afetados pela posição de visão da câmera, escala e rotação como normal). Se você não tiver nenhum Evento de Sorteio, mas tiver um Evento de Sorteio GUI, então o GameMaker Studio 2 ainda
+      por padrão, desenha o duende para a instância (se tiver) como normal.
+    Em relação aos outros eventos de sorteio, os eventos de GUI de sorteio sempre desenharão sobre qualquer coisa sorteada nos eventos de sorteio normais. Assim, se você tiver uma instância em uma camada inferior com um evento de desenho GUI, ela desenhará sobre a instância que está em uma camada superior
+      com um evento de sorteio regular. Se ambas as instâncias tiverem um evento de sorteio GUI, então a ordem de camadas será respeitada.
+    NOTA: Este evento irá, por padrão, desenhar 1:1 com o tamanho da superfície de aplicação, que normalmente é o tamanho da sala ou da porta de visualização. Isto significa que quando você tiver a Correção da Relação de Aspecto nas Opções de Jogo
+      o GUI não vai ser desenhado sobre as barras pretas que "caixa de correio" do jogo. Este comportamento pode ser desativado usando o  display_set_gui_maximise() função,
+      e você também pode bloquear o evento GUI a um tamanho específico que será então dimensionado para se ajustar automaticamente ao display ou às dimensões da superfície da aplicação, usando a função display_set_gui_size().
+     
+  
+  Pré e Pós-Sorteio
+  
+    Os eventos de Pré-Sorteio e Pós-Sorteio fazem parte da categoria de Eventos de Sorteio. No entanto, ao contrário dos outros eventos de sorteio, estes sorteiam diretamente para o buffer de exibição, que será o tamanho
+      do espaço da tela combinada para todos os viewports atualmente visíveis, ou do tamanho da janela se apenas um viewport ou nenhum. A imagem abaixo ilustra isto:
+    Portanto, se você estiver usando os eventos de Pré ou Pós-sorteio, você está desenhando para o alvo de renderização em tela cheia (buffer de exibição) que terá
+      do mesmo tamanho da janela à qual todos os viewports são feitos para caber. Se você não tiver nenhum viewports ativo, este é definido para o tamanho da própria janela.
+    O evento de Pré-Sorteio é acionado antes de qualquer outro evento de sorteio, e nele você pode definir valores, definir propriedades de sorteio e até mesmo desenhar coisas sem se preocupar com os viewports ou com o tamanho da camada GUI (o tamanho da camada GUI pode ser o mesmo que a tela
+      buffer, mas pode não ser, já que você pode definir a resolução GUI em código).
+    É importante notar que este evento acontece antes que o buffer de exibição seja liberado para desenho regular, o que significa que se você não desligar a limpeza da visualização no editor da sala, então nada do que é desenhado no evento de Pré-Sorteio será visto, pois o
+      O primeiro sorteio do viewport irá esclarecê-lo. Se você quiser ser capaz de ver através dos próprios viewports ou não estiver usando viewports, então você também deveria ter definido a cor de fundo para ter um alfa de 0 no Editor de sala.
+    NOTA: Se você desligar estas opções, você poderá notar artefatos indesejados sendo desenhados na tela quando o jogo for testado (como "trilhas" de instâncias). Isto é porque você está desenhando diretamente sobre o quadro anterior
+      do buffer de exibição sem que ele seja liberado. Entretanto, você pode usar draw_clear_alpha() para fazer isso
+      você mesmo.
+    O evento do Sorteio é acionado após todos os eventos de sorteio padrão, mas antes dos eventos de GUI do sorteio. Como o evento de Pré-Sorteio, ele é baseado no tamanho do buffer de exibição, e é colocado antes dos eventos da GUI de Sorteio para permitir que você
+      realizar efeitos de pós-processamento e outras coisas em tela cheia de forma simples e fácil, sem interferir em nenhum elemento HUD/ GUI 
+      que você possa ter em seu jogo.
+     
+  
+  Redimensionamento da janela
+  
+    Este tipo de evento se enquadra na categoria de evento de sorteio e, embora não desenhe nada, ele reage a mudanças no buffer de exibição - especificamente, ele foi projetado para reagir à mudança no tamanho do buffer de exibição do UWP quando o
+      A janela do jogo está "quebrada".
+    Na plataforma alvo UWP, é importante que você pegue qualquer redimensionamento do buffer de exibição do "snapping" da janela do jogo (quando o usuário arrasta a janela para o lado da tela, por exemplo). Este evento fará exatamente isso e
+      é acionado toda vez que a janela é alterada, permitindo que você adicione aqui um código personalizado que redimensionará a visualização ou reposicionará elementos HUD conforme necessário. Esta função é fornecida como uma função conveniente
+      maneira de evitar ter um código de evento por etapas que verifica estas coisas o tempo todo.
+    NOTA: Você não pode desenhar neste evento! Ele é acionado pelo redimensionamento da janela e é apenas para pegar esta mudança... qualquer desenho que deva ser feito ainda deve estar em um dos outros eventos de sorteio.
+     
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Eventos Objeto
+        A seguir: Eventos Async
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

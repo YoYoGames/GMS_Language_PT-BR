@@ -1,0 +1,50 @@
+
+  
+  view_surface_id
+  Com esta variável você pode definir o conteúdo de uma determinada porta de visualização para desenhar para uma superfície, ou obter a identificação da superfície atual, caso tenha sido atribuída a uma porta de visualização. Ao trabalhar com superfícies, muitas vezes é necessário que você capture o conjunto visível
+    região da tela para a superfície, e assim você a atribuiria a uma porta de visualização usando esta variável. Isto significa que tudo o que é mostrado na vista escolhida será agora atraído para a superfície atribuída. A vista agora não será atraída para a
+    o que significa que você precisará de um ou outro:
+  
+    Permitir uma nova visão e desenhar a superfície somente nessa visão (usando view_current para verificar qual visão está sendo desenhada)
+    Desenhe a superfície no evento Draw GUI de uma instância, uma vez que a camada GUI é independente das vistas.
+  
+  Você também pode ler esta variável para obter o índice da superfície que foi atribuída à vista escolhida ou retornará -1 se nenhuma superfície tiver sido atribuída, e geralmente a superfície usada para esta função deve ser do tamanho da própria câmera de visão
+    (não o porto de vista). O exemplo ampliado abaixo mostra uma configuração básica para capturar uma vista e desenhá-la no evento Draw GUI, e para mais informações sobre superfícies veja a seção Superfícies.
+  Note que você também pode definir uma porta de visualização para uma superfície usando a função view_set_surface_id().
+   
+  Sintaxe:
+  view_surface_id[0...7];
+   
+  Devoluções:
+  Real (índice de superfície ou -1 se nenhuma superfície tiver sido atribuída)
+   
+  Exemplo ampliado:
+  Neste exemplo estendido, vamos criar uma superfície e atribuí-la para visualizar a porta[0] para que ela capture a visão da câmera atribuída a essa porta, depois desenhe-a para a tela no evento Draw GUI. Para começar, precisamos rubricar nossa variável de superfície no
+   Criar evento de uma instância controladora:
+  surf = -1;
+  Ajustamos a variável de superfície para -1, pois todas as funções de superfície devem ser realmente usadas nos eventos de sorteio para evitar erros estranhos ou comportamentos indefinidos. Assim, com isso feito, teríamos isto no evento de Sorteio principal:
+  se !surface_exists(surf) {
+     surf = surface_create(camera_get_view_width(view_camera[0])), camera_get_view_height(view_camera[0])); view_surface_id[0] = surf; }
+  
+  As superfícies são voláteis, o que significa que podem ser removidas da memória a qualquer momento devido ao gerenciamento da memória do SO e outras coisas, então aqui verificamos se nossa superfície existe e se não existe e a atribuímos à vista 0. Com
+    que feito, tudo o que aparecesse em vista 0 será agora atraído para a superfície que nós criamos em seu lugar. Se você não fizer mais nada neste ponto, quando você executar seu jogo, você simplesmente receberá uma tela em branco, já que todo o desenho está sendo feito na superfície,
+    mas a superfície em si não está sendo desenhada em nenhum lugar. Portanto, agora precisamos desenhar a superfície para a tela no evento Draw GUI como este:
+  se a superfície_existe(surf) {
+     draw_surface_stretched(surf, 0, 0, display_get_gui_width(), display_get_gui_height()); }
+  
+  Este código irá agora desenhar a superfície que criamos a partir da câmera de visão esticada para preencher toda a camada da GUI.
+   
+   
+   
+  
+    
+      
+        Voltar: Câmeras e Ver Portos
+        Próximo: view_get_camera
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

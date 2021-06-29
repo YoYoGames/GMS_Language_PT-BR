@@ -1,0 +1,54 @@
+
+  
+  exemplo_nearest
+  Esta função verificará todas as instâncias do objeto dado para ver qual está mais próximo do ponto x/y dado. Todas as verificações serão da posição x/y dada até a origem (a posição x/y) das instâncias do objeto especificado. Se nenhuma instância
+    do objeto existente, a função retornará a palavra-chave noonemas, se houver casos, devolverá o id    da instância encontrada. Observe que se a instância executando o código tiver o mesmo índice de objetos que o objeto que está sendo verificado, então ele será incluído na verificação (isto inclui a verificação dos objetos dos pais se a instância que está chamando também for uma criança
+    do pai).
+   
+  Sintaxe:
+  instance_nearest(x, y, obj);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A posição x para verificar de.
+      
+      
+        y
+        A posição y a verificar de.
+      
+      
+        obj
+        O objeto a ser verificado em casos de.
+      
+    
+  
+   
+  Devoluções:
+  Real (ou um valor de identificação de instância ou a palavra-chave noone)
+   
+  Exemplo:
+  var inst, xx; xx = x; x -= 10000; inst = instance_nearest(xx, y, object_index); if inst != id {
+     draw_line(x, y, inst.x, inst.y); }
+     x += 10000;
+  O código acima move a instância atual 10000 pixels e depois verifica sua posição anterior para encontrar a instância mais próxima do mesmo tipo de objeto. Se essa instância for ela mesma, nada mais fará do que voltar à sua posição original, mas se a
+    instância encontrada seja diferente, ela traçará uma linha entre as duas.
+   
+   
+   
+  
+    
+      
+        Voltar: Instâncias
+        Próximo: número_da_classe
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

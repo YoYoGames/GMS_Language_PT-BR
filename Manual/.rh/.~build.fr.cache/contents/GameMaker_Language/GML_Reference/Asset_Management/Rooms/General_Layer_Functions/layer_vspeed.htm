@@ -1,0 +1,48 @@
+
+  
+  layer_vspeed
+  Você pode usar esta função para definir a velocidade vertical (em pixels por frame de jogo) da camada dentro da sala atualmente escopada. Você fornece a identificação da camada (que você obtém quando cria a camada usando layer_create())
+    ou o nome da camada (como um fio - isso terá um impacto no desempenho) e o valor de velocidade a ser definido, onde um valor positivo é para baixo e um valor negativo para cima.
+   
+  Sintaxe:
+  layer_vspeed(layer_id, vspd)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada para definir a velocidade vertical de
+      
+      
+        vspd
+        A velocidade vertical (em pixels por frame de jogo) a definir
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var lay_id = layer_get_id("Sprites"); if layer_get_hspeed(lay_id) != 0 || layer_get_vspeed(lay_id) != 0 {
+     layer_hspeed(lay_id, 0); layer_vspeed(lay_id, 0); }
+  
+  O código acima verifica as velocidades horizontal e vertical da camada dada e, se ambas não estiverem ambas ajustadas a 0, então é ajustado para 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próximo: camada_add_instância
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

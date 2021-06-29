@@ -1,0 +1,56 @@
+
+  
+  push_get_first_local_notification
+  Esta função irá preencher um mapa DS pré-fabricado com uma série de pares chave/valor para a primeira notificação local de empurrão na fila a ser mostrada. Ela retorna -1 se não houver notificações em fila de espera,
+    ou um valor real que represente de outra forma a identificação para a notificação. Esta identificação pode então ser usada para cancelar a notificação usando a função push_cancelal_local_notification().
+  NOTA: Esta função é limitada ao iOS e Android módulos-alvo.
+  O mapa DS conterá os seguintes pares chave/valor:
+  
+    "título" - O título da notificação (este só estará disponível no Android plataforma, pois o iOS não armazena as informações do título)
+    "mensagem" - O texto do corpo da mensagem
+    "data"- A seqüência de pacotes de dados
+  
+   
+  Sintaxe:
+  push_get_first_local_notification(map);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        mapa
+        O DS Map ID a ser utilizado.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo :
+  var map = ds_map_create(); var ntf = push_get_first_local_notification(map); while(ntf >= 0) {
+     var data = ds_map_find_value(map, "data"); if data == "Daily_Reward" {
+     push_cancel_local_notification(ntf);
+     }
+     ntf = push_get_next_local_notification(map); }
+     ds_map_destroy(mapa);
+  
+  O código acima cria um Mapa DS e depois solicita dados para a primeira notificação disponível na fila. Se houver uma notificação, o mapa é preenchido e o código então verifica a chave "data" para uma seqüência específica. Se a seqüência de caracteres
+    é encontrada, a notificação é cancelada e passa a verificar a próxima notificação até que tudo na fila tenha sido verificado.
+   
+   
+   
+  
+    
+      
+        Voltar: Notificações Push
+        Próximo: push_get_next_local_notification
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

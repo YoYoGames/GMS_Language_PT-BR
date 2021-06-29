@@ -1,0 +1,45 @@
+
+  
+  ds_priority_write
+  Esta função retorna uma string que pode então ser armazenada ou transferida para outra estrutura de dados usando o ds_priority_read() função.
+  NOTA: O fio retornado não é um fio legível por humanos, mas sim uma lixeira do conteúdo da estrutura de dados
+   
+  Sintaxe:
+  ds_priority_write(id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação da estrutura de dados a ser verificada.
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  var str; ini_open("save.ini");
+     str =ds_priority_write(p_queue); ini_write_string("P_Queues", "0", str); ds_priority_clear(p_queue);
+     ini_close();
+  
+  O código acima abre um arquivo ini e então escreve uma string contendo as informações armazenadas na fila de prioridade DS indexada na variável "p_queue". A fila de prioridade é então limpa e o arquivo ini é fechado.
+   
+   
+   
+  
+    
+      
+        Voltar: Filas de espera prioritárias DS
+        Próximo: ds_priority_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

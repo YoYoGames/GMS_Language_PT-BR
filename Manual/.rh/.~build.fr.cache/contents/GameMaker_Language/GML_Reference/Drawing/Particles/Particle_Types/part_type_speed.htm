@@ -1,0 +1,65 @@
+
+  
+  part_type_speed
+  Esta função é usada para determinar a velocidade da partícula quando ela é criada e também pode ser usada para fazer a partícula aumentar ou diminuir sua velocidade ao longo de sua vida útil. Os valores de velocidade mínima e máxima padrão em 1, o que significa que a partícula
+    moverá 1 pixel a cada passo, e se forem definidas para o mesmo valor, a velocidade inicial para todas as partículas será a mesma, mas se forem definidas para valores diferentes, cada partícula começará com uma velocidade aleatória de dentro da faixa determinada. Por exemplo, se você
+    têm um mínimo de 3 e um máximo de 6, todas as partículas serão criadas com uma velocidade entre 3 e 6 pixels por etapa.
+  Você também pode definir um valor de incremento que fará a partícula se mover mais rapidamente (se um número positivo) ou mais lentamente (se um número negativo) ao longo de sua vida útil, com a quantidade dada sendo adicionada à velocidade da partícula a cada passo. Este valor pode ser um valor mínimo
+    de (+/-)0,01.
+  Finalmente, você pode definir o fator "agitar". Este é um valor que será adicionado ou subtraído aleatoriamente à velocidade de cada etapa da vida útil das partículas. Obviamente, valores maiores são mais pronunciados do que os menores, e este valor pode até ser
+    um negativo, sendo a faixa máxima entre -20 e 20.
+   
+  Sintaxe:
+  part_type_speed(ind, speed_min, speed_max, speed_incr, speed_wiggle);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do tipo de partícula a ser mudado.
+      
+      
+        speed_min
+        A velocidade mínima em que a partícula pode começar.
+      
+      
+        speed_max
+        A velocidade máxima na qual a partícula pode começar.
+      
+      
+        speed_incr
+        Quanto a velocidade da partícula deve aumentar ou diminuir por passo.
+      
+      
+        speed_wiggle
+        O quanto deve ser adicionado ou subtraído aleatoriamente da velocidade da partícula por etapa.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  part_type_shape(particle2, pt_shape_flare); part_type_size(particle2, 0.01, 0.50, 0.01, 20); part_type_scale(particle2, 0.10, 0.10); part_type_colour3(particle2, 4210816, 4227327, 8240895); part_type_alpha3(particle2, 0.20, 0.80),
+    0); part_type_speed(particle2, 5, 10, -0.20, 20); part_type_direction(particle2, 0, 359, -1, 20); part_type_gravity(particle2, 0, 270); part_type_orientation(particle2, 0, 359, 0, 20, 1); part_type_blend(particle2, 1); part_type_life(particle2, 1, 20);
+  O código acima estabelecerá vários valores de partículas, incluindo a velocidade que estabelece uma velocidade mínima de cinco e uma velocidade máxima de dez, com a velocidade diminuindo por um valor de -0,2 cada passo. A velocidade também se agitará por um valor aleatório entre 0 e 20
+    cada passo.
+   
+   
+   
+  
+    
+      
+        Voltar: Tipos de Partículas
+        Próximo: part_type_direction
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

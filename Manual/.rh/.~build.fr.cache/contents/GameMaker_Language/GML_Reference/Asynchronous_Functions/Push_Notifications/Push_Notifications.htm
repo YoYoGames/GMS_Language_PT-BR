@@ -1,0 +1,59 @@
+
+  
+  Notificações Push
+  Em dispositivos móveis, normalmente apenas uma aplicação pode estar ativa em primeiro plano a qualquer momento, mas muitos jogos e aplicações operam em um ambiente baseado no tempo ou interligado onde eventos de interesse para os usuários podem ocorrer quando a aplicação não está em primeiro plano. Nesses casos, as notificações push local e remota podem permitir que esses jogos notifiquem seus usuários quando os eventos ocorrerem.
+  Quando o sistema operacional entrega uma notificação local ou remota e a aplicação alvo não está sendo executada em primeiro plano, ele apresenta a notificação ao usuário sob a forma de um banner. Se houver um alerta de notificação e o usuário tocar
+    nele, então o jogo é lançado e um Evento de Empurrão Assíncrono é chamado onde você pode verificar a seqüência de chamada de retorno que você especifica e resolver o empurrão
+    com base em seu valor. Se a aplicação estiver em execução em primeiro plano quando a notificação for entregue, a aplicação ainda receberá um Evento de Push Assíncrono, mas o usuário não receberá nenhuma mensagem, a menos que você mesmo a crie.
+  Há algumas diferenças a serem observadas entre as plataformas suportadas:
+  
+    No Android, todas as notificações recebidas quando o aplicativo não estiver em execução/fundo, serão armazenadas, e os dados entregues pelo evento assimétrico na próxima vez que o aplicativo for executado e você precisará habilitar as notificações push dentro das Opções de Jogo do Android para que elas funcionem.
+    No iOS, os dados para uma determinada notificação só serão entregues quando a notificação for selecionada (ou se o aplicativo estiver funcionando em primeiro plano quando a notificação for recebida) e você precisará habilitar as notificações push dentro das Opções de JogoiOS para que elas funcionem.
+  
+   
+  Notificações locais
+  Uma notificação local é local para o dispositivo no qual o jogo está instalado e não requer servidor back-end. Basta definir a data e a hora da notificação e ela será exibida para o usuário se o jogo não estiver em execução no momento. Este tipo de notificação
+    de notificação é útil para definir "lembretes" para que o usuário jogue seu jogo novamente, ou para oferecer uma recompensa diária por jogar, etc... e, quando o usuário tocar a notificação, ele lançará o jogo e passará em uma seqüência de dados que pode então ser
+    analisado pelo jogo para dar uma recompensa ou o que quer que seja.
+  NOTA: Esta funcionalidade é limitada ao iOS e Android módulos-alvo. Para Android você precisará ter instalado a extensão Google Push Notification.
+  As seguintes funções estão disponíveis para notificações locais:
+   
+  
+    push_local_notification
+    push_get_first_local_notification
+    push_get_next_local_notification
+    push_cancelal_local_notification
+  
+   
+   
+  Notificações remotas
+  As mensagens de notificação remota são enviadas por um servidor para um serviço fornecido pela loja de aplicativos da plataforma de dispositivos, e este então encaminha essas mensagens para todos os dispositivos em que sua aplicação está instalada. Isto é suportado pelo GameMaker Studio 2 no
+    módulos alvo iOS e Android.
+  Não há funções no GameMaker Studio 2 para lidar com notificações remotas, pois todas elas devem ser geradas por seu servidor e tratadas pelas respectivas lojas de aplicativos. Entretanto, uma vez configurado corretamente, os jogos do GameMaker Studio 2 receberão estas notificações,
+    que pode então ser tratado no Evento de Empurrão Assíncrono, como se fosse uma notificação local.
+  Favor observar que não há garantia de que as notificações de push remoto serão entregues e que a carga útil de dados permitida é bastante pequena. Isto varia entre plataformas, mas o iOS é particularmente limitado - o serviço de maçã fornece apenas o mais recente
+    notificação, que deve ser selecionada pelo destinatário para que os dados de carga útil sejam entregues a seu evento assimétrico, e estas notificações têm um tamanho máximo de carga útil de 256bytes. Tipicamente, uma notificação push remota indicaria apenas que os novos dados
+    está disponível em seu servidor, por exemplo.
+  NOTA: A implementação do lado do servidor depende inteiramente do usuário final, e a YoYo Games não fornece nenhum suporte para esse lado das coisas, além das informações básicas de configuração disponíveis em sua Base de Conhecimento.
+  Para mais detalhes sobre como montar um servidor, bem como informações específicas das plataformas disponíveis, consulte os seguintes artigos:
+   
+  
+    Android: Notificações remotas usando Firebase
+    iOS: Notificações de empurrão remoto
+  
+   
+   
+   
+   
+  
+    
+      
+        Voltar: Funções assíncronas
+        A seguir: Facebook
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

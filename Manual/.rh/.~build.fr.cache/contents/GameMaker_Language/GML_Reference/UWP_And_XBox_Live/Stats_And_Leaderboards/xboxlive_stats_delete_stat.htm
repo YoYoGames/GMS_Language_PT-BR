@@ -1,0 +1,49 @@
+
+  
+  xboxlive_stats_delete_delete_stat
+  Esta função pode ser usada para excluir uma estatística do gerente da estatística para o ID do usuário em questão. O usuário fornece o ID de usuário conforme retornado pela (por exemplo) função xboxlive_get_user()então o
+    texto a ser excluído. Isto limpa o valor stat e o remove do gerente stat, o que significa que ele não será mais devolvido pelas funções xboxlive_stats_get_stat_names() ou xboxlive_stats_get_stat().
+  A função retornará -1 se houver um erro ou se a identificação do usuário for inválida, ou qualquer outro valor se a função foi chamada com sucesso
+   
+  Sintaxe:
+  xboxlive_stats_delete_stat(user_id, stat);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        user_id
+        O ponteiro de identificação do usuário para apagar a estatística de
+      
+      
+        stat
+        A estatística a ser apagada (um fio)
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  for(var i = 0; i < xboxlive_get_user_count(); i++;)  {
+     user_id[i] = xboxlive_get_user(i); xboxlive_stats_delete_stat(user_id[i], "HighScore"); }
+  
+  O código acima passa através dos usuários conectados e elimina o stat especificado do gerente do stat para cada um deles.
+   
+   
+   
+  
+    
+      
+        Voltar: Estatísticas e Quadros de Líderes
+        Próximo: xboxlive_stats_get_stat_names
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,106 @@
+
+  
+  buffer_create_from_vertex_buffer_ext
+  Você usa esta função para alocar uma parte da memória como um buffer em seu jogo preenchido com os dados de um buffer de vértice previamente criado. A função retorna uma identificação única de buffer que deve ser armazenada em uma variável e usada para todas as chamadas adicionais de função para o buffer. A função leva o id para que o buffer de vértices seja usado (como retornado pela função vértice_criate_buffer(),
+    por exemplo) com as seguintes constantes sendo usadas para definir o tipo de tampão:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        buffer_fixed
+        Um buffer de tamanho fixo.
+      
+      
+        buffer_grow
+        Um buffer que irá "crescer" dinamicamente à medida que os dados são adicionados
+      
+      
+        tampão_enrolador
+        Um buffer onde os dados serão "embrulhados". Quando os dados a serem adicionados atingirem o limite do tamanho do buffer, a sobregravação será colocada de volta no início do buffer, e a escrita continuará a partir desse ponto.
+      
+      
+        tampão_rápido
+        Tampão especial "despojado" que é extremamente rápido de ler/escrever. Só pode ser usado com tipos de dados buffer_u8, e deve estar alinhado a 1 byte.
+      
+      
+        buffer_vbuffer
+        Este tipo de tampão deve ser usado somente como um tampão de vértice.
+      
+    
+  
+   
+  Além do tipo de amortecedor, você também terá que definir o alinhamento de bytes para o amortecedor. Este valor variará dependendo dos dados que você deseja armazenar no buffer, e na maioria dos casos um valor de 1 é perfeitamente bom. Entretanto, esteja ciente de que
+    para algumas operações é essencial um alinhamento específico, e um alinhamento incorreto pode causar erros (para mais detalhes sobre alinhamento, ver Buffer Alignment). O seguinte
+    é um guia geral para mostrar quais valores são mais apropriados para cada tipo de dado (quando em dúvida, use um alinhamento de 1):
+  
+    As cordas devem ser alinhadas a 1 byte.
+    Inteiros de 8 bits assinados ou não podem ser alinhados a qualquer valor, mas note que para um buffer rápido (veja buffer_write()) deve ser alinhado a 1.
+    Inteiros de 16 bits assinados ou não assinados devem ser alinhados a 2 bytes.
+    Os inteiros de 32 bits assinados ou não devem ser alinhados a 4 bytes
+    Flutuadores de até 16bits devem ser alinhados a 2 bytes. (Não suportado atualmente!)
+    Flutuadores de até 32bits devem ser alinhados a 4 bytes.
+    Flutuadores de até 64bits devem ser alinhados a 8 bytes.
+  
+  NOTA: Os buffers de vértices estão alinhados em 1 byte, mas você pode criar o buffer com qualquer alinhamento dependendo de como você quer tratar os dados, pois os dados de vértices são simplesmente uma cópia da memória bruta para o buffer.
+  Os dois últimos argumentos são usados para especificar a gama de dados de vértices que você deseja copiar para o buffer recém-criado. O vértice inicial pode estar em qualquer lugar entre 0 e o número de vértices -1, e então você dá o número de vértices a partir desse ponto
+    para copiar. Você pode usar a função vértice_get_number() no buffer de vértices para obter o número total de vértices armazenados.
+  NOTA: É importante que você remova da memória qualquer recurso criado dinamicamente como este quando não precisar mais deles para evitar vazamentos de memória, então quando terminar com o buffer que você criou, você deve liberá-lo novamente
+    usando buffer_delete(). Observe também que o buffer de vértices usado para criar o novo buffer também não é removido da memória e você deve usar a função
+    vértice_delete_buffer() quando não for mais necessário.
+   
+  Sintaxe:
+  buffer_create_from_vertex_buffer_ext(vertex_buffer, type, alignment, start_vertex, num_vertices)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        vértice_buffer
+        O índice tampão de vértice a ser utilizado.
+      
+      
+        tipo
+        O tipo de buffer a criar (veja a lista constante abaixo).
+      
+      
+        alinhamento
+        O alinhamento de bytes para o buffer
+      
+      
+        start_vertex
+        O vértice inicial.
+      
+      
+        num_vertices
+        O número total de vértices a copiar.
+      
+    
+  
+   
+  Devoluções:
+  Int (ID do buffer Vertex)
+   
+  Exemplo:
+  var v_num = vtex_get_number(model_buffer); player_buffer = buffer_create_from_vertex_buffer(model_buffer, buffer_grow, 1, 0, v_num - 1);
+  O código acima aloca a memória a um buffer e depois copia os dados de todos os vértices do buffer de vértices dado, retornando o índice do novo buffer que é armazenado na variável "player_buffer", para uso futuro.
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: buffer_delete
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

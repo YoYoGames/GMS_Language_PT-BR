@@ -1,0 +1,56 @@
+
+  
+  layer_sequence_create
+  Com esta função, você pode criar uma instância de um ativo em seqüência na camada dada. Você fornece o ID da camada que pode ser uma seqüência do nome da camada - como definido no editor da sala - ou o ID exclusivo da camada - como retornado pela função layer_get_id(),
+    assim como a posição X e Y na sala para criar a seqüência e, finalmente, a identificação da seqüência a ser criada. O ID da seqüência é o nome constante que você definiu no Navegador de Ativos para a seqüência. A função retornará o ID exclusivo
+    do elemento sequência, que pode então ser usado em todas as funções de camadas adicionais para seqüências, ou pode ser usado para recuperar a estrutura da instância da seqüência usando a função layer_sequence_get_instance().
+   
+  Sintaxe:
+  layer_sequence_create(layer_id, x, y, sequence_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada de instância a ser alvo
+      
+      
+        x
+        A posição x na sala para criar a seqüência em
+      
+      
+        y
+        A posição y na sala para criar a seqüência em
+      
+      
+        sequence_id
+        A identificação da seqüência a criar, conforme definido no Navegador de Ativos
+      
+    
+  
+   
+  Devoluções:
+  Inteiro (ID do elemento)
+   
+  Exemplo:
+  var _s = layer_sequence_create("Background", 0, 0, seq_AnimatedBackground); layer_sequence_pause(_s);
+  
+  O código acima cria uma nova seqüência na camada "Background" e depois a faz uma pausa.
+   
+   
+   
+  
+    
+      
+        Voltar: Sequência de camadas
+        Próximo: layer_destroy_sequence_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

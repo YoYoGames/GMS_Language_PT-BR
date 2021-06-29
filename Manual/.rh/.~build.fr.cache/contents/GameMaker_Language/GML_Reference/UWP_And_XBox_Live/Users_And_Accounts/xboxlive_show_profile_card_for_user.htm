@@ -1,0 +1,49 @@
+
+  
+  xboxlive_show_profile_card_for_user
+  Com esta função, você pode solicitar que a XBox mostre o cartão de perfil para o ponteiro de identificação do usuário alvo. A função requer tanto o ponteiro de identificação do usuário para o usuário que está solicitando as informações quanto o ponteiro de identificação do usuário
+    para marcar e obter o cartão de perfil de.
+   
+  Sintaxe:
+  xboxlive_show_profile_card_for_user(solicitando_id_utilizador, target_user_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        solicitando_id_utilizador
+        A identificação do usuário (um ponteiro) do usuário solicitante
+      
+      
+        target_user_id
+        O ID do usuário (um ponteiro) do usuário para obter o cartão de perfil de
+      
+    
+  
+   
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if (gamepad(0, gp_start)) {
+     xboxlive_show_profile_card_for_user(user[0], user[1]); }
+  
+  O código acima verifica se há um botão de controle de jogo e, se for detectado, mostra o cartão de perfil para o usuário em questão.
+   
+   
+   
+  
+    
+      
+        Voltar: Usuários e Contas
+        Próximo: xboxlive_reputation_for_user
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

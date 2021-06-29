@@ -1,0 +1,70 @@
+
+  
+  sprite_set_set_speed
+  Esta função pode ser usada para definir a velocidade e o tipo de animação base como para o recurso sprite. Isso normalmente é definido no Editor Sprite, mas pode haver momentos em que você é solicitado
+    para definir isto manualmente para um determinado recurso sprite. Você precisa fornecer o índice sprite a ser definido, a velocidade da animação e o tipo de velocidade de animação a ser aplicada. O tipo de velocidade de animação pode ser qualquer uma das constantes a seguir:
+  
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        spritespeed_framespersecond
+        O duende foi definido com animação em quadros por segundo.
+      
+      
+        spritespeed_framespergameframe
+        O duende foi definido com em animação em quadros por quadro de jogo.
+      
+    
+  
+   Selecionar o tipo de velocidade a ser usado para calcular as animações é muito importante, pois há uma enorme diferença entre as duas opções. Os dois exemplos a seguir ilustram esta diferença:
+  
+    Se você tiver um sprite que desenha 1 quadro por segundo e define a velocidade da imagem para 0,5 quadros por segundo, ele irá desenhar a 0,5 quadros por segundo. Se sua taxa de quadros por segundo for de 60 quadros, então o duende desenhará 1 quadro para cada 120 quadros.
+      estruturas de jogo.
+    Se você tiver um sprite que desenha 1 quadro por quadro de jogo e definir a velocidade da imagem para 0,5, ele desenhará 0,5 quadros por quadro de jogo. Se sua velocidade de jogo for 60 quadros por segundo, então o duende desenhará 30 quadros para
+      a cada 60 quadros de jogo.
+  
+  Você pode descobrir qual foi o valor da velocidade usada para a animação sprite usando a função sprite_get_speed()e você pode obter o tipo de velocidade de animação usando 
+    sprite_get_type_speed_speed().
+  IMPORTANTE! Esta função afetará o recurso sprite, portanto qualquer mudança que você fizer com esta função afetará todas as instâncias que estão usando o sprite e todos os futuros
+    instâncias também.
+   
+  Sintaxe:
+  sprite_set_speed(índice, velocidade, tipo)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do sprite para obter o tipo de animação de
+      
+    
+  
+   
+  Devoluções:
+  Constante (ver acima)
+   
+  Exemplo:
+  sprite_set_speed(sprite_index, 10, spritespeed_framespersecond);
+  O código acima define a velocidade de animação base para o duende atribuído à instância em 10 quadros por segundo.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação de Sprite
+        Próximo: sprite_delete
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

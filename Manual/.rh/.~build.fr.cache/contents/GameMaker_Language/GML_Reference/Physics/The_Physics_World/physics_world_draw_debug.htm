@@ -1,0 +1,89 @@
+
+  
+  physics_world_draw_debug
+  Esta função irá desenhar uma representação do sistema do mundo físico da sala para ajudar na depuração quando você estiver tendo problemas para que a cena física funcione corretamente. Às vezes o problema pode estar na parte de renderização do seu jogo, por exemplo
+    um duende pode ser desenhado na posição ou rotação errada, dando a aparência de física incorreta, ou pode ser que seus cálculos não estejam corretos. De qualquer forma, esta função o ajudará a encontrar e resolver o problema, desenhando o que está acontecendo.
+    em seu sistema de física. Para isso, você precisa dizer qual parte do sistema deve desenhar, e isto é feito passando um valor criado a partir dos bits armazenados em várias constantes de "bandeira":
+   
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        phy_debug_render_aabb
+        Isto mostra a caixa de delimitação absoluta de cada fixação em relação ao eixo da sala
+      
+      
+        phy_debug_render_collision_pairs
+        Isto mostrará qualquer equipamento que esteja atualmente em colisão
+      
+      
+        phy_debug_render_coms
+        Isto marca o centro de massa de cada luminária na sala
+      
+      
+        phy_debug_render_core_shapes
+        Mostra as formas básicas que compõem as luminárias na sala
+      
+      
+        phy_debug_render_joints
+        Isto desenhará cada uma das juntas de todas as luminárias da sala
+      
+      
+        phy_debug_render_obb
+        Isto mostra a caixa de delimitação relativa para as luminárias na sala
+      
+      
+        phy_debug_render_shapes
+        Isto mostra as formas reais que compõem as luminárias dentro da sala
+      
+    
+  
+   
+  Assim, para desenhar quaisquer duas dessas opções, precisaríamos fazer um pouco "ou" (no GameMaker Studio 2 isto é representado por | ) sobre as duas e armazenar o resultado
+    variável para a função a ser utilizada. Aqui está um exemplo de como você definiria uma variável para usar com a função que atrairá apenas os centros de massa e as juntas de todos os dispositivos em uma sala:
+  bandeira = phy_debug_render_coms | phy_debug_render_shapes;
+  O que lhe daria algo parecido com isto:
+  Como você pode ver com o código acima, apenas as formas e centros de massa são desenhados na tela
+    (assim como as cores que representam seus estados - para maiores informações, consulte on-line a documentação da Caixa 2D). Da mesma forma, você pode exibir mais, ou mesmo todas as constantes que deseja depurar... Apenas "ou" todas elas juntas!
+    Uma outra coisa deve ser observada - esta função deve ser chamada apenas no caso de um sorteio de uma instância que tenha uma profundidade inferior àquelas que você deseja depurar ou então você não será capaz de ver as informações de depuração.
+   
+  Sintaxe:
+  physics_world_draw_debug(bandeira)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        bandeira
+        O valor da bandeira para mostrar diferentes características de depuração
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  flag = phy_debug_render_aabb | phy_debug_render_collision_pairs | phy_debug_render_obb; physics_world_draw_debug(flag);
+  
+  O código acima desenhará todas as caixas de delimitação absoluta, as caixas de delimitação relativa, bem como os dispositivos em colisão dentro do sistema físico atual.
+   
+   
+   
+  
+    
+      
+        Voltar: O Mundo da Física
+        Próximo: physics_draw_debug
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

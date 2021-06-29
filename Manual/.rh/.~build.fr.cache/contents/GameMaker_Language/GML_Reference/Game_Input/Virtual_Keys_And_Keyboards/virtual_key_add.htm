@@ -1,0 +1,63 @@
+
+  
+  virtual_key_add
+  Esta função permite mapear "toques" de uma área da tela para eventos do teclado. Isto significa que uma vez atribuída uma área a uma chave virtual, todos os toques nessa área acionarão o evento do teclado correspondente à chave que você mapeou.
+    para a área. Você pode atribuir cada chave virtual definida a uma variável também, que pode então ser usada nas outras funções da chave virtual para mostrá-las, ocultá-las e excluí-las. Estas chaves são atribuídas por divisão e serão automaticamente removidas.
+    pelo GameMaker Studio 2 nos vestiários.
+  A posição real da chave virtual é baseada na posição da tela e não na posição da sala e, portanto, os valores x/y são absolutos na tela. Isto significa que você não precisa se preocupar com o uso de vistas ou com as coordenadas relativas da sala,
+    e pode simplesmente definir as chaves no evento Create Event de um objeto (você só precisa definir uma chave virtual uma vez por sala), depois desenhar seus sprites de chave no evento Draw GUI,
+    dimensionando a camada GUI para ser a mesma que a tela.
+   
+  Sintaxe
+  virtual_key_add(x, y, w, h, keycode);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A coordenada x (lado esquerdo) da chave virtual na tela
+      
+      
+        y
+        A coordenada y (lado superior) da chave virtual na tela
+      
+      
+        w
+        A largura da chave virtual
+      
+      
+        h
+        A altura da chave virtual
+      
+      
+        keycode
+        Que evento de tecla de teclado deve ser acionado tocando esta área
+      
+    
+  
+   
+  Devoluções:
+  índice de chave virtual
+   
+  Exemplo:
+  global.left = virtual_key_add(32, 32, 64, 64, vk_left);
+  O código acima cria uma chave virtual de 64x64 pixels quadrados, posicionada na tela em (32, 32) que acionará o evento vk_left quando tocado e atribuirá o índice desta chave virtual a uma variável global.
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Chaves e Teclados Virtuais
+        Próximo: virtual_key_show
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

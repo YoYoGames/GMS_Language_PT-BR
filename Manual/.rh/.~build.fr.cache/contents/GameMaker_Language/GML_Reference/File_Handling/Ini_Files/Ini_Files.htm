@@ -1,0 +1,41 @@
+
+  
+  Arquivos de iniciativas
+  Os arquivos INI são arquivos pequenos, leves e compatíveis com a maioria das plataformas. São ideais para armazenar pequenas partes de informação, como preferências de interface, altas pontuações locais, dados de nível, etc... e como tal são
+    uma maneira excelente e fácil para você começar a salvar informações de seus jogos. Entretanto, vale notar que eles têm um limite de dados que podem armazenar, que é um máximo de 64KB, portanto, se você estiver salvando coisas como Estruturas de Dados, você pode desejar
+    para ver algumas das outras funções de arquivo como Arquivos de Texto.
+  IMPORTANTE! Todos os projetos do GameMaker Studio 2 têm um arquivo chamado "opções.ini", então você não pode nomear 
+    qualquer arquivo com esse nome (você terá uma falha no uid quando tentar compilar seu projeto de jogo).
+  Observe que para jogos com localizações é muito importante que as letras acentuadas possam ser lidas a partir de arquivos externos. Isto significa que você deve criar primeiro o arquivo ini no formato UTF8 e
+    depois adicioná-lo ao GameMaker Studio 2 como um arquivo incluído para que seja exportado durante a execução do jogo e utilizado no lugar do arquivo ini padrão no formato ANSI que é criado pelas funções ini quando nenhuma foi previamente
+    fornecido. Desta forma, você pode ler e escrever corretamente com todos os sotaques e cartas não romanas mantidas.
+  As seguintes funções existem para os arquivos ini:
+   
+  
+    ini_open
+    ini_close
+    ini_write_real
+    ini_write_string
+    ini_read_real
+    ini_read_string
+    ini_key_existe
+    ini_section_existe
+    ini_key_delete
+    ini_section_delete
+    ini_open_from_string
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Manuseio de arquivos
+        A seguir: Arquivos de texto
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

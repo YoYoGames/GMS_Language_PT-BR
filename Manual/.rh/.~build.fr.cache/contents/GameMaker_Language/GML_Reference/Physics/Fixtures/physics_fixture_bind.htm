@@ -1,0 +1,57 @@
+
+  
+  physics_fixture_bind
+  Uma vez que tenhamos definido nossa fixação, ela tem que ser vinculada a uma instância. Isto significa que suas propriedades são transferidas para a instância selecionada, e não para o acessório em si, de modo que um acessório pode ser vinculado a múltiplas instâncias, se todas forem
+    ter as mesmas propriedades. Você pode especificar um índice de objetos para o alvo e todas as instâncias presentes na sala no momento receberão essas propriedades de fixação (mas não quaisquer novas instâncias do objeto criado posteriormente), ou você pode usar o
+    palavras-chave outras e todas. Você pode até mesmo especificar um objeto dos pais e todas as instâncias de crianças com esse pai também receberão a fixação. Uma vez que a fixação tenha sido vinculada a todas as instâncias que você precisa, ela pode ser apagada se não mais
+    necessárias e as instâncias com essas propriedades de fixação não serão afetadas e manterão essas propriedades.
+  A fixação será ligada à instância com o centro da massa sendo posicionado na origem da instância, e os dispositivos poligonais são ligados com base na posição dos pontos em relação à origem. Se você precisar que sua luminária seja amarrada
+    a um ponto que não seja a origem, então você deve estar usando physics_fixture_bind_ext().
+  A função também retornará um valor "id" único para a fixação do limite
+   (não a fixação em si) que pode então ser usada para remover ("un-bind") as propriedades físicas da instância usando a função physics_remove_fixture(). Isto permite que você acrescente
+    e remover propriedades físicas de uma instância sem destruir e recriar objetos.
+  OBSERVAÇÃO: Os equipamentos devem ser apagados quando não forem mais necessários, pois se não o fizerem pode causar um vazamento de memória que irá diminuir a velocidade e, por fim, travar seu jogo.
+   
+  Sintaxe:
+  physics_fixture_bind(fixture, target)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fixação
+        a fixação que deve ser amarrada
+      
+      
+        alvo
+        a instância alvo que deve receber a fixação (pode ser uma identificação de instância, uma identificação de objeto, outra, ou todas)
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var fix, inst; fix = physics_fixture_create(); physics_fixture_set_circle_shape(fix, 16); physics_fixture_set_density(fix, 1.0); inst = instance_create_layer(x, y, "Instances", genericBodyObject); my_fix = physics_fixture_bind(fix, 1.0),
+    inst); physics_fixture_delete(fix);
+  
+  O código acima criará uma fixação e atribuirá seu índice à variável "fixação". Ele então define a forma e a densidade da fixação antes de vinculá-la à instância que foi criada com o índice para a fixação vinculada armazenada em
+    a variável "my_fix". Finalmente, a fixação é apagada para evitar vazamentos de memória, uma vez que não é mais necessária.
+   
+   
+   
+  
+    
+      
+        Voltar: Instalações
+        A seguir: physics_fixture_bind_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

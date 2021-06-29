@@ -1,0 +1,44 @@
+
+  
+  surface_reset_target
+  Com esta função, você repõe todos os desenhos adicionais da superfície do alvo de volta para a tela. Observe que para começar a desenhar para uma superfície, você deve ter chamado primeiro a função surface_set_target() e
+    então este após ter terminado, para cada alvo de superfície que você definiu ou então nada será desenhado na tela, pois todos os outros desenhos (mesmo em outros casos) serão feitos na superfície. Você também deve perceber que nada
+    será visto se a própria superfície não for desenhada na tela no evento de sorteio de uma instância.
+  NOTA: Se você não definiu previamente uma meta de renderização com a função surface_set_target()usando esta função, silenciosamente (ou seja: sem
+    qualquer mensagem de erro) terminar toda a execução de código adicional para o evento.
+   
+  Sintaxe:
+  surface_reset_target();
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se view_current = 0 {
+     surface_set_target(surf);
+     com (obj_Effect) {
+     draw_self();
+     }
+     surface_reset_target();
+     }
+     mais
+     {
+     draw_surface(surf, 0, 0); }
+  
+  O código acima verificará para ver qual vista está sendo desenhada atualmente, e se é vista[0] ele define o alvo de sorteio para uma superfície e desenha todas as instâncias do objeto "obj_Effect" antes de redefinir o alvo de sorteio novamente. Se a vista não for visualizada[0].
+    a superfície é atraída para a tela.
+   
+   
+   
+  
+    
+      
+        Voltar: Superfícies
+        A seguir: cópia_da_superfície
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

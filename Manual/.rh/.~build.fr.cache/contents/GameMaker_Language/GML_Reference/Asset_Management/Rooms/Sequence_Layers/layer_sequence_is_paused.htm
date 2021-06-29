@@ -1,0 +1,44 @@
+
+  
+  layer_sequence_is_paused
+  Com esta função você fornece a identificação do elemento de seqüência - como retornado por layer_sequence_create() ou por uma das funções dos elementos da camada - e verificará se a seqüência está ou não pausada no momento, retornando verdadeira se estiver pausada, e falsa se não estiver.
+   
+  Sintaxe:
+  layer_sequence_is_paused(sequence_element_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sequence_element_id
+        O valor de identificação único do elemento de seqüência para o alvo
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if layer_sequence_is_paused(title_sequence) != 0 {
+     layer_sequence_play(title_sequence);
+     }
+  
+  O código acima verifica se o ID do elemento de seqüência armazenado na variável "title_sequence" está em pausa, e se é ele que começa a tocar.
+   
+   
+   
+  
+    
+      
+        Voltar: Sequência de camadas
+        Próximo: layer_sequence_is_is_finished
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

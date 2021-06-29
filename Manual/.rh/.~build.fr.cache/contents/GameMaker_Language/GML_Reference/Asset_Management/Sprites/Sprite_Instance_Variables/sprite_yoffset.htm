@@ -1,0 +1,33 @@
+
+  
+  sprite_yoffset
+  Esta variável lida somente retorna o yoffset local (o componente y da origem como definido no editor sprite) do sprite que foi atribuído à instância. Este yoffset é retornado em pixels e será dependente do imagem_escala,
+    de modo que (por exemplo) se um duende quadrado 32x32 é definido como tendo a origem y a 16, quando esse duende é escalado por 2, essa variável retornará 32. Se você precisar do yoffset não escalonado, você deve usar sprite_get_yoffset().
+  
+   
+  Sintaxe:
+  sprite_yoffset;
+   
+  Devoluções:
+  Real (valor de ponto flutuante de precisão único)
+   
+  Exemplo:
+  se y - sprite_yoffset < 0 {
+     y = sprite_yoffset; }
+  
+  O código acima verifica se a borda superior do duende da instância está fora da sala e se ele move a instância para que o duende inteiro fique visível.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis de Sprite Instance
+        Próximo: image_alpha
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,104 @@
+
+  
+  asset_get_tags
+  Com esta função, você pode recuperar todas as etiquetas atribuídas a um ativo do Navegador de Ativos. Você fornece ou o nome do ativo (como uma string) ou o seu índice de ativos, e a função retornará uma série de tags para esse ativo. Se nenhuma etiqueta for encontrada ou se houver um erro (ou seja: a cadeia de nomes dada não existe), então a matriz retornada estará vazia. Se você fornecer um valor de índice de ativos, então você precisará fornecer o argumento do tipo de ativo opcional
+    (uma constante), pois ativos de diferentes tipos podem ter o mesmo índice, mesmo que não possam ter o mesmo nome. Os tipos de ativos disponíveis estão listados na tabela abaixo:
+   
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        asset_object
+        O nome dado refere-se a um objeto.
+      
+      
+        asset_sprite
+        O nome dado refere-se a um duende.
+      
+      
+        asset_sound
+        O nome dado refere-se a um som.
+      
+      
+        asset_room
+        O nome dado refere-se a uma sala.
+      
+      
+        asset_tiles
+        O nome dado refere-se a um conjunto de azulejos.
+      
+      
+        asset_path
+        O nome dado refere-se a um caminho.
+      
+      
+        asset_script
+        O nome dado refere-se a um roteiro.
+      
+      
+        asset_font
+        O nome dado refere-se a uma fonte.
+      
+      
+        asset_timeline
+        O nome dado refere-se a uma linha de tempo.
+      
+      
+        asset_shader
+        O nome dado refere-se a um shader.
+      
+      
+        asset_animationcurve
+        O nome dado refere-se a uma Curva de Animação.
+      
+      
+        asset_sequence
+        O nome dado refere-se a uma sequência.
+      
+    
+  
+   
+  Sintaxe:
+  asset_get_tags(nome_ou_index, [tipo_de_activo]);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome_ou_index
+        O nome do bem (uma cadeia) ou seu valor de índice (um número inteiro).
+      
+      
+        [asset_type]
+        OPCIONAL! O tipo de ativo para o qual obter as etiquetas, usado somente quando se fornece um índice para o primeiro argumento.
+      
+    
+  
+   
+  Devoluções:
+  Array
+   
+  Exemplo:
+  my_tags = asset_get_tags(object_get_name(object_index));
+  O código acima recuperará todas as tags atribuídas ao objeto a partir do qual a instância que está executando o código foi criada.
+   
+   
+   
+  
+    
+      
+        Voltar: Ativos e Etiquetas
+        Próximo: asset_add_tags
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

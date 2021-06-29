@@ -1,0 +1,47 @@
+
+  
+  fisica_fixture_set_awake
+  Quando você inicia uma sala com física, ou liga as instalações às instâncias, as instalações são sempre consideradas como "acordadas"... ou seja, elas estão processando eventos e interagindo com as instâncias ao redor. Entretanto, isso às vezes pode levar a
+    a problemas, especialmente se você tiver uma série de casos com luminárias que estão lado a lado quando uma sala começa (pense em uma torre feita de várias instâncias com luminárias) como se elas estivessem "acordadas", elas se moverão e possivelmente mudarão de posição
+    devido ao súbito início da gravidade e às colisões que os afetam. Nestes casos, você pode usar esta função para marcar a fixação como "adormecida", caso em que ela não estará processando nada quando for criada pela primeira vez na sala.
+   
+  Sintaxe:
+  physics_fixture_set_awake(fixture, state)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fixação
+        o índice da fixação
+      
+      
+        bandeira
+        se uma fixação está acordada(verdadeira) ou não(falsa)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  physics_fixture_set_awake(fix_Cloud, true);
+  O código acima sinaliza a fixação como estando "acordada" quando ligada a uma instância.
+   
+   
+   
+  
+    
+      
+        Voltar: Instalações
+        A seguir: physics_get_friction
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

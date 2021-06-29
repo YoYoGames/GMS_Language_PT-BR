@@ -1,0 +1,55 @@
+
+  
+  ds_map_add
+  Esta função deve ser usada para adicionar conjuntos de pares chave/valor no mapa DS especificado. Você pode verificar esta função para ver se ela foi bem sucedida ou não (ela retornará verdadeira no caso de sucesso ou falsa de outra forma),
+    pois pode falhar se já existir a mesma chave no mapa DS ou se você especificar um mapa DS inexistente como o ID do mapa a ser adicionado. As chaves e os valores que você fornece podem ser compostos de qualquer combinação de tipos de dados, portanto, todos os seguintes - e
+    mais - são aceitáveis (embora, na prática, você usaria mais comumente um fio para a chave):
+  ds_map_add(map, 5, indefinido); ds_map_add(map, "level", 1); ds_map_add(map, 89.6, "hello world"); ds_map_add(map, 5, buffer_get_address(buff));
+  Você também pode adicionar a um mapa usando o acessor "?", como mostrado abaixo:
+  map[? 5] = indefinido; map[? "level"] = 1; map[? 89.6] = "hello world"; map[? 5] = buffer_get_address(buff);
+  NOTA: Ao contrário de outras estruturas de dados no GameMaker Studio 2, esta chave não irá para o início (nem para o final) do mapa DS, mas irá apenas para o mapa DS em algum lugar.
+   
+  Sintaxe:
+  ds_map_add(id, key, val);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação do mapa a ser adicionado.
+      
+      
+        chave
+        A chave do valor a agregar.
+      
+      
+        val
+        O valor a ser acrescentado ao mapa.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  inventário = ds_map_create(); ds_map_add(inventário, "hp potion", 1); ds_map_add(inventário, "ouro", 100);
+  Isto criará um novo mapa, atribuindo sua identificação à variável "inventário". Em seguida, acrescenta duas novas chaves ao mapa, "poção hp" e "ouro", e define seus valores iniciais como 1 e 100.
+   
+   
+   
+  
+    
+      
+        Voltar: DS Maps
+        Próximo: ds_map_clear
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

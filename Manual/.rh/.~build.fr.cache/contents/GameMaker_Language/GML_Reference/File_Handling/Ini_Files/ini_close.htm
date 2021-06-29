@@ -1,0 +1,33 @@
+
+  
+  ini_close
+  Esta função deve ser chamada no momento em que você terminar de ler ou escrever para qualquer arquivo ini aberto. Se você não usar a função após ter usado qualquer uma das funções de gravação ini, então nada será gravado em disco, pois as informações do arquivo são mantidas
+    na memória até que esta função seja chamada, o que força a escrita. Se você tentar abrir um ini sem ter previamente fechado outro (ou o mesmo), você também receberá um erro.
+  A função também retornará um fio com o arquivo ini codificado nele. Esta string pode então ser salva em um servidor e/ou usada novamente junto com a função ini_open_from_string() para recriar o ini.
+   
+  Sintaxe:
+  ini_close();
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  ini_open("savedata.ini"); score = ini_read_real("save1", "score", 0); ini_close();
+  
+  Isto abrirá "savedata.ini" e definirá a pontuação para o valor sob a seção "save1" com a chave "score" nela, depois fechará o .ini novamente. Se não houver valor sob "save1", "score" ou se não houver
+    arquivo "savedata.ini" presente, a pontuação será ajustada para 0 e um novo arquivo ini_file será criado.
+   
+   
+   
+  
+    
+      
+        Voltar: Arquivos de Inicia
+        Próximo: ini_write_real
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

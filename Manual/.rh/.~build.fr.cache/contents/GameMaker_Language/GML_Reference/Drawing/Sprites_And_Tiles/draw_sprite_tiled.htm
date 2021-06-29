@@ -1,0 +1,55 @@
+
+  
+  draw_sprite_tiled
+  Esta função pegará um duende e depois o colocará repetidamente em toda a vista (ou espaço se nenhuma vista estiver definida), a partir das coordenadas que você dá na função. O azulejo é baseado na largura e na altura do duende, conforme definido pelo
+   variáveis sprite da instância que está executando o código. Esta função é apenas para projeções 2D (ortográficas), e não funcionará corretamente quando uma
+    é utilizada a projeção da câmera.
+   
+  Sintaxe:
+  draw_sprite_tiled(sprite, subimg, x, y);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sprite
+        O índice do duende a desenhar.
+      
+      
+        subimg
+        O subimg (frame) do duende a desenhar (image_index ou -1 correlacionado com o frame atual da animação no objeto).
+      
+      
+        x
+        A coordenada x de onde desenhar o duende.
+      
+      
+        y
+        A coordenada y de onde desenhar o duende.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_sprite_tiled(sprite_index, image_index, x, y);
+  Isto desenhará as instâncias designadas sprite (sprite_index) e seu quadro atual de animação (image_index) na própria posição x e y das instâncias, e em mosaico horizontal e verticalmente em toda a vista.
+   
+   
+   
+  
+    
+      
+        Voltar: Sprites e Azulejos
+        Próximo: draw_sprite_tiled_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

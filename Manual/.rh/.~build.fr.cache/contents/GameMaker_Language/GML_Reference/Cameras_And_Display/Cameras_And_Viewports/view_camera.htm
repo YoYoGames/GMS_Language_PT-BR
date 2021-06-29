@@ -1,0 +1,33 @@
+
+  
+  view_camera
+  Esta matriz mantém a identificação única da câmera atribuída à porta de visualização determinada, e pode ser definida para uma nova câmera ou lida para obter a câmera atual, retornando -1 se nenhuma câmera for atribuída. Você pode ter até 8 portas de visualização ativas em uma sala (valores de matriz 0 até
+    7), e pode atribuir uma câmera a qualquer uma delas simplesmente ajustando esta variável ao valor de identificação da câmera (como retornado pelas funções camera_create() ou camera_create_view()).
+    Se você tiver ajustado a câmera para uma porta de visualização através do Room Editor, esta variável irá segurar o ID da câmera para aquela porta.
+   
+  Sintaxe:
+  view_camera[0 ... 7];
+   
+  Devoluções:
+  Índice da câmera ou -1 se nenhuma câmera for atribuída
+   
+  Exemplo:
+  se view_camera[0] == -1 {
+     view_camera[0] = camera_create_view(0, 0, room_width, room_height); }
+  
+  O código acima verifica se a porta de visualização [0] tem uma câmera acoplada a ela e se não tem, então uma é criada e ajustada a ela.
+   
+   
+   
+  
+    
+      
+        Voltar: Câmeras e Ver Portos
+        Próximo: view_current
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

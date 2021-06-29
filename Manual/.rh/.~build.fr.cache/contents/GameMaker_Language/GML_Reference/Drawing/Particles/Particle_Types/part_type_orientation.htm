@@ -1,0 +1,70 @@
+
+  
+  orientação_parte_tipo
+  Esta função é usada para determinar a orientação do duende de partículas quando ele é criado e também pode ser usada para fazer a orientação da partícula aumentar ou diminuir ao longo de sua vida útil. Os valores mínimo e máximo de orientação padrão são 0, mas estes
+    Os valores podem ser mudados para aleatorizar a orientação seguindo o padrão GameMaker Studio 2, sendo 0 graus para a direita, 90 graus para cima, 180 graus para a esquerda e 270 graus para baixo. Se você definir o mesmo valor, o
+    partículas serão todas criadas com a mesma orientação.
+  Você também pode definir um valor de incremento que adicionará (se um número positivo) ou subtrairá (se um número negativo) uma quantidade de graus à orientação ao longo de sua vida útil. Este valor pode ser um mínimo de (+/-) 0,01.
+  Você pode definir o fator "agitar" também, o mesmo que outras funções das partículas. Este é um valor que será adicionado ou subtraído aleatoriamente à orientação de cada etapa da vida útil das partículas. Obviamente, valores maiores são mais pronunciados do que valores menores
+    e este valor pode até mesmo ser negativo, sendo a faixa máxima entre -20 e 20.
+  Finalmente, você pode optar por ter a orientação relativa ou não, o que significa que enquanto a partícula tiver uma direção (e velocidade), o duende da partícula será orientado em torno desse vetor. Tenha em mente que, se você tiver a velocidade da partícula definida para reduzir
+    e chega a 0, a falta de velocidade define a direção para o valor padrão de 0° e, portanto, uma orientação relativa fará com que o duende de partícula "pule" para um ângulo diferente.
+   
+  Sintaxe:
+  part_type_orientation( ind, ang_min, ang_max, ang_incr, ang_wiggle, ang_relative );
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do tipo de partícula a ser mudado.
+      
+      
+        ang_min
+        O ângulo mínimo de partida das partículas.
+      
+      
+        ang_max
+        O ângulo máximo de partida das partículas.
+      
+      
+        ang_incr
+        O aumento (ou a diminuição, se for fixado negativo) do ângulo em graus por degrau.
+      
+      
+        ang_wiggle
+        A quantidade que o ângulo se agita no sentido horário/no sentido anti-horário por degrau.
+      
+      
+        ang_relativo
+        Seja para definir seu ângulo em relação à direção do movimento da partícula (verdadeiro) ou não (falso).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  part_type_shape(particle2, pt_shape_spark); part_type_size(particle2, 0.10, 0.50, 0.01, 0); part_type_scale(particle2, 0.30, 0.30); part_type_colour1(particle2, 8454143); part_type_alpha1(particle2, 0.50); part_type_speed(particle2, 0.50); part_type_speed(particle2
+    4, 4, -0.07, 1); part_type_direction(particle2, 0, 359, 0, 20); part_type_orientation(particle2, 0, 359, 0, 20, 1); part_type_blend(particle2, 1); part_type_life(particle2, 1, 5);
+  O código acima estabelecerá vários valores de partículas, incluindo a orientação que será valor aleatório entre 0º e 359º. Ele também terá uma quantidade aleatória de 0º a 20º em cada etapa, e a orientação é relativa ao valor de 0º a 359º.
+    direção do movimento.
+   
+   
+   
+  
+    
+      
+        Voltar: Tipos de Partículas
+        A seguir: part_type_colour_mix
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

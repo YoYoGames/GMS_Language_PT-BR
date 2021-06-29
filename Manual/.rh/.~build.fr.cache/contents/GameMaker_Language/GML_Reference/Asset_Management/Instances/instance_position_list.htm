@@ -1,0 +1,66 @@
+
+  
+  lista_de_posições_da_classe
+  Com esta função você pode verificar uma posição para uma colisão com todas as instâncias de outro objeto. Quando você usa esta função você está verificando um único ponto na sala para todas as instâncias de um objeto, e a verificação será feita contra a caixa de delimitação do
+    ou contra a máscara das instâncias, se esse objeto tiver colisões precisas verificadas.
+  A função irá preencher uma lista DS (previamente criada) com o exclusivo id valores de todas as instâncias do objeto que são consideradas como estando em
+    colisão com a instância de chamada, e você tem a opção de ordenar a lista com base na distância da posição a ser verificada até a origem das instâncias encontradas em colisão. Note que a função também aceita a palavra-chave especial
+    GML_Overview/Instance_Keywords.htm">todosNeste caso, todas as instâncias encontradas em colisão serão listadas. A função retorna o número de instâncias encontradas, ou 0 se nenhuma for encontrada.
+   
+  Sintaxe:
+  instance_position_list(x, y, obj, list, ordered);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A posição x para verificar as instâncias.
+      
+      
+        y
+        A posição y para verificar as instâncias.
+      
+      
+        obj
+        O objeto a ser verificado em casos de.
+      
+      
+        lista
+        A lista DS a ser utilizada para armazenar as identificações de ocorrências de colisão.
+      
+      
+        encomendado
+        Se a lista deve ser ordenada por distância(verdadeira) ou não(falsa).
+      
+    
+  
+   
+  Devoluções:
+  Int (O número de instâncias encontradas em colisão)
+   
+  Exemplo:
+  var _list = ds_list_create(); var _num = instance_position_list(mouse_x, mouse_y, all, _list, false); if _num > 0 {
+     for (var i = 0; i < _num; ++i;) {
+     instance_destroy(_list[| i]); }
+     }
+     ds_list_destroy(_list);
+  
+  O código acima verificará se há uma colisão com todas as instâncias encontradas na posição do mouse. Estes serão adicionados a uma lista DS, a qual é então passada em loop para destruir cada uma das instâncias em colisão.
+   
+   
+   
+  
+    
+      
+        Voltar: Instâncias
+        Próximo: instance_id_get
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

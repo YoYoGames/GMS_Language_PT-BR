@@ -1,0 +1,35 @@
+
+  
+  dispositivo_get_tilt_y
+  Esta função retorna um valor entre -1 e 1, dependendo do ângulo de "inclinação" do dispositivo. A correlação real entre graus de inclinação e o valor retornado depende do dispositivo e do SO que ele usa, mas geralmente um valor de 1 ou
+    -1 é o mesmo que +/-90°. A imagem abaixo mostra como cada uma se relaciona com o dispositivo, se as funções disponíveis:
+  
+  Sintaxe:
+  device_get_tilt_y()
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  se display_get_orientation() = display_landscape {
+     x += sign(device_get_tilt_y()); }
+     mais
+     {
+     x += sign(device_get_tilt_x()); }
+  
+  O código acima verifica a orientação do visor e depois usa o valor de inclinação correspondente para mover o jogador ao longo do eixo x.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada do dispositivo
+        Próximo: device_get_tilt_z
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

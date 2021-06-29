@@ -1,0 +1,89 @@
+
+  
+   Variável de Instância
+  Com esta ação, você pode definir uma das variáveis embutidas. Todas as instâncias de todos os objetos têm uma série de variáveis já criadas dentro deles para conter informações essenciais como a posição x/y atual, a velocidade, a direção, a visibilidade
+    e muitas outras coisas. As variáveis de instância que você pode usar são:
+  
+    X Coordenada - A posição ao longo do eixo x na sala.
+    Coordenada Y - A posição ao longo do eixo y na sala.
+    Direção - A direção de movimento para a instância (o padrão é 0°, onde a direita é 0°, para cima é 90°, esquerda é 180° e para baixo é 270°).
+    Velocidade - A velocidade (em pixels por frame de jogo) em que a instância está se movendo.
+    Velocidade horizontal - A velocidade horizontal (em pixels por frame de jogo) em que a instância está se movendo. Uma velocidade negativa significa que ela está se movendo
+      esquerda, uma velocidade positiva é a direita e o padrão é 0.
+    Velocidade vertical - A velocidade vertical (em pixels por frame de jogo) em que a instância está se movendo. Uma velocidade negativa significa que ela está se movendo para cima,
+      uma velocidade positiva é baixa e o padrão é 0.
+    Visível - A variável de alternância de visibilidade (o padrão é verdadeiro, a menos que definido de outra forma no Editor de Objetos,
+      definido como falso para torná-lo invisível). Note que uma instância invisível ainda executa todos os seus eventos , exceto o Evento de Sorteio.
+    Persistente - A variável toggle de persistência (padrão é falsa, a menos que seja definida de outra forma no Editor de Objetos),
+      se esforçar para ser persistente). Isto fará com que uma instância "persista" de sala para sala, ou seja: a instância não será limpa na ponta da sala, mas será transportada para a sala seguinte. Note que quando uma instância é persistente
+     não chamará seu evento Criar ou Destruir, mas chamará os eventos Limpeza, Fim de Sala e Início de Sala.
+    Camada - A camada para a qual a instância foi designada.
+    Profundidade - O valor de profundidade atribuído à camada.
+    Sprite - O recurso sprite designado para a instância.
+    Índice de imagem - O índice de imagem do duende atribuído. Este valor define a moldura do duende atribuído à instância, e se
+      o valor é maior do que o número de quadros na animação que "loop" de tal forma que um duende com 5 quadros, se definido para o quadro 7, irá realmente mostrar o quadro 2.
+    Ângulo de imagem - O ângulo em que a instância deve ser definida (o padrão é 0°, onde a direita é 0°, acima é 90°, esquerda é 180° e abaixo
+      é de 270°).
+    Imagem Alfa - O valor alfa para a instância (padrão é 1) de 0 a 1, onde 0 é totalmente transparente e 1 é totalmente opaco.
+    Image Blend - A cor a ser misturada com o sprite de instância (o padrão é branco).
+    Velocidade da imagem - A velocidade da animação, por exemplo.
+    Escala horizontal - A escala horizontal na qual a instância sprite deve ser desenhada (isto também afetará a instância delimitadora
+      caixa e colisões). Uma escala de 1 indica que não há escala (1:1), valores menores serão escalados para baixo (0,5, por exemplo, será metade da largura do duende), valores maiores serão escalados para cima e valores negativos espelharão o duende e o escalarão, a menos que
+      o valor utilizado é exatamente -1 (neste caso o duende é apenas espelhado ao longo do eixo y, sem escala).
+    Escala vertical - A escala vertical na qual a instância sprite deve ser desenhada (isto também afetará a instância delimitadora
+      caixa e colisões). Uma escala de 1 indica que não há escala (1:1), os valores menores serão escalados para baixo (0,5, por exemplo, será metade da altura do duende), os valores maiores serão escalados para cima e os valores negativos serão escalados para cima , a menos que
+      o valor utilizado é exatamente -1 (neste caso, o duende é simplesmente virado ao longo do eixo y, sem escala).
+    Máscara - O índice da máscara, por exemplo. O valor padrão é -1 (o que significa que a instância usará a máscara de colisão para a
+      atualmente atribuído ao índice sprite), mas se definido para qualquer outro recurso sprite, será usada a máscara de colisão para aquela instância em vez do sprite atribuído ao índice sprite.
+    Fricção - O atrito de usar cada frame do jogo para retardar a instância. Este valor será simplesmente deduzido do atual
+      valor da velocidade de cada quadro de jogo (ou adicionado se o valor da velocidade for negativo).
+    Gravidade - A gravidade aplicará uma força constante na direção da gravidade (ver abaixo) da instância, influenciando sua velocidade (o padrão é
+      0). Note que a gravidade é uma força cumulativa e irá acelerar o objeto se você optar por não limitar a velocidade final.
+    Direção da gravidade - Pode ser usado para definir a direção do movimento quando a gravidade é maior que 0 (padrão
+      é 270). Note que as instruções no GameMaker Studio 2 são calculadas como 0° sendo a direita, 90° sendo para cima, 180° sendo para a esquerda e 270° sendo para baixo.
+    Pontuação - Defina a variável de pontuação.
+    Vidas - Defina a variável vidas.
+    Saúde - Defina a variável saúde.
+  
+  Uma vez selecionada a variável embutida a ser usada, você então define o valor para aquela variável. O valor a ser usado dependerá da variável selecionada (veja a lista acima para padrões e intervalos) e você pode marcar o valor a ser relativo à variável atual
+    valor para a variável. Você também pode adicionar variáveis adicionais para definir na mesma ação, clicando no ícone de mais  ao lado de
+    a ação, e selecionando outra variável de instância e atribuindo-lhe um valor.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Variável
+        A variável embutida para definir
+      
+      
+        Valor
+        O valor para definir a variável para
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima recebe os valores para
+    a posição x/y anterior e depois as compara com a posição x/y atual. Se não forem iguais, então o índice sprite para a instância é alterado e o índice de imagem é ajustado para 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações de instância
+        A seguir: Obter variável de instância
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

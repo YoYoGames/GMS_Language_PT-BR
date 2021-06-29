@@ -1,0 +1,83 @@
+
+  
+  retângulo_em_triângulo
+  Esta função verificará uma área retangular que você define para ver se ela não está em colisão, completamente dentro dos limites do destino, ou se está simplesmente tocando, uma área triangular definida. Se eles não estiverem tocando em nada, a função
+    retornar 0, se a fonte estiver completamente dentro do destino, retornará 1, e se estiverem simplesmente sobrepostos, retornará 2. A imagem abaixo ilustra isto:
+  
+  Sintaxe:
+  retângulo_em_triângulo(sx1, sy1, sx2, sy2, dx1, dy1, dx2, dy2, dx3, dy3);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sx1
+        A coordenada x do lado esquerdo do retângulo da fonte.
+      
+      
+        sy1
+        A coordenada y do lado superior do retângulo da fonte.
+      
+      
+        sx2
+        A coordenada x do lado direito do retângulo da fonte.
+      
+      
+        sy2
+        A coordenada y do lado inferior do retângulo da fonte.
+      
+      
+        x1
+        A coordenada x do primeiro lado do triângulo a ser verificado.
+      
+      
+        y1
+        A coordenada y do primeiro lado do triângulo a ser verificado.
+      
+      
+        x2
+        A coordenada x do segundo lado do triângulo a verificar.
+      
+      
+        y2
+        A coordenada y do segundo lado do triângulo a verificar.
+      
+      
+        x3
+        A coordenada x do terceiro lado do triângulo a verificar.
+      
+      
+        y3
+        A coordenada y do terceiro lado do triângulo a verificar.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var inst = instance_nearest(x, y, obj_Player); se instance_exists(inst) {
+     var x1 = x + lengthdir_x(100, image_angle - 45); var y1 = y + lengthdir_y(100, image_angle - 45); var x2 = x + lengthdir_x(100, image_angle + 45); var y2 = y + lengthdir_y(100, image_angle + 45); if rectangle_in_triangle(inst.bbox_left_left,
+    inst.bbox_top, inst.bbox_right, inst.bbox_bottom, x, y, x1, y1, x2, y2) == 1 {
+     can_see = true; }
+     }
+  
+  O código acima usa a função rectângulo_em_triângulo como um "cone de visão" para verificar se há uma instância de "obj_player". Se a caixa de delimitação completa estiver dentro de uma determinada área triangular, ela definirá uma variável como verdadeira.
+   
+   
+   
+  
+    
+      
+        Voltar: Colisões
+        Próximo: retângulo_em_círculo
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

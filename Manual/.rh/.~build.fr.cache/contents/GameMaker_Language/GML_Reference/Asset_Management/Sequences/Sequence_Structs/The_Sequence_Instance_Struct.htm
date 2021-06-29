@@ -1,0 +1,85 @@
+
+  
+  A estrutura da instância seqüencial
+  Uma seqüência, quando colocada em uma sala, é colocada como um elemento sobre a camada, e este elemento contém uma instância de seqüência. Esta instância de seqüência terá as seguintes propriedades em sua estrutura:
+  
+    seqüência: Esta é a identificação da estrutura do objeto da seqüência a partir da qual a instância da seqüência foi criada (ver mais detalhes) .Você pode obter ou definir esta estrutura, e assim mudar a base
+      seqüência que a instância está referenciando.
+    headPosition: Esta é a posição atual do cabeçote (em quadros) para a instância da seqüência. Você pode obter ou definir este valor, mas note que defini-lo para um valor maior ou menor que
+      a região de reprodução atualmente definida terá efeitos diferentes, dependendo do tipo de conjunto de reprodução para a seqüência. Ver layer_sequence_headpos() para mais informações.
+    headDirection: Esta é a direção de reprodução atual para a instância da seqüência. Você pode obter ou definir este valor usando as seguintes constantes (Note que você pode usar as funções de camada layer_sequence_get_headdir() e
+      layer_sequence_headdir() para obter ou definir este valor sem ter que acessar diretamente a estrutura):
+  
+  
+    
+      
+        Constante
+        Descrição
+        Valor
+      
+      
+        seqdir_right
+        A seqüência jogará quadros em uma ordem incremental da esquerda para a direita
+        1
+      
+      
+        seqdir_left
+        A seqüência jogará quadros em ordem decrescente da direita para a esquerda
+        -1
+      
+    
+  
+   
+  
+    escala de velocidade: Esta propriedade pode ser usada para obter ou definir a escala de velocidade de reprodução. A escala de velocidade é um multiplicador, onde 1 é a velocidade de reprodução padrão e valores inferiores a 1 irão retardar a reprodução e valores superiores a 1 irão acelerar
+      para cima, por exemplo: um valor de 0,5 seria metade da velocidade de reprodução, enquanto um valor de 2 seria o dobro da velocidade de reprodução. Note que você pode usar as funções de camada layer_sequence_get_speed scale() e
+      camada_sequência_escala_de_velocidade() para obter ou definir este valor sem ter que acessar diretamente a estrutura.
+    pausou: Você pode verificar esta propriedade para ver se uma seqüência foi pausada ou não, e será verdadeira se foi, ou falsa de outra forma. Esta é uma propriedade somente de leitura, mas você pode usar a função de camada layer_sequence_pause() para
+      pausar a reprodução, e layer_sequence_play() para retomá-la novamente, se necessário. Você também pode verificar esta propriedade usando a função de camada layer_sequence_is_paused() um pouco
+      do que verificar diretamente a propriedade na estrutura.
+    terminado: Você pode verificar esta propriedade para ver se uma seqüência terminou de tocar ou não, retornando verdadeiro se terminou de tocar, e falso se não for assim. Esta é uma propriedade somente de leitura, e só retornará verdadeiro para faixas que não estejam configuradas para loop ou ping-pong. Você também pode verificar esta propriedade usando a função de camada layer_sequence_is_finished() em vez de verificar a propriedade
+      na estrutura diretamente.
+    elementID: Esta propriedade possui a identificação do elemento de seqüência. Este iD é um valor de identificação simples que está associado a uma camada no editor da sala, e pode então ser usado com as funções de camada apropriadas para
+      encontrar a camada à qual a seqüência foi atribuída ou alterar certas propriedades da seqüência sem ter que lidar com a estrutura.
+    ActiveTracks: Esta propriedade conterá um conjunto de estruturas de "avaliação" contendo informações sobre o estado atual de cada trilha de ativos na seqüência (gráficos, seqüência, áudio, etc...). Estas são apenas as pistas de nível superior,
+      e a matriz devolvida é somente de leitura. Para o conteúdo da estrutura de trilha do ativo retornado em cada entrada da matriz, por favor, veja a seção abaixo.
+  
+  A lista a seguir contém as propriedades que podem estar disponíveis para você ao acessar uma estrutura de trilhas (conforme retornado pela propriedade ActiveTracks da estrutura da seqüência pai, explicada acima). Cada estrutura de trilha de ativos pode ter alguma ou toda
+    as seguintes propriedades, dependendo do tipo de ativo que a pista está referenciando (note que você pode obter ou definir todas essas propriedades, exceto onde especificado como somente leitura), e todos os valores retornados são os da posição atual de playhead:
+  
+    matriz: Esta é a matriz de transformação utilizada para desenhar a pista (sprite, instância e seqüência de pistas).
+    posx: A posição do ativo na seqüência ao longo do eixo X para a pista na posição atual de playhead (todos os ativos).
+    posy: A posição do ativo na seqüência ao longo do eixo Y para a pista na posição atual de playhead (todos os ativos).
+    scalex: A escala do ativo na seqüência ao longo do eixo X para a pista na posição atual de playhead (sprite, instância e seqüência de pistas).
+    escala: A escala do ativo na seqüência ao longo do eixo Y para a pista na posição atual de playhead (sprite, instância e seqüência de pistas).
+    xorigem: A origem X do bem para a pista (todos os bens).
+    yorigin: A origem Y do bem para a pista (todos os bens).
+    largura: A largura (em pixels) do bem para a pista (sprite, exemplo e seqüência de pistas).
+    altura: A altura (em pixels) do bem para a pista (sprite, exemplo e seqüência de pistas).
+    imageindex: O índice de imagem do ativo na pista na seqüência na posição atual de playhead (sprite e pistas de instância).
+    velocidade da imagem: A velocidade da imagem para o ativo na pista na seqüência na posição atual de playhead (sprite e pistas de instância).
+    colorMultiply: O valor da multiplicação de cores para o ativo na pista na seqüência na posição atual de playhead (sprite, instância e seqüência de pistas). Este valor será uma matriz de
+      quatro valores ARGB com o formato [A, R, G, B]. Observe que os valores para cada componente são expressos entre 0 e 1, onde 0 corresponde ao valor HEX #00 e 1 corresponde ao HEX
+      valor #FF (0 - 255 como mostrado no seletor de cores para faixas de multiplicação de cores no Editor de Seqüências).
+    ganho: O ganho (volume) da faixa na posição atual de playhead (faixas de áudio).
+    passo: O tom da faixa na posição atual de playhead (faixas de áudio).
+    pista: A estrutura de dados da pista em que esta pista se baseia (todos os ativos, um valor somente de leitura ).
+    pai: O ID da instância de seqüência pai para a pista (todos os ativos, um valor somente de leitura ).
+    ActiveTracks: Este é um conjunto de estruturas de avaliação para cada trilha de parâmetro que a trilha do ativo contém (todos os ativos, um valor somente de leitura ). O conteúdo de cada estrutura na matriz está listado na seção Estrutura da trilha de parâmetros.
+  
+   
+   
+   
+   
+  
+    
+      
+        Voltar: Sequências
+        A seguir: A estrutura da via
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

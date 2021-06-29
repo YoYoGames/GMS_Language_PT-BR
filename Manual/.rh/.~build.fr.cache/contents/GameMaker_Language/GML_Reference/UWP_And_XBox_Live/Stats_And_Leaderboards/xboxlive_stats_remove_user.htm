@@ -1,0 +1,56 @@
+
+  
+  xboxlive_stats_remove_user
+  Esta função pode ser usada para remover (não registrar) um determinado usuário do gerente de estatísticas, realizando uma descarga dos dados estatísticos para o servidor ao vivo. De acordo com a documentação da XBox, o jogo não tem que remover o usuário do gerenciador de estatísticas,
+    uma vez que o sistema operacional XBox irá periodicamente lavar as estatísticas de qualquer maneira. Você fornece o ID do usuário conforme retornado por (por exemplo) a função xboxlive_get_user()e a função retornará -1
+    se houver um erro ou se a identificação do usuário for inválida, ou qualquer outro valor se a função foi chamada com sucesso.
+  NOTA: A remoção do usuário pode retornar um erro se as estatísticas que foram definidas sobre o usuário forem inválidas (tais como os nomes estatísticos contendo caracteres numéricos não alfanuméricos).
+  A função gerará uma chamada de retorno que acionará um Evento Assíncrono do Sistema. Este evento terá o mapa DS especial async_load    que deve então ser analisado para as seguintes chaves:
+  
+    "id" - Realizará o constante evento
+    "Eventname" - Segura a corda "LocalUserRemoved"
+    "userid" - O ID do usuário associado à solicitação
+    "erro" - 0 se bem sucedido, algum outro valor se tiver havido um erro
+    " errormessage" - Uma cadeia com uma mensagem de erro, se houver alguma disponível
+  
+  Observe que, se você quiser lavar os dados de estatísticas para o servidor ao vivo a qualquer momento sem remover o usuário, você pode usar a função xboxlive_stats_flush_user().
+   
+  Sintaxe:
+  xboxlive_stats_remove_user(user_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        user_id
+        O ID do usuário (um ponteiro) para remover
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  for(var i = 0; i < xboxlive_get_user_count(); ++i;)  {
+     user_id[i] = xboxlive_get_user(i); xboxlive_stats_remove_user(user_id[i]);
+     }
+  
+  O loop de código acima através dos IDs de conta de usuário armazenados e remover (cancelar o registro) cada usuário do gerenciador de estatísticas.
+   
+   
+   
+  
+    
+      
+        Voltar: Estatísticas e Quadros de Líderes
+        Próximo: xboxlive_stats_flush_user
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

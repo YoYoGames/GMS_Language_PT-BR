@@ -1,0 +1,61 @@
+
+  
+  network_send_udp_raw
+  Com esta função você pode enviar dados através da rede usando UDP para um servidor. A função leva a identificação do soquete para conectar, a URL para conectar e a porta para usar. Você deve então fornecer o ID do buffer que contém os dados para
+    ser enviado (para mais informações sobre buffers veja Referência - Buffers) e finalmente o tamanho (em bytes) dos dados. O UDP é "sem conexão" no sentido de que você não faz realmente uma conexão, você apenas envia um pacote
+    diretamente para um IP, e o servidor recebe os dados recebidos de um endereço IP e tem que lidar com eles "como está". Os dados enviados não são formatados pelo GameMaker Studio 2 de forma alguma e os dispositivos receptores receberão os dados como um fluxo que
+    significa que você mesmo terá que lidar com isso. A função retornará o número de bytes de dados enviados, ou um número inferior a 0 se o envio falhar.
+  NOTA: Esta função não funcionará quando utilizada em um projeto em execução no alvo HTML5, e os projetos HTML5 também não poderão receber UDP.
+   
+  Sintaxe:
+  network_send_udp_raw(socket, url, porta, buffer, tamanho);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        soquete
+        A identificação do soquete a ser utilizado.
+      
+      
+        url
+        A url ou IP a que se conectar (uma cadeia).
+      
+      
+        porto
+        A porta a ser conectada.
+      
+      
+        tampão
+        A identificação do buffer de onde obter os dados.
+      
+      
+        tamanho
+        O tamanho (em bytes) dos dados.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  network_send_udp_raw(sock, "www.macsweeneygames.com", 6510, buff, buffer_tell(buff));
+  O código acima enviará um pacote UDP bruto para o servidor definido pela URL na porta 6510. Os dados são retirados do buffer indexado na variável "buff".
+   
+   
+   
+  
+    
+      
+        Voltar: Rede
+        Próximo: network_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

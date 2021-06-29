@@ -1,0 +1,66 @@
+
+  
+   Comece a seguir o caminho
+  Esta ação iniciará uma instância seguindo um caminho que foi criado no Navegador de Ativos. Você então usaria esta ação para dizer a sua instância qual caminho seguir, que velocidade seguir o caminho (medido em pixels por frame de jogo), como
+    comportar-se quando chega ao final do caminho, e se deve seguir a posição absoluta ou relativa do caminho. Ao definir a velocidade você pode usar valores negativos para significar que a instância deve seguir o caminho em sentido inverso e vale a pena notar que
+    a velocidade que você definir aqui pode ser modificada pelo modificador de velocidade definido no editor de caminho para cada ponto do caminho, então se você definir a velocidade do caminho para 2 e no caminho um dos pontos tem um modificador de velocidade de 200%, então a velocidade real nesse ponto será
+    4 pixels por moldura de jogo.
+  Uma vez definida a velocidade inicial do caminho, você pode definir como a instância deve se comportar ao chegar ao final do caminho a partir das seguintes opções (note que quando uma instância chega ao final de um caminho, isto também acionará um Outro - Evento Fim de Caminho):
+  
+    Parada: Terminar o caminho, parando a instância no último ponto do caminho.
+    Reiniciar: Continuar o caminho desde o início, pulando novamente para a posição inicial se o caminho não estiver marcado como fechado no Editor de Caminhos.
+    Loop: Continue a partir da posição atual para percorrer o caminho novamente.
+    Reverter: Volte para trás ao longo do caminho novamente (conseguido invertendo o caminho segue a velocidade), e quando chegar ao início do caminho, ele irá reverter novamente, etc.
+  
+  Finalmente, você pode marcar o caminho como sendo Absoluto ou não. Por padrão, a instância começará a seguir o caminho a partir de sua posição atual (a posição relativa), mas se você marcar a caixa de seleção Absoluto, então ela começará a seguir a
+    caminho exatamente como você o projetou e o colocou no Path Editor (a posição absoluta). A imagem abaixo ilustra isto:
+  Como você pode ver na imagem acima, as duas instâncias estão seguindo o mesmo caminho iniciado
+    com esta ação, mas uma das instâncias está seguindo o caminho absoluto enquanto a outra está seguindo o caminho relativo. Deve-se notar que quando o Absoluto é sinalizado, a instância "pulará" para o início da
+    caminho, não importa onde seja colocado na sala.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Caminho
+        O caminho a ser percorrido
+      
+      
+        Velocidade
+        A velocidade (em pixels por frame de jogo) para seguir o caminho
+      
+      
+        No final
+        A resposta para chegar ao fim do caminho
+      
+      
+        Absoluto
+        Se começar na posição absoluta ou relativa
+      
+    
+  
+   
+  Exemplo:
+  O bloco de ação acima fará com que a instância de chamada siga um caminho (começando em seu absoluto
+    posição e continuando no final) quando uma tecla é pressionada.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações do caminho
+        A seguir: Pare de seguir o caminho
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

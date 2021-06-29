@@ -1,0 +1,48 @@
+
+  
+  Funções do Action Block Script
+  Um dos ativos mais importantes do Navegador de Ativos é o ativo Script. Os Scripts são ativos especiais na medida em que são essencialmente "containers".
+    para funções definidas pelo usuário e não são chamados por ele mesmo diretamente em seus jogos. Todos os scripts são globais no escopo e serão executados automaticamente pelo GameMaker quando seu jogo começar, de modo que você pode usá-los para definir
+    variáveis e funções que você deseja utilizar durante todo o seu jogo.
+  Cada script DnD™pode ter uma ou mais funções definidas pelo usuário, e estas funções são criadas usando a ação Declarar uma nova função:
+  As funções que você definir aqui serão globais no escopo e agirão como qualquer outra função integrada DnD™
+    ação, ou seja: eles podem tomar valores diferentes - ou nenhum - chamadosargumentos (ou parâmetros), e então executar uma tarefa, devolver um valor ou não devolver nada
+    conforme necessário. Você então chamaria a função em seus jogos usando a ação de Chamada de Função , que se parece com isto:
+  Para criar um script DnD™, basta usar o botão direito do mouse  em qualquer lugar do Navegador de Ativos e selecionar Criar então Script. Isto criará um novo script DnD™e abrirá a janela do editor:
+  Você pode nomear o script clicando com o botão direito do mouse  sobre ele no Navegador de Ativos e selecionando Renomear (ou usando um duplo clique lento à esquerda ), mas note que o script
+    O nome deve estar de acordo com as regras gerais para bens, portanto, devem começar com uma letra e conter apenas letras, números ou o símbolo "_" abaixo da barra. Seu script também será pré-povoado com uma ação Declare A New Function,
+    pronto para você preenchê-lo, e você pode adicionar mais declarações de funções conforme necessário (um único script pode conter várias funções, o que é útil para agrupar funções com uso similar ou conectado em conjunto).
+  Como mencionado acima, você pode passar uma série de argumentos para uma função, e ela os utilizará para realizar a tarefa para a qual você a escreveu. Para entender isto melhor, tome - por exemplo - qualquer uma das ações embutidas e pense em como ela funciona... você
+    colocá-lo em um evento e fornecer uma série de valores e isso fará com que sua instância faça algo. As funções definidas pelo usuário são exatamente as mesmas, sendo que a única diferença é que você as escreve.
+  Ao definir uma nova função, você dá a ela um nome e também define o nome de quaisquer argumentos que ela tome, se ela tomar algum (as funções não podem tomar argumentos ou argumentos múltiplos, dependendo do que você precisar). Se você der nomes de argumentos, então estes serão
+    utilizadas nas ações que a função chama como variáveis locais contendo os valores de entrada da função.
+  Também é uma boa prática acrescentar em um comentário para a ação que explique o que ela faz, seguindo as regras do documento do JS. Por exemplo, considere esta função set_vec():
+  Para chamar o script acima você simplesmente usaria a ação Call Function,
+    assim:
+  Você não só pode passar argumentos para uma função, mas também pode pedir a uma função que devolva um valor
+    também (usando a ação Return  ), então você
+    pode usá-los para (por exemplo) construir métodos de cálculo ou devolver uma identificação de instância após uma complexa detecção de colisão ou qualquer número de coisas. Observe, entretanto, que o uso do retorno termina a função e, portanto, nenhuma ação colocada após
+    foi usado será executado, e isto significa que uma certa quantidade de pensamento tem que ir para a forma como suas funções são estruturadas.
+  Abaixo está uma função Arrastar e Soltar que retorna um valor:
+  
+  A função acima simplesmente verifica todas as instâncias em uma sala para ver qual é seu object_index e se uma delas for o objeto do jogador, a função retornará true (terminando a chamada de função) ou
+    false . Você chamaria esta função desta forma:
+  Portanto, chamamos a função e fazemos com que ela crie uma variável temporária (local) para armazenar o retorno
+    (que neste caso é true ou false), e então esta variável é verificada e uma ação é tomada.
+  Ao criar funções para seus scripts DnD™você pode usar todas as mesmas ações que usaria ao adicionar ações em um evento de objeto, e pode até mesmo chamar funções de dentro das funções, e desta forma criar mais código de ação "modular". Construindo
+    scripts com funções desta forma podem economizar muito tempo criando as mesmas seqüências de ação e também podem ajudar a tornar suas seqüências de ação mais fáceis de ler e mais fáceis de depurar.
+   
+   
+   
+  
+    
+      
+        Voltar: Índice
+        A seguir: Mudando DnD™para código
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

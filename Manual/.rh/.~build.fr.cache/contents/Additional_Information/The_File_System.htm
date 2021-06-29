@@ -1,0 +1,68 @@
+
+  
+  O sistema de arquivo
+  Ao utilizar as funções do sistema de arquivos ou arquivos incluídos com o GameMaker Studio 2 é de vital importância saber exatamente como
+    o sistema de arquivo funciona e o que está acontecendo nos bastidores. Para isso, esta seção foi projetada para explicar e esclarecer exatamente como as coisas são armazenadas, onde elas são armazenadas e quais são os possíveis limites ou soluções
+    pode ser para este sistema.
+  A primeira e mais importante observação sobre as funções do arquivo é que elas estão limitadas - em geral e por padrão - à caixa de areia. Isto significa que o GameMaker Studio 2 não pode salvar ou carregar arquivos de qualquer lugar que não faça parte do pacote de jogos ou do armazenamento local do dispositivo sem uma entrada explícita do usuário, e mesmo assim esta entrada é limitada apenas às plataformas alvo Windows, MacOS e Ubuntu(Linux).
+  IMPORTANTE! É possível desligar o sandboxing, no entanto, nos alvos Desktop(Windows, MacOS e Ubuntu(Linux)), verificando a opção Desabilitar sistema de arquivos sandbox na opção Game Options para a plataforma alvo. Você faz isto por sua própria conta e risco, e embora isto abra a possibilidade de salvar e carregar arquivos e permitir que você acesse arquivos em qualquer lugar do sistema em questão, ainda pode ser limitado pelas permissões do SO, e você não será capaz de escrever
+    para a program_directory pasta.
+  Para entender a caixa de areia antes de tudo, é preciso entender que existem duas áreas distintas para os arquivos:
+  
+    O Pacote de Arquivos - aqui é onde todos os arquivos que são empacotados com o jogo executável são armazenados, incluindo os arquivos que você adicionou à lista de ativos Incluído Arquivos da IDE GameMaker Studio 2 (que
+      são os arquivos externos que você quer empacotados com o jogo).
+    A Área de Salvamento - esta é uma área de armazenamento de dispositivos que pode ser escrita com segurança pelo jogo e o jogo tem a garantia de que esta é uma área escrevível.
+  
+  O diagrama a seguir pode ajudá-lo a visualizar isto melhor:
+  
+  NOTA: Você nunca poderá escrever para o diretório File Bundle (programa).
+  Quando seu jogo é sandboxed, as duas áreas alvo - o diretório de pacotes e a área de armazenamento local - estão disponíveis em cada plataforma alvo, mas em cada uma delas elas funcionarão de forma ligeiramente diferente. No entanto, o GameMaker Studio 2 abstraiu o principal
+    essência do que pode e não pode ser feito, facilitando a reorientação de jogos para múltiplos ambientes.
+  Para começar, você deve entender o que significa quando falamos sobre o working_directory. Este é um sinônimo para os dois
+    possível salvar locais (como ilustrado pelo diagrama acima) e quando você usar esse diretório fará uma de duas coisas, dependendo se você está lendo ou escrevendo, e se o arquivo do qual você está lendo foi alterado ou não:
+  
+    Reading Operations - working_directory verificará primeiro a área de salvamento para ver se o arquivo que está sendo acessado está lá, e se ele está usando isso. Entretanto, se o arquivo não existir na área de gravação, ele então verificará a área do pacote de arquivos e
+      usa isso (se o arquivo procurado for um arquivo incluído com seu jogo).
+    Operações de Escrita - Isso só pode acontecer na área de salvamento.
+  
+  OBSERVAÇÃO: em geral, o GameMaker Studio 2 tratará de tudo isso para você e você raramente precisará usar o working_directory construído em variável.
+  Usando estas duas regras simples, podemos agora ver como funcionam as seguintes funções (estes são exemplos para ajudá-lo a visualizar o processo para as diferentes funções disponíveis):
+  
+    directory_create() (e as outras funções do diretório) só funcionarão na área de salvamento .
+    as funções do sistema de arquivo retornarão informações sobre os arquivos tanto do pacote como da área de salvamento , mas somente
+     escrever para a área de salvamento .
+    as funções para escrever textos, binários ou arquivos INI criarão um novo arquivo na área de salvamento se ainda não existir, copiando sobre qualquer informação dos arquivos originais incluídos com o pacote do jogo, caso eles existam.
+      Note que os arquivos originais ainda permanecerão na parte somente de leitura do diretório de salvamento, mas não serão referenciados enquanto existir uma versão na seção de leitura/gravação da área de salvamento.
+  
+  Sobre o Windows, macOS e Ubuntu(Linux) existem duas formas de salvar e carregar arquivos de fora da caixa de areia, ou seja, utilizando as funções get_open_filename() e
+    get_save_filename() (ambas as funções exigirão que o usuário selecione uma área para carregamento e economia e o retorno
+    O fio pode então ser usado no resto das funções do arquivo para contornar a caixa de areia - veja as descrições das funções na seção de idioma do manual para mais detalhes). A outra maneira é desabilitar completamente o sandbox das Opções de Jogo para a plataforma alvo (apenas disponível para alvos Desktop, como discutido mais acima nesta página).
+  Em HTML5 também é possível carregar arquivos de fora do sandbox a partir de um servidor, porém isso só deve ser feito usando a função buffer_load_async() como
+    O carregamento síncrono foi depreciado na maioria dos navegadores e acabará por se tornar obsoleto. Isto significa que arquivos sendo carregados desta forma devem ser salvos como arquivos binários - por exemplo, você pode salvar um *.ini como uma string
+    (ver ini_close() para detalhes) e então escreva isso em um buffer que pode então ser salvo e carregado usando as funções async. Nota
+    que se você estiver carregando imagens usando sprite_add() então estes já são tratados de forma assíncrona.
+  Você também deve saber que cada plataforma alvo tem sua própria área de salvamento onde arquivos e diretórios podem ser escritos e lidos. Abaixo está uma lista dessas áreas para cada alvo, quando lixado:
+  
+    Windows e Windows UWP: Windows tem todos os arquivos no diretório %localappdata%\<Game Name> (no Windows 7 este é o diretório /Users/<User Name>/AppData/Local/<Game Name> ).
+    HTML5: Tudo é feito através do armazenamento local.
+    macOS: O armazenamento dependerá se a aplicação é ou não sandboxed (seguindo as regras da Apple, com o caminho normalmente sendo ~/Library/Application Support/<Game Name>).
+    Ubuntu (Linux): Os arquivos são armazenados no Home/.config/gamename onde "Home" é o diretório home dos usuários - /home/<username>
+    iOS / tvOS: O armazenamento é o local padrão (como visto através do iTunes).
+    Android: Os arquivos estão no local padrão (que é invisível a menos que o dispositivo esteja enraizado) /data/<package name>.
+  
+  Vale notar que o módulo alvo HTML5 tem um limite de armazenamento local (que pode ser entre 1MB e 5MB, dependendo do navegador), o que significa que não será permitido salvar grandes sprites, capturas de tela, etc...
+   
+   
+   
+  
+    
+      
+        Voltar: Informações adicionais
+        A seguir: Operadores Bitwise e Binários
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

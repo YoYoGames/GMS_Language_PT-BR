@@ -1,0 +1,65 @@
+
+  
+  xboxlive_get_stats_for_user
+  Esta função pode ser usada para recuperar dados sobre estatísticas específicas a partir dos servidores Xbox Live. Você fornece o ID do usuário conforme retornado pela função xboxlive_get_user()então seu serviço de jogos
+    ID de configuração (como mostrado no console XDP), e finalmente as estatísticas necessárias. Você pode solicitar até um máximo de 14 estatísticas, mas isto não garante que você obterá 14 resultados stat, pois há um limite para o comprimento total da solicitação e
+    Portanto, a contagem máxima de estatísticas depende do comprimento dos próprios nomes das estatísticas.
+  A função retornará 0 se o pedido de stat foi enviado ou -1 se houve um erro, e a chamada de retorno acionará um Evento Assíncrono do Sistema. Este evento terá
+    o mapa especial DS async_load que deve então ser analisado para a seguinte chave:
+  
+    "tipo_de_evento" - deve segurar a string " stat_result" seo evento foi acionado por esta função
+  
+  Se o tipo de evento estiver relacionado a esta função, então haverá também a seguinte chave adicional:
+  
+    "usuário"- possui a identificação do usuário para as estatísticas solicitadas.
+  
+  Também pode haver um conjunto extra de pares de valores chave, onde a chave é o nome da estatística solicitada, e o valor para essa estatística no servidor. Note que se um stat nunca foi criado para este usuário (porque eles não dispararam os eventos que
+    definir), nenhum valor pode ser devolvido por esse estatuto (ds_map_exists() pode ser usado para verificar as estatísticas no mapa async_load ).
+  Se a solicitação falhar devido ao comprimento da solicitação ser muito grande, deve haver uma mensagem na saída do console indicando o código de erro:
+  xboxlive_get_stats_for_user - a exceção ocorreu obtendo resultados - 0x80190190
+  Quando isto acontece, o mapa de eventos assimétricos DS deve ter uma chave "bem sucedida" com um valor "0", e neste caso você deve tentar recuperar menos estatísticas em uma única chamada.
+   
+  Sintaxe:
+  xboxlive_get_stats_for_user(user_id, serviceconfig_id, statname1, ...);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        user_id
+        O ponteiro de identificação do usuário.
+      
+      
+        serviceconfig_id
+        O ID do arquivo de configuração do serviço
+      
+      
+        statname1 (2, 3, etc...)
+        Os nomes estatutários para os quais recuperar as informações.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var _uid = xboxlive_get_user(0); var _configid = "00000000-0000-0000-0000-0000-000000000000"; xboxlive_get_stats_for_user(xbuser, _configid, "GameProgress", "CurrentMode");
+  O código acima obtém a identificação do usuário e depois a utiliza para solicitar informações sobre estatísticas específicas para esse usuário.
+   
+   
+   
+  
+    
+      
+        Voltar: Estatísticas e Quadros de Líderes
+        Próximo: xboxlive_read_player_leader_leaderboard
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

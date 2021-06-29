@@ -1,0 +1,60 @@
+
+
+
+
+
+  
+  matrix_build_projection_ortho
+  Esta função constrói uma matriz de projeção ortográfica baseada nos parâmetros especificados abaixo (este é o método de projeção padrão usado quando você cria uma sala no GameMaker Studio 2 sem alterar nada). Algumas vezes é necessário mudar
+    de uma perspectiva de projeção para uma projeção ortográfica, que é para o que serve esta função. Normalmente é usada para desenhar uma sobreposição, por exemplo, para mostrar a pontuação ou outros aspectos, pois isso dá uma visão "plana" dos elementos desenhados (ou seja, uma visão "plana" dos elementos desenhados):
+    sem perspectiva) em um jogo 3D. Veja a imagem abaixo para ter uma idéia da diferença entre as visões ortográficas e de perspectiva.
+  NOTA: Você também pode precisar desligar temporariamente a remoção da superfície oculta se quiser que as informações sejam extraídas independentemente do valor de profundidade atual.
+  
+  Sintaxe:
+  matrix_build_projection_ortho(width, height, znear, zfar);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        w
+        A largura da projeção.
+      
+      
+        h
+        A altura da projeção.
+      
+      
+        znear
+        O quase avião de recorte.
+      
+      
+        zfar
+        O avião de recorte distante.
+      
+    
+  
+   
+  Devoluções:
+  Índice matricial
+   
+  Exemplo:
+  viewmat = matrix_build_lookat(640, 240, -10, 640, 240, 0, 0, 1, 0); projmat = matrix_build_projection_ortho(640, 480, 1.0, 32000.0); camera_set_view_mat(view_camera[0], viewmat); camera_set_proj_mat(view_camera[0], projmat);
+  O código acima cria uma nova matriz de visualização e matriz ortográfica, armazena suas identificações em variáveis locais e depois as utiliza para definir as matrizes de visualização e projeção da câmera designada para a porta de visualização[0].
+   
+   
+   
+  
+    
+      
+        Voltar: Funções da Matriz
+        A seguir: matrix_build_projection_perspective
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

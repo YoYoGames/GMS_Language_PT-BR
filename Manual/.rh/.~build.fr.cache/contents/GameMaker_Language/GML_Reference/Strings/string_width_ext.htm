@@ -1,0 +1,51 @@
+
+  
+  largura_de_filtro_extra
+  Esta função retornará a largura máxima (em pixels) da cadeia de entrada, levando em conta a separação de linha e a largura de quebra de linha (que é definida como o número de pixels que a cadeia pode ocupar antes de uma quebra de linha ser inserida). Ela é muito
+    útil para calcular distâncias entre elementos de texto com base na largura máxima de um fio que é dividido em várias linhas, pois seria desenhado com draw_text_ext() usando o atualmente definido
+    fonte. A separação e a largura podem ser definidas como -1 para obter o espaçamento padrão.
+   
+  Sintaxe:
+  string_width_ext(string, sep, w);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        corda
+        O fio para medir a largura de.
+      
+      
+        sep
+        A distância em pixels entre linhas de texto como se a corda estivesse sendo desenhada.
+      
+      
+        w
+        A largura máxima (em pixels) da corda antes de uma quebra de linha, como se a corda fosse trazida desenhada.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var ww = string_width_ext(str_Story_Text[1], -1, 100); draw_text_ext(32, 32, str_Story_Text[1], -1, 100); draw_text_ext(32 + ww, 32, str_Story_Text[2], -1, 100);
+  O código acima obterá a largura da corda dada, levando em conta a separação de linha e a largura da quebra de linha, e então desenhará duas linhas de texto, usando a largura total da corda retornada como um separador.
+   
+   
+   
+  
+    
+      
+        Voltar: Cordas
+        Próximo: string_hash_to_newline
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

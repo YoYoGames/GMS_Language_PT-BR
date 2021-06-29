@@ -1,0 +1,46 @@
+
+  
+   Estabelecer contagem regressiva do alarme
+  Este bloco de ação define um determinado alarme para contagem regressiva, e quando o alarme atingir zero, o Evento de Alarme associado será acionado. Você fornece o número do alarme de 0 a 11, e
+    então o valor para o qual o alarme deve ser ajustado. O valor utilizado é o número de "passos de jogo" que você deseja passar antes que o evento de alarme seja acionado, e você pode definir isso para ser relativo ao valor atual do alarme (adicionando ou subtraindo ao valor atual
+    valor). Observe que o valor deve ser um valor inteiro, e você pode defini-lo como -1 para parar o alarme. Note que quando um alarme é contado para baixo, o evento é executado quando chega a 0, mas o alarme então conta para baixo até -1 para mostrar que terminou. Definindo um
+    O alarme a 0 não executará o evento, uma vez que depois contará para -1 no próximo passo, portanto, para executar um alarme imediatamente, ele deve ser ajustado para 1. Observe que você pode definir alarmes adicionais na mesma ação clicando no ícone de mais  ao lado da ação.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Alarme
+        O alarme a ser definido (o Evento de Alarme correspondente será acionado quando chegar a 0).
+      
+      
+        Contagem regressiva
+        O valor da contagem regressiva nas etapas do jogo.
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima cria uma variável local (temporária) e armazena o valor atual de
+    o alarme[0]. Isto é então verificado e se for inferior a 0, o alarme é ajustado para 60.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações de instância
+        A seguir: Obter contagem regressiva de alarmes
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

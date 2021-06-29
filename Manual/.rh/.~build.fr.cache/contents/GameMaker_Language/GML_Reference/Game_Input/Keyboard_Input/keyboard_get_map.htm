@@ -1,0 +1,43 @@
+
+  
+  teclado_get_map
+  Às vezes você pode desejar obter o código ascii para uma chave mapeada (para ver se ela já está mapeada, por exemplo), que é o que esta função retorna. A função terá um valor de código de chave como retornado pela função ord()    (somente letras maiúsculas de A-Z ou números de 0-9), ou qualquer uma das constantes vk_* listadas na página principal de Entrada do Teclado.
+   
+  Sintaxe:
+  keyboard_get_map(key);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        chave
+        Esta é a chave a partir da qual você deseja obter o valor mapeado
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  se keyboard_get_map(ord("A")) = ord("A") {
+     keyboard_set_map(ord("A"), teclado_lastkey); }
+  
+  O código do exemplo acima vai primeiro verificar e ver se "A" foi mapeado para outra tecla, e se não foi, vai mapeá-lo para a última tecla que o usuário pressionou.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada de Teclado
+        Próximo: keyboard_unset_map
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,320 @@
+
+  
+  O Editor de Imagem
+  OEditor de Imagem é onde você pode criar seus próprios sprites ou editar aqueles que você
+    importaram ou criaram anteriormente. Se você utilizou qualquer outra ferramenta de imagem, isto deve ser familiar a você, mas há algumas coisas a serem observadas quando se utiliza o Editor de Imagem GameMaker Studio 2 que podem não ser imediatamente aparentes:
+  
+    Quando você cria vários quadros, você pode desenhar para eles enquanto eles animam! Então, se você pressionar o botão play na barra de controle de quadros, e então selecionar um pincel e começar a desenhar na janela do editor, você verá que os quadros serão animados no editor e o que você desenhar será adicionado ao quadro correspondente naquele momento. Você pode experimentar com diferentes taxas de quadros
+      até conseguir algo que você goste, mas uma vez que você tenha o jeito de como isto funciona, você estará criando sprites dinâmicos e efeitos em pouco tempo.
+    Você pode puxar a aba do Editor de Imagens da janela principal do espaço de trabalho para dentro da sua própria janela. Isto pode ser útil quando se usa vários monitores, por exemplo.
+    Quando você utiliza as funções de cópia para, por exemplo, copiar uma seleção de uma imagem, então a seleção copiada é adicionada à sua lista de pinceladas. Isto significa que você pode selecionar uma parte de uma imagem e depois utilizá-la no resto do
+      ferramentas de pintura para traçar linhas, polígonos ou apenas pintar livremente. O pincel também pode ser escalonado e misturado com uma cor. Note que a funcionalidade Paste não se destina ao uso interno dentro do editor, pois qualquer coisa que você copie é adicionada ao
+      lista de escovas e assim podem ser selecionadas para "colar" dessa forma. Em vez disso, colar é simplesmente para você capturar algo de um programa externo e colá-lo no Editor de Imagem.
+    Você pode ter várias camadas para cada sprite graças ao prático editor de camadas. Estas camadas podem ser encomendadas e até mesmo colocadas em pastas para facilitar a criação de imagens mais complexas.
+    Você pode mudar rapidamente entre sub-imagens (quadros) no editor, usando as teclas "1" e "2" do teclado.
+  
+  Essas são apenas algumas das características mais avançadas que o editor de imagens oferece. Para descobrir a gama completa de recursos, leia os itens abaixo, detalhando as funções de cada parte do editor:
+  Vista da moldura
+  
+    Esta parte da janela mostra os quadros na ordem em que eles serão animados. Você pode clicar no botão  à esquerda para adicionar mais quadros - ou usar o
+     Menu de imagens - e você também pode clicar e arrastar qualquer um dos quadros para mudar sua posição ao longo da linha do tempo. Na parte superior esquerda do Frame View você pode ligar o Onion Skinning , o que significa que em um único frame de qualquer animação sprite, você pode escolher ver qualquer um dos frames anteriores ou posteriores como uma camada semi-transparente sob o frame da imagem
+      que você está editando atualmente. O ótimo disto é que cada frame é desenhado um pouco mais leve que o último para que você possa ver como a animação tem progredido de frame para frame enquanto desenha o próximo.
+    Ao permitir isso, serão exibidos alguns controles extras sobre os quadros, que você pode clicar em  e arrastar para definir o número de quadros anteriores a serem exibidos, bem como
+      o número de quadros seguintes.
+    Você pode definir certas propriedades para o revestimento de cebola a partir do menu Exibir conextos, que é explicado mais abaixo nesta página.
+    Abaixo do botão Onion Skin, você tem o botão Loop Control  usado para definir se os loops sprite (volta para
+      quadro 1 quando o último quadro é atingido) ou ping-pongos (retrocede através dos quadros quando o último quadro é atingido). O botão Play  em
+      o fundo é para iniciar/parar a visualização da animação.
+    Você pode clicar em qualquer quadro para selecioná-lo para edição, e um quadro selecionado terá um botão Excluir  no canto superior, no qual você pode clicar para remover o
+      armação do duende. Você também pode clicar em  /  +  em vários quadros para selecioná-los juntos, neste caso, clicando no botão Apagar apagará todos os quadros selecionados. Finalmente, você pode
+      usar os atalhos de teclado padrão para cortar, copiar e colar para editar quadros selecionados:  /  + "X",  /  + "C", e  /  + "V".
+     
+  
+  Informações da moldura
+  
+    Esta barra contém as informações da moldura. Aqui você pode definir a velocidade na qual os quadros de animação devem ser reproduzidos usando a caixa de entrada à esquerda. A velocidade dos quadros pode ser baseada em "Framespor segundo",
+      ou " Framespor frame de jogo". O número total de quadros disponíveis é mostrado à direita junto com o quadro atual que foi selecionado, e você pode colapsar esta barra (ocultá-la) clicando no ícone  à esquerda. Você pode definir isto para começar sempre aberto ou começar sempre fechado a partir das Preferências do Editor de Imagens.
+    Observe que o valor usado aqui para a velocidade de animação também definirá a forma como o duende é animado quando usado em um jogo, seja como um bem duende em uma camada ou como um duende atribuído a uma instância, embora você possa modificar isso no momento da execução usando o
+     funções e variáveis.
+     
+  
+  Controles de lona
+  
+    Os controles de tela tratam de vários aspectos de como a tela de desenho principal e seu conteúdo são exibidos. As opções são:
+    
+      Toggle Canvas Grid : Isto irá ligar/desligar a grade de lona. Esta é uma grade que o GameMaker Studio 2 desenha sobre a tela principal para dividi-la em seções,
+        e, por padrão, é definido para 1px no tamanho. Entretanto, se você clicar no ícone do Menu Grid , você abrirá as opções da grade:
+        Estas opções permitem que você defina a cor e o alfa da grade, assim como os valores das células da grade ao longo dos eixos X e Y.
+        Você também tem uma opção para ativar ou desativar o snapping da grade aqui (desativado por padrão).
+      Controles de zoom de lona : Estes botões controlam o nível atual de zoom de lona. Você pode aumentar ou diminuir o zoom e clicar no botão  redefinirá a tela para ser 1:1 com a imagem sendo editada. Você também pode clicar no botão Ajustar Janela  para que toda a tela da imagem caiba dentro da área de trabalho atual do editor (isto fará o zoom in/out, conforme apropriado, para ajustá-la). Note que você também pode aumentar e diminuir o zoom usando o  /  e a Roda do Rato , e pressionando  /  +  a tela da sala será 1:1 com a imagem.
+      Split Canvas : Clicando neste ciclo, a tela será dividida horizontalmente, mantendo-a verticalmente em uma única tela.
+        Quando em tela dividida, cada tela terá seu próprio conjunto de controles de Tela para que você possa ampliar uma e a outra, por exemplo, e você pode editar qualquer uma das telas com as mudanças sendo refletidas na outra tela. Para mudar a visão da tela
+        alternar, você pode clicar no botão Split Options  e selecionar o que deseja usar ou simplesmente clicar no botão Split Canvas até
+        ele cicla para aquele que você deseja.
+    
+     
+  
+  Desenho de lona
+  
+    Esta é a principal janela de edição para suas imagens. Aqui você pode aplicar qualquer uma das ferramentas à direita para pintar sobre a camada atualmente selecionada. Você pode pintar com o botão esquerdo  ou com o botão direito do mouse  (e atribuir uma cor a cada um a partir do seletor de cores) e usar qualquer um dos pincéis definidos a partir do canto superior direito.
+      do editor. Você também pode usar  /  e
+      a Roda do Rato  para aumentar ou diminuir o zoom, e pressionando  /  +  a tela será 1:1 com a imagem (ou você pode
+      usar os controles de lona como explicado acima). Observe também que você pode girar a tela usando o botão central do mouse  ou  + .
+     
+  
+  Valores de lona
+  
+    Esta pequena barra na parte inferior mostra os diferentes valores para a posição e largura e altura do mouse das ferramentas de seleção no editor.
+     
+  
+  Pincéis
+  
+    Aqui você pode selecionar o pincel para pintar. Por padrão, você tem uma seleção de pincéis quadrados e redondos de diferentes tamanhos para usar, mas você pode facilmente criar seu próprio pincel pintando na camada da imagem, e então selecionando a peça
+      você deseja usar para o novo pincel e usando  /  + "C" para copiá-lo. A seção copiada será então adicionada a seus pincéis e você poderá pintar com ele como pintaria com qualquer outro pincel, e isto inclui a utilização das diferentes ferramentas de pintura disponíveis como o desenho de uma linha.
+    Observe que a cor padrão de mistura para o novo pincel será branca, mas se você mudar a cor com o colhedor de cores e pintar usando o pincel, ele será misturado com esta nova cor. Se você quiser remover um pincel da lista, basta
+      clique sobre ele e pressione a tecla  e ele será removido.
+    NOTA: As escovas não são retidas entre as sessões, o fechamento de seu projeto removerá quaisquer escovas que você tenha criado.
+  
+  Colour Picker
+  
+    O topo desta seção tem um número ou amostras de cores predefinidas que você pode escolher, e elas podem ser atribuídas à esquerda  e à direita  botões do mouse, respectivamente, clicando neles com qualquer botão (você também pode trocar as cores entre cada botão por
+      clicando no ícone da seta ao lado dos swatches). As cores selecionadas serão mostradas abaixo como amostras ao lado da imagem do mouse, e você pode então clicar nestas para abrir a janela do Colour Picker:
+    A partir desta janela você pode definir a cor usando qualquer um dos controles deslizantes e gadgets disponíveis, ou você pode inserir valores diretamente para o
+      Valores ARGB ou valores HSV. Observe que se você clicar duas vezes em  em qualquer uma das amostras de cor padrão, você também pode trazer à tona a ferramenta de coleta de cores e editar a paleta padrão para o sprite. Clicando em "Ok" no seletor de cores neste caso, a paleta será ajustada para a nova cor e
+      salvá-lo junto com o bem patrimonial sprite que está sendo editado. Estas paletas de cores podem então ser trocadas e aplicadas a diferentes sprites usando o menu de opções de paleta de cores:
+    Assim, você pode criar uma paleta de cores personalizada em uma imagem sprite e depois usá-la para definir a paleta para qualquer outro sprite
+      no Navegador de Ativos, ou você pode abrir uma imagem sprite e importar a paleta de cores de qualquer outro sprite no Navegador de Ativos. Esta característica da paleta de duendes é abordada com mais detalhes no seguinte blog técnico da YoYo Games:
+    
+      Características do GMS2 que você pode não conhecer 
+    
+     
+  
+  Ferramentas
+  
+    Abaixo listamos as ferramentas que estão disponíveis por padrão no GameMaker Studio 2 - note que todas as ferramentas podem ser usadas com o botão esquerdo do mouse  e direito , e a maioria delas tem atalhos de teclado associados a elas (as importantes estão listadas aqui junto com a ferramenta, mas para uma lista completa por favor veja
+      a página em Atalhos). A maioria das ferramentas também terá opções extras que serão visíveis na parte superior do editor de imagens, como mostrado abaixo:
+    
+    
+      
+        
+          
+          Lápis
+          Esta é a ferramenta do lápis. Ela usa o pincel selecionado para pintar na cor selecionada para o botão do mouse, e você pode definir o tamanho a partir da barra superior do editor de imagens, bem como ativar/desativar o alisamento (interpolação). Note que você também pode
+            redimensione e escale qualquer pincel segurando  + "Z", em seguida clique em  e arraste o mouse para mudar as proporções do pincel, ou, alternativamente, selecione uma das escovas pré-definidas na parte superior direita.
+        
+        
+          
+          Apagador
+          Esta é a ferramenta de borracha. Ela usa o pincel selecionado para apagar uma área em um clique de qualquer botão do mouse. Selecionando isto também adicionará ferramentas extras à barra superior do editor para permitir que você escale o pincel ou ative/desative o alisamento(interpolação linear).
+        
+        
+          
+          Tinta / Enchimento
+          Esta é a ferramenta de balde de tinta (ou enchimento). Esta preencherá uma área da imagem com base no ajuste de tolerância alfa escolhido, que você pode alterar usando o controle deslizante mostrado na barra superior do editor.
+        
+        
+          
+          Remover cor
+          Esta é a ferramenta de remoção de cor. Ao selecioná-la, você pode então clicar em  ou  em qualquer pixel da imagem e todos os pixels que são da mesma cor serão removidos (eles são tecnicamente substituídos pela cor preta em um alfa de 0). A barra superior tem uma barra deslizante de tolerância onde você pode definir a cor do pixel
+            tolerância - quanto mais baixo este valor, mais exata uma cor tem que corresponder à que foi clicada, enquanto um valor mais alto expandirá isto para incluir aquelas cores que são similares à que foi clicada. Se você já tiver feito uma seleção usando
+            qualquer uma das ferramentas de seleção, então apenas clicando em pixels dentro da seleção terá um efeito, e apenas os pixels dentro da seleção serão removidos.
+        
+        
+          
+          Substituir a cor
+          Esta é a ferramenta de substituição de cor. Ao selecioná-la, você pode então clicar em  ou  em qualquer pixel da imagem e todos os pixels da mesma cor serão substituídos pela cor atribuída ao botão do mouse utilizado. A barra superior tem uma barra deslizante de tolerância onde você pode definir a tolerância da cor do pixel - a barra inferior
+            este valor quanto mais exata uma cor tiver que corresponder à que foi clicada, enquanto um valor mais alto expandirá isto para incluir aquelas cores que são similares à que foi clicada. Se você já tiver feito uma seleção usando qualquer uma das cores
+            e só os pixels dentro da seleção serão afetados pela mudança de cor.
+        
+        
+          
+          Linha
+          Esta ferramenta traçará uma linha entre dois pontos. Clique uma vez com um dos botões para criar o primeiro ponto e depois clique novamente em outro lugar para criar outro ponto e juntá-los. A linha será desenhada usando o pincel selecionado para criar o contorno,
+            e você pode editar algumas das propriedades do pincel utilizando a barra superior do editor (tamanho, interpolação linear, etc...).
+        
+        
+          
+          Rectângulo
+          Esta ferramenta desenhará ou um retângulo preenchido ou um retângulo delineado. Se você clicar na parte superior esquerda do ícone, ele será delineado, enquanto que clicando na parte inferior direita será preenchido e se você precisar de ambos, então você pode selecionar essa opção na parte superior
+            bar do editor de imagens (ou use  +  para
+            selecionar um e depois o outro no ícone da caixa de ferramentas), bem como definir o tamanho e o alisamento da escova que está sendo utilizada. O retângulo será então desenhado utilizando o pincel selecionado. Observe que enquanto desenha, você pode segurar  e clicar para desenhar a partir do centro da posição do mouse.
+        
+        
+          
+          Elipse
+          Esta ferramenta desenhará uma elipse preenchida ou delineada. Se você clicar na parte superior esquerda do ícone, ela será delineada, enquanto que clicando na parte inferior direita será preenchida e se você precisar de ambas, então você pode selecionar essa opção na barra superior
+            do editor de imagens (ou use  +  para
+            selecionar um e depois o outro no ícone da caixa de ferramentas), bem como definir o tamanho e o alisamento da escova que está sendo utilizada. A elipse será desenhada utilizando o pincel selecionado para criar o contorno. Observe que enquanto desenha, você pode segurar  e clicar para desenhar a partir do centro da posição do mouse.
+        
+        
+          
+          Polígono
+          Esta ferramenta desenhará um polígono preenchido ou um polígono delineado. Se você clicar na parte superior esquerda do ícone, ele será delineado, enquanto que clicando na parte inferior direita será preenchido e se você precisar de ambos, então você pode selecionar essa opção na barra superior
+            do editor de imagens (ou use  +  para
+            selecionar um e depois o outro no ícone da caixa de ferramentas), bem como definir o tamanho e o alisamento da escova que está sendo utilizada. Você clique em  ou  para adicionar pontos ao polígono utilizando o pincel selecionado e quando estiver satisfeito com os resultados, você deve selecionar uma ferramenta diferente para comprometer as mudanças e gerar
+            a imagem. O polígono será desenhado utilizando o pincel selecionado. Você pode pressionar  a qualquer momento para cancelar a definição do polígono.
+        
+        
+          
+          Spline
+          Esta é a ferramenta spline. Ela utiliza o pincel selecionado para criar um estriado. Você clica e segura qualquer botão do mouse para definir um ponto e depois arrasta o mouse para gerar o spline, liberando
+            o mouse e repetindo para adicionar mais pontos e curvas. A estria será desenhada utilizando o pincel selecionado, que pode ser editado utilizando a barra superior do editor para definir o tamanho e a suavização. A barra superior também tem um ajuste para Iterações que
+            irá definir o quão suave é o estriado resultante (valores mais baixos serão mais ásperos, mais suaves e o valor padrão é 10).
+        
+        
+          
+          Texto
+           Esta é a ferramenta de entrada de texto. Ela cria uma nova camada de texto onde você pode digitar qualquer coisa que precise. Você pode definir a fonte a ser usada, assim como a formatação a partir da barra superior do editor de imagens.
+        
+        
+          
+          Conta-gotas
+          A ferramenta conta-gotas permite que você experimente uma cor da imagem que está sendo editada atualmente.
+        
+        
+          
+          Seleção do retângulo
+          Com esta ferramenta, você pode gerar uma seleção retangular. Você pode cancelar uma seleção a partir do menu Imagem ou pressionando .
+        
+        
+          
+          Seleção de tintas
+          Com esta ferramenta você pode "pintar" uma área selecionada utilizando qualquer um dos pincéis, incluindo os pincéis personalizados. Aplicam-se todos os mesmos atalhos de teclado que para a ferramenta Lápis. Você pode cancelar uma seleção no menu Imagem ou pressionar 
+        
+        
+          
+          Varinha de Condão Mágica
+          A ferramenta de seleção da varinha mágica selecionará áreas da mesma cor com base no valor de tolerância definido na barra superior do editor. Se você marcar "Somente cor", então o valor alfa não será levado em consideração. Você pode cancelar uma seleção
+            a partir do menu Imagem ou pressionando .
+        
+        
+          
+          Girar
+          Esta é a ferramenta de rotação. Se você tiver uma área selecionada usando uma das ferramentas de seleção, então, clicando nela, você poderá girar a área selecionada por um valor arbitrário de 0° a 360°. Se você não tiver uma área da imagem selecionada, então
+            isto permitirá que você gire a escova atual. Para girar, basta manter pressionado o botão esquerdo do mouse  e arrastar para a esquerda ou direita ou definir o valor
+            diretamente na barra superior. Para aceitar as mudanças, você pode pressionar  ou selecionar outra ferramenta. Note que a aceitação da mudança não mudará
+            o material de origem, mas antes criar um novo recurso de escova para você usar com a imagem selecionada ou uma escova girada pela quantidade que você definir. Observe também que o atalho do teclado "Z" pode ser usado para girar
+            qualquer seleção ou escova em 90° e que esta opção não cria uma nova escova e somente afetará a forma como a escova atual é desenhada.
+        
+        
+          
+          Espelho
+          Esta é a ferramenta espelho. Selecionando isto, espelhará a escova atual ao longo do eixo vertical. Esta opção não cria uma nova escova e somente afetará a forma como a escova atual é desenhada.
+        
+        
+          
+          Flip
+          Esta é a ferramenta de inverter. Selecionando isto, espelhará a escova atual ao longo do eixo horizontal. Esta opção não cria uma nova escova e somente afetará a forma como a escova atual é desenhada.
+        
+        
+          
+          Pan
+          Esta é a ferramenta da panela. Ao selecioná-la, você pode então clicar em  e arrastar o mouse para girar o conteúdo da camada dentro da camada. Note que
+            quaisquer pixels fora da tela de desenho não serão visíveis e a imagem será cortada no tamanho da tela de desenho quando você mudar a ferramenta novamente. Observe também que se você tiver feito uma seleção, então os pixels selecionados serão movidos em vez do conteúdo.
+            da camada.
+        
+      
+    
+     
+  
+  Editor de camadas
+  
+    Você pode criar camadas no editor de imagens para diferentes partes de sua imagem, e estas camadas podem ser manipuladas e desenhadas usando as várias escovas e ferramentas. Para criar uma nova camada, basta clicar no ícone , e para removê-la novamente o ícone . As camadas também podem
+      ser encomendado clicando em  em uma camada e depois arrastando a camada para cima ou para baixo até a posição desejada, e você pode organizar ainda mais as camadas por
+      criando pastas usando o botão  e depois arrastando camadas para dentro delas. Se você clicar duas vezes  em uma camada (ou usar  e selecionar Edit Layer Properties), você irá
+      acesso à janela Layer Properties (Propriedades da Camada):
+    Aqui você pode nomear a camada, bem como definir o modo de mistura (a forma como ela deve ser "misturada" com as camadas abaixo),
+      escolhendo entre misturas normais, aditivas, subtrativas ou múltiplas . Finalmente você pode definir a opacidade (transparência) da camada com um deslizador, mas note que isto é cumulativo com o valor alfa real de cada
+      pixels - por exemplo, se você tiver pixels que são 50% opacos e definir a opacidade da camada para 50%, os pixels finais serão desenhados com 25% de opacidade.
+  
+   
+  Além dessas ferramentas dentro do próprio editor de imagens, há também uma série de ferramentas extras disponíveis na barra de menu no topo da IDE:
+  Estes menus são explicados nas seções abaixo:
+  Imagem
+  
+    O menu Imagem tem as seguintes opções (algumas das quais podem ou não estar disponíveis, dependendo do foco do editor):
+    
+      Corte da moldura / Seleção - Corte a moldura ou seleção a partir da imagem, dependendo do foco do Editor. Se cortar uma seleção, isto a adicionará aos pincéis.
+      Copy Frame / Seleção - Copie o quadro ou a seleção da imagem, dependendo do foco do Editor. Se copiar uma seleção, isto a adicionará aos pincéis.
+      Colar Moldura / Seleção - Colar a moldura da prancheta, ou colar a seleção da prancheta à imagem, dependendo do foco atual da IDE. Ao colar em uma imagem, você deve observar que esta
+        é projetado apenas para uso com dados de clipboard de programas externos. Quando você corta ou copia para a prancheta de uma imagem no Editor de Imagens, isto é adicionado às escovas na parte superior direita do editor, e você deve selecionar uma escova para
+        desenhar com a seleção cortada/copiada em vez de tentar colá-la na imagem. Observe também que vários programas terão problemas de colagem de transparências da prancheta no editor de imagens GameMaker Studio 2 devido ao formato utilizado pela prancheta.
+      Selecione Tudo - Selecione a imagem completa.
+      Cancelar Seleção - Limpar qualquer seleção da imagem.
+      Inverter a seleção - Inverter a seleção atual.
+      Adicionar Moldura - Adicionar uma nova moldura ao duende.
+      Moldura de inserção - Inserir uma nova moldura após a que está sendo mostrada atualmente.
+      Excluir nomes selecionados - Remova o quadro selecionado do sprite (você pode usar  /  +  e/ou  +  para selecionar vários quadros).
+      Importar imagem(s) - Carregar uma imagem para ser usada como um quadro a partir do disco. Note que você pode carregar vários quadros de uma só vez selecionando vários arquivos individuais para importar na janela do explorador. Uma vez que você tenha selecionado seu arquivo ou arquivos, você
+        será mostrada a seguinte janela de importação:
+        Aqui você pode escolher como a imagem importada deve ser adicionada ao sprite atual, permitindo que você redimensione toda a tela de desenho,
+        cultivar ou estofá-lo, e também definir a posição "âncora" para colocar a(s) nova(s) imagem(s).
+      Converter em Molduras - Esta opção converterá uma única imagem em uma série de molduras separadas. Primeiro você deve ter criado um único quadro com todas as partes da animação nele (ou importado uma única imagem de faixa) como o mostrado
+        abaixo:
+        
+         Como esta é uma imagem única e queremos convertê-la em quadros individuais, podemos usar esta opção que abrirá então o
+        janela seguinte:
+        Aqui você pode definir como a imagem única deve ser dividida para criar os quadros, definindo o número de quadros, o
+        largura e altura dos quadros e qualquer valor de offset.
+      Importar imagem em tiras - Esta opção abrirá um explorador de arquivos e o levará a procurar por um único arquivo de imagem em tiras para ser usado na criação de quadros. Uma vez selecionada uma imagem, a janela Importar imagem em tiras será aberta, exatamente o mesmo que para
+        a opção Converter em Molduras mostrada acima.
+      Exportar para PNG - Selecionando esta opção, o duende será exportado como uma única imagem PNG. Se o duende tiver mais de uma única imagem, então será criado um duende de "tira" com todas as imagens, uma
+        depois de outro, e o nome do arquivo salvo será automaticamente anexado com "_stripX", onde "X" é o número de quadros exportados. Por exemplo, um sprite de cinco quadros será
+        ser exportado como "sprite_name_strip5.png".
+      Redimensionar todos os quadros - Quando você selecionar esta opção, abrirá a seguinte janela onde você pode definir o caminho que deseja redimensionar todos os quadros de animação que compõem o sprite:
+        Você pode escolher entre redimensionar a imagem, ou redimensionar a tela.
+        Se optar por redimensionar a imagem, basta selecionar a nova largura e/ou altura para cada quadro, se a redimensionar usando a mesma relação de aspecto, e também se a redimensionar em pixels ou porcentagem. Note que ao escalar você pode ativar ou desativar a interpolação linear, onde tê-la ativada fará com que os pixels se desfaçam ou "manchem" à medida que a imagem é escalada (em geral, para a arte de alta resolução você quer isto ativado, mas para
+        arte de pixel que você quer que seja desativada).
+         A opção de redimensionar a tela não alterará os pixels dentro da imagem, mas, em vez disso, aumentará ou diminuirá o tamanho da tela em que as imagens estão sendo desenhadas. Você pode definir onde a "âncora" para o redimensionamento deve estar usando
+        os ícones de seta, em seguida, definir o novo tamanho (em pixels ou como porcentagem), bem como definir se a relação de aspecto dos quadros originais deve ser mantida. Note que tornando o quadro menor do que as imagens sprite originais, os pixels serão cortados.
+      Cortar todos os quadros para seleção - Esta opção só estará disponível quando você tiver uma área da imagem selecionada na tela principal do desenho. Quando você escolher esta opção, a imagem sendo editada (e todos os outros quadros da animação)
+        será cortada até os limites da seleção.
+      Auto Trim All Frames - Esta opção permite que você corte todos os pixels de alfa zero em torno das bordas de um duende. Isto levará em consideração todas as molduras de imagem dentro do duende, de modo que cada lado irá cortar até a borda de qualquer
+        tem o pixel alfa não zero mais distante.
+        
+      Reverter quadros - Selecionando isto, simplesmente reverterá a ordem do quadro para o duende.
+      Espelho - Esta opção permite espelhar ou o quadro atual todos os quadros que compõem o duende ao longo do eixo vertical.
+      Flip - Esta opção permite que você vire ou a moldura atual todos os quadros que compõem o duende ao longo do eixo horizontal.
+      Girar todos os frames (90° no sentido horário) - Esta opção girará todos os frames da animação 90° no sentido horário.
+      Girar todos os frames (90° no sentido anti-horário) - Esta opção girará todos os frames da animação 90° no sentido anti-horário.
+    
+     
+  
+  Ver
+  
+    O menu Ver tem as seguintes opções:
+    
+      1:1 - Dimensionar a imagem para ser 1:1 com a resolução (ou seja: tamanho real) e centralizá-la na janela de edição de imagem.
+      Tela de ajuste - Dimensione a imagem para preencher a janela de edição de imagem.
+      Mostrar grade - Alternar a grade de pixels. Isto é o mesmo que o botão da grade encontrado nos controles de tela (explicado mais acima nesta página).
+      Configurações de pele de cebola - Alterar as configurações de pele de cebola. Isto abrirá a seguinte janela onde você pode ajustar os quadros mostrados pelo botão de pele de cebola, assim como a opacidade e a cor dos quadros de pele de cebola.
+        
+    
+     
+  
+  Efeitos
+  
+    O menu Efeitos é onde você pode adicionar seus próprios plugins de efeitos personalizados, e tem os seguintes efeitos por padrão:
+    
+      Borrão - Aplique um efeito de borrão na imagem. Você pode definir a intensidade, bem como o tipo de borrão a ser usado (caixa ou gaussiano) e definir se deve ser apenas borrado ao longo do eixo horizontal ou vertical, ou ao longo de ambos. Você pode então optar por aplicar
+        isto somente para a camada atual, camadas visíveis ou todas as camadas.
+        
+      Greyscale - Desaturar a imagem por uma determinada quantidade. Você pode optar por aplicar isto somente à camada atual, camadas visíveis ou todas as camadas.
+        
+    
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Os Editores de Ativos
+        A seguir: Curvas de Animação
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

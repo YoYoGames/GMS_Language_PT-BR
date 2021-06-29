@@ -1,0 +1,48 @@
+
+  
+  gc_target_frame_time
+  Com esta função, você pode indicar ao lixeiro que ele não deve passar mais do que o tempo especificado em cada quadro. A função leva um valor de tempo especificado em microssegundos (onde 1.000.000 microssegundos é igual a um segundo) e o tempo limite padrão é de 100 microssegundos.
+  
+  Por favor, note que isto é simplesmente um valor-alvo, já que algumas operações ainda precisam funcionar completamente em um único quadro e podem, às vezes, demorar mais do que o tempo alvo. Observe também queo aumento do tempo alvo tornará o coletor de lixo mais responsivo a mudanças rápidas no uso da memória e fará com que a memória seja liberada mais rapidamente, embora na prática isso seja improvável na maioria dos casos. Observe também que o ajuste do tempo alvo para 0 não fará com que o coletor pare completamente - ele ainda fará uma quantidade mínima de trabalho em cada quadro. Para desativar completamente o coletor, use a função gc_enable().
+
+    
+  
+   
+  Sintaxe:
+  gc_target_frame_time_time(tempo);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tempo
+        O tempo alvo - em microssegundos - que o coletor de lixo deve trabalhar cada quadro
+      
+    
+  
+   
+  Devoluções:
+  N/A (indefinido)
+   
+  Exemplo:
+  if (gc_get_target_frame_time() != 50) {
+     gc_target_frame_time(50); }
+  
+  O código acima verifica o tempo limite atual para o coletor de lixo e, se não for de 50 microssegundos, é ajustado para este valor.
+   
+   
+   
+  
+    
+      
+        Voltar: Coleta de Lixo
+        Próximo: gc_get_target_frame_time
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

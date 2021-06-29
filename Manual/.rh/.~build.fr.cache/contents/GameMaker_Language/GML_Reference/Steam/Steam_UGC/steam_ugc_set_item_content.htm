@@ -1,0 +1,49 @@
+
+  
+  vapor_ugc_set_item_content
+  Esta função irá definir o caminho do conteúdo a ser usado para o item em questão, e deve ser um caminho relativo para a pasta que contém os arquivos de conteúdo a serem carregados - que, por sua vez, devem estar no save are ou no pacote do jogo (ou seja: um arquivo incluído).
+    A alça de atualização é o valor retornado quando você chama a função steam_ugc_start_item_update(). A função retornará verdadeira se a API foi acessada com sucesso e falsa se houvesse um problema.
+   
+  Sintaxe:
+  steam_ugc_set_item_content(ugc_update_handle, content);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ugc_update_handle
+        O cabo único para a UGC a ser atualizado.
+      
+      
+        conteúdo
+        O conteúdo (um caminho) a ser utilizado para o item.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var app_id = steam_get_app_id(); var updateHandle = steam_ugc_start_item_update(app_id, global.Publish_ID); steam_ugc_set_item_title(updateHandle, "My workshop item(3)!"); steam_ugc_set_item_description( updateHandle, "testing
+    workshop..."); steam_ugc_set_item_visibility(updateHandle, ugc_visibility_public); var tagArray; tagArray[0] = "Test"; tagArray[1] = "New"; steam_ugc_set_item_tags( updateHandle, tagArray); steam_ugc_set_item_preview (updateHandle,
+    "promo.jpg"); steam_ugc_set_item_content(updateHandle, "WorkshopContent1"); requestId = steam_ugc_submit_item_update(updateHandle, "Version 1.2");
+  O código acima obtém o ID do jogo, depois usa-o junto com um ID de arquivo publicado anteriormente para gerar uma alça de atualização para o item. Este cabo é então usado para atualizar várias informações antes que a atualização seja empurrada para o Workshop.
+    servidores.
+   
+   
+   
+  
+    
+      
+        Voltar: UGC
+        Próximo: vapor_ugc_set_item_preview
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,74 @@
+
+  
+  steam_upload_score
+  Esta função enviará uma pontuação para o quadro de líderes dado. A pontuação a ser carregada é um número real, e o nome do quadro de líderes é uma string que foi definida quando você criou o quadro de líderes usando a função steam_create_leaderboard().
+    Se a função falhar, ele retornará um valor de -1, enquanto um post bem sucedido retornará uma identificação única para o upload e acionará um Eventode Vapor Assíncrono. Este
+    evento criará um Mapa DS na variável embutida async_load com os seguintes pares de chaves/valores:
+  
+    "event_type" - Esta chave conterá o valor " leaderboard_upload" quando acionado por esta função
+    " lb_name" - Esta chave contém o nome do quadro de líderes que foi afixado
+    "sucesso" - Será 1 se o cargo tiver sucesso, 0 falhou
+    "atualizado" - Será 1 se a pontuação do quadro de líderes foi realmente atualizada (ou seja: a nova pontuação foi melhor) ou 0 caso contrário
+    "post_id" - Esta chave deve corresponder ao valor de identificação retornado pela chamada de upload
+    "pontuação" - Esta chave contém a pontuação que foi afixada
+  
+   
+  Sintaxe:
+  steam_upload_score(lb_name, pontuação);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        lb_nome
+        O nome da tabela de classificação para a qual você está carregando as pontuações (um fio).
+      
+      
+        pontuação
+        A pontuação a ser carregada (um número real).
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo ampliado:
+  Neste exemplo, primeiro carregamos uma pontuação e depois analisamos o mapa async_load retornado, se bem-sucedido. O código abaixo mostra um exemplo típico de upload:
+  se (hp <= 0) {
+     upload_ID = steam_upload_score("Scores do jogo", pontuação); if (!upload_ID) {
+     alarm[0] = room_speed; }
+     }
+  
+  Observe que colocamos um alarme se a chamada falhar. Isto seria usado para tentar o upload novamente em um momento posterior e você pode adicionar lá um código extra para tentar novamente o upload ou para salvar a pontuação em um arquivo de texto caso ele continue a falhar, etc... Agora adicionamos o seguinte
+    no eventoSteam async para a instância que controla as pontuações:
+  var type = ds_map_find_value(async_load, "event_type"); if (type == "leaderboard_upload") {
+     var lb_ID = ds_map_find_value(async_load, "post_id"); if lb_ID == upload_ID {
+     var lb_name = ds_map_find_value(async_load, "lb_name"); var lb_done = ds_map_find_value(async_load, "success"); var lb_score = ds_map_find_value(async_load, "score"); var
+    lb_updated = ds_map_find_value(async_load, "updated"); show_debug_message("leaderboard post id:" + string(lb_ID) + " to lb:" + string(lb_name) + " with score:" + string(lb_score) + " updated="
+    + string(lb_updated)); if (lb_done) {
+     show_debug_message("- Sucedido"); }
+     mais
+     {
+     show_debug_message("- Failed"); }
+     }
+     }
+  
+  no exemplo, estamos simplesmente emitindo os valores de retorno para a janela do compilador como mensagens de depuração, mas você pode usar este evento para lidar com as informações da maneira que quiser.
+   
+   
+   
+  
+    
+      
+        Voltar: Painéis de Liderança
+        Próximo: steam_upload_buffer_score_buffer
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

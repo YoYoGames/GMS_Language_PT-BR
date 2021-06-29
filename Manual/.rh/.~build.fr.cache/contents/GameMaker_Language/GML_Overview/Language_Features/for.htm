@@ -1,0 +1,54 @@
+
+  
+  para
+  Uma das formas mais usadas para iterar sobre uma declaração (ou declarações) várias vezes é usar um para loop, que tem esta forma:
+  para (<atribuição>; <expressão>; <operação>;) { <estatuto>; <estatuto>;... }
+  Isto funciona da seguinte forma - Primeiro é executada a atribuição que atribui um valor a uma variável, depois a expressão é avaliada e, se for verdade, as afirmações entre parênteses rectos{}.
+    são executados. Em seguida, a operação é executada sobre a variável atribuída e, em seguida, a expressão é avaliada novamente. Este loop continuará até que a expressão seja encontrada como falsa.
+  Agora, isto pode parecer complicado quando escrito dessa forma, mas você deve interpretá-lo como:
+  
+    A primeira tarefa inicializa o for-loop
+    A expressão testa se o loop deve ser terminado
+    A declaração é feita
+    A operação é realizada
+    Voltar ao passo 2 e executar a expressão novamente e continuar ou sair do laço
+  
+  Isto é extremamente útil para realizar tarefas repetitivas que envolveriam múltiplas linhas de código de qualquer outra forma, e é comumente usado como um contador para avaliar matrizes, desenhar coisas, definir valores incrementais, etc... O seguinte exemplo de código ilustra
+    um uso típico para este tipo de declaração:
+  for (var i = 0; i < 10; i += 1) {
+     draw_text(32, 32 + (i * 32), string(i) + ". "+ string(scr[i])); }
+  
+  O código acima inicia um loop for, começando em 0 e contando até (e incluindo) 9, e depois usa o valor de loop de i para desenhar os valores armazenados em um array para baixo na tela. Observe como a variável para loop
+   i é usado não apenas para fazer um loop através da matriz, mas também para desenhar um número, bem como para dizer ao GameMaker Studio 2 para onde desenhar os valores na sala. Esta flexibilidade é uma das principais razões pelas quais os loops são tão importantes na programação.
+  Quando você deve usar um para loop? Sempre que você precisar realizar um número fixo de iterações sobre uma ou mais iterações, mantendo o controle da iteração que é
+    atualmente em execução e utilizando esse valor de iteração.
+  OBSERVAÇÃO: Você verá múltiplos exemplos ao trabalhar com outras pessoas das variáveis " i"e" j" que estão sendo usadas para a variável contador de laço. Estes não são nomes obrigatórios de variáveis e você pode usar qualquer coisa
+    como "a" ou "foo" ouo que quer que seja. O uso de " i"e" j" é simplesmente uma convenção padrão na programação.
+  Vale notar que você pode usar as declarações especiais break e continue dentro de um laço for também. Usando break sairá imediatamente do laço e passará para qualquer código que esteja no evento ou função depois que o laço tiver terminado, por exemplo
+  var _inst = noone; for (var i = 0; i < 10; i += 1) {
+     _inst = instance_find(obj_Enemy_Parent, i); if instance_exists(_inst) { if _inst.object_index == obj_Enemy_Melee { break; }  }  }  target = _inst;
+  O código acima passa pelas 10 instâncias mais próximas do objeto "pai" dado, e se for encontrada uma instância, ela verifica o ID do objeto da instância, e se for uma instância de obj_Enemy_Melee, então o loop é encerrado
+    usando break e o valor de identificação atribuído a uma variável (se nenhuma instância for encontrada, então a palavra-chave noone será adicionada à variável).
+  Um exemplo de utilização do continue em um loop for seria:
+  var _val = 0; for (var i = 0; i < 10; i += 1) {
+     if (val_array[i] <= 0) { continuar; }  _val += val_array[i]; }
+     draw_text(32, 32, "Positive Values Total = " + string(_val));
+  Este código verificará o valor armazenado em cada posição de array de 10 comprimentos 1D, e se algum for menor ou igual a 0, ele irá continue o loop, o que significa que a iteração atual terminará,
+    i será incrementado, e a próxima iteração de loop será iniciada. Se o valor for maior que 0, então será adicionado à variável local _val, e após a conclusão do loop o valor total
+    é atraído para a tela.
+  Para mais exemplos de palavras-chave em loop, consulte as seções sobre repetir, enquantoe fazer / até.
+   
+   
+   
+  
+    
+      
+        Voltar: Características lingüísticas
+        Próximo: interruptor
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

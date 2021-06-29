@@ -1,0 +1,49 @@
+
+  
+  camera_set_view_mat
+  Esta função definirá a matriz de visualização para uma determinada câmera. Você dá o valor único de identificação da câmera (como retornado pelos diferentes camera_create() funções) e uma matriz de visualização a ser aplicada. Você pode descobrir
+    mais sobre a criação de matrizes de visualização a partir da seção Funções da Matriz, especificamente matrix_build_lookat().
+    Observe que se sua câmera faz rastreamento automático de objetos - ou seja: ela foi criada usando camera_create_view() com um índice de objeto / identificação de instância que não seja -1, ou você está configurando uma câmera definida em
+    o Room Editor, ou você está configurando a câmera padrão - então esta matriz será sobregravada no próximo quadro de jogo.
+   
+  Sintaxe:
+  camera_set_view_mat(camera_id, matrix)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        camera_id
+        O valor único de identificação da câmera retornou quando você criou a câmera.
+      
+      
+        matriz
+        A identificação única da matriz retornou quando você criou a matriz.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  view_camera[0] = camera_create(); var viewmat = matrix_build_lookat(640, 240, -10, 640, 240, 0, 0, 0, 1, 0); var projmat = matrix_build_projection_ortho(640, 480, 1.0, 32000.0); camera_set_view_mat(view_camera[0], viewmat); camera_set_proj_mat(view_camera[0], viewmat),
+    projmat);
+  O código acima cria uma nova câmera e a atribui para visualizar a porta[0]. Esta câmera então tem suas matrizes de visão e projeção definidas.
+   
+   
+   
+  
+    
+      
+        Voltar: Câmeras e Ver Portos
+        Próximo: camera_set_proj_mat
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

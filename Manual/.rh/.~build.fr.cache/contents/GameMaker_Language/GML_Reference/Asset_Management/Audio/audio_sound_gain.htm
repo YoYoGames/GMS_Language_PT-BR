@@ -1,0 +1,57 @@
+
+  
+  audio_sound_gain
+  Com esta função, você pode desbotar um som dentro ou fora durante um determinado período de tempo, ou pode ser usado para definir o ganho de som instantaneamente. O tempo é medido em milissegundos, e a função requer que você insira um nível final de ganho para que o som tenha
+    alcançado até o final desse tempo. Este ganho pode ser entre 0 (silencioso) e qualquer valor maior que 0, embora normalmente se considere o volume máximo como 1. Qualquer coisa acima de 1 pode ser usada, mas, dependendo do som usado e da plataforma sendo compilada
+    para, você pode obter distorção ou recorte quando o som for reproduzido. Note que a escala de ganho é linear, e para alterar instantaneamente o ganho, basta ajustar o argumento de tempo para 0.
+  Esta função afetará todas as instâncias do som que estão tocando atualmente na sala, se o índice for um recurso sonoro, e o volume final será o volume em que todas as outras instâncias do som serão
+    jogado. Entretanto, se você tiver usado o índice retornado de uma função como audio_play_sound() afetará apenas uma instância do som.
+   
+  Sintaxe:
+  audio_sound_gain(índice, volume, tempo);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do som para definir o ganho.
+      
+      
+        volume
+        Valor para o volume da música.
+      
+      
+        tempo
+        A duração para a mudança no ganho em milissegundos.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se val {
+     var snd = audio_play_sound(snd_fountain); audio_sound_gain(snd, 0, 0); audio_sound_gain(snd, 1, 5000); }
+  
+  O código acima verifica uma variável e, se ela retornar verdadeiro, então atribuirá o índice de um som a ser tocado à variável local "snd". Esta variável é então utilizada para reduzir o volume daquela variável específica
+    soar a 0 e desbotar até o volume total em 5 segundos.
+   
+   
+   
+  
+    
+      
+        Voltar: Áudio
+        Próximo: audio_sound_get_gain
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

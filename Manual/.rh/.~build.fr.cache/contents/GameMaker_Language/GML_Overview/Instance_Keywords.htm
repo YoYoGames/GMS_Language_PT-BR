@@ -1,0 +1,143 @@
+
+  
+  Palavras-chave da instância
+  Para facilitar certas coisas no GameMaker Studio 2, você pode usar uma das várias palavras-chave de instância em seu código (seja GML ou Drag e Drop™). Estas palavras-chave são usadas principalmente para identificar instâncias - e em alguns casos estruturas - sob diferentes
+    situações e cada uma delas é explicada no texto abaixo. Note que todas as palavras-chave são representadas por um valor inteiro negativo internamente, portanto, deve-se ter cuidado ao atribuir ou verificar os valores das variáveis contra ou com estas palavras-chave,
+    já que você pode obter resultados inesperados mais tarde, já que o GameMaker Studio 2 interpreta o valor que você usou como algo mais. Você também deve observar que o uso dos valores em vez das palavras-chave em seu código não é de todo recomendado e pode causar problemas
+    mais tarde.
+   
+  self
+  
+    
+      
+        
+          Palavra-chave
+          Descrição
+          valor
+        
+        
+          self
+          A instância/estrutura que está executando o bloco de código atual.
+             -1
+        
+      
+    
+     
+    self pode ser usado para identificar a estrutura ou instância atual que está no escopo do bloco de código atual. Por exemplo:
+    var val = 100; com (instance_create_layer(x, y, "Instances", obj_Fire)) {
+       self.val = val; }
+    
+    Neste exemplo, você pode ver que temos uma variável local chamada val e queremos que ela defina a variável de instância com o mesmo nome na instância de objeto recém-criada. Para identificar corretamente a variável de instância
+      e diga ao GameMaker Studio 2 para defini-lo na instância chamando o bloco de código, nós usamos a palavra-chave self. Na maioria dos casos, você também pode usar a variável de instância embutida id em vez de self,
+      mas self oferece certos benefícios. Para começar, é mais rápido para o compilador identificar a instância (ou estrutura) usando self em vez de id, pois o valor de id passa pela tabela de pesquisa da instância enquanto self não o faz. Em segundo lugar, para as pessoas que fazem extensões, é muito útil garantir o escopo correto das variáveis, uma vez que é possível que um projeto que utiliza
+      uma extensão pode ter uma variável de escopo global ou algo com o mesmo nome que uma variável na extensão.
+    NOTA: A palavra-chave self não é um atalho para o valor real de identificação de uma instância ou estrutura e só deve ser usada no contexto explicado acima. Se você precisar do valor de identificação para
+      um exemplo, então você precisa usar self.id, por exemplo:
+    var myID = id; com (todos) {
+       if self.id == myID { // faça algo }  }
+    
+    Vale ressaltar também que self também pode ser utilizado dentro das estruturas - sob circunstâncias muito específicas - para referenciar variáveis de membros para a estrutura.
+     
+  
+  other
+  
+    
+      
+        
+          Palavra-chave
+          Descrição
+          valor
+        
+        
+          other
+          A outra instância envolvida em um evento de colisão, ou a outra instância ou estrutura de uma com função.
+             -2
+        
+      
+    
+     
+    A palavra-chave especial other tem duas maneiras diferentes de ser usada para referir uma instância específica (e em alguns casos, uma estrutura): quando usada em uma função with (explicada aqui)
+      ou quando usado em um evento de colisão, que é o que esta seção vai explicar.
+    Um evento de colisão só pode acontecer entre duas instâncias. Você pode ter várias colisões entre várias instâncias, mas todas elas são resolvidas pelo GameMaker Studio 2 em uma base 1 contra 1, com a instância que tem o evento de colisão e o
+      "outra" instância que está envolvida. Imagine que você tem um objeto jogador, múltiplos objetos inimigos e múltiplos objetos-bala que o inimigo pode atirar em você. Você pode atribuir a cada inimigo uma única instância de bala, mas com uma variável de dano diferente
+      aleatoriamente atribuídos a ela quando criada, por exemplo:
+    var nnnnn; nnn = instance_create_layer(x, y, "Bullets", obj_Bullet); nnn.damage = 5 + irandom(5); nnn.speed = 8; nnn.direction = point_direction(x, y, obj_Player.x, obj_Player.y);
+    Você pode ver como definimos suas variáveis usando o "método do ponto" delineado na seção sobre o endereçamento de variáveis em outras instâncias. Isto dará aos objetos de bala um dano diferente
+      valor. Mas e quanto ao objeto do jogador? Como ele vai detectar os danos que tem que suportar? Usando other no evento da colisão:
+    hp -= outros.danos; if hp <= 0 instance_destroy();
+    O código acima deduzirá o valor armazenado na outra instância na variável "danos" de colisões da variável "hp" do jogador, então verificará se o "hp" é menor ou igual a 0. Se for
+      então ele destruirá o objeto do jogador. Observe que outros usados desta forma só funcionam no evento de colisão e que a outra instância deve ter a variável sendo verificada ou um erro será atirado. Entretanto, você pode atribuir
+      para variáveis, ou mesmo criar novas variáveis, usando other no evento de colisão também, como este:
+    //add dez para a outra variável de instância "mana" other.mana += 10; //seture a outra variável de instância "hit" para true, criando-a se a variável ainda não existir other.hit = true;
+    Vale ressaltar também que other também pode ser utilizado dentro das estruturas - sob circunstâncias muito específicas - para referenciar variáveis de membros para a estrutura. 
+     
+  
+  all
+  
+    
+      
+        
+          Palavra-chave
+          Descrição
+          valor
+        
+        
+          all
+          Todas as instâncias atualmente ativas na sala.
+             -3
+        
+      
+    
+     
+    Esta palavra-chave é usada para dizer ao GameMaker Studio 2 que uma função deve ser aplicada, ou para verificar todas as instâncias ativas dentro de uma sala (as instâncias desativadas não serão verificadas ou acessadas). Você não pode usar all para acessar
+      ou definir variáveis em outras instâncias usando o método de ponto (ver aqui), mas você pode usá-lo ao chamar com()por exemplo:
+    com (todos) {
+       velocidade = 0; }
+    
+    O código acima irá definir a velocidade de todas as instâncias na sala para 0. Você também pode usar all dentro das funções para direcionar ou verificar todas as instâncias na sala, por exemplo:
+    //Check a point for any active instance in the room inst = instance_position(mouse_x, mouse_y, all); 
+       //Check all instances for a collision ao longo de uma linha if collision_line(x, y, mouse_x, mouse_y, all, false, true) {}
+       //Add all instances in the room into a motion planning grid mp_grid_add_instances(grid, all, false);
+    all é uma palavra-chave muito útil e pode ser usada em numerosas situações dentro de seu código e ações, muitas vezes reduzindo a quantidade de código que você precisa escrever para alcançar um efeito desejado.
+     
+  
+  noone
+  
+    
+      
+        
+          Palavra-chave
+          Descrição
+          valor
+        
+        
+          noone
+          Sem nenhum exemplo.
+             -4
+        
+      
+    
+     
+    Pode parecer estranho, mas muitas vezes, ao programar seus jogos, você encontrará a necessidade de verificar se não há casos encontrados em um local, ou em uma colisão, etc... Nesses casos, você usaria esta palavra-chave para verificar se não há nada, algo como isto:
+    if instance_nearest(x, y, obj_enemy) != noone {
+       // fazer algo já que há uma instância inimiga perto de }
+    
+    Neste exemplo, a função instance_nearest() retornará ou noone ou a identificação única da instância encontrada mais próxima. Basicamente, a qualquer momento que você precise verificar por uma instância, você pode esperar
+      para obter ou noone ou uma identificação única de instância devolvida.
+     
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Visão geral daGML
+        A seguir: Endereçando Variáveis em Outras Instâncias
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

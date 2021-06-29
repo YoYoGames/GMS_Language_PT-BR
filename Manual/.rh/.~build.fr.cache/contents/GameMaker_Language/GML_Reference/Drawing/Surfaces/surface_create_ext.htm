@@ -1,0 +1,58 @@
+
+  
+  superfície_criar_texto
+  Esta função permite anexar uma superfície a um elemento de tela que já existe em sua página web, o que significa que você pode efetivamente dividir porções de seu jogo a serem desenhadas em vários lugares diferentes dentro da página. Para isso, você deve ter definido corretamente o elemento de tela dentro da página *.html de seu jogo usando os tamanhos e nomes corretos que correspondem às superfícies que você deseja criar. Assim, você teria sua tela "principal", e então sua superfície secundária
+    elementos de tela, que serão designados usando esta função para as superfícies corretas. A imagem seguinte é um exemplo de como uma página com três elementos de lona seria criada:
+  O layout da página pode ser complicado, especialmente se você desejar que todos os elementos se alinhem corretamente, mas uma vez
+    a difícil tarefa de criar o layout foi concluída, você pode então adicionar este arquivo html como o arquivo de página padrão do jogo usando a guia HTML5 das Opções do Jogo.
+    A próxima coisa que você deve fazer é configurar sua sala e vistas, pois cada superfície precisará estar associada a uma vista específica para "capturar" as imagens do jogo (veja a variável de vista view_surface_id[0...7]).
+    A imagem abaixo mostra como a sala de jogos para o exemplo da tela acima seria exposta:
+  Finalmente, você usaria esta função para criar as superfícies, sendo o nome o mesmo
+    usado para os elementos de lona e o tamanho correspondente ao tamanho daquela mesma lona. A função retornará o índice da superfície que deverá ser armazenada em uma variável para futuras chamadas de função. Quando a superfície é criada pela primeira vez, ela pode conter
+    "ruído", pois basicamente é apenas uma área de memória que é posta de lado para o propósito (e que a memória ainda pode conter informações), então você pode querer limpar a superfície antes de usar com uma função como draw_clear_alpha().
+  NOTA: Esta função só está disponível para uso com o módulo HTML5.
+   
+  Sintaxe:
+  surface_create_ext(nome, w, h);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome
+        O nome do elemento de lona para ligar a superfície.
+      
+      
+        w
+        A largura da superfície a ser criada.
+      
+      
+        h
+        A altura da superfície a ser criada.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  s1 = surface_create_ext("surface1", 192, 550); s2 = surface_create_ext("surface2", 608, 186); view_surface_id[1] = s1; view_surface_id[2] = s2;
+  O código acima cria duas superfícies de tamanhos diferentes, atribuindo cada uma a um elemento de tela diferente, e então essas superfícies são atribuídas a duas vistas para que a parte correta da sala seja capturada.
+   
+   
+   
+  
+    
+      
+        Voltar: Superfícies
+        Próximo: tamanho_da_superfície
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

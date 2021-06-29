@@ -1,0 +1,44 @@
+
+  
+  tipo_de_evento
+  Esta variável somente leitura retorna o tipo de evento que está sendo executado atualmente, que pode ser uma das constantes a seguir:
+  
+    ev_criar
+    ev_destroy
+    ev_step
+    ev_alarm
+    ev_keyboard
+    ev_keypress
+    ev_keyrelease
+    ev_mouse
+    ev_collision
+    ev_outros
+    ev_gesture
+    ev_draw
+  
+   Para uma lista completa das constantes que estão relacionadas com os diferentes eventos veja event_perform()e se você precisar do número do evento (ou seja: o subevento), você deve estar verificando o número_do_evento.
+   
+  Sintaxe:
+  tipo_de_evento;
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  show_debug_message("Current Event = " + string(event_type));
+  O código acima mostrará uma mensagem de debug com o tipo de evento que está sendo realizado atualmente.
+   
+   
+   
+  
+    
+      
+        Voltar: Eventos de geração de objetos
+        Próximo: evento_erecido
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

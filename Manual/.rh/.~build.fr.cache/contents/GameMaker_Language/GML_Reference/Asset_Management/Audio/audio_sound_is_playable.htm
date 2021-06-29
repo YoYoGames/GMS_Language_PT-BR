@@ -1,0 +1,45 @@
+
+  
+  audio_sound_is_playable
+  Esta função pode ser usada para verificar se o índice de som dado pode ser reproduzido atualmente. Isto é necessário devido às diferentes formas de reprodução de som streamed e unstreamed na plataforma de destino HTML5, e será
+    retornar verdadeiro se o som puder ser tocado e falso se não puder. Note que em todas as outras plataformas além do HTML5, a função sempre retornará verdadeiro.
+   
+  Sintaxe:
+  audio_sound_is_playable(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do som a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  if audio_sound_get_pitch(snd_Explode) != 1 {
+     audio_sound_pitch(snd_Explode, 1); }
+  
+  O código acima mudará o tom do áudio reproduzido do som indexado como "snd_Explode", se seu tom não for igual a 1.
+   
+   
+   
+  
+    
+      
+        Voltar: Áudio
+        Próximo: audio_falloff_set_model
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

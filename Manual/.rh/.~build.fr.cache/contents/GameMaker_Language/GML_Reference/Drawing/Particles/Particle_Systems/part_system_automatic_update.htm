@@ -1,0 +1,51 @@
+
+  
+  part_system_automatic_update
+  Esta função controla se o GameMaker Studio 2 deve atualizar o sistema de partículas automaticamente ou não, e normalmente você não precisaria usar esta função, pois o valor padrão de true (atualização automática está ligada) é o que você deseja
+    acontecer. No entanto, para efeitos especiais ou para pausar o jogo, você pode definir isso como falso e isso impedirá que qualquer atualização seja realizada no sistema de partículas em questão, a menos que seja explicitamente comandada pelo uso da função part_system_update()    ou você usa esta função novamente para ativar as atualizações automáticas. Nenhuma atualização significa que as partículas criadas neste sistema não mudarão mais de posição, cor ou qualquer outro parâmetro e que os emissores deixarão de funcionar também, "congelando" o sistema.
+    no ponto exato em que a atualização automática foi definida como falsa.
+  Uma coisa a ser observada é que se você estiver usando os efeitos simples criados pelas funções effect_create_above() ou effect_create_below() então você pode usar
+    os valores de 0 (para efeitos abaixo) ou 1 (para efeitos acima) como índice do sistema de partículas e assim alternar a atualização automática para estes também (isto também funcionará para alternar a atualização para os efeitos de partículas DnD™).
+   
+  Sintaxe:
+  part_system_automatic_update(ind, automático);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do sistema de partículas a mudar.
+      
+      
+        automático
+        Se a atualização automática está ligada(verdadeira) ou não (falsa).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se global.Pause {
+     part_system_automatic_update(global.Sname, false); }
+  
+  O código acima desligará as atualizações de partículas se a variável global "Paused" for verdadeira.
+   
+   
+   
+  
+    
+      
+        Voltar: Sistemas de Partículas
+        Próximo: part_system_automatic_draw
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

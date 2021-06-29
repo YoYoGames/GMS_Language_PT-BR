@@ -1,0 +1,34 @@
+
+  
+  caminho_posição anterior
+  Esta variável pode ser usada para obter ou definir a posição de uma instância ao longo de seu caminho atual no passo anterior, e é um valor normalizado entre 0 e 1 ou seja: 0 é a posição inicial do caminho e 1 seria a posição final. É semelhante ao
+    xprevious e yprevious variáveis no seu funcionamento, somente é específico para os caminhos. Ela pode ser útil para
+    coisas como parar temporariamente um seguidor de caminho se algo estiver no caminho (veja o código de exemplo abaixo).
+   
+  Sintaxe:
+  caminho_posição anterior;
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var _x = x + lengthdir_x(16, direção); var _y = y + lengthdir_y(16, direção); if collision_circle(xx, yy, 16, obj_Player, false,true) { path_position = path_positionprevious; }
+  
+  O código acima verifica uma área na frente da instância para uma colisão com o objeto "obj_Player" e, se houver uma, coloca a instância de volta na posição anterior que ocupava no caminho atual, conforme atribuído pela função
+    path_start().
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis de caminho
+        Próximo: caminho_velocidade
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

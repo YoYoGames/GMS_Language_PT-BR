@@ -1,0 +1,48 @@
+
+
+
+
+  
+  teclado_virtual_ocultar
+  Esta função pode ser usada para esconder o teclado virtual no dispositivo que executa o jogo. A chamada desta função gerará um Evento Assíncrono de Sistema, no qual o
+   async_load DS map será preenchida com os seguintes pares chave/valor:
+  
+    "event_type" - este será o "status do teclado virtual" quando acionado pelas funções do teclado virtual.
+    "screen_height" - a altura do teclado virtual (em pixels). Esta será 0 se o teclado for invisível.
+    "keyboard_status" - o status atual do teclado, retornado como uma das seguintes seqüências:
+      
+        "escondido".
+        "escondido".
+        "mostrando"
+        "visível"
+      
+    
+  
+   
+  Sintaxe
+  keyboard_virtual_hide();
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se a entrada == verdadeiro {
+     input = falso; keyboard_virtual_hide();
+     }
+  
+  O código acima esconderá o teclado virtual do SO se a variável dada não estiver definida como falsa.
+  
+   
+   
+  
+    
+      
+        Voltar: Chaves e Teclados Virtuais
+        Próximo: estado_virtual_do_ teclado
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,80 @@
+
+  
+  vapor_ativar_sobreposição
+  O Steam overlay é uma peça da interface do usuário do Steam que pode ser ativada por cima de quase todos os jogos lançados através do Steam. Ela permite ao usuário acessar sua lista de amigos, navegador da web, chat e compra de DLC dentro do jogo. A chave padrão para um usuário
+    para acessar a sobreposição enquanto estiver em um jogo é SHIFT+TAB, mas você também pode trazer à tona qualquer página da sobreposição usando esta função. É necessária uma das seis constantes que estão listadas abaixo:
+  
+     
+    
+      
+        
+          Constante
+          Descrição
+        
+        
+          ov_amigos
+          A página de amigos para o usuário atual
+        
+        
+          ov_comunidade
+          A página da comunidade para seu jogo
+        
+        
+          ov_players
+          A página mostrando outros que estão jogando o mesmo jogo ou que você jogou recentemente com
+        
+        
+          ov_settings
+          As configurações de sobreposição do cliente Steam 
+        
+        
+          ov_gamegroup
+          Abre o navegador da Comunidade Steam para o grupo oficial de jogos para este jogo
+        
+        
+          ov_achievements
+          A página de conquistas para seu jogo
+        
+      
+    
+  
+   
+  Sintaxe:
+  steam_activate_overlay(overlayindex);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        overlayindex
+        O índice da página do Steam API UI para mostrar (veja as constantes listadas abaixo).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var key = teclado_lastkey; switch (chave) {
+     case vk_f1: steam_activate_overlay(ov_friends); break; case vk_f2: steam_activate_overlay(ov_community); break; case vk_f3: steam_activate_overlay(ov_players); break; case vk_f4: steam_activate_overlay(ov_settings);
+    pausa; case vk_f5: steam_activate_overlay(ov_gamegroup); pausa; case vk_f6: steam_activate_overlay(ov_achievements); pausa; }
+  
+  O código acima pesquisa a última tecla do teclado pressionada e se for qualquer uma das teclas de função de 1 a 6 abrirá a página correspondente da sobreposição do vapor.
+   
+   
+   
+  
+    
+      
+        Voltar: Sobreposição avapor
+        Próximo: vapor_ativar_ativar_sobre_browser
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

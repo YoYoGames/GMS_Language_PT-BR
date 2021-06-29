@@ -1,0 +1,55 @@
+
+  
+  timeline_moment_add_script
+  Com esta função você pode adicionar dinamicamente uma função de roteiro às linhas de tempo em qualquer "momento" dentro dessa linha de tempo, onde um "momento" é o equivalente a um tique de jogo (ou
+    passo). Desta forma, você pode criar uma nova linha de tempo usando a timeline_add() e adicionar diferentes comportamentos em qualquer ponto, ou simplesmente modificar um recurso de linha de tempo previamente criado com novos comportamentos. Nota
+    que a função não pode exigir nenhum argumento adicional ao usar esta função, e se você usá-la para modificar um ativo da Linha do Tempo presente no Navegador de Ativos, então todas as instâncias que usam esta linha do tempo serão afetadas, e a mudança durará até
+    o fim do jogo (ligando para game_restart() também não reiniciará a mudança).
+   
+  Sintaxe:
+  timeline_moment_add_script(ind, step, script);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice da linha do tempo para adicionar um momento.
+      
+      
+        etapa
+        O momento (passo) a ser acrescentado.
+      
+      
+        roteiro
+        O índice da função do roteiro para adicionar ao momento.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  global.tl = timeline_add(); var i = room_speed * 60; repeat(3)
+     {
+     timeline_moment_add_script(global.tl, i, choose(Attack_1, Attack_2, Attack_3); i += room_speed * 60; }
+  
+  O código acima criará uma nova linha de tempo e armazenará seu índice na variável "global.tl". Ele então adicionará três scripts à linha de tempo, escolhidos aleatoriamente, em intervalos de um minuto.
+   
+   
+   
+  
+    
+      
+        Voltar: Cronogramas
+        Próximo: linha do tempo_momento_claro
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,64 @@
+
+  
+  vapor_ugc_download
+  Com esta função, você pode baixar uma imagem prévia para qualquer item UGC. O ugc_handle é o valor de identificação único para a imagem (que você pode obter usando a função steam_ugc_send_query()),
+    e o nome do arquivo de destino é o nome (e caminho local dentro da caixa de areia Steam ) que você deseja dar o arquivo de imagem quando o download estiver completo.
+  Ao utilizar esta função, desencadeará um evento assíncrono a vapor para relatar os detalhes do arquivo de imagem solicitado, contendo os seguintes pares de chaves/valores no
+    async_load ds_map:
+  
+    " id" - O ID assimétrico retornado pela função de chamada
+    "resultado" - O resultado da operação (um valor real). Este será ou a constante GML ugc_result_success ou algum outro número real. Portanto, você deve verificar esta constante para garantir que a chamada foi bem sucedida, e se
+      caso contrário, alguma coisa não funcionou corretamente. Os demais valores possíveis retornados são mostrados como resultado do valor EResult " Steam " e você deve ver o steamclientpublic .h nos cabeçalhos do SDK para todos os 89 valores possíveis.
+    "event_type" - Esta chave conterá o valor " ugc_download".
+    "original_filename" - Esta chave contém o nome original do arquivo de imagem no servidor (uma string )
+    "dest_filename" - Esta chave contém o nome do arquivo de imagem em que você passou (uma string)
+    "ugc_handle" - Esta chave contém o valor da ugc_handle que você passou para a função de chamada
+  
+   
+  Sintaxe:
+  steam_ugc_download(ugc_handle, dest_filename);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ugc_handle
+        O cabo exclusivo para a visualização a ser baixada.
+      
+      
+        dest_filename
+        O nome do arquivo para salvar a visualização.
+      
+    
+  
+   
+  Devoluções:
+  Identificação Async
+   
+  Exemplo ampliado:
+  Neste exemplo, primeiro chamamos a função e armazenamos o valor de identificação assimétrica em uma variável:
+  steam_get= steam_ugc_download(steam_handle, "\UGC\Preview_file.png");
+  Isto enviaria então um pedido de arquivo ao Steam API, gerando um evento assimétrico que trataríamos da seguinte forma:
+  var event_id = async_load[? "id"]; if event_id == steam_get {
+     var type = async_load[? "event_type"]; if type == "ugc_download" {
+     sprite_delete(preview_sprite); preview_sprite = sprite_add(async_load[? "dest_filename"], 0, false, false, 0, 0); }
+     }
+  
+  O código acima verifica o tipo de evento e depois cria um sprite a partir da imagem baixada.
+   
+   
+   
+  
+    
+      
+        Voltar: UGC
+        Próximo: steam_is_screenshot_requested
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

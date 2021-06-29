@@ -1,0 +1,50 @@
+
+  
+  draw_surface
+  Com esta função você pode desenhar uma superfície em uma determinada posição dentro da sala, com o canto superior esquerdo da imagem sendo desenhado na posição x/y especificada.
+  NOTA: Ao trabalhar com superfícies há a possibilidade de que elas possam deixar de existir a qualquer momento devido ao fato de serem armazenadas na memória de textura. Você deve SEMPRE verificar se uma superfície existe usando superfície_existe()    antes de referenciá-los diretamente.
+   
+  Sintaxe:
+  draw_surface(id, x, y);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        O valor único de identificação da superfície a ser desenhada.
+      
+      
+        x
+        A posição x de onde desenhar a superfície.
+      
+      
+        y
+        A posição y de onde desenhar a superfície.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var _vx = camera_get_view_x(view_camera[0]); var _vy = camera_get_view_y(view_camera[0]); draw_surface(surf, _vx, _vy);
+  O código acima desenha a superfície indexada em "surf" na mesma posição que a vista da câmera[0].
+   
+   
+   
+  
+    
+      
+        Voltar: Superfícies
+        Próximo: draw_surface_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

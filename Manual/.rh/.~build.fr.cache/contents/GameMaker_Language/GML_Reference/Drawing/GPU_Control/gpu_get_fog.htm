@@ -1,0 +1,37 @@
+
+  
+  gpu_get_fog
+  Esta função pode ser usada para recuperar os ajustes de nevoeiro. A função retorna uma matriz de 4 elementos 1D com as seguintes informações:
+  
+    [0] = alternância ativada (um booleano, verdadeiro ou falso), padrão falso
+    [1] = cor (real), padrão c_preto
+    [2] = distância inicial (real), padrão 0
+    [3] = distância final (real), padrão 1
+  
+  Note que você pode mudar esses valores e passar o conjunto completo para o gpu_set_fog() funcionam como um único argumento.
+   
+  Sintaxe:
+  gpu_get_fog();
+   
+  Devoluções:
+  4 elementos 1D Array (veja acima os elementos do array)
+   
+  Exemplo:
+  var fog_a = gpu_get_fog(); fog_a[1] = c_red; gpu_set_fog(fog_a);
+  
+  O código acima obtém as configurações atuais de nevoeiro e então define o elemento de cor da matriz para c_red antes de definir o nevoeiro novamente usando a matriz alterada.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle de GPU
+        Próximo: gpu_get_cullmode
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

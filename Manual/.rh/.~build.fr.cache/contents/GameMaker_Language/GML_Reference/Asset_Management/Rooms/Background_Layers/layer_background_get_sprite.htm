@@ -1,0 +1,45 @@
+
+  
+  layer_background_get_sprite
+  Esta função pode ser usada para obter o valor atual do índice sprite do elemento de fundo. Você dá o ID do elemento de fundo (que você obtém quando cria um elemento de fundo usando layer_background_create()    ou quando você usa a função layer_background_get_id()), e a função retornará um valor real que representa o índice sprite que está sendo mostrado. Se o elemento não tem sprite atribuído, a função
+    retornará -1.
+   
+  Sintaxe:
+  layer_background_get_sprite(background_element_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        background_element_id
+        O valor único de identificação do elemento de fundo para obter as informações de
+      
+    
+  
+   
+  Devoluções:
+  Índice Sprite (Real) ou -1
+   
+  Exemplo:
+  var lay_id = layer_get_id("Background_sky"); var back_id = layer_background_get_id(lay_id); if layer_background_get_sprite(back_id) != spr_Clouds {
+     layer_background_sprite(back_id, spr_Clouds); }
+  
+  O código acima obterá a identificação da camada chamada "Background_sky" e depois a utilizará para obter a identificação do elemento de fundo nessa camada. Este ID é então usado para verificar o duende atribuído ao elemento, definindo-o para o duende "spr_Clouds".
+    se ainda não o for.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de fundo
+        Próximo: fundo_camada_get_htiled
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,49 @@
+
+  
+  vértice_begin
+  Com esta função você inicia a definição de um primitivo personalizado. Você atribui um buffer para escrever o primitivo, e o formato de vértice para usar (previamente definido usando as funções de formato de vértice). Você então definiria os pontos necessários para cada
+    vértice do primitivo antes de chamar vértice_end() para finalizar a criação primitiva.
+   
+  Sintaxe:
+  vertex_begin(tampão, formato);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O buffer a ser escrito.
+      
+      
+        formato
+        O formato de vértice a ser utilizado.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  vertex_format_begin(); vertex_format_add_position();
+     vertex_format_add_colour();
+     vertex_format_add_textcoord();
+     v_format = vtex_format_end(); v_buff = vtex_create_buffer(); vertex_begin(v_buff, v_format);
+  O código acima irá definir um novo formato de vértice, criar um novo buffer e iniciar o processo de definição de um novo primitivo.
+   
+   
+   
+  
+    
+      
+        Voltar: Primitivos e formatos de vértices
+        Próximo: vértice_color
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

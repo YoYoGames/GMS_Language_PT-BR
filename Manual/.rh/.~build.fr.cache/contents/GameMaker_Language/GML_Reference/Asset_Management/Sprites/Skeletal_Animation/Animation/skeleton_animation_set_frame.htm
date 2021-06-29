@@ -1,0 +1,49 @@
+
+  
+  esqueleto_estrutura_de_animação
+  Esta função definirá a animação atribuída à pista dada ao frame que você fornecer. O índice de quadros deve ser um valor real entre 0 e o número de quadros para a animação (que você pode obter usando a função esqueleto_animação_get_frames).
+    Se você fornecer um valor fora desta faixa, a animação será laçada para fazer a diferença, por exemplo, se a animação tiver 5 quadros e você definir o quadro como 8, o quadro real mostrado será 3.
+   
+  Sintaxe:
+  esqueleto_estrutura_de_animação_set(pista, índice);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        faixa
+        A trilha de animação para definir o quadro de.
+      
+      
+        índice
+        O novo índice para o quadro de animação.
+      
+    
+  
+   
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se global.pause {
+     skeleton_animation_set_frame(0, -image_speed); }
+  
+  O código acima definirá o índice de quadros para a animação na faixa 0 para a velocidade negativa da imagem quando a variável global "pausa" for verdadeira (essencialmente pausando a animação).
+   
+   
+   
+  
+    
+      
+        Voltar: Animação
+        A seguir: esqueleto_esqueleto_esqueleto
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

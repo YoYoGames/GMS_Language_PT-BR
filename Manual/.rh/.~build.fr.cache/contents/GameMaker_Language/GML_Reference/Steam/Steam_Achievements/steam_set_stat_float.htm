@@ -1,0 +1,46 @@
+
+  
+  vapor_set_stat_float
+  Com esta função, você pode definir uma estatística específica para um novo valor de ponto flutuante. A estatística deve ter sido previamente definida na página de contas do painel de controle Steamworkspara seu jogo e a string que é passada para a função deve
+    corresponde àquele usado como o nome API no painel de controle. Exemplos de quando você poderia usar isto são para rastrear até onde seu jogador viajou, ou que porcentagem do jogo está completa.
+   
+  Sintaxe:
+  steam_set_stat_float(stat_name, valor);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        stat_name
+        O nome da estatística a ser definida (um fio).
+      
+      
+        valor
+        O valor (um flutuador de 32bit) para definir a estatística.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var dist_pc = (dist / dist_max) * 100; steam_set_stat_float("Travelled", dist_pc);
+  O código acima calcula uma porcentagem com base na variável distância percorrida "dist" e a distância máxima que você pode percorrer "dist_max" e então define a estatística "viajado" para o novo valor.
+   
+   
+   
+  
+    
+      
+        Voltar: Conquistas e estatísticas
+        Próximo: steam_set_stat_avg_rate
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,74 @@
+
+  
+  esqueleto_criar_aplicação
+  Quando você cria um duende de animação esquelética, você pode atribuir ranhuras de fixação e anexos para ir nelas. Estas são simplesmente imagens que estão separadas da animação, mas quando anexadas
+    se moverá junto com o osso ao qual estão presos. Normalmente você atribuiria estes anexos em seu programa de animação (Coluna vertebral), mas com esta função você pode criar o seu próprio em tempo de execução usando um ativo sprite de seu jogo. a função requer
+    que você dê um nome ao anexo (como uma corda) e depois defina o sprite_index e image_index a usar, assim como a origem x e y (que pode ser diferente daquela definida pelo sprite nas propriedades do sprite), e você também pode definir qualquer transformação
+    que você deseja que seja aplicado à imagem quando anexado. Se o anexo foi criado com sucesso, a função retornará 1 e se não foi (você forneceu um índice sprite inválido, ou o sprite de base não é uma espinha dorsal
+    sprite) então ele retornará -1.
+   
+  Sintaxe:
+  esqueleto_criar_criar(nome, duende, ind, xorigem, yorigin, escala x, escala y, podridão);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome
+        O nome (como um fio) do anexo a ser criado.
+      
+      
+        sprite
+        O sprite_index para obter a imagem de anexo.
+      
+      
+        ind
+        A imagem_index para obter a imagem de anexo.
+      
+      
+        xorigem
+        A origem x para a imagem que está sendo utilizada.
+      
+      
+        yorigin
+        A origem y para a imagem que está sendo utilizada.
+      
+      
+        xscale
+        A escala horizontal da imagem, como um multiplicador: 1 = escala normal, 0,5 é metade, etc...
+      
+      
+        yscale
+        A escala vertical da imagem, como um multiplicador: 1 = escala normal, 0,5 é metade, etc...
+      
+      
+        podridão
+        A rotação da imagem. 0=normal, 90=voltada 90 graus no sentido anti-horário, etc.
+      
+    
+  
+   
+  Devoluções:
+  1 se bem-sucedido, -1 se não
+   
+  Exemplo:
+  skeleton_attachment_create("espada", spr_Weapons, 0, 0, 80, 1, 1, 90); skeleton_attachment_create("faca", spr_Weapons, 1, 0, 45, 1, 1, 1, 90); skeleton_attachment_create("crossbow", spr_Weapons, 0, 10, 30, 1, 1, 1,
+    0); skeleton_attachment_set("slot_leftHand", choose("sword", "knife", "crossbow")));
+  O código acima verificaria o nome do anexo atualmente atribuído para o slot chamado "slot_leftHand" e se uma cadeia vazia for devolvida, um novo sprite é anexado.
+   
+   
+   
+  
+    
+      
+        Voltar: Anexos:
+        A seguir: esqueleto_criar_cores
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

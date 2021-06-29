@@ -1,0 +1,57 @@
+
+  
+  ds_grid_set
+  Esta função pode ser usada para definir uma determinada célula dentro de uma determinada grade DS para qualquer valor, que pode ser um número real ou uma string. A imagem abaixo ilustra isto:
+  
+  Sintaxe:
+  ds_grid_set(índice, x, y, valor);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        Este índice da grade.
+      
+      
+        x
+        A posição x da célula a definir.
+      
+      
+        y
+        A posição y da célula a definir.
+      
+      
+        valor
+        O valor com o qual se deve definir a célula.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  grid = ds_grid_create(5, 5); var i = 0; var j = 0; repeat (ds_grid_width(grid)) {
+     repetir (ds_grid_height(grid)) {
+     ds_grid_set(grid, i, j, irandom(9)); j += 1; }
+     j = 0; i += 1; }
+  
+  O código acima cria uma grade e armazena seu índice na variável "grade". Ele então preenche esta grade com números inteiros aleatórios de 0 a 9.
+   
+   
+   
+  
+    
+      
+        Voltar: Grades DS
+        Próximo: ds_grid_set_disk
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

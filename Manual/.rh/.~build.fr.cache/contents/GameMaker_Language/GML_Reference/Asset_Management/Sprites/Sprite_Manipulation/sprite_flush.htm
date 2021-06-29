@@ -1,0 +1,43 @@
+
+  
+  sprite_flush
+  Com esta função, você pode remover a página de textura dada para o duende dado da memória de textura. Você fornece o índice sprite (como definido ao criar o recurso sprite) e a página de textura para a qual ele é designado será removida da memória de textura.
+    Note que se a página de textura for usada em outro lugar na sala (por outro sprite ou fundo, etc...) você poderá obter um pequeno acerto de desempenho quando a página for imediatamente recarregada, portanto, deve-se tomar cuidado ao usar esta função. Note que a função
+    retornará -1 se o fluxo não for suportado para o recurso escolhido, ou retornará 0 se todos funcionarem corretamente.
+   
+  Sintaxe:
+  sprite_flush(ind)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice (nome do recurso) do ativo sprite a ser enxaguado
+      
+    
+  
+   
+  Devoluções:
+  Int (-1 ou 0)
+   
+  Exemplo:
+  sprite_flush(spr_Player_Aura);
+  O código acima descarrega o duende "spr_Player_Aura" da memória.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação de Sprite
+        Próximo: sprite_flush_multi
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

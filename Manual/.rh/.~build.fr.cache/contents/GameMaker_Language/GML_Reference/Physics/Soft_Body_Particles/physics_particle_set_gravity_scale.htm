@@ -1,0 +1,47 @@
+
+  
+  escala_física_de_partículas_de_agravidade
+  Com esta função você pode definir o fator de escala de gravidade para partículas na simulação física. A função é projetada para ajudar a evitar a instabilidade na simulação física, especialmente quando se usa partículas muito pequenas que podem se comportar de forma imprevisível.
+    (ou seja, quebra de conservação do momento) em cenários como explosões. A desaceleração dessas partículas através da redução da escala de gravidade pode estabilizar seu comportamento. Esta função é global no escopo, na medida em que mudará a escala de gravidade não apenas
+    para novas partículas criadas após a mudança, mas também para aquelas já presentes na simulação.
+  NOTA: Ajustando o número de iterações de atualização por etapa (usando a função physics_world_update_iterations()    também pode afetar o efeito da gravidade sobre as partículas. Tamanhos maiores de iteração conferem maior resistência à gravidade.
+   
+  Sintaxe:
+  physics_particle_set_gravity_scale(scale)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        escala
+        O fator de escalonamento a ser aplicado à gravidade para todas as partículas.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  physics_particle_set_radius(15); physics_particle_set_density(0.5);
+     physics_particle_set_damping(1);
+     physics_particle_set_gravity_scale(1);
+  
+  O código acima definirá as propriedades básicas para todas as partículas na simulação.
+   
+   
+   
+  
+    
+      
+        Voltar: Partículas macias do corpo
+        A seguir: Physics_particle_get_max_count
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

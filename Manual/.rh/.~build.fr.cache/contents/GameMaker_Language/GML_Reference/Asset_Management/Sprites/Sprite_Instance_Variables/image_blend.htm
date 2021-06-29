@@ -1,0 +1,34 @@
+
+  
+  image_blend
+  Esta variável controla o "tinting" da instância sprite e o valor padrão é -1 (mas também pode ser c_white). Qualquer outro valor (incluindo constantes de cor internas como c_red, ou c_aqua) misturará o valor especificado
+    cor com o duende original. Favor observar que para que as mudanças nesta variável sejam visíveis, a instância não deve ter nenhum evento de sorteio (e, portanto, o GameMaker Studio 2 irá desenhar o duende por padrão) ou ser desenhada usando um dos desenhos ampliados
+    funções como draw_self() ou draw_sprite_ext().
+  
+  Observe que você deve tentar limitar a mistura na plataforma HTML5 (a menos que use WebGL), pois cada sprite misturado tem que ser colocado em cache separadamente e, portanto, ter muitos sprites misturados pode afetar negativamente o desempenho (você também pode definir o tamanho do cache usando
+    a função sprite_set_cache_size_size()).
+   
+  Sintaxe:
+  image_blend;
+   
+  Devoluções:
+  Real (valor de ponto flutuante de precisão único)
+   
+  Exemplo:
+  image_blend = make_colour_hsv(255, 255, random(255));
+  O código acima definirá a mistura_de_imagem do duende definido para a instância a uma cor aleatória.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis de Sprite Instance
+        Próximo: image_index
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

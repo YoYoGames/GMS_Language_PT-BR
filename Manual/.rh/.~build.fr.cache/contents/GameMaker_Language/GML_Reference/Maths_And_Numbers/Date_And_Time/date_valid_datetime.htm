@@ -1,0 +1,68 @@
+
+
+
+
+
+  
+  data_valid_datetime
+  Com esta função você pode verificar um valor de data/hora para ver se é válido (retorna verdadeiro) ou não (retorna falso). Note que esta função só considerará uma data/hora válida após 1/1/1970 e qualquer coisa antes disso
+    retornar falso, portanto, o mais rápido que você pode verificar seria:
+  date_valid_datetime(1970, 01, 01, 01, 0, 0, 0, 0);
+   
+  Sintaxe:
+  data_valid_datetime(ano, mês, dia, dia, hora, minuto, segundo);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ano
+        O ano para verificar.
+      
+      
+        mês
+        O mês a verificar.
+      
+      
+        dia
+        O dia para verificar.
+      
+      
+        hora
+        A hora de verificar.
+      
+      
+        minuto
+        O minuto para verificar.
+      
+      
+        segundo
+        O segundo a verificar.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se data_valid_datetime(2011, 9, 15, 10, 10, 3, 30) {
+     mydatetime = date_create_datetime(2011, 9, 15, 10, 3, 30); }
+  Isto definirá "mydatetime" para 15 de setembro de 2011, 10:03.30, se for um valor válido (que é).
+   
+   
+   
+  
+    
+      
+        Voltar: Data e TIME
+        Próximo: data_de_data
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

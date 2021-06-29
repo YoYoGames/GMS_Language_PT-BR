@@ -1,0 +1,33 @@
+
+  
+  número_do_evento
+  Esta variável read-only retorna o número do evento que está sendo chamado atualmente, onde o número está realmente se referindo ao "subevento" do evento, ou seja: para o evento de etapa o número do evento pode ser qualquer uma das constantes ev_step_normal ,
+   ev_step_begin, ou ev_step_end. Para uma lista completa das constantes que estão disponíveis para os subeventos específicos, veja event_perform()e, se você precisar conhecer o evento principal em si, você deve
+    estar verificando o tipo_de_evento.
+   
+  Sintaxe:
+  número_do_evento;
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  switch (event_number) {
+     caso ev_step_normal: show_debug_message("Step event!"); intervalo; caso ev_game_start: show_debug_message("Game Start"); intervalo; caso ev_room_start: show_debug_message("Room Start!"); intervalo; }
+  
+  O código acima poderia ser chamado de script e usado para mostrar mensagens de depuração informando qual evento está sendo acionado no momento.
+   
+   
+   
+  
+    
+      
+        Voltar: Eventos de geração de objetos
+        Próximo: event_object
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

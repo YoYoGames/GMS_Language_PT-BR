@@ -1,0 +1,55 @@
+
+  
+  draw_enable_drawevent
+  
+    Com esta função você pode optar por ativar(verdadeiro) ou desativar(falso) o evento de sorteio para todas as instâncias do jogo, dando-lhe assim controle sobre como e quando as coisas são sorteadas, útil se você deseja implementar um
+      técnica "frame skip". Note que isto não impede apenas que as instâncias sejam atraídas para a tela, mas suprime completamente o evento de sorteio, o que significa que é preciso ter cuidado, pois qualquer lógica de jogo que esteja presente naquele evento não será executada.
+      também não. Uma coisa importante a entender sobre esta função é que se você a chamar logo no início do jogo, antes que o quadro inicial seja renderizado (ou seja: o Evento Criar do primeiro objeto na primeira sala do jogo), então a janela do jogo não será renderizada.
+      Isto pode ser útil para projetos on-line que requerem um servidor que não precisa renderizar nada.
+  
+   
+  Sintaxe:
+  draw_enable_drawevent(enable);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Habilitar
+        Ajustar para verdadeiro ou falso.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  frame_skip ++; if (frame_skip mod 5) == 0 {
+     draw_enable_drawevent(true);
+     }
+     mais
+     {
+     draw_enable_drawevent(false);
+     }
+  
+  
+    O código acima verifica uma variável e, se ela retornar verdadeiro, ativa o evento de sorteio, caso contrário o evento de sorteio é desativado.
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Desenho
+        Próximo: draw_flush
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

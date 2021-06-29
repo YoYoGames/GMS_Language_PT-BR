@@ -1,0 +1,59 @@
+
+  
+  exemplo_lugar
+  Com esta função você pode verificar uma posição para uma colisão com outra instância ou todas as instâncias de um objeto usando a máscara de colisão da instância que executa o código para a verificação. Quando você usa esta função, está efetivamente pedindo ao GameMaker Studio 2 para mover a instância para a nova posição, verificar se há uma colisão, voltar atrás e dizer-lhe se uma colisão foi encontrada ou não. Isto funcionará para colisões precisas, mas somente se tanto a instância quanto o objeto que está sendo verificado tiverem máscaras de colisão precisas.
+    Esta função devolverá a instância única id do objeto a ser colidido, mas se isso não for necessário é um pouco mais rápido para usar o
+    função place_meeting(). Esta função também aceita as palavras-chave especiais all e other e
+    devolver a palavra-chave noone se não ocorrer nenhuma colisão, ou o valor único de identificação da instância encontrada caso ocorra uma colisão.
+  Note que as coordenadas x/y dadas serão arredondadas para o inteiro mais próximo antes da verificação ser realizada, então se isso não for o que você precisa (ou se você estiver usando um produto GameMaker antigo), você deve pavimentar as coordenadas no
+    verificar:
+  instance_place_list(floor(x), floor(y), obj_Enemy, list, true).
+   
+  Sintaxe:
+  instance_place(x, y, obj);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A posição x para verificar as instâncias.
+      
+      
+        y
+        A posição y para verificar as instâncias.
+      
+      
+        obj
+        O objeto a ser verificado em casos de.
+      
+    
+  
+   
+  Devoluções:
+  Real (ou um valor de identificação de instância ou a palavra-chave noone)
+   
+  Exemplo:
+  var _inst = instance_place(x, y, obj_Enemy); if _inst != noone {
+     hp -= _inst.dmg; instance_destroy(_inst);
+     }
+  
+  O código acima verificará uma colisão com instâncias de "obj_Enemy" e se houver uma, reduzirá a variável "hp" pela quantidade armazenada na variável "dmg" da instância de colisão e então destruirá a colisão
+    instância.
+   
+   
+   
+  
+    
+      
+        Voltar: Instâncias
+        Próximo: exemplo_lista_local
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

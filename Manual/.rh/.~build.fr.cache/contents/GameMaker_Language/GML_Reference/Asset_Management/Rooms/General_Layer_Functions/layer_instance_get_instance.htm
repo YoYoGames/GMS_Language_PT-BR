@@ -1,0 +1,46 @@
+
+  
+  layer_instance_get_instance
+  Esta função pode ser usada para obter a identificação única da instância do elemento da instância em questão. Você dá o ID do elemento de instância (veja o exemplo de código abaixo para saber como obtê-lo), e a função retornará um valor real que representa o valor único
+   exemplo de id para o elemento. Se o elemento não for uma instância, a função retornará -1.
+   
+  Sintaxe:
+  layer_instance_get_instance(element_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        element_id
+        O valor único de identificação do elemento de instância para obter a identificação de
+      
+    
+  
+   
+  Devoluções:
+  Real (valor de identificação único para um exemplo)
+   
+  Exemplo:
+  elementos = layer_get_all_elements("Instâncias"); for (var i = 0; i < array_length(elements); i++) {
+     if (layer_get_element_type(elements[i]) == layerelementtype_instance) {
+     var layerelement = elements[i]; var inst = layer_instance_get_instance(layerelement); inst.x = inst.x + 10; }
+     }
+  
+  O código acima verificará todos os elementos de instância em uma camada, depois obterá seu valor de identificação único e o utilizará para movê-los 10px para a direita.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próximo: substâncias_de_destruição_de_camadas
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

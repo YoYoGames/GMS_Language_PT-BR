@@ -1,0 +1,49 @@
+
+  
+  jogo_save
+  Esta é uma função herdada que pode ser usada para salvar o estado atual do jogo, e não é mais recomendada para uso. Use as funções de Arquivo para criar um sistema de salvamento personalizado onde você só salva
+    e carregar dados específicos do jogo.
+  Esta função salvará o estado do jogo como ele é, porém não economizará nenhum recurso dinâmico sendo usado naquele momento, tais como estruturas de dados, superfícies, recursos adicionados em tempo de execução , etc. Se tal arquivo de salvamento for carregado, qualquer atualização do jogo que tenha sido
+    feito após o salvamento não será visível, pois restaurará a versão do jogo que foi usada para criar o salvamento.
+  Note que salvar arquivos criados usando esta função pode não ser suportado por atualizações Tempo de execução por isso substituir esta função por um novo sistema de economia é essencial para garantir a compatibilidade com as versões
+    futuras atualizações do GameMaker e, pelas razões listadas acima, atualizações feitas em seu próprio jogo.
+   
+  Sintaxe:
+  game_save(filename);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome do arquivo
+        O nome do arquivo para o qual salvar o jogo.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se keyboard_check_pressed(ord("S")) {
+     global.Saved = true; game_save("Save.dat");
+     }
+  
+  O código acima definirá uma variável global como verdadeira e então salvará o jogo no arquivo "Save.dat" quando a tecla "S" for pressionada.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle geral do jogo
+        Próximo: game_save_buffer
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

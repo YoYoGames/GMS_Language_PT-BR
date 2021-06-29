@@ -1,0 +1,34 @@
+
+  
+  uwp_license_trial_user
+  Esta função retornará o ponteiro de identificação do usuário cuja licença de teste está sendo usada atualmente, ou retornará o ponteiro_nulo se o usuário não estiver atualmente ativo ou se o jogo não estiver atualmente em modo de teste.
+   
+  Sintaxe:
+  uwp_license_trial_user();
+   
+  Devoluções:
+  Apontador
+   
+  Exemplo:
+  se gamepad_button_check_pressed(0, gp_start) {
+     if uwp_license_trial_version() {
+     var _uid = uwp_license_trial_user(); uwp_show_help(_uid);
+     }
+     }
+  
+  O código acima verifica se um botão é pressionado e depois verifica o aplicativo para ver se ele está funcionando com uma licença de teste. Se estiver, então ele obtém o ID de usuário para licença e abre o arquivo de ajuda para esse usuário.
+   
+   
+   
+  
+    
+      
+        Voltar: UWP e XBox Live
+        A seguir: uwp_license_trial_time_remaining
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

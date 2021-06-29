@@ -1,0 +1,47 @@
+
+  
+  audio_set_listener_mask
+  Ao utilizar vários ouvintes em um sistema, você pode definir a máscara de bits para um som e fazer com que ele seja ouvido apenas pelo ouvinte sinalizado. Entretanto, você também pode definir a máscara global usando esta função e todos os sons tocados normalmente serão ouvidos de
+    os ouvintes sinalizados por esta máscara, sem a necessidade de definir a máscara para cada som individualmente.
+   
+  Sintaxe:
+  audio_set_listener_mask(máscara);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        máscara
+        Os dados da máscara de bits a serem definidos para os ouvintes
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var num = audio_get_listener_count(); var mask = 0; for(var i = 0; i < num; ++i;) {
+     var info = audio_get_listener_info(i); var m = audio_listener_get_data(info[? "máscara"]); mask = mask | m; ds_map_destroy(info);
+     }
+     audio_set_listener_mask(máscara);
+  
+  O código acima verifica o número de ouvintes disponíveis e, em seguida, faz um loop através deles, que são combinados para criar uma máscara de bit único que é aplicada ao ouvinte global.
+   
+   
+   
+  
+    
+      
+        Voltar: Ouvintes de áudio
+        Próximo: audio_get_listener_count
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

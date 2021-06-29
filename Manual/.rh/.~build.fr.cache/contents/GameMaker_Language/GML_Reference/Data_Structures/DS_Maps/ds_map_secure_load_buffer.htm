@@ -1,0 +1,45 @@
+
+  
+  ds_map_secure_load_buffer
+  Esta função carregará um mapa seguro de DS salvo a partir de um buffer. Você deve ter carregado previamente o buffer na memória (usando buffer_load()) e, em seguida, passando isso para esta função, devolverá um DS
+    mapa povoado com o conteúdo do buffer. Observe que o buffer deve ter sido criado usando a função ds_map_secure_save_buffer()para que isto funcione corretamente, e também note que se o DS
+    sendo carregado continha uma matriz, esta será convertida em uma lista DS ao invés disso, quando carregado.
+  IMPORTANTE! Uma das características de um arquivo seguro salvo é que ele está travado no dispositivo em que foi criado, de modo que você não pode carregar um arquivo salvo em um dispositivo em um projeto em execução em outro dispositivo.
+   
+  Sintaxe:
+  ds_map_secure_load_buffer_buffer(buffer);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome do arquivo
+        A identificação do buffer para carregar os dados do mapa.
+      
+    
+  
+   
+  Devoluções:
+  Inteiro (DS map index)
+   
+  Exemplo:
+  var buff = buffer_load("save.dat"); map = ds_map_secure_load_buffer(buff); buffer_delete(buff);
+  
+  O código acima carregará um mapa DS salvo com segurança a partir de um buffer e armazenará seu valor de índice em uma variável para uso futuro.
+   
+   
+   
+  
+    
+      
+        Voltar: DS Maps
+        Próximo: ds_map_add_list
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

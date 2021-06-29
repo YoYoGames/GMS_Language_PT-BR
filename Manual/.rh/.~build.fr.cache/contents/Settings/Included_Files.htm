@@ -1,0 +1,35 @@
+
+  
+  Arquivos Incluídos
+  OGameMaker Studio 2 não está limitado apenas aos recursos que você cria dentro do programa, já que você pode adicionar arquivos ao projeto como Arquivos Incluídos para que eles possam ser acessados à medida que o jogo estiver sendo executado. De quais arquivos você adicionará dependerá
+    sobre o que você quer fazer, mas coisas como arquivos padrão *.ini, sprites e imagens de fundo, ou arquivos de texto de idioma são comumente usados como arquivos incluídos.
+  Para adicionar estas coisas ao seu projeto, há uma janela do editor que pode ser aberta no menu Extras do Navegador de Ativos :
+  Selecionando isto, será aberto o Editor de Arquivos Incluídos:
+  Para adicionar um arquivo a seus recursos basta usar o botão Open In Explorer, que abrirá um explorador de arquivos na pasta de arquivos de dados
+    para seu projeto. Você pode então adicionar diretórios e arquivos conforme necessário e o GameMaker Studio 2 atualizará o editor de arquivos indluded com estes automaticamente.
+  Note que toda a edição (renomeação, organização, etc...) deve ser feita a partir do explorador de arquivos padrão.
+  Uma vez que você tenha adicionado arquivos ao editor, você pode clicar duas vezes em  sobre eles para abrir as Propriedades do Arquivo:
+  Esta janela mostra o nome do arquivo, seu tamanho em disco e também as plataformas para as quais ele deve ser exportado quando você compila/testa
+    seu jogo. Você tem botões para selecionar "Todos" ou "Nenhum", ou você pode descer na lista e verificar/desmarcar os tragetes para os quais você quer que o arquivo seja exportado, conforme necessário.
+  Para maiores informações sobre como os arquivos incluídos são armazenados com seu jogo e como são acessados, consulte a seção do manual dedicada ao Sistema de Arquivos.
+  IMPORTANTE! Ao incluir arquivos de som, você deve se assegurar de que os arquivos evitem nomes que entrem em conflito com os ativos de som de streaming. Por exemplo, um ativo sonoro chamado "main_music" e um arquivo incluído chamado "main_music.ogg".
+    será indefinido quando o projeto for executado. Isto é porque os arquivos streamed também são armazenados fora do pacote principal do projeto, portanto, é preciso ter cuidado nestas situações.
+  Vale notar que você pode incluir DLL (no Windows) ou DyLib (no MacOS) como arquivos incluídos e depois criar suas próprias funções personalizadas para lidar com eles usando external_define().
+    Estes podem então ser usados chamando o external_call() função.
+  ADVERTÊNCIA! Usar os arquivos incluídos para criar funcionalidades extras desta forma é incompatível com o sistema de Extensão, na medida em que você não pode usar o externo_*() funções
+    com arquivos adicionados em uma extensão, uma vez que as extensões já têm um método para adicionar constantes e funções.
+   
+   
+   
+  
+    
+      
+        Voltar: Configurações do jogo
+        A seguir: Grupos de Áudio
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

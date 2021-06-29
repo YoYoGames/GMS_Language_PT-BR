@@ -1,0 +1,52 @@
+
+  
+  ds_grid_read
+  Esta função pode ser usada para converter uma corda que foi criada anteriormente pela função ds_grid_write() de volta a uma grade DS. A grade DS deve ter sido criada anteriormente (veja o exemplo abaixo). Nota
+    que se a estrutura de dados foi criada com versões anteriores de GameMaker você deve adicionar o argumento opcional "legado", definindo-o como verdadeiro, já que o formato das cordas foi alterado com esta versão.
+   
+  Sintaxe:
+  ds_grid_read(index, string [, legado]);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice da grade a ser lido.
+      
+      
+        corda
+        O fio para ler na grade do DS.
+      
+      
+        legado(opcional)
+        Pode ser verdadeiro ou falso ou omitido completamente.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  grid = ds_grid_create(room_width div 32, room_height div 32); ini_open("Save.ini");
+     ds_grid_read(grid, ini_read_string("Save", "0", "")); ini_close()
+  
+  O código acima cria uma grade DS com base no tamanho da sala (cada 32x32 quadrados de pixels representa uma célula da grade) e então lê um conjunto de dados da grade previamente salvos de um arquivo ini para a nova grade DS.
+   
+   
+   
+  
+    
+      
+        Voltar: Grades DS
+        Próximo: ds_grid_write
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

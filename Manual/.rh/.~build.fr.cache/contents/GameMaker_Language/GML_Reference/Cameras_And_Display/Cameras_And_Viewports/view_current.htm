@@ -1,0 +1,37 @@
+
+  
+  view_current
+  Esta variável lida apenas é válida somente no Evento de sorteio e retorna o porto de vista atual que está sendo feito. O valor de retorno mudará durante o evento de sorteio.
+    quando se tem vários pontos de vista, pois o evento de sorteio é chamado uma vez para cada porto de vista em sucessão. Assim, quando (por exemplo) você estiver usando a view port[0] e view port[1] em sua sala de jogos, o evento do sorteio para TODAS as instâncias será realizado duas vezes, uma
+    para cada porto, e com esta variável você pode verificar qual a visão que está sendo desenhada atualmente. Em geral, isto é usado para renderizar apenas detalhes específicos a uma única porta quando várias portas de visualização são visíveis na sala ao mesmo tempo. Veja o exemplo
+    código abaixo.
+   
+  Sintaxe:
+  view_current;
+   
+  Devoluções:
+  Inteiro (ver índice de porta de 0 a 7)
+   
+  Exemplo:
+  se view_current == 0 {
+     var xx = camera_get_view_x(view_camera[0]); var yy = camera_get_view_y(view_camera[0]); draw_text(xx + 32, yy + 32, "Player 1"); }
+     else
+     {
+     var xx = camera_get_view_x(view_camera[1]); var yy = camera_get_view_y(view_camera[1]); draw_text(xx + 32, yy + 32, "Player 2"); }
+  
+  O código acima verifica qual vista está sendo desenhada atualmente e depois desenha um texto diferente para cada vista com base no valor de retorno.
+   
+   
+   
+  
+    
+      
+        Voltar: Câmeras e Ver Portos
+        Próximo: view_enabled
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

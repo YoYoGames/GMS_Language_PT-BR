@@ -1,0 +1,43 @@
+
+  
+  tilemap_get_tileset
+  Usando esta função você pode recuperar o valor do índice do recurso do conjunto de azulejos atribuído a um determinado elemento do mapa de azulejos em uma camada. Você dá o ID do elemento do mapa de azulejo (que você obtém quando cria um elemento do mapa de azulejo usando layer_tilemap_create()    ou quando você usa a função layer_tilemap_get_id()), e a função retornará o valor do índice do conjunto de azulejos.
+   
+  Sintaxe:
+  tilemap_get_tileset(tilemap_element_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tilemap_element_id
+        O valor de identificação único do elemento do mapa de azulejos para obter o conjunto de azulejos de
+      
+    
+  
+   
+  Devoluções:
+  Valor do índice do conjunto de azulejos (Real)
+   
+  Exemplo:
+  var lay_id = layer_get_id("Tiles_trees"); var map_id = layer_tilemap_get_id(lay_id); if tilemap_get_tileset(map_id) != ts_Nighttime {
+     tilemap_tileset(map_id, ts_Nighttime); }
+  
+  O código acima verifica o conjunto atual de azulejos atribuído à camada "Tiles_trees" e se não for "ts_Nighttime" então esse conjunto de azulejos é atribuído ao mapa de azulejos.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas do mapa de azulejos
+        Próximo: tilemap_get_frame
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

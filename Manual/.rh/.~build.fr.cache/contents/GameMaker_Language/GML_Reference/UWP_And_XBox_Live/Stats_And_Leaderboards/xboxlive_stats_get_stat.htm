@@ -1,0 +1,50 @@
+
+  
+  xboxlive_stats_get_stat
+  Esta função pode ser usada para recuperar um único valor stat do gerente stat para um determinado usuário. O usuário fornece o ID do usuário conforme retornado pela (por exemplo) função xboxlive_get_user(),
+    e, em seguida, a string stat como definida quando você a criou usando uma das funções xboxlive_stats_set_stat_*. O valor de retorno pode ser ou uma string ou um real (dependendo do stat sendo verificado) ou a constante GML indefinida se o stat não existir ou se houver um erro.
+   
+  Sintaxe:
+  xboxlive_stats_get_stat(user_id, stat);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        user_id
+        O ponteiro de identificação do usuário para obter os nomes estatutários de
+      
+      
+        stat
+        A estatística a definir (um fio)
+      
+    
+  
+   
+  Devoluções:
+  Real, de corda ou indefinido
+   
+  Exemplo:
+  if (game_over == verdadeiro) {
+     if (xboxlive_stats_get_stat(p_user_id, "PercentDone") < 100) {
+     var _val = (global.LevelsFinished / global.LevelsTotal) * 100; xboxlive_stats_set_stat_real(p_user_id, "PercentDone", _val); }
+     }
+  
+  O código acima verifica uma variável e se for verdade , então verificará o valor da estatística "PercentDone". Se este valor for inferior a 100, um valor é então gerado e o stat é definido para este valor.
+   
+   
+   
+  
+    
+      
+        Voltar: Estatísticas e Quadros de Líderes
+        Próximo: xboxlive_stats_get_leaderboard
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

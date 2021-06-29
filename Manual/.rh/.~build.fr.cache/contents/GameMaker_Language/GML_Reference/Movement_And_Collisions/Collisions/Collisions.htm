@@ -1,0 +1,88 @@
+
+  
+  Colisões
+  Ao planejar moções ou decidir sobre determinadas ações, muitas vezes é importante ver se há colisões com outros objetos em determinados lugares do mundo do jogo, e muitas vezes escolher a colisão certa para o trabalho é a tarefa mais importante
+    de todos. O GameMaker Studio 2 tem uma série de funções incorporadas para ajudá-lo a lidar com colisões corretamente e de acordo com as necessidades de seu projeto.
+  IMPORTANTE! Todas as funções de colisão funcionam usando posições inteiras, independentemente dos valores de entrada. Quaisquer valores não inteiros serão arredondados para o número inteiro mais próximo.
+   
+  Verificação de colisão simples
+  As seguintes funções tratam das várias maneiras pelas quais você pode ter uma instância de verificação de colisões com outra instância:
+   
+  
+    place_empty
+    place_free
+    place_meeting
+    position_empty
+    position_meeting
+    mudança_de_posição
+    position_destroy
+    exemplo_lugar
+    lista_de_lugares_da_classe
+    posição_da_classe
+    lista_de_posições_da_classe
+  
+   
+  Verificação avançada de colisão
+  As seguintes rotinas podem ser usadas para isto (assim como outras funções detalhadas nas seções relativas a Movimentação e Instâncias). Estas funções de colisão funcionam todas de maneira ligeiramente diferente, mas mantêm três argumentos comuns
+    que explicaremos aqui:
+  
+    obj. É aqui que especificamos o objeto com o qual a função tem de verificar uma colisão. Pode ser uma identificação de instância, um tipo de objeto, ou a palavra-chave GM especial all. Também vale a pena notar que se o tipo de objeto escolhido for o designado
+     pais de outros objetos, então todos os filhos daquele objeto também serão incluídos neste cheque.
+    pré. Isto pode ser verdadeiro ou falso e está relacionado com a precisão da verificação de colisão. Se for definido como verdadeiro, então as colisões precisas devem ser calculadas (mas somente se o objeto a ser verificado tiver "precisão".
+      marcado para sua detecção de colisão em suas propriedades de máscara), que é uma tarefa um pouco mais complexa para a CPU e, portanto, deve ser usada com cautela. Se forem falsas, as colisões serão calculadas com base na caixa de delimitação do objeto a ser verificado.
+      para.
+    não me. Talvez seja necessário verificar se há colisões com um objeto que tenha o mesmo índice que o objeto que executa o código, assim, para evitar que o código encontre uma colisão com ele mesmo, você pode definir isto como verdadeiro. Se você estiver procurando especificamente
+      por exemplo, o objeto que executa o código, ou não é importante, ele pode ser deixado como falso.
+  
+  As funções básicas retornarão ou a identificação de uma instância encontrada em colisão, ou a palavra-chave especial noone quando não há colisão, enquanto as funções de lista retornarão o número de instâncias que estão em colisão e povoam
+    uma lista de DS pré-fabricados com suas identificações. Observe que se houver múltiplas colisões com as áreas definidas por estas funções e instâncias do objeto dado, apenas uma identificação de instância é devolvida, e pode ser qualquer uma das instâncias na colisão.
+  Existem as seguintes funções que lidam com colisões avançadas.
+   
+  
+    círculo_de_colisão
+    lista_de_colisão_círculo
+    colisão_elipse
+    lista_de_colisão_elipse
+    linha_de_colisão
+    lista_de_linha_de_colisão
+    ponto_de_colisão
+    lista_de_pontos_de_colisão
+    colisão_rectângulo
+    lista_de_ângulo_de_colisão
+  
+   
+  Verificação de colisão sem máscara
+  Todas as funções acima estão relacionadas às instâncias de verificação de colisão e, como tal, dependem da máscara de colisão que é definida para a instância. Entretanto, há muitos momentos em que é necessário verificar a existência de "colisões" com um ponto
+    ou uma área, especialmente quando sua instância não tem um duende designado, ou quando você está trabalhando com o mouse, etc... Portanto, o GameMaker Studio 2 também fornece as seguintes funções para ajudá-lo nessas situações:
+   
+  
+    point_in_rectangle
+    point_in_triangle
+    point_in_circle
+    retângulo_em_ângulo_reto
+    retângulo_em_triângulo
+    retângulo_em_círculo
+  
+   
+  Colisões Físicas
+  Ao utilizar a construção em física, as funções de colisão acima não têm garantia de funcionar para instâncias habilitadas em física. Isto se deve principalmente ao fato de que estas instâncias não usam mais a maioria das variáveis habituais embutidas (em vez disso, a física
+    As instâncias habilitadas têm seu próprio conjunto de variáveis) e também não utilizam a máscara de colisão ou a caixa de delimitação, uma vez que, em seu lugar, utilizam acessórios. Entretanto, existe uma função especial para testar colisões com a física ativada que verifica se há sobreposição de dispositivos:
+   
+  
+    fisica_test_overlap
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Movimento e colisões
+        A seguir: Movimento
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

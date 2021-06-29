@@ -1,0 +1,57 @@
+
+  
+  exception_unhandled_handler
+  Esta função de tempo de execução pode ser usada para "assumir" a mensagem de erro padrão do GameMaker Studio 2 quando ocorre uma exceção de tempo de execução. Você fornece um método ou função que é chamado quando a exceção ocorre, e seu primeiro argumento será uma estrutura
+    contendo informações sobre a exceção. Esta estrutura tem o seguinte formato:
+  { mensagem : "", // uma string que é uma mensagem curta para esta exceção longMessage : "", // uma string que é uma mensagem mais longa para esta exceção script : "", // uma string
+    que descreve onde a exceção veio da linha: 0, // um real que é o número da linha onde a exceção veio de stacktrace : [ "", "" ], // um conjunto de cordas que é a estrutura da pilha a exceção
+    foi gerado }
+  
+  Você também pode fornecer undefined como o argumento, que removerá o manipulador de exceções personalizado (se definido) e retornará à mensagem de erro padrão do GameMaker Studio 2.
+  Esta função retornará o método do manipulador de exceções previamente definido, no entanto, se nunca foi alterado ou se foi reiniciado anteriormente usando undefined, então ele simplesmente retornará undefined.
+  Passar um método para esta função significa que nenhuma mensagem de erro será mostrada ao usuário, e você mesmo terá permissão para lidar com a exceção. Entretanto, você não pode usar isto para "quebrar" a exceção para continuar seu jogo, pois o jogo
+    ainda fechará depois que o manipulador de exceções for chamado.
+  Observe que o contexto para executar o método não está em um evento e, portanto, é altamente improvável que qualquer coisa possa ser apresentada neste momento na tela. Em geral, a coisa mais segura que poderia ser feita neste momento é salvar um arquivo com o
+    informações de contexto de exceção para que possam ser - por exemplo - analisadas e processadas na próxima rodada do jogo e depois tratadas.
+  Observe que se você usar a declaração de retorno no método fornecido, então o valor dado será convertido para um inteiro e usado como o código de saída do corredor.
+   
+  Sintaxe:
+  exception_unhandled_handler(user_handler);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        user_handler
+        O método (função definida pelo usuário) a ser usado como o manipulador de exceções, ou undefined para redefini-lo como padrão.
+      
+    
+  
+   
+  Devoluções:
+  Método (ou indefinido)
+   
+  Exemplo:
+  exception_unhandled_handler(function(ex)) {
+     show_debug_message( " "); show_debug_message( "Unhandled exception " + string(ex) ); show_debug_message( "--------------------------------------------------------------"); -------------------------------------------------------------- se file_exists("crash.txt") file_delete("crash.txt"); var _f = file_text_open_write("crash.txt"); file_text_write_string(_f, string(ex)); file_text_close(_f);
+     return 0; }
+     )
+  
+  O código acima criará um método de tratamento de exceções e o utilizará para salvar um arquivo com os dados das exceções.
+   
+   
+   
+  
+    
+      
+        Voltar: Depuração
+        Próximo: get_integer
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

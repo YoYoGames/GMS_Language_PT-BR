@@ -1,0 +1,83 @@
+
+  
+  Primitivos e formatos de vértices
+  Um primitivo é um tipo de desenho feito usando pontos para definir o que é mostrado na tela. Eles podem ser compostos de pontos simples, linhas ou triângulos e podem ser coloridos, ter mistura alfa e até receber uma textura, o que significa que podem ser usados
+    para criar alguns efeitos muito emocionantes em um jogo 2D! Por exemplo, você pode criar um retângulo usando múltiplos triângulos primitivos, depois texturizá-lo com um duende de bandeira e no evento de sorteio de uma instância ter essa bandeira "onda" no vento e
+    distorcer o duende que você usou, simplesmente modificando os pontos que formam o primitivo.
+  ADVERTÊNCIA! Estas funções não funcionam com o módulo HTML5 a menos que você tenha ativado o OpenGL nas Opções de Jogo.
+  Informações sobre desenhos primitivos podem ser encontradas nas páginas seguintes:
+   
+  
+    draw_primitive_begin
+    textura_de_sorteio_primitivo_begin_textura
+    draw_primitive_end
+    draw_vertex
+    draw_vertex_colour
+    draw_vertex_texture
+    draw_vertex_texture_colour
+  
+   
+  OGameMaker Studio 2 permite que você defina seus próprios formatos de vértices a partir dos quais você pode criar seus próprios primitivos personalizados. Isto pode acelerar muito as operações de sombreamento ou pode ser usado para ampliar suas capacidades e criar surpreendentes
+    efeitos. Você pode encontrar informações sobre isso nas seções seguintes:
+   
+  
+    vértice_format_begin
+    vértice_formato_add_color
+    vértice_formato_add_posição
+    vértice_formato_add_posição_3d
+    vertex_format_add_texcoord
+    vértice_formato_add_normal
+    vértice_formato_add_custom
+    vertex_format_end_end
+    vértice_formato_delete
+  
+   
+  Uma vez que você tenha criado seu formato de vértice (veja a seção acima) você pode então usá-lo para construir os primitivos que você deseja desenhar usando as seguintes funções de buffer de vértice:
+   
+  
+    vértice_criate_buffer
+    vertex_create_buffer_ext_ext
+    vertex_create_buffer_from_buffer
+    vertex_create_buffer_from_buffer_ext
+    vertex_get_buffer_size
+    vértice_get_number
+    vértice_delete_buffer
+    vértice_begin
+    vértice_color
+    vértice_normal
+    vértice_posição
+    vértice_posição_3d
+    vértice_argb
+    vértex_texcoord
+    vértice_float1
+    vértice_float2
+    vértice_float3
+    vértice_float4
+    vértice_ubyte4
+    vertex_end
+    vértice_freeze
+    vertex_submit
+  
+   
+  IMPORTANTE! Os primitivos que você constrói devem seguir o formato que você definiu usando as funções de Formato de Vértice, portanto, se você definiu um formato de vértice com apenas dados posicionais, não adianta construir seu primitivo com
+    dados de cor. Você deve observar que a ordem na qual você adiciona propriedades ao primitivo que está construindo é definida pela ordem na qual você adicionou essas propriedades ao criar o formato do vértice, portanto, se você definiu o formato vetorial com o
+    posição de ordem, coordenada de cor e textura, você deve adicionar estas propriedades ao primitivo que está sendo construído na mesma ordem, caso contrário, você receberá erros.
+  Para uma visão geral de como construir os primitivos usando as funções de vértice, veja:
+  
+    Guia de Primitivos e Construção de Vértices
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Desenho
+        A seguir: Superfícies
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

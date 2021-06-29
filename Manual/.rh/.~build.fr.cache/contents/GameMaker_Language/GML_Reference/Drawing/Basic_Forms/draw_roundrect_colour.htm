@@ -1,0 +1,71 @@
+
+  
+  draw_roundrect_colour
+  Com esta função você pode desenhar um contorno de um retângulo arredondado ou um retângulo arredondado preenchido onde a posição (x1,y1) é o canto superior esquerdo e a posição (x2,y2) é o canto inferior direito. Se for preenchido, você pode definir o indivíduo
+    cores para o centro e as bordas, e se essas cores não forem as mesmas, você terá um efeito de gradiente de uma para a outra (as configurações de cores sobreporão o conjunto de cores de base com a função draw_set_colour()). Você
+    pode definir quão preciso é o desenho dos cantos com a função draw_set_circle_precision()mas os cantos são sempre desenhados com um raio fixo. Caso seja necessário alterar o raio dos cantos
+    você deve usar a função draw_roundrect_colour_ext(). Favor observar que o retângulo a ser desenhado pode precisar de valores diferentes (+/-1 no x, y, ou largura ou altura) para ser desenhado com o desejado.
+    dimensões devido às diferenças entre as várias plataformas suportadas.
+  NOTA: Se você quiser desenhar uma forma usando um sombreador, você deve estar ciente de que a maioria dos sombreadores espera as seguintes entradas: vértice, textura, cor. Entretanto, ao utilizar esta função, apenas os dados de vértice e cor estão sendo passados para dentro, e assim o
+   shader não pode desenhar nada (ou desenhar algo, mas não corretamente). Se você precisar desenhar formas desta maneira, então o sombreador deve ser personalizado tendo isto em mente.
+   
+  Sintaxe:
+  draw_roundrect_colour(x1, y1, x2, y2, col1, col2, esboço);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x1
+        A coordenada x da esquerda do retângulo arredondado.
+      
+      
+        y1
+        A coordenada y da parte superior do retângulo arredondado.
+      
+      
+        x2
+        A coordenada x da direita do retângulo arredondado.
+      
+      
+        y2
+        A coordenada y do fundo do retângulo arredondado.
+      
+      
+        col1
+        A cor central.
+      
+      
+        col2
+        A cor da borda externa.
+      
+      
+        esboço
+        Se o retângulo é um contorno (verdadeiro) ou preenchido (falso).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_roundrect_colour(50, 50, 200, 200, c_black, c_white, false);
+  Isto desenharia um quadrado preenchido com cantos arredondados e com um gradiente preto/branco liso do centro para as bordas.
+   
+   
+   
+  
+    
+      
+        Voltar: Formulários básicos
+        Próximo: draw_roundrect_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

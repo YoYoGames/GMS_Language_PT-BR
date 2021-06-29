@@ -1,0 +1,42 @@
+
+  
+  tileset_get_name
+  Esta função devolverá o nome como um fio do conjunto de azulejos especificado. Este nome é o que foi especificado para o conjunto de azulejos no Navegador de Ativos da janela principal do GameMaker Studio 2. Observe que este é apenas um conjunto de caracteres
+    e não pode ser usado para fazer referência direta ao conjunto de azulejos - para isso você precisaria do índice do conjunto de azulejos. Você pode, entretanto, usar esta string para obter o índice do conjunto de azulejos usando a string retornada junto com a função asset_get_index().
+   
+  Sintaxe:
+  tileset_get_name(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do conjunto de azulejos para obter o nome de.
+      
+    
+  
+   
+  Devoluções
+  Cordão
+   
+  Exemplo:
+  var _l = layer_get_id("tilemap_trees"); var _m = layer_tilemap_get_id(_l); var _t = tilemap_tileset(_m); tileset_name = tileset_get_name(_t);
+  O código acima obterá o nome do índice do conjunto de azulejos para a camada dada, armazenando a string de retorno na variável tileset_name.
+   
+   
+   
+  
+    
+      
+        Voltar: Conjuntos de azulejos
+        Próximo: tileset_get_texture
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

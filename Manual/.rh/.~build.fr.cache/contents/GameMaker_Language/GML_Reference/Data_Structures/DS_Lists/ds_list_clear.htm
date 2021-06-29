@@ -1,0 +1,47 @@
+
+  
+  ds_list_clear
+  Com esta função você pode limpar todos os dados da estrutura de dados da lista fornecida. Isto NÃO destrói a estrutura de dados (para isso você deve usar ds_list_destroy()) ele só limpa todos os dados dele e faz
+    a lista vazia (zero em tamanho). Note que a limpeza de uma lista desreferenciará qualquer estrutura de dados nela armazenada dando um vazamento de memória, portanto, você precisaria passar pela lista e destruir todos os itens da estrutura de dados manualmente antes de limpá-la para evitar
+    isto. A única vez que isto não é necessário é quando você tiver marcado qualquer item da lista como outra lista DS ou como um mapa DS, caso em que estes itens serão destruídos (não liberados!) e
+    sua memória é limpa automaticamente quando o pai é limpo.
+   
+  Sintaxe:
+  ds_list_clear(id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação da estrutura de dados a limpar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if (count === 15) && (!ds_list_empty(command_list)) {
+     ds_list_clear(command_list);
+     alarm[0] = room_speed; ai_count = 0; }
+  
+  O código acima verifica uma variável para ver se ela atingiu um valor específico e se ela tem a lista DS indexada na variável "command_list", define um alarme e redefine a variável para 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Listas DS
+        Próximo: ds_list_empty
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

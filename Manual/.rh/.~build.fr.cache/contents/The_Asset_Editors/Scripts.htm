@@ -1,0 +1,118 @@
+
+  
+  O Editor Roteiro
+  Esta seção trata do editor de roteiro (também chamado editor de texto), que é onde você digita todo o código que
+    seu jogo exigirá correr. Este editor é usado para criar recursos de script personalizados, bem como para codificar eventos de objetos, para adicionar código de criação de sala,
+    e para muitas outras coisas, e como tal, esta seção simplesmente detalha como funciona o editor de scripts, e não como criar ativos de scripts nem como usar Drag e Drop™para fazer scripts. Para isso, consulte as seguintes seções: 
+  
+    RoteirosGML 
+    DnD™Roteiros
+  
+  O editor de scripts é onde você escreve seu código de linguagem GameMaker, que é a linguagem de programação integrada que o GameMaker Studio 2 usa (veja a seção ReferênciaGML para mais detalhes).
+    Quando você se familiarizar mais com o GameMaker Studio 2 e quiser utilizá-lo ao máximo, é aconselhável começar a aprender a usar esta linguagem, pois ela expande muito suas possibilidades ao criar jogos.
+  Um recurso de script pode ser nomeado clicando com o botão direito do mouse em  no Navegador de Recursos e selecionando Renomear,
+    mas observe que o nome do script deve estar de acordo com as regras de script para funções, de modo que elas só possam ser alfanuméricas, devem começar com uma letra, e o único símbolo que elas podem conter é o símbolo "_" abaixo da barra. O editor de roteiros em outros lugares
+    não pode ser renomeado e terá um nome específico para o que está sendo editado, como um evento objeto, por exemplo.
+  Quando você abrir a janela do editor de roteiros, ela terá as seguintes opções e layout:
+  Roteiro / Aba de eventos
+  
+    O editor de scripts abre em uma janela com abas no topo para permitir que você tenha vários scripts ou eventos em uma janela (embora este comportamento possa ser alterado das Preferências para dar uma nova janela para cada script ou evento). Você pode clicar em  em uma aba e depois arrastá-la para alterar a ordem da aba, ou - se preferir - você pode puxar
+      A janela atual e colocá-la no espaço de trabalho para criar uma nova janela para aquele script (ou adicioná-la a uma janela diferente), e você também pode maximizar o editor do script para criar um novo espaço de trabalho também. Se você arrastar uma aba de script para fora da janela atual e colocá-la na
+      Janela IDE, então uma nova IDE será gerada para conter este recurso de script, e pode ser usada como você faria na janela principal.
+    Observe que se você estiver editando código de um evento de objeto no editor de roteiros e tiver maximizado o editor de roteiros ou tê-lo em uma janela separada ou espaço de trabalho, então o menu do editor  terá algumas opções extras:
+    
+    
+      Restaurar para o espaço de trabalho: Isto tirará o editor de roteiros de um estado maximizado/espaço de trabalho e o colocará novamente no objeto no espaço de trabalho.
+      Ir para Objeto: Isto o levará para o espaço de trabalho em que o objeto com o código está e se concentrará no objeto.
+      Adicionar /Open Event: Isto permite adicionar um novo evento ao objeto ao qual o script atual pertence e abrirá uma nova aba de código no Editor de Script para o evento adicionado. Se o evento selecionado já tiver código no mesmo, então isto irá
+        ser aberto em uma nova aba.
+    
+    Para obter informações sobre o restante das opções do menu , veja a seção sobre Edição, abaixo.
+     
+  
+  Caleira
+  
+    A Gutter é usada para mostrar os números de linha de seu código e também para transmitir algumas informações específicas sobre o estado do código. Mais importante ainda, se você fizer um erro de digitação ou construir o código incorretamente, então a IDE GameMaker Studio 2 informará o problema assinalando a linha do código com um ponto de exclamação vermelho  mostrando um erro de sintaxe. Você pode então passar o mouse sobre o símbolo para obter uma breve descrição de qual é o problema:
+    Você pode encontrar mais informações sobre erros de sintaxe (e erros gerais ao testar ou compilar seu código) na seção seguinte:
+    
+      Relatório de erros
+    
+    A sarjeta também marcará qualquer linha do roteiro que tenha tido um ponto de parada adicionado. Um ponto de parada é simplesmente um lugar no roteiro onde você quer que o depurador pause a execução de seu
+      jogo quando é alcançado. Você pode alternar um ponto de quebra a partir de qualquer linha de qualquer script ou evento de objeto pressionando "f9" ou usando o menu  com o botão direito do mouse. Quando você adicionar um ponto de parada, ele aparecerá assim na sarjeta:
+    Finalmente, a sarjeta também mostrará quaisquer itens marcados em livros. Para marcar uma linha de código basta segurar  /  +  + Number (de 0 a 9), e isto permitirá que você pule de volta para esta linha de código de qualquer lugar na IDE simplesmente usando  /  + Number (de 0 a 9). Para excluir o bookmark, basta executar a mesma ação que você usou para adicioná-lo
+      na linha de código novamente. Quando um marcador de página tiver sido adicionado, ele aparecerá assim:
+    
+     
+  
+  Busca / Substituir
+  
+    Enquanto trabalha no editor de roteiros, você pode pressionar  /  + "F" para abrir a caixa de Busca ou  /  + "H" para abrir a caixa de Busca e Substituição:
+    Aqui você pode realizar uma busca local pela palavra-chave que você digitar e, uma vez digitado seu termo de busca, você pode então usar
+      as setas na parte superior direita da janela de busca para saltar de um termo encontrado para o próximo no script. Você pode mudar a forma como a operação de busca é realizada, alternando os seguintes botões:
+    
+      
+        
+          
+          Ao alternar isto, a função de busca somente destacará aquelas cordas que correspondem a toda a cadeia de entrada. Por exemplo, com ela fora de uma busca por "aleatório" aparecerão todas as palavras que contenham esta cadeia de caracteres - como irandom(),
+            ou randomise() - enquanto que alternar com ele mostraria apenas a função random().
+        
+        
+          
+          Quando esta opção é alternada, você está dizendo ao GameMaker Studio 2 para verificar não apenas o conteúdo da cadeia de busca, mas também o caso. Por exemplo, se você tiver um sprite chamado "spr_Dog" e fizer uma busca por
+            " cão" com esta alternância, então a corda de duende será destacada, porém se a alternância estiver ligada então não será mais, já que " cão" não é mais considerado o mesmo que " cão".
+        
+      
+    
+    Se você abriu a janela de busca usando  /  + "F", então a funcionalidade de substituição não será visível, então você precisa clicar no botão Substituir  para abrir
+      isso. Uma vez aberto, você pode então digitar uma string que será usada para substituir qualquer string de busca, usando os seguintes botões para realizar a ação:
+    
+      
+        
+          
+          Clicando aqui, a próxima cadeia de busca encontrada no roteiro será substituída pela cadeia de substituição dada. Observe que o termo "próximo" é considerado o próximo após a posição atual do cursor, e você pode pular para diferentes usando a seta
+            botões na parte superior direita da janela de busca.
+        
+        
+          
+          Clicando aqui substituirá todos os exemplos da cadeia de busca dentro do script usando a cadeia de substituição dada.
+        
+      
+    
+    Observe que se você quiser fazer uma busca global (ou seja: procurar o projeto inteiro em vez do script ou evento atual), então você pode pressionar  /  +  + "F".
+     
+     
+  
+  Editor Principal do Código
+  
+    O editor de código principal é onde você escreverá todo o seu código para criar o recurso de script ou preencher um evento de objeto. A edição real de seu código é abordada na seção de Edição mais abaixo nesta página.
+     
+  
+  Informações
+  
+    A barra de informações na parte inferior da IDE mostra o número da linha atual e a posição ao longo da linha. É também onde você pode ver o código helper, que é uma linha de texto que mostra a função que você está atualmente editando ao longo
+      com os argumentos que ela requer. Ao preencher a função no editor, os argumentos destacarão qual deles você está editando atualmente.
+    Note que qualquer argumento opcional em suas funções de script será mostrado com [] colchetes ao redor deles. Se você tiver usado os Comentários do Script JSDoc dentro de um recurso de script, então o
+      As informações que você forneceu também serão mostradas aqui.
+  
+   
+  Você pode obter mais informações sobre o uso do roteiro e dos editores de código nas páginas seguintes:
+  
+    Código de edição
+    Comentários JSDoc
+    Código Snippets
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Os Editores de Ativos
+        A seguir: Sequências
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

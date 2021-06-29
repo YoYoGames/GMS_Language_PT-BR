@@ -1,0 +1,36 @@
+
+  
+  phy_col_normal_x
+  Esta variável só de leitura retorna o componente x da colisão normal correspondente ao phy_collision_x valor da matriz. Para cada ponto de contato há um contato normal associado (que normalmente é
+    o mesmo normal para todos os pontos de contato na colisão). Este contato normal é um vetor unitário que aponta de uma instância na colisão para outra, e pode ser usado, por exemplo, para calcular a direção "push" correta para resolver
+    colisões
+  NOTA: Esta variável só está disponível no evento de colisão de uma instância física habilitada.
+   
+  Sintaxe:
+  phy_col_normal_x;
+   
+  Devoluções:
+  Real (valor de ponto flutuante de precisão único, ou indefinido se a instância não estiver habilitada fisicamente)
+   
+  Exemplo:
+  repetir(5 + irandom(5)) {
+     com (instance_create_layer(x, y, "Effects", obj_Debris) {
+     physics_apply_local_impulse(0, 0, other.phy_col_normal_x[0], other.phy_col_normal_y[0]); }
+     }
+  
+  O código acima usa o contato normal para definir a direção do movimento para uma instância criada no evento de colisão entre duas instâncias físicas habilitadas.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis Físicas
+        Próximo: phy_col_normal_y
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

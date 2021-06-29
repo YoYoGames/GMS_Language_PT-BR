@@ -1,0 +1,78 @@
+
+  
+  draw_roundrect_colour_ext
+  Com esta função você pode desenhar um contorno de um retângulo arredondado ou um retângulo arredondado preenchido onde a posição (x1,y1) é o canto superior esquerdo e a posição (x2,y2) é o canto inferior direito. Se o retângulo estiver preenchido, então a cor
+    argumentos serão usados para gerar um gradiente de cor do centro para as bordas, onde a cor 1 é a cor central e a cor 2 a cor das bordas. Você também deve fornecer valores de raio para os eixos x e y (em pixels) e os cantos serão arredondados.
+    por estes montantes. Você pode definir o quão preciso é o desenho dos cantos com a função draw_set_circle_precision(). Favor notar que o retângulo sendo desenhado pode precisar de valores diferentes (+/-1
+    no x, y, ou largura ou altura) a ser desenhado com as dimensões desejadas devido às diferenças entre as várias plataformas suportadas.
+  NOTA: Se você quiser desenhar uma forma usando um sombreador, você deve estar ciente de que a maioria dos sombreadores espera as seguintes entradas: vértice, textura, cor. Entretanto, ao utilizar esta função, apenas os dados de vértice e cor estão sendo passados para dentro, e assim o
+   shader não pode desenhar nada (ou desenhar algo, mas não corretamente). Se você precisar desenhar formas desta maneira, então o sombreador deve ser personalizado tendo isto em mente.
+   
+  Sintaxe:
+  draw_roundrect_colour_ext(x1, y1, x2, y2, xrad, yrad, col1, col2, esboço);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x1
+        A coordenada x da esquerda do retângulo arredondado.
+      
+      
+        y1
+        A coordenada y da parte superior do retângulo arredondado.
+      
+      
+        x2
+        A coordenada x da direita do retângulo arredondado.
+      
+      
+        y2
+        A coordenada y do fundo do retângulo arredondado.
+      
+      
+        xrad
+        O raio da curva ao longo do eixo x a partir dos cantos retangulares.
+      
+      
+        yrad
+        O raio da curva ao longo do eixo y a partir dos cantos do retângulo.
+      
+      
+        col1
+        A cor central.
+      
+      
+        col2
+        A cor da borda externa.
+      
+      
+        esboço
+        Se o retângulo é um contorno (verdadeiro) ou preenchido (falso).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var dist = point_distance(x, y, mouse_x, mouse_y) / 10; var col = make_colour_hsv(clamp(dist, 0, 255), 255, 255, 255); draw_roundrect_colour_ext(x - 50, y - 50, x + 50, y + 50, dist, dist, dist, col, c_white, 0);
+  Isto desenharia um quadrado preenchido com cantos arredondados, cujo raio é definido pela distância da instância que faz o desenho até o mouse. Este valor também é usado para calcular a cor da mistura central.
+   
+   
+   
+  
+    
+      
+        Voltar: Formulários básicos
+        Próximo: draw_triangle
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

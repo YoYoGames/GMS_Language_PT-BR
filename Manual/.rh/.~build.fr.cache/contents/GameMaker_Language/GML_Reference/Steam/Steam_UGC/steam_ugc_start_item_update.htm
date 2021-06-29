@@ -1,0 +1,49 @@
+
+  
+  steam_ugc_start_item_update
+  Esta função deve ser chamada antes de adicionar ou atualizar informações sobre um item da UGC. Você precisa fornecer o ID exclusivo do aplicativo para seu jogo a vapor, juntamente com o ID exclusivo do arquivo publicado que foi devolvido para o item quando você o criou usando a função
+    steam_ugc_create_item(). A função retornará um exclusivo controle de atualização para o item, que você poderá então usar nas funções do item UGC para atualizar (ou adicionar) informações para o upload.
+   
+  Sintaxe:
+  steam_ugc_start_item_update(consumer_app_id, published_file_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Consumer_app_id
+        O único App ID para seu jogo no Steam.
+      
+      
+        published_file_id
+        O valor único de identificação do arquivo publicado para o item.
+      
+    
+  
+   
+  Devoluções:
+  Manusear
+   
+  Exemplo:
+  var app_id = steam_get_app_id(); var updateHandle = steam_ugc_start_item_update(app_id, global.Publish_ID); steam_ugc_set_item_title(updateHandle, "My workshop item(3)!"); steam_ugc_set_item_description( updateHandle, "testing
+    workshop..."); steam_ugc_set_item_visibility(updateHandle, ugc_visibility_public); var tagArray; tagArray[0] = "Test"; tagArray[1] = "New"; steam_ugc_set_item_tags( updateHandle, tagArray); steam_ugc_set_item_preview (updateHandle,
+    "promo.jpg"); steam_ugc_set_item_content(updateHandle, "WorkshopContent1"); requestId = steam_ugc_submit_item_update(updateHandle, "Version 1.2");
+  O código acima obtém o ID do jogo, depois usa-o junto com um ID de arquivo publicado anteriormente para gerar uma alça de atualização para o item. Este cabo é então usado para atualizar vários pedaços de informação antes que a atualização seja empurrada para o Workshop.
+    servidores.
+   
+   
+   
+  
+    
+      
+        Voltar: UGC
+        Próximo: steam_ugc_set_item_title
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,46 @@
+
+  
+  xboxlive_user_is_guest
+  Esta função retornará verdadeiro se o ponteiro de identificação do usuário dado for um usuário convidado e falso se não o for. Você pode obter um ponteiro de identificação do usuário com a função xboxlive_get_user().
+   
+  Sintaxe:
+  xboxlive_user_is_guest(user_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        user_id
+        O ponteiro de identificação do usuário a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if xboxlive_user_is_guest(user_id[0]) {
+     global.user_name[0] = "GUEST"; }
+     mais
+     {
+     global.user_name[0] = xboxlive_gamedisplayname_for_user(user_id[0]); }
+  
+  O acima armazena o ponteiro de identificação do usuário ativador em uma variável global.
+   
+   
+   
+  
+    
+      
+        Voltar: Usuários e Contas
+        Próximo: xboxlive_user_is_active
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

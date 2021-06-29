@@ -1,0 +1,45 @@
+
+  
+  nome_da_estrutura_variável_get_names
+  Com esta função você pode recuperar uma matriz preenchida com os nomes das variáveis de uma estrutura. Você passa na referência estrutural para verificar, e cada entrada na matriz será uma seqüência dos nomes das variáveis que a estrutura
+    contém.
+   
+  Sintaxe:
+  variável_nomes_de_estrutura_get_names(struct);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        estrutura
+        A referência estrutural a ser verificada.
+      
+    
+  
+   
+  Devoluções:
+  Array (cada entrada é um fio)
+   
+  Exemplo:
+  var str = ""; var array = variable_struct_get_names(mystruct); show_debug_message("Variables for struct: " + string(array)); for (var i = 0; i < array_length(array); i++;)  {
+     str = array[i] + ":" + string(variable_struct_get(mystruct, array[i])); show_debug_message(str));
+     }
+  
+  O código acima recuperará um array dos nomes das variáveis para a estrutura dada e então exibirá estes junto com seus valores na saída de depuração.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções variáveis
+        Próximo: nomes_de_estrutura_variável_conta
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,71 @@
+
+  
+  draw_surface_tiled_ext
+  Esta função tomará uma superfície e depois a ladrilhará repetidamente por toda a sala, começando pelas coordenadas que você dá na função e com cada ladrilho escalonado, de cor misturada e com o alfa que você define (estas propriedades são as mesmas
+    como as utilizadas em draw_surface_ext()).
+  NOTA: Quando se trabalha com superfícies há a possibilidade de que elas possam deixar de existir a qualquer momento devido a serem armazenadas na memória de textura. Você deve SEMPRE verificar se uma superfície existe usando superfície_existe()    antes de referenciá-los diretamente.
+   
+  Sintaxe:
+  draw_surface_tiled_ext(id, x, y, xscale, yscale, col, alpha);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        O valor único de identificação da superfície a ser desenhada.
+      
+      
+        x
+        A coordenada x de onde desenhar a superfície.
+      
+      
+        y
+        A coordenada y de onde desenhar a superfície.
+      
+      
+        xscale
+        A escalada horizontal da superfície.
+      
+      
+        yscale
+        A escamação vertical da superfície.
+      
+      
+        h
+        A altura da área que a superfície esticada irá ocupar.
+      
+      
+        col
+        A cor com a qual se deve misturar a superfície.
+      
+      
+        alfa
+        O alfa da superfície.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_surface_tiled_ext(surf, x, y, 2, 2, c_red, 0,5);
+  Isto desenhará a superfície indexada em "surf" na própria posição x e y das instâncias, duplicará seu tamanho armazenado e azulejado em todas as direções na sala, assim como misturado com a cor vermelha e parcialmente transparente.
+   
+   
+   
+  
+    
+      
+        Voltar: Superfícies
+        Próximo: draw_surface_general
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

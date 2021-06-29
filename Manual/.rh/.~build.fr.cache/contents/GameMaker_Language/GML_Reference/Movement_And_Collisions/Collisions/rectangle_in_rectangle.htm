@@ -1,0 +1,72 @@
+
+  
+  retângulo_em_ângulo_reto
+  Esta função verificará duas áreas retangulares que você define para ver se o retângulo de origem não está em colisão, completamente dentro dos limites dos retângulos de destino, ou se eles estão simplesmente tocando. Se eles não estiverem tocando em nenhuma função
+    retornará 0, se a fonte estiver completamente dentro do destino retornará 1, e se eles estiverem simplesmente sobrepostos, então retornará 2. A imagem abaixo ilustra isto:
+  
+  Sintaxe:
+  retângulo_em_ângulo_reto(sx1, sy1, sx2, sy2, dx1, dy1, dx2, dy2);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sx1
+        A coordenada x do lado esquerdo do retângulo da fonte.
+      
+      
+        sy1
+        A coordenada y do lado superior do retângulo da fonte.
+      
+      
+        sx2
+        A coordenada x do lado direito do retângulo da fonte.
+      
+      
+        sy2
+        A coordenada y do lado inferior do retângulo da fonte.
+      
+      
+        dx1
+        A coordenada x do lado esquerdo do retângulo de destino a ser verificado.
+      
+      
+        dy1
+        A coordenada y do lado superior do retângulo de destino a ser verificado.
+      
+      
+        dx2
+        A coordenada x do lado direito do retângulo de destino a ser verificado.
+      
+      
+        dy2
+        A coordenada y do lado inferior do retângulo de destino a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  switch(rectangle_in_rectangle(x - 50, y - 50, x + 50, y + 50, mouse_x - 50, mouse_y - 50, mouse_x + 50, mouse_y + 50)) {
+     caso 0: image_blend = c_yellow; pausa; caso 1: image_blend = c_red; pausa; caso 2: image_blend = c_orange; pausa; }
+  
+  O código acima verifica duas áreas retangulares para colisão, e definirá a instância image_blend com base no valor de retorno.
+   
+   
+   
+  
+    
+      
+        Voltar: Colisões
+        Próximo: retângulo_em_triângulo
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

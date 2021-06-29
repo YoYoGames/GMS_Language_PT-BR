@@ -1,0 +1,80 @@
+
+  
+  Sistema
+  Este evento só pode ser acionado por uma chamada de retorno de um evento de nível de sistema (como a detecção
+    de um GamePad ou o login automático no XBox Live) e retornará um DS Map armazenado na variável async_load,
+    contendo diferentes pares chave/valor dependendo do evento de nível de sistema que acionou a chamada de retorno. Estes eventos são:
+   
+  Almofadas de jogo
+  Quando este evento for acionado para um controle de jogo sendo conectado ou desconectado, ele retornará um dos seguintes pares chave/valor no mapa async_load:
+  
+    "event_type" - o tipo de evento do sistema recebido, que será uma das seguintes cordas:
+      
+        "gamepad discovered" - acontece quando o sistema informa que um novo gamepad foi conectado
+        
+        "gamepad lost" - acontece quando o sistema perdeu a conexão a um gamepad
+        
+      
+    
+    "pad_index" - o índice do bloco que foi adicionado ou removido
+  
+  Este evento agora permite que você mova toda a sua lógica de verificação do GamePad do Step Event ou de um evento de Alarme para o System Event e só o execute quando for realmente necessário.
+  IMPORTANTE! Este evento NÃO será acionado a menos que você tenha pelo menos um gamepad_* função ou DnD™ ação em seu código de jogo. O corredor só inicializará o sub-sistema de gamepad quando as funções forem utilizadas no projeto, portanto, se elas não estiverem presentes, a adição/remoção de gamepads não acionará o Evento do Sistema.
+   
+  Teclados virtuais
+  Quando este evento for acionado para que um teclado virtual seja aberto ou fechado, ele retornará os seguintes pares de teclas/valores no mapa async_load:
+  
+    "event_type" - o tipo de evento do sistema recebido, que será "virtual keyboard status" para teclados virtuais.
+    "screen_height" - a altura do teclado virtual (em pixels). Este será 0 se o teclado for invisível.
+    "keyboard_status" - o status atual do teclado, retornado como uma das seguintes cordas:
+      
+        "escondido".
+        "escondido".
+        "mostrando"
+        "visível"
+      
+    
+  
+  Veja aqui para mais informações sobre o teclado virtual.
+   
+  XBox Live
+  O evento assíncrono do sistema pode ser acionado ao visar a XBox One usando a exportação UWP e verificando a opção Ativar XBox Live nas Opções de Jogo UWP. Quando você inicia o GameMaker Studio
+    2 O projeto UWP que tem o Xbox Live ativado o projeto tentará automaticamente entrar em silêncio no Xbox Live. Os resultados desta tentativa de login serão retornados como um dos seguintes pares de chaves/valores no mapa async_load:
+  
+    "event_type" - o tipo de evento do sistema recebido, que será uma das seguintes cordas:
+    "user signed in" - o login do usuário silencioso foi concluído com sucesso
+    "user sign in failed" - o login silencioso do usuário falhou (quando isso acontece, você pode usar a função xboxlive_show_account_picker() para
+      fazer com que o usuário escolha uma conta para assinar com)
+    "user signed out" - o usuário assinou
+  
+  Outras funções para XBox Live também podem desencadear este evento, mas os diferentes callbacks para essas funções estão detalhados nas páginas de funções relevantes. Para maiores informações sobre as funções específicas disponíveis para a XBox Live, por favor, veja aqui.
+   
+  Status do sistema de áudio
+  Este tipo de evento é especificamente para uso quando se trabalha com o alvo HTML5, pois ele será acionado toda vez que o status do contexto Web Audio mudar. Isto significa que se você tiver, por exemplo, um pedaço de música de fundo em loop, então você pode pausá-lo
+    ou pará-lo e reiniciá-lo, com base neste evento que o aciona. Isto pode ser verificado procurando o seguinte par chave/valor no mapa async_load:
+  
+    "event_type" - o tipo de evento do sistema recebido, que será a corda "audio_system_status" se o sistema de áudio foi rubricado ou o contexto mudou.
+  
+  Se este tipo de evento for acionado, então haverá uma chave adicional no mapa async_load:
+  
+    "status" - O status do sistema de áudio, que será uma das duas cordas a seguir
+    "available" - O sistema de áudio é inicializado e está disponível para reproduzir sons
+    "unavailable" - O sistema de áudio não é inicializado, ou o contexto não está em execução no momento, e portanto não pode reproduzir sons (todas as funções de reprodução de som retornarão -1)
+  
+  Para mais informações sobre as funções específicas disponíveis para Áudio, por favor, veja aqui.
+  NOTA: Embora este evento tenha sido projetado para uso com o alvo HTML5, ele também será acionado em todas as outras plataformas, mas em tudo (exceto HTML5) ele só será acionado uma vez no Game Start quando o motor de áudio for inicializado pela primeira vez.
+   
+   
+   
+  
+    
+      
+        Voltar: Eventos Async
+        A seguir: Reprodução de áudio
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

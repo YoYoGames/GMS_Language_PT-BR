@@ -1,0 +1,56 @@
+
+  
+  instance_find
+  Todas as instâncias têm um identificador único (id) que pode ser usada para modificá-las e manipulá-las enquanto um jogo está em execução, mas você pode nem sempre saber qual é a identificação para uma instância específica e, portanto, esta função
+    pode ajudar como você pode usá-lo para iterar através de todos eles para encontrar o que você precisa. Você especifica o objeto do qual deseja encontrar a instância e um número, e se houver uma instância nessa posição na lista de instâncias, então a função retorna
+    o id dessa instância, e se não retornar a palavra-chave especial noone. Você também pode usar a palavra-chave all para iterar através de
+    todas as instâncias em uma sala, assim como um objeto pai para iterar através de todas as instâncias que fazem parte dessa hierarquia pai/filha, e você pode até especificar uma instância (se você tiver seu id) como uma verificação para ver se
+    ela realmente existe na sala atual. Observe que como as instâncias são classificadas de forma arbitrária, não há uma ordem específica de como as instâncias são verificadas por esta função, e qualquer instância pode estar em qualquer posição.
+  O valor máximo para "n" nesta função seria
+  
+    Para a palavra-chave all: instance_count - 1
+    Para um índice de objetos: instance_number(OBJ) - 1
+  
+   
+  Sintaxe:
+  instance_find(obj, n);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        obj
+        O objetivo de encontrar a enésima instância de
+      
+      
+        n
+        O número da instância a ser encontrada.
+      
+    
+  
+   
+  Devoluções:
+  Real (ou um valor de identificação de instância ou a palavra-chave noone)
+   
+  Exemplo:
+  for (var i = 0; i < instance_number(obj_Enemy); ++i;)  {
+     enemy[i] = instance_find(obj_Enemy,i); }
+  
+  O código acima usará um loop para iterar através de todas as instâncias do "obj_Enemy" e armazenar sua identificação na matriz "enemy[]".
+   
+   
+   
+  
+    
+      
+        Voltar: Instâncias
+        Próximo: instance_furthest
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

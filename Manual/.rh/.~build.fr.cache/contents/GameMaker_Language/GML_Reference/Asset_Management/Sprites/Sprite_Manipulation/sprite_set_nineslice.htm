@@ -1,0 +1,48 @@
+
+  
+  sprite_set_nineslice
+  Esta função é usada para aplicar uma estrutura de Nove Fatias a um duende. Você fornece o índice de sprite e a estrutura de Nove Fatias para aplicar, que pode ser recuperada usando sprite_nineslice_create() ou sprite_get_nineslice().
+  OBSERVAÇÃO: Esta função afeta o ativo sprite, portanto qualquer mudança que você fizer com esta função afetará todas as instâncias que estão usando este sprite e todas as instâncias futuras também. 
+   
+  Sintaxe:
+  sprite_set_nineslice(ind, nineslice);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do duende a modificar
+      
+      
+        nineslice
+        A estrutura de nove fatias a aplicar
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var _nineslice = sprite_nineslice_create();
+     _nineslice.enabled = true; _nineslice.left = 10; _nineslice.right = 10; _nineslice.top = 10; _nineslice.bottom = 10;
+    
+   sprite_set_nineslice(spr_box_0, _nineslice_0);
+  O código acima cria uma nova estrutura de nove fatias, habilita-a e define os offsets para as guias. A estrutura é então aplicada a um duende, alterando suas propriedades de Nove Fatias.
+   
+   
+  
+    
+      
+        Voltar: Manipulação de Sprite
+        Próximo: sprite_set_offset
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

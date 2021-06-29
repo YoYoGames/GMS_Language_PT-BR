@@ -1,0 +1,33 @@
+
+  
+  aplicação_get_position
+  Quando você tiver selecionado "manter proporção" nas Opções de Jogo para uma plataforma alvo, o GameMaker Studio 2 ajustará automaticamente a posição de sorteio para a superfície da aplicação de modo que seja exibida corretamente centrada e escalonada em
+    a exibição dada. Entretanto, se você estiver manipulando esta superfície e desejar desenhá-la você mesmo, então esta função lhe dá uma maneira fácil de encontrar exatamente onde dentro da tela ou janela que a superfície estava sendo desenhada, para que você possa então
+    desenhe-o lá você mesmo, ou alinhe imagens GUI ou pós-desenhar imagens a ele.
+  A função retornará uma matriz com quatro teclas, onde as teclas 0 e 1 são a posição x e y do canto superior esquerdo da superfície, e as teclas 2 e 3 são as posições x e y do canto inferior direito do
+    a superfície, tudo relativo ao tamanho da tela ou janela.
+   
+  Sintaxe:
+  aplicação_get_position();
+   
+  Devoluções:
+  Array
+   
+  Exemplo:
+  var a = application_get_position(); xx = a[0]; yy = a[1]; ww = a[2] - a[0]; hh = a[3] - a[1];
+  O código acima obterá a posição da superfície de aplicação, bem como a largura e altura absolutas em relação à janela de exibição, e as armazenará em quatro variáveis para uso futuro.
+   
+   
+   
+  
+    
+      
+        Voltar: Superfícies
+        A seguir: Application_surface_draw_enable
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

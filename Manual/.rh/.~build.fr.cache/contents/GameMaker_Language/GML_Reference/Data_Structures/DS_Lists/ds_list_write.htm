@@ -1,0 +1,44 @@
+
+  
+  ds_list_write
+  Esta função retorna uma string que pode então ser armazenada ou transferida para outra estrutura de dados usando o ds_list_read() função.
+  NOTA: O fio retornado não é um fio legível por humanos, mas sim uma lixeira do conteúdo da estrutura de dados.
+   
+  Sintaxe:
+  ds_list_write(id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação da estrutura de dados a ser escrita.
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  ini_open("save.ini"); var str = ds_list_write(list); ini_write_string("Lists", "0", str); ds_list_clear(list);
+     ini_close();
+  
+  O código acima abre um arquivo ini e então escreve uma string contendo as informações armazenadas na lista DS indexada na variável "lista". A lista é então limpa e o arquivo ini é fechado.
+   
+   
+   
+  
+    
+      
+        Voltar: Listas DS
+        Próximo: ds_list_as_list_as_list
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

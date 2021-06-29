@@ -1,0 +1,129 @@
+
+  
+  Usando curvas de animação
+  Uma característica importante do folha de drogadição é a capacidade de atribuir Curvas de Animação a faixas de parâmetros dentro da seqüência para criar curvas de parâmetros em seu lugar
+    dos quadros-chave de parâmetros. Há dois tipos de curvas que podem ser usadas para os quadros de parâmetros:
+  
+    Curvas Incorporadas: Estas são curvas que estão embutidas na seqüência e são exclusivas da faixa de parâmetros em que são utilizadas.
+    Curvas Compartilhadas: Estas são curvas que são criadas independentemente da seqüência usando o Editor de Curvas de Animação.
+  
+  Começaremos explicando como usar um ativo Curva de Animação, que é simplesmente um caso de criação de uma nova curva, estabelecendo os canais no Editor de Curvas de Animação, e depois arrastando o ativo da curva para a folha de papel para aplicá-lo a um parâmetro
+    pista:
+  
+    
+  Você também pode usar o botão direito do mouse  opção do menu Assign Shared Curve (Importar) para adicionar um recurso de curva de animação
+    para a faixa de parâmetros selecionada. Isto abrirá o Asset Explorer onde você poderá selecionar a curva desejada dentre as apresentadas a você:
+  É importante notar que o ativo da curva de animação deve ter o número correto de canais para a pista em que está sendo aplicado, pois cada
+    tipo de faixa de parâmetros exigirá um número diferente de canais na curva de animação. Qualquer curva de animação que não tenha canais suficientes será mostrada com um indicador  no navegador de ativos.
+  Abaixo está uma lista das diferentes faixas de parâmetros e os canais que serão necessários em cada ativo da curva (canais devem ser adicionados na ordem dada para cada tipo de parâmetro):
+  
+    Posição: 2 canais, X e Y.
+    Rotação: 1 canal.
+    Multiplicação de cores: 4 canais, Alfa, Vermelho, Verde e Azul, e a faixa deve estar entre 0 e 255.
+    Índice de imagens: 1 canal.
+    Velocidade de imagem: 1 canal.
+    Origem: 2 canais, X e Y.
+    Escala: 2 canais, escala X e escala Y, e note que o valor é um multiplicador, então o valor base é 1 (sem escala) e maior que um fará a imagem maior, e menos de 1 fará a imagem menor. Os valores negativos serão invertidos ou
+      espelhar a imagem, bem como aplicar a escala.
+    Passo: 1 canal, que deve ser um mínimo de 0, onde 1 é o passo padrão do som.
+    Volume: 1 canal, que deve ser um mínimo de 0 e um máximo de 1.
+  
+  Se você importar uma curva de animação que não tenha canais suficientes para a faixa de parâmetros, você será solicitado a escolher se algum canal em falta deve ser adicionado à curva de animação:
+  
+  As curvas compartilhadas também podem ser invalidadas se qualquer canal necessário for excluído em um editor de curvas de animação externo. Nesse caso, a curva compartilhada aparecerá como inválida na folha de dope, e você pode clicar em "Adicionar canal(s)" para criar qualquer
+    canais em falta que tornarão a curva novamente válida:
+  
+  Por padrão, a curva de animação será aplicada ao longo de todo o comprimento da chave do ativo a que está anexada, no entanto, como nos quadros-chave, você pode clicar em  em uma curva e arrastá-la para reposicioná-la na linha de tempo, e você também pode segurar a chave  e arrastá-la para redimensionar o comprimento da curva
+    (isto também se aplica às curvas embutidas):
+  A outra maneira de adicionar uma curva de parâmetros a uma pista é incorporá-la. Isto pode ser feito clicando com o botão direito do mouse
+     na faixa de parâmetros e selecionando "Convert to Curve", ou clicando no botão Toggle Curve Mode , que mostrará a faixa como uma curva de animação na área completa da folha de papelão , e você poderá então clicar no botão Convert To Curve:
+  Uma vez convertida a faixa de parâmetros do quadro-chave para uma curva, ela pode ser editada dentro da folha de papel, exatamente da mesma maneira
+    que você pode editar ativos de curva de animação, isso inclui adicionar ou remover pontos, mudar sua posição, mudar o tipo de curva (linear, lisa ou bezier), aplicar predefinições e renomear canais e as cores
+    associados a eles.
+  IMPORTANTE: Você também pode editar os ativos da curva de animação que foram aplicados às faixas de parâmetros dessa forma, porém quaisquer alterações que você fizer serão aplicadas a todas as faixas que utilizam a curva de animação, já que você está editando
+    o ativo da curva e não uma única cópia do mesmo. Para editar um ativo de curva de animação que tenha sido aplicado a uma faixa somente naquela faixa, é necessário primeiro usar o menu direito do mouse  na faixa de parâmetros e selecionar Embed Curve. Isto duplicará o ativo da curva de animação e o incorporará na pista do pararmetro como uma curva independente somente para aquela pista. Por outro lado, você pode converter uma curva de animação embutida
+    em um recurso de Curva de Animação usando o botão direito do mouse  opção de menu Exportar para Curva Compartilhada. Isto converterá o ativo incorporado
+    em um novo ativo que pode então ser editado como normal, bem como aplicado a outras faixas de parâmetros, se necessário.
+  
+  A imagem acima mostra como fica o editor de curvas de animação incorporado, e é muito semelhante ao editor de curvas de animação. Expanda cada seção abaixo para obter mais informações sobre as diferentes seções.
+   
+  Nome da Curva
+  
+    Este será o nome do ativo da curva de animação externa ou o nome da faixa de parâmetros para uma curva embutida.
+     
+  
+  Biblioteca de curvas
+  
+    O botão  abre o Biblioteca de Curvas de Animação janela,
+      que permite mudar o Tipo de Curva da curva embutida ou compartilhada, e aplicar uma predefinição ao canal selecionado.
+    Veja a seção sobre Curvas de Animação na Biblioteca de 
+      informações sobre Tipos de Curvas e Predefinições. Note que ao abrir a janela através do botão , o modo de aplicação "Overwrite " será selecionado por padrão.
+    
+    
+  
+  Lista de canais
+  
+    A lista de canais é onde você pode editar os diferentes canais que compõem sua curva de parâmetros. Cada canal deve ter um nome único (usando somente caracteres alfanuméricos e o símbolo "_" sublinhado),
+      e você também pode definir a cor para o canal clicando duas vezes em  na amostra de cores à esquerda, que abrirá o seletor de cores para que você possa escolher uma nova cor.
+      Para renomear o canal, você pode fazer um duplo clique lento  e renomear, e você também pode usar o botão direito do mouse  para abrir um menu onde você pode escolher renomear, mudar a cor ou copiar o canal. Os canais podem ser expandidos clicando na seta ao lado do nome para mostrar cada um dos pontos da curva do canal, e estes pontos podem ser editados manualmente, clicando
+      o valor atual e digitando o novo valor. Você também pode alternar a visibilidade do canal na folha de drogadição clicando no ícone "olho" .
+     
+  
+  Controle de Conversão
+  
+    Aqui os quadros-chave podem ser convertidos em curvas de parâmetros (como explicado mais adiante nesta página), mas também há um botão para converter curvas de parâmetros em quadros-chave. No entanto, você deve estar ciente de que ao fazer isso, há algumas advertências. Quadros-chave
+      não pode ser "entre" quadros, e assim alguns valores de curva terão que ser arredondados para o quadro mais próximo, o que, por sua vez, mudará a maneira como o parâmetro pista se comporta. Além disso, se a curva de parâmetros utilizar interpolação catmull-rom ou bezier, isto será perdido e
+      a interpolação entre os quadros-chave será definida para interpolação linear.
+     
+  
+  Menu Curva
+  
+    Este menu contém opções disponíveis em outros lugares no editor, mas todas em um só lugar. As opções são:
+    
+      Faixa definida: Ajuste a faixa vertical da curva de parâmetros (ver Faixa de Canal, abaixo).
+      Converter em Curva: Converter a faixa de parâmetros selecionada usando quadros-chave em uma curva de parâmetros.
+      Curva Embedar: Incorporar o ativo da curva compartilhada que está sendo usado pela pista de parâmetros na pista.
+      Curva Compartilhada Atribuída (Importação): Atribuir um ativo da Curva de Animação para ser usado como uma curva compartilhada para a faixa de parâmetros.
+      Converta para chaves: Converter a faixa de parâmetros selecionados usando curvas de parâmetros em quadros-chave.
+      Exportar para Curva Compartilhada: Converter a curva embutida em um ativo de curva compartilhada.
+    
+     
+  
+  Faixa de canais
+  
+    O botão Channel Range é usado para definir o alcance vertical visual para o Editor de Canais. Por padrão, isto será definido de -1 a 1, mas clicando neste botão abrirá a seguinte janela:
+    
+    A alteração destes valores mudará a forma como os dados são representados na seção Editor de Canal, permitindo que você tenha valores mais altos/mais baixos ao longo da curva do canal do que apenas -1 a 1. Note que isto é puramente visual e não prende os valores para
+      o canal.
+     
+  
+  Editor de canais
+  
+    O Editor de Canal mostra uma representação visual dos diferentes canais utilizados na curva de parâmetros. Por padrão, todos os canais serão mostrados aqui, mas você só pode editar o canal atualmente selecionado da Lista de Canais, que será destacado
+      no editor. Você pode mudar a posição de qualquer um dos pontos ao longo da curva do canal clicando em  sobre eles e arrastando-os dentro do editor, mas note que
+      o primeiro e o último ponto só podem ser alterados ao longo do eixo vertical e seu valor horizontal será sempre 0 e 1, respectivamente.
+    
+      Você pode adicionar pontos diretamente à curva do canal movendo o mouse próximo à linha do canal principal e clicando em  quando o cursor mudar para o " AddPoint".
+        e você pode então editar estes pontos clicando em  e arrastando ou alterando seus valores nas opções expandidas de canais na Lista de Canais:
+      
+    
+    Você pode editar vários pontos ao mesmo tempo clicando em  e arrastando dentro do editor para selecionar todos os pontos que deseja editar ou usando  /  +  para adicionar pontos à seleção individualmente. Soltando o botão do mouse e depois clicando novamente em qualquer um dos pontos da seleção e arrastando, todos eles serão movidos juntos:
+    Você pode  clicar com o botão direito do mouse em qualquer lugar no Editor de Canal para abrir a janela da Biblioteca de Curvas de Animação (somente quando o Tipo de Curva selecionado for Bezier). A aplicação de uma predefinição desta forma afetará todo o canal. Para modificar apenas uma parte do canal, você pode  clicar com o botão direito do mouse em uma linha individual para aplicar uma predefinição, ou selecionar várias linhas clicando  e arrastando, depois  clicar com o botão direito do mouse na seleção para aplicar uma predefinição às linhas selecionadas.
+    Note que ao abrir a janela da Biblioteca de Curvas de Animação através do Editor de Canal, o Modo de Aplicação "Entre" será selecionado por padrão.
+  
+   
+  Uma vez terminada a edição das curvas de parâmetros, você pode voltar à visualização regular da folha de drogados das diferentes faixas clicando no botão Toggle Curve Mode .
+   
+   
+  
+    
+      
+        Voltar: Sequências
+        A seguir: Mensagens de radiodifusão
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

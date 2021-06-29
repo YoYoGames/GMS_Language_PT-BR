@@ -1,0 +1,43 @@
+
+  
+  fisica_fixture_set_polygon_sha
+  Esta função estabelece uma forma poligonal para sua fixação, mas você precisará usar fisic_fixture_add_point() para realmente definir a forma deste polígono em relação à origem da fixação. O polígono
+    é fechado quando a fixação é vinculada a uma instância. Você também deve observar que esta função deve ser chamada antes de definir qualquer ponto, e também deve ter pelo menos três pontos definidos para seu polígono antes de ligá-lo a uma instância ou
+    você receberá um erro.
+   
+  Sintaxe:
+  physics_fixture_set_polygon_shape(fixture)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fixação
+        o índice da fixação
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  physics_fixture_set_polygon_shape(fix_Ship); physics_fixture_add_point(fix_Ship, 0,0); physics_fixture_add_point(fix_Ship, -40, 100); physics_fixture_add_point(fix_Ship, 40, 100);
+  O código acima aplicará uma forma poligonal à fixação indexada na variável "fix_Ship" e depois definirá três pontos para criar uma forma triangular.
+   
+   
+   
+  
+    
+      
+        Voltar: Instalações
+        A seguir: physics_fixture_add_ponto_add
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

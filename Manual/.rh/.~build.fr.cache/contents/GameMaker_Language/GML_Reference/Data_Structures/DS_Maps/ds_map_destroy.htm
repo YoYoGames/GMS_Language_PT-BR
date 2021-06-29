@@ -1,0 +1,47 @@
+
+  
+  ds_map_destroy
+  Os mapas DS ocupam espaço na memória, que é alocado a eles quando são criados. Isto significa que você também precisa liberar esta memória quando o mapa DS não é necessário para evitar erros, vazamentos de memória e perda de desempenho ao executar seu jogo. Esta função
+    faz exatamente isso. Note que a destruição de um mapa irá desreferenciar quaisquer estruturas de dados armazenadas no mapa, dando um vazamento de memória, portanto você precisaria atravessar o mapa e destruir todos os itens da estrutura de dados manualmente antes de destruí-lo para evitar isso. O
+    somente quando você tiver assinalado qualquer item no mapa como uma lista DS ou como outro mapa DS, e nesse caso esses itens serão destruídos e sua memória será limpa
+    automaticamente também.
+  IMPORTANTE! Quando você cria uma estrutura de dados, o valor do índice para identificá-lo é um valor inteiro começando em 0. Isso significa que estruturas de dados de diferentes tipos podem ter o mesmo valor de índice, portanto, em caso de dúvida, você deve estar usando o
+    ds_exists() antes de acessá-los. Observe também que os índices são reutilizados, de modo que um valor de índice de estrutura de dados destruída pode ser usado por um índice recém-criado posteriormente, por isso recomendamos
+      sempre definindo a variável que manteve o índice DS em -1 após a destruição.
+   
+  Sintaxe:
+  ds_map_destroy(id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação do mapa a ser destruído.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  ds_map_destroy(inventário); inventário = -1;
+  O código acima destruirá o mapa DS com a identificação indexada na variável "inventário".
+   
+   
+   
+  
+    
+      
+        Voltar: DS Maps
+        Próximo: ds_map_secure_save
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

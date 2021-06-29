@@ -1,0 +1,113 @@
+
+  
+  buffer_write
+  Esta função pode ser usada para escrever dados em um buffer previamente criado. Os dados que você escreve devem estar de acordo com o argumento "tipo" desta função, o que significa que você não pode tentar escrever uma string como um inteiro de 16 bits sem assinatura, por exemplo.
+    As seguintes constantes podem ser usadas para definir o tipo de dados:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        buffer_u8
+        Um número inteiro não assinado de 8 bits. Este é um valor positivo de 0 a 255.
+      
+      
+        buffer_s8
+        Um número inteiro de 8 bits assinado. Este pode ser um valor positivo ou negativo de -128 a 127 (0 é classificado como positivo).
+      
+      
+        buffer_u16
+        Um inteiro de 16 bits, não assinado. Este é um valor positivo de 0 - 65,535.
+      
+      
+        buffer_s16
+        Um número inteiro de 16 bits assinado. Este pode ser um valor positivo ou negativo de -32.768 a 32.767 (0 é classificado como positivo).
+      
+      
+        buffer_u32
+        Um número inteiro não assinado de 32 bits. Este é um valor positivo de 0 a 4.294.967.295.
+      
+      
+        buffer_s32
+        Um número inteiro de 32 bits assinado. Este pode ser um valor positivo ou negativo de -2.147.483.648 a 2.147.483.647 (0 é classificado como positivo).
+      
+      
+        buffer_u64
+        Um número inteiro não assinado de 64 bits.
+      
+      
+        buffer_f16
+        Um flutuador de 16 bits. Este pode ser um valor positivo ou negativo dentro da mesma faixa que um inteiro de 16 bits assinado.
+      
+      
+        buffer_f32
+        Um flutuador de 32bit. Este pode ser um valor positivo ou negativo dentro da mesma faixa que um inteiro de 32 bits assinado.
+      
+      
+        buffer_f64
+        Um flutuador de 64 bits.
+      
+      
+        buffer_bool
+        Um valor booleano. Pode ser apenas 1 ou 0(verdadeiro ou falso)
+      
+      
+        cordão_tampão
+        Um fio de qualquer tamanho, finalizado com um caráter de terminação nulo.
+      
+      
+        texto_tampão
+        Uma cadeia de qualquer tamanho, sem o caráter final de terminação nula.
+      
+    
+  
+   
+  A função retornará 0 se for bem sucedida ou -1 se falhar.
+   
+  Sintaxe:
+  buffer_write(buffer, tipo, valor)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O índice do buffer para o qual escrever.
+      
+      
+        tipo
+        O tipo de dados que devem ser escritos no buffer (ver a lista de constantes acima).
+      
+      
+        valor
+        Os dados a serem escritos.
+      
+    
+  
+   
+  Devoluções:
+  0 em caso de sucesso, ou -1 em caso de falha
+   
+  Exemplo:
+  buffer_seek(buff, buffer_seek_start, 0); buffer_write(buff, buffer_s16, 0); buffer_write(buff, buffer_s16, x); buffer_write(buff, buffer_s16, y);
+  O código acima encontra o início do buffer com o id armazenado na variável "buff" eles escrevem uma série de valores inteiros assinados de 16 bits para ele.
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: buffer_fill
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

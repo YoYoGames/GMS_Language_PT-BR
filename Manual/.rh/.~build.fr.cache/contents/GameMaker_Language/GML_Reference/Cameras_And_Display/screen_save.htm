@@ -1,0 +1,46 @@
+
+  
+  screen_save
+  Com esta função, você pode salvar uma captura de tela do jogo como ela aparece atualmente na janela do jogo. O arquivo será salvo no diretório de trabalho do jogo, que nas janelas está localizado em <drive>:/Users/YOURUSERNAME/AppData/Local/[Nome do jogo]/ e no Mac seria ~/Library/Application  Support/[Nome do jogo]/. A imagem capturada será a renderização final da superfície da aplicação do jogo, ou (se a superfície da aplicação tiver sido desativada) será uma imagem de toda a tela ou janela.
+    É importante observar que a função foi projetada para ser chamada no evento final do Draw GUI, o que deve dar resultados consistentes em todas as plataformas. A sua utilização em qualquer outro evento pode não funcionar como esperado, e pode dar resultados diferentes em todas as plataformas.
+    diferentes alvos e até mesmo dispositivos. Se você precisar de mais controle sobre o que está sendo salvo, você deve usar a função screen_save_part().
+  OBSERVAÇÃO: Esta função não funciona com o alvo HTML5.
+   
+  Sintaxe:
+  screen_save(fname);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fname
+        O nome do arquivo para a captura de tela para salvar
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se keyboard_check_pressed(ord("S")) {
+     screen_save(working_directory + "Screens\Screen_" + string(num++) + ".png") }
+  
+  O código acima tira uma captura de tela do jogo quando o usuário pressiona a tecla "S". Esta captura de tela é salva em um diretório específico e numerada usando uma variável que é então incrementada.
+   
+   
+   
+  
+    
+      Câmeras e Display
+        Voltar: 
+        Próximo: screen_save_part
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

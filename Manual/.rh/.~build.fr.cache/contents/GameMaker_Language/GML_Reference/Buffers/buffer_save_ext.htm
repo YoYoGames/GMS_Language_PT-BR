@@ -1,0 +1,54 @@
+
+  
+  buffer_save_ext_ext
+  Com esta função, você pode salvar parte do conteúdo de um buffer em um arquivo, pronto para ser lido de volta à memória usando o buffer_load() função. O "offset" define a posição inicial dentro do buffer
+    para economia (em bytes), e o "tamanho" é o tamanho da área de amortecimento a ser salva a partir dessa compensação (também em bytes).
+   
+  Sintaxe:
+  buffer_save_ext(buffer, nome do arquivo, offset, tamanho);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O índice do buffer a ser salvo.
+      
+      
+        nome do arquivo
+        O nome do arquivo a ser salvo como.
+      
+      
+        offset
+        A compensação dentro do buffer para economizar de (em bytes).
+      
+      
+        tamanho
+        O tamanho da área de amortecimento a ser economizada (em bytes).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  buffer_save_ext(buff, "Player_Save.sav", 0, 16384);
+  Salva parte do conteúdo atual do buffer com o id armazenado na variável "buff" em um arquivo.
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: buffer_save_async
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

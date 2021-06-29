@@ -1,0 +1,216 @@
+
+  
+  Desenho
+  Esta seção (e a seção seguinte sobre Movimento e Controles) tem como objetivo dar-lhe exemplos práticos de GML ou DnD™para que você possa começar o mais rápido possível a fazer seus primeiros projetos de jogo. Nós
+    não explicará as coisas com muita profundidade, pois queremos que você comece a fazer as coisas o mais rápido possível, por isso encorajamos você a explorar quaisquer links à medida que for avançando e a usar a função de "busca" do manual para procurar por mais
+    informações sobre qualquer coisa que você não tenha certeza.
+  Nesta seção vamos nos concentrar em simplesmente desenhar informações para a tela, tanto como texto quanto como imagens, e também explicar um pouco mais sobre os diferentes eventos de desenho , especificamente, o evento principal do desenho
+    e o evento do Draw GUI (note que em alguns dos exemplos você será obrigado a acrescentar outros eventos, mas nós os explicaremos à medida que chegarmos a eles).
+  
+  Antes de continuar, você pode querer fazer um novo projeto ( GML ou DnD™) a partir da página inicial, e adicionar (ou criar) alguns sprites, bem como um ou dois objetos, pois lhe daremos alguns
+    código que você pode testar usando estes. Até mesmo um quadrado branco funcionará por enquanto como o duende para nosso objeto!
+  Agora, como mencionado na seção sobre Objetos e Instâncias, se você não adicionar um Evento de Sorteio ao objeto, então o GameMaker Studio 2 irá sortear por padrão, o que significa que se o objeto tiver um duende atribuído a ele, isto
+    sprite será desenhado, completo com quaisquer transformações que tenham sido adicionadas. O que queremos dizer com transformadas? Bem, cada objeto tem um número devariáveis embutidas que controlarão como uma instância do objeto desenha seu duende quando o desenho padrão, e você pode mudar essas variáveis à medida que o jogo corre para mudar a maneira como o duende é desenhado.
+  NOTA: Você pode encontrar aqui uma lista de todas as variáveis embutidas que podem ser usadas para transformar sprites de exemplo.
+    Os usuários do Drag e Drop™têm algumas ações dedicadas que afetam estas variáveis, que você pode encontrar aqui, e você também pode usar as próprias variáveis reais junto com
+    as ações Get Instance Variable e Set Instance Variable.
+  Vejamos alguns exemplos:
+  Mudança Alfa (Transparência)
+  
+    O valor alfa é o que controla a transparência do que está sendo desenhado, e no GameMaker Studio 2, você pode usar a variável incorporada image_alpha para mudar o quão transparente é o duende atribuído. Para
+      ver como isto funciona, abrir (ou criar) um objeto, atribuir-lhe um duende, e depois dar ao objeto um Evento de Criação. No Create Event, simplesmente adicione o seguinte DnD™ou GML:
+    
+    var _val = aleatório(1); image_alpha = _val;
+    A imagem alfa é calculada como um valor de 0 a 1, onde 0 é totalmente transparente e 1 é totalmente opaco (por padrão é definido como 1). Portanto, neste exemplo, tudo o que estamos fazendo é definir a imagem alfa como um valor decimal aleatório de 0 a 1. Coloque um
+      poucas instâncias deste objeto em uma sala, e então clique no botão Play   na parte superior da IDE.
+    Você deve ver que cada instância do objeto desenha seu duende com uma transparência diferente, por exemplo:
+    
+     
+  
+  Mudança da mistura de cores (Tinting)
+  
+    Quando seu objeto é o desenho padrão de um duende, este duende está na verdade sendo desenhado misturado (ou colorido) com uma cor, e este valor de cor é armazenado na variável image_blend incorporada.
+      Por padrão esta cor é branca, o que essencialmente significa que nenhuma cor será adicionada ao duende quando ele for mostrado na tela. Entretanto, é possível usar outras cores para obter efeitos especiais, por exemplo, usar vermelho para mostrar que a instância recebeu
+      alguns danos.
+    Neste exemplo, vamos misturar cores diferentes com o duende enquanto uma chave é pressionada e mantida pressionada, e assim você precisará abrir (ou criar) um objeto, atribuir-lhe um duende, e então dar ao objeto uma chave para baixo <Espaço> Evento.
+    
+    Neste evento Key Down, adicione o seguinte DnD™ou GML:
+    
+    var _col = choose(c_red, c_green, c_blue, c_yellow, c_fuchsia, c_orange); image_blend = _col;
+    Coloque algumas instâncias deste objeto em uma sala, e depois clique no botão Play  no topo da IDE, e teste segurando e soltando a tecla Space . Você
+      deve ver que cada instância mudará sua cor rapidamente enquanto a chave é mantida em baixo, e parar de mudar quando for liberada:
+    
+     
+  
+  Escala de mudança
+  
+    Outra das propriedades que podemos mudar para nosso sprite é o valor da escala , permitindo-nos desenhá-lo maior ou menor quando quisermos. A escala é calculada independentemente ao longo dos eixos X e Y por duas variáveis separadas, a
+      image_xscale variável e a variável image_yscale variável. Por padrão, elas são definidas como 1, e atuam como multiplicadores, portanto, um valor de 0,5 seria metade da escala e um valor de 2 seria o dobro da escala.
+    IMPORTANTE! A mudança da escala do duende atribuído usando estas variáveis também mudará o tamanho da caixa de delimitação para corresponder, o que significa que a área de detecção de colisão para o duende também irá escalar.
+    Neste exemplo, vamos usar algumas matemáticas simples para fazer uma instância escalar o duende para cima e para baixo em um loop. Para começar, abrir (ou criar) um objeto, atribuir-lhe um duende, e depois dar ao objeto um Evento de Criação. Neste
+      evento adicione o seguinte:
+    
+    temporizador = 0;
+    Agora adicione um Evento de Etapa ao objeto com isto:
+    
+    timer = timer + 1; var _val = dsin(timer); image_xscale = 1 + _val; image_yscale = 1 + _val;
+    Aqui estamos usando a função matemática dsin() para gerar um valor entre -1 e 1 usando a variável temporizador, e depois aplicando
+      que para as variáveis de escala. Depois de colocar algumas instâncias em uma sala e pressionar o botão Play  , você deve ver como as instâncias escalam para cima e
+      de uma escala de 0 a uma escala de 2 e depois novamente de volta.
+    
+    Uma última coisa... mude a seção " image_yscale" para " 1 - _val" e veja o que acontece!
+     
+  
+   
+  Os exemplos acima ilustram apenas algumas das muitas maneiras pelas quais você pode manipular o objeto sprite quando o GameMaker Studio 2 é o desenho padrão, mas e se você quiser desenhar mais de uma coisa para um objeto? Nesses casos, você precisa usar o evento de desenho para dizer explicitamente ao GameMaker Studio 2 o que desenhar, que é o que faremos nos exemplos a seguir.
+  Desenhando Dois (ou mais) Sprites Juntos
+  
+    Para este exemplo, você precisará de dois sprites e um objeto. Chame os sprites " spr_One" e " spr_Two", e depois defina o " spr_One".
+      para o centro e para " spr_Two", defina sua origem para o meio-esquerda:
+    Atribua o primeiro sprite (" spr_One" com a origem central) ao objeto que você criou e depois acrescente
+      um Evento Create. No Create Event, adicione o seguinte DnD™ou GML:
+    
+    draw_angle = 0;
+    Vamos usar esta variável para girar " spr_Two" com o tempo, e desenhá-la sobreposta ao duende atribuído ao objeto (" spr_One"). Para fazer isso, precisamos adicionar um evento de sorteio a
+      o objeto. Ao fazer isso, estamos dizendo ao GameMaker Studio 2 que queremos assumir o que a instância desenha, o que significa que nosso código incluirá uma chamada para o draw_self() função
+      ou Desenhe o duende ação. Esta ação simplesmente replica o que o objeto faz quando nenhum Evento de Sorteio está presente e é o desenho padrão do duende atribuído. Nós vamos
+      então desenhamos o segundo duende que queremos usar como o duende de sobreposição que está girando. O DnD™e o GML se parecem com isto:
+    
+    draw_self(); draw_angle = draw_angle + 0,5; draw_sprite_ext(spr_Two, 0, x, y, 1, 1, 1, draw_angle, c_red, 1);
+    Adicione várias instâncias do objeto no editor da sala e pressione o botão Play   na parte superior da IDE. Se tudo tiver corrido corretamente, você deve ver algo assim agora:
+    
+    Antes de deixarmos este exemplo, vamos apenas ajustá-lo um pouco e, em vez de termos " spr_Two" simplesmente girar, vamos fazer com que ele aponte para a posição do mouse. Para isso, precisamos mudar o Evento de Sorteio
+     DnD™ou GML para ter este aspecto:
+    
+    draw_self(); draw_angle = point_direction(x, y, mouse_x, mouse_y); draw_sprite_ext(spr_Two, 0, x, y, 1, 1, 1, draw_angle, c_red, 1);
+    Execute o projeto novamente e desta vez você verá algo muito diferente!
+    O duende agora aponta para o mouse, independentemente de para onde você o mova! Como você pode ver, a estratificação dos sprites é um grande
+      maneira de acrescentar detalhes a um objeto ou de ter algo que se mova independentemente do duende "base" atribuído ao objeto, e é uma ferramenta poderosa que você provavelmente usará muito em seus próprios projetos.
+     
+  
+  Desenho de outras coisas que não Sprites
+  
+    Você pode desenhar coisas no Evento de Desenho que não sejam sprites também, como texto, ou formas. Neste exemplo, usaremos a função DnD™ou GML draw_self() para desenhar o objeto sprite, mas também desenharemos algumas outras coisas,
+      começando com algum texto. Para este exemplo, será necessário um duende e um objeto (com o duende atribuído a ele). No objeto, primeiro adicione um Create Event com este DnD™ou GML:
+    
+    nome = escolher("Fred", "Jonas", "Sharon", "Kate", "Frank", "John", "Monica", "Amanda"); número = irandom(100);
+    Tudo o que isso faz é dizer ao GameMaker Studio 2 para escolher um dos nomes listados e atribuí-lo a uma variável, assim como gerar um número aleatório de 0 a 100 para cada instância do objeto. Desejamos atrair estes valores para a tela, e assim para isso
+      agora você precisa adicionar um evento de sorteio e nele adicionar o seguinte DnD™ou GML:
+    
+    draw_self(); draw_set_halign(fa_center);
+       draw_text(x, y + 32, "Meu nome é " + nome); draw_text(x, y + 48, "Meu número é " + string(número));
+    Você notará no código acima que nós usamos o string() função ou Número para String ação
+      sobre a variável "número" que queremos desenhar. Isto porque todo texto tem que ser composto de caracteres, não valores, e por isso precisamos usar esta função/ação para converter o valor numérico naqueles caracteres que queremos
+      sorteio. Neste caso, estamos pegando o número aleatório que geramos e transformando-o em uma "cadeia" de caracteres que podem ser desenhados. Observe também que definimos o alinhamento do texto. Isto simplesmente diz ao GameMaker Studio 2 por onde começar
+      desenhando o texto relativo à posição dada e, neste caso, queremos que o texto seja centralizado ao longo do eixo x.
+    Adicione várias instâncias do objeto no editor da sala e pressione o botão Play  na parte superior da IDE. Você deve ver algo como isto:
+    
+    Em todos os exemplos até agora, temos desenhado o duende designado para a instância, mas nem sempre tem que ser assim. Você pode desenhar o que quiser no evento do sorteio, independentemente do duende designado. Para ilustrar
+      Neste ponto, vamos mudar o código que temos atualmente, removendo a chamada draw_self() e substituindo por uma função para desenhar uma elipse colorida, como esta:
+    
+    draw_ellipse_colour(x - 50, y - 32, x + 50, y + 32, c_fuchsia, c_lime, false); draw_set_halign(fa_center);
+       draw_text(x, y + 32, "Meu nome é " + nome); draw_text(x, y + 48, "Meu número é " + string(número));
+    Execute o projeto novamente e você deve ver isto:
+    
+    Uma coisa importante a se notar sobre isto, é que mesmo que não estejamos desenhando o duende designado, ele ainda será usado para a detecção de colisão. Portanto, embora você possa estar desenhando uma coisa, as colisões ainda serão calculadas com base
+      no duende designado como se ele fosse colocado na sala junto com a instância, mesmo que não seja visível. Isto é bastante útil na verdade, pois significa que você pode desenhar diferentes sprites, mas manter uma única máscara de colisão baseada em
+      o duende designado. Observe também que você ainda pode aplicar as diferentes transformações como a escala X/Y, e as colisões serão baseadas no tamanho alterado, mesmo que não haja nada sendo desenhado para mostrar isto.
+  
+   
+   
+  A camada GUI
+  Mencionamos no topo da página que estaríamos falando sobre o Evento de Sorteio GUI assim como sobre o Evento de Sorteio, então vamos olhar para isso agora. O Evento de Sorteio GUI funciona em algo chamado de  Camada GUI,
+    que é uma camada especial de desenho de largura e altura fixas que é desenhada sobre as instâncias na sala. O ótimo da camada de GUI é que  ela não se move com a câmera da sala, por isso é o lugar ideal para adicionar a GUI estática
+    itens, como pontuação, barras de saúde e outras informações que seu jogo requer para comunicar ao usuário. Você pode encontrar mais informações sobre a camada GUI na seção Eventos de Sorteio 
+    do manual.
+  NOTA: As salas podem ser maiores que o tamanho da tela, de modo que você pode ter grandes níveis para que o jogador se movimente para dentro. Isto significa que no Editor de Sala (ou em código) você precisa definir uma câmera que siga a ação de seu
+    jogo. Esta é basicamente uma forma de montar uma área fixa da tela para exibir diferentes partes da sala maior com base - por exemplo - na posição do jogador na sala, e é usada em muitos jogos. Pense no modo como a vista sempre segue
+    o personagem principal em jogos clássicos como Mario ou Zelda. Isso é feito com câmeras. Para mais informações, consulte a seção Propriedades da Sala na seção Editor da Sala do manual.
+  Os exemplos a seguir serão todos usando o evento Draw GUI, então você precisará criar um objeto e adicionar esse evento a ele. Note que o objeto não precisa de um sprite designado, pois não estamos querendo desenhar nada por padrão,
+    nem precisamos dele para detectar colisões. Objetos como este, que são projetados apenas para desenhar coisas ou controlar certos aspectos do jogo, são freqüentemente chamados de Objetos Controladores. Observe também que estaremos usando o mesmo objeto para
+    todos os exemplos, então recomendamos que você os examine um após o outro (embora isto não seja estritamente necessário).
+   Texto do desenho
+  
+    Ao desenhar para a camada GUI, o canto superior esquerdo é a posição de origem, e à direita é +X e para baixo é +Y. Isto torna o posicionamento de texto e gráficos muito fácil, como você verá neste exemplo. Tudo o que vamos fazer aqui é desenhar um valor
+      que representa a pontuação do jogador, então em nosso objeto precisaremos adicionar um Create Event para rubricar uma variável para manter este valor, como este:
+    
+    player_score = 0;
+    Também queremos adicionar um Teclado para baixo <Espaço> Evento ao objeto, já que usaremos isso para incrementar a pontuação toda vez que você pressionar a tecla Espaço.
+    
+    Neste caso, acrescente o seguinte:
+    
+    var _val = irandom(100); player_score = player_score + _val;
+    Finalmente, vamos sortear o valor da pontuação no evento do Sorteio GUI, como este:
+    Neste caso, acrescente o seguinte:
+    
+    draw_set_halign(fa_left); draw_set_colour(c_yellow);
+       draw_text(32, 32, "SCORE:"); draw_set_colour(c_white);
+       var _str = string(player_score); draw_text_transformed(32, 48, _str, 2, 2, 0);
+    Você notará como usamos valores codificados (ou fixos) para a posição x/y do texto a ser desenhado, já que não precisamos que ele seja relativo a nenhuma instância, já que estamos desenhando
+      para a camada GUI. Também usamos a função "definir cor" para mudar a cor do texto, bem como a fração "transformada" para tornar o valor real da pontuação maior, o que ilustra como você pode personalizar
+      elementos de texto em seus próprios jogos.
+    Adicione uma única instância deste objeto ao seu quarto agora e depois pressione o botão Play  . Quando o jogo for executado, pressione e solte a tecla <Space> e você deverá ver o valor da pontuação aumentar.
+    
+     
+  
+  Sprites de Desenho
+  
+    Neste exemplo, vamos utilizar a camada GUI para desenhar alguns sprites. O uso mais óbvio para isso é desenhar vidas dos jogadores, então vamos em frente e façamos exatamente isso! Você vai precisar de um duende para este exemplo - que deve ter cerca de 64x64 pixels
+      - mas não deve ser atribuído ao objeto, pois seremos nós mesmos a desenhá-lo.
+    Para começar, precisamos adicionar algumas variáveis novas ao objeto no Create Event (se você fez o exemplo anterior, adicione o seguinte abaixo o que já está lá):
+    
+    player_lives = 3; gui_w = display_get_gui_width();
+    Neste código inicializamos uma variável para a vida do jogador, mas também criamos uma variável para segurar a largura da camada GUI, para que possamos posicionar as coisas corretamente em relação à direita da tela. Poderíamos simplesmente codificar um valor no código
+      e usar isso, mas isso significaria que se fizermos qualquer mudança no tamanho da sala, ou se adicionarmos câmeras, etc... mais tarde, então precisaríamos passar pelo código e mudar o valor em todos os lugares. Usando o display_get_gui_width() função
+      em vez disso, significa que não precisamos nos preocupar com nenhuma mudança futura como essa, pois o código se adaptará automaticamente ao tamanho que a camada GUI acabar.
+    Em seguida, queremos adicionar um Teclado pressionado <Enter> Evento ao objeto, já que usaremos isso para mudar o número de vidas toda vez que a tecla Enter for pressionada:
+    
+    Neste caso, acrescente o seguinte:
+    
+    player_lives = player_lives -1; se player_lives < 0 { player_lives = 3; }
+    Finalmente, precisamos desenhar os sprites para a tela. Para isso, estaremos usando um loop " for" (informações usando GML aqui e para DnD™ 
+     aqui), junto com a variável de largura GUI para posicionar tudo no canto superior direito da tela. Portanto, acrescente isto no evento Draw Gui (após qualquer outra ação que possa
+      têm de exemplos anteriores):
+    
+    for (var i = 0; i < player_lives; i += 1;) { var _xx = gui_w - 48 - (i * 70); draw_sprite(spr_Heart, 0, _xx, 48); }
+    Se você ainda não adicionou uma instância deste objeto a uma sala, vá em frente e adicione-a agora (apenas uma!), então pressione o botão Play . Uma vez que o jogo estiver funcionando, pressione a tecla <Enter> várias vezes para ver as vidas mudarem.
+    
+    Antes de deixar este exemplo, você deve experimentar com o número de vidas e ver o que acontece. No momento está definido para 3, mas mude o evento Create Event e o evento Key Pressed para definir o valor para 5, ou 10... se você já fez tudo
+      certo, então o código deve adaptá-los e desenhá-los todos corretamente!
+     
+  
+  Desenho de uma barra de saúde
+  
+    Este último exemplo cobre o desenho de uma barra de saúde para a camada GUI. Há várias maneiras de fazer isso, mas o GameMaker Studio 2 tem uma função construída especificamente para fazer barras de saúde, então é isso que estaremos usando aqui, embora
+      você pode criar seu próprio usando sprites ou formas também. Para começar, como antes, precisamos rubricar um varaible para manter o valor de saúde, então adicione o seguinte DnD™ou GML no Create Event do objeto (depois de qualquer outro código
+      que já pode estar lá):
+    
+    player_health = 100;
+    Queremos usar as teclas de seta para mudar o valor de saúde para cima ou para baixo dependendo de qual tecla de seta é pressionada, e poderíamos fazer isso adicionando em dois Teclado pressionado <Seta> eventos, porém provavelmente é mais fácil usar um Evento Passo e algum código para verificar as teclas, então vá em frente e adicione agora um Evento Passo com o seguinte DnD™ ou GML:
+    
+    if keyboard_check(vk_up) { if player_health < 100 { player_health = player_health + 1; }  }  if keyboard_check(vk_down) { if player_health > 0 { player_health = player_health - 1; }  }
+    Com isso feito, podemos de fato chegar ao desenho da barra de saúde, que é feito no evento Draw GUI, acrescentando o seguinte (depois de qualquer outra coisa que já esteja lá):
+    
+    var _xx = gui_w / 2; draw_healthbar(_xx - 50, 24, _xx + 50, 40, player_health, c_black, c_white, c_red, c_lime, 0, true, true);
+    Adicione uma instância deste objeto a uma sala se você ainda não o fez (apenas uma, no entanto!), e então pressione o botão Play . Uma vez que o jogo seja
+      rodando pressione as teclas <Up Arrow> e <Down Arrow> várias vezes para ver a mudança na saúde.
+    
+  
+   
+  Esperamos que depois de fazer estes exemplos você tenha um pouco mais de confiança ao usar o GameMaker Studio 2 e um pouco mais de compreensão de como tudo isso funciona. A próxima seção explorará como fazer com que estas coisas que você tem desenhado se movimentem pela sala
+    bem como aceitar - e responder - a contribuição do usuário.
+   
+   
+   
+  
+    
+      
+        Voltar: Índice
+        A seguir: Movimento e Controles
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,44 @@
+
+  
+  camera_destroy
+  Com esta função, você pode destruir qualquer câmera. Ao chamar a função você fornece o valor único de identificação da câmera, que você obtém das funções camera_create_* ou do view_camera se estiver usando o
+    Editor da sala para configurar o porto de vista e a vista. Você nunca deve destruir uma câmera que está atualmente atribuída a uma vista visível, a menos que você esteja atribuindo uma nova câmera a essa vista no mesmo passo, e você deve sempre destruir qualquer câmera
+    que você criou através de código quando não é mais necessário para evitar vazamentos de memória, e você também pode destruir as câmeras padrão se tiver alguma atribuída no Editor de Sala, mas você deve atribuir uma nova câmera para a porta de visualização (ou desabilitar
+    isto) caso contrário, você obterá resultados estranhos.
+   
+  Sintaxe:
+  camera_destroy(camera_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        camera_id
+        O valor único de identificação da câmera retornou quando você criou a câmera.
+      
+    
+  
+   
+  Devoluções:
+  Real (valor único de identificação da câmera)
+   
+  Exemplo:
+  camera_destroy(view_camera[0]); view_camera[0] = camera_create_view(0, 0, 640, 480, 0, obj_Player, 5, 5, -1, -1, -1);
+  O código acima destrói a câmera atualmente designada para visualizar a porta [0] e então cria uma nova câmera e atribui sua identificação a essa porta.
+   
+   
+   
+  
+    
+      
+        Voltar: Câmeras e Ver Portos
+        A seguir: camera_apply
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,43 @@
+
+  
+  repita
+  A linguagem GameMaker tem uma série de maneiras que você pode realizar loops, ou seja: ter uma declaração ou declarações iterativas sobre si mesmo um certo número de vezes. A mais simples delas é a repetição da afirmação, que tem a forma:
+  repetir (<expressão>) { <declaração>; <declaração>;... }
+  Com a repetição da afirmação dada repete-se o número de vezes indicado pelo valor arredondado da expressão. Para
+    exemplo, o seguinte cria cinco bolas em posições aleatórias:
+  repita (5) {
+     instance_create_layer(random(400), random(400), "Instances", obj_ball); }
+  
+  Isto pode ser muito útil para evitar digitar o mesmo código várias vezes, ou para usar matrizes, ou para contar através de várias operações, etc... Você também não está limitado a usar uma única declaração, e pode repetir múltiplas declarações anexando
+    dentro de parênteses encaracolados {}. Por exemplo:
+  var _x = 32; repetir (global.p_lives) { draw_sprite(spr_heart, 0, _x, 32); _x += sprite_get_width(spr_heart); }
+  O exemplo acima repete as afirmações entre colchetes por muitas iteraçõesque a variável global "vive" tenha, e cada iteração desenha
+    o duende do coração na posição _x, depois move a posição um pouco com base na largura do duende do coração.
+  Quando você deve usar um loop repeat? Sempre que você quiser repetir uma ou mais afirmações um número fixo de vezes sem nenhuma necessidade específica de manter uma contagem das iterações.
+  Vale a pena notar que você pode usar as declarações especiais break e continue dentro de um
+    repita loop também. Usando break sairá imediatamente do laço e passará para qualquer código que esteja no evento ou função depois que o laço tiver terminado, por exemplo:
+  var i = 0; var temp = 0; repetir (10) { temp += array[i]; if (temp > max_total) { break; }  else { i += 1; }  }
+  O código acima passa por 10 valores de matriz e os adiciona a uma variável local. Se o total da variável local for maior do que o valor dado para max_total, então o loop é terminado usando
+    quebra, caso contrário, o loop continuará. 
+  Um exemplo de utilização do continue em um loop repeat seria:
+  repeat(10) {  var _x = random(room_width); var _y = random(room_height); if (instance_position(_x, y, obj_Enemy) {
+     continuar;
+     }
+     instance_create_layer(_x, _y, "Instances", obj_Enemy); }
+  Este código irá repetir 10 vezes, gerando uma posição aleatória da sala e depois verificando se existe uma instância do objeto obj_Enemy nessa posição. Se existir, a iteração atual do loop é terminada usando continue e uma nova iteração é iniciada, e se não existir, então uma instância do objeto obj_Enemy é criada na posição aleatória.
+  Para mais exemplos de funções de loop, consulte as seções sobre enquanto, fazer... atée para.
+   
+   
+   
+  
+    
+      
+        Voltar: Características lingüísticas
+        Próximo: enquanto
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,44 @@
+
+  
+  Configurando o Plugin GIT 
+  Ao começar a usar o plugin GIT, precisamos configurar uma identidade para que o GIT se comprometa, o que significa que precisamos ir para a seção Plugins - Source Control (Git )
+    das Preferências e acrescente seus detalhes de autenticação.
+  Esta identidade de autenticação será usada para todos os projetos futuros, e o GameMaker Studio 2 lhe dá duas formas diferentes de configurá-la
+    para cima:
+  
+    Nome de usuário e senha: Clicando no botão " AddNew User/Pass Authentication" você verá a seguinte janela onde você pode inserir a URL do Repositório , o nome de usuário e 
+      a senha:
+      Se você quiser que isso afete apenas um repositório específico, então coloque a URL para o repositório no campo superior. Entretanto, se for
+      autenticação de domínio você quer (ou seja: "bitbucket.org" ou "github.com" ), então basta colocar o domínio e nada mais. Quando algo precisa verificar a autenticação,
+      procurará primeiro uma correspondência de repositório específica, e depois uma correspondência de domínio. Isto permitirá que você tenha uma autenticação padrão para um domínio, e posteriormente substitua com detalhes específicos para certos repositórios.
+  
+  NOTA: Se você estiver usando um repositório externo, então você deve estar usando o nome de usuário e senha associados à conta configurada para aquele repositório, mas se você estiver querendo usar um repositório local, então você pode usar qualquer nome de usuário e senha.
+  
+    Pares de chaves SSH: Clicando em " Adicionarnova autenticação de par de chaves SSH" você verá a seguinte janela onde você pode inserir a URL do Repositório e a Senha antes de dar a
+      caminhos para os arquivos de chave pública e chave privada necessários:
+      Como as autenticações de nome de usuário/senha, você pode ter autenticações específicas de domínio e repositório ao usar os pares de chaves SSH. Se você já tiver um
+      O SSH Keypair gerado, você pode definir aqui os caminhos, assim como qualquer senha necessária para acessá-los. Note que caso você precise de acesso rápido à chave pública, o botão de cópia  copiará automaticamente o conteúdo para a área de transferência para você. Se você ainda não tiver um par de chaves SSH, clicando no botão Criar KeyPair abrirá um diálogo de arquivo de onde colocar a chave privada, e
+      a chave pública será criada adjacente a ela - isto preencherá automaticamente os caminhos para as chaves públicas e privadas para você.
+  
+  Estas configurações serão agora usadas para se comunicar com o repositório (IE: Git Hub, Bit Bucket, etc. ) ao lidar com pedidos de clonagem, empurrar e puxar. No entanto, você ainda precisa configurar as opções por projeto que podem ser feitas abrindo as Opções Principais e clicando na opção Habilitar Controle de Fonte. Isto ativará o SCM para o projeto atual.
+  Uma vez ativado o controle da fonte (e aplicado), um novo menu de contexto aparecerá no topo da IDE com a seguinte opção (cada
+    do qual é explicado em mais detalhes no resto das seções deste tutorial):
+  
+  NOTA: Se você precisar editar os detalhes de autenticação novamente, basta clicar duas vezes na entrada e a janela de detalhes se abrirá para você editar, mas você não poderá renomear a URL. Se você precisar alterar a URL, então você precisará
+    para apagar os detalhes de autenticação e readmitir. Para excluir os detalhes de autenticação, clique no botão fechar à esquerda da linha na janela principal de Preferências.
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Controle da fonte
+        A seguir: Opções de Repositório 
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

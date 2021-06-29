@@ -1,0 +1,57 @@
+
+  
+  fisica_particle_draw
+  Esta função desenhará um duende na posição de todas as partículas que compartilham o mesmo valor de categoria definido pelo usuário, e que têm bandeiras que coincidem com as definidas para a máscara. O valor da máscara é definido da mesma forma que o usuário definiria o
+    bandeiras ao criar a partícula (ver a função physics_particle_create() por exemplo), ou seja: usando o bitwise ou "|" para mascarar os bits apropriados para cada bandeira.
+  NOTA: Esta função desenhará todas as partículas na simulação física com bandeiras que coincidam com as da máscara, sejam elas partículas individuais ou grupos, se a categoria do usuário for a mesma.
+  A partícula desenhada usará a cor e os valores alfa definidos quando você a criou, e girará com o momento angular da partícula. Entretanto, se você desejar escalar o duende ou alterar qualquer outra de suas propriedades desenhadas, você deve usar a função
+    physics_particle_draw_ext().
+   
+  Sintaxe:
+  physics_particle_draw(typemask, category, sprite, subimg)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        typemask
+        A máscara para comparar as bandeiras de partículas com.
+      
+      
+        categoria
+        A categoria definida pelo usuário para desenhar (use 0 para desenhar todas as categorias).
+      
+      
+        sprite
+        O duende a ser utilizado para cada partícula.
+      
+      
+        subimg
+        A imagem_index do duende a desenhar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile; physics_particle_draw(flags, 2, sprBlob, 0);
+  O código acima desenhará um duende para todas as partículas da categoria "2" definida pelo usuário que tenham as mesmas bandeiras que a máscara dada.
+   
+   
+   
+  
+    
+      
+        Voltar: Partículas macias do corpo
+        A seguir: physics_particle_draw_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

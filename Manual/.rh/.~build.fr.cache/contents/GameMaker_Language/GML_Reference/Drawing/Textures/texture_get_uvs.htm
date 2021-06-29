@@ -1,0 +1,53 @@
+
+  
+  textura_get_uvs
+  Esta função retorna uma matriz 1D com 4 elementos que representam as coordenadas UV para a imagem na página de textura, preenchendo a matriz com os seguintes valores:
+  
+    [0] = esquerda
+    [1] = topo
+    [2] = direito
+    [3] = fundo
+    [4] = quantidade de pixels que o compilador de bens aparou do lado esquerdo dos sprites (somente bens sprite)
+    [5] = quantidade de pixels que o compilador de bens aparou do lado superior dos sprites (somente bens sprite)
+    [6] = porcentagem normalizada de dados de pixels da largura original dos sprites que foi salva na página de textura (somente ativos sprite)
+    [7] = porcentagem normalizada de dados de pixels da altura original dos sprites que foi salva na página de textura (somente ativos sprite)
+  
+  Este valor pode então ser usado em outras funções de desenho, particularmente em geral 3D e algumas das funções 2D primitivas, assim como as funções Shader. Se você precisar do UVS para um duende, então você pode usar o sprite_get_uvs() e
+    para uma fonte, font_get_uvs().
+   
+  Sintaxe:
+  text_get_uvs(texid)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        texid
+        A vantagem da imagem para obter a textura de
+      
+    
+  
+   
+  Devoluções:
+  1D Array (4 - 8 elementos)
+   
+  Exemplo:
+  var tex = text_get_uvs(surf_back); tex_left = tex[0]; tex_top = tex[1]; tex_right = tex[2]; tex_left = tex[3];
+  O código acima armazenará as coordenadas UV para a textura da superfície em uma matriz local e então atribuirá os valores às variáveis de instância.
+   
+   
+   
+  
+    
+      
+        Voltar: Texturas
+        A seguir: textura_set_set_stage
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

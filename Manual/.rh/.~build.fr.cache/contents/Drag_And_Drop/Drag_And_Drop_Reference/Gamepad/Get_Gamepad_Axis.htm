@@ -1,0 +1,52 @@
+
+  
+   Obter o eixo Gamepad
+  Você pode usar esta ação para obter o valor dos diferentes eixos de um determinado gamepad. Você fornece o índice do gamepad (este é o número de "slots" que um gamepad ocupa) e seleciona o eixo para verificar a partir da vara esquerda ou direita, horizontal
+    ou vertical. O valor retornado será entre -1 e 1 para cada um dos eixos horizontais e verticais disponíveis: -1 é para a esquerda e 1 é para a direita para o eixo horizontal, e -1 é para cima e 1 é para baixo para o eixo vertical. Este valor retornado será armazenado em
+    a variável alvo que você fornece para uso futuro, que você pode sinalizar como uma variável "Temp", significando que a ação criará uma nova variável temporária (local) para manter o valor de retorno para você, como mostrado no exemplo abaixo.
+  Vale notar que o ajuste da zona morta para o eixo do bastão não afetará o valor retornado, que será sempre entre -1 e 1. Por exemplo, ajustar a zona morta para 0,2 significará que o empurrão
+    a vara direita só começará a retornar um valor de 0 - 1 quando o valor do eixo bruto for superior a 0,2 - então quando o valor bruto for 0,2, o valor de retorno será 0, quando o valor bruto for 0,5, o valor de retorno será 0,375, ou se o valor bruto
+    é 0,9, então o valor de retorno seria de 0,875.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Gamepad
+        O índice gamepad.
+      
+      
+        Eixo
+        O eixo a verificar (vara esquerda/ vara direita, horizontal/vertical)
+      
+      
+        Meta
+        A variável alvo para armazenar o valor retornado.
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima cria duas variáveis locais (temporárias) e então armazena o atual
+    valores para o eixo horizontal e vertical do bastão esquerdo do tabuleiro de jogo. Estes valores são então usados para definir a direção da instância.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações Gamepad
+        A seguir: Gamepad Get Trigger
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

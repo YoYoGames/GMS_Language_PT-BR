@@ -1,0 +1,45 @@
+
+  
+  physics_set_restitution
+  Quando você amarra um acessório a uma instância usando physics_fixture_bind() isto retorna um "id" para a fixação do limite. Você pode usar este id para definir o valor de restituição do fixador vinculado, não o fixador "base", a qualquer momento usando esta função. A restituição é normalmente definida como um valor entre 0 e 1, mas você pode usar valores mais altos se necessário, embora os resultados possam ser imprevisíveis.
+   
+  Sintaxe:
+  physics_set_restitution(fixture, restitution)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fixação
+        a identificação da fixação do limite
+      
+      
+        restituição
+        o novo valor de restituição a aplicar
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var descanso = physics_get_restitution(fix_id); physics_set_restitution(fix_id, descanso * 2);
+  O código acima obtém o valor de restituição atual para as propriedades físicas vinculadas da instância e depois as define para um valor diferente.
+   
+   
+   
+  
+    
+      
+        Voltar: Instalações
+        A seguir: physics_fixture_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

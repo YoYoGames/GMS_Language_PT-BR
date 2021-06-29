@@ -1,0 +1,113 @@
+
+  
+  Preferências do editor da sala
+  
+  As Preferências do Editor de Sala são usadas para definir como o Editor de Sala irá se parecer e se comportar. As configurações gerais são as seguintes:
+  
+    Adistância inicial da corrente desvanece-se (px): Define a distância a partir da janela principal para que o elo da corrente se desvaneça. O valor padrão é 10px.
+    Adistância de parada da corrente desvanece-se (px): Define a distância da janela principal para o elo da corrente até o fim do desbotamento. O valor padrão é 100px.
+    Cadeia Alfa Mínima: Define o valor alfa final após o ponto de queda para o ponto de queda da cadeia alfa. O valor padrão é 0,3.
+    Espaçamento de profundidade da camada padrão: Quando você cria várias camadas no editor da sala, é automaticamente atribuída uma profundidade com base em sua posição dentro da lista de camadas. Esta profundidade é incrementada pela quantidade dada aqui. O padrão
+      valor é 100, portanto cada camada será camada anterior + 100 de profundidade.
+    Largura padrão da sala: Define a largura inicial que será selecionada como padrão para uma nova sala. O padrão é 1024px.
+    Altura padrão da sala: Define a altura inicial que será selecionada como padrão para uma nova sala. O padrão é 768px.
+    Adicionar camadas de sala padrão: Quando você criar qualquer novo recurso de sala, o GameMaker Studio 2 irá gerar um par de camadas "base" para você - uma camada de fundo e uma camada de instância. Você pode desativar esse comportamento aqui para que
+      As novas salas não terão camadas pré-fabricadas. Isto é feito por padrão.
+    Vista da sala de exposição: Se você tiver vistas ativas dentro de uma sala, isto é mostrado por um esboço onde os limites da vista estariam dentro da sala, e a visibilidade desta área pode ser alternada usando o botão dedicado no próprio editor.
+      Entretanto, você pode optar por ter os limites de visualização invisíveis ao abrir uma sala, desmarcando esta opção (o botão ainda pode ser usado para mostrá-los novamente). O valor padrão está ativado, tornando os limites de visualização visíveis quando você abre uma sala.
+    Opções gerais de cores: Estas estão relacionadas às diferentes cores que são usadas em toda a interface do editor da sala, e se você clicar duas vezes em qualquer uma das amostras, você pode editar a cor para aquela configuração.
+    Ajuste do volume mestre: O ajuste do volume mestre para reprodução prévia no Editor de Sala, um valor entre 0 e 1. O padrão é 1.
+  
+  Outras opções estão disponíveis para edição a partir das sub-categorias listadas abaixo:
+  Confirmar Diálogos
+  
+    
+    As preferências do Confirm Dialogs são usadas para alterar as mensagens que são mostradas no editor da sala quando você executa certas ações. As mensagens que você pode alterar são:
+    
+      Resposta automática à atualização das profundidades das camadas: quando você muda as profundidades das camadas, uma mensagem é mostrada para avisá-lo de que ao fazer isso, você também atualizará automaticamente todas as outras profundidades das camadas. Com esta opção, você pode optar por ter a mensagem
+        mostrar, faça com que ele atualize as camadas como se você tivesse clicado "Ok", ou não atualize nada como se você tivesse clicado "Não".
+      Resposta automática ao aviso de bloqueio por camadas: Se você tentar apagar uma camada na sala e ela por acaso estiver bloqueada, será exibida uma mensagem por padrão. No entanto, se você definir esta opção como "Ok", não será mostrada a mensagem e
+        apenas não deixar apagar a camada.
+      Resposta automática ao aviso de item bloqueado:  Se você tentar excluir um item que esteja bloqueado, será exibida uma mensagem por padrão. No entanto, ao definir esta opção para "Ok", não será mostrada a mensagem e
+        apenas não deixar apagar o item.
+      Resposta automática ao aviso de bloqueio da camada do proprietário do item: Se você tentar excluir um item em uma camada e a camada estiver bloqueada (mesmo que o item não esteja), então lhe será mostrada uma mensagem por padrão para informá-lo de que não pode
+        ser feito. No entanto, ao definir esta opção para "Ok", a mensagem não será mostrada e simplesmente não será permitido apagar o item.
+      Criar nova camada de ativos ao arrastar seqüências/prites para camadas inadequadas: Se você tentar adicionar um sprite (ou uma seqüência) a uma camada que não seja uma camada de ativos, então lhe será mostrada uma mensagem por padrão para informá-lo de que ela não pode
+        ser feito e perguntar se você deseja criar uma nova camada de ativo para o item sendo arrastado. Entretanto, a configuração desta opção para "Ok" não mostrará a mensagem e criará automaticamente uma nova camada para sprites (e seqüências).
+      Resposta automática à exclusão de itens da sala mãe: Aqui você pode escolher o que acontece quando você apaga um item que faz parte de um quarto dos pais (e assim presente em todos os quartos de crianças). O padrão é mostrar-lhe uma mensagem de aviso e permitir que você
+        decidir o que fazer, mas você pode defini-lo como "Apagar tudo" para suprimir a mensagem e prosseguir com o item apagar do quarto dos pais e de todos os seus filhos, ou você pode selecionar "Manter tudo" para suprimir a mensagem abortar a exclusão.
+      Resposta automática à exclusão da camada da sala mãe: Aqui você pode escolher o que acontece quando você elimina uma camada que faz parte de um quarto dos pais (e assim presente em todos os quartos das crianças). O padrão é mostrar-lhe uma mensagem de aviso e permitir que você
+        decidir o que fazer, mas você pode definir "Apagar tudo" para suprimir a mensagem e ir em frente com a camada apagar do quarto dos pais e de todos os seus filhos, ou você pode selecionar "Manter tudo" para suprimir a mensagem abortar a exclusão.
+      Resposta automática a erro de arraste de ativo inválido: Se você tentar adicionar um ativo a uma camada que não é designada como sendo para esse tipo de ativo (como adicionar um caminho a uma camada de instância), então lhe será mostrada uma mensagem por padrão para
+        informar que isso não pode ser feito. No entanto, a configuração desta opção para "Ok" não mostrará a mensagem e simplesmente não permitirá que você acrescente o ativo. Note que esta opção não se aplica a instâncias, sprites ou seqüências.
+      Criar nova camada de instância ao arrastar objetos em camadas inadequadas: Se você tentar adicionar uma instância de objeto a uma camada que não seja uma camada de instância, então lhe será mostrada uma mensagem por padrão para informá-lo de que ela não pode ser
+        feito e perguntar se você deseja criar uma nova camada de instância para o item que está sendo arrastado. No entanto, definir esta opção para "Ok" não mostrará a mensagem e criará automaticamente uma nova camada para a instância.
+      Resposta automática ao erro de arrasto de seleção de camada inválida: Aqui você pode escolher o que acontece quando você arrasta um recurso para o editor da sala quando você selecionou várias camadas no editor de camadas (ou não selecionou nenhuma camada
+        em absoluto). O padrão é mostrar uma mensagem de aviso, mas você pode definir esta opção como "OK" para suprimir a mensagem e continuar, sem adicionar nenhum recurso.
+      Resposta automática a erro de arraste de camada bloqueada ou invisível: Aqui você pode escolher o que acontece quando você arrasta um recurso para uma camada que foi bloqueada ou que está marcada como invisível. O padrão é mostrar uma mensagem de aviso, mas você
+        pode definir esta opção para "OK" para suprimir a mensagem e continuar, sem acrescentar nenhum recurso.
+    
+     
+    
+  
+  Configurações da grade
+  
+    
+      
+    O
+      As preferências de Grid Settings são usadas para mudar a forma como a sobreposição da grade funciona, com as seguintes opções disponíveis:
+    
+      
+       Espaçamento horizontal da grade (px): Isto irá definir o espaço horizontal para as células da grade da sala em pixels. O valor padrão é 32px.
+      
+       Espaçamento vertical da grade (px): Isto irá definir o espaço vertical para as células da grade da sala em pixels. O valor padrão é 32px.
+      
+       Grade de exibição: Esta opção irá ligar ou desligar a grade da sala quando você abrir uma sala pela primeira vez. Ela está ligada por padrão, mas mesmo que esteja desligada, você pode ativá-la novamente usando o botão apropriado no próprio editor da sala.
+      
+       Pronto para a rede: Com esta opção, você pode definir se uma sala terá ativos snap to the room grid por padrão ou não, quando uma sala é aberta inicialmente. Ela está ligada por padrão, mas mesmo que esteja desligada, você pode habilitá-la novamente usando
+        o botão apropriado no próprio editor da sala.
+      
+       Cor da linha de grade: Esta opção permite definir a cor (incluindo o componente alfa) das linhas de grade da sala. O valor padrão é (
+       ARGB) #30FFFFFF.
+    
+    
+      
+  
+  Guias inteligentes
+  
+    
+      
+    Esta seção detalha o
+     Preferências de Guias Inteligentes para o Editor da Sala. As opções disponíveis são:
+    
+      
+       Habilitar guias inteligentes: Isto é usado para ativar/desativar o uso de guias inteligentes no Editor de Sala. O padrão é ativado.
+       
+      
+       Habilitar as Réguas: Esta opção ativará/desativará as réguas laterais no Editor de Sala. O padrão está habilitado.
+       
+      
+       Réguas de corte para bordas: Quando ativada, esta opção irá encaixar guias arrastadas para o editor da sala a partir das réguas para qualquer ativo colocado na sala. A opção padrão está ativada.
+       
+      
+       Distância instantânea: Esta configuração diz ao Editor de Sala a que distância um guia tem que estar de um bem antes de "estalar" para o lado do bem. O valor padrão é 6px.
+       
+    
+    
+      
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Preferências IDE
+        A seguir: Preferências do Editor Spline
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

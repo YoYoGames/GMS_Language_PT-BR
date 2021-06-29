@@ -1,0 +1,52 @@
+
+  
+  xboxlive_matchmaking_session_get_users
+  Esta função criará e preencherá um mapa DS com os detalhes dos usuários na sessão especificada, ou -1 se houver um erro. Você pode obter o ponteiro de identificação da sessão a partir do async_load    Mapa DS que é retornado no Evento Social Assíncrono quando você criou ou encontrou uma sessão (veja xboxlive_matchmaking_create()    para mais detalhes). O mapa DS devolvido terá os seguintes pares chave/valor:
+  
+    "num_resultados" - contém o número de usuários na sessão
+    "userId<index> "- contém o ID do usuário (< index> é um valorde 0 a "num_resultados" - 1)
+    "userIsOwner<index> "- contém 1 se o usuário for o host, caso contrário 0 (< index> é um valorde 0 a "num_resultados" - 1)
+  
+   
+  Sintaxe:
+  xboxlive_matchmaking_session_get_users(session_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        session_id
+        O ponteiro de identificação da sessão a ser usada
+      
+    
+  
+   
+  Devoluções:
+  Solicitar ID (número inteiro)
+   
+  Exemplo:
+  var session_map = xboxlive_matchmaking_session_get_users(global.SessionID); if (session_map != -1) {
+     for (var i = 0; i < session_map[? "num_results"]; i++) {
+     if (session_map[? "userIsOwner" + string(i)] == 1) {
+     global.OwnerID = session_map[? "userId" + string(i)]; }
+     }
+     }
+  
+  O acima mencionado recuperará os dados do usuário para todos os usuários participantes da sessão de matchmaking e definirá uma variável global para a identificação do proprietário da sessão.
+   
+   
+   
+  
+    
+      
+        Voltar: Fósforos
+        Próximo: xboxlive_matchmaking_join_session
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

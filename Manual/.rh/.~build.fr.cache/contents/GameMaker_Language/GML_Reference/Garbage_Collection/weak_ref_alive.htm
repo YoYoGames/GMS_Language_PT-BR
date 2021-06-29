@@ -1,0 +1,43 @@
+
+  
+  Ref_ref_create fraco
+  Com esta função você pode verificar a fraca referência a uma estrutura para ver se ela ainda está "viva" ou não. Você fornece a referência fraca para verificar (como retornado pela função
+    weak_ref_create()), e a função retornará true se a estrutura ainda estiver sendo referenciada em algum lugar ou false se não estiver e tiver sido recolhido lixo.
+      Note que se você fornecer um valor que não seja uma referência fraca, a função retornará undefined.
+   
+  Sintaxe:
+  weak_ref_alive(weak_ref);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Ref_fraqueza
+        A fraca referência à estrutura que você deseja verificar.
+      
+    
+  
+   
+  Devoluções:
+  Booleano (ou indefinido)
+   
+  Exemplo:
+  if weak_ref_alive(inventory_ref) { inventory = -1; }
+  O código acima verifica uma referência fraca a uma estrutura e, se ainda estiver viva, a variável de referência é definida como -1, desreferenciando a estrutura e permitindo que seja coletado o lixo.
+   
+   
+   
+  
+    
+      
+        Voltar: Coleta de Lixo
+        A seguir: weak_ref_any_alive
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

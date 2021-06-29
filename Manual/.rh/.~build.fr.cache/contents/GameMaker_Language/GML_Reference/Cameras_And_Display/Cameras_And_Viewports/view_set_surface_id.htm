@@ -1,0 +1,50 @@
+
+  
+  view_set_surface_id
+  Com esta variável, você pode definir o conteúdo de uma porta de visão para desenhar em uma superfície. Quando se trabalha com superfícies, muitas vezes é necessário capturar toda a região visível da tela para a superfície, e assim você a atribuiria a uma porta de visualização usando
+    esta função. Isto significa que tudo que é mostrado na vista do porto escolhido será agora atraído para a superfície designada e o conteúdo dessa vista do porto não será mais exibido, o que significa que você precisará de uma ou outra:
+  
+    Permitir uma nova visão e desenhar a superfície somente nessa visão (usando view_current para verificar qual visão está sendo desenhada)
+    Desenhe a superfície no evento Draw GUI de uma instância, uma vez que a camada GUI é independente das vistas.
+  
+  Ao usar esta função você dá o índice da porta de visualização (de 0 a 7) e um índice de superfície (ou o aplicação_surface ou o valor de índice único retornado pela função surface_create())
+    ou, se uma superfície foi previamente atribuída e você deseja removê-la, um valor de -1. Para mais informações sobre como definir a porta de visualização para uma superfície, veja também a variável view_surface_id.
+   
+  Sintaxe:
+  view_set_surface_id(view_port, surf)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        view_port
+        O porto de visão para o alvo (0 - 7)
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  if view_get_surface_id(0) == -1 {
+     view_set_surface_id(0, global.vSurf); }
+  
+  O código acima verificará se uma superfície foi atribuída à porta de visualização[0] e se não foi atribuída, então uma é atribuída.
+   
+   
+   
+  
+    
+      
+        Voltar: Câmeras e Ver Portos
+        Próximo: camera_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

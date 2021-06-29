@@ -1,0 +1,60 @@
+
+
+
+
+
+  
+  fisica_test_overlap
+  Esta função pode ser usada para verificar e ver se um corpo físico (ou seja: a fixação de uma instância) se sobrepõe, ou se irá sobrepor, quando girado e colocado em uma determinada posição na sala. o argumento do "ângulo" é o
+    ângulo de rotação que a instância chamadora tem (ou terá) na posição a ser verificada, e o argumento "obj" pode ser ou uma única instância id, e índice de objeto ou o palavras-chave todos ou outros.
+   
+  Sintaxe:
+  physics_test_overlap(xpos, ypos, angle, obj);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        xpos
+        A posição x na sala para verificar
+      
+      
+        ypos
+        A posição y na sala para verificar
+      
+      
+        ângulo
+        O ângulo a ser verificado (da instância de chamada)
+      
+      
+        obj
+        O objeto a ser verificado para
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if physics_test_overlap(x+20, y-35, 0, obj_Bomb) {
+     alarm[0] = room_speed; ignited = true; }
+  
+  O código acima verificará uma posição para uma sobreposição de uma fixação física e, se houver, definirá uma variável e um alarme.
+   
+   
+   
+  
+    
+      
+        Voltar: Física
+        A seguir: propriedades_massa_física
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

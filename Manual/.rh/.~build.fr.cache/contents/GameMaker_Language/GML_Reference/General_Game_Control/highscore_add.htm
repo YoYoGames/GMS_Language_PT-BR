@@ -1,0 +1,50 @@
+
+  
+  highscore_add
+  Com esta função, você pode adicionar um nome e uma pontuação à lista interna de pontuação máxima global. Não há necessidade de verificar o valor para ver se ele é alto o suficiente para entrar na lista de pontuação, pois o GameMaker Studio 2 apenas armazenará
+    aqueles valores que são maiores do que a décima posição armazenada.
+   
+  Sintaxe:
+  highscore_add(str, dormente);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        str
+        A cadeia (nome) para atribuir a pontuação a
+      
+      
+        dormente
+        O número (pontuação) a adicionar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se vive = 0 {
+     highscore_add(global.Nome, pontuação); pontuação = 0; room_goto(rm_MainMenu);
+     }
+  
+  O código acima verificará as vidas e, se elas estiverem em 0, adicionará a pontuação atual e a string mantida na variável global "Name" à lista de pontuação alta, antes de finalmente definir a pontuação em 0 e enviar o jogador para a sala
+    indexados em "rm_MainMenu".
+   
+   
+   
+  
+    
+      
+        Voltar: Controle geral do jogo
+        Próximo: highscore_name
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

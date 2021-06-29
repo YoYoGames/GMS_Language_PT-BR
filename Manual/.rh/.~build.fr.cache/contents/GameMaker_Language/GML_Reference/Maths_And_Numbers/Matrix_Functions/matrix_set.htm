@@ -1,0 +1,71 @@
+
+
+
+
+
+  
+  matriz_set
+  Esta função toma uma matriz de 16 valores, correspondentes a um determinado tipo de matriz 4x4, onde os elementos [0 - 3] seriam a linha 1, os elementos [4 -7] seriam a linha 2, etc... (veja a imagem na página principal).
+    Você pode criar tal matriz usando a matrix_build() ou matrix_get() funções ou simplesmente construindo você mesmo a matriz e passando-a para a função. A matriz disponível
+    tipos são visão, projeção e mundo, para os quais você usaria uma das constantes a seguir:
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        matrix_view
+        A matriz de visão atual
+      
+      
+        matrix_projection
+        A matriz de projeção atual
+      
+      
+        matrix_world
+        A matriz mundial atual
+      
+    
+  
+   
+  Sintaxe:
+  matrix_set(tipo, matriz);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tipo
+        O tipo de matriz para obter os valores de (ver as constantes listadas acima)
+      
+      
+        matriz
+        Os dados da matriz como uma matriz
+      
+    
+  
+   
+  Devoluções:
+  NA
+   
+  Exemplo:
+  matrix_set(matrix_world, m_array);
+  O código acima definirá os valores da matriz mundial atual para aqueles armazenados na matriz de matriz "m_array".
+   
+   
+   
+  
+    
+      
+        Voltar: Funções da Matriz
+        Próximo: matrix_build
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

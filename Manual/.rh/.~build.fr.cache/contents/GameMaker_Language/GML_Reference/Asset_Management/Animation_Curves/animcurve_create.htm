@@ -1,0 +1,39 @@
+
+  
+  animcurve_create
+  Esta função criará uma estrutura de curva de animação vazia, pronta para você povoar com dados de canal. A função retornará um ponteiro para a estrutura e este será então usado para adicionar canais
+    e outros dados para a curva de animação. Você também pode fornecer isto para funções como animcurve_get() para mais tarde obter os dados da curva.
+  Quando você usar esta função, a estrutura criada não terá dados nela, e para usá-la você deve adicionar pelo menos um canal e o canal deve ter pontos adicionados a ele. Para adicionar um canal, veja a função animcurve_channel_new(),
+    e para adicionar pontos ao canal, veja a função animcurve_point_new(). Além disso, você pode dar à curva de animação um nome definindo a variável "name" (como mostrado em
+    o código de exemplo, abaixo). Os canais adicionados a uma nova curva de animação devem ser adicionados como uma matriz, onde cada item da matriz faz referência a uma estrutura de canal, e os pontos em um canal também devem ser adicionados
+    como uma matriz, onde cada item da matriz faz referência a uma estrutura de pontos.
+  Observe que as curvas de animação criadas dessa forma devem ser apagadas quando não forem mais necessárias, pois ocuparão espaço na memória caso contrário, o que pode levar a um vazamento de memória, diminuindo a velocidade e, por fim, quebrando seu jogo.
+    Você pode remover uma curva de animação quando não for mais necessário, usando a função animcurve_destroy(). Você não precisa limpar nenhum canal ou ponto de dados dentro da curva, pois isso será feito
+    pelo coletor de lixo automaticamente quando a própria curva é destruída.
+   
+   
+  Sintaxe: 
+  animcurve_create();
+   
+  Devoluções: 
+  Referência Estrutural
+   
+  Exemplo: 
+  my_curve = animcurve_create(); my_curve.name = "My_Curve"; var _channels = array_create(1); _channels[0] = animcurve_channel_new(); _channels[0].name = "alpha"; _channels[0].type = animcurvetype_catmullrom; _channels[0].iterações = 8; var _points = array_create(3); _points[0] = animcurve_point_new(); _points[0].posx = 0; _points[0].value = 0; _points[1] = animcurve_point_new(); _points[1].posx = 0.5; _points[1].value
+    = 1; _pontos[2] = animcurve_point_new(); _pontos[2].posx = 1; _pontos[2].valor = 0; _canais[0].pontos = _pontos; my_curve.channels = _canais;
+  O código acima cria uma nova estrutura de curva de animação e a armazena na variável "my_curve". Esta estrutura é então preenchida com um nome e uma matriz de canais. A matriz de canais contém um único canal com três pontos.
+   
+   
+   
+  
+    
+      
+        Voltar: Curvas de Animação
+        Próximo: animcurve_channel_new
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

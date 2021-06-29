@@ -1,0 +1,53 @@
+
+  
+  tampão_peek
+  Com o buffer_read() você pode ler os dados do buffer dado na posição "procurar" atual, com cada pedaço de dado sendo lido avançando esta posição pelos bytes lidos ou escritos.
+    Entretanto, pode ser necessário que você leia um determinado dado sem querer alterar a posição atual de busca, e é quando você usaria esta função. Você simplesmente fornece a função com um buffer id, e então uma posição offset (de
+    o buffer start) dentro desse buffer para ler, assim como o tipo de dados que você está querendo ler.
+  NOTA: O uso do tipo de dados incorretos para os dados que estão sendo lidos resultará em valores errôneos!
+  Se a função tiver sucesso, então um valor (Real, string, int, etc...) será retornado dependendo do tipo de dado, enquanto uma falha retornará simplesmente 0.
+   
+  Sintaxe:
+  buffer_peek(buffer, offset, tipo);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O índice do buffer a ser utilizado.
+      
+      
+        offset
+        A posição de offset (em bytes) dentro do buffer para ler os dados fornecidos.
+      
+      
+        tipo
+        O tipo de dados que devem ser lidos do buffer (ver a lista de constantes aqui).
+      
+    
+  
+   
+  Devoluções:
+  Real/Calça ou 0 se falhar.
+   
+  Exemplo:
+  var vermelho = buffer_peek(buff, 1, buffer_u8); var verde = buffer_peek(buff, 2, buffer_u8); var azul = buffer_peek(buff, 3, buffer_u8); image_blend = make_colour_rgb(vermelho, verde, azul);
+  O código acima obterá três valores de três posições diferentes dentro do buffer indexado na variável "buff" e então usará esses valores para definir a mistura da imagem da instância.
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: buffer_poke
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

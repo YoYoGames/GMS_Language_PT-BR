@@ -1,0 +1,46 @@
+
+  
+  sprite_duplicate
+  Esta função retornará o índice de um sprite recém-criado que é uma duplicata (cópia) de uma entrada como o argumento "índice". Se a função falhar, -1 é retornado. Esta função deve ser usada para copiar qualquer
+    Sprites dos ativos originais antes que qualquer transformação possa ser feita neles. Por exemplo, se você deseja trocar a caixa de delimitação por um duende, ou definir seu alfa de outro duende, você deve primeiro duplicá-lo, depois realizar a operação no
+    duplica o sprite e usa-o. Um sprite duplicado será colocado em sua própria página de textura única quando criado, o que significa que duplicar múltiplos sprites criará múltiplas páginas de textura e terá um impacto no desempenho, portanto use apenas esta função
+    quando necessário.
+  NOTA: Quando você duplica um duende no GameMaker Studio 2, você deve se lembrar de removê-lo novamente (com sprite_delete())
+    quando não for mais necessário, caso contrário há o risco de um vazamento de memória que irá retardar e, eventualmente, quebrar seu jogo.
+   
+  Sintaxe:
+  sprite_duplicate(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do duende a duplicar.
+      
+    
+  
+   
+  Devoluções
+  Real (valor único de identificação sprite)
+   
+  Exemplo:
+  new_spr = sprite_duplicate(sprite_index)
+  O código acima duplica o sprite atualmente em uso como índice sprite da instância e armazena o índice para este novo sprite na variável "new_spr".
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação de Sprite
+        Próximo: sprite_assign
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

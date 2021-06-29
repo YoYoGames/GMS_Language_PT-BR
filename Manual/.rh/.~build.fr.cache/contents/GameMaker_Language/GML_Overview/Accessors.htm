@@ -1,0 +1,137 @@
+
+  
+  Accessors
+  A linguagem GameMaker(GML) também permite que você acesse certas estruturas de dados e arrays através do uso de expressões lógicas chamadas acessores. Isto
+    é estruturado de forma semelhante à de quando você normalmente trabalha com um array, apenas usamos um símbolo identificador antes do primeiro argumento para dizer ao GameMaker Studio 2 que você está trabalhando em uma estrutura de dados (previamente criada) ou no array
+    literalmente.
+   
+  Listas DS [| ]
+  
+    A sintaxe das listas DS é:
+    list_index[| index]
+    Assim, quando você tiver usado ds_list_create() para criar sua lista, você usaria o índice da lista (que você armazenou em uma variável) para referenciá-lo, sendo o valor "índice" a posição na lista a ser definida ou adicionada. Por exemplo, o valor
+      O código seguinte cria uma lista e depois adiciona 10 entradas, definindo cada entrada como um número aleatório de 0 a 9:
+    ds = ds_list_create(); var index = 0; repeat(10)
+       {
+       ds[| index++] = irandom(9); }
+    
+    Observe que se você estiver usando uma expressão para adicionar uma referência a um índice que já tem um valor, o valor anterior será substituído em vez de ter um índice adicional adicionado à lista. Para adicionar mais entradas, você precisaria saber o tamanho do ds_list
+      e adicioná-los ao final. Vale ressaltar também que você pode definir um índice de lista maior do que o tamanho da lista que está sendo referenciada, e isso definirá esse valor, expandindo a lista ao mesmo tempo e inicializando todas as posições
+      na lista até o índice dado como 0.
+    Uma vez criada a estrutura de sua lista e preenchida com dados, para obter valores da lista, você teria algo parecido:
+    valor = ds[| 5];
+    O acima receberá o valor da posição 5 (o sexto índice, já que as listas começam em 0) e o armazenará em uma variável. Se você fornecer uma posição que esteja fora do tamanho da lista, então o valor indefinido será devolvido, o que você pode verificar se
+      usando a função is_undefined().
+     
+  
+  DS Maps [? ]
+  
+    A sintaxe dos mapas DS é:
+    map_index[? key]
+    Depois de criar seu mapa com ds_map_create(), você usaria o índice do mapa que você armazenou em uma variável para referenciá-lo, sendo o valor "chave" a chave do mapa a ser definida ou obtida. Por exemplo, o seguinte código cria um mapa e
+      então acrescenta algumas entradas a ele usando esta sintaxe:
+    ds = ds_map_create(); ds[? "Nome"] = "Hamish"; ds[? "Empresa"] = "MacSeweeny Games"; ds[? "Jogo"] = "Catch The Haggis";
+    Observe que se o mapa já contém o mesmo valor chave que você está tentando adicionar, ele não criará uma chave duplicada com o novo valor, mas sim o valor anterior será substituído.
+    Uma vez criada sua estrutura de mapa e preenchida com dados, para obter valores de uma chave de mapa específica, você teria algo assim:
+    valor = ds[? "Nome"];
+    O acima mencionado receberá o valor da chave "Nome" e o armazenará em uma variável, mas esteja ciente de que se a chave dada não existir no mapa DS, então o valor retornado será indefinido. Isto pode ser verificado para usar a função
+      is_undefined().
+     
+  
+  Grades DS [# ]
+  
+    A sintaxe da grade DS é:
+    grid_index[# xpos, ypos]
+    Depois de criar sua grade com a função ds_grid_create(), você usaria o índice da grade que você armazenou em uma variável para referenciá-la, sendo "xpos" e "ypos" a posição dentro da grade para obter ou definir
+      um valor. Por exemplo, o seguinte código cria uma grade, limpa-a para 0 e depois adiciona algumas entradas a ela:
+    ds = ds_grid_create(); ds_grid_clear(ds, 0); var gw = ds_grid_width(ds) - 1; var gh = ds_grid_height(ds) - 1; repeat(10)
+       {
+       var xx = irandom(gw); var yy = irandom(gh); if (ds[# xx, yy] == 0) {
+       ds[# xx, yy] = 1; }
+       }
+    
+    Uma vez criada sua estrutura de grade e preenchida com dados, para obter valores de uma posição específica da grade, você teria algo parecido:
+    valor = ds[# mouse_x div 16, mouse_y div 16];
+    O acima receberá o valor do ds_grid dado com base na posição do mouse (dividido pela largura da "célula" na sala para obter a localização correta). Se você fornecer uma posição que esteja fora dos limites da grade, então o valor indefinido será devolvido, o que você pode verificar para usar a função is_undefined().
+     
+  
+  Arrays [@ ]
+  
+    As arrays também têm seus próprios acessores que funcionam de forma similar aos listados acima para estruturas de dados. Entretanto, os acessores de array têm uma propriedade interessante e que é permitir que você modifique um array de uma função ou método de script sem ter que copiá-lo. Quando você passa um array para uma função, ele é passado por referência, o que significa que o array em si não está sendo dado no script, mas é simplesmente
+      ser referenciado para obter os dados. Normalmente, se você precisar mudar o array, ele seria copiado para o script e então você precisaria passar de volta (devolver) o array copiado para que o array original fosse atualizado. Isto pode ter um custo alto.
+      de processamento, e assim você pode usar o acessor em seu lugar, pois isso mudará a matriz original diretamente sem a necessidade de ser copiada. Você pode ver como isto funciona nos exemplos abaixo.
+    A sintaxe para as arrays é:
+    array[@ xpos]
+    Após ter criado seu array em uma instância, você pode então passá-lo para um script por referência e usar o acessor @ para mudá-lo diretamente. Por exemplo, você criaria a array e chamaria a diversão assim:
+    array[99] = 0; array_populate(array);
+    
+    A função em si teria algo assim:
+    function array_populate(_array) { var a = _array; var i = 0; repeat(25) { i = irandom(99); while (a[i] != 0) { i = irandom(99); }  
+        a[@ i] = 100; }  }
+    Tudo o que esta função está fazendo é selecionar 25 posições aleatórias na matriz e definir o valor da posição da matriz escolhida para 100.
+    NOTA: Você não pode usar o acessor de array @ ao trabalhar com o array argument[n] em funções de script.
+     
+     
+  
+  Estruturas [$ ]
+  
+    A sintaxe para as estruturas é
+    estrutura [$ "nome"]
+    Este acessor é essencialmente um invólucro para as funções variable_struct_get() e variable_struct_set(),
+      e você o usaria muito parecido com o acessor para um mapa DS. Por exemplo, se você criou uma estrutura e quer recuperar um valor de uma variável chamada "my_health", então você o faria:
+    
+    var _hp = struct[$ "minha_saúde"];
+    Como você pode ver, você não fornece a variável em si, mas sim um fio com a variável. Note que se a estrutura não tiver uma variável com o nome dado, então o acessor retornará undefined como
+      o valor.
+    Para definir uma variável em uma estrutura, você faria o seguinte
+    structure[$ "my_score"] = 100;
+    Como na obtenção de um valor, você fornece o nome da variável a ser definida como uma string, e ela será definida para o valor dado. Se o nome da variável utilizada não existir na estrutura, então ela será criada e definida para o valor dado.
+    
+  
+   
+  Uma característica importante dos acessores é o fato de que eles podem ser acorrentados juntos. Isto significa que se você tiver várias estruturas de dados e/ou matrizes aninhadas, não há mais a necessidade de usar uma variedade de funções para obter acesso a um valor que
+    está profundamente dentro da estrutura aninhada. Por exemplo, digamos que você tenha uma matriz, e cada item da matriz é uma lista DS, como esta:
+  array = array_create(3); for (var i = 0; i < 3; ++i;) {
+     array[i] = ds_list_create(); switch(i)
+     {
+     case 0: com (obj_Wall) ds_list_add(array[i], id); break;
+     caso 1: com (obj_Door) ds_list_add(array[i], id); pausa;
+     caso 2: com (obj_Chest) ds_list_add(array[i], id); pausa;
+     }
+     }
+  
+  No código acima, criamos uma matriz de 3 itens e atribuímos uma lista DS a cada um deles, e depois preenchemos as diferentes listas com as identificações de instância de vários objetos no jogo. Agora, para acessar um ID em uma das listas, podemos fazer o
+    seguintes:
+  var _list = array[0]; var _id = ds_list_find_value(_list, 0);
+  Entretanto, você pode fazer a mesma coisa usando acessores encadeados de uma maneira muito mais limpa e que usa menos código:
+  var _id = array[0][| 0];
+  Você pode encadear vários acessores desta forma e eles podem ser de vários tipos para ter acesso às informações armazenadas em cada parte da estrutura aninhada. Aqui estão mais alguns exemplos:
+  // Acesse uma grade que foi adicionada a uma lista que faz parte de um mapa: var _a = data[? "listas"][| 0][# 0, 0];
+     // Acessar um array aninhado em uma lista a partir de um script e modificá-lo: data[| 0][@ 10] = 100;
+     // Acessar um mapa aninhado em uma grade aninhada em uma lista aninhada em um array: data[0][| 10][# 3, 4][? "chave"] = "olá mundo";
+  O uso de acessores encadeados para coisas não só significa que você pode escrever um código mais compacto, mas também permitirá que você use a iteração (por exemplo, usando um para loop) e outras técnicas para acessar seus dados em
+    uma maneira mais limpa e intuitiva.
+  Vale notar que ao utilizar os acessores desta forma, você deve sempre usar o acessor @ para arrays, pois caso contrário você estará adicionando despesas extras a qualquer ação que esteja sendo executada. Como mencionado acima, por padrão, as arrays
+    são passados por referência para as funções e depois usam o comportamento "copy on write" quando modificados. Entretanto, se o array for parte de uma cadeia, então o item anterior na cadeia será atualizado com o array copiado e o "original".
+    será deletado. Por exemplo, fazer algo como isto:
+  // Em um evento objeto data[| 0][0] = 100;
+     // Em uma função data[| 0][0][0] = 200;
+  alcança os mesmos resultados que o mesmo resultado:
+  // Em um evento de objeto data[| 0][0] = 100;
+     // Em uma função data[| 0][@ 0] = 200;
+  No entanto, o segundo exemplo é melhor, pois funciona sem a sobrecarga desnecessária de copiar primeiro toda a matriz.
+   
+   
+   
+  
+    
+      
+        Voltar: Visão geral daGML
+        A seguir: Funções e Variáveis do Roteiro
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

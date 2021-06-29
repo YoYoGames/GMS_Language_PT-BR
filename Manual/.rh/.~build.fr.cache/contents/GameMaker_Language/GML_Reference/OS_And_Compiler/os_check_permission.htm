@@ -1,0 +1,69 @@
+
+  
+  os_check_permission
+  Com esta função, você pode verificar se uma permissão específica foi concedida ao jogo pelo usuário. Você fornece a permissão para verificar como uma string usando o formato " android.permission.<permission> ", então para verificar a permissão RECORD_AUDIO ( por exemplo) você chamaria
+  os_check_permission("android.permission.RECORD_AUDIO");
+  A função retornará uma das três constantes - mostradas abaixo - para dizer ao jogo como está o estado da permissão. Para mais informações sobre as permissões dos aplicativos, consulte a Documentação doAndroid.
+  IMPORTANTE! Esta função é para o Android apenas no alvo.
+   
+  Sintaxe:
+  os_check_permission(permissão)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        permissão
+        A permissão para verificar (um fio)
+      
+    
+  
+   
+  Devoluções:
+  Constante
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        os_permission_granted
+        Isto indica que a permissão foi concedida
+      
+      
+        os_permission_denied
+        Isto indica que a permissão não foi concedida
+      
+      
+        os_permission_denied_dont_request
+        Isto indica que a permissão foi bloqueada pelas configurações do telefone, ou que o usuário negou anteriormente o pedido e selecionou "Não pedir novamente".
+      
+    
+  
+   
+  Exemplo:
+  if (os_type == os_android) {
+     if (os_check_permission("android.permission.INTERNET") == os_permission_denied) {
+     os_request_permission("android.permission.INTERNET");
+     }
+     }
+  
+  O código acima verifica o tipo de sistema operacional e se for Android, ele verifica as permissões e se a permissão "INTERNET" ainda não tiver sido concedida, ele a solicita.
+   
+   
+   
+  
+    
+      
+        Voltar: OS E Compilador
+        Próximo: os_request_permission
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

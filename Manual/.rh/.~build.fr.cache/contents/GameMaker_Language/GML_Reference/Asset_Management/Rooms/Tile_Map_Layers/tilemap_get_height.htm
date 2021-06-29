@@ -1,0 +1,42 @@
+
+  
+  tilemap_get_height
+  Usando esta função você pode recuperar a altura (em células) do elemento do mapa de azulejos. Você dá o ID do elemento do mapa de azulejos (que você obtém quando cria um elemento do mapa de azulejos usando layer_tilemap_create() ou quando
+    você usa a função layer_tilemap_get_id()), e a função devolverá a altura (número de células de largura).
+   
+  Sintaxe:
+  tilemap_get_height(tilemap_element_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tilemap_element_id
+        O valor de identificação único do elemento do mapa de azulejos para obter a altura de
+      
+    
+  
+   
+  Devoluções:
+  Inteiro
+   
+  Exemplo:
+  var lay_id = layer_get_id("espadrilles"); var map_id = layer_tilemap_get_id(lay_id); var _w = tilemap_get_width(map_id); var _h = tilemap_get_height(map_id); total_tiles = (_w * _h);
+  O código acima usa o ID do mapa de azulejos recuperado para obter a largura e altura do mapa de azulejos e depois usa esses valores para definir uma variável de instância.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas do mapa de azulejos
+        Próximo: tilemap_get_x
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

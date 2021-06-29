@@ -1,0 +1,99 @@
+
+
+
+
+
+  
+  Partículas macias do corpo
+  OGameMaker Studio 2 utiliza a biblioteca de física corporal rígida Box2D, e como tal não permite a física corporal suave. Entretanto, o Diversão líquida extensão adiciona partículas a
+    o sistema de física, que permite a criação de corpos moles simulados utilizando a física corporal rígida. Basicamente, é possível criar uma forma de partículas que mantém a coesão e assim simular um corpo inteiro, que, devido à
+    interação das partículas, dá a impressão de um corpo macio. Você também pode usar as partículas físicas para simular líquidos e outros sistemas físicos baseados em partículas.
+  Antes de começar a criar suas partículas físicas, você precisará definir as propriedades físicas básicas para elas, como se fosse uma fixação na física regular. Observe que a definição destas propriedades afetará todas as partículas criadas anteriormente como
+    bem como quaisquer novas partículas que você crie, então você normalmente só usaria estas funções no início do jogo ou nível. Entretanto, há funções específicas disponíveis para definir as bandeiras de partículas para partículas individuais
+    (e grupos de partículas) que mudarão suas propriedades como "saliência" ou "viscosidade", permitindo criar diferentes tipos de partículas dentro das faixas destes cenários globais.
+  As seguintes funções estão disponíveis para a configuração e obtenção de dados do sistema global de partículas:
+   
+  
+    contagem_de_partículas_físicas
+    contagem_física_de_partículas_grupo
+    physics_particle_set_max_count
+    physics_particle_set_radius
+    densidade_de_set_física
+    fisica_particle_set_damping
+    escala_física_de_partículas_de_agravidade
+    fisica_particle_get_max_count
+    physics_particle_get_radius
+    densidade_de_particula_esquema_física
+    fisica_particle_get_damping
+    escala_física_particular_agravidade_agravidade
+  
+   
+  Você também tem as seguintes funções disponíveis para colocar bandeiras em partículas individuais (ou grupos de partículas), bem como para obter informações, como posição ou cor, de uma única partícula ou de um único grupo:
+   
+  
+    physics_particle_set_flags
+    physics_particle_set_category_flags
+    bandeiras_de_grupo_de_partículas_físicas
+    bandeiras_de_agrupamento_de_artigos_física
+    física_grupo_de_partículas_get_inertia
+    física_grupo_de_partículas_get_centre_x
+    física_grupo_de_partículas_get_centre_y
+    grupo_física_particular_agrupamento_esvel_x
+    grupo_físico_agrupamento_agrupamento_esvel_y
+    física_grupo_de_partículas_get_ang_vel
+    física_grupo_de_partículas_get_x
+    física_grupo_de_partículas_get_y
+    grupo_física_agulhas_agulhas_ângulo
+    dados_físicos_particulados_get_data
+    física_partícula_get_data_particle
+    dados_de_agrupamento_de_particula_física
+  
+   
+  Você pode criar partículas de duas maneiras - individualmente ou em grupos. As partículas individuais se comportarão exatamente como definidas pelas configurações globais e pelas bandeiras que foram definidas quando foram criadas, mas os grupos de partículas podem exibir comportamentos diferentes
+    dependendo de suas bandeiras de grupo. Estas bandeiras de grupo podem ser definidas em valores diferentes para dar ao grupo propriedades diferentes, como penetração e rigidez.
+  As seguintes funções estão disponíveis para a criação de partículas:
+   
+  
+    physics_particle_create
+    física_particle_group_begin
+    círculo_físico_grupo_de_partículas
+    caixa_de_grupos_de_partículas_físicas
+    física_particle_group_polygon
+    física_particle_group_add_ponto_add
+    física_física_grupo_de_partículas_final
+    fisica_particle_group_join
+    física_particle_group_delete
+  
+   
+  Você não só pode criar partículas, mas também eliminá-las, seja individualmente ou em uma região. As seguintes funções estão disponíveis para apagar as partículas do sistema:
+   
+  
+    physics_particle_delete
+    fisica_particle_delete_delete_region_circle
+    caixa_de_partículas_de_região_física
+    physics_particle_delete_delete_region_region_poly
+  
+   
+  A menos que você tenha ativado o desenho debug usando physics_draw_debug()Não se vêem partículas na tela ao criá-las. Portanto, para ver realmente o
+    partículas, você precisa desenhá-las para a tela no evento de desenho de uma instância usando as seguintes funções (note que você também pode desenhá-las usando as funções regulares draw_sprite 
+    se você obtiver os dados para cada partícula usando a função physics_particle_get_data()):
+   
+  
+    fisica_particle_draw
+    physics_particle_draw_ext
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Física
+        A seguir: Variáveis Físicas
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

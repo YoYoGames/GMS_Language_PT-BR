@@ -1,0 +1,42 @@
+
+  
+  largura_do_browser
+  Esta variável mantém a largura (em pixels) do navegador em que o jogo está sendo executado. Se nenhum navegador estiver presente, então o tamanho da janela é retornado. a imagem a seguir ilustra como esta variável se relaciona com o resto das funções de posicionamento disponíveis
+    através das Funções de Janela.
+  
+  Sintaxe:
+  largura_do_browser
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  if (browser_height > window_get_height()) || (browser_width > window_get_width()) {
+     var xx, yy; if (browser_width > window_get_width()) {
+     xx = (browser_width - window_get_width()) / 2; }
+     else
+     {
+     xx = 0; }
+     if (browser_height > window_get_height()) {
+     yy = (browser_height - window_get_height()) / 2; }
+     mais
+     {
+     yy = 0; }
+     window_set_position(xx, yy); }
+  
+  O código acima verifica a largura e a altura do navegador para ver se algum deles é maior do que a largura e a altura da janela atual. Se algum deles for, então calcula uma nova posição para a janela do jogo dentro do navegador.
+   
+   
+   
+  
+    
+      
+        Voltar: Web e HTML5
+        Próxima: captura_de_input_browser
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

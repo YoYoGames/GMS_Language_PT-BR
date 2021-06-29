@@ -1,0 +1,50 @@
+
+  
+  layer_sprite_get_id
+  Esta função pode ser usada para recuperar o valor de identificação único de um elemento sprite em uma camada. Você fornece o ID da camada (que você obtém quando cria a camada usando layer_create() ou quando
+    você usa o nome da camada junto com layer_get_id()) e o nome do elemento sprite, conforme definido no Editor de Sala. A função retornará o valor de identificação associado àquele duende.
+    elemento sobre a camada.
+  Note que esta função foi especificamente projetada para uso com sprites que foram adicionados na IDE em uma camada de ativos, e se você adicionou um sprite a uma camada através de código usando a função layer_sprite_create(),
+    então o ID retornado por essa função deve ser usado para toda referência futura (já que esse elemento sprite não terá nome a ser passado para esta função).
+  Se a camada especificada não existir, ou se o elemento sprite dado não puder ser encontrado, a função retornará -1.
+   
+  Sintaxe:
+  layer_sprite_get_id(layer_id, sprite_element_name)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada a ser alvo
+      
+      
+        sprite_element_name
+        O nome único do elemento sprite na camada, conforme definido no Editor de Sala
+      
+    
+  
+   
+  Devoluções:
+  Valor de identificação do elemento Sprite (Real)
+   
+  Exemplo:
+  var lay_id = layer_get_id("Assets_trees"); var back_id = layer_sprite_get_id(lay_id, "gráfico_254367CB"); layer_sprite_change(back_id, spr_Trees_Winter);
+  O código acima obterá a identificação da camada chamada "Assets_trees" e então a utilizará para recuperar a identificação do elemento sprite "gráfico_254367CB" naquela camada. O ID do elemento sprite recuperado é então usado para alterar o ID do elemento
+    sprite do elemento.
+   
+   
+  
+    
+      
+        Voltar: Camadas de Sprite
+        Próximo: layer_sprite_exists
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

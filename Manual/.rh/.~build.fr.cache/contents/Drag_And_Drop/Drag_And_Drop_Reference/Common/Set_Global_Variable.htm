@@ -1,0 +1,56 @@
+
+  
+   Definir Variável Global
+  Esta ação é usada para atribuir um valor a uma variável global (criando-a no processo) ou para alterar o valor de uma variável global existente. Variáveis globais são variáveis que "pertencem" a nenhuma instância específica, mas sim ao todo.
+    e, como tal, pode ser acessado e alterado por qualquer instância, roteiro ou código. Para informações mais avançadas sobre variáveis globais, por favor, veja aqui.
+  Você dá o nome da variável global e depois o valor, que pode ser adicionado em relação ao valor original, se necessário. Se você der um novo nome de variável (ou seja: uma variável que nunca foi atribuída anteriormente em todo o jogo), então este
+    criará a nova variável global e lhe atribuirá o valor que você der, enquanto que se você der o nome de uma variável global existente, ela simplesmente mudará o valor para a nova variável. Note que a verificação Relative adicionará o valor à variável global existente.
+    valor global da variável (use um número negativo para subtrair) e você também pode usarexpressões e variáveis criadas anteriormente como o valor.
+  Vale notar que quando falamos de "valores", não nos referimos apenas a valores numéricos, pois uma variável pode ser uma string, um ponteiro, uma identificação de recurso ou qualquer outra coisa que uma função possa retornar ou usar. No caso de uma string, a verificação relativa concatenará o valor com qualquer que seja a variável mantida anteriormente, portanto, se sua variável foi "Olá" e você atribuir "Mundo" a ela usando a verificação relativa, o valor final da variável será "Olá Mundo". Os cuidados devem ser
+    No entanto, para garantir que os valores das variáveis sejam ambos do mesmo tipo de dados, como tentar adicionar, por exemplo, um inteiro e uma string, resultará em um erro de compilação.
+  Você também pode adicionar variáveis adicionais na mesma ação, clicando no ícone mais  ao lado da ação, e dando outra variável global
+    nome e valor. Para informações mais avançadas sobre variáveis, consulte a seção sobre Variáveis e Escopo de Variáveis.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Nome
+        O nome da nova variável global a ser criada, ou o nome de uma variável global existente a ser alterada.
+      
+      
+        Valor
+        O valor que a variável global deve ter.
+      
+      
+        Relativo
+        Verifique isto para definir o valor em relação ao anterior.
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima verifica se há uma colisão entre a instância de chamada e o objeto
+    "obj_player", e se for encontrado 1 é subtraído da variável global "player_hp" e a variável global "player_score" é definida
+    a 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações Comuns
+        A seguir: Obter a Variável Global
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

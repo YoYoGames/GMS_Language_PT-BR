@@ -1,0 +1,174 @@
+
+  
+  steam_ugc_create_query_all_ex
+  Esta função pode ser usada para consultar a base de dados da UGC. A função requer o ID do jogo que vai consumir o item e/ou o ID do jogo que criou o item, e você precisa usar as seguintes constantes para o tipo de consulta a ser criada,
+    o tipo de item a consultar e o número de página a consultar. Note que uma consulta retornará um número máximo de 50 itens.
+   
+  
+    
+      
+        Tipo de consulta Constante
+        Descrição
+      
+      
+        ugc_query_RankedByVote
+        Veja a Documentação doVapor.
+      
+      
+        ugc_query_RankedByPublicationDate
+        -
+      
+      
+        ugc_query_AcceptedForGameRankedByAcceptanceDate
+        -
+      
+      
+        ugc_query_RankedByTrend
+        -
+      
+      
+        ugc_query_FavoritedByFriendsRankedByPublicationDate
+        -
+      
+      
+        ugc_query_CreatedByFriendsRankedByPublicationDate
+        -
+      
+      
+        ugc_query_RankedByNumTimesReported
+        -
+      
+      
+        ugc_query_CreatedByFollowedUsersRankedByPublicationDate
+        -
+      
+      
+        ugc_query_NotYetRated
+        -
+      
+      
+        ugc_query_RankedByTotalVotesAsc
+        -
+      
+      
+        ugc_query_RankedByVotesUp
+        -
+      
+      
+        ugc_query_RankedByTextSearch
+        -
+      
+    
+  
+   
+  
+    
+      
+        Constante do tipo de partida
+        Descrição
+      
+      
+        ugc_match_Items
+        Veja a Documentação doVapor.
+      
+      
+        ugc_match_Items_Mtx
+        -
+      
+      
+        ugc_match_Items_ReadyToUse
+        -
+      
+      
+        ugc_match_Collections
+        -
+      
+      
+        ugc_match_Artwork
+        -
+      
+      
+        ugc_match_Videos
+        -
+      
+      
+        ugc_match_Screenshots
+        -
+      
+      
+        ugc_match_AllGuides
+        -
+      
+      
+        ugc_match_WebGuides
+        -
+      
+      
+        ugc_match_IntegratedGuides
+        -
+      
+      
+        ugc_match_UsableInGame
+        -
+      
+      
+        ugc_match_ControllerBindings
+        -
+      
+    
+  
+   A função retorna um valor único de manuseio de consulta que deve ser armazenado em uma variável para uso nas outras funções de consulta. Note que esta função apenas prepara a consulta, mas não a envia - para isso você deve chamar a função
+    steam_ugc_send_query.htm">steam_ugc_send_query() - e você pode usar mais funções de steam_ugc_query_* () para refinar o pedido de busca antes que ele seja realmente enviado.
+   
+  Sintaxe:
+  steam_ugc_create_query_all_ex(query_type, match_type, page, creator_app_id, consumer_app_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        query_type
+        O tipo de consulta de dados a criar (veja as constantes listadas abaixo).
+      
+      
+        tipo_de_fósforo
+        O tipo de itens de UGC a consultar (ver constantes listadas abaixo).
+      
+      
+        página
+        O número da página a consultar.
+      
+      
+        creator_app_id
+        O ID do aplicativo criador do item.
+      
+      
+        Consumer_app_id
+        O ID do aplicativo do consumidor.
+      
+    
+  
+   
+  Devoluções:
+  Consulta
+   
+  Exemplo:
+  query_handle = steam_ugc_create_query_all_ex(ugc_query_RankedByVote, página, global.AccountID, 0, global.GameID);
+  O código acima cria um pedido de consulta e armazena o seu manuseio em uma variável para uso futuro.
+   
+   
+   
+  
+    
+      
+        Voltar: UGC
+        A seguir: steam_ugc_query_set_cloud_filename_filter
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

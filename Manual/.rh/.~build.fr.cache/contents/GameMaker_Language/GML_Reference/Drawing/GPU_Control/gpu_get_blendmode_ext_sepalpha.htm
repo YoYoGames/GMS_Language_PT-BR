@@ -1,0 +1,94 @@
+
+  
+  gpu_get_blendmode_ext_sepalpha
+  Esta função pode ser usada para recuperar o atual modo de mistura estendida que está sendo usado para desenho, separando os modos de mistura em duas partes - o componente RGB e o componente Alfa. A função retorna uma matriz de 4 elementos 1D com os seguintes elementos
+    nela:
+  
+    [0] = Modo de mistura da fonte menos o componente alfa (o padrão é bm_src_alpha (As, As, As))
+    [1] = Modo de mistura de destino menos o componente alfa (o padrão é bm_inv_src_alpha (1-As, 1-As, 1-As))
+    [2] = Componente alfa da fonte (o padrão é bm_src_alpha (As))
+    [3] = componente alfa de destino (o padrão é bm_inv_src_alpha (1-As))
+  
+  Os valores da matriz serão uma das seguintes constantes ("s" denota um valor retirado da fonte enquanto um "d" denota um valor do destino):
+   
+  
+    
+      
+        Constante
+        Fator de mistura (Vermelho, Verde, Azul, Alfa)
+      
+      
+        bm_zero
+        (0, 0, 0, 0)
+      
+      
+        bm_one
+        (1, 1, 1, 1)
+      
+      
+        bm_src_colour
+        (Rs, Gs, Bs, As)
+      
+      
+        bm_inv_src_colour
+        (1-Rs, 1-Gs, 1-Bs, 1-As)
+      
+      
+        bm_src_alpha
+        (As, As, As, As, As)
+      
+      
+        bm_inv_src_alpha
+        (1-As, 1-As, 1-As, 1-As, 1-As)
+      
+      
+        bm_dest_alpha
+        (Anúncio, Anúncio, Anúncio, Anúncio)
+      
+      
+        bm_inv_dest_alpha
+        (1-Ad, 1-Ad, 1-Ad, 1-Ad, 1-Ad)
+      
+      
+        bm_dest_colour
+        (Rd, Gd, Bd, Ad)
+      
+      
+        bm_inv_dest_color
+        (1-Rd, 1-Gd, 1-Bd, 1-Ad)
+      
+      
+        bm_src_alpha_sat
+        (f, f, f, 1) onde f = min(As, 1-Ad)
+      
+    
+  
+   
+  Ao criar os modos de mistura estendida desta forma, os componentes RGB serão retirados de um modo de mistura e o componente Alfa será retirado de outro, de modo que - por exemplo - se você usar bm_zero (0, 0, 0, 0) como modo de mistura RGB e bm_one como modo de mistura alfa, você obterá uma mistura composta de (0,0,0,1).
+  Observe que você pode alterar estes valores diretamente dentro da matriz e passar a matriz completa para a função como um único argumento (como mostrado no exemplo abaixo).
+   
+  Sintaxe:
+  gpu_get_blendmode_ext_sepalpha();
+   
+  Devoluções:
+  4 elementos 1D Array (ver acima para constantes)
+   
+  Exemplo:
+  var bm = gpu_get_blendmode_ext_sepalpha(); bm[0] = bm_src_alpha; bm[1] = bm_inv_src_alpha; gpu_set_blendmode_ext_sepalpha(bm);
+  
+  O código acima cria uma matriz local e obtém o modo de mistura estendida atual com valores alfa separados. Esta matriz é então manipulada e retornada para definir o modo de mistura.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle de GPU
+        Próximo: gpu_get_blendmode_src
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

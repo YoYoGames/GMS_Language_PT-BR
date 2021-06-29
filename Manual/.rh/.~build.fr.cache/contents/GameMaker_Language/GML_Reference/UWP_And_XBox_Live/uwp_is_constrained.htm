@@ -1,0 +1,35 @@
+
+  
+  uwp_is_constrained
+  Esta função retornará verdadeiro se o jogo estiver rodando em um modo de restrição de recursos ou falso se estiver rodando normalmente. O modo com restrição de recursos pode ser ativado quando o jogo não tem foco e, neste modo, o jogo reduziu
+    Recursos da GPU. A resposta a isto normalmente deveria ser pausar o jogo (já que o usuário não tem mais controle). Além disso, desativar qualquer efeito particularmente tributário pode ser uma boa idéia se a desaceleração for observada neste modo. Note que, ao contrário da uwp_is_suspending()    esta função voltará a ser verdadeira continuamente enquanto o jogo estiver em modo restrito (e não apenas uma vez quando isso acontecer pela primeira vez).
+   
+  Sintaxe:
+  uwp_is_constrained();
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se xboxliveis_constrained() {
+     if !instance_exists(obj_PauseMenu) {
+     instance_create(0,0,obj_PauseMenu);
+     }
+     }
+  
+  O código acima verifica se o aplicativo está restrito e se ele cria uma instância de um objeto (usado para pausar o jogo).
+   
+   
+   
+  
+    
+      
+        Voltar: UWP e XBox Live
+        Próximo: uwp_was_terminated
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

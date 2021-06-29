@@ -1,0 +1,32 @@
+
+  
+  y
+  O valor y de uma instância é a posição vertical na sala atual, medida em pixels. Este valor pode ser 0, positivo ou negativo, onde 0 é a parte superior da sala e se mover para baixo aumenta y, se mover para cima diminui y (um valor negativo para y significa
+    que a instância foi para fora do topo da sala). Você pode até mesmo dar um valor real como 12.345, mas como você não pode obter .345 de um pixel, a instância pode não parecer ter se movido, embora estes valores sejam mantidos e usados internamente por
+   GameMaker Studio 2 e são perfeitamente válidos.
+  Ao definir os valores y (e x) você pode fazer o objeto saltar pela sala até a posição de sua escolha, ou pode adicionar e subtrair a eles por quantidades menores para dar a ilusão de movimento sem realmente usar o objeto embutido. velocidade    e direção funções. Isto deve ser levado em consideração ao fazer seus jogos, pois muitas vezes um tipo de movimento se presta a um estilo particular de jogo mais do que outro.
+   
+  Sintaxe:
+  y;
+   
+  Devoluções:
+  Real (valor de ponto flutuante de precisão único)
+   
+  Exemplo:
+  se keyboard_check(vk_down) y += 5; se keyboard_check(vk_up) y -= 5;
+  O código acima usará as teclas de seta para adicionar ou subtrair à posição y e assim criar a ilusão de movimento.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis de instância
+        Próximo: xprevious
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

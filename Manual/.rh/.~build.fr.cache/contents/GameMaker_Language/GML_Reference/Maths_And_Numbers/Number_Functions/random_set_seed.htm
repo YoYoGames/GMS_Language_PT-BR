@@ -1,0 +1,48 @@
+
+
+
+
+
+  
+  aleatório_set_seed
+  Para gerar um número aleatório, o GameMaker Studio 2 começa com um número de semente aleatório. Com esta função você pode definir essa semente para um valor conhecido e assim "forçar" o resultado de todos os eventos aleatórios depois a ser o mesmo toda vez que o programa for
+    correr. Por exemplo, esta função pode ser usada em conjunto com random_get_seed() para criar conteúdo gerado processualmente e salvar os resultados sem ter enormes jogos de salvamento (você salva apenas a semente, sem necessidade
+    para qualquer outra coisa). Caso você precise de resultados verdadeiramente aleatórios para tudo, você deve estar usando o aleatoriedade() função.
+  NOTA: Embora esta semente dê resultados consistentes em cada plataforma alvo, os resultados podem variar entre plataformas devido à maneira diferente como cada alvo funciona.
+   
+  Sintaxe:
+  random_set_seed(val);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        val
+        A semente a ser lançada.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if debug { random_set_seed(1); }
+  O código acima define a semente aleatória como 1 somente se a variável "debug" for verdadeira.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções Numéricas
+        A seguir: sementes_randômicas_get_seed
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

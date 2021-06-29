@@ -1,0 +1,85 @@
+
+  
+  esqueleto_criar_côr_cores
+  Quando você cria um duende de animação esquelética, você pode atribuir ranhuras de fixação e anexos para ir nelas. Estas são simplesmente imagens (sprites) que são separadas da animação, mas quando anexadas se moverão junto com o osso, elas são
+    anexado a. Normalmente você atribuiria estes anexos em seu programa de animação (Coluna vertebral), mas com esta função você pode criar seu próprio anexo em tempo de execução usando um ativo sprite de seu jogo. a função requer que você dê um nome ao anexo (como
+    um cordel) e então definir o sprite_index e image_index para usar, assim como a origem x e y (que pode
+    ser diferente daquela definida pelo duende nas propriedades do duende), e você também pode definir qualquer transformação que desejar aplicar à imagem quando anexada, bem como a cor a ser misturada com a imagem e seu alfa (transparência)
+    valor. Se o anexo foi criado com sucesso a função retornará 1 e se não foi (você forneceu um índice sprite inválido, ou o sprite de base não é um sprite da coluna vertebral) então ele retornará -1.
+  Vale a pena notar que o duende de exemplo pode ter uma cor de mistura e uma configuração alfa (image_blend e image_alpha),
+    assim como a ranhura de fixação (veja a função conjunto_esqueleto_de_squema_cores()), e assim a cor final e o alfa que o duende de fixação designado para o slot terá será um composto
+    de todos esses valores.
+   
+  Sintaxe:
+  esqueleto_criar_côr(nome, duende, ind, xorigem, yorigem, escala x, escala y, podridão, cor, alfa);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome
+        O nome (como um fio) do anexo a ser criado.
+      
+      
+        sprite
+        O sprite_index para obter a imagem de anexo.
+      
+      
+        ind
+        A imagem_index para obter a imagem de anexo.
+      
+      
+        xorigem
+        A origem x para a imagem que está sendo utilizada.
+      
+      
+        yorigin
+        A origem y para a imagem que está sendo utilizada.
+      
+      
+        xscale
+        A escala horizontal da imagem, como um multiplicador: 1 = escala normal, 0,5 é metade, etc...
+      
+      
+        yscale
+        A escala vertical da imagem, como um multiplicador: 1 = escala normal, 0,5 é metade, etc...
+      
+      
+        podridão
+        A rotação da imagem: 0 = normal, 90 = girada 90° no sentido anti-horário, etc.
+      
+      
+        Cor
+        O valor de cor a usar (Um valor constante, inteiro ou hexadecimal).
+      
+      
+        Alfa
+        O valor alfa a ser usado (de 0 a 1).
+      
+    
+  
+   
+  Devoluções:
+  1 se bem-sucedido, -1 se não
+   
+  Exemplo:
+  esqueleto_criar_cores("espada", spr_Weapons, 0, 0, 80, 1, 1, 1, 90, c_red, 1); skeleton_attachment_create_colour("faca", spr_Weapons, 1, 0, 45, 1, 1, 90, c_yellow, 1); skeleton_attachment_create_colour("besta_cruzada",
+    spr_Weapons, 0, 10, 30, 1, 1, 1, 0, c_white, 0,5); skeleton_attachment_set("slot_leftHand", choose("espada", "faca", "crossbow"));
+  O código acima verificaria o nome do anexo atualmente atribuído para o slot chamado "slot_leftHand" e se uma cadeia vazia for devolvida, um novo sprite é anexado.
+   
+   
+   
+  
+    
+      
+        Voltar: Anexos:
+        A seguir: esqueleto_dados_esqueleto
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

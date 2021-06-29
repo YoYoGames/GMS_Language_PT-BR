@@ -1,0 +1,48 @@
+
+  
+  camada_y
+  Você pode usar esta função para definir a posição y da camada dentro da sala atualmente escopada. Você fornece a identificação da camada (que você obtém quando cria a camada usando layer_create()) ou o nome da camada (como um fio
+    - isto terá um impacto no desempenho) e a função moverá a camada o número dado de pixels ao longo do eixo vertical da sala.
+   
+  Sintaxe:
+  layer_y(layer_id, y)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada para definir a posição y de
+      
+      
+        y
+        A posição y na sala para definir a camada a
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var lay_id = layer_get_id("Sprites"); if layer_get_x(lay_id) != 0 || layer_get_y(lay_id) != 0 {
+     layer_x(lay_id, 0); layer_y(lay_id, 0); }
+  
+  O código acima verifica a posição da camada dada e se não estiver definido para (0, 0), então está definido para essa posição.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próximo: layer_hspeed
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

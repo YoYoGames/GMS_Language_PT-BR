@@ -1,0 +1,59 @@
+
+  
+  Variáveis Objeto
+  Ao clicar no botão Variáveis , será aberta a janela Variáveis de Objeto , que você poderá usar para gerar qualquer número de variáveis antes do Evento de Criação do objeto:
+  Nesta janela, você pode clicar no botão Adicionar para adicionar uma nova variável à lista. Você pode então nomear a variável
+    bem como definir seu tipo e ajustar suas propriedades:
+  O nome da variável deve começar com uma letra e pode conter apenas letras, números e o símbolo de sublinhado '_' com
+    um comprimento máximo de 64 símbolos. Portanto, variáveis válidas são coisas como fish, foo_bar, num1, e variáveis inválidas seriam 6fish,
+    foo bar , ou *num. Uma vez que você tenha dado o nome da variável, você precisa definir seu tipo, que pode ser qualquer uma das seguintes:  Vale notar que este recurso é particularmente útil quando se trabalha com instâncias pai/filho - já que você pode ter um objeto pai com um conjunto de variáveis definidas e depois simplesmente modificá-las em objeto filho (veja a seção Variáveis de Objeto e Objetos Filhos abaixo para mais detalhes) - e para quando você adiciona instâncias no Editor de Sala (veja a seção sobre Camadas > Camada de Instância), já que você também pode modificar estas variáveis para instâncias individuais
+    que foram colocados na sala.
+  Os diferentes tipos de variáveis que você pode criar estão listados abaixo:
+  
+    Real: Um número real é qualquer número que não seja um inteiro inteiro e que possa ser positivo ou negativo. Portanto, 124.5, 45639.566546456, 0.9, -45.5 etc... são todos exemplos de números reais. Todos os números reais são armazenados como valores de ponto flutuante de 64 bits (duplas). Os dados reais (e inteiros) 
+      tipos têm uma opção para definir um intervalo de valores que pode ser acessado clicando no botão Opções :Ao verificar isso, você pode então inserir um valor inicial e um valor final e ao invés de ter um valor fixo mostrado para a variável na janela Variáveis de Objeto,
+      você terá um deslizador que está preso a estes valores:
+      
+    Inteiro: Um número inteiro é um número inteiro e pode ser positivo ou negativo, por exemplo 30004, 19, 0, -300. Note que você pode
+      definir uma faixa de valores para o inteiro de saída, como explicado acima para números reais.
+    Cordão: Uma corda é qualquer coisa que tenha sido colocada dentro de aspas duplas, por exemplo "peixe", "Olá Mundo", ou "12345".
+    Booleano: Um booleano é um valor que ou é verdadeiro ou falso. Na janela Object Editor Variables, isto é simplesmente mostrado como uma caixa que você verifica se é verdadeiro e desmarca se é falso.
+    Expressão: Uma expressão é uma frase matemática que pode conter números comuns, variáveis, strings ou funções GML, assim como um ou mais operadores. Por exemplo: sqrt(85 * 6) + 5.5 é uma expressão.
+    Recurso: Um recurso é simplesmente qualquer um dos recursos que você tenha definido no Navegador de Ativos. Ao selecionar este tipo de recurso, você pode então clicar no botão Open Asset Explorer  para abrir o Asset Explorer e selecionar o recurso desejado.
+    Lista: Selecionar um tipo de lista de entrada significa que você pode então criar uma seleção de valores (estes podem ser strings, reais, expressões etc...) dos quais você pode então escolher um ou mais para a variável a retornar. Para definir os itens que
+      vá na lista que você precisa adicionar primeiro nas Opções (clique no botão  ):
+      Você poderá escolher o item como o valor padrão para a variável na janela principal a partir do menu suspenso:
+      Note que se você tiver Multi-selecionado na Lista de Opções então a variável se tornará um array de todos os
+      opções selecionadas:
+      
+    Cor: O tipo de cor é para você definir um valor de cor a ser armazenado na variável. Você pode inserir um número real (de 0 a 16777216, este terá um valor alfa de 255), ou um valor hexadecimal (no formato de $RRRGGBBAA), ou você
+      pode clicar duas vezes  na amostra de cores para abrir o Colour Picker e definir a cor ali.
+  
+   
+   
+  Variáveis de Objeto e Objetos Infantis
+  Uma característica importante das Variáveis de Objetos é que elas são herdadas por quaisquer objetos menores que você tenha no Navegador de Ativos (consulte a seção sobre Objetos-Parentais para mais informações), o que significa que você
+    pode então optar por anular ou alterar qualquer um ou todos eles, se desejar.
+  Quando você cria um objeto filho de outro recurso objeto que tem Variáveis definidas para ele, estas aparecerão na janela de Variáveis Objeto como esta:
+  Você pode ver na imagem superior que o objeto Pai tem quatro Variáveis de Objeto e na imagem inferior estas
+    também são mostrados, apenas "cinzentos" e têm o ícone Herdado dos Pais  para indicar que foram herdados.
+    Estas variáveis herdadas podem então ser editadas se você clicar no botão Override Variable , para que você possa então ajustar o controle deslizante de faixa
+    ou valores, ou selecionar diferentes itens de listas, etc... Note que quando você edita uma variável pai você só pode alterar o valor definido, mas não o nome, nem pode alterar as opções da variável. Observe também que você pode adicionar novas Variáveis de Objeto
+    para objetos infantis também (e na imagem de exemplo acima você pode ver que "Tipo de Personagem" é uma nova Variável de Objeto somente para o objeto infantil).
+  Se você editou uma variável de objeto herdada, então você pode clicar no botão Excluir  para remover a edição, mas não a variável. A variável irá
+    ainda será herdado do pai, mas usará novamente o valor padrão dos pais. Se você precisar remover completamente a variável, então você deve fazer isto do objeto pai.
+   
+   
+   
+  
+    
+      
+        Voltar: O Editor de Objetos
+        A seguir: Eventos Objeto
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

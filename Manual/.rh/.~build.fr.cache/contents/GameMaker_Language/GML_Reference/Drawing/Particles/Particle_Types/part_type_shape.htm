@@ -1,0 +1,112 @@
+
+  
+  tipo_parte
+  Com esta função você pode definir a forma do duende a ser usado para o tipo de partícula, sendo aceitáveis as seguintes constantes:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        pt_shape_pixel
+        Um pixel de 1x1 pixel. (Esta é a configuração padrão).
+      
+      
+        pt_shape_disk
+        Um círculo preenchido.
+      
+      
+        pt_shape_square
+        Um quadrado cheio.
+      
+      
+        pt_shape_line
+        Uma linha horizontal de 8px de largura.
+      
+      
+        pt_shape_star
+        Uma estrela cheia de cinco pontos.
+      
+      
+        pt_shape_circle
+        Um círculo de 3px delineado.
+      
+      
+        pt_shape_ring
+        Um círculo com um brilho interior (parece uma bolha).
+      
+      
+        pt_shape_sphere
+        Um círculo com um "brilho para fora" sólido no meio, brilhando para fora.
+      
+      
+        pt_shape_flare
+        Um ponto de brilho intenso (parece uma estrela de verdade na noite).
+      
+      
+        pt_shape_spark
+        Um "efeito de faísca" como uma estrela com múltiplos pontos se desvanecendo.
+      
+      
+        pt_shape_explosion
+        Uma "nuvem quadrada de fumaça" requer múltiplas cores para assemelhar-se a uma explosão.
+      
+      
+        pt_shape_cloud
+        Uma nuvem fina, requer escalada e múltiplas partículas para se assemelhar a uma nuvem.
+      
+      
+        pt_shape_smoke
+        Uma versão suave do efeito de explosão. Use múltiplos para criar uma nuvem de fumaça.
+      
+      
+        pt_shape_snow
+        Uma forma genérica de floco de neve.
+      
+    
+  
+  
+   
+  Sintaxe:
+  part_type_shape(ind, shape);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do tipo de partícula a definir.
+      
+      
+        forma
+        A forma a escolher.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  global.p1 = part_type_create(); part_type_shape(global.p1, pt_shape_square); part_type_size(global.p1, 1, 3, 0, 0, 0); part_type_scale(global.p1, 1, 1); part_type_colour1(global.p1, c_white); part_type_alpha2(global.p1, 1, 0); part_type_speed(global.p1, 2, 4, 0, 0, 0); part_type_direction(global.p1, 0, 180, 0, 0, 0); part_type_gravity(global.p1, 0.20, 270); part_type_orientation(global.p1, 0, 0, 0, 0, 0, 1); part_type_blend(global.p1, 1); part_type_life(global.p1,
+    15, 60);
+  O código acima define o tipo de partícula indexada na variável global "p1" para a forma de um quadrado, depois define várias outras propriedades de partícula.
+   
+   
+   
+  
+    
+      
+        Voltar: Tipos de Partículas
+        Próximo: part_type_sprite
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

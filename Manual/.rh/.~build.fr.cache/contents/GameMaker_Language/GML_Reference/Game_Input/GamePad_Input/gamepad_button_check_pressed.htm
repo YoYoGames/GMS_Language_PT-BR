@@ -1,0 +1,51 @@
+
+  
+  gamepad_button_check_pressed
+  Esta função retornará verdadeiro ou falso, dependendo se o botão gamepad dado for detectado como tendo sido pressionado ou não. Note que esta função só será acionada uma vez para o botão na primeira vez que ele for pressionado. Para
+    para acionar novamente o botão deve primeiro ser liberado e depois reprimido. Se você precisar verificar um aperto contínuo do botão, você deve estar usando a função gamepad_button_check().
+  Se você estiver verificando um botão analógico, então a verificação levará em consideração a configuração do limiar e só retornará true quando o valor da entrada bruta ultrapassar o determinado limiar
+    (você pode obter este valor bruto usando a função gamepad_button_value()).
+   
+  Sintaxe:
+  gamepad_button_check_pressed(dispositivo, botão);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dispositivo
+        Qual dispositivo de controle de jogo "slot" a ser verificado.
+      
+      
+        botão
+        Qual botão do gamepad é constante a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se gamepad_button_check_pressed(0, gp_start) {
+     audio_play_sound(snd_Start, 0, false); room_goto(rm_Level_1);
+     }
+  
+  O código acima detectará se o botão "start" do controle de jogo conectado ao dispositivo "slot" 0 foi pressionado ou não e trocará de espaço, caso tenha sido.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada Gamepad
+        Próximo:  gamepad_button_check_released 
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

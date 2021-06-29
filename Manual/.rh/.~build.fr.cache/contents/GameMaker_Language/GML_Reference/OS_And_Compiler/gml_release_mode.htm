@@ -1,0 +1,47 @@
+
+  
+  gml_release_mode
+  Quando seu jogo é compilado, ele também inclui certas funções internas para verificação de erros durante a execução. Estas verificações internas cobrem muitos aspectos de um código de jogo, incluindo intervalos, parâmetros e alguns aspectos gerais do compilador GML interno e são
+    o que gera as mensagens de erro finais em muitos casos. No entanto, esta função pode ser usada para desligar estas verificações internas (ou seja: removê-las completamente do jogo compilado), dando um impulso de velocidade ao seu projeto final.
+  Observe que isto significa que se você fizer algo em seu código de jogo que esteja incorreto, o jogo compilado pode simplesmente travar, ou pode experimentar algum comportamento muito inesperado. Por exemplo, se um DS Grid for acessado em um
+    coordenada fora do tamanho definido, no modo desenvolvedor você receberia uma mensagem de erro da janela do compilador, mas as verificações no local permitiriam que o jogo continuasse a ser executado. Entretanto, no modo de liberação, estas verificações não estarão lá e, portanto, o código poderia
+    devolver ou um ponteiro NULL, ou um mau ponteiro que, por sua vez, apontará para alguma memória aleatória. Assim, na melhor das hipóteses, você pode receber os dados errados de volta, ou na pior das hipóteses você pode sobrescrever algo na memória - dados, gráficos, ou até mesmo o próprio código. Outro exemplo
+    seria na construção de primitivos - se você fornecer os dados de cor, posição, textura, etc... numa ordem diferente daquela que você definiu quando criou o formato de vértice, então o jogo poderá travar ou produzir resultados inesperados quando o modo de lançamento
+    está ligado.
+   
+  Sintaxe:
+  gml_release_mode(flag);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        bandeira
+        Seja verdadeiro para definir o modo de liberação ou falso para o desenvolvimento geral.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  gml_release_mode(true);
+  O código de exemplo acima irá definir o jogo para usar o modo de lançamento quando compilado.
+   
+   
+   
+  
+    
+      
+        Voltar: OS E Compilador
+        Próximo: gml_pragma
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

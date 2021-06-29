@@ -1,0 +1,37 @@
+
+  
+  retornar
+  A declaração de retorno tem a seguinte sintaxe:
+  retorno (<expressão>)
+  Você só usa a declaração de retorno em funções e métodos de script, e ela é usada para retornar um valor da função a ser usada em outro código ou função
+    chamadas. Deve-se observar que a execução da função termina na declaração return , o que significa que qualquer código que venha depois de return ter sido chamado não será executado. Aqui está uma breve descrição de
+    exemplo de script chamado sqr_calc que calcula o quadrado de qualquer valor que lhe é passado, e inclui a captura de erros no caso de o parâmetro que é passado não ser um número real:
+  /// @function sqr_calc(val); /// @param {real} val O valor para calcular o quadrado de //// @description Calcular o quadrado do valor dado
+     function sqr_calc(value) {
+     if !is_real(value) {
+     return 0; }
+     mais
+     {
+     retorno (valor * valor); }
+     }
+  
+  Para chamar uma função de dentro de um código, basta usá-la da mesma forma que ao chamar funções em tempo de execução - ou seja, escrever o nome da função com os valores dos parâmetros entre parênteses. Assim, a função acima seria chamada desta forma:
+  se teclado_check_pressed(vk_enter) {
+     val = scr_sqr(montante); }
+  
+  Aqui a variável val será 0 (porque a variável amount não é um número real) ou o total para value * value.
+   
+   
+   
+  
+    
+      
+        Voltar: Características lingüísticas
+        Próximo: início / fim
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

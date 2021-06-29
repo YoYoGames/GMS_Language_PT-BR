@@ -1,0 +1,35 @@
+
+  
+  audio_get_recorder_count
+  Esta função devolverá o número de fontes de gravação de áudio (como microfones, etc...) atualmente disponíveis para o seu jogo. Assim, se você tiver um valor de retorno de, por exemplo, quatro, então você terá uma entrada de áudio nas fontes 0, 1, 2 e 3, com um
+    desses valores sendo aqueles que você usa para começar a gravar a partir do uso da função audio_start_recording(). Este valor pode mudar a qualquer momento à medida que as pessoas conectam e desconectam microfones ou outros
+    fontes de entrada para o dispositivo. Note que você pode usar a função audio_get_recorder_info() para obter informações sobre cada dispositivo conectado.
+  IMPORTANTE! Esta função sempre retornará 0 quando utilizada no alvo HTML5.
+   
+  Sintaxe:
+  audio_get_recorder_count();
+   
+  Devoluções:
+  Inteiro
+   
+  Exemplo:
+  se audio_get_recorder_count() > 0 {
+     channel_index = audio_start_recording(0); }
+  
+  O código acima verifica os gravadores de áudio disponíveis e se houver 1 ou mais, ele começa a gravar a partir do primeiro indexado (fonte 0).
+   
+   
+   
+  
+    
+      
+        Voltar: Buffers de áudio
+        Próximo: audio_get_recorder_info
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

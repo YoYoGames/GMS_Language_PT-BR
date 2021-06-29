@@ -1,0 +1,62 @@
+
+  
+  ds_grid_add_region
+  Esta função pode ser usada para adicionar um determinado valor (real ou string) a todos os valores das células encontradas dentro da área definida de uma grade. O valor a ser adicionado deve ser do mesmo tipo do que é mantido dentro das células da grade, ou seja: não se pode adicionar uma string a
+    um real ou vice-versa, e para as cordas isto corresponde a concatenação.
+   
+  Sintaxe:
+  ds_grid_add_region(index, x1, y1, x2, y2, val);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice da grade.
+      
+      
+        x1
+        A posição x da esquerda da região na grade.
+      
+      
+        y1
+        A posição y da parte superior da região na grade.
+      
+      
+        x2
+        A posição x da direita da região na grade.
+      
+      
+        y2
+        A posição y da parte inferior da região na grade.
+      
+      
+        val
+        O valor a agregar às células da região.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  ds_grid_add_region(grid, 2, 4, 5, 5, ".")
+  Isto acrescentaria "..." a todas as cordas mantidas nas células dentro da região definida da grade DS referenciada pela variável "grade".
+   
+   
+   
+  
+    
+      
+        Voltar: Grades DS
+        Próximo: ds_grid_add_disk
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

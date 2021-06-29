@@ -1,0 +1,54 @@
+
+  
+  event_perform_object
+  Esta função funciona da mesma forma que event_perform() exceto que desta vez você pode especificar eventos de outro objeto. Há muitas opções aqui que permitem a simulação completa de todos
+    eventos possíveis, mas note que isto literalmente apenas executa todo o código no evento e o jogo não modificará nada para fazê-lo acionar manualmente, por exemplo, se você optar por executar um evento de pressão do teclado, o evento será acionado
+    mas a chave relevante não será reconhecida como tendo sido pressionada. Ou se você executar um evento de alarme, o contador de alarme não será ajustado para -1, mas sim continuará a contagem regressiva. Você pode encontrar uma lista completa das constantes disponíveis esta função
+    requer da página para a função event_perform().
+  OBSERVAÇÃO: As ações no caso chamado com esta função são aplicadas à instância atual, e não às instâncias do objeto em questão.
+   
+  Sintaxe:
+  event_perform_object(obj, type, numb);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        obj
+        O objeto que deve ter seu evento acionado.
+      
+      
+        tipo
+        O tipo de evento a ser realizado. Veja abaixo.
+      
+      
+        dormente
+        O evento específico, se for necessário (caso contrário, use apenas 0).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  event_perform_object(obj_Player, ev_keypress, ord("W"));
+  Isto realizaria o evento associado à Verificação do Teclado Pressionado > tecla W do objeto "obj_Player" na instância atual.
+   
+   
+   
+   
+  
+    
+      
+        Voltar: Eventos de geração de objetos
+        Próximo: event_user
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

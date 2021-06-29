@@ -1,0 +1,56 @@
+
+  
+  posição_de_ouvinte_audio
+  Com esta função você pode mudar a posição do ouvinte dentro do espaço de áudio 3D. A imagem de exemplo abaixo mostra a posição padrão para o ouvinte no espaço de áudio:
+  
+  NOTA: se você tiver vários ouvintes, você deve usar a função audio_listener_set_position().
+  Como você pode ver, a posição padrão é (0, 0, 0) mas você normalmente usaria esta função para mover o ouvinte com o objeto do jogador dentro de seu jogo e assim mudar a maneira como o áudio criado pelos emissores é ouvido pelo jogador, por exemplo, no
+    imagem abaixo de um jogo de cima para baixo, a instância do jogador define o ouvinte que fará com que o áudio dos vários emissores "mude" à medida que o jogador se move pelo nível:
+  
+  Sintaxe:
+  audio_listener_position(x, y, z);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A posição x do ouvinte (padrão 0).
+      
+      
+        y
+        A posição y do ouvinte (padrão 0).
+      
+      
+        z
+        A posição z do ouvinte (padrão 0).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se velocidade > 0 {
+     audio_listener_position(x, y, 0); }
+  
+  O código acima verifica se a velocidade da instância do leitor está acima de 0 e se é ele que atualiza o ouvinte de áudio para a posição x/y atual.
+   
+   
+   
+  
+    
+      
+        Voltar: Ouvintes de áudio
+        Próximo: audio_listener_velocity
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

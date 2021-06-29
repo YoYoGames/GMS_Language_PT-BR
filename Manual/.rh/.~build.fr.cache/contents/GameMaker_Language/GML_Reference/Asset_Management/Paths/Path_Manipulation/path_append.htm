@@ -1,0 +1,49 @@
+
+  
+  path_append
+  Com este código você pode anexar um caminho a outro, unindo-os efetivamente, e para que isto funcione, ambos os caminhos devem existir previamente. Em geral, você gostaria de usar esta função em caminhos criados usando path_add(),
+    uma vez que se você utilizá-lo em um ativo do caminho, ele afetará permanentemente o caminho para instâncias no jogo desde o momento em que a função é utilizada até o final do jogo.
+  NOTA: Isto não removerá o caminho que está sendo anexado do jogo. Ele ainda está lá, só que agora não tem pontos nele e se você não quiser mais usá-lo você deve removê-lo com a função path_delete().
+   
+  Sintaxe:
+  path_append(index, path);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O novo índice do caminho.
+      
+      
+        caminho
+        O índice do caminho que será anexado ao 'índice'.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  path_append(mypath, mppath); path_delete(mppath);
+  
+  O código acima anexa os dados do caminho indexado na variável "mppath" ao caminho indexado na variável "mypath" e depois apaga o "mppath" da memória.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação do caminho
+        Próximo: path_assign
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

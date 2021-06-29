@@ -1,0 +1,57 @@
+
+  
+  sprite_get_uvs
+  Esta função retorna uma matriz com as coordenadas UV e outros dados para a textura da subimagem sprite na página de textura. A função retorna um array com os 8 elementos a seguir:
+  
+    [0] = esquerda
+    [1] = topo
+    [2] = direito
+    [3] = fundo
+    [4] = quantidade de pixels que o compilador de bens aparou do lado esquerdo dos sprites
+    [5] = quantidade de pixels que o compilador de bens aparou do lado superior dos sprites
+    [6] = porcentagem normalizada de dados de pixels da largura original dos sprites que foi salva na página de textura
+    [7] = porcentagem normalizada de dados de pixels da altura original dos sprites que foi salva na página de textura
+  
+  Esta matriz pode então ser usada em outras funções de desenho, particularmente quando se trabalha em 3D ou usando as funções primitivas 2D, bem como quando se trabalha com o Shader funções.
+  NOTA: Esta função não funcionará com sprites vetoriais ou sprites de animação de esqueleto.
+   
+  Sintaxe:
+  sprite_get_uvs(sprite, subimagem);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sprite
+        O índice do duende a ser utilizado.
+      
+      
+        subimagem
+        A subimagem do duende a ser usada.
+      
+    
+  
+   
+  Devoluções
+  Array (1D, 8 elementos)
+   
+  Exemplo:
+  var tex = sprite_get_uvs(sprite, 0); tex_left = tex[0]; tex_top = tex[1]; tex_right = tex[2]; tex_bottom = tex[3];
+  O código acima armazenará as coordenadas UV para o duende dado em uma matriz local e então atribuirá os valores às variáveis de instância.
+   
+   
+   
+  
+    
+      
+        Voltar: Informações Sprite
+        Próximo: sprite_get_info
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

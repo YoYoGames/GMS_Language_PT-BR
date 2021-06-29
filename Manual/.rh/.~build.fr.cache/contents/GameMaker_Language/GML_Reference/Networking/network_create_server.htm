@@ -1,0 +1,79 @@
+
+  
+  network_create_server
+  Esta função é usada para criar um novo servidor de rede para seu jogo, usando um dos protocolos de conexão permitidos (veja as constantes listadas abaixo). Você fornece o tipo de servidor, depois lhe dá uma porta para usar, e finalmente o número máximo de conexões
+    que deve ser permitido a qualquer momento para o servidor (note que este número depende de você, mas muitos clientes conectados saturarão a rede ou a CPU do dispositivo não será capaz de lidar com o processamento desse número de jogadores, então use com
+    cuidados). A função retorna uma identificação única que deve ser usada em uma variável e usada para identificar o servidor em todas as outras funções da rede, ou um valor inferior a 0 se a conexão falhar.
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        network_socket_tcp
+        Criar um soquete usando TCP.
+      
+      
+        rede_socket_udp
+        Criar um soquete utilizando o UDP.
+      
+      
+        network_socket_ws
+        Criar um soquete web(somente para conexão a projetos HTML5), usando TCP.
+      
+      
+        rede_socket_bluetooth
+        Criar uma tomada Bluetooth(atualmente indisponível!).
+      
+    
+  
+   
+  Sintaxe:
+  network_create_server(type, port, max_client);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tipo
+        O tipo de servidor a ser criado (ver as constantes listadas abaixo).
+      
+      
+        porto
+        A porta que o servidor irá utilizar.
+      
+      
+        max_client
+        O número máximo de clientes que podem se conectar de uma só vez.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var port = 6510; server = network_create_server(network_socket_tcp, port, 32); while (server < 0 && port < 65535) {
+     porto+++
+     server = network_create_server(network_socket_tcp, port, 32); }
+  
+  O código acima tentará criar um servidor usando TCP através da porta 6510. Se essa porta não estiver disponível, ela irá então percorrer as portas para encontrar uma que esteja.
+   
+   
+   
+  
+    
+      
+        Voltar: Rede
+        A seguir: network_create_server_raw
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

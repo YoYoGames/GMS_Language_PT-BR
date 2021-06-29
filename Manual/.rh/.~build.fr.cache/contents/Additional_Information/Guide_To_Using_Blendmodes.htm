@@ -1,0 +1,176 @@
+
+  
+  Guia para a utilização de emendas
+  Se você tem usado o GameMaker Studio 2 por algum tempo, você quase certamente terá encontrado modos de mistura, e provavelmente até os usou em seus jogos.
+    Os modos de mistura são uma ótima maneira de mudar como algo é desenhado para dar efeitos gráficos interessantes e específicos, mas você sabe como eles funcionam e como você os usa? Este é um assunto que pode confundir as pessoas e por isso, nesta seção, esperamos dissipar
+    alguns dos modos de mistura misteriosos ao redor e permitir que você os utilize em toda a sua extensão em seus jogos.
+   
+  VISÃO GERAL
+  Os modos de mistura basicamente dizem a seu jogo para desenhar certas coisas misturadas com o que quer que já esteja desenhado de antemão. Tudo que você desenha para a tela é composto de quatro componentes - vermelho, verde, azul e alfa - e, por padrão, eles são desenhados para
+    a tela usando o modo de mistura bm_normal. Este modo de mistura desenha todos os pixels com suas cores e valores alfa essencialmente inalterados (embora, mais tarde nesta seção você verá que isto não é bem verdade...),
+    mas o GameMaker Studio 2 tem uma série de modos de mistura que podem ser configurados para mudar este comportamento.
+  Quando o GameMaker Studio 2 vai desenhar um pixel, há uma cor de origem ( a cor do pixel que você vai desenhar) e uma cor de destino ( a cor que já está no pixel para o qual estamos desenhando). Quando
+    determinando a nova cor do pixel, o GameMaker combinará as cores de origem e destino de acordo com o modo de mistura, como mencionado acima. Cada componente das cores é armazenado como um valor de ponto flutuante entre 0 e 1,
+    e a nova cor é calculada multiplicando cada componente da cor de origem por algum fator e multiplicando cada componente da cor de destino por algum outro fator e depois adicionando os resultados juntos, componente por componente.
+   
+  MODOS DE MISTURA BÁSICOS
+  GameMaker Studio 2 usa a função gpu_set_blendmode() para mudar a mistura que seu jogo usa para desenhar. Você chamaria isto antes (por exemplo) de desenho
+    um duende, e depois o repõe, algo como isto:
+  gpu_set_blendmode(bm_add); draw_self();
+     gpu_set_blendmode(bm_normal);
+  
+  Esse código desenha a instância sprite usando um modo de mistura aditiva . O modo de mistura aditiva é definido usando uma das constantes GML disponíveis, das quais há quatro para os modos básicos:
+  bm_normal bm_add
+     bm_subtract
+     bm_max
+  
+  Já vimos o aspecto do bm_normal - já que é o que tudo tem como padrão! - então vamos continuar a olhar os outros três com um pouco mais de detalhe...
+  
+   
+  bm_add
+  
+    Este modo de mistura adiciona as cores dos pixels de origem e destino juntos (mas não afeta os valores alfa). Por exemplo, se sua imagem de fundo for uma cor sólida com um valor RGB de (100,15,70), e então você desenha um retângulo com um
+      RGB de (120,25,30), então (usando bm_add) os valores finais de RGB para cada pixel do retângulo seriam (220,40,100). Observe que os valores de cor não podem ultrapassar 255 (ou abaixo de 0), portanto, qualquer coisa que somar mais do que isso será fixada em 255.
+    Usando esta mistura
+      O modo é uma ótima maneira de obter aquele aspecto de "néon glow", e é mais freqüentemente usado para efeitos de iluminação, ou lasers ou qualquer coisa que você queira parecer brilhar ou ter luminescência.
+    
+  
+  bm_subtract
+  
+    Este modo de mistura é um pouco diferente do anterior, pois funciona em uma base percentual e não em um valor direto. Esta porcentagem é o que será subtraído da cor de destino (a cor do pixel a ser atraído). Para explicar isto
+      melhor, vejamos um exemplo.
+    Imagine que você quer reduzir em 25% o valor vermelho de todos os pixels desenhados em uma área da sala. Primeiro você precisaria obter 25% de 255, depois converter isso em um valor de cor RGB, e finalmente usar isso junto com bm_subtract para desenhar sobre a área.
+      Algo parecido com isto:
+    var red = (25 / 100) * 255;var col = make_colour_rgb(red, 0, 0);gpu_set_blendmode(bm_subtract);draw_rectangle_colour(0, 0, 128, 256, col, col, col, col, false);gpu_set_blendmode(bm_normal);
+    Seguindo a mesma regra, se você quisesse simplesmente reduzir o brilho de um fundo em 50%, então você teria uma cor que é 50% vermelho, 50% verde e 50% azul, ou seja: RGB (128, 128, 128). Este modo de mistura é usado principalmente para desenhar sombras, ou criar
+      efeitos interessantes de fade out.
+    
+  
+  bm_max
+  
+    Este modo de mistura é mais complexo de explicar, mas basicamente multiplica as cores de origem pelo alfa de origem, depois as adiciona aos valores de cor de destino multiplicados pelos valores de cor de origem inversa. A matemática real por trás do bm_max (e o
+      outros modos de mistura) que cobriremos na parte dois de nosso artigo, mas tudo que você precisa saber é que o resultado será uma cor mais "saturada" e mais brilhante, sem levar ao mesmo brilho branco puro que o uso do bm_add causará.
+    Este modo de mistura pode ser útil quando
+      você precisa desenhar imagens sobrepostas sem que elas se tornem tão brilhantes que não possam ser vistas. As partes brilhantes se tornarão mais brilhantes, mas ainda assim devem manter um nível de cor e tonalidade. Observe que o valor alfa da imagem de origem
+      também influenciará no efeito final ao usar este modo de mistura.
+  
+   
+  Agora você sabe o básico por trás do uso de um modo de mistura no GameMaker Studio 2. Ele toma os valores RGB e alfa para a imagem de origem (o que está sendo desenhado) e depois os mistura com os valores RGB e alfa do destino (o que está sendo desenhado
+    também). Esta mistura é feita multiplicando os componentes individuais para cada cor de pixel e alfa por quantidades diferentes, dependendo dos efeitos que desejamos alcançar. Com este conhecimento, você pode começar a usar os modos de mistura em seus jogos para obter
+    lasers brilhantes, sombras realistas ou efeitos de transição saturados, mas ainda há mais a ser aprendido aqui! Abaixo, analisamos os modos de mistura estendida, bem como exploramos um pouco da matemática por trás deles, para que você possa criar seu
+    efeitos de mistura próprios como multiplicação ou sobreposição.
+   
+  Modos de mistura estendida
+  Acima falamos sobre a função gpu_set_blendmode()mas agora vamos olhar para gpu_set_blendmode_ext().
+    Esta é (como o nome indica) uma função ampliada para definir modos de mistura personalizados , mas como isso funciona? Vamos apenas dar uma olhada na resposta técnica seca antes de irmos mais longe:
+  
+    A função gpu_set_blendmode_ext(src, dest) indica o modo de mistura a ser usado tanto para a cor de origem quanto para a cor de destino. A nova cor é alguns fatores vezes a fonte e outro fator vezes
+      o destino. Estes fatores são definidos com esta função. Para entender isto, tanto a fonte quanto o destino têm um componente vermelho, verde, azul e alfa. Portanto, a fonte é (Rs, Gs, Bs, As) e o destino é
+      (Rd, Gd, Bd, Ad). Todos os valores são considerados como estando entre 0 e 1.
+  
+  Agora, embora esse texto esteja correto e explique o que os modos de mistura fazem, ele não é realmente intuitivo... então vamos entrar um pouco mais em detalhes e explicar do que se trata.
+  Quando falamos da fonte , estamos falando da cor e dos valores alfa do pixel que está sendo desenhado, e quando falamos do destino , estamos falando da cor e dos valores alfa do pixel que
+    está sendo arrastado. Para manter as coisas mais fáceis, podemos escrever a cor da fonte como seus componentes, desta forma:
+  
+    (Rs, Gs, Bs, As) = o RGB e o Alfa da cor que você vai desenhar.
+  
+  E o destino seria assim:
+  
+    (Rd, Gd, Bd, Ad) = o RGB e o Alfa da cor que você vai desenhar.
+  
+  Assim, quando desenhamos algo na tela, nosso processador gráfico está realmente fazendo o seguinte para cada pixel:
+  final_pixel_color = (Rs,Gs,Bs,As) * source_blend_factor + (Rd,Gd,Bd,Ad) * destination_blend_factor
+  Os fatores de mistura mencionados acima são definidos no GameMaker Studio 2 por um número de constantes GML, e cada uma representa um fator pelo qual os valores R, G, B e A da fonte ou destino devem ser multiplicados por. Os fatores disponíveis
+    são:
+  
+    bm_zero: O fator de mistura é (0, 0, 0, 0, 0)
+    bm_one: O fator de mistura é (1, 1, 1, 1, 1)
+    bm_src_colour: O fator de mistura é (Rs, Gs, Bs, As)
+    bm_inv_src_colour: O fator de mistura é (1-Rs, 1-Gs, 1-Bs, 1-As)
+    bm_src_alpha: O fator de mistura é (As, As, As, As, As)
+    bm_inv_src_alpha: O fator de mistura é (1-As, 1-As, 1-As, 1-As, 1-As)
+    bm_dest_alpha: O fator de mistura é (Anúncio, Anúncio, Anúncio, Anúncio)
+    bm_inv_dest_alpha: O fator de mistura é (1-Ad, 1-Ad, 1-Ad, 1-Ad, 1-Ad)
+    bm_dest_colour: O fator de mistura é (Rd, Gd, Bd, Ad)
+    bm_inv_dest_colour: O fator de mistura é (1-Rd, 1-Gd, 1-Bd, 1-Ad)
+    bm_src_alpha_sat: O fator de mistura é (f, f, f, 1); f = min(As, 1-Ad)
+  
+  Os quatro modos de mistura "básicos" que o GameMaker Studio 2 tem são na verdade compostos de dois desses fatores de mistura.
+  Exemplo de como o bm_normal funciona
+  
+    É hora de olhar um exemplo prático de como isto se reúne para desenhar no GameMaker Studio 2. Para isto, vamos olhar para bm_normal, que é realmente:
+    gpu_set_blendmode_ext(bm_src_alpha, bm_inv_src_alpha);
+    Um dos problemas que as pessoas têm com os modos de mistura é visualizar os resultados, portanto, para mostrar a matemática por trás deles, usaremos este modo de mistura como nosso tema de teste, já que é o modo de mistura que todos mais usam e sabemos exatamente o que
+      esperar dele. Imagine que estamos desenhando um retângulo com a cor (128, 255, 64, 255, 255) sobre um fundo com a cor (64, 128, 255, 255, 255):
+    Então,
+      nosso modo de mistura se parece com este:
+    Fonte: (128, 255, 64, 255) = (0,5, 1, 0,25, 1)Destino: (64, 128, 255, 255, 255) = (0,25, 0,5, 1, 1)bm_src_alpha (As, As, As, As) = (255, 255, 255, 255, 255) = (1, 1, 1, 1)bm_inv_src_alpha (1-As, 1-As, 1-As, 1-As) = (0, 0, 0, 0, 0)(Rs,Gs,Bs,As)
+      * bm_src_alpha + (Rd,Gd,Bd,Ad) * bm_inv_src_alpha(0,5, 1, 0,25, 1) * (1, 1, 1, 1) + (0,25, 0,5, 1, 1) * (0, 0, 0, 0, 0)(0,5, 1, 0,25, 1) + (0, 0, 0, 0, 0) = (0,5, 1, 0,25, 1) = (128, 255, 64, 255)
+    Como você pode ver, multiplicamos os valores de destino por 0, o que lhes dá um valor de 0 também, o que significa que as cores de origem permanecem inalteradas, portanto nosso valor final de cor é (128, 255, 64, 255). Você pode ver como a inclusão do alfa afeta
+      este valor também:
+    Fonte (128, 255, 64, 128) = (0,5, 1, 0,25, 0,5)Destino: (64, 128, 255, 255, 255) = (0,25, 0,5, 1, 1)bm_src_alpha (As, As, As, As) = (128, 128, 128, 128, 128) = (0,5, 0,5, 0,5, 0,5)bm_inv_src_alpha (1-As, 1-As, 1-As, 1-As) = (0,5, 0,5, 0,5, 0,5,
+      0,5)(Rs,Gs,Bs,As) * bm_src_alpha + (Rd,Gd,Bd,Ad) * bm_inv_src_alpha(0,5, 1, 0,25, 0,5) * (0,5, 0,5, 0,5, 0.5, 0,5) + (0,25, 0,5, 1, 1) * (0,5, 0,5, 0,5, 0,5, 0,5)(0,25, 0,5, 0,125, 0,25) + (0,125, 0,25, 0,5, 0,5) = (0,375, 0,75, 0,625, 0,75)
+      = (96, 192, 159, 192)
+    Isto dá uma cor final de pixel (96, 192, 159, 192), e dará uma imagem como a mostrada abaixo:
+    
+    Esperamos que agora você possa ver claramente o que os fatores do modo de mistura fazem, e como combiná-los pode mudar o que é desenhado para criar alguns efeitos interessantes. Agora veremos um exemplo prático de como combinar estes fatores para criar seu próprio costume
+      modos de mistura.
+      
+      
+  
+  Agora você sabe como funciona o modo de mistura e já viu um exemplo de como ele é usado para o desenho cotidiano, vamos olhar para algo mais complexo...
+   
+  CRIANDO SEUS PRÓPRIOS MODOS DE MISTURA
+  Usando os diferentes fatores disponíveis, você pode criar seus próprios modos de mistura para conseguir opções de mistura que não estão disponíveis normalmente. Neste exemplo, vamos criar um efeito multiplicador como o utilizado no Photoshop. Nós
+    pode simular este modo de mistura usando duas de nossas constantes de fator de modo de mistura acima mencionadas como esta:
+  gpu_set_blendmode_ext(bm_dest_colour, bm_zero);
+  Antes de realmente desenharmos algo usando este modo de mistura, vamos dar uma olhada em como ele deve ficar no Photoshop:
+  Usando nosso modo de mistura estendida, obtemos o seguinte:
+  (Rs, Gs, Bs, As) * (Rd, Gd, Bd, Ad) + (Rd, Gd, Bd, Ad) * (0,0,0,0) = (Rs, Gs, Bs, As) * (Rd, Gd, Bd, Ad) Cor de origem * cor de destino + cor de destino * zero = cor de origem * cor de destino
+  O fator de mistura bm_zero remove efetivamente a cor de destino da equação (como zero vezes qualquer coisa é zero), então ficamos com a cor de origem multiplicada pelo fator de mistura da cor de destino, portanto
+    o nome "multiplicar" para a modalidade. Para usar isto no GameMaker Studio 2, você simplesmente teria algo assim em seu Evento de Sorteio:
+  gpu_set_blendmode_ext(bm_dest_colour, bm_zero); draw_self();
+     gpu_set_blendmode(bm_normal);
+  
+  A imagem seguinte foi tirada de um projeto de teste no GameMaker usando este código exato:
+  Você consegue perceber a diferença? Provavelmente não! Haverá, no entanto, algum desvio
+    entre os dois devido às diferenças entre as ferramentas de renderização utilizadas, mas é quase exatamente como seria de se esperar. Observe que nem todos os modos de mistura utilizados pelos programas de arte estão disponíveis para você dentro do GameMaker Studio 2, devido ao fato de que alguns dos
+    eles podem realmente forçar os valores de cor a ultrapassar 255 e assim criar efeitos especiais, mas isso não significa que você não possa criar imitações transitáveis desses efeitos, ou mesmo efeitos novinhos em folha, usando-os.
+  Vale a pena mencionar que com o GameMaker Studio 2 você pode dar este passo adiante usando a função gpu_set_blendmode_ext_sepalpha().
+    Isto permite separar o componente alfa dos diferentes fatores do modo de mistura e usá-los individualmente para criar ainda mais combinações possíveis. Não vamos cobrir esta função aqui, como já está explicado em profundidade no manual,
+    mas vale a pena mencionar apenas para que você saiba que ele está disponível para uso.
+   
+  SUPERFÍCIES E ALFA
+  Uma última coisa é digna de nota sobre os modos de mistura, e é como eles afetam o componente alfa de uma cor. Ao simplesmente desenhar para a superfície de aplicação ou
+    o buffer de exibição, você não precisa realmente levar em consideração o valor alfa de destino, pois ele será sempre um. Entretanto, as superfícies que você mesmo faz são diferentes,
+    uma vez que você pode limpar uma superfície para ter qualquer valor alfa de zero a um que você desejar. Isto leva a alguns efeitos interessantes que são contrários ao que a maioria das pessoas esperaria.
+  Para ilustrar isto, vamos analisar o desenho utilizando o padrão básico bm_normal. A maioria das pessoas pensa que ter uma superfície livre para alfa 0, e depois desenhar algo com um alfa de 0,5 dará um alfa resultante
+    valor 0,5 também... mas este não é o caso e é algo que muitas pessoas acham que é um "bug" na forma como o GameMaker Studio 2 torna as coisas. No entanto, como você verá, não é de forma alguma um "bug"!
+  Digamos que você tenha superfície com cada pixel em alfa 0, então você desenha um círculo com alfa 0,5 usando o modo de mistura bm_normal. A superfície inteira ainda será alfa 0, mas no círculo o alfa será na verdade 0,25,
+    desde então:
+  0.5 * 0.5 + 0 * 0.5 = 0.5 * 0.5 = 0.25
+  Se, em seguida, proceder para desenhar outro círculo no círculo existente, também com um alfa de 0,5, então o alfa fora dos círculos seria 0, entre os círculos 0,25, e no círculo menor seria 0,375:
+  0.5 * 0.5 + 0.25 * 0.5 = 0.25 + 0.125 = 0.375
+  Se você continuasse a desenhar um número de 0,5 círculos alfa para uma superfície com 0 alfa, e depois desenhasse esta superfície para a sala, você seria capaz de ver isto claramente:
+  Se você ainda estiver um pouco confuso sobre o alfa, tente imaginá-lo como apenas outra cor. Ele se comporta como
+    uma cor e todos os cálculos sobre ela são feitos de maneira semelhante. Só não é realmente visível, embora o efeito que tem sobre outras cores seja. O que nos leva à última coisa a notar quando usamos superfícies e modos de mistura (até mesmo bm_normal)...
+  Mesmo se o alfa da superfície for 0, os componentes de cor ainda estão lá e existem e influenciarão em todas as operações de mistura. Assim, o desenho até uma superfície livre de alfa zero que tenha sido limpa usando a cor vermelha (para
+    exemplo) misturará as cores de origem com as cores de destino e dará diferentes efeitos ao que você possa pensar. A imagem acima foi criada em uma superfície desobstruída a preto sobre um fundo preto, mas se desobstruirmos a superfície a vermelho, obtemos
+    isto, em vez disso:
+  Espero que agora você possa descobrir por que isso acontece por si mesmo usando as fórmulas que descrevi acima e aplicando os números apropriados
+    para bm_normal.
+   
+   
+   
+  
+    
+      
+        Voltar: Informações adicionais
+        A seguir: Relatório de erros
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

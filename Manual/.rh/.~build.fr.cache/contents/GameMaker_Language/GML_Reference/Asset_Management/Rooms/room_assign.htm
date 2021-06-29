@@ -1,0 +1,47 @@
+
+  
+  atribuição_de_quarto
+  Esta função irá copiar uma sala para outra, removendo todas as instâncias, azulejos, etc... da sala que está sendo copiada e substituindo-as completamente pelo conteúdo da nova sala. Você fornece o índice para a sala para a qual a sala será copiada (ou como definido
+    no navegador do ativo ou como retornado pela função room_add()), bem como o índice da sala de origem. Note que a chamada desta função em uma sala de ativos criada no Navegador de Ativos alterará permanentemente o conteúdo da sala,
+    e mesmo ligando para game_restart() não devolverá a sala ao seu estado original (somente terminando o jogo e abrindo-a novamente começará com a sala em seu estado original novamente).
+   
+  Sintaxe:
+  room_assign(ind, fonte);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice da sala a ser copiado.
+      
+      
+        fonte
+        O índice da sala de onde será copiado.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  global.rm = room_add(); room_assign(global.rm, rm_Base);
+  O código acima adicionará uma nova sala ao jogo e então copiará o conteúdo da sala indexada como "rm_Base" para dentro dela.
+   
+   
+   
+  
+    
+      
+        Voltar: Quartos
+        Próximo: room_instance_add
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

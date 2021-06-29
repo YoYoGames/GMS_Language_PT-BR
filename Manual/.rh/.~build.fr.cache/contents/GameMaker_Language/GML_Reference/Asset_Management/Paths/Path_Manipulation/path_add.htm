@@ -1,0 +1,33 @@
+
+  
+  caminho_add
+  Com esta função você pode criar um caminho no GameMaker Studio 2 sem usar o editor de caminhos. esta função retornará o índice do caminho que deverá ser armazenado em uma variável e usado como referência para aquele caminho a partir de então. Por favor, note que
+    que o caminho criado está vazio, ou seja: não tem pontos definidos, então você terá que usar as outras funções disponíveis para adicionar pontos ao caminho ou estar usando grades MP para
+    gerar o caminho. Uma vez terminado o uso do caminho, ou desejando criar um novo e armazenar seu índice na mesma variável, você deve primeiro apagar o caminho antigo com path_delete para evitar vazamentos de memória que
+    pode, eventualmente, acabar por quebrar seu jogo.
+   
+  Sintaxe:
+  path_add();
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  global.newpath = path_add();
+  Isto criará um novo caminho e atribuirá seu índice ao global.newpath.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação do caminho
+        Próximo: caminho_add_ponto
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

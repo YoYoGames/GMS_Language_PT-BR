@@ -1,0 +1,83 @@
+
+  
+  botão_de_marcação_pressionado_do_mouse
+  Esta função voltará a ser verdadeira se o botão do mouse que está sendo verificado tiver sido pressionado ou falsa se não tiver sido. Esta função só será acionada uma vez para qualquer botão do mouse quando ele for pressionado pela primeira vez e para acionar novamente o botão
+    precisará ter sido liberada e pressionada novamente. Note que ele será considerado acionado durante a etapa, e para todas as instâncias que tenham qualquer evento do mouse ou que usem esta mesma função.
+  Você fornece o botão do mouse para verificar a partir de uma das seguintes constantes:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        mb_esquerda
+        O botão esquerdo do mouse
+      
+      
+        mb_middle
+        O botão central do mouse (isto pode não ser válido para todas as plataformas alvo)
+      
+      
+        mb_right
+        O botão direito do mouse
+      
+      
+        mb_side1*
+        Botão do lado do mouse 1
+      
+      
+        mb_side2*
+        Botão do lado do mouse 2
+      
+      
+        mb_any
+        Qualquer um dos botões do mouse
+      
+      
+        mb_none
+        Sem botão do mouse
+      
+    
+  
+   *
+   NOTA: Os botões mb_side1 e mb_side2 estão disponíveis apenas no Windows, macOS, Ubuntu e HTML5.
+  Sintaxe:
+  mouse_check_button_pressed(numb);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dormente
+        Qual a constante do botão do mouse a verificar.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if mouse_check_button_pressed(mb_left) {
+     pontuação += 50; }
+  
+  O código acima verificará se o botão esquerdo do mouse foi pressionado e se ele tem, acrescentará 50 à pontuação.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada do mouse
+        Próximo: mouse_check_button_released
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

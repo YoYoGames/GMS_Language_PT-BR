@@ -1,0 +1,52 @@
+
+  
+   Obter dados sobre os azulejos na Pixel
+  Com esta ação você pode obter os dados de uma célula de azulejo em uma camada de mapa de azulejo a partir de uma posição. Os dados do azulejo são simplesmente um valor que reflete o índice do azulejo junto com os valores de virar, espelhar e girar, assim como qualquer máscara de azulejo personalizada que
+    você já usou. Com esta ação, você primeiro fornece a camada a ser alvo usando o nome da camada (um fio), como definido no editor da sala, e depois os eixos x e y na sala para obter os dados do azulejo. O valor dos dados do azulejo retornado coincidirá com
+    seja qual for a célula do mapa de azulejos que esteja nesse ponto. Por exemplo, se suas peças de azulejos forem 16x16, então a camada do mapa de azulejos manterá as peças em células de 16x16 pixels, então se você usar esta ação para apontar a posição da sala (8, 8), você estará obtendo
+    os dados para a célula (0, 0) do mapa do azulejo.
+  NOTA: A camada selecionada deve ter sido definida como uma camada de mapa de azulejos no editor da sala, caso contrário, você poderá receber erros.
+  O valor retornado será então armazenado na variável de destino que pode ter sido criada anteriormente ou pode ser uma nova variável temporária (se você marcar a caixa de seleção "Temp"). Para mais informações sobre os dados dos azulejos, consulte a seção GML sobre Funções do Mapa de Azulejos.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Camada
+        A camada com o mapa de azulejos ao alvo
+      
+      
+        X
+        A posição ao longo do eixo horizontal (X) para definir os dados da telha para
+      
+      
+        Y
+        A posição ao longo do eixo vertical (Y) para definir os dados da telha
+      
+    
+  
+   
+  Exemplo:
+  O código de bloqueio de ação acima testa para um clique do mouse e quando um é recebido
+    recupera os dados do azulejo para a célula que coincide com a posição do mouse. Estes dados são então modificados e retornados para a camada do mapa do azulejo, girando o azulejo naquela célula.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações em telhas
+        A seguir: Definir dados do azulejo na célula
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

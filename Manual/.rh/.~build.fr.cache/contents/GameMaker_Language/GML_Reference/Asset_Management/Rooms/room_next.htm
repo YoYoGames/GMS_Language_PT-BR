@@ -1,0 +1,45 @@
+
+  
+  room_next
+  Com esta função você pode recuperar o índice da sala após a entrada da sala na função. Por exemplo, você pode usar a variável sala para obter o índice da sala atual e depois usar esta função para encontrar
+    a sala que a segue, conforme listado no Room Manager. Se não houver espaço depois daquele que você inserir, então -1 é devolvido. Note que esta função não irá reconhecer ou levar em consideração
+    quartos que foram adicionados dinamicamente usando room_add() ou room_duplicate().
+   
+  Sintaxe:
+  room_next(numb);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dormente
+        O índice da sala para obter o próximo depois.
+      
+    
+  
+   
+  Devoluções:
+  Índice
+   
+  Exemplo:
+  if room_next(room) != -1 {
+     room_goto_next());
+     }
+  
+  O código acima verificará se a próxima sala existe e, em caso afirmativo, irá até ela.
+   
+   
+  
+    
+      
+        Voltar: Quartos
+        Próximo: room_previous
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

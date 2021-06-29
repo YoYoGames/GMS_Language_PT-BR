@@ -1,0 +1,64 @@
+
+  
+  draw_circle_colour
+  Com esta função você pode desenhar um contorno de um círculo ou um círculo preenchido, e se for preenchido, você pode definir as cores de preenchimento interior e exterior. Se estas cores não forem as mesmas, você terá um efeito de gradiente de um para o outro e
+    as configurações de cores sobreporão o conjunto de cores de base com a função draw_set_colour(). Você pode definir o quão preciso é o desenho com a função draw_set_circle_precision().
+  NOTA: Se você quiser desenhar uma forma usando um sombreador, você deve estar ciente de que a maioria dos sombreadores espera as seguintes entradas: vértice, textura, cor. Entretanto, ao utilizar esta função, apenas os dados de vértice e cor estão sendo passados para dentro, e assim o
+   shader não pode desenhar nada (ou desenhar algo, mas não corretamente). Se você precisar desenhar formas desta maneira, então o sombreador deve ser personalizado tendo isto em mente.
+   
+  Sintaxe:
+  draw_circle_colour(x, y, r, col1, col2, esboço);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A coordenada x do centro do círculo.
+      
+      
+        y
+        A coordenada y do centro do círculo.
+      
+      
+        r
+        O raio (distância do centro à borda) do círculo em pixels.
+      
+      
+        col1
+        A cor no centro do círculo.
+      
+      
+        col2
+        A cor na borda do círculo.
+      
+      
+        esboço
+        Se o círculo é um esboço(verdadeiro) ou não(falso). Se verdadeiro, o col1 é irrelevante.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_circle_colour(x, y, 100, c_white, c_black, false);
+  Isto desenharia um círculo preenchido com seu centro na posição x e y da instância executora, com um raio de 100 pixels, do branco no centro para o preto no exterior.
+   
+   
+   
+  
+    
+      
+        Voltar: Formulários básicos
+        Próximo: draw_ellipse
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

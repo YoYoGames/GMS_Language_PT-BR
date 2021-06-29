@@ -1,0 +1,66 @@
+
+
+
+
+
+  
+  física_mass_properties
+  Esta função pode ser usada para definir valores de massa e inércia personalizados para uma instância habilitada para a física. Normalmente, a massa, centro de massa e inércia de uma instância é calculada usando uma combinação da área de superfície dos dispositivos ligados e sua densidade.
+    Entretanto, em ocasiões muito especiais, pode ser necessário compensar o centro de massa ou alterar a inércia e é quando você usaria esta função. Tenha em mente que a massa é calculada no peso do mundo real (ou seja: quilogramas) e você deve sempre tentar
+    e manter valores realistas para o que você está modelando. Assim, se o seu objeto físico for destinado a representar uma pessoa, sua massa seria de aproximadamente 70 quilos.
+  O centro de massa é calculado automaticamente para você com base na forma do acessório (ou fixações) que você definiu. Para ter uma idéia geral de onde isto poderia estar, se você tiver um duende que tenha a mesma forma que as luminárias que você deseja criar, então
+    selecione a opção "origem do centro" você verá aproximadamente onde o centro de massa também estará. Entretanto, isto pode não ser correto ou você pode estar procurando um efeito específico de seu objeto físico, caso em que esta função também pode
+    ser usado para mudar as coordenadas x e y para o centro da massa. Estes são valores locais, portanto 0,0 é o ponto em que as fixações estão ligadas à instância (a origem da instância). Portanto, um centro de massa de -4,0
+    deslocaria o centro de massa para a esquerda da origem.
+  Quanto à inércia, isto basicamente define o quanto a instância é resistente a mudanças em sua direção e velocidade, de modo que uma inércia mais alta a torna mais resistente e uma inércia baixa a torna menos resistente (inércia e massa não podem ser valores negativos!).
+  NOTA: Esta função não define massa e inércia para luminárias individuais, mas sim para toda a instância física habilitada, não importa quantas luminárias estejam ligadas a ela.
+  NOTA: Esta função só deve ser usada quando necessário, pois a simulação física é projetada para que a massa e a inércia sejam ótimas com base na densidade e no tamanho da fixação. A alteração destes valores pode ter efeitos imprevistos.
+   
+  Sintaxe:
+  física_mass_properties(massa, local_center_x, local_center_y, inércia)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        massa
+        A nova massa que você quer que a fixação tenha.
+      
+      
+        local_center_x
+        A coordenada x local do novo centro de massa.
+      
+      
+        local_center_y
+        A coordenada y local do novo centro de massa.
+      
+      
+        inércia
+        Estabelecer a inércia para a fixação.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  fisica_mass_properties(phy_mass, -10, -10, phy_inertia);
+  O código acima deslocará o centro de massa do corpo físico para a esquerda.
+   
+   
+   
+  
+    
+      
+        Voltar: Física
+        A seguir: sobreposição_de_teste_física
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

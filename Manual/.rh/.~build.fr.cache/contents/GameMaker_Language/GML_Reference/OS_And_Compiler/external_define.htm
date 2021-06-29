@@ -1,0 +1,91 @@
+
+  
+  externo_define
+  Esta função pode ser usada para definir uma chamada de função externa para uma dll específica (para Windows) ou dylib (para Mac). Este arquivo pode ser ou um arquivo incluído ou parte de uma extensão. Você fornece o nome (e o caminho) do arquivo, depois o nome da função
+    que você deseja definir. Em seguida, você precisa definir a convenção de chamada a ser utilizada (veja a lista de constantes abaixo), bem como o tipo de resultado a ser esperado (também uma constante, como listado abaixo). Finalmente, você deve dar o número de argumentos que o
+    (de 0 a 15) e para cada um dos argumentos você deve especificar seu tipo também. Observe que para funções com 4 ou mais argumentos, todos eles devem ser do tipo ty_real.
+  NOTA: Isto é apenas para dll ou dylib que foram adicionados como "Arquivos Incluídos" à IDE GameMaker Studio 2. Não funcionará com aqueles arquivos adicionados como extensões, uma vez que estes requerem que você defina as funções na extensão
+    pacote em si.
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        dll_cdecl
+        Esta é a chamada padrão C, C++
+      
+      
+        dll_stdcall
+        Esta é a chamada padrão WinAPI( somenteWindows dll )
+      
+      
+        ty_real
+        Um verdadeiro argumento numérico
+      
+      
+        ty_string
+        um argumento de cordas com termo nulo
+      
+    
+  
+   
+  Sintaxe:
+  externo_define(dll, nome, calltype, restype, argnumb, argtype[0], argtype[1], ...argtype[10]) ;
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dll
+        O nome do arquivo dll (string)
+      
+      
+        nome
+        O nome da função (string)
+      
+      
+        tipo de chamada
+        A convenção de chamada utilizada
+      
+      
+        restype
+        O tipo de resultado a esperar
+      
+      
+        argnumb
+        O número de argumentos (0 - 10)
+      
+      
+        argtype[0 ... 10]
+        Os diferentes tipos de argumentos que estão sendo utilizados
+      
+    
+  
+   
+   
+  Devoluções:
+  Real (valor único de identificação da função)
+   
+  Exemplo:
+  my_funcion = external_define("MyDLL.dll", "MyMin", dll_cdecl, ty_real, 2, ty_real, ty_real);
+  O código do exemplo acima definirá uma função externa chamada "MyMin" com dois argumentos.
+   
+   
+   
+  
+    
+      
+        Voltar: OS E Compilador
+        Próximo: chamada_externa
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

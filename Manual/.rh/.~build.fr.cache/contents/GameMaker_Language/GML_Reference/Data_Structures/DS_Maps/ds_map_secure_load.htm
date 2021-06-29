@@ -1,0 +1,44 @@
+
+  
+  ds_map_secure_load
+  Esta função carregará um mapa DS previamente gravado do arquivo em questão. Este arquivo deve ter sido previamente criado usando o ds_map_secure_save() função, e, quando carregada, a função retornará a
+   do mapa DS que foi criado a partir dos dados carregados. Este índice de mapa DS deve ser armazenado em uma variável e utilizado para todas as chamadas de funções adicionais a este mapa. Observe que se o DS map que está sendo carregado foi salvo com um array como um dos
+    valores chave, esta matriz terá sido convertida em uma lista DS em carga.
+  IMPORTANTE! Uma das características de um arquivo seguro salvo é que ele está travado no dispositivo em que foi criado, de modo que você não pode carregar um arquivo salvo em um dispositivo em um projeto em execução em outro dispositivo.
+   
+  Sintaxe:
+  ds_map_secure_load(filename);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome do arquivo
+        O nome do arquivo de onde carregar os dados do mapa.
+      
+    
+  
+   
+  Devoluções:
+  Inteiro (DS map index)
+   
+  Exemplo:
+  p_map = ds_map_secure_load("p_data.dat");
+  O código acima irá carregar um mapa DS salvo com segurança e armazenar seu valor de índice em uma variável para uso futuro.
+   
+   
+   
+  
+    
+      
+        Voltar: DS Maps
+        Próximo: ds_map_secure_load_buffer
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

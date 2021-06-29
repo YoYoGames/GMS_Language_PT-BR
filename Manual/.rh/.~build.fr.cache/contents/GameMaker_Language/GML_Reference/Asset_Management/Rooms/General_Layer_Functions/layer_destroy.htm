@@ -1,0 +1,47 @@
+
+  
+  layer_destroy
+  Esta função destruirá a camada dada. Você fornece a identificação da camada (que você obtém quando cria a camada usando layer_create()) ou o nome da camada (como um fio - isto terá um impacto no desempenho) e isto
+    irá removê-lo da sala atual. Se a camada for uma que tenha sido projetada no editor da sala, então na próxima vez que sair da sala e depois retornar, a camada será recriada novamente com o conteúdo original, porém se a sala for persistente,
+    a camada será removida, a menos que a persistência da sala seja desligada novamente. Quando se destrói uma camada desta maneira, todo o seu conteúdo será removido também, portanto, qualquer identificação de referência para fundos ou mapas de azulejos, etc... não será mais válida e quaisquer instâncias
+    designado para a camada será destruído (realizando seu Evento de Destruição ao mesmo tempo, se eles tiverem um, bem como o Evento de Limpeza).
+   
+  Sintaxe:
+  layer_destroy(layer_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada a destruir (ou o nome da camada como um fio)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se !instance_exists(obj_Bullet_Parent) {
+     layer_destroy(global.Bullet_Layer);
+     }
+  
+  O código acima verificará se existe alguma instância do objeto "obj_Bullet_Parent", e se não existir, destruirá a camada com o ID armazenado na variável global.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próximo: layer_x
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

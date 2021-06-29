@@ -1,0 +1,51 @@
+
+  
+  câmera_set_view_view_speed
+  Você pode usar esta função para atualizar a velocidade da câmera de visão dentro da sala. Você dá o valor único de identificação da câmera (como retornado pelos diferentes camera_create() funções) e, em seguida, dar as funções x e y (horizontal
+    e vertical) que deve se movimentar quando definido para seguir uma determinada instância. A velocidade é calculada em pixels por passo e pode ser ajustada para "-1" para fazer a câmera se mover instantaneamente, mas se a câmera não estiver ajustada para seguir qualquer instância, então a
+    Os valores aqui estabelecidos não terão efeito visível.
+   
+  Sintaxe:
+  camera_set_view_speed(camera_id, xspeed, yspeed)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        camera_id
+        O valor único de identificação da câmera retornou quando você criou a câmera.
+      
+      
+        xspeed
+        A velocidade (número de pixels por quadro de jogo) que a vista deve mover-se sobre o eixo horizontal (x)
+      
+      
+        yspeed
+        A velocidade (número de pixels por quadro de jogo) que a vista deve mover-se sobre o eixo vertical (y)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  camera_set_view_speed(view_camera[0], 5, 5);
+  O código acima definirá a velocidade de visualização da câmera designada para a porta de visualização[0].
+   
+   
+   
+  
+    
+      
+        Voltar: Câmeras e Ver Portos
+        Próximo: camera_set_view_border
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

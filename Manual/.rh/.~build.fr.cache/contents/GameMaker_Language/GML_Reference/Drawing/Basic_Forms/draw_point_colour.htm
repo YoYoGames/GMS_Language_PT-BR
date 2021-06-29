@@ -1,0 +1,51 @@
+
+  
+  draw_point_colour
+  Com esta função, você pode desenhar um único pixel em qualquer lugar da tela com uma cor que você define. As configurações de cores sobreporão o conjunto de cores de base com a função draw_set_colour().
+  NOTA: Se você quiser desenhar uma forma usando um sombreador, você deve estar ciente de que a maioria dos sombreadores espera as seguintes entradas: vértice, textura, cor. Entretanto, ao utilizar esta função, apenas os dados de vértice e cor estão sendo passados para dentro, e assim o
+   shader não pode desenhar nada (ou desenhar algo, mas não corretamente). Se você precisar desenhar formas desta maneira, então o sombreador deve ser personalizado tendo isto em mente.
+   
+  Sintaxe:
+  draw_point_colour(x, y, col1);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A coordenada x do ponto.
+      
+      
+        y
+        A coordenada y do ponto.
+      
+      
+        col1
+        A cor do ponto.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_point_colour(50, 50, c_red);
+  Isto desenharia um pixel vermelho a (50,50).
+   
+   
+   
+  
+    
+      
+        Voltar: Formulários básicos
+        Próximo: draw_rectangle
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

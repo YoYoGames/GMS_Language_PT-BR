@@ -1,0 +1,62 @@
+
+  
+  dados_esqueleto_dados_de_squadra
+  Com esta função você pode preencher uma lista DS (pré-criada) com dados para cada um dos slots de anexo disponíveis que uma animação contém. Estes dados são retornados no fórum de um mapa DS que contém os seguintes pares chave/valor:
+  
+    "nome": O nome do espaço.
+    "osso": O nome do "osso".
+    "anexo": O nome do anexo se for usado ou "(nenhum)" se não houver um atribuído.
+  
+  Os valores para cada chave serão cordas e podem então ser usados nas outras funções de fixação do esqueleto para estes tipos de duende. Observe que o mapa DS criado não é destruído, portanto você precisará percorrer a lista DS e destruir cada um dos
+    os próprios mapas criados.
+   
+  Sintaxe:
+  skeleton_slot_data(sprite, lista);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sprite
+        O índice sprite da animação do esqueleto da coluna vertebral para obter os dados.
+      
+      
+        lista
+        A identificação da lista DS a ser preenchida com os mapas DS.
+      
+    
+  
+   
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var list = ds_list_create(); var open = true; slot_name = ""; skeleton_slot_data(sprite_index, list); for (var i = 0; i < ds_list_size(list); i++;)  {
+     var map = list[| i]; se aberto {
+     if map[? "attachment"] == "(none)" {
+     open = false; slot_name = map[? "nome"]; }
+     }
+     ds_map_destroy(mapa);
+     }
+     ds_list_destroy(list);
+  
+  O código acima cria uma lista DS e depois a preenche com os dados do slot para o exemplo sprite. Estes dados são então analisados para extrair os mapas individuais de DS com os dados do slot. Isto é então verificado para ver se há um slot vazio, e se sim, a variável
+    O "slot_name" é atribuído ao nome do slot vazio antes que o mapa DS seja destruído. Finalmente, destruímos a lista DS, pois ela não é mais necessária.
+   
+   
+   
+  
+    
+      
+        Voltar: Slots
+        Próxima: esqueleto_dados_de_instância_esqueleto
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

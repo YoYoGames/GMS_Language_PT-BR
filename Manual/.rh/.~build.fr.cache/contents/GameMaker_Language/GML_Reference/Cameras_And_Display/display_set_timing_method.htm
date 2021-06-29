@@ -1,0 +1,70 @@
+
+  
+  display_set_timing_method
+  Esta função pode ser usada para definir o método de tempo a ser usado para renderizar seu jogo. O método pode ser uma das seguintes constantes:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        tm_sleep
+        Usar o valor da margem de sono como principal método de tempo
+      
+      
+        tm_countvsyncs
+        Usar o sincronismo vsync como o principal método de sincronismo (padrão para todas as plataformas suportadas)
+      
+    
+  
+   
+  O método de sincronização vsync usa o suporte de plataformas alvo para sincronização vertical para fornecer uma âncora para os cálculos de tempo de renderização dos jogos, enquanto que a definição do modo para margem de sono tentará apenas garantir que cada frame dure para o correto
+    quantidade de tempo (digamos 1/30 ou 1/60 de um segundo) esperando ou dormindo. Em geral, o tempo vsync padrão dará os resultados mais suaves, mas observe que ao usar o método vsync, os valores da margem de sono ainda são relevantes, embora
+    têm um impacto reduzido e recomendamos mantê-lo em seu valor padrão ao utilizar este método.
+  Por padrão em todas as plataformas exceto PS4, Ubuntu e HTML5, o GameMaker Studio 2 usará o método de tempo vsync, enquanto que nas plataformas não suportadas, somente o tempo de margem de sono pode ser usado.
+  Se você deseja definir a margem de sono, você pode fazê-lo usando a função display_set_sleep_margin() e você pode encontrar qual método de tempo está sendo usado atualmente com a função display_get_timing_method().
+   
+  Sintaxe:
+  display_set_timing_method(método);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        método
+        O método de tempo a usar (ver a lista de constantes, acima)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se display_get_timing_method() != tm_sleep {
+     display_set_set_timing_method(tm_sleep);
+     if display_get_sleep_margin() != 20 {
+     display_set_sleep_sleep_margin(20);
+     }
+     }
+  
+  O código acima verificará o método de tempo e, se não estiver ajustado para tm_sleep , será ajustado para isso e a margem de sono será ajustada para 20.
+   
+   
+   
+  
+    
+      Câmeras e Display
+        Voltar: 
+        A seguir: display_set_sleep_margin
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

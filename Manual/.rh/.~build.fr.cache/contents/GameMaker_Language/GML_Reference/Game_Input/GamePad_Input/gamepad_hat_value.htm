@@ -1,0 +1,58 @@
+
+
+
+
+  
+  gamepad_hat_value
+  Com esta função você pode obter o valor atual de um "chapéu" de jogo. Cada valor de "chapéu" é uma pequena máscara para as diferentes direções onde:
+  
+    Para cima = 1
+    Direito = 2
+    Abaixo = 4
+    Esquerda = 8
+  
+  Note que estes podem ser combinados (por exemplo, fornecer um índice de chapéu de 3 seria verificar e corrigir), mas somente 2 bits, no máximo, podem ser pressionados de uma só vez. A função retornará um valor real entre 0 e 1, onde 0 não é pressionado e 1 é totalmente pressionado.
+    (e pode haver valores intermediários, dependendo se o gamepad suporta entrada analógica para chapéus).
+   
+  Sintaxe:
+  gamepad_hat_value(dispositivo, hatindex);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dispositivo
+        Qual dispositivo de controle de jogo "slot" a ser verificado.
+      
+      
+        hatindex
+        Qual chapéu (ou chapéu) para verificar.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var _dir = gamepad_hat_value(global.PadIndex, 0); switch (_dir) {
+     caso 1: y -= 3; pausa; caso 2: x += 3; pausa; caso 3: y -= 3; x += 3; pausa; caso 4: x -= 3; pausa; caso 6: y += 3; x += 3; pausa; caso 8: y += 3; pausa; caso 9: y -= 3; x -= 3; pausa; caso 12: y += 3; x -= 3; pausa; }
+  
+  O código acima armazena o estado do chapéu "0" em uma variável local, depois verifica qual é o valor de retorno e age de acordo.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada Gamepad
+        Próximo: gamepad_get_mapping
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

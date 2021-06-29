@@ -1,0 +1,72 @@
+
+  
+  física_fricção_junta_criar
+  A junta de fricção é um pouco diferente de todas as outras juntas na simulação física, pois a conexão criada não restringirá a posição ou o movimento das instâncias, mas sim sua velocidade e rotação. Isto funciona tomando os valores máximos de entrada
+    para força e torque e aplicá-los à segunda fixação para reduzir a velocidade e o momento angular para os mesmos valores da primeira instância. Portanto, se você tiver uma instância estacionária e uma instância móvel, então conecte-as com um atrito
+    conjunta, a instância móvel irá gradualmente desacelerar até ficar também estacionária. Se ambas as instâncias estivessem em movimento, então a segunda instância terá sua velocidade de movimento modificada para igualar a da primeira instância.
+  Como na maioria das outras juntas, você fornece as instâncias para se unir, assim como a posição
+    para a junta a ser criada no interior da sala. Você então fornece a força máxima e o torque máximo (fricção direcional e rotacional), e se você definir o valor "col" como verdadeiro, então as duas instâncias podem interagir e colidir com
+    um ao outro, mas somente se tiverem eventos de colisão, no entanto, se for definido como falso, eles não colidirão, não importa o que aconteça.
+   
+  Sintaxe:
+  physics_joint_friction_create(inst1, inst2, anchor_x, anchor_y, max_force, max_torque, col)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        inst1
+        A primeira instância para se conectar com a junta
+      
+      
+        inst2
+        A segunda instância para se conectar com a junta
+      
+      
+        anchor_x
+        A coordenada x para a articulação, dentro do mundo do jogo
+      
+      
+        âncora_y
+        A coordenada y para a articulação, dentro do mundo do jogo
+      
+      
+        max_force
+        A força friccional máxima que será aplicada
+      
+      
+        max_torque
+        A força máxima de rotação que será aplicada
+      
+      
+        col
+        Se as duas instâncias podem colidir (verdadeiras) ou não (falsas)
+      
+    
+  
+   
+  Devoluções:
+  Inteiro (índice da junta)
+   
+  Exemplo:
+  var mainFixture, o_id; mainFixture = physics_fixture_create(); physics_fixture_set_circle_shape(mainFixture, sprite_get_width(sprite_index) / 2); o_id = instance_create_layer(x+300, y, "Instances", obj_Rudder); physics_fixture_bind(mainFixture_bind(mainFixture),
+    id); physics_fixture_bind(mainFixture, o_id); physics_joint_friction_create(id, o_id, x, y, 10, 0.3, true); physics_fixture_delete(mainFixture);
+  
+  O código acima criará uma fixação e depois a ligará a duas instâncias, antes de ligá-las ambas usando uma junta de fricção.
+   
+   
+   
+  
+    
+      
+        Voltar: Juntas
+        A seguir: physics_joint_delete
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

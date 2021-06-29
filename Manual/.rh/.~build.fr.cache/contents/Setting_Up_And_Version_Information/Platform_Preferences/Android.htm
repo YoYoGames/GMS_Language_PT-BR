@@ -1,0 +1,53 @@
+
+  
+  Preferências doAndroid 
+  O Android As preferências são divididas em várias seções listadas abaixo:
+  No topo das preferências, você pode definir o tamanho máximo do JDK Memory Heap (padrão
+    é de 2GB). A seguir você tem que configurar os vários Caminhos diferentes para que o GameMaker Studio 2 saiba onde procurar as várias ferramentas necessárias para construir o pacote executável final e testar seu jogo. Isto é dividido em três seções
+    para o Android SDK, Android NDK e Java JDK. Estes caminhos deveriam ter sido preenchidos automaticamente para você, mas se você tiver qualquer problema, clique no botão à direita para abrir o explorador de arquivos.
+    e selecionar manualmente os locais para cada elemento. Você pode encontrar detalhes de quais versões são necessárias para cada um dos elementos do SDK aqui. Os caminhos devem ser validados à medida que você os aplica
+    e uma mensagem mostrará "Encontrado"ou lhe informará de qualquer erro (neste caso, você deve revisar todas as informações para ter certeza de que estão corretas).
+  Abaixo estão as diferentes opções de embalagem que estão:
+  
+    Sempre faça a instalação completa do APK: Ao sinalizar isto fará com que o GameMaker Studio 2 remova quaisquer corredores anteriores de seu dispositivo, assim como todos os arquivos associados (por exemplo, arquivos *.ini ) de seu
+      antes de instalar uma nova versão do jogo.
+    Instalar na embalagem: Quando esta opção for marcada, a compilação de um pacote executável final *.apk também o instalará automaticamente no dispositivo alvo atualmente selecionado.
+  
+  Finalmente, chegamos à KeyStore. Este é um arquivo que será usado para "assinar" todos os seus aplicativos Android , portanto, preencha todos os detalhes corretamente e tenha em mente que este arquivo será necessário para criar e atualizar todos os seus aplicativos Android.
+    no futuro, o que significa que, após a criação do , ele é aconselhável tirar uma foto da tela das configurações utilizadas e fazer um backup do arquivo final. Se você perder este arquivo, você não poderá atualizar nenhum
+    jogos existentes que foram carregados para a loja.
+  Para criar um novo arquivo de keystore, os seguintes detalhes são necessários:
+  
+  
+    Nome do arquivo: Este é o nome do arquivo da loja chave.
+  
+  NOTA: Este não é o seu nome ou o nome da empresa, mas o nome do arquivo a ser gerado! Se você já possui um arquivo de keystore de projetos anteriores, então você pode clicar aqui no botão do navegador de arquivos e direcionar o GameMaker Studio 2 para o arquivo de keystore criado anteriormente (ou clicar no botão Importar ). Neste caso, você ainda deve preencher o resto das informações necessárias (exatamente como quando você gerou o arquivo pela primeira vez), mas não deve clicar no botão Gerar Keystore ! Isso gerará um novo arquivo de Keystore, sobrescrevendo o arquivo anterior.
+  
+    Nome comum: Este seria normalmente o seu nome.
+    Senha: Sua senha de segurança para o arquivo do keystore, que deve ter pelo menos seis caracteres.
+    Alias: Este é outro nome que pode ser usado para o arquivo do keystore e deve ser diferente do nome inserido acima.
+    Senha de segurança para o arquivo da loja de chaves, que deve ter pelo menos seis caracteres.
+    Unidade Organizacional: O departamento dentro da empresa do qual você faz parte.
+    Organização: O nome de sua empresa.
+    Localização: O nome da cidade ou localidade onde você está sediado.
+    País: O código padrão de duas letras para o país onde você está sediado.
+  
+  Uma vez preenchidas estas informações e você estiver satisfeito com elas, pressione o botão marcado Gerar Keystore para GameMaker Studio 2 para criar o arquivo de keystore necessário. Isto pode demorar um momento, mas uma vez terminado, normalmente não
+    precisam ser alterados novamente. Note que você pode clicar no botão Importar para importar um arquivo de keystore previamente criado (veja a seção Nome do arquivo , acima) e você também pode recuperar o hash de keystore SHA1 clicando no botão Gerar hash de chave .
+    Pressionando isto, serão geradas duas chaves de hash de segurança especiais diretamente ligadas ao arquivo de seu keystore que alguns sites da web requerem para a funcionalidade correta (por exemplo, Facebook, ou Google Play para o hash Sha1). Caso você precise disto, basta pressionar o botão
+    depois copiar e colar as chaves de hash que são geradas.
+   
+   
+   
+  
+    
+      
+        Voltar: Preferências da Plataforma
+        A seguir: HTML5
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

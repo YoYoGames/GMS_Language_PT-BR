@@ -1,0 +1,36 @@
+
+  
+  surface_get_depth_disable
+  Esta função verifica se a geração automática de buffer de profundidade para superfícies está habilitada. Normalmente todas as superfícies têm amortecedores de profundidade, portanto, se você desenhar objetos 3D para elas, então ele os classificará corretamente pela profundidade, porém alocando essencialmente os amortecedores de profundidade
+    duplica o tamanho das superfícies, o que poderia ser um overhead excessivo e desnecessário, especialmente se seu jogo for muito intensivo em memória ou predominantemente 2D. Nestes casos, você pode verificar isto usando esta função e desabilitar o buffer de profundidade para superfícies
+    se necessário utilizando a função superfície_depth_disable().
+   
+  Sintaxe:
+  surface_get_depth_disable();
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se (!surface_exists(surf)) {
+     if surface_get_depth_disable() == falso {
+     surface_depth_disable(true);
+     }
+     surf = surface_create(room_width, room_height); }
+  
+  O código acima verificará se a superfície em questão existe, e se não existir, então verificará o estado atual do buffer de profundidade da superfície e se estiver habilitado, ao invés disso o desativará, antes de finalmente criar a superfície.
+   
+   
+   
+  
+    
+      
+        Voltar: Superfícies
+        Próximo: surface_getpixel
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,65 @@
+
+  
+  mp_grid_create
+  Com esta função você pode criar uma mp_grid para as funções de planejamento de movimento. Ela retorna um índice que deve ser armazenado em uma variável para uso em todas as outras chamadas de funções de grade MP. As coordenadas x e y indicam a posição do canto superior esquerdo
+    da grade, hcells e vcells indicam o número de células horizontais e verticais a serem criadas dentro da grade, e a largura e altura das células indicam o tamanho das células em pixels. Você pode criar e manter múltiplas estruturas de grade na
+    mesmo momento se você precisar delas para coisas diferentes, mas esteja ciente de que cada grade exigirá memória, e quanto mais células elas tiverem, mais memória elas precisarão. Observe também que as funções MP são bastante pesadas em termos de processador, portanto, quanto mais frequentemente
+    você os chama e quanto maior a resolução da célula, maior é a probabilidade de ter uma queda no desempenho.
+   
+  Sintaxe:
+  mp_grid_create(esquerda, topo, hcells, vcells, cellwidth, cellheight):
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        esquerda
+        Início x coordenada da rede mp_grid na sala
+      
+      
+        topo
+        Início e coordenada da rede mp_grid na sala
+      
+      
+        hcells
+        Número de células horizontais que a rede mp_grid conterá
+      
+      
+        vcells
+        Número de células verticais que a rede mp_grid conterá
+      
+      
+        largura do velório
+        A largura (em pixels) de cada célula individual da rede mp_grid
+      
+      
+        altura de cela
+        A altura (em pixels) de cada célula individual da rede mp_grid
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  global.grid = mp_grid_create(0, 0, room_width / 32, room_height /32, 32, 32);
+  O código acima cria uma variável global "grid", depois gera uma mp_grid e atribui seu índice (id) a essa variável para uso em todas as outras chamadas de função mp_grid. A grade cobre a sala, com uma resolução de célula de 32x32 pixels. Isto significa
+    que, por exemplo, em uma sala que é 640x480, a grade conteria 300 células: 20 células horizontais (640 / 32) multiplicadas por 15 células verticais (480 /32) dá 300 células
+   
+   
+   
+  
+    
+      
+        Voltar: Planejamento de Movimento
+        Próximo: mp_grid_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

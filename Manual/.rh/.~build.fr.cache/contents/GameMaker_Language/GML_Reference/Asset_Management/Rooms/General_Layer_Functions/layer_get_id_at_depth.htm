@@ -1,0 +1,48 @@
+
+  
+  layer_get_id_id_at_depth
+  Você pode usar esta função para obter as identificações de todas as camadas com uma profundidade específica. Você dá a profundidade a ser verificada e a função retornará uma matriz com 1 ou mais entradas, dependendo se há
+    quaisquer camadas na profundidade determinada ou não. Se não houver camadas na profundidade determinada, a matriz terá uma única entrada na posição [0] com um valor -1, mas, se houver camadas na profundidade, então será feita uma entrada na matriz para cada
+    camada encontrada - o valor de entrada será o valor de identificação único para uma camada.
+   
+  Sintaxe:
+  layer_get_id_id_at_depth(depth)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        profundidade
+        A profundidade para verificar e recuperar as identificações das camadas.
+      
+    
+  
+   
+  Devoluções:
+  Array
+   
+  Exemplo:
+  var a = layer_get_id_id_at_depth(0); if a[0] != -1 {
+     para (var i = 0; i < array_length(a); i++;)  {
+     layer_destroy(a[i]);
+     }
+     }
+  
+  O código acima recupera dados sobre as camadas com uma profundidade de 0. É feita uma verificação para ver se existe alguma camada a essa profundidade, e se há então a matriz retornada é analisada e cada uma das camadas encontradas é destruída.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próximo: layer_get_name
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

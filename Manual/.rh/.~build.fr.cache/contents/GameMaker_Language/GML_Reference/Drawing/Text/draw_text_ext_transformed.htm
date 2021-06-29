@@ -1,0 +1,71 @@
+
+  
+  draw_text_ext_transformed
+  Esta função é uma combinação da base draw_text() função com o texto_desenho_texto() e draw_text_transformed()    permitindo escalar e girar o texto enquanto mantém um espaçamento de linha específico e uma largura máxima por linha. Observe que o argumento "largura" é baseado em uma escala de 1, portanto, se a escala for diferente, este valor deve ser alterado
+    proporcionalmente. Por exemplo, se a largura de base para uma quebra de linha for 300 e você definir a escala para 2, então o texto aparecerá errado, ultrapassando a largura determinada. Ao invés disso, você deveria ter ajustado a largura para 150 para compensar a escala.
+   
+  Sintaxe:
+  draw_text_ext_transformed(x, y, string, sep, w, xscale, yscale, angle);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A coordenada x do fio desenhado.
+      
+      
+        y
+        A coordenada y da corda desenhada.
+      
+      
+        corda
+        O fio para desenhar.
+      
+      
+        sep
+        A distância em pixels entre linhas de texto.
+      
+      
+        w
+        A largura máxima em pixels do fio antes de uma quebra de linha.
+      
+      
+        xscale
+        A escala horizontal.
+      
+      
+        yscale
+        A escala vertical.
+      
+      
+        ângulo
+        O ângulo do texto.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_set_halign(fa_center); draw_set_valign(fa_middle);
+     image_angle += 1; draw_text_ext_transformed(room_width / 2, room_height / 2, keyboard_string, 10, 300, 2, 2, image_angle);
+  O código acima desenhará o texto dado no meio da sala, com um comprimento máximo de fio de 300 pixels, um espaçamento entre cada linha de 10 pixels, girando redondo e escalonado para o dobro de seu tamanho original.
+   
+   
+   
+  
+    
+      
+        Voltar: Texto
+        Próximo: draw_text_transformed_colour
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

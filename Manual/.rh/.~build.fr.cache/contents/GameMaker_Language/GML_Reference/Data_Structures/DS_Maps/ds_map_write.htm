@@ -1,0 +1,43 @@
+
+  
+  ds_map_write
+  Esta função transformará os dados do mapa DS do mapa especificado em formato de string que pode então ser escrito em um arquivo *.ini ou *.txt para facilitar o armazenamento. Esta string pode então ser lida posteriormente em um novo ds_map usando ds_map_read().
+  NOTA: O fio retornado não é um fio legível por humanos, mas sim uma lixeira do conteúdo da estrutura de dados.
+   
+  Sintaxe:
+  ds_map_write(id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação da estrutura de dados a usar
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  ini_open("map.ini"); var t_string; t_string = ds_map_write(inventory); ini_write_string("Saved", "0", t_string); ini_close();
+  
+  O código acima abre um arquivo ini pronto para ser escrito. Ele então usa ds_map_write() para gerar uma string que é armazenada na variável temporária "t_string". Finalmente, ele escreve essa string no arquivo ini antes de fechá-lo.
+   
+   
+   
+  
+    
+      
+        Voltar: DS Maps
+        Próximo: ds_map_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

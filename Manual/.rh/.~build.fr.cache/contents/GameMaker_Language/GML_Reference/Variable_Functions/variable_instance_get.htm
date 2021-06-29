@@ -1,0 +1,53 @@
+
+  
+  variable_instance_get
+  Com esta função você pode obter o valor de uma determinada variável nomeada. Você fornece o valor único de identificação da instância (que pode ser encontrado nas propriedades da instância na sala
+    editor, ou é retornado quando você chama a função instance_create_layer()) assim como o nome da variável para obter o valor de uma string (ver exemplo de código
+    abaixo). A função retornará o valor mantido pela variável, ou undefined se a variável não existir.
+  IMPORTANTE! Se a variável que você está recebendo não existir, então a função retornará a palavra-chave indefinida e você poderá receber erros que impedirão o funcionamento do jogo, portanto, em caso de dúvida, use a função variável_instância_existe    primeiro.
+   
+  Sintaxe:
+  variable_instance_get(instance_id, nome);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        exemplo_id
+        O valor de identificação único da instância a ser usada
+      
+      
+        nome
+        O nome da variável a ser obtida (como um fio)
+      
+    
+  
+   
+  Devoluções:
+  Valor (qualquer tipo de dado) ou indefinido (se a variável nomeada não existir)
+   
+  Exemplo:
+  se variável_instance_existir(id, "shields") {
+     var ss = variable_instance_get(id, "shields"); }
+     mais
+     }
+     var ss = -1; }
+  
+  O código acima verificará se uma variável existe e se ela existe, então o valor que possui é recuperado e armazenado em uma variável local. Se não existir, a variável local é definida como -1.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções variáveis
+        Próximo: variable_instance_set
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

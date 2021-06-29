@@ -1,0 +1,58 @@
+
+  
+   Vidas de instâncias de sorteio
+  Esta ação atrairá um duende para representar cada uma das vidas que a instância tem atualmente. O número a ser sorteado é retirado do valor atual das vidas da instância local, que é uma variável especial que é criada automaticamente dentro de
+    a instância se você usar qualquer uma das ações que o exijam. Você dá o duende para desenhar para as vidas e a ordem de empilhamento, que pode ser tanto a linha (horizontalmente, da esquerda para a direita), ou a coluna (verticalmente, de cima para baixo), assim como a posição.
+    A posição pode ser uma posição absoluta dentro da sala, ou uma relativa à posição da instância fazendo o desenho, e o espaçamento entre as imagens será baseado na largura ou altura do duende. Note que isto simplesmente desenha uma imagem estática
+    - a imagem inicial única (quadro 0) do duende dado - e quaisquer outros quadros serão ignorados, assim como qualquer transformação que tenha sido adicionada à instância através da alteração das variáveis da instância (como image_xscale ou image_blend).
+    O texto da legenda será desenhado antes do valor de vida e, se for texto, deverá ser embalado com "", e ambos serão formatados usando a fonte de desenho atual, cor e alinhamento.
+  
+  NOTA: Esta ação é apenas para uso nos vários eventos de sorteio, e não desenhará nada se for usada em outro lugar.
+   
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Legenda
+        O fio a sacar junto com o valor da pontuação (anterior e pode ser deixado em branco)
+      
+      
+        Ordem de empilhamento
+        A ordem de entrada (Linha ou Coluna)
+      
+      
+        x
+        A posição x para tirar a vida em
+      
+      
+        y
+        A posição y para atrair as vidas em
+      
+    
+  
+   
+  Exemplo:
+  O código do bloco de ação acima desenha sprites relativos à instância para representar
+    o valor de vida atual.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações de desenho
+        A seguir: Set Draw Colour
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

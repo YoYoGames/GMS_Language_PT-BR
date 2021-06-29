@@ -1,0 +1,44 @@
+
+  
+  buffer_delete
+  Com esta função você pode apagar um buffer criado anteriormente usando a função buffer_create() da memória, liberando os recursos utilizados para criá-la e removendo quaisquer dados que ela possa conter atualmente.
+  OBSERVAÇÃO: É importante sempre remover da memória quaisquer recursos criados dinamicamente quando você não precisar mais deles para evitar vazamentos de memória.
+  IMPORTANTE! Quando você cria um buffer, o valor do índice usado para identificá-lo é um valor inteiro começando em 0. Estes índices são reutilizados pelo GameMaker, portanto um valor de índice de buffer destruído pode ser usado por um novo valor criado posteriormente,
+    e recomendamos que você defina qualquer variável que contenha um índice de tampão para -1 após ter destruído o tampão.
+   
+  Sintaxe:
+  buffer_delete(tampão)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O índice do buffer a ser apagado.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  buffer_delete(player_buffer); player_buffer = -1;
+  O código acima apagará o buffer criado anteriormente com o id armazenado na variável "player_buffer" e então define a variável como -1.
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: buffer_read
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

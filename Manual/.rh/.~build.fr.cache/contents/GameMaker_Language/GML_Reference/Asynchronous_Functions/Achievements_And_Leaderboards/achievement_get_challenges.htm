@@ -1,0 +1,75 @@
+
+  
+  desafios_get_challenges
+  Esta função enviará um pedido ao servidor para obter informações sobre todos os desafios atuais e desencadeará um Evento Assíncrono Social de retorno que contém o
+    async_load mapa povoado com os pares chave/valor relevantes. A chave de identificação deste mapa DS é usada para identificar o retorno de chamada correto (lá pode
+    ser mais de uma função de gatilho para qualquer evento assíncrono), e será emparelhado com a constante realização_challenge_list_received assim como um número de outros pares de chaves/valores para cada desafio. O conteúdo exato do
+    mapa são mostrados abaixo:
+  NOTA: Esta função é para iOS somente.
+  
+    " id" - Para esta função deve ser realizado_challenge_list_received
+    " numchallenges" - O número de desafios (locais e remotos) atualmente disponíveis.
+    "ChallengeNplayerid" - A identificação do jogador para o desafio, onde "N" é um inteiro, EG: "Challenge5playerid" é a identificação do jogador para o quinto desafio da lista.
+    "ChallengeNissuerid" - O id da pessoa que emitiu o desafio, onde "N" é um número inteiro, EG: "Challenge2issuerid" é o id do emissor para o segundo desafio da lista.
+    "ChallengeNstate" - O estado do desafio "N", que terá um valor de 0 - 3 (como um fio) para inválido, pendente, concluído ou recusado.
+    "ChallengeNmessage" - A mensagem de texto para o desafio "N".
+    "ChallengeNissued date" - A data de emissão do desafio "N".
+    "ChallengeNcompleted date" - A data de conclusão do desafio "N".
+    "ChallengeNtype" - O tipo de desafio dado. Pode ser uma de duas constantes:
+  
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        achievement_filter_friends_only 
+        Obtenha apenas as pontuações dos amigos jogadores.
+      
+      
+        achievement_filter_all_players 
+        Obtenha todas as pontuações para todos os jogadores.
+      
+    
+  
+   
+  
+    "ChallengeNidentifier" - O fio identificador para o desafio.
+    "ChallengeNscore" - A pontuação empatada com o desafio.
+  
+   
+  Sintaxe:
+  realizações_get_challenges()
+   
+  Devoluções:
+  N/A
+   
+  Exemplo ampliado:
+  O seguinte código seria provavelmente chamado depois que o jogador entrasse em sua conta de jogo usando achievement_login():
+  achievement_get_challenges();
+  Isto enviará um pedido para as informações atuais do desafio e gerará uma chamada assíncrona de retorno com o ds_map especial async_load contendo os seguintes dados:
+  var ident = ds_map_find_value(async_load, "id"); if ident == achievement_challenge_list_received {
+     var numentries = ds_map_find_value(async_load,"numchallenges"); for(var i = 0; i < numentries; i++;) {
+     player_id[i] = ds_map_find_value(async_load, "Challenge" + string(i)+"playerid"); issuer_id[i] = ds_map_find_value(async_load, "Challenge" + string(i) +"issuerid"); state[i]
+    = ds_map_find_value(async_load, "Challenge" + string(i)+"state"); message[i] = ds_map_find_value(async_load, "Challenge" + string(i)+"message"); date_completed[i] = ds_map_find_value(async_load,
+    "Desafio" + string(i)+"data de conclusão"); date_issued[i] = ds_map_find_value(async_load, "Desafio" + string(i)+"data de emissão"); ach_type[i] = ds_map_find_value(async_load, "Desafio")
+    + string(i)+"type"); ach_ident[i] = ds_map_find_value(async_load, "Desafio" + string(i)+"identificador"); ach_score[i] = ds_map_find_value(async_load, "Desafio" + string(i)+"pontuação"); }
+  
+  O código acima verifica o Mapa DS retornado no Evento Assíncrono Social e se seu "id" corresponde à constante a ser verificada, ele então percorre o mapa armazenando todos os diferentes valores em uma série de arrays. Estas informações
+    pode então ser usado, por exemplo, para criar suas próprias páginas de desafio, personalizadas, no jogo.
+   
+   
+   
+  
+    
+      
+        Voltar: Conquistas e Quadros de Líderes
+        Próximo: achievement_get_pic
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

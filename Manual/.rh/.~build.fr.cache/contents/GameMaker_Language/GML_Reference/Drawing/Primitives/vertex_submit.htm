@@ -1,0 +1,82 @@
+
+  
+  vertex_submit
+  Você pode usar esta função para submeter o conteúdo de um buffer de vértice à tubulação gráfica para uso com um shader. Você fornece o índice de buffer a ser usado, o tipo primitivo básico a ser usado (veja as constantes abaixo) e a textura que deve ser usada. O
+    O tipo primitivo básico só é usado para atribuir a ordem na qual os vértices armazenados no buffer são desenhados e conectados, mas os dados reais usados para cada um dos vértices serão os que você definiu ao criar o buffer de vértices.
+  NOTA: Esta função só pode ser usada no Evento de Sorteio.
+  Para um exemplo visual das diferentes bases primitivas disponíveis, veja a imagem abaixo:
+  
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        pr_lista de pontos
+        Um primitivo que consiste em uma lista de pontos.
+      
+      
+        pr_linelist
+        Um primitivo composto de uma linha individual em uma lista.
+      
+      
+        pr_linestrip
+        Um primitivo composto de uma faixa consecutiva de linhas.
+      
+      
+        pr_trianglelist
+        Um primitivo composto de triângulos individuais em uma lista.
+      
+      
+        pr_trianglestrip
+        Um primitivo composto de uma faixa consecutiva de triângulos.
+      
+    
+  
+   
+  Sintaxe:
+  vertex_submit(tampão, primitivo, textura);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O amortecedor a ser utilizado.
+      
+      
+        primitivo
+        O tipo de base primitiva.
+      
+      
+        textura
+        A textura a ser usada (ou -1 para nenhuma textura).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  shader_set(shader_prim); vertex_submit(buff, pr_trianglelist, sprite_get_texture(sprite_index)); shader_reset();
+  
+  O código acima apresentará o buffer de vértice indexado na variável "buff" para desenho com o shader " shader_prim ",usando uma lista triangular como base primitiva e a textura do sprite para a instância que executa o código.
+   
+   
+   
+  
+    
+      
+        Voltar: Primitivos e formatos de vértices
+        Próximo: draw_primitive_begin
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

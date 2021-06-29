@@ -1,0 +1,50 @@
+
+  
+  achievement_load_progress
+  Esta função enviará um pedido ao servidor para obter informações sobre todas as realizações disponíveis. Ela acionará um Evento Assíncrono Social de retorno que contém
+    o async_load mapa povoado com os pares chave/valor relevantes. A chave de identificação deste mapa DS é usada para identificar o retorno de chamada correto (lá
+    pode ser mais de uma função de gatilho para qualquer evento assíncrono), e será emparelhado com a constante obtenção de resultados, bem como um número de outros pares de chaves/valores para cada jogador. O conteúdo exato do mapa
+    são mostrados abaixo:
+  NOTA: Esta função é para iOS somente.
+  
+    "id" - Para esta função, deve ser alcançada_a realização_info.
+    " numentries" - O número de realizações na lista.
+    "AchN"- O nome da realização, onde "N" é um valor inteiro correspondente a seu lugar na lista de entradas.
+    "AchCompN" - Como é completa a realização "N" como um valor percentual de 0 a 100 (um fio).
+  
+   
+  Sintaxe:
+  achievement_load_progress()
+   
+  Devoluções:
+  N/A
+   
+  Exemplo ampliado:
+  O seguinte código exigiria progresso de realização quando o usuário estiver em um dispositivo iOS:
+  if os_type == os_ios {
+     achievement_load_progress();
+     }
+  
+  Isto enviará um pedido de informações sobre as realizações e gerará uma chamada de retorno assíncrona com o mapa DS especial de assimetria contendo os seguintes dados:
+  var ident = ds_map_find_value(async_load, "id"); if ident == achievement_achievement_info {
+     var numentries = ds_map_find_value(async_load, "numentries"); for(var i = 0; i < numentries; i++;) {
+     ach_id[i] = ds_map_find_value(async_load, "Ach" + string(i)); comp[i] = ds_map_find_value(async_load, "AchComp" + string(i)); }
+     }
+  
+  O código acima verifica o Mapa DS retornado no Evento Assíncrono Social e se seu "id" corresponde à constante a ser verificada, ele então percorre as entradas no mapa para cada uma das realizações e armazena seu nome
+    e porcentagem de conclusão.
+   
+   
+   
+  
+    
+      
+        Voltar: Conquistas e Quadros de Líderes
+        Próximo: desafio_de_conquista
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

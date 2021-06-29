@@ -1,0 +1,247 @@
+
+  
+  Erros de sintaxe
+  O primeiro nível de relatório de erro ao programar seus jogos no GameMaker Studio 2 está no código ou editor DnD™, e é o verificador de sintaxe. Conforme você acerta seu código - ou adiciona suas ações
+    - O GameMaker verificará se ele segue a sintaxe estabelecida para a linguagem, e sinalizará quaisquer problemas que encontrar para que você possa corrigi-los antes de começar a executar o jogo ou compilar um executável.
+  Estes erros se encaixam em duas categorias principais:
+  
+     Avisos: Estes são mostrados para coisas que podem ser um erro, mas podem não ser, e provavelmente não vão parar
+      o jogo de compilação, mas pode provocar erros de tempo de execução. As causas mais comuns desses avisos são quando uma variável é usada em uma expressão e ainda não foi definida em nenhum outro lugar, ou quando uma variável foi definida mas não foi
+      mas ainda não foi utilizada.
+     Erros: Estes são problemas que não permitirão a compilação do jogo e muito menos a sua execução.
+      Estes devem ser corrigidos antes de fazer algo mais com o código. A tabela abaixo mostra as causas mais comuns destes problemas.
+  
+  Os erros de sintaxe serão atualizados à medida que você escrever seu código (haverá uma pequena pausa entre digitar algo e qualquer erro que apareça nesta janela para evitar que erros sejam reportados por código inacabado), e seguirá o formato:
+  [objeto] - [evento] - [Número da linha] - [Posição em linha]: [cadeia de erro]: [string de erro
+  Ou se o erro estiver em um roteiro, será:
+  [roteiro] - [Número da linha] - [Posição na linha]: [cadeia de erro]: [string de erro]: [string de erro]: [string de erro
+  Um duplo clique em  em qualquer um dos erros mostrados no console de saída o levará para a linha no evento ou script do objeto que tem o erro para que você
+    pode editá-lo.
+  Deve-se observar que alguns desses erros serão mostrados em locais específicos em seu código, mas o erro real pode ser causado por algo em outro lugar, ou um único problema pode provocar múltiplas mensagens de erro:
+  Na imagem acima, os três  erros foram provocados por um único erro - o uso de um ponto e vírgula ";" em vez de uma vírgula "," na linha 220 para a função variable_instance_exists().
+  A tabela abaixo lista os diferentes erros de sintaxe e suas principais causas:
+   
+  
+    
+      
+        Erro
+         Tipo 
+        Descrição
+      
+      
+        Referência malformada [val]
+        
+        Isto significa que há um erro interno de validação AST (você nunca deve ver este erro, mas se você considerar preencher um relatório de erro do Menu de Ajuda) 
+      
+      
+        Seqüência de fuga de caráter hexadecimal malformado 
+        
+        Isto pode acontecer quando você tiver usado o valor hexadecimal para um caractere de fuga em uma corda e isto tem o formato errado.
+      
+      
+        Nó inesperado [val]
+        
+        Isto significa que há um erro interno de validação AST (você nunca deve ver este erro, mas se você considerar preencher um relatório de erro do Menu de Ajuda) 
+      
+      
+        Exceção durante a análise [val]
+        
+        Isto significa que há um erro interno de validação AST (você nunca deve ver este erro, mas se você considerar preencher um relatório de erro do Menu de Ajuda) 
+      
+      
+        Referência de identificação malformada [val]
+        
+         
+      
+      
+        Expressão desnecessária [val] usada como uma declaração
+        
+        Este erro ocorre quando o verificador de sintaxe detecta uma expressão (mostrada em [val]) onde estava esperando uma declaração. Por exemplo, o código a seguir lançará o erro como se estivesse esperando o operador ternário ? mas encontra 32:
+          temp_x = x < (room_width / 2)  32: room_width - 32;
+      
+      
+        Referência de matriz malformada [val]
+        
+        Isto significa que você tentou fazer referência a uma matriz de forma incorreta, e [val] mostrará a referência.
+      
+      
+        Operador binário inesperado [val]
+        
+        Este erro ocorre quando você usa um dos operadores bitwise em um lugar onde não deveria estar sendo usado, com [val] mostrando onde.
+      
+      
+        Cordel nãoerminado literalmente
+        
+        Este erro ocorrerá quando você abre uma string usando @“ ou “, mas não a fecha antes do final do código.
+      
+      
+        Citações simples não são mais permitidas para cordas
+        
+        Este erro ocorre quando você tenta usar cordas envoltas em aspas simples, por exemplo: "Hello World", ao invés de aspas duplas, por exemplo: "Hello World".
+      
+      
+        Erro de sintaxe inesperado
+        
+        Este erro denota um erro de sintaxe que o analisador não é capaz de identificar mais especificamente.
+      
+      
+        Tem "[val1]", espera-se "[val2]".
+        
+        Isto acontece quando o verificador de sintaxe espera algum valor ou símbolo, mas recebe um diferente, onde [val1] é o símbolo ou valor atual, e [val2] é o símbolo ou valor esperado. Por exemplo, [val1] é o símbolo ou o valor esperado:
+          Got "{", expected "("
+      
+      
+        Tem "[val1]", espera-se "[val2]" ou "[val3]".
+        
+        Como acima, mas para quando há múltiplos símbolos possíveis esperados.
+      
+      
+        Expectativa de expressão
+        
+        Este erro ocorre quando o verificador de sintaxe espera uma expressão, mas uma não é dada.
+      
+      
+        Declaração [val] vazia
+        
+        Isto acontece quando você encerra uma declaração e a deixa vazia. Por exemplo, o código a seguir dará o erro (note o ponto e vírgula terminante):
+          if (x < 0);
+      
+      
+        Chamadas de funções aninhadas não são permitidas
+        
+        Isto pode acontecer quando você está tentando aninhar chamadas de função dentro de uma declaração, por exemplo:
+          ds_list_find_value(list, 0)).sprite_index
+      
+      
+        O uso de [val] não é permitido no GameMaker Studio 2 Trial
+        
+        Esta mensagem significa que a função ou símbolo mostrado para [val] não está disponível para uso sob a Licença de Teste para GameMaker Studio 2.
+      
+      
+        Número de argumentos para a função [val1] esperado [val2] obteve val[3]
+        
+        Este erro lhe diz que você não forneceu o número correto de argumentos para a função mostrada para [val1], que espera o número mostrado em [val2], mas obteve aqueles mostrados em [val3].
+      
+      
+        Número de argumentos para a função [val1] esperado [val2] - [val3] obtido [val4]
+        
+        Como acima, apenas para uma série de argumentos.
+      
+      
+        Duplicação da enumeração encontrada
+        
+        Este erro lhe diz que você duplicou um nome de entrada de variável enumerativa 
+      
+      
+        Enumeração duplicada encontrada
+        
+        Este erro lhe diz que você definiu dois ou mais enumeros com o mesmo nome.
+      
+      
+        Nome variável ausente em globalvar
+        
+        Isto lhe diz que você usou a declaração globalvar mas omitiu o fornecimento de um nome variável.
+      
+      
+        Nome da variável ausente em var
+        
+        Isto lhe diz que você usou a declaração var mas omitiu o fornecimento de um nome variável.
+      
+      
+        Não foi encontrada nenhuma #região correspondente para #endregião
+        
+        Este erro significa que você declarou uma região final em seu código, sem definir uma região inicial.
+      
+      
+        Região não fechada encontrada no final do roteiro
+        
+        Este erro significa que você declarou uma região em algum lugar no código, mas não definiu uma região final em nenhum lugar para ela.
+      
+      
+        Operador de terminal inesperado [val]
+        
+        Isto significa que há um erro interno de validação AST (você nunca deve ver este erro, mas se você considerar preencher um relatório de erro do Menu de Ajuda) 
+      
+      
+        Operador não esperado [val]
+        
+        Isto acontece quando um operador unário (como +, -, =, etc...) foi encontrado em seu código em um lugar onde não é esperado, onde [val] lhe mostrará o operador.
+      
+      
+        Operador ternário inesperado [val]
+        
+        Este erro significa que você usou uma das partes do operador ternário incorretamente em algum lugar em seu código, onde [val] mostra a parte que está em erro.
+      
+      
+        Tente ter uma cláusula de captura ou finalmente uma cláusula
+        
+        Este erro significa que você chamou a função try, mas omitiu a inclusão de uma cláusula catch ou finally.
+      
+      
+        Macro [val] já existe
+        
+        Você pode obter este erro quando tenta definir uma macro [val] com o mesmo nome que uma que foi previamente definida.
+      
+      
+        Referência variável malformada, obteve [val]
+        
+        Isto significa que há um erro interno de validação AST (você nunca deve ver este erro, mas se você considerar preencher um relatório de erro do Menu de Ajuda) 
+      
+      
+        Atribuição à expressão de qualidade multi-relacional - GML não suporta múltiplas atribuições em uma expressão
+        
+        Este erro lhe diz que há um problema com uma tarefa multi-operadora (também chamada de tarefa composta) que não é suportada pela linguagem GameMaker. Isto inclui coisas como "*=" ou "/=",
+          etc....
+      
+      
+        Macro [val] não é usado
+        
+        Isto acontece quando a macro [val] não é utilizada em qualquer parte de seu código.
+      
+      
+        Variável [val] referenciada apenas uma vez
+        
+        Isto significa que a variável dada [val] só é referenciada uma vez em seu código.
+      
+      
+        Variável não atribuída [val] referenciada
+        
+        Isto significa que a variável [val] foi referenciada em seu código, mas não foi atribuído um valor em nenhum lugar anteriormente.
+      
+      
+        Somente funções que são declaradas como construtoras podem usar herança
+        
+        Este erro lhe diz que você tentou usar a herança em uma função que não foi declarada como construtora.
+      
+      
+        Atributo de função desconhecido [val]
+        
+        Este erro significa que você tentou usar um modificador de função inválido ou não identificado ([val]) ao declarar uma função em linha (um modificador de função é algo como a palavra-chave constructor, que é suportada). 
+      
+      
+        O argumento herdado"[val]}" não está em argumentos funcionais
+        
+        Este erro acontece quando se tenta referenciar um argumento em uma função herdada que não tenha sido declarada na definição da função pai.
+      
+      
+        [val] Código de Criação
+        
+        Isto acontece quando você tem um erro [val] no código de criação da sala em algum lugar.
+      
+    
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Relatório de erros
+        A seguir: Erros do Compilador
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

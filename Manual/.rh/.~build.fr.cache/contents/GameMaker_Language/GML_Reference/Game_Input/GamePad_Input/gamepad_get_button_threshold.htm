@@ -1,0 +1,47 @@
+
+
+
+
+  
+  gamepad_get_button_threshold
+  Esta função pode ser usada para detectar o ajuste do limiar atual dos botões analógicos para um determinado dispositivo. O limite padrão para todos os botões analógicos é 0,5, sendo a faixa de 0 a 1. O limite define em que ponto o botão está
+    considerado como sendo "pressionado" para jogos que exigem que eles atuem como um botão digital.
+   
+  Sintaxe:
+  gamepad_get_button_threshold(dispositivo);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dispositivo
+        Qual dispositivo de controle de jogo "slot" a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  se gamepad_get_button_threshold(0) != 0.5 {
+     gamepad_set_button_threshold(0, 0.5); }
+  
+  O código acima verifica o limite do botão analógico do controle de jogo conectado ao dispositivo "slot" 0 e se não for o valor padrão de 0,5, ele é definido para esse valor.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada Gamepad
+        A seguir:  gamepad_get_axis_deadzone 
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,77 @@
+
+
+
+
+  
+  matrix_build
+  Esta função pode ser usada para criar sua própria matriz personalizada e retornará um valor de índice para esta nova matriz que deverá ser armazenada em uma variável para referência e uso futuro. A própria matriz é criada como matriz de 16 valores onde os primeiros 4 elementos são linha 1, os segundos 4 elementos são linha 2, etc... de uma matriz 4x4.
+  NOTA: Quando você constrói uma nova matriz desta forma a ordem de operação é YXZ.
+   
+  Sintaxe:
+  matrix_build(x, y, z, xrotation, yrotation, zrotation, xscale, yscale, zscale);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        O componente x do vetor de tradução.
+      
+      
+        y
+        O componente y do vetor de tradução.
+      
+      
+        z
+        O componente z do vetor de tradução.
+      
+      
+        xrotação
+        O ângulo de rotação ao redor do eixo x (em graus °).
+      
+      
+        yrotation
+        O ângulo para girar em torno do eixo y (em graus °).
+      
+      
+        xzotação
+        O ângulo para girar ao redor do eixo z (em graus °).
+      
+      
+        xscale
+        A quantidade em escala x.
+      
+      
+        yscale
+        O valor da escala y.
+      
+      
+        zscale
+        A quantidade em escala z.
+      
+    
+  
+   
+  Devoluções:
+  Índice de Matriz (Matriz 4x4)
+   
+  Exemplo:
+  t_matrix = matrix_build(x, y, 0, 0, 0, 90, 0, 1, 2, 1);
+  O código acima irá construir uma nova matriz transformará e armazenará o índice de matriz resultante na variável "t_matrix".
+   
+   
+   
+  
+    
+      
+        Voltar: Funções da Matriz
+        Próximo: matrix_multiply
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

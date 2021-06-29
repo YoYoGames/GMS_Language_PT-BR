@@ -1,0 +1,42 @@
+
+  
+  room_duplicate
+  Isto duplicará uma determinada sala e devolverá o índice de duplicatas a ser usado em todas as chamadas posteriores para referenciar a nova sala.
+  NOTA: As novas salas não fazem parte do pedido habitual de salas, portanto não têm uma sala "anterior" ou "próxima" (o que significa que as funções room_next()    e room_previous() não vai funcionar). Para saltar da sala acrescentada para outra, é preciso usar o índice da própria sala.
+   
+  Sintaxe:
+  room_duplicate(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice da sala original a ser duplicado.
+      
+    
+  
+   
+  Devoluções:
+  Índice
+   
+  Exemplo:
+  global.myroom = room_duplicate(rm_level);
+  Isto duplicará a sala indexada por "rm_level" e atribuirá o índice da sala desta nova sala à variável "global.myroom".
+   
+   
+   
+  
+    
+      
+        Voltar: Quartos
+        Próximo: room_assign
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

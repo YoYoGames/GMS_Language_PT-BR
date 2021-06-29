@@ -1,0 +1,44 @@
+
+  
+  escala_de_série_de_série_de_camadas
+  Com esta função você fornece a identificação do elemento de seqüência - como retornado por layer_sequence_create() ou por uma das funções dos elementos de camada - e retornará a escala de velocidade de reprodução atual. Este é o valor multiplicador usado para desacelerar ou acelerar a velocidade de reprodução. Um valor de 1 é o valor padrão, e valores inferiores a 1 significam que a reprodução é desacelerada e valores maiores
+    do que 1 significa que a reprodução é acelerada.
+   
+  Sintaxe:
+  layer_sequence_get_speed scale(sequence_element_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sequence_element_id
+        O valor de identificação único do elemento de seqüência para o alvo
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  if layer_sequence_get_speed scale(title_sequence) != 1 {
+     layer_sequence_speed scale(title_sequence, 1); }
+  
+  O código acima verifica a escala de velocidade atual da cabeça de jogo do elemento de seqüência ID armazenado na variável "title_sequence", e se não estiver definido para 1, está definido para este valor.
+   
+   
+   
+  
+    
+      
+        Voltar: Sequência de camadas
+        Próximo: layer_sequence_get_length
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

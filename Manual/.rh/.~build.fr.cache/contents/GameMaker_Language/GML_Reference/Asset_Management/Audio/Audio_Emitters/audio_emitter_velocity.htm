@@ -1,0 +1,58 @@
+
+  
+  audio_emitter_velocity
+  Esta função pode ser usada para dar um efeito Doppler emissor e simular o movimento de áudio baseado no vetor que é resolvido a partir das posições relativas x, y e z. Se o emissor em si não vai se mover, você normalmente não
+    precisa definir estes valores, mas, por exemplo, se você estiver fazendo um jogo de tiro rolante em que os inimigos vêm da direita e rolam para a esquerda, você definiria isto para ter uma velocidade de (hspeed, 0, 0) no evento de criação dos inimigos (e atualizar
+    o emissor de cada instância no evento da etapa usando audio_emitter_position()) para dar a qualquer som emitido pelas instâncias inimigas o Doppler correto ao passarem pela instância do jogador (que, por sua vez
+    estaria usando a função audio_listener_position() para colocar o ouvinte na posição correta).
+   
+  Sintaxe:
+  audio_emitter_velocity(emissor, vx, vy, vz);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        emissora
+        O índice do emissor a mudar.
+      
+      
+        vx
+        O valor vetorial x (padrão 0).
+      
+      
+        vy
+        O valor do vetor y (padrão 0).
+      
+      
+        vz
+        O valor z vetorial (padrão 0).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  s_emit = audio_emitter_create(); audio_emitter_position(s_emit, room_width, 0, 0); audio_emitter_velocity(s_emit, -5, 0, 0, 0);
+  O código acima cria um emissor de áudio e atribui seu índice à variável "s_emit". Este emissor é então colocado em uma posição dentro da sala e recebe uma velocidade de 5 pixels por degrau ao longo do eixo x (ele Doppler será corretamente Doppler em relação
+    ao ouvinte como se ele tivesse uma velocidade horizontal de 5 pixels por passo).
+   
+   
+   
+  
+    
+      
+        Voltar: Emissores de áudio
+        Próximo: audio_emitter_falloff
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,59 @@
+
+  
+   Set Secondary Particles (Partículas Secundárias)
+  Esta ação permite utilizar um segundo tipo de partícula junto com a partícula primária. Você dá o valor ID do tipo de partícula primária (que deve ser o mesmo que o valor usado quando você criou a partícula usando a ação Criar Tipo de Partícula ) e então você pode escolher que ela emita um tipo de partícula secundária em cada quadro de jogo que ela existe e/ou no final da vida útil de cada partícula primária. Você deve dar outro valor de identificação de partícula para o "Secundário" e depois um número
+    a ser criado no "Conde".
+  Se o Evento selecionado for "Por Etapa", então cada estrutura de jogo que uma partícula primária existe na tela emitirá o número dado de partículas secundárias - por exemplo, você poderia ter um foguete com partículas "chama", e cada chama
+    emite uma partícula secundária de "fumaça". Se o evento for definido como "Na Morte", então as partículas secundárias agora só serão emitidas quando uma partícula do tipo primário atingir o fim de sua vida útil - por exemplo, você poderia
+    têm uma partícula de "explosão" que emite uma partícula de "poeira" no final de sua vida útil.
+  É importante notar que você não pode usar o mesmo tipo de partícula ID que a partícula primária, e que você pode muito rapidamente encontrar problemas de desempenho ao usar esta ação, pois é fácil criar milhares de
+    partículas muito rapidamente desta forma - portanto, tome cuidado para limitar a vida útil e o número de partículas sendo criadas tanto pelo tipo de partícula primária como pela secundária. Observe também que você pode atribuir uma partícula secundária a qualquer tipo de partícula e, portanto, pode criar
+    "cadeias de partículas" onde uma partícula cria outra a cada passo e depois esta partícula cria outra quando chega ao fim de sua vida útil, etc... Embora, mais uma vez, deve-se ter cuidado ao encadear as partículas desta forma, para garantir
+    que o desempenho não sofre. Você também pode chamar esta ação duas vezes para um único tipo de partícula e fazê-la fluir em passo e explodir na morte.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Tipo ID
+        O valor de identificação para o tipo de partícula para dar a partícula secundária a
+      
+      
+        Evento
+        Quando criar a partícula secundária, seja "Por Etapa" ou "Na Morte".
+      
+      
+        Secundário
+        O valor de identificação para o tipo de partícula a emitir no Evento secundário escolhido
+      
+      
+        Conde
+        O número de partículas secundárias a serem criadas no Evento secundário escolhido
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima atribuirá duas partículas secundárias a
+    a partícula com a identificação armazenada na variável "p_fire".
+   
+   
+   
+  
+    
+      
+        Voltar: Ações com Partículas
+        A seguir: Partículas de ruptura
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

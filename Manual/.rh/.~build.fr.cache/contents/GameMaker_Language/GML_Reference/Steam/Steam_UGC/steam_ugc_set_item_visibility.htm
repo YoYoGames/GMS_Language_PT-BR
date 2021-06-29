@@ -1,0 +1,71 @@
+
+  
+  steam_ugc_set_item_visibility
+  Esta função definirá a visibilidade do item dado, definida usando uma das constantes a seguir:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        ugc_visibilidade_público
+        Defina o item para ser visível ao público
+      
+      
+        ugc_visibility_friends_only
+        Defina o item para ser visível somente para as pessoas da lista de amigos dos usuários
+      
+      
+        ugc_visibilidade_privada
+        Defina o item para ser privado
+      
+    
+  
+   
+  A alça de atualização é o valor retornado quando você chama a função steam_ugc_start_item_update()e a função retornará verdadeira se o API foi acessado com sucesso e falsa se houvesse um problema.
+   
+  Sintaxe:
+  steam_ugc_set_item_visibility(ugc_update_handle, visibilidade);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ugc_update_handle
+        O cabo único para a UGC a ser atualizado.
+      
+      
+        visibilidade
+        A visibilidade (uma constante, listada abaixo) a ser usada para o item.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var app_id = steam_get_app_id(); var updateHandle = steam_ugc_start_item_update(app_id, global.Publish_ID); steam_ugc_set_item_title(updateHandle, "My workshop item(3)!"); steam_ugc_set_item_description( updateHandle, "testing
+    workshop..."); steam_ugc_set_item_visibility(updateHandle, ugc_visibility_public); var tagArray; tagArray[0] = "Test"; tagArray[1] = "New"; steam_ugc_set_item_tags( updateHandle, tagArray); steam_ugc_set_item_preview (updateHandle,
+    "promo.jpg"); steam_ugc_set_item_content(updateHandle, "WorkshopContent1"); requestId = steam_ugc_submit_item_update(updateHandle, "Version 1.2");
+  O código acima obtém o ID do jogo, então usa-o junto com um ID de arquivo publicado anteriormente para gerar uma alça de atualização para o item. Este cabo é então usado para atualizar várias informações antes que a atualização seja empurrada para o Workshop.
+    servidores.
+   
+   
+   
+  
+    
+      
+        Voltar: UGC
+        Próximo: steam_ugc_set_item_tags
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

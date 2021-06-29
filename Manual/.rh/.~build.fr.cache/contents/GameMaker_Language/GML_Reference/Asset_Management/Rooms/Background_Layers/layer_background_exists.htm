@@ -1,0 +1,50 @@
+
+  
+  layer_background_existe
+  Você pode usar esta função para verificar e ver se existe um elemento de fundo em qualquer camada. Você fornece a identificação da camada (que você obtém quando cria a camada usando layer_create()) ou
+    o nome da camada (como um fio - isso terá um impacto no desempenho) e o ID do elemento de fundo (que você obtém quando cria um elemento de fundo usando layer_background_create() ou quando você usa
+    a função layer_background_get_id()) e a função retornará ou verdadeira se o elemento existir, ou falsa se não existir.
+  NOTA: Esta função funciona dentro do escopo da sala alvo atual - por padrão a sala na qual a função é chamada - que pode ser definida usando a função layer_set_target_room().
+   
+  Sintaxe:
+  layer_background_exists(layer_id, background_element_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada a ser alvo (ou o nome da camada como uma corda)
+      
+      
+        background_element_id
+        O valor único de identificação do elemento de fundo a ser verificado
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var lay_id = layer_get_id("Background_trees"); if layer_background_exists(lay_id, global.TreesBackground) {
+     layer_background_destroy(lay_id, global.TreesBackground); }
+  
+  O código acima verifica a camada "Background_trees" para ver se o elemento de fundo dado existe e se ele existe, então ele é destruído (mas não a camada).
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de fundo
+        A seguir: layer_background_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

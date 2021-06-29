@@ -1,0 +1,44 @@
+
+  
+  superfície_get_target_ext_ext
+  Esta função recuperará o ID de superfície atribuído a um dos 4 alvos de renderização disponíveis para as superfícies. Você fornece o índice do alvo de renderização para verificar, e a função retornará -1 se nenhuma superfície for atribuída, ou um valor inteiro >= 0, representando
+    a identificação da superfície atribuída (como retornada pela função surface_create()).
+   
+  Sintaxe:
+  surface_get_target_ext(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice de metas de renderização a serem verificadas (de 0 a 3).
+      
+    
+  
+   
+  Devoluções:
+  Inteiro (-1 para nenhum alvo de superfície, ou um valor de identificação de superfície)
+   
+  Exemplo:
+  if surface_get_target_ext(0) == -1 {
+     surface_set_target_ext(0, global.Surf); }
+  
+  O código acima vai primeiro verificar e ver se o shader renderiza o alvo 0 foi definido para uma superfície e, se não, então é atribuído um.
+   
+   
+   
+  
+    
+      
+        Voltar: Superfícies
+        Próximo: alvo_de_reset_superfície
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

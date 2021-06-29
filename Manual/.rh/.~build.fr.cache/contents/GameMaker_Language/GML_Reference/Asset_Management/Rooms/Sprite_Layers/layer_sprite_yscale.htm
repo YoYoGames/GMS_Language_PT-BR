@@ -1,0 +1,48 @@
+
+  
+  camada_escrita_escrita_escala
+  Usando esta função você pode mudar se o elemento sprite dado em uma camada deve ou não ser escalado ao longo do eixo y. Você dá o ID do elemento sprite (que você obtém quando cria um elemento sprite usando layer_sprite_create()    ou quando você usa a função layer_sprite_get_id()), e então definir o valor da escala. Uma escala de 1 indica que não há escala (1:1), valores menores serão escalados para baixo (0,5, por exemplo, será metade da altura do
+    sprite usado), valores maiores serão escalados para cima, e valores negativos espelharão o sprite e o escalarão a menos que o valor usado seja exatamente -1 (neste caso o sprite usado é apenas espelhado de cima para baixo sobre sua posição (0, 0) sem escala).
+   
+  Sintaxe:
+  layer_sprite_yscale(sprite_element_id, yscale);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sprite_element_id
+        O valor de identificação único do elemento sprite a mudar
+      
+      
+        yscale
+        O valor da escala y (padrão é 1)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var asset_sprite = layer_sprite_get_id(layer, "gfc_Trees"); if layer_sprite_get_xscale(asset_sprite) != 1 || layer_sprite_get_yscale(asset_sprite) != 1 {
+     layer_sprite_xscale(asset_sprite, 1); layer_sprite_yscale(asset_sprite, 1); }
+  
+  O código acima verificará o elemento sprite atribuído à camada em que a instância que está executando o código está e, se for escalado em qualquer direção, ajustará tanto a escala do eixo x quanto a escala do eixo y para 1.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de Sprite
+        Próximo: layer_sprite_angle
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

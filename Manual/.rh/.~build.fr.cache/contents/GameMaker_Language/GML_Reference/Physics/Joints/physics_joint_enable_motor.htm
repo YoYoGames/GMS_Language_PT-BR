@@ -1,0 +1,49 @@
+
+  
+  physics_joint_enable_motor
+  Quando você tem uma junta com um motor(prismático ou revoluto), você pode querer ser capaz de ligar ou desligar o motor dependendo das variáveis e condições
+    dentro do jogo. Para isso, você precisa ter armazenado previamente o índice da junta em uma variável e então você pode ligar ou desligar o motor usando esta função e ajustando o argumento "motor" para verdadeiro ou falso.
+   
+  Sintaxe:
+  physics_joint_enable_motor(junta, motor)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        conjunto
+        A junta na qual você deseja ativar ou desativar o motor
+      
+      
+        motor
+        Se você deseja ligar (verdadeiro) ou desligar (falso) o motor
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var t_fix = physics_fixture_create(); physics_fixture_set_circle_shape(t_fix, sprite_get_width(sprite_index) / 2); var o_id=instance_create_layer(x+300, y, "Instances", obj_Door); physics_fixture_bind(t_fix, id); physics_fixture_bind(t_fix, id); physics_fixture_bind(t_fix,
+    o_id); perma_joint = physics_joint_revolute_create(id, o_id, x+25, y, -90, 90, 1, 10, 2, 0, 0, 0); physics_joint_enable(perma_joint, 1); physics_fixture_delete(t_fix);
+  
+  O código acima cria e define uma nova fixação e depois cria uma instância de "obj_Door", ligando a fixação criada às duas instâncias. Elas são então unidas por uma junta giratória sem motor e os ângulos limitados a +/- 90 graus
+    swing, e armazenamos o índice conjunto na variável "perma_joint". Depois ligamos o motor usando esta variável, antes de finalmente apagar a fixação da memória, pois ela não é mais necessária.
+   
+   
+   
+  
+    
+      
+        Voltar: Juntas
+        A seguir: physics_joint_get_value
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

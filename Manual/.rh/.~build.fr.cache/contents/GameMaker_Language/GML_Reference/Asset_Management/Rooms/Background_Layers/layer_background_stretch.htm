@@ -1,0 +1,53 @@
+
+  
+  fundo_de_camada_esticar
+  Usando esta função, você pode alternar um elemento de fundo sprite para esticar para caber na sala ou permanecer em 1:1 com a resolução. Você fornece o ID do elemento de fundo (que você obtém quando cria um elemento de fundo usando layer_background_create()    ou quando você usa a função layer_background_get_id()), e depois colocar o argumento de esticar para verdadeiro ou falso. Quando definido como verdadeiro, o elemento sprite será esticado para caber
+    a sala (escalonada para cima ou para baixo dependendo do tamanho do duende e da sala), e quando configurado para falso, o elemento duende será exibido com sua resolução nativa.
+   
+  Sintaxe:
+  layer_background_stretch(background_element_id, stretch)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        background_element_id
+        O valor de identificação único do elemento de fundo a ser mudado
+      
+      
+        trecho
+        A alavanca de estiramento, que pode ser verdadeira ou falsa
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if mouse_check_button_pressed(mb_left) {
+     var back = layer_background_get_id(layer); if layer_background_get_stretch(back) {
+     layer_background_stretch(back, false); }
+     else
+     {
+     layer_background_stretch(back, true); }
+     }
+  
+  O código acima verifica se o botão do mouse está pressionado e, se for detectado, alternará o estiramento do elemento de fundo sprite atribuído à camada em que a instância está rodando o código.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de fundo
+        Próximo: layer_background_blend
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

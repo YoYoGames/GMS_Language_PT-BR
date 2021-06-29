@@ -1,0 +1,48 @@
+
+  
+  part_system_update
+  Com esta função você pode forçar um sistema de partículas a desenhar todas as partículas atuais na tela. Se part_system_automatic_draw() é desligada, então esta função mostrará as partículas quando
+    usado no evento de sorteio de uma instância, ou pode ser usado quando o alvo de sorteio é fixado em uma superfície (usando surface_set_target()) para atrair as partículas do sistema para aquela superfície.
+   
+  Sintaxe:
+  part_system_drawit(ind);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do sistema de partículas para extrair as partículas de.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se a superfície_existe(surf) {
+     surface_set_target(surf);
+     part_system_drawit(global.psys);
+     surface_reset_target();
+     }
+  
+  O código acima verifica se a superfície indexada na variável "surf" existe e, se existir, define o objetivo do desenho para a superfície, desenha o sistema de partículas com o ID armazenado na variável global e, em seguida, redefine o desenho
+    alvo para que todo desenho normal apareça na tela mais uma vez.
+   
+   
+   
+  
+    
+      
+        Voltar: Sistemas de Partículas
+        Próximo: part_system_draw_order
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

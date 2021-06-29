@@ -1,0 +1,48 @@
+
+  
+  Estatísticas e quadros de líderes
+  As Estatísticas Xbox One (achievements e leaderboards) são funcionais ao utilizar UWP e têm algumas funções especiais para lidar com elas, embora elas também utilizem algumas das funções padrão embutidas para as leaderboards. O sistema de estatísticas do Xbox Live de 2017 simplifica
+    todo o procedimento para fazer conquistas e leaderboards, permitindo-lhe criar e utilizar os diferentes sistemas de dentro do GameMaker Studio 2. A principal diferença entre o sistema de 2017 e os sistemas anteriores
+    é que você não precisa mais definir todas as estatísticas que usa no jogo no XDP, e também não precisa vincular o desbloqueio de realizações a um evento/regra estatutário (pois elas são desbloqueadas por uma chamada de função direta em seu lugar).
+  NOTA: Embora não haja necessidade de arquivo manifesto com este sistema, você ainda pode configurar algumas estatísticas no XDP/MDC. Na configuração do sistema serão consideradas as estatísticas em destaque, o que significa que você pode ter quadros de líderes globais e
+    as estatísticas aparecem na página do painel de instrumentos dos jogos. Para mais informações, consulte o artigo MS Configuring Featured Stats or Leaderboards on Universal Dev Center with Data Platform 2017.
+  Antes de chamar qualquer uma das funções de estatísticas listadas abaixo, você deve certificar-se de que o usuário esteja logado (veja as funções de usuário listadas acima), então configure o sistema de estatísticas e adicione o usuário a ele usando estas funções:
+   
+  
+    xboxlive_stats_setup
+    xboxlive_stats_add_user
+  
+   
+  O restante das funções estatutárias de 2017 são as seguintes:
+   
+  
+    xboxlive_stats_remove_user
+    xboxlive_stats_flush_user
+    xboxlive_stats_set_stat_real
+    xboxlive_stats_set_stat_int
+    xboxlive_stats_set_stat_string
+    xboxlive_stats_delete_delete_stat
+    xboxlive_stats_get_stat_names
+    xboxlive_stats_get_stat
+    xboxlive_stats_get_leaderboard
+    xboxlive_stats_get_social_leaderboard
+    xboxlive_achievements_set_progress
+    xboxlive_get_stats_for_user
+    xboxlive_read_player_leader_leaderboard
+    xboxlive_fire_event
+  
+   
+   
+   
+  
+    
+      
+        Voltar: UWP e XBox Live
+        A seguir: Fazer fósforos
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

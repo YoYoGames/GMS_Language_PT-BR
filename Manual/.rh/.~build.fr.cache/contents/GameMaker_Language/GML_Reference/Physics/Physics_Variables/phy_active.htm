@@ -1,0 +1,36 @@
+
+  
+  phy_active
+  Esta variável controla se a instância está ou não atualmente "ativa". Defini-la como falsa impedirá que a instância participe do mundo da física, e defini-la como verdadeira fará com que ela participe novamente. Por favor,
+    observar que isso não é o mesmo que desativar a instância, pois a instância ainda é visível na tela e ainda pode ser alterada através de código, ao invés de
+    esta função apenas a impede de participar da simulação física
+   
+  Sintaxe:
+  phy_active;
+   
+  Devoluções:
+  Booleano (ou indefinido se a instância não estiver habilitada para física)
+   
+  Exemplo:
+  se teclado_check_pressed(ord"P") {
+     global.Pause = !global.Pause com (obj_Parent) {
+     phy_active = !global.Pause; }
+     }
+  
+  O código acima detectará uma tecla pressionada da letra "P" e então alternará a variável global "Pausa" de verdadeiro para falso e de volta . Esta variável é então usada para definir se a física está ativa ou não nas crianças
+    instâncias do objeto indexado na variável "obj_Parent".
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis Físicas
+        Próximo: phy_angular_velocity
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

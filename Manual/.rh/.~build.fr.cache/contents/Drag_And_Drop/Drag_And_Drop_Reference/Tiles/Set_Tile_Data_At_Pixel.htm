@@ -1,0 +1,56 @@
+
+  
+   Definir dados do azulejo no Pixel
+  Com esta ação, você pode definir os dados de um azulejo para uma célula de azulejo encontrada em uma posição específica em uma camada de mapa de azulejo. Os dados do azulejo são simplesmente um valor que reflete o índice do azulejo junto com a
+    inverter, espelhar e girar valores, assim como qualquer máscara de azulejo personalizada que você tenha usado. Com esta ação, você primeiro fornece a camada a ser alvejada usando o nome da camada (um fio), como definido no editor da sala, e depois os eixos x e y na sala.
+    para definir os dados do azulejo. Note que os dados do azulejo serão definidos para a "célula" do mapa de azulejos na qual a posição dada cair. Por exemplo, se as peças do seu conjunto de azulejos forem 16x16, então a camada do mapa de azulejos conterá azulejos em células de 16x16 pixels, portanto
+    se você usar esta ação para apontar a posição da sala (8, 8), você estará trocando o azulejo na célula (0, 0) do mapa do azulejo.
+  NOTA: A camada selecionada deve ter sido definida como uma camada de mapa de azulejos no editor da sala, caso contrário, você poderá receber erros.
+  O argumento final para a ação são os próprios dados do azulejo. Você normalmente recuperaria os dados do azulejo para a célula do mapa do azulejo usando a ação Obter dados do azulejo no Pixel e depois manipulá-los usando a ação Definir dados do azulejo Transformar dados antes de configurá-lo novamente com esta ação. Para mais informações sobre os dados do azulejo, consulte a seção GML sobre Funções do Mapa de Azulejo.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Camada
+        A camada com o mapa de azulejos ao alvo
+      
+      
+        X
+        A posição ao longo do eixo horizontal (X) para definir os dados da telha para
+      
+      
+        Y
+        A posição ao longo do eixo vertical (Y) para definir os dados da telha
+      
+      
+        Dados
+        Os dados de azulejos a serem usados para colocar a célula na posição
+      
+    
+  
+   
+  Exemplo:
+  O código de bloqueio de ação acima testa para um clique do mouse e quando um é recebido
+    recupera os dados do azulejo para a célula que coincide com a posição do mouse. Estes dados são então modificados e devolvidos à camada do mapa de azulejos, girando o azulejo naquela célula.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações em telhas
+        A seguir: Obter dados de azulejos na Pixel
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

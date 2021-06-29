@@ -1,0 +1,51 @@
+
+  
+  ds_queue_enqueue
+  Esta função adicionará um valor (real ou string) à cauda da fila DS. A função pode levar mais 14 argumentos opcionais (fazendo um total de 15 adições possíveis), permitindo que você adicione múltiplos valores
+    consecutivamente à cauda da fila em uma única chamada.
+   
+  Sintaxe:
+  ds_queue_enqueue(id, val [, val2, ... val15]);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação da fila a ser acrescentada.
+      
+      
+        val
+        O valor a agregar à fila.
+      
+      
+        [val2, ... val15]
+        Valores opcionais a serem adicionados à fila.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  move_queue = ds_queue_queue_create(); ds_queue_enqueue(move_queue, x + 200); ds_queue_enqueue(move_queue, y); ds_queue_enqueue(move_queue, x + 200);  ds_queue_enqueue(move_queue, y + 200); ds_queue_enqueue(move_queue, x); ds_queue_enqueue(move_queue, x); ds_queue_enqueue(move_queue, x + 200),
+    y + 200); ds_queue_enqueue(move_queue, x); ds_queue_enqueue(move_queue, y);
+  O código acima cria uma nova fila de DS e armazena seu índice na variável "move_queue". Ele então empurra uma série de valores para a fila para uso futuro.
+   
+   
+   
+  
+    
+      
+        Voltar: Filas de DS
+        Próximo: ds_queue_head
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

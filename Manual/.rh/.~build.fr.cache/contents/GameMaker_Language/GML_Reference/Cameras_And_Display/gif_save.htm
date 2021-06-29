@@ -1,0 +1,57 @@
+
+  
+  gif_save
+  Com esta função, você pode salvar uma animação GIF. Você fornece o índice GIF (como retornado pela função gif_open()), bem como um nome de arquivo para salvá-lo. Note que o GameMaker Studio 2 não é automaticamente
+    anexe a extensão do arquivo .gif, portanto você deve incluir isto como parte da cadeia de nomes do arquivo se desejar que o arquivo salvo seja identificado como um GIF. O GIF criado será paletizado usando a Paleta Universal 884 (veja aqui para mais informações).
+  Observe que se a função for bem sucedida e o GIF for salvo corretamente, então ele retornará 0, caso contrário retornará -1.
+   
+  Sintaxe:
+  gif_save(gif_index, fname);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        gif_index
+        O ID do gif para salvar
+      
+      
+        fname
+        O nome do arquivo a ser usado para o gif
+      
+    
+  
+   
+  Devoluções:
+  Inteiro
+   
+  Exemplo:
+  se save_gif == verdadeiro {
+     if count === 0 {
+     gif_image = gif_open(room_width, room_height); }
+     ou se contar < 30 {
+     gif_add_surface(gif_image, application_surface, 6/100); }
+     mais
+     {
+     gif_save(gif_image, "GameCapture.gif"); count = 0; save_gif = false; }
+     contar+++;
+     }
+  
+  O código acima criará um arquivo de imagem GIF com 30 quadros tirados da superfície da aplicação e depois o salvará.
+   
+   
+   
+  
+    
+      
+        Voltar: Câmeras e Display
+        Próximo: gif_save_buffer
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

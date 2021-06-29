@@ -1,0 +1,84 @@
+
+  
+  Opções de jogo HTML5
+  Esta seção descreve as diferentes opções disponíveis para você que controlam como seus projetos de jogo HTML5 serão compilados. As diferentes seções são:
+   
+  Geral
+  Nesta seção você tem campos para preencher as seguintes informações sobre seu jogo:
+  
+    Título do navegador: Aqui você pode dar texto a ser usado para a barra de título da guia de seu jogo no navegador.
+    Versão: O número da versão para o seu projeto.
+    Nome da pasta: O nome da pasta onde seus arquivos de jogo HTML5 serão armazenados (o padrão é "html5game").
+    Nome de saída: Este é o nome do arquivo HTML de saída e pode ser alterado para algo diferente do padrão "index.html".
+  
+   
+  Abaixo dos campos de informações do jogo, você também tem as seguintes opções:
+  
+    Depuração de saída para o Console: Isto enviará toda a saída de debug para o console JS de seu navegador. Isto está desligado por padrão.
+    Cursor de exibição: Isto irá desativar o cursor do mouse quando estiver sobre a tela do jogo. Isto está ligado por padrão.
+    Exibir Alerta "Rodando fora do servidor": Se você estiver testando um jogo localmente (ou seja: clicando no arquivo de índice de seu computador em vez de um servidor - não recomendado), então você normalmente recebe um aviso informando que as coisas
+      não funcionará como você pode esperar devido à segurança do navegador para arquivos locais. Você pode suprimir este aviso, desmarcando esta opção. Por padrão, ele está ativado.
+  
+  Abaixo das configurações gerais, você tem as opções Avançadas , que são
+  
+    Incluído arquivo como index.html: Isto é para adicionar um arquivo "index.html" personalizado para usar em vez do arquivo pré-definido que o GameMaker Studio 2 gera por padrão. Isto pode ser muito útil se você tiver um projeto de website implementado
+      ou queira incluir certas características em todas as suas construções HTML5. O arquivo a ser utilizado deve ser incluído como um Arquivo Incluído no projeto do jogo.
+    Extensão da barra de carregamento: Isto mudará a barra de carregamento padrão para uma que foi adicionada ao seu projeto GameMaker Studio 2 como uma Extensão.
+    Pré-gaste a saída .js: Aqui você pode pré-gastar a saída *.js com qualquer JavaScript extra necessário para seu jogo. Por exemplo, um aplicativo da Chrome Store pode exigir que você adicione window.localStorage = undefined; à saída JS, para o qual você usaria esta opção.
+  
+   
+  Analíticos
+  Esta seção permite que você adicione análises ao seu jogo, permitindo que você use certos produtos de terceiros para rastrear seu jogo e seu
+    vendas ou peças de teatro. Você pode especificar se deve usar Flurry Analytics ou Google Analytics para rastrear seu jogo. Devido à natureza destas funções,
+    você só pode ter um ativo de cada vez, e uma vez que você tenha sinalizado a opção Enable Flurry Analytics ou Enable Google Analytics, você também deve adicionar a identificação única que lhe foi atribuída na área apropriada.
+  Para informações sobre as funções que você pode usar para enviar dados analíticos, por favor, veja aqui.
+   
+  Gráficos
+  Aqui você pode alterar os seguintes detalhes relacionados a como seu jogo será exibido (note que nem todos os navegadores exibirão seu jogo
+    da mesma forma, portanto, teste estas opções no maior número possível de navegadores para ter certeza de que elas tenham o efeito desejado):
+  
+    Permitir a comutação para tela cheia: Ao verificar isso, o usuário poderá alternar o jogo do modo janela para o modo tela cheia usando  /  + "F" no Mac e F10 no Windows. Isto é
+      por padrão.
+    Interpolar as cores entre os pixels: Ativa a interpolação linear, que basicamente "suaviza" os pixels. Para gráficos de pixel nítidos, deve ser
+      mas se você tiver misturas alfa agradáveis e gráficos alisados é melhor deixá-lo ligado. Isto está ligado por padrão.
+    Centralizar o jogo no navegador: Ao verificar isto, a tela do jogo será automaticamente centralizada dentro do navegador que executa o jogo. Isto está desativado por padrão.
+    Uso de Partículas Construídas em Partículas: Esta opção exportará os sprites necessários para o sistema de partículas embutidas junto com seu jogo. Estes sprites são armazenados em páginas de textura individual, o que significa que não são o método mais eficiente
+      de gerar partículas para esta plataforma, portanto é recomendado que (a menos que utilize WebGL) você desmarque esta opção e use seus próprios sprites de partículas que serão armazenados nas páginas principais de textura, todos juntos para seu jogo. Isto é feito por
+      padrão.
+    Uso de Fonte Construída: Esta opção exportará o GameMaker Studio 2 construído em fonte junto com o resto dos arquivos do jogo. Isto aumentará ligeiramente o tamanho das páginas de textura e exigirá uma pequena quantidade extra de memória e armazenamento,
+      Portanto, se seu jogo não utiliza a fonte Arial, esta deve ser desativada. Está ligado por padrão.
+    WebGL: Escolha entre desligar o suporte WebGL, torná-lo opcional (auto-detecção) ou torná-lo um requisito para seu jogo. Deve-se notar que para testar o desempenho em todas as circunstâncias, você deve ter isso como desativado, então
+      Normalmente, a autodetecção para publicação. Torná-lo um requisito pode reduzir consideravelmente a compatibilidade que seu jogo tem com diferentes tipos de navegador. Isto é definido para autodetecção por padrão.
+    Escala: Seu jogo pode ser configurado para escalar a tela de sorteio automaticamente para manter a relação de aspecto dentro do navegador, ou você pode selecionar para que seja executado em escala completa. A opção de escala completa irá
+      não a tela cheia do jogo no navegador, mas sim esticar o que é desenhado para caber no tamanho da tela, conforme definido pela primeira sala do jogo. Isto é definido para manter a relação de aspecto por padrão.
+  
+  Finalmente, há a opção de definir o tamanho da página de textura. O tamanho padrão (e o mais compatível) é 2048x2048, mas você pode escolher entre 256x256 até 8192x8192. Lá
+    é também um botão marcado Pré-visualização que gerará as páginas de textura para esta plataforma e depois abrirá uma janela para que você possa ver como elas são. Isto pode ser muito útil se você desejar ver como são as páginas de textura
+    estruturada e para evitar ter páginas de textura maiores (ou menores) do que o necessário. Para maiores informações sobre páginas de textura, por favor, veja aqui.
+  NOTA: Esteja ciente de que quanto maior o tamanho da página de textura, menos compatível seu jogo será com diferentes navegadores e dispositivos.
+   
+  Imagens
+  Esta seção é onde você pode definir o Favicon e a tela Splash. O ícone deve ser escrito como um
+    *.ico e podem ser 16x16, 32x32, 48x48, ou 64x64 pixels de tamanho, e 8-bit, 24-bit, ou 32-bit de profundidade de cor. A tela de respingo deve ser do tamanho da tela que vai segurar seu jogo e irá sobrepor-se a qualquer
+    barras de carregamento se você marcar a opção Use Splash Screen (ou seja: você pode ter uma barra de carregamento, OU uma tela de respingo, mas não ambas). Imagens menores ou maiores são permitidas, mas serão escalonadas para caber. A tela de respingo deve ser uma imagem *.png.
+  Vale notar que o GameMaker Studio 2 possui uma ferramenta Gerador de Imagens de Projeto que pode ser usada para criar automaticamente todas as imagens necessárias para todas as diferentes plataformas alvo de seu jogo
+    está sendo compilado para. Se você usar esta ferramenta, você deve revisar as imagens criadas para garantir que elas sejam o que você precisa.
+   
+  Social
+  A aba social é utilizada para configurar a comunicação no Facebook em seu jogo. Se você precisar das funções do Facebook, você precisa de
+    para clicar na caixa de seleção "Use Facebook" e depois fornecer o ID do aplicativo do Facebook e o Nome de exibição do aplicativo do Facebook. Observe que todas as funcionalidades do Facebook são acessadas através de uma extensão, e quando você marcar a caixa Usar Facebook pela primeira vez, você será solicitado a baixar e instalar a extensão do Facebook a partir do Mercado (talvez seja necessário fazer o login em sua contaYoYo antes que ela possa ser baixada).
+   
+   
+   
+  
+    
+      
+        Voltar: Opções de jogo
+        A seguir: Android
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

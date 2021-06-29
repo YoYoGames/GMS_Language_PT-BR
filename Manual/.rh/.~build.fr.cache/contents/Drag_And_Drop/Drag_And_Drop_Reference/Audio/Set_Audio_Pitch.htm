@@ -1,0 +1,50 @@
+
+  
+   Definir o passo de áudio
+  Esta ação pode ser usada para definir o tom de um som. Você fornece o bem sonoro do Navegador de Bens, e então dá o tom desejado para mudá-lo, e todas as outras instâncias daquele som que você tocar terão seu tom alterado. Esta ação
+    No entanto, não mudará o tom de qualquer som que esteja tocando atualmente, e deve ser usado antes de se usar a ação Play Audio para o som.
+  O valor de pitch é um multiplicador de pitch, na medida em que o valor de entrada multiplica o pitch atual por esse valor, de modo que o valor padrão de 1 não é alterado, enquanto que um valor inferior a 1 baixará o pitch e maior que 1 elevará o pitch.
+    É melhor usar pequenos incrementos para esta função, pois qualquer valor abaixo de 0 ou acima de 5 pode não ser audível de qualquer forma. Vale notar que a mudança total de passo permitida é fixada em (1/256) - 256 oitavas, portanto, qualquer valor acima ou abaixo disto não será
+    registrado.
+  NOTA: O valor de fixação dado acima é o que o GameMaker Studio 2 tenta fixar a faixa, mas este valor não é garantido em todas as plataformas alvo. iOS, por exemplo, fixa a (1/256) - 8, então você pode precisar experimentar em cada plataforma alvo
+    e ter diferentes versões de um recurso sonoro, cada uma pré-deslocada, caso você precise de valores de oitava mais altos ou mais baixos.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Som
+        O bom recurso para definir o tom de
+      
+      
+        tom
+        O tom para definir o som (o padrão é 1)
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima recebe primeiro o tom para o som dado e o armazena em um
+    variável local. Em seguida, verifica se há uma tecla pressionada e, se for detectada, o valor do pitch é verificado para ver se é inferior a 2. Se for, então o som é parado, a variável pitch tem 0,1 adicionado a ela, e então esta variável é usada para definir
+    o tom do som novamente antes de ser tocado.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações de áudio
+        A seguir: Obter o passo de áudio
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

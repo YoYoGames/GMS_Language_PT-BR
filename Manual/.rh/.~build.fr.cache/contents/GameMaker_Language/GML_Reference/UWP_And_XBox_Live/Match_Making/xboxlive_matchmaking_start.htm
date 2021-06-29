@@ -1,0 +1,42 @@
+
+  
+  xboxlive_matchmaking_start
+  Esta função deve ser chamada antes que você possa iniciar qualquer sessão multi-jogador para o usuário. Ela pega o ponteiro User ID, que você pode recuperar para um determinado bloco de jogos chamando o xboxlive_user_for_pad()    e inicializará a API multiplayer.
+   
+  Sintaxe:
+  xboxlive_matchmaking_start(user_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        user_id
+        O ponteiro de identificação do usuário a ser usado
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  global.UserID = xboxlive_user_for_pad(global.PadIndex); xboxlive_matchmaking_start(global.UserID);
+  
+  O código acima obtém a identificação do usuário para o índice de teclado dado e, em seguida, inicia as capacidades multiplayer.
+   
+   
+   
+  
+    
+      
+        Voltar: Fósforos
+        Próximo: xboxlive_matchmaking_stop
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

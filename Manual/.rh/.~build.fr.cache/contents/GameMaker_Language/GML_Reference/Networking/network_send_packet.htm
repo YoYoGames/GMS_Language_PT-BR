@@ -1,0 +1,53 @@
+
+  
+  network_send_packet
+  Com esta função você pode enviar um "pacote" de dados através da rede. A função leva a identificação do soquete para conectar e então você deve fornecer a identificação do buffer que contém os dados a serem enviados (para mais informações sobre buffers
+    ver Referência - Buffers) e finalmente o tamanho (em bytes) do pacote de dados. Os pacotes enviados com esta função são formatados de forma que o jogo GameMaker Studio 2 que recebe os dados possa "dividir" o
+    pacotes corretamente, e a função retornará o número de bytes de dados enviados, ou um número inferior a 0 se o envio falhar. Vale notar que o tamanho final dos dados enviados que são devolvidos por esta função também incluirá o
+    Informações de cabeçalho GameMaker, que é um adicional de 12 bytes.
+   
+  Sintaxe:
+  network_send_packet(socket, buffer, tamanho);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        soquete
+        A identificação do soquete a ser utilizado.
+      
+      
+        tampão
+        A identificação do buffer de onde obter os dados.
+      
+      
+        tamanho
+        O tamanho (em bytes) dos dados.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  buff = buffer_load("player_save.dat"); network_send_packet(sock, buff, buffer_get_size(buff));
+  A informação acima carrega um dado de buffer previamente gravado na memória e retorna a identificação do buffer para ser armazenado na variável "buff". Este buffer completo é então enviado como um pacote através da rede usando o soquete identificado pela variável
+    "meia".
+   
+   
+   
+  
+    
+      
+        Voltar: Rede
+        Próximo: network_send_raw
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

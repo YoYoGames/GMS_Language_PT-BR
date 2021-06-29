@@ -1,0 +1,50 @@
+
+  
+  file_copy
+  Esta função irá copiar o arquivo especificado, dando-lhe o novo nome que você escolher. Se você estiver copiando um arquivo em Android de dentro de sua área de Arquivos Incluídos (que estará dentro de seu APK) ele copiará primeiro para a memória, portanto, esteja ciente de que
+    que a cópia de arquivos muito grandes do APK pode fazer com que os dispositivos fiquem sem memória. No alvo HTML5, usamos o HTML5 Local Storage API para salvar o lado do cliente, e as funções não suportam operações de arquivos binários, portanto, suponha que você esteja
+    cópia de um arquivo de texto.
+  ADVERTÊNCIA! Esta função pode não funcionar como você espera devido ao GameMaker Studio 2 ser lixado! Consulte a seção sobre Limites do Sistema de Arquivos para maiores informações.
+   
+  Sintaxe:
+  file_copy(fname, newname);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fname
+        O nome do arquivo a ser copiado.
+      
+      
+        novo nome
+        O nome do novo, copiado, arquivo.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se file_exists("level1.txt") {
+     file_copy("level1.txt", "level2.txt"); }
+  
+  Isto verificaria a existência de um arquivo e, se ele existe, é copiado.
+   
+   
+   
+  
+    
+      
+        Voltar: Sistema de arquivo
+        Próximo: file_find_first
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

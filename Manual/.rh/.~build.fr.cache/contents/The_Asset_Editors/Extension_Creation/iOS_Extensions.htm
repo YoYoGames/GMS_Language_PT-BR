@@ -1,0 +1,54 @@
+
+  
+  ExtensõesiOS / tvOS 
+  Para criar uma extensão para iOS ou tvOS você tem que fazer isso em duas partes. A primeira parte seria adicionar a própria extensão, junto com os arquivos necessários, etc... e a segunda é criar as funções e macros/constantes que a extensão requer.
+    As funções e constantes são adicionadas usando arquivos placeholder para agrupá-las, assim você adicionaria um placeholder e então definiria as funções e macros como explicado na seção aqui .
+    Para adicionar o resto dos arquivos, embora seja necessário primeiro marcar o iOS e/ou o tvOS na seção Características Adicionais do editor para abrir a janela de Propriedades de Extensão relevante (a caixa de seleção
+    A imagem abaixo mostra a janela de propriedades iOS, mas a janela tvOS é exatamente a mesma):
+  
+  Aqui você dá os seguintes detalhes:
+  
+    Bandeiras Linker / Bandeiras do Compilador: Algumas estruturas e SDKs de terceiros requerem a adição de bandeiras adicionais de linker e de compilador para funcionar, que podem ser especificadas aqui (veja a documentação que acompanha o SDK ou a estrutura em
+      pergunta para detalhes).
+    Nome da classe: Sua extensão pode ter múltiplas classes, com cada classe tendo suas próprias funções e constantes, portanto você deve dar-lhe um nome que reflita seu propósito
+    Nome da classe do delegado: O nome de sua classe de delegado de aplicativo personalizado. Esta configuração permite que a extensão substitua/extenda a funcionalidade principal do aplicativo. Para usar este recurso, você precisa fazer o seguinte:
+      
+        Garantir que os arquivos fonte dos delegados tenham o mesmo nome que a classe do delegado (por exemplo, @interface MyCustomAppDelegate deve ser definido em " MyCustomAppDelegate.h")
+        Adicione a variável de ambiente ${YYExtAppDelegateIncludes} no topo do arquivo de cabeçalho do delegado de seu aplicativo. Isto será substituído em tempo de compilação com os arquivos de inclusão relevantes para a classe do delegado pai.
+        Use a variável de ambiente ${YYExtAppDelegateBaseClass} como a classe base para seu delegado de aplicativo personalizado. Isto será substituído em tempo de compilação com a classe correta do delegado base.
+           Para garantir que sua extensão funcione com quaisquer outras extensões que usam delegados de aplicativos personalizados, você deve chamar qualquer método de classe base de métodos sobrepostos em sua classe filha. Antes de chamar o método de superclasse, você precisa ter certeza de que ele
+          é implementada na hierarquia de classes para evitar erros, por exemplo, para
+      
+     - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+         // Verifique se alguma superclasse implementa este método e chame-o if([[[self superclass] instancesRespondToSelector:@selector(application:willFinishLaunchingWithOptions:)]) return [super application:application willFinishLaunchingWithOptions:launchOptions]; else return TRUE; }
+     
+    
+    Estruturas do sistema: Aqui você pode adicionar em qualquerestrutura de sistema iOS à sua extensão. Estas são adicionadas clicando no botão  que adicionará uma estrutura de espaço reservado, que você poderá editar clicando lentamente em . Você pode saber mais sobre as estruturas de sistema disponíveis aqui. Para remover uma estrutura de sistema, basta selecioná-la e depois clicar no botão .
+    Injetar no Info.plist: Aqui você pode adicionar qualquer código para ser injetado no arquivo info.plist.
+    Estruturas e Pacotes de Terceiros: Esta seção é para a adição de pacotes de terceiros e SDK. Como nos trabalhos de estrutura do sistema, você clica no botão  para adicioná-los e depois clica lentamente em  para editá-los, e selecioná-los e depois clicar em  irá removê-los (veja a documentação que veio com seu SDK escolhido para obter informações sobre o nome da estrutura). Se o pacote framework/SDK estiver em seu Mac de desenvolvimento, então você precisa adicionar o caminho em " Enter framework path on Mac".
+      e clique no botão , ou se o SDK ou código fonte estiver em seu PC, use o botão Add Source.
+    CocoaPods: Aqui você pode dar o nome de qualquer CocoaPods que a extensão vai usar em vez de (ou também) quaisquer SDKs e estruturas que foram adicionados. Note que existe uma opção de jogo para iOS e para tvOS para adicionar um Podfile ao GameMaker Studio2que é necessário se você estiver adicionando CocoaPods nesta seção.
+    Dependências dosCocoaPods: Esta seção é onde você pode listar as diferentes dependências exigidas pelos CocoaPods adicionadas na seção anterior. Note que existe uma opção de jogo para iOS e para tvOS para adicionar um Podfile.lock ao GameMaker Studio2que é necessário se você estiver adicionando Dependências de CocoaPods nesta seção.
+  
+  Se sua extensão teve alguma Estrutura de Sistema ou Estrutura de Terceiros adicionada, estas serão agora listadas na janela Propriedades da Extensão , com cada uma delas tendo uma caixa de seleção ao lado. Se você marcar a caixa de seleção, você estará habilitando uma
+    que é útil caso você precise "sobrepor" qualquer símbolo da biblioteca incluída com seu próprio valor, mas deve ser notado que ao fazer isso, a vinculação será mais lenta.
+  Para mais informações sobre a criação de extensões iOS e tvOS, consulte a Base de ConhecimentoYoYo Games, e para informações sobre o uso de CocoaPods
+    em extensões, consulte o seguinte guia:
+  
+    iOS e tvOS: usando cápsulas de cacau
+  
+   
+   
+   
+  
+    
+      
+        Voltar: O Editor de Extensão
+        A seguir: Criando uma extensão
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

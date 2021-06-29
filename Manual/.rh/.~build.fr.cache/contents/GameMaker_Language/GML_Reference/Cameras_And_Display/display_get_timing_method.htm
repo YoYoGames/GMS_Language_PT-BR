@@ -1,0 +1,52 @@
+
+  
+  display_get_timing_method
+  Esta função pode ser usada para recuperar o método de tempo a ser usado para renderizar seu jogo. O método pode ser uma das constantes listadas abaixo.
+  Para obter mais informações sobre os diferentes métodos de tempo, por favor veja display_set_timing_method().
+   
+  Sintaxe:
+  display_get_timing_method();
+   
+  Devoluções:
+  Constante
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        tm_sleep
+        O valor da margem de sono é o principal método de tempo
+      
+      
+        tm_countvsyncs
+        O sincronismo Vsync é o principal método de sincronismo (padrão para todas as plataformas suportadas)
+      
+    
+  
+   
+  Exemplo:
+  se display_get_timing_method() != tm_sleep {
+     display_set_set_timing_method(tm_sleep);
+     if display_get_sleep_margin() != 20 {
+     display_set_sleep_sleep_margin(20);
+     }
+     }
+  
+  O código acima verificará o método de tempo e, se não estiver ajustado para tm_sleep , será ajustado para isso e a margem de sono será ajustada para 20.
+   
+   
+   
+  
+    
+      Câmeras e Display
+        Voltar: 
+        A seguir: display_get_sleep_margin
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

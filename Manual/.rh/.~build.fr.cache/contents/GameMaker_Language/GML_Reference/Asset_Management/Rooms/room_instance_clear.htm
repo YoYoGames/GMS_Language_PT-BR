@@ -1,0 +1,43 @@
+
+  
+  room_instance_clear
+  Esta função limpará uma sala com todas as instâncias (não serão chamados eventos de destruição para as instâncias que estão sendo removidas). Note que a chamada desta função em uma sala de ativos criada no Navegador de Ativos limpará permanentemente a sala de instâncias,
+    e mesmo ligando para game_restart() não devolverá a sala ao seu estado original (somente terminando o jogo e abrindo-a novamente começará com a sala em seu estado original novamente).
+   
+  Sintaxe:
+  room_instance_clear(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice da sala para limpar todas as instâncias em.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  global.rm = room_add(); room_assign(rm_Base, global.rm); room_instance_clear(global.rm);
+  
+  O código acima adicionará uma nova sala ao jogo e então copiará o conteúdo da sala indexada como "rm_Base" para dentro dela. Ele então limpará todas as instâncias a partir desta nova sala.
+   
+   
+   
+  
+    
+      
+        Voltar: Quartos
+        Próximo: altura_do_servidor
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

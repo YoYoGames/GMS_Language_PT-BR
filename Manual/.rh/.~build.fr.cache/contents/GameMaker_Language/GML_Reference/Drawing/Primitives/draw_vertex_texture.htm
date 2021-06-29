@@ -1,0 +1,65 @@
+
+  
+  draw_vertex_texture
+  Esta função define a posição de um vértice texturizado para um primitivo. O aspecto final do primitivo dependerá do tipo primitivo escolhido para desenhar (Veja draw_primitive_begin() para mais informações),
+    a ordem com que você adiciona os vértices a ela e a posição do ponto de partida que você estabelece para a textura. Para terminar e desenhar o primitivo você deve chamar draw_primitive_end().
+  Você também pode escolher desenhar apenas parte da textura sobre a superfície do primitivo, definindo a posição xtex/ytex apropriada para a amostragem (estas coordenadas também são conhecidas como pontos UV ). Este ponto é definido por um valor entre
+    0 e 1 com o canto superior esquerdo da imagem a ser usado sendo o ponto (0,0) e o canto inferior direito sendo o ponto (1,1). Desta forma, você pode texturizar um primitivo com apenas uma parte do ativo da imagem de origem.
+  Ao desenhar um primitivo texturizado, a textura será misturada com a cor definida pelo draw_set_colour. Isto significa que para desenhar a textura sem mistura, esta deve ser definida como c_white, como mostrado no exemplo abaixo.
+  OBSERVAÇÃO: Para que uma textura se repita, deve ser uma potência de dois em tamanho, ou seja: 32x32, 128x128, etc...
+   
+  Sintaxe:
+  draw_vertex_texture(x, y, xtex, ytex)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A coordenada x do vértice.
+      
+      
+        y
+        A coordenada y do vértice.
+      
+      
+        xtex
+        A largura da amostra de textura a ser utilizada.
+      
+      
+        ytex
+        A altura da amostra de textura a ser utilizada.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_set_colour(c_white);
+var tex = sprite_get_texture(spr_Background, 0);
+draw_primitive_begin_texture(pr_trianglestrip, tex);
+draw_vertex_texture(0, 0, 0, 0, 0);
+draw_vertex_texture(640, 0, 1, 0);
+draw_vertex_texture(0, 480, 0, 1);
+draw_vertex_texture(640, 480, 1, 1, 1);
+draw_primitive_end();
+  O código acima desenhará uma faixa triangular de 4 vértices (fazendo um retângulo) texturizada com a textura mantida na variável "tex", e toda a textura será usada para cobrir a primitiva completa.
+   
+   
+   
+  
+    
+      
+        Voltar: Primitivos e formatos de vértices
+        A seguir: draw_vertex_texture_colour
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

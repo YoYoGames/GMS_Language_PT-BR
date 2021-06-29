@@ -1,0 +1,46 @@
+
+  
+  draw_set_circle_precision
+  Para otimizar o desempenho ao desenhar círculos, o GameMaker Studio 2 basicamente desenha uma forma poligonal com lados suficientes para fazê-lo parecer circular. Entretanto, dependendo de quão grandes ou pequenos você precisa que seus círculos sejam, você pode descobrir que mudando
+    este valor pode ajudar a aumentar o desempenho de seu jogo, ou fazer os círculos parecerem melhores. O valor de precisão que você pode inserir nesta função é o número de lados que o polígono do círculo tem, e este número pode ser qualquer coisa entre 4 e 64,
+   mas deve ser um número divisível por 4, com um valor padrão de 24.
+  
+  NOTA: Se você quiser desenhar uma forma usando um sombreador, você deve estar ciente de que a maioria dos sombreadores espera as seguintes entradas: vértice, textura, cor. Entretanto, ao utilizar esta função, apenas os dados de vértice e cor estão sendo passados para dentro, e assim o
+   shader não pode desenhar nada (ou desenhar algo, mas não corretamente). Se você precisar desenhar formas desta maneira, então o sombreador deve ser personalizado tendo isto em mente.
+   
+  Sintaxe:
+  draw_set_circle_precision(precisão);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        precisão
+        A precisão de todos os círculos desenhados após esta função é chamada.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_set_circle_precision(12);
+  O código acima desenhará todos os círculos usando um polígono de 12 lados.
+   
+   
+   
+  
+    
+      
+        Voltar: Formulários básicos
+        Próximo: draw_button
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

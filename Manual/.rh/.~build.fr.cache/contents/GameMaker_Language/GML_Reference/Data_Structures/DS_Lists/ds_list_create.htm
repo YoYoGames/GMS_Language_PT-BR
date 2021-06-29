@@ -1,0 +1,32 @@
+
+  
+  ds_list_create
+  Esta função criará uma nova estrutura de dados da lista e retornará o valor do índice. Este valor deve ser armazenado em uma variável e usado em todas as outras chamadas de função relacionadas à lista. Note que se você tentar acessar um valor na lista antes que ele tenha sido preenchido - ou seja, a lista está "vazia" - então o valor de retorno pode ser 0, já que internamente as primeiras entradas na lista são definidas quando criadas para minimizar os problemas de desempenho ao adicionar itens à lista inicialmente (embora o
+    ds_list_size() ainda retornará 0 em uma lista recém-criada). Se você deseja garantir que a lista esteja "verdadeiramente" vazia ao criar, então você deve chamar ds_list_clear()    após a criação da lista, o que significa que quaisquer valores retornados para os slots da lista não-populosa serão indefinidos.
+  IMPORTANTE! Quando você cria uma estrutura de dados, o valor do índice para identificá-lo é um valor inteiro começando em 0. Isso significa que estruturas de dados de diferentes tipos podem ter o mesmo valor de índice, portanto, em caso de dúvida, você deve estar usando o
+    ds_exists() antes de acessá-los. Observe também que os índices são reutilizados, portanto, um valor de índice de estrutura de dados destruída pode ser usado por um índice recém-criado posteriormente.
+   
+  Sintaxe:
+  ds_list_create();
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  lista = ds_list_create();
+  Isto criará uma nova lista e atribuirá seu id de índice à variável de instância "lista".
+   
+   
+   
+  
+    
+      
+        Voltar: Listas DS
+        Próximo: ds_list_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

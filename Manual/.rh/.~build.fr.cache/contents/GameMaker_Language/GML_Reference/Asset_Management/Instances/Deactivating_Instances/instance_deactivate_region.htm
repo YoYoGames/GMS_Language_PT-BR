@@ -1,0 +1,69 @@
+
+  
+  instance_deactivate_region
+  Com esta função você pode definir uma região dentro da sala para desativar instâncias que tenham sido ativadas anteriormente. Esta região pode ser sinalizada como "dentro" ou "fora", como demonstrado na imagem a seguir:
+  Você pode ver na imagem acima que a instância "maçã" é sempre
+    inativo porque, mesmo que o duende em si não se sobreponha à região, a caixa delimitadora sim. Portanto, as instâncias são consideradas dentro da região especificada quando sua caixa delimitadora se sobrepõe a ela, e o estado da máscara de colisão
+    (preciso ou não) não é levado em consideração. Note que a desativação não é instantânea, e uma instância que tenha sido desativada desta forma não será considerada inativa até o final do evento em que a função foi
+    chamado.
+  NOTA: Se você desativar uma instância no início da sala (ou seja: do código de criação da sala, ou de uma instância criar evento de uma instância dentro da sala) todas as instâncias que são colocadas dentro da sala do editor da sala ainda executarão seu evento de criação antes de serem desativadas.
+  AVISO: A desativação de instâncias que têm a física habilitada NÃO irá impedir que seus dispositivos interajam dentro da simulação física. Para isso, você deve definir seus phy_active variável
+    para verdadeiro ou falso à medida que você ativa/desativa as instâncias.
+   
+  Sintaxe:
+  instance_deactivate_region(left, top, width, height, inside, notme);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        esquerda
+        A coordenada x da esquerda da região retangular a ser desativada.
+      
+      
+        topo
+        A coordenada y da parte superior da região retangular para desativar.
+      
+      
+        largura
+        A largura da região a ser desativada.
+      
+      
+        altura
+        A altura da região para desativar.
+      
+      
+        dentro
+        Seja para desativar instâncias no interior da região (verdadeiro) ou no exterior (falso).
+      
+      
+        notme
+        Se excluir a instância de chamada da desativação (verdadeira) ou não (falsa).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  instance_activate_all(); var _vx = camera_get_view_x(view_camera[0]); var _vy = camera_get_view_y(view_camera[0]); var _vw = camera_get_view_width(view_camera[0]); var _vh = camera_get_view_height(view_camera[0]); instance_deactivate_region(_vx
+    - 64, _vy - 64, _vw + 128, _vh + 128, falso, falso);
+  O código acima ativa todas as instâncias e depois desativa uma região dentro da sala.
+   
+   
+   
+  
+    
+      
+        Voltar: Desativação de Instâncias
+        A seguir: instance_deactivate_layer
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

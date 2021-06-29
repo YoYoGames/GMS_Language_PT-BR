@@ -1,0 +1,72 @@
+
+  
+  push_local_notification
+  Esta função pode ser usada para definir uma notificação local a ser exibida em uma determinada data e em um determinado horário. O "fire_time" é a data/hora em que a notificação deve ser empurrada para o dispositivo do usuário (você pode usar as funções de data e hora do GameMaker Studio 2 para obter isto), e você pode dar à notificação um título e um texto de mensagem, assim como uma seqüência de pagamento que será passada para o seu jogo quando os usuários tocarem a notificação.
+  NOTA: O argumento do "título" é ignorado no iOS e o nome do jogo é mostrado em seu lugar.
+  Ao tocar na notificação, o jogo começará no dispositivo e acionará um evento Assíncrono de Notificação de Push onde o async_load    O mapa DS pode então ser analisado para verificar a cadeia de carga útil e executar qualquer ação que seja necessária.
+  NOTA: Esta funcionalidade é limitada ao iOS e Android módulos-alvo.
+   
+  Sintaxe:
+  push_local_notification(fire_time, title, message, data);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fire_time
+        A data/hora para disparar a notificação
+      
+      
+        título
+        O título da notificação (uma cadeia)
+      
+      
+        mensagem
+        O texto da mensagem de notificação (uma cadeia)
+      
+      
+        dados
+        O pacote de dados a enviar para seu jogo (uma corda)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo ampliado
+  Neste exemplo, enviaremos uma notificação local usando o seguinte código:
+  var fireTime = date_inc_day(date_current_datetime(), 1); var data = "daily_reward"; push_local_notification(fireTime, "Ahoy!", "Catch The Haggis Has A Present", data);
+  Isto definirá um timer para "empurrar" uma notificação para o dispositivo quando um dia tiver passado. Quando o dia terminar, se seu jogo estiver em segundo plano ou não estiver em execução, uma notificação será mostrada ao usuário com o título e a mensagem (em
+   iOS, o nome do jogo é mostrado e o título é ignorado), e então um Evento de Notificação Assíncrona de Push será chamado. Observe que se o jogo estiver em primeiro plano quando chegar a hora da notificação, ele não será mostrado, mas o evento assíncrono
+    evento ainda será acionado. No próprio evento, você lidaria com a chamada de retorno algo como isto: Evento Async da seguinte maneira:
+  var type = ds_map_find_value(async_load, "type"); var status = ds_map_find_value(async_load, "status"); if status == 0 {
+     //error de algum tipo var error = ds_map_find_value(async_load, "error"); show_debug_message("error=" + string(error)); }
+     mais
+     {
+     if type == "register" {
+     global.reg_id = ds_map_find_value(async_load, "reg_id"); }
+     mais
+     {
+     var data = ds_map_find_value(async_load, "data"); if data == "daily_reward" {
+     global.Gold += 1000; }
+     }
+     }
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Notificações Push
+        Próximo: push_get_first_local_notification
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

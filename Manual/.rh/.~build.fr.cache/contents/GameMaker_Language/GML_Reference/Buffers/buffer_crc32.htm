@@ -1,0 +1,50 @@
+
+  
+  buffer_crc32
+  Esta função irá pegar os dados de entrada de um buffer e retornar um hash de checksum crc32. Você especifica o ID do buffer a ser usado, depois um valor de offset (em bytes) para onde começar, e depois um tamanho (novamente em bytes) para a região a ser hashed, e
+    a função retornará um valor inteiro de 32 bits para aquela região.
+   
+  Sintaxe:
+  buffer_crc32(buffer, offset, tamanho);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O índice do buffer a ser utilizado.
+      
+      
+        offset
+        O valor da compensação de dados.
+      
+      
+        tamanho
+        O tamanho do amortecedor.
+      
+    
+  
+   
+  Devoluções:
+  Int 32
+   
+  Exemplo:
+  check_val = buffer_crc32(buff, 0, buffer_get_size(buff));
+  O código acima criará um valor de hash de checksum crc32 para os dados completos armazenados no buffer indexado pela variável "buff", e armazenará o valor de hash inteiro retornado na variável "check_val".
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: código_base64_de_tampão
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

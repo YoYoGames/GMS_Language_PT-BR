@@ -1,0 +1,65 @@
+
+  
+  audio_listener_get_data
+  Esta função criará um mapa DS e o preencherá com os valores de posição, velocidade e orientação para o ouvinte dado. O índice padrão do ouvinte é 0, mas você pode usar a função
+    audio_get_listener_info() para obter os diferentes índices disponíveis para a plataforma alvo. Se você fornecer um índice de ouvinte incorreto, então a função retornará -1.
+  NOTA: Você é responsável pela destruição do mapa DS devolvido usando a função apropriada.
+  O mapa DS conterá as seguintes chaves:
+  
+    " x" - A posição x do ouvinte
+    " y" - A posição y do ouvinte
+    "z" - A posição z do ouvinte
+    "vx" - A velocidade do eixo x do ouvinte
+    "vy" - A velocidade do eixo y do ouvinte
+    "vz" - A velocidade do eixo z do ouvinte
+    "lookat_x" - O componente x do olhar para o vetor do ouvinte
+    "lookat_y"- O componente y do olhar para o vetor do ouvinte
+    "lookat_z" - O componente z do olhar para o vetor do ouvinte
+    "up_x"- O componente x do vetor up do ouvinte
+    " up_y"- O componente y do vetor up do ouvinte
+    " up_z"- O componente z do vetor up do ouvinte
+  
+   
+  Sintaxe:
+  audio_listener_get_data(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O ouvinte para obter os dados para (padrão 0).
+      
+    
+  
+   
+  Devoluções:
+  ds_map
+   
+  Exemplo:
+  var num = audio_get_listener_count(); for(var i = 0; i < num; ++i;) {
+     var info = audio_get_listener_info(i); var data = audio_listener_get_data(info[? "index"]); if data[? "x"] != 0 {
+     audio_listener_set_position(info[? "index"], 0, 0, 0, 0); }
+     ds_map_destroy(info);
+     ds_map_destroy(data);
+     }
+  
+  O código acima verifica o número de ouvintes disponíveis e, se sua posição x não for 0, ele define sua posição para 0, 0, 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Ouvintes de áudio
+        Próximo: audio_listener_set_position
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

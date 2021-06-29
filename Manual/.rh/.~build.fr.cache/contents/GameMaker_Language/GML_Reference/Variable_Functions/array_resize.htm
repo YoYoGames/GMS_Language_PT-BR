@@ -1,0 +1,55 @@
+
+  
+  array_resize
+  Com esta função você pode redimensionar uma dimensão de matriz existente para ser um novo tamanho. Você fornece a matriz a ser redimensionada assim como o novo número de índices para a matriz, e a função redimensionará essa matriz. Note que esta função é projetada para redimensionar
+    um array até um comprimento menor, pois você pode redimensionar simplesmente ajustando um novo índice no array. Dito isto, se você o usar para dimensionar um array, então quaisquer novos índices serão definidos para o valor padrão de 0.
+  Esta função também pode ser usada para matrizes multidimensionais, desde que você especifique qual dimensão deseja redimensionar ao fornecer o índice da matriz, seguindo este padrão:
+  // Redimensionar a primeira dimensão da matriz array_resize(my_array, 10);
+     // Redimensionar a segunda dimensão da matriz array_resize(my_array[0], 10);
+     // Redimensionar a terceira dimensão da matriz array_resize(my_array[0][0], 10);
+     // etc...
+   
+  Sintaxe:
+  array_resize(array_index, new_size);
+  
+    
+      
+        
+          Argumento
+          Descrição
+        
+        
+          array_index
+          O índice da matriz a ser redimensionada.
+        
+        
+          novo_tamanho
+          O novo tamanho para a matriz (um número inteiro, a partir de 0).
+        
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se array_length(a) > 10 {
+     array_resize(a, 10); }
+  
+  O código acima verifica o comprimento de uma matriz e, se ela tiver mais de 10 índices, é redimensionada.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções variáveis
+        Próximo: array_length_1d
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

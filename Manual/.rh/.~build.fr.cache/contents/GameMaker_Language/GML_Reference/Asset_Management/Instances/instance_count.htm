@@ -1,0 +1,33 @@
+
+  
+  exemplo_conta
+  Com esta variável lida apenas você pode obter uma contagem de todas as instâncias ativas que estão na sala. Isto incluirá a instância que executa o código, mas não inclui as instâncias que foram desativadas usando as funções da instância desativada. Note que esta variável só lhe dará o número de instâncias no início da etapa, portanto quaisquer alterações nas instâncias na sala feitas após o início da etapa não serão levadas em consideração.
+   
+  Sintaxe:
+  exemplo_conta;
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  se (exemplo_conta < 100) {
+     var dif = 100 - instance_count; while (--dif > 0) {
+     instance_create_layer(random(room_width), random(room_height), "Effects", obj_Star); }
+     }
+  
+  O código acima criará múltiplas instâncias do objeto "obj_Star" até que a contagem total de instâncias atinja 100.
+   
+   
+   
+  
+    
+      
+        Voltar: Instâncias
+        Próximo: alarm_get
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

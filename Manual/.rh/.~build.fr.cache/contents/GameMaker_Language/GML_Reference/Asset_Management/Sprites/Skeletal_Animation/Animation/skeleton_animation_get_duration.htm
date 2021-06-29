@@ -1,0 +1,46 @@
+
+  
+  esqueleto_animação_get_duração
+  Esta função retornará o tempo necessário para que o conjunto de animação em questão seja executado antes do looping de volta ao início. O valor de retorno é em segundos.
+   
+  Sintaxe:
+  esqueleto_animação_get_duration(animname);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        animname
+        O nome (uma cadeia) do conjunto de animação a ser utilizado.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo1:
+  time += delta_time / 1000000; var duration = skeleton_animation_get_duration(skeleton_animation_get()); var frame = floor((image_number * (mTime_number / duration)) + 0,5) % image_number; image_index = frame; draw_self();
+  
+  O código acima definirá o índice da imagem para o valor correto para o duende de animação esquelético atualmente atribuído.
+  Exemplo2:
+  time += delta_time / 1000000; var d = skeleton_animation_get_duration("walk"); if time > d time -= d; draw_skeleton_time(sprite_index, "walk", "skin1", time, x, y, image_xscale, image_yscale, image_angle,
+    c_white);
+  O código acima desenhará o duende de animação esquelético dado usando o tempo delta para definir o frame que está sendo desenhado.
+   
+   
+   
+  
+    
+      
+        Voltar: Animação
+        Próximo: skeleton_animation_mix
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

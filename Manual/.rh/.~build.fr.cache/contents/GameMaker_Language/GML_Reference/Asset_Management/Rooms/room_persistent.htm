@@ -1,0 +1,34 @@
+
+  
+  room_persistent
+  Esta variável pode ser usada para obter e para definir a bandeira persistente para a sala atual. Se definida como verdadeira, a sala é considerada persistente, em cujo caso cada vez que você sair da sala e voltar o estado das instâncias dentro daquela sala
+    terá sido mantido. Entretanto, se for sinalizada como falsa, cada vez que você retornar à sala, ela será reposta ao seu estado inicial. Você deve observar que uma sala persistente usa consideravelmente mais memória do que uma sala normal e não é recomendado
+    para ter muitos deles em seu jogo.
+   
+  Sintaxe:
+  room_persistent;
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se vive < 1 {
+     room_persistent = falso; room_goto(rm_start);
+     }
+  
+  O código acima verifica a variável "vidas" e, se for menor que 1, definirá a persistência da sala como falsa e , em seguida, mudará de sala.
+   
+   
+   
+  
+    
+      
+        Voltar: Quartos
+        Próximo: room_get_name
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,47 @@
+
+  
+  vapor_ugc_query_set_return_total_somente
+  Esta função pode ser usada para filtrar qualquer consulta UGC, especificamente para solicitar apenas o número de resultados sem qualquer outra informação (o que significa que o mapa DS gerado pela função de envio conterá a chave "num_resultados" sem
+    quaisquer outros dados do mapa). O tratamento da consulta é o valor retornado quando você criou a consulta (usando, por exemplo, steam_ugc_create_query_user()) e o segundo argumento ou é verdadeiro ou
+   falso. A função retornará verdadeiro se o filtro de consulta foi configurado corretamente, ou falso de outra forma.
+   
+  Sintaxe:
+  steam_ugc_query_set_return_total_only(ugc_query_handle , total_only);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ugc_query_handle
+        O cabo de consulta a ser usado.
+      
+      
+        total_apenas
+        Se a consulta deve retornar apenas o número total de acertos ou não.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var query_handle = steam_ugc_create_query_all(ugc_query_RankedByVote, ugc_match_Items, 1); steam_ugc_query_set_return_total_only(query_handle, true); steam_ugc_query_set_allow_cached_response(query_handle, true); query_ID = steam_ugc_send_query(query_handle);
+  O código acima cria um pedido de consulta e armazena seu tratamento em uma variável local para uso futuro nas demais funções que definem melhor o pedido de consulta antes de enviar a consulta.
+   
+   
+   
+  
+    
+      
+        Voltar: UGC
+        Próximo: steam_ugc_query_set_allow_cached_response
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

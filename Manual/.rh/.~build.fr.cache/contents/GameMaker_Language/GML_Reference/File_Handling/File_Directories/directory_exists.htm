@@ -1,0 +1,44 @@
+
+  
+  diretório_existe
+  Esta função retornará verdadeiro se o diretório indicado existir ou falso se não existir. O nome especificado deve incluir o caminho completo, não um caminho relativo e, por padrão, você não pode acessar nenhum diretório de fora - com o pacote de jogos
+    uma vez que todos os jogos são sandboxed (veja a seção sobre o Sistema de Arquivo para mais informações).
+   
+  Sintaxe:
+  directory_exists(dname)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dname
+        O nome do diretório a ser procurado.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if directory_exists(working_directory + "Saves/") {
+     file = file_find_first(working_directory + "Saves/*.doc", fa_readonly); }
+  
+  Isto irá verificar se o diretório especificado existe, então, se existir, vá lá e devolva o primeiro arquivo doc "somente leitura" encontrado.
+   
+   
+   
+  
+    
+      
+        Voltar: Diretórios de arquivos
+        Próximo: diretório_criar
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

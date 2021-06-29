@@ -1,0 +1,54 @@
+
+  
+   Definir cabeça seqüencial
+  Com esta ação, você pode definir a posição de cabeça de jogo do elemento de seqüência dado na sala para uma moldura especificada. Você fornece o ID do elemento de seqüência (como retornado pela ação Criar Sequência) e
+    a nova posição de cabeça de brincadeira em armações. Para informações sobre a cabeça de brincadeira, consulte Utilizando a Folha de Drogas.
+  Observe que a posição está em quadros e se você definir um valor maior que o número total de quadros (ou menor que 0), então a posição final real do playhead dependerá do tipo de reprodução de seqüência que foi selecionada,
+    seguindo estas regras:
+  
+    Sem looping: A cabeça de brincadeira se fixará ao final do laço (ou ao início, se o valor dado for negativo)
+    Looping: O playhead voltará ao início da seqüência mais os quadros extras, por exemplo: se você definir o playhead em uma seqüência de 30 quadros para uma posição de quadro 45, a posição real do playhead acabará sendo 15. Se você der
+      um valor negativo, então o playhead da seqüência se envolverá na direção inversa.
+    Laço de ping-pong: O playhead avançará até o final e então voltará o número extra de quadros que estão sobre o comprimento total do quadro, invertendo a direção de reprodução, por exemplo: Se a seqüência for de 30 quadros e você definir o playhead
+      a 40, a posição final do playhead será 20 e a direção será invertida (descendo para 0). Note que nuncadeve dar um valor negativo para a reprodução do ping-pong de uma seqüência, pois ele pode ter indefinido
+      resultados.
+  
+  Estabelecer a posição da cabeça desta maneira não interromperá a reprodução e a seqüência simplesmente continuará a partir da nova posição da cabeça de reprodução, a menos que seja pausada.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Variável
+        A identificação do elemento de seqüência para mudar a posição da cabeça.
+      
+      
+        Cabeça (armações)
+        A nova posição da cabeça (em armações) para o elemento de seqüência.
+      
+    
+  
+   
+  Exemplo:
+  O bloco de ação acima recupera a posição atual da cabeça do elemento de seqüência ID armazenado em
+    a variável "seq_id". Esse valor é então usado para definir a posição da cabeça do mesmo elemento sequencial, avançando-a em 4 quadros.
+   
+   
+  
+    
+      
+        Voltar: Ações Sequenciais
+        A seguir: Criar Elemento de Sequência 
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

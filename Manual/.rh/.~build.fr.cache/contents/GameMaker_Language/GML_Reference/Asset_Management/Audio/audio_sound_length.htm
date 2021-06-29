@@ -1,0 +1,44 @@
+
+  
+  audio_sound_length
+  Esta função devolverá em segundos a duração do som dado. O som pode ser uma referência a partir do índice de um som individual que está sendo reproduzido e que foi armazenado em uma variável ao usar o audio_play_sound() ou 
+    audio_play_sound_at() ou um ativo real do Navegador de Ativos.
+   
+  Sintaxe:
+  audio_sound_length(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do som a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var len; len = audio_sound_length(snd_Beam); audio_play_sound(snd_Beam, 1, false); alarm[0] = room_sound_length(snd_Beam, 1, false); alarm[0] = room_speed * len;
+  O código acima obtém a duração (em segundos) do som indexado na variável "snd_Beam", depois toca o som e dispara um alarme quando o som tiver terminado de tocar, usando a duração do som para calcular o tempo necessário para
+    o alarme.
+   
+   
+   
+  
+    
+      
+        Voltar: Áudio
+        Próximo: áudio_sound_pitch
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

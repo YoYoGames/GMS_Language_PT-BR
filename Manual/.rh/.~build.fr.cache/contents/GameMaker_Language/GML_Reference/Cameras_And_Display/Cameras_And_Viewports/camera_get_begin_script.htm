@@ -1,0 +1,43 @@
+
+  
+  camera_get_begin_script
+  Esta função pode ser usada para recuperar a identificação da função de script atribuída como o script inicial para a câmera em questão. Se nenhuma função de script for atribuída, então a função retornará -1.
+   
+  Sintaxe:
+  camera_get_begin_script(camera_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        camera_id
+        O valor único de identificação da câmera retornou quando você criou a câmera
+      
+    
+  
+   
+  Devoluções:
+  ID da função Script ou -1 se nenhum script for atribuído
+   
+  Exemplo:
+  var scr = camera_get_begin_script(camera_view[0]); if scr != cutScene {
+     camera_set_update_script(camera_view[0], cutScene); }
+  
+  O código acima verifica a função de script atribuída como script inicial para a câmera atribuída à porta de visualização[0] e, se não for "cutScene", é definida para essa função.
+   
+   
+   
+  
+    
+      
+        Voltar: Câmeras e Ver Portos
+        Próximo: camera_get_end_script
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,44 @@
+
+  
+  xboxlive_stats_get_stat_names
+  Esta função pode ser usada para recuperar todas as estatísticas definidas do gerente de estatísticas para um determinado usuário. O usuário fornece o ID do usuário conforme retornado pela (por exemplo) função xboxlive_get_user(),
+    e a função retornará um conjunto de cordas contendo as estatísticas para o usuário. Se ocorrer um erro ou se o usuário não tiver estatísticas, a matriz ainda será devolvida, mas terá uma contagem de elementos de 0.
+   
+  Sintaxe:
+  xboxlive_stats_get_stat_names(user_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        user_id
+        O ponteiro de identificação do usuário para obter os nomes estatutários de
+      
+    
+  
+   
+  Devoluções:
+  Array
+   
+  Exemplo:
+  var _stat_str = xboxlive_stats_get_stat_names(user_id); for (var i = 0; i < array_length(_stat_str); ++i;)  {
+     xboxlive_stats_delete_stat(user_id, _stat_str[i]); }
+  
+  O código acima recupera todas as estatísticas definidas para o ponteiro de identificação do usuário armazenado na variável dada e, em seguida, percorre a matriz e apaga o stat especificado do gerente do stat.
+   
+   
+   
+  
+    
+      
+        Voltar: Estatísticas e Quadros de Líderes
+        Próximo: xboxlive_stats_get_stat
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

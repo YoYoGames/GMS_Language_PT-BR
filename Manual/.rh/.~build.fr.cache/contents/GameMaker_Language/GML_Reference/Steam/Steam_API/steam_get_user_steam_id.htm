@@ -1,0 +1,32 @@
+
+  
+  steam_get_user_steam_id
+  Você pode usar esta função para retornar a identificação única do usuário Steam do usuário atualmente logado no cliente Steam. Este é um valor único de 64 bits que pode ser usado para identificar usuários individuais e não seu nome de usuário na tela (isto pode ser
+    encontrado usando a função steam_get_persona_name()). Como esta é uma int64 você pode precisar lançá-la como tal quando usá-la em funções subseqüentes usando o int64()    função.
+   
+  Sintaxe:
+  vapor_get_user_steam_id();
+   
+  Devoluções:
+  Inteiro (int64)
+   
+  Exemplo:
+  se vapor_inicializado() {
+     global.u_id = steam_get_user_steam_id(); }
+  
+  O código acima definirá uma variável global para o ID de vapor exclusivo dos usuários atuais se o API do cliente Steam for inicializado corretamente.
+   
+   
+   
+  
+    
+      
+        Voltar: General SteamAPI
+        Próximo: steam_get_persona_name
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

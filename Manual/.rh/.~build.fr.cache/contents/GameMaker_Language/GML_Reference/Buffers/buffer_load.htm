@@ -1,0 +1,47 @@
+
+  
+  buffer_load
+  Esta função é usada para carregar um buffer que foi salvo anteriormente usando o buffer_save() funções, bem como quaisquer arquivos ou arquivos incluídos 
+    carregado externamente. Ele retornará um novo ID de buffer que é criado pela função de "crescer" buffer (ver aqui) com um alinhamento de bytes de 1. Este ID deve ser armazenado em uma variável e usado em todas as outras
+    funções chamadas para este buffer. Se a carga falhar por qualquer motivo, a função retornará -1 e uma mensagem será exibida na janela de saída do compilador dizendo que a carga falhou.
+  Note que em HTML5 qualquer buffer carregado do armazenamento local será decodificado usando a base64 (uma vez que eles são salvos como cordas base64), porém usando esta função em Arquivos Incluídos ou quaisquer arquivos externos não usarão a decodificação da base64, o que deve ser bom
+    para a maioria dos casos.
+  NOTA: É importante que você remova da memória qualquer recurso criado dinamicamente como este quando não precisar mais deles para evitar vazamentos de memória, então quando terminar com o buffer que você criou, você deve liberá-lo novamente
+    usando buffer_delete().
+   
+  Sintaxe:
+  buffer_load(filename);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome do arquivo
+        O nome do arquivo a ser carregado.
+      
+    
+  
+   
+  Devoluções:
+  real
+   
+  Exemplo:
+  player_buffer = buffer_load("Player_Save.sav");
+  O código acima irá carregar um buffer previamente gravado na memória, criando um novo buffer. O índice deste novo buffer é armazenado na variável "player_buffer".
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        A seguir: buffer_load_ext_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

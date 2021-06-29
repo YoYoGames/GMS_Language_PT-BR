@@ -1,0 +1,46 @@
+
+  
+  camera_apply
+  Esta função aplicará as configurações da câmera em questão à vista atual da câmera que está sendo apresentada imediatamente. Enquanto você pode definir qualquer câmera de visualização usando as funções específicas de camera_set_*, as novas configurações não serão usadas para renderização até que a
+   próximo quadro de jogo, mas com esta função você pode fazer essas mudanças imediatamente. Se você estiver usando várias vistas, então a função deve ser usada no Evento de Sorteio e você pode usar a variável view_current    para aplicar seletivamente a câmera em questão apenas à vista da câmera que está sendo apresentada atualmente. Note que isto NÃO altera o valor de ID da câmera, apenas as configurações para aquela câmera, e que se você usar esta função na câmera padrão (ou seja: a câmera interna
+    câmera GameMaker Studio 2 usa quando nenhuma câmera de visualização está ativa) as mudanças serão sobrescritas no próximo quadro de jogo pelas configurações internas para desenhar a sala.
+   
+  Sintaxe:
+  camera_apply(camera_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        camera_id
+        O valor único de identificação da câmera retornou quando você criou a câmera.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se view_current == 0 {
+     camera_apply(cutscene_cam);
+     }
+  
+  O código acima (em um Evento de Desenho) verifica qual visão de câmera está sendo apresentada no momento e se é visão de câmera[0] então as configurações para a câmera referenciada pela variável "cutscene_cam" são aplicadas a ela.
+   
+   
+   
+  
+    
+      
+        Voltar: Câmeras e Ver Portos
+        Próximo: camera_set_view_mat
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

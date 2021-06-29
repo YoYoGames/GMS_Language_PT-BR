@@ -1,0 +1,44 @@
+
+  
+  clickable_exists
+  Esta função retorna se um ícone DOM clicável foi criado com o índice especificado existe ou não. Favor observar que o valor utilizado para verificação deve ter sido rubricado previamente ou então você receberá um erro causando o fechamento do GameMaker Studio 2.
+   
+  Sintaxe:
+  clickable_exists(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do clicável a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se !clickable_exists(home_but) {
+     home_but = clickable_add(32, 32, sprite_get_tpe(spr_MS_Home, 0), " ", "_blank", "width=700, height=500, menubar=0, toolbar=0, scrollbars=0"); http://macsweeney_games.com }
+  
+  O código acima verifica a variável "home_but" para ver se ela já existe, e se ela não cria um ícone DOM clicável na posição (32, 32) da página em que a tela do jogo está rodando. O ícone usa o sprite referenciado a partir de
+    a página de textura como "spr_MS_Home" e quando clicado o ícone abrirá uma nova janela para a URL especificada e com as propriedades definidas para aquela janela.
+   
+   
+   
+  
+    
+      
+        Voltar: Web e HTML5
+        Próximo: clickable_add
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,50 @@
+
+
+
+
+
+  
+  data_compare_time
+  Com esta função você pode verificar duas datas e horas para ver qual delas tem o componente tempo antes ou depois da outra. A função retorna -1 se a data/hora1 for anterior, 1 se a data/hora1 for posterior e 0 se forem as mesmas, e ignora a data,
+    Assim, literalmente, qual dos tempos é mais avançado em seu dia dado.
+   
+  Sintaxe:
+  date_compare_time(datetime1, datetime2);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        data/hora1
+        A primeira data.
+      
+      
+        data/hora2
+        A data para comparar o primeiro com o primeiro.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  d = date_compare_time(date_create_datetime( 2011, 9, 15, 11, 11, 4, 0 ), date_current_datetime());
+  Isto definiria "d" para o valor correspondente, dependendo de qual dos tempos foi o mais antigo. Basicamente, se o horário atual for posterior às 11:04 da manhã, ele retornaria 1. Se antes, -1. Se a hora for 11:04, ele retornaria 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Data e TIME
+        Próximo: data_valid_datetime
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

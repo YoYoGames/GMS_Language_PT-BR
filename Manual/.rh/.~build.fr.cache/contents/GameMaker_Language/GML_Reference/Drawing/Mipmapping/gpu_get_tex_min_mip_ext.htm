@@ -1,0 +1,46 @@
+
+  
+  gpu_get_tex_min_mip_ext
+  Com esta função você pode obter o nível mínimo de mipmap que é usado atualmente para um determinado amostrador de sombreamento. Você fornece o valor do índice para o amostrador de shader (como retornado pela função shader_get_sampler_index(),
+    e a função retornará um valor de 0 para resolução total, 1 para o primeiro mipmap, 2 para o segundo etc...
+   
+  Sintaxe:
+  gpu_get_tex_min_mip_ext(sampler_index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice_de_amostragem
+        O índice do amostrador de sombreamento para obter
+      
+    
+  
+   
+  Devoluções:
+  Real (padrão: 0)
+   
+  Exemplo:
+  var _sampleIndex = shader_get_sampler_index(shd_Glass, "s_Background"); var _spriteTex = sprite_get_texture(sprite_index, 0); shader_set (shd_Glass);
+     if gpu_get_tex_min_mip_ext(_sampleIndex) != 0 {
+     gpu_set_tex_min_mip_ext(_sampleIndex, 0); }
+     text_set_set_stage(_sampleIndex , _spriteTex); shader_reset();
+  
+  O código acima define o nível mínimo do mipmap para 0 para o amostrador de textura de sombreamento dado, caso ainda não tenha sido definido como 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Mipmapping
+        Próximo: gpu_get_tex_max_mip
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

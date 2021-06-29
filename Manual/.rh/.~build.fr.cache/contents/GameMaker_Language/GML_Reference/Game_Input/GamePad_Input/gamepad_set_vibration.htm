@@ -1,0 +1,56 @@
+
+
+
+
+  
+  gamepad_set_vibration
+  Com esta função você pode ajustar a vibração dos motores gamepad, com qualquer dos motores usando um valor de 0 (sem vibração) a 1 (vibração total). Note que não há limite de tempo para esta função, portanto você precisará usar uma variável ou um alarme para mudar
+    fora da vibração (ajuste os motores para 0) depois de um determinado tempo, caso contrário, o controle de jogo continuará a vibrar indefinidamente.
+  NOTA: Esta função está atualmente disponível apenas para o padrão Windows PS4 e Xbox One target modules.
+   
+  Sintaxe:
+  gamepad_set_vibration(device, left_motor, right_motor);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dispositivo
+        Qual dispositivo de controle de jogo "slot" a ser verificado.
+      
+      
+        esquerda_motor
+        A quantidade de vibração do motor esquerdo de 0 a 1.
+      
+      
+        direito_motor
+        A quantidade de vibração do motor certo de 0 a 1.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se vive = 0 {
+     gamepad_set_vibration(0, 1, 1); alarm[0] = room_speed / 2; }
+  
+  O código acima seria usado (por exemplo) em um evento de colisão para fazer com que o controle de jogo fosse ligado no "slot" 0 vibrar por meio segundo, com o alarme que está ajustado sendo usado para desligá-lo novamente uma vez que esse tempo tenha passado.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada Gamepad
+        A seguir:  gamepad_set_colour 
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

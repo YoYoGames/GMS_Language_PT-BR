@@ -1,0 +1,67 @@
+
+  
+  audio_listener_orientation
+  Com esta função você pode mudar a orientação do ouvinte dentro do espaço de áudio 3D. O olhar para a direção e direção ascendente se baseia nos vetores
+    que são resolvidos a partir das posições relativas x, y e z, e por padrão para (0, 0, 1000) para a direção e (0, 1, 0) para a direção ascendente, como mostrado na ilustração abaixo:
+  
+  NOTA: se você tem múltiplos ouvintes, você deve usar a função audio_listener_set_orientation().
+  Mudar a orientação do ouvinte com esta função mudará a forma como o som criado pelos emissores de áudio ao redor da sala de jogo é percebido pelo jogador de seu jogo. No exemplo abaixo, os sons criados pelo emissor quando o ouvinte está no padrão
+    A posição parece vir de baixo e à direita do ouvinte, mas com a nova posição e orientação do ouvinte serão agora percebidos como vindo de cima e à direita.
+  
+  Sintaxe:
+  audio_listener_orientation(lookat_x, lookat_y, lookat_z, up_x, up_y, up_z);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        lookat_x
+        O vetor de aparência x (padrão 0).
+      
+      
+        lookat_y
+        O vetor y de aparência (padrão 0).
+      
+      
+        lookat_z
+        O vetor de aparência z (padrão 1000).
+      
+      
+        up_x
+        O vetor x up (padrão 0).
+      
+      
+        up_y
+        O vetor y up (default 1).
+      
+      
+        up_z
+        O vetor z up (padrão 0).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  xt = x + dcos(direção); yt = y - dsin(direção); zt = z - dsin(direção z); audio_listener_position(x, y, z) audio_listener_orientation(xt, yt, zt, 0, 0, 1)
+  O código acima usa três variáveis para definir a posição e orientação do ouvinte de áudio 3D.
+   
+   
+   
+  
+    
+      
+        Voltar: Ouvintes de áudio
+        Próximo: áudio_listener_get_data
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

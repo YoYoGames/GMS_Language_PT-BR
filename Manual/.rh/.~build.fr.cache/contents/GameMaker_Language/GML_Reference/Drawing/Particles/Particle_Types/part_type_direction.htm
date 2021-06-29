@@ -1,0 +1,63 @@
+
+  
+  part_type_direction
+  Esta função é usada para determinar a direção da partícula quando ela é criada e também pode ser usada para fazer a partícula aumentar ou diminuir sua direção ao longo de sua vida útil. Os valores mínimo e máximo de direção padrão em 0, o que significa que
+    a partícula se moverá para a direita sem variação, mas estes valores podem ser alterados para limitar a direção do movimento seguindo as direções padrão do GameMaker Studio 2 de 0 sendo para a direita, 90 sendo para cima, 180 sendo para a esquerda e 270 sendo para baixo.
+    Se você os definir para o mesmo valor, as partículas se moverão apenas em uma direção.
+  Você também pode definir um valor de incremento que adicionará (se um número positivo) ou subtrairá (se um número negativo) uma quantidade de graus à direção ao longo de sua vida útil. Este valor pode ser um mínimo de (+/-) 0,01.
+  Finalmente, você pode definir o fator "agitar". Este é um valor que será adicionado ou subtraído aleatoriamente para a direção de cada etapa da vida útil das partículas. Obviamente, valores maiores são mais pronunciados do que os menores, e este valor pode até
+    ser um negativo, com o intervalo máximo entre -20 e 20.
+   
+  Sintaxe:
+  part_type_direction(ind, dir_min, dir_max, dir_incr, dir_wiggle);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do tipo de partícula a ser mudado.
+      
+      
+        dir_min
+        A direção mínima na qual a partícula pode começar.
+      
+      
+        dir_max
+        A direção máxima na qual a partícula pode começar.
+      
+      
+        dir_incr
+        Quanto a direção da partícula deve aumentar ou diminuir por passo.
+      
+      
+        dir_wiggle
+        O quanto deve ser adicionado ou subtraído aleatoriamente da direção da partícula por passo.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  part_type_shape(particle1, pt_shape_pixel); part_type_size(particle1, 0.19, 0.79, 0.01, 0); part_type_scale(particle1, 5, 5); part_type_colour3(particle1, 32768, 8454016, 8454016); part_type_alpha3(particle1, 0, 0.80, 0); part_type_speed(part_type_speed(particle1, 32768, 8454016),
+    8, 10, -0,50, 1); part_type_direction(particle1, 0, 359, 1, 20); part_type_gravity(particle1, 0, 270); part_type_orientation(particle1, 0, 359, 0, 0, 0, 1); part_type_blend(particle1, 1); part_type_life(particle1, 10, 50);
+  O código acima estabelecerá vários valores de partículas, incluindo a direção que será valor aleatório entre 0 e 359 graus. Ele também subirá 1 grau a cada passo e tem uma quantidade aleatória adicionada a ele de 0 a 20 cada passo também.
+   
+   
+   
+  
+    
+      
+        Voltar: Tipos de Partículas
+        Próximo: part_type_gravity
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

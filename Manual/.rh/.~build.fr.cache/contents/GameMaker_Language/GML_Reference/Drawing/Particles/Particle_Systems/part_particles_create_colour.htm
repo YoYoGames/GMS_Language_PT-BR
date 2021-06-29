@@ -1,0 +1,65 @@
+
+  
+  part_particles_create
+  Esta função é ideal para aqueles efeitos que não requerem nenhuma das funcionalidades oferecidas pelos emissores de partículas (por exemplo, para criar fumaça de um míssil, ou um simples efeito de explosão) como
+    permite a criação rápida e fácil de partículas em qualquer posição na sala de jogos. Você também pode colorir as partículas "on the fly" como são criadas com esta função, e esta cor irá sobrepor-se à cor predefinida da partícula,
+    mas não mistura esta cor ao longo da vida útil das partículas. Note que você deve ter criado previamente o sistema de partículas e o tipo de partícula para que esta função possa ser utilizada.
+   
+  Sintaxe:
+  part_particles_create_colour(ind, x, y, parttype, colour, number);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do sistema de partícula.
+      
+      
+        x
+        A coordenada x de onde criar as partículas.
+      
+      
+        y
+        A coordenada y de onde criar as partículas.
+      
+      
+        tipo de peça
+        O índice (tipo) das partículas a serem criadas.
+      
+      
+        cor
+        A mistura de cores para as partículas.
+      
+      
+        número
+        O número de partículas a criar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se (velocidade > 1) {
+     var _c = choose(c_aqua, c_lime, c_fuschia, c_orange); part_particles_create_colour(sname, x, y, p_Smoke, _c, 1); }
+  
+  O código acima irá gerar uma única partícula a cada passo que a instância com o código tenha uma velocidade maior que uma. Estas partículas serão de uma cor aleatória.
+   
+   
+   
+  
+    
+      
+        Voltar: Sistemas de Partículas
+        Próximo: part_system_exists
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,44 @@
+
+  
+  ds_stack_write
+  Esta função retorna uma string que pode então ser armazenada ou transferida para outra estrutura de dados usando o ds_stack_read() função.
+  NOTA: O fio retornado não é um fio legível por humanos, mas sim uma lixeira do conteúdo da estrutura de dados
+   
+  Sintaxe:
+  ds_stack_write(id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação da estrutura de dados a ser escrita.
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  ini_open("save.ini"); var str = ds_stack_write(stack); ini_write_string("Stacks", "0", str); ds_stack_clear(stack);
+     ini_close();
+  
+  O código acima abre um arquivo ini e então escreve uma string contendo as informações armazenadas na pilha DS indexada na variável "stack". A pilha é então limpa e o arquivo ini é fechado.
+   
+   
+   
+  
+    
+      
+        Voltar: ds_stack_create
+        Próximo: ds_stack_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

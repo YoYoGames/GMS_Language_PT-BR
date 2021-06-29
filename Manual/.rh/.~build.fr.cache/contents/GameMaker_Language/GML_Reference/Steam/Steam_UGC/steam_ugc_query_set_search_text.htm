@@ -1,0 +1,47 @@
+
+  
+  steam_ugc_query_set_search_text
+  Esta função pode ser usada para filtrar ainda mais qualquer consulta UGC, especificamente para pesquisar a cadeia dada no título e descrição dos itens UGC. O controle da consulta é o valor retornado quando você criou a consulta (usando, por exemplo, steam_ugc_create_query_user())
+    e o segundo argumento é uma cadeia que você quer usar como termo de busca. A função retornará verdadeiro se o filtro de consulta foi configurado corretamente, ou falso de outra forma.
+   
+  Sintaxe:
+  steam_ugc_query_set_search_text(ugc_query_handle , search_text);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ugc_query_handle
+        O cabo de consulta a ser usado.
+      
+      
+        search_text
+        O texto de busca a ser usado (uma cadeia) para a consulta.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var query_handle = steam_ugc_create_query_all(ugc_query_RankedByVote, ugc_match_Items, 1); steam_ugc_query_set_search_text(query_handle, "textura"); steam_ugc_query_set_return_long_description(query_handle, true); steam_ugc_query_set_allow_cached_response(query_handle, true),
+    verdadeiro); query_ID = steam_ugc_send_query(query_handle);
+  O código acima cria um pedido de consulta e armazena seu tratamento em uma variável local para uso futuro nas demais funções que definem melhor o pedido de consulta antes de enviar a consulta.
+   
+   
+   
+  
+    
+      
+        Voltar: UGC
+        Próximo: vapor_ugc_query_set_baseado_por_tend_days
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

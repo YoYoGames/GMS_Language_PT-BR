@@ -1,0 +1,72 @@
+
+  
+  se/outro e Operadores Condicionais
+  Uma característica fundamental da maioria das linguagens de programação é a capacidade de fazer uma pergunta simples que dá uma resposta booleana verdadeira ou falsa, e no GML isto é conseguido usando a palavra-chave if. Uma condição simples, se for preciso
+    uma expressão e executará uma ou maisafirmações se a expressão resolver como true,
+    com a seguinte forma básica:
+  if (<expressão>) { <declaração>; <declaração>;... }
+   Aqui você está dizendo que se uma expressão se resolve como verdadeira, então faça algo. Note que a parte "então" da condição está implícita, mas há uma palavra-chave then que pode ser usada (embora
+    é quase sempre omitido), de modo que você também pode criar condicionantes como este:
+  se (<expressão>) então { <declaração>; <declaração>;... }
+  Além de if e then, você também pode usar a outra palavra-chave para fazer algo mais se a expressão a ser verificada avaliar como falsa. Isto " se...então...".
+    forma se parece com esta:
+  se (<expressão>) { <declaração>; }  mais
+     { <statement>; }
+  Neste caso a expressão será avaliada, e se ela for avaliada como false, a declaração após else é executada, caso contrário a declaração inicial é executada (é verdade ).
+  NOTA: Na linguagem do GameMaker qualquer valor menor ou igual a 0 será avaliado como false, enquanto qualquer valor maior que 0 será avaliado como true.
+  É um bom hábito colocar sempre parênteses ao redor das expressões e parênteses encaracolados {} ao redor das declarações no if (caso contrário apenas a primeira declaração será executada), e tomar uma nova linha no bloco para cada declaração, por exemplo:
+  // Isto funcionará if <expressão>>statement>;
+     // Exemplo: if test == variável verdadeira = variável falsa = variável verdadeira;
+  // Isto é melhor se (<expressão>) {
+     <declaração>
+     }  mais
+     {
+     <estatuto>
+     }
+    
+     // Exemplo se (teste == verdadeiro) { variável = falso; }  mais
+     { variável = verdadeiro; }
+  Note que embora isto seja um pouco mais verboso, significa que não há ambigüidade no código e que ele se compilará corretamente em plataformas de trabalho a todo momento. Entretanto, o exemplo inicial pode não ser, como explicado na seção da página Expressões e Operadores.
+  OBSERVAÇÃO: Ao comparar dois valores para ver se são iguais, você deve usar o operador "==", e usar apenas o "=" para a atribuição. Atualmente, o GameMaker irá
+    tratá-los como intercambiáveis, mas isto pode mudar no futuro e seu código é mais limpo e óbvio quando se utiliza os operadores corretos para comparações e atribuições.
+  Para dar um exemplo adequado de utilização do if, considere o seguinte código que irá mover uma instância em direção à posição x=200 na sala quando colocado no Evento de Etapa:
+  se (x < 200) {
+     x += 4; }
+     mais
+     {
+     x = 200; }
+  
+  Note que você também pode fazer verificações compostas em um if, ou seja: verificar vários valores ou expressões na mesma declaração. Estas verificações podem usar os vários operadores combinados (&& e, ||| ou,  e ^^ xou). Quando você fizer isso, o GameMaker Studio 2 avaliará cada um deles um de cada vez, e dependendo de como eles avaliam, então o resto poderá ser ignorado. Por exemplo, o resto pode ser ignorado:
+  if (keyboard_check_pressed(vk_enter)) && (instance_exists(obj_Player)) {
+     go = false; alarm[0] = room_speed; }
+  
+  Aqui estamos verificando usando o && "e" operador, então é verificando se ambas as condições no se avaliar para verdadeiro, e se a primeira é falsa então a segunda nem mesmo
+    ser verificado. Isto é chamado de "curto-circuito" do código, portanto, ao combinar expressões para verificar, você deve garantir que a "mais barata" para o desempenho seja sempre a primeira a evitar avaliar as mais caras se a primeira
+    avalia para false. Em uma linha semelhante, se uma condição puder ser avaliada como true ou false em tempo de compilação, então a condição inteira será removida do código,
+    por exemplo, digamos que você tenha uma macro DEBUG_ON para depuração e ela pode ser true ou false - quando estiver definida para false então o seguinte bloco de código será removido do jogo quando ele for compilado:
+  if DEBUG_ON == true { show_debug_message("Instances = " + string(instance_count)); }
+  Você também pode realizar operações condicionais (também conhecidas como operações ternárias ), que são essencialmente uma forma "atalho" de realizar um "se" básico. Ela tem a seguinte sintaxe:
+  variável = <condição> ? <declaração1 (se verdadeira)> : <declaração2(se falsa)>
+  O operador condicional "?" devolverá um de dois valores determinados, dependendo se a expressão da condição avalia como verdadeira ou falsa, por exemplo:
+  var temp_x = (x < (largura_de_sala / 2)) ? 32: (largura_da_sala - 32);
+  O código acima verificará o valor de "x" em relação ao valor da metade da largura da sala e então, se for menor, definirá "temp_x" para 32, caso contrário "temp_x" será espaço
+    largura - 32. Aqui estão mais alguns exemplos de uso:
+  draw_text(x, y, "A taxa é " + (global.Member ? "$2.00" : "$10.00")); path_start(((global.level > 10) ? path_hard : path_easy;), 2, path_action_reverse, true); (--hp <= 0) ? instance_destroy() : score +=
+    10;
+  Vale notar também que você pode fazer ninho de operações condicionais, mas que se o fizer, então cada operação precisará ser incluída entre parênteses, por exemplo:
+  var c = a ? "foo" : (b ? "bar" : "whee"); // Corrigir var c = a ? "foo" : b ? "bar" : "whee"; // Provocará um erro
+   
+   
+   
+  
+    
+      
+        Voltar: Características lingüísticas
+        A seguir: repita
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

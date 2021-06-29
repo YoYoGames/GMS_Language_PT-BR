@@ -1,0 +1,44 @@
+
+  
+  caminho_espelho
+  Esta função toma todos os pontos do caminho e os espelha ao longo do eixo vertical. Esta função muda o ativo do caminho real, e assim afetará permanentemente como o caminho é usado por todas as instâncias no jogo a partir do momento em que a função
+    é usado até o final do jogo. Se isto não for o que você precisa, então você deve usar uma função como path_duplicate() para criar uma cópia do caminho primeiro, então chame esta função no
+    ativo duplicado (não esqueça de ligar para path_delete() sobre o ativo quando ele não for mais necessário).
+  
+  Sintaxe:
+  path_mirror(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do caminho para o espelho.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  path_mirror(mypath);
+  Isto espelharia o caminho indexado na variável "mypath" ao longo do eixo vertical.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação do caminho
+        Próximo: caminho_reverso
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,47 @@
+
+  
+  fisic_fixture_set_restitution
+  Em física, a restituição é definida como "o retorno de um objeto ou sistema ao seu estado original após deformação elástica", mas como as fixações no GameMaker Studio 2 são corpos realmente rígidos e não podem ser deformados, a restituição é
+    realmente uma forma de dizer o quão "saltitante" é o acessório. Este ajuste afetará o quanto um objeto "salta" quando colide com outros objetos e é co-dependente de outras forças que agem na instância como a gravidade e o atrito,
+    e geralmente é um valor entre 0 e 1 (valores mais altos podem ser usados, mas podem dar resultados imprevisíveis). Aqui está uma ilustração de como funciona:
+  
+  Sintaxe:
+  physics_fixture_set_restitution(fixture, restitution)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fixação
+        O índice da fixação
+      
+      
+        restituição
+        A restituição da fixação (geralmente entre 0 e 1)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  physics_fixture_set_restitution(fix_Ball, 0,9);
+  O código acima estabelecerá a restituição da fixação indexada em "fix_ball" para 0,9.
+   
+   
+   
+  
+    
+      
+        Voltar: Instalações
+        A seguir: sensor_de_fixação_física
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

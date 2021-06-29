@@ -1,0 +1,45 @@
+
+  
+  steam_get_stat_float
+  Com esta função, você pode obter o valor de uma estatística específica de ponto flutuante. A estatística deve ter sido previamente definida na página de contas do painel de controle da Steamworkspara seu jogo e a string que é passada para a função deve
+    corresponde àquele usado como o nome API no painel de controle.
+   
+  Sintaxe:
+  steam_get_stat_float(stat_name);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        stat_name
+        O nome da estatística a ser obtida (um fio).
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var dist_pc = (dist / dist_max) * 100; if steam_get_stat_float("Travelled") < dist_pc {
+     steam_set_stat_int("Travelled", dist_pc); }
+  
+  O código acima calcula uma porcentagem com base na variável distância percorrida "dist" e a distância máxima que você pode percorrer "dist_max". Em seguida, ele pesquisa o valor atual para a estatística "Travelled" e, se for menor, calcula o valor da variável "dist_max".
+    do que o valor calculado, ele estabelece a estatística novamente.
+   
+   
+   
+  
+    
+      
+        Voltar: Conquistas e estatísticas
+        Próximo: steam_get_stat_avg_rate
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

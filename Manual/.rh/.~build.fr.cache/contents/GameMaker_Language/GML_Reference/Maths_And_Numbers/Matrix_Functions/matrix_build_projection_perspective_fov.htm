@@ -1,0 +1,57 @@
+
+
+
+
+
+  
+  matrix_build_projection_perspective_fov
+  Esta função constrói uma matriz de projeção de perspectiva baseada no campo de visão, usando os parâmetros especificados listados abaixo.
+   
+  Sintaxe:
+  matrix_build_projection_perspective_fov(fov_y, aspect, znear, zfar);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fov
+        O ângulo do campo de visão.
+      
+      
+        aspecto
+        A relação de aspecto do campo de visão.
+      
+      
+        znear
+        O quase avião de recorte.
+      
+      
+        zfar
+        O avião de recorte distante.
+      
+    
+  
+   
+  Devoluções:
+  Índice matricial
+   
+  Exemplo:
+  projmat = matrix_build_projection_perspective_fov(60, 320/240, 1.0, 32000.0); camera_set_proj_mat(view_camera[0], projmat);
+  O código acima cria uma matriz de projeção de campo de visão que é então armazenada em uma variável. Esta matriz é então usada para configurar a câmera atribuída à porta de visualização[0].
+   
+   
+   
+  
+    
+      
+        Voltar: Funções da Matriz
+        Próximo: matrix_transform_vertex
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

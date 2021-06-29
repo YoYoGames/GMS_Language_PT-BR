@@ -1,0 +1,54 @@
+
+  
+  file_text_write_real
+  Com esta função você pode escrever um número para o arquivo de texto previamente aberto. Note que como o valor a ser escrito pode ser um número real, todos os decimais serão escritos com um "." como separador. Se o arquivo já contiver informações,
+    esta informação será apagada e a cadeia será escrita no início do arquivo, a menos que você tenha aberto o arquivo com o file_text_open_append(). Você também pode evitar isso usando o
+    file_text_readln() função junto com o file_text_eof() para percorrer o conteúdo do arquivo até chegar ao final e depois começar a escrever.
+  É importante notar que ao escrever números muito grandes em um arquivo de texto usando esta função, ele pode ser traduzido para um formato padrão simplificado, como "6.6624e+003", que não pode ser lido de volta para o GameMaker Studio 2 corretamente.
+    Para evitar problemas como este, você deve, ao invés disso, converter o valor para uma string e usar a função file_text_write_string() ao invés disso.
+   
+  Sintaxe:
+  file_text_write_real(fileid, val);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fileid
+        A identificação do arquivo a ser editado.
+      
+      
+        val
+        O verdadeiro valor para escrever no arquivo.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var file = file_text_open_write(working_directory + "hiscore.txt"); for (var i = 0; i < 10; ++i;) {
+     file_text_write_real(file, scr[i]); file_text_writeln(file);
+     file_text_write_string(file, scr_name[i]); file_text_writeln(file);
+     }
+     file_text_close(file);
+  
+  O código acima abre um arquivo para escrita e depois percorre duas matrizes, escrevendo cada valor de matriz em uma nova linha do arquivo. O arquivo é então fechado quando o loop tiver terminado.
+   
+   
+   
+  
+    
+      
+        Voltar: Arquivos de texto
+        Próximo: file_text_write_string
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,53 @@
+
+  
+   Se Gamepad Button Down
+  Com esta ação você pode fazer uma sondagem para ver se um determinado botão está sendo mantido pressionado no momento. A ação retornará verdadeiro a cada passo que o botão estiver sendo mantido pressionado, ou falso, embora se você clicar no botão não modificador
+    você pode então verificar se o botão não está sendo segurado, ou seja: a ação retornará verdadeira enquanto nenhum botão estiver em baixo e falsa se houver. Se você só precisa verificar se o botão está apertado, então use a ação Se o botão Gamepad estiver apertado.
+  Se o botão a ser verificado for um botão analógico, então ele não será considerado pressionado até que o valor do botão tenha ultrapassado o limite estabelecido usando a ação Set Gamepad Button Threshold.
+  Note que para adicionar ações no bloco "se", elas devem ser descartadas ao lado da ação, como mostrado na imagem abaixo:
+  Estas ações serão executadas agora se o "se" for avaliado como verdadeiro,
+    enquanto quaisquer ações abandonadas em outro lugar serão executadas após o bloco "se".
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Gamepad
+        O índice gamepad.
+      
+      
+        Botão
+        O nome do botão a ser verificado.
+      
+      
+        Não
+        Negar o cheque (o verdadeiro torna-se falso e vice-versa)
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima pesquisa o estado do botão do gamepad 0 a cada passo e se
+    um botão está sendo mantido pressionado, ele verifica se o botão inicial está pressionado. Se a verificação for verdadeira na pressão inicial para baixo, um som é tocado, então, enquanto o botão é mantido pressionado para baixo, a velocidade da instância é ajustada para 10. Se o botão não estiver sendo mantido pressionado
+    para baixo, é feita uma verificação no botão de liberação para repor a velocidade em 0 novamente.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações Gamepad
+        A seguir: Se o botão Gamepad for liberado
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

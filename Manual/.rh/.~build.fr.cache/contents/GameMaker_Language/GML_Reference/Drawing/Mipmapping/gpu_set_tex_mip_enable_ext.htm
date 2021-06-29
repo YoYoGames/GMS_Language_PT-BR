@@ -1,0 +1,70 @@
+
+  
+  gpu_set_tex_mip_enable_ext
+  Com esta função você pode definir se o mipmapping está desligado, ligado para tudo ou ligado somente para grupos de textura selecionados no Gerente de Grupo de Textura em um amostrador de shader. Você
+    fornecer o valor do índice para o amostrador de sombreamento (como retornado pela função shader_get_sampler_index()e, em seguida, uma das constantes listadas abaixo.
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        mip_off
+        O Mipmapping está desativado.
+      
+      
+        mip_on
+        O Mipmapping para todas as texturas está habilitado.
+      
+      
+        mip_markedonly
+        O Mipmapping está habilitado para texturas que o tenham habilitado nas opções do Grupo de Textura (default).
+      
+    
+  
+   
+  Sintaxe:
+  gpu_set_tex_mip_enable_ext(sampler_index, setting);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice_de_amostragem
+        O índice do amostrador de sombreamento para obter
+      
+      
+        cenário
+        A configuração do mipmap (uma constante, padrão: mip_markedonly)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var _sampleIndex = shader_get_sampler_index(shd_Glass, "s_Background"); var _spriteTex = sprite_get_texture(sprite_index, 0); shader_set (shd_Glass);
+     if gpu_get_tex_mip_enable_ext(_sampleIndex) != mip_on {
+     gpu_set_tex_mip_enable_ext(_sampleIndex, mip_on); }
+     text_set_set_stage(_sampleIndex , _spriteTex); shader_reset();
+  
+  O código acima permite o mipmapping para o amostrador de textura de sombreamento dado, caso ainda não tenha sido habilitado.
+   
+   
+   
+  
+    
+      
+        Voltar: Mipmapping
+        Próximo: gpu_get_tex_mip_filter
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

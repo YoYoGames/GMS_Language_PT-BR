@@ -1,0 +1,47 @@
+
+  
+  set_set_rotate
+  Esta função pode ser usada para definir um determinado conjunto de dados da telha para girar a telha 90 graus ou não. Você dá os dados do azulejo, que podem ser recuperados usando a função tilemap_get()e depois definir o argumento da rotação
+    ou verdadeiro, se você quiser que o azulejo seja girado, ou falso, se você quiser que o azulejo esteja em seu estado padrão, não rotacionado. A função retornará um conjunto modificado de dados do azulejo que pode então ser aplicado usando a função tilemap_set()    função.
+   
+  Sintaxe:
+  tile_set_rotate(tiledata, rotate)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tiledata
+        os dados da telha a definir
+      
+      
+        girar
+        Ajustar para verdadeiro para girar e falso para deixá-lo como está
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var lay_id = layer_get_id("Tiles_sky"); var map_id = layer_tilemap_get_id(lay_id); var mx = tilemap_get_cell_x_at_pixel(map_id, mouse_x, mouse_y); var my = tilemap_get_cell_y_at_pixel(map_id, mouse_x, mouse_y); var data
+    = tilemap_get(map_id, mx, my); var bool = !tile_get_rotate(data); data = tile_set_rotate(data, bool); tilemap_set(map_id, data, mx, my);
+  O código acima obtém o ID do mapa de azulejos da camada dada e depois obtém a posição das células x e y para o azulejo sob o mouse. Esta posição é então usada para obter os dados do azulejo que são girados e depois usados para definir o azulejo novamente.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas do mapa de azulejos
+        Próximo: layer_tilemap_get_id
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

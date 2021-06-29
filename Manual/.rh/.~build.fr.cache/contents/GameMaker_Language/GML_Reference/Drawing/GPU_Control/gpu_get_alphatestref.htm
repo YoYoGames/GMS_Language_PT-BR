@@ -1,0 +1,34 @@
+
+  
+  gpu_get_alphatestref
+  Você pode usar esta função para encontrar o valor atual para a referência do teste alfa (o padrão é 0, mas você pode usar gpu_set_alphatestref() para definir este valor para algo diferente disto).
+   
+  Sintaxe:
+  gpu_get_alphatestref();
+   
+  Devoluções:
+  Real (de 0 a 255)
+   
+  Exemplo:
+  se gpu_get_alphatestenable() {
+     if gpu_get_alphatestref() < 254 {
+     gpu_set_alphatestref(254);
+     }
+     }
+  
+  O código acima verifica se o teste alfa está ativado, e se estiver, então verifica o valor de referência atual do teste alfa e o define se for inferior a 254.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle de GPU
+        Próximo: gpu_get_texfilter
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

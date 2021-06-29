@@ -1,0 +1,44 @@
+
+  
+  layer_get_shader
+  Esta função pode ser usada para verificar se a camada dada tem um sombreador atribuído a ela. Você fornece a identificação da camada (que você obtém quando cria a camada usando layer_create()) ou o nome da camada (como um fio - isto
+    têm um impacto no desempenho), e a função retornará ou o índice de sombreamento do sombreador atribuído, ou -1 se nenhum sombreador for atribuído.
+   
+  Sintaxe:
+  layer_get_shader(layer_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada a ser alvo (ou o nome da camada como uma corda)
+      
+    
+  
+   
+  Devoluções:
+  Shader Index (ou -1 se nenhum shader for atribuído)
+   
+  Exemplo:
+  if layer_get_shader(layer) == -1 {
+     layer_shader(layer, shd_Sepia); }
+  
+  O código acima verificará se a camada que está executando o código tem um shader atribuído à instância e se não tem um atribuído.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        A seguir: sala_alvo_de_camadas
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,51 @@
+
+  
+  ds_map_replace_list
+  Com esta função você pode substituir uma lista DS que tenha sido armazenada na "chave" dada por outra lista que tenha sido criada anteriormente. Esta função é projetada para criar mapas compatíveis com JSON que
+    você então codificaria usando json_encode() e só deve ser usado em conjunto com essa funcionalidade.
+   
+  Sintaxe:
+  ds_map_replace_list(id, key, value)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação do mapa a ser utilizado.
+      
+      
+        chave
+        A chave para substituir.
+      
+      
+        valor
+        A identificação da ds_list a ser usada para substituir a previamente armazenada na chave indicada.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+   var j_list = ds_list_add(j_list, saúde); ds_list_add(j_list, vidas); ds_list_add(j_list, pontuação); ds_map_replace_list(j_map, "lista", j_list); var j = json_encode(j_map); ds_list_destroy(j_list);
+  
+  O código acima criará uma Lista DS e a preencherá com os valores de várias variáveis globais antes de substituir uma lista previamente armazenada no Mapa DS "j_map".
+   
+   
+   
+  
+    
+      
+        Voltar: DS Maps
+        Próximo: ds_map_replace_map
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

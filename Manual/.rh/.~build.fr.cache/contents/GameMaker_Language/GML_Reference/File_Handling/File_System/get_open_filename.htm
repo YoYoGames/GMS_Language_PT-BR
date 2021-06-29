@@ -1,0 +1,53 @@
+
+  
+  get_open_filename
+  Esta função abre um diálogo e pede ao jogador um nome de arquivo para abrir com o filtro dado. O filtro tem a forma " name1|mask1|name2|mask2|...", onde a máscara pode conter as diferentes opções com um ponto-e-vírgula entre elas e
+    você também pode usar um "*" para significar qualquer corda. Por exemplo: " bitmaps|*.bmp;*.wmf", pediria ao usuário para selecionar o nome de um arquivo bitmap do sistema, mas somente aqueles que têm as duas extensões especificadas (bmp e
+   png). esta função não abre o arquivo em si! Ela apenas retorna uma cadeia com o nome completo e o caminho do arquivo. Se o usuário pressionar "Cancelar" uma string vazia "" é retornada.
+  Uma coisa importante a se notar ao usar esta função é que ela concede a você certas permissões para aquele arquivo, pela duração de seu jogo. Assim, uma vez que você obtém o caminho do arquivo do usuário, você pode acessá-lo de novo e de novo sem ter que pedir. No entanto,
+    uma vez que esta função é para leitura de um arquivo, as permissões concedidas são apenas para leitura e a economia não será permitida pelo sistema operacional. Caso você precise ler e escrever no arquivo, você pode obter permissão usando a função get_save_filename().
+  NOTA: Esta função só é válida para os alvos Windows e macOS.
+   
+  Sintaxe:
+  get_open_filename(filtro, fnome);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        filtro
+        O tipo de filtro e/ou nome do arquivo.
+      
+      
+        fname
+        O nome de arquivo sugerido para uso.
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  var file; file = get_open_filename("text file|*.txt", ""); if file != "" {
+     file_text_open_read(file);
+     }
+  
+  O código acima pedirá ao usuário que selecione um arquivo de texto para abrir e então verifique o nome do arquivo retornado e o caminho, e se ele existir abrirá o arquivo para leitura.
+   
+   
+   
+  
+    
+      
+        Voltar: Sistema de arquivo
+        Próximo: get_open_filename_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,83 @@
+
+  
+  file_attributes
+  Você pode usar esta função para verificar os atributos de um determinado arquivo. Você pode somar as seguintes constantes para ver o tipo de arquivo que deseja:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        fa_readonly
+        Arquivos somente leitura
+      
+      
+        fa_hidden
+        Arquivos ocultos
+      
+      
+        fa_sysfile
+        Arquivos do sistema
+      
+      
+        fa_volumeid
+        Arquivos volumétricos
+      
+      
+        fa_directory
+        Diretórios
+      
+      
+        fa_archive
+        Arquivos arquivados
+      
+    
+  
+  
+  NOTA: Esta é uma função somente para Windows.
+   
+  Sintaxe:
+  file_attributes(fname, attr);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fname
+        O nome do arquivo a ser verificado.
+      
+      
+        attr
+        Os atributos a serem verificados.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if !file_attributes(file, fa_hidden) {
+     file_delete(file);
+     }
+  
+  Isto verificaria um arquivo para ver se ele está escondido ou não, e se não estiver apagado.
+   
+   
+   
+  
+    
+      
+        Voltar: Sistema de arquivo
+        Próximo: nome_nome_do_arquivo
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

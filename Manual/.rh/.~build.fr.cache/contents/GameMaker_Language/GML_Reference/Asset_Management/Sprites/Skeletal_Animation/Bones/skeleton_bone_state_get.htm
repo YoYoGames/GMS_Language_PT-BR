@@ -1,0 +1,70 @@
+
+  
+  esqueleto_esqueleto_esqueleto_esqueleto
+  Sua animação esquelética é composta de um número de "ossos", que você terá definido e dado nomes em seu programa de animação, e esta função pode ser usada para obter certos dados para o osso nomeado a qualquer momento. Observe que esses dados se referem a
+    à pose atual para o esqueleto, dependendo do conjunto de animação utilizado, e a função requer um mapa DS previamente criado, que terá então as seguintes chaves e suas
+    valores equivalentes após a chamada da função:
+  
+    "x": A posição local x do osso em relação ao osso-mãe.
+    "y": A posição local y do osso em relação ao osso-mãe.
+    "ângulo": A rotação local do osso em relação ao osso-mãe.
+    "escala x": A escala horizontal local do osso, em referência ao osso-mãe.
+    "escala y": A escala vertical local do osso, em referência ao osso-mãe.
+    "worldScaleX": A magnitude (sempre positiva) da escala mundial X (este é um valor somente para leitura ).
+    "worldScaleY": A magnitude (sempre positiva) da escala mundial Y (este é um valor apenas lido ).
+    "worldAngleX": A rotação mundial para o eixo X (este é um valor somente para leitura ).
+    "worldAngleY": A rotação mundial para o eixo Y (este é um valor somente para leitura ).
+    "mundoX": A posição do mundo X (este é um valor somente para leitura ).
+    "mundialmente": A posição mundial Y (este é um valor somente para leitura ).
+    "appliedAngle": Esta é a rotação local usada para colocar os ossos do esqueleto.
+    "pai": O nome (um fio) do osso pai.
+  
+  Os dados do mapa retornados são similares aos retornados para a pose padrão quando você usa skeleton_bone_data_get()Só que agora você tem as chaves extras do "mundo". Estas se referem à posição do osso
+    relativo à raiz (origem) do duende de animação esquelético, e os valores retornados não levam em consideração qualquer escala ou rotação que tenha sido feita através da definição das variáveis embutidas do duende como image_xscale ou image_angle.
+    Os valores mundiais são apenas lidos e não podem ser definidos.
+  Esta função é fornecida para que você possa "interceptar" os dados da animação e modificá-los antes de serem desenhados na tela, e como tal você gostaria de usá-los no evento Other - Animation Update, uma vez que este evento é acionado imediatamente antes dos Eventos do Sorteio.
+   
+  Sintaxe:
+  esqueleto_esqueleto_esqueleto_esqueleto(osso, mapa);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        osso
+        O nome (como um fio) do osso.
+      
+      
+        mapa
+        O mapa DS (anteriormente criado) que armazena os dados ósseos.
+      
+    
+  
+   
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var map = ds_map_create(); skeleton_bone_bone_state_get("head", map); var xx = ds_map_find_value(map, "worldX"); var yy = ds_map_find_value(map, "worldY"); var deltax = mouse_x - (x + xx); var deltay
+    = mouse_y - (y + yy); var angle = -radtodeg(arctan2(deltay, deltax)); ds_map_replace(map, "angle", angle); skeleton_bone_bone_state_set("head", map); ds_map_destroy(map);
+  
+  O código acima cria um mapa DS e depois o preenche com os dados do osso chamado "cabeça". Ele então extrai a posição mundial para o osso, e usa esses dados para definir o "ângulo" do osso para rastrear a posição do mouse no
+    jogo.
+   
+   
+   
+  
+    
+      
+        Voltar: Bones
+        Próximo: conjunto_esqueleto_de_estado_esqueleto
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

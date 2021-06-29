@@ -1,0 +1,33 @@
+
+  
+  fps_real
+  No GameMaker Studio 2 há duas maneiras principais que podem ser usadas para saber a velocidade em que seu jogo funciona. O velocidade do jogo (conforme especificado nas Opções de Jogo) e os fps (quadros por segundo). Estes valores são freqüentemente confusos, mas basicamente um é o número de passos do jogo que o GameMaker Studio 2 deve estar completando em um segundo (velocidade do jogo), enquanto o outro é o número de passos da CPU que o GameMaker Studio 2 está realmente completando em um segundo (os fps reais), e este valor é geralmente muito maior do que a velocidade do jogo, mas cairá à medida que seu jogo se torna mais complexo e usa mais poder de processamento para manter a velocidade da sala definida.
+  Esta variável somente de leitura retorna o fps atual como um valor inteiro. Observe que a função só será atualizada uma vez a cada passo de seu jogo e assim pode parecer "pular" de um valor para outro, mas isto é bastante normal.
+  NOTA: No alvo HTML5, esta variável retornará um múltiplo da taxa de atualização do monitor, uma vez que o GameMaker Studio 2 tem que contar com o navegador para o tempo e o envio.
+   
+  Sintaxe:
+  fps_real
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  se debug_mode {
+     draw_text(32, 32, "FPS = " + string(fps_real)); }
+  
+  O código acima verificará se o jogo está no modo de depuração e se é ele que exibirá os fps reais atuais na tela.
+   
+   
+   
+  
+    
+      
+        Voltar: Depuração
+        Próximo: debug_mode
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

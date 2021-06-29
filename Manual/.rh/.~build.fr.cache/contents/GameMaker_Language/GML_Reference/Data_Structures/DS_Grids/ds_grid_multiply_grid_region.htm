@@ -1,0 +1,70 @@
+
+  
+  ds_grid_multiply_grid_region
+  Com esta função é possível definir uma área dentro de uma determinada grade DS, depois pegar esses valores e multiplicá-los com aqueles encontrados em uma região separada da mesma grade DS, ou de outra (que tenha sido criada anteriormente). A região original irá
+    permanecem inalterados, enquanto a região com a qual foram multiplicados irá agora armazenar os novos valores para cada célula.
+   
+  Sintaxe:
+  ds_grid_multiply_grid_region(index, source, x1, y1, x2, y2, xpos, ypos);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice da grade de destino.
+      
+      
+        fonte
+        O índice da grade de fontes.
+      
+      
+        x1
+        A posição esquerda da região de células para copiar a partir da grade de origem.
+      
+      
+        y1
+        A posição superior da região de células para copiar a partir da grade de origem.
+      
+      
+        x2
+        A posição correta da região de células para copiar a partir da grade de origem.
+      
+      
+        y2
+        A posição inferior da região de células a serem copiadas da grade de origem.
+      
+      
+        xpos
+        A posição x na grade de destino para multiplicar a região de origem com.
+      
+      
+        ypos
+        A posição y na grade de destino para multiplicar a região de origem com.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  ds_grid_multiply_grid_region(mygrid, mygrid, 0, 0, 0, 5, 5, 0, 0, 0)
+  Isto levaria a região de células de (0,0) a (5,5) da grade DS "mygrid" e as multiplicaria pelas células da posição (0,0) da mesma grade DS.
+   
+   
+   
+  
+    
+      
+        Voltar: Grades DS
+        Próximo: ds_grid_value_exists
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,34 @@
+
+  
+  window_has_focus
+  Com esta função você pode pesquisar o estado da janela (ou aba) e se ela perder o foco, a função retornará falsa, caso contrário, retornará verdadeira. Na maioria dos casos, você pode simplesmente usar a função os_is_paused() função
+    para testar isso, mas em alguns casos muito específicos (por exemplo, jogos em aplicativos cromados) essa função não será acionada, caso em que você deve usar essa função em seu lugar.
+  NOTA: Esta função é válida somente para o HTML5, Windows e MacOS.
+   
+  Sintaxe:
+  window_has_focus();
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se !window_has_focus() {
+     scr_PauseGame();
+     }
+  
+  O código acima verificará se a janela do jogo está em foco ou não, e se a função retorna um script falso será chamado.
+   
+   
+   
+  
+    
+      
+        Voltar: A Janela de Jogo
+        Próximo: window_device
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,53 @@
+
+  
+  fazer / até
+  Uma função é outra forma de iterar uma ou maisafirmações várias vezes, e é realmente uma afirmação " fazer...até" como
+    você não pode ter um sem o outro, pois você está dizendo ao GameMaker Studio 2 para fazer algo até que uma expressão específica retorne à realidade. Ele tem esta forma:
+  do {
+     <declaração>;
+     <declaração>;
+     ...
+     }
+     até (<expressão>);
+  A declaração (que pode ser um bloco de código de múltiplas declarações dentro de colchetes {}) é executada até que a expressão seja encontrada como verdadeira, e a declaração inicial é sempre executada pelo menos uma vez. Abaixo de você
+    pode encontrar um exemplo de uma maneira típica de usar fazer... até:
+  do {
+     x = random(room_width); y = random(room_height); }
+     até (place_free(x, y));
+  O código acima tenta colocar o objeto atual em uma posição livre e irá definir as variáveis x/y pelo menos uma vez, e então realizar tantas iteraçõesquantas forem necessárias
+    até que a expressão place_free() retorne verdadeiro.
+  Quando você deve usar um loop do / until? Ele deve ser usado sempre que você quiser repetir uma ou mais declarações, mas não sabe quantas vezes ele tem que repetir, e quer
+    para garantir que as declarações sejam executadas pelo menos uma vez antes do término do loop.
+  Você também pode usar o break e continue declarações dentro de seus loops do. Usando break, você poderá
+    sair imediatamente do laço e passar para qualquer código que esteja no evento ou função após o laço ter terminado, por exemplo
+  var _id = noone; do
+     { _id = lista[| 0]; se a instância_existir(_id) { _break; }  ds_list_delete(list, 0); }  até (ds_list_empty(list)); target = _id;
+  No código acima, nós criamos uma variável local e a definimos para manter a palavra-chave noone. Em seguida, realizamos um loop do / until verificando a primeira posição de uma lista DS para ver se ela contém uma
+    exemplo de identificação, e se o fizer, então break o laço, caso contrário o valor para a posição da lista é excluído. Após o término do laço (seja pelo break ou porque a lista está vazia) o local
+    O valor da variável é então atribuído à variável de instância target.
+  Um exemplo de uso continuado em um loop do / until seria:
+  do {
+     var _x = random(room_width); var _y = random(room_height); if (instance_position(_x, y, obj_Enemy) {
+     continuar;
+     }
+     instance_create_layer(_x, _y, "Instances", obj_Enemy); }
+     até (instance_count(obj_Enemy) >= 10);
+  Este código gerará uma posição de sala aleatória e então verificará se existe uma instância do objeto obj_Enemy nessa posição. Se existir, a iteração atual do loop é terminada usando continue e
+    uma nova iteração é iniciada, e se não for, então uma instância do objeto obj_Enemy é criada na posição aleatória. O loop só terminará quando houver 10 ou mais instâncias do objeto na sala.
+  Uma nota final: tenha cuidado com seus loops, pois você pode facilmente fazê-los loop para sempre, neste caso seu jogo ficará pendurado e não reagirá mais a nenhuma entrada do usuário e eles terão que forçar o fechamento.
+  Para mais exemplos de palavras-chave em loop, consulte as seções sobre repita, enquantoe para.
+   
+   
+   
+  
+    
+      
+        Voltar: Características lingüísticas
+        Próximo: para
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

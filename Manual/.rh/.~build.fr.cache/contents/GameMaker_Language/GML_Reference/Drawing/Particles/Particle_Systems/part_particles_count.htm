@@ -1,0 +1,45 @@
+
+  
+  part_particles_count
+  Com esta função você pode verificar se um sistema de partículas atualmente tem alguma partícula criada na sala, e ele retornará o número delas também.
+   
+  Sintaxe:
+  part_particles_count(ind);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do sistema de partícula.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  if (part_particles_count(Sname) == 0) {
+     part_system_destroy(Sname);
+     instance_destroy();
+     }
+  
+  O código acima verificará o número de partículas no sistema de partículas local indexado na variável "Sname" e, se não houver nenhuma, destruirá o sistema e, em seguida, a instância.
+   
+   
+   
+  
+    
+      
+        Voltar: Sistemas de Partículas
+        Próximo: part_system_automatic_update
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

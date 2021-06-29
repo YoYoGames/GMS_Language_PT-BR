@@ -1,0 +1,47 @@
+
+  
+  gpu_get_texfilter_ext
+  Com esta função você pode verificar se a interpolação de textura (interpolação linear) está habilitada (retorna verdadeiro) ou não (retorna falso) para uma dada textura de shader sampler.
+  NOTA: No alvo HTML5, esta função só funcionará com WebGL habilitado.
+   
+  Sintaxe:
+  gpu_get_texfilter_ext(sampler_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sampler_id
+        A identificação do amostrador a partir do shader.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var s_tex = shader_get_sampler_index(shader_glass, "s_NoiseSampler"); if gpu_get_texfilter_ext(s_tex) {
+     gpu_set_texfilter_ext(s_tex, false); }
+     mais
+     {
+     gpu_set_texfilter_ext(s_tex, true); }
+  
+  O código acima verifica se a filtragem de textura está ligada ou desligada para uma identificação específica do amostrador (armazenada em uma variável local) e a troca de acordo.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle de GPU
+        Próximo: gpu_get_texrepeat
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

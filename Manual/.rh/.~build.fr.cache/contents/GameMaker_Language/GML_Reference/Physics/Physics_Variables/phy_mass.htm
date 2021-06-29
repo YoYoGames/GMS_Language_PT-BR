@@ -1,0 +1,32 @@
+
+  
+  phy_mass
+  Esta variável somente de leitura retorna a massa da instância em quilogramas. Este valor é calculado automaticamente com base na área de superfície dos dispositivos atribuídos e seus valores de densidade, mas pode ser alterado usando a função physics_mass_properties().
+   
+  Sintaxe:
+  f_mass;
+   
+  Devoluções:
+  Real (valor de ponto flutuante de precisão único, ou indefinido se a instância não estiver habilitada fisicamente)
+   
+  Exemplo:
+  if (phy_mass < other.phy_mass) {
+     instance_destroy();
+     }
+  
+  O código acima é do evento de colisão da instância com outra e compara a massa de cada instância e destrói aquela que tem menos massa.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis Físicas
+        Próximo: phy_sleeping
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

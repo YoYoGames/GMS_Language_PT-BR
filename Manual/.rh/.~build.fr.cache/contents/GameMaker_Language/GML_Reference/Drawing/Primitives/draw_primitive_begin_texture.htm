@@ -1,0 +1,50 @@
+
+  
+  textura_de_sorteio_primitivo_begin_textura
+  Esta função deve ser chamada antes de se definir os vértices de um primitivo texturizado. Você deve dar o tipo de primitivo a ser usado (ver draw_primitive_begin() para mais informações) e a identificação de um
+    textura a ser usada, que pode ser um ativo de imagem de fundo ou sprite. Este recurso pode ser obtido a partir das funções sprite_get_texture()por exemplo
+    (usar -1 para nenhuma textura).
+  OBSERVAÇÃO: Para que uma textura se repita, deve ser uma potência de dois em tamanho, ou seja: 32x32, 128x128, etc...
+   
+  Sintaxe:
+  draw_primitive_begin_texture(tipo, tex)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tipo
+        O tipo de primitivo que você vai desenhar.
+      
+      
+        tex
+        A textura a ser usada com os primitivos.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_set_colour(c_white); var tex = sprite_get_texture(spr_Background, 0); draw_primitive_begin_texture(pr_trianglestrip, tex); draw_vertex_texture(0, 0, 0, 0, 0); draw_vertex_texture(640, 0, 1, 0); draw_vertex_texture(0, 480,
+    0, 1); draw_vertex_texture(640, 480, 1, 1); draw_primitive_end();
+  
+  O código acima desenhará uma faixa triangular de 4 vértices (fazendo um retângulo) texturizada com a textura mantida na variável "tex", e toda a textura será usada para cobrir a primitiva completa.
+   
+   
+   
+  
+    
+      
+        Voltar: Primitivos e formatos de vértices
+        Próximo: draw_primitive_end
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

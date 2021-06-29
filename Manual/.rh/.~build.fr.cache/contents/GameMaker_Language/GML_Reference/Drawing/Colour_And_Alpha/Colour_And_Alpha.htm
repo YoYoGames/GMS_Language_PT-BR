@@ -1,0 +1,162 @@
+
+  
+  Cor e Alfa
+  GameMaker Studio 2 tem uma seleção abrangente de funções para manipular a cor e o alfa do que é desenhado na tela (para misturar imagens usando modos especiais de mistura e outros modos específicos de PGU
+    veja a seção sobre o Controle da GPU. Usando estas funções você pode separar cores em suas partes componentes, criar novas cores e manipular o alfa do desenho para mudar o quão diferente
+    as coisas em seu jogo são desenhadas juntas. Além destas funções, há também uma série de constantes que podem ser usadas como cores de base nestas (e em outras) funções:
+   
+  
+    
+      
+        Constante
+        Cor
+        Valor
+      
+      
+        c_aqua
+         
+        16776960
+      
+      
+        c_negro
+         
+        0
+      
+      
+        c_blue
+         
+        16711680
+      
+      
+        c_dkgray
+         
+        4210752
+      
+      
+        c_fúcsia
+         
+        16711935
+      
+      
+        c_gray
+         
+        8421504
+      
+      
+        c_verde
+         
+        32768
+      
+      
+        c_lime
+         
+        65280
+      
+      
+        c_ltgray
+         
+        12632256
+      
+      
+        c_maroon
+         
+        128
+      
+      
+        c_navy
+         
+        8388608
+      
+      
+        c_olive
+         
+        32896
+      
+      
+        c_orange
+         
+        4235519
+      
+      
+        c_púrpura
+         
+        8388736
+      
+      
+        c_red
+         
+        255
+      
+      
+        c_silver
+         
+        12632256
+      
+      
+        c_teal
+         
+        8421376
+      
+      
+        c_white
+         
+        16777215
+      
+      
+        c_amarelo
+         
+        65535
+      
+    
+  
+   
+  Note que você também pode criar cores a partir de seu valor hexadecimal usando previamente o símbolo "$", e estes valores também podem ser usados nas funções de cor para obter matizes de componentes ou para mistura, etc... O valor hexadecimal para estas cores
+    é dividido em três partes com o formato Azul / Verde / Vermelho para, por exemplo, definir uma cor púrpura que você poderia usar:
+  col = $983c95
+  Onde 98 é o componente azul, 3c é o componente verde e 95 é o componente vermelho.
+  As seguintes funções podem ser usadas para obter as tonalidades dos componentes, matizes compostos, saturação e luminosidade de uma cor selecionada, assim como o alfa e outras propriedades:
+   
+  
+    color_get_blue
+    color_get_green
+    color_get_red
+    cor_get_hue
+    cor_get_saturação
+    color_get_value
+    draw_getpixel
+    draw_getpixel_ext
+    draw_get_colour
+    draw_get_alpha
+  
+   
+  Estas funções podem ser usadas para criar cores a partir de valores de entrada brutos para componentes de cor:
+   
+  
+    make_colour_hsv
+    make_colour_rgb
+    merge_colour
+  
+   
+  As seguintes funções podem ser usadas para definir as diversas opções de desenho para a tela, incluindo alfa, cor e mistura:
+   
+  
+    draw_clear
+    draw_clear_alpha
+    draw_set_alpha
+    draw_set_colour
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Desenho
+        A seguir: Controle de GPU
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

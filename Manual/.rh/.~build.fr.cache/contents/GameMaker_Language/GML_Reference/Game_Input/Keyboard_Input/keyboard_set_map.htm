@@ -1,0 +1,52 @@
+
+  
+  teclado_set_map
+  Às vezes, ao fazer um jogo, você pode desejar que uma chave faça o mesmo que outra. Por exemplo, muitas pessoas usam as teclas WASD para movimento, mas depois muitas pessoas também usam as teclas de setas! Então, o que fazer? Bem, você poderia codificar o sistema de movimento
+    duas vezes, mas isso é um pouco complicado e felizmente redundante, pois esta função permite "mapear" uma chave para outra e assim qualquer entrada de qualquer uma das chaves será interpretada como a mesma. Para fazer isso, você escolhe uma chave que deseja mapear (chave2
+    - esta será a chave para a qual você escreverá o código) e uma chave para a qual você quer que ele seja mapeado (chave1). Depois disso, a chave pressionada para qualquer uma das chaves será interpretada pelo GameMaker Studio 2 como vindo da chave2. Você também pode usar esta função para projetar
+    um sistema onde o usuário pode definir suas próprias chaves para jogar simplesmente mapeando a chave de entrada do usuário para a chave que você codificou no jogo.
+  A função toma um valor de código de chave como retornado pela função ord() (somente letras maiúsculas de A-Z ou números de 0-9), ou qualquer uma das constantes vk_* listadas na página principal de Entrada do Teclado.
+  IMPORTANTE! A chave para a qual você está mapeando (key1) não será mais utilizável, pois ela é o verdadeiro símbolo da chave uma vez que você use esta função. Por exemplo, se você mapear a seta para cima para "W", então você não será mais capaz de detectar a prensa
+    da chave "W" como um "W", será sempre considerado como a flecha de cima. Para desfazer isto, ou mapear a chave para si mesmo - assim tanto a chave1 como a chave2 seriam ord("W") - ou usar a função keyboard_unset_map().
+   
+  Sintaxe:
+  keyboard_set_map(key1, key2);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        chave1
+        Esta é a chave para a qual a chave1 deve ser mapeada
+      
+      
+        chave2
+        Esta é a chave que deve ser mapeada
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  keyboard_set_map(ord("A"), vk_left);
+  O código do exemplo acima irá mapear a tecla "A" para a seta para a esquerda. Isto significa que o jogador pode usar tanto a tecla "A" quanto a seta para a esquerda, e que todo código escrito para a seta para a esquerda também responderá à tecla "A".
+    que está sendo usada em seu lugar.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada de Teclado
+        Próximo: keyboard_get_map
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

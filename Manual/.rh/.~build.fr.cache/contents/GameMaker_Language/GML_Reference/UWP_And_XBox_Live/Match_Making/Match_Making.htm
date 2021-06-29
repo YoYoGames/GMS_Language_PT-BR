@@ -1,0 +1,79 @@
+
+  
+  Fazer fósforos
+  Matchmaking (multiplayer) para Xbox Live e UWP requer um pouco de configuração, em parte através de um arquivo de configuração que define quais conexões de rede você vai usar, e em parte através da configuração de modelos de sessão e hoppers de matchmaking no Xbox
+    Portal do Desenvolvedor. O GameMaker Studio 2 suporta isto através do uso do alvo UWP e permite que você faça o seguinte:
+  
+    Criar uma sessão multiplayer
+    Encontre (e/ou participe) de uma sessão multiplayer
+    Ser notificado quando jogadores relevantes entram ou saem de uma sessão, assim como receber seus detalhes de conexão de rede
+    Ser notificado quando o host da sessão migrar para um usuário diferente
+    Obtenha uma lista de usuários na sessão
+    Deixe uma sessão
+  
+  A conectividade de rede Xbox Live depende de algo chamado Associação de Dispositivos Seguros, que é basicamente um contrato que define exatamente como o dispositivo se conecta a outros dispositivos e que tipo de dados ele é capaz de comunicar usando
+    essa conexão. Estas são configuradas usando um arquivo que você precisa incluir em seu projeto. Você pode encontrar um exemplo deste arquivo aqui. Os principais pontos importantes no arquivo são os números de protocolo e porta para cada descrição de soquete, pois estes devem corresponder ao que você realmente configurou em código.
+  Uma vez criado este arquivo de manifesto de rede, ele deve ser adicionado ao projeto como um arquivo incluído. Então, dentro das Opções de Jogo UWP, na aba Xbox One General, ele deve ser
+    selecionado na caixa combinada "Incluído arquivo para manifesto de configuração de rede".
+  Para criar uma sessão multiplayer, você precisa especificar qual modelo de sessão será utilizado. Estes modelos de sessão são definidos no XDP, mas um exemplo é mostrado abaixo:
+  Nome da sessão: MatchSession Versão do contrato: 107 Modelo de sessão (texto JSON): {
+     "constantes": { "sistema": { "versão": 1, "maxMembersCount": 12, "capacidades": { },
+     "memberInitialization": { "externalEvaluation": false, "membersNeededToStart": 1 }
+     },
+     "personalizado":  {}
+     }
+  
+  Uma descrição dos campos pode ser encontrada em "Visão Geral da Sessão" no arquivo de ajuda XDK. Note que atualmente não suportamos a configuração dinâmica de parâmetros de sessão do GameMaker Studio 2.
+  Junto com o modelo da sessão, um funil de fósforos também deve ser instalado para permitir que a sessão seja encontrada (isto também é feito no XDP). Os funis são usados para definir as regras que são usadas ao combinar jogadores. Assim como os parâmetros da sessão, nós não
+    atualmente não suportamos a configuração dinâmica dos parâmetros do funil do GameMaker: Estúdio. Consulte a seção "Configuração de matchmaking do SmartMatch" no arquivo de ajuda do XDK para obter mais detalhes.
+  As seguintes funções estão disponíveis para o XboxLive matchmaking (note que você também precisará usar as funções de rede do GameMaker Studio 2 para as conexões
+    etc...):
+   
+  
+    xboxlive_matchmaking_start
+    xboxlive_matchmaking_stop
+    xboxlive_matchmaking_create
+    xboxlive_matchmaking_find
+    xboxlive_matchmaking_session_get_users
+    xboxlive_matchmaking_join_session
+    xboxlive_matchmaking_session_leave
+  
+   
+  OGameMaker Studio 2 fornece um conjunto extra de funções de matchmaking para você usar para convidar outros jogadores da rede para participar de uma sessão, ou para você aceitar um convite para participar da sessão de outra pessoa. As funções disponíveis
+    são:
+   
+  
+    xboxlive_matchmaking_send_invites
+    xboxlive_matchmaking_set_joinable_joinable_session
+    xboxlive_matchmaking_join_invite
+  
+   
+  Quando o jogador aceita um convite de outro jogador, uma de duas coisas acontece:
+  
+    Se seu jogo estiver em execução no momento, você receberá um Evento Assíncrono Social com mapa DS async_load contendo as seguintes chaves/valores:
+      
+        "id" - Isto será definido para MATCHMAKING_INVITATION_INVITATION.
+        "invitation_id" - Este é o valor único do ID do convite
+        "convite_anfitrião" - Este é o valor único de identificação da sessão para o anfitrião da sessão
+      
+      Você deve salvar o ID e os valores do Host e depois deixar as sessões necessárias, e chamar a função xboxlive_matchmaking_join_invite(), passando como argumentos o ID do convite e os valores do Host do convite em um evento Step.
+    Se seu jogo não estiver funcionando atualmente, ele será iniciado pelo sistema operacional. Você receberá o mesmo tipo de Evento Assíncrono Social com as mesmas chaves definidas como as listadas acima. Salve-as em variáveis, depois conecte-as a
+      Xbox Live e finalmente chamar xboxlive_matchmaking_join_invite().
+  
+  Uma vez que você tenha chamado xboxlive_matchmaking_join_invite() o usuário tentará participar da sessão e receberá Eventos Sociais Assíncronos como se você tivesse chamado xboxlive_matchmaking_find() em
+    esta sessão.
+   
+   
+   
+  
+    
+      
+        Voltar: UWP e XBox Live
+        A seguir: Usuários e Contas
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

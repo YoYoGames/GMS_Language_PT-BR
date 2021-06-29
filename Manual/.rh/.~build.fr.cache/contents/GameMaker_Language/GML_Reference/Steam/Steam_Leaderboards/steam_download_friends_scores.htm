@@ -1,0 +1,44 @@
+
+  
+  vapor_download_friends_scores
+  Com esta função você pode recuperar somente as pontuações na tabela de liderança que pertencem àquelas pessoas que estão marcadas como "amigos" no cliente Steam. Portanto, se seu quadro de líderes tem 200 entradas, e 50 delas são seus amigos, esta função
+    recuperará apenas aqueles 50 resultados. O nome do quadro de líderes é uma string que foi definida quando você criou o quadro de líderes usando a função steam_create_leaderboard()e a função retornará
+    um valor que pode então ser usado para identificar a chamada de retorno no EventoSteam Async, ou retornará -1 se tiver falhado.
+   
+  Sintaxe:
+  steam_download_friends_scores(lb_name);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        lb_nome
+        O nome do quadro de líderes do qual você está baixando as pontuações (um fio).
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  score_get = vapor_download_friends_scores("Game Scores");
+  Isto enviará uma solicitação para o Steam Server para os amigos usuários, para as pontuações da tabela de liderança e armazenará a identificação assimétrica da solicitação na variável "score_get". Isto será então tratado no EventoSteam Async,
+    como mostrado no Exemplo Ampliado para steam_download_scores().
+   
+   
+   
+  
+    
+      
+        Voltar: Painéis de Liderança
+        Próximo: steam_create_leaderboard
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,72 @@
+
+  
+  Nuvem
+  O Evento em Nuvem é aquele que é acionado pela chamada de retorno de um dos cloud_*() funções,
+    como cloud_synchronise(). Ele realmente gera um mapa DS que é exclusivo para este evento e é armazenado em
+    a variável especial  async_load  (consulte as funções individuais para exemplos de códigos que explicam o uso deste
+    evento em mais detalhes). Este mapa DS tem a seguinte estrutura:
+  
+    "status": Isto contém o código de status, onde um valor negativo denota um erro, cuja descrição estará contida no "errorString". Um valor de 0 (ou um valor positivo) indica um sucesso (ver abaixo para
+      valores exatos), e o "resultString" conterá os dados retornados ou uma mensagem de sucesso.
+    "id": A identificação que foi devolvida da função chamada. Se você disparar uma série de pedidos cloud_, então você precisa saber qual deles você está recebendo a resposta, e assim você usaria este valor para comparar com
+      o valor que você armazenou quando enviou originalmente o pedido para encontrar o correto.
+    "description": A descrição do último arquivo carregado.
+    "resultString": Isto contém um fio que é a bolha de dados retornada da nuvem.
+    "errorString": retorna um Error String para qualquer erro.
+  
+  O significado exato da entrada do mapa de "status" retornado é explicado na tabela a seguir:
+   
+  
+    
+      
+        Status Valor
+        errorString / resultString
+        Descrição
+      
+      
+        -1
+        errorString = "Not logged in to <SERVICE>" (Não logado em <SERVICE>")
+        Você não conseguiu acessar o serviço em nuvem em questão
+      
+      
+        0
+        resultadoString = dados recuperados
+        Novos dados do jogo baixados da nuvem (após uma chamada para cloud_synchronise() )
+      
+      
+        1
+        resultString = "AlreadySynchronized" (já sincronizado)
+        Nenhum dado novo desde a última vez que você chamou cloud_synchronise
+      
+      
+        2
+        resultadoString = "ConflictDeferral"
+        Foi encontrado um conflito, mas o jogador optou por ignorá-lo
+      
+      
+        3
+        resultString = "GameUploadSuccess
+        Os dados de cloud_string_save() ou cloud_file_save() foram carregados com sucesso para a nuvem
+      
+      
+        -n
+        errorString = Descrição do erro
+        Qualquer outro número negativo significa uma falha de sincronização
+      
+    
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Eventos Async
+        A seguir: Diálogo
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

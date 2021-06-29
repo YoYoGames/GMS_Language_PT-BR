@@ -1,0 +1,57 @@
+
+  
+  linha_de_sorteio
+  Com esta função você pode desenhar uma linha de 1 pixel de largura entre quaisquer dois pontos na sala de jogos. Observe que a linha a ser desenhada pode precisar de valores diferentes (+/-1 no x, y) para ser desenhada com as dimensões desejadas devido às diferenças entre os vários pontos
+    plataformas suportadas.
+  NOTA: Se você quiser desenhar uma forma usando um sombreador, você deve estar ciente de que a maioria dos sombreadores espera as seguintes entradas: vértice, textura, cor. Entretanto, ao utilizar esta função, apenas os dados de vértice e cor estão sendo passados para dentro, e assim o
+   shader não pode desenhar nada (ou desenhar algo, mas não corretamente). Se você precisar desenhar formas desta maneira, então o sombreador deve ser personalizado tendo isto em mente.
+   
+  Sintaxe:
+  draw_line(x1, y1, x2, y2);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x1
+        A coordenada x do início da linha.
+      
+      
+        y1
+        A coordenada y do início da linha.
+      
+      
+        x2
+        A coordenada x do final da linha.
+      
+      
+        y2
+        A coordenada y do final da linha.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_set_colour(c_lime); draw_line(50,50,150,50);
+  
+  Isto desenhará uma linha horizontal verde claro do ponto (50,50) ao ponto (150,50).
+   
+   
+   
+  
+    
+      
+        Voltar: Formulários básicos
+        A seguir: cor_da_linha_de_sorteio
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

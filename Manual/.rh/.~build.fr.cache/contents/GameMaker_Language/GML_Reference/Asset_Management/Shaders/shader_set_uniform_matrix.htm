@@ -1,0 +1,46 @@
+
+  
+  shader_set_uniform_matrix
+  Com esta função você pode definir o valor (ou valores) de uma constante de sombreamento para a matriz de transformação de corrente (como definido usando as Funções de Matriz). Você deve ter obtido anteriormente
+    o "cabo" da constante usando a função shader_get_uniform().
+  OBSERVAÇÃO: Todos os uniformes devem ser ajustados após a chamada da função shader_set()e antes de chamar shader_reset().
+   
+  Sintaxe:
+  shader_set_uniform_matrix(handle);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        alça
+        O cabo da constante de sombreamento a ser ajustado.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  shader_set(shader_Glass); shader_matrix= shader_get_uniform(shader_glass, "u_vMatrix"); shader_set_uniform_matrix(shader_matrix);
+     draw_self();
+     shader_reset();
+  
+  O código acima obterá o comando da constante de sombreamento "u_vMatrix" e então definirá essa constante para a matriz de transformação de corrente.
+   
+   
+   
+  
+    
+      
+        Voltar: Shaders
+        Próximo: shader_set_uniform_matrix_array
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,66 @@
+
+  
+  font_replace_sprite_ext
+  Esta função substituirá uma fonte sprite que você criou anteriormente usando a função font_add_sprite_ext(). Ela usa uma "faixa de duende", onde cada subimagem é um símbolo ou letra individual,
+    e as imagens são mapeadas em letras com base no argumento "string_map" da função. Este argumento é uma string que você pode usar para dizer ao GameMaker Studio 2 qual a ordem das sub-imagens da fonte sprite e ele as mapeará automaticamente
+    ao escrever um texto. Assim, por exemplo, se você tem um mapa de string-map de "AaBbcDdEeFfGgHh", sua fonte sprite deve ter as subimagens ordenadas desta forma.
+  Você também pode definir o espaçamento para que a fonte seja proporcional(verdadeira) ou não(falsa), onde uma fonte proporcional é espaçada com base na largura real das letras (assim, a letra "i" ocupa menos espaço do que a letra "w",
+    por exemplo), enquanto uma fonte não proporcional será espaçada com base na largura da subimagem, como uma fonte monoespaçada. Finalmente, você pode definir o espaço a ser deixado entre cada letra ao escrever, e este pode ser qualquer valor inteiro, sendo que 0 não é espaço (a letra "w", por exemplo).
+    letras "tocarão" se forem proporcionais). A função retorna um valor de índice que deve ser armazenado em uma variável, pois isto será necessário em todos os códigos adicionais que se referem a esta fonte.
+  Se a função falhar, então falhará silenciosamente sem substituir a fonte sprite dada.
+  NOTA: Esta função requer que você tenha adicionado previamente uma fonte sprite usando font_add_sprite()pois ele irá substituir isso e não pode ser usado
+    em fontes que são incluídas como parte dos recursos do jogo.
+   
+  Sintaxe:
+  font_replace_sprite_ext(font, spr, string_map, propulsor, sep);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fonte
+        A fonte a ser substituída.
+      
+      
+        spr
+        O duende para adicionar uma fonte baseada em.
+      
+      
+        string_map
+        Corda da qual é tirada a ordem de subimagem sprite.
+      
+      
+        adereço
+        Definir como fonte proporcional ou não.
+      
+      
+        sep
+        O espaço a ser deixado entre cada carta.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+   
+  font_replace_sprite_ext(global.Font, spr_CalcFont, "0123456789+-*/=", true, 2);
+  O código acima substituirá um recurso de fonte sprite indexado na variável "global.Font" por imagens sprite indexadas na variável "spr_CalcFont".
+   
+   
+   
+  
+    
+      
+        Voltar: Fontes
+        Próximo: font_delete
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

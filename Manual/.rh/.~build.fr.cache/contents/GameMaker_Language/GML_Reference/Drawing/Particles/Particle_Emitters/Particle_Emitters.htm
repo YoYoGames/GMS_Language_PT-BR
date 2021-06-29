@@ -1,0 +1,35 @@
+
+  
+  Emissores de Partículas
+  Os emissores de partículas são usados pelo GameMaker Studio 2 para emitir partículas sobre uma área da tela que pode ter diferentes formas e distribuições. Eles também podem criar um fluxo contínuo de partículas
+    ou podem explodir uma série de partículas de uma só vez, dependendo da forma como as funções são utilizadas.
+  Como um emissor de partículas é um recurso criado dinamicamente, você deve criá-lo e armazenar o índice retornado em uma variável para referenciar o emissor em todas as outras chamadas de função, e é muito importante que você também destrua o emissor quando ele não
+    mais tempo necessário ou então você terá um vazamento de memória que irá diminuir a velocidade e, eventualmente, quebrar seu jogo. Também vale a pena notar que os emissores de partículas viverão para sempre após a sua criação, mesmo que o índice não seja mais armazenado. Portanto, mesmo se você
+    trocar de sala ou reiniciar o jogo, os sistemas e as partículas permanecerão, e serão visíveis, em todas as outras salas, portanto você deve assegurar-se de destruí-las quando não precisar mais delas.
+  As seguintes funções estão disponíveis para definir os emissores e para deixá-los criar partículas. Note que cada uma delas recebe o índice do sistema de partículas ao qual pertence como um primeiro argumento.
+   
+  
+    part_emitter_existe
+    part_emitter_create
+    part_emitter_clear
+    part_emitter_region
+    part_emitter_burst
+    part_emitter_stream
+    part_emitter_destroy
+    part_emitter_destroy_all
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Partículas
+        A seguir: Sistemas de Partículas
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

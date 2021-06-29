@@ -1,0 +1,62 @@
+
+
+
+
+
+  
+  point_distance
+  Esta função retorna o comprimento de um vetor formado pelos componentes especificados [x1,y1] e [x2,y2]. Por exemplo, na imagem abaixo, se quisermos obter a distância entre a posição do navio jogador e a posição do inimigo, para que possamos calcular se o
+    inimigo está perto o suficiente para atirar então nós usaríamos esta função (o código exato está no exemplo abaixo da imagem):
+  
+   
+  Sintaxe:
+  point_distance(x1, y1, x2, y2);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x1
+        A coordenada x do primeiro componente do vetor
+      
+      
+        y1
+        A coordenada y do primeiro componente do vetor
+      
+      
+        x2
+        A coordenada x do segundo componente do vetor
+      
+      
+        y2
+        A coordenada y do segundo componente do vetor
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var ex, ey; ex = instance_nearest(x, y, enemy).x; ey = instance_nearest(x, y, enemy).y; if (point_distance(x, y, ex, ey) < 200) {
+     instance_create_layer(x, y, "Bullets", obj_Missile) }
+  
+  O código acima obterá as coordenadas x e y do inimigo mais próximo e depois as utilizará para verificar a distância (comprimento) do vetor formado por elas e as coordenadas do jogador. Se o valor for inferior a 200, o objeto jogador irá criar uma instância de
+    "obj_Missile".
+   
+   
+   
+  
+    
+      
+        Voltar: Ângulos e distância
+        Próximo: point_distance_3d
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,42 @@
+
+  
+   Set Instance Colour
+  Este bloco de ação define a cor da imagem_misturar para "misturar" com o sprite de instância. O valor padrão é o código hexadecimal $FFFFFFFFFF (que representa a cor branca usando o formato ARGB ) e isto desenhará o sprite sem mistura e com alfa completo. Qualquer outro valor (incluindo constantes de cor internas como c_red, ou c_aqua) irá misturar a cor especificada com o duende original, bem como definir o
+    image_alpha por exemplo, mas somente quando a caixa de seleção Usar Alfa estiver marcada. Isto sobregravará qualquer valor alfa definido anteriormente usando a ação Definir Instância Alfa.
+  Favor observar que para que as mudanças nesta ação sejam visíveis, a instância não deve ter nenhum evento de sorteio (e, portanto, o GameMaker Studio 2 irá, por padrão, sortear o sprite) ou ser sorteada usando a ação Draw Self. É o seguinte
+    Também é importante observar que você deve tentar limitar a mistura na plataforma HTML5 (a menos que utilize WebGL), pois cada sprite misturado tem que ser colocado em cache separadamente e, portanto, ter muitos sprites misturados pode afetar negativamente o desempenho.
+  
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Cor
+        A nova cor de mistura a ser usada (clicando na amostra de cor abrirá a janela do colhedor de cores).
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima estabelece um novo duende, bem como uma série de outros
+    propriedades de como esse duende deve ser exibido, incluindo a definição da cor da mistura para rosa.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações de instância
+        A seguir: Se a instância existir
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

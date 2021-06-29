@@ -1,0 +1,48 @@
+
+  
+  move_contact_solid
+  Esta função moverá a instância que executa o código um número definido de pixels na direção especificada até que encontre uma instância com sólido sinalizados como verdadeiros. Você pode
+    use -1 ou 0 para o maxdist sendo um padrão de 1000px, ou seja: GameMaker Studio 2 moverá a instância continuamente para 1000 pixels até que ela esteja fora de colisão.
+   
+  Sintaxe:
+  move_contact_solid( dir, maxdist );
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dir
+        A direção para avançar.
+      
+      
+        maxdist
+        A distância máxima que o objeto pode percorrer (-1 ou 0 um valor padrão de 1000 pixels).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if !place_meeting(x, y + 1, obj_Floor) {
+     move_contact_solid(270, -1); }
+  
+  O código acima verificará, abaixo da instância, se há uma colisão com "obj_Floor", e se não houver nenhuma, então ele o moverá para baixo até que haja uma colisão, ou 1000 pixels tenham sido cobertos.
+   
+   
+   
+  
+    
+      
+        Voltar: Movimento
+        Próximo: move_outside_all
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

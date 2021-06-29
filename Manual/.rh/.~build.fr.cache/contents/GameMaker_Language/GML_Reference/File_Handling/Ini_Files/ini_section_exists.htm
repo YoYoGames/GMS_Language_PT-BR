@@ -1,0 +1,46 @@
+
+  
+  ini_section_existe
+  Esta função verifica se existe uma seção no ini atualmente aberto e retornará verdadeiro se existir ou falso de outra forma. Esta não é uma verificação necessária para evitar erros, pois, quando uma seção não existe, a leitura de uma seção não existente
+    apenas retornará um valor padrão, porém pode ser útil ver se um arquivo ini salvou dados específicos.
+   
+  Sintaxe:
+  ini_section_exists(section);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        seção
+        A seção no arquivo .ini aberto para verificar.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  ini_open("savedata.ini"); if !ini_section_exists("save1") {
+     global.savegame = "1"; }
+     ini_close();
+  
+  Isto definirá a variável global.savegame para "1" se "save1" NÃO for encontrado. Com um loop para loop, isto poderia ser usado como uma forma básica de calcular quantos jogos salvos existem para um jogo (ou seja: criando um sistema para múltiplos salvamentos simultâneos
+    jogos por um jogo).
+   
+   
+   
+  
+    
+      
+        Voltar: Arquivos de Inicia
+        Próximo: ini_key_delete
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

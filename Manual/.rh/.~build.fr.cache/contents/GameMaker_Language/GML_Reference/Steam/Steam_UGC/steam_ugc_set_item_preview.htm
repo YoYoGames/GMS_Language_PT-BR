@@ -1,0 +1,50 @@
+
+  
+  vapor_ugc_set_item_preview
+  Esta função definirá a imagem de visualização a ser usada para o item em questão. A imagem deve ser fornecida em formato PNG, JPG ou GIF com um tamanho máximo de 1MB. O caminho para a imagem deve ser um caminho relativo no save are ou no jogo.
+    pacote (ou seja: um arquivo incluído). A alça de atualização é o valor retornado quando você chama a função steam_ugc_start_item_update(). A função voltará a ser verdadeira se a API foi bem sucedida
+    acessado e falso se houvesse algum problema.
+   
+  Sintaxe:
+  steam_ugc_set_item_preview(ugc_update_handle, preview);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ugc_update_handle
+        O cabo único para a UGC a ser atualizado.
+      
+      
+        visualização
+        A imagem de visualização (JPG, GIF ou PNG - tamanho máximo de 1MB) a ser usada para o item.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var app_id = steam_get_app_id(); var updateHandle = steam_ugc_start_item_update(app_id, global.Publish_ID); steam_ugc_set_item_title(updateHandle, "My workshop item(3)!"); steam_ugc_set_item_description( updateHandle, "testing
+    workshop..."); steam_ugc_set_item_visibility(updateHandle, ugc_visibility_public); var tagArray; tagArray[0] = "Test"; tagArray[1] = "New"; steam_ugc_set_item_tags( updateHandle, tagArray); steam_ugc_set_item_preview (updateHandle,
+    "promo.jpg"); steam_ugc_set_item_content(updateHandle, "WorkshopContent1"); requestId = steam_ugc_submit_item_update(updateHandle, "Version 1.2");
+  O código acima obtém o ID do jogo, depois usa-o junto com um ID de arquivo publicado anteriormente para gerar uma alça de atualização para o item. Este cabo é então usado para atualizar várias informações antes que a atualização seja empurrada para o Workshop.
+    servidores.
+   
+   
+   
+  
+    
+      
+        Voltar: UGC
+        Próximo: steam_ugc_submit_item_update
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

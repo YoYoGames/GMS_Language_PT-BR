@@ -1,0 +1,66 @@
+
+  
+  Chaves virtuais e teclados virtuais
+  Ao desenvolver jogos para dispositivos touchscreen, muitas vezes é importante obter a entrada do teclado por parte do usuário. Ao utilizar o GameMaker Studio 2, isto pode ser feito de uma de duas maneiras:
+  
+    Crie suas próprias chaves virtuais na tela para receber entrada
+    Abrir o teclado virtual do sistema operacional e obter informações a partir dele.
+  
+  O que você usa dependerá muito do jogo e do que você precisa, mas em geral você usaria teclas virtuais quando quiser ter botões na tela para controle do jogador ou para menus, enquanto você usaria o teclado virtual quando precisar da entrada do jogador,
+    como obter um nome ou definir um valor.
+  Para que seus jogos funcionem corretamente em dispositivos móveis com tela sensível ao toque, talvez seja necessário atribuir áreas da tela para responder a certas coisas quando elas são tocadas pelo usuário. Isto é feito através da atribuição de uma "chave virtual".
+    a uma chave de teclado padrão mapeada internamente e depois usando os eventos de teclado que eles geram para controlar sua aplicação. Vale notar que estas "teclas virtuais" são mapeadas para a posição da tela em vez da posição da sala.
+    e assim os valores x/y são absolutos, com base no tamanho do display. Isto significa que você não precisa se preocupar com o uso das vistas ou das coordenadas relativas da sala, e pode simplesmente definir as chaves no Evento Criar de um objeto (você só precisa definir
+    uma chave virtual uma vez por sala), depois desenhe seus sprites de chave no Evento Draw GUI, dimensionando a camada GUI para ser a mesma que a tela.
+  NOTA: Estas funções não funcionarão no Windows, Ubuntu(Linux), nem no MacOS, plataformas alvo usando uma tela sensível ao toque, embora recebam cliques de mouse como "toques".
+  As funções-chave virtuais disponíveis são:
+   
+  
+    virtual_key_add
+    virtual_key_show
+    virtual_key_hide
+    virtual_key_delete
+  
+   
+  Se você precisar de texto ou entrada numérica em seu jogo em um dispositivo touchscreen, então você pode usar as funções de teclado virtual fornecidas para usar o teclado do SO do dispositivo. Estas funções chamarão ou ocultarão o teclado do SO e aceitarão a entrada do mesmo,
+    mas não desencadeará os eventos regulares do teclado, mas atualizará o teclado_string variável com a entrada do usuário (isto se deve ao fato de que o teclado virtual pode
+    introduzir palavras inteiras e não apenas caracteres isolados).
+  A abertura ou fechamento do teclado virtual irá gerar Eventos Assíncronos do Sistema, nos quais o async_load DS
+    será preenchida com os seguintes pares chave/valor:
+  
+    " event_type" - o tipo de evento do sistema recebido, que será o "status do teclado virtual" para tecladosvirtuais.
+    "screen_height" - a altura do teclado virtual (em pixels). Esta será 0 se o teclado for invisível.
+    "keyboard_status" - o status atual do teclado, retornado como uma das seguintes cordas:
+      
+        "escondido".
+        "escondido".
+        "mostrando"
+        "visível"
+      
+    
+  
+  As funções de teclado virtual disponíveis são:
+  NOTA: Estas funções são válidas apenas para o Android (incluindo AndroidTV), iOS (incluindo tvOS), e plataformas alvo UWP .
+   
+  
+    teclado_virtual_show
+    teclado_virtual_ocultar
+    estado_virtual_do_ teclado
+    altura_virtual_do_ teclado
+  
+   
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada de jogo
+        A seguir: Entrada de Teclado
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

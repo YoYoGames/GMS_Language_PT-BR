@@ -1,0 +1,61 @@
+
+  
+   Definir a velocidade das partículas
+  Esta ação é usada para definir a velocidade das partículas, que pode ser estática ou definida para aumentar / diminuir ao longo do tempo. Você fornece o valor de identificação único para o tipo para definir o tamanho de (como retornado quando você criou o tipo com a ação Criar tipo de partícula)
+    e depois dar uma gama de velocidades iniciais de partida, depois a quantidade de aumento e finalmente a "sacudida". A velocidade em que uma partícula é criada é calculada como pixels por quadro de jogo, portanto, uma configuração mínima de 2 e uma configuração máxima de 5 irá emitir
+    partículas se movendo em qualquer lugar entre 2 e 5 pixels por quadro do jogo.
+  A opção de aumentar a velocidade de uma partícula permite que você insira um valor que será adicionado ao valor da velocidade base de cada quadro de jogo da vida útil da partícula. Assim, definir este valor para, por exemplo, 0,1 adicionará 0,1 à velocidade de cada quadro de jogo. Nota
+    que você pode usar valores negativos aqui também para fazer a partícula desacelerar também, embora a velocidade nunca vá abaixo de 0. Note que a diminuição mínima de velocidade que é aceita é de -0,01 e o incremento mínimo é de 0,01.
+  Finalmente, você pode definir a opção "sacudir". Este é um valor que será gerado aleatoriamente entre 0 e o valor que você dá e então adicionado ou subtraído à velocidade de cada etapa da vida útil das partículas, fazendo com que a imagem desenhada flutue em
+    velocidade. Obviamente os valores maiores são mais pronunciados do que os menores, e este valor pode até mesmo ser negativo, sendo a faixa máxima entre -20 e 20.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Tipo
+        O valor de identificação único para o tipo de partícula para definir o tamanho de
+      
+      
+        Velocidade mínima
+        A velocidade mínima para o tipo de partícula (padrão 0,1)
+      
+      
+        Velocidade máxima
+        A velocidade máxima para o tipo de partícula (padrão 1)
+      
+      
+        Aumentar
+        O valor a acrescentar à velocidade do tipo de partícula a cada quadro de jogo (pode ser negativo, mínimo +/-0,01)
+      
+      
+        Wiggle
+        O valor máximo a ser adicionado ou subtraído aleatoriamente da velocidade das partículas por etapa (+/-20).
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima criará um novo tipo de partícula e atribuirá seu exclusivo
+    valor de identificação para uma variável global. Em seguida, ele passa a definir todas as propriedades para o tipo de partícula.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações com Partículas
+        A seguir: Definir a direção das partículas
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,49 @@
+
+  
+  shader_set_uniform_f_array
+  Com esta função você pode definir uma constante de sombreamento para manter um conjunto de valores. Você deve ter obtido previamente o "cabo" da constante usando a função shader_get_uniform()e você terá
+    para ter previamente rubricado a matriz.
+  OBSERVAÇÃO: Todos os uniformes devem ser ajustados após a chamada da função shader_set()e antes de chamar shader_reset().
+   
+  Sintaxe:
+  shader_set_uniform_f_array(handle, array);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        alça
+        O cabo do sombreador constante a ser ajustado.
+      
+      
+        matriz
+        Um conjunto previamente rubricado de valores de ponto flutuante.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  shader_set(shader_glass); tex_array[0] = 0,5; tex_array[1] = 0,1; tex_array[2] = 0,25; shader_params= shader_get_uniform(shader_glass, "u_vParams"); shader_set_uniform_f_array(shader_params, tex_array); draw_self();
+     shader_reset();
+  
+  O código acima obterá o cabo da constante shader "u_vParams" e então definirá essa constante para a matriz dada.
+   
+   
+   
+  
+    
+      
+        Voltar: Shaders
+        Próximo: shader_set_uniform_i
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,52 @@
+
+  
+  variável_set_struct_set
+  Com esta função você pode definir o valor de uma determinada variável em uma estrutura. Você fornece a referência da estrutura bem como o nome da variável para definir o valor de uma string (veja o código de exemplo abaixo), e finalmente o valor a ser definido (pode ser
+    qualquer tipo de dado válido). Se a variável não existir já na estrutura, ela será criada e então lhe será atribuído o valor.
+   
+  Sintaxe:
+  variable_struct_set(structure, name, val);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        estrutura
+        A referência estrutural a estabelecer
+      
+      
+        nome
+        O nome da variável a ser definida (como uma string)
+      
+      
+        val
+        O valor para definir a variável para
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if !variable_struct_exists(mystruct, "shields") {
+     variable_struct_set(mystruct, "shields", 0); }
+  
+  O código acima verificará se a variável dada existe na estrutura dada e se ela não existe, então ela é criada e definida como 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções variáveis
+        A seguir: variável_struct_remove
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

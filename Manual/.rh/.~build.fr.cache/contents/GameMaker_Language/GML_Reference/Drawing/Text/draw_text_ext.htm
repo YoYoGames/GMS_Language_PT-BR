@@ -1,0 +1,60 @@
+
+  
+  texto_desenho_texto
+  Esta função irá desenhar texto de forma semelhante a draw_text() somente agora você pode definir o espaço entre cada linha de texto - se o texto ocupar mais de uma linha - e limitar a largura (em pixels)
+    da cadeia por linha para que, caso qualquer linha exceda este valor, o GameMaker Studio 2 dividirá automaticamente o texto para a próxima linha no espaço branco disponível mais próximo (se o texto não tiver espaços em branco, então ele ultrapassará este máximo
+    valor da largura). Note que qualquer espaço branco colocado no início da corda será removido antes de ser analisado para desenho por causa disso. Observe também que um valor de -1 para o argumento de separação de linha será padrão para uma separação baseada no
+    altura do caractere "M" na fonte escolhida.
+   
+  Sintaxe:
+  draw_text_ext(x, y, string, sep, w);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A coordenada x do fio desenhado.
+      
+      
+        y
+        A coordenada y da corda desenhada.
+      
+      
+        corda
+        O fio para desenhar.
+      
+      
+        sep
+        A distância em pixels entre linhas de texto.
+      
+      
+        w
+        A largura máxima em pixels do fio antes de uma quebra de linha.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_text_ext(100, 50, keyboard_string, 3, 300);
+  O código acima desenhará qualquer texto que o usuário digitar no teclado, dividindo-o em novas linhas toda vez que o comprimento da linha exceder 300 pixels. o código também manterá uma separação de 3 pixels entre linhas caso isso ocorra.
+   
+   
+   
+  
+    
+      
+        Voltar: Texto
+        Próximo: draw_text_colour
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

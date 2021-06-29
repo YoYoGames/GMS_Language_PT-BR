@@ -1,0 +1,49 @@
+
+  
+  part_system_automatic_draw
+  Esta função pode ser usada para desligar o desenho de um sistema de partículas para que quaisquer atualizações feitas no sistema (automáticas ou não) não sejam vistas. Esta é uma opção puramente visual e quando definida como falsa, não será possível ver o
+    partículas como não são desenhadas, mas ainda existem e estão mudando de posição, cor, etc... como normalmente fariam. Quando o desenho automático está desativado, você pode encomendar explicitamente o GameMaker Studio 2 para desenhar o estado atual da partícula
+    sistema usando a função part_system_drawit()e se esta função for definida novamente como verdadeira, você pode ligar novamente o desenho automático.
+  Uma coisa a ser observada é que se você estiver usando os efeitos simples criados pelas funções effect_create_above() ou effect_create_below() então você pode usar
+    os valores 0 (para efeitos abaixo) ou 1 (para efeitos acima) como o índice do sistema de partículas e assim alternar o desenho automático para estes também (isto também funcionará para alternar o desenho para os efeitos de partículas DnD™).
+   
+  Sintaxe:
+  part_system_automatic_draw(ind, automático);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do sistema de partículas a mudar.
+      
+      
+        automático
+        Se o desenho automático está ligado (verdadeiro) ou não (falso).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  part_system_automatic_draw(global.Sname, false);
+  O código acima desativa o desenho automático para o sistema de partículas indexado na variável global "Sname".
+   
+   
+   
+  
+    
+      
+        Voltar: Sistemas de Partículas
+        Próximo: part_system_update
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

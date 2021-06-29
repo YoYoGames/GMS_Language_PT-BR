@@ -1,0 +1,43 @@
+
+  
+  font_get_last
+  Ao definir uma fonte no GameMaker Studio 2, você pode definir uma gama de caracteres a serem incluídos. Isto porque a fonte em si não está realmente incluída em seu jogo (por razões legais), mas uma imagem de
+    a fonte é incluída em uma página de textura e é isso que seu jogo usará (como qualquer outro ativo gráfico). Isto significa que você vai querer manter o número de caracteres que utiliza no mínimo e especificar apenas a gama de caracteres que
+    seu jogo precisará de forma a manter a memória de textura o mais otimizada possível. Esta função pode ser usada para encontrar o último personagem (como um valor UTF8) que foi usado quando seu ativo de fonte foi adicionado ao seu jogo.
+   
+  Sintaxe:
+  font_get_last(ind);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        Índice da fonte a ser verificada.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  num = font_get_last(fnt_Main);
+  O código acima armazenará o valor ASCII da última letra da faixa de fontes para a fonte indexada em "fnt_Main".
+   
+   
+   
+  
+    
+      
+        Voltar: Fontes
+        Próximo: font_get_italic
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

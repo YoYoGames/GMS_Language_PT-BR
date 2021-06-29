@@ -1,0 +1,51 @@
+
+  
+  sprite_save_strip
+  Esta função criará uma imagem de faixa de todas as subimagens de um duende, salvando-a para o disco com o nome de arquivo especificado. O sprite deve ter sido adicionado em tempo de execução (não é possível salvar sprites adicionados através da IDE) e o
+    arquivo deve ser salvo com uma extensão *.png.
+  NOTA: Dependendo da plataforma de destino escolhida, você está limitado quanto ao local de onde pode salvar e carregar arquivos. Consulte Manuseio de arquivos para mais informações.
+   
+  Sintaxe:
+  sprite_save_strip(ind, nome do arquivo);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do sprite para mudar o mapa de transparência.
+      
+      
+        nome do arquivo
+        O nome do arquivo para a tira de sprite salva.
+      
+    
+  
+   
+  Devoluções
+  N/A
+   
+  Exemplo:
+  var spr, i; spr = sprite_create_from_surface(0, 0, 32, 32, true, true, 16, 16); para (i = 1; i < 8; i +=1) {
+     sprite_add_from_surface(spr, i, 0, 32, 32, true, true, 16, 16); }
+     sprite_save_strip(spr, "Custom_Player_Sprite.png"); sprite_delete(spr);
+  
+  O código acima cria um sprite da superfície indexada na variável "surf", atribuindo seu índice à variável local "spr_Custom", e então usa um laço para se mover através da superfície e capturar várias seções que
+    Este novo duende é então salvo como uma faixa de png antes de ser removido da memória.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação de Sprite
+        Próximo: sprite_flush
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

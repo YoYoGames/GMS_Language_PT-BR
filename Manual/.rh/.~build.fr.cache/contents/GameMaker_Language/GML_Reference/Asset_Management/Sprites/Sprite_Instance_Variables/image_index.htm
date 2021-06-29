@@ -1,0 +1,37 @@
+
+  
+  image_index
+  Um duende é composto de uma ou mais subimagens que podem fazer o duende parecer animado enquanto ele muda de uma para outra, ou podem ser alternados em código para dar diferentes "estados", como um botão tem nas janelas.
+    Se o sprite for animado, então você pode obter o quadro atual da animação verificando a variável image_index, ou se você quiser mudar o estado de um sprite estático, você pode selecionar uma nova subimagem definindo esta variável para a desejada
+    subimagem do duende. Favor observar que para que as mudanças nesta variável sejam visíveis, a instância não deve ter nenhum evento de sorteio (e, portanto, o GameMaker Studio 2 irá desenhar o duende por padrão) ou ser desenhada usando uma das funções de desenho como
+    draw_self() ou draw_sprite_ext() (fornecendo a imagem_index no argumento apropriado).
+  Observe que a definição desta variável diretamente em um quadro não acionará nenhuma mensagem de difusão que possa estar presente nesse quadro.
+  Observe também que, ao usar os sprites de animação esquelética, você ainda pode obter e definir os valores do índice da imagem - veja a função esqueleto_animação_get_duração() para
+    exemplos de como fazer isso.
+   
+  Sintaxe:
+  image_index;
+   
+  Devoluções:
+  Real (valor de ponto flutuante de precisão único)
+   
+  Exemplo:
+  if (image_speed > 0) {
+     if (image_index >= image_number - 1) instance_destroy(); }
+  
+  O código acima verifica se o sprite está animando, e se está então verifica se a imagem_index atual está no último frame e nesse caso destrói a instância.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis de Sprite Instance
+        Próximo: image_number
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

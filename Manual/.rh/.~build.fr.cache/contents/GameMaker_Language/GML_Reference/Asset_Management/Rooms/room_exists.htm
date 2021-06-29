@@ -1,0 +1,45 @@
+
+  
+  room_exists
+  Com esta função, você pode verificar e ver se a sala que você especifica existe ou não. Esta função toma o índice da sala (um número real) e não o nome da sala (uma cadeia). Esta função é mais útil quando você está criando salas dinamicamente
+    usando a função room_add()mas você também pode usar as variáveis somente de leitura room_first e quarto_last ou as funções room_next()    e room_previous() para obter um índice específico da sala, ou fornecer uma variável que tenha armazenado o índice de qualquer outra sala em seu jogo.
+   
+  Sintaxe:
+  room_exists(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice da sala a verificar.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se o room_exists(global.rm[0]) {
+     room_goto(global.rm[0]);
+     }
+  
+  O código acima verifica se a sala indexada na matriz "global.rm[]" existe e se existe, então vai para aquela sala.
+   
+   
+   
+  
+    
+      
+        Voltar: Quartos
+        Próximo: room_add
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

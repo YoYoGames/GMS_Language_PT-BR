@@ -1,0 +1,47 @@
+
+  
+  ds_list_shuffle
+  Com esta função você pode embaralhar uma lista, que reordenará todos os valores dos componentes em posições aleatórias daqueles em que eles foram originalmente adicionados à lista.
+  NOTA: Esta função embaralhará os itens da lista para as mesmas posições toda vez que o jogo for executado novamente devido ao fato de que o GameMaker Studio 2 gera a mesma semente inicial aleatória toda vez para tornar o código de depuração uma tarefa muito mais fácil. Para evitar que
+    este comportamento usa aleatoriedade() no início de seu jogo. Isto só é verdade quando se testa e depura o jogo,
+    pois o pacote executável final não mostrará este comportamento e será aleatório a cada peça.
+   
+  Sintaxe:
+  ds_list_shuffle(id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        O id da lista para embaralhar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se reiniciar {
+     ds_list_shuffle(card_list);
+     }
+  
+  O código acima embaralhará a lista indexada na variável "card_list" se a variável "restart" estiver marcada como verdadeira.
+   
+   
+   
+  
+    
+      
+        Voltar: Listas DS
+        Próximo: ds_list_sort
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

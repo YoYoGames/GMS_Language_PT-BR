@@ -1,0 +1,107 @@
+
+  
+  draw_sprite_general
+  Esta função combina a função draw_sprite_ext() com a função draw_sprite_part()de modo que cada canto do
+    A parte final do duende pode ser misturada com uma cor individual.
+  NOTA: A mistura de cores só é recomendada para o alvo HTML5 quando a WebGL está habilitada, embora você ainda possa definir a cor da mistura se ela não estiver habilitada e ela irá misturar o sprite como normal. Entretanto, toda mistura desta forma cria uma duplicata
+    sprite, que é então armazenado no cache e utilizado quando necessário. Isto está longe de ser ideal e se você usar mudanças múltiplas de cor, isso irá diminuir o desempenho de seus jogos a menos que você ative o WebGL. se você não quiser usar o WebGL, então você pode definir
+    o tamanho do cache da fonte para tentar limitá-lo, caso seja necessário, utilizando a função sprite_set_cache_size_size().
+  NOTA: Esta função pode não funcionar como esperado ao usar sprites de animação de esqueleto, e você pode descobrir que a função apenas desenha o primeiro frame da pose padrão. Você deve usar as funções draw_skeleton_* em seu lugar.
+   
+  Sintaxe:
+  draw_sprite_general(sprite, subimg, left, top, width, height, x, y, xscale, yscale, yscale, rot, c1, c2, c3, c4, alpha);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sprite
+        O índice do duende a desenhar.
+      
+      
+        subimg
+        O subimg (frame) do duende a desenhar (image_index ou -1 correlacionado com o frame atual da animação no objeto).
+      
+      
+        esquerda
+        A posição x no duende do canto superior esquerdo da área a desenhar.
+      
+      
+        topo
+        A posição y no fustão do canto superior esquerdo da área a desenhar.
+      
+      
+        largura
+        A largura da área a ser desenhada.
+      
+      
+        altura
+        A altura da área a desenhar.
+      
+      
+        x
+        A coordenada x de onde desenhar o duende.
+      
+      
+        y
+        A coordenada y de onde desenhar o duende.
+      
+      
+        xscale
+        A escalada horizontal do duende, como um multiplicador: 1 = escalada normal, 0,5 é metade, etc...
+      
+      
+        yscale
+        A escalada vertical do duende, como um multiplicador: 1 = escalada normal, 0,5 é metade etc...
+      
+      
+        podridão
+        A rotação do duende. 0=normal, 90=voltada 90 graus no sentido anti-horário, etc.
+      
+      
+        c1
+        A cor com a qual se mistura a área superior esquerda do duende.
+      
+      
+        c2
+        A cor com a qual se mistura a área superior direita do duende.
+      
+      
+        c3
+        A cor com a qual se mistura a área inferior direita do duende.
+      
+      
+        c4
+        A cor com a qual se mistura a área inferior esquerda do duende.
+      
+      
+        alfa
+        O alfa do duende (de 0 a 1 onde 0 é transparente e 1 opaco).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_sprite_general(sprite_index, image_index, 8, 8, sprite_width-16, sprite_height-16, x, y, 2, 0,5, 180, c_white, c_white, c_black, c_black, 1);
+  Isto atrairá as instâncias atribuídas ao duende (sprite_index) e seu quadro atual de animação (image_index), porém raspará uma margem de 8px em todos os quatro lados do duende. Ele será esticado para dobrar sua largura habitual, mas metade de sua altura habitual.
+    Será opaco, e de cabeça para baixo. A área superior do duende será branca e, portanto, normal, mas a área inferior será preta, o que significa que o duende passará de normal para uma silhueta para baixo em um gradiente suave.
+   
+   
+   
+  
+    
+      
+        Voltar: Sprites e Azulejos
+        Próximo: draw_sprite_part
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

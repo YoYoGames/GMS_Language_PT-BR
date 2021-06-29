@@ -1,0 +1,49 @@
+
+  
+  steam_ugc_unsubscribe_item
+  Esta função pode ser usada para cancelar a inscrição de um item da UGC. Você fornece o ID do arquivo publicado e então a função retorna um valor único de ID async que pode ser usado para verificar se o item foi descadastrado corretamente no eventoSteam Async.
+    Este evento terá a função async_load Mapa DS que será preenchido com os seguintes pares chave/valor:
+  
+    " id" - A identificação assimétrica retornada pela função que acionou o evento
+    "resultado" - O resultado da operação (um valor real). Este será ou a constante GML ugc_result_success ou algum outro número real. Portanto, você deve verificar esta constante para garantir que a chamada foi bem sucedida, e se
+      caso contrário, alguma coisa não funcionou corretamente. Os demais valores possíveis retornados são mostrados como resultado do valor EResult " Steam " e você deve ver o steamclientpublic .h nos cabeçalhos do SDK para todos os 89 valores possíveis.
+    " event_type" - A string " ugc_unsubscribe_item".
+    "published_file_id" - A identificação única para o item publicado.
+  
+   
+  Sintaxe:
+  steam_ugc_unsubscribe_item(published_file_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        published_file_id
+        A identificação única do arquivo para a UGC para cancelar a inscrição.
+      
+    
+  
+   
+  Devoluções:
+  Identificação Async
+   
+  Exemplo:
+  steam_sub= steam_ugc_subscribe_item(global.pubFileID);
+  O código acima assinará (e baixará) o item com o ID do arquivo armazenado na variável global "pubFileID".
+   
+   
+   
+  
+    
+      
+        Voltar: UGC
+        Próximo: steam_ugc_num_subscribed_items
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

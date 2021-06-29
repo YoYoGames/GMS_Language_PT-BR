@@ -1,0 +1,51 @@
+
+
+
+
+
+  
+  escolha
+  s vezes você quer especificar algo diferente dos números para uma seleção aleatória, ou os números que você quer não estão em nenhuma ordem real ou dentro de qualquer faixa definida. Nesses casos, você usaria escolher() para gerar um resultado aleatório. Por exemplo, digamos
+    você deseja criar um objeto com um duende aleatório no início, então você poderia usar esta função para definir o índice de duende para um de um conjunto de determinados sprites. Note que você pode ter tantos quantos desejar (note que mais argumentos significarão que a função
+    será mais lento a analisar).
+  NOTA: Esta função retornará o mesmo valor toda vez que o jogo for executado novamente devido ao fato de que o GameMaker Studio 2 gera a mesma semente inicial aleatória toda vez para fazer do código de depuração uma tarefa muito mais fácil. Para evitar este comportamento, use
+    aleatoriedade() no início de seu jogo.
+   
+  Sintaxe:
+  choose(val0, val1, val2... max_val);
+   
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        val0... max_val
+        Um valor de entrada que pode ser string, inteiro, variável ou constante.
+      
+    
+  
+   
+  Devoluções:
+  Um dos argumentos apresentados
+   
+  Exemplo:
+  sprite_index = choose(spr_Cactus, spr_Flower, spr_Tree, spr_Shrub); hp = choose(5, 8, 15, 32, 40); name = choose("John", "Steven", "Graham", "Jack", "Emily", "Tina", "Jill",
+    "Helen");
+  O código acima usa para definir uma série de propriedades para o exemplo.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções Numéricas
+        Próximo: aleatório
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

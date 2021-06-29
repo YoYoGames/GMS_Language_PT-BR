@@ -1,0 +1,43 @@
+
+  
+  gpu_set_blendenable
+  Esta função pode ser usada para ativar e desativar a mistura alfa. Basicamente, se você tiver este conjunto falso, todas as imagens sendo desenhadas serão desenhadas 100% opacas, o que significa que qualquer área transparente, ou semi transparente, de um duende ou fundo será
+    ser visível como uma cor sólida. É uma boa idéia ter uma mistura alfa sempre que possível (especialmente quando se desenvolve para dispositivos móveis), pois isto aumenta muito a velocidade de tração.
+  
+  Sintaxe:
+  gpu_set_blendenable(enable);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        habilitar
+        Ativar ou desativar o valor da mistura alfa(verdadeiro ou falso).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  gpu_set_blendenable(false); draw_sprite(spr_Background, 0, 0, 0, 0); gpu_set_blendenable(true);
+  
+  O código acima desliga a mistura alfa para desenhar um duende de fundo e depois o liga novamente para continuar desenhando.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle de GPU
+        Próximo: gpu_set_ztestenable
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

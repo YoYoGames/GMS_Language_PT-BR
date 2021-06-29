@@ -1,0 +1,46 @@
+
+  
+  ds_map_clear
+  Esta função limpará o mapa DS (previamente criado) de todos os pares chave/valor, mas não apagará o próprio mapa DS da memória. Para isso, você deve usar a função ds_map_destroy(). Note que a compensação
+    um mapa desreferenciará quaisquer estruturas de dados armazenadas no mapa dando um vazamento de memória, então você precisaria passar por ele e destruir todos os itens da estrutura de dados manualmente antes de limpar o mapa para evitar isso. A única vez que isto não é necessário é quando
+    você assinalou qualquer item no mapa como uma lista DS ou como outro mapa DS, caso em que esses itens serão destruídos (não limpos!) e sua memória será limpa automaticamente quando o
+    o mapa pai é limpo.
+   
+  Sintaxe:
+  ds_map_clear(id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação da estrutura de dados a limpar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se global.new_game {
+     ds_map_clear(inventário);
+     }
+  A função acima verificará uma variável global para ver se ela é verdadeira e, se for, então o mapa DS indexado na variável de instância "inventário" será limpo de todos os pares chave/valor (mas não será destruído ).
+   
+   
+   
+  
+    
+      
+        Voltar: DS Maps
+        Próximo: ds_map_copy
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

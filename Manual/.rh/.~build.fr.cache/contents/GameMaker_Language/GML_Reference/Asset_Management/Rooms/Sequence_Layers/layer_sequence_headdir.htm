@@ -1,0 +1,66 @@
+
+  
+  layer_sequence_headdir
+  Com esta função você pode definir a direção para o playhead da seqüência dada. Você fornece a identificação do elemento de seqüência conforme retornado por layer_sequence_create()    ou por uma das funções do elemento camada, e então dar a direção do jogo, que deve ser uma das constantes seguintes:
+   
+  
+    
+      
+        Constante
+        Descrição
+        Valor
+      
+      
+        seq_dir_right
+        A seqüência jogará quadros em uma ordem incremental da esquerda para a direita
+        1
+      
+      
+        seq_dir_esquerda
+        A seqüência jogará quadros em ordem decrescente da direita para a esquerda
+        -1
+      
+    
+  
+   
+   
+  Sintaxe:
+  layer_sequence_headdir(sequence_element_id, direction)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sequence_element_id
+        O valor de identificação único do elemento de seqüência para o alvo
+      
+      
+        direção
+        A direção do playhead, uma constante, listada acima
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var _seq = layer_sequence_create("Background", 0, 0, seq_AnimatedBackground); layer_sequence_headdir(_seq, seq_dir_left);
+  O código acima cria uma nova seqüência e armazena sua identificação em uma variável local. Esta identificação é então usada para definir a direção do playhead para diminuir os quadros (reprodução da direita para a esquerda).
+   
+   
+   
+  
+    
+      
+        Voltar: Sequência de camadas
+        Próximo: layer_sequence_pause
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

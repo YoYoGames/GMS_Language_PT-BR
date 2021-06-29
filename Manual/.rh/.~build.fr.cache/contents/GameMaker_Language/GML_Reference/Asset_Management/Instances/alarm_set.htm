@@ -1,0 +1,48 @@
+
+  
+  alarme_set
+  Esta função pode ser usada para definir um alarme. Você fornece o número do alarme de 0 a 11, e depois o valor para ajustar o alarme. O valor deve ser um valor inteiro, e você pode defini-lo como -1 para parar o alarme (valores não inteiros serão arredondados para o valor mais próximo
+    inteiro). Este é um método alternativo para definir diretamente a matriz de alarmes.
+   
+  Sintaxe:
+  alarm_set(índice, valor);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice de alarme a ser definido, de 0 a 11.
+      
+      
+        valor
+        O valor (um número inteiro) para o qual o alarme deve ser ajustado.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  para (var i = 0; i < 12; i++) {
+     if alarm_get(i) > 0 alarm_set(i, -1); }
+  
+  O código acima verifica todos os alarmes na instância de chamada e, se forem maiores que 0, os coloca em -1, impedindo-os de continuar a contagem regressiva.
+   
+   
+   
+  
+    
+      
+        Voltar: Instâncias
+        Próximo: instance_find
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,30 @@
+
+  
+  sprite_nineslice_create
+  Nove fatias é uma técnica utilizada para escalar imagens retangulares para preservar detalhes, fazendo com que elas mantenham sua forma original após a escalada. Consulte esta página para obter informações sobre o Nine Slice.
+  Esta função é utilizada para criar uma estrutura de nove fatias que pode ser modificada e depois aplicada a um duende. O conteúdo desta estrutura está detalhado nesta página.
+  Você pode armazenar esta estrutura em uma variável, modificar suas propriedades e aplicá-la a qualquer sprites usando sprite_set_nineslice().
+  Sintaxe:
+  sprite_nineslice_create();
+   
+  Devoluções:
+  Estrutura
+   
+  Exemplo:
+  var _nineslice = sprite_nineslice_create();
+     _nineslice.enabled = true; _nineslice.left = 10; _nineslice.right = 10; _nineslice.top = 10; _nineslice.bottom = 10;
+     sprite_set_nineslice(spr_box_0, _nineslice_0, _nineslice);
+  O código acima cria uma nova estrutura de nove fatias, habilita-a e define os offsets para as guias. A estrutura é então aplicada a um duende, alterando suas propriedades de Nove Fatias.
+   
+  
+    
+      
+        Voltar: Manipulação de Sprite
+        Próximo: sprite_set_nineslice
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

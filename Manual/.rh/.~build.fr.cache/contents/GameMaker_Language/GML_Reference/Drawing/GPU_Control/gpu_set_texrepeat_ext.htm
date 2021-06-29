@@ -1,0 +1,53 @@
+
+  
+  gpu_set_texrepeat_ext
+  Esta função pode ser usada para definir se um único "slot" de amostragem repete a textura dada quando se usa Shaders no GameMaker Studio 2. A sua realização repetirá o
+    textura se as coordenadas uv estiverem fora com o intervalo 0-1, enquanto um ajuste de falso significará que não haverá repetição. O caso de uso provável para estas funções é para repetir uma textura em 3D, mas para que ela funcione e não puxar imagens do resto.
+    da página de textura, o duende usado precisará ser marcado como estando em uma "Página de Textura Separada" no Editor Sprite.
+  OBSERVAÇÃO: Esta configuração será sobrevalorizada pelo valor definido ao chamar a função gpu_set_texrepeat().
+   
+  Sintaxe:
+  gpu_set_texrepeat_ext(sampler_id, enable);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sampler_id
+        A identificação do amostrador a partir do shader.
+      
+      
+        habilitar
+        Ativar ou desativar a filtragem da textura(verdadeiro / falso)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var s_tex = shader_get_sampler_index(shader_glass, "s_NoiseSampler"); if gpu_get_texfilter_ext(s_tex) {
+     gpu_set_texfilter_ext(s_tex, false); }
+     mais
+     {
+     gpu_set_texfilter_ext(s_tex, true); }
+  
+  O código acima verifica se a filtragem de textura está ligada ou desligada para uma identificação específica do amostrador (armazenada em uma variável local) e a troca de acordo.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle de GPU
+        Próximo: gpu_push_state
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

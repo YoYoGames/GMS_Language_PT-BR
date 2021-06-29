@@ -1,0 +1,47 @@
+
+  
+  view_set_yport
+  Esta função pode ser usada para definir a posição y da porta de visualização dada. Você dá o índice da porta de visão (de 0 a 7) e a nova posição para colocá-la.
+   
+  Sintaxe:
+  view_set_yport(view_port, y)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        view_port
+        O porto de visão para o alvo (0 - 7)
+      
+      
+        y
+        A nova posição y
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if view_get_yport(0) != (display_get_height() / 2) - (view_hport[0] / 2) {
+     view_set_yport(0, (display_get_height() / 2) - (view_hport[0] / 2)); }
+  
+  O código acima verificará a posição y da porta de visualização[0] e, se não estiver onde é necessário estar, será ajustado para essa posição.
+   
+   
+   
+  
+    
+      
+        Voltar: Câmeras e Ver Portos
+        Próximo: view_set_wport
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

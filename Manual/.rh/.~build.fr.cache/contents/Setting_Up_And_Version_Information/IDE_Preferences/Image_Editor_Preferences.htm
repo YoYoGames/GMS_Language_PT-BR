@@ -1,0 +1,131 @@
+
+  
+  Preferências do editor de imagens
+  
+  As Preferências do Editor de Imagem são usadas para definir como a janela do Editor de Imagem se parece e se sente. As opções gerais são as seguintes:
+  
+    Expandir a sobreposição de controles sprite por padrão: Quando isto for verificado, os controles sprite e as informações da moldura serão mostradas no Editor de Imagens toda vez que você abrir um sprite para edição (isto pode ser fechado novamente usando o botão de colapso
+       , mas voltará a abrir ao editar o sprite mais tarde). Quando isto não for verificado, os controles do duende e as informações da moldura serão ocultadas na abertura
+      um duende. O padrão é ter isto desmarcado.
+    Modo Loop padrão: O botão de loop no Editor de Imagem pode ser configurado para funcionar em dois modos diferentes: ou tocar uma vez, onde a animação irá parar quando chegar ao último frame, loop desde o início, onde a animação irá
+      de volta ao primeiro quadro quando terminar, ou ping pong, onde a animação subirá através das imagens até o final e depois voltará a descer através delas até o início. O valor padrão aqui é "loop".
+    Desenho do esquema de seleção fino: Se isto for verificado, então o contorno para seleção terá uma largura absoluta de 1px, independentemente da escala da imagem, enquanto que se não for verificado, o contorno para seleção terá uma largura relativa de 1px.
+      e escalar com a imagem. O padrão é ter esta opção marcada.
+    Perfil de seleção cor primária: O perfil da seção é uma linha tracejada que alterna entre duas cores. Esta opção permite definir a primeira dessas cores a ser usada (incluindo alfa), e tem um valor padrão de ARGB #FFFFFD0.
+    Perfil de seleção de cor secundária: O perfil da seção é uma linha tracejada que alterna entre duas cores. Esta opção permite definir a segunda dessas cores a ser usada (incluindo alfa), e tem um valor padrão de ARGB #0000D0.
+    Cor de fundo do editor: Durante a edição de uma moldura sprite a imagem pode ser escalada para dentro ou para fora ou pode não caber todo o desenho na janela, neste caso será mostrada uma cor de fundo que você pode definir aqui. O valor padrão é ARGB
+      #282828FF.
+  
+  O Editor de Imagens Preferências também tem as seguintes sub-categorias:
+  Antecedentes
+  
+    
+      
+    Aqui você pode definir as opções para o fundo sobre o qual você edita suas imagens sprite. Por padrão, esta é uma grade de quadrados cinza, mas você pode usar as seguintes configurações para alterá-la:
+    
+      
+       Estilo lona: Aqui você define o "estilo" para o fundo, que pode ser "
+       Padrão de bloco" ou "
+       Cor única". A cor única define simplesmente o fundo para a cor de sua escolha (usando a configuração Cor 1, como explicado abaixo) enquanto o padrão de bloco é a configuração padrão (que também pode ser editado usando o resto do diálogo
+        opções mostradas abaixo). O padrão é "
+       Padrão de Bloco".
+      
+       Tamanho do bloco de lona: Quando você tiver selecionado
+       Padrão de bloco para o fundo, você pode definir aqui o tamanho do bloco individual. O padrão é 16px, com um valor mínimo de 2px e um máximo de 256px permitido.
+      
+       Cor primária da tela: Se você tiver
+       Cor única escolhida para o fundo, então a cor utilizada é esta. Você pode clicar na amostra de cores para abrir o editor de cores e mudá-lo. Ao utilizar o
+        Opção de padrão de bloco, esta opção define a primeira cor para blocos alternativos. A cor padrão é (
+       ARGB) #FFC3C3C3C3.
+      
+       Cor secundária da lona (estilo padrão de bloco): Se você tiver
+       Padrão de bloco escolhido para o fundo, então a cor usada para alternar com a cor 1 (acima) é esta aqui. Você pode clicar na amostra de cores para abrir o editor de cores e mudá-lo. A cor padrão é (ARGB) #FF80808080.
+    
+     
+  
+  Confirmar Diálogos
+  
+    
+      
+    Aqui você pode selecionar o comportamento dos diálogos de confirmação quando você executa diferentes ações sobre o duende atual. Elas são:
+    
+      
+       Resposta automática à eliminação de quadros: Quando você apaga um quadro por padrão, uma mensagem mostra para perguntar se você tem certeza de que deseja fazer isso. Ao definir esta opção como "OK", você pode remover esta mensagem e permitir a exclusão de quadros.
+        sem que outras mensagens sejam mostradas. O padrão é "Mostrar mensagem".
+      
+       Resposta automática à substituição de imagens durante a importação de tiras: Ao selecionar Import Strip no menu suspenso Image, você receberá uma mensagem avisando que você estará substituindo quaisquer imagens já existentes no recurso sprite,
+        com a opção de continuar ou não. Você pode definir aqui se quer mostrar esta mensagem, ou fazer com que a IDE simplesmente escolha a opção "Sim" ou "Não". O valor padrão é "Mostrar mensagem".
+      
+       Resposta automática ao compromisso de mudanças na troca de ferramentas: Quando você muda as ferramentas de desenho após editar um quadro, por padrão, uma mensagem mostra para perguntar se você deseja comprometer as mudanças feitas. Ao definir esta opção como "OK", você
+        pode remover esta mensagem e permitir que a edição de quadros seja comprometida sem que outras mensagens sejam mostradas quando você muda de ferramenta. Se você escolher "Não", então a edição de quadros será silenciosamente cancelada quando você mudar as ferramentas. O padrão é "Mostrar
+        mensagem".
+      
+      
+       Resposta automática ao aviso de camada bloqueada: Se você tentar editar uma camada bloqueada, você receberá uma mensagem por padrão informando que não pode fazer isso. Se você definir esta opção como "OK", nenhuma mensagem será mostrada.
+        e a edição irá silenciosamente falhar.
+      
+       Resposta automática a um aviso de grupo selecionado: Se você selecionar várias camadas no editor de camadas e depois tentar desenhar ou editar, então lhe será mostrada uma mensagem por padrão para informá-lo que não é possível. Você pode selecionar "OK".
+        aqui para remover esta mensagem e silenciosamente não editar as imagens juntas até que somente uma única camada seja selecionada. O padrão é "Mostrar mensagem".
+    
+    
+      
+  
+  Configurações da grade
+  
+    
+       Grade
+      As preferências de configuração são usadas para definir como a grade de imagem será apresentada, com as seguintes opções disponíveis:
+    
+      
+       Espaçamento horizontal da grade (px): Este valor define o espaçamento para as linhas horizontais da grade da imagem. O valor padrão é 1px.
+      
+       Espaçamento vertical da grade (px): Este valor define o espaçamento para as linhas verticais da grade da imagem. O valor padrão é 1px.
+      
+       Grade de exibição: Se isto for verificado, então o Editor de Imagem abrirá com a grade de imagem ligada. O padrão está desligado.
+      
+       Snap To Grid: Se isto for verificado, então o editor de imagem irá automaticamente capturar certas ferramentas para a grade de imagem. O padrão está desligado.
+      
+       Cor da linha da grade: Aqui você pode definir a cor (incluindo o valor alfa) para a grade da imagem. O padrão é (
+       ARGB) #FF000000.
+    
+     
+  
+  Ferramentas
+  
+    
+       Aqui você pode definir as opções ddiferentes
+      pela forma como algumas das ferramentas de desenho funcionam e são mostradas.
+     
+    Se você estiver usando o
+     Ferramenta Arco
+       então aqui
+      você pode definir as diferentes cores usadas para desenhar as propriedades do nó:
+    
+      
+       Cor do ponto de ancoragem: Defina a cor para os diferentes pontos de ancoragem no spline/arco. O padrão é (
+       ARGB) #FFFFFF0000.
+      
+       Cor do ponto de controle: Defina a cor para cada um dos "cabos" do ponto de controle em um ponto de ancoragem. O padrão é (ARGB) #FFFF0000.
+      
+       Cor da linha tangente: Defina a cor para as linhas que ligam os pontos de controle às âncoras. O padrão é (ARGB) #FF00FFFFFF.
+      
+       Cor do ponto selecionado: Defina a cor a ser usada para qualquer ponto de ancoragem selecionado no spline/arco. O padrão é (ARGB) #FF00FF00.
+      
+       Tamanho do ponto: Definir o tamanho dos diferentes pontos de ancoragem e pontos de controle a serem utilizados. O padrão é 10px.
+    
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Preferências IDE
+        A seguir: Preferências do editor Sprite
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

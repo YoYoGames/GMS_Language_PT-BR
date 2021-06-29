@@ -1,0 +1,33 @@
+
+  
+  gc_get_target_frame_time
+  Com esta função você pode recuperar o valor do quadro alvo atual para o coletor de lixo. O valor retornado está em microssegundos. (onde 1.000.000 microssegundos é igual a um segundo) e o tempo limite padrão é de 100 microssegundos. Se você deseja alterar este valor, deve usar a função gc_target_frame_time().
+    
+  
+   
+  Sintaxe:
+  gc_get_target_frame_time_time(tempo);
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  if (gc_get_target_frame_time() != 50) {
+     gc_target_frame_time(50); }
+  
+  O código acima verifica o tempo limite atual para o coletor de lixo e, se não for de 50 microssegundos, é ajustado para este valor.
+   
+   
+   
+  
+    
+      
+        Voltar: Coleta de Lixo
+        Próximo: gc_get_stats
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

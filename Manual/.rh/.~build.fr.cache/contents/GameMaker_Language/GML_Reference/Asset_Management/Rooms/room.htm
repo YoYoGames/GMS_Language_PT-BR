@@ -1,0 +1,31 @@
+
+  
+  sala
+  Esta variável contém o índice da sala atual que seu jogo está funcionando. Esta não é uma variável somente de leitura, porém mudando isto não mudará o valor do índice para a sala atual, mas sim mudará a sala para corresponder ao índice que
+    você definiu a variável para. Deve-se tomar cuidado ao fazer isto, como se o índice para o qual você muda a variável não fosse válido, o jogo irá lançar um erro e fechar. Em geral, é uma prática muito melhor para usar room_goto()    para trocar de sala.
+  Nota: As identificações de salas não são baseadas em seu pedido no Navegador de Ativos ou no Gerente de Sala, e por isso você deve evitar fornecer um valor numérico diretamente. Ao invés disso, use a constante de sala para
+    o bem que você deseja referir (que é simplesmente seu nome) ou recuperá-lo através de uma função.
+  Sintaxe:
+  espaço;
+   
+  Devoluções:
+  Real (valor de índice único)
+   
+  Exemplo:
+  if (room == rm_level1) { audio_play_sound(snd_level1, 1, 1); }
+  O código acima verificará se a sala atual é o primeiro nível e, nesse caso, toca a música desse nível.
+   
+   
+   
+  
+    
+      
+        Voltar: Quartos
+        Próximo: room_speed
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

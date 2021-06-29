@@ -1,0 +1,63 @@
+
+  
+  json_decode
+  IMPORTANTE! Esta função - embora ainda válida - foi superada pela função json_parse(), e recomendamos que você use esta função apenas para suporte de legado.
+  JSON (JavaScript Object Notation) é um formato leve de troca de dados que é fácil de ler e escrever, tanto para pessoas quanto para máquinas. Ele é construído sobre duas estruturas básicas:
+  
+    Uma coleção de pares de nomes/valores, chamados de Mapa DS no GameMaker Studio 2, mas também conhecido como um "dicionário" ou "objeto".
+    Uma lista ordenada de valores, chamada de Lista DS no GameMaker Studio 2, mas isto também pode ser chamado de "array" ou "seqüência".
+  
+  Com esta função, você pode decodificar uma peça do JSON e convertê-la em um DS Map, pronto para uso no GameMaker Studio 2. Se o JSON a ser decodificado requer uma hierarquia de listas e mapas dentro do mapa DS central, estes também são decodificados e também
+    criado para você, usando as seguintes regras (note que estas regras se aplicam somente à estrutura de nível superior):
+  
+    JSON é um valor único - retorna um mapa DS com uma única entrada "padrão" que é o valor
+    JSON é um conjunto de objetos ou valores - retorna um mapa DS com uma única entrada "padrão" que é uma lista DS dos objetos ou valores
+    JSON é um objeto - devolve um mapa DS que tem as entradas de objetos nele
+  
+  NOTA: Ao decodificar arrays JSON, há um mapa com a chave "padrão" APENAS quando uma matriz é a estrutura de nível superior, e APENAS para essa matriz de nível superior. As listas internas decodificam diretamente para o mapa DS sem serem incluídas em um mapa DS.
+  NOTA: Se você escreveu arrays GameMaker no nível superior, ou como o conteúdo de um mapa DS ou lista DS, estes serão decodificados como listas DS, e não como arrays.
+  Normalmente você saberia a que chaves o JSON decodifica, mas se não, então você pode usar o ds_map_size(), ds_map_find_first()    e ds_map_find_next() funções para analisar o mapa e obter as informações necessárias.
+  NOTA: O GameMaker Studio 2 cria os mapas e listas DS necessários do JSON, e para a limpeza você só precisa apagar o mapa ou lista de nível superior e o GameMaker Studio 2 apagará automaticamente da memória todos os mapas e listas abaixo.
+  IMPORTANTE: Você não pode ter números de 64 bits em seu JSON, pois eles não funcionarão corretamente devido ao fato de não serem tratados pelo formato JSON.
+   
+  Sintaxe:
+  json_decode(string)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        corda
+        A cadeia de formato JSON que você está passando para a função de decodificação
+      
+    
+  
+   
+  Devoluções:
+  DS map id ou -1 se falhar
+   
+  Exemplo:
+  var resultMap = json_decode(requestResult); var list = ds_map_find_value(resultMap, "default"); var size = ds_list_size(list); for (var n = 0; n < ds_list_size(list); n+++;)  {
+     var map = ds_list_find_value(list, n); var curr = ds_map_find_first(map); while (is_string(curr)) {
+     global.nome[n] = ds_map_find_value(mapa, "nome"); curr = ds_map_find_next(mapa, curr); }
+     }
+     ds_map_destroy(resultMap);
+  
+  O código acima decodificará uma seqüência JSON e a analisará para gerar uma matriz global.
+   
+   
+   
+  
+    
+      
+        Voltar: Codificação de arquivos
+        Próximo: json_stringify
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

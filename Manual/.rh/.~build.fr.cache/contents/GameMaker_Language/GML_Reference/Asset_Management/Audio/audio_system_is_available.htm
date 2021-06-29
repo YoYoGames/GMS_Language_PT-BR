@@ -1,0 +1,49 @@
+
+  
+  sistema_de_áudio_disponível
+  Esta função pode ser usada para verificar e ver se o sistema de áudio foi inicializado, ou se o contexto de áudio está em execução. Em todas as plataformas, esta função retornará verdadeiro imediatamente após o início do jogo quando o motor de áudio for inicializado, exceto no alvo HTML5.
+    Em HTML5, o status do contexto de áudio pode mudar a qualquer momento dependendo da entrada do usuário, do navegador que está sendo usado e de sua versão, de modo que esta função pode ser usada para verificar e ver se o áudio pode ser reproduzido ou não. Se a função retornar falso (ou seja, se a função retorna falso ), o status do áudio pode ser alterado a qualquer momento:
+    o status do contexto de áudio não está sendo executado), então somente sons não transmitidos podem ser reproduzidos (mas não é garantido, e você deve assumir que nenhum áudio pode ser reproduzido), enquanto que se ele retornar verdadeiro, então
+    todo o áudio será reproduzido.
+   
+  Sintaxe:
+  audio_system_is_available();
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se o audio_system_system_is_available() {
+     if audio_is_paused(global.Music) {
+     audio_resume_sound(global.Music)
+     }
+     else
+     {
+     if !audio_is_playing(global.Music) {
+     global.Music = audio_play_sound(snd_Music, 0, true); }
+     }
+     }
+     mais
+     {
+     if audio_is_playing(global.Music) {
+     audio_pause_sound(global.Music);
+     }
+     }
+  
+  O código acima irá pausar/despausar uma faixa de áudio, dependendo se o sistema de áudio está inicializado e disponível ou não.
+   
+   
+   
+  
+    
+      
+        Voltar: Áudio
+        Próximo: audio_existe
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

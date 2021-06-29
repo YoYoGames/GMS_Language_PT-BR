@@ -1,0 +1,44 @@
+
+  
+  ds_queue_write
+  Esta função retorna uma string que pode então ser armazenada ou transferida para outra estrutura de dados usando o ds_queue_read() função.
+  NOTA: O fio retornado não é um fio legível por humanos, mas sim uma lixeira do conteúdo da estrutura de dados
+   
+  Sintaxe:
+  ds_queue_write(id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação da estrutura de dados a ser escrita.
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  ini_open("save.ini"); var str =ds_queue_write(queue); ini_write_string("Queues", "0", str); ds_queue_clear(queue);
+     ini_close();
+  
+  O código acima abre um arquivo ini e então escreve uma string contendo as informações armazenadas na fila DS indexada na variável "fila". A fila é então limpa e o arquivo ini é fechado.
+   
+   
+   
+  
+    
+      
+        Voltar: Filas de DS
+        Próximo: ds_queue_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,31 @@
+
+  
+  room_goto_next
+  Com esta função você pode fazer seu jogo ir para o próximo, conforme listado no Gerente de Sala no momento em que o jogo foi compilado. Se esta sala não existir, um erro será cometido e o jogo será
+    ser forçado a fechar. Note que a sala não mudará até o final do evento onde a função foi chamada, portanto, qualquer código após esta ter sido chamada ainda será executado se no mesmo evento. A ressalva a isto é que qualquer código que crie instâncias
+    que é chamado depois disto, não criará a instância e assim deve ser chamado antes do vestiário. Esta função também acionará o evento Room End.
+   
+  Sintaxe:
+  room_goto_next();
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se room_exists(room_next(room)) { room_goto_next(); }
+  O código acima verificará se há outra sala após a atual e, se houver, irá para aquela sala.
+   
+   
+   
+  
+    
+      
+        Voltar: Quartos
+        Próximo: room_goto_previous
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

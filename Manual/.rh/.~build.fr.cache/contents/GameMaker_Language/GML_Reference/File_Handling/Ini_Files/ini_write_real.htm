@@ -1,0 +1,53 @@
+
+  
+  ini_write_real
+  Você pode usar esta função para escrever um valor (numérico) em um arquivo de dados ini. Os arquivos Ini são divididos em seções e, em seguida, cada seção é dividida em pares de chaves - valores. Assim, um arquivo ini típico se pareceria com algo assim:
+  
+   
+  Sintaxe:
+  ini_write_real(seção, chave, valor);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        seção
+        A seção do .ini para escrever.
+      
+      
+        chave
+        A chave dentro da seção relevante do .ini para escrever.
+      
+      
+        valor
+        O valor real para escrever para o destino relevante.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  pontuação = 1000; ini_open("savedata.ini");
+     ini_write_real("save1", "Pontuação", pontuação ); pontuação2 = ini_read_real("save1", "Pontuação", 0 ); ini_close();
+  
+  Isto definirá a pontuação para 1000, depois abrirá "savedata.ini" e escreverá este valor para "save1" > "Score". Em seguida, definirá a pontuação2 para o valor real em "save1" > "score" nele, 1000, e fechará o arquivo .ini
+    novamente. Se não tivesse encontrado este valor, a pontuação 2 teria acabado fixada em 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Arquivos de Inicia
+        Próximo: ini_write_string
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

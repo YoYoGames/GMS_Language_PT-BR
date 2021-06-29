@@ -70,7 +70,7 @@
 <glossdef>Uma chamada de retorno é simplesmente uma função que funciona e depois aciona outra função (ou bloco de código) quando termina de fazer o que quer que tenha sido designado para fazer. Por exemplo, a função sprite_add() acionará uma callback no evento assíncrono de imagem carregada quando o sprite tiver sido carregado.</glossdef></glossentry>
 <glossentry id="Default_catmull-rom_interpolation">
 <glossterm>interpolação catmull-rom</glossterm>
-<glossdef>Este é um tipo de interpolação não-linear baseada em splines matemáticos. É usado para estimar um novo valor conectando dois valores conhecidos adjacentes usando curvas "lisas" (splines), e um novo valor pode ser derivado de qualquer ponto ao longo da linha.</glossdef></glossentry>
+<glossdef>Este é um tipo de interpolação não-linear baseada em splines matemáticos. É usado para estimar um novo valor conectando dois valores conhecidos adjacentes usando curvas "suaves" (splines), e um novo valor pode ser derivado de qualquer ponto ao longo da linha.</glossdef></glossentry>
 <glossentry id="Default_Compiling">
 <glossterm>Compilação</glossterm>
 <glossdef>A compilação é quando o GameMaker pega seu código e o coleta de forma a criar um pacote executável que será executado em um dispositivo como um jogo.</glossdef></glossentry>
@@ -88,7 +88,7 @@
 <glossdef>O overhead da CPU mede a quantidade de trabalho que a unidade central de processamento de um computador pode realizar e a porcentagem dessa capacidade que é utilizada pelas tarefas individuais de computação.</glossdef></glossentry>
 <glossentry id="Default_deadzone">
 <glossterm>deadzone</glossterm>
-<glossdef>A zona morta é a distância que você tem que mover um bastão analógico antes do jogo reconhecer que ele está sendo movido. Uma zona morta baixa fará qualquer movimento leve do bastão analógico mover seu jogador ou pontaria ou o que quer que seja. Um valor alto de zona morta significa que o bastão analógico precisa de um movimento muito maior antes que o jogo o detecte e mova o que quer que esteja sendo controlado.</glossdef></glossentry>
+<glossdef>A zona morta é a distância que você tem que mover um bastão analógico antes do jogo reconhecer que ele está sendo movido. Uma zona morta baixa fará qualquer movimento leve do bastão analógico mover seu jogador ou sua mira ou o que quer que seja. Um valor alto de zona morta significa que o bastão analógico precisa de um movimento muito maior antes que o jogo o detecte e mova o que quer que esteja sendo controlado.</glossdef></glossentry>
 <glossentry id="Default_back-buffer">
 <glossterm>buffer de exibição</glossterm>
 <glossdef>O buffer de exibição é a "tela" onde tudo é finalmente desenhado. Alguns eventos visam isso diretamente (como o evento de Pré-Sorteio), enquanto outros primeiro desenham para a superfície da aplicação e depois desenham isso para o buffer de exibição.</glossdef></glossentry>
@@ -97,7 +97,7 @@
 <glossdef>A Dope Sheet é a representação visual da linha de tempo da seqüência, e onde você pode adicionar, remover e editar as diferentes chaves de ativos e chaves de parâmetros que afetam como as diferentes faixas na seqüência se comportarão ao longo do tempo.</glossdef></glossentry>
 <glossentry id="Default_encoding">
 <glossterm>codificando</glossterm>
-<glossdef>A codificação transforma os dados em outro formato usando um esquema que está disponível publicamente para que possam ser facilmente revertidos. Isto não é o mesmo que criptografia, pois não requer uma chave para descodificá-la. A codificação é geralmente usada para mudar os dados em um formato para uso do eaiser por um sistema diferente (como o envio de dados para um servidor), ou para tornar os dados ilegíveis para o olho humano.</glossdef></glossentry>
+<glossdef>A codificação transforma os dados em outro formato utilizando um esquema que está disponível publicamente para que possam ser facilmente revertidos. Isto não é o mesmo que criptografia, pois não requer uma chave para descodificá-la. A codificação é geralmente usada para mudar os dados em um formato para uso do eaiser por um sistema diferente (como enviar dados para um servidor), ou para tornar os dados ilegíveis ao olho humano.</glossdef></glossentry>
 <glossentry id="Default_EULA">
 <glossterm>EULA</glossterm>
 <glossdef>O Contrato de Licença de Usuário Final (EULA) é um documento legal que delineia a licença para um produto que você está obtendo.</glossdef></glossentry>
@@ -118,7 +118,7 @@
 <glossdef>Uma fonte é uma coleção de glifos gráficos usados para representar texto em um idioma. As fontes podem ser de diferentes pesos, tamanhos e estilos e são usadas para exibir qualquer conteúdo escrito em um projeto.</glossdef></glossentry>
 <glossentry id="Default_framework">
 <glossterm>estrutura</glossterm>
-<glossdef>Uma estrutura é um alicerce básico de código que pode ser alterado e/ou construído pelo usuário. Uma estrutura pode incluir diferentes bibliotecas de software, APIs, compiladores e muito mais. Em termos mais simples, uma estrutura fornece um ambiente favorável para um determinado tipo e nível de programação para um projeto. No GameMaker Studio 2 você pode, por exemplo, criar seus próprios projetos de framework (via pacotes de ativos locais) que contêm scripts e objetos para controles gerais, gerenciamento de estatísticas, redes ou qualquer outra coisa que você normalmente usa em seus projetos, e então importá-los para novos projetos logo no início para lhe dar o fundamento básico para conntinuar sem ter que reprogramar estes sistemas a cada vez.</glossdef></glossentry>
+<glossdef>Uma estrutura é uma base de código que pode ser alterada e/ou construída pelo usuário. Uma estrutura pode incluir diferentes bibliotecas de software, APIs, compiladores e muito mais. Em termos mais simples, uma estrutura fornece um ambiente favorável para um determinado tipo e nível de programação para um projeto. No GameMaker Studio 2 você pode, por exemplo, criar seus próprios projetos de framework (via pacotes de ativos locais) que contêm scripts e objetos para controles gerais, gerenciamento de estatísticas, redes ou qualquer outra coisa que você normalmente usa em seus projetos, e então importá-los para novos projetos logo no início para lhe dar o fundamento básico para conntinuar sem ter que reprogramar estes sistemas a cada vez.</glossdef></glossentry>
 <glossentry id="Default_frontend">
 <glossterm>frontend</glossterm>
 <glossdef>O frontend é a parte de um programa que é 'front faceada', ou seja: a parte com a qual o usuário final interage. Por exemplo, no GameMaker Studio 2, a interface onde você faz a programação e adiciona ativos, etc... é o frontend do programa, pois é onde você interage com o programa e insere valores e arquivos e outras coisas. Este é essencialmente o oposto do backend.</glossdef></glossentry>
@@ -139,7 +139,7 @@
 <glossdef>Na programação de computadores, o termo hard-coded é usado para descrever código que é considerado fixo e não é passível de mudança. As características hardcoded são incorporadas em hardware ou software de tal forma que não podem ser modificadas posteriormente. Por exemplo, se você está fazendo um jogo e 'hard-code' a saúde do jogador a 10, então você estaria usando o valor 10 em todo o código do jogo ao invés de usar uma variável.</glossdef></glossentry>
 <glossentry id="Default_hashing">
 <glossterm>hashing</glossterm>
-<glossdef>Hashing é o método de criar uma cadeia ou valor relacionado a uma única fonte - geralmente um arquivo - e SOMENTE essa fonte. Por exemplo, no GameMaker você pode gerar um hash para um arquivo salvo, depois, antes de acessá-lo mais tarde, gerar outro hash para ele e verificar o hash original e o novo hash para determinar se o arquivo foi adulterado.</glossdef></glossentry>
+<glossdef>Hashing é o método de criação de uma cadeia ou valor relacionado a uma única fonte - geralmente um arquivo - e SOMENTE essa fonte. Por exemplo, no GameMaker você pode gerar um hash para um arquivo salvo, depois, antes de acessá-lo mais tarde, gerar outro hash para ele e verificar o hash original e o novo hash para determinar se o arquivo foi adulterado.</glossdef></glossentry>
 <glossentry id="Default_HVS">
 <glossterm>HSV</glossterm>
 <glossdef>Isto significa Tonalidade, Saturação e Valor e é uma forma de expressar uma cor geralmente usando valores de 0 a 255. A tonalidade é o valor da tonalidade da cor, a saturação é a quantidade da cor a ser usada e o valor é o brilho da cor.</glossdef></glossentry>
@@ -217,7 +217,7 @@
 <glossdef>Um shader é uma coleção de pequenos programas que rodam diretamente sobre a GPU para criar gráficos e efeitos gráficos. Estes são muito rápidos para rodar e liberam a CPU para fazer outras coisas.</glossdef></glossentry>
 <glossentry id="Default_smooth_interpolation">
 <glossterm>interpolação suave</glossterm>
-<glossdef>A interpolação suave envolve a estimativa de um novo valor, conectando dois valores conhecidos adjacentes com uma curva estriada gerada matematicamente. Você pode então obter o valor interpolado, verificando qualquer ponto ao longo da linha.</glossdef></glossentry>
+<glossdef>A interpolação suave envolve a estimativa de um novo valor através da conexão de dois valores conhecidos adjacentes com uma curva estriada gerada matematicamente. Você pode então obter o valor interpolado, verificando qualquer ponto ao longo da linha.</glossdef></glossentry>
 <glossentry id="Default_source_code">
 <glossterm>código fonte</glossterm>
 <glossdef>O código fonte é o componente fundamental de um programa de computador que é necessário para que o programa seja executado.</glossdef></glossentry>
@@ -259,7 +259,7 @@
 <glossdef>A área do editor de seqüências que mostra todas as diferentes faixas em uma seqüência - faixas de ativos, faixas de parâmetros, grupos de faixas e grupos de máscaras de clipes.</glossdef></glossentry>
 <glossentry id="Default_truth_table">
 <glossterm>tabela da verdade</glossterm>
-<glossdef>Uma tabela verdade é uma tabela matemática utilizada na lógica - especificamente em conexão com a álgebra booleana e funções booleanas - que estabelece os valores funcionais das expressões lógicas em cada um de seus argumentos funcionais, ou seja, para cada combinação de valores tomados por suas variáveis lógicas.</glossdef></glossentry>
+<glossdef>Uma tabela verdade é uma tabela matemática usada na lógica - especificamente em conexão com a álgebra booleana e funções booleanas - que estabelece os valores funcionais de expressões lógicas em cada um de seus argumentos funcionais, ou seja, para cada combinação de valores tomados por suas variáveis lógicas.</glossdef></glossentry>
 <glossentry id="Default_typo">
 <glossterm>erro datilográfico</glossterm>
 <glossdef>Erro tipográfico.</glossdef></glossentry>
@@ -277,7 +277,7 @@
 <glossdef>Um vetor é uma construção matemática que tem um tamanho, chamado de magnitude, e uma direção. No GameMaker, um vetor é normalmente usado para mostrar a distância e a direção em que algo se moveu. Um vetor também pode ser usado para definir imagens e certos formatos de imagem como SWF usam matemática vetorial para definir as imagens que elas contêm.</glossdef></glossentry>
 <glossentry id="Default_Version_Number">
 <glossterm>Número da versão</glossterm>
-<glossdef>Um número de versão é um conjunto único de números atribuídos a um lançamento específico de um programa de software, jogo ou ativo, normalmente com o formato MAJOR.MINOR.MAINTENANCE, por exemplo: v2.3.56. Normalmente, à medida que atualizações e edições inteiramente novas de um jogo ou ativo são lançadas, o número de versão aumentará.</glossdef></glossentry>
+<glossdef>Um número de versão é um conjunto único de números atribuído a um lançamento específico de um programa de software, jogo ou ativo, normalmente com o formato MAJOR.MINOR.MAINTENANCE, por exemplo: v2.3.56. Normalmente, à medida que atualizações e edições inteiramente novas de um jogo ou ativo são lançadas, o número de versão aumentará.</glossdef></glossentry>
 <glossentry id="Default_vertex">
 <glossterm>vértice</glossterm>
 <glossdef>Um vértice é o nome dado a um único ponto de um polígono que contém várias características que definem a sua posição, sua cor e sua textura. Em computação gráfica, isto geralmente significa um canto de um triângulo que é usado para criar um primitivo, e uma combinação de tais primitivos é o que faz os gráficos na tela.</glossdef></glossentry>

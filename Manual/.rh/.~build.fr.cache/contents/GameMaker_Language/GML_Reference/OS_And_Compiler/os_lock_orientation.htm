@@ -1,0 +1,45 @@
+
+  
+  os_lock_orientation
+  Com esta função você pode "travar" seu dispositivo à orientação atual até o momento em que você o "liberte" para permitir que todas as Opções de Jogo habilitem novamente as orientações para aquela plataforma alvo.
+    Observe que é provável que você queira confirmar que a orientação é a desejada antes de travar.
+   
+  Sintaxe:
+  os_lock_orientation(flag)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        bandeira
+        Ajustar para verdadeiro ou falso para ativar ou desativar o bloqueio de orientação.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if (os_type == os_android) ||| (os_type == os_ios) {
+     os_lock_orientation(true);
+     }
+  
+  O código acima verifica o tipo de SO e se for um Android ou um iOS, então o bloqueio de orientação é sinalizado como verdadeiro.
+   
+   
+   
+  
+    
+      
+        Voltar: OS E Compilador
+        Próximo: os_check_permission
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

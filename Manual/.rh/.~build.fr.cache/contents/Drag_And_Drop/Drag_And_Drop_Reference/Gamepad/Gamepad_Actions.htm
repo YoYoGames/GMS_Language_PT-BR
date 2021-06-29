@@ -1,0 +1,187 @@
+
+  
+  Biblioteca de ação Gamepad
+  GameMaker Studio 2 tem uma série de ações dedicadas que podem ser usadas para detectar tanto o analógico quanto o digital
+    controles de múltiplos blocos de jogo conectados. Estas ações exigem que você especifique um valor de índice gamepad, que é um número (contando de 0) que representa o gamepad que está sendo selecionado. Observe que quando um controle de jogo é conectado ao seu dispositivo (ou
+    é removido) e então um Evento de Sistema Assíncrono é acionado (entretanto, para lidar com isso você pode precisar usar código).
+  Os "slots" do gamepad são indexados de 0 com slots 0 - 3 inclusive sendo apenas para os gamepads Xinput  , ou seja: controladores Xbox360 e compatíveis. Entretanto, você também pode verificar os slots 4 - 11 inclusive para os gamepads DirectInput, o que significa que você pode detectar muitos outros modelos de controladores quando conectado através destes slots.
+  Constantes de entrada
+  Ao trabalhar com as ações do gamepad, a entrada pode vir de eixos, botões ou chapéus, que o GameMaker Studio 2 atribuirá às seguintes constantes embutidas (note que "chapéus" geralmente são detectados apenas em controladores não-padrão):
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        gp_face1
+        Botão de cima 1 (este mapa para o "A" em um controlador Xbox 360 e a cruz em um controlador PS )
+      
+      
+        gp_face2
+        Botão de cima 2 (este mapa para o "B" em um controlador Xbox 360 e o círculo em um controlador PS )
+      
+      
+        gp_face3
+        Botão de cima 3 (este mapa para o "X" em um controlador Xbox 360 e o quadrado em um controlador PS )
+      
+      
+        gp_face4
+        Botão superior 4 (este mapa mostra o "Y" em um controlador Xbox 360 e o triângulo em um controlador PS )
+      
+      
+        gp_shoulderl
+        Botão de ombro esquerdo
+      
+      
+        gp_shoulderlb
+        Gatilho do ombro esquerdo
+      
+      
+        gp_shoulderr
+        Botão de ombro direito
+      
+      
+        gp_shoulderrb
+        Gatilho de ombro direito
+      
+      
+        gp_select
+        O botão select (este é o botão PS em um controlador DS4)
+      
+      
+        gp_start
+        O botão start (este é o botão "opções" em um controlador PS4)
+      
+      
+        gp_stickl
+        O bastão esquerdo pressionado (como um botão)
+      
+      
+        gp_stickr
+        O bastão direito pressionado (como um botão)
+      
+      
+        gp_padu
+        D-pad up
+      
+      
+        gp_padd
+        D-pad down
+      
+      
+        gp_padl
+        D-pad esquerda
+      
+      
+        gp_padr
+        Direito D-pad
+      
+      
+        gp_axislh
+        Vara esquerda eixo horizontal (analógico)
+      
+      
+        gp_axislv
+        Eixo vertical esquerdo da vara (analógico)
+      
+      
+        gp_axisrh
+        Eixo horizontal do bastão direito (analógico)
+      
+      
+        gp_axisrv
+        Eixo vertical do bastão direito (analógico)
+      
+    
+  
+  Para entender melhor exatamente que parte do controlador cada constante representa, você pode se referir à seguinte imagem de um gamepad padrão Xinput:
+  
+  Ações
+  As ações de gamepad disponíveis estão todas listadas abaixo:
+  
+    
+      
+        
+        Obtenha o Eixo Gamepad
+      
+      
+        
+        Obter o gatilho Gamepad
+      
+      
+        
+        Obter Gamepad Count
+      
+      
+        
+        Conecte o Gamepad
+      
+      
+        
+        Conjunto Gamepad Axis Deadzone
+      
+      
+        
+        Botão Gamepad Threshold
+      
+      
+        
+        Se o botão Gamepad fosse pressionado
+      
+      
+        
+        Se o Gamepad Botão Down
+      
+      
+        
+        Se o botão Gamepad for liberado
+      
+    
+  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  A lista a seguir mostra a compatibilidade atual entre as plataformas (note que isto mudará com futuras atualizações):
+  
+    Windows é totalmente suportado com até um máximo de 11 dispositivos conectados permitidos de uma só vez. Note que no Windows, os primeiros 4 slots de gamepad (0 - 3) são tratados usando a dll XInput, o que significa que somente os controladores XBox podem ser 100% compatíveis
+      e que para outros tipos de controladores você deve verificar o resto dos slots do gamepad (4 - 11).
+    macOS é suportado com até um máximo de 4 dispositivos conectados permitidos de uma vez, e estes dispositivos só podem ser do tipo Playstation3ou Xbox 360. Observe que a opção " Buildfor Mac AppStore" no Mac Game
+      As opções precisam estar DESLIGADAS para que o suporte de almofada funcione.
+    Ubuntu também suporta a entrada do GamePad, mas você pode precisar instalar bibliotecas adicionais a partir do repositório Ubuntu. Você pode fazer isso facilmente abrindo um terminal de linha de comando e digitando o seguinte, que instalará o suporte a GUI
+      para o joystick, assim como o próprio joystick:
+  
+  sudo apt-get install jstest-gtk sudo apt-get install joystick.
+  
+    Os jogosHTML5 suportam gamepads na maioria dos principais navegadores, exceto Safari.
+    O apoio do Gamepad também se estende a iOS com o gabinete iCade. O eixo esquerdo mapeia para o controlador do bastão (embora a entrada seja digital, não analógica), os quatro botões "face" mapeiam para os botões frontais do gabinete, e o
+      quatro botões de ombro mapeados para aqueles na parte de trás do gabinete.
+    Android export suporta controladores NYKO e controladores genéricos Bluetooth, mas somente quando eles estão habilitados, o que significa que você terá que marcar a opção iCade/Bluetooth na seção Geral das Opções de Jogo do Android. Eles requerem API nível 12 para que funcionem plenamente e deve ser observado que o GameMaker Studio 2 registrará como conectado qualquer dispositivo Bluetooth com o qual seu dispositivo esteja emparelhado, quer seja ou não
+      conectado ou não. Portanto, isto deve ser levado em consideração ao atribuir e verificar os "slots".
+    No PS4, se você quiser usar o rastreamento por toque, você precisa usar as funções para o dispositivo_mouse_* botões
+      (não há DnD™ações para isso).
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Índice
+        A seguir: Ações de Movimento
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

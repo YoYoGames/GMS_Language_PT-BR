@@ -1,0 +1,174 @@
+
+  
+  O Editor da Sala
+  
+  O editor da sala é onde você cria suas salas de jogos. Cada jogo requer pelo menos uma sala para correr, e na sala você pode colocar instâncias, sprites, azulejos, caminhos e fundos. Cada um desses diferentes recursos pode ser colocado
+    em sua própria camada única que pode então ser encomendada como você desejar no Editor de Camadas. Devido à complexidade do editor da sala, primeiro lhe daremos uma breve visão geral das características mais importantes, e depois
+    você pode encontrar detalhes mais detalhados nos links da seção abaixo.
+  Ao criar um recurso de sala, você pode clicar com o botão direito do mouse  sobre ele no Navegador de Ativos para abrir o menu de contexto, o que lhe permitirá criar salas para crianças (veja
+    a página sobre Herança para mais informações), abrir a sala para edição, adicionar um novo grupo de recursos para melhor organizar as salas, renomear a sala ou apagá-la. Note que para alterar a ordem das salas
+    e/ou herança que você precisa para usar o Room Manager, que você pode abrir usando o menu no canto superior direito do Navegador de Ativos.
+  O próprio editor da sala é um espaço de trabalho e como tal você pode clicar em  na aba e arrastá-lo da janela principal para uma nova janela própria - talvez em outra tela, por exemplo. Você também pode colocá-lo de volta na janela principal arrastando a aba para a parte superior da IDE e soltando o botão do mouse.
+  A interface do usuário para o editor da sala é simples de navegar e dividida em várias seções discretas. As partes do editor que estão acopladas - as propriedades da sala e o editor de camadas, assim como as diferentes camadas
+    Também podem ser removidos do cais simplesmente arrastando-os para o espaço de trabalho, e podem ser adicionados novamente ao cais arrastando-os para os lados ou para o fundo do espaço de trabalho.
+  Abaixo está uma breve visão geral de cada uma das seções do Room Editor:
+  Réguas / Guias
+  
+    As réguas ao longo da borda da tela mostram a posição das coisas que são colocadas dentro dela, e são marcadas de (0, 0) que é o centro da tela e a origem para a sala. Você pode clicar e arrastar sobre as réguas para puxar uma
+      ou guia vertical na sala, e este guia pode então ser usado para posicionar com precisão os diferentes ativos que estão sendo usados, pois mover um ativo perto de um "estalará" o mesmo para o guia. Ao posicionar os ativos dentro da sala, a guia inteligente
+      Também serão mostrados temporariamente guias indicando a distância entre os bens, assim como a distância do limite da sala ou do ponto central.
+    A distância que os bens "estalam
+      a guias, assim como outros bens, pode ser definida nas Preferências do Editor de Sala.
+    
+  
+  Editor de camadas
+  
+    O editor da sala coloca as coisas em camadas dentro da sala. Cada camada está em uma discreta "profundidade", onde as que aparecem na parte inferior da lista na janela da camada serão desenhadas sob aquelas que aparecem perto da parte superior.
+    IMPORTANTE! Há uma profundidade mínima e máxima de camada de -16000 a 16000. Qualquer coisa colocada em uma camada fora dessa faixa não será desenhada, embora todos os eventos ainda funcionem normalmente.
+    As camadas são criadas clicando no botão apropriado para o tipo de camada que você deseja criar, que são:
+    
+      
+        
+          
+          Instâncias
+          Esta camada é para todas as instâncias que seu jogo irá utilizar.
+        
+        
+          
+          Mapas de azulejos
+          Esta camada é para a colocação de azulejos de conjuntos de azulejos comomapas de azulejos.
+        
+        
+          
+          Caminhos
+          Esta camada é para mostrar e acrescentar caminhos em uma sala.
+        
+        
+          
+          Ativos
+          Esta camada é para que os recursos visuais sejam adicionados à sala, como sprites e seqüências.
+        
+        
+          
+          Antecedentes
+          Este tipo de camada define um fundo, que é essencialmente uma única cor ou imagem de duende que é desenhada sobre toda a sala.
+        
+      
+    
+    Você também pode criar uma pasta de camadas usando o botão de pasta  onde você pode agrupar as camadas selecionadas, assim como excluir as camadas selecionadas
+      com o botão apagar . Cada um desses tipos de camada é discutido aqui em mais
+      detalhe.
+    
+    Observe que você pode alternar a herança para o editor de camadas que afetará a ordem e a visibilidade das camadas. A visibilidade em si pode ser definida clicando no ícone do olho  ao lado de cada uma das camadas, ou você pode clicar na que se encontra no topo para ativar/desativar todas as camadas de uma só vez. Você também tem a possibilidade de "travar" uma camada (ou todas elas) de modo que
+      eles não podem ser alterados clicando no ícone do cadeado . Note que as camadas que estão marcadas como invisíveis não serão mostradas quando o jogo for executado.
+     
+  
+  Propriedades da camada
+  
+    A janela de propriedades da camada da sala mudará dependendo da camada atualmente selecionada no editor de camadas.
+     Cada janela terá os diferentes
+      propriedades e listas associadas ao tipo de camada atualmente selecionado, e você será capaz de editar detalhes fundamentais sobre como a camada é exibida e o que está realmente sobre a camada. Consulte aqui para obter mais detalhes.
+    
+  
+  Propriedades dos quartos
+  
+    Esta seção do editor da sala é onde você pode definir todas as propriedades básicas para a sala, como seu tamanho, se ela usa física ou qualquer câmera e viewports que ela requer. Esta seção é ditada aqui com mais detalhes.
+    
+  
+  Caixa de ferramentas em camadas
+  
+    Alguns tipos de camadas terão ferramentas adicionais adicionadas ao topo da IDE na Caixa de Ferramentas de Camadas (por exemplo, camadas de azulejos ou camadas de caminhos). As ferramentas exatas mudarão com base no tipo de camada que está sendo editada atualmente, e assim são explicadas
+      na página que explica cada camada, aqui.
+    
+  
+  Caixa de ferramentas de sala
+  
+    Na parte superior da tela principal do Editor de Sala você tem alguns controles para lidar com a forma como as coisas são exibidas. Eles são:
+    
+       Toggle Canvas Grid: Isto irá ligar/desligar a grade de tela do Editor de Sala. Esta é uma grade que o GameMaker Studio 2 desenha sobre a tela principal
+        para dividi-lo em seções, e por padrão é definido para 32x32px em tamanho. Entretanto, se você clicar no ícone do Menu Grid , você abrirá as opções da grade:Estas opções permitem definir a cor e o alfa da grade, assim como os valores das células da grade ao longo dos eixos X e Y. Você também tem uma opção para ativar ou desativar
+        (ativada por padrão). Você pode usar os atalhos de teclado "G" e  + "G" para alternar a visibilidade da grade
+        e de grelha, respectivamente.
+       Controles de zoom de lona: Estes botões controlam o nível atual de zoom da lona. Você pode aumentar ou diminuir o zoom e
+        clicando no botão , a tela será reinicializada para ser 1:1 com a sala sendo editada. Você também pode clicar no botão Window Fit  para fazer com que toda a tela da sala caiba dentro da área de trabalho atual do editor (isto fará o zoom in/out conforme apropriado para fazer com que ela caiba). Note que você também pode aumentar e diminuir o zoom usando  /  e a Roda do Rato , e pressionando  /  +  ajustará a tela da sala para ser 1:1 com as configurações da sala.
+        Mostrar Visualizações: Clicando nisto, o retângulo de visão será ativado ou desativado. Quando ativado, você verá uma área destacada que significa os diferentes
+        vistas que são habilitadas para a sala.
+        Reproduzir Animações: Ao adicionar sprites, seqüências ou azulejos animados, você pode querer ter uma idéia de como eles ficarão dentro da própria sala
+        sem ter que compilar o projeto inteiro, e assim você pode clicar nisto para iniciar todas as diferentes animações tocando. Clicando novamente, a animação será interrompida.
+        Selecionar tela de qualquer camada: Por padrão, quando você clica em um elemento da tela da sala, você só poderá selecionar aqueles
+        ativos que estão na camada que está sendo editada atualmente, entretanto, se você ativar esta opção, você pode então clicar em qualquer elemento e ele será selecionado, mudando a camada alvo para a camada em que o elemento está. Você pode usar o atalho de teclado".
+        P " para habilitá-lo temporariamente (segure "P" para habilitar e liberar para desabilitar)
+        
+      
+    
+  
+  Lona de sala
+  
+    O centro da janela do editor da sala é ocupado com a área onde toda a edição propriamente dita acontece. Aqui é onde você colocará suas instâncias e ativos, desenhando suas peças, ou posicionando seus caminhos. Você pode aumentar e diminuir o zoom usando o
+      roda do mouse ou os controles da sala na parte superior, e você pode dar a volta segurando o botão central do mouse  para baixo e movendo o mouse ao redor ou usando  +  enquanto se movimenta.
+    Ao criar camadas de ativos ou de instância, você pode colocar o ativo ou instância simplesmente arrastando-o do Navegador de Ativos e depois soltando-o onde você deseja que ele seja posicionado. Alternativamente, você pode selecionar um ativo ou instância a partir do Ativo
+      Navegue e depois pressione e segure  para visualizar o recurso "in-situ", e se você clicar adicionalmente no botão esquerdo do mouse  você pode adicionar a instância e até "pintá-la" na camada da sala, mantendo o botão pressionado e arrastando o mouse. Observe que, por padrão, as instâncias e sprites que são adicionados
+      para uma sala desta forma será encaixado nas configurações definidas da grade da sala, mas você pode segurar  /  para que a instância siga o mouse com precisão e não snap (o lançamento  /  permitirá snapping novamente).
+    Para caminhos, você pode criar uma nova camada de caminho e um novo recurso de caminho de dentro do Room Editor - ou criar um novo recurso de caminho e depois arrastá-lo para a janela principal do editor, como você faria por exemplo - e depois editar o caminho e suas conexões em
+      a janela do editor também. Para conjuntos de azulejos, você pode "pintá-los" a partir do editor de conjuntos de azulejos.
+    Note que você pode selecionar e mover ou excluir vários ativos da mesma camada mantendo  /  +  nos que você quiser, e a maioria dos recursos no editor da sala permitirá que você os rotacione e os escalone (individualmente
+      ou como um grupo) clicando e segurando  ao longo das bordas ou cantos externos e arrastando o mouse. Você também pode clicar duas vezes em  em qualquer ativo individual (telhas, instâncias, sprites) para que o editor faça uma panela e abra a janela de propriedades para o ativo selecionado.
+     
+  
+  Barra de status
+  
+    A barra de status é usada para lhe mostrar informações específicas do contexto. A barra de status sempre mostrará onde está o cursor do mouse na sala, mas também mostrará informações adicionais baseadas na camada que está sendo editada, a ferramenta que está sendo usada e o estado
+      dessa ferramenta.
+    
+  
+   
+  Você pode obter mais informações sobre algumas das seções acima mencionadas nas páginas seguintes:
+  
+    Tipos de camadas e propriedades
+    Propriedades dos quartos
+    Herança do quarto
+  
+  Além das ferramentas de edição, você também verá que um novo menu suspenso foi adicionado ao topo da IDE.
+  Estes menus são explicados abaixo:
+  
+    Vista em camadas: Isto reabrirá a janela do Layer Editor, caso você a tenha fechado a qualquer momento.
+    Propriedades do quarto: Isto reabrirá a janela de propriedades do quarto, caso você a tenha fechado a qualquer momento.
+    Propriedades de camadas: Isto reabrirá a Janela de Propriedades da Camada, caso você a tenha fechado a qualquer momento.
+    Ordem de criação da instância: Isto abrirá a Janela de Ordem de Criação de Instância (que também pode ser aberta usando o botão na janela Propriedades da Sala ): 
+       Esta janela lista todas as instâncias da sala na ordem em que serão criadas (de cima para baixo). Caso você necessite
+      uma instância específica a ser criada antes de qualquer outra, você pode simplesmente clicar em  e arrastá-la para a posição de sua necessidade.
+    Reinicialização de janelas na área de trabalho atual: Isto irá redefinir o layout da janela do editor da sala para seus valores padrão para o espaço de trabalho da área de trabalho atualmente focada.
+  
+   
+  
+    Edição de Ladrilhos: Ao trabalhar com uma camada de azulejo, esta opção será destacada no menu suspenso. Tem o seguinte sub-menu:
+      Ao editar a camada de telha você pode selecionar várias telhas clicando, segurando e arrastando o botão esquerdo do mouse , ou você pode selecionar e agrupar telhas individuais usando  /  + , ou remover telhas individuais da seleção usando  + . A partir deste menu você pode então limpar a seleção ou invertê-la, bem como cortar, copiar ou colar a seleção em outra camada (ou mesmo na mesma camada, mas
+      em outra posição). A opção final reabrirá a janela de encaixe do editor de azulejos, caso você a tenha fechado.
+    Converter Imagem em Mapa de Ladrilho: A opção Converter Mapa de Imagem em Ladrilho é uma ferramenta poderosa que pode ser usada para importar uma única imagem e depois extrair os ladrilhos usados da imagem e recriá-la como uma camada de mapa de ladrilho no editor da sala, criando
+      o conjunto de azulejos e duende necessários como parte do processo. Ao selecionar esta ferramenta, você será solicitado a fornecer um arquivo de imagem não comprimido (PNG, GIF ou BMP) que irá
+      ser então carregado. Na carga será apresentada a ferramenta Importação de Imagens:
+      Aqui você terá opções de como dividir o azulejo ao criar o conjunto de azulejos, e você pode definir a largura e a altura da célula
+      bem como quaisquer compensações necessárias em torno das bordas. Você também pode definir a largura aproximada (em pixels) para o duende final que é criado. Por exemplo, se o conjunto de azulejos for composto de 64x64 células de azulejos e você definir aqui uma largura de 200, o duende final
+      que é criado para uso no conjunto de azulejos terá 192 pixels de largura (ou seja: 3 células de azulejo). Se você deixá-lo no valor padrão de 0, então o GameMaker Studio 2 tentará fazer um sprite o mais "quadrado" possível com aproximadamente o mesmo número
+      de células horizontais e verticais de azulejos.
+       Após definir o modo como a imagem será dividida, clicando na amostra ao lado da opção Remover cor abrirá o seletor de cores e permitirá selecionar uma cor que será removida do duende final. Isto normalmente é
+      uma cor de fundo que você deseja remover e definir esta amostra para qualquer outra coisa que não seja 100% transparente (alfa 0) removerá a cor selecionada na importação.
+       Finalmente, você tem a opção de nomear o duende, o conjunto de azulejos e a camada de mapa de azulejos que será criada para você por esta ferramenta. Quando você finalizar a importação, será criado um duende com todas as imagens dispostas em uma grade, assim como um conjunto de azulejos de
+      este duende. Na sala, uma nova camada de mapa de azulejos será criada e a imagem será reproduzida usando o conjunto de azulejos gerados. Note que a ferramenta não duplicará os azulejos e reconhecerá quando uma célula tiver dados de imagem que coincidam com
+      outra célula (isto inclui azulejos girados). Você pode ver isto na imagem a seguir, onde apenas um azulejo de flor foi criado e um azulejo de caixote também, mas há múltiplas instâncias de ambos, com algumas instâncias giradas na imagem de base:
+      
+  
+   
+   
+  
+    
+      
+        Voltar: Os Editores de Ativos
+        A seguir: Roteiros
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

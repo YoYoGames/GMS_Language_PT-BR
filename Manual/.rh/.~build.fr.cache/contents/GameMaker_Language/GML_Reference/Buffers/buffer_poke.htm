@@ -1,0 +1,55 @@
+
+  
+  ponto_de_tampão
+  Com o buffer_write() você pode escrever dados para o buffer dado na posição "procurar" atual, com cada pedaço de dado avançando esta posição pelos bytes sendo escritos ou lidos. No entanto, ele
+    pode ser necessário que você altere um determinado dado sem querer alterar a posição atual de busca, e é quando você usaria esta função. Você simplesmente fornece a função com um índice de buffer, e então a posição de offset a partir do
+    buffer start (em bytes) dentro desse buffer para escrever, assim como o tipo de dados e o valor a ser escrito.
+   
+  Sintaxe:
+  buffer_poke(buffer, offset, tipo, valor);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O índice do buffer a ser utilizado.
+      
+      
+        offset
+        A posição de compensação (em bytes) dentro do buffer para escrever os dados fornecidos.
+      
+      
+        tipo
+        O tipo de dados que devem ser escritos no buffer (ver a lista de constantes aqui).
+      
+      
+        valor
+        Os dados a serem acrescentados ao buffer, de acordo com o tipo especificado.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  buffer_poke(buff, 3, buffer_u8, color_get_blue(image_blend));
+  O código acima adicionará o valor do componente azul da cor utilizada para a mistura da imagem no buffer indexado na variável "buff", na terceira posição no buffer e como um valor de 8bit não assinado.
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: buffer_save
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

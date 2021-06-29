@@ -1,0 +1,52 @@
+
+  
+  get_save_filename
+  Esta função abre um diálogo e pede ao jogador um nome de arquivo para salvar com o filtro dado. O filtro tem a forma " name1|mask1|name2|mask2|...", onde a máscara pode conter as diferentes opções com um ponto-e-vírgula entre elas
+    e você também pode usar um "*" para significar qualquer corda. Por exemplo: " bitmaps|*.bmp;*.wmf", pediria ao usuário para selecionar o nome de um arquivo bitmap do sistema, mas somente aqueles que têm as duas extensões especificadas (bmp epng ). esta função não salva o arquivo em si! Ela só retorna uma string com o nome completo e o caminho do arquivo. Se o usuário pressionar "Cancelar" uma string vazia "" é retornada.
+  Uma coisa importante a se notar ao usar esta função é que ela concede a você certas permissões para aquele arquivo, pela duração de seu jogo. Assim, uma vez que você obtém o caminho do arquivo do usuário, você pode acessá-lo de novo e de novo sem ter que pedir, e o
+    A permissão se aplica igualmente à leitura e à escrita.
+  NOTA: Esta função só é válida para os alvos Windows e macOS.
+   
+  Sintaxe:
+  get_save_filename(filtro, fnome);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        filtro
+        O tipo de filtro e/ou nome do arquivo.
+      
+      
+        fname
+        O nome de arquivo sugerido para uso.
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  var file; file = get_save_filename("screenshot|*.png", ""); if file != "" {
+     screen_save(file);
+     }
+  
+  O código acima pedirá ao usuário que selecione um arquivo de nome de arquivo de imagem para salvar e então verifique o nome do arquivo retornado e o caminho, e se não for uma cadeia de caracteres vazia, ele tira uma foto da tela e a salva usando o nome dado.
+   
+   
+   
+  
+    
+      
+        Voltar: Sistema de arquivo
+        Próximo: get_save_filename_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

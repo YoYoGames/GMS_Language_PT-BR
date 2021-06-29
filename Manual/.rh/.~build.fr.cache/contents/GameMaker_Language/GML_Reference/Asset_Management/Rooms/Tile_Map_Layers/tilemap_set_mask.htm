@@ -1,0 +1,80 @@
+
+  
+  mapa_modelo_do_cartão
+  Esta função pode ser usada para definir a máscara de bit de azulejo para um único mapa de azulejo. Você dá o ID do elemento do mapa de azulejo (que você obtém quando cria um elemento do mapa de azulejo usando layer_tilemap_create() ou quando
+    você usa a função layer_tilemap_get_id()), e depois o valor da máscara. A idéia é que se você tiver, por exemplo, um conjunto bem pequeno de azulejos de 16 x 16 azulejos, então você tem um total de 256 azulejos diferentes
+    em seu conjunto de azulejos, que utiliza apenas 8 bits de seu índice nos dados de azulejos "blob" (de um conjunto de 19 bits de dados disponíveis). Estes bits podem ser "mascarados" e então o restante dos dados do azulejo pode ser usado para armazenar valores adicionais.
+  Uma maneira fácil de obter o valor inicial da máscara índice é pegar o número de azulejos no conjunto de azulejos e subtrair 1, então um conjunto de azulejos 16x16 tem 256 azulejos e um valor de máscara de 255 (ou $ff em hexadecimal), e se o conjunto de azulejos tem um número de azulejos que não são
+    uma potência de dois, depois arredonde para a potência mais próxima de dois para obter a máscara, por exemplo, um conjunto de azulejos que é 20x20 tem 400 azulejos, que você arredondaria para 512, e assim obter um valor de índice de máscara de 511 ($1ff em hexadecimal). Além da máscara de índice,
+    normalmente você gostaria de preservar os valores de inverter, girar e espelhar que são atribuídos a um azulejo também, de modo a ajudar com isso há algumas constantes que podem ser usadas. Estas podem ser "ou" -editadas junto com o valor da máscara de índice para preservar
+    esses pedaços de dados. As seguintes constantes podem ser usadas (veja o código de exemplo abaixo para uso):
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        tile_rotate
+        Usado para definir/escondicionar o bit de rotação de uma bolha de dados de azulejos.
+      
+      
+        espelhado_móvel
+        Usado para definir/esconder o pedaço de espelho de uma bolha de dados de azulejos.
+      
+      
+        tile_flip
+        Usado para definir/escondicionar o pedaço de flip de um bloco de dados de azulejos.
+      
+      
+        màscara_index_index
+        Uma constante especial que é para "e" -ing com o blob de dados do azulejo para extrair o índice do azulejo.
+      
+    
+  
+   
+  A máscara do mapa de azulejos é um recurso avançado e permite que você use bits dos dados do azulejo "blob" para seu próprio uso. Por exemplo, o usuário poderia reservar um bit para significar "sólido" na estrutura de dados do azulejo e então isto pode ser verificado para
+    colisões rápidas. Basicamente, a máscara de bit é "e" contra os dados do ladrilho quando o mapa de ladrilho é desenhado (para que não afete nenhuma das outras funcionalidades), significando que bits que não estão na máscara são ignorados, mas ainda podem
+    ser lido e escrito pelo usuário para seus próprios fins. Note que existem duas máscaras diferentes - uma global e uma por mapa de azulejo - e estas são "e" - reunidas internamente pelo GameMaker Studio 2 antes de serem usadas para desenho.
+   
+  Sintaxe:
+  tilemap_set_mask(tilemap_element_id, máscara)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tilemap_element_id
+        O valor de identificação único do elemento do mapa de azulejos para definir a máscara de
+      
+      
+        máscara
+        O valor da máscara
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var lay_id = layer_get_id("Tiles_sky"); var map_id = layer_tilemap_get_id(lay_id); var mask = tile_mirror | tile_flip | tile_rotate | 255; tilemap_set_mask(map_id, mask);
+  O código acima obtém o ID do mapa de azulejos da camada dada e então define a máscara de bit do mapa de azulejos para 8bits, preservando os valores de inverter, espelhar e girar para cada azulejo no mapa.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas do mapa de azulejos
+        Próxima: mapa_cartão_cartão_cartão_global_mask
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

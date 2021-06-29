@@ -1,0 +1,59 @@
+
+  
+  path_endaction
+  Esta variável pode ser usada para obter ou alterar a reação de uma instância quando ela chega ao final do caminho atual. Normalmente, isto seria definido quando se inicia o caminho usando path_start() mas
+    você pode querer mudar este comportamento dependendo de qualquer número de eventos em seu jogo. Os valores disponíveis são expressos utilizando as seguintes constantes:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        path_action_stop
+        interromper o caminho
+      
+      
+        path_action_restart
+        continuar da posição inicial, pulando para o início se o caminho não estiver fechado
+      
+      
+        path_action_continue
+        iniciar o caminho novamente a partir da posição atual
+      
+      
+        path_action_reverse
+        inverter a velocidade do caminho (fazer o caminho em marcha à ré)
+      
+    
+  
+   
+  Sintaxe:
+  path_endaction;
+   
+  Devoluções:
+  Constante (ver descrição)
+   
+  Exemplo:
+  
+  if (path_endaction == path_action_stop) {
+     path_endaction = path_action_reverse; }
+  
+  O código acima verificará a ação final do caminho e se estiver definido para parar, então a ação final será alterada para reverter.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis de caminho
+        Próximo: caminho_arranca
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

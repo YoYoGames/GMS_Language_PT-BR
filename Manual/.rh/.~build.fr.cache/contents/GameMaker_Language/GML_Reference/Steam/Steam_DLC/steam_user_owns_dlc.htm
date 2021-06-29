@@ -1,0 +1,47 @@
+
+  
+  steam_user_owns_dlc
+  Se seu jogo tem DLC criado para ele, você pode usar esta função para verificar e ver se o usuário o comprou antes de acessar qualquer arquivo associado a ele. A função retorna verdadeiro se o jogador possuir o conteúdo, e falso se o
+    não, mas note que mesmo que o usuário seja proprietário do DLC, ele pode não tê-lo instalado, então você deve usar a função adicional de steam_user_installed_dlc() para verificar se ele está instalado como
+    bem antes de utilizá-lo. Observe que as identificações a vapor podem ser em grande número e, portanto, você pode precisar lançar seu valor de identificação como um int64() antes de fornecê-lo para a função.
+   
+  Sintaxe:
+  steam_user_owns_dlc(dlc_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dlc_id
+        O identificador único para o DLC a ser verificado (um número inteiro int64).
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  global.Level_Max = 100; if steam_user_owns_dlc(10354) {
+     if steam_user_installed_dlc(10354) {
+     global.Level_max = 200; }
+     }
+  
+  O código acima verificará se o usuário comprou, e instalou, o DLC com o id 10354, e se assim for, definirá uma variável global para um valor diferente.
+   
+   
+   
+  
+    
+      
+        Voltar: DLC
+        Próximo: steam_user_installed_dlc
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

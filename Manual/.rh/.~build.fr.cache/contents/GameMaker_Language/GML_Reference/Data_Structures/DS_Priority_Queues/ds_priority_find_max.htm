@@ -1,0 +1,45 @@
+
+  
+  ds_priority_find_max
+  Com esta função você pode encontrar o valor armazenado na fila de prioridade mais alta, e se mais de um valor tiver a mesma prioridade então qualquer um deles poderia ser devolvido em qualquer ordem. Entretanto, ao contrário de ds_priority_delete_delete_max(),
+    esta função não removerá o valor da fila.
+   
+  Sintaxe:
+  ds_priority_find_max(id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação da fila prioritária a ser usada.
+      
+    
+  
+   
+  Devoluções:
+  Real ou String
+   
+  Exemplo:
+  se ai_move {
+     script_execute(ds_priority_find_max(ai_priority));
+     }
+  
+  O código acima verifica uma variável de instância e se ela retornar verdadeiro, executará uma função de script indexada na fila de prioridade com o valor de prioridade mais alto.
+   
+   
+   
+  
+    
+      
+        Voltar: Filas de espera prioritárias DS
+        Próximo: ds_priority_find_min
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

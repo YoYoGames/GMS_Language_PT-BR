@@ -1,0 +1,55 @@
+
+  
+  aplicação_surface_enable
+  Com esta função você pode habilitar ou desabilitar a superfície de aplicação. Por padrão, a superfície de aplicação é habilitada e todos os desenhos para os eventos de Desenho serão feitos para isso e a superfície será desenhada para a tela. Entretanto, em alguns dispositivos mais antigos e específicos
+    chipsets, o que pode resultar em um desempenho inferior. Nesses casos, você pode desligar o desenho na superfície da aplicação e todo o desenho do evento de desenho será então feito diretamente no buffer da tela.
+  Você pode usar esta função para ativar ou desativar a superfície de aplicação a qualquer momento em seu jogo, mas você deve observar que ela requer pelo menos um quadro (etapa) para que as mudanças tenham efeito. Desativando-adesligará toda a correção da relação de aspecto,
+    como definido nas Opções de Jogo para a plataforma alvo. Isto significa que você deve ter algum método no lugar que dimensione o jogo para o dispositivo, janela ou dimensão de tela necessários. Se você ligá-lo novamente, então as Opções de Jogo terão efeito novamente no próximo passo.
+  Recomenda-se usar esta função com cuidado, pois ela terá impacto na forma como tudo é atraído para a tela. Em geral, você gostaria de tê-la como opção em um menu de seu jogo, ou chamá-la apenas uma vez no início de seu jogo e escrever seu
+    código ao redor se você o tem ativado ou desativado.
+   
+  Sintaxe:
+  application_surface_enable(enable);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        habilitar
+        Configurado para habilitar(verdadeiro) ou desabilitar(falso) a superfície de aplicação.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if keyboard_check_pressed(vk_space) {
+     if application_surface_is_enabled() {
+     application_surface_enable(false);
+     }
+     else
+     {
+     application_surface_enable(true);
+     }
+     }
+  
+  A verificação do código acima para um pressionamento de tecla e a alternância da superfície de aplicação, dependendo de seu estado (como em um menu de opções).
+   
+   
+   
+  
+    
+      
+        Voltar: Superfícies
+        A seguir: application_surface_is_enabled
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

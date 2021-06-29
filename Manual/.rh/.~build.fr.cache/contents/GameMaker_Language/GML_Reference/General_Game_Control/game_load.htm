@@ -1,0 +1,44 @@
+
+  
+  jogo_load
+  Com esta função você pode carregar um jogo que tenha sido salvo anteriormente usando game_save(). Note que ele irá restaurar a versão do jogo que foi usada para criar o save, portanto, quaisquer atualizações feitas após ele não serão
+    visível. Para mais informações, leia a página em game_save().
+   
+  Sintaxe:
+  game_load(filename);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome do arquivo
+        O nome do arquivo a ser carregado.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se keyboard_check_pressed(ord("L")) {
+     if global.Save game_load("Save.dat"); }
+  
+  O código acima carregará um jogo salvo anteriormente se a variável global for verdadeira quando o jogador pressiona a tecla "L".
+   
+   
+   
+  
+    
+      
+        Voltar: Controle geral do jogo
+        Próximo: jogo_load_buffer
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

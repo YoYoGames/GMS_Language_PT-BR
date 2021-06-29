@@ -1,0 +1,49 @@
+
+  
+  debug_event
+  Esta função gera um evento de depuração personalizado que será mostrado na visualização gráfica do depurador quando um jogo estiver sendo executado no modo de depuração. Se você precisar que as mensagens sejam exibidas quando não estiver em modo de depuração
+    modo, então você deve estar usando show_debug_message(). Vale ressaltar que a função também levará duas cordas reservadas para ajudar a realizar a depuração utilizando aplicações externas como Visual Studio. Estas
+    são:
+  
+    "OutputDebugOn" - Isto permite uma chamada para o OutputDebugString para a Windows alvo, o que significa que toda a saída de depuração - tudo que você vê na janela de saída - pode ser visualizada pelo Visual Studio ou por aplicativos de terceiros.
+    "BreakOnError" - Esta opção é apenas para Windows YYC buildds, e significa que os projetos não exibirão a tela habitual de erro de código se o tempo de execução detectar um erro, mas, em vez disso, apenas continuar e travar. Isto permite que você
+      para ver o stacktrace dentro do Visual Studio se debugando.
+  
+   
+  Sintaxe:
+  debug_event(string)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        corda
+        A cadeia de eventos de depuração personalizada a ser usada.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se !surface_exists(global.EffectsSurface) {
+     debug_event("Recreating Effects Surface"); global.EffectsSurface = surface_create(room_width, room_height); }
+  O código acima verifica se uma superfície existe e se não existe, um evento de depuração é acionado na visualização gráfica do depurador (o jogo deve ter sido executado no Modo de Depuração para que isso seja visível) e a superfície é recriada.
+   
+   
+   
+  
+    
+      
+        Voltar: Depuração
+        Próximo: debug_get_callstack
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

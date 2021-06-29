@@ -1,0 +1,111 @@
+
+  
+  asset_remove_tags
+  Com esta função você pode remover uma ou mais cadeias de tags para qualquer ativo do navegador de ativos. Você fornece o nome do ativo (como uma string) ou seu índice de ativos, assim como uma única tag string ou uma matriz onde cada item é uma única tag string.
+    Se você fornecer um valor de índice de ativos, então você precisará fornecer o argumento do tipo de ativo opcional (uma constante), pois ativos de tipos diferentes podem ter o mesmo índice, mesmo que não possam ter o mesmo nome. Os tipos de ativos disponíveis são listados
+    na tabela abaixo:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        asset_object
+        O nome dado refere-se a um objeto.
+      
+      
+        asset_sprite
+        O nome dado refere-se a um duende.
+      
+      
+        asset_sound
+        O nome dado refere-se a um som.
+      
+      
+        asset_room
+        O nome dado refere-se a uma sala.
+      
+      
+        asset_tiles
+        O nome dado refere-se a um conjunto de azulejos.
+      
+      
+        asset_path
+        O nome dado refere-se a um caminho.
+      
+      
+        asset_script
+        O nome dado refere-se a um roteiro.
+      
+      
+        asset_font
+        O nome dado refere-se a uma fonte.
+      
+      
+        asset_timeline
+        O nome dado refere-se a uma linha de tempo.
+      
+      
+        asset_shader
+        O nome dado refere-se a um shader.
+      
+      
+        asset_animationcurve
+        O nome dado refere-se a uma Curva de Animação.
+      
+      
+        asset_sequence
+        O nome dado refere-se a uma sequência.
+      
+    
+  
+   
+  Se a função conseguir remover a(s) etiqueta(s), ela retornará verdadeira (s), caso contrário, retornará falsa(s).
+   
+   
+  Sintaxe:
+  asset_remove_tags(nome_ou_index, tags, [tipo_de_activo]));
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome_ou_index
+        O nome do bem (uma cadeia) ou seu valor de índice (um número inteiro).
+      
+      
+        etiquetas
+        Uma única cadeia de tags de ativos ou uma matriz com várias tags de ativos.
+      
+      
+        [asset_type]
+        OPCIONAL! O tipo de ativo do qual remover as etiquetas, usado somente quando se fornece um índice para o primeiro argumento.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var _a = array_create(3); _a[0] = "enemy"; _a[1] = "all_levels"; _a[2] = "boss"; asset_remove_tags(obj_Enemy_Boss_Parent, _a, asset_object);
+  O código acima criará um conjunto de tags e depois as removerá do objeto em questão.
+   
+   
+   
+  
+    
+      
+        Voltar: Ativos e Etiquetas
+        Próxima: bens_etags_tags
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

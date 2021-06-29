@@ -1,0 +1,47 @@
+
+  
+  Mensagens de radiodifusão
+  Tanto as Seqüências como os Sprites podem gerar o que são chamados de mensagens transmitidas em qualquer ponto de sua extensão. Estas
+    As mensagens são cadeias simples que são adicionadas a quadros específicos ao longo da linha do tempo da animação, e quando esse ponto da linha do tempo é atingido, então a cadeia será transmitida para todas as instâncias que a ouvirem. Qualquer instância que tenha um Evento de Mensagem de Radiodifusão (encontrado na categoria "Outro" evento) receberá a cadeia de caracteres da mensagem quando ela for atingida na linha de tempo, e nesse ponto caberá a você ter algum código que a analisará e reagirá de acordo. Observe também que as seqüências
+    também pode ouvir as mensagens transmitidas, mas isso requer que você primeiro configure o método do ouvinte usando código (veja a seção GML sobre Eventos e Momentos Seqüenciais para
+    mais informações).
+  OBSERVAÇÃO: A definição do índice de imagem de uma instância diretamente em um quadro não acionará nenhuma mensagem de difusão que possa estar presente nesse quadro do duende do objeto.
+  Para adicionar uma Mensagem de Difusão à seqüência ou linha de tempo sprite, basta clicar no botão . Isto abrirá um diálogo onde você poderá adicionar a mensagem
+    a ser transmitido:
+  
+  Uma vez adicionada, a mensagem será mostrada na Folha de Drogas (ou na visualização da moldura sprite). Para editá-la, você deve clicar com o botão direito do mouse  sobre a mensagem
+    para abrir uma lista de todas as mensagens que se sobrepõem ao quadro (só pode haver uma mensagem em um quadro, mas colocar várias mensagens em quadros consecutivos fará com que elas se sobreponham visualmente, dificultando a seleção daquele que você deseja e
+    pode ter uma mensagem e um momento no mesmo quadro também), e então selecionando um desta lista abrirá o diálogo de mensagem onde
+    você pode editá-lo ou removê-lo.
+  Quando um evento de Mensagem de Radiodifusão é acionado, haverá um Mapa DS especial criado e armazenado na variável incorporada event_data.
+    Esta variável ID é uma variável de escopo global embutida, mas só conterá dados de mapa DS no evento que acionou - neste caso o evento de Mensagem de Radiodifusão - e retornará -1 em todos os outros momentos. As chaves que o evento terá são
+    como se segue:
+  
+    "event_type": Para uma mensagem transmitida, esta será a seqüência "sequence event" para uma mensagem enviada de uma seqüência e "sprite event"".
+      para uma mensagem enviada por um duende.
+    "message": Esta chave contém a seqüência de mensagens que foi recebida.
+    "element_id": Esta chave retorna a identificação do elemento (seqüência/escrita/instância) em uma camada no editor da sala. Você pode então usar este valor de identificação para descobrir que tipo de elemento gerou a mensagem usando a função
+      layer_get_element_type() e usar as outras funções relevantes para direcioná-lo ou executá-lo
+      uma ação como tocar um som, conforme a necessidade.
+  
+  Observe que o evento de transmissão de uma mensagem de uma instância receberá várias cordas para cada uma das vezes que uma mensagem de transmissão for enviada. Você não precisa agir em todas elas, e pode ter diferentes instâncias ouvindo diferentes seqüências de transmissão.
+    Entretanto, você pode ter uma instância que está ouvindo mensagens que podem ser recebidas ao mesmo tempo. Quando isto acontecer, o evento será acionado várias vezes - uma vez para cada cadeia de mensagens.
+  Abaixo está um breve exemplo de como este evento pode ser verificado:
+  if event_data[? "event_type"] == "sequence event" {
+     switch (event_data[? "message"]) { case "hit": audio_play_sound(snd_hit, 0, false); break; case "destroy": sequence_destroy(event_data[? "element_id"]); break; }  }
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Sequências
+        A seguir: A Tela Sequencial
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

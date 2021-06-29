@@ -1,0 +1,64 @@
+
+  
+  ds_grid_value_y
+  Com esta função você pode obter a coordenada y (dentro de uma determinada região de grade retangular) do valor que está sendo procurado. Você dá o índice da grade DS (como retornado por ds_grid_create()) junto com as posições x/y
+    para os cantos superior esquerdo e inferior direito da região da grade para procurar, antes de fornecer o valor a ser procurado. Se o valor a ser pesquisado não existir, então a função retornará -1.
+   
+  Sintaxe:
+  ds_grid_value_y(index, x1, y1, x2, y2, val);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice da grade.
+      
+      
+        x1
+        A posição x da esquerda da região na grade, de 0 a (largura da grade - 1).
+      
+      
+        y1
+        A posição y da parte superior da região na grade, de 0 a (altura da grade - 1).
+      
+      
+        x2
+        A posição x da direita da região na grade, de 0 a (largura da grade - 1).
+      
+      
+        y2
+        A posição y da parte inferior da região na grade, de 0 a (altura da grade - 1)
+      
+      
+        val
+        O valor a encontrar.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  if ds_grid_value_exists(grid, 0, 1, 5, 6, val) {
+     xpos = ds_grid_value_x(grid, 0, 1, 5, 6, val); ypos = ds_grid_value_y(grid, 0, 1, 5, 6, val); }
+  
+  O código acima verifica uma ds_grid para um valor específico dentro de uma região retangular. se for encontrado, ele então armazena a posição x e y do valor em duas variáveis para uso posterior.
+   
+   
+   
+  
+    
+      
+        Voltar: Grades DS
+        Próximo: ds_grid_value_disk_x
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

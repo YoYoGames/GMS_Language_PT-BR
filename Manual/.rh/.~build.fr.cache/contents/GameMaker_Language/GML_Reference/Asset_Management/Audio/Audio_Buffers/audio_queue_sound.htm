@@ -1,0 +1,58 @@
+
+  
+  audio_queue_sound
+  Esta função adicionará os dados de um buffer na fila de áudio que você criou anteriormente usando a função audio_create_play_queue(). Você especifica o índice de fila a ser adicionado, e o
+    ID do buffer para obter os dados, assim como a posição (offset) dentro do buffer e o número de bytes a adicionar. Uma vez adicionado áudio de um buffer a uma fila, o buffer não pode ser apagado até que você tenha liberado a fila usando a função 
+    audio_free_play_queue()e as propriedades tampão devem corresponder às da fila à qual você está adicionando o som.
+   
+  Sintaxe:
+  audio_queue_sound(queueIndex, bufferId, bufferOffset, bufferLength);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        queueIndex
+        O índice da fila a ser acrescentada.
+      
+      
+        bufferId
+        O amortecedor a ser adicionado à fila.
+      
+      
+        bufferOffset
+        A compensação dentro do buffer de origem para começar.
+      
+      
+        comprimento do buffer
+        O comprimento do buffer (o número de bytes no buffer).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  len = async_load[? "data_len"]; audio_buff = buffer_create(len, buffer_fast, 1); buffer_copy(async_load[? "buffer_id"], 0, len, buff, 0); audio_queue_sound(audio_queue, audio_buff, 0, len); audio_play_sound(audio_queue_queue),
+    10, 0);
+  O código acima seria chamado no evento assíncrono de gravação de áudio e atribui alguns dados gravados a um buffer, que é
+    em seguida, adicionado a uma fila de áudio. Isto é então reproduzido.
+   
+   
+   
+  
+    
+      
+        Voltar: Buffers de áudio
+        Próximo: audio_start_recording
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

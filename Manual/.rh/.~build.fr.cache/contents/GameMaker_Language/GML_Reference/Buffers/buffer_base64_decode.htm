@@ -1,0 +1,46 @@
+
+  
+  buffer_base64_decode
+  Com esta função você pode decodificar uma cadeia codificada base64 (criada usando o buffer_base64_encode() função) em um buffer. Esta função criará o buffer (como um buffer "crescer" alinhado por 1 byte).
+    e retornará o índice único para o buffer que deve ser usado em todas as outras chamadas de função.
+  NOTA: É importante que você remova da memória qualquer recurso criado dinamicamente como este quando não precisar mais deles para evitar vazamentos de memória, então quando terminar com o buffer que você criou, você deve liberá-lo novamente
+    usando buffer_delete().
+   
+  Sintaxe:
+  buffer_base64_decode(string);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        corda
+        O fio codificado base64 para decodificar
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  ini_open("Save.ini"); buff = buffer_base64_decode(ini_read_string("Save", "Slot1", "")); ini_close();
+  
+  O código acima abrirá um arquivo ini e então lerá uma seqüência dele para a função de decodificação. Esta função retornará um índice de buffer, que é armazenado na variável "buff", contendo os dados previamente codificados e salvos. O arquivo ini
+    é então fechado.
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: buffer_base64_decode_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,54 @@
+
+  
+  posição_do_sistema_parte
+  Com esta função você pode definir a posição base do sistema de partículas em relação à posição (0,0) da sala, o que significa que todas as outras funções de partículas relacionadas a este sistema serão agora desenhadas em relação à nova posição. Por padrão, esta
+    A posição é sempre (0,0), mas em algumas circunstâncias muito especiais você pode querer mudar isso para outra coisa.
+  NOTA: Esta função mudará tudo dentro do sistema de partículas, portanto se você tiver um emissor na posição (100.100) e depois ajustar a posição do sistema de partículas para (0.100), o emissor irá agora puxar para (100.200). O mesmo vale se você mudar
+    o sistema e depois criar o emissor, como se mesmo que você o crie em (100.100) ele será desenhado em (100.200).
+   
+  Sintaxe:
+  part_system_position(ind, x, y);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do sistema de partículas a mudar.
+      
+      
+        x
+        A nova coordenada x do sistema de partícula.
+      
+      
+        y
+        A nova coordenada y do sistema de partículas.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if mouse_check_button_pressed(mb_left) {
+     part_system_position(global.Sname, mouse_x, mouse_y); }
+  
+  O código acima verificará o apertar do botão do mouse e se detectar um, o sistema de partículas indexadas na variável global "Sname" é deslocado para a posição x/y do mouse
+   
+   
+   
+  
+    
+      
+        Voltar: Sistemas de Partículas
+        Próximo: part_system_clear
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

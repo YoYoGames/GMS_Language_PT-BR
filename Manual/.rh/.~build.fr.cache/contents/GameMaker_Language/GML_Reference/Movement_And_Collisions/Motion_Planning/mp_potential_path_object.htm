@@ -1,0 +1,67 @@
+
+  
+  mp_potencial_objeto_do_caminho
+  Esta função calcula um caminho para a instância desde sua posição atual e orientação até a posição especificada pelos argumentos xgoal, ygoal. Ela usa o tamanho do passo indicado enquanto tenta evitar a colisão com instâncias do objeto especificado.
+    pelo argumento "obj". Como na função mp_potencial_step() utiliza etapas potenciais de campo para realizar isso e a maneira pela qual o faz pode ser modificada através da função mp_potencial_settings().
+    O caminho indicado já deve existir e será sobregravado pelo novo caminho. A função retornará se um caminho foi encontrado (verdadeiro) ou não (falso).
+  Para evitar que a função continue a ser calculada para sempre, é necessário fornecer um fator maior que 1 - a função irá parar e relatar falha se não conseguir encontrar um caminho menor que este fator vezes a distância entre o início e a meta. Um fator de 4
+    é normalmente bom o suficiente, mas se você espera desvios longos, você pode torná-lo mais longo. Se falhar, ainda é criado um caminho que corre na direção aproximada do objetivo, mas não o alcançará.
+  NOTA: Esta função não move a instância. Ela estabelece apenas um caminho, e você deve usar as funções de Caminho para se movimentar.
+   
+  Sintaxe:
+  mp_potencial_objeto_do_caminho(caminho, xgoal, ygoal, stepize, factor, obj)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        caminho
+        índice do caminho que deve ser utilizado pela função
+      
+      
+        xgoal
+        A posição alvo x.
+      
+      
+        ygoal
+        A posição y alvo.
+      
+      
+        stepsize
+        A velocidade que a instância se move em pixels por passo.
+      
+      
+        fator
+        Este número é utilizado para evitar um loop infinito. Deve ser maior que 1. Veja a descrição da função para mais informações.
+      
+      
+        obj
+        O objetivo que é bloquear o caminho. Pode ser um índice de objetos, um id de instância ou a palavra-chave especial, tudo
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  path = path_add(); mp_potential_path_object(path, obj_Player.x, obj_Player.y, 3, 4, obj_Wall); path_start(path, 3, 0, 0, 0);
+  O código acima cria um novo recurso de caminho e armazena seu índice na variável "caminho". Ele então gera um caminho usando mp_potencial_path entre o objeto com este código e o objeto "obj_Player", verificando se há colisões
+    com o objeto "obj_Wall". Finalmente, ele inicia o objeto ao longo desse caminho, mesmo que a função não tenha conseguido retornar um caminho completo para o "obj_Player".
+   
+   
+   
+  
+    
+      
+        Voltar: Planejamento de Movimento
+        Próximo: mp_grid_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,85 @@
+
+  
+   Se o ponto de colisão
+  Esta ação é usada para verificar e ver se há uma colisão com uma ou mais instâncias de um determinado objeto em um ponto específico da sala e avaliará se uma colisão é detectada, ou falsa de outra forma. Você dá ao objeto
+    para verificar e a posição a ser verificada - que pode ser uma posição absoluta na sala ou uma posição relativa à instância - e você também pode verificar a Não bandeira para verificar se não há uma colisão na posição dada, ou seja
+    que a ação só será então avaliada como verdadeira se não forem encontradas colisões, caso contrário, será avaliada como falsa. Você também pode definir a opção Excluir o Self para excluir a instância de chamada da verificação de colisão.
+  Em seguida, você pode checar/desmarcar a opção de Lista de Retorno. Verificando isto significa que a ação criará e preencherá uma lista estrutura de dados com todas as instâncias em colisão
+    com o ponto e definir a variável alvo para a ID da lista DS. Quando desmarcada, ela só definirá a variável Alvo para um valor menor que 0 quando não for detectada nenhuma colisão, ou o valor de identificação único de uma das instâncias na colisão
+    (note que se várias instâncias estiverem em colisão, então você não tem como saber qual instância de identificação será devolvida quando não utilizar uma lista).
+  Se você selecionou retornar uma lista - e a variável Alvo não está definida como Temp - então você também pode selecionar a opção Alvo Livre. Quando definida como verdadeira, então a lista contida na variável de destino será destruída e
+    uma nova lista criada (e retornada à variável alvo) cada vez que você chama a ação. Desta forma, você pode reutilizar a mesma variável sem se preocupar com vazamentos de memória, pois, se você não marcar a opção Alvo Livre, você se torna responsável por
+    por destruir a lista antes de usar a variável novamente na ação. Observe que independentemente de esta opção estar marcada ou não, se você tiver definido a ação para Return List, então a variável alvo sempre conterá uma identificação da lista,
+    e como tal, isto precisará ser liberado quando a instância for destruída ou a sala terminar (você pode usar o evento Clean Up para isto, por exemplo, junto com a ação Free Data Structure ).
+    Vale notar que você pode definir a opção Alvo Livre para usar uma variável pré-definida ou uma expressão e assim controlar quando a estrutura de dados da lista for liberada, definindo a variável em outro lugar (ou tendo resultados diferentes para a expressão)
+    desde que avalie para verdadeiro/falso.
+  Finalmente, você fornece a variável alvo que você deseja manter o valor retornado ou a ID da lista. Se você marcar a variável Alvo para manter o valor retornado como sendo uma variável Temp (local), então a ação criará esta variável para manter
+    o valor de retorno somente até o final do evento, neste caso a opção Free Target não faz nada e você será responsável pela destruição da lista DS se essa opção tiver sido verificada. Se nenhuma variável alvo for fornecida e a opção Lista de Retorno estiver marcada, nenhuma lista será criada.
+  IMPORTANTE! As colisões só serão registradas para aquelas instâncias que possuem uma máscara de colisão válida, ou seja: elas têm um duende atribuído ao sprite_index, ou um duende atribuído ao mask_index. Se as instâncias do objeto forem
+    Se a máscara de colisão não tiver sido verificada nesta ação, então a colisão não será detectada, independentemente do que a instância estiver desenhando no momento.
+  Note que para adicionar ações em um bloco "if", elas devem ser descartadas ao lado da ação, como mostrado na imagem abaixo:
+  
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Forma
+        A forma a usar
+      
+      
+        Objeto
+        O objeto a ser verificado para casos de
+      
+      
+        x1
+        A posição x para começar de
+      
+      
+        y1
+        A posição y para começar de
+      
+      
+        x2
+        A posição x para terminar em
+      
+      
+        y2
+        A posição y para terminar em
+      
+      
+        Alvo Livre
+        Pode ser definida para uma variável ou expressão, ou definida para verdadeiro/falso para controlar a liberação da memória da lista ao reutilizar uma variável da lista
+      
+      
+        Meta
+        A variável a ser alvo para o valor de retorno da ação
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima verifica se há uma colisão na posição x/y do mouse com uma instância
+    do objeto "obj_Enemy". Se uma (ou mais) colisões for encontrada, um efeito é criado e na posição da instância com a identificação armazenada na variável Objetivo, e então a instância é destruída. Se nenhuma colisão for encontrada, é criado um efeito diferente
+    efeito é criado na posição do mouse.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações de colisão
+        A seguir: Se houver algum objeto no local
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

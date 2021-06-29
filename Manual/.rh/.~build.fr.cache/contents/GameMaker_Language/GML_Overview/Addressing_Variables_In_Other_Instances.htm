@@ -1,0 +1,61 @@
+
+  
+  Abordagem de variáveis em outras instâncias
+  Nas seções dedicadas às variáveis você descobriu como criar e usar variáveis dentro de uma única instância, ou em um escopo global, mas o que acontece se você quiser que uma instância acesse uma variável em outra,
+    exemplo diferente? Há muitos casos em que você pode querer fazer isso, por exemplo, em uma colisão com um objeto bala, você pode querer descobrir quanto dano a bala faz ao acessar uma variável na bala, ou você pode querer parar o movimento
+    de todas as bolas em um quebra-cabeça, ou você pode querer mover o personagem principal para uma determinada posição, ou qualquer outra situação que você normalmente encontra em qualquer jogo. Felizmente, a linguagem GameMaker vem equipada com mecanismos para alcançar
+    isto.
+  Um dos métodos mais comuns para acessar ou alterar uma variável em outra instância é usar seu nome de objeto como um identificador e depois usar um ponto "." para dizer ao GameMaker Studio 2 que a variável usada depois
+    deve ser atribuído ou alterado nesse objeto. A sintaxe para isto é:
+  <object_id>.< variável>= <valor>;
+  Na prática, seria assim:
+  obj_ball.speed = 0;
+  Com o código acima, você está definindo a velocidade de uma instância de "obj_ball". Entretanto, se você tiver mais de uma instância do objeto dado na sala, então ela se aplicará a TODOS eles igualmente - a menos que você esteja usando HTML5,
+    Nesse caso, ele afetará apenas um, mas você não tem como saber qual afetará - portanto, se você precisar acessar todas as instâncias de um objeto, você deve estar usando com()como é o caso de
+    100% compatível com plataformas cruzadas. Em geral, este formato só deve ser usado quando você tiver uma única instância do objeto na sala, ou (como você verá na próxima parte) quando você tiver uma  identificação de instância específica.
+  Você também pode acessar uma única instância de um objeto quando há múltiplas instâncias dentro da sala usando o nome da instância única para dizer ao GameMaker Studio 2 exatamente qual instância desejamos tratar. A constante do nome da instância é a
+    identificação única constante que é dada a cada instância adicionada a uma sala em seu jogo. Você pode encontrar esta constante clicando duas vezes em uma instância no editor da sala:
+  Note que este nome pode ser editado e receber um nome mais descritivo - embora o nome deva ser
+    exclusivo para todo o jogo - e pode ser usado como o lado esquerdo do ponto:
+  inst_4DB70D2.speed = 0;
+  De longe o método mais comum e prático, entretanto, é usar uma variável à esquerda do ponto, desde que a variável em questão tenha armazenado uma identificação de instância válida. Os exemplos a seguir ilustram isto.
+  // Exemplo 1 var _inst = instance_position(mouse_x, mouse_y, all); se instance_exists(_inst) {
+     _inst.speed = 0; }
+    
+     // Exemplo 2 var _inst = instance_create_layer(mouse_x, mouse_y, "Inimies", obj_E_Parent); _inst.direction = point_direction(_inst.x, _inst.y, x, y); _inst.target = id;
+  No código acima para o Exemplo 1, há um instance_exists() chamada no bloco de código. Isto porque, utilizando o método de ponto para acessar ou alterar outras instâncias
+    valor dará um erro e travará o jogo se a instância não existir, e há a possibilidade de que este seja o caso neste exemplo. Entretanto, não precisamos da verificação nos Exemplos 2 e 3 porque sabemos que a instância está lá
+    uma vez que no Exemplo 2 o criamos, e no Exemplo 3, é a outra instância em um evento de colisão. Entretanto, se houver qualquer possibilidade de que a instância possa ser destruída, desativada ou de outra forma removida da sala enquanto se utiliza este método,
+    você deve sempre verificar com antecedência usando a função instance_exists() ou a função instance_number() função.
+  Note que você não pode usar a palavra-chave especial "tudo" com este método para direcionar todas as instâncias (por exemplo: all.val = 10 daria um erro), mas você pode usar as palavras-chave
+    "outros" e"self" sem problemas. Por exemplo, utilizar o outro em um evento de colisão:
+  // Exemplo 3 other.hp -= 10; if other.hp <= 0 {
+     other.sprite_index = spr_E_Dead; }
+  
+  Também é importante notar que você não pode usar nenhuma função por si só como o lado esquerdo de uma tarefa. Por exemplo, o seguinte código lhe daria um erro:
+  instance_nearest(x, y, obj).speed = 0;
+  O valor de retorno para a expressão nesse exemplo de código é um número inteiro (o valor de identificação único para a instância mais próxima) e, portanto, deve ser incluído entre parênteses () para ser usado dessa forma e endereçar corretamente a instância
+    necessário. O código acima seria escrito corretamente como:
+  (instance_nearest(x, y, obj)).speed = 0;
+     //or
+    
+     var inst = instance_nearest(x, y, obj); inst.speed = 0;
+  Todas estas são formas perfeitamente válidas de ler, mudar e definir variáveis em outras instâncias, e funcionam porque o ponto é realmente um operador. Ele toma um valor como operando da esquerda e uma variável como operando da direita, e retorna o endereço desta variável em particular no objeto ou instância indicada. Todos os nomes de objetos, constantes, IDs etc... simplesmente representam valores e estes podem ser tratados como qualquer outro valor.
+  A outra maneira de referenciar variáveis em outra instância é usar a função GameMaker Language with(), que é discutida em detalhes aqui:
+  // Isto afetará todas as instâncias do objeto "obj_Enemy" com (obj_Enemy) { target = other.parent; } 
+     // Isso afetará uma instância do objeto "obj_Enemy" var _enemy = instance_nearest(x, y, obj_Enemy); se instance_exists(_enemy) { com (_enemy) { target_x = mouse_x; target.y = mouse_y; }  }
+   
+   
+   
+  
+    
+      
+        Voltar: Visão geral daGML
+        A seguir: Ordem de avaliação
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

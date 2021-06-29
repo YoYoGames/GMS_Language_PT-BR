@@ -1,0 +1,63 @@
+
+  
+  Opções de jogostvOS 
+  Esta seção descreve as diferentes opções disponíveis para você que controlam como seus projetos de jogos tvOS serão compilados. As diferentes seções são:
+   
+  Geral
+  Aqui você pode preencher as Informações do produto sobre seu jogo, incluindo seu Nome de exibição, seu ID do pacote e as Informações da versão . Note que o Bundle ID deve estar no formato correto de URL reversa para que a construção final do jogo funcione corretamente, EG: com.[Company].[GameName]. Você também pode definir o local de saída do aplicativo no Mac do build, e você pode dar ao Team Identifier que deseja usar para assinar o aplicativo final que o GameMaker Studio 2 cria para você. Defini-lo aqui substituirá o ID da equipe que você forneceu nas Preferências dotvOS.
+  Aqui você também tem a opção de gerar um Podfile e um Podfile.lock. Estes arquivos são necessários se você estiver adicionando CocoaPods a uma extensãotvOS usando o Editor de Extensão. Os arquivos contêm macros específicas exigidas pelo GameMaker Studio 2 para configurar qualquer CocaoPodslistado ao construir seu jogo. Clicando nos botões, os arquivos serão criados com
+    as macros pré-geradas, e também abrir um explorador de arquivos sobre a localização dos arquivos, caso você deseje editá-los manualmente. Há também um botão que o levará ao seguinte guia:
+  
+    iOS e tvOS: usando cápsulas de cacau
+  
+   
+  Gráficos
+  Aqui você pode alterar os seguintes detalhes relacionados a como seu jogo será exibido, com as seguintes opções disponíveis:
+  
+    Interpolar as cores entre os pixels: Ativa a interpolação linear, que basicamente "suaviza" os pixels. Para gráficos de pixel nítidos, deve ser
+      mas se você tiver misturas alfa agradáveis e gráficos alisados é melhor deixá-lo ligado. Isto está desativado por padrão.
+    Escala: Aqui você pode selecionar a escala da tela de desenho mantendo a relação de aspecto dentro da tela do dispositivo - adicionando "estofamento" ao redor das bordas para caber na tela - ou você pode selecionar que a tela de desenho seja esticada para caber
+      a tela do dispositivo.
+  
+  A seguir, há a opção de definir o tamanho da página de textura. O tamanho padrão (e o mais compatível) é 2048x2048, mas você pode escolher entre 256x256 até 8192x8192. Lá
+    é também um botão marcado Preview que irá gerar as páginas de textura para esta plataforma e depois abrir uma janela para que você possa ver como elas ficam. Isto pode ser muito útil se você desejar ver como as páginas de textura são estruturadas e
+    para evitar ter páginas de textura maiores (ou menores) do que o necessário. Para maiores informações sobre páginas de textura, por favor, veja aqui.
+  NOTA: Esteja ciente de que quanto maior o tamanho da página de textura, menos compatível seu jogo será com diferentes navegadores e dispositivos.
+  Finalmente, você escolhe Mostrar um cursor ou não. Se verificado, o SO mostrará um cursor sempre que o mouse for movido (na posição do mouse), e o cursor se apagará e desaparecerá quando o mouse não for movido por um período de tempo.
+    Se desmarcado, então nenhum cursor será mostrado.
+   
+  Ícones
+  Esta seção permite adicionar os vários ícones diferentes exigidos pelos vários dispositivos e as diferentes partes do
+    App Store. Estes ícones devem ser de autoria de 24bit *.png imagens no tamanho especificado para cada uma.
+  Vale notar que o GameMaker Studio 2 possui uma ferramenta Gerador de Imagens de Projeto que pode ser usada para criar automaticamente todas as imagens necessárias para todas as diferentes plataformas alvo de seu jogo
+    está sendo compilado para. Se você usar esta ferramenta, você deve revisar as imagens criadas para garantir que elas sejam o que você precisa, especialmente para esta plataforma, pois os ícones necessários são retangulares e não quadrados. Esta ferramenta também irá gerar imagens (explicado
+    abaixo), bem como os ícones.
+   
+  Imagens
+  Esta seção permite que você adicione gráficos separados como imagens "Top Shelf" e telas de respingo para cada um dos diferentes
+   tvOS tamanhos-alvo. Estas imagens devem ser de autoria individual 24bit *.png imagens sem transparências e com o tamanho correto. Você também pode definir um tempo mínimo para mostrar as telas de respingo a partir do menu suspenso em
+    o fundo (de 0 a 10 segundos).
+  Como mencionado na seção sobre Ícones, você pode usar o Gerador de Imagens do Projeto para criar estas imagens.
+   
+  Social
+  Esta seção é para permitir diferentes características sociais em seu jogo tvOS. As seguintes opções podem ser escolhidas:
+  
+    Habilitar notificações de Push: Para que seu jogo possa utilizar as Notificações Push, elas devem ser habilitadas aqui primeiro, caso contrário, não funcionarão.
+    Habilite o login com a Apple: Esta opção é para usar a Extensão Apple Sign In no iOS. Você pode obter esta extensão no Jogos YoYo Mercado,
+      e a própria extensão contém instruções completas de uso. Se você não estiver usando esta extensão, então não deve assinalar estas opções.
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Opções de jogo
+        A seguir: Windows
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,38 @@
+
+  
+  async_load
+  Esta variável é global no escopo e é usada para manter um mapa DS quando usada nos Eventos Assíncronos,
+    e -1 em todos os outros momentos. O conteúdo real do mapa DS dependerá do tipo de chamada de retorno de evento assíncrono, bem como da função que foi usada para acionar o evento, portanto, consulte
+    as páginas individuais desses eventos para detalhes completos de todo o conteúdo possível do mapa DS.
+   
+  Sintaxe:
+  async_load;
+   
+  Devoluções:
+  Real (valor inteiro)
+   
+  Exemplo ampliado:
+  sprite = sprite_add("site.com/path/image.png", 16, true, true, 0, 0);
+  O código acima seria chamado em um evento para carregar um duende a partir de um URL externo. Isto acionaria então o evento assíncrono de imagem carregada, onde você analisaria o mapa async_load:
+  if ds_map_find_value(async_load, "id") == sprite {
+     if (ds_map_find_value(async_load, "status") >= 0) {
+     sprite_index = sprite; }
+     }
+  
+  O código acima verificará primeiro o ID do mapa de carga_assíncrona, depois verificará o status da chamada de retorno. Se o valor for maior ou igual a 0 (sinalização de sucesso), o resultado da chamada de retorno será então usado para definir o índice sprite do
+    instância para a imagem recém-carregada.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis globais
+        Próximo: pontuação
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

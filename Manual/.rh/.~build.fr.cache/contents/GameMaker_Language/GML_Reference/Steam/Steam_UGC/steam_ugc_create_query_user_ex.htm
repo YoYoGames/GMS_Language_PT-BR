@@ -1,0 +1,207 @@
+
+  
+  steam_ugc_create_query_user_ex
+  Esta função pode ser usada para consultar a base de dados da UGC. A função requer o valor do ID do usuário e o ID do jogo que vai consumir o item e/ou o ID do jogo que criou o item. Você também precisa usar as seguintes constantes
+    para o tipo de dados a consultar, o tipo de item a consultar e a ordem em que os itens retornados serão classificados, bem como um número de página - note que uma consulta retornará um número máximo de 50 itens.
+   
+  
+    
+      
+        Tipo de lista Constante
+        Descrição
+      
+      
+        ugc_list_Published
+        Veja a Documentação doVapor.
+      
+      
+        ugc_list_VotedOn
+        -
+      
+      
+        ugc_list_VotedUp
+        -
+      
+      
+        ugc_list_VotedDown
+        -
+      
+      
+        ugc_list_WillVoteLater
+        -
+      
+      
+        ugc_list_Favorited
+        -
+      
+      
+        ugc_list_Subscribed
+        -
+      
+      
+        ugc_list_UsedOrPlayed
+        -
+      
+      
+        ugc_list_Followed
+        -
+      
+    
+  
+   
+  
+    
+      
+        Constante do tipo de partida
+        Descrição
+      
+      
+        ugc_match_Items
+        Veja a Documentação doVapor.
+      
+      
+        ugc_match_Items_Mtx
+        -
+      
+      
+        ugc_match_Items_ReadyToUse
+        -
+      
+      
+        ugc_match_Collections
+        -
+      
+      
+        ugc_match_Artwork
+        -
+      
+      
+        ugc_match_Videos
+        -
+      
+      
+        ugc_match_Screenshots
+        -
+      
+      
+        ugc_match_AllGuides
+        -
+      
+      
+        ugc_match_WebGuides
+        -
+      
+      
+        ugc_match_IntegratedGuides
+        -
+      
+      
+        ugc_match_UsableInGame
+        -
+      
+      
+        ugc_match_ControllerBindings
+        -
+      
+    
+  
+   
+  
+    
+      
+        Constante de Ordenação
+        Descrição
+      
+      
+        ugc_sortorder_CreationOrderDesc
+        Veja a Documentação doVapor.
+      
+      
+        ugc_sortorder_CreationOrderAsc
+        -
+      
+      
+        ugc_sortorder_TitleAsc
+        -
+      
+      
+        ugc_sortorder_LastUpdatedDesc
+        -
+      
+      
+        ugc_sortorder_SubscriptionDateDesc
+        -
+      
+      
+        ugc_sortorder_VoteScoreDesc
+        -
+      
+      
+        ugc_sortorder_ForModeration
+        -
+      
+    
+  
+   A função retorna um valor único de manuseio de consulta que deve ser armazenado em uma variável para uso nas outras funções de consulta. Note que esta função apenas prepara a consulta, mas não a envia - para isso você deve chamar a função
+    steam_ugc_send_query.htm">steam_ugc_send_query() - e você pode usar mais funções de steam_ugc_query_* () para refinar o pedido de busca antes que ele seja realmente enviado.
+   
+  Sintaxe:
+  steam_ugc_create_query_user_ex(list_type, match_type, sort_order, page, account_id, creator_app_id, consumer_app_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tipo_lista
+        O tipo de lista de dados a criar (veja as constantes listadas abaixo).
+      
+      
+        tipo_de_fósforo
+        O tipo de itens de UGC a consultar (ver constantes listadas abaixo).
+      
+      
+        ordenar_ordenar
+        A forma como os dados devem ser ordenados (ver as constantes listadas abaixo).
+      
+      
+        página
+        O número da página a consultar.
+      
+      
+        account_id
+        O ID da conta Steam.
+      
+      
+        creator_app_id
+        O ID do aplicativo criador do item.
+      
+      
+        Consumer_app_id
+        O ID do aplicativo do consumidor.
+      
+    
+  
+   
+  Devoluções:
+  Consulta
+   
+  Exemplo:
+  query_handle = steam_ugc_create_query_user_ex(ugc_list_Published, ugc_match_Items, ugc_sortorder_TitleAsc, page, global.AccountID, 0, global.GameID);
+  O código acima cria um pedido de consulta e armazena o seu manuseio em uma variável para uso futuro.
+   
+   
+   
+  
+    
+      
+        Voltar: UGC
+        Próximo: steam_ugc_create_query_all
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

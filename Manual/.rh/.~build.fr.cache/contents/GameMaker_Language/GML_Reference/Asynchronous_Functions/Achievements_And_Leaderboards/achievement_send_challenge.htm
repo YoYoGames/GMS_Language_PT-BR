@@ -1,0 +1,98 @@
+
+  
+  desafio_de_conquista
+  Esta função enviará um desafio através da rede para o jogador escolhido. Você pode obter o playerid usando a função achievement_load_friends() ou o achievement_load_leaderboard()    e você também deve fornecer o challengeid que é o valor único dado ao desafio quando você o criou em seu painel de controle do iTunes Connect ou Google Play. Você também deve fornecer uma pontuação, e uma mensagem de texto breve, bem como definir o
+   tipo de desafio. Esta pode ser uma das constantes a seguir:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        desafio_tipo_de_resultados 
+        Um desafio com base no valor da pontuação.
+      
+      
+        achievement_type_achievement_challenge 
+        Um desafio baseado em uma conquista.
+      
+    
+  
+   
+  Esta função desencadeará um Evento Assíncrono Social para o jogador que vai receber o desafio, e neste evento você terá um mapa DS referenciado
+    na variável async_load. A chave de id deste DS Map é usada para identificar o retorno de chamada correto (pode haver mais de uma função de acionamento para qualquer evento assíncrono), e será emparelhada com o constante desafio_recebido, bem como um número de outros pares de chaves/valores para cada jogador. O conteúdo exato do mapa é mostrado abaixo:
+  NOTA: que o usuário também pode receber notificações de torradas por desafios recebidos, mas isso dependerá dos valores que você escolheu usando a função notificações_de_conquista_de_conquista().
+  
+    " id" - Para esta função deve ser feito_leaderboard_info
+    "playerid" - O ID do jogador para o desafio.
+    "issuerid" - A identificação do emissor para o desafio.
+    "estado" - O estado do desafio, que terá um valor de 0 - 3 (como um fio) para inválido, pendente, concluído ou recusado.
+    "mensagem" - A mensagem de texto para o desafio.
+    "data de conclusão" - A data de conclusão para o desafio.
+    "Data de emissão" - A data de emissão para o desafio.
+    " tipo"- O tipo de desafio dado. Pode ser uma das duas constantes listadas acima
+    "identificador" - A cadeia de identificação para o desafio, conforme definido no painel do fornecedor
+    " pontuação" - A pontuação empatada com o desafio (se aplicável).
+  
+   
+  Sintaxe:
+  achievement_send_challenge(playerid, challengeid, score, type, message)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        playerid
+        A identificação única do jogador a desafiar.
+      
+      
+        challengeid
+        A identificação única do desafio (como encontrada no painel do fornecedor).
+      
+      
+        pontuação
+        A pontuação a bater.
+      
+      
+        tipo
+        o tipo de desafio a ser lançado - uma das duas constantes dadas abaixo.
+      
+      
+        mensagem
+        A mensagem a ser anexada ao desafio.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo ampliado:
+  Para enviar um desafio através da rede, você teria este código:
+  achievement_send_challenge(global.playerid[0], global.challengeid[0], score, achievement_type_score_challenge, "Beat that sucker!");
+  Este pedido desencadeará então o Evento Social em seu jogo para o jogador ao qual o desafio foi dirigido, e isto pode ser tratado da seguinte maneira:
+  var ident = ds_map_find_value(async_load, "id"); if ident == achievement_challenge_received {
+     player_id = ds_map_find_value(async_load, "playerid"); issuer_id = ds_map_find_value(async_load, "issuerid"); state = ds_map_find_value(async_load, "state"); message = ds_map_find_value(async_load, "state"),
+    "mensagem"); date_completed = ds_map_find_value(async_load, "complete date"); date_issued = ds_map_find_value(async_load, "issued date"); ach_type = ds_map_find_value(async_load, "tipo"); ach_ident = ds_map_find_value(async_load, "identificador"); ach_score = ds_map_find_value(async_load, "pontuação"); }
+  
+  O código acima verifica o DS Map devolvido no Evento Assíncrono Social e se seu "id" corresponde à constante a ser verificada, ele então extrai os valores relevantes para cada uma das chaves no mapa e os armazena em variáveis
+    para uso futuro.
+   
+   
+   
+  
+    
+      
+        Voltar: Conquistas e Quadros de Líderes
+        Próximo: achievement_reset
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,72 @@
+
+  
+  url_open_ext
+  Isto abrirá a URL especificada no navegador do dispositivo alvo escolhido, ou, se você estiver usando o módulo HTML5, no navegador atualmente aberto. O parâmetro "alvo" que você especifica é o mesmo que o "nome" padrão do JavaScript
+    quando você usa o método open( ), e você deve estar ciente de que tudo menos " _self" pode resultar no bloqueio do navegador, ou perguntando ao usuário se ele deseja permitir isso.
+  Os alvos válidos são:
+   
+  
+    
+      
+        Meta
+        Descrição
+      
+      
+        em branco
+        Abre o documento vinculado em uma nova janela ou aba (isto não funcionará se os pop-ups estiverem sendo bloqueados pelo usuário, caso em que você pode usar o clicável_* funções em seu lugar).
+      
+      
+        _self
+        Abre o documento vinculado no mesmo quadro em que foi clicado (este é o padrão).
+      
+      
+        pai
+        Abre o documento vinculado no quadro superior.
+      
+      
+        _topo
+        Abre o documento vinculado no corpo inteiro da janela.
+      
+    
+  
+   
+  Sintaxe:
+  url_open_ext(url, alvo);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        url
+        O URL (endereço do site) para o qual o link deve ser criado.
+      
+      
+        alvo
+        Esta é a área de destino para abrir a URL dentro.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  url_open_ext("http://yoyogames.com", "_blank");
+  Isto abriria a página inicial dos YoYo Games em uma nova janela.
+   
+   
+   
+  
+    
+      
+        Voltar: Web e HTML5
+        Próximo: url_open_full
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

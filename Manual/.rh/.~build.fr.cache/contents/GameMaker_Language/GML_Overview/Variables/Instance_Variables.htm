@@ -1,0 +1,35 @@
+
+  
+  Variáveis de instância
+  Uma variável de instância é criada dentro de uma instância de um objeto e é considerada única para essa instância - ou seja: muitas instâncias do mesmo objeto podem ter a mesma variável, mas cada variável pode ter um valor diferente, pois são únicas para
+    cada instância. Mas como é criada uma variável de instância? Bem, você cria novas variáveis simplesmente atribuindo um valor a elas como mostrado neste pequeno exemplo (isto é chamado de declarar a variável):
+  poções = 12; vida = 100; nome = "Jock MacSweeney"; força = 5,5; armadura = -2;
+  Como você pode ver, basta dar o nome e depois um valor (o valor pode ser qualquer tipo de dado) para definir essa variável e tê-la pronta para uso dentro de uma instância do objeto para o qual você está codificando (note que o valor pode
+    vêm do valor de retorno de uma função ou do resultado de uma operação entre outras variáveis, etc...). Essas variáveis podem então ser usadas e modificadas de várias maneiras a partir de dentro da instância, por exemplo, este código pode estar em um evento de colisão
+    e usado para tirar uma quantia da variável "life":
+  vida -= 5 + armadura;
+  Se "life" estiver em 100, terá agora um valor de 97 (100 - (5 + -2) = 97). Agora, este é um exemplo simples, e você poderia substituir "armour" pelo valor real de -2,
+    mas o que acontece se esse valor for codificado em vários lugares e depois você decide mudá-lo? Você teria que passar por TODO seu código e mudar cada -2 para qualquer que seja o novo valor
+    é, o que consome tempo e é muito propenso a erros! Mas se você usar uma variável, tudo o que você tem que fazer é reatribuir-lhe um novo valor e o código usará automaticamente esse novo valor a partir daí, tornando as coisas muito mais flexíveis e muito mais fáceis de consertar
+    caso haja algum problema. Deve-se notar também que mesmo que um valor não vá mudar, é muito mais fácil lembrar o que significa uma variável chamada "life" em vez de apenas olhar para um número.
+  OGameMaker Studio 2 também tem uma coleção de variáveis de instância "incorporadas", então você deve estar ciente delas, pois você pode nomear uma de suas próprias variáveis de instância como a mesma ou desejar ter sua própria variável global com o mesmo nome e se perguntar por que
+    você está recebendo erros. Eles são fáceis de identificar, porém, pois são mostrados em uma cor diferente no editor de código e também aparecem em auto-completo e são mostrados em barra na parte inferior do editor de código.
+  Existem algumas funções detempo de execução projetadas para ajudá-lo ao lidar com variáveis de instância, que estão todas listadas na seção seguinte:
+  
+    Funções variáveis
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis e Escopo de Variáveis
+        A seguir: Variáveis globais
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,48 @@
+
+  
+  física_particle_group_add_ponto_add
+  Esta função estabelece um ponto na sala para definir a forma de um polígono que será usado para criar um grupo de partículas macias do corpo. Você deve ter sinalizado previamente ao GameMaker Studio 2 que vai definir a forma de um polígono usando a função
+   physics_particle_group_polygon( ) e depois usar esta função para definir os pontos individuais do polígono. Você deve dar pelo menos três pontos ao definir a forma do polígono, mas pode dar até oito,
+    e a função permitirá a definição de polígonos côncavos. Entretanto, se você gerar um polígono com quaisquer cavidades, os pontos dentro dele serão ignorados e uma forma convexa será criada para o grupo de partículas.
+   
+  Sintaxe:
+  física_particle_group_add_ponto_add(x, y)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A posição x na sala para o ponto.
+      
+      
+        y
+        A posição y na sala para o ponto.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile; var groupflags = phy_particle_group_flag_solid; physics_particle_group_begin(flags, groupflags, mouse_x, mouse_y, 0, 0, 0, c_white, 1, 1, 2); physics_particle_group_polygon();
+     physics_particle_group_add_point(200, 200); physics_particle_group_add_point(300, 300); physics_particle_group_add_point(100, 300); mLastGroup = physics_particle_group_end();
+  O código acima armazena as bandeiras para o tipo de partícula e as propriedades do grupo de partículas em variáveis e depois as utiliza para criar um grupo de partículas poligonais de três lados na posição do mouse.
+   
+   
+   
+  
+    
+      
+        Voltar: Partículas macias do corpo
+        Próximo: física_física_final_grupo_de_partículas
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

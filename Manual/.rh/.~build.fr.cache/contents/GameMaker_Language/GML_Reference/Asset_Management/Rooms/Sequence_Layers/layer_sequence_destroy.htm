@@ -1,0 +1,46 @@
+
+  
+  layer_sequence_destroy
+  Com esta função você pode destruir (remover da sala) um elemento de seqüência. Você fornece a identificação do elemento seqüencial conforme retornado por layer_sequence_create() ou por uma das funções dos elementos da camada e a seqüência será destruída.
+   
+  Sintaxe:
+  layer_sequence_destroy(sequence_element_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sequence_element_id
+        O valor de identificação único do elemento de seqüência para o alvo
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var a = layer_get_all_elements(layer); for (var i = 0; i < array_length(a); i++;)  {
+     if layer_get_element_type(a[i]) == layerelementtype_sequence {
+     layer_sequence_destroy(a[i])
+     }
+     }
+  
+  O código acima obtém as identificações de todos os elementos atribuídos à camada da instância que está executando o código. O código então verifica se algum dos elementos retornados são ativos em seqüência e se eles são destruídos.
+   
+   
+   
+  
+    
+      
+        Voltar: Sequência de camadas
+        Próximo: layer_sequence_x
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

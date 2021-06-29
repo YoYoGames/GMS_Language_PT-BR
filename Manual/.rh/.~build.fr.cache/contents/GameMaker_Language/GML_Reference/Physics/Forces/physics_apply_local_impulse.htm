@@ -1,0 +1,60 @@
+
+  
+  física_aplicar_impulso_local
+  Você não só pode aplicar força e gravidade a um objeto com a física no GameMaker Studio 2, mas também pode aplicar um impulso. Isto é ligeiramente diferente de uma força na medida em que quando ela é aplicada afetará imediatamente a velocidade, e,
+    potencialmente o torque (ou "spin") do objeto, particularmente se o ponto escolhido para aplicar o impulso tem um vetor que não está alinhado com o centro de massa (nota: o centro de massa não é necessariamente o mesmo que a origem!).
+    Esta função aplica um impulso localmente a uma instância. Isto significa que a força e a direção do impulso são calculadas com base na origem (ou na posição se não tiver sprite) da instância, sem levar em consideração
+    a direção ou rotação que pode ter na sala de jogos ou no mundo da física. Aqui está uma ilustração:
+  Como você pode ver, o sapo na imagem recebe um impulso de baixo para
+    fazê-la "saltar". O impulso exato é definido pelo vetor que obtemos dos componentes ximpulso/yimpulso em relação às coordenadas xpos/ypos - o que significa simplesmente que o impulso é calculado como a distância de xpos/ypos a ximpulso/yimpulso
+    em Newtons, e a direção é o ângulo que obtemos de xpos/ypos a ximpulso/yimpulso.
+  NOTA: O mundo da física usa medidores para todos os seus cálculos, e a proporção de pixels por metro é definida no editor da sala ou usando physics_world_create().
+   
+  Sintaxe:
+  physics_apply_local_impulse(xpos, ypos, ximpulse, yimpulse)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        xpos
+        A coordenada x relativa à origem onde o impulso será aplicado
+      
+      
+        ypos
+        A coordenada y em relação à origem onde o impulso será aplicado
+      
+      
+        ximpulse
+        o componente x do vetor de impulso (em relação à coordenada xpos)
+      
+      
+        yimpulse
+        o componente y do vetor de impulso (em relação à coordenada ypos)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se pular { physics_apply_local_impulse(0, 20, 0, 50); }
+  O código acima aplicará um impulso com força de 30 Newtons e uma direção indo de baixo para cima em relação à origem da instância, se a variável "salto" for verdadeira.
+   
+   
+   
+  
+    
+      
+        Voltar: Forças
+        A seguir: physics_apply_torque
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

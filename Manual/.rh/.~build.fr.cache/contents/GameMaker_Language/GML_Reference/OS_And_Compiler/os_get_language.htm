@@ -1,0 +1,105 @@
+
+  
+  os_get_language
+  Esta função retorna uma string com as duas letras Código de Idioma para o sistema operacional que está rodando o jogo, conforme definido pela norma ISO639. Se a informação não estiver disponível, ela conterá
+    simplesmente um fio vazio "", ou "en" para a língua "inglesa". Observe que alguns idiomas também têm um Código Regional relevante, portanto, para distinguir entre diferentes regiões de um mesmo país, use a função os_get_region().
+  A tabela a seguir mostra exemplos de alguns dos principais códigos de linguagem de duas letras, conforme definido pela ISO 639:
+   
+  
+    
+      
+        Idioma
+        Código
+      
+      
+        árabe
+        ar
+      
+      
+        Chinês
+        zh
+      
+      
+        Dinamarquês
+        da
+      
+      
+        Inglês
+        pt
+      
+      
+        Francês
+        fr
+      
+      
+        Alemão
+        de
+      
+      
+        Grego
+        el
+      
+      
+        Italiano
+        it
+      
+      
+        Japonês
+        ja
+      
+      
+        Norueguês
+        não
+      
+      
+        Polonês
+        pl
+      
+      
+        Português
+        pt
+      
+      
+        Russo
+        ru
+      
+      
+        Espanhol
+        es
+      
+      
+        Sueco
+        sv
+      
+    
+  
+   
+  NOTA: Este não é o código do país de localização que é devolvido, mas o código do idioma do sistema operacional.
+   
+  Sintaxe:
+  os_get_language()
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  switch (os_get_language()) {
+     caso "es": ini_open("spanish.ini"); pausa; caso "fr": ini_open("french.ini"); pausa; caso "it": ini_open("italian.ini"); pausa; padrão: ini_open("english.ini");
+    pausa;;
+  
+  O código acima verifica o idioma do sistema operacional e abre um arquivo *.ini diferente, dependendo do valor retornado.
+   
+   
+   
+  
+    
+      
+        Voltar: OS E Compilador
+        Próximo: os_get_region
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,62 @@
+
+  
+  Criando Sprites
+  Agora que você sabe o que é um programa, é hora de olhar alguns dos diferentes recursos que podem ser usados no GameMaker Studio 2 para fazer seu jogo. Para começar, vamos analisar os sprites ,
+    que são geralmente uma das primeiras coisas que você precisará ao fazer qualquer projeto. Como explicado na seção do The Asset Browser, um sprite é uma imagem que pode ser animada (embora não
+    precisa ser) e depois atraída para a tela. Em geral, um duende será associado a um objeto, mas você pode desenhar sprites por conta própria, seja a partir do código ou da camada de ativos do editor da sala (falaremos sobre isso com mais detalhes mais tarde,
+    na seção sobre quartos). Você também pode criar um duende para ser usado como um conjunto de azulejos, mas exploraremos essa opção também em uma seção posterior.
+  Quando você cria um novo projeto a partir da página inicial, o navegador de recursos só conterá pastas vazias para os recursos que você possa precisar, então você precisa clicar com o botão direito do mouse em  na pasta de recursos sprite e então selecionar a opção Criar (se você não tiver uma pasta de recursos sprite você pode fazer uma a partir do menu de clique com o botão direito do mouse e então criar a sprite, ou você pode simplesmente clicar com o botão direito do mouse em qualquer lugar do recurso
+    navegador e criá-lo). Isto criará um novo ativo sprite e abrirá o editor sprite para você (se o editor sprite não abrir, simplesmente clique duas vezes em  sobre o novo ativo):
+  Como você pode ver, a parte superior esquerda da janela tem um campo para o Nome do duende. Todos os sprites (e todos os outros bens) devem ter
+    um nome dado a eles para que você (e o GameMaker Studio 2) possa identificá-los facilmente, embora você deva observar que este nome é realmente apenas um  variável que possui um valor de identificação
+    que "aponta" para o recurso, neste caso, um duende. É melhor dar a cada duende um nome descritivo para que você possa identificar rapidamente se um determinado bem é um duende, um objeto ou outra coisa, e muitas pessoas fazem isso
+    prefixando ou sufixando o recurso com as letras " spr" - por exemplo, " spr_Ball". Observe que os nomes dos recursos estão limitados ao uso apenas de letras, dígitos e o sublinhado
+    símbolo "_", e o nome de todos os bens deve começar com uma letra e não com um número.
+  As outras características do editor sprite que discutiremos no final desta seção, mas primeiro precisamos explicar como desenhar um sprite. Isto é feito na seção Editor de imagem. A imagem
+    editor é uma ferramenta muito poderosa para criar os gráficos em seu jogo e é aberta clicando no botão Edit Image .
+  
+  Não vamos entrar em muita profundidade sobre as ferramentas disponíveis aqui - para isso temos a seção Editor de Imagem do manual - mas brevemente você tem:
+  
+    Na parte superior esquerda, a vista da moldura - esta mostra a(s) moldura(s) de seu duende e pode ser redimensionada usando os ícones da lupa.
+    No centro temos a tela de desenho - isto mostra a moldura atualmente selecionada pronta para desenho e você pode usar o botão central do mouse  para dar a volta e a roda do mouse  para aumentar e diminuir o zoom.
+    Na parte superior direita temos as escovas básicas - aqui você pode escolher a escova para desenho, e qualquer escova personalizada também será adicionada aqui.
+    No meio à direita temos o seletor de cores - aqui podemos escolher a cor a ser usada para o botão esquerdo e/ou direito do mouse, já que você pode desenhar na tela com um ou outro botão ao mesmo tempo.
+    Logo abaixo do colhedor de cores temos nossas ferramentas - estas são as diferentes ferramentas de desenho, incluindo a escova, o enchimento de inundação, o mascaramento e as ferramentas de forma. Observe que algumas das ferramentas são divididas diagonalmente e desenharão ou esboçadas ou preenchidas
+      formas, dependendo do lado da linha em que você clicar para selecioná-las.
+    Na parte inferior direita temos a vista das camadas - como muitas outras ferramentas de desenho lá fora, você pode criar diferentes camadas para desenhar, permitindo que você experimente com posição e cor, etc... sem ter que se preocupar em destruir
+      o que está por baixo.
+  
+  Desenhe algo no editor de imagem e leve algum tempo para brincar com as opções, depois quando estiver pronto feche a área de trabalho do editor de imagem (que salvará a imagem) para levá-lo de volta à área de trabalho principal com o editor sprite dentro dela. Vamos discutir
+    algumas outras características do editor sprite que são importantes de se conhecer quando se está apenas começando...
+  A primeira coisa que você precisa saber é como definir a origem para o duende. A origem é simplesmente o ponto que será usado para "ancorar" nosso duende dentro da sala e, neste caso, queremos colocá-lo no centro.
+  Portanto, clicamos em  no menu inferior para definir a origem e selecionamos "centro do meio":
+  
+  Você verá o marcador de origem azul na imagem de pré-visualização mover-se para o centro do duende. Note que você pode colocar a origem em qualquer lugar que desejar, basta clicar em  no link
+    imagem de pré-visualização, e você também pode inserir manualmente a posição de origem adicionando valores nos campos x/y na parte superior.
+  Outra coisa importante a fazer é saber como colocar a máscara de colisão para o duende. A máscara de colisão é a área que o GameMaker Studio 2 irá verificar para ver se houve uma colisão com qualquer outra instância de um objeto no jogo,
+    e, por padrão, isto é definido como retângulo (que também é o mais rápido a ser resolvido). Observe que você pode definir o modo de detecção para o  caixa de delimitação para ser automático
+    (o valor padrão) ou manual. Se você escolher manual você será capaz de definir os valores da caixa de delimitação esquerda, direita, superior e inferior.
+  
+  Qualquer tipo de máscara de colisão que não seja retângulo será mais lento de resolver, mas quando se faz um jogo pequeno e simples, normalmente não é um problema. Note que você também pode importar sprites feitos em outro software clicando no botão Importar no
+    sprite editor, e você também pode arrastar arquivos de imagem para o IDE GameMaker Studio 2 para adicioná-los como sprites ao Navegador de Ativos. Você também pode arrastar sprites do Navegador de Ativos para adicioná-los diretamente às coisas, neste caso a IDE irá destacar o
+    lugares aos quais você pode adicionar o duende:
+  Se você quiser informações mais detalhadas sobre o Editor Sprite e o Editor de Imagem, consulte as seções seguintes do manual:
+  
+    Editores: O Editor Sprite
+    Editores: O Editor de Imagem
+  
+  Você pode fechar o editor sprite agora que vamos passar a discutir os  Conjuntos de Azulejos.
+   
+   
+  
+    
+      
+        Voltar: Índice
+        A seguir: Criação de Ladrilhos
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

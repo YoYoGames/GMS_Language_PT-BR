@@ -1,0 +1,53 @@
+
+  
+  buffer_sha1
+  Na criptografia, SHA-1 é uma função de hashing criptográfica projetada pela Agência de Segurança Nacional dos Estados Unidos e é empregada em várias aplicações e protocolos amplamente utilizados, como o popular
+    Git onde é usado para verificar mudanças de arquivo. Esta função irá pegar os dados de entrada de um buffer e retorna uma digestão de mensagem de 160 bits em formato ASCII. Desta forma, você pode gerar uma chave segura que pode ser armazenada e usada para verificar a integridade
+    das informações enviadas (ou recebidas) para (ou recebidas de) um servidor externo (por exemplo). Ao aplicar isto aos buffers usando esta função, você deve especificar o id do buffer a ser usado, depois um valor de offset (em bytes) para onde começar, e então
+    um tamanho (novamente em bytes) para a região a ser apressada.
+  NOTA: O SHA-1 não é completamente seguro e pode ser quebrado. Veja esta página para mais informações.
+   
+  Sintaxe:
+  buffer_sha1(buffer, offset, tamanho);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O índice do buffer a ser utilizado.
+      
+      
+        offset
+        O valor da compensação de dados.
+      
+      
+        tamanho
+        O tamanho do amortecedor.
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  check_string = buffer_sha1(buff, 0, buffer_get_size(buff));
+  O código acima criará um hash sha1 para os dados completos armazenados no buffer indexado pela variável "buff", e armazenará o hash retornado na variável "check_string".
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: buffer_crc32
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

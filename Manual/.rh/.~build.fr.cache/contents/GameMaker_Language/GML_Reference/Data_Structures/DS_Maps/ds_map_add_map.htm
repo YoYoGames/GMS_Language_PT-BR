@@ -1,0 +1,53 @@
+
+  
+  ds_map_add_map
+  Com esta função você pode atribuir um mapa DS (previamente criado) a uma chave dentro do mapa DS dado. Esta função é projetada para criar mapas compatíveis com JSON que você então codificaria usando json_encode()    e só deve ser usado em conjunto com essa funcionalidade. Se um mapa DS tiver outro mapa adicionado desta forma, então destruir o mapa pai também destruirá os mapas contidos e liberará sua memória, e chamando ds_map_clear() em
+    o mapa pai também destruirá e limpará quaisquer mapas sinalizados.
+   
+  Sintaxe:
+  ds_map_add_map(id, chave, valor)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação do mapa a ser utilizado.
+      
+      
+        chave
+        A chave para o mapa adicionado.
+      
+      
+        valor
+        A identificação do mapa a acrescentar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var j_map = ds_map_create(); var j_list = ds_list_create(); var sub_map = ds_map_create(); ds_map_add_list(sub_map, "list", j_list); ds_map_add(sub_map, "array", j_array); ds_map_add_map(j_map, "map",
+    sub_map); var j = json_encode(j_map); ds_map_destroy(j_map);
+  
+  O código acima criará dois mapas DS, e então preencherá um com uma lista e uma matriz antes de adicioná-lo ao segundo, que é então codificado em uma cadeia JSON. O mapa é então destruído para removê-lo, e quaisquer outros mapas ou listas que ele contenha,
+    de memória.
+   
+   
+   
+  
+    
+      
+        Voltar: DS Maps
+        Próximo: ds_map_replace_list
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

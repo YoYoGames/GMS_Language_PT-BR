@@ -1,0 +1,65 @@
+
+  
+   Leia o arquivo Ini
+  Com esta ação, você pode ler um dado de um arquivo da Ini. Você deve ter previamente aberto o arquivo Ini para leitura/escrita usando a ação Abrir arquivo Ini, e então com esta ação você dá o tipo de dados a serem lidos
+    (seja um número real ou um fio fechado em ""), assim como o cabeçalho da seção e a chave dentro dessa seção para obter os dados. Você também pode fornecer um valor padrão que pode ser tanto um número real de uma cadeia de caracteres, e o tipo deve
+    coincidem com o "Tipo" definido na ação. Esta ação padrão será devolvida pela ação caso ocorra qualquer uma das seguintes situações:
+  
+    O arquivo da Ini que você abriu não existe
+    O cabeçalho da seção a que você se refere não existe
+    A chave da qual você está tentando obter dados não existe
+  
+  Sob qualquer uma das circunstâncias acima, você receberá o valor padrão devolvido em vez de um valor do arquivo Ini. Qualquer valor retornado será armazenado na variável de destino que você especificar, que também pode ser criada naquele momento, se marcada
+    como uma variável local temporária.
+  IMPORTANTE! tentar ler dados de um arquivo Ini que não tenha sido aberto anteriormente usando a ação Open Ini File causará um erro grave e travará seu jogo.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Tipo
+        O tipo de dados a serem lidos, seja um fio (entre aspas ""), ou um númeroreal
+      
+      
+        Seção
+        A seção do arquivo da Ini a ser lida (como um fio)
+      
+      
+        Chave
+        A chave dentro da seção a ser lida (como um fio)
+      
+      
+        Padrão
+        O valor padrão para retornar se o arquivo, seção ou chave não existir
+      
+      
+        Meta
+        A variável alvo para manter o valor de retorno da ação
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima abrirá um arquivo Ini para leitura e, em seguida, utilizará os dados lidos a partir dele para definir
+    3 variáveis globais diferentes antes de fechar o arquivo novamente.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações do arquivo
+        A seguir: Se o arquivo existir
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

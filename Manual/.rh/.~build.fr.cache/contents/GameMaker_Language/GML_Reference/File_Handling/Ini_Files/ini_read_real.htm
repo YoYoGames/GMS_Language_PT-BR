@@ -1,0 +1,51 @@
+
+  
+  ini_read_real
+  Você pode usar esta função para ler um número a partir de um arquivo de dados ini. Os arquivos Ini são divididos em seções e, em seguida, cada seção é dividida em pares de chaves - valores. Assim, um arquivo ini típico se pareceria com algo assim:
+  
+  Sintaxe:
+  ini_read_real(seção, chave, default);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        seção
+        A seção do .ini a ler de.
+      
+      
+        chave
+        A chave dentro da seção relevante do .ini a ser lida.
+      
+      
+        padrão
+        O valor a retornar se um valor não for encontrado no local definido (ou se o arquivo .ini não existir). Deve ser um número real.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  ini_open("savedata.ini"); score = ini_read_real("save1", "score", 0 ); ini_close();
+  
+  Isto abrirá "savedata.ini" e definirá a pontuação para o valor sob "save1" > "score" nele, depois fechará o .ini novamente. Se não houver valor em "save1" > "score", ou se não houver "savedata.ini".
+    presente, a pontuação será definida como 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Arquivos de Inicia
+        Próximo: ini_read_string
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

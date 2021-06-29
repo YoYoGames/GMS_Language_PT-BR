@@ -1,0 +1,55 @@
+
+  
+   Definir dados do azulejo na célula
+  Com esta ação, você pode definir os dados de uma célula de azulejo em uma camada de mapa de azulejo. Os dados do azulejo são simplesmente um valor que reflete o índice do azulejo junto com os valores de virar, espelhar e girar,
+    bem como qualquer máscara de azulejo personalizada que você tenha usado. Com esta ação, você primeiro fornece a camada a ser alvo usando o nome da camada (um fio), como definido no editor da sala, e depois a coluna e linha na camada do mapa de azulejos para definir os dados do azulejo.
+    para. A "célula" é a área na grade do mapa de azulejos que contém o azulejo para o qual você deseja definir os dados, portanto, se seus azulejos são 16x16, por exemplo, e a sala é 1024x768 o mapa de azulejos terá 64 colunas e 48 filas.
+  NOTA: A camada selecionada deve ter sido definida como uma camada de mapa de azulejos no editor da sala, caso contrário, você poderá receber erros.
+  O argumento final para a ação são os próprios dados do azulejo. Você normalmente recuperaria os dados do azulejo para a célula do mapa do azulejo usando a ação Get Tile Data In Cell e depois os manipularia usando a ação Set Tile Data Transform antes de defini-la novamente com esta ação. Para mais informações sobre os dados do azulejo, consulte a seção GML sobre Funções do Mapa de Azulejo.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Camada
+        A camada com o mapa de azulejos ao alvo
+      
+      
+        Colunas
+        A posição da coluna da célula ao longo do eixo horizontal para definir os dados da telha para
+      
+      
+        Fila
+        A posição da linha de células ao longo do eixo vertical para definir os dados da telha
+      
+      
+        Dados
+        Os dados dos azulejos a serem utilizados para a configuração da célula
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima passa por cada célula de ladrilho na sala, recupera
+    os dados do azulejo para a célula, espelha-o, e em seguida, define a célula novamente.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações em telhas
+        A seguir: Obter dados de azulejos na célula
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

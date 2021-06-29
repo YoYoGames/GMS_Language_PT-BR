@@ -1,0 +1,42 @@
+
+  
+  xboxlive_matchmaking_session_leave
+  Esta função faz com que o usuário que criou ou encontrou a sessão especificada saia dela. Você pode obter o ponteiro de identificação da sessão a partir do async_load Mapa DS que é
+    retornou no Evento Social Assíncrono quando você criou ou encontrou uma sessão (veja xboxlive_matchmaking_create()    para mais detalhes).
+   
+  Sintaxe:
+  xboxlive_matchmaking_session_leave(session_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        session_id
+        O ponteiro de identificação da sessão para sair.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if gamepad_button_check_pressed(0, gp_start) { xboxlive_matchmaking_session_leave(global.sessionID); }
+  O código acima verifica se há um botão de controle de jogo pressionado e, se for detectado, o usuário sairá da sessão de matchmaking.
+   
+   
+   
+  
+    
+      
+        Voltar: Fósforos
+        Próximo: xboxlive_matchmaking_send_invites
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

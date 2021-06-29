@@ -1,0 +1,50 @@
+
+  
+  Funções assíncronas
+  No contexto do GameMaker Studio 2, uma função assíncrona é aquela que envia para um servidor web, ou pede a entrada do usuário, ou mesmo transmite dados, enquanto deixa o GameMaker Studio 2 continuar a rodar sem bloquear o jogo sendo executado. Quando
+    o retorno da informação é recebido um Evento Async especial que, por sua vez, permite que qualquer instância com um Evento Async atribuído a ele execute outras funções (embora este
+    não tem que ser o caso). Portanto, basicamente, é uma forma de se comunicar com algum recurso externo (servidor, usuário ou dispositivo) sem que o jogo ou projeto pare enquanto se espera por uma resposta.
+  Por que isso é importante? Bem, já que permite que o GameMaker Studio 2 continue funcionando enquanto envia ou recebe dados, e isto significa que você pode fazer muitas coisas sem bloquear o loop do jogo, como por exemplo:
+  
+    transmita dados do dispositivo para seu jogo sem que o jogador espere que as coisas sejam carregadas
+    ter eventos de chamada de retorno para fazer as coisas somente quando as informações corretas forem recebidas
+    comunicar e trocar dados com um servidor web
+  
+  Isto faz com que tudo funcione de uma maneira muito mais fluida e discreta. Deve-se notar que os Eventos Async serão acionados para todas as instâncias que os tiverem, de modo que você pode usar uma função assíncrona em uma instância, e ter a função assíncrona
+    Evento que trata da resposta em outro, ou mesmo vários outros. Você pode ir aqui para mais informações sobre como funciona o evento assíncrono - Eventos assíncronos.
+  Os diferentes tipos de funções assíncronas estão listados nas seções abaixo:
+   
+  
+    HTTP
+    Diálogo
+    Economia de nuvens
+    Notificações Push
+    Facebook
+    Conquistas e Quadros de Líderes
+  
+   
+  Há também uma série de funções de buffer que podem ser usadas para carregar e salvar buffers de forma assíncrona, que são necessárias quando se trabalha nos diferentes consoles que o GameMaker STudio 2 suporta, embora
+    eles também podem ser usados nas outras plataformas alvo:
+   
+  
+    buffer_save_async
+    buffer_load_async
+    buffer_async_group_begin
+    opção_de_tampão_async_group_option
+    buffer_async_group_end
+  
+   
+   
+   
+  
+    
+      
+        Voltar: ReferênciaGML
+        A seguir: Rede
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,72 @@
+
+  
+  game_set_speed_speed
+  Esta função pode ser usada para definir a velocidade do jogo. Você pode configurá-la de duas maneiras - como quadros de jogo por segundo (FPS) ou como microssegundos por quadro de jogo (MPF) - usando uma das duas constantes a seguir:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        gamepeed_fps
+        Define a velocidade do jogo usando quadros por segundo.
+      
+      
+        gamepeed_microseconds
+        Define a velocidade do jogo usando microssegundos por quadro.
+      
+    
+  
+   
+  Assim, por exemplo, uma velocidade de jogo de 30 quadros por segundo seria de 33333 microssegundos por quadro de jogo, o que seria então expresso por esta função como um ou outro:
+  game_set_speed(30, gamespeed_fps);
+  ou:
+  game_set_speed(3333333, gamespeed_microseconds);
+   
+  Sintaxe:
+  game_set_speed(velocidade, tipo);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        velocidade
+        A nova velocidade de jogo (seja como FPS ou MPF).
+      
+      
+        tipo
+        O tipo de método utilizado para definir a velocidade do jogo (ver as constantes acima).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if os_browser == browser_not_a_browser {
+     game_set_speed(60, gamespeed_fps); }
+     mais
+     {
+     game_set_speed(30, gamespeed_fps); }
+  
+  O código acima verifica se o jogo está rodando em um navegador e define a velocidade do jogo de acordo com um valor FPS.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle geral do jogo
+        Próximo: highscore_add
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,50 @@
+
+  
+  ds_map_is_list
+  Com esta função, você pode verificar se uma lista DS está armazenada na chave do mapa dado. Se a dada chave contém um DS list ID, então a função retornará verdadeiro, caso contrário, retornará falso.
+   
+  Sintaxe:
+  ds_map_is_list(id, key)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        O id do ds_map a ser usado.
+      
+      
+        chave
+        A chave para verificar.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var size = ds_map_size(inventory) ; var key = ds_map_find_first(inventory); for (var i = 0; i < size; i++;) {
+     if ds_map_is_list(inventory, key) {
+     ds_list_destroy(key);
+     }
+     key = ds_map_find_next(inventory); }  ds_map_destroy(inventário);
+  
+  O código acima passa por um mapa DS e verifica se alguma das chaves dentro dele é para uma lista DS. Se forem, então a lista DS é destruída, e no final do loop o mapa DS é destruído também.
+   
+   
+   
+  
+    
+      
+        Voltar: DS Maps
+        A seguir: ds_map_is_map  
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

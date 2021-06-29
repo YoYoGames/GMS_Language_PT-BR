@@ -1,0 +1,78 @@
+
+  
+  mp_grid_path
+  Com esta função você pode criar um caminho que irá navegar de um ponto de partida a um ponto de chegada usando uma mp_grid que você definiu previamente, evitando quaisquer obstáculos que já tenham sido adicionados à grade. Os argumentos xstart e ystart
+    indicam o início do caminho em coordenadas de sala, enquanto xgoal, ygoal argumentos indicam o destino. Você também pode selecionar apenas movimento horizontal/vertical, ou permitir movimentos diagonais completos, especificando verdadeiro no argumento de permissão.
+    A função retorna ou verdadeiro (conseguiu encontrar um caminho) ou falso (falhou), assim como definir o caminho escolhido. Na imagem a seguir, você pode ver como tudo isso funciona em conjunto:
+  Como você pode ver, os objetos "tubos" foram adicionados à grade, o que significa que qualquer
+    O caminho criado tem que contorná-los. Há dois caminhos criados na imagem, um (verde) foi feito com diagonais permitidas e o outro (vermelho) sem diagonais. A diferença entre os dois é bastante óbvia, com o caminho verde parecendo muito mais "elegante".
+    e direto, mas tudo depende do uso que você vai dar a eles, a qual você prefere. Note que o caminho é independente da instância atual - é um caminho através da grade, não um caminho para uma instância específica, mesmo que uma instância específica
+    pode ter a variável que armazena o índice do caminho. Você também pode precisar depurar esses caminhos para ver como eles são feitos e interagir dentro do ambiente do jogo, caso em que você deve estar usando o draw_path() função.
+  OBSERVAÇÃO: O caminho deve ter sido previamente criado (ou em código com caminho_add() ou como um recurso)
+    e será substituída pelo caminho gerado por esta função.
+   
+  Sintaxe:
+  mp_grid_path(id, path, xstart, ystart, xgoal, ygoal, allowdiag);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        Índice da rede mp_ que deve ser usada
+      
+      
+        caminho
+        índice do caminho que deve ser utilizado pela função
+      
+      
+        x início
+        Início x coordenada do novo caminho
+      
+      
+        y começar
+        Início e coordenada do novo caminho
+      
+      
+        xgoal
+        Acabamento x coordenada do novo caminho
+      
+      
+        ygoal
+        Acabamento e coordenação do novo caminho
+      
+      
+        allowdiag
+        Indica se são permitidos movimentos diagonais em vez de apenas horizontais ou verticais
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  global.grid = mp_grid_create(0, 0, room_width div 32, room_height div 32, 32, 32); mp_grid_add_instances(global.grid, obj_wall, false); com (obj_Enemy) {
+     path = path_add(); if mp_grid_path(global.grid, path, x, y, obj_Player.x, obj_Player.y, 1) {
+     path_start(path, 0, 3, 0); }
+     }
+  
+  O código acima cria uma variável global "global.grid", depois gera uma mp_grid e atribui seu índice (id) a essa variável para uso em todas as outras chamadas de função mp_grid. Ele então adiciona todas as instâncias de "obj_Wall" na grade antes de
+    obtendo todas as instâncias de "obj_Enemy" para criar um caminho e depois usar mp_grid_path para calcular uma rota de sua posição até a posição de "obj_Player". Se existe um caminho, então o objeto começa ele mesmo ao longo do caminho.
+   
+   
+   
+  
+    
+      
+        Voltar: Planejamento de Movimento
+        Próximo: mp_grid_add_cell
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

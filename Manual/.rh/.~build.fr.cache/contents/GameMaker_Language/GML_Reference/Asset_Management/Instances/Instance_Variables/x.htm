@@ -1,0 +1,32 @@
+
+  
+  x
+  O valor x de uma instância é a posição horizontal na sala atual, medida em pixels. Este valor pode ser 0, positivo ou negativo, onde 0 é o lado esquerdo da sala e movendo-se para a direita aumenta x, movendo-se para a esquerda diminui x (um valor negativo
+    valor para x significa que a instância foi para fora do lado esquerdo da sala). Você pode até mesmo dar x um valor real como 12,345, mas como você não pode obter .345 de um pixel, a instância pode não parecer ter se movido, embora estes valores sejam mantidos
+    e utilizados internamente pelo GameMaker Studio 2 e são perfeitamente válidos.
+  Ao definir os valores x (e y) você pode fazer o objeto saltar pela sala até a posição de sua escolha, ou pode adicionar e subtrair a eles por quantidades menores para dar a ilusão de movimento sem realmente usar o objeto embutido. velocidade    e direção funções. Isto deve ser levado em conta ao fazer seus jogos, pois muitas vezes um tipo de movimento se presta a um estilo particular de jogo mais do que outro.
+   
+  Sintaxe:
+  x;
+   
+  Devoluções:
+  Real (valor de ponto flutuante de precisão único)
+   
+  Exemplo:
+  if keyboard_check(vk_left) x += 5; if keyboard_check(vk_right) x -= 5;
+  O código acima usará as teclas de seta para adicionar ou subtrair à posição x e assim criar a ilusão de movimento.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis de instância
+        Próximo: y
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,51 @@
+
+  
+  tilemap_get_cell_x_at_pixel
+  Usando esta função, você pode recuperar a posição do eixo x de uma célula individual do mapa de azulejos, dando a posição relativa do eixo x dentro da sala. Você dá o ID do elemento do mapa de azulejos (que você obtém quando cria um elemento do mapa de azulejos usando layer_tilemap_create()    ou quando você usa a função layer_tilemap_get_id()), assim como a posição x e y dentro da sala e a função devolverá a posição x da célula dentro do mapa de azulejos para esse ponto.
+    Note que se o valor estiver fora da área do mapa de azulejos, e não houver célula disponível, ele retornará -1.
+   
+  Sintaxe:
+  tilemap_get_cell_x_at_pixel(tilemap_element_id, x, y);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tilemap_element_id
+        O valor de identificação único do elemento do mapa de azulejos para obter a posição da célula x de
+      
+      
+        x
+        A posição x dentro da sala a ser usada para obter a célula
+      
+      
+        y
+        A posição y dentro da sala a ser usada para obter a célula
+      
+    
+  
+   
+  Devoluções:
+  Inteiro (posição da célula do eixo x ou -1 se houver um erro)
+   
+  Exemplo:
+  var lay_id = layer_get_id("Tiles_Walls"); var map_id = layer_tilemap_get_id(lay_id); var _x = tilemap_get_cell_x_at_pixel(map_id, mouse_x, mouse_y); var _y = tilemap_get_cell_y_at_pixel(map_id, mouse_x, mouse_y); tiledata
+    = tilemap_get(map_id, _x, _y);
+  O código acima usa o ID do mapa de azulejos recuperado para obter a posição da célula a partir de um conjunto de coordenadas de sala e então armazenar os dados para qualquer azulejo encontrado ali em uma variável de instância.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas do mapa de azulejos
+        A seguir: tilemap_get_cell_y_at_pixel
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

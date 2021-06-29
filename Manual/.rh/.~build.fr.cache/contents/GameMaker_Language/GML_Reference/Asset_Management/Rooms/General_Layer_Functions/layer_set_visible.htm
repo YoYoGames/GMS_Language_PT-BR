@@ -1,0 +1,53 @@
+
+  
+  layer_set_visible
+  Com esta função, você pode alternar a visibilidade de uma camada. Você fornece a identificação da camada (que você obtém ao criar a camada usando layer_create()) ou o nome da camada (como um fio - isto terá um desempenho
+    impacto), bem como o valor de comutação para a camada onde visível é true e invisível é false.
+  Quando uma camada é invisível, nada que é atribuído à camada será sorteado, e se alguma instância for atribuída à camada, ela nem mesmo executará seu evento de sorteio (muito parecido com se você definir a variável de instância visível como falsa).
+    Note que quaisquer instâncias já marcadas como invisíveis não serão marcadas como visíveis se a camada em que estão inseridas for definida como visível, pois estas são duas configurações independentes, embora seu comportamento seja o mesmo.
+   
+  Sintaxe:
+  layer_set_visible(layer_id, visível)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada a ser alvo (ou o nome da camada como uma corda)
+      
+      
+        visível
+        Se a camada deve ser visível(verdadeira) ou não(falsa)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var lay_id = layer_get_id("Instâncias"); if layer_get_visible(lay_id) {
+     layer_set_visible(lay_id, false); }
+     mais
+     {
+     layer_set_visible(lay_id, true); }
+  
+  O código acima obtém o valor de identificação para a camada chamada "Instâncias" no editor da sala, então usa a identificação para verificar se a camada está visível ou não, alternando a visibilidade da camada dependendo do valor retornado.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próximo: layer_get_visible
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

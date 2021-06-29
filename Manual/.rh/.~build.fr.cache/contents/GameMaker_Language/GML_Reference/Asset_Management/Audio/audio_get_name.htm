@@ -1,0 +1,43 @@
+
+  
+  audio_get_name
+  Esta função devolverá o nome de um determinado recurso de áudio como uma corda. O valor "índice" pode ser o do próprio recurso (como visto no Navegador de Ativos) ou o valor de identificação único que é dado quando você toca o som usando, por exemplo,
+    audio_play_sound(). Note que a string retornada não é a mesma que a identificação do recurso e não pode ser usada para acessar o recurso em si, portanto deve ser usada apenas para exibição ou verificação de erros.
+   
+  Sintaxe:
+  audio_get_name(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do som a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  var snd = audio_play_sound(choose(snd_One, snd_Two, snd_Three), 0, false); var name = audio_get_name(snd); show_debug_message("Sound = " + nome);
+  O código acima reproduz um som aleatório escolhido a partir de três recursos sonoros diferentes e depois mostra uma mensagem de debug com seu nome.
+   
+   
+   
+  
+    
+      
+        Voltar: Áudio
+        Próximo: audio_get_type
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

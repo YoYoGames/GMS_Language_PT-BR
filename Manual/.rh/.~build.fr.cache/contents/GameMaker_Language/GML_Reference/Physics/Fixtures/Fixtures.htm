@@ -1,0 +1,88 @@
+
+
+
+
+
+  
+  Instalações
+  Antes que uma instância no GameMaker Studio 2 possa ter propriedades físicas, ela deve ter uma fixação atribuída a ela. Um acessório liga uma forma ou forma à instância e isto acrescenta propriedades materiais como densidade, fricção,
+    e restituição. As luminárias podem ser caixas, círculos, polígonos ou qualquer outra forma simples que você desejar, pois o GameMaker Studio 2 fornece funções que permitem definir sua própria forma ponto por ponto, e então uma vez que você tenha
+    sua forma você pode ir em frente e definir suas propriedades físicas também. Estas propriedades são as que regem a forma como a instância com a fixação a ela atribuída reagirá com outra instância no mundo da física e estão listadas abaixo:
+  
+    Densidade: A densidade de um material é definida como sua massa por unidade de volume. É, essencialmente, uma medida de quão apertada a matéria está apertada. Se você desejar que sua fixação seja estática (ou seja
+      imóvel) então a densidade deve ser definida como 0, tornando-a essencialmente infinitamente densa. Os objetos cinemáticos que se movem com velocidade constante e não são fisicamente afetados por colisões também são definidos usando uma densidade
+      de 0.
+    Fricção: A fricção é a força que resiste ao movimento relativo de superfícies sólidas, camadas fluidas e elementos materiais que deslizam uns contra os outros.
+    Amortecimento linear: Esta é a força generalizada que faz com que um objeto em movimento perca o impulso. No "mundo real", as coisas geralmente não acontecem para sempre. Por exemplo, um avião de papel voará por um curto período de tempo, mas eventualmente
+      cairá devido à fricção do ar que atua sobre ele causando sua desaceleração. No mundo da física que criamos tais coisas são difíceis de modelar e por isso cada fixação recebe seu próprio amortecimento linear para simular este tipo de "generalização".
+      fricção".
+    Amortecimento angular: Como acima, esta é uma força generalizada que é aplicada a um objeto para que ele pare de girar eternamente.
+    Restituição: Em física, a restituição é definida como "o retorno de um objeto ou sistema ao seu estado original após deformação elástica", mas como os dispositivos no GameMaker Studio 2 são 
+      corpos realmente rígidos e não podem ser deformados, pense nisto como basicamente o quão "saltitante" é a luminária.
+  
+  Assim, como você pode ver, com apenas algumas funções simples, o GameMaker Studio 2 pode ajudá-lo a criar sistemas complexos e interações que darão a seus jogos um senso de realismo sem precedentes.
+  NOTA: Você pode definir um acessório e tê-lo vinculado a múltiplas instâncias (pense em uma mesa de bilhar, onde todas as bolas têm as mesmas propriedades físicas, mas cada uma delas é uma entidade discreta). Você também pode vincular várias fixações a uma
+    uma única instância e combinar as propriedades físicas (por exemplo, usando dois polígonos triangulares para criar uma estrela)
+  As seguintes funções são para criar, ligar, ajustar colisões e depois apagar luminárias:
+   
+  
+    physics_fixture_create
+    physics_fixture_bind
+    physics_fixture_bind_ext
+    grupo_fixo_físico_set_collision
+    physics_fixture_delete
+    physics_remove_fixture
+  
+   
+  Uma fixação deve receber uma forma ou não será detectada pelo mundo da física, e esta forma pode ser definida pelas seguintes funções:
+   
+  
+    fisica_fixture_set_box_box_shape
+    fisica_fixture_set_set_circle_shape
+    forma_de_série_física
+    forma_da_cade_física
+    fisica_fixture_set_polygon_sha
+    fisica_fixture_add_point
+  
+   
+  Para que sua instância física possa reagir adequadamente ao mundo ao seu redor, os dispositivos que você utiliza devem ter propriedades específicas definidas que darão ao dispositivo ressalto, fricção, massa, etc... As seguintes funções são utilizadas para definir essas propriedades
+    da fixação:
+   
+  
+    densidade_de_série_física
+    física_fixture_set_fricção_física
+    fisica_fixture_set_linear_damping
+    fisica_fixture_set_angular_damping
+    fisic_fixture_set_restitution
+    fisic_fixture_set_sensor
+    fisica_fixture_set_kinematic
+    fisica_fixture_set_awake
+  
+   
+  Você também pode definir certas propriedades da fixação depois que ela foi vinculada a uma instância. Ao ligar a fixação "base", você pode optar por armazenar o índice único para as propriedades físicas ligadas em uma variável.
+    Isto pode então ser usado nas seguintes funções para alterar certas propriedades, ou para obter os valores atuais para elas:
+   
+  
+    physics_get_friction
+    physics_get_density
+    physics_get_restitution
+    physics_set_friction
+    densidade_física_set
+    physics_set_restitution
+    física_mass_properties
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Física
+        A seguir: Juntas
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

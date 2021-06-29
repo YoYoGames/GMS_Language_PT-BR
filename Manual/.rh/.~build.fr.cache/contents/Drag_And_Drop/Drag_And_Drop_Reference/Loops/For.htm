@@ -1,0 +1,58 @@
+
+  
+   Para
+  O For action é usado para realizar loops que só terminam quando um valor atinge a condição determinada. Você dá um valor inicial como uma variável (que pode ser marcada como uma variável local temporária - geralmente é o que você quer), então você dá
+    a condição para comparar a variável (por exemplo, se ela for inferior a um determinado valor), e finalmente a quantia para incrementar a variável a cada iteração do laço. Portanto, o fluxo geral é o seguinte:
+  
+    Você rubricar uma variável até um valor
+    Você define a condição para verificar esta variável em relação a
+    Você define o quanto a variável deve ser incrementada por cada iteração do laço
+    Você então adiciona ações no laço, e estas serão executadas para cada iteração até que a condição retorne falsa ou uma ação de quebra seja encontrada.
+  
+  Ao adicionar ações a serem executadas dentro do loop, estas são adicionadas tanto quanto você adicionaria uma ação a um "se", ou seja: deixá-la cair para o lado da ação em vez de sob ela:
+  Todas as ações adicionadas ao lado serão incluídas no For e serão realizadas antes da continuação do evento ou do roteiro
+    com as ações acrescentadas abaixo. Note que você pode terminar qualquer loop prematuramente se você chamar a ação Break, e ao usar Para loops você não tem que incrementar e pode fazer com que ele também diminua, desde que a condição
+    que você usa é apropriado. Por exemplo, configure a variável inicial para 10, configure a condição para verificar menos de 0 e depois configure o valor de incremento para -1 e o loop irá iterar 10 vezes, contando de 10 a 0 para trás.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Inicializar
+        Inicializar a variável que será usada para contar até um valor (pode ser marcada como uma variável local temporária)
+      
+      
+        Condição
+        A condição para verificar para quebrar o laço
+      
+      
+        Incremento
+        A quantidade para incrementar (ou diminuir) a variável inicial de contagem por cada iteração do laço
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima executa um loop para verificar e ver se um controle de jogo está conectado a algum dos 12 disponíveis
+    "ranhuras". Se um "gamepad" é descoberto, uma variável global é definida para o número atual de slots e o loop é quebrado.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações de Loop
+        A seguir: Intervalo
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

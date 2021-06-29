@@ -1,0 +1,64 @@
+
+  
+  layer_tilemap_create
+  Com esta função, você pode atribuir um recurso de conjunto de azulejos a uma camada a ser usada como um mapa de azulejos em seu projeto. Você fornece o ID da camada (que você obtém quando cria a camada usando layer_create())
+    ou o nome da camada (como um fio - isso terá um impacto no desempenho) e, em seguida, uma posição inicial (x, y) para adicionar o mapa de azulejos à sala, o recurso do conjunto de azulejos a ser usado e, em seguida, a largura e a altura do mapa de azulejos em células (ou seja: uma largura de
+    20 e uma altura de 10 irá criar um mapa de azulejos com 200 células de largura e 10 células de altura), com o tamanho das próprias células sendo definido pelo conjunto de azulejos escolhido. Vale ressaltar que não se pode colocar azulejos em posições negativas
+    dentro do mapa de azulejos, portanto, todos os azulejos devem ser colocados dentro dos espaços celulares 0 à largura - 1, 0 à altura - 1.
+   
+  Sintaxe:
+  layer_tilemap_create(layer_id, x, y, tile set, width, height)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada a ser alvo (ou o nome da camada como uma corda)
+      
+      
+        x
+        A posição x do mapa de azulejos na sala
+      
+      
+        y
+        A posição y do mapa de azulejos na sala
+      
+      
+        conjunto de azulejos
+        O índice do conjunto de azulejos a ser utilizado
+      
+      
+        largura
+        O mapa de largura do azulejo (em células)
+      
+      
+        altura
+        A altura do mapa de azulejos (em células)
+      
+    
+  
+   
+  Devoluções:
+  ID do elemento do mapa de azulejos (Real)
+   
+  Exemplo:
+  global.back_layer = layer_create(10000); global.back_tiles = layer_tilemap_create(global.back_layer, 0, 0, tmap_Trees, 16, 32);
+  O código acima cria uma nova camada e depois adiciona um novo elemento do mapa de azulejos, definindo a posição do mapa de azulejos para (0,0), bem como o conjunto de azulejos a serem usados e a largura e altura do mapa de azulejos.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas do mapa de azulejos
+        A seguir: layer_tilemap_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

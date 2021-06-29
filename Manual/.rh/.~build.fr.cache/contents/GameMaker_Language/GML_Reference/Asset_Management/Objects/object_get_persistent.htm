@@ -1,0 +1,44 @@
+
+  
+  object_get_persistent
+  Esta função lhe dirá se o objeto que você está verificando foi assinalado como "persistente" ou não. Um objeto persistente é aquele que fará com que qualquer instância dele seja transportada de sala em sala, a menos que seja explicitamente destruída.
+    Por favor, note que esta não é uma função de instância! Portanto, você pode ter um objeto persistente e uma instância não-persistente do mesmo objeto e vice-versa. Você pode definir uma bandeira persistente de instâncias individuais usando a persistente exemplo
+    variável.
+   
+  Sintaxe:
+  object_get_persistent(obj);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        obj
+        O índice do objeto a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if (!persistent) && (object_get_persistent(object_index)) { persist = true; }
+  O código acima verificará a instância em execução para ver se ela é persistente ou não, assim como verificará o índice de objetos da instância para ver se ela está marcada como persistente ou não. Se a instância ainda não for persistente, o índice de objetos é sinalizado como persistente.
+    por ser persistente, ele se tornará "persistente" para aquele exemplo.
+   
+   
+   
+  
+    
+      
+        Voltar: Objetos
+        Próximo: object_get_solid
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

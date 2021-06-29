@@ -1,0 +1,49 @@
+
+  
+  draw_set_alpha
+  Com esta função você pode definir o alfa do sorteio da base para o jogo. Este valor pode ser definido de 0 a 1, sendo 0 totalmente transparente e 1 totalmente opaco (o valor padrão), e afetará todos os outros sorteios, incluindo fundos, sprites, fontes,
+    primitivos e 3D.
+  Observe que se você estiver desenhando algum dos ativos e fornecendo um argumento alfa como parte da função (por exemplo, ao usar draw_sprite_ext()), então o valor alfa estabelecido aqui será
+    overridden, portanto desenhar um duende usando draw_sprite_ext( ) com um argumento alfa de 1 irá desenhar o duende totalmente opaco independentemente do conjunto alfa com draw_set_alpha() (isto funcionará da mesma forma quando se usa draw_self()    e a definição do image_alpha da instância). Observe também que quando uma instância é um desenho padrão (ou seja: tem um duende mas não tem Evento de Sorteio), então o
+    a variável image_alpha será fixada ao conjunto alfa com draw_set_alpha(), de modo que uma image_alpha de 1 e uma alfa de 0,5 desenharão o duende em alfa 0,5, enquanto uma image_alpha de 0,25 e uma alfa de desenho
+    de 0,5 vai desenhar o duende em 0,25 alfa.
+   
+  Sintaxe:
+  draw_set_alpha(alfa);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        alfa
+        O alfa a definir (entre 0 e 1)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_set_alpha(0.5); draw_set_colour(c_black);
+     draw_text(x+5, y+5, "LEVEL 1"); draw_set_alpha(1);
+     draw_set_colour(c_white);
+     draw_text(x, y, "NÍVEL 1"); draw_text(x, y, "NÍVEL 1");
+  O código acima desenhará algum texto na posição especificada com um efeito de sombra criado pelo desenho alfa e cor modificados.
+   
+   
+   
+  
+    
+      
+        Voltar: Cor e Alfa
+        Próximo: draw_set_colour
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

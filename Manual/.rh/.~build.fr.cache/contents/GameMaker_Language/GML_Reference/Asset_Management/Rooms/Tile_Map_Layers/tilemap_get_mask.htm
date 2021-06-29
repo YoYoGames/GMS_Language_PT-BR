@@ -1,0 +1,45 @@
+
+  
+  mapa_get_mask do azulejo
+  Esta função pode ser usada para recuperar o valor da máscara de bit para o mapa de azulejos dado. Você dá o ID do elemento do mapa de azulejo (que você obtém quando cria um elemento do mapa de azulejo usando layer_tilemap_create() ou quando
+    você usa a função layer_tilemap_get_id()), e a função retornará o valor atual da máscara ou -1 se houver um erro ou 0 se nenhuma máscara for especificada. Para maiores informações sobre as máscaras de bit do mapa de azulejos,
+    ver a função tilemap_set_mask().
+   
+  Sintaxe:
+  tilemap_get_mask(tilemap_element_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tilemap_element_id
+        O valor de identificação único do elemento do mapa de azulejos para obter a máscara de
+      
+    
+  
+   
+  Devoluções:
+  Real (0 para sem máscara, -1 para um erro)
+   
+  Exemplo:
+  var lay_id = layer_get_id("Tiles_sky"); var map_id = layer_tilemap_get_id(lay_id); var mask = tilemap_get_mask(map_id); var new_mask = tile_mirror | tile_flip | tile_rotate | 255; if mask != new_mask {
+     tilemap_set_mask(map_id, new_mask); }
+  
+  O código acima obtém o ID do mapa de azulejos da camada dada e depois verifica o valor da máscara associada a ela. Se não for o mesmo que o valor definido na variável "new_mask", então ele é definido para esse valor.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas do mapa de azulejos
+        Próximo: mapa_get_global_mask do tilemap
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

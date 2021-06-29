@@ -1,0 +1,52 @@
+
+  
+  xboxlive_matchmaking_send_invites
+  Esta função traz à tona o diálogo do sistema Xbox Live para permitir que um usuário envie convites para seu jogo. Você especifica o usuário local que deve controlar o diálogo (e a lista de amigos de quem será usada pelo diálogo), o valor único de ID de sessão para
+    a sessão para a qual eles querem convidar as pessoas e algum texto padrão para mostrar no diálogo. Você obtém o ID da sessão no async_load Mapa DS gerado pelo
+    função xboxlive_matchmaking_create().
+  A função retornará -1 se os argumentos forem inválidos ou se o usuário não estiver conectado ao Xbox Live, ou um valor maior que 0 de outra forma.
+   
+  Sintaxe:
+  xboxlive_matchmaking_send_invites(from_user, session_to_invite_into, text_to_add_to_invite);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        de_utilizador
+        A identificação do usuário local para controlar o diálogo.
+      
+      
+        sessão_convidar_para_a_sessão
+        A identificação única da sessão para a qual a sessão deve participar.
+      
+      
+        text_to_add_to_invite
+        Um pequeno texto a ser acrescentado ao convite.
+      
+    
+  
+   
+  Devoluções:
+  Inteiro
+   
+  Exemplo:
+  if gamepad_button_check_pressed(0, gp_face1) { var _uid = xboxlive_user_for_pad(0); xboxlive_matchmaking_send_invites(_uid, global.session_ID, "Come and join my game!"); }
+  O código acima verifica se há um botão de controle de jogo e, se for detectado, será aberto o diálogo Xbox Live para convites de sessão.
+   
+   
+   
+  
+    
+      
+        Voltar: Fósforos
+        Próximo: xboxlive_matchmaking_set_joinable_session
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

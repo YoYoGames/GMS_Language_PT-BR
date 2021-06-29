@@ -1,0 +1,71 @@
+
+  
+  Variáveis estáticas
+  Uma característica interessante das funções do roteiro e das variáveis do método é que elas podem ter variáveis estáticas. Uma variável estática é aquela que é definida na primeira vez
+    que a função é chamada e que manterá seu valor a partir de então. Para criar uma variável estática você precisa defini-la usando a palavra-chave static, como mostrado neste exemplo simples:
+  contador = função() {
+     static num = 0; return num++; }
+  
+  No exemplo acima, a variável num é uma variável estática, e assim será definida como 0 na primeira vez que a função for chamada, mas toda vez que a função for chamada depois disso, a inicialização da variável será
+    ignoradas. Então, se você chamar esta função assim:
+  para (var i = 0; i < 10; ++i;) {
+     show_debug_message(counter()); }
+  
+  A saída será:
+  0 1
+     2
+     3
+     4
+     5
+     6
+     7
+     8
+     9
+  
+  Se você não usasse a palavra-chave static aqui, então a saída seria simplesmente 0 para cada iteração do loop, já que a variável num será definida como 0 toda vez
+    a função é chamada antes de ser devolvida. Note que uma variável estática só pode ser alterada dentro da função original, e retorná-la simplesmente lhe dará uma cópia de seu valor - essencialmente a variável estática compartilhada só pode ser alterada pelo
+    função que a contém.
+  Uma variável estática é sempre inicializada no topo da função, portanto, não importa onde você defina uma variável estática na função, ela estará sempre disponível para ser lida e alterada em toda a função (mesmo se for usada antes de ser definida).
+    Veja o exemplo a seguir:
+  função add_health() {
+     my_health+++; show_debug_message(my_health); static my_health = 1; }
+  
+  Aqui a variável estática " my_health"está sendo alterada e impressa para a saída do compilador antes de ser inicializada. Embora isso pareça errado, é perfeitamente correto porque as variáveis estáticas são inicializadas antes de qualquer
+    O código de função é executado. Note que se houver múltiplas variáveis estáticas em uma função, a ordem na qual elas foram definidas será mantida quando forem inicializadas no topo.
+  Você também pode usar a palavra-chave static dentro de uma função para criar uma função estática, o que - como com as variáveis - significa simplesmente que a função só será definida uma vez, que é a primeira vez que a função
+    é chamado, por exemplo:
+  função(_x, _y) construtor Vector2 {
+     x = _x; y = _y;
+     static Add = function( _other ) { x += _other.x; y += _other.y; }  }
+  
+  No exemplo acima, a função do construtor Vector2 pode ser usada para criar uma estrutura, e a estrutura terá algumas variáveis, uma das quais é a variável do método Add. Desde
+    esta variável foi definida como estática, a função que ela contém só será inicializada quando a função Vector2 for chamada pela primeira vez, e todas as outras estruturas criadas com este construtor farão referência
+    a função Add que foi criada inicialmente, em vez de criar uma nova função para cada estrutura (para mais informações sobre estruturas e a palavra-chave constructor, veja aqui).
+  Ao utilizar herança com construtores, quaisquer variáveis estáticas no construtor infantil só serão inicializadas uma vez que o construtor pai tenha sido executado, de modo que as variáveis estáticas do construtor infantil não substituam a estática do pai
+    variáveis. Veja o exemplo a seguir:
+  função Pai() construtor {
+     show_debug_message(valor); valor estático = 10; }
+    
+     função Criança() : Pai() construtor {
+     show_debug_message(valor); valor estático = 20; }
+    
+     var _child = nova criança();
+  Chamar a criança() construtor imprime isto no log de saída:
+  10 20
+  
+  O primeiro valor é da construtora mãe, e o segundo é da construtora criança. Isto mostra que o valor da variável estática da criança não foi inicializado até que a construtora mãe tenha terminado, e que em cada construtora
+    a variável estática foi inicializada antes da chamada show_debug_message().
+   
+   
+  
+    
+      
+        Voltar: Visão geral daGML
+        A seguir: Structs
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,45 @@
+
+  
+  ds_priority_delete_delete_min
+  Esta função retornará o valor que tem a menor prioridade na fila e então removerá o valor (e prioridade) da estrutura de dados. Se mais de um valor tiver a mesma prioridade, então qualquer um deles poderá ser devolvido em qualquer ordem, mas todos
+    outros valores com a mesma prioridade ainda estarão na fila de espera.
+   
+  Sintaxe:
+  ds_priority_delete_delete_min(id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação da fila prioritária a ser usada.
+      
+    
+  
+   
+  Devoluções:
+  Tipo de dados armazenados na prioridade
+   
+  Exemplo:
+  se ai_move {
+     script_execute(ds_priority_delete_min(ai_priority));
+     }
+  
+  O código acima verifica uma variável de instância e se ela retornar verdadeiro, executará uma função de script indexada na fila de prioridade com o menor valor de prioridade e então removerá esse script da fila.
+   
+   
+   
+  
+    
+      
+        Voltar: Filas de espera prioritárias DS
+        Próximo: ds_priority_delete_delete_value
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

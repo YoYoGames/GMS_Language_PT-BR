@@ -1,0 +1,49 @@
+
+  
+  layer_sprite_blend
+  Esta função controla a mistura (ou "tinting") do duende sprite e o valor padrão é -1 (que representa a constante c_white, que também pode ser usada). Qualquer outro valor (incluindo constantes de cor internas como c_red,
+    ou c_aqua) misturará a cor especificada com o duende original. Você dá o ID do elemento sprite (que você obtém quando cria um elemento sprite usando layer_sprite_create() ou quando você usa
+    a função layer_sprite_get_id()), e então definir a cor da mistura a ser utilizada. Abaixo você pode ver um exemplo de um duende que foi misturado com cores diferentes:
+  Favor observar que você deve tentar limitar a mistura na plataforma HTML5 (a menos que utilize WebGL),
+    pois cada sprite misturado tem que ser colocado em cache separadamente e, portanto, ter muitos sprites misturados pode afetar negativamente o desempenho (você também pode definir o tamanho do cache usando a função sprite_set_cache_size_size()).
+   
+  Sintaxe:
+  layer_sprite_blend(sprite_element_id, blend);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sprite_element_id
+        O valor de identificação único do elemento sprite a mudar
+      
+      
+        mistura
+        A cor a ser misturada com o duende sprite (o padrão é c_white)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var lay_id = layer_get_id("Asset_sky"); var spr_id = layer_sprite_get_id(lay_id, "Clouds"); layer_sprite_blend(spr_id, c_gray);
+  O código acima obtém o valor de identificação do duende chamado "Clouds" atribuído à camada "Asset_sky" e depois o tinge com uma cor.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de Sprite
+        Próximo: layer_sprite_alpha
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

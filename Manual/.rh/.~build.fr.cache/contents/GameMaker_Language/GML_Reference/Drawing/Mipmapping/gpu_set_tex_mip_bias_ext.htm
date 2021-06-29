@@ -1,0 +1,51 @@
+
+  
+  gpu_set_tex_mip_bias_ext
+  Com esta função você pode definir o valor de polarização do mipmap para um determinado amostrador de sombreador. Você fornece o valor do índice para o amostrador de shader (como retornado pela função shader_get_sampler_index(),
+    e então o valor do viés, onde 0 é para nenhum viés, 1 é igual ao primeiro mipmap, 2 é igual ao segundo mipmap etc... Isso controla a taxa na qual o mapa mip é trocado e geralmente fará com que as texturas mais sombreadas fiquem mais embaçadas quanto maior o valor e a
+    maior a "distância" sendo vista. Note que esta função também pode assumir valores negativos, em cujo caso as texturas de sombreamento serão mais nítidas em uma distância maior quanto menor o valor.
+   
+  Sintaxe:
+  gpu_set_tex_mip_bias_ext(sampler_index, bias);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice_de_amostragem
+        O índice do amostrador de sombreamento para obter
+      
+      
+        viés
+        O valor de viés do mipmap a usar (padrão: 0)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var _sampleIndex = shader_get_sampler_index(shd_Glass, "s_Background"); var _spriteTex = sprite_get_texture(sprite_index, 0); shader_set (shd_Glass);
+     if gpu_get_tex_mip_mip_bias_ext(_sampleIndex) != 0 {
+     gpu_set_tex_mip_mip_bias_ext(_sampleIndex, 0); }
+     text_set_set_stage(_sampleIndex , _spriteTex); shader_reset();
+  
+  O código acima define o viés do filtro mip como 0 para o amostrador de textura de sombreamento dado, caso ainda não tenha sido definido como 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Mipmapping
+        Próximo: gpu_set_tex_min_mip
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,49 @@
+
+  
+  audio_get_master_gain
+  Com esta função você pode obter o valor absoluto para o volume global de todos os sons e músicas para um ouvinte específico. O índice padrão do ouvinte é 0, mas você pode usar a função audio_get_listener_info() para
+    obter os diferentes índices disponíveis para a plataforma alvo. O valor do ganho retornado é baseado em uma escala linear de 0 (silencioso) a 1 (volume total). Note que em algumas plataformas você pode ter um ganho maior que 1, embora um valor de 1 seja considerado
+    "volume completo" e qualquer coisa maior pode introduzir clipagem de áudio.
+   
+  Sintaxe:
+  audio_get_master_gain(listenenerIndex);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        listenenerIndex
+        O índice do ouvinte para obter o ganho de.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var num = audio_get_listener_count(); for( var i = 0; i < num; ++i;) {
+     var info = audio_get_listener_info(i); var ind = info[? "index"]; if audio_get_master_gain(ind) != 1 {
+     audio_set_master_gain(info[? "index"], 1); }
+     ds_map_destroy(info);
+     }
+  
+  O código acima passa através dos ouvintes disponíveis, verificando se seu ganho é 1 ou não, e se não é 1 para cada um deles.
+   
+   
+   
+  
+    
+      
+        Voltar: Áudio
+        Próximo: audio_channel_num
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

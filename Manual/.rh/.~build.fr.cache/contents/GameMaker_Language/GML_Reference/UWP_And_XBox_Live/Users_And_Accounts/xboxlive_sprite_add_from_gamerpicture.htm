@@ -1,0 +1,68 @@
+
+  
+  xboxlive_sprite_add_from_gamerpicture
+  Com esta função, você pode obter a imagem do jogador para um determinado ponteiro de identificação do usuário. A função funciona de forma assíncrona e acionará uma imagem carregada de forma assíncrona.
+    para informá-lo de que a função está concluída (como com as chamadas HTML5/URL para sprite_add()). O evento Asynchronous Image Loaded terá um mapa DS armazenado em
+    a variável embutida async_load. O mapa contém as seguintes informações:
+  
+    "nome do arquivo": O caminho completo para o arquivo que você solicitou.
+    " id": O ID do recurso que você carregou. Este será o mesmo que a variável à qual você atribuiu o recurso.
+    "status": Retorna um valor inferior a 0 para um erro.
+  
+  NOTA: Quando você carrega dinamicamente um duende em seu jogo no momento da corrida, você deve lembrar-se de removê-lo novamente usando sprite_delete() quando não for mais necessário,
+    Caso contrário, há o risco de um vazamento de memória que irá diminuir a velocidade e, eventualmente, quebrar seu jogo.
+   
+  Sintaxe:
+  xboxlive_sprite_add_from_gamerpicture(user_id, imagesize, xorig, yorig);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        user_id
+        O ID do usuário (um ponteiro) para obter a imagem do jogador para
+      
+      
+        imagesize
+        Tamanho em pixels do duende a ser devolvido
+      
+      
+        xorig
+        Indicar a posição x da origem no duende
+      
+      
+        yorig
+        Indicar a posição y da origem no duende
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var _a = 0; var _num = xboxlive_get_user_count(); for (var i = 0; i < _num; ++i;) {
+     var _uid = xboxlive_get_user(i); if _uid != pointer_null {
+     global.UserName[_a] = xboxlive_gamedisplayname_for_user(_uid); global.UserScore[_a] = xboxlive_gamerscore_for_user(_uid); global.UserRep[_a] = xboxlive_reputation_for_user(_uid); global.UserAvatar[_a]
+    = xboxlive_sprite_add_from_gamerpicture(_uid, 256, 0, 0, 0); ++a;
+     }
+     }
+  
+  O código acima passa através dos usuários logados e armazena seus dados do jogador em várias matrizes globais.
+   
+   
+   
+  
+    
+      
+        Voltar: Usuários e Contas
+        Próximo: xboxlive_generate_player_id_session_id
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

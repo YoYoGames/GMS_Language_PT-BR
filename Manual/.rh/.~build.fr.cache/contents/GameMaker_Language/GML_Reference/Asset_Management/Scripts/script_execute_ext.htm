@@ -1,0 +1,56 @@
+
+  
+  script_execute_ext
+  Esta função funciona de forma semelhante à função script_execute() somente você pode fornecer uma matriz que contém os argumentos necessários para a função/script que está sendo chamada. Você
+    pode também fornecer dois argumentos opcionais à função para especificar um offset na matriz para obter os argumentos, assim como o número de argumentos a serem usados na matriz (este deve ser um máximo de comprimento da matriz - offset). 
+   
+  Sintaxe:
+  script_execute(scr, array_args, [offset], [num_args]));
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        scr
+        O nome da função/escrito que você deseja chamar
+      
+      
+        array_args
+        A matriz que contém os argumentos para a função/escrito
+      
+      
+        [offset]
+        OPCIONAL! A compensação para a matriz de argumentos
+      
+      
+        [num_args]
+        OPCIONAL! O número de argumentos para (a partir da compensação)
+      
+    
+  
+   
+  Devoluções:
+  Dependerá do valor de retorno da função/script a ser chamado
+   
+  Exemplo:
+  script_execute_ext(move_inst, move_array, floor(random(4)), 1);
+  O código do exemplo acima usará script_execute_ext para chamar a função dada, fornecendo um conjunto de quatro argumentos, mas usando apenas um deles ao acaso.
+  NOTA: Esta função não pode ser usada com funções embutidas.
+   
+   
+   
+  
+    
+      
+        Voltar: Roteiros
+        Próximo: script_existe
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

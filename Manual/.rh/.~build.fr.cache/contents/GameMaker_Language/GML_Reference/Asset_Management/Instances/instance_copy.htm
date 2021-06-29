@@ -1,0 +1,46 @@
+
+  
+  exemplo_copia
+  Com esta função, você pode "clonar" uma instância, pois isto criará uma nova versão da instância executando o código em sua mesma posição. O argumento "perf" é usado para instruir esta nova instância a realizar ou não o evento de criação.
+    Esta função retorna a função id da nova instância, que pode então ser armazenada em uma variável ou usada para acessar essa instância.
+  NOTA: Se você optar por não realizar o evento de criação, poderá encontrar erros se a instância depender de qualquer variável rubricada neste evento.
+   
+  Sintaxe:
+  instance_copy(perf);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        perf
+        Seja para realizar o evento Create da nova instância (verdadeiro) ou não (falso).
+      
+    
+  
+   
+  Devoluções:
+  Real (valor de identificação da instância)
+   
+  Exemplo:
+  var inst = instance_number(object_index); if inst < 10 {
+     instance_copy(true);
+     }
+  
+  O código acima cria uma variável local e a utiliza para armazenar o número de instâncias do objeto que executa o código na sala. Se o número for inferior a 10, a instância então faz uma cópia de si mesma.
+   
+   
+   
+  
+    
+      
+        Voltar: Instâncias
+        Próximo: instance_find
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

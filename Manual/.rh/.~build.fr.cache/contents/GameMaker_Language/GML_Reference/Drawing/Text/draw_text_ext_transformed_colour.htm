@@ -1,0 +1,96 @@
+
+  
+  draw_text_ext_transformed_colour
+  Esta função é uma combinação da base draw_text() função com o texto_desenho_texto(), draw_text_transformed()    e draw_text_colour() funções. Como tal, esta é a mais geral de todas as funções para desenhar texto e dá uma grande flexibilidade ao desenhar. Note que a "largura
+    é baseado em uma escala de 1, portanto, se a escala for diferente, este valor deve ser alterado proporcionalmente. Por exemplo, se a largura de base para uma quebra de linha for 300 e você definir a escala para 2, então o texto aparecerá errado, ultrapassando o valor dado
+    largura. Em vez disso, você deveria ter ajustado a largura para 150 para compensar a escalada.
+  NOTA: A mistura gradual não está disponível para o alvo HTML5 a menos que a WebGL esteja habilitada, embora você ainda possa definir as cores da mistura e ela irá misturar a fonte com a primeira cor dada. No entanto, toda mistura desta forma cria uma duplicata
+    A fonte que é então armazenada no cache e usada quando necessário, que está longe de ser a ideal e se você usar mudanças múltiplas de cor irá diminuir o desempenho de seus jogos. Você pode definir o tamanho do cache da fonte para tentar limitá-lo, caso seja necessário.
+    usando a função font_set_cache_size().
+   
+  Sintaxe:
+  draw_text_ext_transformed_colour(x, y, string, sep, w, xscale, yscale, angle, c1, c2, c3, c4, alpha);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A coordenada x do fio desenhado.
+      
+      
+        y
+        A coordenada y da corda desenhada.
+      
+      
+        corda
+        O fio para desenhar.
+      
+      
+        sep
+        A distância em pixels entre linhas de texto.
+      
+      
+        w
+        A largura máxima em pixels do fio antes de uma quebra de linha.
+      
+      
+        xscale
+        A escala horizontal.
+      
+      
+        yscale
+        A escala vertical.
+      
+      
+        ângulo
+        O ângulo do texto.
+      
+      
+        c1
+        A cor para a parte superior esquerda do texto desenhado.
+      
+      
+        c2
+        A cor para a parte superior direita do texto desenhado.
+      
+      
+        c3
+        A cor para a parte inferior direita do texto desenhado.
+      
+      
+        c4
+        A cor para a parte inferior esquerda do texto desenhado.
+      
+      
+        alfa
+        O alfa para o texto.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_set_halign(fa_center); draw_set_valign(fa_middle);
+     draw_text_ext_transformed_colour(200, 200, "Meu nome é" + global.name +", 20, 200, 0,5, 0,5, 0,5, 180, c_blue, c_blue, c_navy, c_navy, 1);
+  Isto desenhará o texto dado com um gradiente azul a azul escuro para baixo, na posição (200.200) na sala, girado para estar de cabeça para baixo e na metade do tamanho normal do ponto da fonte. Haverá 20 pixels entre cada linha, caso haja mais de
+    uma linha desenhada e cada linha terá uma largura máxima de 200 pixels.
+   
+   
+   
+  
+    
+      
+        Voltar: Texto
+        Próximo: draw_highscore
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

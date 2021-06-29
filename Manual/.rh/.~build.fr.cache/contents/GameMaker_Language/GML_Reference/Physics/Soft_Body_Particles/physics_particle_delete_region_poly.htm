@@ -1,0 +1,47 @@
+
+  
+  physics_particle_delete_delete_region_region_poly
+  Com esta função você pode apagar (remover) todas as partículas que se enquadram nos limites da área poligonal definida da simulação física na sala atual. A função toma um (previamente criado) ds_list()    contendo a posição x/y de cada ponto do polígono, sendo as posições pares numeradas na lista as coordenadas x, e as posições ímpares numeradas as coordenadas y, ou seja: para um triângulo, sua lista teria seis entradas, com as entradas 0, 2, e
+    4 sendo as coordenadas x e 1, 3, e 5 sendo as coordenadas y. O polígono será então utilizado para apagar todas as partículas que se enquadram na área definida.
+  Observe que o polígono definido deve ter pelo menos três pontos, e no máximo 8.
+   
+  Sintaxe:
+  physics_particle_delete_region_region_poly(pointList)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        pointList
+        Uma ds_list de pontos a serem usados para criar o polígono.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var list = ds_list_create(p_list); for (var i = 0; i < 5; i ++;) {
+     ds_list_add(p_list, mx[i]); ds_list_add(p_list, my[i]); }
+     physics_particle_delete_region_region_poly(p_list);
+     ds_list_destroy(p_list);
+  
+  O código acima eliminará todas as partículas encontradas na área poligonal definida pelos pontos adicionados à lista DS.
+   
+   
+   
+  
+    
+      
+        Voltar: Partículas macias do corpo
+        A seguir: física_particle_draw
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

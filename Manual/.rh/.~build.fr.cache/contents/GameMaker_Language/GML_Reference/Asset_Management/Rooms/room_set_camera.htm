@@ -1,0 +1,49 @@
+
+  
+  room_set_camera
+  Com esta função você pode atribuir uma câmera a um viewport específico em uma sala que não seja a atual. Você fornece o índice da sala, o índice de visão (de 0 a 7) e depois o índice da câmera a ser usada.
+   
+  Sintaxe:
+  room_set_camera(rm, vind, camera);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        rm
+        O índice da sala para definir a visão da câmera de
+      
+      
+        vind
+        O índice da porta de visualização para atribuir a câmera a
+      
+      
+        câmera
+        O índice da câmera a atribuir
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  global.myroom = room_add(); room_set_camera(global.myroom, 0, global.MainCam);
+  O código acima atribui uma câmera em uma sala recém-criada para visualizar a porta [0].
+   
+   
+   
+  
+    
+      
+        Voltar: Quartos
+        A seguir: room_get_camera
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

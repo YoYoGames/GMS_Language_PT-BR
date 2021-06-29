@@ -1,0 +1,47 @@
+
+  
+  mp_grid_destroy
+  Você pode usar esta função para destruir a rede mp_rede indicada (conforme definido pela função mp_grid_create()) e liberar a memória alocada. É essencial que você chame isso sempre que
+    a grade MP está terminada ou você poderá ter um vazamento de memória, o que significa que seu jogo irá diminuir com o tempo e eventualmente cair.
+  NOTA: A utilização das funções mp_grid_* em uma grade após ter sido destruída resultará em um erro.
+   
+  Sintaxe:
+  mp_grid_destroy(id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        Índice da rede mp_ que deve ser destruída
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se temporizador = 0 {
+     mp_grid_destroy(grid);
+     room_goto(rm_Menu);
+     }
+  
+  O código acima destruirá a mp_grid indexada na variável "grid" se a variável "timer" for igual a 0, e depois irá para outra sala.
+   
+   
+   
+  
+    
+      
+        Voltar: Planejamento de Movimento
+        Próximo: mp_grid_path
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

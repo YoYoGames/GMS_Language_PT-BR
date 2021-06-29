@@ -1,0 +1,58 @@
+
+  
+  draw_sprite
+  Esta função desenha o duende dado e a subimagem em uma posição dentro da sala de jogo. Para o sprite você pode usar a variável de instância sprite_index para
+    obter o sprite atual que é atribuído à instância que executa o código, ou você pode usar qualquer outro ativo sprite. O mesmo vale para a subimagem, pois esta também pode ser definida para a variável da instância image_index    que definirá a subimagem para aquela selecionada para a instância atual sprite (note que você pode desenhar um sprite diferente e ainda usar o valor da subimagem para a instância atual), ou você pode usar qualquer outro valor para isso para desenhar uma subimagem específica
+    do duende escolhido. Se o valor for maior que o número de subimagens, então o GameMaker Studio 2 fará um loop automático do número para selecionar a imagem correspondente (por exemplo, se o sprite a ser desenhado tiver 5 subimagens numeradas de 0 a
+    4 e definimos o valor do índice como 7, então a função irá desenhar a subimagem 3, numerada como 0). Finalmente, a posição x e y é a posição dentro da sala em que o duende será sorteado, e está centrada no offset sprite x e no offset y.
+  NOTA: Esta função pode não funcionar como esperado ao usar sprites de animação de esqueleto, e você pode descobrir que a função apenas desenha o primeiro frame da pose padrão. Você deve usar as funções draw_skeleton_* em seu lugar.
+   
+  Sintaxe:
+  draw_sprite(sprite, subimg, x, y);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sprite
+        O índice do duende a desenhar.
+      
+      
+        subimg
+        A subimagem (frame) do duende a desenhar (image_index ou -1 correlacionado com o frame atual da animação no objeto).
+      
+      
+        x
+        A coordenada x de onde desenhar o duende.
+      
+      
+        y
+        A coordenada y de onde desenhar o duende.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_sprite(sprite_index, image_index, x, y); draw_sprite(spr_Halo, 0, x, y-32);
+  Isto atrairá as instâncias designadas sprite (sprite_index) com a subimagem atual na posição x e y da instância dentro da sala. Em seguida, desenhará o primeiro quadro do sprite indexado por "spr_Halo" na mesma posição x e y
+    mas 32 pixels "acima".
+   
+   
+   
+  
+    
+      
+        Voltar: Sprites e Azulejos
+        Próximo: draw_sprite_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

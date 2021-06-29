@@ -1,0 +1,51 @@
+
+  
+  cloud_file_save
+  Esta função irá comprometer um arquivo para o serviço de nuvem escolhido para armazenamento. A função retornará um valor de identificação único que deverá ser usado no evento assíncrono apropriado para identificar o mapa DS que é retornado como uma "chamada de retorno".
+    a partir do serviço de nuvem. O arquivo deve conter todas as informações que você precisa salvar para seu jogo, pois você só pode armazenar um único "blob de dados" na nuvem, e executar esta função novamente irá sobrescrever qualquer arquivo previamente armazenado
+    valores (assim como a utilização do cloud_string_save() função). A descrição deve ser uma pequena seqüência de informações que descreva o salvamento, por exemplo: "Nível2, Estágio2".
+  Para maiores informações sobre os dados assíncronos retornados, por favor, veja a função cloud_synchronise().
+   
+  Sintaxe:
+  cloud_file_save(arquivo, descrição);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        corda
+        O arquivo a ser carregado (como um fio).
+      
+      
+        descrição
+        Uma breve descrição dos dados que estão sendo armazenados.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var t_str = ""; for (var i = 0; i < 10; i++;) {
+     t_str += string(global.Highscore[i]) + "|" }
+     var file = file_text_open_write("Highscores.txt"); file_text_write_string(file, t_str); file_text_close(file);
+     save_check = cloud_file_save("Highscores.txt", "Current Highscores");
+  O código acima cria uma string a partir dos valores armazenados na matriz global "Highscores" e depois escreve esta string em um arquivo para armazenamento local. O arquivo é então enviado para o serviço de nuvem para armazenamento.
+   
+   
+   
+  
+    
+      
+        Voltar: Economia de nuvens
+        Próximo: Sincronizar_nuvem
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

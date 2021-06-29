@@ -1,0 +1,48 @@
+
+  
+  caminho_set_precisão
+  Com esta função você pode mudar a "suavidade" de um caminho. Este valor deve estar entre 1 e 8, com um valor baixo criando bordas mais retas com curvas mais nítidas entre pontos, enquanto um valor mais alto arredondará os pontos e tornará o caminho um
+    muito mais "curvado". Note que esta função não terá efeito visível se o caminho não tiver sido ajustado para suavizar no editor de caminhos ou usando a função path_set_kind(). Esta função altera o ativo do caminho real,
+    e assim afetará permanentemente como o caminho é usado por todas as instâncias do jogo desde o momento em que a função é usada até o final do jogo. Se isto não for o que você precisa, então você deve usar uma função como path_duplicate() para criar uma cópia do caminho primeiro, depois chamar esta função no ativo duplicado (não se esqueça de chamar path_delete() no ativo quando não for mais necessário).
+  
+  Sintaxe:
+  path_set_precision(index, prec);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do caminho para a mudança.
+      
+      
+        prec
+        A precisão do caminho. Deve ser um número inteiro entre 1 e 8.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  path_set_precision(pth_Patrol, 2);
+  Isto determinará a precisão do caminho dado a 2.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação do caminho
+        Próximo: path_shift
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

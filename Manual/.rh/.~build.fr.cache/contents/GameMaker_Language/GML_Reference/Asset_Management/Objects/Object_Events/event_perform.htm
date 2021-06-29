@@ -1,0 +1,403 @@
+
+  
+  event_perform
+  Esta função realizará o evento especificado, com o argumento designado, por exemplo, executando o código. Há muitas opções aqui que permitem a simulação completa de todos os eventos possíveis, mas note que isto literalmente apenas executa todo o código
+    no evento e o jogo não modificará nada para que seja acionado manualmente, por exemplo, se você optar por realizar um evento de apertar o teclado, o evento será acionado, mas a tecla relevante não será reconhecida como tendo sido pressionada. Ou se você
+    realizar um evento de alarme, o contador de alarme não será ajustado para -1, mas sim continuará a contagem regressiva.
+  A tabela abaixo descreve todas as constantes que estão incluídas no GameMaker Studio 2 para referência de tipos de eventos, assim como seu valor numérico. Os eventos em si são marcados em negrito e são os mesmos que os valores de retorno do tipo_de_evento    enquanto seus valores numéricos são marcados com texto em itálico e estes são os mesmos que os valores de retorno para a variável número_do_evento variável:
+   
+  
+    
+      
+        Nome
+        Descrição
+      
+      
+        ev_criar
+        Criar evento.
+      
+      
+        ev_destroy
+        Destruir evento
+      
+      
+        ev_cleanup
+        Evento de limpeza
+      
+      
+        ev_step
+        Etapa do evento
+      
+      
+           ---- ev_step_normal
+        Etapa
+      
+      
+           ---- ev_step_begin
+        Passo Inicial
+      
+      
+           ---- ev_step_end_end
+        Etapa final
+      
+      
+        ev_alarm
+        Evento de alarme
+      
+      
+           ---- 0 ... 11
+        O número relevante para qual dos 12 alarmes você deseja acionar o evento de
+      
+      
+        ev_keyboard, ev_keypress, ev_keyrelease
+        Teclado/Keyboard Prensado/Keyboard Libertado
+      
+      
+           ---- qualquer código chave
+        vk_space ou ord("W"), por exemplo.
+      
+      
+        ev_mouse
+        Evento com o mouse
+      
+      
+           ---- ev_left_button
+        Botão esquerdo segurado no objeto
+      
+      
+           ---- ev_right_button
+        Botão direito segurado no objeto
+      
+      
+           ---- ev_middle_button
+        Botão do meio (ou roda clicável) segurado no objeto
+      
+      
+           ---- ev_no_button
+        Sem botões pressionados
+      
+      
+           ---- ev_left_press
+        Botão esquerdo apenas pressionado no objeto
+      
+      
+           ---- ev_right_press
+        Botão direito apenas pressionado no objeto
+      
+      
+           ---- ev_middle_press
+        Botão do meio (ou roda clicável) apenas pressionado sobre o objeto
+      
+      
+           ---- ev_left_release
+        Botão esquerdo apenas solto no objeto
+      
+      
+           ---- ev_right_release
+        Botão direito apenas liberado no objeto
+      
+      
+           ---- ev_middle_release
+        Botão do meio acaba de ser liberado no objeto
+      
+      
+           ---- ev_mouse_enter
+        O mouse acabou de entrar na caixa de delimitação do objeto
+      
+      
+           ---- ev_mouse_leave
+        O mouse acabou de deixar a caixa de delimitação do objeto
+      
+      
+           ---- ev_mouse_wheel_up
+        Roda do mouse rolada para cima
+      
+      
+           ---- ev_mouse_wheel_down
+        Roda do mouse rolada para baixo
+      
+      
+           ---- ev_global_esquerda_botão
+        Botão esquerdo segurado em qualquer lugar
+      
+      
+           ---- ev_global_right_button
+        Botão direito segurado em qualquer lugar
+      
+      
+           ---- ev_global_middle_button
+        Botão do meio (ou roda clicável) segurado em qualquer lugar
+      
+      
+           ---- ev_global_left_press
+        Botão esquerdo apenas pressionado em qualquer lugar
+      
+      
+           ---- ev_global_right_press
+        Botão direito apenas pressionado em qualquer lugar
+      
+      
+           ---- ev_global_middle_press
+        Botão do meio (ou roda clicável) apenas pressionado em qualquer lugar
+      
+      
+           ---- ev_global_left_release
+        Botão esquerdo apenas liberado em qualquer lugar
+      
+      
+           ---- ev_global_right_release
+        Botão direito apenas liberado em qualquer lugar
+      
+      
+           ---- ev_global_middle_release
+        O botão do meio acaba de ser lançado em qualquer lugar
+      
+      
+        ev_gesture
+        Um evento gesto (Tap, Drag, Flick, Pinch ou Rotate)
+      
+      
+           ---- ev_gesture_tap
+        Um único clique/toque e liberação foi detectado, por exemplo
+      
+      
+           ---- ev_gesture_double_tap
+        Dois toques/clique rápidos e liberações foram detectados, por exemplo
+      
+      
+           ---- ev_gesture_drag_start
+        O início de um gesto de arrasto foi detectado, por exemplo
+      
+      
+           ---- ev_gesture_dragging
+        Um toque/clique foi realizado e movido por um exemplo
+      
+      
+           ---- ev_gesture_drag_end_end
+        A liberação do toque/clique de um arrasto foi detectada por um exemplo
+      
+      
+           ---- ev_gesture_flick
+        A liberação de um toque/clique de uma arrasto teve movimento suficiente para que um evento de arrasto fosse detectado por exemplo
+      
+      
+           ---- ev_gesture_pinch_start
+        Dois toques e um movimento reto foram detectados por um exemplo
+      
+      
+           ---- ev_gesture_pinch_in
+        O movimento entre dois toques, por exemplo, foi detectado como dentro
+      
+      
+           ---- ev_gesture_pinch_out
+        O movimento entre dois toques, por exemplo, foi detectado como sendo para o exterior.
+      
+      
+           ---- ev_gesture_pinch_end_end
+        A liberação de um (ou ambos) toques para uma pitada foi detectada, por exemplo
+      
+      
+           ---- ev_gesture_rotate_start
+        O movimento entre dois toques, por exemplo, foi detectado como uma rotação
+      
+      
+           ---- ev_gesture_rotating
+        O movimento entre dois toques, por exemplo, foi detectado como rotativo
+      
+      
+           ---- ev_gesture_rotate_end_end
+        A liberação de um (ou ambos) toques para uma rotação foi detectada, por exemplo
+      
+      
+           ---- ev_global_gesture_tap
+        Um único clique/toque e liberação foi detectado em qualquer lugar da sala
+      
+      
+           ---- ev_global_gesture_double_tap
+        Dois toques/clique rápidos e liberações foram detectados em qualquer lugar da sala
+      
+      
+           ---- ev_global_gesture_drag_start
+        O início de um gesto de arrasto foi detectado em qualquer lugar da sala
+      
+      
+           ---- ev_global_gesture_dragging
+        Um toque/clique foi realizado e movido para qualquer lugar da sala
+      
+      
+           ---- ev_global_gesture_drag_end_end
+        A liberação do toque/clique de um arrasto foi detectada em qualquer lugar da sala
+      
+      
+           ---- ev_global_gesture_flick
+        A liberação de um toque/clique de uma arrasto teve movimento suficiente para que um evento de arrasto fosse detectado em qualquer lugar da sala
+      
+      
+           ---- ev_global_gesture_pinch_start
+        Dois toques e um movimento reto foram detectados em qualquer lugar da sala
+      
+      
+           ---- ev_global_gesture_pinch_in
+        O movimento entre dois toques em qualquer lugar da sala foi detectado como dentro
+      
+      
+           ---- ev_global_gesture_pinch_out
+        O movimento entre dois toques em qualquer lugar da sala foi detectado como para o exterior
+      
+      
+           ---- ev_global_gesture_pinch_end_end
+        A liberação de um (ou ambos) toques para um beliscão foi detectada em qualquer lugar da sala
+      
+      
+           ---- ev_global_gesture_rotate_start
+        O movimento entre dois toques em qualquer lugar da sala foi detectado como uma rotação
+      
+      
+           ---- ev_global_gesture_rotating
+        O movimento entre dois toques em qualquer lugar da sala foi detectado como rotativo
+      
+      
+           ---- ev_global_gesture_rotate_end_end
+        A liberação de um (ou ambos) toques para uma rotação foi detectada em qualquer lugar da sala
+      
+      
+        ev_collision
+        Colisão com um objeto
+      
+      
+           ---- O índice do objeto a ser verificado.
+        objeto1, por exemplo.
+      
+      
+        ev_outros
+        Uma das ações listadas em "Outras
+      
+      
+           ---- ev_outside
+        Se a instância está fora da sala
+      
+      
+           ---- ev_boundary
+        Se a instância está cruzando a fronteira
+      
+      
+           ---- ev_game_start
+        Somente acionado no início do jogo
+      
+      
+           ---- ev_game_end_end
+        Somente acionado no final do jogo
+      
+      
+           ---- ev_room_start
+        Somente acionado no início de uma sala
+      
+      
+           ---- ev_room_end
+        Acionado somente no final de uma sala
+      
+      
+           ---- ev_no_more_lives
+        Se todas as vidas estão esgotadas (se vidas==0)
+      
+      
+           ---- ev_no_more_health
+        Se toda a saúde estiver esgotada (se a saúde==0)
+      
+      
+           ---- ev_animation_end
+        Se o duende do objeto tiver chegado ao final de sua animação
+      
+      
+           ---- ev_end_of_path
+        Se o objeto chegou ao fim de um caminho, ele está seguindo
+      
+      
+           ---- ev_close_button
+        Se o botão Fechar janela tiver sido pressionado
+      
+      
+           ---- ev_user0... ev_user15
+        Um dos 16 eventos de usuários disponíveis.
+      
+      
+        ev_draw
+        Evento de sorteio. NOTA: Este evento não pode ser forçado fora de um evento de sorteio e as constantes e as constantes são apenas para identificar o evento quando realizado nestes casos.
+      
+      
+           ---- ev_draw_begin
+        O evento de início do sorteio.
+      
+      
+           ---- ev_draw_end
+        O evento final do sorteio.
+      
+      
+           ---- ev_draw_pre
+        O evento de pré-sorteio.
+      
+      
+           ---- ev_draw_post
+        O evento pós-sorteio.
+      
+      
+           ---- ev_gui
+        O evento do draw gui.
+      
+      
+           ---- ev_gui_begin
+        O evento começa com o draw gui.
+      
+      
+           ---- ev_gui_end
+        O evento final do draw gui.
+      
+    
+  
+   
+  Sintaxe:
+  event_perform(type, numb);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tipo
+        O tipo de evento a ser realizado. Veja abaixo.
+      
+      
+        dormente
+        O evento específico constante ou valor, se for necessário (caso contrário, use apenas 0).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo ampliado
+   Para ajudar a entender como esta função pode ser utilizada, por favor, veja os poucos exemplos a seguir:
+  event_perform(ev_keypress, ord("W"));
+  Isto realizaria o evento associado com a tecla "W" pressionada (sem realmente gerar um pressionamento de teclado).
+  event_perform(ev_step, ev_step_begin);
+  Isto realizaria o evento da etapa inicial (se chamado de qualquer um dos eventos da etapa, faria com que o código do evento da etapa inicial fosse executado duas vezes).
+  event_perform(ev_create, 0);
+  Isto realizaria o  eventoCriar da instância.
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Eventos de geração de objetos
+        Próximo: event_perform_object
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

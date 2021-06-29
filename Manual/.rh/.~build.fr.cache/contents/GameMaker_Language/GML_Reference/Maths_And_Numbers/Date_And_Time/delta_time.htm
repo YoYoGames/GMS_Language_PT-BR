@@ -1,0 +1,36 @@
+
+
+
+
+
+  
+  delta_time
+  O objetivo do tempo delta é eliminar os efeitos do atraso ou lentidão dos computadores que tentam lidar com gráficos complexos ou um monte de código. É um valor que pode ser adicionado à velocidade dos objetos para que eles acabem se movendo ao mesmo tempo.
+    velocidade, independentemente do atraso. Isto é conseguido no GameMaker Studio 2 usando a variável somente leitura delta_time a cada passo, pois mede o tempo que passou entre um passo e outro em microssegundos (1microssegundo é 1.000.000th
+    de um segundo). Portanto, a variável delta_time pode ser usada para calcular quanto mais rápido (por exemplo) um personagem do jogo tem que se mover para compensar um pico de atraso no jogo.
+   
+  Sintaxe:
+  delta_time
+   
+  Devoluções:
+  Real (inteiro)
+   
+  Exemplo:
+  var _dt = delta_time / 1000000; speed = spd * dt;
+  O código acima definirá a velocidade da instância usando o tempo delta para corrigir o atraso. A variável "_dt" seria usada para manter o valor do tempo delta previamente calculado, de modo que a razão possa ser usada para multiplicar o valor da velocidade base (mantida
+    na variável "spd") e assim obter uma velocidade consistente para a instância.
+   
+   
+   
+  
+    
+      
+        Voltar: Data e TIME
+        Próximo: data_set_timezone
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

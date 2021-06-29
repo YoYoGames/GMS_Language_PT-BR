@@ -1,0 +1,50 @@
+
+  
+  draw_clear_alpha
+  Esta função pode ser usada para limpar toda a tela com uma determinada cor e o componente alfa do destino é definido para o valor que você definiu - esta função não faz nenhuma mistura como ela funciona, mas qualquer operação subseqüente de mistura pode
+    ser configurado para usar o alfa de destino que você definiu. Isto é apenas para uso no evento de sorteio de uma instância (não será mostrado se usado em qualquer outro evento), e também pode ser muito útil para limpar superfícies quando elas são criadas recentemente.
+  Vale notar que ao usar o módulo HTML5, você pode usar esta função para tornar o fundo da tela transparente, o que permitirá que qualquer imagem sendo usada no HTML hospedeiro seja vista com o jogo correndo sobre elas. Para conseguir este efeito
+    primeiro você deve ir ao editor da sala e remover quaisquer camadas de fundo do editor da sala, depois desmarcar a opção Clear View Background encontrada nas propriedades View Properties.
+    Finalmente, você precisará fazer um novo objeto, colocá-lo na primeira sala do jogo e atribuir-lhe uma profundidade muito alta (por exemplo, 10000). Depois, no evento Pré-Sorteio, use esta função para definir o alfa da tela com a cor e transparência que
+    que você deseja que tenha.
+   
+  Sintaxe:
+  draw_clear_alpha(col, alfa);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        col
+        A cor com a qual a tela será limpa
+      
+      
+        alfa
+        A transparência da cor com a qual a tela será limpa
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_clear_alpha(c_red, 0,5);
+  Isto irá limpar a tela com 50% (0,5) de transparência com a cor vermelha.
+   
+   
+   
+  
+    
+      
+        Voltar: Cor e Alfa
+        Próximo: draw_set_alpha
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

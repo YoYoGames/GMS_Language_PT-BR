@@ -1,0 +1,41 @@
+
+  
+  view_get_camera
+  Esta função pode ser usada para recuperar o valor único de identificação da câmera atribuído à porta de visualização dada (de 0 a 7). Se nenhuma câmera for atribuída, a função retornará -1.
+   
+  Sintaxe:
+  view_get_camera(view_port)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        view_port
+        O porto de visão para o alvo (0 - 7)
+      
+    
+  
+   
+  Devoluções:
+  Índice de câmeras (Real)
+   
+  Exemplo:
+  var cam = view_get_camera(0); var cw = camera_get_view_width(cam); var ch = camera_get_view_height(cam); camera_set_view_pos(cam, mouse_x - (cw / 2), mouse_y - (ch / 2));
+  O código acima recuperará a identificação da câmera designada para visualizar a porta[0] e então mudará sua posição.
+   
+   
+   
+  
+    
+      
+        Voltar: Câmeras e Ver Portos
+        Próximo: view_get_visible
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

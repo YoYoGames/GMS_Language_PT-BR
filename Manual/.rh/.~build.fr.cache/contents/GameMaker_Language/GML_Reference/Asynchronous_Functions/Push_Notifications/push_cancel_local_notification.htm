@@ -1,0 +1,49 @@
+
+  
+  push_cancelal_local_notification
+  Esta função cancela a notificação push dada. Você pode obter a identificação para que a notificação seja cancelada usando as funções push_get_first_local_notification() e push_get_next_local_notification()    e a função voltará a ser verdadeira no caso de sucesso ou falsa de outra forma (por exemplo, se a notificação não existir ou já tiver sido acionada).
+  NOTA: Esta função é limitada ao iOS e Android módulos-alvo.
+   
+  Sintaxe:
+  push_cancelal_local_notification(ID);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ID
+        A identificação da notificação de cancelamento.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo :
+  var map = ds_map_create(); var ntf = push_get_first_local_notification(map); while(ntf >= 0) {
+     var data = ds_map_find_value(map, "data"); if data == "Daily_Reward" {
+     push_cancel_local_notification(ntf);
+     }
+     ntf = push_get_next_local_notification(map); }
+     ds_map_destroy(mapa);
+  
+  O código acima cria um Mapa DS e depois solicita dados para a primeira notificação disponível na fila. Se houver uma notificação, o mapa é preenchido e o código então verifica a chave "data" para uma seqüência específica. Se a seqüência de caracteres
+    é encontrada, a notificação é cancelada e passa a verificar a próxima notificação até que tudo na fila tenha sido verificado.
+   
+   
+   
+  
+    
+      
+        Voltar: Notificações Push
+        Próximo: push_local_notification
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

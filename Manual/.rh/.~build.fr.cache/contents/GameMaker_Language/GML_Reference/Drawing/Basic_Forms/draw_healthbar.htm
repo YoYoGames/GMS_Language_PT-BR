@@ -1,0 +1,87 @@
+
+  
+  draw_healthbar
+  Com esta função você pode desenhar uma barra colorida para mostrar um valor constante. Embora a função utilize a palavra "barra de saúde", você pode usá-la para exibir o que desejar, desde que a quantidade a ser exibida seja um valor percentual entre 0 e
+    100 (uma porcentagem de qualquer valor pode ser calculada com a fórmula (CURRENT_Value / MAXIMUM_Value) * 100), assim, por exemplo, você pode usar isto para exibir potência, saúde, mana, tempo ou qualquer outra coisa que se beneficiaria de uma exibição em barra.
+  Você pode definir várias coisas diferentes que mudam o aspecto visual da barra e estas são ilustradas na imagem abaixo (note que as cores usadas aqui são c_green para o valor máximo e c_red para o valor mínimo, mas você
+    pode usar as cores que você desejar):
+  
+  NOTA: Se você quiser desenhar uma forma usando um sombreador, você deve estar ciente de que a maioria dos sombreadores espera as seguintes entradas: vértice, textura, cor. Entretanto, ao utilizar esta função, apenas os dados de vértice e cor estão sendo passados para dentro, e assim o
+   shader não pode desenhar nada (ou desenhar algo, mas não corretamente). Se você precisar desenhar formas desta maneira, então o sombreador deve ser personalizado tendo isto em mente.
+   
+  Sintaxe:
+  draw_healthbar(x1, y1, x2, y2, quantidade, backcol, mincol, maxcol, direção, showback, showborder);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x1
+        A coordenada x da esquerda da barra sanitária
+      
+      
+        y1
+        A coordenada y da parte superior da barra sanitária
+      
+      
+        x2
+        A coordenada x da direita da barra sanitária
+      
+      
+        y2
+        A coordenada y do fundo da barra sanitária
+      
+      
+        valor
+        A variável que define a saúde total (entre 0 e 100)
+      
+      
+        backcol
+        A cor do fundo para o bar
+      
+      
+        mincol
+        A cor do bar quando sem saúde (0)
+      
+      
+        maxcol
+        A cor do bar quando em plena saúde (100)
+      
+      
+        direção
+        Onde a barra é "ancorada" (0 = esquerda, 1 = direita, 2 = superior, 3 = inferior)
+      
+      
+        showback
+        Se o fundo da barra é traçado (verdadeiro) ou não (falso). Se falso, o argumento backcol é desconsiderado.
+      
+      
+        showborder
+        Se os elementos da barra têm uma borda preta de 1px de largura (verdadeiro) ou não (falso).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var pc; pc = (hp / max_hp) * 100; draw_healthbar(100, 100, 500, 200, pc, c_black, c_red, c_lime, 0, true, true)
+  O código acima usa o valor percentual que você obtém das variáveis "hp" e "hp_max" para desenhar uma barra de saúde padrão vermelha/verde.
+   
+   
+   
+  
+    
+      
+        Voltar: Formulários básicos
+        Próximo: draw_path
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

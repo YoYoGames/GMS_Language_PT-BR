@@ -1,0 +1,46 @@
+
+  
+   Criar lista
+  Esta ação criará uma nova estrutura de dados da lista e retornará o valor do índice para que você possa acessar a lista posteriormente através das outras ações de Estrutura de Dados. O índice da lista será retornado para a Variável de destino que você fornecer, que pode ter sido
+    criado anteriormente usando a opção Atribuir Variável ou Declarar Temp, ou você pode marcar a caixa de seleção "Temp" para nomear e criar uma variável local temporária
+    para armazenar o valor até o final do roteiro ou evento. Uma estrutura de dados de lista recém-criada é considerada "vazia", ou seja: não contém entradas de lista. Observe que você pode criar listas DS adicionais clicando no ícone mais 
+    ao lado da ação, e selecionando outra variável para segurar a ID da lista.
+  IMPORTANTE! A criação de qualquer estrutura de dados utiliza a memória na plataforma alvo, e como tal todas as estruturas de dados devem ser livres quando não forem mais necessárias, usando a ação Free Data Structure (Estrutura de dados livre), caso contrário você obtém uma
+    vazamento de memória que pode prejudicar o desempenho de seus jogos ou até mesmo causar a sua queda. Isto é particularmente relevante ao usar variáveis locais temporárias para armazenar índices de estrutura de dados, já que estas variáveis são removidas no final do código ou evento, mas
+    isso não significa que a estrutura de dados seja removida também! A estrutura de dados ainda existirá, só que você não terá como referenciá-la, então ou use uma variável de instância e libere a estrutura em um momento posterior, ou libere a estrutura antes do final de
+    o evento ou função se seu índice for armazenado em uma variável temporária.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Meta
+        A variável-alvo para armazenar o índice da lista em
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima cria uma variável de escopo global e, em seguida, cria uma nova lista de dados
+    atribuindo seu valor de índice à variável global. O escopo é então alterado para que todas as instâncias do objeto "obj_Enemy_Parent" adicionem seu valor de identificação de instância única na lista.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações de estrutura de dados
+        A seguir: Criar Mapa
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

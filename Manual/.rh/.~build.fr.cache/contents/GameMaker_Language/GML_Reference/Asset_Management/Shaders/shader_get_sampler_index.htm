@@ -1,0 +1,49 @@
+
+  
+  shader_get_sampler_index
+  Como você não pode alterar o valor de um amostrador de sombreador dentro do próprio sombreador, você tem que defini-lo antes de chamar o sombreador usando uma das funções do conjunto uniforme disponível. Entretanto, para poder fazer isso, você
+    deve primeiro chamar esta função para obter o "cabo" do amostrador de sombreamento que você vai querer definir.
+  NOTA: Embora um shader seja composto de dois programas discretos (vértice e fragmento) esta função não diferenciará entre os dois e devolverá o cabo da amostra do shader de qualquer um deles.
+   
+  Sintaxe:
+  shader_get_sampler_index(shader, uniforme);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        shader
+        O índice do sombreador a ser usado.
+      
+      
+        uniforme
+        O amostrador de sombreador para obter o cabo de (um cordel).
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  glassshader_bgsampler = shader_get_sampler_index(GlassShader, "s_BackgroundSampler") spr = sprite_get_texture(sprite_index, 0); shader_set (GlassShader);
+     text_set_set_stage(glassshader_bgsampler, spr); shader_reset();
+  
+  O código acima obterá o cabo para o amostrador dentro do sombreador indexado como "GlassShader"e então definirá esse sombreador constante para a textura do duende dado.
+   
+   
+   
+  
+    
+      
+        Voltar: Shaders
+        Próximo: shader_set
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,50 @@
+
+  
+  ds_list_mark_as_map
+  Esta função irá "marcar" (ou "sinalizar") uma determinada posição dentro de uma lista DS previamente criada como segurando um mapa DS. Esta funcionalidade é necessária ao codificar as cadeias JSON (que você pode criar
+    usando json_encode()), mas também pode ser útil quando se aninham estruturas de dados, pois os itens marcados desta forma serão automaticamente coletados (destruídos) quando o pai
+    A lista DS é destruída. Isto significa que você não precisa passar manualmente pelo conteúdo da lista e destruir as estruturas de dados marcadas individualmente antes de destruir a lista "pai". Entretanto, se você apagar a posição da lista individualmente,
+    a estrutura de dados que continha não será coletada e você deve chamar a função de destruição do mapa DS apropriada antes de apagar a posição da lista dos pais. Observe também que se você chamar a função ds_list_clear()    em uma lista, quaisquer itens assinalados como mapas também serão destruídos quando a lista for limpa.
+  Também vale a pena notar que se a posição que foi marcada mudar dentro da lista, a "marca" se moverá com ela, então se você tiver marcado a posição 3 na lista (por exemplo) e depois inserir mais 2 itens abaixo dela para que ela se mova para cima para a posição
+    5, ele ainda será marcado como um mapa.
+   
+  Sintaxe:
+  ds_list_mark_as_map(id, pos);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        O id da lista para marcar.
+      
+      
+        pos
+        A posição dentro da lista para marcar.
+      
+    
+  
+   
+  Devoluções:
+  Real (inteiro - ID do mapa DS se bem-sucedido ou -1 se falhar)
+   
+  Exemplo:
+  var sub_map = ds_map_create(); ds_map_add(sub_map, "player", player_array); ds_map_add(sub_map, "enemy", enemy_array); ds_list_add(j_list, sub_map); ds_list_mark_as_map(j_list, 0);
+  O código acima cria um mapa DS e depois o preenche com duas chaves, cada uma contendo um conjunto de valores. Este mapa é então adicionado à lista DS dada, e a posição "marcada" como tal para que possa ser codificada corretamente mais tarde.
+   
+   
+   
+  
+    
+      
+        Voltar: Listas DS
+        Próximo: ds_list_is_list
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

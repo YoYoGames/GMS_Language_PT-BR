@@ -1,0 +1,51 @@
+
+  
+   Declare Temporary Variable
+  Esta ação é usada para declarar e dar um valor inicial a uma variável temporária (também chamada variável local), que é uma variável que só existe pela duração do evento ou roteiro em que foi declarada. Variáveis temporárias
+    são muito úteis para armazenar valores que só são necessários para uma única operação e evitar que seus objetos fiquem "desordenados" com variáveis que só podem ser usadas uma vez. Eles também são muito úteis para quebrar operações complexas, ou para
+    definir valores em outras instâncias quando se muda o escopo da ação. Isto porque as variáveis declaradas como arenotscopiáveis temporárias para qualquer instância em particular, mas, em vez disso, escopadas para o evento ou o próprio script, então se você criar uma variável temporária
+    e depois alterar o escopo de ação usando a ação Aplicar a..., você ainda pode verificar a variável temporária sem problemas e sem alterar seu escopo de ação.
+  Vale notar que quando falamos de "valores", não nos referimos apenas a valores numéricos, pois uma variável pode ser uma string, um ponteiro, um ID de recurso ou qualquer outra coisa que uma função possa retornar ou usar, até mesmo uma expressão. Veja a seção sobre tipos de dados para mais informações.
+  Observe que muitas ações têm uma caixa de seleção "Temp" que permite criar uma nova variável local temporária para manter o valor de retorno da ação, e esta variável pode ser acessada no script de ação ou evento como qualquer outra variável
+    depois disso. Observe também que variáveis locais temporárias são escopadas ao script ou evento no qual são criadas, e assim elas podem ser usadas por outras instâncias no mesmo bloco quando se usa Aplicar a.
+  Você também pode adicionar variáveis adicionais na mesma ação clicando no ícone de mais  ao lado da ação, e dando outra variável local temporária
+    nome e valor. Para informações mais avançadas sobre variáveis, consulte a seção sobre Variáveis e Escopo de Variáveis.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Nome
+        O nome da nova variável a ser atribuída, ou o nome de uma variável existente a ser alterada.
+      
+      
+        Valor
+        O valor que a variável deve ter.
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima cria duas variáveis temporárias, " _dir".
+    e "_spd" e as define para valores aleatórios. Em seguida, ele usa esses valores para definir a instância movendo-se em uma direção aleatória a uma velocidade aleatória.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações Comuns
+        A seguir: Conjunto de Variável Global
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

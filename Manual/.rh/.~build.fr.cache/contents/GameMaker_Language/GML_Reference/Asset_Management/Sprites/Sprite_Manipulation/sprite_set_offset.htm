@@ -1,0 +1,51 @@
+
+  
+  sprite_set_offset
+  Esta função pode ser usada para definir a origem x e y de um duende, e toma valores relativos com base na posição (0,0) sendo o canto superior esquerdo do duende. A imagem a seguir ilustra isto:
+  
+  OBSERVAÇÃO: Esta função afeta o ativo sprite, de modo que todas as outras instâncias com este sprite terão a mesma compensação.
+   
+  Sintaxe:
+  sprite_set_offset(ind, xoff, yoff);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do sprite para alterar a compensação de.
+      
+      
+        xoff
+        A posição x da origem.
+      
+      
+        yoff
+        A posição y da origem.
+      
+    
+  
+   
+  Devoluções
+  N/A
+   
+  Exemplo:
+  sprite_assign(spr_Custom, spr_Base); sprite_set_offset(spr_Custom, sprite_get_xoffset(spr_Base), sprite_get_yoffset(spr_Base));
+  O código acima atribui o sprite indexado em "spr_Base" ao sprite indexado em "spr_Custom" e então usa os valores x e y offset de "spr_Base" para definir a origem do novo sprite.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação de Sprite
+        Próximo: sprite_set_bbox_mode
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

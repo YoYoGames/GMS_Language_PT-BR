@@ -1,0 +1,62 @@
+
+  
+  
+     Declare uma nova função
+  Esta ação pode ser usada para criar uma nova função definida pelo usuário, que pode então ser chamada a qualquer momento mais tarde em seu código. Uma função definida pelo usuário é aquela que você define para fazer uma tarefa que não é coberta pelas ações disponíveis DnD™ou funções GML runner,
+    e podem ser globais, por exemplo ou locais (veja aqui para mais informações sobre o escopo) e também podem ser usados como construtores para criar estruturas.
+    Para saber mais sobre o uso desta ação para criar funções globais, consulte a seção sobre Criação de funções de ação. Você também pode sinalizar a função como sendo estática,
+    o que significa que só será definido uma vez na primeira vez que for utilizado.
+  Para utilizar esta ação, você pode adicioná-la a um evento de instância e depois dar a função que você deseja declarar um nome. Em seguida, você fornece os nomes dos argumentos necessários para cada um dos parâmetros que a função tomará. Se a função for usada como um construtor
+    (ou seja: vai estar criando uma estrutura), então você precisa verificar a bandeira do Construtor e depois chamar a função que você precisa para usar a Nova Ação. Se a função só vai ser usada localmente na mesma
+    e em nenhum outro lugar, então você também pode selecionar a bandeira Temp . Uma vez definido o nome e os parâmetros, você pode adicionar as ações que deseja que a função seja executada quando ela for chamada em seu código, deixando-as ao lado de
+    a ação, como mostrado na imagem abaixo:
+  Você pode ver exemplos de uso tanto como uma função regular quanto como uma função de construtor
+    abaixo.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Função
+        O nome da nova função.
+      
+      
+        Argumento0 ... ArgumentoX
+        Os diferentes nomes dos argumentos para cada um dos parâmetros que devem ser passados para a função.
+      
+    
+  
+   
+  Exemplo ampliado 1:
+  O código de bloco de ação acima iria no Create Event of an instance, e declara uma nova função set_vec com três argumentos: _x, _y e spd. Estes argumentos são então utilizados nas ações que a função chamará para definir a direção e a velocidade da instância,
+    quando a função é chamada. Você chamaria a função usando a ação de Chamada de Função em qualquer evento subseqüente, como este:
+  A função é chamada e define a direção da instância para apontar para o
+    posição do mouse X/Y, e define a velocidade da instância para 5.
+   
+  Exemplo ampliado 2:
+  O código de bloco de ação acima provavelmente iria no evento Create Event of
+    uma instância, e declara uma nova função construtora init_char_struct com quatro argumentos: _str1, _str2, _val1 e _val2. Estes argumentos são então utilizados para povoar as variáveis dadas dentro da estrutura
+    que a função está criando. Você então chamaria a função usando a Nova ação em qualquer evento subseqüente, como este:
+  A função é chamada e retornará uma nova estrutura para a matriz "char",
+    e a estrutura será preenchida com as variáveis "name", "location", "hp" e "mana", definidas com os valores usados para os argumentos correspondentes na função.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações Comuns
+        A seguir: Atribuir variável
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

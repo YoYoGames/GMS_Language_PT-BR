@@ -1,0 +1,68 @@
+
+  
+  font_add_sprite
+  Com esta função, você pode usar uma "faixa sprite" para criar um novo recurso de fonte, onde cada subimagem seria um símbolo ou letra individual. O índice é o número do mapa UTF8 para o primeiro caractere a ser usado e as faixas a serem usadas são as mesmas que
+    você faria por uma fonte normal, começando com "!", mas lembre-se que você só deve incluir o que você precisa e que você deve estar usando o ord() função para obter o valor UTF8 correto para o início
+    carta. A fonte sprite criada terá então as subimagens definidas para um glifo individual da fonte, onde o "primeiro" glifo terá a imagem_index de 0. Você pode definir "espaço" como sendo qualquer caractere que você queira, por exemplo
+    uma única linha do tamanho que você deseja que o espaço seja, e todos os espaços no texto serão renderizados nessa largura (mas a imagem escolhida nunca será renderizada), ou se você não fornecer um duende para o espaço, então a largura do personagem mais largo
+    na fonte sprite será usado em seu lugar.
+  Você também pode definir o espaçamento para que a fonte seja proporcional(verdadeira) ou não(falsa), onde uma fonte proporcional é espaçada com base na largura real das letras (assim, a letra "i" ocupa menos espaço do que a letra "w",
+    por exemplo), enquanto uma fonte não proporcional será espaçada com base na largura da subimagem, como uma fonte monoespaçada. Finalmente, você pode definir o espaço a ser deixado entre cada letra ao escrever, e este pode ser qualquer valor inteiro, sendo que 0 não é espaço (a letra "w", por exemplo).
+    letras "tocarão" se forem proporcionais). A função retorna um valor de índice que deve ser armazenado em uma variável, pois isso será necessário em todos os outros códigos que se referem a essa fonte, ou retornará -1 se a função falhar para qualquer
+    razão.
+  Vale notar também que não pode haver espaços no mapa de caracteres, de modo que se você, por exemplo, usar '.' e '0' mas não '/', você precisa incluir '/' de qualquer forma ou deixar uma subimagem em branco entre o
+    dois caracteres usados.
+  O próprio sprite pode ser um ativo sprite do Navegador de Ativos ou carregado de um arquivo usando primeiro o sprite_add para obter o índice do sprite carregado (que depois é usado na função). É importante observar que para o alinhamento da fonte
+    funções (como draw_set_halign()) para funcionar como esperado ao usar uma fonte sprite, o duende deve ter sua origem definida para o canto superior esquerdo. Se você usar outros valores, então você terá
+    precisam levar em consideração a compensação de origem ao desenhar o texto usando a fonte.
+  NOTA: Quando você carrega uma fonte no GameMaker Studio 2 você deve se lembrar de removê-la novamente (com font_delete()) quando não é mais necessário, caso contrário
+    é o risco de um vazamento de memória que irá diminuir a velocidade e, eventualmente, quebrar seu jogo.
+   
+  Sintaxe:
+  font_add_sprite(spr, first, prop, sep);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        spr
+        O duende para adicionar uma fonte baseada em.
+      
+      
+        primeiro
+        O índice do primeiro personagem disponível.
+      
+      
+        adereço
+        Definir como fonte proporcional ou não.
+      
+      
+        sep
+        O espaço a ser deixado entre cada carta.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  global.Font = font_add_sprite(spr_HUD_Font, ord("!"), true, 2);
+  O código acima criará um novo ativo de fonte a partir de um ativo sprite e armazenará o índice da nova fonte na variável "global.Font" para uso posterior.
+   
+   
+   
+  
+    
+      
+        Voltar: Fontes
+        Próximo: font_add_sprite_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

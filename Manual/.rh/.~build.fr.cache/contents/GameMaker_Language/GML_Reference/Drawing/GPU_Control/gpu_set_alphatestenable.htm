@@ -1,0 +1,48 @@
+
+  
+  gpu_set_alphatestenable
+  Esta função ativará ou desativará o teste alfa para seu jogo (por padrão, isto está desativado). Ao ativar o teste alfa, você poderá então usar a função de companheiro gpu_set_alphatestref() para definir o "corte
+    A imagem abaixo mostra a diferença que pode ser vista quando o teste alfa é ligado ou desligado:
+  
+  NOTA: Esta função pode afetar negativamente o desempenho em dispositivos iOS e Android.
+   
+  Sintaxe:
+  gpu_set_alphatestenable(enable);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        habilitar
+        Ativar ou desativar o teste alfa(verdadeiro / falso)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if !gpu_get_alphatestenable() {
+     gpu_set_alphatestenable(true);
+     gpu_set_alphatestref(128);
+     }
+  
+  O código acima verificará se o teste alfa está ativado e se não estiver, ligará o teste alfa e definirá o limite de teste para 128 (apenas pixels com um alfa acima de 0,5 serão desenhados).
+   
+   
+   
+  
+    
+      
+        Voltar: Controle de GPU
+        Próximo: gpu_set_alphatestref
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,50 @@
+
+  
+  camada_has_instance
+  Esta função pode ser usada para verificar se uma determinada instância está atualmente atribuída à camada em questão. Você fornece o ID da camada (que você obtém ao criar a camada usando layer_create()) ou o nome da camada (como um fio
+    - isto terá um impacto sobre o desempenho) e a identificação da instância a ser verificada. Você também pode dar um índice do objeto (ou seja: o nome do objeto no Navegador do Ativo) e a função verificará se alguma instância desse objeto está em
+    a camada dada. A função retornará verdadeira se a instância estiver sobre a camada e falsa se não estiver.
+   
+  Sintaxe:
+  layer_has_instance(layer_id, instance_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada a ser alvo (ou o nome da camada como uma corda)
+      
+      
+        exemplo_id
+        A identificação única da instância ou o índice de objetos da instância para verificar
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if !layer_has_instance(global.Bullet_Layer, obj_Bullet_Parent) {
+     layer_destroy(global.Bullet_Layer);
+     }
+  
+  O código acima verificará se a camada dada contém alguma instância do objeto "obj_Bullet_Parent" e, caso contrário, destruirá a camada.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próximo: layer_instance_get_instance
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

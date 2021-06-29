@@ -1,0 +1,122 @@
+
+  
+  gpu_set_blendmode_ext
+  Quando o GameMaker Studio 2 vai desenhar um pixel, há uma cor de origem (a cor do pixel que vamos desenhar) e uma cor de destino (a cor que já está no pixel para o qual estamos desenhando), portanto, ao determinar a nova cor de
+    o pixel, as cores de origem e destino são calculados de acordo com o modo de mistura escolhido. Cada componente das cores é armazenado como um valor de ponto flutuante entre 0 e 1, e a nova cor é calculada multiplicando cada componente do
+    cor de origem por algum fator e multiplicando cada componente da cor de destino por algum outro fator e depois adicionando os resultados juntos, componente por componente.
+  Esta função permite definir as diferentes partes componentes que devem ser consideradas em conjunto para criar um modo de mistura personalizado. A fonte e o destino têm ambos um componente vermelho, verde, azul e alfa, e no gráfico a seguir o RGBA da fonte
+    são considerados (Rs, Gs, Bs, As) enquanto os do destino são (Rd, Gd, Bd, Ad). As onze constantes que estão disponíveis para uso podem ser fonte ou destino (ou ambos) quando usadas nesta função.
+  
+    
+      
+        Constante
+        Fator de mistura (Vermelho, Verde, Azul, Alfa)
+      
+      
+        bm_zero
+        (0, 0, 0, 0)
+      
+      
+        bm_one
+        (1, 1, 1, 1)
+      
+      
+        bm_src_colour
+        (Rs, Gs, Bs, As)
+      
+      
+        bm_inv_src_colour
+        (1-Rs, 1-Gs, 1-Bs, 1-As)
+      
+      
+        bm_src_alpha
+        (As, As, As, As, As)
+      
+      
+        bm_inv_src_alpha
+        (1-As, 1-As, 1-As, 1-As, 1-As)
+      
+      
+        bm_dest_alpha
+        (Anúncio, Anúncio, Anúncio, Anúncio)
+      
+      
+        bm_inv_dest_alpha
+        (1-Ad, 1-Ad, 1-Ad, 1-Ad, 1-Ad)
+      
+      
+        bm_dest_colour
+        (Rd, Gd, Bd, Ad)
+      
+      
+        bm_inv_dest_color
+        (1-Rd, 1-Gd, 1-Bd, 1-Ad)
+      
+      
+        bm_src_alpha_sat
+        (f, f, f, 1) onde f = min(As, 1-Ad)
+      
+    
+  
+  IMPORTANTE! HTML5 sem WebGL habilitado não será capaz de exibir corretamente os seguintes modos:
+  
+    bm_src_colour
+    bm_inv_src_colour
+    bm_dest_colour
+    bm_inv_dest_color
+    bm_src_alpha_sat
+  
+   
+  Observe que você pode fornecer dois argumentos individuais para esta função ou pode fornecer uma série de argumentos (como retornado pela função gpu_get_blendmode_ext() por exemplo). Se fornecer uma matriz
+    deve ter os dois elementos a seguir:
+  
+    [0] = Modo de mistura da fonte (o padrão é bm_src_alpha)
+    [1] = Modo de mistura de destino (o padrão é bm_inv_src_alpha)
+  
+  Para ajudá-lo a obter o máximo dos modos de mistura e para ajudar a entender como eles funcionam e como afetam a imagem final que está sendo desenhada para a tela, recomendamos que você leia o seguinte guia:
+  
+    Guia para a utilização de emendas
+  
+   
+  Sintaxe:
+  gpu_set_blendmode(src, dest);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        src
+        Fator do modo de mistura da fonte (ver constantes acima).
+      
+      
+        dest
+        Fator do modo de mistura de destino (ver constantes acima)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  gpu_set_blendmode_ext(bm_src_alpha, bm_one); draw_circle_colour(100, 100, 50, c_white, c_black, 0); gpu_set_blendmode(bm_normal);
+  
+  Isto transformará o preto em transparência, criando um efeito de "brilho" pelo fato de o branco ser forte no exterior e gradualmente enfraquecendo ainda mais a partir do centro do círculo. O modo de mistura é reiniciado depois que o círculo é desenhado para garantir a mistura aditiva
+    não se aplica também a tudo o resto depois dele.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle de GPU
+        Próximo: gpu_set_blendmode_ext_sepalpha
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

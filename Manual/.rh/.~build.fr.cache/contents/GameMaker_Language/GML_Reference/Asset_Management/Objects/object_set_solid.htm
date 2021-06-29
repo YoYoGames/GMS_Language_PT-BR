@@ -1,0 +1,49 @@
+
+  
+  object_set_solid
+  Com esta função você pode marcar um objeto específico como sendo sólido ou não (para mais informações sobre a bandeira "sólido" veja a seção sobre o Editor de Objetos ). Isto significa que todas as instâncias
+    deste objeto que é criado após a mudança de sólido será criado com este novo estado, enquanto as instâncias que já se encontram na sala podem não ser afetadas.
+  Por favor, note que esta não é uma função de instância! Você pode definir a bandeira sólida de instâncias individuais usando a sólido e, portanto, todas as dez instâncias foram marcadas como sólidas, mesmo
+    o objeto em questão tem a bandeira definida como falsa no IDE, e mesmo que você mude a bandeira sólida do objeto para verdadeiro usando esta função, todas as instâncias que atualmente estão na sala permanecerão como estavam, e somente instâncias criadas após a chamada
+    a função começará com a bandeira sólida como verdadeira.
+   
+  Sintaxe:
+  object_set_solid( índice, sólido );
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do objeto a ser modificado.
+      
+      
+        sólido
+        A nova solidez do objeto (verdadeiro=sólido, falso=não sólido).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if !object_get_solid(obj_Block) { object_set_solid(obj_Block, true); }
+  O código acima verifica a bandeira sólida do objeto "obj_Block" e, se for falso, é alterado para ser sinalizado como verdadeiro.
+   
+   
+   
+  
+    
+      
+        Voltar: Objetos
+        Próximo: object_set_sprite
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

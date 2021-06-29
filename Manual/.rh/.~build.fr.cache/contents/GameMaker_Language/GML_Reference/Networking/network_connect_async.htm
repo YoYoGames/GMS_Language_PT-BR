@@ -1,0 +1,51 @@
+
+  
+  network_connect_async
+  Com esta função, você pode enviar um pedido para se conectar a um servidor. A função leva a identificação do soquete para se conectar (veja network_create_socket()) e exige que você forneça o endereço IP para se conectar
+    para (um fio), bem como a porta de passagem, e se a conexão falhar, um valor inferior a 0 será devolvido. A conexão usa um protocolo especial que garante que somente os jogos GameMaker Studio 2 se conectem entre si, porém se você precisar
+    para conectar a um servidor que não seja um jogo GameMaker Studio 2, você pode usar network_connect_async_raw(). Note que esta função é assíncrona, gerando um evento de Rede Assíncrona do tipo network_type_non_blocking_connect.
+   
+  Sintaxe:
+  network_connect_async(socket, url, porta);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        soquete
+        A identificação do soquete a ser utilizado.
+      
+      
+        url
+        A URL ou IP a que se conectar (uma cadeia).
+      
+      
+        porto
+        A porta a ser conectada.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  cliente = network_create_socket(network_socket_tcp); network_connect_async(client, "192.134.0.1", 6510);
+  O código acima criará um novo soquete TCP e então tentará fazer uma conexão assíncrona através dele com o endereço IP dado na porta 6510.
+   
+   
+   
+  
+    
+      
+        Voltar: Rede
+        Próximo: network_connect_raw
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

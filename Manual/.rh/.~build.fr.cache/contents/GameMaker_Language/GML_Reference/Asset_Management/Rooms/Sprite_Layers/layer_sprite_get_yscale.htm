@@ -1,0 +1,43 @@
+
+  
+  layer_sprite_get_yscale
+  Esta função pode ser usada para obter o multiplicador de escala atual ao longo do eixo y para o elemento sprite. Você dá o ID do elemento sprite (que você obtém quando cria um elemento sprite usando layer_sprite_create()    ou quando você usa a função layer_sprite_get_id()), e a função retornará valor real para a escala y, onde 1 não é escalonamento.
+   
+  Sintaxe:
+  layer_sprite_get_yscale(sprite_element_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sprite_element_id
+        O valor de identificação único do elemento sprite para obter as informações de
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var lay_id = layer_get_id("sprite_sky"); var spr_id = layer_sprite_get_id(lay_id, "Clouds"); if layer_sprite_get_yscale(spr_id) != 1 {
+     layer_sprite_yscale(spr_id, 1); }
+  
+  O código acima obterá a identificação da camada chamada "sprite_sky" e depois a utilizará para obter a identificação do elemento sprite naquela camada. Este ID é então usado para verificar o valor da escala y e se for algo diferente de 1, é ajustado para 1.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de Sprite
+        Próximo: layer_sprite_get_angle
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

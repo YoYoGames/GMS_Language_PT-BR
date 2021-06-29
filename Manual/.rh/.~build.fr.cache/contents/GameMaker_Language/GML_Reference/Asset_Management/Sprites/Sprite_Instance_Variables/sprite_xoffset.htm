@@ -1,0 +1,33 @@
+
+  
+  sprite_xoffset
+  Esta variável lida apenas retorna o xoffset local (o componente x da origem como definido no editor sprite) do sprite que foi atribuído à instância. Este xoffset é retornado em pixels e será dependente do image_xscale,
+    de modo que (por exemplo) se um duende quadrado 32x32 for definido como tendo a origem x em 16, quando esse duende for escalado por 2 esta variável retornará 32. Se você precisar do xoffset não escalonado, você deve usar sprite_get_xoffset().
+  
+   
+  Sintaxe:
+  sprite_xoffset;
+   
+  Devoluções:
+  Real (valor de ponto flutuante de precisão único)
+   
+  Exemplo:
+  se x - sprite_xoffset < 0 {
+     x = sprite_xoffset; }
+  
+  O código acima verifica se a borda esquerda do duende da instância está fora da sala e se ele move a instância para que o duende inteiro fique visível.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis de Sprite Instance
+        Próximo: sprite_yoffset
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

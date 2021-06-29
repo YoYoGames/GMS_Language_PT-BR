@@ -1,0 +1,44 @@
+
+  
+  objeto_get_solid
+  Esta função lhe dirá se o objeto que você está verificando foi sinalizado como "sólido" ou não. Um objeto sólido gera um evento de colisão especial ao utilizar o sistema de colisão tradicional (ou seja: o mundo da física está desligado). Por favor, note que
+    que esta não é uma função de instância! Portanto, você pode ter um objeto sólido e uma instância normal do mesmo objeto e vice-versa. Você pode definir uma bandeira sólida de instâncias individuais usando a sólido exemplo
+    variável.
+   
+  Sintaxe:
+  object_get_solid(obj);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        obj
+        O índice do objeto a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if (!solid) && (object_get_solid(object_index)) { solid = true; }
+  O código acima verificará a instância em execução para ver se ela é sólida ou não, assim como verificará o índice de objetos da instância para ver se ela está marcada como sólida ou não. Se a instância ainda não é sólida, o índice de objetos é sinalizado como sólido, ele
+    vai se tornar "sólido" para o caso.
+   
+   
+   
+  
+    
+      
+        Voltar: Objetos
+        Próximo: object_get_sprite
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

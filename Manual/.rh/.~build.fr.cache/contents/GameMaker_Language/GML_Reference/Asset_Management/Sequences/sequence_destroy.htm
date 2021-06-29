@@ -1,0 +1,46 @@
+
+  
+  sequence_destroy
+  Com esta função você pode destruir um objeto sequencial que foi criado dinamicamente. Você fornece ou a estrutura do objeto seqüencial (como retornado pela função sequence_create()) ou a identificação da seqüência (como retornado
+    pela função layer_sequence_get_sequence() ou a partir da seqüência de propriedade estrutural da instância). Esta função deve ser usada sempre que uma
+    não é mais necessária a seqüência para liberar a memória associada a ela.
+   
+  Sintaxe:
+  sequence_destroy(sequence_struct_or_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Sequência_de_estrutura_ou_e_id
+        A estrutura do objeto sequencial ou identificação para destruir
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if sequence_exists(my_seq) {
+     sequence_destroy(my_seq);
+     }
+  
+  O código acima verifica se o objeto em seqüência existe e se o faz é destruído.
+   
+   
+   
+  
+    
+      
+        Voltar: Sequências
+        Próximo: sequence_get
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

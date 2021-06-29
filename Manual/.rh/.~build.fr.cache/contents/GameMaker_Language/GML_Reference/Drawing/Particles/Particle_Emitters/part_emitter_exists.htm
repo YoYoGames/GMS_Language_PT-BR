@@ -1,0 +1,48 @@
+
+  
+  part_emitter_existe
+  Com esta função, você pode verificar se o emissor de partículas em questão existe ou não no sistema em questão. Observe que se a variável a ser verificada for uma variável não-inicializada (que um emissor de partícula teria seu índice atribuído de outra forma)
+    isto vai lançar um erro.
+   
+  Sintaxe:
+  part_emitter_exists(ps, ind);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ps
+        O sistema de partículas para verificar a existência de um emissor.
+      
+      
+        ind
+        O índice do emissor a ser pesquisado.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if part_emitter_exists(sname, p_emit1) {
+     part_emitter_burst(sname, p_emit1, part_1, 30); }
+  
+  O código acima verificará o emissor indexado na variável "permissão" e, se existir, rebentará 30 partículas da mesma.
+   
+   
+   
+  
+    
+      
+        Voltar: Emissores de Partículas
+        Próximo: part_emitter_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

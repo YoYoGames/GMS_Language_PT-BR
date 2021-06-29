@@ -1,0 +1,45 @@
+
+  
+  gpu_set_ztestenable
+  Esta função pode ser usada para ativar ou desativar o teste de z-buffer, afetando a forma como as coisas serão desenhadas (em geral, só é útil quando se trabalha com projetos 3D). Essencialmente, por padrão, quando o teste z está desligado e você tem dois objetos desenhando para o mesmo espaço,
+   Ambos os objetos serão entregues independentemente do fato de um traçar demais o outro, resultando em chamadas desnecessárias de sorteio. Se você ligar isto, o z-buffer é testado para ver se um objeto será "visível" e não desenhado se ele for
+    não estiver. Note que este é o comportamento padrão, mas você pode mudar isto mudando o tipo de comparação usada para o teste do z-buffer (veja a função gpu_set_zfunc().
+  Por padrão, o teste de z-buffer está desligado(falso).
+   
+  Sintaxe:
+  gpu_set_ztestenable(enable);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        habilitar
+        Ativar ou desativar o teste z-buffer(verdadeiro ou falso).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  gpu_set_ztestenable(true); draw_sprite(spr_Background, 0, 0, 0, 0); gpu_set_ztestenable(false);
+  
+  O código acima liga o teste de z-buffer para desenhar um duende de fundo e depois o desliga novamente para continuar o desenho.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle de GPU
+        Próximo: gpu_set_zfunc
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

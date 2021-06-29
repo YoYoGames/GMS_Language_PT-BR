@@ -1,0 +1,43 @@
+
+  
+  layer_sequence_get_headpos
+  Com esta função você fornece a identificação do elemento de seqüência - como retornado por layer_sequence_create() ou por uma das funções dos elementos da camada - e ele retornará a posição atual do playhead (a moldura atual em que o playhead está).
+   
+  Sintaxe:
+  layer_sequence_get_headpos(sequence_element_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sequence_element_id
+        O valor de identificação único do elemento de seqüência para o alvo
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  if layer_sequence_get_headpos(title_sequence) != 0 {
+     layer_sequence_headpos(title_sequence, 0); }
+  
+  O código acima verifica a posição atual da cabeça de jogo do elemento de seqüência ID armazenado na variável "title_sequence", e se não estiver definido para 0, é definido para este valor.
+   
+   
+   
+  
+    
+      
+        Voltar: Sequência de camadas
+        Próximo: layer_sequence_get_headdir
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

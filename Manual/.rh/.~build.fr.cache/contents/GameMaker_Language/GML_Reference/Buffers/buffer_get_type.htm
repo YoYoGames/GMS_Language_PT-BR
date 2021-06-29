@@ -1,0 +1,70 @@
+
+  
+  tipo_computador
+  Com esta função, você recupera o tipo de buffer que está sendo referenciado por um valor de identificação de buffer. O valor de retorno será uma das constantes a seguir:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        buffer_fixed
+        Um buffer de tamanho fixo.
+      
+      
+        buffer_grow
+        Um buffer que irá "crescer" dinamicamente à medida que os dados são adicionados
+      
+      
+        tampão_enrolador
+        Um buffer onde os dados serão "embrulhados". Quando os dados a serem adicionados atingirem o limite do tamanho do buffer, a sobregravação será colocada de volta no início do buffer, e a escrita continuará a partir desse ponto.
+      
+      
+        tampão_rápido
+        Tampão especial "despojado" que é extremamente rápido de ler/escrever. Só pode ser usado com tipos de dados buffer_u8, e deve estar alinhado a 1 byte.
+      
+      
+        buffer_vbuffer
+        Um amortecedor de vértices
+      
+    
+  
+   
+  Sintaxe:
+  buffer_get_type(buffer);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O índice do buffer a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Constante
+   
+  Exemplo:
+  tipo = buffer_get_type(buff);
+  O código acima obterá o tipo de buffer a partir do valor indexado na variável "buff" e o armazenará em uma variável.
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        A seguir: alinhamento_tampão_get_alignment
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,112 @@
+
+  
+  tipo de
+  Esta função retorna o tipo de dados de qualquer variável como uma string. Os possíveis valores de retorno estão listados na tabela abaixo:
+  
+    
+      
+        Cordão
+        Descrição
+      
+      
+        número
+        A variável contém um número real (ponto flutuante) - isso pode incluir NaN e infinito
+      
+      
+        corda
+        A variável contém um fio
+      
+      
+        matriz
+        A variável faz referência a uma matriz
+      
+      
+        bool
+        A variável contém um booleano(verdadeiro / falso)
+      
+      
+        int32
+        A variável contém um número inteiro de 32 bits
+      
+      
+        int64
+        A variável contém um inteiro de 64 bits
+      
+      
+        ptr
+        A variável contém um ponteiro
+      
+      
+        indefinido
+        A variável é indefinida
+      
+      
+        nulo
+        A variável tem um valor nulo (isto não deve ser visto normalmente)
+      
+      
+        vec3
+        A variável possui um vetor de 3 valores
+      
+      
+        vec4
+        A variável possui um vetor de 4 valores
+      
+      
+        método
+        A variável contém uma referência de função
+      
+      
+        estrutura
+        A variável contém uma referência estrutural
+      
+      
+        desconhecido
+        O valor é desconhecido. Isto nunca deve ser visto e significa que algo deu errado no nível mais básico, como uma sobregravação de memória.
+      
+    
+  
+   
+  Favor observar que há casos em que esta função pode não retornar o valor correto para um método. Considere as duas definições de função a seguir:
+  a = função() { // algo } 
+     função b() { // Algo }
+  Tecnicamente, estes dois métodos são considerados métodos, pois ligam uma função a uma variável de escopo de instância, no entanto, ligar para typeof() na função b retornará "número" e não " método ",
+    enquanto que chamá-lo em a retornará "método". Isto se deve ao fato de que a métodos criados como o de b são atribuídos índices de script (que são valores inteiros), já que este é o
+    forma que o compilador reconhece as funções do script, mesmo que a função não tenha sido definida em um script.
+   
+  Sintaxe:
+  tipo de(variável);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        variável
+        A variável para obter o tipo de dados.
+      
+    
+  
+   
+  Devoluções:
+  Corda (ver tabela acima)
+   
+  Exemplo:
+  var _str = typeof(global.ExtensionInput); show_debug_message(" global.ExtensionInput é um " + _str);
+  O código acima obtém o tipo de dados mantido pela variável global dada e retorna a string para uma variável local que é então usada para emitir uma mensagem para o console.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções variáveis
+        Próximo: bool
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,69 @@
+
+  
+   Valor Transformado do Desenho
+  Com esta ação, você pode desenhar uma legenda de cadeia e/ou uma variável ou valor para a tela. O argumento do título é uma string que você deseja adicionar antes do valor, e pode ser deixado em branco se necessário, e o valor pode ser uma variável, um valor fixo, ou
+    outra cadeia - neste caso, deve ser incluída entre aspas, e também pode ser deixada em branco, se necessário. Em seguida, você dá a posição onde a corda deve ser desenhada, seja como uma posição absoluta ou como uma posição relativa à instância que está desenhando o
+    texto. Além disso, você pode definir a escala do texto, esticando-o ao longo do eixo horizontal ou vertical, bem como a rotação (os ângulos para rotação do texto são no sentido anti-horário, de modo que o ajuste para 90° o fará girar para a esquerda e -90° para a
+    direito). A escala é feita pelo fator dado, portanto, uma escala de 0,5 será metade da largura do texto e uma escala de 2 será o dobro da largura, sendo 1 o valor padrão para nenhuma escala. Note que o aspecto do texto quando desenhado dependerá de
+    a fonte utilizada, a cor utilizada e o alinhamento. Todas estas coisas podem ser alteradas antes de desenhar, como mostra o exemplo abaixo.
+  NOTA: Esta ação é apenas para uso nos diversos eventos de sorteio, e não desenhará nada se for usada em outro lugar.
+   
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Legenda
+        A legenda para desenhar (um fio), pode ser deixada em branco
+      
+      
+        Valor
+        O valor a desenhar (real, variável ou string)
+      
+      
+        x
+        A posição x para desenhar em
+      
+      
+        y
+        A posição y para desenhar em
+      
+      
+        xscale
+        O fator de escala x (horizontal), o padrão é 1
+      
+      
+        yscale
+        O fator de escala y (vertical), o padrão é 1
+      
+      
+        Rotação
+        O ângulo de rotação para desenhar o texto
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima estabelece uma cor, uma fonte e depois alinha o texto
+    para desenhar do centro antes de realmente desenhar o valor "current_time" junto com a legenda "TIME: ", escalado para ser o dobro do tamanho e "vibrando" ligeiramente devido à mudança aleatória do ângulo.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações de desenho
+        A seguir: Sorteio Sprite
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

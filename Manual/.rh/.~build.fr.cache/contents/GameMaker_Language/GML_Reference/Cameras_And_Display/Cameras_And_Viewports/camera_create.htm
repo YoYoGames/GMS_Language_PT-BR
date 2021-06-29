@@ -1,0 +1,34 @@
+
+  
+  camera_create
+  Esta função criará uma câmera "vazia", ou seja: uma câmera sem nenhuma configuração de visão ou projeção definida. Uma vez criada a câmera, pode-se então usar as diferentes funções de matriz para definir as matrizes de visão e projeção. Você também pode usar esta função para criar a câmera e então usar as diferentes funções camera_set_* para configurar a visão, no entanto, observe que você deve fornecer pelo menos uma posição e tamanho de visão,
+    caso contrário a câmera resultante não será válida e dará resultados estranhos se aplicada a uma porta de visualização (se você não definir o objeto seguinte, bordas ou velocidade de movimento estas serão definidas para os valores padrão para uma câmera de visualização no Editor de Sala).
+  Note que as câmeras são como todos os recursos dinâmicos e ocuparão a memória quando criadas. Isto significa que você precisa tomar cuidado para não criar câmeras desnecessariamente e destruir aquelas que você não precisa chamando a função camera_destroy().
+    Isto também significa que as câmeras persistirão de sala para sala se atribuídas a uma variável global (elas persistirão quando atribuídas a uma instância ou a variáveis locais também, mas você não pode acessá-las depois de mudar de sala, daí o vazamento de memória), portanto
+    que você pode - por exemplo - criar uma nova câmera, atribuí-la a uma variável global, e então no início de cada sala definir as matrizes de visão e projeção necessárias e a porta de visão que você precisa usar.
+   
+  Sintaxe:
+  camera_create();
+   
+  Devoluções:
+  Real (valor único de identificação da câmera)
+   
+  Exemplo:
+  view_camera[0] = camera_create(); var viewmat = matrix_build_lookat(640, 240, -10, 640, 240, 0, 0, 0, 1, 0); var projmat = matrix_build_projection_ortho(640, 480, 1.0, 32000.0); camera_set_view_mat(view_camera[0], viewmat); camera_set_proj_mat(view_camera[0], viewmat),
+    projmat);
+  O código acima cria uma nova câmera e atribui sua identificação para visualização[0]. As matrizes de visão e projeção são então criadas e armazenadas em variáveis locais antes de serem usadas para configurar a câmera.
+   
+   
+   
+  
+    
+      
+        Voltar: Câmeras e Ver Portos
+        Próximo: camera_create_view
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

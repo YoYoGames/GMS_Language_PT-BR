@@ -1,0 +1,49 @@
+
+  
+  move_random
+  Com esta função você pode definir a instância para uma posição em qualquer lugar da sala, mas alinhada a uma grade "invisível". Assim, um valor de 32 para o hsnap e vsnap colocará a instância em uma posição aleatória que está alinhada a uma grade de 32x32 quadrados.
+    você pode definir estes valores para 1 para obter uma posição em qualquer parte da sala.
+  OBSERVAÇÃO: Esta função se encaixará nas mesmas posições toda vez que o jogo for executado novamente devido ao fato de que o GameMaker Studio 2 gera a mesma semente inicial aleatória toda vez para fazer do código de depuração uma tarefa muito mais fácil. Para evitar este comportamento
+    uso aleatoriedade() no início de seu jogo. Isto só é verdade ao testar e depurar o jogo, como o jogo final.
+    pacote executável não mostrará este comportamento e será aleatório a cada peça.
+   
+  Sintaxe:
+  move_random(hsnap, vsnap);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        hsnap
+        O snapping horizontal (o tamanho em pixels entre 'células').
+      
+      
+        vsnap
+        O snapping vertical (o tamanho em pixels entre 'células').
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if keyboard_check(vk_space) { move_random(1,1); }
+  Isto moverá a instância para uma posição aleatória em qualquer lugar da sala quando a tecla de espaço for pressionada.
+   
+   
+   
+  
+    
+      
+        Voltar: Movimento
+        Próximo: move_snap
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

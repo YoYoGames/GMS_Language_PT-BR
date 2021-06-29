@@ -1,0 +1,42 @@
+
+  
+  Código de Comentários
+  Ao trabalhar em colaboração com outras pessoas, ao lidar com um grande projeto, ou mesmo apenas para sua própria referência e depuração, é muito importante deixar comentários em seu código de evento e scripts. No GameMaker Studio 2 você tem vários mecanismos
+    para ajudá-lo a deixar notas e comentários sobre seções de código e até mesmo blocos inteiros de código que podem ser vistos na lista de eventos do objeto que você está editando atualmente. Desta forma, você pode deixar anotações para si mesmo e para seus colegas, ou para explicar
+    uma peça de código particularmente complicada, ou até mesmo deixar um lembrete sobre o que algo faz, ou o que você quer que algo faça no futuro.
+  Para deixar um simples comentário de uma linha, a primeira coisa que você pode fazer é usar // antes do texto. Por exemplo:
+  //inicializar variáveis sr = 10; hp = 100;
+  Você também pode deixar comentários de várias linhas, para dar crédito, para omitir uma seção completa do código para depuração, ou mesmo para deixar notas sobre como você quer mudar o código no futuro. Para isso, você pode usar /* ... */ assim:
+  /* Setup GIF Variables to initial values (estas podem ser editadas para que você não precise usar as funções de setter o tempo todo se você estiver sempre usando os mesmos valores)
+     IMPORTANTE! Consulte os scripts "set" individuais para obter informações mais extensas sobre cada uma das diferentes variáveis. */
+    
+     frame_num = 30; frame_steps = 5; frame_width = 256; frame_height = 256; frame_quality = gifcam_quality_high;
+  Além dos comentários, você também pode usar etiquetas especiais #regionais para marcar uma seção de código para Dobra de Código, e cada região pode conter um comentário. Como isto funciona é que você adiciona uma tag #region - junto com qualquer texto de comentário - ao
+    superior de uma seção de código e então adicionar uma tag #endregion correspondente na parte inferior da seção e então você pode "dobrar" o código, ou seja: escondê-lo para que você possa cortar o número de linhas de código visíveis no editor em qualquer
+    uma vez:
+  O código atual parece algo parecido com isto:
+  #Esta é uma região exemplo
+     width = sprite_get_width(sprite); height = sprite_get_height(sprite); xoff = sprite_get_xoffset(sprite); yoff = sprite_get_yoffset(sprite);
+     #endregion Comentário adicional aqui se necessário
+  Finalmente, vale mencionar que ao trabalhar com eventos no Editor de Objetos, você pode usar um comentário especial "description" no início do evento para dizer
+    o que é o conteúdo geral do evento, e isto mostrará na janela de eventos do Object Editor. Isto deve ir para a primeira linha do editor de código, e é formatado da seguinte forma:
+  //// @descrição <Este é um Evento Descrição>
+  Isto agora será mostrado na janela do evento, por exemplo:
+  Note que você pode definir um comentário padrão a ser criado para todos os eventos a partir das Preferências do Editor de Objetos.
+  Finalmente, se você estiver escrevendo funções de script e quiser ter algum controle sobre como elas são tratadas pela IDE (ou seja: ter auto-completar ou mostrar os parâmetros do script), então você deve escrever seus comentários usando
+    Notação JSDoc, como explicado aqui.
+   
+   
+   
+  
+    
+      
+        Voltar: Visão geral daGML
+        A seguir: Variáveis e Escopo Variável
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

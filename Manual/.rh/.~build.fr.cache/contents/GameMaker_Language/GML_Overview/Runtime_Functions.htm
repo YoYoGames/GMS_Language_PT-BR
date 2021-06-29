@@ -1,0 +1,48 @@
+
+  
+  Funçõesem tempo de execução 
+  A definição geral de uma função é algo como isto:
+  Uma função tem uma entrada e uma saída, e a saída está de alguma forma relacionada com a entrada.
+  No GameMaker Studio 2 isso se traduz em duas coisas diferentes, mas ambas funcionam da mesma maneira:
+  
+    Funçõesem tempo de execução - A tempo de execução função é aquela que é fornecida como parte da Idioma GameMaker(GML). Estes são incorporados à linguagem e podem ser usados para fazer as coisas acontecerem em seus jogos e há um grande número de GML
+      funções de tempo de execução à sua disposição, todas elas explicadas na seção Referência do Idioma do manual.
+    Funções e métodos do roteiro - Roteiro funções e Mvariáveis de ethod são funções que você mesmo criou usando o edifício básico
+      blocos do Idioma GameMaker(GML), e estas podem incluir funções de tempo de execução como parte de seu código.
+  
+  Nos dois casos acima, uma função tem a forma de um nome de função, seguido pelos argumentos de entrada entre colchetes () e separados
+    por vírgulas (se a função não tiver argumentos de entrada, são usados apenas colchetes). Esta página se concentra nas funções detempo de execução (ou seja: as que são incorporadas ao GameMaker para formar a linguagem GameMaker), mas as regras gerais mostradas
+    abaixo para todos os tipos de funções.
+  Aqui está um esboço da estrutura de uma função:
+  <função>(<arg0>, <arg1> ,... <argN>);
+  Algumas funções podem retornar valores e podem ser usadas emexpressões, enquanto outras simplesmente executam comandos, como ilustrado nas duas funções de tempo de execução a seguir
+    exemplos:
+  // Destruir a instância de chamada // Isto não requer argumentos e não retorna nada instance_destroy();
+    
+     // Obter a distância da posição atual da instância até a posição do mouse // Isto leva quatro argumentos e retorna um valor real dist = point_distance(x, y, mouse_x, mouse_y);
+  NOTA: Em qualquer lugar onde o manual tenha "N/A" como valor de retorno para uma função, isso significa que a função não deve retornar nenhum valor como parte de sua operação. Se você tentar verificar um valor de retorno destas funções, então você
+    terá o valor undefined. 
+  s vezes o valor de retorno de uma função pode ser um valor que você quer usar em uma atribuição, mas você deve observar que é impossível usar qualquer função diretamente como a esquerda
+    lado de uma tarefa. Por exemplo, o seguinte código para definir a velocidade em uma instância lhe daria um erro:
+  instance_nearest(x, y, obj).speed = 0;
+  O valor de retorno para a expressão nesse exemplo de código é um número inteiro (o valor de identificação único para a instância mais próxima) e, portanto, deve ser incluído entre parênteses para ser usado desta forma e endereçar corretamente a instância requerida (ver Variáveis de endereçamento em outras instâncias para mais informações). O código acima seria escrito corretamente como:
+  (instance_nearest(x, y, obj)).speed = 0;
+     //ou mais corretamente ainda
+     var inst = instance_nearest(x, y, obj); inst.speed = 0;
+  A seção Referência Idioma do manual lista todas as funções de tempo de execução disponíveis e dá exemplos de como elas podem ser usadas, bem como outras informações importantes sobre o que elas podem retornar
+    ou quaisquer eventos que eles possam desencadear, etc... Para mais informações sobre funções e métodos de script definidos pelo usuário, consulte a seção sobre Funções de Script e a seção sobre Variáveis de Método.
+   
+   
+   
+  
+    
+      
+        Voltar: Visão geral daGML
+        A seguir: Código de Comentários
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

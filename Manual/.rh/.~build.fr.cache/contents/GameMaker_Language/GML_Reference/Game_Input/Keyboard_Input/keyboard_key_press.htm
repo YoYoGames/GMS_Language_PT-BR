@@ -1,0 +1,44 @@
+
+  
+  teclado_key_press
+  Com esta função você pode simular a pressão de qualquer tecla no teclado. Quando utilizada, a tecla será marcada como sendo pressionada até que a função de liberação correspondente seja chamada (veja teclados_chaves_liberação()).
+    A função terá um valor de código de chave como retornado pela função ord() (somente letras maiúsculas de A-Z ou números de 0-9), ou qualquer uma das constantes vk_* listadas na página principal de Entrada do Teclado.
+  Observe que depois de chamar esta função, se a tecla for pressionada fisicamente no teclado, este evento de imprensa não será registrado novamente até que a tecla seja fisicamente liberada (acionando o evento de liberação e parando esta função),
+    ou a função da tecla de liberação correspondente foi chamada, e a tecla foi pressionada novamente.
+   
+  Sintaxe:
+  keyboard_key_press(key);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        chave
+        A chave para simular uma prensa de.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  keyboard_key_press(vk_space);
+  Isto irá simular uma prensa de barra de espaço.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada de Teclado
+        Próximo: keyboard_key_release
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

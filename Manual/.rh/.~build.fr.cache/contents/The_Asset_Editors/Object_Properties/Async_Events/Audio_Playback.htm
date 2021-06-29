@@ -1,0 +1,41 @@
+
+  
+  Reprodução de áudio
+  Este evento só pode ser acionado pelas funções de reprodução em fila de áudio e retornará um DS Map armazenado na variável  async_load,
+    contendo diferentes pares chave/valor relativos à fila de áudio que acionou o evento. O evento é acionado por uma callback quando se seleciona uma fila de áudio para reprodução e uma
+    buffer naquela fila de áudio está terminado de tocar.
+  As seguintes chaves estarão disponíveis no mapa DS:
+  
+    "queue_id" - o índice da fila para a fila que terminou de tocar, conforme retornado pela função audio_create_play_queue().
+    "buffer_id" - o ID do buffer que não está mais sendo jogado.
+    "queue_shutdown" - isto é ajustado para 0 durante a reprodução normal e 1 quando o evento é recebido porque audio_free_play_queue() tem
+      foi chamado. Quando isto for ajustado para 1, você não quer enfileirar mais dados.
+  
+  Como uma fila de áudio pode ser criada a partir de múltiplos buffers, este evento pode ser acionado várias vezes para uma fila à medida que se chega ao final de cada seção de áudio com buffer, daí a chave "buffer_id".
+  NOTA: A variável async_load só é válida nos eventos assíncronos, pois o mapa DS que aponta é criado no início do evento, depois apagado novamente no final, com isto
+    Entretanto, todas as outras estruturas de dados criadas a partir do evento devem ser limpas usando as funções apropriadas.
+  No exemplo de uso dado abaixo, criaremos uma fila de áudio com 10 sons de áudio em buffer adicionados a ela e, em seguida, tocaremos a fila:
+  audio_queue = audio_create_play_queue(buffer_s16, 11052, audio_mono); for (var i = 0; i < 10; i++;) { audio_queue_queue_sound(audio_queue, audio_buffer[i], 0, buffer_get_size(audio_buffer[i])); }  audio_play_sound(audio_queue,
+    0, é verdade);
+  Cada passo do jogo, agora que a gravação é detectada, desencadeará um evento de gravação de áudio assíncrono onde você pode lidar com a entrada gravada algo como isto:
+  var fila = async_load[? "queue_id_fila"]; var num = 0; if queue = audio_queue { for (var i = 0; i < 10; i++;) { if async_load[? "buffer_id"] == audio_buffer[i] { buffer_seek(audio_buffer[i],
+    buffer_seek_start, 0); num = i; }  }  if num === 9 { audio_stop_sound(audio_queue); audio_free_play_queue(audio_queue); }  }
+  
+  Aqui verificamos o ID da fila e se é o que queremos, verificamos então o ID do buffer para ver qual buffer acabou de ser jogado. Também definimos então um var local para esse valor de índice para verificação posterior e voltamos a colocar o buffer de volta no início para isso.
+    som. Uma vez que nossa variável local atinge 9, indicando que a fila terminou, paramos a reprodução do som e liberamos a fila.
+   
+   
+   
+   
+  
+    
+      
+        Voltar: Eventos Async
+        A seguir: Gravação de áudio
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

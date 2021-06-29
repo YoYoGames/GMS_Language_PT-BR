@@ -1,0 +1,51 @@
+
+  
+  buffer_load_ext_ext
+  Esta função irá carregar os dados do buffer que foram salvos anteriormente usando o buffer_save() funções em um buffer já criado. Você dá a identificação do buffer previamente criado para carregar, depois o buffer salvo
+    arquivo de buffer para carregar, e finalmente o offset desde o início do buffer (em bytes) para o qual você deseja carregar os dados.
+   
+  Sintaxe:
+  buffer_load_ext(buffer, nome do arquivo, offset);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O índice do buffer para o qual carregar.
+      
+      
+        nome do arquivo
+        O nome do arquivo a ser carregado.
+      
+      
+        offset
+        A compensação dentro do buffer para carregar a (em bytes).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var pos = buffer_seek(player_buffer, buffer_seek_end, 0); buffer_load(player_buffer, "Data_Save.sav", pos);
+  O código acima obterá primeiro a posição do final do buffer indexado na variável "player_buffer" e depois carregará os dados do dado para aquela posição (note que este exemplo só funcionará com "grow" ou "wrap".
+    tipos de buffer).
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: buffer_load_async
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

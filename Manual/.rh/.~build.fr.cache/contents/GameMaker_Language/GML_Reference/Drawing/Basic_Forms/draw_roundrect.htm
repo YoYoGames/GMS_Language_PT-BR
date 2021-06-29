@@ -1,0 +1,61 @@
+
+  
+  draw_roundrect
+  Com esta função você pode desenhar um contorno de um retângulo arredondado ou um retângulo arredondado preenchido onde a posição (x1,y1) é o canto superior esquerdo e a posição (x2,y2) é o canto inferior direito. Você pode definir com que precisão o desenho do
+    cantos é com a função draw_set_circle_precision()mas esta função usa um raio fixo para eles (caso você precise mudar o raio do canto, use a função draw_roundrect_ext()).
+    Favor observar que o retângulo a ser desenhado pode precisar de valores diferentes (+/-1 no x, y, ou largura ou altura) para ser desenhado com as dimensões desejadas devido às diferenças entre as várias plataformas suportadas.
+  NOTA: Se você quiser desenhar uma forma usando um sombreador, você deve estar ciente de que a maioria dos sombreadores espera as seguintes entradas: vértice, textura, cor. Entretanto, ao utilizar esta função, apenas os dados de vértice e cor estão sendo passados para dentro, e assim o
+   shader não pode desenhar nada (ou desenhar algo, mas não corretamente). Se você precisar desenhar formas desta maneira, então o sombreador deve ser personalizado tendo isto em mente.
+   
+  Sintaxe:
+  draw_roundrect(x1, y1, x2, y2, esboço);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x1
+        A coordenada x do canto superior esquerdo do retângulo arredondado (como se fosse um retângulo normal).
+      
+      
+        y1
+        A coordenada y do canto superior esquerdo do retângulo arredondado (como se fosse um retângulo normal).
+      
+      
+        x2
+        A coordenada x do canto inferior direito do retângulo arredondado (como se fosse um retângulo normal).
+      
+      
+        y2
+        A coordenada y do canto inferior direito do retângulo arredondado (como se fosse um retângulo normal).
+      
+      
+        esboço
+        Se o retângulo arredondado é desenhado preenchido (falso) ou como um contorno de um pixel de largura (verdadeiro).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_set_colour(c_lime); draw_roundrect(50, 100, 250, 200, 0);
+  Isto desenhará um retângulo arredondado cheio, com seu canto superior esquerdo teórico (antes de ser curvo) em (50.100) e seu canto inferior direito teórico em (250.200).
+   
+   
+   
+  
+    
+      
+        Voltar: Formulários básicos
+        A seguir: draw_roundrect_colour
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

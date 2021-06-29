@@ -1,0 +1,138 @@
+
+  
+  A estrutura da via
+  A estrutura de trilhos pode ser usada tanto paratrilhospatrimoniais denível superior ou paratrilhos de parâmetros sub-faixa ,
+    e o comportamento da pista é definido por duas coisas, seu nome e seu tipo . As estruturas da via são criadas utilizando a função sequence_track_new()    e podem ser recuperados dos ativos de seqüência usando a propriedade ActiveTracks da estrutura de instância de seqüência ou a propriedade tracks da estrutura de objeto de seqüência.
+  As propriedades disponíveis para a estrutura da via são:
+  
+    tipo: As seguintes constantes podem ser todas usadas para definir o tipo de faixa que está sendo criada na seqüência (estas constantes também são usadas na geração de quadros-chave e dados de quadros-chave, explicados nas seções abaixo):
+  
+  
+    
+      
+        Constante
+        Descrição
+        Valor
+      
+      
+        seqtracktype_graphic
+        Esta é uma faixa de ativos gráficos (sprite).
+        1
+      
+      
+        seqtracktype_audio
+        Esta é uma faixa de ativos de áudio.
+        2
+      
+      
+        seqtracktype_instance
+        Este é um exemplo de patrimônio.
+        14
+      
+      
+        seqtracktype_sequence
+        Este é um caminho de ativos em seqüência.
+        7
+      
+      
+        seqtracktype_clipmask
+        Esta é uma trilha de ativos de grupo de máscara de clipes.
+        8
+      
+      
+        seqtracktype_clipmask_mask
+        Este é um trilho de recurso de máscara de clip sprite usado para gerar a máscara de clip.
+        9
+      
+      
+        seqtracktype_clipmask_subject
+        Este é um trilho de recursos de sprite com máscara que está sendo mascarado.
+        10
+      
+      
+        seqtracktype_group
+        Esta pasta de pasta de grupo é um recurso.
+        11
+      
+      
+        seqtracktype_colour
+        Esta é uma faixa de parâmetros de dados de cor.
+        4
+      
+      
+        seqtracktype_real
+        Esta é uma faixa de parâmetros de valor numérico real.
+        3
+      
+      
+        seqtracktype_message
+        Esta é uma faixa de transmissão de mensagens.
+        15
+      
+      
+        seqtracktype_moment
+        Esta é uma pista de eventos/momentos.
+        16
+      
+      
+        seqtracktype_bool
+        Não utilizado atualmente.
+        5
+      
+      
+        seqtracktype_string
+        Não utilizado atualmente.
+        6
+      
+      
+        seqtracktype_spriteframes
+        Não utilizado atualmente.
+        13
+      
+      
+        seqtracktype_empty
+        Não utilizado atualmente.
+        12
+      
+    
+  
+   
+  
+    nome: Ao criar uma faixa de parâmetros, o nome que você dá aqui pode ser qualquer string que você precisar para identificar a faixa, entretanto, para faixas de parâmetros, você precisa especificar strings específicas para dizer ao GameMaker Studio 2 que tipo de faixa de parâmetros
+      que você está criando (estas cadeias de caracteres só se aplicam aos tipos de faixa de parâmetros seqtracktype_real e seqtracktype_colour ):
+      
+        "posição" - quando colocado em uma pista do tipo seqtracktype_real isto indica que o conteúdo desta pista deve ser usado como dados posicionais.
+        "escala" - quando colocado em uma trilha do tipo seqtracktype_real isto indica que o conteúdo desta trilha deve ser usado como dados de escala.
+        "rotação" - quando ajustado em uma pista do tipo seqtracktype_real isto indica que o conteúdo desta pista deve ser usado como dados de rotação.
+        "blend_multiply"- quando ajustado em uma faixa do tipo seqtracktype_colour isto indica que o conteúdo desta faixa deve ser usado como dados de multiplicação de cores. Os dados do quadro-chave para tal trilha devem
+          ser um conjunto de quatro valores com o formato [A, R, G, B]. Observe que os valores para cada componente são expressos entre 0 e 1, onde 0 corresponde ao valor HEX #00 e 1 corresponde ao valor HEX #FF (0 - 255 como mostrado na cor
+          para trilhas de mistura de imagens no Editor de Seqüências).
+        "image_speed" - quando colocado em uma pista do tipo seqtracktype_real, isto indica que o conteúdo desta pista deve ser usado como o valor da velocidade da imagem.
+        "image_index"- quando colocado em uma pista do tipo seqtracktype_real, isto indica que o conteúdo desta pista deve ser usado como o valor do índice de imagem.
+        "image_angle" - quando colocado em uma pista do tipo seqtracktype_real, isto indica que o conteúdo desta pista deve ser usado como o valor do ângulo da imagem.
+        "image_blend" - quando colocado em uma faixa do tipo seqtracktype_colour isto indica que o conteúdo desta faixa deve ser usado como o valor da mistura de imagens. Os dados do quadro-chave para tal faixa devem ser um
+          matriz de quatro valores com o formato [A, R, G, B]. Note que os valores para cada componente são expressos entre 0 e 1, onde 0 corresponde ao valor HEX #00 e 1 corresponde ao valor HEX #FF (0 - 255 como mostrado no colhedor de cores
+          para pistas de multiplicação de cores no Editor de Seqüências).
+      
+    
+    pistas: Esta propriedade permite o acesso à lista de faixas que são crianças desta faixa. Ao obter esta propriedade é devolvido um conjunto de estruturas de trilhos, e ao definir esta propriedade
+      uma série de estruturas de trilhos deve ser especificada.
+    visível: Isto indica se este rastro é visível (o valor é verdadeiro) ou não (o valor é falso). Você pode obter ou definir este valor e se uma faixa não visível, então nenhuma de suas faixas infantis será desenhada também.
+    quadros-chave: Esta propriedade permite o acesso à lista de estruturas do quadro-chave para a pista. Ao obter esta propriedade é devolvido um conjunto de estruturas de estrutura de teclado, e ao definir esta propriedade um conjunto de estruturas de teclado
+      estruturas devem ser especificadas.
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Sequências
+        A seguir: A estrutura do Keyframe
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

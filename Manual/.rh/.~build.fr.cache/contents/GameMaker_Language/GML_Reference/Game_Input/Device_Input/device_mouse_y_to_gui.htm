@@ -1,0 +1,52 @@
+
+  
+  dispositivo_mouse_y_to_gui
+  Esta função retorna a posição y do toque no dispositivo em relação à camada GUI. Como a camada GUI pode ser ajustada para um tamanho diferente, independentemente da resolução da tela e do tamanho da sala, às vezes pode ser complicado obter
+    o ponto exato na camada GUI em que um usuário tocou a tela. Com esta função você pode obter essa posição com base no tamanho real da GUI, tornando os botões GUI e elementos HUD mais fáceis de criar e interagir. Se você estiver executando isto em uma
+    HTML5 ou módulos PC e Mac, este valor é atualizado constantemente, desde que o dispositivo (geralmente um mouse) esteja conectado, porém, para dispositivos móveis, isto só será atualizado enquanto a tela estiver sendo tocada, e note que o número máximo de
+    toques que podem ser detectados dependerão muito do dispositivo a ser utilizado e do sistema operacional que ele executar. Observe também que no HTML5 somente o "dispositivo 0" funcionará corretamente e outros dispositivos podem dar valores errados.
+   
+  Sintaxe:
+  device_mouse_y_to_gui(device);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dispositivo
+        O dispositivo (de 0 a n) que está sendo verificado.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  se device_mouse_check_button(0, mb_left) {
+     if device_mouse_y_to_gui(0) > 0 && device_mouse_y_to_gui(0) < 32 {
+     press = true; }
+     else
+     {
+     press = falso; }
+     }
+  
+  O código acima verifica se o mouse do dispositivo está sendo pressionado e, em caso afirmativo, ele então sonda a posição x do dispositivo na camada GUI para ver se ele está dentro dos parâmetros. Se for, ele define a variável "pressionada" como verdadeira, outros sensatos
+    o define como falso.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada do dispositivo
+        Próximo: device_is_keypad_open
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

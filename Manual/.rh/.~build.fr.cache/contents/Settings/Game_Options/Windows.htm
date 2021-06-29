@@ -1,0 +1,79 @@
+
+  
+  Opções de jogosdo Windows 
+  Esta seção descreve as diferentes opções disponíveis para você que controlam como seus projetos de jogos Windows serão compilados. As diferentes seções são:
+   
+  Geral
+  A página Geral para jogos Windows é onde você deve fornecer as informações necessárias para que o Windows exiba
+    quando seu jogo tiver sido instalado e estiver em funcionamento. Estas informações vão na seção Informações sobre o produto e devem ser preenchidas completamente.
+  A seção Opções desta janela permite que você escolha para onde o pacote do jogo será instalado, seja para as pastas "%localappdata%" ou "%appdata%", como
+    bem como se deve configurar o Copy exe para pasta de saída. Em geral, você nunca deve precisar desta opção, mas ela é fornecida para aqueles usuários que possuem várias DLL's que se comunicam entre si e com seu jogo, e quando ativada, ela
+    manter o jogo EXE na pasta de saída ao testar, em vez de colocá-lo na pasta Temp .
+  A seguir você pode definir a Margem de Sono doWindows. Esta opção está relacionada à redução da gagueira ao executar seu jogo em sistemas específicos. Basicamente, se seu jogo estiver rodando mais rápido que a velocidade de seu quarto, o GameMaker Studio 2 "dormirá".
+    pelo tempo restante, mas este sono pode ser bastante impreciso e você pode muitas vezes terminar o sono por mais tempo do que o necessário, fazendo com que seu quadro demore mais, o que causa a gagueira. Para contornar isto, podemos dormir por menos tempo e depois sentar-nos em um lugar apertado.
+    loop pelo restante do tempo para torná-lo mais preciso - embora o problema de sentar em loop é que isso faz com que o uso da CPU aumente, o que, por sua vez, pode fazer com que a temperatura de sua CPU aumente e seu ventilador funcione mais rápido. Por padrão, este valor
+    está ajustado para 10, e em 99,99% dos casos você estará bem com isso, mas para máquinas de baixa gama ou para máquinas com muitos processos de fundo em execução esta pode não ser uma solução ideal (ou para máquinas de muito alta gama também) e um valor de 1 ou 15
+    ou algo que possa ser necessário. Observe que esta é uma configuração muito específica do sistema e o que funciona em sua máquina construída pode não ser apropriado para outro usuário, e como tal, em caso de dúvida, deixá-la configurada para 10.
+  NOTA: Além da Margem de Sono, você pode controlar ainda mais seu desempenho e consumo de energia no Windows, ajustando a resolução do agendador de fios em tempo de execução .
+  A próxima opção é Habilitar o vapor para seu jogo. Se você ativar esta opção, certifique-se de ter o SteamworksSDK instalado (veja aqui), e que
+    você adicionou o Steam App ID nas Opções Gerais para o jogo. Observe que se você estiver executando o GameMaker Studio 2 no Windows e a partir da versão Steam da IDE e estiver desenvolvendo jogos
+    para Steam, então você também pode precisar verificar a opção Usar lançador alternativo para aplicação de  Steam. O que esta opção faz é lançar seu jogo ao testar usando um programa de lançador alternativo para evitar que ele seja sinalizado pelo Steam
+    com o ID de aplicação do GameMaker Studio 2 ao invés do ID de sua própria aplicação de jogo. Você só deve habilitar isto quando estiver desenvolvendo para o Steam e se tiver problemas para lançar seu jogo.
+  A penúltima opção que você tem é a opção de Desativar o sistema de arquivo sandbox. Ao verificar isso, o GameMaker Studio 2 será desativado para salvar e carregar arquivos, permitindo que seus jogos acessem arquivos de qualquer lugar do sistema.
+    correndo o jogo. Esta opção é desmarcada por padrão, pois recomendamos que você mantenha a caixa de areia GameMaker Studio 2 para arquivos em todos os sistemas e, quando marcada, algumas áreas de salvamento/carga podem ainda não estar disponíveis, dependendo das permissões de nível de sistema operacional.
+    Para mais informações sobre o sandbox, consulte as páginas do sistema de arquivos do GameMaker Studio 2.
+  Finalmente, você tem a opção de fazer com que o GameMaker Studio 2 crie um executável x64 para seus projetos Windows. Quando ativada, esta opção criará um executável de 64 bits para seu jogo quando ele for compilado, e recomendamos fortemente que todos os novos projetos utilizem esta opção.
+    Este se tornará o formato padrão (e único) para executáveis Windows no futuro a longo prazo, uma vez que o executável de 32 bits estará sendo gradualmente eliminado. Note que, quando ativado, qualquer extensão dll sendo usada pelo projeto também precisará ser de 64 bits (veja aqui para mais informações).
+   
+  Gráficos
+  As opções gráficas são aquelas que você deve configurar para determinar como seu jogo irá utilizar a placa gráfica de seu
+    PC Windows alvo. As seguintes opções estão incluídas para que você possa modificar:
+  
+    Cursor de exibição: Quando isto for verificado, o cursor das janelas regulares será mostrado, e desmarcá-lo significará que nenhum cursor será mostrado a menos que você tenha criado um em seu código de jogo. Isto está ativado por padrão.
+    Iniciar tela cheia: Se isto for verificado, o jogo começará no modo de tela cheia, caso contrário, começará em tela cheia. Isto é desligado por padrão.
+    Permitir a troca de tela cheia: Com isso, o usuário pode mudar de tela cheia para janela e voltar usando os atalhos padrão do Windows. Isto é desligado por padrão.
+    Interpolar as cores entre os pixels: Ativa a interpolação linear, que basicamente "suaviza" os pixels. Para gráficos com pixels nítidos, deve ser desligado, mas
+      Se você tiver uma boa combinação de alfa e gráficos suaves, é melhor deixá-la ligada, por padrão.
+    Use a sincronização para evitar rasgos: Esta sincronização ativa ou desativa a sincronização v-sync. Note que se você tiver um jogo com uma velocidade de sala de 120 e o jogador tiver um monitor com uma taxa de atualização
+      de 60, ligando esta opção, sua velocidade de jogo também será fixada em 60. Esta opção está desligada por padrão.
+    Permitir o redimensionamento da janela: A verificação disto permite ao usuário mudar o tamanho da janela do jogo (a opção Janela sem Fronteiras precisa estar desligada para que isto funcione). Esta opção está desativada por padrão.
+    Janela sem fronteiras: Ao verificar isso, seu jogo será executado com uma janela sem bordas, removendo os botões normais de minimizar, maximizar e fechar, assim como o título do jogo. Isto é desligado por padrão.
+    Escala: Aqui você pode optar por manter a relação de aspecto (assim uma sala de 4:3 será "encaixotada" em um 16:9) ou escalar completamente (esticando a imagem para caber na tela inteira).
+      
+      ADVERTÊNCIA! Adesativação da superfície de aplicação desabilitará todas as opções de escalonamento definidas nas Opções de Jogo do Windows até que ela seja ligada novamente. Veja a superfície de aplicação para mais detalhes.
+  
+  Finalmente, há a opção de definir o tamanho da página de textura. O tamanho padrão (e o mais compatível) é 2048x2048, mas você pode escolher entre 256x256 até 8192x8192. Lá
+    é também um botão marcado Pré-visualização que gerará as páginas de textura para esta plataforma e depois abrirá uma janela para que você possa ver como elas são. Isto pode ser muito útil se você desejar ver como são as páginas de textura
+    estruturada e para evitar ter páginas de textura maiores (ou menores) do que o necessário. Para maiores informações sobre páginas de textura, por favor, veja aqui.
+  NOTA: Esteja ciente de que quanto maior o tamanho da página de textura, menos compatível seu jogo estará nos PCs com especificações mais baixas.
+   
+  Imagens
+  A seção de imagens é onde você fornece as imagens que seu jogo requer. Para Windows, você precisa fornecer um arquivo de ícones (que deve estar no formato .ico ) e também uma tela de splash (que pode ser .png, .bmp, .jpg ou .gif format).
+    A tela splash será mostrada enquanto o jogo carrega, e pode ser habilitada ou desabilitada verificando a opção Use Splash Screen (que está desligada por padrão).
+  Vale notar que o GameMaker Studio 2 possui uma ferramenta Gerador de Imagens de Projeto que pode ser usada para criar automaticamente todas as imagens necessárias para todas as diferentes plataformas alvo de seu jogo
+    está sendo compilado para. Se você usar esta ferramenta, você deve revisar as imagens criadas para garantir que elas sejam o que você precisa.
+   
+  Instalador
+  Os jogospara Windows podem ser criados com um instalador e aqui você pode definir as diversas configurações e gráficos
+    que o GameMaker Studio 2 usará ao criá-lo. Antes de mais nada, temos as opções gráficas que definirão o visual do próprio instalador:
+  
+    Acabado: O gráfico que aparece na página "Acabado" do instalador. Deve estar no formato *.bmp e medir 164x314px.
+    Cabeçalho: O gráfico que aparece enquanto o instalador está rodando. Deve estar no formato *.bmp e medir 150x57px.
+  
+  Você também pode apontar para um arquivo específico de Contrato de Licença (um exemplo é fornecido com o GameMaker Studio 2) e um arquivo de script personalizado NSI (detalhes aqui) caso você precise
+    um, ou clique nos botões apropriados para retornar aos arquivos padrão fornecidos com o GameMaker Studio 2.
+   
+   
+   
+  
+    
+      
+        Voltar: Opções de jogo
+        A seguir: macOS
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,48 @@
+
+  
+  endereço_de_suporte
+  Com esta função, você pode obter um ponteiro para o endereço de buffer em bruto e alinhado. Isto é principalmente para uso com extensões, pois você pode passar este valor para eles, permitindo-lhes acessar os dados do buffer. Note que há algumas coisas
+    você não pode fazer com o buffer ao acessar a partir de uma extensão:
+  
+    Não se pode liberar a memória.
+    Não se pode redimensionar a memória.
+    Você não pode escrever além do endereço do buffer mais o tamanho do buffer (você pode usar o buffer_get_size() para isto) ou você receberá um erro fora dos limites.
+  
+   
+  Sintaxe:
+  buffer_get_address(buffer);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O índice do buffer a ser utilizado.
+      
+    
+  
+   
+  Devoluções:
+  ponteiro
+   
+  Exemplo:
+  var b_address = buffer_get_address(buff_model); var b_end_address = b_address + buffer_get_size(buff_model);
+  O código acima obterá o endereço de memória do buffer indexado na variável "buff_model" e então obterá o endereço de memória para o fim do buffer usando a função buffer_get_size (), armazenando ambos os valores em variáveis locais para
+    utilização posterior.
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: tamanho_do_tampão_esquema_de_tampão
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

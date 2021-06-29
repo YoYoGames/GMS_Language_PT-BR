@@ -1,0 +1,46 @@
+
+  
+  file_text_close
+  Uma vez que você tenha terminado de trabalhar com um determinado arquivo (seja lendo ou escrevendo para ele), você deve fechar o arquivo novamente, ou então você corre o risco de perder as informações contidas nele. Isto também evita vazamentos de memória e garante que você nunca mais
+    o limite de arquivos por ter mais de 32 arquivos abertos.
+   
+  Sintaxe:
+  file_text_close(fileid);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fileid
+        A identificação do arquivo a ser fechado.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var file = file_text_open_write(working_directory + "Game_Data.txt"); while (!file_text_eof(file)) {
+     file_text_readln(file);
+     }
+     file_text_write_string(file, level_data); file_text_close(file);
+  
+  O código acima abre um arquivo para escrita e depois percorre as linhas de texto já escritas no arquivo até chegar ao final. Neste ponto, ele escreve uma linha e depois fecha o arquivo novamente.
+   
+   
+   
+  
+    
+      
+        Voltar: Arquivos de texto
+        Próximo: file_text_open_read
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

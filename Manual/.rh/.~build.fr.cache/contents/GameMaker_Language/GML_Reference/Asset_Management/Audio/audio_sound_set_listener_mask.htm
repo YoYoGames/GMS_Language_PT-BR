@@ -1,0 +1,49 @@
+
+  
+  audio_sound_set_listener_mask
+  Esta função pode ser usada para definir a máscara de bits para um som, de modo que ele seja tocado apenas pelos ouvintes especificados. Você pode criar uma bit-máscara usando a função audio_get_listener_info() e
+    então usando o bitwise ou ("|") para criar uma máscara personalizada com aqueles ouvintes dos quais você requer o som para tocar, e então aplicar esta máscara personalizada ao som depois de tocá-lo. Esta máscara irá
+    substitua a máscara padrão ou aquela que você possa ter definido usando a função audio_set_listener_mask().
+  NOTA: Esta função só pode ser usada em um som após ter sido ajustada para tocar e requer o soundID conforme retornado pela função usada para tocar o som.
+   
+  Sintaxe:
+  audio_sound_set_listener_mask(soundID, máscara);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        soundID
+        A identificação única do som para definir a máscara de
+      
+      
+        máscara
+        Os dados de bitmask a serem definidos para o som
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var snd = audio_play_sound(snd_PlayerDead, 10, false); audio_sound_set_listener_mask(snd, global.PlayerMask);
+  O código acima toca um som e, em seguida, define o(s) ouvinte(s) para tocar a partir do uso dos dados da máscara armazenados em uma variável global.
+   
+   
+   
+  
+    
+      
+        Voltar: Áudio
+        Próximo: audio_sound_get_listener_mask
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,43 @@
+
+  
+  tamanho_da_linha do tempo
+  Com esta função você pode obter o número total de momentos ativos para uma linha de tempo (um momento "ativo" é aquele que tem o código ou DnD™ adicionadoa ele). Isto pode ser útil ao criar linhas de tempo dinâmicas usando a timeline_moment_add_script() e timeline_moment_moment_clear() como você pode verificar se uma determinada linha de tempo tem o número correto de momentos ativos ou se não tem nenhum.
+   
+  Sintaxe:
+  timeline_size(ind);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice da linha do tempo obtém as informações.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if timeline_size(global.tl) == 0 {
+     timeline_moment_add_script(global.tl, room_speed + irandom(room_speed), spawn_enemy); }
+  
+  O código acima verifica o tamanho dado da linha de tempo, e se retornar 0 (ou seja: a linha de tempo não tem momentos ativos) adicionará uma função de script para ser usada em um momento aleatório dentro da linha de tempo indexada na variável global "tl".
+   
+   
+   
+  
+    
+      
+        Voltar: Cronogramas
+        Próximo: linha do tempo_max_momento
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

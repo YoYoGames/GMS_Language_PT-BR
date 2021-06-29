@@ -1,0 +1,45 @@
+
+  
+  layer_background_get_index
+  Esta função pode ser usada para obter o valor atual do índice de imagem do elemento de fundo. Você dá o ID do elemento de fundo (que você obtém quando cria um elemento de fundo usando layer_background_create()    ou quando você usa a função layer_background_get_id()), e a função retornará um valor real que representa o índice de imagem que está sendo mostrado para o duende. A função retornará -1 se ou o
+    O elemento de fundo não existe ou o elemento não tem um duende válido atribuído a ele.
+   
+  Sintaxe:
+  layer_background_get_index(background_element_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        background_element_id
+        O valor único de identificação do elemento de fundo para obter as informações de
+      
+    
+  
+   
+  Devoluções:
+  Real (o índice de imagem sprite atual ou -1)
+   
+  Exemplo:
+  var lay_id = layer_get_id("Background_sky"); var back_id = layer_background_get_id(lay_id); if layer_background_get_index(back_id) < 4 {
+     layer_background_index(back_id, 4); }
+  
+  O código acima obterá a identificação da camada chamada "Background_sky" e depois a utilizará para obter a identificação do elemento de fundo nessa camada. Este ID é então usado para verificar se o índice de imagem para o elemento é inferior a 4, e se for o caso
+    está ajustado para 4.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de fundo
+        Próximo: fundo_camada_velocidade_get_speed
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

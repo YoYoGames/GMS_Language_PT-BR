@@ -1,0 +1,36 @@
+
+  
+  dados_do_evento
+  Esta variável é global no escopo e é usada para manter um Mapa DS quando usada nos Eventos de Gesture, e -1 em
+    todas as outras vezes. O conteúdo real do mapa DS dependerá do tipo de evento gesto que o desencadeou, portanto, consulte as seções individuais para esses eventos.
+   
+  Sintaxe:
+  event_data;
+   
+  Devoluções:
+  Real (valor inteiro)
+   
+  Exemplo:
+  isFlick = event_data[?"isflick"]; if (isFlick) {
+     flickVelX = event_data[?"diffX"]; flickVelY = event_data[?"diffY"]; }
+     else
+     {
+     flickVelX = 0; flickVelY = 0; }
+  
+  O código acima é retirado do evento Drag End e verifica se o ventilador é um evento "flick", e se é ele que extrai os dados necessários do mapa DS de dados do evento e o usa para definir algumas variáveis. Se for um "flick
+    não for detectado, então as mesmas variáveis são definidas como 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada por gestos
+        A seguir: gesture_get_drag_time
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

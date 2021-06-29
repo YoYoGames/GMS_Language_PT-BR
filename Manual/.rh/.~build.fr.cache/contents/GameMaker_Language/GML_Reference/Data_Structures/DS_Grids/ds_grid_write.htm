@@ -1,0 +1,43 @@
+
+  
+  ds_grid_write
+  Esta função pode ser usada para converter a dada ds_grid em uma string, que pode então ser armazenada em um arquivo externo (por exemplo). Você pode ler a string retornada desta função de volta para uma ds_grid usando a função ds_grid_read().
+  NOTA: O fio retornado não é um fio legível por humanos, mas sim uma lixeira do conteúdo da estrutura de dados.
+   
+  Sintaxe:
+  ds_grid_write(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice da grade para escrever.
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  ini_open("Save.ini"); ini_write_string("Save", "0", ds_grid_write(mygrid)); ini_close()
+  
+  O código acima abrirá um arquivo ini (criando-o se ainda não existir) e então escreverá a ds_grid dada como uma string para esse arquivo.
+   
+   
+   
+  
+    
+      
+        Voltar: Grades DS
+        Próximo: ds_grid_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

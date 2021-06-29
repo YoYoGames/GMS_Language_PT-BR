@@ -1,0 +1,51 @@
+
+  
+  escala_global_textura
+  Esta função permite que você controle o escalonamento das páginas de textura em carga a partir do arquivo WAD que faz parte de seu executável final do jogo. O valor de entrada deve ser um poder de dois valores e funcionará de tal forma que:
+  
+    Para definir as páginas de textura a serem 1:1 use texture_global_scale(1)
+    Para meias texturas o tempo todo use textura_escala_global(2)
+    Para trimaterializá-los utilize textura_escala_global(4), etc...
+  
+  Desta forma, você pode controlar melhor a utilização da memória da página em plataformas com problemas de pouca memória. Note que as páginas de texturas são criadas sob demanda do WAD, e assim você pode chamar isso no início do jogo para carregar todas as texturas em escala, ou você
+    pode chamá-lo em horários específicos para carregar texturas específicas, caso em que você provavelmente gostaria de chamar draw_texture_flush() antes de chamar esta função, então use as funções de pré-viagem para obter o correto
+    páginas de textura em memória.
+   
+  Sintaxe:
+  texture_global_scale(pow2integer);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        pow2integer
+        O fator de escala a utilizar (1, sem escala, 2, meia escala, 4, quarto de escala, etc...)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_texture_flush(); text_global_scale(2);
+     sprite_prefetch(spr_Trees);
+  
+  O código acima limpará todas as texturas da memória, depois ajustará a escala de textura para 2 (para que as páginas de textura tenham metade do tamanho) e, finalmente, pré-programará a página de textura na qual o duende "spr_Trees" está contido.
+   
+   
+   
+  
+    
+      
+        Voltar: Texturas
+        Próximo: draw_texture_flush
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

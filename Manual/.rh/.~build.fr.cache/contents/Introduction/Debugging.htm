@@ -1,0 +1,66 @@
+
+  
+  Depuração
+  Ao programar seu jogo, seja usando a linguagem GameMaker(GML) ou Drag e Drop™(DnD™), pode ser muito fácil cometer erros - usar as variáveis erradas, passar os argumentos errados, ou usar as funções erradas são apenas algumas das mais comuns
+    erros que todos nós cometemos - e estes erros nem sempre são detectados pelo verificador de sintaxe que é incluído no editor de roteiro/ação. Isso significa que estes erros só se tornarão aparentes
+    quando você realmente executa ou compila seu jogo, e mesmo assim, às vezes pode ser difícil saber exatamente o que está dando errado. Portanto, pode ser de vital importância saber como seu jogo está se desempenhando no dispositivo escolhido, bem como ver que instâncias
+    estão na sala, que variáveis globais foram criadas e toda uma série de outros detalhes. A verificação destas coisas se chama "depuração deseu código", e quaisquer erros ou problemas que você possa encontrar são chamados de "bugs".
+  Agora, você mesmo pode verificar muitas dessas coisas adicionando em seus jogos o chamado "código de debug" para exibir na tela as informações que você precisa, ou você pode ter que ele mostre mensagens quando há um erro, mas isso é freqüentemente um
+    muito trabalho e se você não tiver certeza de onde o problema está em primeiro lugar, então pode ser um caso demorado de tentativa e erro para rastrear seu bug. Para isso, o GameMaker Studio 2 tem um modo especial de teste chamado Debug Mode que iniciará o Debug Module, e há também um sistema abrangente de relatório de erros que exibe mensagens no Compiling para ajudá-lo a rastrear
+    qualquer problema com seu jogo.
+  As seções abaixo cobrem as diferentes maneiras de depurar seu jogo:
+   
+  Relatório de erros
+  
+    Quando ocorre um erro durante a compilação e execução de um projeto isto é relatado com uma mensagem na Janela de Saída de Erros de Compilação, muito parecida com a mostrada abaixo:
+    A maioria das mensagens de erro do compilador segue o mesmo esquema, com uma mensagem declarando o objeto no qual o erro ocorreu, depois o Evento junto com
+      o número da linha e, finalmente, uma breve descrição do erro em si. Este tipo de informação fornecida pelo relatório de erro é muito importante, pois detecta e relata os erros de sintaxe e linguagem que vão causar seus
+      jogo terminado para cair, mas não relatará bugs mais sutis, nem dará feedback sobre o desempenho. Para esses tipos de coisas, você deve usar o Modo Debug (explicado abaixo).
+    Além destes erros de compilação, você também pode obter erros de sintaxe. Estes serão detectados quando você adicionar suas ações ou código DnD™e são mostrados na Janela de saída de erros de sintaxe, semelhante à imagem mostrada abaixo:
+    Como com os erros do compilador, a janela de erros de sintaxe irá direcioná-lo para o objeto, o evento e as linhas específicas que estão dando o problema,
+      e será freqüentemente mostrado com uma breve explicação do que é o erro.
+     
+  
+  Modo de depuração
+  
+    Se você precisar verificar as coisas com mais cuidado, você pode executar o jogo no Modo de Depuração clicando no botão de execução de depuração . Quando você fizer isso, o Módulo de Depuração abrirá junto com seu jogo. Este módulo lhe permite monitorar como tudo está funcionando em seu jogo, desde o desempenho global, até os valores de variáveis individuais em instâncias individuais. Você pode encontrar mais informações
+      sobre o Módulo Debug e suas possibilidades e como utilizá-lo a partir da página seguinte:
+    
+      O Depurador
+    
+    Note que quando você usa o Módulo Debug, você também pode adicionar Pontos de Interrupção ao seu código ou DnD™. Um breakpoint é um ponto no loop do jogo onde você quer que o módulo de debug faça uma pausa e permita que você passe pelo código real do jogo uma linha em
+      um tempo. Você pode adicionar pontos de parada usando a tecla "F9", e eles serão mostrados na Janela de Saída onde você pode habilitá-los/desabilitá-los conforme necessário.
+     
+  
+  Ferramentas adicionais
+  
+    Como uma ferramenta adicional para depuração de jogos compilados, há certos parâmetros de linha de comando que podem ser usados quando você executa o pacote final do jogo no Windows. Para obter informações sobre como isto funciona, por favor veja aqui.
+    Você também pode gerar uma sobreposição de debug quando estiver testando seu jogo, que mostrará informações adicionais de debug sobre o desempenho de seu jogo enquanto ele está sendo executado, e você também pode emitir mensagens de debug para
+      o console de compilação onde você pode fornecer seu próprio texto para ajudar na depuração do comportamento de seus jogos. Para mais informações, consulte as seguintes páginas: 
+    
+      show_debug_overlay
+      show_debug_message
+      debug_event
+    
+     
+  
+   
+  Há também um conjunto de preferências relacionadas à depuração e ao uso das ferramentas de depuração. Você pode encontrar mais informações na página seguinte:
+  
+    Preferências de depuração
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Introdução ao GameMaker Studio 2
+        A seguir: A Janela de Saída
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,53 @@
+
+  
+  buffer_compress
+  Com esta função você pode comprimir parte (ou a totalidade) de um buffer usando a compressão zlib. Você fornece a identificação do buffer para comprimir (como retornado por buffer_create()),
+    o offset dentro do buffer para usar em bytes, e o tamanho dos dados do buffer para comprimir (também em bytes). A função retornará um novo valor de identificação do buffer para o buffer comprimido, ou um valor menor que 0 se ele falhou por qualquer razão. Esta função
+    não alterará o amortecedor original.
+   
+  Sintaxe:
+  buffer_compress(buffer, offset, tamanho);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O índice do buffer para comprimir.
+      
+      
+        offset
+        A compensação dentro do buffer para comprimir (em bytes).
+      
+      
+        tamanho
+        O tamanho da área de amortecimento a ser comprimida (em bytes).
+      
+    
+  
+   
+  Devoluções:
+  Int (valor de identificação tampão)
+   
+  Exemplo:
+  var srcBuff = buffer_create(1024, buffer_grow, 1); buffer_write(srcBuff, global.DataString); var cmpBuff = buffer_compress(srcBuff, 0, buffer_tell(srcBuff)); buffer_save(cmpBuff, "Player_Save.sav"); buffer_delete(srcBuff);
+     buffer_delete(cmpBuff);
+  
+  O código acima criará um buffer e depois o preencherá com os dados de uma cadeia. Este buffer é então comprimido e salvo, e tanto a fonte quanto os buffers comprimidos são apagados.
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: buffer_decompress
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

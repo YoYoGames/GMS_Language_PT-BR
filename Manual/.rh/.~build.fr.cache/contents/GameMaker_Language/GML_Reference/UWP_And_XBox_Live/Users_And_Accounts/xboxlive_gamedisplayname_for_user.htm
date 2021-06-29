@@ -1,0 +1,44 @@
+
+  
+  xboxlive_gamedisplayname_para_utilizador
+  Com esta função, você pode recuperar o nome do display - como um fio - a partir do ponteiro de identificação do usuário dado. Note que se o usuário for local, então o valor retornado é simplesmente uma string do nome de exibição, mas se for um usuário remoto, então a string irá
+    ser sua gamertag que pode então ser usada, por exemplo, para mutilar/desmutar no bate-papo de voz.
+   
+  Sintaxe:
+  xboxlive_gamedisplayname_for_user(user_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        user_id
+        O ponteiro de identificação do usuário a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  for(var i = 0; i < xboxlive_get_user_count(); ++i;)  {
+     user_id[i] = xboxlive_get_user(i); user_name[i] = xboxlive_gamedisplayname_for_user(user_id[i]); }
+  
+  O código acima obtém o ponteiro de identificação do usuário para cada conta de usuário disponível e então armazena o ponteiro junto com o nome do display em duas arrays.
+   
+   
+   
+  
+    
+      
+        Voltar: Usuários e Contas
+        Próximo: xboxlive_user_for_pad
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

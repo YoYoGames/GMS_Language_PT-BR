@@ -1,0 +1,134 @@
+
+  
+  sequence_keyframe_new
+  Com esta função, você pode criar uma nova estrutura de quadros-chave de pista, fornecendo o tipo de pista a que o quadro-chave será aplicado, que será uma das constantes a seguir:
+  
+    
+      
+        Constante
+        Descrição
+        Valor
+      
+      
+        seqtracktype_graphic
+        Esta é uma faixa de ativos gráficos (sprite).
+        1
+      
+      
+        seqtracktype_audio
+        Esta é uma faixa de ativos de áudio.
+        2
+      
+      
+        seqtracktype_instance
+        Este é um exemplo de patrimônio.
+        14
+      
+      
+        seqtracktype_sequence
+        Este é um caminho de ativos em seqüência.
+        7
+      
+      
+        seqtracktype_clipmask
+        Esta é uma trilha de ativos de grupo de máscara de clipes.
+        8
+      
+      
+        seqtracktype_clipmask_mask
+        Este é um trilho de recurso de máscara de clip sprite usado para gerar a máscara de clip.
+        9
+      
+      
+        seqtracktype_clipmask_subject
+        Este é um trilho de recursos de sprite com máscara que está sendo mascarado.
+        10
+      
+      
+        seqtracktype_group
+        Esta pasta de pasta de grupo é um recurso.
+        11
+      
+      
+        seqtracktype_colour
+        Esta é uma faixa de parâmetros de dados de cor.
+        4
+      
+      
+        seqtracktype_real
+        Esta é uma faixa de parâmetros de valor numérico real.
+        3
+      
+      
+        seqtracktype_message
+        Esta é uma faixa de transmissão de mensagens.
+        15
+      
+      
+        seqtracktype_moment
+        Esta é uma pista de eventos/momentos.
+        16
+      
+      
+        seqtracktype_bool
+        Não utilizado atualmente.
+        5
+      
+      
+        seqtracktype_string
+        Não utilizado atualmente.
+        6
+      
+      
+        seqtracktype_spriteframes
+        Não utilizado atualmente.
+        13
+      
+      
+        seqtracktype_empty
+        Não utilizado atualmente.
+        12
+      
+    
+  
+   
+  A função retornará uma estrutura de estrutura de trilhos chave que pode então ter dados adicionados a ela antes de ser atribuída a uma estrutura de trilhos.
+   
+  Sintaxe:
+  sequence_keyframe_new(type);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tipo
+        O tipo de chaveiro a ser criado, uma constante, listada acima.
+      
+    
+  
+   
+  Devoluções:
+  Estrutura
+   
+  Exemplo:
+  myseq = sequence_create(); var mytracks = array_create(1); mytracks[0] = sequence_track_new(seqtracktype_graphic); var graphkeys = array_create(1); graphkeys[0] = sequence_keyframe_new(seqtracktype_graphic); graphkeys[0].frame
+    = 0; graphickeys[0].length = 1; graphkeys[0].stretch = true; graphkeys[0].disabled = false; var graphkeydata = array_create(1); graphkeydata[0] = sequence_keyframedata_new(seqtracktype_graphic); graphkeydata[0].spriteIndex
+    = spr_Platform; graphkeydata[0].channel = 0; graphkeys[0].channels = graphkeydata; mytracks[0].name = "TestGraphicTrack"; mytracks[0]. keyframes= graphickeys; myseq.tracks = mytracks;
+  O código acima cria uma nova seqüência e depois cria uma faixa gráfica de ativos e define alguns dados do quadro-chave na faixa. Esta faixa é então atribuída à instância.
+   
+   
+   
+  
+    
+      
+        Voltar: Sequências
+        Próximo: sequence_keyframedata_new
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

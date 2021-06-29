@@ -1,0 +1,45 @@
+
+  
+  textura_prefetch
+  Esta função pode ser usada para "pré-fetar" uma página de textura ou um grupo de páginas de textura, ou seja: carregá-las em VRAM quando necessário. Você fornece o ID da página de textura única (como retornado pelas funções de grupo de textura_* ) para pré-fetar uma única página de textura (como retornado pelas funções de grupo de textura_* ).
+    ou você pode fornecer um nome de grupo de textura (como definido no Editor do Grupo de Textura) para pré-configurar todas as páginas de textura do grupo.
+   
+  Sintaxe:
+  text_prefetch(tex_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tex_id
+        O ID da página de textura (um número inteiro) ou um ID do grupo de textura (um fio)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var _tex_array = textgroup_get_textures( "MainMenu"); for (var i = 0; i < array_length(_tex_array); ++i;)  {
+     text_prefetch(_tex_array[i]));
+     }
+  
+  O código acima prefetará todas as páginas de textura sob o grupo de textura "MainMenu".
+   
+   
+   
+  
+    
+      
+        Voltar: Texturas
+        A seguir: textura_flush
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

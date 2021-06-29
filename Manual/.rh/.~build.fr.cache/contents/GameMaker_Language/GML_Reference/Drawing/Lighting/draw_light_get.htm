@@ -1,0 +1,70 @@
+
+  
+  draw_light_get
+  Esta função obterá os parâmetros de luz especificados como uma matriz com os seguintes 6 elementos -
+  
+    [0] = habilitado / desabilitado(verdadeiro / falso)
+    [1] = tipo leve (ver constantes abaixo)
+    [2] = x posição
+    [3] = posição y
+    [4] = posição z
+    [5] = raio de luz (somente para luzes pontuais, será 0 para direcional)
+    [6] = cor clara (um real)
+  
+  O tipo de luz pode ser uma das duas constantes a seguir:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        tipo leve_dir
+        A luz é uma luz direcional
+      
+      
+        ponto_tipo_leve
+        A luz é uma luz pontual
+      
+    
+  
+   
+  Sintaxe:
+  draw_light_get(ind);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O número do índice da luz (de 0 a 7)
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  light_a = draw_light_get(1); if light_a[5] < 200 {
+     light_a[5] += 5; draw_light_define_point(1, 200, 123, 50, light_a[5], c_white); }
+  
+  O código acima obterá os valores usados para definir a luz indexada como "1", então verifique o raio e se for inferior a 200 será aumentado e o raio de luz será ajustado para o novo valor.
+   
+   
+   
+  
+    
+      
+        Voltar: Iluminação
+        A seguir: draw_get_lighting
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

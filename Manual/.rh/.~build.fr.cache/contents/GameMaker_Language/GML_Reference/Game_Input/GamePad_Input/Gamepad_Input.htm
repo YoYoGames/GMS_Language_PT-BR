@@ -1,0 +1,239 @@
+
+  
+  GamepadInput
+  GameMaker Studio 2 tem uma série de funções dedicadas que podem ser usadas para detectar controles analógicos e digitais a partir de múltiplos gamepads conectados. Estas funções funcionam de forma similar às Entradas do Dispositivo,
+    na medida em que você pode detectar até quatro pastilhas de jogo XInput diferentes que estão conectadas (e até 8 pastilhas de jogo DirectInput) e lidar com a entrada de cada uma usando as mesmas funções. Observe que quando um gamepad é conectado ao seu dispositivo (ou é removido)
+    então um Evento de Sistema Assíncrono é acionado onde você pode lidar com a situação usando as funções apropriadas.
+  Os "slots" do gamepad são indexados de 0 para cima, e o slot real que um gamepad designado dependerá de uma variedade de fatores, entre os quais não menos importante é o sistema operacional em que o projeto está sendo executado. Sobre o Windows alvo, slots 0 -
+    3 inclusive são apenas para os controles de jogo Xinput, ou seja: controladores Xbox360 e compatíveis. No entanto, você também pode verificar os slots 4 - 11 inclusive para os controles de jogo DirectInput, o que significa que você pode detectar muitos outros modelos de controladores quando conectados
+    através destes slots. Em outras plataformas, os blocos podem ser detectados em qualquer slot que o sistema operacional lhe tenha atribuído, que pode ser o slot 3 ou o slot 20 ou mais. Por exemplo, Android dispositivos armazenarão os tapetes de jogo bluetooth em um slot e depois reservarão
+    esse slot para esse gamepad no futuro, seja ele conectado ou não, então você não pode assumir que um único gamepad conectado esteja conectado ao slot 0, pois provavelmente não será esse o caso.
+  Vale notar que, ao usar os controles de jogo DirectInput no Windows, ou controles de jogo genéricos em outras plataformas, as constantes dadas abaixo podem não corresponder exatamente aos botões que você espera quando eles são pressionados, devido à fragmentação e
+    forma não padronizada que a API é implementada pelos fabricantes de controladores. Devido a isso, é recomendável que você tenha algum tipo de tela de configuração do gamepad em seus jogos, onde as pessoas possam redefinir os botões do gamepad com base na entrada de qualquer
+    para mitigar quaisquer problemas (há funções de "mapeamento" do gamepad que podem ajudar com isso no Windows Desktop, Ubuntu, macOS e alvos Android , enquanto em todos os outros você mesmo precisaria fazer isso usando código).
+  Constantes de entrada
+  Ao trabalhar com as funções do GameMaker Studio 2, a entrada pode vir de eixos, botões ou chapéus, que o GameMaker Studio 2 atribuirá às seguintes constantes embutidas (note que "chapéus" são geralmente
+    somente detectados em controladores não-padrão):
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        gp_face1
+        Botão de cima 1 (este mapa para o "A" em um controlador Xbox 360 e a cruz em um controlador PS )
+      
+      
+        gp_face2
+        Botão de cima 2 (este mapa para o "B" em um controlador Xbox 360 e o círculo em um controlador PS )
+      
+      
+        gp_face3
+        Botão de cima 3 (este mapa para o "X" em um controlador Xbox 360 e o quadrado em um controlador PS )
+      
+      
+        gp_face4
+        Botão superior 4 (este mapa mostra o "Y" em um controlador Xbox 360 e o triângulo em um controlador PS )
+      
+      
+        gp_shoulderl
+        Botão de ombro esquerdo
+      
+      
+        gp_shoulderlb
+        Gatilho do ombro esquerdo
+      
+      
+        gp_shoulderr
+        Botão de ombro direito
+      
+      
+        gp_shoulderrb
+        Gatilho de ombro direito
+      
+      
+        gp_select
+        O botão select (este é o botão PS em um controlador DS4)
+      
+      
+        gp_start
+        O botão start (este é o botão "opções" em um controlador PS4)
+      
+      
+        gp_stickl
+        O bastão esquerdo pressionado (como um botão)
+      
+      
+        gp_stickr
+        O bastão direito pressionado (como um botão)
+      
+      
+        gp_padu
+        D-pad up
+      
+      
+        gp_padd
+        D-pad down
+      
+      
+        gp_padl
+        D-pad esquerda
+      
+      
+        gp_padr
+        Direito D-pad
+      
+      
+        gp_axislh
+        Vara esquerda eixo horizontal (analógico)
+      
+      
+        gp_axislv
+        Eixo vertical esquerdo da vara (analógico)
+      
+      
+        gp_axisrh
+        Eixo horizontal do bastão direito (analógico)
+      
+      
+        gp_axisrv
+        Eixo vertical do bastão direito (analógico)
+      
+    
+  
+  Para entender melhor exatamente que parte do controlador cada constante representa, você pode consultar a seguinte imagem de um gamepad padrão XInput:
+  
+  As seguintes constantes podem ser usadas com o gamepad_axis_value() ao utilizar o controle de jogo DualSense em um PS4 ou PS5:
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        gp_axis_acceleration_x
+        A aceleração do gamepad no eixo X
+      
+      
+        gp_axis_acceleration_y
+        A aceleração do gamepad no eixo Y
+      
+      
+        gp_axis_acceleration_z
+        A aceleração do gamepad no eixo Z
+      
+      
+        gp_eixo_angular_velocidade_x
+        A velocidade angular do gamepad no eixo X
+      
+      
+        gp_eixo_angular_velocidade_y
+        A velocidade angular do gamepad no eixo Y
+      
+      
+        gp_eixo_angular_velocidade_z
+        A velocidade angular do gamepad no eixo Z
+      
+      
+        gp_axis_orientation_x
+        A orientação X do gamepad
+      
+      
+        gp_axis_orientation_y
+        A orientação em Y do gamepad
+      
+      
+        gp_axis_orientation_z
+        A orientação Z do gamepad
+      
+      
+        gp_axis_orientation_w
+        A orientação W do gamepad
+      
+    
+  
+  OBSERVAÇÃO: A orientação do gamepad é um Quaternion , razão pela qual ele tem quatro valores (X, Y, Z e W).
+  Estas constantes são atualmente suportadas apenas no PS4 e PS5, e quando usadas em outras plataformas as funções de entrada retornarão 0, mesmo quando se usa um gamepad DualSense.
+  Funções
+  Abaixo você pode encontrar uma lista de todas as funções do gamepad:
+  
+    gamepad_is_supported
+    gamepad_is_connected
+    gamepad_get_guid
+    gamepad_get_device_count
+    gamepad_get_description
+    gamepad_get_button_threshold
+    gamepad_get_axis_deadzone
+    gamepad_get_option
+    gamepad_set_button_threshold
+    gamepad_set_axis_deadzone
+    gamepad_set_vibration
+    gamepad_set_colour
+    gamepad_set_option
+    gamepad_axis_count
+    gamepad_axis_value
+    gamepad_button_check
+    gamepad_button_check_pressed
+    gamepad_button_check_released
+    gamepad_button_count
+    gamepad_button_value
+    gamepad_hat_count
+    gamepad_hat_value
+  
+   
+  As seguintes funções do gamepad também existem e são usadas para refazer as constantes construídas para as entradas físicas diretas de um determinado gamepad. Estas funções são apenas para as plataformas alvo do Windows Desktop, Ubuntu, MacOS e Android e no Windows,
+    eles só serão válidos para dispositivos de entrada direta. Enquanto o GameMaker Studio 2 vem com mapeamentos para uma série de diferentes gamepads baseados no SDL Gamepad Controller DB, no entanto
+    devido ao enorme número de tipos e marcas de controladores por aí, é impossível mapear as constantes GML para as entradas corretas para cada marca e modelo, portanto, com estas funções você tem a possibilidade de criar seus próprios mapeamentos personalizados.
+   
+  
+    gamepad_get_mapping
+    gamepad_test_mapping
+    gamepad_remove_mapping
+  
+   
+  É importante notar que os controles de entrada direta são executados em modo cooperativo, o que significa que seu jogo só tem acesso a eles quando é a aplicação em primeiro plano, o que, por sua vez, fará com que os controladores de entrada direta sejam "perdidos" se o
+    O jogo perde o foco e depois "encontrado" novamente quando volta ao foco (isto pode ser detectado no System Event e tratado). Da mesma forma, nenhuma entrada dos controles de jogo será detectada enquanto o jogo não estiver em foco, e nós recomendamos que você
+    usar a função os_is_paused() ou window_has_focus() para detectar isso e pausar o jogo ou algo assim
+    semelhante a qualquer botão que esteja sendo pressionado no momento em que o jogo perder o foco manterá o estado de retenção até que o jogo recupere o foco.
+   
+  Compatibilidade
+  A lista a seguir mostra a compatibilidade atual entre as plataformas (note que isto mudará com futuras atualizações):
+  
+    Windows é totalmente suportado com até um máximo de 12 dispositivos conectados permitidos de uma só vez (numerados de 0 a 11, sendo 0 - 3 dispositivos XInput e 4 - 11 dispositivos DirectInput). A remoção das constantes do controlador também é permitida.
+    macOS é suportado com até um máximo de 4 dispositivos conectados permitidos de uma vez, e estes dispositivos só podem ser do tipo Playstation3ou Xbox 360. Observe que a opção "Build for Mac AppStore" em Opções de Jogos Mac
+      precisa estar DESLIGADO para o suporte de almofada para trabalhar. A remoção das constantes do controlador também é permitida.
+    Ubuntu também suporta a entrada Gamepad, mas você pode precisar instalar bibliotecas adicionais a partir do repositório Ubuntu. Você pode fazer isto facilmente abrindo um terminal de linha de comando e digitando o seguinte (isto instalará suporte a GUI
+      para o joystick/gamepad, bem como o próprio joystick/gamepad API - não é permitida a refilmagem das constantes do controlador):
+     sudo apt-get install jstest-gtk sudo apt-get install joystick.
+
+    
+    Os jogosHTML5 que utilizam gamepads são suportados pela maioria dos principais navegadores, exceto o Safari. A remoção de constantes de controladores não é permitida.
+    O apoio do Gamepad também se estende a iOS com o gabinete iCade. O eixo esquerdo mapeia para o controlador do bastão (embora a entrada seja digital, não analógica), os quatro botões "face" mapeiam para os botões frontais do gabinete, e os quatro
+      botões de ombro mapeados para aqueles na parte de trás do gabinete.
+    Android (e Fogo da Amazônia) exportação suporta controladores NYKO e controladores genéricos Bluetooth, mas somente quando estiverem habilitados, o que significa que você terá que marcar a opção iCade/Bluetooth na seção Geral das Opções de Jogo do Android. Eles requerem API nível 12 para que funcionem plenamente e deve ser observado que o GameMaker Studio 2 registrará como conectado qualquer dispositivo Bluetooth com o qual seu dispositivo esteja emparelhado, seja ou não realmente
+      conectado. Portanto, isto deve ser levado em consideração na atribuição e verificação de "slots". Note que o remapeamento das constantes do controlador também é permitido.
+    No PS4, se você quiser usar o rastreamento por toque, você precisa usar o dispositivo_mouse_* botões. A remoção das constantes do controlador não é permitida.
+    Em Windows UWP, XBoxOne e Nintendo Troca alvos, os controles de jogo são totalmente suportados, mas o remapeamento das constantes do controlador não é permitido.
+  
+  Idealmente, em todas as plataformas alvo, você deseja enumerar uma lista de "slots" de gamepad disponíveis e então verificá-los para ver se algum dispositivo é detectado, algo como isto:
+  var _maxpads = gamepad_get_device_count();
+     for (var i = 0; i < _maxpads; i++) {
+     if (gamepad_is_connected(i)) {
+     // fazer coisas com a almofada "i" }
+     }
+  
+   
+   
+  
+    
+      
+        Voltar: Entrada de jogo
+        A seguir: Chaves e Teclados Virtuais
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

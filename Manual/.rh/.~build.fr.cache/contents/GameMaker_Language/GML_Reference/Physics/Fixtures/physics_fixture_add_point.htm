@@ -1,0 +1,57 @@
+
+  
+  fisica_fixture_add_point
+  Esta função define os pontos de um polígono que foi previamente definido para a fixação usando physics_fixture_set_polygon_shape() ou pode ser usado para adicionar pontos a uma cadeia de bordas
+    equipamentos que utilizam a função physics_fixture_set_chain_shape(). Para uma forma poligonal, os pontos são relativos à origem da fixação, sendo a posição 0,0 do eixo x/y o centro,
+    e as coordenadas subseqüentes sendo calculadas como de costume no GameMaker Studio 2 com down/right sendo +x,+y e up/left sendo -x,-y. Aqui está uma ilustração para ajudar você a visualizar este processo:
+  Como você pode ver, qualquer polígono convexo simples pode ser modelado desta forma, mas
+    Os polígonos côncavos não são suportados neste momento. Finalmente, para fechar o polígono, é preciso ligar a fixação a uma instância. Você também deve observar que também deve ter pelo menos três pontos definidos para seu polígono antes de ligar
+    a uma instância ou você receberá um erro e que adicionar um ponto a uma fixação que não tem uma forma poligonal previamente definida também causará um erro. Observe também que o número máximo de pontos permitidos para um fixador é oito.
+  Para formas de correntes (que são simplesmente uma série de formas de bordas conectadas em série), esta função definirá um ponto como uma "conexão" para encadear as bordas em conjunto. Portanto, é necessário ter definido pelo menos dois pontos antes de unir a fixação à instância
+    caso contrário, você receberá um erro. Entretanto, ao contrário dos polígonos, você não está limitado a um máximo de oito pontos e pode adicionar tantos quantos você precisar para criar a cadeia e os pontos são definidos nas coordenadas reais da sala, em vez de serem relativos ao
+    instância.
+   
+  Sintaxe:
+  physics_fixture_add_point(fixture, xpos, ypos)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fixação
+        o índice da fixação
+      
+      
+        xpos
+        a posição x do ponto(em relação à origem da fixação para formas de polígono)
+      
+      
+        ypos
+        a posição y do ponto(em relação à origem da fixação para formas de polígono)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  physics_fixture_set_polygon_shape(fix_Ship); physics_fixture_add_point(fix_Ship, 0,0); physics_fixture_add_point(fix_Ship, -40, 100); physics_fixture_add_point(fix_Ship, 40, 100);
+  O código acima aplicará uma forma poligonal à fixação indexada na variável "fix_Ship" e depois definirá três pontos para criar uma forma triangular.
+   
+   
+   
+  
+    
+      
+        Voltar: Instalações
+        A seguir: densidade_de_set_física
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

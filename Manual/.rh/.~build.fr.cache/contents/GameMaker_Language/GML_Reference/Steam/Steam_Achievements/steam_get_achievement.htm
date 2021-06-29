@@ -1,0 +1,46 @@
+
+  
+  steam_get_achievement
+  Com esta função, você pode verificar o Steam API para ver se uma conquista específica foi concedida. A conquista deveria ter sido previamente definida na página de contas do painel de controle Steamworkspara seu jogo e a seqüência que é passada para a função
+    deve corresponder ao utilizado como o nome API no painel de controle.
+   
+  Sintaxe:
+  steam_get_achievement(ach_name);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ach_name
+        O nome da realização a obter (string).
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se hp <= 0 {
+     global.Death += 1; if global.Deaths == 10 {
+     if !vapor_get_achievement("ach_Player_Dies_Ten_Times") vapor_set_achievement("ach_Player_Dies_Ten_Times"); }
+     }
+  
+  O código acima recompensará o jogador uma conquista se a variável global "Mortes" for igual a 10 e se a conquista ainda não tiver sido concedida.
+   
+   
+   
+  
+    
+      
+        Voltar: Conquistas e estatísticas
+        Próxima: vapor_clear_achievement
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

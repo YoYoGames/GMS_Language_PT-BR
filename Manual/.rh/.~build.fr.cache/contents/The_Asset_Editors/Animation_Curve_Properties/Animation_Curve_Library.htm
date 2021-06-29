@@ -1,0 +1,60 @@
+
+  
+  A Biblioteca de Curvas de Animação
+  A janela da Biblioteca de Curvas de Animação permite alterar o Tipo de Curva para a Curva de Animação, e aplicar
+    um pré-ajuste para o canal selecionado. Ela pode ser aberta pelo  clicando com o botão esquerdo do mouse no botão  no Editor de Curvas de Animação ou na  Folha deSequência de Drogas, ou pelo  clicando com o botão direito do mouse
+    em qualquer lugar no Editor do Canal.
+  Tipo de Curva
+  
+    O Tipo de Curva controla como um canal flui de ponto a ponto, que pode ser definido para uma das seguintes opções:
+    
+      Linear: Isto irá criar uma progressão linear entre os pontos do canal
+      Suave: Isto utilizará interpolação catmull-rom para criar uma progressão suave entre os pontos do canal
+      Bezier: Isto usará a matemática da curva Bezier para criar uma progressão suave entre os pontos no canal, onde você pode controlar como a curva se parece, manipulando as "pegas" nos pontos
+    
+    Note que a mudança do Tipo de Curva aplicará esse tipo a todos os canais da Curva de Animação.
+  
+  Predefinições de curvas
+  
+    Umapredefinição de curva muda a forma de sua curva.  Clicando com o botão esquerdo do mouse em uma predefinição no menu de predefinições, essa predefinição será aplicada ao seu
+      selecionado, e clicando em Reiniciar reverterá o canal para como estava antes da janela da Biblioteca de Curvas de Animação ser aberta.
+    OBSERVAÇÃO: As predefinições só podem ser aplicadas se o Tipo de Curva estiver definido para Bezier.
+    Por padrão, uma predefinição é aplicada a todo o canal. Você pode selecionar uma seção de seu canal arrastando com o botão esquerdo do mouse  no Editor de Canais, e depois abrir a janela da Biblioteca de Curvas de Animação através do botão  ou clicando com o botão direito do mouse , que aplicará qualquer pré-definição somente à seção selecionada.
+    Note que seu canal de curva (ou seleção dentro desse canal) precisa ter uma inclinação para que uma pré-seleção tenha qualquer efeito, como qualquer aplicado
+      A interpolação é baseada na diferença vertical entre os pontos de partida e de chegada. Uma curva plana não tem tal diferença entre os dois pontos, portanto, você não verá nenhum resultado depois de aplicar uma curva pré-definida a tal curva.
+    Há dois modos de aplicação que você pode escolher, o que afeta como uma predefinição é aplicada ao seu canal (ou à sua seleção dentro desse canal):
+    
+      
+    
+      Sobregravar: Este é o padrão quando a janela é aberta através do botão  no Editor de Curvas de Animação ou na Folha de Sequência de Drogas. Ela sobrescreve
+        quaisquer pontos entre o ponto inicial e final de seu canal ou seleção.
+      Entre: Este é o padrão quando a janela é aberta por  clicando com o botão direito do mouse em qualquer lugar no Editor de Canal. Ele aplica a predefinição entre cada par de pontos selecionados,
+        e acrescenta quaisquer novos pontos que sejam necessários sem remover nenhum ponto existente.
+    
+    O seguinte visual mostra a pré-configuração da curva da Expo   aplicada a um canal usando os modos de aplicação Entre e Sobreescrever :
+    
+    Como você pode ver no visual acima, Entre aplica a curva predefinida a cada par de pontos, e insere quaisquer novos pontos que sejam necessários. Overwrite remove quaisquer pontos entre os pontos inicial e final e então
+      aplica a predefinição.
+    Há também três Modos de Facilitação que você pode escolher, que controlam como uma curva acelera ou desacelera. O modo de flexibilização padrão é Ease Out.
+    
+    
+      Facilidade de entrada: A curva começa com uma aceleração mais rápida, e depois desacelera
+      Facilidade: A curva começa com uma aceleração mais lenta, e depois acelera com o tempo
+      Facilidade de entrada e saída: A curva começa com uma aceleração mais lenta, acelera com o tempo e depois desacelera
+    
+    O seguinte visual mostra a curva de Quart pré-definida em todos os três modos de flexão:
+    
+  
+   
+  
+    
+      
+        Voltar: Curvas de Animação
+        A seguir: Extensões
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

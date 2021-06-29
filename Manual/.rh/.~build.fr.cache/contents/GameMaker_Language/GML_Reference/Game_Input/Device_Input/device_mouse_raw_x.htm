@@ -1,0 +1,45 @@
+
+  
+  dispositivo_mouse_raw_x
+  Esta função retorna a posição bruta x de um toque no dispositivo. O que isto significa é que ela retorna a definição real do dispositivo da posição x que está sendo tocada, não o GameMaker Studio 2 one, e como tal, irá ignorar as coisas
+    como posição de vista e escalada. Note que o número máximo de toques que podem ser detectados dependerá muito do dispositivo a ser usado e do sistema operacional que ele executar.
+  NOTA: Esta função é muito dependente do dispositivo e você deve experimentar primeiro o módulo e dispositivo alvo desejado para ver o que exatamente é retornado.
+   
+  Sintaxe:
+  device_mouse_raw_x(device);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        dispositivo
+        O dispositivo (de 0 a n) que está sendo verificado.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  se device_mouse_check_button(0, mb_left) && device_mouse_check_button(1, mb_left) {
+     x_av = média(device_mouse_raw_x(0), device_mouse_raw_x(1)); y_av = média(device_mouse_raw_y(0), device_mouse_raw_y(1)); }
+  
+  O código acima verifica se o dispositivo1 e o dispositivo2 estão sendo pressionados, e se estão, calcula a posição média das coordenadas x/y entre cada ponto de injeção.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada do dispositivo
+        Próximo: device_mouse_raw_y
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

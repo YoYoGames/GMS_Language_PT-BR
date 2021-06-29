@@ -1,0 +1,45 @@
+
+  
+  conjunto_esqueleto_esqueleto
+  Um duende de animação esquelético pode ser desenhado com uma variedade de texturas (chamadas "peles"), permitindo que você use uma única animação para múltiplos propósitos diferentes. Por exemplo, você pode ter uma animação de passeio genérica e esta pode ser usada por seu
+    personagens NPC, inimigos, etc... em um jogo simplesmente mudando a pele com que é desenhado. Essas peles precisam ter sido previamente criadas e nomeadas em seu programa de animação, e esse nome é passado para a função (como uma corda) para definir o sprite
+    para usar essa pele ao ser desenhada.
+   
+  Sintaxe:
+  skeleton_skin_set(skinname);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        skinname
+        O nome (um fio) da pele a ser usada.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if skeleton_skin_get() == "skin_Enemy1" {
+     skeleton_skin_set(choose("skin_Enemy1", "skin_Enemy2", "skin_Enemy3"); }
+  
+  O código acima verificaria a pele atualmente designada para a animação e se for "skin_Enemy1", ele escolhe e define uma nova pele a partir de uma das três opções.
+   
+   
+   
+  
+    
+      
+        Voltar: Peles
+        A seguir: lista_esqueleto_da_capa
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

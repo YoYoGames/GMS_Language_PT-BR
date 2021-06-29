@@ -1,0 +1,74 @@
+
+  
+  http_post_string
+  Na computação, uma solicitação postal é utilizada quando o cliente precisa enviar dados para o servidor como parte da solicitação de recuperação, como ao carregar um arquivo ou enviar um formulário preenchido, e o mesmo se aplica a esta função no GameMaker Studio 2.
+    Ao contrário do método de solicitação http_get() onde apenas uma URL é enviada para o servidor, http_post_string() também inclui uma string que é enviada para o servidor e pode resultar na criação
+    de um novo recurso ou a atualização de um recurso existente ou ambos. Deve-se observar que os parâmetros de solicitação HTTP (os bits às vezes "colados" ao final de uma URL quando você envia um formulário em uma página da Web) são perfeitamente aceitáveis quando se usa
+    esta função também.
+  NOTA: Você deve estar ciente de que, devido à proteção XSS nos navegadores, as solicitações e tentativas de carregamento de recursos através de domínios são bloqueadas e podem parecer retornar resultados em branco. Consulte a parte sobre Questões de Domínios Cruzados para maiores detalhes.
+  Este evento gerará uma "call back" que é captada por qualquer evento HTTP , neste caso gerará um DS Map ( mais comumente conhecido como "dicionário") que é exclusivo para este evento e é armazenado na variável especial async_load. Este mapa DS conterá
+    valores diferentes, dependendo se há ou não dados sendo devolvidos. Por exemplo, se você tiver solicitado um arquivo, o evento será acionado várias vezes conforme cada pacote de dados é recebido para que você possa mostrar uma barra de progresso, por exemplo. A barra de progresso geral
+    para o mapa DS será a seguinte:
+  
+    id: O ID que foi devolvido do comando. Se você disparar uma série de solicitações http_ então você precisa saber a qual você está recebendo a resposta, e assim você usaria este valor para comparar com o valor que você armazenou quando você originalmente
+      enviou o pedido para encontrar a pessoa certa.
+    status: Retorna um valor inferior a 0 para um erro, 0 para completo e 1 para receber pacotes (veja abaixo para mais detalhes).
+    resultado: Os dados recebidos (apenas fio).
+    url: A URL completa que você solicitou.
+    http_status: O código de status http em bruto (se disponível). Isto retorna o código de status padrão da web para a maioria dos navegadores, por exemplo: 304 para "Não modificado" ou 204 para "Sem conteúdo", etc...
+  
+  Se houver vários pacotes sendo devolvidos ao seu jogo, a chave "status" de retorno retornará 1, neste caso o mapa DS terá as seguintes chaves adicionais:
+  
+    "ContentLength": Este é o tamanho do arquivo que o servidor web disse que você deve esperar receber (pode ser -1 se o servidor não devolver estes dados).
+    "sizeDownloaded": O tamanho dos dados que já foram baixados.
+  
+   
+  Sintaxe:
+  http_post_string(url, string);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        url
+        O endereço web do servidor do qual você deseja obter informações
+      
+      
+        corda
+        A cadeia que você deseja enviar para o URL especificado
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo ampliado:
+  A função http_post_string() pode ser chamada a partir de qualquer evento, e como é assíncrona, a ligação de retorno pode ser quase instantânea ou pode levar vários segundos. Chamar a função é simples e pareceria algo parecido com isto:
+  var str = "nome=" + nome_de_jogador.global + "&score=" + string(global.player_score); post = http_post_string("http://www.angusgames.com/game?game_id=" + string(global.game_id), str);
+  O código acima envia um pedido de recuperação para a URL especificada com os parâmetros fornecidos, bem como o envio dos dados adicionais (nome do jogador e pontuação na forma codificada pela URL) armazenados na variável str. Isto acionará todos os eventos assíncronos Http definidos se uma chamada de retorno for recebida, e você pode verificar o "id" retornado em relação àquele armazenado no post da variável para ter certeza de que você executou o código correto caso tivesse usado várias funções http_post_string (). As seguintes funções
+    O código de exemplo mostra como isto seria feito:
+  var r_str = "null"; if ds_map_find_value(async_load, "id") == post {
+     if ds_map_find_value(async_load, "status") == 0 {
+     r_str = ds_map_find_value(async_load, "resultado"); }
+     }
+  
+  O código acima verificará primeiro a identificação do mapa DS que foi criado, depois verificará o status da ligação de retorno. Se o valor for igual a 0 (sinalização de sucesso), o resultado da chamada de retorno será então armazenado em uma variável para uso futuro, caso contrário
+    a variável terá simplesmente um valor padrão (neste caso, "nulo").
+   
+   
+   
+  
+    
+      
+        Voltar: HTTP
+        Próximo: http_get_request_crossorigin
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

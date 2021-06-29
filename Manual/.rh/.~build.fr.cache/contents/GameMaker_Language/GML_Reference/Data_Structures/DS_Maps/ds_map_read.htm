@@ -1,0 +1,56 @@
+
+  
+  ds_map_read
+  Esta função terá um fio que foi previamente criado pela função ds_map_write() e depois leia-o em um mapa DS  previamente criado. Se o mapa que a corda
+    está sendo lido contém qualquer par chave/valor, estes serão limpos primeiro antes que o mapa salvo seja reconstruído. Observe que se a estrutura de dados foi criada com versões anteriores do GameMaker Studio 2, você deve adicionar o argumento opcional
+    "legado", definindo-o como verdadeiro, já que o formato das cordas mudou com esta versão.
+   
+  Sintaxe:
+  ds_map_read(id, str [, legacy]));
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação da estrutura de dados para a leitura da cadeia
+      
+      
+        str
+        O fio a ser lido
+      
+      
+        legado(opcional)
+        Pode ser verdadeiro ou falso ou omitido completamente.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  inventário = ds_map_create(); ini_open("map.ini");
+     var t_string = ini_read_string("Saved", "0", ""); if (t_string != "") {
+     ds_map_read(inventário, t_string); }
+     ini_close();
+  
+  O código acima cria um novo mapa DS e armazena seu índice de identificação na variável "inventário". Em seguida, ele abre um arquivo ini e lê uma string desse arquivo na variável temporária "t_string". Finalmente, ele verifica se a variável
+    A string é válida (não o valor padrão do ini "") e se for, então lê a string no mapa DS recém-criado antes de fechar o ini novamente.
+   
+   
+   
+  
+    
+      
+        Voltar: DS Maps
+        Próximo: ds_map_write
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,60 @@
+
+  
+  xboxlive_stats_flush_user
+  Esta função pode ser usada para lavar os dados de estatísticas de um determinado usuário do gerente de estatísticas, para o servidor ao vivo, garantindo que o servidor esteja atualizado com os valores atuais. De acordo com a documentação da XBox, os desenvolvedores devem ter cuidado para não
+    chame-o com muita freqüência, pois a XBox limitará os pedidos, e o sistema operativo da XBox também irá automaticamente lavar as estatísticas aproximadamente a cada 5 minutos de qualquer forma.
+  NOTA: A remoção do usuário pode retornar um erro se as estatísticas que foram definidas sobre o usuário forem inválidas (tais como os nomes estatísticos contendo caracteres numéricos não alfanuméricos).
+  Para usar a função, você fornece o ID do usuário como retornado por (por exemplo) a função xboxlive_get_user()e um valor de propridade (que será 1 para alta prioridade e 0 para baixa prioridade).
+    A função retornará -1 se houver um erro ou o ID do usuário for inválido, ou qualquer outro valor se a função foi chamada com sucesso. A função também gerará uma chamada de retorno que acionará um Evento Assíncrono do Sistema.
+    Este evento terá o mapa DS especial async_load que deverá então ser analisado para as seguintes chaves:
+  
+    "id" - Realizará o constante evento
+    " eventname" - Segura a corda " StatisticUpdateComplete".
+    "userid" - O ID do usuário associado à solicitação
+    "erro" - 0 se bem sucedido, algum outro valor se tiver havido um erro
+    " errormessage" - Uma cadeia com uma mensagem de erro, se houver alguma disponível
+  
+  Note que as estatísticas serão lavadas automaticamente para você quando você remover um usuário do gerente de estatísticas. Veja xboxlive_stats_remove_user() para mais informações.
+   
+  Sintaxe:
+  xboxlive_stats_flush_user(user_id, prioridade);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        user_id
+        O ID do usuário (um ponteiro) a ser usado
+      
+      
+        prioridade
+        O valor da proridade (0 ou 1)
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  for(var i = 0; i < array_length(user_id); ++i;)  {
+     xboxlive_stats_flush_user(user_id[i], 0); }
+  
+  O código acima passa através dos IDs de conta de usuário armazenados e, em seguida, descarrega os dados do gerenciador de estatísticas para cada usuário.
+   
+   
+   
+  
+    
+      
+        Voltar: Estatísticas e Quadros de Líderes
+        Próximo: xboxlive_stats_set_stat_real
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

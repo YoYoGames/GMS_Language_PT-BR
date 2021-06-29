@@ -1,0 +1,132 @@
+
+  
+  effect_create_below
+  Com esta função você pode criar um efeito simples abaixo de todas as instâncias de sua sala (na verdade, ela é criada a uma profundidade de 100000). Se o efeito for qualquer outro ef_rain ou ef_snow, então você pode definir uma posição x/y para criar o
+    e o tamanho pode ser um valor de 0, 1 ou 2, onde 0 é pequeno, 1 é médio e 2 é grande.
+  É importante notar que estes efeitos podem ter seu desenho ligado e desligado, bem como ter seu desenho em pausa, utilizando as funções part_system_automatic_draw() e
+    part_system_automatic_update() com o valor apropriado para o índice do sistema de partículas (onde 0 é para efeitos abaixo e 1 é para efeitos acima).
+  As constantes disponíveis para os diferentes tipos de partícula são:
+  
+    
+      
+        Constante
+        Exemplo
+        Descrição
+      
+      
+        ef_cloud
+        
+        Um efeito que cria partículas aleatórias de nuvens de tamanhos variados
+      
+      
+        ef_ellipse
+        
+        Um efeito que cria elipses em expansão
+      
+      
+        ef_explosão
+        
+        Um efeito que cria explosões em expansão
+      
+      
+        ef_firework
+        
+        Um efeito que cria múltiplas partículas pequenas para gerar uma explosão de fogos de artifício
+      
+      
+        ef_flare
+        
+        Um efeito que gera um ponto brilhante que se acende e se desvanece
+      
+      
+        ef_rain
+        
+        Um efeito que gera partículas de chuva que descem da parte superior da tela
+      
+      
+        ef_ring
+        
+        Um efeito que gera círculos de expansão e desbotamento
+      
+      
+        ef_smoke
+        
+        Um efeito que gera pequenas fumadas
+      
+      
+        ef_smokeup
+        
+        Um efeito que cria uma pluma de fumaça que sobe na tela
+      
+      
+        ef_snow
+        
+        Um efeito que gera múltiplas partículas de neve caindo pela tela
+      
+      
+        ef_spark
+        
+        Um efeito que gera uma pequena faísca
+      
+      
+        ef_star
+        
+        Um efeito que gera partículas estelares
+      
+    
+  
+   
+  Sintaxe:
+  effect_create_below(tipo, x, y, tamanho, cor);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tipo
+        O tipo de efeito (use uma das constantes listadas acima).
+      
+      
+        x
+        O x posicionamento do efeito, se relevante.
+      
+      
+        y
+        O posicionamento y do efeito, se relevante.
+      
+      
+        tamanho
+        O tamanho do efeito.
+      
+      
+        cor
+        A cor do efeito.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se velocidade > 0 {
+     effect_create_below(ef_smoke, x, y, 0, c_gray); }
+  
+  O código acima criará um pequeno sopro de fumaça cinza a cada passo que a velocidade da instância for maior que 0 nas coordenadas da instância x,y.
+   
+   
+   
+  
+    
+      
+        Voltar: Partículas
+        Próximo: effect_create_above
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

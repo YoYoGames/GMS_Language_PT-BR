@@ -1,0 +1,45 @@
+
+  
+  layer_sprite_get_sprite
+  Esta função pode ser usada para obter o índice sprite atual do elemento sprite. Você dá o ID do elemento sprite (que você obtém quando cria um elemento sprite usando layer_sprite_create() ou quando você usa
+    a função layer_sprite_get_id()), e a função retornará um valor real que representa o índice sprite que está sendo mostrado. Se o elemento não tiver sprite atribuído, a função retornará -1.
+   
+  Sintaxe:
+  layer_sprite_get_sprite(sprite_element_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sprite_element_id
+        O valor de identificação único do elemento sprite para obter as informações de
+      
+    
+  
+   
+  Devoluções:
+  Índice Sprite (Real) ou -1
+   
+  Exemplo:
+  var lay_id = layer_get_id("sprite_sky"); var spr_id = layer_sprite_get_id(lay_id, "Clouds"); if layer_sprite_get_sprite(spr_id) != spr_Clouds {
+     layer_sprite_change(spr_id, spr_Clouds); }
+  
+  O código acima obterá a identificação da camada chamada "sprite_sky" e então a utilizará para obter a identificação do elemento sprite naquela camada. Este ID é então usado para verificar o duende atribuído ao elemento, definindo-o para o duende "spr_Clouds".
+    se ainda não o for.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de Sprite
+        Próximo: layer_sprite_get_index
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

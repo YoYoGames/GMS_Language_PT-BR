@@ -1,0 +1,50 @@
+
+  
+  move_wrap
+  Esta função "embrulhará" automaticamente uma instância que tenha deixado a sala no eixo horizontal ou vertical (ou ambos). Você pode especificar uma margem fora das bordas da sala para que isso ocorra, e quando a instância tiver viajado para fora
+    dessa margem, o GameMaker Studio 2 o envolverá automaticamente de volta à sala do outro lado. Note que a instância deve ter uma velocidade de embrulho para funcionar, porque a direção do embrulho é baseada na direção do movimento.
+   
+  Sintaxe:
+  move_wrap(hor, vert, margin);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        hor
+        Se envolver horizontalmente (verdadeiro) ou não (falso).
+      
+      
+        vert
+        Seja para envolver verticalmente (verdadeiro) ou não (falso).
+      
+      
+        margem
+        A que distância fora da sala, em pixels, o objeto deve estar para iniciar o embrulho.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  move_wrap(true, false, sprite_width);
+  Isto fará com que a instância se envolva horizontalmente, mas não verticalmente, quando estiver sobre sua própria largura de duende fora da sala.
+   
+   
+   
+  
+    
+      
+        Voltar: Movimento
+        Próximo: place_snapped
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

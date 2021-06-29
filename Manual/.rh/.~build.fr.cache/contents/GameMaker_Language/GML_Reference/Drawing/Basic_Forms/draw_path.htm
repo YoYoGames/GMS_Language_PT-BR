@@ -1,0 +1,58 @@
+
+  
+  caminho_de_sorteio
+  Com esta função, você pode fazer com que o GameMaker Studio 2 desenhe um caminho para a tela. O caminho será desenhado como uma linha simples, e pode ser relativo à instância de chamada ou na posição absoluta em que foi criado no editor de caminhos ou através de
+    código. Esta função é extremamente útil na depuração de caminhos dinâmicos (por exemplo, aqueles criados para instâncias com o mp_grid_path() função).
+  NOTA: Se você quiser desenhar uma forma usando um sombreador, você deve estar ciente de que a maioria dos sombreadores espera as seguintes entradas: vértice, textura, cor. Entretanto, ao utilizar esta função, apenas os dados de vértice e cor estão sendo passados para dentro, e assim o
+   shader não pode desenhar nada (ou desenhar algo, mas não corretamente). Se você precisar desenhar formas desta maneira, então o sombreador deve ser personalizado tendo isto em mente.
+   
+  Sintaxe:
+  draw_path(caminho, x, y, absoluto);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        caminho
+        O caminho para desenhar
+      
+      
+        x
+        A coordenada x de onde o caminho é traçado
+      
+      
+        y
+        A coordenada y de onde o caminho é traçado
+      
+      
+        absoluto
+        Se o caminho é traçado na posição absoluta(verdadeiro) ou na posição relativa(falso)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if mp_grid_path(grid, path, x, y, obj_Player.x, obj_Player.y, 1) {
+     draw_path(caminho, x, y, falso); }
+  
+  O código acima usará a função mp_grid_path para gerar um caminho e armazená-lo na variável "path". Se o caminho for criado com sucesso, ele será então desenhado na tela em uma posição relativa à instância que está executando o código.
+   
+   
+   
+  
+    
+      
+        Voltar: Formulários básicos
+        Próximo: draw_arrow
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

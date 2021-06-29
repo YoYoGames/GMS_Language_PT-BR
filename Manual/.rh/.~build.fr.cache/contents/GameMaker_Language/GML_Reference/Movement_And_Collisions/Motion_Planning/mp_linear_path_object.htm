@@ -1,0 +1,62 @@
+
+  
+  mp_objeto_de_caminho_linear
+  Esta função calcula um caminho linear da posição da instância atual até o ponto especificado pelos valores "xgoal" e "ygoal". Ela utiliza o tamanho do passo indicado, o mesmo que na função mp_linear_step().
+    O caminho indicado já deve existir e será sobrescrito pelo novo caminho e a função retornará se um caminho completo for encontrado (verdadeiro) ou não (falso). Um caminho completo só é encontrado se não houve colisão com o objeto ou instância especificada e
+    se o caminho falso for devolvido, ainda é gerado um caminho, mas este só chegará até a posição onde o caminho foi bloqueado.
+  NOTA: Esta função não move a instância. Ela estabelece apenas um caminho, e você deve usar as funções de Caminho para se movimentar.
+   
+  Sintaxe:
+  mp_linear_path_object(path, xgoal, ygoal, stepsize, obj);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        caminho
+        O índice do caminho a ser utilizado
+      
+      
+        xgoal
+        A posição alvo x.
+      
+      
+        ygoal
+        A posição y alvo.
+      
+      
+        stepsize
+        A velocidade que a instância se move em pixels por passo.
+      
+      
+        obj
+        O objetivo que é bloquear o caminho. Pode ser um índice de objetos, um id de instância ou a palavra-chave especial, tudo
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if mp_linear_path_object(path, mouse_x, mouse_y, 4, obj_Wall) { path_start(path, 4, 0, 0); }
+  O código acima verifica uma colisão com "obj_Wall" ao longo do caminho entre o objeto que executa o código e a posição x/y do mouse. Se não houver colisão e o caminho completo for gerado, então ele iniciará o objeto ao longo do
+    caminho gerado.
+   
+   
+   
+   
+  
+    
+      
+        Voltar: Planejamento de Movimento
+        Próximo: mp_potencial_settings
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

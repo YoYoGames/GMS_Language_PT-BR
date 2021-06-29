@@ -1,0 +1,54 @@
+
+  
+  steam_ugc_get_item_update_progress
+  Esta função pode ser usada para rastrear o status de atualização de um item. Você dá o controle do item (como retornado pela função steam_ugc_start_item_update()) e um mapa DS vazio que será então preenchido com os seguintes pares de chaves/valores:
+  
+    "status_code" - O código de status do vapor
+    "status_string" - Uma cadeia para o status atual
+    " bytes_processados" - Os bytes processados até agora
+    " bytes_total" - O número total de bytes na atualização
+  
+  Se houver um erro, a função retornará falsa e o mapa estará vazio, caso contrário, a função retornará verdadeira.
+   
+  Sintaxe:
+  steam_ugc_get_item_update_progress(ugc_update_handle, info_map);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ugc_update_handle
+        O cabo único para a UGC a ser atualizado.
+      
+      
+        info_map
+        Um índice do mapa DS (anteriormente criado).
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var uploadMap = ds_map_create(); steam_ugc_get_item_update_progress(global.itemHandle, uploadMap); var statusCode = uploadMap[? "status_code"]; var status = uploadMap[? "status_string"]; var processado = uploadMap[?
+    "bytes_processado"]; var total = uploadMap[? "bytes_total"]; draw_text(32, 0, "Upload info for item:" + string(global.itemHandle)); draw_text(32, 15, "status code:" + string(statusCode)); draw_text(32, 30, "status:" + string(status)); draw_text(32, 45, "bytes processados":" +string(processed)); draw_text(32, 60, "bytes total:" + string( total)); ds_map_destroy(uploadMap);
+  
+  O código acima irá consultar o status do upload do item indexado na variável global "itemHandle", usando um DS Map para armazenar as informações. Isto é, então, analisado e os valores resultantes são traçados para a tela.
+   
+   
+   
+  
+    
+      
+        Voltar: UGC
+        Próximo: steam_ugc_subscribe_item
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

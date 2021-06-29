@@ -1,0 +1,46 @@
+
+  
+   Definir a velocidade da linha do tempo
+  Esta ação pode ser usada para definir a velocidade na qual uma linha do tempo se moverá através dos momentos que ela contém. Normalmente, em cada quadro de jogo você gostaria que a posição na linha do tempo fosse aumentada em 1, porém você pode alterar este valor definindo este
+    ação para um valor diferente. O valor escolhido será tratado como um multiplicador, portanto um valor de 2, por exemplo, fará com que a linha do tempo funcione com o dobro da velocidade, enquanto que um valor de 0,5 faria com que funcionasse com a metade da velocidade.
+    O que isto significa para os momentos é que se o valor for maior que um, então vários momentos poderão ocorrer dentro do mesmo quadro de jogo (nenhum momento é pulado), e se a velocidade for menor que um, então depois de um momento ter corrido, haverá quadros
+    onde nada acontece até o próximo momento - se você definir a velocidade da linha do tempo para 0,1, por exemplo, você terá um momento em um quadro de jogo, então 9 quadros de jogo sem momentos, e no décimo quadro de jogo o próximo momento será executado.
+  Se você definir uma linha do tempo para começar a usar as ações Definir Linha do Tempo de Instância ou Definir Estado da Linha do Tempo, mas não definir 
+    a velocidade, então a linha do tempo será padrão para 1 momento por quadro de jogo.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        
+          Argumento
+          Descrição
+        
+        
+          Velocidade
+          A velocidade - como multiplicador - para que a linha do tempo funcione em (o padrão é 1)
+        
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima atribuirá uma linha do tempo
+    para a instância que chama as ações, bem como definir o momento inicial para 10 e depois a velocidade da linha do tempo para 2.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações na Linha do Tempo
+        A seguir: Definir Estado da Linha do Tempo
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

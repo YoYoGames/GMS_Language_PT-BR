@@ -1,0 +1,53 @@
+
+  
+  tilemap_set
+  Esta função pode ser usada para definir qualquer célula (quadrado de grade) dentro do elemento do mapa de azulejos na camada para um novo azulejo. Você dá o ID do elemento do mapa de azulejo (que você obtém quando cria um elemento do mapa de azulejo usando layer_tilemap_create()    ou quando você usa a função layer_tilemap_get_id()), e depois os dados dos azulejos a serem definidos, bem como a posição dentro do mapa de azulejos. Você pode recuperar os dados do azulejo usando a função tilemap_get()    e depois usar as funções tile_ para mudá-lo antes de configurar a célula usando esta função. A função retornará verdadeiro se o azulejo foi definido com sucesso e falso se houve um problema e não foi definido.
+   
+  Sintaxe:
+  tilemap_set(tilemap_element_id, tiledata, xcell, ycell)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tilemap_element_id
+        O valor de identificação único do elemento do mapa de azulejos a ser mudado
+      
+      
+        tiledata
+        Os dados do azulejo a ser definido
+      
+      
+        xcell
+        A posição da célula (grade) a definir ao longo do eixo x
+      
+      
+        ycell
+        A posição da célula (grade) a definir ao longo do eixo y
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  var lay_id = layer_get_id("Tiles_sky"); var map_id = layer_tilemap_get_id(lay_id); var data = tilemap_get(map_id, 0, 0); data = tile_set_flip(data, true); tilemap_set(map_id, data, 0, 0);
+  O código acima obtém a identificação para o mapa de azulejos na camada "Tiles_Sky" e depois a usa para obter os dados do azulejo na célula (0, 0). Estes dados do azulejo são então virados antes de serem usados para definir o azulejo no mapa de azulejos novamente.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas do mapa de azulejos
+        A seguir: tilemap_set_at_pixel
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

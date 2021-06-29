@@ -1,0 +1,54 @@
+
+  
+  audio_group_set_gain
+  Com esta função você pode desbotar um grupo de sons dentro ou fora durante um determinado período de tempo, ou pode ser usado para definir o ganho do grupo instantaneamente. O tempo é medido em milissegundos, e a função requer que você insira um nível final de ganho para o
+    grupo a ter alcançado até o final desse tempo. Este ganho pode estar entre 0 (silencioso) e 1 (volume completo) e a escala é linear, de tal forma que um valor de 0,5 seria metade do volume. Para alterar instantaneamente o ganho, basta ajustar o argumento de tempo para 0. Observe que
+    em algumas plataformas você pode ter um ganho superior a 1, embora um valor de 1 seja considerado "volume completo" e qualquer coisa maior possa introduzir clipping de áudio.
+   
+  Sintaxe:
+  audio_group_set_gain(groupID, volume, tempo);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        groupID
+        O índice do grupo de áudio a parar (como definido na Janela Grupos de Áudio)
+      
+      
+        volume
+        O valor final para o volume do grupo.
+      
+      
+        tempo
+        A duração da mudança no ganho em milissegundos.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if keyboard_check_pressed(vk_space) {
+     audio_group_set_gain(audiogroup1, 0, 5000); }
+  
+  O código acima verifica a tecla "espaço" e depois desbota todo o áudio do "audiogrupo1" para 0 em 5 segundos.
+   
+   
+   
+  
+    
+      
+        Voltar: Grupos de Áudio
+        Próximo: audio_group_load
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

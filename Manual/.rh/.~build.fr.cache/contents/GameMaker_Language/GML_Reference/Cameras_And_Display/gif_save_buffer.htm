@@ -1,0 +1,52 @@
+
+  
+  gif_save_buffer
+  Com esta função, você pode salvar uma animação GIF. Você fornece o índice GIF (como retornado pela função gif_open()) e a função retornará um buffer de crescimento de 1 byte alinhado com os dados do GIF. Note que a função final
+    Os dados GIF terão sido paletizados utilizando a Paleta Universal 884 (veja aqui para mais informações).
+   
+  Sintaxe:
+  gif_save_buffer(gif_index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        gif_index
+        O ID do gif para salvar
+      
+    
+  
+   
+  Devoluções:
+  Número inteiro (Buffer ID)
+   
+  Exemplo:
+  se save_gif == verdadeiro {
+     if count === 0 {
+     gif_image = gif_open(room_width, room_height); }
+     ou se contar < 30 {
+     gif_add_surface(gif_image, application_surface, 6/100); }
+     mais
+     {
+     global.capture_buff = gif_save_buffer(gif_image); count = 0; save_gif = false; }
+     contar+++;
+     }
+  
+  O código acima criará um arquivo de imagem GIF com 30 quadros tirados da superfície da aplicação e depois o salvará em um buffer.
+   
+   
+   
+  
+    
+      Câmeras e Display
+        Voltar: 
+        Próximo: display_reset
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

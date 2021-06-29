@@ -1,0 +1,45 @@
+
+  
+  layer_sprite_x
+  Esta função controla a posição ao longo do eixo x da sala do elemento sprite do ativo na camada. Você dá a identificação do elemento sprite (que você obtém quando cria um elemento sprite usando layer_sprite_create()    ou quando você usa a função layer_sprite_get_id()), e então definir o valor x a ser usado (com base nas coordenadas da sala).
+   
+  Sintaxe:
+  layer_sprite_x(sprite_element_id, x);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sprite_element_id
+        O valor de identificação único do elemento sprite a mudar
+      
+      
+        x
+        A posição x para o duende
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var lay_id = layer_get_id("Asset_sky"); var spr_id = layer_sprite_get_id(lay_id, "Clouds"); layer_sprite_x(spr_id, irandom(room_width));
+  O código acima obtém o valor de identificação do ativo sprite "Clouds" atribuído à camada "Asset_sky" e então define sua posição x para um valor aleatório entre 0 e a largura da sala.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de Sprite
+        Próximo: layer_sprite_y
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

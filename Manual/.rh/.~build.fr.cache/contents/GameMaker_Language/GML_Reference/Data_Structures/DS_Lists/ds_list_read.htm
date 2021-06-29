@@ -1,0 +1,55 @@
+
+  
+  ds_list_read
+  Com esta função você pode recriar uma lista DS salva (uma que tenha sido escrita anteriormente como uma string usando ds_list_write()). É preciso primeiro criar uma nova lista de DS para ler a seqüência, e se a lista de DS já
+    existe e tem informações armazenadas nele, então isto será liberado antes da leitura. Esta função é de vital importância na criação de mecanismos de salvamento/carga para seu jogo, observe que se a estrutura de dados foi criada com versões anteriores de GameMaker    você deve adicionar o argumento opcional "legado", definindo-o como verdadeiro, já que o formato das cordas foi alterado com esta versão.
+   
+  Sintaxe:
+  ds_list_read(id, str [, legacy]));
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação da estrutura de dados a ser lida.
+      
+      
+        str
+        O fio a partir do qual ler.
+      
+      
+        legado(opcional)
+        Pode ser verdadeiro ou falso ou omitido completamente.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  lista = ds_list_create(); ini_open("save.ini");
+     var str = ini_read_string("Lists", "0", ""); if str != "" {
+     ds_list_read(list, str); }
+     ini_close();
+  
+  O código acima cria uma lista e armazena o índice na variável "lista". Em seguida, ele abre um arquivo ini e lê uma string a partir dele, verificando se a string não é retornada como vazia primeiro. Esta cadeia de caracteres é então lida em
+    a recém-criada ds_list.
+   
+   
+   
+  
+    
+      
+        Voltar: Listas DS
+        Próximo: ds_list_write
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

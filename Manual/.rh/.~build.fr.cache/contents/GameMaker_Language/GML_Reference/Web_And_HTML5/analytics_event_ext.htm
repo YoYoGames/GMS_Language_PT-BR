@@ -1,0 +1,54 @@
+
+  
+  análise_evento_extra_analítico
+  Esta função enviará o texto especificado para o provedor analítico que você configurou através das Opções de Jogo HTML5. Esta função pode ser usada para criar uma análise personalizada para rastrear algo
+    fora do escopo do fornecedor que está sendo usado, e também aceitará pares de parâmetros/valores personalizados, onde o parâmetro é uma string e o valor um número real. Para o Google Analytics, você só pode adicionar um par extra, enquanto Flurry aceitará até
+    7.
+   
+  Sintaxe:
+  analytics_event_ext(string, string_param, valor);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        corda
+        Um fio a ser enviado ao fornecedor.
+      
+      
+        string_param[0 -9]
+        O parâmetro a enviar (uma cadeia).
+      
+      
+        valor[0 - 9]
+        O valor do parâmetro (um número real).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var num, time; ini_open("Options.ini");
+     num = ini_read_real("Data", "Plays", 0); num += 1; time = current_time; analytics_event_ext(GAME_NAME, "Plays", num, "Time", time); ini_write_real("Data", "Plays",
+    num); ini_close();
+  
+  O código acima obterá informações de um arquivo ini, bem como a hora atual, e então enviará esses detalhes para o fornecedor da análise.
+   
+   
+   
+  
+    
+      
+        Voltar: Web e HTML5
+        Próximo: url_open
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

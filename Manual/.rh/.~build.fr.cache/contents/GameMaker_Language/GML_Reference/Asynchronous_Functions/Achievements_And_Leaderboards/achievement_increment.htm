@@ -1,0 +1,54 @@
+
+  
+  achievement_increment
+  Os jogos podem ter realizações sem valor de conclusão e, portanto, você pode usar esta função para incrementar essas realizações em um determinado valor. No Android, você envia a identificação da realização como uma seqüência (esta é a identificação única da realização que foi atribuída quando
+    você configura a realização), enquanto em todas as outras plataformas você fornece o nome da realização definida como um fio, e então você dá o valor real da realização a ser incrementado por.
+  A função desencadeará um Evento Assíncrono Social onde o retorno async_load    O mapa DS terá os seguintes pares chave/valor:
+  
+    "tipo"- Este é o tipo de evento que foi disparado, que será a seqüência " achievement_increment_resultado" para esta função.
+    "id" - Este é o ID do evento, e, para esta função, retornará uma constante GML GooglePlayServices_EVENT_ID_INCREMENT_ACHIEVEMENT .
+    "achievement_id" - Esta é a identificação única de realização que tem sido incrementada.
+    "status" - Este será 1 se a realização foi incrementada com sucesso, ou 0 se a solicitação falhou
+    "completo" - Este será 1 se a realização tiver sido completada por este incremento, ou 0 se a solicitação falhou
+  
+   
+  Sintaxe:
+  achievement_increment(nome, valor)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome
+        O nome/id da realização.
+      
+      
+        valor
+        O valor a ser enviado como um incremento.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  achievement_increment(global.Achievement[0], pontuação);
+  O código acima acrescenta a pontuação atual do jogador à conquista com o ID armazenado na matriz global.
+   
+   
+   
+  
+    
+      
+        Voltar: Conquistas e Quadros de Líderes
+        Próxima: realizações_show_achievements
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

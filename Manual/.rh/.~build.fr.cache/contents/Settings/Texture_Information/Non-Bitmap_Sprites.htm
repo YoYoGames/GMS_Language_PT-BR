@@ -1,0 +1,84 @@
+
+  Sprites não-Bitmap
+  OGameMaker Studio 2 tem suporte para sprites não-bitmap na forma de arquivos vetoriais SWF ou arquivos de Animação do Esqueleto da Coluna Vertebral. Ambos os formatos têm seus prós e contras, e as duas seções abaixo explicam como importá-los para o Editor Sprite, bem como um pouco de informação sobre como eles são desenhados.
+   
+  Sprites de Animação Esquelética (Coluna)
+  Um duende feito usando animação esquelética, é aquele no qual um "esqueleto" base foi criado e animado usando quadros-chave para mover as partes componentes do esqueleto ao longo do tempo. Este esqueleto é então esfolado de um atlas de textura e a animação resultante é exportada em um dos muitos tipos de arquivo. O GameMaker Studio 2 permite importar este tipo de sprite desde que ele tenha sido exportado como um arquivo no formato *.json e tenha o
+    arquivo atlas de textura corretamente associado (*.atlas) e arquivo de imagem (como um *.png) no mesmo diretório.
+  Atualmente, o GameMaker Studio 2 só pode importar imagens vetoriais de arquivos em formato JSON feitos pelo programa Spine,
+    No entanto, a forma de importá-los para o programa é quase idêntica à de adicionar uma imagem bitmap normal. Para adicionar uma animação esquelética, você precisa criar um novo sprite, que trará à tona o diálogo padrão Load Sprite, apenas
+    aqui você precisa ter certeza de ter selecionado *.json do filtro de arquivos na parte inferior:
+  
+  Ao pressionar o botão "carregar", a animação esquelética será adicionada ao Navegador de Ativos como um sprite, com uma barra de progresso sendo mostrada à medida que o arquivo é processado. Observe que, dependendo da complexidade
+    do arquivo, isto pode levar um ou dois momentos. Quando o processamento tiver terminado, você retornará ao diálogo de propriedades sprite, que agora terá este aspecto:
+  Uma vez importada a animação, você pode definir as propriedades de colisão, mas note que aqui você está limitado a simplesmente usar
+    colisões precisas ou colisões de caixas de delimitação, e que os dados de colisão para uma animação esquelética sejam explicitamente extraídos dos dados fornecidos. O GameMaker Studio 2 não gera nenhuma máscara de colisão se os dados estiverem faltando no arquivo importado, o que significa
+    você simplesmente não terá colisões de trabalho se as máscaras não estiverem configuradas corretamente no programa utilizado para criar a imagem sendo importada.
+  OBSERVAÇÃO: Devido à complexidade das animações esqueléticas, a imagem prévia mostrada no editor sprite não pretende representar com precisão sua animação, mas sim dar-lhe uma imagem simples que represente a animação para visualização
+    no editor da sala.
+  Ao contrário dos sprites bitmap, os sprite de animação esquelética importados não podem ser modificados no editor de forma alguma, mas há uma série de funções disponíveis dentro da linguagem GameMaker(GML) que podem ser usadas para mudar as peles, definir propriedades,
+    e controlar outros aspectos da animação. Você também não pode definir nenhuma das opções de textura para o duende, pois o GameMaker utilizará o atlas de textura fornecido que foi feito pelo programa que gerou o duende.
+  Há uma série de coisas que você deve estar ciente ao importar sprites de animação de esqueleto, sendo a mais importante que algumas das funções de desenho e gerenciamento de sprite não são suportadas por razões técnicas, particularmente aquelas
+    funções de desenho que atraem apenas parte de um duende, ou que "enviesam" a posição de alguma forma (ver o indivíduo draw_sprite_*() funções
+    para detalhes exatos dos quais). Entretanto, as funções básicas de desenho sprite são totalmente suportadas, assim como as variáveis sprite incorporadas. Além destas funções e variáveis, você também pode definir e alterar as propriedades da animação usando as funções especiais skeleton_*, que estão listadas e explicadas na seção de referência sobre Animações Esqueletais.
+   
+   
+  Sprites Vetoriais (SWF)
+  Geralmente todos os sprites no GameMaker usam bitmaps que - embora flexíveis em termos de conteúdo - colocam limitações tanto no tamanho quanto no número de quadros possíveis em um sprite antes que o uso de memória possa se tornar proibitivo. Os sprites vetoriais trabalham em torno destas limitações
+    armazenando e desenhando seu conteúdo de forma diferente: em vez de uma grade de pixels, que pode se tornar em bloco ou difusa quando escalada, eles são desenhados como triângulos usando matemática vetorial e estes podem ser escalados para cima (ou para baixo) sem perder a definição, como ilustrado
+    na imagem abaixo:
+  Para ajudá-lo a visualizar como isso é feito, a imagem abaixo é do mesmo vetor Fireman sprite só agora podemos ver os polígonos que
+    são usados para fazer a imagem dentro do GameMaker Studio 2:
+  Entretanto, nada é de graça quando se trata de programar jogos, e a troca aqui com sprites vetoriais é que eles são mais caros para a CPU
+    para desenhar do que os sprites bitmap e esta diferença de velocidade aumenta à medida que a complexidade da animação sendo importada aumenta. Além disso, seu uso de memória é afetado por sua complexidade visual, ao contrário dos bitmap sprites. Sem contar que, em mente, eles fazem
+    é possível adicionar grandes gráficos animados de formas que seriam impossíveis usando os tradicionais sprites bitmapped.
+  No lado oposto da equação de desempenho, porque os sprites vetoriais só desenham os pixels absolutamente necessários (ao contrário dos sprites bitmap que também "desenham" o espaço vazio ao redor da imagem) eles podem ser mais baratos do ponto de vista da GPU. Além disso, em geral
+    Os sprites vetoriais são muito menores que seus equivalentes em bitmap - para o exemplo do bombeiro acima dos tamanhos dos vários tipos de duendes são os seguintes:
+  Bitmap a 70x68 = 4x70x68 bytes x 12 quadros = 223k Vetor = 54k
+  Se você quadruplicar a resolução do duende:
+  Bitmap a 280x272 = 4x280x272 bytes x 12 quadros = 3570k Vector = 54k
+  Portanto, como você pode ver, muita memória pode potencialmente ser salva usando sprites vetoriais, e ainda temos muito potencial de economia de espaço no futuro.
+  Atualmente o GameMaker Studio 2 tem suporte limitado para sprites vetoriais. e só pode importar imagens vetoriais de arquivos no formato SWF. A maneira de importá-las para o programa é quase idêntica à de adicionar um
+    imagem bitmap. Para adicionar um sprite vetorial, crie um novo sprite, que trará o diálogo padrão Load Sprite, mas certifique-se de ter selecionado *.swf do filtro de arquivo na parte inferior.
+  Ao pressionar o botão "carregar", a imagem vetorial ou animação será adicionada ao Navegador de Ativos ,
+    com uma barra de progresso sendo mostrada à medida que o arquivo é processado. Note que, dependendo da complexidade do arquivo, isto pode levar algum tempo (até um minuto para animações mais complexas). Quando o processamento tiver terminado, você será devolvido às propriedades do sprite.
+    diálogo, que agora terá este aspecto:
+  O editor sprite não terá mudado muito, mas agora o botão Edit Image foi desativado e não pode
+    já que não há bitmaps para editar neste tipo de sprite. Em segundo lugar, todas as opções de texturas também foram desbotadas a cinzento. Os sprites SWF são baseados em matemática e, como tal, não costumam ter texturas associadas a eles, portanto nenhuma das
+    As opções disponíveis são aplicáveis para este tipo de duende.
+  NOTA: A aparência da imagem no editor de pré-visualização escolhido não será a mesma do jogo, nem da janela de pré-visualização do editor sprite. A imagem vetorial será importada no tamanho em que foi criada,
+    que não é necessariamente o tamanho em que a visualização é mostrada (os navegadores normalmente escalarão a imagem para caber, por exemplo).
+  Uma adição ao Editor Sprite é que você pode definir a qualidade do duende vetorial quando desenhado usando o deslizador de precisão SWF na parte superior. Isto irá simplesmente reduzir ou aumentar o número de triângulos usados para gerar o duende
+    - com um valor de cerca de 50% sendo suficiente normalmente para a maioria dos jogos - no entanto, você deve experimentar este valor se estiver usando escalas extremas, ou se estiver tendo problemas de desempenho.
+  Há várias coisas que você deve estar ciente ao importar sprites vetoriais, sendo a mais importante o fato de que algumas das funções de desenho e gerenciamento de sprite não são suportadas por razões técnicas, particularmente as funções de desenho
+    que atraem apenas parte de um duende, ou que "enviesam" a posição de alguma forma (ver o indivíduo draw_sprite_*() funções
+    para detalhes exatos dos quais). Entretanto, as funções básicas de desenho sprite são totalmente suportadas, assim como as variáveis sprite incorporadas. Você também pode definir diferentes valores anti-aliasing(AA)
+    para os sprites SWF que estão sendo desenhados usando as funções draw_enable_swf_aa(), draw_get_swf_aa_level() ou draw_set_swf_aa_level().
+  Você também deve estar ciente do seguinte:
+  
+    Ao importar um arquivo *.SWF, Actionscript não é suportado, portanto, se seu SWF depende dele para funcionar corretamente, então provavelmente não vai dar certo. Da mesma forma, qualquer clip de filme embutido que tenha sua própria linha do tempo
+      só terá seu primeiro frame exibido durante toda a animação - toda animação deve estar na linha do tempo principal.
+    Se seu arquivo vetorial tiver detalhes particularmente finos, você pode ocasionalmente descobrir que buracos ou triângulos estranhos aparecerão nos sprites resultantes. Isto porque, em pequenas escalas, a geometria pode às vezes colapsar para criar formas que simplesmente não
+      triangulam bem. Neste caso, você tem duas opções - você pode escalar o conteúdo do arquivo vetorial que dará ao importador mais espaço para brincar, ou você pode tentar reduzir o nível de detalhe no objeto que está quebrando.
+    OGameMaker Studio 2 usa o tamanho do palco do SWF como os limites do duende resultante. Entretanto, se você tiver algo no palco fora desses limites, ele ainda está desenhado. Isto significa que você deve tentar evitar colocar qualquer coisa fora dos limites de seu
+      O desenho é limitado pelo palco se você não quiser que ele seja mostrado, ou use uma camada de máscara para limitar o desenho a esta área.
+    O tamanho do palco também afeta o tamanho de qualquer máscara de colisão que é gerada, portanto, se você tiver um grande tamanho de palco e muitos quadros em sua animação, você pode potencialmente devorar muita memória. Portanto, só use máscaras de colisão precisas se você
+      realmente precisam dele.
+    Como um arquivo SWF é criado a partir de múltiplas camadas, algumas das quais potencialmente sobrepostas, o alfa não funciona da mesma forma que funciona com sprites bitmap - áreas sobrepostas não parecerão tão transparentes quanto outras partes do duende, como os pixels que existem
+      ser atraído por várias vezes.
+    Os preenchimentos de bitmap são suportados, embora se você usar preenchimentos de bitmap em mosaico como parte de seu arquivo SWF, você precisa ter certeza de que o bitmap é um power-of-two em tamanho, caso contrário, ele não vai ladrilhar corretamente. A renderização de texto também é suportada, mas você precisa
+      incorporar a fonte em seu arquivo SWF para que ele apareça no sprite resultante. Além disso, atualmente só é suportado texto alinhado à esquerda com uma única linha.
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Grupos de Textura
+        A seguir: Páginas de Textura
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+

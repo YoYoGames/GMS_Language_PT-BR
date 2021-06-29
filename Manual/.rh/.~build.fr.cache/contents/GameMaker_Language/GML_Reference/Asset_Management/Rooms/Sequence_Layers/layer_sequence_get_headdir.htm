@@ -1,0 +1,63 @@
+
+  
+  layer_sequence_get_headdir
+  Com esta função você fornece a identificação do elemento de seqüência - como retornado por layer_sequence_create() ou por uma das funções dos elementos da camada - e retornará a direção atual do playhead, que será uma das constantes listadas abaixo.
+   
+  Sintaxe:
+  layer_sequence_get_headdir(sequence_element_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sequence_element_id
+        O valor de identificação único do elemento de seqüência para o alvo
+      
+    
+  
+   
+  Devoluções:
+  Constante
+   
+  
+    
+      
+        Constante
+        Descrição
+        Valor
+      
+      
+        seq_dir_right
+        A seqüência está jogando quadros em uma ordem incremental da esquerda para a direita
+        1
+      
+      
+        seq_dir_esquerda
+        A seqüência está jogando quadros em uma ordem decrescente da direita para a esquerda
+        -1
+      
+    
+  
+   
+  Exemplo:
+  if layer_sequence_get_headdir(title_sequence) != seq_dir_left {
+     layer_sequence_headdir(title_sequence, seq_dir_left); }
+  
+  O código acima verifica a direção atual da cabeça de jogo do elemento de seqüência ID armazenado na variável "title_sequence", e se não estiver definido para seq_dir_left, ele é definido para este valor.
+   
+   
+   
+  
+    
+      
+        Voltar: Sequência de camadas
+        Próximo: escala_de_série_de_camadas_esquema_de_velocidade
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,58 @@
+
+  
+  instance_create_layer
+  Com esta função você pode criar uma nova instância do objeto especificado em qualquer ponto dentro da sala e na camada especificada. A camada pode ser identificada usando o valor de identificação da camada (como retornado pela função layer_create())
+    ou pelo nome da camada (como uma corda, por exemplo, "exemplo_camada") como definido no editor da sala.
+  Esta função retorna o id da nova instância, que pode então ser armazenada em uma variável ou usada para acessar essa instância. Note que esta função também chamará o Create Event da instância sendo criada antes de continuar com o código ou ações para o evento que chamou a função.
+  IMPORTANTE! Há uma profundidade mínima e máxima de camada de -16000 a 16000. Qualquer coisa colocada em uma camada fora dessa faixa não será desenhada, embora todos os eventos ainda funcionem normalmente.
+   
+  Sintaxe:
+  instance_create_layer(x, y, layer_id, obj);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        x
+        A posição x o objeto será criada em
+      
+      
+        y
+        A posição y do objeto será criada em
+      
+      
+        layer_id
+        A identificação da camada (ou nome) para atribuir a instância criada a
+      
+      
+        obj
+        O índice de objetos do objeto para criar uma instância de
+      
+    
+  
+   
+  Devoluções:
+  Real (valor de identificação da instância)
+   
+  Exemplo:
+  var inst = instance_create_layer(x, y, "instance_layer", obj_Bullet); com (inst) {
+     speed = other.shoot_speed; direction = other.image_angle; }
+  
+  O código acima cria uma nova instância do objeto "obj_Bullet" e armazena a identificação da instância em uma variável. Esta variável é então usada para atribuir velocidade e direção à nova instância.
+   
+   
+   
+  
+    
+      
+        Voltar: Instâncias
+        Próximo: instance_create_depth
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

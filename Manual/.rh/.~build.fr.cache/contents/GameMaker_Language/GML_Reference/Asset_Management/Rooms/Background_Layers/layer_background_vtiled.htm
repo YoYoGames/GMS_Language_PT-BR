@@ -1,0 +1,48 @@
+
+  
+  fundo_camada_vtiled
+  Usando esta função, você pode mudar se o elemento de fundo dado em uma camada deve ou não ser ladrilhado verticalmente. Você dá a identificação do elemento de fundo (que você obtém quando cria um elemento de fundo usando layer_background_create()    ou quando você usa a função layer_background_get_id()), e depois definir o valor do azulejo. Se definido como verdadeiro, então o elemento será exibido em mosaico verticalmente na sala, e quando definido como falso,
+    o elemento não será azulejado. Esta função é apenas para projetos 2D, e não funcionará corretamente quando uma projeção de câmera 3D for usada.
+   
+  Sintaxe:
+  layer_background_vtiled(background_element_id, tiled);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        background_element_id
+        O valor de identificação único do elemento de fundo a ser mudado
+      
+      
+        visível
+        A chave vertical de azulejos, que pode ser verdadeira ou falsa
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var back = layer_background_get_id(layer); if !layer_background_get_htiled(back) || !layer_background_get_vtiled(back) {
+     layer_background_htiled(back, true); layer_background_vtiled(back, true); }
+  
+  O código acima verificará o elemento de fundo atribuído à camada em que a instância que está executando o código está e, se não estiver ladrilhada em nenhuma das direções, ela o colocará em azulejo vertical e horizontalmente.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de fundo
+        Próximo: fundo_de_camada_esticar
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

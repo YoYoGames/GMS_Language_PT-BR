@@ -1,0 +1,49 @@
+
+  
+  gpu_set_zwriteenable
+  Esta função pode ser usada para ativar(verdadeiro) e desativar(falso) o pedido de profundidade usando o z-buffer. Quando uma instância é renderizada no GameMaker Studio 2, a profundidade de um pixel gerado (sua coordenada z) é armazenada no z-buffer,
+    então, se outra instância da cena deve ser renderizada no mesmo pixel, as duas profundidades são comparadas (teste z - veja gpu_set_ztestenable()) e o que está "mais perto" do observador é então salvo
+    para o z-buffer, substituindo o antigo. Entretanto, isto nem sempre é o que você deseja que aconteça e há momentos em que você pode querer que algo seja atraído sobre tudo o resto, não importa qual seja seu valor z. Nesses casos, você pode usar esta função
+    para desligar a escrita no z-buffer e assim forçar o que está sendo desenhado a ser desenhado sobre tudo o resto. Note que a descrição dada aqui é para o modo de comparação padrão do teste z, mas isso pode ser alterado
+  O valor padrão é que o z-buffering está ativado(verdadeiro).
+   
+  Sintaxe:
+  gpu_set_zwriteenable(enable);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        habilitar
+        O modo de comparação a ser usado (ver lista acima)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  gpu_set_zwriteenable(false); com (obj_Menu_Containers) {
+     draw_self();
+     }
+     gpu_set_zwriteenable(true);
+  
+  O código acima desliga a escrita de z-buffer, desenha uma série de objetos, e então o liga novamente para continuar desenhando.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle de GPU
+        Próximo: gpu_set_fog
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

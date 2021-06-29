@@ -1,0 +1,47 @@
+
+  
+  physics_pause_enable
+  Normalmente para que uma simulação física funcione, ela deve ser contínua e não pode ser interrompida e iniciada, ou ter instâncias subitamente movidas de um lugar para outro na sala. Entretanto, há momentos em que é necessário fazer uma pausa na simulação como (para
+    exemplo) o dispositivo os pausou, e assim você usaria esta função. Ele pausa a simulação se a bandeira for colocada em verdadeiro e nenhum outro cálculo físico será feito até que a bandeira seja colocada em falso novamente.
+  NOTA: Isto é de particular utilidade caso você deseje desativar todas as instâncias em uma sala, pois mesmo quando desativado um corpo físico continuará sendo calculado e simulado no mundo da física.
+   
+  Sintaxe:
+  physics_pause_enable(flag)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        bandeira
+        Isto pode ser definido como verdadeiro para interromper a simulação, ou falso para recomeçá-la.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se os_is_paused() {
+     physics_pause_enable(true);
+     instance_deactivate_all(true);
+     instance_create_layer(x, y, "Controllers", obj_PauseMenu); }
+  
+  O código acima verifica se o sistema operativo foi pausado e se então faz uma pausa no mundo da física, desativa tudo, exceto a si mesmo, e então cria uma instância de menu de pausa.
+   
+   
+   
+  
+    
+      
+        Voltar: O Mundo da Física
+        Próximo: physics_world_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

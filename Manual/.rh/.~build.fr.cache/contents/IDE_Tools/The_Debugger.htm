@@ -1,0 +1,131 @@
+
+  
+  O Depurador
+  O Debugger é uma ferramenta poderosa para verificar seu jogo, e é especialmente útil para rastrear erros e bugs em seu código, assim como verificar se os scripts são executados quando deveriam ser, e se as variáveis e arrays contêm o
+    valores que você espera, etc... Você pode iniciar o Debugger executando seu jogo a partir da IDE GameMaker Studio 2 usando o botão Debug  no topo da IDE, ou indo para o menu Construir e selecionando "Debug".
+  NOTA: Você pode ser solicitado pelo Windows Firewall (ou qualquer outro programa de firewall que você executar) a criar uma exceção de segurança para este módulo. Você deve fazer isto caso contrário, não funcionará corretamente. Isto se deve à forma como o
+    o depurador funciona e é essencial para a depuração de plataformas móveis.
+  Quando você executa um jogo no modo de depuração, a IDE exibirá as diferentes ferramentas disponíveis para o Debugger:
+  A imagem acima mostra o layout padrão para o depurador, mas como em outros aspectos da IDE, você pode customizar isso para atender às suas necessidades, fechando
+    janelas que você não precisa ou mudar os tamanhos dos documentos e janelas que você precisa. Você pode reiniciar o layout do depurador a qualquer momento - ou reabrir janelas fechadas - a partir do menu de contexto do depurador no topo da IDE:
+  Abaixo explicamos para que serve cada seção do depurador:
+  Vista gráfica
+  
+    A vista gráfica mostra uma exibição gráfica de como seu projeto está usando a memória e seu enquadramento ao longo do tempo:
+    O gráfico mostra o uso atual e médio da memória, bem como o FPS atual e médio ao longo do tempo, e você pode aumentar ou diminuir o zoom usando o  /  junto com a roda do mouse , e se você posicionar o cursor do mouse sobre qualquer um dos elementos do gráfico, ele mostrará o valor para aquele elemento no ponto selecionado.
+    A vista gráfica também mostrará certos eventos de depuração como pontos ao longo da extensão do gráfico. Estes eventos são gerados automaticamente pelo GameMaker Studio 2 em certos pontos da execução de um jogo para mostrar eventos importantes específicos, mas você também pode
+      adicionar em seus próprios elementos gráficos usando as funções show_debug_message() e debug_event().
+      Os eventos do sistema serão marcados com uma cor diferente daqueles eventos que são acionados através de código:
+    Ao executar o jogo em debug e mousing sobre esses eventos, será mostrada uma lista de todos os eventos que foram acionados naquele ponto do jogo,
+      e você tem a opção de puxar a lista para fora em uma janela separada para revisão clicando no texto " Cliquepara abrir em uma nova janela":
+    
+     
+  
+  Visão dos recursos
+  
+    A Visão de Recursos mostra uma lista de todos os recursos sendo utilizados no projeto que podem conter código ou ações DnD™. Esta seção funciona muito como o Navegador de Recursos e você pode expandir os itens
+      nele para mostrar mais informações, por exemplo, os diferentes eventos para um objeto específico. Você pode então clicar duas vezes em  em qualquer um dos recursos para abrir
+      o código para ele na janela Visão de Código, onde você pode verificar os valores e adicionar ou remover pontos de interrupção.
+     
+  
+  Pilha de chamadas
+  
+    Esta janela exibirá a pilha atual de chamadas de eventos, bem como o número de linha para o código que está sendo atravessado. A pilha de chamadas é essencialmente uma estrutura de dados "última entrada - primeira saída" que mostra a ordem de execução de todo o jogo.
+      código tanto do corredor do GameMaker Studio 2 - uma vez que a depuração é feita usando a Máquina Virtual (VM) - como do que você escreveu para o jogo. O depurador precisará
+      foram Pausadas antes que qualquer informação seja mostrada aqui.
+     
+  
+  Barra de ferramentas
+  
+    A barra de ferramentas tem os controles do depurador junto com algumas informações básicas como o uso de memória, o FPS atual (real) para o jogo e um indicador para mostrar se o depurador está atualmente conectado ou não (o indicador estará verde quando conectado
+      a uma instância em andamento de seu projeto e vermelho de outra forma). Os controles disponíveis são:
+    
+      
+        
+          
+          Isto começa o jogo novamente depois de ter sido pausado (atalho de teclado "f5").
+        
+        
+          
+          Isto fará uma pausa (pausa) no jogo.
+        
+        
+          
+          Reinicia o jogo.
+        
+        
+          
+          Pára o jogo.
+        
+        
+          
+          Entre em um bloco de código ou script (atalho de teclado "f11").
+        
+        
+          
+          Passo sobre um bloco de código ou script (atalho de teclado "f10").
+        
+        
+          
+          Saia de um bloco de código ou script (atalho de teclado  + "f11").
+        
+        
+          
+          Ativar ou desativar atualizações em tempo real para as informações de depuração (isto está desativado por padrão).
+        
+      
+    
+    Os três primeiros botões são usados para controlar seu jogo, permitindo que você o inicie, pause, reinicie ou pare a qualquer momento. Quando o jogo é pausado (ou clicando no botão Pausa
+      ou a partir de um ponto de parada) você pode então usar os três botões de etapa para passar pelo seu código.
+    Quando falamos em "pisar" no código, queremos simplesmente dizer que você pode dizer ao seu jogo para executar a linha de código atual, depois "pisar" na próxima, permitindo que você execute todo o seu jogo uma linha de código de cada vez
+      se você desejar. Normalmente você simplesmente usaria o botão Step In para fazer isso, mas você também tem um para pisar no código e outro para sair do código. O passo em frente é útil quando você
+      ter grandes scripts para serem executados, pois clicando neles, todo o script ou bloco de código será executado como um único passo e parará na próxima linha depois, enquanto sair tirará você de um script (eles serão executados, mas todos de uma só vez) e parará no
+      próximo passo depois, quando o escopo mudar.
+    O ícone final para atualizações em tempo real permite que a janela de depuração atualize seus dados em tempo real, para que você possa ver como as variáveis mudam ou instâncias são criadas e destruídas à medida que acontecem. Note que isto pode afetar o desempenho dos jogos
+      e que nem todas as informações estão disponíveis em tempo real. Por exemplo, o relógio Render State (veja a seção sobre Relógios) não pode ser visto em tempo real.
+     
+  
+  Vista de código
+  
+    A visualização do código é onde podemos ver e rever diferentes scripts ou códigos de eventos de nosso projeto enquanto ele é executado. Por padrão, isto começa vazio, mas você pode clicar duas vezes em  em qualquer ativo da Visão de Recursos para abri-la aqui. Você pode abrir vários eventos ou scripts diferentes também, e eles serão adicionados ao espaço de trabalho da Visualização de Código como abas ao longo do topo.
+    Enquanto qualquer janela de código estiver aberta na Vista de Código, você pode clicar à esquerda  na sarjeta (onde estão os números das linhas) para adicionar ou remover pontos de parada (veja
+      mais abaixo nesta página para informações sobre pontos de parada).
+    Você também pode usar o botão direito do mouse  para abrir o Menu de Contexto, que também lhe permite adicionar ou remover pontos de parada e copiar qualquer
+      código selecionado para a prancheta.
+     
+  
+  Relógios
+  
+    Esta seção é dedicada a "observar" diferentes aspectos de seu jogo para permitir uma depuração mais profunda e detalhada. Isto é abordado em profundidade na página seguinte:
+    
+      Relógios
+    
+  
+   É importante notar que enquanto o jogo estiver rodando não atualiza as janelas de depuração com valores variáveis e outros detalhes por padrão, portanto você deve primeiro usar o botão Pausa  no Debugger para pausar o jogo antes que Locals, Globals e outros dados estejam disponíveis, ou permitir a atualização em tempo real a partir dos ícones no topo . O
+    A única exceção a esta regra é a visão Perfil , que é atualizada em tempo real quando ativada independentemente do interruptor em tempo real, pois tem seu próprio botão de ligar/desligar. Você pode encontrar informações completas sobre esta visão na página seguinte:
+  
+    O Perfilador
+  
+  Outra parte importante da depuração de seu jogo é o uso de Breakpoints. Um breakpoint é um lugar no código de seu projeto no qual você deseja que ele pare para poder ver o que está acontecendo. Com o Debugger funcionando, você pode adicionar ou remover pontos de interrupção
+    a qualquer momento e em qualquer bloco de código ou script clicando com o botão esquerdo do mouse  na sarjeta (onde estão os números das linhas), ou você pode usar o botão direito do mouse  para
+    abrir o Menu de Contexto, que também permite adicionar ou remover pontos de parada:
+  Os pontos de parada também podem ser definidos a partir da IDE GameMaker Studio 2. Ao escrever seu projeto, eles podem ser adicionados ou removidos a qualquer momento usando
+    f9 (ou usando o botão direito do mouse  e selecionando "togglebreakpoint"), seja em uma ação na janela do objeto
+      (para usuários de DnD™), ou em uma linha em uma janela de editor de código. Agora, quando você executar seu jogo no modo de depuração, ele fará uma pausa no ponto (ou pontos) que você tiver definido.
+  Os pontos de parada definidos na IDE são salvos junto com seu projeto e persistirão em várias execuções até serem removidos novamente, entretanto, se você adicionar um ponto de parada ao seu código no Debugger, este será perdido após o fechamento do módulo, ou uma nova execução de teste será iniciada.
+    Note que todos os pontos de parada aparecerão na Janela de Saída onde podem ser habilitados ou desabilitados ou até mesmo removidos.
+   
+   
+   
+  
+    
+      
+        Voltar: Ferramentas IDE adicionais
+        A seguir: O Micro Servidor Web
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

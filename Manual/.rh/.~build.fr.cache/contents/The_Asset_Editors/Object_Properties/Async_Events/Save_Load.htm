@@ -1,0 +1,39 @@
+
+  
+  Economizar / Carregar
+  Este evento será acionado pela chamada de retorno de certas funções relacionadas ao carregamento
+    e salvando buffers para arquivos, assim como ao carregar ou descarregar áudio da memória. O evento em si conterá o async_load    Mapa DS que será preenchido com as chaves necessárias para a função específica. Estas estão listadas nas seções abaixo.
+   
+  Buffers
+  Quando você usa as funções buffer_save_async() ou buffer_load_async() um
+    evento assíncrono será acionado quando a transferência de dados tiver sido concluída. Este evento irá preencher o mapa async_load com os seguintes pares de chaves/valores
+  
+    "id": a identificação da função async como retornada pela função utilizada.
+    "status": retornará verdadeiro se os dados foram salvos/carregados corretamente, e falso caso contrário.
+  
+  Isto permite que você pesquise o progresso da economia/carga e exiba uma mensagem ou troca de sala, etc... quando o processo estiver concluído.
+   
+  Grupos de áudio
+  Ao trabalhar com grupos de áudio, você pode carregá-los e descarregá-los da memória usando as funções audio_group_load() e
+    audio_group_unload(). Ao utilizar a função de carga, ele acionará este evento quando o conjunto completo de áudio
+    Os arquivos definidos para o grupo foram carregados na memória e irão preencher o mapa com os seguintes pares de chaves/valores:
+  
+    "type": isto nos diz o tipo de evento que está sendo chamado e será "audiogroup_load" para carregar áudio.
+    "group_id": devolverá a identificação do grupo de áudio que foi carregado (como definido no Editor do Grupo de Áudio ).
+  
+  Quando todo o áudio tiver sido carregado para um grupo, este evento será acionado e poderá então ser usado para trocar de sala, ou tocar uma faixa de música, etc...
+   
+   
+   
+  
+    
+      
+        Voltar: Eventos Async
+        A seguir: Social
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

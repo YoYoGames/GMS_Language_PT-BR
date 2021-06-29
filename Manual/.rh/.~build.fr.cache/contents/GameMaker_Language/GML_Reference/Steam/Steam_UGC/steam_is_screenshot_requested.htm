@@ -1,0 +1,34 @@
+
+  
+  steam_is_screenshot_requested
+  Esta função pesquisará o Steam API para ver se a tecla para tirar uma captura de tela do jogo foi pressionada. A função só retornará verdadeiro para um passo (tique do jogo) se a tecla tiver sido pressionada, e retornará falso em todos os outros
+    vezes.
+  OBSERVAÇÃO: isto não tira uma foto de tela para você. Isto só sinaliza que a tecla foi pressionada e você deve usar as funções do GameMaker Studio 2 screen_save()    ou screen_save_part() para salvar uma cópia local do arquivo a ser carregado.
+   
+  Sintaxe:
+  steam_is_screenshot_requested();
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se o vapor for solicitado() {
+     var file = "Catch_The_Haggis_" + string(global.scrn_num) + ".png"); screen_save(file)
+     steam_send_screenshot(file, window_get_width(), window_get_height()); global.scrn_num += 1; }
+  
+  O código acima pesquisará o Steam API para um pedido de captura de tela e, se tiver sido, será gerado um nome único para o arquivo de imagem, uma captura de tela será tirada e o arquivo será enviado para a página da Comunidade Steam para o usuário.
+   
+   
+   
+  
+    
+      
+        Voltar: UGC
+        Próximo: steam_send_screenshot
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

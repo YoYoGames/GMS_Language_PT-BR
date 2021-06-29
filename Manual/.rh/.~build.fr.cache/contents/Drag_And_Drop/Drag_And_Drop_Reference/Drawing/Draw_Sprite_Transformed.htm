@@ -1,0 +1,73 @@
+
+  
+   Desenho Sprite Transformado
+  Esta função desenhará o duende dado similar à ação Draw Sprite, mas com opções adicionais para mudar a escala, mistura, rotação e armação do duende a ser desenhado. A alteração destes valores não modifica
+    o recurso de qualquer forma (apenas como ele é desenhado), e você pode usar qualquer uma das variáveis de propriedade sprite disponíveis em vez de valores diretos para todos os argumentos na função. A imagem abaixo ilustra
+    como valores diferentes afetam o desenho do duende:
+  
+  NOTA: A mistura de cores só é recomendada para o alvo HTML5 quando o WebGL está habilitado, embora você ainda possa definir a cor da mistura se ela não estiver habilitada e ela irá misturar o sprite como normal. Entretanto, toda mistura desta forma cria uma duplicata
+    sprite, que é então armazenado no cache e utilizado quando necessário. Isto está longe de ser ideal e se você usar mudanças múltiplas de cor, isso diminuirá o desempenho de seus jogos a menos que você ative o WebGL. se você não quiser usar o WebGL, então você pode definir
+    o tamanho do cache da fonte para tentar limitá-lo, caso seja necessário, utilizando a função sprite_set_cache_size().
+  NOTA: Esta ação é apenas para uso nos diversos eventos de sorteio, e não desenhará nada se for usada em outro lugar.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Sprite
+        O duende a desenhar
+      
+      
+        Moldura
+        A moldura sprite para desenhar (use o índice de imagem variável embutido para a moldura atual)
+      
+      
+        X
+        A posição x a ser desenhada dentro da sala
+      
+      
+        Y
+        A posição y para desenhar dentro da sala
+      
+      
+        Escala X
+        O fator de escala para o eixo X (use a escala variável da imagem_x integrada para a escala X atual)
+      
+      
+        Escala Y
+        O fator de escala para o eixo Y (use a escala variável de imagem_escala para a escala Y atual)
+      
+      
+        Rotação
+        O ângulo de tração para o duende (de 0 a 360, girando no sentido anti-horário onde 0 é para a direita - use o ângulo_de_imagem variável embutido para a rotação atual)
+      
+      
+        Cor
+        A cor a ser misturada com o duende (o padrão é branco, e você pode usar a mistura de imagem variável embutida para a cor atual)
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima verifica uma variável e se ela for definida como verdadeira, então o duende é desenhado com escala aleatória ao longo dos eixos x e y e misturado com a cor vermelha, caso contrário o duende é desenhado usando as transformações padrão.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações de desenho
+        A seguir: Sprites empilhados de sorteio
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

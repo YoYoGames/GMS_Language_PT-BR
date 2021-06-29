@@ -1,0 +1,44 @@
+
+  
+  file_text_open_read
+  Esta função abre o arquivo de texto com o nome de arquivo indicado apenas para leitura, retornando a identificação única do arquivo que deve ser armazenado em uma variável, pois ele será usado para todas as outras ações relacionadas a esse arquivo. Se o arquivo não
+    existe, então a função retornará o valor -1.
+  OBSERVAÇÃO: Você só pode ter um máximo de 32 arquivos abertos a qualquer momento. Você também deve sempre fechar os arquivos quando terminar, pois isto escreve as informações e libera a memória associada ao arquivo.
+  ATENÇÃO! Esta função pode não funcionar como você espera devido ao GameMaker Studio 2 ser lixado! Consulte a seção sobre o Sistema de Arquivos para maiores informações.
+   
+  Sintaxe:
+  file_text_open_read(fname);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fname
+        O nome do arquivo a ser lido.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  file = file_text_open_read(working_directory + "level.txt");
+  Isto abriria "level.txt" do mesmo diretório do jogo e armazenaria a identificação do arquivo na variável "file".
+   
+   
+   
+  
+    
+      
+        Voltar: Arquivos de texto
+        Próximo: file_text_open_write
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

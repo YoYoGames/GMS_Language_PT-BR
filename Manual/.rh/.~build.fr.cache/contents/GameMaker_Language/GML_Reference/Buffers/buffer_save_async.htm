@@ -1,0 +1,74 @@
+
+  
+  buffer_save_async
+  Com esta função, você pode salvar parte do conteúdo de um buffer em um arquivo, pronto para ser lido de volta à memória usando o buffer_load() (ou qualquer uma das outras funções de amortecedores de carga). O "offset
+    define a posição inicial dentro do buffer para salvar (em bytes), e o "tamanho" é o tamanho da área do buffer a ser salva a partir desse offset (também em bytes). Esta função funciona de forma assíncrona, e assim o jogo continuará funcionando
+    enquanto estiver sendo salvo, e todos os arquivos salvos usando esta função serão colocados em uma pasta "padrão". Esta pasta não precisa ser incluída no nome do arquivo, pois ele é adicionado automaticamente pelo GameMaker. Por exemplo, o caminho do nome do arquivo " Data\Player_Save.sav".
+    seria na verdade salvo em "default\Data\Player_Save.sav". Entretanto, se você então carregar o arquivo usando a função buffer_load_async()você não precisa fornecer o "padrão".
+    parte do caminho (mas qualquer outra função de arquivo o exigirá, exceto nos consoles Xbox One, PS4 e Nintendo Switch).
+  NOTA: Em HTML5 "default/" não é adicionado automaticamente e você pode ter que responder por isso em seu código.
+  A função retornará um valor de ID exclusivo e acionará um Evento Assíncrono de Salvamento/Carga onde você pode usar o ID retornado para verificar o valor de ID de carga_assíncrona,
+    como mostrado no exemplo ampliado abaixo. O async_load no evento terá os dois pares chave/valor a seguir:
+  
+    "id": a identificação da função async como retornada pela função save.
+    "status": retornará verdadeiro se os dados foram salvos/carregados corretamente, e falso caso contrário.
+  
+  Note que você pode salvar múltiplos buffers em um chamando esta função várias vezes entre chamadas para buffer_async_group_begin() e buffer_async_group_end()    (veja essas funções para maiores informações sobre isso).
+  NOTA: Em HTML5 os resultados retornados são salvos como cordas codificadas base64 quando salvos em um arquivo.
+   
+  Sintaxe:
+  buffer_save_async(buffer, nome do arquivo, offset, tamanho);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O índice do buffer a ser salvo.
+      
+      
+        nome do arquivo
+        O nome do arquivo a ser salvo como.
+      
+      
+        offset
+        A compensação dentro do buffer para economizar de (em bytes).
+      
+      
+        tamanho
+        O tamanho da área de amortecimento a ser economizada (em bytes).
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo ampliado:
+  A função buffer_save_async( ) pode ser chamada a partir de qualquer evento, e como é assíncrona, a ligação de retorno pode ser quase instantânea ou pode levar vários segundos. Chamar a função é simples e pareceria algo parecido com isto:
+  saveid = buffer_save_async(buff, "Player_Save.sav", 0, 16384);
+  O código acima salva o conteúdo do buffer " buff"para o arquivo salvo dado, armazenando o ID da chamada de função na variável " saveid". Quando o salvamento estiver completo, o evento assíncrono de salvamento/carga será acionado
+    e você pode analisar o mapa async_load para a identificação correta da função, desta forma:
+  if ds_map_find_value(async_load, "id") == saveid {
+     if ds_map_find_value(async_load, "status") == falso {
+     show_debug_message("Salvar falhou!"); }
+     }
+  
+  O código acima verificará primeiro a identificação do mapa DS que foi criado, depois verificará o status da chamada de retorno, postando uma mensagem de depuração se tiver havido algum problema.
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: buffer_load
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

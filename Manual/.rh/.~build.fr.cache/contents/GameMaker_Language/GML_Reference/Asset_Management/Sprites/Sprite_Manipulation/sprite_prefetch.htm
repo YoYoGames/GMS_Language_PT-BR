@@ -1,0 +1,44 @@
+
+  
+  sprite_prefetch
+  Esta função pode ser usada para pré-fetar (colocar na memória de textura) uma página de textura com o duende dado. Você fornece o índice sprite conforme definido quando você criou o recurso sprite, e a página de textura em que ele está será carregada na memória. Note que o
+    retornará -1 se o prefetch não for suportado para o recurso escolhido ou se a plataforma alvo for HTML5, ou retornará 0 se tudo tiver funcionado corretamente.
+  OBSERVAÇÃO: Há um golpe de desempenho quando a textura é carregada na memória de textura na maioria dos dispositivos, por isso é recomendável que você ligue para sprite_prefetch em
+    qualquer gráfico necessário no início de um nível para evitar qualquer barraca.
+   
+  Sintaxe:
+  sprite_prefetch(ind)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice sprite a ser buscado
+      
+    
+  
+   
+  Devoluções:
+  Int (-1 ou 0)
+   
+  Exemplo:
+  sprite_prefetch(spr_Player_Aura);
+  O código acima irá colocar o duende referenciado na memória de textura pronta para uso.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação de Sprite
+        Próximo: sprite_prefetch_multi
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,53 @@
+
+  
+  buffer_md5
+  Na criptografia, MD5 (Message-Digest algoritmo 5) é uma função de hashing criptográfico amplamente utilizada com um valor de hash de 128 bits e tem sido empregada em uma grande variedade de aplicações de segurança.
+    Também é comumente usado para verificar a integridade dos dados. Esta função irá pegar os dados de entrada de um determinado buffer (ou parte do buffer) e retornar o hash MD5 hexadecimal de 32 caracteres que é exclusivo para esses dados. Desta forma, você pode gerar
+    uma chave segura que pode ser armazenada e usada para verificar a integridade das informações enviadas (ou recebidas de) um servidor externo (por exemplo). Ao aplicar isto aos buffers que utilizam esta função, é necessário especificar o id do buffer para
+    uso, depois um valor de compensação (em bytes) para onde começar, e depois um tamanho (novamente em bytes) para a região a ser apressada.
+  NOTA: O MD5 não é completamente seguro e pode ser quebrado. Veja esta página para mais informações.
+   
+  Sintaxe:
+  buffer_md5(buffer, offset, tamanho);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tampão
+        O índice do buffer a ser utilizado.
+      
+      
+        offset
+        O valor da compensação de dados.
+      
+      
+        tamanho
+        O tamanho do amortecedor.
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  check_string = buffer_md5(buff, 0, buffer_get_size(buff));
+  O código acima criará um hash md5 para os dados completos armazenados no buffer indexado pela variável "buff", e armazenará o hash retornado na variável "check_string".
+   
+   
+   
+  
+    
+      
+        Voltar: Tampões
+        Próximo: buffer_sha1
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,46 @@
+
+  
+   Escrever Buffer
+  Esta ação pode ser usada para escrever dados em um buffer. Você fornece o ID exclusivo do buffer para escrever (como retornado pela ação Criar buffer) e depois o valor a ser escrito, que pode ser um real ou uma string, mas note que
+   todos os valores são armazenados como strings, então quando você lê do buffer (usando o Read Buffer) você pode precisar usar uma das ações do tipo de dados para convertê-lo a partir de uma string
+    de volta ao valor original. Tenha em mente também que os buffers são lidos e escritos sequencialmente e assim, escrever em um buffer irá mover a posição de "busca" ao longo de um, significando que para escrever vários dados você simplesmente chama esta ação
+    o número de vezes necessário.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Buffer
+        O índice tampão (armazenado em uma variável)
+      
+      
+        Valor
+        O valor a ser acrescentado ao buffer
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima cria uma variável global e depois um buffer, atribuindo o exclusivo
+    identificação do buffer para a variável. Este buffer tem dois pedaços de dados escritos.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações Tampão
+        A seguir: Procure um tampão
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

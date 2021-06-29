@@ -1,0 +1,33 @@
+
+  
+  vapor_estats_ready
+  Ao utilizar o Steam API, esta função pode ser chamada para verificar se o Steam API do cliente iniciou corretamente as estatísticas para o seu jogo.
+   
+  Sintaxe:
+  steam_stats_ready();
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  global.steam_api= falso; if steam_initialised() {
+     if steam_stats_ready() && steam_is_overlay_enabled() {
+     global.steam_api= true; }
+     }
+  
+  O código acima definirá uma variável global como verdadeira se a API do cliente Steam for inicializada corretamente, juntamente com as estatísticas e a funcionalidade de sobreposição do Steam, ou definirá a variável como falsa de outra forma.
+   
+   
+   
+  
+    
+      
+        Voltar: General SteamAPI
+        Próximo: steam_get_app_id
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

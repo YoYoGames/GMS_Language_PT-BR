@@ -1,0 +1,47 @@
+
+  
+  instance_deactivate_all
+  Esta função desativará todas as instâncias que estiverem na sala no momento em que o código for executado. Isto pode incluir a instância executando o código se a bandeira "notme" estiver definida como falsa, mas normalmente você gostaria que essa instância
+    para ser ativo, caso em que a bandeira "notme" deve ser colocada para ser verdadeira. Note que a desativação não é instantânea, e uma instância que tenha sido desativada desta forma não será considerada inativa até o final do evento.
+    na qual a função foi chamada.
+  NOTA: Se você desativar uma instância no início da sala (ou seja: do código de criação da sala, ou de uma instância criar evento de uma instância dentro da sala) todas as instâncias que são colocadas dentro da sala do editor da sala ainda executarão seu evento de criação antes de serem desativadas.
+  AVISO: A desativação de instâncias que têm a física habilitada NÃO irá impedir que seus dispositivos interajam dentro da simulação física. Para isso, você deve definir seus phy_active variável
+    para verdadeiro ou falso à medida que você ativa/desativa as instâncias.
+   
+  Sintaxe:
+  instance_deactivate_all(notme);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        notme
+        Se manter a instância de chamada ativada (verdadeira) ou não (falsa).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  instance_deactivate_all(true); var _vx = camera_get_view_x(view_camera[0]); var _vy = camera_get_view_y(view_camera[0]); var _vw = camera_get_view_width(view_camera[0]); var _vh = camera_get_view_height(view_camera[0]); instance_activate_region(_vx
+    - 64, _vy - 64, _vw + 128, _vh + 128, falso);
+  O código acima desativa todas as instâncias exceto a que está executando o código e depois ativa uma região dentro da sala.
+   
+   
+   
+  
+    
+      
+        Voltar: Desativação de Instâncias
+        Próximo: instance_deactivate_object
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

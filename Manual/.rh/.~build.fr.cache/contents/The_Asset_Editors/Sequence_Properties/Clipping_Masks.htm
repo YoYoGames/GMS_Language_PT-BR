@@ -1,0 +1,33 @@
+
+  
+  Máscaras de grampear
+  Como mencionado na página Painel de pistas, há uma ação para criar o que é chamado de grupo de máscara de recorte no editor de pistas. Isto é acessado clicando no botão  na parte inferior do Painel de Trilha:
+  Clicando aqui será criado um grupo de máscara de recorte que é composto de dois subconjuntos de ativos que podem ser usados como
+    o sujeito ou a máscara do grupo. Basicamente o sujeito é o bem que vai ser mascarado, e a máscara é o bem que vai fazer o mascaramento:
+  A idéia por trás do uso de uma máscara de recorte é que você adicione um duende de assunto, e depois um duende de máscara, e o duende de máscara "esconde".
+    (máscara) o sujeito. Você pode então usar a animação de duende de máscara, ou mover ou escalar o duende de máscara para mudar a visibilidade do assunto (ou partes do assunto). Cada grupo (máscara e sujeito) pode conter múltiplos recursos, e cada um dos recursos pode
+    têm múltiplas faixas de parâmetros.
+  Para adicionar um assunto e máscara, simplesmente arraste o sprite, objeto ou seqüência do Navegador de Ativos sobre a pasta na qual você deseja adicioná-lo:
+  
+  A máscara alfa sprite será usada para "esconder" qualquer assunto que esteja debaixo dela, onde um valor de 100% alfa (opaco) irá mascarar completamente e um valor de 0% alfa (transparente) irá mostrá-lo. Por exemplo, temos este duende para mascarar:
+  Podemos então aplicar isto como uma máscara de recorte aos ícones para criar um efeito "cooldown", como este:
+  No exemplo acima "Sprite_2" é simplesmente um bem estático que é o ícone de base,
+    e depois criamos um grupo de máscaras de recorte com uma versão em escala de cinza do duende, assim como uma máscara (usando o exemplo do duende mostrado acima). Quando combinado e a seqüência é reproduzida, o grupo de máscara de clipping revela o duende de base
+    por baixo, criando nosso efeito de resfriamento.
+  Observe que os grupos de máscara de recorte podem ser tratados como um único item na lista de faixas e folha de drogados, e você pode adicionar faixas de parâmetros de rotação e posição ao grupo como um todo. Você também pode aplicar grupos de máscaras de recorte a pastas de ativos de grupo
+    ou mesmo para outros grupos de máscaras de recorte, tornando-os uma ferramenta muito poderosa.
+   
+   
+   
+  
+    
+      
+        Voltar: Sequências
+        A seguir: Usando a Folha de Drogas
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

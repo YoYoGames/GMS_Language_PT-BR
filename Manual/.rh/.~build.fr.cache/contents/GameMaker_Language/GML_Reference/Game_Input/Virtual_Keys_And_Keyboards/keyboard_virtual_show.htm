@@ -1,0 +1,241 @@
+
+  
+  teclado_virtual_show
+  Esta função pode ser usada para mostrar o teclado virtual no dispositivo que executa o jogo. Quando você chama esta função, você precisa fornecer uma das seguintes constantes para cada um dos três primeiros argumentos:
+  
+    Tipo de teclado: Esta constante é usada para definir qual conjunto de teclas estará disponível no teclado virtual. Os tipos de teclado disponíveis são:
+  
+  
+    
+      
+        Tipo de teclado
+        Descrição
+      
+      
+        kbv_type_default
+        O tipo de teclado padrão para o sistema atual.
+      
+      
+        kbv_type_ascii
+        Um teclado somente em ASCII.
+      
+      
+        kbv_type_url
+        Um teclado normal otimizado para entrada de URL. Normalmente apresenta um ".com" ou outras teclas de domínio, bem como as teclas "/" e ".".
+      
+      
+        kbv_type_email
+        Um teclado normal otimizado para a entrada de e-mails. Normalmente apresenta caracteres "@" e ".".
+      
+      
+        kbv_type_numbers
+        Um teclado só de números, geralmente exibido como um teclado numérico.
+      
+      
+        kbv_type_phone
+        Um teclado de teclado telefônico. Normalmente só números - apenas com as teclas "*" e "#".
+      
+      
+        kbv_type_phone_name
+        Um teclado otimizado para digitar tanto um número de telefone quanto um nome. Normalmente semelhante a um teclado ASCII, mas com uma seleção limitada de caracteres especiais.
+      
+    
+  
+   
+  
+    Tipo de retorno: Esta constante é usada para definir o que é mostrado na tecla de retorno/ação do teclado virtual. Os tipos de retorno disponíveis são:
+  
+  
+    
+      
+        Tipo de retorno
+        Descrição
+      
+      
+        kbv_returnkey_default
+        O título padrão da chave de retorno para o sistema atual.
+      
+      
+        kbv_returnkey_go
+        Define o título da chave de retorno para "Ir".
+      
+      
+        kbv_returnkey_google
+        Define o título da chave de retorno para "Google", ou para um ícone de busca genérica em alguns casos.
+      
+      
+        kbv_returnkey_join
+        Define o título da chave de retorno para "Ir".
+      
+      
+        kbv_returnkey_next
+        Define o título da chave de retorno para "Próximo".
+      
+      
+        kbv_returnkey_route
+        Define o título da chave de retorno para "Rota".
+      
+      
+        kbv_returnkey_search
+        Define o título da chave de retorno para "Pesquisar", ou para um ícone de pesquisa genérica em alguns casos.
+      
+      
+        kbv_returnkey_send
+        Define o título da chave de retorno para "Enviar".
+      
+      
+        kbv_returnkey_yahoo
+        Define o título da chave de retorno para "Yahoo", ou para um ícone de busca genérica em alguns casos.
+      
+      
+        kbv_returnkey_done
+        Define o título da chave de retorno como "Feito".
+      
+      
+        kbv_returnkey_continuar
+        Define o título da chave de retorno para "Continuar".
+      
+      
+        kbv_returnkey_emergência
+        Define o título da chave de retorno para "Chamada de Emergência".
+      
+    
+  
+   
+  
+    Tipo de autocapitalização: Esta constante é usada para determinar como as palavras digitadas através do teclado virtual devem ser autocapitalizadas. Os tipos de autocapitalização disponíveis são:
+  
+  
+    
+      
+        Tipo de autocapitalização
+        Descrição
+      
+      
+        kbvv_autocapitalize_none
+        A autocapitalização está desativada.
+      
+      
+        kbv_autocapitalize_words
+        As palavras serão auto-capitalizadas.
+      
+      
+        kbv_autocapitalize_sentenças
+        As sentenças serão auto-capitalizadas.
+      
+      
+        kbv_autocapitalize_characters
+        Todos os caracteres serão capitalizados.
+      
+    
+  
+   
+  O último argumento é ativar/desativar o texto preditivo, e isso seria definido como verdadeiro para permitir, e falso de outra forma, mas note que só porque é permitido não significa que será usado, pois isso dependerá das preferências
+    do usuário no dispositivo. Quando em modo texto preditivo, o teclado virtual não irá gerar eventos normais de pressionamento de teclas do GameMaker Studio 2. Ao invés disso, ele atualizará apenas o último caractere pressionado e as variáveis de seqüência de teclas. Isto é devido a
+    a incapacidade de detectar se uma mudança no campo de texto interno usado para detectar pressionamentos de tecla veio de uma tecla de teclado virtual real, ou de uma sugestão de texto. Nesses casos, você gostaria de ler a entrada do teclado_string em vez de
+    para ler qualquer tipo de entrada de chave bruta.
+  É importante notar também que o usuário receberá teclados diferentes com diferentes capacidades dependendo do SO da plataforma, com as seguintes advertências para uso por alvo:
+  
+    UWP: A implementação UWP não suporta retorno_tipo_chave, autocapitalização_tipo ou preditivo_texto_ativado. A inserção destes parâmetros em uma função não causará nenhum erro, eles simplesmente não terão nenhum
+      efeito sobre o teclado.
+    
+    Android: No Android, o teclado tipo kbv_type_phone_name não é suportado e exibirá um teclado ASCII, e o tipo de chave de retorno só pode ser kbv_returnkey_go, kbv_returnkey_search, kbv_returnkey_next,
+     kbv_returnkey_send ou kbv_returnkey_done. Se outros tipos de chave de retorno forem usados nessa plataforma, o sistema irá padrão para as chaves de retorno de substituição listadas abaixo:
+  
+  
+    
+      
+        Chave de retorno não disponível
+        Chave de substituição
+      
+      
+        kbv_returnkey_google kbv_returnkey_yahoo
+        
+        kbv_returnkey_search
+      
+      
+        kbv_returnkey_join kbv_returnkey_route
+           kbvv_returnkey_emergency
+        
+        kbv_returnkey_go
+      
+      
+        kbv_returnkey_continuar
+        kbv_returnkey_next
+      
+    
+  
+   
+  
+    AndroidTV/ FireTV: Os tipos de teclas de retorno personalizadas não são suportados nos teclados ASCII - a tecla de retorno padrão será sempre exibida.
+    
+    tvOS: Texto preditivo e auto-capitalização não são suportados no tvOS, e a altura do teclado retornado por eventos do sistema e a função keyboard_virtual_height() irá padrão para a altura da tela devido ao fato de abranger todo o
+      e devido às funções de dimensões retas do teclado estarem desabilitadas no tvOS. Observe também que os eventos físicos (bluetooth) do teclado não serão transmitidos, a menos que o teclado virtual tenha sido aberto.
+  
+  Chamando esta função, será gerado um Evento Assíncrono de Sistema, no qual o mapa DS de carga assíncrona será preenchido com os seguintes pares chave/valor:
+  
+    "event_type" - este será o "status do teclado virtual" quando acionado pelas funções do teclado virtual.
+    
+    "screen_height" - a altura do teclado virtual (em pixels). Esta será 0 se o teclado for invisível.
+    
+    "keyboard_status" - o status atual do teclado, retornado como uma das seguintes seqüências:
+      
+        "escondido".
+        "escondido".
+        "mostrando"
+        "visível"
+      
+    
+  
+   
+  Sintaxe
+  keyboard_virtual_show(teclado_type, return_key_type, autocapitalização_type, predictive_text_enabled);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tipo_de_teclado
+        Determina o conjunto de teclas disponível no teclado virtual.
+      
+      
+        return_key_type
+        Determina o que é mostrado na tecla de retorno/ação do teclado virtual.
+      
+      
+        autocapitalização_type
+        Determina como/se as palavras digitadas através do teclado virtual serão autocapitalizadas.
+      
+      
+        predictive_text_enabled
+        Ajustar para verdadeiro/falso para ativar/desativar a entrada de texto preditivo.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se input === falso {
+     input = verdadeiro; keyboard_virtual_show(kbv_type_numbers, kbv_returnkey_default, kbv_autocapitalize_none, false); }
+  
+  O código acima trará o teclado virtual do SO se a variável dada não for definida como verdadeira.
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Chaves e Teclados Virtuais
+        Próximo: keyboard_virtual_hide
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,43 @@
+
+  
+  camera_get_view_target
+  Esta função pode ser usada para recuperar o seguinte alvo da câmera em questão. O valor de retorno pode ser um índice de objeto, um ID de instância ou -1 se nenhum alvo seguinte tiver sido definido.
+   
+  Sintaxe:
+  camera_get_view_target(camera_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        camera_id
+        O valor único de identificação da câmera retornou quando você criou a câmera
+      
+    
+  
+   
+  Devoluções:
+  Índice de objetos, ID da instância, ou -1 se nenhuma meta for definida.
+   
+  Exemplo:
+  var target = camera_get_view_target(view_camera[0]); if target != obj_Player {
+     camera_set_view_target(view_camera[0], obj_Player); }
+  
+  O código acima recupera o seguinte alvo da câmera designada para visualizar a porta[0] e depois verifica se ela corresponde ao índice de objetos "obj_Player". Se não corresponder, então a câmera de visualização é definida para seguir uma instância desse objeto.
+   
+   
+   
+  
+    
+      
+        Voltar: Câmeras e Ver Portos
+        Próximo: camera_get_default
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

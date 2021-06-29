@@ -1,0 +1,51 @@
+
+  
+  display_reset
+  Esta função repõe as configurações de exibição para as que foram definidas quando o jogo foi iniciado, mas também permite alterar o nível atual de anti-aliasing em tela cheia que está sendo usado e se deve ser usada a sincronização vertical. O anti serrilhamento disponível
+    são 0,2,4 e 8, com o valor inicial padrão sendo definido como 0, e a configuração padrão v-sync é falsa (off). Aativação do v-sync pode proporcionar uma experiência de jogo mais suave, mas também precisará de mais poder de processamento e, portanto, seu impacto deve ser considerado
+    cuidadoso antes de usar, e o mesmo vale para o anti-aliasing onde quanto maior o número, mais processamento é necessário.
+  Como nem todos os dispositivos alvo são iguais, alguns podem não suportar 8x ou 4x anti-aliasing, por exemplo, e por isso há uma variável de leitura apenas disponível para obter os diferentes níveis de AA que o dispositivo executando o jogo pode exibir:
+  display_aa
+  Esta variável retornará um valor inteiro baseado na definição de bits para os diferentes níveis. Assim, para apenas 2xAA, isto reportará 2, para 2x e 4x disponibilidade, reportará 6. Para 8 e 4, ela relatará 12. Para todos os 3 níveis (2,4 e 8), ele irá
+    relatório 14.
+   
+  Sintaxe:
+  display_reset(aa, vsync);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        aa
+        O nível de filtragem anti-aliasing (0, 2, 4 ou 8).
+      
+      
+        vsync
+        Alternar a sincronização vertical para ligar (verdadeiro) ou desligar (falso).
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  if (display_aa > 12) { display_reset(8, true); }
+  O código acima estabelecerá o nível de anti-aliasing para 8 se suportado e mudará o v-sync para on.
+   
+   
+   
+  
+    
+      Câmeras e Display
+        Voltar: 
+        Próximo: display_get_width
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

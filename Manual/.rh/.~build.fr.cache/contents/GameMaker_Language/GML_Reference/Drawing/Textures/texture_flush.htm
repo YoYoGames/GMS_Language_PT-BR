@@ -1,0 +1,45 @@
+
+  
+  textura_flush
+  Esta função pode ser usada para "nivelar" uma página de textura ou um grupo de páginas de textura, ou seja: removê-las da VRAM quando não forem mais necessárias. Você fornece o ID da página de textura única (como retornado pelas funções de grupo de textura_* ) para nivelar
+    uma única página, ou você pode fornecer um nome de grupo de textura (como definido no Editor do Grupo de Textura) para lavar todas as páginas de textura do grupo.
+   
+  Sintaxe:
+  text_flush(tex_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tex_id
+        O ID da página de textura (um número inteiro) ou um ID do grupo de textura (um fio)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var _tex_array = textgroup_get_textures( "MainMenu"); for (var i = 0; i < array_length(_tex_array); ++i;)  {
+     text_flush(_tex_array[i]);
+     }
+  
+  O código acima irá nivelar todas as páginas de textura sob o grupo de textura "MainMenu".
+   
+   
+   
+  
+    
+      
+        Voltar: Texturas
+        A seguir: texturas_debug_messages
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

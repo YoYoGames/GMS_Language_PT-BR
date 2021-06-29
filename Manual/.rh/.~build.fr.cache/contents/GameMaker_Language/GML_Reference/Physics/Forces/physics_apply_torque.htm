@@ -1,0 +1,47 @@
+
+  
+  physics_apply_torque
+  Quando falamos de torque, geralmente estamos falando da tendência de uma força ou impulso para girar uma instância sobre seu centro de massa, mas no GameMaker Studio 2 você também pode aplicar torque independentemente a uma instância, fazendo com que ela gire
+    em uma determinada direção. Quanto torque você aplica para obter a rotação desejada, tudo depende do tamanho e da densidade da fixação que você atribui à sua instância, pois ambas as propriedades vão no sentido de definir sua massa, o que define sua inércia, o que afeta
+    torque! A regra geral é que se uma instância tem muita inércia, será necessário muito torque para que ela comece a girar. Deve-se notar também que outros fatores como gravidade e colisões também podem afetar o torque de uma instância.
+    Aqui está uma imagem para ajudar a explicar:
+  Como você pode ver, a quantidade de torque que você precisa para girar o objeto depende do
+    massa subjacente e inércia que ela dá. Tudo isso é calculado para você pelo GameMaker Studio 2 com base no tamanho e densidade da fixação que é atribuída à instância quando ela é criada. Observe também que para rotação no sentido anti-horário, o
+    valor deve ser negativo.
+   
+  Sintaxe:
+  physics_apply_torque(torque)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        torque
+        O torque (em Newton metros) a ser aplicado
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if keyboard_check(vk_left) { physics_apply_torque(-100); }
+  O código acima girará a instância no sentido anti-horário (para a esquerda) com um torque de 100Nm quando a tecla de seta para a esquerda for pressionada.
+   
+   
+   
+  
+    
+      
+        Voltar: Forças
+        A seguir: física_aplicar_impulso_angular
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,48 @@
+
+  
+  layer_hspeed
+  Você pode usar esta função para definir a velocidade horizontal (em pixels por frame de jogo) da camada dentro da sala atualmente escopada. Você fornece a identificação da camada (que você obtém quando cria a camada usando layer_create())
+    ou o nome da camada (como um fio - isso terá um impacto no desempenho) e o valor da velocidade a ser definida, onde um valor positivo é para a direita e um valor negativo para a esquerda.
+   
+  Sintaxe:
+  layer_hspeed(layer_id, hspd)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada para definir a velocidade horizontal de
+      
+      
+        hspd
+        A velocidade horizontal (em pixels por frame de jogo) a ser definida
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var lay_id = layer_get_id("Sprites"); if layer_get_hspeed(lay_id) != 0 || layer_get_vspeed(lay_id) != 0 {
+     layer_hspeed(lay_id, 0); layer_vspeed(lay_id, 0); }
+  
+  O código acima verifica as velocidades horizontal e vertical da camada dada e, se ambas não estiverem ambas ajustadas a 0, então é ajustado para 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próximo: layer_vspeed
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

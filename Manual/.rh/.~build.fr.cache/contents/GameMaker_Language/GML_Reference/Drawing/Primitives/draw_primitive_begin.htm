@@ -1,0 +1,58 @@
+
+  
+  draw_primitive_begin
+  Esta função deve ser chamada antes que você possa definir quaisquer primitivos. Existem 6 tipos de primitivos que você pode definir com as seguintes constantes:
+  
+    pr_lista de pontos
+    pr_linelist
+    pr_linestrip
+    pr_trianglelist
+    pr_trianglestrip
+    pr_trianglefan
+  
+   
+  A imagem a seguir ilustra basicamente como estes devem ser e também a ordem na qual você deve definir os vértices:
+  Favor notar que em algumas plataformas(Windows, UWP, XBox) o tipo pr_trianglefan não é nativo.
+    e assim o GameMaker Studio 2 faz uma conversão quando o jogo é compilado para fazê-los funcionar. Isto significa que nessas plataformas o tipo pr_trianglefan será muito mais lento de usar do que as outras. Isto também observa que para usar isto
+    em HTML5, você deve habilitar o WebGL nas Opções de Jogo.
+   
+  Sintaxe:
+  draw_primitive_begin(tipo)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tipo
+        O tipo de primitivo que você vai desenhar.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var _passos = 20; var _xx = 50; var _yy = 50; var _radius = 30; draw_primitive_begin(pr_trianglefan);
+     draw_vertex(_xx, _yyy); for(var i = 0; i <= _passos; ++i;) {
+     draw_vertex(_xx + lengthdir_x(_radius, 270 * i / _steps), _yy + lengthdir_y(_radius, 270 * i / _steps)); }
+     draw_primitive_end();
+  
+  O código acima desenhará três quartos de um círculo feito de primitivos.
+   
+   
+   
+  
+    
+      
+        Voltar: Primitivos e formatos de vértices
+        A seguir: textura_de_sorteio_primitivo_begin_textura
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

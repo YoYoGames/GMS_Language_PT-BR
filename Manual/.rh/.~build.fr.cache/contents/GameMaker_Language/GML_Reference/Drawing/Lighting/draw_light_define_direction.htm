@@ -1,0 +1,60 @@
+
+  
+  draw_light_define_direction
+  Esta função é para definir uma luz direcional, onde a direção e a intensidade são definidas pelos valores de entrada para o vetor de unidade x, y e z (significando que devem estar entre -1 e 1, onde 1 ou -1 é intensidade total, e 0 não é intensidade). O
+    As luzes também podem receber uma cor, o que também afetará a intensidade percebida da luz, pois certas cores parecem "mais escuras" do que outras. Você também deve dar à luz um número índice que será usado em outras funções para referência
+    isso.
+  NOTA: Há apenas 8 luzes de hardware disponíveis, portanto apenas 8 luzes definidas podem ser habilitadas a qualquer momento (embora mais possam ser definidas).
+   
+  Sintaxe:
+  draw_light_define_direction(ind, x, y, z, col);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O número do índice da luz (arbitrário)
+      
+      
+        x
+        O componente x do vetor de luz
+      
+      
+        y
+        O componente y do vetor de luz
+      
+      
+        z
+        O componente z do vetor de luz
+      
+      
+        col
+        A cor a ser usada para a luz (ou um valor constante, real ou hexadecimal).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_set_lighting(true); draw_define_define_direction(1, 0, 1, 0, c_white); draw_light_enable(1, true);
+  O código acima permitirá a iluminação de toda a cena, depois definirá uma luz direcional branca no espaço da sala e, finalmente, acenderá essa luz.
+   
+   
+   
+  
+    
+      
+        Voltar: Iluminação
+        Próximo: draw_light_enable
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

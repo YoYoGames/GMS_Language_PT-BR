@@ -1,0 +1,50 @@
+
+  
+  Código de edição
+  Quando você começa a usar o editor de scripts, é simplesmente um caso de digitação do código que você quer ter para o ativo do script ou para o evento, seguindo a sintaxe correta do GML . Enquanto você faz isso,
+    você receberá ajuda da janela do auto-completar:
+  Esta janela aparecerá enquanto você estiver escrevendo seu código (normalmente após uma pequena pausa, mas isto pode ser definido nas Preferências)
+    e lhe dar uma seleção de respostas "melhor adaptação" em ordem alfabética.
+  Ao usar o editor de código você pode clicar em  e arrastar o mouse para selecionar uma linha de código ou manter pressionado , depois clicar em  e arrastar para selecionar colunas de código. Qualquer coisa selecionada desta maneira pode então ser copiada, cortada e colada usando
+    os atalhos de teclado padrão de  /  + " C",  /  + "X" e  /  + "V".
+  Vale a pena notar que você pode comentar seu código de várias maneiras. Comentar seu código é muito importante para manter a produtividade, pois mantém as coisas claras e separa as seções do código de tal forma que é óbvio o que cada
+    parte faz e porque está lá. Também significa que se você estiver trabalhando em equipe, poderá deixar notas para os outros membros e que eles saberão exatamente o que você fez ou para que serve uma seção específica do código. Mesmo se você for um desenvolvedor solo,
+    deixar comentários em seu código é importante, especialmente se você tiver que deixar o projeto e voltar a ele em uma data posterior.
+  Comentar seu código é simples, pois você só precisa usar "//" antes de qualquer linha de texto ou você pode comentar parágrafos inteiros usando "/* text here */". Há até dois teclados
+    atalhos para comentar e descomentar linhas de código selecionadas:  /  + "K" para comentar, e  /  +  + "K" para des-comentar. A seguinte imagem ilustra o código escrito usando estes dois métodos
+    assim como alguns comentários do JS Doc (explicados com mais detalhes):
+  Os scripts também podem ter certos comentários em estilo JSDoc adicionados para definir as propriedades das funções que eles contêm, de modo que quando você usa
+    as funções em seu código aparecem em auto-completar juntamente com seus argumentos e outros detalhes. Você pode saber mais sobre isto na seção JSDoc Script Comments para mais informações.
+  Por padrão, todos os códigos escritos terão ícones de código dobráveis ao lado de cada conjunto de chaves correspondentes {}. Estes assumem a forma de um pouco mais de + ou menos de - ícones, e clicando neles, o código será "dobrado" dentro das chaves correspondentes, de modo a ocupar menos espaço visual.
+  Você também pode definir manualmente regiões dobráveis de código usando as tags especiais #region para marcar uma seção de código. Como isto funciona é que você adiciona uma tag #region (junto com qualquer texto de comentário) ao topo do
+    uma seção de código e então adicionar uma tag #endregion correspondente no final da seção e então você pode "dobrar" o código, ou seja: escondê-lo para que você possa cortar o número de linhas de código visíveis no editor
+    a qualquer momento:
+  O código atual parece algo parecido com isto:
+  #Esta é uma região exemplo
+     width = sprite_get_width(sprite); height = sprite_get_height(sprite); xoff = sprite_get_xoffset(sprite); yoff = sprite_get_yoffset(sprite);
+     #endregion Comentário adicional aqui se necessário
+  Como você deve ter notado, partes do texto do roteiro são coloridas. O editor do roteiro "conhece" objetos existentes, variáveis e funções incorporadas, etc... e os códigos de cores correspondentes. Os códigos de cores ajudam muito a evitar erros
+    como você pode ver imediatamente se você escreveu mal algum nome ou usou uma palavra-chave como variável, ou tem um erro de sintaxe. Entretanto, se você não gostar do código de cores, nas Preferências você pode ligá-lo e desligá-lo (você também pode usar F10 para ligá-lo ou desligá-lo no editor), bem como personalizar as cores que são usadas.
+  Você também pode clicar com o botão direito em  em qualquer lugar do editor para abrir o menu a seguir:
+  Além das funções regulares que você esperaria cortar, copiar e colar linhas de código, você também tem a opção de comentar ou descomentar
+    qualquer texto selecionado, adicionar ou remover travessões, assim como dividir a janela de código em 1, 2 ou 3 painéis separados (note que as opções relacionadas a #regions não estarão disponíveis se você não tiver definido nenhum no código que está sendo editado).
+  A última opção para dividir em painéis dividirá a janela real em diferentes partes onde você pode então arrastar um roteiro ou evento e fazer com que ele seja exibido junto com os outros para comparação e edição.
+  Isto é excepcionalmente útil para comparar dois scripts ou para visualizar scripts conectados ao mesmo tempo, sem precisar de outra janela
+    ou ter que alternar constantemente entre as abas.
+  As outras opções neste menu são alternar um ponto de parada para uso com o Debugger, e converter o código GML em DnD™ou vice-versa. Observe que se converter o código para DnD™, então ele não criará
+    ações individuais para cada linha de código, mas use uma única ação de código para manter tudo o que estava anteriormente no evento ou roteiro.
+   
+   
+   
+  
+    
+      
+        Voltar: O Editor Roteiro
+        A seguir: Comentários JSDoc
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

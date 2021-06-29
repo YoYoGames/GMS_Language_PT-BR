@@ -1,0 +1,46 @@
+
+  
+  file_text_writeln
+  Com esta função, você pode escrever uma nova linha em um arquivo de texto aberto. Desta forma, você pode pular linhas ou escrever informações linha por linha (veja o código de exemplo abaixo).
+   
+  Sintaxe:
+  file_text_writeln(fileid);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fileid
+        A identificação do arquivo a ser editado.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var file = file_text_open_write(working_directory + "hiscore.txt"); for (var i = 0; i < 10; ++i;) {
+     file_text_write_real(file, scr[i]); file_text_writeln(file);
+     file_text_write_string(file, scr_name[i]); file_text_writeln(file);
+     }
+     file_text_close(file);
+  
+  O código acima abre um arquivo para escrita e depois percorre duas matrizes, escrevendo cada valor de matriz em uma nova linha do arquivo. O arquivo é então fechado quando o loop tiver terminado.
+   
+   
+   
+  
+    
+      
+        Voltar: Arquivos de texto
+        Próximo: file_text_eoln
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

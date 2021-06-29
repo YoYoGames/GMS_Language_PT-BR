@@ -1,0 +1,100 @@
+
+  
+  window_get_cursor
+  Com esta função você pode obter o cursor atual sendo usado na janela do jogo, sendo o valor de retorno qualquer uma das constantes listadas abaixo (para definir o cursor atual sendo usado você pode usar a função window_set_cursor()    que também toma estas constantes):
+   
+  
+    
+      
+        Constante
+        Cursor
+      
+      
+        cr_none
+         
+      
+      
+        cr_default
+        
+      
+      
+        cr_arrow
+        
+      
+      
+        cr_cross
+        
+      
+      
+        cr_beam
+        
+      
+      
+        cr_size_nesw
+        
+      
+      
+        cr_size_ns
+        
+      
+      
+        cr_size_nwse
+        
+      
+      
+        cr_size_we
+        
+      
+      
+        cr_uparrow
+        
+      
+      
+        cr_hourglass
+        
+      
+      
+        cr_drag
+        
+      
+      
+        cr_appstart
+        
+      
+      
+        cr_handpoint
+        
+      
+      
+        cr_size_all
+        
+      
+    
+  
+   
+  Sintaxe:
+  window_get_cursor();
+   
+  Devoluções:
+  Constante
+   
+  Exemplo:
+  if mouse_check_button_pressed(mb_left) {
+     if window_get_cursor() != cr_drag window_set_cursor(cr_drag); }
+  
+  O código acima mudará o cursor da janela para o cursor de arrastar da janela padrão se o botão esquerdo do mouse tiver sido pressionado e ainda não tiver sido alterado anteriormente.
+   
+   
+   
+  
+    
+      
+        Voltar: A Janela de Jogo
+        Próximo: window_get_visible_rects
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

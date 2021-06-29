@@ -1,0 +1,44 @@
+
+  
+  Ref_ref_create fraco
+  Com esta função você pode criar uma fraca referência a uma estrutura que pode então ser usada para verificar se a estrutura ainda está "viva" (referenciada) ou não no jogo. Você fornece a
+    referência à estrutura que você deseja rastrear, e a função retornará outra estrutura que é uma referência fraca a essa estrutura. Note que você pode verificar se uma referência é "forte" ou "fraca", usando a função instanceof(),
+    como uma referência forte retornará ou "struct" ou o nome da função do construtor que criou a estrutura, ou "weakref" se for uma referência fraca. Observe também que
+    a fraca estrutura de referência terá uma variável "ref" que poderá ser acessada para obter a referência da string à estrutura em questão, a menos que tenha sido recolhida, caso em que retornará undefined.
+   
+  Sintaxe:
+  weak_ref_create(struct_to_track);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        structure_to_track
+        A estrutura para a qual você quer criar uma referência fraca
+      
+    
+  
+   
+  Devoluções:
+  Estrutura
+   
+  Exemplo:
+  inventory_ref = weak_ref_create(inventário);
+  O código acima cria uma referência fraca a uma estrutura e a armazena em uma variável de instância para uso posterior.
+   
+   
+   
+  
+    
+      
+        Voltar: Coleta de Lixo
+        A seguir: fraco_ref_alive
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

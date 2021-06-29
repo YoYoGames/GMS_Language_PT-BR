@@ -1,0 +1,32 @@
+
+  
+  tilemap_get_global_mask
+  Esta função pode ser usada para recuperar o valor da máscara de bit para todos os mapas de azulejos, retornando o valor atual da máscara ou -1 se houver um erro ou 0 se nenhuma máscara for especificada. Para maiores informações sobre as máscaras de bit map global de azulejo, veja a função tilemap_set_global_mask().
+   
+  Sintaxe:
+  tilemap_get_global_mask();
+   
+  Devoluções:
+  Real (0 para sem máscara, -1 para um erro, valor da máscara caso contrário)
+   
+  Exemplo:
+  var máscara = tilemap_get_global_mask(map_id); var nova_mascara = tile_mirror | tile_flip | tile_rotate | 255; se máscara != nova_mascara {
+     tilemap_set_global_mask(new_mask);
+     }
+  
+  O código acima obtém o valor global da máscara associado a todos os mapas de azulejos. Se não for o mesmo que o valor definido na variável "new_mask", então ele é definido para esse valor.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas do mapa de azulejos
+        Próximo: tilemap_get_tileset
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

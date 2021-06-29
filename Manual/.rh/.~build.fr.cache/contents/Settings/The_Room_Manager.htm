@@ -1,0 +1,63 @@
+
+  
+  O gerente de sala
+  Ao utilizar o Navegador de Ativos, você pode criar seus quartos e movê-los entre
+    os diferentes grupos de pastas para organizar o projeto da maneira que melhor lhe convier. Entretanto, os jogos no GameMaker Studio 2 geralmente têm salas que seguem uma determinada ordem, e no mínimo devem ter uma sala de partida específica (depois
+    o jogo começa nesta sala, você pode usar código ou ações para ir a qualquer sala do jogo se desejar), que é onde o Gerente de Sala entra em jogo.
+  Você pode abrir o gerente da sala clicando no botão "Extras"  na parte superior do Navegador de Ativos e selecionando-o no menu que se abre, ou você pode
+    basta clicar em  o ícone à esquerda de uma sala no navegador de ativos:
+  Uma vez aberto, o Gerente de Sala lhe apresenta duas abas diferentes, uma para Pedido de Quarto e outra para Herança de Quarto.
+    A ordem das salas define a ordem na qual as salas serão acessadas se você estiver atravessando o jogo literalmente, usando a função room_goto_next() em
+    o final de cada quarto, e o quarto superior listado será sempre sinalizado pelo ícone "home" , o que mostra que este quarto é o designado
+    espaço de partida para o jogo. Este ícone também será mostrado no Navegador de Ativos para que você possa ver claramente qual é a sala, independentemente de como você tenha filtrado ou configurado seus ativos.
+  Nota: As identificações dos bens de seu quarto não estarão na mesma ordem definida nesta lista e, portanto, você não deve fornecer um valor numérico diretamente para mudar o quarto no momento da execução. Use sempre a constante da sala para o ativo que você deseja consultar (que é simplesmente seu nome) ou recupere-o através de uma função.
+  Você pode mudar a ordem das salas simplesmente clicando em  e arrastando a sala que deseja mover para cima ou para baixo da lista, e você pode usar  e/ou  /  para selecionar várias salas e depois clicar e arrastá-las para movê-las por completo:
+  A aba " Room Inheritance" é para a criação de quartos "infantis". Um quarto infantil é aquele que foi copiado de
+    um quarto "pai" e pronto para herdar todas as suas propriedades. Se você não fizer nada a esta sala, então esta sala será de fato uma cópia da sala original, mas você pode então ir para o Room Editor e
+    alternar a herança para coisas específicas como camadas ou instâncias, assim como adicionar novas camadas, instâncias e propriedades à sala.
+  Como na aba Ordem de quartos, você pode clicar em  e arrastar para reordenar os quartos, mas note que selecionando um quarto infantil e mudando-o para um pai ou mãe diferente quebrará a herança do quarto com o pai ou mãe original e, em vez disso, herdará as propriedades do novo quarto. Observe também que você pode converter
+    uma criança em uma sala "cheia" sem herança, arrastando-a para a esquerda da lista (a borda da lista se tornará destacada), quando ela simplesmente se tornará uma sala à sua própria direita.
+  Os quartos podem ter vários filhos, e cada criança também pode ser um dos pais e ter seus próprios filhos, por exemplo:
+  Aqui temos um quarto de pais, "rm_Level_1_Day", que tem dois filhos
+    "rm_Level_1_Day_AfterBattle" e "rm_Level_1_Night". Também designamos outro quarto infantil para "rm_Level_1_Night" chamado ".
+    rm_Level_1_Night_AfterBattle ". Desta forma, você pode reutilizar os recursos e o projeto de nível de um quarto de um dos pais e, em seguida, alterar apenas o que é necessário para torná-lo ligeiramente diferente no quarto ou quartos da criança.
+  NOTA: Para maiores informações sobre herança de quartos, por favor, veja aqui.
+  Finalmente, o gerente da sala tem algumas ferramentas extras para ajudar você a navegar e organizar seus quartos. No topo você tem uma Barra de Busca que lhe permite adicionar um termo de busca e depois ir rapidamente para as salas que têm o termo de busca em suas
+    nomes. As salas que possuem o termo de busca serão destacadas, e então você poderá navegar até elas instantaneamente usando os botões para cima/para baixo na lateral:
+  Há também alguns botões úteis na parte inferior do Room Manager que lhe permitem mover salas para cima ou para baixo da lista de pedidos de salas:
+  Ao lado destes botões você também tem um botão Criar Grupo que pode ser usado para criar uma pasta de grupo.
+    Estas pastas podem ser usadas para organizar melhor as salas em seu jogo (a ordem das salas ainda será respeitada), e você pode clicar e arrastar as salas para a pasta para adicioná-las. Você também pode selecionar várias salas clicando em  e/ou  / , depois clique no botão Criar grupo e todas as salas selecionadas serão adicionadas ao grupo. Note que isto mudará a ordem das salas em seu jogo, e também note que se você optar por excluir a pasta do grupo mais tarde, quaisquer salas dentro da pasta também serão excluídas (por
+    padrão GameMaker o advertirá sobre isto).
+  Você também deve observar que pode clicar com o botão direito do mouse em qualquer sala do Room Manager para abrir o menu a seguir:
+  Este menu lhe dá as seguintes opções:
+  
+    Criar quarto para crianças: Isto criará um novo quarto como uma criança do quarto que foi clicado, com o novo quarto herdando as propriedades do quarto dos pais.
+    Edição: Isto abrirá o Editor da Sala para a sala.
+    Editar Etiquetas: Isto abrirá o Tag Editor para que você possa adicionar tags à sala.
+    Renomear: Isto permite que você renomeie o bem da sala (você também pode fazer um duplo clique lento  na sala para renomeá-la).
+    Duplicar: Isto irá duplicar a sala selecionada, colocando a nova sala sob a sala selecionada.
+    Favorito:  Isto adicionará a sala selecionada à seção de Favoritos do Navegador de Ativos.
+    Excluir: Clicando aqui, a sala (ou salas) que foram selecionadas será excluída. Se usado em uma pasta de grupo, todas as salas dentro da pasta serão deletadas junto com a pasta. Se usado em uma sala pai, somente a sala pai será excluída,
+      e todos os quartos para crianças permanecerão, embora agora eles serão independentes e não mais quartos para crianças.
+    Expandir as crianças: Se uma pasta de grupo for selecionada, esta opção expandirá o conteúdo da pasta.
+    Expandir tudo: Esta opção expandirá todos os grupos de pastas.
+    Colapsar tudo: Esta opção irá colapsar todos os grupos de pastas.
+    Organizar:  O submenu de arrumação pode ser usado para mover salas para cima ou para baixo no gerenciador de salas, muito parecido com os botões na parte inferior da janela do gerenciador.
+    Abrir no Explorer: Isto abrirá um explorador de arquivos de SO sobre o ativo no projeto do jogo.
+    Cor do ativo: Aqui você pode selecionar uma cor para a sala (ou salas) para ajudar a identificá-las no Gerente da Sala. Note que esta cor também será usada no Navegador de Ativos e substituirá qualquer cor que tenha sido definida anteriormente.
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Configurações do jogo
+        A seguir: Arquivos Incluídos
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

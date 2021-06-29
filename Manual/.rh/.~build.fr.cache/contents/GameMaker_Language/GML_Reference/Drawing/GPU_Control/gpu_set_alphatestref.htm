@@ -1,0 +1,50 @@
+
+  
+  gpu_set_alphatestref
+  Esta função definirá o valor de referência para o teste alfa (quando tiver sido habilitado usando o gpu_set_alphatestenable()). Este é o limiar de "corte" no qual os pixels com alfa
+    não será sorteado.
+  Basicamente, se você tiver este valor ajustado para 0 e tiver a interpolação linear ativada (seja nas Opções de Jogo ou usando gpu_set_texfilter()), você ainda pode obter erros visuais nas bordas de sobreposição
+    objetos. Isto porque você pode ter áreas quase completamente transparentes que bloqueiam coisas desenhadas atrás delas, mas se você definir este valor de referência para, por exemplo, 254 (ou seja, um abaixo do máximo), isto garante que apenas 100% dos pixels opacos são
+    será sorteado. Você também pode desligar a interpolação de textura, o que normalmente lhe permitiria usar os valores padrão sem problemas e sem necessidade de usar esta função, porém muito depende da arte de origem.
+  NOTA: Este é um recurso avançado de desenho, portanto se você não tem certeza se precisa ou não, ou não sabe exatamente o que ele faz, provavelmente é melhor não usá-lo, pois pode corromper seriamente a forma como seu jogo é desenhado.
+   
+  Sintaxe:
+  gpu_set_alphatestref(val);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        val
+        Define o valor de referência para testes alfa de 0 a 255 (valor padrão é 0)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if !gpu_get_alphatestenable() {
+     gpu_set_alphatestenable(true);
+     gpu_set_alphatestref(128);
+     }
+  
+  O código acima verificará se o teste alfa está ativado e se não estiver, ligará o teste alfa e definirá o limite de teste para 128 (apenas pixels com um alfa acima de 0,5 serão desenhados).
+   
+   
+   
+  
+    
+      
+        Voltar: Controle de GPU
+        Próximo: gpu_set_texfilter
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

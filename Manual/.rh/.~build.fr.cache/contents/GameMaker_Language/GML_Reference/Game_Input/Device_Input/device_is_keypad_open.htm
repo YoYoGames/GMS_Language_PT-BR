@@ -1,0 +1,37 @@
+
+  
+  device_is_keypad_open
+  Isto faz uma verificação do dispositivo para um teclado e se um estiver disponível ele retorna verdadeiro, caso contrário ele retorna falso. Observe que esta função é principalmente para uso com dispositivos Android 
+  Para aqueles usuários com um Sony Xperia Play, existe um conjunto de botões/mapas-chave no GameMaker Studio 2, para que você possa usar as constantes de teclado vk_up, vk_down, vk_left,
+   vk_right para as teclas do joypad e Triangle é ord("T"), Square é ord("S" ), Circle é vk_alt + vk_backspace enquanto o botão voltar é simplesmente vk_backspace,
+   Cross é vk_space, Select é vk_return e Start é vk_rshift, o Trigger L é ord("L") e o Trigger R é ord("R" ).
+   
+  Sintaxe:
+  device_is_keypad_open
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if device_is_keypad_open() {
+     global.Setting = 2; }
+     mais
+     {
+     global.Setting = 1; }
+  
+  O código acima verifica se há um teclado e então muda uma variável global, dependendo do valor retornado.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada do dispositivo
+        Próximo: device_get_tilt_x
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,125 @@
+
+  
+  Usando a folha de papelão
+  O Folha de Droga é onde os dados das diferentes faixas adicionadas à seqüência são exibidos ao longo do tempo, dando a você não apenas
+    uma visão geral de cada faixa, mas também um meio de editar a posição das mesmas, bem como os horários para mudanças de parâmetros, etc...
+  Quando você adiciona um novo ativo a uma seqüência, um track do ativo será criado no Painel de Track e uma chave de ativo será adicionada ao
+   folha de drogadição na posição atual de cabeça de jogo. Esta chave refletirá o comprimento de jogo do ativo em quadros:
+  A chave do ativo em si pode então ser editada movendo o mouse para o início ou para o fim do quadro de teclas e quando o cursor
+    mudanças clicando em  e arrastando. Isto irá mover o início da chave ou o final da chave, dependendo de qual você selecionou, mas ambos
+    irá afetar o comprimento da chave. Observe que você também pode mudar a posição de uma chave de ativos simplesmente clicando em  em qualquer lugar e arrastando para a esquerda ou direita:
+  Além das chaves de ativos, a folha de drogadição também mostrará a chave de parâmetro
+   s. As chaves de parâmetros são inicialmente "pontos" no tempo onde você sinaliza uma mudança em um bem para o bem ao qual estão relacionados, e a seqüência usará o valor para aquele ponto para mudar o bem. Como isto será feito dependerá se
+      você definiu as chaves para interpolação linear ou não no Painel de Pista. As teclas de parâmetros, como as teclas de faixa, podem ser movidas clicando em  e arrastando-as ao longo da linha de tempo para uma nova posição, e você também pode estender a tecla para mais de um único quadro usando a tecla  ao mesmo tempo em que arrasta (o cursor mudará para mostrar isto). Isto significa que você pode manter os valores da chave ao longo do tempo antes de continuar com qualquer interpolação para a próxima chave:
+  Ao trabalhar com a folha de drogados, os atalhos usuais do teclado também podem ser usados, ou seja:  /  e o botão esquerdo do mouse  para selecionar uma ou mais faixas em qualquer ordem,  e o botão esquerdo do mouse
+     para selecionar faixas consecutivas, e você também pode cortá-las, copiá-las e colá-las usando as combinações de teclas  /  +"X",  /  + "C" e  /  + "V".
+  Há também diferentes opções de teclas disponíveis no menu  do botão direito do mouse, que são detalhadas abaixo. Observe que ao colar as teclas na folha de papelão usando estas
+    as chaves serão coladas na posição atual da cabeça de jogo.
+  Essa é a base do uso da folha de drogadição , mas abaixo entramos em um pouco mais de detalhes sobre para que serve cada uma das diferentes seções e como utilizá-las:
+   
+  Região Início / Região Fim
+  
+    Estes marcadores são os pontos de início e fim da região do clipe. Eles podem ser usados para definir uma seção específica da seqüência a ser mostrada na sala quando o jogo for executado, e também serão usados como pontos do laço ao prever a seqüência
+      no editor. Estes pontos não podem ser maiores ou menores do que o comprimento total da seqüência como definido no Editor de Seqüências Controles de Seqüências. Para mudar a posição de um marcador de região de clipe, basta clicar em  e arrastá-los para o quadro desejado.
+     
+  
+  Controles de Zoom
+  
+    Esta barra é usada para mostrar o zoom atual da folha de papelão e também pode ser usada para alterar este nível de zoom. Você pode clicar em  nos widgets finais e depois arrastar para mudar o nível de zoom:
+    
+    Observe também que você pode aumentar ou diminuir o zoom da folha de papel usando a tecla  /  e a roda do mouse .
+    
+  
+  Faixas de ativos
+  
+    As faixas de ativos são representadas na folha de papelão como "chaves", que são barras coloridas que representam a posição do ativo e o tempo em que ele está ativo na seqüência. Como mencionado acima, estas podem ser movimentadas e alongadas
+      e encurtado conforme necessário. Note que uma chave de faixa de bens que seja mais longa que o próprio bem em duração - por exemplo, um som pode durar 5 quadros e você estica sua chave para 15 quadros - será repetida por toda a duração de sua chave. Ativo
+      faixas e teclas podem ser copiadas e coladas usando os atalhos de teclado padrão ou ainda modificadas usando o botão direito do mouse  opções de menu (explicado mais abaixo
+      esta página).
+    Se você excluir uma chave de faixa de ativos, isto não exclui a faixa em si, nem exclui nenhum parâmetro de faixa que tenha sido adicionado, ele simplesmente exclui a chave de ativos da folha de papel. Se não houver mais chaves para esta faixa, você pode readmitir
+      arrastando um ativo do Navegador de Ativos para a folha de papel e ele será adicionado como uma nova chave, mas note que você não pode adicionar um ativo que seja distinto do ativo original (ou seja: se você excluir uma chave para um duende, você não poderá então adicionar um som
+      ativo nessa posição-chave).
+     
+  
+  Rastos de parâmetros
+  
+    As faixas de parâmetros são representadas na folha de papelão como barras coloridas embaixo da faixa principal do ativo a que pertencem. As barras de cor em si não podem ser editadas e são puramente uma representação visual da pista que as chaves dos parâmetros estão sendo
+      aplicados, e são os pontos individuais na faixa de parâmetros que são editados (ver Chaves de parâmetros, abaixo).
+     
+  
+  O Cabeça de Jogo
+  
+    O playhead é a posição no tempo em que a linha do tempo está sendo visualizada atualmente. Esta posição é usada quando se deixam cair ativos na Tela de Seqüência para definir a posição onde eles também foram adicionados.
+      como uma série de outras coisas, como adicionar parâmetros, ou dividir chaves. Quando você pressiona "play" na tela do editor de seqüência, o playhead se moverá através da seqüência, e você também pode clicar em  e arrastá-lo para se mover para um quadro específico dentro da seqüência ou para "scrub" sobre vários quadros e obter um rápido
+      sem tocar a coisa toda.
+    
+  
+  Chaves de parâmetros
+  
+    As teclas de parâmetros são os "pontos" mostrados em uma faixa de parâmetros onde quer que tenha ocorrido uma mudança nesse parâmetro. Estes pontos podem ser movidos conforme necessário e expandidos para que durem mais de um quadro (como explicado mais acima nesta página), e
+      você pode editar seu valor a partir do Painel de Trilha, ou alterando o ativo na tela (se for uma escala, posição ou parâmetro de rotação). Observe que todos os parâmetros de faixa
+      também será refletido como um ponto na faixa de chaves de ativos à qual o parâmetro pertence, mas estes pontos não podem ser editados e estão lá como uma ajuda informativa quando as diferentes faixas de parâmetros no painel de pistas tiverem caído.
+    
+  
+  Curvas de parâmetros
+  
+    A folha de papel também permite que você utilizecurvas  paremétricas em vez de quadros-chave em suas faixas de parâmetros para alterar os valores dos parâmetros. Estas curvas podem ser incorporadas como parte do ativo da seqüência,
+      ou podem ser ativos de curva de animação externa que são aplicados a uma pista de parâmetros. Veja a seção sobre Usando Curvas de Animação      para mais informações.
+     
+  
+   
+   
+  Menu RMB
+  Clicando com o botão direito do mouse  dentro da folha de papelão em uma pista de ativos, surgirão as seguintes opções de menu (note que algumas opções podem não estar visíveis
+    dependendo se a parte da pista clicada tem ou não uma chave):
+  
+  
+    Cortar, Copiar e Colar chave(s): Estas opções permitem cortar/copiar/colar ativos. Note que qualquer chave colada na folha de papel usando estas opções será colada na posição de cabeça de jogo.
+    Adicione a chave no lugar: Isto adicionará uma nova chave de ativos à faixa de ativos na posição do quadro mais próxima onde o mouse foi clicado, e não na posição de cabeça de jogo.
+    Chave Dividida no Local: Quando usado, isto dividirá a chave de ativos sob o mouse em duas chaves, com a divisão sendo criada no quadro mais próximo ao local onde o mouse foi clicado, e não na posição de cabeça de jogo.
+    Colar a(s) chave(s) no lugar: Quando você usa esta opção, a(s) chave(s) copiada(s) ou cortada(s) será(ão) colada(s) na posição mais próxima onde o botão direito do mouse foi clicado, e não na posição de cabeça de jogo.
+    Eliminar a(s) chave(s): Selecionando isto será eliminada a chave ou chaves atualmente selecionadas.
+    Copiar para começar: Esta opção irá copiar a(s) chave(s) selecionada(s) para o início da seqüência(não o início da região do clipe).
+    Copiar para finalizar: Esta opção irá copiar a(s) chave(s) selecionada(s) até o final da seqüência(não o final da região do clipe).
+    Stretch Asset Key: Ao selecionar isto, a chave de ativo selecionada será esticada até o final da seqüência (não o final da região do clipe), ou esticada até o início de outra chave de ativo na mesma pista.
+    Excluir chave de ativos: Quando você usar isto, a chave de ativo selecionada será excluída e você poderá então adicionar um novo ativo à pista, arrastando-a do navegador de ativos para a pista da folha de papel que foi excluída. Isto criará um novo ativo
+      que pode então ser editada, mantendo qualquer rastro de parâmetro associado ao bem.
+  
+  Clicando com o botão direito do mouse  dentro da folha de drogados em uma faixa de parâmetros, surgirão as seguintes opções de menu (note que algumas opções podem não estar visíveis
+    dependendo se a parte da pista clicada tem ou não um quadro-chave e se a pista está usando quadros-chave ou curvas de parâmetros):
+  
+  
+    Cortar, Copiar e Colar chave(s): Estas opções permitem cortar/copiar/colar chaves de parâmetros. Note que qualquer chave colada na folha de papel usando estas opções será colada na posição de cabeça de jogo.
+    Adicione a chave no lugar: Isto adicionará uma nova chave de parâmetro à faixa de parâmetros na posição do quadro mais próxima onde o mouse foi clicado, e não na posição de playhead.
+    Chave Dividida no Local: Quando usado, isto dividirá a chave de parâmetro sob o mouse em dois quadros-chave, com a divisão sendo criada no quadro mais próximo ao local onde o mouse foi clicado, e não na posição de cabeça de jogo.
+    Colar a(s) chave(s) no lugar: Quando você usa esta opção, a(s) chave(s) copiada(s) ou cortada(s) será(ão) colada(s) na posição em que o botão direito do mouse foi clicado, e não na posição de playhead.
+    Eliminar a(s) chave(s): Selecionando isto será eliminado o quadro-chave ou quadros-chave atualmente selecionados.
+    Converter em Curva de Animais Embutidos: Esta opção converterá todos os quadros-chave para a(s) faixa(s) de parâmetros selecionada(s) em uma curva de animação embutida (veja a seção sobre Utilização de Curvas de Animação para
+      mais informações). Alternativamente, se usado em uma curva de parâmetros que usa um ativo Curva de Animação, isto copiará o ativo da curva para a pista como uma curva de parâmetros embutida.
+    Definir para Curva Externa de Animais: Esta opção permite atribuir um recurso de Curva de Animação à faixa de parâmetros (veja a seção sobre Utilização de Curvas de Animação para mais informações).
+    Converta para chaves: Com esta opção, você pode converter uma curva de animação em quadros-chave individuais. Note que se a curva tiver usado interpolação catmull-rom, esta
+      serão perdidos e os quadros-chave usarão interpolação linear entre os pontos da curva, e também observar que as chaves geradas a partir de uma curva de animação devem cair sobre um quadro.
+      Isto significa que qualquer curva com pontos que estejam entre quadros será colocada no valor inteiro de quadro mais próximo quando convertida em chaves, mudando potencialmente o comportamento da curva.
+    Curva de Animais Embutidos para Exportação: Esta opção permite pegar uma curva de animação embutida e convertê-la em um ativo de Curva de Animação, que será mostrado no Navegador de Ativos e poderá então ser usado em outro lugar.
+    Editor aberto: Isto abrirá o editor de curvas de folha de papel para editar curvas de animação embutidas ou externas que tenham sido aplicadas à pista paramétrica. Isto é o mesmo que usar o botão Toggle Curve Mode  na folha de papelão.
+    Copiar para começar: Esta opção copiará o(s) quadro(s) chave selecionado(s) para o início da seqüência(não o início da região do clipe).
+    Copiar para finalizar: Esta opção copiará o(s) quadro(s) chave selecionado(s) até o final da seqüência(não o final da região do clipe).
+    Chave de parâmetro de esticar: Ao selecionar isto, a chave de ativo selecionada será esticada até o final da seqüência (não até o final da região do clipe) ou até o próximo quadro-chave na pista. Uma chave de parâmetro esticada significa que ela
+      manter seu valor para tantas armações quantas forem esticadas. Se utilizada em uma curva de parâmetros, a curva será esticada até o final da seqüência, ou até encontrar outra curva na pista.
+    Apagar chave de parâmetro: Quando você usar isto, o(s) parâmetro (s) selecionado(s) será(ão) apagado(s).
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Sequências
+        A seguir: Usando Curvas de Animação 
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

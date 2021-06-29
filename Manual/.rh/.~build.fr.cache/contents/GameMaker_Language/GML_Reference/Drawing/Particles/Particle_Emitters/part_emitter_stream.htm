@@ -1,0 +1,56 @@
+
+  
+  part_emitter_stream
+  Esta função permite definir um emissor para transmitir um tipo específico de partícula e normalmente é usado o evento de criação, pois é um código único que define o emissor para gerar o número de partículas especificadas em cada etapa do jogo - depois disso. O
+    as partículas são emitidas seguindo a distribuição, forma e posição definidas pela função part_emitter_region(). Você pode definir o número de partículas sendo transmitidas para zero e chamar esta função novamente
+    para "desligar" o fluxo de partículas, e a função também aceitará números negativos para a quantidade, caso em que o emissor produzirá partículas com base em chances aleatórias. Por exemplo, se você tiver o número de partícula definido para -5, aí
+    é uma chance de 1:5 de que uma partícula seja produzida a cada passo. Se você precisar que as partículas apareçam todas de uma vez ao invés de cada passo, você deve estar usando a função part_emitter_burst().
+   
+  Sintaxe:
+  part_emitter_stream(ps, ind, parttype, part number);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ps
+        O sistema de partículas em que está o emissor.
+      
+      
+        ind
+        O índice do emissor a partir do qual o emissor irrompe.
+      
+      
+        tipo de peça
+        O índice (tipo) das partículas a serem criadas.
+      
+      
+        número
+        O número de partículas a serem criadas por etapa.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  part_emitter_stream(global. Sname, p_emit1, p1, 1);
+  O código acima transmitirá 1 partícula a cada etapa do jogo até que o emissor seja destruído ou até que o fluxo seja ajustado para 0.
+   
+   
+   
+  
+    
+      
+        Voltar: Emissores de Partículas
+        Próximo: part_emitter_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

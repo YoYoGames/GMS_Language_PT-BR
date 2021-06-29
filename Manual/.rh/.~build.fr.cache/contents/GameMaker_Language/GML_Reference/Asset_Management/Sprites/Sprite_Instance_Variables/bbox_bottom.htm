@@ -1,0 +1,33 @@
+
+  
+  bbox_bottom
+  Esta variável lida apenas retorna a posição y (dentro da sala) do fundo da caixa de delimitação, onde a caixa de delimitação é definida pela largura e altura máximas da máscara para a instância (como
+    definido pelo sprite_index ou pelo mask_index). Mesmo quando um duende tem uma máscara de colisão precisa, a caixa de delimitação existe e é utilizada
+    para certas coisas, e assim você pode usar esta variável para encontrá-la. Observe que quando a instância não tem sprite atribuído o valor retornado será o mesmo que a posição Y da instância.
+   
+  Sintaxe:
+  bbox_bottom;
+   
+  Devoluções:
+  Real (inteiro)
+   
+  Exemplo:
+  se bbox_bottom > room_height {
+     y = room_height - sprite_yoffset; }
+  
+  O código acima verifica se a caixa delimitadora da instância está fora da sala e se é ela que coloca a instância em uma nova posição.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis de Sprite Instance
+        Próximo: bbox_right
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

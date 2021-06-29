@@ -1,0 +1,40 @@
+
+  
+  HTTP
+  O Evento HTTP é um evento que é acionado pela chamada de retorno de uma das funçõeshttp_*(),
+    como http_post_string(). Ele realmente gera um Mapa DS que
+    é exclusivo para este evento e é armazenado na variável especial async_load (consulte as funções individuais para
+    exemplos de códigos que explicam o uso deste evento em mais detalhes). Este mapa DS tem a seguinte estrutura geral:
+  
+    "id": A identificação que foi devolvida do comando. Se você disparar uma série de pedidos http_, então você precisa saber a qual deles você está recebendo a resposta, e assim você usaria este
+      valor para comparar com o valor armazenado quando você originalmente enviou o pedido para encontrar o valor correto.
+    "status": Retorna um valor inferior a 0 para um erro, 0 para o sucesso e 1 se o conteúdo estiver sendo baixado.
+    "result": Os dados recebidos (apenas string), ou o caminho para o arquivo baixado, se você tiver usado http_get_file().
+    "url": A URL completa que você solicitou.
+    "http_status": O código de status http bruto (se disponível). Isto retorna o código de status padrão da web para a maioria dos navegadores, por exemplo: 304 para "Não modificado" ou 204 para "Sem conteúdo", etc...
+  
+  O acima mostra o que você recebe quando usa o http_post_string() mas cada uma das funções http_ pode retornar um mapa ligeiramente diferente, portanto, consulte a entrada manual de cada função para descobrir os dados precisos que são retornados para ela.
+  NOTA: Como async_load cria um mapa DS, estas funções são particularmente úteis quando acopladas com o json_encode() e
+    json_decode() funções.
+  Também pode haver dados adicionais fornecidos por este mapa se você tiver solicitado arquivos para download. Neste caso, o "status" terá o valor 1 e o mapa DS terá estas chaves extras:
+  
+    "contentLength": Este é o tamanho de arquivo que o servidor web disse que você deve esperar receber (pode ser -1 se o servidor não devolver esses dados).
+    "sizeDownloaded": O tamanho dos dados que já foram baixados.
+  
+  Note que o evento não será acionado para cada pacote de dados que for recebido, mas será atualizado a qualquer momento durante o download dentro do loop principal do jogo. Observe também que atualmente esta funcionalidade está disponível apenas para Windowsnormal.
+    plataformas-alvo.
+   
+   
+   
+  
+    
+      
+        Voltar: Eventos Async
+        A seguir: Na compra de aplicativos
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

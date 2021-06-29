@@ -1,0 +1,33 @@
+
+  
+  camada
+  Esta variável incorporada é criada para cada instância em uma sala e contém o valor de identificação da camada à qual a instância está atribuída. Este valor pode então ser usado em outras funções como layer_get_depth() ou
+    pode ser alterado para mover a instância para outra camada, mas note que se a camada que está sendo atribuída não existir na sala atual, então você receberá um erro que forçará seu jogo a fechar. Ao atribuir uma camada, você deve fornecer a única
+   ID da camada conforme retornado pela função layer_get_id() (quando se usam camadas de sala nomeadas), ou como retornado pela função layer_create() (quando
+    você cria suas próprias camadas em tempo de execução).
+  IMPORTANTE! se você criou a instância usando o instance_create_depth() ou ter alterado manualmente a função profundidade    a camada atribuída à instância se torna uma camada "gerenciada", que é aquela que o GameMaker Studio 2 controla e gerencia automaticamente. Nesses casos, a variável de camada retornará -1.
+   
+  Sintaxe:
+  camada;
+   
+  Devoluções:
+  Real (número inteiro - valor do índice de recursos)
+   
+  Exemplo:
+  layer = layer_create(-1000);
+  O código acima criará uma nova camada com uma profundidade de -1000 e então definirá a variável da camada de instância para o ID da camada retornada, movendo a instância da camada em que se encontra atualmente para a nova camada que está sendo criada.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis de instância
+        Próximo: alarme
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

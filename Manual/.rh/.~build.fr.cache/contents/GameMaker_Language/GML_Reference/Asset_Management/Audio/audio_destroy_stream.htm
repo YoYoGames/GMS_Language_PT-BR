@@ -1,0 +1,45 @@
+
+  
+  audio_destroy_stream
+  Se você criou anteriormente um fluxo de áudio a partir de um arquivo usando a função audio_create_stream() e não precisa mais desse som, você pode chamar essa função para apagá-lo de
+    memória. Qualquer outra chamada para o índice de som após ter sido destruído dará um erro. Deve-se notar que isto liberará o fluxo, mas na plataforma alvo isto pode não aparecer em um gerenciador de memória. Isto se deve ao fato de que o GameMaker Studio 2 pools
+    recursos de memória para evitar a sobrecarga da alocação de memória, e assim a memória permanecerá alocada até ser necessária para algo mais ou reutilizada para um novo fluxo.
+  NOTA: Esta funcionalidade não está disponível para a plataforma de destino HTML5.
+   
+  Sintaxe:
+  audio_destroy_stream(filename);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome do arquivo
+        O arquivo para transmitir o áudio de.
+      
+    
+  
+   
+  Devoluções:
+  NA
+   
+  Exemplo:
+  audio_destroy_stream(snd);
+  O código acima remove da memória o som indexado na variável "snd".
+   
+   
+   
+  
+    
+      
+        Voltar: Áudio
+        Próximo: audio_sound_set_track_position
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

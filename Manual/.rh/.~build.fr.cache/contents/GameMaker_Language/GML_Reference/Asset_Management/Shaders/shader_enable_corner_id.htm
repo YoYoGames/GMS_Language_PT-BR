@@ -1,0 +1,42 @@
+
+  
+  shader_enable_corner_id
+  Com esta função você pode definir um estado global para todos os shaders sendo usados onde, quando ativado, o shader "rouba" 2 bits dos valores de cor de entrada. O primeiro é a partir do bit inferior do valor da cor vermelha, e o segundo é a partir do bit inferior do valor da cor vermelha.
+    um pouco do valor da cor azul. Estes valores podem ser recuperados no sombreador para determinar com qual vértice você está lidando (ou seja: qual canto).
+   
+  Sintaxe:
+  shader_enable_corner_id(enable);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        habilitar
+        Habilitar(verdadeiro) ou desabilitar(falso) esta função.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  shader_enable_corner_id(true);
+  O código acima permitirá o uso de bits de cor para a identificação do canto para todos os shaders.
+   
+   
+   
+  
+    
+      
+        Voltar: Shaders
+        Próximo: shader_get_name
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

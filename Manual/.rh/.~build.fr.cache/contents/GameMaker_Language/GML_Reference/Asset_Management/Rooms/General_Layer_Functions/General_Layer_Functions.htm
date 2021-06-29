@@ -1,0 +1,82 @@
+
+  
+  Funções gerais da camada
+  O GameMaker Studio 2 Room Editor permite que você acrescente camadas de diferentes ativos à sua sala. Estes podem ser mapas de azulejos (usando conjuntos de azulejos), fundos, sprites ou seqüências, e instâncias,
+    mas observe que, ao contrário do editor da sala, você não está limitado a um único tipo de ativo por camada, e pode adicionar vários tipos de ativos à mesma camada - por exemplo, você pode ter um fundo e um mapa de azulejos, todos na mesma camada. Note que cada ativo
+    que é adicionado a uma camada é considerado um elemento dessa camada.
+  Esta seção descreve as funções gerais utilizadas quando se trabalha com camadas de salas, bem como algumas funções específicas para trabalhar com camada de instância elementos:
+   
+  
+    camada_existe
+    layer_get_id
+    layer_get_depth
+    layer_get_id_id_at_depth
+    layer_get_name
+    layer_get_all
+    layer_get_all_elements
+    layer_get_element_layer
+    layer_get_element_type
+    layer_get_x
+    layer_get_y
+    layer_get_hspeed
+    layer_get_vspeed
+    layer_create
+    layer_destroy
+    layer_x
+    camada_y
+    layer_hspeed
+    layer_vspeed
+    camada_add_instância
+    camada_has_instance
+    layer_instance_get_instance
+    camada_destroy_instances
+    layer_element_move
+    layer_set_visible
+    layer_get_visible
+    layer_depth
+    camada_força_desenho_de_profundidade
+    layer_is_draw_depth_forced
+    layer_get_forced_depth
+    layer_script_begin
+    layer_script_end_end
+    layer_shader
+    layer_get_script_begin
+    layer_get_script_end_end
+    layer_get_shader
+  
+   
+  Também temos um par de funções extras relacionadas com as camadas-alvo em uma sala diferente. Pode ser que você queira mudar algo em uma sala que não é a sala atual, ou talvez você queira gerar salas de forma processual, ou qualquer número de coisas.
+    Para permitir isso, usamos as seguintes funções:
+   
+  
+    layer_set_target_room
+    layer_get_target_room
+    layer_reset_target_room
+  
+   
+  O que você faz aqui é definir a sala de destino usando a função apropriada e depois chamar as funções de camada são normais. Estas funções de camada agora se aplicarão somente à sala de destino e não à atual. Quando você terminar, você chamará a
+    função reset para retornar o escopo do código de volta para a sala atual novamente.
+  ADVERTÊNCIA! Ao visar outra sala, você pode usar todas as funções de camadas regulares , exceto que você não pode criar instâncias usando instance_create_layer()    ou instance_create_depth()nem a camada funcionará layer_add_instance() ser
+    disponível.
+  Finalmente, e isto é exclusivamente para uso com instâncias em camadas (embora a própria camada possa ter outros elementos, eles não serão afetados pelas seguintes funções), você tem um par de funções que podem ser usadas para desativar ou reativar
+    todas as instâncias:
+   
+  
+    instance_deactivate_layer
+    instance_activate_layer
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Quartos
+        A seguir: Camadas do mapa de azulejos
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

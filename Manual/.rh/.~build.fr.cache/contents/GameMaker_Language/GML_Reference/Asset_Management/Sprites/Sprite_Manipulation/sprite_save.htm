@@ -1,0 +1,56 @@
+
+  
+  sprite_save
+  Esta função pode ser usada para salvar qualquer subimagem de um duende em disco, dando-lhe o nome de arquivo especificado. O sprite deve ter sido adicionado em tempo de execução (não é possível salvar sprites adicionados através da IDE) e o arquivo deve ser salvo
+    com uma extensão *.png.
+  NOTA: Dependendo da plataforma de destino escolhida, você está limitado quanto ao local de onde pode salvar e carregar arquivos. Consulte Manuseio de arquivos para mais informações.
+   
+  Sintaxe:
+  sprite_save(ind, subimg, fname);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do duende a salvar.
+      
+      
+        subimg
+        A subimagem do duende a salvar.
+      
+      
+        fname
+        O nome do arquivo para o duende salvo.
+      
+    
+  
+   
+  Devoluções
+  N/A
+   
+  Exemplo:
+  var surf, spr_custom; surf = surface_create(32, 32); surface_set_target(surf);
+     draw_clear_alpha(c_black, 0); draw_sprite(spr_Body, 0, 0, 0, 0); draw_sprite(spr_Clothes, 0, 0, 0, 0); draw_sprite(spr_Hair, 0, 0, 0, 0); spr_custom = sprite_create_from_surface(surf, 0, 0, 32, 32, true, true, 16, 16); surface_reset_target();
+     surface_free(surf);
+     sprite_save(spr_custom, 0, "Player_Custom_Sprite.png"); sprite_delete(spr_Custom);
+  
+  O código acima cria uma superfície e armazena seu índice na variável local "surf". Em seguida, visa aquela superfície, limpa-a e desenha vários sprites uns em cima dos outros. Ele cria um novo sprite a partir da imagem composta desenhada sobre a superfície
+    e atribui seu índice à variável local "spr_Custom" antes de liberar a memória utilizada pela superfície. Finalmente, o sprite resultante é salvo em um arquivo e depois removido da memória também.
+   
+   
+   
+  
+    
+      
+        Voltar: Manipulação de Sprite
+        Próximo: sprite_save_strip
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

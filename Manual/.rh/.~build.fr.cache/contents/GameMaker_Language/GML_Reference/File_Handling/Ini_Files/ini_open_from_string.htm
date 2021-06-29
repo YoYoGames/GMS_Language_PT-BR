@@ -1,0 +1,44 @@
+
+  
+  ini_open_from_string
+  Esta função criará um arquivo ini a partir de um fio e o abrirá para leitura/escrita. A string deve ser formatada corretamente como um arquivo ini (ou seja: com seções, chaves de quebra de linha e valores), caso contrário, o arquivo ini não será criado corretamente. Nota
+    que este arquivo ini é temporário e será removido da memória no momento em que for fechado, perdendo qualquer informação que tenha sido armazenada nele, entretanto o ini_close() retorna uma seqüência do arquivo ini completo que
+    pode então ser salvo em um servidor ou em um disco.
+   
+  Sintaxe:
+  ini_open_from_string(string);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        corda
+        O fio contendo todas as informações do ini.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  ini_open_from_string(str) global.sound = ini_read_string("Options", "Sound", true); ini_close();
+  
+  O código acima estabelece um ini temporário para segurar a informação da string "str", depois lê a partir do ini antes de fechá-lo novamente.
+   
+   
+   
+  
+    
+      
+        Voltar: Arquivos de Inicia
+        Próximo: ini_open
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

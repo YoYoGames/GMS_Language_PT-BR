@@ -1,0 +1,52 @@
+
+  
+  gpu_set_texfilter
+  Esta função pode ser usada para definir a filtragem da textura (interpolação linear) de todas as imagens desenhadas na tela do jogo. Quando isto for habilitado(true) todas as texturas serão suavizadas quando desenhadas (isto inclui sprites, pois também são consideradas texturas),
+    significando que quando escalonado ou movido se não houver uma proporção de 1:1 pixel, haverá uma "mancha" em vários pixels que pode fazer as imagens parecerem borradas, dependendo do estilo de arte utilizado. Se isto for desabilitado(falso), então as imagens
+    serão desenhadas com base no pixel mais próximo quando escaladas ou em movimento, o que pode levar a imagens "em bloco". O valor padrão é falso, e isto também pode ser alterado nas Opções Globais de Jogo para plataformas alvo individuais.
+  NOTA: Este ajuste substituirá qualquer conjunto de interpolação de estágios de textura para shaders usando a função gpu_set_texfilter_ext().
+  NOTA: No alvo HTML5, esta função só funcionará com WebGL habilitado.
+   
+  Sintaxe:
+  gpu_set_texfilter(enable);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        habilitar
+        Ativar ou desativar a filtragem da textura(verdadeiro / falso)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se gpu_get_texfilter() {
+     gpu_set_texfilter(false);
+     }
+     mais
+     {
+     gpu_set_texfilter(true);
+     }
+  
+  O código acima verifica se a filtragem de textura está ligada ou desligada e a liga de acordo.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle de GPU
+        Próximo: gpu_set_texfilter_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

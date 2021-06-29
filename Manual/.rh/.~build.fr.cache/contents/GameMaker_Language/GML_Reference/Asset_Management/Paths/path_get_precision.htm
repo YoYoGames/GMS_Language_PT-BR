@@ -1,0 +1,44 @@
+
+  
+  caminho_esquer_precisão
+  Esta função retorna com que precisão o caminho dado foi "suavizado", e será um valor inteiro de 1 a 8. Embora você possa obter (e definir) este valor para um caminho reto, ele não terá influência sobre como uma instância usa
+    o caminho, pois ele só é relevante quando o tipo de caminho é definido como "suave".
+   
+  Sintaxe:
+  path_get_precision(index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do caminho a ser verificado.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  if (path_get_kind(pth_Patrol)) {
+     if (path_get_precision(pth_Patrol)) != 8 { path_set_precision(pth_Patrol, 8); }  }
+  O código acima verifica o caminho indexado em "pth_Patrol" para ver de que tipo é e se é liso, então verifica o quão preciso é o alisamento. Se for inferior a 8, é então definido para um valor de 8.
+   
+   
+   
+  
+    
+      
+        Voltar: Caminhos
+        Próximo: caminho_get_speed
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

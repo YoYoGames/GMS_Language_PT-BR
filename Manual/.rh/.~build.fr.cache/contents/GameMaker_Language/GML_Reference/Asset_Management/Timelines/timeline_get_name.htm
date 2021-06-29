@@ -1,0 +1,43 @@
+
+  
+  cronograma_nome_get_name
+  Esta função pode ser usada para obter o nome de uma linha de tempo como um fio. se a linha de tempo tiver sido criada dinamicamente usando o linha do tempo_add() função, o nome devolvido terá o
+    formato "__newtimelineN" onde " N" é onúmero da linha do tempo (a partir de 0). Observe que isto é apenas uma linha de tempo e não pode ser usado para fazer referência direta à linha de tempo - para
+    que você precisaria do índice da linha do tempo. Você pode, entretanto, usar esta string para obter o índice da linha do tempo usando a string retornada junto com a função asset_get_index().
+   
+  Sintaxe:
+  timeline_get_name(ind);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice da linha do tempo para verificar o nome de.
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  var _str = timeline_get_name(timeline_index); show_debug_message("Current timeline = " + _str);
+  O código acima recebe o nome da linha do tempo atualmente atribuída e o envia para o console.
+   
+   
+   
+  
+    
+      
+        Voltar: Cronogramas
+        Próximo: linha do tempo_add
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,121 @@
+
+  
+  Compilação
+  Compilar seu jogo pode significar uma de duas coisas: compilá-lo para testes, ou compilá-lo para criar um  pacote executável ou
+    uma plataforma alvo específica. A compilação de seu jogo para teste pode ser feita simplesmente pressionando o botão Play  no topo da IDE, que lançará o jogo para teste.
+    usando o alvo especificado. Você também pode executar o jogo no Debug Mode testando usando o botão Debug . Isto irá rodar o jogo, mas também abrirá o
+   Debug Window, onde você pode monitorar como seu jogo funciona e ver qualquer problema (veja a seção sobre Depuração para mais informações).
+  Por padrão, o GameMaker Studio 2 será executado e depurado usando a Máquina Virtual (VM), que é mais ou menos o mesmo que rodar no sistema operacional desktop que está sendo usado. Entretanto, o GameMaker
+    O Studio 2 é um mecanismo de plataforma cruzada e você pode testar, depurar e compilar pacotes executáveis de seus projetos em várias plataformas alvo diferentes (as plataformas exatas disponíveis dependerão dos detalhes de sua licença). Para
+    alterar a plataforma alvo atual você pode clicar em  no botão Alvos  para abrir a Janela de Alvos, que se parecerá com isto (os detalhes exatos variam de acordo com seu tipo de licença):
+  
+  Na parte superior, ao lado do botão Targets, você tem as configurações atuais que indicam a plataforma e as configurações específicas que estão sendo utilizadas, e então o resto da janela é ocupada com os detalhes e opções para todos os alvos disponíveis que
+    você pode selecionar para usar em seu lugar. Cada seção desta janela é explicada abaixo:
+  Trabalhador
+  
+    A primeira coluna do Gerente-Alvo é dedicada ao  Trabalhadores remotos que você tem disponível. Para começar, você só terá uma única máquina "Local".
+      listados aqui, que é a máquina na qual o GameMaker Studio 2 está instalado, mas você também pode configurar um Operador Remoto para usar. Quando um Operador Remoto tiver sido configurado, você poderá selecioná-lo da lista aqui, e fazer com que ele construa sua
+      em vez de usar a máquina host onde o GameMaker Studio 2 está instalado.
+    Para mais informações sobre como montar e usar Trabalhadores Remotos, por favor, veja a seção abaixo:
+    
+      Trabalhadores remotos
+    
+     
+  
+  Plataformas
+  
+    Esta seção lista todas as plataformas alvo disponíveis. O conteúdo desta lista variará dependendo da licença que você tiver, mas sempre terá pelo menos o alvo "Teste". Para selecionar um alvo, basta clicar em  sobre ele. Isto então atualizará as demais janelas de opções para mostrar diferentes detalhes dependendo da plataforma selecionada.
+     
+  
+  Saída
+  
+    Cada plataforma alvo pode ter um ou mais formatos de saída, sendo os principais:
+    
+      VM: O alvo VM (Virtual Machine) usa um runner genérico para cada plataforma e depois interpreta o código para o seu jogo. Em geral, esta opção é utilizada para testes devido a seus tempos de compilação mais rápidos, mas não oferece o
+        mesmo aumento de desempenho que o uso da opção YYC (se disponível) oferece. Você pode usar isto para compilar pacotes executáveis para jogos menores ou jogos onde o desempenho nunca será um problema.
+      YYC: O YYC(YoYo Compiler) pega a saída normal do GameMaker Studio 2 e a compila em código nativo para a plataforma alvo, "removendo" funções desnecessárias e executando uma série de outras técnicas de otimização
+        para criar um pacote executável menor e com melhor desempenho. Isto pode aumentar o desempenho de seus jogos em pelo menos duas ou três vezes, especialmente em jogos de lógica pesada, e é ideal para aqueles projetos maiores ou intensivos em CPU. Os tempos de compilação podem
+        demore mais e você deve sempre limpar o cache do compilador antes de construir qualquer pacote final completo de ativos para uma plataforma alvo. Observe que o alvo YYC pode exigir a instalação de ferramentas extras para a plataforma selecionada, caso contrário, ele não
+        trabalho - você pode encontrar mais informações sobre isso no Centro de AjudaYoYo Games, bem como nas páginas de Preferências individuais de cada alvo 
+        detalhado neste manual.
+      JavaScript: O alvo JavaScript só estará disponível para alguns alvos, como o alvo HTML5, e define o jogo a ser compilado em JavaScript puro.
+    
+     
+    
+    
+  
+  Dispositivo
+  
+    Certas plataformas (como iOS ou Android) permitem associar um ou mais dispositivos ao GameMaker Studio 2 para que os jogos possam compilar seletivamente para eles. Inicialmente, a lista de dispositivos estará vazia e você precisa clicar em  no ícone Lápis  para abrir o Editor de Dispositivos:
+    Aqui você pode adicionar novos dispositivos, bem como fazer o teste GameMaker Studio 2 para uma conexão a qualquer dispositivo(s) que possa(m) estar conectado(s). O conteúdo exato
+      desta janela dependerá das especificações da plataforma (veja a seção sobre o Gerenciador de Dispositivos para detalhes exatos de qualquer plataforma). Uma vez que um dispositivo tenha sido encontrado ou adicionado,
+      será então mostrado nesta janela, como nesta imagem de exemplo para o Android:
+    O procedimento exato e os requisitos para a criação de dispositivos e problemas de solução de problemas podem ser encontrados na seção apropriada da Base de Conhecimento do GameMaker Studio 2.
+     
+  
+  Config
+  
+    Como explicado na seção sobre Configurações, você pode armazenar certos detalhes para a compilação de seu jogo como Configs. Esta seção da janela Alvos permite que você tenha o GameMaker Studio
+      2 selecionam automaticamente uma configuração específica para uma plataforma alvo específica.
+  
+   
+  Há também um número ou preferências que podem ser definidas para modificar e personalizar o fluxo de trabalho da compilação, explicado na página seguinte:
+  
+    Preferências de compilação
+  
+   
+   
+  Criando um pacote final executável
+  A compilação de seu projeto de jogo para qualquer plataforma alvo exigirá que você tenha configurado a plataforma correta  construir ferramentas (ver aqui)
+    e também preencheu as Preferências de Plataforma apropriadas. Uma vez feito isso, você pode simplesmente clicar no botão Create Executable  no IDE para iniciar a compilação do compilador ou selecionar Create Executable a partir do Menu Build. Qualquer uma das opções abrirá uma janela do explorador de arquivos onde você poderá dar o nome final que
+    que você deseja usar para seu jogo executável antes de clicar em Salvar para iniciar o processo de compilação e construção. Uma vez feito isso, os arquivos necessários serão gerados para que você possa distribuí-lo como desejar.
+  IMPORTANTE! Se você tiver a  licença gratuita  de 30 dias de teste, então a compilação de um executável final não estará disponível, e você será obrigado a atualizar para uma das licenças pagas para compilar seu jogo para distribuição.
+  NOTA: Antes de fazer uma construção final de seu projeto para lançamento, você deve sempre limpar o Cache do Compilador de Ativos (usando o ícone "vassoura"  na parte superior da IDE). O GameMaker Studio 2 armazenará muitos de seus arquivos de jogo para manter a velocidade de compilação a um mínimo.
+  Cada opção alvo economiza para um formato específico da plataforma, listado abaixo:
+  
+    Windows - A compilação para o sistema operacional Windows geral solicitará primeiro que você escolha entre criar um instalador ou um pacote Zip , onde o instalador será um único executável que instalará seu jogo, e o
+      O arquivo Zip será um único arquivo comprimido no formato *.zip com todos os seus arquivos de jogo armazenados (os arquivos precisarão ser extraídos para que o jogo seja executado). Se você marcar a caixa marcada como Remember Packaging Option, então o GameMaker Studio 2 se lembrará da escolha para todas as compilações futuras (isto pode ser redefinido ou alterado a partir das Preferências doWindows).
+      Você pode saber mais no Centro de Ajuda do YoYo Games. Observe que o alvo do Windows pode compilar executáveis de 32 bits ou 64 bits, dependendo do que você selecionou em
+      as Opções Gerais de Jogo. Recomendamos fortemente que todos os novos projetos usem o tempo de execução x64 para criar executáveis de 64 bits, pois o tempo de execução de 32 bits será depreciado e removido.
+      no futuro.
+    Ubuntu (Linux ) - Os aplicativos Ubuntu(Linux) podem ser compilados como arquivos *.zip - contendo um x64 ou um executável ARM - dependendo do dispositivo a ser visado. Você pode saber mais no Centro de AjudaYoYo Games.
+    HTML5 - Se você optou por construir HTML5, então um arquivo index.html (este é o nome padrão, mas você pode dar seu próprio nome também nas Preferências da Plataforma), juntamente com uma pasta contendo seus arquivos de jogo
+      será criado e salvo no local especificado. Para que seu jogo funcione, você precisará que ambos sejam carregados em um servidor. O index.html também pode ser customizado
+      para mostrar seu jogo com uma cor de fundo diferente, ou em uma posição diferente, etc... mas é necessário um conhecimento de HTML para isso, e você também pode especificar seu próprio arquivo de índice personalizado ao construir o pacote (veja as Opções de Jogo HTML5).
+      Você pode saber mais no Centro de Ajuda do YoYo Games.
+    Android - Para dispositivos Android, você pode escolher construir um arquivo *.apk ou um *.aab (Android App Bundle) da janela que é mostrada para salvar o jogo:
+      
+      O tipo de arquivo que você escolher dependerá da loja que você deseja segmentar, com o arquivo *.aab sendo necessário para o Google Play, enquanto o arquivo *.apk pode ser usado em outras lojas. Você pode saber mais no Centro de Ajuda do YoYo Games.
+    iOS - A compilação no iOS criará um arquivo xarchive que é então usado no Xtools para criar o pacote final do iOS. Note que para compilar para o iOS será necessário um computador Apple Mac rodando OSX ou superior, bem como os certificados e permissões relevantes.
+      Você pode saber mais no Centro de Ajuda do YoYo Games.
+    macOS - A compilação para o alvo macOS irá primeiro solicitar que você escolha entre criar um DMG ou um arquivo Zip :
+      "Package as DMG" irá construir um pacote instalador .dmg que pode ser usado para instalar o jogo em
+      um computador Mac. Note que durante este processo de construção você verá o instalador aparecer no Mac, que desaparecerá assim que o processo de construção estiver completo.
+       "Package as Zip" construirá um arquivo *.app ou um arquivo *.pkg, dependendo se você deseja ou não fazer o upload posterior para a App Store Mac. Como no iOS, você precisará de um computador Apple Mac rodando OSX ou superior, assim como os certificados e permissões relevantes.
+      Você pode saber mais no Centro de Ajuda do YoYo Games.
+    Windows UWP - Para Windows UWP, o GameMaker Studio 2 criará um pacote *.appxbundle que poderá então ser carregado na Loja Windows ou distribuído em outro lugar. Quando você clica no botão Criar Executável
+      você será solicitado a informar ao GameMaker Studio 2 qual tipo de pacote você gostaria de criar (pode ser para arquiteturas ARM, x64 e/ou x86), e você deve escolher aqueles alvos que
+      o jogo será suportado (você deve selecionar pelo menos um, mas pode selecionar os três ou qualquer combinação): 
+      
+      Se você marcar a caixa marcada Package For Store Upload, então o pacote final criado será um arquivo *.appxupload, que é o que a Microsoft especifica que deve ser usado para enviar aplicativos para sua loja, como explicado neste artigo aqui (todas as arquiteturas escolhidas serão
+      incluído, assim como com o *.appxbundle). Você pode saber mais sobre a configuração e compilação para a plataforma UWP a partir do Centro de AjudaYoYo Games.
+  
+  Uma vez criado seu pacote de ativos executáveis, você pode então entregar o arquivo a outras pessoas ou colocá-lo em seu website para download, ou carregar esses arquivos para os diferentes serviços de hospedagem para distribuição individual ou mesmo para lojas online (como
+    Google Play, iTunes ou a MS Store) para distribuição geral e varejo.
+  Note que você é livre para distribuir os jogos que criar com o GameMaker Studio 2 da maneira que quiser, inclusive vendendo-os. Naturalmente, isto pressupõe que os sprites, imagens e sons que você usou para fazê-los podem ser distribuídos ou vendidos também e que
+    você tem os direitos legais sobre todos os bens, e também assume que o jogo está de acordo com o EULA daYoYo Games para GameMaker Studio 2.
+   
+   
+   
+  
+    
+      
+        Voltar: Introdução ao GameMaker Studio 2
+        A seguir: Depuração
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

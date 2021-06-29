@@ -1,0 +1,94 @@
+
+  
+  Buffers
+  Um buffer é uma região da memória física usada para armazenar temporariamente dados enquanto estão sendo movidos de um lugar para outro ou manipulados de alguma forma, por exemplo, você pode usar um buffer para armazenar dados de pacotes que aguardam transmissão por uma rede ou para armazenar
+    um pacote que foi recebido através de uma rede. O GameMaker Studio 2 tem uma série de funções específicas relacionadas à criação, modificação e carregamento/reserva de buffers, mas antes de utilizá-los, observe os seguintes pontos:
+  
+    Quando um buffer é criado, ele é automaticamente limpo e preenchido a 0.
+    O argumento do "tamanho" das funções do buffer sempre se refere ao tamanho em bytes do buffer.
+    O argumento "Alinhamento" refere-se a como os dados são armazenados dentro de um buffer. Se seu alinhamento for definido para dizer, 4, e você escrever um único pedaço de dados que seja 1 byte em tamanho, então faça um buffer_tell, você terá um offset de 1,
+      se você escrever outro dado, também 1 byte em tamanho, então faça um buffer_tell, você terá um offset de 5, pois o alinhamento "almofadou" os dados para aquele tamanho. O alinhamento só afeta para onde as coisas são escritas, portanto, se
+      você faz um buffer_tell depois de escrever algo, ele retornará a posição de escrita atual que imediatamente segue os dados que você escreveu. Observe, entretanto, que se você escrever outro dado, internamente o buffer se moverá
+      a posição de escrita ao longo do próximo múltiplo do tamanho do alinhamento antes de realmente escrever a peça de dados.
+    Quando se trata de "offset", este é o valor em bytes para compensar os dados por dentro do buffer dado. Portanto, se seu buffer estiver 2 bytes alinhado e você quiser pular os 4 primeiros lugares alinhados, você teria um offset de 2 * 4 bytes.
+    Algumas das funções do buffer também criam um novo buffer (como buffer_load, por exemplo). Lembre-se de que estes buffers também precisarão ser removidos da memória quando não estiverem em uso usando a função buffer_delete.
+    A memória utilizada para criar buffers é a memória do sistema, portanto, mesmo quando o jogo não tem foco, qualquer dado armazenado em um buffer deve ser seguro, entretanto, se o aplicativo for fechado ou reiniciado, ele será perdido.
+  
+  As páginas seguintes explicam como funcionam os buffers dentro do contexto do GameMaker Studio 2 e contêm alguns exemplos de código para aqueles usuários que não têm certeza de como utilizá-los:
+  
+    Usando amortecedores
+  
+  IMPORTANTE! Quando você cria um buffer, o valor do índice usado para identificá-lo é um valor inteiro começando em 0. Estes índices são reutilizados pelo GameMaker, portanto, um valor de índice de buffer destruído pode ser usado por um novo valor criado posteriormente,
+    e recomendamos que você defina qualquer variável que contenha um índice de tampão para -1 após ter destruído o tampão.
+  As seguintes funções existem para você usar com buffers binários em seus jogos:
+  
+    buffer_existe
+    buffer_create
+    buffer_create_from_vertex_buffer
+    buffer_create_from_vertex_buffer_ext
+    buffer_delete
+    buffer_read
+    buffer_write
+    buffer_fill
+    tampão_seek
+    buffer_tell
+    tampão_peek
+    ponto_de_tampão
+    buffer_save
+    buffer_save_ext_ext
+    buffer_save_async
+    buffer_load
+    buffer_load_ext_ext
+    buffer_load_async
+    buffer_load_partial
+    buffer_compress
+    buffer_decompress
+    buffer_async_group_begin
+    opção_de_tampão_async_group_option
+    buffer_async_group_end
+    buffer_copy
+    buffer_copy_from_vertex_buffer
+    tipo_computador
+    buffer_get_alignment
+    endereço_de_suporte
+    tamanho_do_tampão_de_servidor
+    superfície_de_solução
+    superfície_superfície_de_tampão
+    tamanho_tampão
+    tamanho_do_tampão
+    buffer_md5
+    buffer_sha1
+    buffer_crc32
+    base64_código_de_tampão
+    buffer_base64_decode
+    buffer_base64_decode_ext
+    tamanho_utilizado_do_soltampão
+  
+   
+  Há também duas funções extras relacionadas aos amortecedores que podem ser usadas para salvar e carregar estados de jogo (note que eles requerem que um amortecedor tenha sido criado anteriormente):
+   
+  
+    jogo_load_buffer
+    jogo_save_buffer
+  
+   
+  Finalmente, você também pode usar amortecedores de vértices especiais para criar seus próprios primitivos ou modelos personalizados, etc... Você pode saber mais sobre eles na seção seguinte do manual:
+   
+  
+    Edifício Primitivo
+  
+   
+   
+   
+  
+    
+      
+        Voltar: ReferênciaGML
+        A seguir: UWP e XBox Live
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

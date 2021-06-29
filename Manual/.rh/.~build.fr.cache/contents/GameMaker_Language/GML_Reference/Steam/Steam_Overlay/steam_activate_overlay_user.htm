@@ -1,0 +1,53 @@
+
+  
+  vapor_ativar_overlay_user
+  Esta função abrirá o Steam overlay para um dos diálogos escolhidos em relação ao ID do usuário dado. As possíveis cadeias de diálogos disponíveis são:
+  
+    "steamid" - abre o navegador da Comunidade Steam para a página do usuário ou grupo
+    "chat"- abre uma janela de chat para o usuário especificado
+  
+  Note que as identificações a vapor podem ser em grande número e, portanto, você pode precisar lançar seu valor de identificação como um int64() antes de fornecê-lo para a função.
+   
+  Sintaxe:
+  steam_activate_overlay_user(dialog_name, steamid);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome_de_diálogo
+        O diálogo para abrir a sobreposição (ver abaixo).
+      
+      
+        steamid
+        A identificação do usuário do Steam ou ID do grupo a ser usado.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var key = teclado_lastkey; switch (chave) {
+     caso vk_f1: steam_activate_overlay_user(" steamid",global.GameGroupID); pausa; caso vk_f2: steam_activate_overlay_user("chat", global.FriendID); pausa; }
+  
+  O código acima pesquisa a última tecla do teclado pressionada e se for a tecla de função 1 ou a tecla de função 2, abrirá o Steam overlay para ver o Steam group armazenado na variável global "GamegroupID", ou abrirá a janela de bate-papo para
+    conversar com o usuário armazenado na variável global "FriendID".
+   
+   
+   
+  
+    
+      
+        Voltar: Sobreposição avapor
+        Próximo: vapor_é_apto_de_enabled
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

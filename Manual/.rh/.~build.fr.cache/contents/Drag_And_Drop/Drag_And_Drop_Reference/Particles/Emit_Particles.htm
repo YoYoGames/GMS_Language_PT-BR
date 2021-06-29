@@ -1,0 +1,59 @@
+
+  
+   Emitir Partículas
+  Esta ação é utilizada para criar partículas a partir de um emissor. Você fornece o ID do sistema de partículas ao qual o emissor pertence (como retornado pela ação Criar Sistema de Partículas) e então o ID do emissor real (como retornado
+    pela ação Criar Emissor de Partículas), e finalmente o tipo de partícula a criar (como retornado pela ação Criar Tipo de Partícula). Você pode então selecionar "Rebentar".
+    ou "Stream" as partículas do emissor, bem como dar o número delas que você deseja criar.
+  Quando você escolhe transmitir partículas, você não precisa colocar esta ação em um evento de quadro de jogo como o evento Step Event ou o evento Draw, mas simplesmente chamá-lo uma vez no Create Event (por exemplo) e o emissor irá transmitir partículas a cada jogo
+    até chamar novamente esta ação para pará-la (ajustando o valor de contagem para 0). Se você optar por estourar as partículas, então você pode chamar isto em qualquer caso que você escolher e as partículas serão criadas uma vez.
+   
+  Sintaxe de ação:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        Sistema
+        A identificação do sistema em que o emissor está
+      
+      
+        Emissor
+        A identificação do emissor a ser utilizada
+      
+      
+        Tipo
+        A identificação do tipo de partícula a criar
+      
+      
+        Evento
+        O tipo de evento para as partículas, seja "Burst" ou "Stream".
+      
+      
+        Conde
+        O número de partículas a romper ou a fluir
+      
+    
+  
+   
+  Exemplo:
+  O código de bloco de ação acima criará um emissor de partículas, definindo a sua região,
+    e, em seguida, colocá-lo para emitir um fluxo de partículas.
+   
+   
+   
+  
+    
+      
+        Voltar: Ações com Partículas
+        A seguir: Set Emitter Region
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

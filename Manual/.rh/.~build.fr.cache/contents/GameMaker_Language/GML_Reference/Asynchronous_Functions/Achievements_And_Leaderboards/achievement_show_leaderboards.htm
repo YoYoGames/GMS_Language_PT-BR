@@ -1,0 +1,33 @@
+
+  
+  achievement_show_leaderboards
+  Esta função abrirá a página das placas líderes para a plataforma escolhida. Note que esta é uma função assíncrona, ou seja: seu jogo continuará a ser executado em segundo plano enquanto a página das tabelas de liderança estiver sendo mostrada. Como tal, você deve ser
+    cuidado onde você usa isto e certifique-se de pausar o jogo ou apenas permitir que ele seja mostrado em áreas de seu jogo onde ele não interferirá com o jogo.
+   
+  Sintaxe:
+  achievement_show_leaderboards()
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se a realização_disponível() {
+     global.Pause = true; instance_create_layer(0, 0, "Controllers", obj_Pause); achievement_show_leaderboards();
+     }
+  
+  O código acima verifica se o quadro de líderes e o serviço de realizações escolhido está disponível e, em caso afirmativo, define uma variável global e cria uma instância de "pausa" do controlador antes de chamar a função para mostrar o quadro de líderes na tela.
+   
+   
+   
+  
+    
+      
+        Voltar: Conquistas e Quadros de Líderes
+        Próximo: notificações de desafio_de_conquista
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

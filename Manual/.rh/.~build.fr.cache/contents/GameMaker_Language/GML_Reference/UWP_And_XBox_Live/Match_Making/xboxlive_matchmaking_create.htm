@@ -1,0 +1,92 @@
+
+  
+  xboxlive_matchmaking_create
+  Esta função criará uma sessão multiplayer usando o modelo Session Template, o funil de matchmaking e o modelo Secure Device Association, que você deveria ter criado previamente no painel do XDP. O ID de usuário que você pode recuperar para um determinado jogo
+    chamando o xboxlive_user_for_pad() função e visibilidade será uma das constantes a seguir:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        xboxlive_match_visibility_open
+        especifica que a sessão pode ser acompanhada pelos outros.
+      
+      
+        xboxlive_match_visibilidade_privada
+        especifica que a sessão não é visível para os usuários que não são membros da sessão.
+      
+      
+        xboxlive_match_visibility_usetemplate
+        especifica que o valor usado no modelo de sessão deve ser usado (isto normalmente deve ser usado porque não se pode sobrepor o valor de um modelo se este tiver sido definido no XDP).
+      
+    
+  
+   
+  A função retorna um valor único de Request ID, que pode então ser usado para identificar o Evento Assíncrono Social correto para esta função. Este evento será acionado quando a sessão tiver sido criada e conterá um Mapa DS na variável async_load com os seguintes pares chave/valor:
+  
+    "requestid" - contém a identificação do pedido conforme retornado pela função de chamada
+    "status" - contém a seqüência "session_created" para informá-lo sobre que tipo de evento foi acionado.
+    "sessionid" - contém o ID da sessão, ou -1 em caso de falha
+    "erro" - contém 0 em caso de sucesso, ou -1 em caso de fracasso
+    "correlationid" - o manípulo da sessão para correlação com a função xboxlive_matchmaking_join_session()
+  
+   
+  Sintaxe:
+  xboxlive_matchmaking_create(user_id, visibility, template, hopper, sdatemplate, [matchattributes]);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        user_id
+        O ponteiro de identificação do usuário a ser usado
+      
+      
+        visibilidade
+        Uma das constantes listadas acima
+      
+      
+        modelo
+        O nome do modelo de sessão
+      
+      
+        funil
+        O nome da tremonha de fósforos
+      
+      
+        sdatemplate
+        O nome do modelo de associação de dispositivos seguros
+      
+      
+        matchattributes
+        [OPTATIVA]
+      
+    
+  
+   
+  Devoluções:
+  Solicitar ID (número inteiro)
+   
+  Exemplo:
+  var userID = xboxlive_user_for_pad(global.PadIndex); result = xboxlive_matchmaking_create(userID, xboxlive_match_visibility_usetemplate, "MatchTicketSession", "MatchTicketHopper", "PeerServerTraffic");
+  O acima mencionado recuperará o ID do usuário no gamepad dado e então iniciará uma sessão de matchmaking para eles.
+   
+   
+   
+  
+    
+      
+        Voltar: Fósforos
+        Próximo: xboxlive_matchmaking_find
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,50 @@
+
+
+
+
+  
+  gesto_tap_count
+  Esta função é usada para definir se a contagem de torneira está ativada ou desativada. Quando configurada para a contagem de toque verdadeiro está ativada, e quando configurada para falsa está desativada, embora você possa verificar em qual estado ela está usando a função gesture_get_tap_count().
+    Quando ativado, cada evento de tap terá uma entrada adicional de mapa DS "tapcount" que terá registrado o número de taps, e quando ativado significa que todos os eventos de tap serão acionados, ou seja: dois taps acionarão ambos os
+    e o evento de torneira dupla, com a contagem de torneira simples sendo 1 e a contagem de torneira dupla sendo 2. O valor da contagem de tap será zerado para 0 após o tempo ajustado para uma detecção de tap duplo (veja a função gesture_double_tap_time()).
+    Se a contagem da torneira estiver desativada, então a torneira inicial não será registrada até que o tempo de dupla torneira tenha passado e nenhuma segunda torneira tenha sido detectada. Note que isto é habilitado por padrão.
+   
+  Sintaxe:
+  gesture_tap_count(enable);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        habilitar
+        Habilitar (definir para verdadeiro) ou desabilitar (definir para falso) a contagem de torneira.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se !gesture_get_tap_count() {
+     getsure_tap_count(true);
+     }
+  
+  O código acima verifica se a contagem de torneira está ativada e se não está, então está ligada.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada por gestos
+        Próximo: gesto_picch_distance
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,54 @@
+
+  
+  audio_get_recorder_info
+  Esta função retornará um Mapa DS com informações sobre o índice de origem do registrador em questão. Você pode descobrir quantas fontes de gravadores estão disponíveis usando a função audio_get_recorder_count(),
+    e o mapa retornado conterá os seguintes pares chave/valor:
+  
+    " nome"- um nome para descrever o dispositivo
+    " índice" - o índice a ser utilizado para registrar
+    "data_format" - os dados de formato serão devolvidos em (isto é sempre buffer_s16 no momento , mas outros formatos podem ser suportados no futuro)
+    "taxa_amostra" - a taxa de amostragem (em Hz) dos dados retornados (atualmente fixada em 16000hz, mas isso pode mudar no futuro)
+    "canais" - o áudio_mono constante (outras constantes para estéreo e 3D podem ser suportadas no futuro)
+  
+  Note que embora a função crie um mapa DS para você, ela não o remove novamente mais tarde e, portanto, você mesmo deve estar destruindo o mapa quando ele não for mais necessário para evitar qualquer vazamento de memória.
+  NOTA: A maioria das plataformas , exceto HTML5, suporta a gravação de áudio de alguma forma, mas isso não significa que todos os dispositivos o permitam, mesmo que a plataforma o permita, então você deve sempre verificar se o audio_get_recorder_count()    retorna um valor maior que 0 para verificar se os dispositivos de gravação estão disponíveis antes de utilizar o restante das funções de gravação.
+   
+  Sintaxe:
+  audio_get_recorder_info(recorder_index);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        recorder_index
+        O índice da fonte do registrador para obter as informações.
+      
+    
+  
+   
+  Devoluções:
+  Número inteiro (DS map ID)
+   
+  Exemplo:
+  len = async_load[? "data_len"]; audio_buff = buffer_create(len, buffer_fast, 1); buffer_copy(async_load[? "buffer_id"], 0, len, buff, 0); audio_queue_sound(audio_queue, audio_buff, 0, len); audio_play_sound(audio_queue_queue),
+    10, 0);
+  O código acima seria chamado no evento assíncrono de gravação de áudio e atribui alguns dados gravados a um buffer, que é então adicionado a uma fila de áudio.
+    Isto é então reproduzido.
+   
+   
+   
+  
+    
+      
+        Voltar: Buffers de áudio
+        Próximo: audio_criate_buffer_sound
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

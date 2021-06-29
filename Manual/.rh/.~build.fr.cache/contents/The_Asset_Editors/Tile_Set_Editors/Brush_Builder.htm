@@ -1,0 +1,91 @@
+
+  
+  O construtor do conjunto de escovas de azulejos
+  Por padrão, quando você "pinta" azulejos em uma camada de mapa de azulejos no editor da sala, você seleciona um único azulejo e pinta com isso. Entretanto, os conjuntos de azulejos são quase sempre projetados para ter seções
+    que se encaixam de diferentes maneiras para formar áreas ou itens inteiros. Por exemplo, um conjunto de azulejos RPG pode ter características de paisagem que podem ser conectadas para criar características maiores ou menores - como árvores e edifícios - dependendo do número de azulejos
+    usado. Agora, colocar múltiplas características como esta em uma camada de sala exigiria que você voltasse para frente e para trás muitas vezes para trocar o azulejo, o que não é bom para o seu fluxo de trabalho. Para resolver isto, o GameMaker Studio 2 permite que você crie escovas de azulejo em
+    o editor Tile Set, disponível quando você clica em  no botão Brush Builder:
+  No Brush Builder você tem a telha original colocada à esquerda e uma "lona" em branco à direita. Agora você pode selecionar
+    qualquer azulejo da esquerda e pinte-o à direita para criar "pincéis" personalizados que você pode então usar no editor da sala. Note que você pode clicar e segurar o botão esquerdo do mouse  e depois arrastar o conjunto de azulejos para selecionar vários azulejos para pintar na tela do pincel e você também pode segurar  /  +  para adicionar azulejos individuais específicos ou segurar  +  para remover azulejos específicos.
+  A imagem a seguir mostra nossas características paisagísticas anteriormente mencionadas como um exemplo de três escovas personalizadas feitas de um único conjunto de azulejos:
+  À direita você pode ver três características que fizemos (destacado com uma caixa laranja
+    na imagem). Observe como deixamos uma lacuna de um ladrilho entre cada característica - isto porque qualquer grupo de ladrilhos comovente será tratado como uma única escova no editor da sala, então deixamos uma lacuna de um ladrilho para mostrar que cada conjunto é um conjunto distinto
+    escova que queremos criar. Ao criar seus pincéis, você pinta com o botão esquerdo do mouse  e apaga com o botão direito do mouse . Você também pode ampliar a folha de azulejo ou a tela do pincel usando  /  e a roda do mouse  quando o mouse
+    está sobre uma das janelas, ou você pode navegar usando  +  ou
+    o botão do meio do mouse  e arrastando. Observe que você também pode usar as ferramentas de zoom na Caixa de ferramentas dentro das janelas do editor para mudar
+    os níveis de zoom de qualquer uma das janelas, bem como alternar a visibilidade e a cor da grade.
+  Na parte superior direita você pode ver a ferramenta selecionada atualmente, e também pode definir o tamanho do pincel com o qual você quer pintar. O tamanho padrão é 1, que é um único ladrilho, mas se você defini-lo para valores mais altos então você pode pintar (e apagar) com um
+    escova maior composta da telha selecionada repetida, como mostrado na imagem abaixo:
+  A caixa de ferramentas é onde você pode selecionar a ferramenta a ser usada para muitas tarefas diferentes no editor Tile Set, algumas das quais dependerão se
+    você tem qualquer coisa definida em sua biblioteca de azulejos automotivos. Um breve esboço de cada ferramenta é dado abaixo (note que quando você tiver selecionado uma camada de azulejo no Room Editor, então esta caixa de ferramentas é exibida na parte superior da sala
+    espaço de trabalho, juntamente com ferramentas de desenho adicionais):
+  
+    
+      
+        
+        Lápis
+        Esta é a ferramenta do lápis. Ela usa o azulejo selecionado para pintar na janela dos pincéis com o botão esquerdo do mouse  e você pode apagar com o botão direito do mouse .
+      
+      
+        
+        Apagador
+        Com a ferramenta de borracha você pode usar o botão esquerdo do mouse  para apagar um determinado azulejo na janela Pinceladas. Essencialmente, tudo isso faz com que o índice de azulejos seja 0, que é
+          o reservado azulejo "vazio".
+      
+      
+        
+        Seleção
+        Esta é a ferramenta de seleção, que pode ser usada para definir uma área da janela das escovas para trabalhar. Você pode clicar no botão esquerdo do mouse  e depois arrastar o mouse
+          para criar uma área retangular, ou você pode pressionar  /  +  para adicionar múltiplas seleções e  +  para limpar uma parte da seleção. Para limpar a seleção inteira, você pode pressionar . Quando você tiver uma área de uma janela de Pincéis selecionada, o restante das ferramentas (Lápis, Flip, Rotacionar, etc...) só funcionará dentro da área selecionada. Observe que você também pode selecionar azulejos na janela e depois copiar (  / + "C"), cortar (  /  + "X") e colar
+          (  /  + "
+          V") eles, que então mudarão a ferramenta para o Lápis e permitirão que você "pinte" com eles.
+      
+      
+        
+        AutoTile
+        Clicar nesta ferramenta permite o estilo Auto tiling paint. Quando este estiver ativo, você pode selecionar qualquer ladrilho da aba Autotile Libraries, e então pintá-lo na janela Pincel e o GameMaker Studio 2 irá mudá-lo automaticamente.
+          para combinar com as telhas ao redor, desde que você tenha instalado corretamente a Aba Auto Tile. Note que a seleção de uma telha do conjunto de telhas que não faz parte das bibliotecas de autoteste irá redefinir a ferramenta de desenho para o padrão
+          Ferramenta de lápis.
+      
+      
+        
+        Flip
+        Clicando na ferramenta Flip com o botão esquerdo do mouse  (ou usando o atalho de teclado "X" ), o azulejo ou azulejos atualmente
+          selecionado para desenhar ao longo do eixo horizontal , sem mudar a ferramenta de desenho (se você tiver um pincel personalizado selecionado para desenhar, todo o pincel será virado). Se você não tiver nenhuma telha selecionada para desenhar, mas tiver um grupo de telhas selecionadas
+          na janela da escova, então a ferramenta de inverter inverterá as telhas selecionadas.
+      
+      
+        
+        Espelho
+        Clicando na ferramenta Espelho com o botão esquerdo do mouse  (ou usando o atalho do teclado " Y" ) espelhará o(s) azulejo(s) atual(is)
+          selecionado para desenhar ao longo do eixo vertical , sem mudar a ferramenta de desenho (se você tiver um pincel personalizado selecionado para desenhar, o pincel inteiro se espelhará). Se você não tiver nenhuma telha selecionada para desenhar, mas tiver um grupo de telhas selecionadas
+          na janela da escova, então a ferramenta Espelho espelhará as telhas selecionadas.
+      
+      
+        
+        Girar
+        Clicando na ferramenta Rodar com o botão esquerdo do mouse  (ou usando o atalho de teclado " Z" ), o(s) azulejo(s) atualmente
+          selecionado para desenhar 90° no sentido horário, sem mudar a ferramenta de desenho (se você tiver um pincel personalizado selecionado para desenhar, o pincel inteiro irá girar). Se você não tiver nenhuma telha selecionada para desenhar, mas tiver um grupo de telhas selecionadas no
+          janela de escova, então a ferramenta Rotate fará girar as telhas selecionadas.
+      
+    
+  
+  Abaixo das ferramentas, você pode encontrar duas seções diferentes para selecionar qualquer azulejo automotivo ou azulejosanimados que foram criados usando a imagem atual do conjunto de azulejos.
+    Um único duende que é usado para um conjunto de azulejos pode ter muitas, muitas, imagens de uma única célula nele, e estas podem ser combinadas no editor de Animação ou Autotile para criar escovas personalizadas que aparecerão nestas seções e podem ser usadas em conjunto com
+    azulejos estáticos regulares para criar escovas (note que um azulejo animado animará independentemente de ter sido selecionado da biblioteca ou do conjunto de azulejos base).
+  Uma vez instalados todos os pincéis necessários, você pode usá-los para pintar azulejos em qualquer camada do mapa de azulejos dentro do Room Editor.
+   
+   
+   
+  
+    
+      
+        Voltar: Conjuntos de azulejos
+        A seguir: Ladrilhos Animados
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

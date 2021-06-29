@@ -1,0 +1,67 @@
+
+  
+  draw_surface_stretched_ext
+  Esta função faz exatamente o mesmo que o draw_surface_stretched() com a capacidade adicional de definir a mistura de cores e o valor alfa para a superfície quando ela é desenhada (semelhante à função
+    draw_surface_ext()).
+  NOTA: Quando se trabalha com superfícies há a possibilidade de que elas possam deixar de existir a qualquer momento devido a serem armazenadas na memória de textura. Você deve SEMPRE verificar se uma superfície existe usando superfície_existe()    antes de referenciá-los diretamente.
+   
+  Sintaxe:
+  draw_surface_stretched_ext(id, x, y, w, h, col, alpha);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        O valor único de identificação da superfície a ser desenhada.
+      
+      
+        x
+        A posição x de onde desenhar a superfície.
+      
+      
+        y
+        A posição y de onde desenhar a superfície.
+      
+      
+        w
+        A largura na qual se desenha a superfície.
+      
+      
+        h
+        A altura em que se deve desenhar a superfície.
+      
+      
+        cor
+        A cor com a qual colorir a superfície.
+      
+      
+        alfa
+        O alfa com o qual se deve misturar a superfície.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_surface_stretched_ext(surf, x, y, 200, 200, c_white, 0,5);
+  Isto desenhará a superfície dada com seu canto esquerdo na posição x/y e será esticada para ocupar uma área de 200x200 pixels sem mistura, mas com transparência parcial.
+   
+   
+   
+  
+    
+      
+        Voltar: Superfícies
+        Próximo: draw_surface_tiled
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

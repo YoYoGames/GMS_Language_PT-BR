@@ -1,0 +1,49 @@
+
+  
+  achievement_login
+  Esta função registra o usuário na tabela de liderança apropriada e no serviço de realizações. Se o serviço não estiver disponível, o usuário é logado em um centro de jogos "fingido" e todas as conquistas e pontuações são armazenadas no dispositivo para que quando
+    o serviço real está disponível, estes detalhes podem ser carregados. A função desencadeará um Evento Assíncrono Social de retorno que contém o async_load    mapa povoado com os pares chave/valor relevantes. A chave de id deste Mapa DS é usada para identificar a chamada de retorno correta (pode haver mais de uma função de acionamento para qualquer evento assíncrono), e será emparelhada com a constante realização_nossa_info, bem como um número de outros pares de chaves/valores para cada desafio. O conteúdo exato do mapa é mostrado abaixo:
+  
+    " id" - Para esta função deve ser realizado_nossa_info
+    " name"- O nome do usuário que está atualmente logado.
+    "playerid" - A identificação única para o usuário que está atualmente conectado.
+  
+   
+  Sintaxe:
+  achievement_login()
+   
+  Devoluções:
+  N/A
+   
+  Exemplo ampliado:
+  O seguinte código provavelmente seria chamado logo no início de seu jogo, ou de um objeto de botão especial que você colocou em uma sala, e solicitará que o jogador faça login em sua conta do Google Game Services ou da Apple Game center:
+  achievement_login();
+  Isto enviará uma solicitação para as informações atuais do jogador e gerará uma chamada de retorno assíncrona com o mapa especial de DS assimétrico contendo os seguintes dados:
+  var ident = ds_map_find_value(async_load, "id"); if ident == achievement_our_info {
+     var nome = ds_map_find_value(async_load, "nome" ); var playerid = ds_map_find_value(async_load, "playerid" ); global.OurName = nome; global.OurId = playerid; if os_type == os_android {
+     achievement_load_leaderboard("CgkIs9_51u0PEAIQBw", 1, 100, achievement_filter_friends_only); }
+     mais
+     {
+     achievement_load_leaderboard("leaderboard1id", 1, 100, achievement_filter_friends_only); }
+     achievement_get_challenges();
+     achievement_load_friends();
+     achievement_load_progress();
+     }
+  
+  O código acima verifica o Mapa DS retornado no Evento Assíncrono Social e se seu "id" corresponde à constante a ser verificada, ele então percorre o mapa armazenando todos os diferentes valores em variáveis antes de chamar o resto
+    das funções para preparar as tabelas de liderança, desafios e listas de amigos.
+   
+   
+   
+  
+    
+      
+        Voltar: Conquistas e Quadros de Líderes
+        Próximo: achievement_logout
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

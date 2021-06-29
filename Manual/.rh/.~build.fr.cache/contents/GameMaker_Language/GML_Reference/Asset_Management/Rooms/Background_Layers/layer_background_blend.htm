@@ -1,0 +1,48 @@
+
+  
+  layer_background_blend
+  Esta função controla a mistura (ou "tinting") do sprite de fundo e o valor padrão é -1 (que representa a constante c_white, que também pode ser usada). Qualquer outro valor (incluindo constantes de cor internas como c_red,
+    ou c_aqua) misturará a cor especificada com o duende original. Você dá a identificação do elemento de fundo (que você obtém quando cria um elemento de fundo usando layer_background_create()    ou quando você usa a função layer_background_get_id()), e então definir a cor da mistura a ser utilizada. Abaixo você pode ver um exemplo de um duende que foi misturado com cores diferentes:
+  Favor notar que você deve tentar limitar a mistura na plataforma HTML5 (a menos que utilize WebGL), como cada
+    O sprite misturado tem que ser colocado em cache separadamente e assim ter muitos sprites misturados pode afetar negativamente o desempenho (você também pode definir o tamanho do cache usando a função sprite_set_cache_size()).
+   
+  Sintaxe:
+  layer_background_blend(background_element_id, blend);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        background_element_id
+        O valor de identificação único do elemento de fundo a ser mudado
+      
+      
+        mistura
+        A cor a ser misturada com o fundo sprite (o padrão é c_white)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var lay_id = layer_get_id("Background_sky"); var back_id = layer_background_get_id(lay_id); layer_background_blend(back_id, c_aqua);
+  O código acima obtém o valor de identificação do fundo atribuído à camada "Background_sky" e depois o tinge com uma cor.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de fundo
+        Próximo: fundo_camada_alfa
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

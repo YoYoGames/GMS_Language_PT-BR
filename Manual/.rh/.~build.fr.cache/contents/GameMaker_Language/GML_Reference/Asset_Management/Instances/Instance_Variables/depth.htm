@@ -1,0 +1,41 @@
+
+  
+  profundidade
+  Quando você cria um objeto você pode atribuir-lhe uma profundidade inicial que define como as instâncias desse objeto serão desenhadas na sala quando o jogo estiver sendo jogado e essa variável pode ser usada para obter e alterar esse valor de profundidade enquanto o
+    o jogo está em andamento. Você normalmente não precisaria usar esta variável, uma vez que você deve definir instâncias a serem adicionadas a camadas discretas, que por sua vez são definidas para uma profundidade específica, mas pode ser que você queira mudar a profundidade
+    de uma instância utilizando este valor, em cujo caso será criada uma "camada temporária" especificamente para a instância na profundidade determinada. Note que quando nenhuma instância estiver na mesma profundidade, esta camada temporária será removida da memória.
+    (ao contrário das camadas regulares, que permanecerão mesmo que não tenham nada sobre elas).
+  IMPORTANTE! Quando você modifica a variável de profundidade e o GameMaker Studio 2 gerencia as camadas, as camadas incorporadas camada variável retornará -1 e não
+    o ID da camada, uma vez que as camadas gerenciadas não podem ser manipuladas através de código.
+  No GameMaker Studio 2, quanto menor o valor de profundidade de uma instância, mais "perto da câmera" essa instância será desenhada, enquanto um valor de profundidade mais alto significa que a instância será desenhada "mais longe da câmera", ou seja
+    -1000 é desenhada em cima de -100, que é desenhada em cima de 0, que é desenhada em cima de 100, que é desenhada em cima de 1000.
+  Note que instâncias de um objeto que têm a mesma profundidade podem ser desenhadas acima ou abaixo uma da outra, mesmo quando parecem ser colocadas uma em cima da outra no editor da sala. Se você quiser garantir que algo seja desenhado por cima ou por baixo de tudo o resto, você deve sempre definir explicitamente a profundidade (ou camada). Observe também que há um mínimo de
+    (-16000) e valor máximo (+16000) de profundidade fora do qual as instâncias não serão extraídas, embora elas ainda existam e processem eventos.
+  NOTA: Você não pode definir a profundidade de uma instância em seu evento de sorteio (todos os outros eventos estão bem).
+   
+  Sintaxe:
+  profundidade;
+   
+  Devoluções:
+  Real (valor de ponto flutuante de precisão único)
+   
+  Exemplo:
+  se y != yprevious {
+     profundidade = -y; }
+  
+  O código acima verificará se a posição y mudou e se a profundidade também será ajustada para corresponder a ele.
+   
+   
+   
+  
+    
+      
+        Voltar: Variáveis de instância
+        Próximo: camada
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,46 @@
+
+  
+  layer_get_name
+  Você pode usar esta função para obter o nome da camada dada. Você fornece o valor único de identificação da camada e se a camada for uma das camadas nomeadas criadas no editor da sala, então a função retornará uma string com o nome da camada. Se a camada
+    não é um dos editores da sala (ou seja: foi criado usando layer_create()) então um fio vazio será devolvido.
+   
+  Sintaxe:
+  layer_get_name(layer_id)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        layer_id
+        O valor de identificação único da camada para obter o nome de
+      
+    
+  
+   
+  Devoluções:
+  Cordão
+   
+  Exemplo:
+  var a = layer_get_all(); var layer_list = ds_list_create(); for (var i = 0; i Alt; array_length(a); i++;)  {
+     if layer_get_name(a[i]) != "" {
+     ds_list_add(layer_list, a[i]) }
+     }
+  
+  O código acima obtém as identificações de todas as camadas na sala e, em seguida, faz loops através dos quais eles verificam se alguma é denominada camadas. Se eles são, sua identificação é adicionada a uma lista.
+   
+   
+   
+  
+    
+      
+        Voltar: Funções gerais da camada
+        Próximo: layer_get_all
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

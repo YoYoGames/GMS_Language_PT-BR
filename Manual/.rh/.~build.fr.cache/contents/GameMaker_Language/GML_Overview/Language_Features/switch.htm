@@ -1,0 +1,50 @@
+
+  
+  interruptor
+  Em várias situações, você quer deixar que suas instâncias completem ações diferentes, dependendo de um valor particular. Você pode fazer isso usando uma série de se/outro declarações, mas
+    quando as escolhas possíveis ficam acima de duas ou três, geralmente é mais fácil usar a declaração de interruptor. Uma declaração de troca tem a seguinte forma:
+  interruptor (<expressão>) {
+     case <constant1>: <statement1>; ... ; break; case <constant2>: <statement2>; ... ; break;...
+     default: <declaração>; }
+  
+  Isto funciona da seguinte forma:
+  
+    Primeiro a expressão é executada.
+    Em seguida, é comparado com os resultados das diferentes constantes após cada uma dasdeclarações do case.
+      Quando dizemos "constante", o que queremos dizer é que o valor no caso não pode ser uma expressão variável e deve ser um valor fixo de qualquer tipo de dado, como "luta" ou 3 ou a palavra-chave noone. 
+    A execução continua após a primeira declaração case com o valor correto, até que uma declaração de pausa seja encontrada.
+    Se nenhuma declaração de caso tiver o valor correto, então a declaração default será executada (não é necessário ter uma declaração default, e se nenhuma for fornecida, então nenhuma ação será tomada).
+  
+  Um exemplo simples de utilização de uma declaração de interruptor seria algo parecido com isto:
+  switch (global.state) { caso "alerta": if (instance_exists(obj_Player)) { if (point_distance(x, y, obj_Player.x, obj_Player.y) < 100) { 
+    global.state = "chase"; }  }  break; case "chase": var _lost = false; if (instance_exists(obj_Player)) { move_towards_point(obj_Player.x,
+    obj_Player.y, 2); if (point_distance(x, y, obj_Player.x, obj_Player.y) > 100) { _lost = true; }  }  else _lost = true; if (_lost) { speed = 0; global.state = "alert"; }  break; }
+  Aqui temos uma variável global que contém um valor de string que é usado para definir o comportamento (estado) da instância. Neste exemplo, a instância simplesmente alterna entre dois estados, mas é extremamente fácil expandi-la para incluir mais estados, acrescentando
+    mais case declarações para cadeias de estados adicionais, como "lutar" ou "morrer", etc...
+  Note-se que podem ser usadas múltiplas declarações de caso para executar a mesma declaração, já que a pausa nem sempre é necessária para cada um case. Se não houver uma declaração break para um
+    particular case, a execução simplesmente continua com o código para o próximo caso, por exemplo:
+  switch (teclado_chave) {
+     case vk_left: case ord("A"): x -= 4; break;
+     caso vk_direita: caso ord("D"): x += 4; pausa;
+     caso vk_up: caso ord("W"): y -= 4; pausa;
+     caso vk_down: caso ord("S"): y += 4; pausa;
+     }
+  
+  O código acima usa o switch para verificar um evento de teclado e depois compara isso com cada um dos case listados. Se ele atender a algum dos valores requeridos, então o código correspondente é executado. Observe como no código que usamos
+    a maneira como essa chave pode verificar várias cases e continuar se não for encontrada break para permitir que várias chaves sejam usadas para obter o mesmo resultado. Note que cada case pode ter seu próprio código, e assim você pode configurar uma espécie de sistema de "herança" onde mais de um case e seu código será executado consecutivamente com o próximo até que uma pausa seja alcançada, dependendo do valor
+    da expressão inicial switch.
+   
+   
+   
+  
+    
+      
+        Voltar: Características lingüísticas
+        Próximo: intervalo
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

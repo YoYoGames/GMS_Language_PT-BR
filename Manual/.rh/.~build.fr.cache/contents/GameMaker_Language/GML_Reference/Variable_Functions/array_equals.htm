@@ -1,0 +1,56 @@
+
+  
+  array_equals
+  Com esta função você pode verificar se duas matrizes são iguais (equivalente ou o mesmo). Você dá as duas arrays para verificar, e a função retornará verdadeira se elas forem iguais (ou equivalentes ou iguais) ou falsa se
+    não são. Note que isto não é o mesmo que verificar se duas matrizes são a mesma usando ==, o que não verificará se as duas matrizes possuem valores equivalentes, mas apenas para ver se as matrizes estão referenciando o
+    mesma matriz inicial. Por exemplo:
+  var a = [1,2,3,4]; var b = [1,2,3,4]; se (a === b) {
+     show_debug_message( "Isto nunca irá disparar, pois a e b não fazem referência à matriz SAME" ); }
+     if (array_equals(a, b)) {
+     show_debug_message( "This will fire now" ); }
+  
+   
+  Sintaxe:
+  array_equals(var1, var2);
+  
+    
+      
+        
+          Argumento
+          Descrição
+        
+        
+          var1
+          O índice da primeira matriz.
+        
+        
+          var2
+          O índice da segunda matriz.
+        
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if !array_equals(inventory_array, item_array) {
+     var len = array_length(inventory_array); array_copy(item_array, 0, inventory_array, 0, len); }
+  
+  O código acima verificará duas arrays para ver se elas possuem valores equivalentes, e se elas não possuem, então o código copiará todo o conteúdo da array "inventory_array" para a array "item_array".
+   
+   
+   
+  
+    
+      
+        Voltar: Funções variáveis
+        Próximo: array_get
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

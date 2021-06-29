@@ -1,0 +1,43 @@
+
+  
+  display_set_ui_visibility
+  Esta função pode ser usada para mostrar ou ocultar a interface do sistema em Android somente. A função exige que você forneça uma ou mais bandeiras do sistema como um valor inteiro. Ao usar mais de uma bandeira, estas precisam ser fundidas usando o bitwise
+    "ou", como mostrado no exemplo abaixo. Você pode encontrar uma lista de bandeiras do sistema Android aqui.
+   
+  Sintaxe:
+  display_set_ui_visibility(flags);
+  
+    
+      
+        Argumento
+        bandeiras
+      
+      
+        bandeiras
+        As bandeiras do Android SYSTEM para usar (como um valor inteiro).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var flags = 1024|4096; display_set_ui_visibility(flags);
+  
+  O código acima usará as bandeiras do sistema Android "SYSTEM_UI_FLAG_IMMERSIVE_STICKY" e "SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN" para definir a visibilidade da tela.
+   
+   
+   
+  
+    
+      Câmeras e Display
+        Voltar: 
+        A seguir: display_set_timing_method
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

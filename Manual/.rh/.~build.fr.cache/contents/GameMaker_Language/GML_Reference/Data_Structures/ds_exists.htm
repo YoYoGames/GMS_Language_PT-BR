@@ -1,0 +1,82 @@
+
+  
+  ds_existe
+  Com esta função você pode verificar se existe uma estrutura de dados do tipo em questão. Você fornece o valor "índice" (como mantido em uma variável) e o "tipo" de DS, que pode ser qualquer uma das constantes listadas abaixo, e a função retornará
+   verdadeiro se a estrutura de dados existir e falso caso contrário.
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        ds_type_map
+        Uma estrutura de dados cartográficos 
+      
+      
+        ds_type_list
+        Uma estrutura de dados da lista 
+      
+      
+        ds_type_stack
+        Uma estrutura de dados em pilha 
+      
+      
+        ds_type_grid
+        Uma estrutura de dados em grade 
+      
+      
+        ds_type_queue
+        Uma estrutura de dados em fila 
+      
+      
+        ds_type_priority
+        Uma estrutura de dados prioritária 
+      
+    
+  
+   
+   
+  Sintaxe:
+  ds_exists(ind, tipo);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice variável para verificar a estrutura de dados
+      
+      
+        tipo
+        O tipo de estrutura de dados a serem verificados (ver a lista de constantes abaixo)
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  if !ds_exists(ai_grid, ds_type_grid) {
+     ai_grid = ds_grid_create(room_width / 32, room_height / 32); }
+  
+  O código acima verifica a variável (previamente rubricada) "ai_grid" para ver se ela indexa uma estrutura de dados do tipo DS grid, e se não indexa, então cria uma e armazena seu índice na variável.
+   
+   
+   
+  
+    
+      
+        Voltar: Estruturas de dados
+        Próximo: ds_set_precision
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

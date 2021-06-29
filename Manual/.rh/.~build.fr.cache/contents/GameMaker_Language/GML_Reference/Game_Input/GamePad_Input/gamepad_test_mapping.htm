@@ -1,0 +1,159 @@
+
+
+
+
+  
+  gamepad_test_mapping
+  Esta função pode ser usada para definir o mapeamento do gamepad sobre os alvos que o permitem. Você fornece o índice "slot" para o gamepad definir e, em seguida, a cadeia do mapa, que deveria ter sido criada usando o formato SDL com os seguintes campos:
+  <guia>,<descrição>,plataforma:<nome da plataforma>,<ligações>
+  Os detalhes que devem ser incluídos em cada um desses campos são:
+  
+    guia - uma seqüência de dígitos e letras que identifica de forma única um tipo de dispositivo (isto pode ser recuperado usando o gamepad_get_guid() função)
+    descrição - uma descrição Ascii do dispositivo (que pode ser recuperada usando o gamepad_get_description() função)
+    plataforma-nome - será ou "plataforma:android", "plataforma:janelas", "linux", ou "mac" (note que isto será anexado automaticamente à string quando você chamar esta função, e assim você
+      não é necessário fornecê-lo ao construir suas próprias cordas de mapeamento)
+    bindings - um conjunto de entradas separadas por um ',' para ligar a entrada real a constantes GML específicas
+  
+  A lista de entradas separadas por vírgulas segue um formato específico para cada entrada:
+  <abstract-gp-nome>:<-value-binding>
+  Aqui <versão de valor> (ou seja: a entrada direta do gamepad) pode ser qualquer uma das seguintes:
+  
+    a<N> - Isto representa um eixo do gamepad, onde o <N> é um dos eixos de 0 a gamepad_axis_count() -1
+    b<N> - Isto representa um botão do gamepad, onde o <N> é um dos botões de 0 a gamepad_button_count() -1
+    h<N>.<mask> - Isto representa um chapéu do gamepad, onde o <N> representa um chapéu de 0 a gamepad_hat_count() -1, e a <máscara> será ou 1, 2, 4, ou 8.
+  
+  Cada valor de entrada deve ser vinculado a um nome SDL, que é expresso como <>abstract-gp-name> , que, por sua vez, está vinculado a uma constante GML. A tabela abaixo mostra a equivalência entre o nome SDL e a constante GameMaker Studio 2:
+   
+  
+    
+      
+        Nome SDL
+        NomeGML 
+      
+      
+        a
+        gp_face1
+      
+      
+        b
+        gp_face2
+      
+      
+        x
+        gp_face3
+      
+      
+        y
+        gp_face4
+      
+      
+        lefthoulder
+        gp_shoulderl
+      
+      
+        lefttrigger
+        gp_shoulderlb
+      
+      
+        direitos de propriedade
+        gp_shoulderr
+      
+      
+        righttrigger
+        gp_shoulderrb
+      
+      
+        guia
+        gp_select
+      
+      
+        início
+        gp_start
+      
+      
+        vara esquerda
+        gp_stickl
+      
+      
+        pauzinho de direitos
+        gp_stickr
+      
+      
+        dpup
+        gp_padu
+      
+      
+        dpdown
+        gp_padl
+      
+      
+        dpleft
+        gp_padr
+      
+      
+        dpright
+        gp_padd
+      
+      
+        leftx
+        gp_axislh
+      
+      
+        esquerda
+        gp_axislv
+      
+      
+        rightx
+        gp_axisrh
+      
+      
+        à direita
+        gp_axisrv
+      
+    
+  
+   Quando você tiver construído sua cadeia de mapeamento, ela deve se parecer com algo assim:
+  "050000005e040000fd020000ffff3f00,Xbox Wireless Controller,a:b0,b:b1,start:b4,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b6,lefthoulder:b9,lefttick:b7,lefttrigger:a4,leftx:a0,lefty:a1,righthoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,x:b2,y:b3,platform:android".
+   
+  Sintaxe:
+  gamepad_test_mapping(index, mapping_string);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        Qual o "slot" do índice gamepad a ser definido.
+      
+      
+        cor
+        A cadeia do mapa a ser usada (veja a descrição para mais informações).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var mapping = gamepad_get_guid(global.padIndex) + "," + gamepad_get_description(global.padIndex); var len = array_length(global.PadInstances); for( i = 0; i < len; i += 2) {
+     var esquerda = global.PadInstances[i]; var direita = global.PadInstances[i+1]; mapping += "," + left.sdlLabel + ":" + right.binding; }
+     gamepad_test_mapping(global.padIndex, mapping);
+  O código acima percorrerá várias instâncias e utilizará os valores de diferentes variáveis que elas contêm para criar uma cadeia de mapeamento, que é então definida para uso no painel de jogo no índice do slot dado.
+   
+   
+   
+  
+    
+      
+        Voltar: Entrada Gamepad
+        Próximo: gamepad_remove_mapping
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

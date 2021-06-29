@@ -1,0 +1,48 @@
+
+  
+  tilemap_set_width
+  Esta função pode ser usada para redimensionar um elemento do mapa de azulejos. Você dá o ID do elemento do mapa de azulejos (que você obtém quando cria um elemento do mapa de azulejos usando layer_tilemap_create() ou quando você usa a função layer_tilemap_get_id()),
+    e a nova largura do mapa de azulejos em células de azulejos.
+   
+  Sintaxe:
+  tilemap_set_width(tilemap_element_id, width)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tilemap_element_id
+        O valor de identificação único do elemento do mapa de azulejos para definir a largura de
+      
+      
+        largura
+        O valor da largura (em "células")
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var lay_id = layer_get_id("Tiles_Walls"); var map_id = layer_tilemap_get_id(lay_id); if tilemap_get_width(map_id) != room_width div 16 {
+     tilemap_set_width(map_id, room_width div 16); }
+  
+  O código acima verifica a largura de um mapa de azulejos específico e, se não for o tamanho correto, então a largura é definida.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas do mapa de azulejos
+        Próxima: mapa de azulejos_altura_set_height
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,47 @@
+
+  
+  texturas_grupo_get_textures
+  Esta função pode ser usada para recuperar os IDs das páginas de textura das páginas individuais que compõem um grupo de textura. Você fornece a cadeia de identificação do grupo de textura (como definido no Editor de Grupo de Textura), e a função retornará uma matriz 1D, onde cada
+    A entrada na matriz é uma única identificação de página de textura. Se a função falhar - ou seja: um grupo inválido é dado, ou o grupo não tem textura atribuída a ele - então a matriz estará vazia (0 comprimento).
+   
+  Sintaxe:
+  textgroup_get_textures(tex_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tex_id
+        O nome do grupo de textura a verificar (um fio)
+      
+    
+  
+   
+  Devoluções:
+  1D array
+   
+  Exemplo:
+  var _tex_array = textgroup_get_textures( "MainMenu"); for (var i = 0; i < array_length(_tex_array); ++i;)  {
+     if text_is_ready(_tex_array[i]) {
+     text_prefetch(_tex_array[i]));
+     }
+     }
+  
+  O código acima recuperará os IDs de página de textura para o grupo de textura "MainMenu", então verifique se estão desembalados, e se são eles que são colocados na VRAM.
+   
+   
+   
+  
+    
+      
+        Voltar: Texturas
+        Próximo: grupo de texturas_get_sprites
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

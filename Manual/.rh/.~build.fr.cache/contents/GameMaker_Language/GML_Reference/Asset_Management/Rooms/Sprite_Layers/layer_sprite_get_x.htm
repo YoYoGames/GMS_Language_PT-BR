@@ -1,0 +1,45 @@
+
+  
+  layer_sprite_get_x
+  Esta função pode ser usada para obter a posição x do elemento sprite na sala. Você dá o ID do elemento sprite (que você obtém quando cria um elemento sprite usando layer_sprite_create() ou quando você
+    usar a função layer_sprite_get_id()), e a função retornará o valor da posição x.
+   
+  Sintaxe:
+  layer_sprite_get_x(sprite_element_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sprite_element_id
+        O valor de identificação único do elemento sprite para obter as informações de
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var lay_id = layer_get_id("sprite_sky"); var spr_id = layer_sprite_get_id(lay_id, "Clouds"); if layer_sprite_get_x(spr_id) < 0 {
+     layer_sprite_x(spr_id, room_width); }
+  
+  O código acima obterá a identificação da camada chamada "sprite_sky" e depois a utilizará para obter a identificação do elemento sprite naquela camada. Este ID é então usado para verificar a posição do elemento x e se ele for menor que 0, então o elemento da camada
+    é movido para uma posição x diferente.
+   
+   
+   
+  
+    
+      
+        Voltar: Camadas de Sprite
+        Próximo: layer_sprite_get_y
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

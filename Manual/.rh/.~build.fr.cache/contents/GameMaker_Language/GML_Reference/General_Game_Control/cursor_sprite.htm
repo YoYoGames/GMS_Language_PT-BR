@@ -1,0 +1,33 @@
+
+  
+  cursor_sprite
+  A definição desta variável instruirá o GameMaker Studio 2 a usar o sprite designado como um cursor (basicamente definindo-o para a posição x/y atual do mouse a cada passo). O valor padrão é -1 que não é um sprite para o
+    mas você pode atribuir qualquer índice sprite dos ativos do jogo ou que tenha sido importado de um recurso externo. Observe que não há como controlar a velocidade da animação ou o índice da imagem, então se o sprite tiver sub-imagens, estas serão alternadas
+    na mesma velocidade que a velocidade da sala. Para remover o cursor sprite, você pode definir esta variável para -1 novamente.
+  Também vale a pena notar que esta variável não substitui o cursor da janela do jogo, e que ainda será desenhada como normal. Para evitar isto você pode usar a função window_set_cursor() e
+    defini-lo para a constante cr_none que tornará o cursor padrão invisível.
+   
+  Sintaxe:
+  cursor_sprite;
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  cursor_sprite = spr_CustomCursor;
+  O código acima definirá o sprite indexado na variável "spr_CustomCursor" para ser o cursor sprite para o jogo.
+   
+   
+   
+  
+    
+      
+        Voltar: Controle geral do jogo
+        Próximo: game_id
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

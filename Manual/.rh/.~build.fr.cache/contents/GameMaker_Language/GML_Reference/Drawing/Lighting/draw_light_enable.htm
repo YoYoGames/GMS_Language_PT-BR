@@ -1,0 +1,46 @@
+
+  
+  draw_enable_light_enable
+  Esta função é utilizada para permitir uma luz definida. Ao definir uma luz posicional ou direcional, deve-se atribuir-lhe um número índice que é então utilizado por esta função para ligar ou desligar a luz. O padrão é desativado(falso).
+  NOTA: Há apenas 8 luzes de hardware disponíveis, portanto apenas 8 luzes definidas podem ser habilitadas a qualquer momento (embora mais possam ser definidas).
+   
+  Sintaxe:
+  draw_light_enable(ind, habilitar);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O número do índice da luz (de 0 a 7)
+      
+      
+        habilitar
+        Ativar ou desativar toda a iluminação(verdadeira ou falsa)
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  draw_set_lighting(true); draw_define_define_direction(1, 0, 1, 0, c_white); draw_light_enable(1, true);
+  O código acima permitirá a iluminação de toda a cena, depois definirá uma luz direcional branca no espaço da sala e, finalmente, acenderá essa luz.
+   
+   
+   
+  
+    
+      
+        Voltar: Iluminação
+        Próximo: draw_set_lighting
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

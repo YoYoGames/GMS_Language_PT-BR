@@ -1,0 +1,50 @@
+
+  
+  Ordem do evento
+  Ao considerar os eventos no GameMaker Studio 2, deve-se observar que a ordem exata pela qual TODOS os eventos vão ocorrer em cada etapa não pode ser claramente indicada, simplesmente porque depende do funcionamento interno do GameMaker Studio
+    2 e isto está sujeito a mudanças à medida que o software se desenvolve. No entanto, há certos eventos que sempre ocorrerão na mesma ordem.
+  O primeiro conjunto de eventos que sempre acontecerá da mesma forma são aqueles que ocorrem quando uma sala é aberta pela primeira vez. A ordem que os diferentes eventos irão disparar é:
+  
+    Variáveis de Objeto / Variáveis de Instância são inicializadas (estas são as variáveis que você pode definir na IDE do Editor de Objeto ou do Editor de Sala).
+      Se você tiver um objeto com variáveis anexadas, elas serão criadas antes de qualquer outra coisa e então quaisquer instâncias que tenham variáveis anexadas serão definidas depois para que você possa sobrescrever variáveis de objeto com variáveis específicas de instância na sala
+      editor.
+    Criar Evento seguido do Código de Criação de Instância de cada instância - de modo que cada instância seja criada, ela executará primeiro seu evento Criar e depois seu Código de Criação de Instância
+      antes de passar para a próxima instância a ser criada
+    Game Start Event - este evento é acionado uma vez na primeira sala do jogo para todas as instâncias colocadas na sala do editor da sala (note que chamar o game_restart() irá acionar este evento novamente.
+    Código de Criação de Sala - este é o código único escrito no Editor de Sala para quando uma sala é inserida pela primeira vez
+    Evento Room Start de todas as instâncias - um dos "outros" eventos da categoria "outros" e irá disparar para todas as instâncias, persistente ou não
+  
+  Também vale a pena notar que você também pode definir a ordem na qual instâncias específicas são criadas dentro do próprio editor da sala, movendo-as para cima ou para baixo da lista da janela de propriedades da camada de instância.
+  Além desses eventos específicos, a única ordem conhecida que sempre ocorrerá da mesma forma, não importa o que pertença aos eventos das três etapas e os diferentes eventos de sorteio . Estes sempre permanecerão consistentes, portanto, se
+    você tem um código que depende de um tempo específico durante cada etapa de seu jogo, você deve usar:
+  
+    Iniciar Evento Passo a Passo
+    Step Event (observe que o step event é executado um pouco antes das instâncias serem colocadas em suas novas posições)
+    Evento da etapa final
+  
+  Todos os eventos para desenho também são sempre tratados na mesma ordem (exceto o evento Window Resize , que é acionado de forma diferente):
+  
+    Evento de Pré-Sorteio
+    Evento de início do sorteio
+    Evento de sorteio
+    Evento de fim de sorteio
+    Evento pós-sorteio
+    Sorteio GUI Evento Inicial
+    Sorteio GUI Evento
+    Sorteio GUI Evento Final
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Eventos Objeto
+        A seguir: Outros eventos
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,73 @@
+
+  
+  http_get_file
+  Com esta função, você pode se conectar ao URL especificado para recuperar informações na forma de um arquivo. Como esta é uma função assíncrona, o GameMaker Studio 2 não irá bloquear enquanto espera por uma resposta, mas continuará funcionando, a menos que receba
+    informações de retorno de chamada. Estas informações terão a forma de uma cadeia e desencadearão um Evento Async em qualquer instância que tenha um definido em suas propriedades de objeto.
+  NOTA: Você deve estar ciente de que, devido à proteção XSS nos navegadores, as solicitações e tentativas de carregamento de recursos de vários domínios são bloqueadas e podem parecer retornar resultados em branco. Consulte a parte sobre Questões de Domínios Cruzados para maiores detalhes.
+  Este evento gerará uma "call back" que é captada por qualquer evento HTTP, caso em que gerará um Mapa DS    (mais comumente conhecido como "dicionário") que é exclusivo para este evento e é armazenado na variável especial async_load. Este mapa DS conterá
+    valores diferentes dependendo dos dados que estão sendo devolvidos, ou seja: o evento acionará várias vezes conforme cada pacote de dados é recebido para que você possa mostrar uma barra de progresso, por exemplo. A estrutura geral para o mapa DS será a seguinte:
+  
+    id: O ID que foi devolvido do comando. Se você disparar uma série de solicitações http_ então você precisa saber a qual você está recebendo a resposta, e assim você usaria este valor para comparar com o valor que você armazenou quando você originalmente
+      enviou o pedido para encontrar a pessoa certa.
+    status: Retorna um valor inferior a 0 para um erro, 0 para completo e 1 para receber pacotes (veja abaixo para mais detalhes).
+    resultado: Os dados recebidos (apenas fio).
+    url: A URL completa que você solicitou.
+    http_status: O código de status http em bruto (se disponível). Isto retorna o código de status padrão da web para a maioria dos navegadores, por exemplo: 304 para "Não modificado" ou 204 para "Sem conteúdo", etc...
+  
+  Se houver vários pacotes sendo devolvidos ao seu jogo, a chave "status" de retorno retornará 1, neste caso o mapa DS terá as seguintes chaves adicionais:
+  
+    "ContentLength": Este é o tamanho do arquivo que o servidor web disse que você deve esperar receber (pode ser -1 se o servidor não devolver estes dados).
+    "sizeDownloaded": O tamanho dos dados que já foram baixados.
+  
+   
+  Sintaxe:
+  http_get_file(url, local_target);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        url
+        O endereço web do servidor do qual você deseja obter o arquivo
+      
+      
+        local_alvo
+        O caminho de armazenamento local para salvar o arquivo para
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo ampliado:
+  A função http_get_file( ) pode ser chamada a partir de qualquer evento, e como é assíncrona, a ligação de retorno pode ser quase instantânea ou pode levar vários segundos. Chamar a função é simples e pareceria algo parecido com isto:
+  arquivo = http_get_file("http://www.macsweeneygames.com/downloads/upgrade.zip", "\Downloads\Upgrade.zip");
+  O código acima solicitará um arquivo do URL dado e o definirá para ser baixado para a área de armazenamento local (como especificado nas Opções de Jogo HTML5) , em um diretório "Downloads" com o nome do arquivo dado (isso não precisa ser o mesmo que
+    o nome do arquivo fonte, mas deve usar a mesma extensão do arquivo). O índice async_load map será armazenado na variável "file" para que você possa verificar o retorno de chamada correto no Evento Assíncrono, e se o diretório de gravação não
+    existir, ela será criada. O Evento Assíncrono acionado seria o subevento HTTP e, nesse caso, você teria algo como o seguinte:
+  if ds_map_find_value(async_load, "id") == arquivo {
+     var status = ds_map_find_value(async_load, "status"); if status == 0 {
+     var path = ds_map_find_value(async_load, "result"); var files = zip_unzip(path, "/NewContent/"); if files > 0 {
+     global.ExtraContent = true; }
+     }
+     }
+  
+  O código acima verificará primeiro o "id" do ds_map que foi criado, depois verificará o status da ligação de retorno. Se o valor for igual a 0 (sinalização de sucesso), o resultado da chamada de retorno será então usado junto com o zip_unzip()    para descompactar o arquivo baixado para o diretório dado. Se o descompactação for bem sucedida, uma variável global é definida como verdadeira.
+   
+   
+   
+  
+    
+      
+        Voltar: HTTP
+        Próximo: http_post_string
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

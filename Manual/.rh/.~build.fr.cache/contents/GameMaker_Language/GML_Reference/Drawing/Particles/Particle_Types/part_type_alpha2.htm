@@ -1,0 +1,50 @@
+
+  
+  part_type_alpha2
+  Esta função pode ser usada para definir um gradiente de valor alfa (transparência) para cada partícula criada do tipo dado. O primeiro alfa é aquele com o qual todas as partículas começarão, e o segundo alfa é aquele em que a partícula terminará,
+    e uma mudança de gradiente suave ocorrerá para o alfa durante a vida útil das partículas de um para o outro. Isto pode ser de 0 (transparente) a 1 (opaco).
+   
+  Sintaxe:
+  part_type_alpha2(ind, alpha1, alpha2);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do tipo de partícula a ser mudado.
+      
+      
+        alfa1
+        O alfa inicial da partícula.
+      
+      
+        alfa2
+        O alfa final da partícula.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  part_type_alpha2(global.Snow_Part, 0, 1);
+  O código acima definirá todas as partículas criadas do tipo de partícula indexada na variável global "Snow_Part" para ter um valor alfa de 0 (transparente) e depois desvanecer para ter um alfa de 1 (opaco) no final de sua vida útil.
+   
+   
+   
+  
+    
+      
+        Voltar: Tipos de Partículas
+        Próximo: part_type_alpha3
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,48 @@
+
+  
+  part_emitter_destroy
+  Esta função removerá o emissor especificado do sistema dado e o apagará da memória (isto também impedirá quaisquer partículas de serem produzidas pelo emissor dado, mas NÃO as remove da sala). Esta função deve sempre
+    ser chamado quando o emissor dado não for mais necessário para que o sistema evite vazamentos de memória e erros.
+   
+  Sintaxe:
+  part_emitter_destroy( ps, ind );
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ps
+        O sistema de partículas para destruir o emissor de.
+      
+      
+        ind
+        O índice do emissor a destruir.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  if part_emitter_exists(global.Sname, p_emit) {
+     part_emitter_destroy(global.sname, p_emit1); }
+  
+  O código acima verificará se o emissor de partículas indexado na variável "p_emit" existe no sistema de dar partículas e se ele o faz é destruído.
+   
+   
+   
+  
+    
+      
+        Voltar: Emissores de Partículas
+        Próximo: part_emitter_destroy_all
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

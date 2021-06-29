@@ -1,0 +1,35 @@
+
+  
+  in_sequence
+  Esta é uma variável incorporada que faz parte das variáveis de instância criadas para cada instância de objeto em seu jogo. Se a instância estiver sendo controlada por uma seqüência,
+    esta variável retornará true, caso contrário retornará false. Esta é uma variável somente de leitura e não pode ser alterada.
+  Note que esta variável se tornará falsa depois que a Seqüência de controle tiver terminado, mesmo que seu Elemento Seqüência ainda exista, e se tornará verdadeira se esse Elemento Seqüência for tocado novamente.
+  Você pode usar esta variável em seus objetos controlados pelo jogador (ou CPU) para ter certeza de que eles só serão movidos por código quando não estiverem em uma seqüência. Isto pode ser útil para cutscenes, quando você precisar usar as mesmas instâncias em uma Sequência (usando
+    o sequence_instance_override_object() função) e você precisa ter certeza de que eles não podem ser movidos por seu código habitual enquanto aquela cutscene estiver ativa.
+   
+  Sintaxe:
+  in_sequence
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se (!in_sequence) {
+     x += move_x; y += move_y; }
+  
+  O código acima verifica a variável in_sequence, e se for false (o que significa que a instância não está sendo controlada por uma seqüência) então ele adiciona move_x e move_y à variável
+    da instância, certificando-se de que ela só se mova quando não estiver em uma seqüência.
+   
+   
+  
+    
+      
+        Voltar: Sequências
+        Próximo: sequence_exists
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

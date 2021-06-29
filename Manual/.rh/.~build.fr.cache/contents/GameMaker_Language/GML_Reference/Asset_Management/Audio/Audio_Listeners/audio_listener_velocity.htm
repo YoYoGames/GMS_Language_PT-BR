@@ -1,0 +1,58 @@
+
+  
+  audio_listener_velocity
+  Esta função pode ser usada para dar ao ouvinte efeitos Doppler e simular movimentos de áudio com base no vetor que é resolvido a partir das posições relativas x, y e z. Se o ouvinte em si não vai se mover, ou o movimento é
+    não um movimento constante, você normalmente não precisaria definir esses valores, mas, por exemplo, se você estiver fazendo um jogo de rolagem onde o jogador tem um movimento constante de baixo para cima e os inimigos um movimento constante de cima para baixo, você definiria o
+    velocidades de escuta e de emissão (para emissores você usaria audio_emitter_velocity()) para os vetores apropriados para simular o Doppler correto
+    efeito à medida que eles passam da instância do jogador.
+  NOTA: se você tem múltiplos ouvintes, você deve usar a função audio_listener_set_velocity().
+  A imagem abaixo mostra como isto poderia ser configurado para o jogo de exemplo dado acima:
+  
+   
+  Sintaxe:
+  audio_listener_velocity(vx, vy, vz);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        vx
+        O componente de velocidade x do ouvinte (padrão 0).
+      
+      
+        vy
+        O componente de velocidade y do ouvinte (padrão 0).
+      
+      
+        vz
+        O componente de velocidade z do ouvinte (padrão 0).
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  se velocidade > 0 {
+     audio_listener_velocity(abs(hspeed), abs(vspeed), 0); }
+  
+  O código acima verifica se a velocidade da instância do jogador é superior a 0 e se é, então, usa os componentes absolutos apropriados hspeed e vspeed para definir a velocidade do ouvinte.
+   
+   
+   
+  
+    
+      
+        Voltar: Ouvintes de áudio
+        Próximo: audio_listener_orientation
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

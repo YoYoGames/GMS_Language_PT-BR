@@ -1,0 +1,48 @@
+
+  
+  animcurve_channel_evaluate
+  Esta função pode ser usada para obter o valor em um ponto específico no tempo a partir de uma estrutura de canal. Você fornece o ponteiro de estrutura para o canal (como retornado pela função animcurve_get_channel(),
+    ou como retornado na estrutura da curva de animação a partir da função animcurve_get()) e a posição "x" (tempo) ao longo do canal da curva para avaliar. Esta posição deve estar entre 0 e
+    1, e a função retornará o valor da curva nessa posição, ou retornará 0 se a estrutura de canal fornecida for inválida.
+   
+   
+  Sintaxe: 
+  animcurve_channel_evaluate(canal_struct, posx);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        canal_estruto
+        O ponteiro estrutural do canal a ser avaliado.
+      
+      
+        posx
+        A posição a tempo de verificar (de 0 a 1).
+      
+    
+  
+   
+  Devoluções: 
+  Real
+   
+  Exemplo: 
+  var _channel = animcurve_get_channel(ac_AlphaCurve, 0); var _val = animcurve_channel_evaluate(_channel, sin(current_time/1000)); image_alpha = _val;
+  O código acima obtém a estrutura do canal para o ativo da curva de animação "ac_AlphaCurve". Ele então usa o valor de avaliação retornado para definir o alfa da imagem para a instância.
+   
+   
+   
+  
+    
+      
+        Voltar: Curvas de Animação
+        Próximo: animcurve_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,51 @@
+
+  
+  sprite_get_speed
+  Esta função pode ser usada para recuperar a velocidade do duende como definida para o recurso duende no Editor Sprite. O valor retornado pode então ser usado, por exemplo, para calcular como
+    muitos quadros podem ser desenhados para diferentes image_speed. Note que o valor do retorno será muito diferente dependendo do tipo de velocidade
+    que foi aplicado no editor Sprite, seja em quadros por segundo, ou quadros por quadro de jogo. Os dois exemplos a seguir ilustram isto:
+  
+    Se você tiver um sprite que desenha 1 quadro por segundo e define a velocidade da imagem para 0,5 quadros por segundo, ele irá desenhar a 0,5 quadros por segundo. Se sua taxa de quadros por segundo for de 60 quadros, então o duende desenhará 1 quadro para cada 120 quadros.
+      estruturas de jogo.
+    Se você tiver um sprite que desenha 1 quadro por quadro de jogo e definir a velocidade da imagem para 0,5, ele desenhará 0,5 quadros por quadro de jogo. Se sua velocidade de jogo for 60 quadros por segundo, então o duende desenhará 30 quadros para
+      a cada 60 quadros de jogo.
+  
+  Você pode descobrir qual foi o tipo de velocidade de animação usada ao definir o duende usando a função sprite_get_type_speed_speed()e você pode definir a velocidade e o tipo de animação
+    usando a função sprite_set_speed().
+   
+  Sintaxe:
+  sprite_get_speed(index)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        índice
+        O índice do duende para obter a velocidade de
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  s_speed = sprite_get_speed(sprite_index); s_type = sprite_get_speed_type(sprite_index);
+  O código acima obtém a velocidade do duende e o tipo de animação do duende e as armazena, por exemplo, variáveis para uso futuro.
+   
+   
+   
+  
+    
+      
+        Voltar: Informações Sprite
+        Próximo: sprite_get_type_speed_speed
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

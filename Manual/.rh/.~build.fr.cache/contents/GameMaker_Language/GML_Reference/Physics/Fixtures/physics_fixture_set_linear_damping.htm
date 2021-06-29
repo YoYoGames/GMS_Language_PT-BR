@@ -1,0 +1,48 @@
+
+  
+  fisica_fixture_set_linear_damping
+  O amortecimento é usado para reduzir a velocidade mundial da física de instâncias, e difere do atrito, pois o atrito só ocorre quando duas instâncias com acessórios estão em contato. O amortecimento também é muito mais barato de se simular do que o atrito, mas note que o amortecimento
+    não substitui o atrito; os dois efeitos podem, e devem, ser utilizados em conjunto. Aqui está uma imagem para ilustrar o amortecimento:
+  Os parâmetros de amortecimento devem estar entre 0 e infinito, com 0 significando sem amortecimento,
+    e infinito significando amortecimento total. Normalmente você usará um valor de amortecimento entre 0 e 1, mas você pode usar qualquer valor não-negativo se necessário.
+   
+  Sintaxe:
+  physics_fixture_set_linear_damping(fixture, damping)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fixação
+        o índice da fixação
+      
+      
+        amortecimento
+        o amortecimento da fixação, geralmente entre 0 e 1
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  physics_fixture_set_linear_damping(fix_Ball, 0.1);
+  O código acima definirá o amortecimento linear da fixação indexada em "fix_ball" para 0,1.
+   
+   
+   
+  
+    
+      
+        Voltar: Instalações
+        A seguir: fixação_física_set_angular_damping
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

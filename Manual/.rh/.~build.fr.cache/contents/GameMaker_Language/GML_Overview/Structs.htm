@@ -1,0 +1,166 @@
+
+  
+  Estruturas e Construtores
+  Uma estrutura é - para dizer de forma simples - uma variável que contém um conjunto de outras variáveis. As variáveis que uma estrutura contém podem ser de qualquer tipo de dado mencionado anteriormente e estas variáveis podem ser lidas de
+    e escritos após a declaração de estrutura inicial, e você também pode adicionar mais variáveis a uma estrutura depois que ela foi declarada. As variáveis utilizadas em uma estrutura devem seguir esquemas convencionais de nomenclatura, ou seja: elas não podem começar com um número e devem
+    ser composto somente de caracteres alfanuméricos e o caractere "_", e também observar que o conteúdo de uma estrutura é independente da instância ou função que a criou, e como tal você pode - se desejar - usar caracteres embutidos
+    nomes de variáveis tais como image_index ou x e y.
+  Após a criação inicial, as estruturas não têm nenhuma sobrecarga de processamento enquanto elas existirem , embora ocupem espaço na memória. A sintaxe da estrutura é a seguinte:
+  <variável> = {
+   
+        <variável> : <valor> ,
+        <variável> : <valor> ,  etc...
+     };
+  
+  Portanto, um exemplo disso na prática seria:
+  mystruct = {
+     a : 20, b : "Hello World" };
+  
+  O código acima cria uma estrutura de escopo de instância na variável mystruct e a preenche com alguns valores (estruturas podem ser criadas em escopos local, instância e global, como qualquer outra variável - veja a seção sobre Variáveis e Escopo de Variável para mais informações). Note que você não precisa preencher o conteúdo de uma estrutura quando ela é criada inicialmente e você pode criar uma estrutura vazia simplesmente fazendo isso:
+  mystruct = {};
+  Esta estrutura pode então ser acrescentada em um ponto posterior do código do jogo. Aqui está um exemplo de uma estrutura com várias variáveis e tipos de dados:
+  var _xx = 100; mystruct = {
+     a : 10, b : "Hello World", c : int64(5), d : _xx + 50, e : function(a, b) {
+     return a + b; },
+     f : [ 10, 20, 30, 40, 50 ], g : image_index };
+  
+  Você notará no código acima que você também pode definir métodos e usar funções de tempo de execução em estruturas e também pode usar variáveis locais e de instância dentro da declaração estrutural.
+  Por exemplo, você notará no exemplo acima que a variável estrutural "g" está sendo definida para image_index, que é uma variável de instância. Você pode pensar que precisaria usar a palavra-chave other neste caso para obter a variável de instância, mas isto não é necessário. Essencialmente, quando você define uma estrutura, todas as variáveis membros no lado esquerdo dos dois pontos ":" são as variáveis estruturais, e os valores e variáveis no lado direito usam o escopo do que quer que esteja definindo a estrutura (neste caso, uma instância).
+  Vejamos um exemplo simples para ilustrar isto. Digamos que você quer definir uma estrutura com as variáveis "x" e "y" e quer defini-las para o "x" e "y" da instância que define a estrutura. Na prática
+    o código ficaria assim:
+  mystruct = {
+     x : x, y : y };
+  
+  No código acima, as variáveis estruturais dos membros x e y estão sendo definidas para os valores mantidos na instância variáveis x e y, uma vez que o lado direito dos dois pontos ":" se refere à instância que está definindo
+    a estrutura. Vale notar que isto significa que você não pode utilizar variáveis estruturais de membros para definir variáveis subseqüentes dentro da declaração estrutural. Por exemplo, o seguinte lhe daria um erro:
+  mystruct = {
+     a : 10, b : 10, c : a + b }
+  
+  O erro ocorre porque as variáveis a e b estão de fato sendo avaliadas no âmbito do que quer que esteja definindo a estrutura (elas estão no lado direito dos dois pontos ":"), e não são as que estão sendo definidas dentro
+    a própria estrutura.
+  IMPORTANTE!  Você não pode usar nenhum global variáveis de escopo como nomes de membros estruturantes, por exemplo: game_id ou fps.
+    Você pode encontrar uma lista completa destas variáveis globais na página seguinte:
+  
+    Estruturas Variáveis Proibidas
+  
+  Uma vez definida uma estrutura, você pode acessar os dados dentro dela usando a notação "ponto", assim:
+  mystruct = {
+     a : 20, b : "Hello World" }
+    
+     mystring = mystruct.b + string(mystruct.a);
+  Você também pode realizar operações sobre as variáveis dentro de uma estrutura ou usá-las em funções, assim como faria com qualquer outra variável. Por exemplo:
+  mystruct.a += 1; mystruct.b = mystruct.a + 20; mydir = point_direction(mouse_x, mouse_y, mystruct.xx, mystruct.yy);
+  Finalmente, as estruturas podem ter outras estruturas aninhadas dentro delas, como esta:
+  mystruct = {
+     a : { aa : "Este é um exemplo" },
+     b : { bb : "E outro" },
+     };
+  
+  Para acessar tais estruturas aninhadas, você ainda usaria a notação de ponto, desta forma:
+  var _str = mystuct.a.aa + " " + mystruct.b.bb; show_debug_message(_str);
+  
+  Outra maneira de acessar dados em uma estrutura é usando o with() função. Assim, por exemplo, você poderia fazer isto:
+  com(mystruct) {
+     a += outros.x; }
+  
+  Usando with() muda o escopo do código para a estrutura dada, onde você pode manipular as variáveis dos membros no escopo da estrutura. Note que no exemplo também utilizamos a palavra-chaveother .
+    Isto funciona exatamente como em uma instância ao usar with() e referenciará a instância (ou estrutura) que está realmente rodando o bloco de código.
+  Quando uma estrutura não é mais necessária, ela pode ser removida da memória usando o excluir operador, que sinaliza a estrutura como podendo ser coletado o lixo. Isto não é estritamente necessário, pois o lixeiro pode fazer isto automaticamente se a estrutura não estiver mais referenciada em seu código, mas é uma boa prática fazê-lo e nós o recomendamos (por exemplo, chamar a eliminação no evento de limpeza de uma instância para dizer explicitamente ao lixeiro que uma estrutura de escopo de instância deve ser eliminada). Aqui está um exemplo:
+  // Criar evento mystruct = {
+     pos_x : x, pos_y : y, contagem : 1000 };
+    
+     /// Evento de limpeza apagar mystruct;
+  Funções do Construtor
+  Você também pode usar funções ou métodos de script para criar funções que podem ser usadas para gerar novas estruturas, o que requer o uso da palavra-chave do construtor para a função
+    e o novo ao criar uma estrutura a partir de tal função. Veja a seguinte função:
+  função Vector2(_x, _y) construtor {
+     x = _x; y = _y;
+     static Add = function(_vec2) {
+     x += _vec2.x; y += _vec2.y; }
+     }
+  
+  Ou, usando o método de sintaxe variável:
+  Vector2 = construtor de função(_x, _y) {
+     x = _x; y = _y;
+     static Add = function(_vec2) {
+     x += _vec2.x; y += _vec2.y; }
+     }
+  
+  Aqui estamos criando uma função chamada Vetor2 e dizendo ao GameMaker Studio 2 que esta é uma função utilizada para criar estruturas, acrescentando a palavra-chave construtor após sua definição. Você pode então chamar esta função construtora como
+    isto:
+  v2 = novo Vector2(10, 10);
+  A variável v2 conterá agora uma estrutura com as variáveis x e y e a variável do método estático Add.
+  Você também pode fazer uso de argumentos opcionais em suas funções de construtor:
+  função Vector2(_x = 0, _y = 0) construtor {
+     x = _x; y = _y; }
+  
+  Este construtor usará agora 0 para os argumentos _x e _y se eles não forem especificados quando a função for chamada. Isto significa que você pode criar uma nova estrutura Vector2 sem ter que especificar nenhum argumento:
+  vazio_vetor = novo Vetor2();
+  Herança
+  As funções criadas desta forma também suportarão herança única, ou seja: você pode criar uma função construtora que herda dados de outra função construtora.
+  NOTA: Ao trabalhar com herança, não se pode usar variáveis de método para definir a função do construtor, apenas funções de roteiro.
+  Por exemplo, criamos a função construtora Vector2 acima, para que possamos usá-la como "pai" para outra função construtora, que chamaremos Vector3:
+  função Vector3(_x, _y, _z) : Vector2(_x, _y) construtor {
+     z = _z;
+     static Add = function( _vec3 ) {
+     x += _vec3.x; y += _vec3.y; z += _vec3.z; }
+     }
+  
+  Como você pode ver, ao definir a função usamos um cólon ":" para separar o novo construtor da construtora mãe a ser herdada. O construtor infantil(Vector3) passa o _x e
+   _y arguments into the parent(Vector2) constructor, que são usados para executar o construtor dos pais primeiro, depois do qual o construtor da criança é executado. Desta forma, o construtor da criança obtém as variáveis do pai (x e y) e também pode definir suas próprias (z).
+  Você também pode passar valores constantes para a construtora pais, de modo que uma certa construtora infantil sempre forneça os mesmos valores para sua construtora pais:
+  função Item(dano) construtor {
+     my_damage = dano; }
+    
+     função BasicSword() : Item(10) construtor {}
+    
+     var _basic_sword = new BasicSword(); show_debug_message(_basic_sword.my_damage); // Imprime 10
+  Isto significa que o dano de uma espada básica será sempre 10, uma vez que ela passa esse valor para seu construtor-mãe independentemente de quais sejam seus próprios argumentos.
+  Observe que atribuir um valor padrão a um argumento em uma construtora de crianças sobreporá o valor padrão dos pais para esse argumento. Veja o seguinte exemplo:
+  função Pai(valor = 10) construtor {
+     show_debug_message(valor); }
+    
+     função Criança(valor = 20) : Pai(valor) construtor {
+     show_debug_message(valor); }
+    
+     var _child = criança nova();
+  Ambos os construtores irão imprimir 20 para o registro de saída, pois esse foi o valor padrão para o argumento definido pelo construtor infantil, e o mesmo valor foi passado para o construtor pai.
+  Para obter mais detalhes sobre os operadores novos e de exclusão, consulte as páginas seguintes:
+  
+    novo
+    excluir
+      
+    
+  
+  Saída de cordas
+  Uma última coisa a mencionar sobre as estruturas é que você pode mudar o que sai deles para o console para depuração. Por padrão, chamando a função show_debug_message() em
+    uma estrutura produzirá o conteúdo da estrutura (como mostrado acima). Entretanto, é possível personalizar esta mensagem adicionando um método especificamente nomeado à estrutura chamada toString:
+  mystruct = {
+     a : 20, b : "Hello World",
+     toString : function() { return "This stuct says " + b + ", " + string(a) + " times!"; }  }
+     show_debug_message(mystruct);
+  
+  Agora quando a função show_debug_message() for chamada, o método toString será usado para gerar a saída e - com o exemplo acima - você terá:
+  Esta estrutura diz Olá Mundo, 20 vezes!
+  Note que você também pode chamar o string() de uma referência estrutural e usar isso para exibir o conteúdo - ou o método toString - para o
+    ou salvá-lo em um arquivo, ou o que quer que seja, por exemplo, uma tela
+  var _str = string(mystruct); draw_text(32, 32, _str);
+  Finalmente, há uma série de funções de tempo de execução que você pode usar nas estruturas para obter as variáveis que elas contêm, bem como algumas outras coisas. Você pode encontrá-las na seção seguinte:
+  
+    Funções variáveis
+  
+   
+   
+   
+  
+    
+      
+        Voltar: Visão geral daGML
+        A seguir: Características lingüísticas
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

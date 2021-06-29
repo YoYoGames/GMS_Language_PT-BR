@@ -1,0 +1,95 @@
+
+  
+  audio_criate_buffer_sound
+  Com esta função você pode criar um novo som a partir do conteúdo de um buffer. O buffer terá sido criado anteriormente (veja as funções de buffer para detalhes sobre como fazer isso), e teve dados adicionados ou
+    carregado nele. Em seguida, você o passa para esta função com o formato de dados (apenas buffer_u8 ou buffer_s16 são suportados atualmente), a taxa de amostragem (que pode estar entre 1000hz e 48000hz), e uma compensação no buffer para obter os dados
+    de. Você também precisa fornecer o número de amostras no tampão e os canais que o som requer. Estes canais são definidos por uma das seguintes constantes:
+   
+  
+    
+      
+        Constante
+        Descrição
+      
+      
+        audio_mono
+        Áudio mono (canal único).
+      
+      
+        audio_stereo
+        Áudio estéreo (canal duplo).
+      
+      
+        audio_3D
+        áudio 3D (5.1).
+      
+    
+  
+   
+  Observe que depois de ter criado um som, você deve liberar o índice do ponteiro associado a ele quando ele não for mais necessário usando a função audio_free_buffer_sound(). Se você não fizer isso e
+    então reatribuir a variável ou mudar de sala, etc... a identificação sonora será perdida e você terá um vazamento de memória. Observe também que você não pode apagar o buffer se algum som tiver sido criado a partir dele e o som não tiver sido liberado primeiro. Portanto, você
+    libere primeiro o som (ou sons), depois apague o buffer. Também vale a pena notar que adicionar qualquer coisa ao buffer, ou mudar o tamanho do buffer, depois de ter tido um som criado a partir dele, dará resultados inesperados e não é recomendado
+    - Uma vez que você tenha começado a criar sons a partir de qualquer tampão, não deve manipulá-los de outra forma depois.
+   
+  Sintaxe:
+  audio_create_buffer_sound(bufferId, bufferFormat, bufferRate, bufferOffset, bufferLength, bufferChannels);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        bufferId
+        A identificação do buffer a ser utilizado.
+      
+      
+        bufferFormat
+        O formato dos dados no buffer(buffer_u8 ou buffer_s16).
+      
+      
+        bufferRate
+        A taxa de amostragem dos dados no buffer.
+      
+      
+        bufferOffset
+        A compensação para o buffer para ler os dados da amostra (em bytes).
+      
+      
+        comprimento do buffer
+        O comprimento do buffer (o número de bytes de dados de áudio, excluindo o cabeçalho).
+      
+      
+        Canais-tampãoCanais de segurança
+        Os canais a serem utilizados a partir de uma das constantes listadas abaixo.
+      
+    
+  
+   
+  Devoluções:
+  Inteiro (Sound ID)
+   
+  Exemplo:
+  var rate = 44100; var hertz = irandom_range(220, 880); var samples = 44100; var bufferId = buffer_create(rate, buffer_fast, 1); var buffer_seek(bufferId, buffer_seek_start, 0); var num_to_write = rate / hertz; var length
+    = buffer_get_size(bufferId) ; var val_to_write = 1; for (var i = 0; i < (samples / num_to_write) + 1; i++;)  {
+     for (var j = 0; j < num_to_write; j++;) {
+     buffer_write(bufferId, buffer_u8, val_to_write * 255); }
+     val_to_write = (1 - val_to_write); }
+     soundId = audio_create_buffer_sound(bufferId, buffer_u8, rate, 0, length, audio_stereo);
+  O acima exposto cria um buffer e, em seguida, processa-o com dados. Estes dados são então usados para criar um novo som, que é armazenado na variável "soundId".
+   
+   
+   
+  
+    
+      
+        Voltar: Buffers de áudio
+        Próximo: audio_free_buffer_sound
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

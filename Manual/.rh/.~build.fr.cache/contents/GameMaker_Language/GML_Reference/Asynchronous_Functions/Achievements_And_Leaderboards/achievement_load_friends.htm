@@ -1,0 +1,47 @@
+
+  
+  achievement_load_friends
+  Esta função enviará um pedido ao servidor para informações sobre todos os amigos usuários logados e acionará um Evento Assíncrono Social de retorno que contém
+    o async_load mapa povoado com os pares chave/valor relevantes. A chave de identificação deste mapa DS é usada para identificar o retorno de chamada correto (lá
+    pode ser mais de uma função de gatilho para qualquer evento assíncrono), e será emparelhado com a constante conquista_amigos_info assim como um número de outros pares de chaves/valores para cada amigo. O conteúdo exato do mapa é
+    mostrado abaixo:
+  NOTA: Esta função é para iOS somente.
+  
+    " id" - Para esta função deve ser realizado_amigos_info
+    "FriendN"- O nome do amigo, onde "N" é um valor inteiro correspondente à sua posição dentro da lista de amigos.
+    "FriendidN" - A identificação única do usuário do amigo, "N".
+  
+   
+  Sintaxe:
+  achievement_load_friends()
+   
+  Devoluções:
+  N/A
+   
+  Exemplo ampliado:
+  O seguinte código seria provavelmente chamado depois que o jogador entrasse em sua conta de jogo usando achievement_login() para obter uma lista de todos esses amigos usuários:
+  achievement_friends_info();
+  Isto enviará um pedido de informações sobre os amigos dos usuários e gerará uma chamada assíncrona de retorno com o mapa DS especial de assim-chamada contendo os seguintes dados:
+  var ident = ds_map_find_value(async_load, "id"); if ident == achievement_friends_info {
+     var numfriends = ds_map_find_value(async_load, "numfriends"); global.numfriends = numfriends; for(var i=0; i < numfriends; i++;) {
+     global.friendname[i] = ds_map_find_value(async_load, "Friend" + string(i)); global.friendid[i] = ds_map_find_value(async_load, "Friendid" + string(i)); achievement_get_pic(global.friendid[i]);
+     }
+     }
+  
+  O código acima verifica o Mapa DS retornado no Evento Assíncrono Social e se seu "id" corresponde à constante a ser verificada, ele então percorre o mapa armazenando todos os diferentes valores em uma série de arrays e solicitações
+    uma imagem para cada uma das entradas no mapa (ver achievement_get_pic()).
+   
+   
+   
+  
+    
+      
+        Voltar: Conquistas e Quadros de Líderes
+        Próximo: achievement_load_leaderboard
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

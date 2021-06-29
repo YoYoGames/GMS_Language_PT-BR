@@ -1,0 +1,46 @@
+
+  
+  ds_map_keys_to_array
+  Com esta função você pode recuperar todas as chaves que um mapa DS contém. Você fornece o DS map ID para obter as chaves de (como retornado por ds_map_create()) e a função retornará um
+    onde cada entrada na GML_Overview/Arrays.htm">matriz é uma chave do mapa DS. A função tem um segundo argumento opcional onde você pode fornecer um array que você criou, neste caso os dados chave do mapa serão anexados a qualquer dado existente no array.
+      Note que a função modificará o array fornecido diretamente, mas também retornará uma referência a ele (ou uma referência a um novo array se nenhum for fornecido).
+   
+  Sintaxe:
+  ds_map_keys_to_array(id, [array])
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        id
+        A identificação do mapa a ser utilizado.
+      
+      
+        [matriz]
+        OPCIONAL! A matriz para anexar as chaves do mapa DS.
+      
+    
+  
+   
+  Devoluções:
+  Array
+   
+  Exemplo:
+  map_keys = ds_map_keys_to_array(inventário);
+  O código acima recupera as chaves para um mapa DS e depois as armazena como uma matriz para uso futuro.
+   
+   
+  
+    
+      
+        Voltar: DS Maps
+        Próximo: ds_map_values_to_array
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

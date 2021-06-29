@@ -1,0 +1,50 @@
+
+  
+  steam_file_write
+  Você pode usar esta função para escrever dados em um arquivo, que será então sincronizado com o Steam Cloud quando o usuário sair do jogo. se o arquivo não existir, esta função irá criá-lo para você, e se ele já existir, irá sobrescrever
+    qualquer dado que já esteja armazenado dentro do arquivo com a nova cadeia de dados. A função retornará um valor 0 se falhar por qualquer razão e um valor maior que 0 se for bem sucedida.
+   
+  Sintaxe:
+  steam_file_write(filename, dados, tamanho);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        nome do arquivo
+        O nome do arquivo para o qual escrever.
+      
+      
+        dados
+        Os dados a serem escritos (um fio).
+      
+      
+        tamanho
+        o tamanho dos dados a serem escritos.
+      
+    
+  
+   
+  Devoluções:
+  Real
+   
+  Exemplo:
+  var fname="SaveData.txt"; var data = string(global.Level) + "|" + string(global.Points) + "|" + string(global.HP); var len = string_length(data); steam_file_write_file(fname, data, len);
+  O código acima preparará uma série de variáveis locais e depois as utilizará para escrever (ou criar) um arquivo que será então sincronizado com a Nuvem de Vapor.
+   
+   
+   
+  
+    
+      
+        Voltar: Nuvem devapor
+        Próximo: steam_file_write_file
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

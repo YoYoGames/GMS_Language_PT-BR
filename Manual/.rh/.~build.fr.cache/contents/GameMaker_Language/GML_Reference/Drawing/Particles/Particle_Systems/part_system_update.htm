@@ -1,0 +1,46 @@
+
+  
+  part_system_update
+  Esta função fará o sistema de partículas avançar um passo no tempo de jogo e pode ser usada para simular o comportamento do sistema de partículas quando a atualização automática está desligada, ou pode ser usada para avançar um sistema de partículas para um ponto específico, tudo em uma única etapa.
+    Por exemplo, se você tiver um sistema de partículas para neve, e quiser que pareça que a neve está caindo logo a partir do momento em que o jogador entra na sala, então você pode desejar avançar suas partículas de neve por alguns segundos no evento de criação de uma instância
+    para que, na primeira vez em que são desenhadas, haja partículas por toda a tela (o exemplo de código abaixo mostra isso). Você também pode usar esta função quando a atualização automática do sistema é desligada pela função part_system_automatic_update()    para levar o sistema adiante.
+   
+  Sintaxe:
+  part_system_update(ind);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        ind
+        O índice do sistema de partículas a ser atualizado.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  repetir (room_speed * 3) {
+     part_system_update(global.RainSys);
+     }
+  
+  O código acima fará avançar o sistema de partículas indexadas na variável global "RainSys" em 3 segundos.
+   
+   
+   
+  
+    
+      
+        Voltar: Sistemas de Partículas
+        Próximo: part_system_drawit
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

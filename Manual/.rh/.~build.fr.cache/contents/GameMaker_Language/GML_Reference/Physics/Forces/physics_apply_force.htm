@@ -1,0 +1,61 @@
+
+  
+  physics_apply_force
+  Quando se trabalha com física, é preciso aplicar não somente a gravidade aos objetos, mas também as forças. Uma força é qualquer influência que faz um objeto sofrer uma mudança de velocidade, uma mudança de direção ou uma mudança de forma, e é definida no mundo físico GameMaker Studio 2 da mesma forma que nós definimos a gravidade, obtendo o vetor dos dois componentes xforce/yforce. Deve-se notar que as forças não são aplicadas ao centro de massa do objeto, mas sim em um ponto da sala e elas mudarão o
+    direção e velocidade, assim como o torque (spin) dependente de quaisquer outras forças que estejam trabalhando no objeto (como a gravidade). Aqui está um exemplo de imagem para ajudar a ilustrar:
+  No exemplo acima, o objeto de mola na parte inferior criou uma força sobre a bola
+    objeto para que ele se mova em uma direção diferente. A força exata é definida pelo vetor que obtemos dos componentes xforce/yforce em relação às coordenadas xpos/ypos - o que significa simplesmente que a força é calculada como a distância a partir de xpos/ypos
+    para xforce/yforce em Newtons (sendo um Newton definido como a quantidade de força líquida necessária para acelerar uma massa de um quilograma a uma taxa de um metro por segundo ao quadrado) e a direção é o ângulo que obtemos de xpos/ypos para xforce/yforce. O
+    código para uma colisão como a acima iria no caso de colisão do objeto de mola e seria algo parecido com o fornecido no exemplo abaixo.
+  NOTA: O mundo da física usa medidores para todos os seus cálculos, e a proporção de pixels por metro é definida no editor da sala ou usando physics_world_create().
+   
+  Sintaxe:
+  physics_apply_force(xpos, ypos, xforce, yforce)
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        xpos
+        A coordenada x na sala onde a força será aplicada
+      
+      
+        ypos
+        A coordenada y na sala onde a força será aplicada
+      
+      
+        xforce
+        o componente x do vetor de força
+      
+      
+        yforce
+        o componente y do vetor de força
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  com (outros) {
+     physics_apply_force(x, y, 0, -30); }
+  
+  O código acima aplicará o código ao outro objeto na colisão com uma força de 30 Newtons e uma direção.
+   
+   
+   
+  
+    
+      
+        Voltar: Forças
+        A seguir: physics_apply_impulse
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

@@ -1,0 +1,44 @@
+
+  
+  grupos de texturas_get_tilesets
+  Com esta função você pode recuperar o índice de cada um dos tileset atribuídos às páginas de textura dentro de um determinado grupo de textura. Você fornece a cadeia de identificação do grupo de textura (como definido no Editor de Grupo de Textura) e a função retornará um 1D
+    onde cada entrada contém o índice de tileset para um recurso de tileset. Se a função falhar - ou seja: um grupo inválido é dado, ou o grupo não tem textura atribuída a ele - então a matriz estará vazia (0 comprimento).
+   
+  Sintaxe:
+  texturegroup_get_tilesets(tex_id);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        tex
+        O nome do grupo de textura a verificar (um fio)
+      
+    
+  
+   
+  Devoluções:
+  1D array
+   
+  Exemplo:
+  var _tex_array = texturegroup_get_tilesets( "MainMenu"); for (var i = 0; i < array_length(_tex_array); ++i;)  {
+     show_debug_message("Tileset " + string(i) + " Index:" + string(tex_array[i])); }
+  
+  O código acima recuperará os índices do tileset para o grupo de textura "MainMenu", depois exibirá esses IDs na janela de saída do console.
+   
+   
+   
+  
+    
+      
+        Voltar: Texturas
+        Próximo: textura_get_width
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

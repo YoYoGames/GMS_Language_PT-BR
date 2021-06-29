@@ -1,0 +1,46 @@
+
+  
+  file_delete
+  Esta função excluirá o arquivo especificado do sistema. Deve-se observar que esta função somente excluirá os arquivos que o GameMaker Studio 2 é capaz de criar e analisar: arquivos ini, arquivos de texto e arquivos binários, ou aqueles arquivos feitos
+    para armazenar recursos criados pelo jogo, como sprites ou superfícies. No entanto, ele não excluirá nenhum outro arquivo. A função também retornará verdadeiro se o arquivo tiver sido removido com sucesso, ou falso em qualquer outra circunstância.
+  ADVERTÊNCIA! Esta função pode não funcionar como você espera devido ao GameMaker Studio 2 ser lixado! Consulte a seção sobre Limites do Sistema de Arquivos para maiores informações.
+   
+  Sintaxe:
+  file_delete(fname);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        fname
+        O nome do arquivo a ser excluído.
+      
+    
+  
+   
+  Devoluções:
+  Booleano
+   
+  Exemplo:
+  se file_exists("level.txt") {
+     file_delete("level.txt");
+     }
+  
+  Isto verificaria a existência de um arquivo e, se ele existir, seria eliminado.
+   
+   
+   
+  
+    
+      
+        Voltar: Sistema de arquivo
+        Próximo: file_rename
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+

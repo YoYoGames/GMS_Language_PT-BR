@@ -1,0 +1,49 @@
+
+  
+  lista_esqueleto_animação_esqueleto
+  Com esta função você pode preencher uma lista DS (pré-criada) com todos os nomes das animações incluídas como parte do esqueleto de animação sprite. Os nomes serão cordas e podem então
+    ser usado nas outras funções de animação para estes tipos de duende.
+   
+  Sintaxe:
+  skeleton_animation_list(sprite, list);
+  
+    
+      
+        Argumento
+        Descrição
+      
+      
+        sprite
+        O índice sprite da animação do esqueleto da coluna vertebral para obter a lista.
+      
+      
+        lista
+        A identificação da lista DS a ser preenchida com os nomes da animação.
+      
+    
+  
+   
+  Devoluções:
+  N/A
+   
+  Exemplo:
+  var list = ds_list_create(); skeleton_animation_list(sprite_index, list); for (var i = 1; i < ds_list_size(list); i++;)  {
+     skeleton_animation_mix(list[| 0], list[| i], 0.5); }
+     ds_list_destroy(list);
+  
+  O código acima cria uma lista DS de todos os nomes de animação para o duende que está sendo usado pela instância. Em seguida, ele passa por eles e define o valor da mistura para todos eles com a primeira animação para 0,5.
+   
+   
+   
+  
+    
+      
+        Voltar: Animação
+        A seguir: skeleton_animation_clear
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Todos os direitos reservados
+  
+  
+  
+
